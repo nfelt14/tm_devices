@@ -21,7 +21,7 @@ jobs:
           python-version: x  # any version
           check-latest: true
       - name: Install workflow dependencies
-        run: pip install poetry-core yamlfix
+        run: pip install poetry-core yamlfix requests
       - name: Print Information
         run: |-
           echo ${{ github.head_ref }}
