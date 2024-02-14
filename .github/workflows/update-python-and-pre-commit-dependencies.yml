@@ -26,6 +26,8 @@ jobs:
         run: |-
           echo ${{ github.head_ref }}
           echo ${{ github.event.pull_request.user.login }}
+      - name: Run updater script
+        run: python scripts/update_development_dependencies.py
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'ci: Update python linters and pre-commit dependencies.'
