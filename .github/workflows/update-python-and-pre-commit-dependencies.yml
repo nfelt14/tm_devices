@@ -26,8 +26,8 @@ jobs:
       - name: Configure git
         run: |
           git config --system --add safe.directory "*"
-          git config --global user.name "${{ vars.TEK_OPENSOURCE_NAME }}"
-          git config --global user.email "${{ vars.TEK_OPENSOURCE_EMAIL }}"
+          git config user.name "${{ vars.TEK_OPENSOURCE_NAME }}"
+          git config user.email "${{ vars.TEK_OPENSOURCE_EMAIL }}"
           mkdir --parents ~/.ssh
           echo -e "${{ secrets.TEK_OPENSOURCE_SSH_SIGNING_KEY_PRIVATE }}" >>~/.ssh/signing_key
           cat ~/.ssh/signing_key
@@ -36,12 +36,12 @@ jobs:
           chmod 600 ~/.ssh/signing_key && chmod 600 ~/.ssh/signing_key.pub
           eval "$(ssh-agent)"
           ssh-add ~/.ssh/signing_key
-          git config --global gpg.format ssh
-          git config --global user.signingKey ~/.ssh/signing_key
-          git config --global commit.gpgsign true
+          git config gpg.format ssh
+          git config user.signingKey ~/.ssh/signing_key
+          git config commit.gpgsign true
           touch ~/.ssh/allowed_signers
           echo "${{ vars.TEK_OPENSOURCE_EMAIL }} ${{ secrets.TEK_OPENSOURCE_SSH_SIGNING_KEY_PUBLIC }}" >~/.ssh/allowed_signers
-          git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
+          git config gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
       - name: Run updater script
         run: python scripts/update_development_dependencies.py --no-install
       - uses: stefanzweifel/git-auto-commit-action@v5
