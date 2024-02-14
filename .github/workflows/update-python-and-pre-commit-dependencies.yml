@@ -25,7 +25,6 @@ jobs:
         run: pip install poetry yamlfix toml-sort requests pre-commit-update
       - name: Configure git
         run: |
-          git config --system --add safe.directory "*"
           git config user.name "${{ vars.TEK_OPENSOURCE_NAME }}"
           git config user.email "${{ vars.TEK_OPENSOURCE_EMAIL }}"
           mkdir --parents ~/.ssh
