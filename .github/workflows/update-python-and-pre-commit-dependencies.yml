@@ -7,10 +7,14 @@ jobs:
   update-python-and-pre-commit-deps:
     name: Update python linters and pre-commit dependencies
     runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login == 'nfelt14'  # TODO: change to dependabot
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.head_ref }}
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -22,3 +26,6 @@ jobs:
         run: |-
           echo ${{ github.head_ref }}
           echo ${{ github.event.pull_request.user.login }}
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'ci: Update python linters and pre-commit dependencies.'
