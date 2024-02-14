@@ -7,7 +7,7 @@ jobs:
   update-python-and-pre-commit-deps:
     name: Update python linters and pre-commit dependencies
     runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == 'nfelt14'  # TODO: change to dependabot
+    if: github.event.pull_request.user.login == 'dependabot'
     permissions:
       contents: write
     steps:
@@ -23,7 +23,7 @@ jobs:
           check-latest: true
       - name: Install workflow dependencies
         run: pip install poetry yamlfix toml-sort requests pre-commit-update
-      - uses: crazy-max/ghaction-import-gpg@v5
+      - uses: crazy-max/ghaction-import-gpg@v6
         with:
           gpg_private_key: ${{ secrets.TEK_OPENSOURCE_GPG_SIGNING_KEY_PRIVATE }}
           passphrase: ${{ secrets.TEK_OPENSOURCE_GPG_SIGNING_KEY_PASSPHRASE }}
