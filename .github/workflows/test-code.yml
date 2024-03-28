@@ -90,7 +90,7 @@ jobs:
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
-          files: artifacts/**/**/results.xml
+          files: ./**/results.xml
           large_files: true
           report_individual_runs: true
   # Check that all jobs passed
