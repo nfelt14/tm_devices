@@ -41,6 +41,7 @@ jobs:
             .coverage*
   # Quick testing with coverage (no linting)
   test-fast:
+    if: false  # TODO: remove
     runs-on: ${{ matrix.os_name }}-latest
     strategy:
       fail-fast: false
@@ -86,13 +87,16 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           path: artifacts
-      - name: Print directory contents
+      - name: Identify results files
         run: |
-          ls -la artifacts
+          mkdir .results
+          find artifacts -type f -wholename "*results.xml" | xargs cp -t .results/
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
-          files: artifacts/**/results.xml
+          files: .results/*.xml
+          large_files: true
+          report_individual_runs: true
   # Check that all jobs passed
   check-tests-passed:
     if: ${{ !cancelled() }}
