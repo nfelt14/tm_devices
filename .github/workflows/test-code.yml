@@ -13,6 +13,7 @@ concurrency:
 jobs:
   # Basic testing & linting
   test-general:
+    if: false  # TODO: remove
     runs-on: ${{ matrix.platform }}
     strategy:
       fail-fast: false
@@ -41,7 +42,6 @@ jobs:
             .coverage*
   # Quick testing with coverage (no linting)
   test-fast:
-    if: false  # TODO: remove
     runs-on: ${{ matrix.os_name }}-latest
     strategy:
       fail-fast: false
