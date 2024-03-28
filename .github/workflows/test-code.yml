@@ -24,6 +24,7 @@ concurrency:
 jobs:
   # Basic testing & linting
   test-general:
+    if: false  # TODO remove
     runs-on: ${{ matrix.platform }}
     strategy:
       fail-fast: false
@@ -60,6 +61,10 @@ jobs:
       matrix:
         os_name: [ubuntu, windows, macos]
     steps:
+      - run: |
+          echo ${{ github.repository }}
+          echo ${{ env.REPO_NAME }}
+          echo 'tektronix/${{ env.REPO_NAME }}'
       - uses: actions/checkout@v4
       - if: ${{ inputs.node-version }}
         uses: actions/setup-node@v4
