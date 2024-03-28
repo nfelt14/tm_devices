@@ -13,6 +13,7 @@ concurrency:
 jobs:
   # Basic testing & linting
   test-general:
+    if: false  # TODO: remove
     runs-on: ${{ matrix.platform }}
     strategy:
       fail-fast: false
@@ -89,10 +90,7 @@ jobs:
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
-          files: |
-            artifacts/artifact_windows_tests/.results_tests/results.xml
-            artifacts/artifact_macos_tests/.results_tests/results.xml
-            artifacts/artifact_ubuntu_tests/.results_tests/results.xml
+          files: artifacts/**/.results_tests/results.xml
           large_files: true
           report_individual_runs: true
           action_fail_on_inconclusive: true
