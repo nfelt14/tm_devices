@@ -95,6 +95,7 @@ jobs:
             artifacts/artifact_ubuntu_tests/.results_tests/results.xml
           large_files: true
           report_individual_runs: true
+          action_fail_on_inconclusive: true
   # Check that all jobs passed
   check-tests-passed:
     if: ${{ !cancelled() }}
