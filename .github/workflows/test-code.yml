@@ -87,14 +87,10 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           path: artifacts
-      - name: Identify results files
-        run: |
-          mkdir .results
-          find artifacts -type f -wholename "*results.xml" | xargs cp -t .results/
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
-          files: .results/*.xml
+          files: artifacts/**/**/results.xml
           large_files: true
           report_individual_runs: true
   # Check that all jobs passed
