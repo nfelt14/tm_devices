@@ -116,6 +116,7 @@ jobs:
           require_tests: true
           check_annotations: true
           update_check: true
+          test_files_prefix: tests/
 
 #        uses: EnricoMi/publish-unit-test-result-action@v2
 #        with:
