@@ -116,7 +116,7 @@ jobs:
           action_fail_on_inconclusive: true
           test_changes_limit: 20
           check_run_annotations_branch: '*'
-#          test_file_prefix: +tests/
+          test_file_prefix: +tests/
 #        uses: mikepenz/action-junit-report@v4
 #        with:
 #          report_paths: artifacts/**/.results_tests/results.xml
