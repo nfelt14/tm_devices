@@ -116,8 +116,8 @@ jobs:
           report_paths: artifacts/**/.results_tests/results.xml
           check_name: Test Results
           require_tests: true
-#          update_check: true
-#          check_annotations: true
+          update_check: true
+          check_annotations: true
           annotate_only: true
           job_summary: true
       - uses: marocchino/sticky-pull-request-comment@v2
