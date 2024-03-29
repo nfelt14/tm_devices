@@ -469,7 +469,7 @@ def get_version(version_string: str) -> Version:
         The Version object.
     """
     version_parts = version_string.split(".")
-    found_alpha = False
+    found_alpha = True  # TODO: reset to False
     try:
         version = Version(version_string)
     except InvalidVersion:
