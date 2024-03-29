@@ -50,5 +50,5 @@ jobs:
             <td>${{ steps.test-results.outputs.skipped }} skipped</td>
             <td>${{ steps.test-results.outputs.failed }} failed</td>
             </tr>
-            <p><a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}" target="_blank">Workflow run</a></p>
             </table>
+            <p><a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}" target="_blank">Link to workflow run</a></p>
