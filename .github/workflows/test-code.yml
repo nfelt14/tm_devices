@@ -102,7 +102,6 @@ jobs:
     permissions:  # TODO: remove permissions
       checks: write
       pull-requests: write
-      actions: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
@@ -114,10 +113,14 @@ jobs:
           report_paths: artifacts/**/.results_tests/results.xml
           check_name: Test Results
           require_tests: true
-          annotate_only: false
+          annotate_only: true
           job_summary: true
-          detailed_summary: true
-      - run: echo $GITHUB_STEP_SUMMARY
+      - uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: test-results
+#          number:
+          message: |
+            Test Results
       - uses: actions/upload-artifact@v4
         with:
           name: Event File
