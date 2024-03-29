@@ -115,21 +115,14 @@ jobs:
 #          large_files: true
 #          action_fail_on_inconclusive: true
 #          test_file_prefix: +tests/
-        uses: dorny/test-reporter@v1
+        uses: mikepenz/action-junit-report@v4
         with:
-          name: Test Results
-          path: artifacts/**/.results_tests/results.xml
-          reporter: java-junit
-          fail-on-error: false
-          fail-on-empty: true
-#        uses: mikepenz/action-junit-report@v4
-#        with:
-#          report_paths: artifacts/**/.results_tests/results.xml
-#          check_name: Test Results
-##          commit: ...
-#          require_tests: true
-#          check_annotations: true
-#          update_check: true
+          report_paths: artifacts/**/.results_tests/results.xml
+          check_name: Test Results
+#          commit: ...
+          require_tests: true
+          check_annotations: true
+          update_check: true
 #          test_files_prefix: tests/
       - uses: actions/upload-artifact@v4
         with:
