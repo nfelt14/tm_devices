@@ -112,11 +112,12 @@ jobs:
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
           files: artifacts/**/.results_tests/results.xml
-#          large_files: true
+          large_files: true
           action_fail_on_inconclusive: true
+          report_individual_runs: true
           test_changes_limit: 20
           check_run_annotations_branch: '*'
-          test_file_prefix: +tests/
+#          test_file_prefix: +tests/
           json_file: .results.json
       - run: cat .results.json
 #        uses: mikepenz/action-junit-report@v4
