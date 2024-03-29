@@ -116,10 +116,8 @@ jobs:
           action_fail_on_inconclusive: true
           report_individual_runs: true
           test_changes_limit: 20
-          check_run_annotations_branch: '*'
-#          test_file_prefix: +tests/
+          check_run: false  # disable adding the check since it shows up attached to a random workflow run
           json_file: .results.json
-      - run: cat .results.json
 #        uses: mikepenz/action-junit-report@v4
 #        with:
 #          report_paths: artifacts/**/.results_tests/results.xml
