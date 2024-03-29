@@ -139,7 +139,7 @@ jobs:
             <td>${{ steps.test-results.outputs.failed }} failed</td>
             </tr>
             </table>
-            <p><a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" target="_blank">Link to workflow run</a></p>
+            <p><a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}">Link to workflow run</a></p>
   # Check that all jobs passed
   check-tests-passed:
     if: ${{ !cancelled() }}
