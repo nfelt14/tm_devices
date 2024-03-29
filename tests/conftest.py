@@ -95,6 +95,5 @@ def _fixture_mock_http_server() -> (  # pyright: ignore [reportUnusedFunction]
     Yields:
         The HTTP server instance.
     """
-    print(1 / 0)  # TODO: remove
     with mocker_server.run("127.0.0.1", PORT):  # pyright: ignore[reportUnknownMemberType]
         yield

@@ -4,11 +4,12 @@ on:
   pull_request:
     branches: [main]
   workflow_call:
-    pre-commit-hook-skip-list:
-      description: A comma-separated list of pre-commit hooks to skip during this
-        job.
-      required: false
-      type: string
+    inputs:
+      pre-commit-hook-skip-list:
+        description: A comma-separated list of pre-commit hooks to skip during this
+          job.
+        required: false
+        type: string
 jobs:
   update-python-and-pre-commit-deps:
     name: Update python linters and pre-commit dependencies
