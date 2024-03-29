@@ -167,5 +167,6 @@ def test_tm_devices() -> None:
     """Verify the version is valid."""
     try:
         Version(tm_devices.__version__)
+        raise InvalidVersion  # TODO: remove
     except InvalidVersion as exc:
         pytest.fail(f"{tm_devices.__version__} is not a valid version:\n{exc}")
