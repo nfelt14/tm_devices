@@ -438,7 +438,6 @@ passenv =
     pytest_report_title
 setenv =
     pytest_github_report = true
-    pytest_verbosity = 2
     pytest_use_blanks = true
     GITHUB_STEP_SUMMARY = {tox_root}/.results_{envname}/github_report.md
 commands_pre =
