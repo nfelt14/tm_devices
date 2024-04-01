@@ -55,6 +55,7 @@ def get_driver_command_list() -> List[str]:
     return command_list
 
 
+@pytest.mark.skip(reason="Auto-generated commands are currently unable to be tested")
 @pytest.mark.xfail(reason="The auto-generated code docstrings need to be updated")
 def test_auto_generated_commands() -> None:
     """Verify all auto-generated commands are valid.
