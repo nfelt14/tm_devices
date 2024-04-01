@@ -100,11 +100,6 @@ jobs:
     if: ${{ !cancelled() }}
     needs: test-fast
     runs-on: ubuntu-latest
-#    permissions:
-#      checks: write
-#      pull-requests: write
-#      actions: read
-#      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
@@ -114,7 +109,7 @@ jobs:
         uses: phoenix-actions/test-reporting@v13
         with:
           name: Test Results
-          only-summary: true
+          only-summary: false
           output-to: step-summary
           path: artifacts/**/.results_tests/results.xml
           reporter: java-junit
@@ -152,7 +147,7 @@ jobs:
   # Check that all jobs passed
   check-tests-passed:
     if: ${{ !cancelled() }}
-    needs: [test-general, test-fast]
+    needs: [test-general, test-fast, create-job-summary]
     runs-on: ubuntu-latest
     steps:
       - name: Decide whether the needed jobs succeeded or failed
