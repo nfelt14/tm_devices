@@ -97,6 +97,7 @@ jobs:
           name: codecov-${{ matrix.os_name }}
           fail_ci_if_error: true
   create-job-summary:
+    name: Test Results
     if: ${{ !cancelled() }}
     needs: test-fast
     runs-on: ubuntu-latest
@@ -114,6 +115,7 @@ jobs:
           path: artifacts/**/.results_tests/results.xml
           reporter: java-junit
           fail-on-error: false
+          max-annotations: 0
   upload-test-results:
     if: ${{ !cancelled() }}
     needs: test-fast
