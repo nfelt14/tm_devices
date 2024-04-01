@@ -116,7 +116,7 @@ jobs:
           reporter: java-junit
           fail-on-error: false
           max-annotations: 0
-  upload-test-results:
+  upload-test-results:  # TODO: remove to separate job that uses workflow_run trigger
     if: ${{ !cancelled() }}
     needs: test-fast
     runs-on: ubuntu-latest
