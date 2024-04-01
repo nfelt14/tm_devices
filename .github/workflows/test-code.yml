@@ -56,6 +56,7 @@ jobs:
     runs-on: ${{ matrix.os_name }}-latest
     env:
       REPO_NAME: tektronix/${{ inputs.repo-name || 'tm_devices' }}
+      pytest_report_title: Test Results (${{ matrix.os_name }})
     strategy:
       fail-fast: false
       matrix:
@@ -95,50 +96,37 @@ jobs:
           files: ./.coverage_tests.xml
           name: codecov-${{ matrix.os_name }}
           fail_ci_if_error: true
+    outputs:
+      os_name_array: (${{ toJson(matrix.os_name) }})
   upload-test-results:
     if: ${{ !cancelled() }}
     needs: test-fast
     runs-on: ubuntu-latest
-    permissions:  # TODO: remove permissions
+    strategy:
+      fail-fast: false
+      matrix:
+        os_name: ${{ fromJson(needs.test-fast.outputs.os_name_array) }}
+    permissions:
       checks: write
       pull-requests: write
       actions: read
       contents: read
     steps:
-      - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
           path: artifacts
       - name: Publish Test Results
-        id: test-results
-        uses: mikepenz/action-junit-report@v4
+        uses: marocchino/sticky-pull-request-comment@v2
         with:
-          report_paths: artifacts/**/.results_tests/results.xml
-          check_name: Test Results
-          require_tests: true
-          update_check: true
-          check_annotations: true
-          annotate_only: true
-          job_summary: true
-      - uses: marocchino/sticky-pull-request-comment@v2
+          header: test-results-${{ matrix.os_name }}
+          recreate: true
+          path: artifacts/artifact_${{ matrix.os_name }}_tests/.results_tests/github_report.md
+      - name: Add workflow link to comment
+        uses: marocchino/sticky-pull-request-comment@v2
         with:
-          header: test-results
+          header: test-results-${{ matrix.os_name }}
+          append: true
           message: |
-            <h1>Test Results</h1>
-            <table>
-            <tr>
-            <th>Tests</th>
-            <th>Passed &#x2705;</th>
-            <th>Skipped &#x23ED;</th>
-            <th>Failed &#x274C;</th>
-            </tr>
-            <tr>
-            <td>${{ steps.test-results.outputs.total }} ran</td>
-            <td>${{ steps.test-results.outputs.passed }} passed</td>
-            <td>${{ steps.test-results.outputs.skipped }} skipped</td>
-            <td>${{ steps.test-results.outputs.failed }} failed</td>
-            </tr>
-            </table>
             <p><a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}">Link to workflow run</a></p>
   # Check that all jobs passed
   check-tests-passed:
