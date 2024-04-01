@@ -97,7 +97,7 @@ jobs:
           name: codecov-${{ matrix.os_name }}
           fail_ci_if_error: true
     outputs:
-      os_name_array: (${{ toJson(matrix.os_name) }})
+      os_name_array: ${{ toJson(matrix.os_name) }}
   upload-test-results:
     if: ${{ !cancelled() }}
     needs: test-fast
