@@ -116,36 +116,6 @@ jobs:
           reporter: java-junit
           fail-on-error: false
           max-annotations: 0
-  upload-test-results:  # TODO: remove to separate job that uses workflow_run trigger
-    if: ${{ !cancelled() }}
-    needs: test-fast
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        os_name: [ubuntu, windows, macos]
-    permissions:
-      checks: write
-      pull-requests: write
-      actions: read
-      contents: read
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          path: artifacts
-      - name: Publish Test Results
-        uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          header: test-results-${{ matrix.os_name }}
-          recreate: true
-          path: artifacts/artifact_${{ matrix.os_name }}_tests/.results_tests/github_report.md
-      - name: Add workflow link to comment
-        uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          header: test-results-${{ matrix.os_name }}
-          append: true
-          message: |
-            <p><a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}">Link to workflow run</a></p>
   # Check that all jobs passed
   check-tests-passed:
     if: ${{ !cancelled() }}
