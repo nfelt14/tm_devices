@@ -6,9 +6,19 @@ on:
     types: [completed]
   workflow_call:
 jobs:
+  print-info:
+    runs-on: ubuntu-latest
+    env:
+      EVENT_OBJ: ${{ toJson(github.event) }}
+    steps:
+      - run: |
+          echo ${{ github.event.workflow_run.event }}
+          echo ${{ github.event.workflow_run.event.number }}
+          echo ${{ github.event.workflow_run.event.pull_request.number }}
+          echo $EVENT_OBJ
   publish-test-results:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.event.name == 'pull_request' && !contains(fromJSON('["skipped", "cancelled"]'), github.event.workflow_run.conclusion) }}
+    if: ${{ github.event.workflow_run.event == 'pull_request' && !contains(fromJSON('["skipped", "cancelled"]'), github.event.workflow_run.conclusion) }}
     strategy:
       fail-fast: false
       matrix:
@@ -17,9 +27,11 @@ jobs:
       checks: write
       pull-requests: write
     steps:
-      - uses: actions/download-artifact@v4
+      - name: Download and Extract Artifacts
+        uses: dawidd6/action-download-artifact@v3.1.4
         with:
-          pattern: '*artifact_${{ matrix.os_name }}_tests*'
+          run_id: ${{ github.event.workflow_run.id }}
+          name: artifact_${{ matrix.os_name }}_tests
           path: artifacts
       - name: Publish Test Results
         uses: marocchino/sticky-pull-request-comment@v2
