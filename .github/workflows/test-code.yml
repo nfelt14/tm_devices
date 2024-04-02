@@ -115,6 +115,11 @@ jobs:
           reporter: java-junit
           fail-on-error: false
           max-annotations: 0
+      - name: Upload Event File
+        uses: actions/upload-artifact@v4
+        with:
+          name: event-file
+          path: ${{ github.event_path }}
   # Check that all jobs passed
   check-tests-passed:
     if: ${{ !cancelled() }}
