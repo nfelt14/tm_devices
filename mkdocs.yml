@@ -1,0 +1,93 @@
+---
+site_name: tm_devices
+strict: false  # TODO: set to true
+theme:
+  name: readthedocs  # TODO: readthedocs?
+  custom_dir: docs/_templates
+  include_homepage_in_sidebar: false
+  titles_only: false
+  collapse_navigation: true
+  features: [content.tooltips]
+extra_css: [_static/theme_overrides.css]
+extra_javascript: [_static/insert-br.js]
+exclude_docs: |
+  /*.txt
+  /*.py
+  /*.dat
+  /*.bat
+  /*.json
+markdown_extensions:
+  - abbr
+  - smarty
+  - codehilite
+  - admonition
+  - tables
+  - md_in_html
+  - sane_lists
+  - attr_list
+  - def_list
+  - pymdownx.snippets:
+      check_paths: true
+plugins:
+  - search
+  - include-markdown
+  - mermaid2
+  - macros:
+      module_name: docs/macros
+      on_error_fail: true
+      on_undefined: strict
+#  - gen-files:
+#      scripts: [docs/generate_api_pages.py]
+  - literate-nav
+  - ezglossary:
+      tooltip: full
+      strict: true
+      use_default: true
+      inline_refs: none
+  - mkdocstrings:
+      enable_inventory: true
+      handlers:
+        python:  # see https://mkdocstrings.github.io/python/usage/
+          paths: [src]
+          show_inheritance_diagram: false  # TODO: set to true
+          docstring_section_style: list
+          import:
+            - url: https://docs.python.org/3/objects.inv
+              domains: [std, py]
+            - url: https://pyvisa.readthedocs.io/en/latest/objects.inv
+              domains: [std, py]
+            - url: https://packaging.pypa.io/en/stable/objects.inv
+              domains: [std, py]
+            - url: https://docs.python-requests.org/en/latest/objects.inv
+              domains: [std, py]
+  - spellcheck:
+      backends:
+        - symspellpy
+        - codespell:
+            dictionaries: [clear, rare, usage]
+      ignore_code: true
+      min_length: 2
+      max_capital: 1
+      allow_unicode: false
+      strict_only: true
+nav:
+  - 'tm_devices: Test & Measurement Device Management': index.md  # TODO: Figure out how to get the title from the file itself
+  - The Basics:
+      - key_features.md
+      - basic_usage.md
+      - configuration.md
+      - glossary.md
+      - Changelog: CHANGELOG.md  # TODO: Figure out how to get the title from the file itself
+  - Advanced Topics: [advanced/architecture.md, advanced/advanced_usage.md]
+  - Troubleshooting:
+      - troubleshooting/usage.md
+      - troubleshooting/contributions.md
+  - Contributing:
+      - Contributing Guidelines: CONTRIBUTING.md  # TODO: Figure out how to get the title from the file itself
+      - contributing/add_driver_methods.md
+      - contributing/add_new_driver.md
+      - contributing/add_new_device_type.md
+      - contributing/unit_tests.md
+      - Code of Conduct: CODE_OF_CONDUCT.md  # TODO: Figure out how to get the title from the file itself
+      - LICENSE.md
+#  - API Reference: reference/tm_devices/index.md  # TODO: change the directory name

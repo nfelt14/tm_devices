@@ -15,8 +15,14 @@
     border: 2px solid black
 }
 
-.rst-content table.device-support-table.docutils tbody tr:has(th p),
-.device-support-table tr:has(td:first-child p:not(:empty)) {
+.device-support-table table {
+    width: auto !important;
+    display: table !important;
+    margin: auto !important;
+}
+
+.device-support-table.docutils tbody tr:has(th p),
+.device-support-table tr:has(td:first-child:not(:empty)) {
     border-top-width: 2px;
     border-top-color: black;
     border-top-style: solid;
@@ -129,7 +135,8 @@ table.apisummarytable {
     width: 100%;
 }
 
-/* Make content width wider */
-.wy-nav-content {
-    max-width: 60% !important;
+/* Custom cursor for help with abbreviations */
+/* Could add the .mkdocs-ezglossary-link class if those links should get a help icon */
+abbr[title] {
+    cursor: help;
 }

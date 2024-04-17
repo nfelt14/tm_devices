@@ -1,7 +1,14 @@
-# Troubleshooting `tm_devices` Contributions
+# Troubleshooting Contributions
 
 This goes over common issues which can occur when contributing to `tm_devices`
 and how to deal with them.
+
+{%
+include-markdown "includes/add_new_troubleshooting_section.md"
+comments=false
+rewrite-relative-urls=false
+
+%}
 
 ______________________________________________________________________
 

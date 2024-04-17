@@ -20,7 +20,7 @@ connection information that is provided directly via python code.
 
 ### Block Diagram
 
-```{mermaid}
+```mermaid
 classDiagram
     direction LR
 

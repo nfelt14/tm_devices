@@ -104,7 +104,7 @@ recommended IDE for package development is
    git checkout -b name-of-your-bugfix-or-feature
    ```
 
-5. Update the **Unreleased** section in the [CHANGELOG](CHANGELOG.md) using the proper format.
+5. Update the **Unreleased** section in the [CHANGELOG](./CHANGELOG.md) using the proper format.
 
 6. When you're done making changes, check that your changes conform to any code
    formatting requirements and pass any tests.
@@ -197,7 +197,7 @@ Before you submit a pull request, check that it meets these guidelines:
 2. If the pull request adds functionality, the docs should be updated.
 3. The pull request should work for all currently supported operating systems
    and versions of Python.
-4. The **Unreleased** section in the [Changelog](CHANGELOG.md) should be updated.
+4. The **Unreleased** section in the [Changelog](./CHANGELOG.md) should be updated.
 
 ## Project Test Plan
 
@@ -208,7 +208,7 @@ This project undergoes rigorous testing to ensure a high quality product.
 1. 100% of the source code will have unit tests (except for accepted exceptions)
 2. All static code analysis will pass
 3. All features will have documentation
-4. [Changelog](CHANGELOG.md) will be updated
+4. [Changelog](./CHANGELOG.md) will be updated
 5. Pull requests will have all required approvals prior to merging
 
 ### Major Changes
@@ -219,5 +219,5 @@ This project undergoes rigorous testing to ensure a high quality product.
 ## Code of Conduct
 
 Please note that the `tm_devices` project is released with a
-[Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project you agree
+[Code of Conduct](./CODE_OF_CONDUCT.md). By contributing to this project you agree
 to abide by its terms.

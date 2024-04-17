@@ -105,13 +105,24 @@ matplotlib = [
   {python = "3.8", version = ">=3.7"}
 ]
 memory-profiler = ">=0.61.0"
-myst-parser = ">=0.19.1"
+mkdocs = ">=1.5.3"
+mkdocs-ezglossary-plugin = ">=1.5.8"
+mkdocs-gen-files = ">=0.5.0"
+mkdocs-include-markdown-plugin = ">=6.0.5"
+mkdocs-literate-nav = ">=0.6.1"
+mkdocs-macros-plugin = ">=1.0.5"
+mkdocs-mermaid2-plugin = ">=1.1.1"
+mkdocs-section-index = ">=0.3.8"
+mkdocs-spellcheck = {extras = ["codespell", "symspellpy"], version = ">=1.0.3"}
+mkdocstrings = {extras = ["python"], version = ">=0.24.3"}
+myst-parser = ">=0.19.1"  # TODO: remove
 pip = ">=22.0"
 poetry = ">=1.8.0"
 pre-commit = ">=2.20.0"
 pre-commit-update = ">=0.1.3"
 pyclean = ">=3.0.0"
 pylint = {extras = ["spelling"], version = "3.1.0"}  # Update this by running scripts/update_development_dependencies.py
+pymdown-extensions = ">=10.7.1"
 pyright = "1.1.357"  # Update this by running scripts/update_development_dependencies.py
 pyroma = ">=4.2"
 pytest = ">=7.1.2"
@@ -123,18 +134,19 @@ pytest-profiling = ">=1.7.0"
 python-semantic-release = ">=8.5.1"
 ruff = "0.3.5"  # Update this by running scripts/update_development_dependencies.py
 safety = ">=2.1.1"
-sphinx-autoapi = ">=2.0.0"
-sphinx-autodoc-typehints = ">=2.0.0"
-sphinx-copybutton = ">=0.5.1"
-sphinx-notfound-page = ">=1.0.0"
+sphinx-autoapi = ">=2.0.0"  # TODO: remove
+sphinx-autodoc-typehints = ">=2.0.0"  # TODO: remove
+sphinx-copybutton = ">=0.5.1"  # TODO: remove
+sphinx-notfound-page = ">=1.0.0"  # TODO: remove
 sphinx-remove-toctrees = [
+  # TODO: remove
   {python = ">=3.9", version = ">=1.0"}
 ]
-sphinx-rtd-theme = ">=1.0.0"
-sphinx-tippy = ">=0.4.1"
-sphinx-togglebutton = ">=0.3.2"
-sphinx-toolbox = ">=3.5.0"
-sphinxcontrib-mermaid = ">=0.7.1"
+sphinx-rtd-theme = ">=1.0.0"  # TODO: remove
+sphinx-tippy = ">=0.4.1"  # TODO: remove
+sphinx-togglebutton = ">=0.3.2"  # TODO: remove
+sphinx-toolbox = ">=3.5.0"  # TODO: remove
+sphinxcontrib-mermaid = ">=0.7.1"  # TODO: remove
 toml-sort = ">=0.23.0"
 tox = ">=4.0"
 tox-gh-actions = ">=3.1.0"
@@ -452,6 +464,7 @@ setenv =
 commands_pre =
 
 [testenv:docs]
+skip_install = true
 basepython = {env:DOC_PYTHON_VERSION}
 deps =
     -rdocs/requirements.txt

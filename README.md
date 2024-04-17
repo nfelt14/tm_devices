@@ -1,4 +1,4 @@
-<div class="custom-badge-table">
+<div markdown="1" class="custom-badge-table">
 
 |                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -71,9 +71,9 @@ with DeviceManager() as device_manager:
 > \[!TIP\]
 > Visit the [Glossary](https://tinyurl.com/tek-tm-devices/docs/glossary.md) to see definitions for all symbols and abbreviations.
 
-<div class="custom-table-center-cells device-support-table">
+<div markdown="1" class="custom-table-center-cells device-support-table">
 
-<div class="custom-table-title">
+<div markdown="1" class="custom-table-title">
 
 _Device Support Levels_
 
@@ -137,9 +137,9 @@ _Device Support Levels_
 
 </div>
 
-<div class="custom-table-center-cells device-support-table">
+<div markdown="1" class="custom-table-center-cells device-support-table">
 
-<div class="custom-table-title">
+<div markdown="1" class="custom-table-title">
 
 _Software Solution Support Levels_
 

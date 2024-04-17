@@ -1,27 +1,3 @@
-# Troubleshooting
-
-Troubleshooting the `tm_devices` package.
-
-Check here for troubleshooting support before submitting a new issue.
-
-## Usage
-
-```{toctree}
----
-maxdepth: 2
----
-usage.md
-```
-
-## Contributions
-
-```{toctree}
----
-maxdepth: 2
----
-contributions.md
-```
-
 ______________________________________________________________________
 
 ## Creating New Troubleshooting Entries
