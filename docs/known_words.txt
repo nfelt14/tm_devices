@@ -27,6 +27,7 @@ docstring
 docstrings
 enum
 executables
+filepath
 get_acquisition_data
 gh
 github
@@ -46,6 +47,7 @@ md
 mixin
 mixins
 multimeters
+mv
 namespace
 noqa
 opensource
@@ -78,6 +80,7 @@ testpypi
 tippy
 tm_devices
 tmdevicessupport
+toml
 usb
 walkthrough
 www
