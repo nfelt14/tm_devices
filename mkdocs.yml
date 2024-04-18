@@ -1,35 +1,48 @@
 ---
 site_name: tm_devices
+repo_url: https://github.com/tektronix/tm_devices
+site_author: Tektronix
+copyright: 2022, Tektronix
 strict: false  # TODO: set to true
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  not_found: warn
 theme:
-  name: readthedocs  # TODO: readthedocs?
+  name: readthedocs
+  highlightjs: false
   custom_dir: docs/_templates
   include_homepage_in_sidebar: false
   titles_only: false
   collapse_navigation: true
   features: [content.tooltips]
-extra_css: [_static/theme_overrides.css]
+extra_css: [_static/theme_overrides.css, _static/code_styles.css]
 extra_javascript: [_static/insert-br.js]
-exclude_docs: |
-  /*.txt
-  /*.py
-  /*.dat
-  /*.bat
-  /*.json
 markdown_extensions:
+  - meta
+  - toc:
+      permalink: true
+  - tables
+  - fenced_code
   - abbr
   - smarty
-  - codehilite
   - admonition
-  - tables
   - md_in_html
   - sane_lists
   - attr_list
   - def_list
   - pymdownx.snippets:
       check_paths: true
+  - pymdownx.highlight:
+      use_pygments: true
+      pygments_style: default
+      pygments_lang_class: true
+      code_attr_on_pre: true
+  - pymdownx.superfences
 plugins:
-  - search
+  - search:
+      prebuild_index: true
   - include-markdown
   - mermaid2
   - macros:
@@ -61,33 +74,44 @@ plugins:
             - url: https://docs.python-requests.org/en/latest/objects.inv
               domains: [std, py]
   - spellcheck:
+      known_words: known_words.txt
+      skip_files: [CHANGELOG.md]
       backends:
         - symspellpy
         - codespell:
-            dictionaries: [clear, rare, usage]
+            dictionaries:
+              - clear
+              - rare
+              - informal
+              - usage
+              - code
+              - names
+              - en-GB_to_en-US
       ignore_code: true
       min_length: 2
       max_capital: 1
-      allow_unicode: false
+      allow_unicode: true
       strict_only: true
+not_in_nav: |
+  includes/*
 nav:
-  - 'tm_devices: Test & Measurement Device Management': index.md  # TODO: Figure out how to get the title from the file itself
+  - index.md
   - The Basics:
       - key_features.md
       - basic_usage.md
       - configuration.md
       - glossary.md
-      - Changelog: CHANGELOG.md  # TODO: Figure out how to get the title from the file itself
+      - CHANGELOG.md
   - Advanced Topics: [advanced/architecture.md, advanced/advanced_usage.md]
   - Troubleshooting:
       - troubleshooting/usage.md
       - troubleshooting/contributions.md
   - Contributing:
-      - Contributing Guidelines: CONTRIBUTING.md  # TODO: Figure out how to get the title from the file itself
+      - CONTRIBUTING.md
       - contributing/add_driver_methods.md
       - contributing/add_new_driver.md
       - contributing/add_new_device_type.md
       - contributing/unit_tests.md
-      - Code of Conduct: CODE_OF_CONDUCT.md  # TODO: Figure out how to get the title from the file itself
+      - CODE_OF_CONDUCT.md
       - LICENSE.md
 #  - API Reference: reference/tm_devices/index.md  # TODO: change the directory name

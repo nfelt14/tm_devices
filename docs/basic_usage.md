@@ -8,7 +8,7 @@ project.
 This will print the available VISA devices to the console when run from a shell terminal.
 
 ```console
-> list-visa-resources
+$ list-visa-resources
 [
   "TCPIP0::192.168.0.100::inst0::INSTR",
   "ASRL4::INSTR"
@@ -161,7 +161,7 @@ language: python
 
 ## Registering the Device Manager to be closed at program termination
 
-Sometimes using the `DeviceManager` class as a context manager isn't feasible.
+Sometimes using the `DeviceManager` class as a context manager is not feasible.
 In those instances there is an alternative way to enforce the device manager to
 close when the Python script execution is finished without needing to explicitly
 call the `.close()` method.

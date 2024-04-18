@@ -58,5 +58,5 @@ the `resources` key.
      - The simulation definition files for the affected devices will need to be updated.
   2. If a new device driver is added to `tm_devices`:
      - A new simulation definition file for the new device will need to be added and the
-       master `resources` list will need the new driver added, see the walkthrough for
+       primary `resources` list will need the new driver added, see the walkthrough for
        [adding a new device driver](./add_new_driver.md).

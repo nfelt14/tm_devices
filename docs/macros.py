@@ -1,9 +1,12 @@
 """Macros for the documentation."""
 
+import re
+
 from mkdocs_macros.plugin import MacrosPlugin  # pyright: ignore[reportMissingTypeStubs]
 
+HEADER_ONE_REGEX = re.compile(r"^#\s(.+)$", re.MULTILINE)
 PAGE_REPLACEMENTS = {
-    "tm_devices: Test & Measurement Device Management": (
+    "index.md": (
         # TODO: update plural device types to include the "s" when
         #  https://github.com/realtimeprojects/mkdocs-ezglossary/issues/9 is fixed
         (" AFGs ", " <AFG:> "),
@@ -48,6 +51,11 @@ def define_env(env: MacrosPlugin) -> None:  # noqa: ARG001
 
 def on_post_page_macros(env: MacrosPlugin) -> None:
     """Post-process pages."""
-    if env.page.title in PAGE_REPLACEMENTS:  # pyright: ignore[reportUnknownMemberType]
-        for search, replace in PAGE_REPLACEMENTS[env.page.title]:  # pyright: ignore[reportUnknownMemberType]
+    if env.page.file.src_path in PAGE_REPLACEMENTS:  # pyright: ignore[reportUnknownMemberType]
+        for search, replace in PAGE_REPLACEMENTS[env.page.file.src_path]:  # pyright: ignore[reportUnknownMemberType]
             env.markdown = env.markdown.replace(search, replace)  # pyright: ignore[reportUnknownMemberType]
+    # Check if the title is correct
+    if actual_title_match := HEADER_ONE_REGEX.search(env.markdown):  # pyright: ignore[reportUnknownMemberType,reportUnknownArgumentType]
+        actual_title = actual_title_match.group(1)
+        if env.page.title != actual_title:  # pyright: ignore[reportUnknownMemberType]
+            env.page.title = actual_title  # pyright: ignore[reportUnknownMemberType]

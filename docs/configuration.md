@@ -29,7 +29,7 @@ into your scripts. The config file stores a list of device entries and runtime
 behavior options.
 
 The file allows you to set up a list of devices once and is easy to edit when
-things change, but doesn't require modification with every script execution.
+things change, but does not require modification with every script execution.
 
 A config file can be **overruled** by an
 [environment variable](#environment-variable) configuration. That means that if
@@ -228,7 +228,7 @@ runtime behavior configuration.
   - This config option will turn on extremely verbose VISA logging to stdout.
 - `standalone`
   - This config option specifies to use the PyVISA-py VISA backend, which
-    doesn't require any actual visa.dll to exist on the system to work.
+    does not require any actual visa.dll to exist on the system to work.
   - By default, the Device Manager will default to using whatever visa.dll it
     can find on the system.
 - `setup_cleanup`
