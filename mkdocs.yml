@@ -4,7 +4,7 @@ repo_url: https://github.com/tektronix/tm_devices
 edit_uri: ''
 site_author: Tektronix
 copyright: © Copyright 2022, Tektronix
-strict: false  # TODO: set to true
+strict: true
 validation:
   omitted_files: warn
   absolute_links: warn

@@ -14,6 +14,7 @@ ci
 codebase
 codecov
 config
+conftest
 cookiecutter
 cov
 csv
@@ -67,6 +68,7 @@ repo
 runtime
 sarif
 sexualized
+sim_devices
 socio
 stdout
 styleguide

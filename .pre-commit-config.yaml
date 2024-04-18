@@ -61,7 +61,7 @@ repos:
     hooks:
       - id: mdformat
         args: [--number, --end-of-line, keep]
-        exclude: ^(docs/_includes/abbreviations.md|docs/configuration.md|docs/basic_usage.md)$
+        exclude: ^(docs/_includes/abbreviations.md|docs/configuration.md|docs/basic_usage.md|docs/advanced/advanced_usage.md|docs/contributing/unit_tests.md)$
         additional_dependencies:
           - setuptools  # This is required since Python 3.12 no longer installs setuptools by default in virtual environments
           - mdformat-beautysh
