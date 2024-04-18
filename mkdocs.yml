@@ -2,7 +2,7 @@
 site_name: tm_devices
 repo_url: https://github.com/tektronix/tm_devices
 site_author: Tektronix
-copyright: 2022, Tektronix
+copyright: © Copyright 2022, Tektronix
 strict: false  # TODO: set to true
 validation:
   omitted_files: warn
@@ -15,10 +15,12 @@ theme:
   custom_dir: docs/_templates
   include_homepage_in_sidebar: false
   titles_only: false
+  navigation_depth: 4
   collapse_navigation: true
+  sticky_navigation: true
   features: [content.tooltips]
 extra_css: [_static/theme_overrides.css, _static/code_styles.css]
-extra_javascript: [_static/insert-br.js]
+extra_javascript: [_static/insert-br.js, _static/hide-open-close.js]
 markdown_extensions:
   - meta
   - toc:
