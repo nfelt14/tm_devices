@@ -140,3 +140,8 @@ table.apisummarytable {
 abbr[title] {
     cursor: help;
 }
+
+/* Fix code color in admonitions */
+.rst-content .admonition code {
+    color: #E74C3C !important;
+}

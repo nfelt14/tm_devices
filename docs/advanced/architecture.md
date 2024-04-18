@@ -2,7 +2,7 @@
 
 An overview of this package's architecture.
 
-______________________________________________________________________
+---
 
 ## The Device Manager
 
@@ -28,7 +28,7 @@ classDiagram
     DeviceManager --> "1" DMConfigParser : uses
 ```
 
-______________________________________________________________________
+---
 
 ## Main device types
 
@@ -51,6 +51,7 @@ between different models of the same device type.
 
 ### Block Diagram
 
+````
 ```{autoclasstree} tm_devices.drivers.device_type_classes
 ---
 full:
@@ -59,8 +60,9 @@ align: center
 alt: Main device types class diagram
 ---
 ```
+````
 
-______________________________________________________________________
+---
 
 ## All device drivers
 
@@ -68,6 +70,7 @@ This package supports many devices, zoom in to see them all!
 
 ### Block Diagram
 
+````
 ```{autoclasstree} tm_devices.drivers
 ---
 full:
@@ -76,3 +79,4 @@ align: center
 alt: Complete device driver class diagram
 ---
 ```
+````

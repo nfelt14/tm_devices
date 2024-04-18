@@ -1,6 +1,7 @@
 ---
 site_name: tm_devices
 repo_url: https://github.com/tektronix/tm_devices
+edit_uri: ''
 site_author: Tektronix
 copyright: © Copyright 2022, Tektronix
 strict: false  # TODO: set to true
@@ -20,7 +21,7 @@ theme:
   sticky_navigation: true
   features: [content.tooltips]
 extra_css: [_static/theme_overrides.css, _static/code_styles.css]
-extra_javascript: [_static/insert-br.js, _static/hide-open-close.js]
+extra_javascript: [_static/insert-br.js]
 markdown_extensions:
   - meta
   - toc:
@@ -42,11 +43,13 @@ markdown_extensions:
       pygments_lang_class: true
       code_attr_on_pre: true
   - pymdownx.superfences
+  - pymdownx.inlinehilite
 plugins:
   - search:
       prebuild_index: true
   - include-markdown
   - mermaid2
+  - codeinclude
   - macros:
       module_name: docs/macros
       on_error_fail: true

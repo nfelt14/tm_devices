@@ -10,7 +10,7 @@ rewrite-relative-urls=false
 
 %}
 
-______________________________________________________________________
+---
 
 ## Unit tests have lots of VISA timeouts and failures in tests for areas that were not changed
 
@@ -77,7 +77,7 @@ devices:
         r: KEITHLEY INSTRUMENTS INC.,MODEL 2281S-20-6,01234567,01.00
 ```
 
-______________________________________________________________________
+---
 
 ## Pyright is failing on unchanged code
 
@@ -133,7 +133,7 @@ proper development dependencies installed.
 See the [contributing guide](../CONTRIBUTING.md) for details on how to properly set up
 and test changes using a virtual environment.
 
-______________________________________________________________________
+---
 
 ## Executable not found during `pre-commit`
 
@@ -231,7 +231,7 @@ python scripts/update_development_dependencies.py
 # Re-run original, failing command
 ```
 
-______________________________________________________________________
+---
 
 ## `FileNotFoundError` when running tests
 

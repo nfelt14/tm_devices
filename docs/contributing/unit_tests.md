@@ -51,12 +51,11 @@ defined in the {repo_url}`tests/sim_devices/devices.yaml` file, under
 the `resources` key.
 
 - In either of the following two scenarios, reference the
-  [pyvisa-sim simulated instrument definition docs](https://pyvisa.readthedocs.io/projects/pyvisa-sim/en/latest/definitions.html)
-  for details on how the simulated instruments are defined.
-  1. If a new feature or driver update introduces any new commands to existing
-     drivers:
-     - The simulation definition files for the affected devices will need to be updated.
-  2. If a new device driver is added to `tm_devices`:
-     - A new simulation definition file for the new device will need to be added and the
-       primary `resources` list will need the new driver added, see the walkthrough for
-       [adding a new device driver](./add_new_driver.md).
+    [pyvisa-sim simulated instrument definition docs](https://pyvisa.readthedocs.io/projects/pyvisa-sim/en/latest/definitions.html)
+    for details on how the simulated instruments are defined.
+    1. If a new feature or driver update introduces any new commands to existing drivers:
+        - The simulation definition files for the affected devices will need to be updated.
+    2. If a new device driver is added:
+        - A new simulation definition file for the new device will need to be added, and the
+            primary `resources` list in {repo_url}`tests/sim_devices/devices.yaml` will need the new driver
+            added, see the walkthrough for [adding a new device driver](./add_new_driver.md).

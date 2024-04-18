@@ -51,6 +51,7 @@ repos:
       - id: blacken-docs
         files: \.(rst|md|markdown|tex)$
         additional_dependencies: [black==23.12.1]  # This may need to be updated/removed in the future once ruff supports formatting python code blocks in markdown
+        args: [--line-length=100]
   - repo: https://github.com/lyz-code/yamlfix
     rev: 1.16.0
     hooks:
@@ -60,18 +61,21 @@ repos:
     hooks:
       - id: mdformat
         args: [--number, --end-of-line, keep]
-        exclude: ^(docs/_includes/abbreviations.md)$
+        exclude: ^(docs/_includes/abbreviations.md|docs/configuration.md)$
         additional_dependencies:
           - setuptools  # This is required since Python 3.12 no longer installs setuptools by default in virtual environments
-          - black==23.12.1  # This may need to be updated/removed in the future once ruff supports formatting python code blocks in markdown
           - mdformat-beautysh
-          - mdformat-black
           - mdformat-config
-          - mdformat-shfmt
-          - mdformat-web
+          - mdformat-footnote
+          - mdformat-frontmatter
           - mdformat-gfm
-          - mdformat-myst
+          - mdformat-mkdocs
+          - mdformat-shfmt
+          - mdformat-simple-breaks
+          - mdformat-tables
           - mdformat-toc
+          - mdformat-web
+          - mdformat-wikilink
 # TODO: enable this, will require configuration
 #  - repo: https://github.com/jackdewinter/pymarkdown
 #    rev: v0.9.11

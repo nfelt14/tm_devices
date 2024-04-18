@@ -10,7 +10,7 @@ rewrite-relative-urls=false
 
 %}
 
-______________________________________________________________________
+---
 
 ## Issues connecting to devices that are simulated using PyVISA-sim
 

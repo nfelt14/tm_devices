@@ -182,7 +182,7 @@ first instantiated.
 In order to do this a few things will need to be created:
 
 1. A custom device class inheriting from one of the
-   [main device types](advanced/architecture.md#main-device-types).
+    [main device types](advanced/architecture.md#main-device-types).
 2. A mapping of the parsed model series string to the Python class.
 
 ```{literalinclude} ../examples/miscellaneous/custom_device_driver_support.py

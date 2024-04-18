@@ -10,11 +10,9 @@ The Device Manager can be instantiated without any connections defined. Devices
 can then be added to the Device Manager directly in the python code. Specific
 configuration options can also be changed during runtime.
 
-```{literalinclude} ../examples/miscellaneous/adding_devices.py
----
-language: python
----
-```
+<!--codeinclude-->
+[](../examples/miscellaneous/adding_devices.py)
+<!--/codeinclude-->
 
 See the [Example Usage](basic_usage.md) for more usage examples.
 
@@ -395,7 +393,7 @@ will override any existing config file you have.
 Sample environment variable device configurations (with comments, not allowed in
 environment variable)
 
-```
+```python
 # Sample SMU using IP address and PyVISA-py
 TM_OPTIONS = "STANDALONE"
 TM_DEVICES = "address=123.45.67.255,device_type=SMU"
