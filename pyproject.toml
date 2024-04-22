@@ -463,8 +463,7 @@ deps =
     -rdocs/requirements.txt
 commands_pre =
 commands =
-    python -c "import shutil; shutil.rmtree('.results_{envname}', ignore_errors=True)"
-    sphinx-build -b html -a -W --keep-going docs .results_{envname}/html
+    mkdocs --verbose build --site-dir .results_{envname}/html
 
 [testenv:doctests]
 basepython = {env:DOC_PYTHON_VERSION}
