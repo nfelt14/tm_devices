@@ -1,5 +1,6 @@
 graphviz
 mkdocs
+mkdocs-codeinclude-plugin
 mkdocs-ezglossary-plugin
 mkdocs-gen-files
 mkdocs-include-markdown-plugin

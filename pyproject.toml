@@ -100,6 +100,7 @@ docformatter = {extras = ["tomli"], version = "1.7.5"}  # Update this by running
 flask = ">=2.2.2"
 graphviz = ">=0.20.1"
 http-server-mock = ">=1.7"
+linkchecker = ">=10.0.0"
 matplotlib = [
   {python = ">=3.9", version = ">=3.8"},
   {python = "3.8", version = ">=3.7"}
@@ -128,6 +129,7 @@ pyright = "1.1.357"  # Update this by running scripts/update_development_depende
 pyroma = ">=4.2"
 pytest = ">=7.1.2"
 pytest-cov = ">=3.0.0"
+pytest-depends = "^1.0.1"
 pytest-github-report = ">=0.0.1"
 pytest-html = ">=4.0"
 pytest-order = ">=1.0.1"
@@ -264,6 +266,7 @@ useLibraryCodeForTypes = true
 # Pytest configuration
 [tool.pytest.ini_options]
 addopts = "--order-scope=module --cov-config=pyproject.toml"
+doctest_optionflags = "ELLIPSIS NORMALIZE_WHITESPACE IGNORE_EXCEPTION_DETAIL"
 filterwarnings = [
   "ignore:'xdrlib' is deprecated:DeprecationWarning",
   "ignore::DeprecationWarning:pkg_resources",
@@ -438,6 +441,7 @@ commands =
     !tests: poetry build --output=dist_{envname}
     !tests: twine check --strict dist_{envname}/*
     !tests: pre-commit run --all-files --show-diff-on-failure
+    !tests: pytest -vv --doctest-modules --doctest-report=ndiff --showlocals --junitxml={tox_root}/.results_{envname}/results_doctests.xml --self-contained-html --html={tox_root}/.results_{envname}/results_doctests.html src
     pytest -vv -k "not test_docs" --showlocals --cov --junitxml={tox_root}/.results_{envname}/results.xml --cov-report=term --cov-report=xml:{tox_root}/.coverage_{envname}.xml --cov-report=html:{tox_root}/.results_{envname}/html --self-contained-html --html={tox_root}/.results_{envname}/results.html
 
 [testenv:tests]
@@ -469,5 +473,5 @@ deps =
     -rtests/requirements.txt
 commands_pre =
 commands =
-    pytest -v -k "test_docs and not test_docs_html" --showlocals --junitxml={tox_root}/.results_{envname}/results.xml --self-contained-html --html={tox_root}/.results_{envname}/results.html
+    pytest -v -k "test_docs" --showlocals --junitxml={tox_root}/.results_{envname}/results.xml --self-contained-html --html={tox_root}/.results_{envname}/results.html
 """
