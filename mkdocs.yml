@@ -62,6 +62,7 @@ plugins:
       strict: true
       use_default: true
       inline_refs: none
+      markdown_links: true
   - mkdocstrings:
       enable_inventory: true
       handlers:

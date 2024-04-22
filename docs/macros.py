@@ -7,17 +7,15 @@ from mkdocs_macros.plugin import MacrosPlugin  # pyright: ignore[reportMissingTy
 HEADER_ONE_REGEX = re.compile(r"^#\s(.+)$", re.MULTILINE)
 PAGE_REPLACEMENTS = {
     "index.md": (
-        # TODO: update plural device types to include the "s" when
-        #  https://github.com/realtimeprojects/mkdocs-ezglossary/issues/9 is fixed
-        (" AFGs ", " <AFG:> "),
-        (" AWGs ", " <AWG:> "),
-        (" Scopes ", " <Scope:> "),
-        (" PSUs ", " <PSU:> "),
-        (" SMUs ", " <SMU:> "),
-        (" MTs ", " <MT:> "),
-        (" DMMs ", " <DMM:> "),
-        (" DAQs ", " <DAQ:> "),
-        (" SSs ", " <SS:> "),
+        (" AFGs ", r" <AFG:\|AFGs> "),
+        (" AWGs ", r" <AWG:\|AWGs> "),
+        (" Scopes ", r" <Scope:\|Scopes> "),
+        (" PSUs ", r" <PSU:\|PSUs> "),
+        (" SMUs ", r" <SMU:\|SMUs> "),
+        (" MTs ", r" <MT:\|MTs> "),
+        (" DMMs ", r" <DMM:\|DMMs> "),
+        (" DAQs ", r" <DAQ:\|DAQs> "),
+        (" SSs ", r" <SS:\|SSs> "),
         (" PI ", " <PI:>"),
         (" TSP ", " <TSP:>"),
         (" API ", " <API:>"),
