@@ -19,6 +19,10 @@ repos:
         args: [--unsafe]
       - id: check-toml
       - id: check-json
+      - id: check-xml
+      - id: file-contents-sorter
+        files: ^(docs/known_words.txt)$
+        args: [--unique]
       - id: requirements-txt-fixer
       - id: trailing-whitespace
       - id: end-of-file-fixer
@@ -26,7 +30,7 @@ repos:
       - id: check-merge-conflict
       - id: check-added-large-files
         args: [--maxkb=3000, --enforce-all]
-      - id: forbid-new-submodules
+      - id: forbid-submodules
       - id: pretty-format-json
         args: [--autofix, --indent=4]
   - repo: https://github.com/Lucas-C/pre-commit-hooks
