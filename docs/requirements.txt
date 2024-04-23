@@ -1,3 +1,4 @@
+black
 graphviz
 mkdocs
 mkdocs-codeinclude-plugin

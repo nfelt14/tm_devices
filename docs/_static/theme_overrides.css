@@ -145,3 +145,37 @@ abbr[title] {
 .rst-content .admonition code {
     color: #E74C3C !important;
 }
+
+/* Indentation for mkdocstrings. */
+div.doc-contents:not(.first) {
+  padding-left: 25px;
+  border-left: .05rem solid rgba(200, 200, 200, 0.2);
+}
+
+/* Hide the main header symbol */
+h1.doc-heading > code.doc-symbol {
+  display: none;
+}
+.doc-symbol-parameter::after {
+  content: "parameter";
+}
+
+.doc-symbol-attribute::after {
+  content: "attribute";
+}
+
+.doc-symbol-function::after {
+  content: "function";
+}
+
+.doc-symbol-method::after {
+  content: "method";
+}
+
+.doc-symbol-class::after {
+  content: "class";
+}
+
+.doc-symbol-module::after {
+  content: "module";
+}

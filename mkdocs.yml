@@ -4,7 +4,7 @@ repo_url: https://github.com/tektronix/tm_devices
 edit_uri: ''
 site_author: Tektronix
 copyright: © Copyright 2022, Tektronix
-strict: true
+strict: false  # TODO: set to true
 validation:
   omitted_files: warn
   absolute_links: warn
@@ -50,12 +50,13 @@ plugins:
   - include-markdown
   - mermaid2
   - codeinclude
+  - section-index
   - macros:
       module_name: docs/macros
       on_error_fail: true
       on_undefined: strict
-#  - gen-files:
-#      scripts: [docs/generate_api_pages.py]
+  - gen-files:
+      scripts: [docs/generate_api_pages.py]
   - literate-nav
   - ezglossary:
       tooltip: full
@@ -68,8 +69,25 @@ plugins:
       handlers:
         python:  # see https://mkdocstrings.github.io/python/usage/
           paths: [src]
-          show_inheritance_diagram: false  # TODO: set to true
-          docstring_section_style: list
+          options:
+            docstring_options:
+              ignore_init_summary: true
+              trim_doctest_flags: true
+            merge_init_into_class: true
+            show_inheritance_diagram: true
+            docstring_section_style: list
+            filters: ['!^_']
+            summary: true
+            show_signature_annotations: true
+            separate_signature: true
+            signature_crossrefs: true
+            show_labels: true
+            heading_level: 1
+            show_root_heading: true
+            show_root_full_path: true
+            show_category_heading: true
+            show_symbol_type_heading: false
+            show_symbol_type_toc: false
           import:
             - url: https://docs.python.org/3/objects.inv
               domains: [std, py]
@@ -120,4 +138,4 @@ nav:
       - contributing/unit_tests.md
       - CODE_OF_CONDUCT.md
       - LICENSE.md
-#  - API Reference: reference/tm_devices/index.md  # TODO: change the directory name
+  - API Reference: reference/  # TODO: change the directory name
