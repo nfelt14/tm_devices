@@ -82,11 +82,6 @@ repos:
           - mdformat-toc
           - mdformat-web
           - mdformat-wikilink
-# TODO: enable this, will require configuration
-#  - repo: https://github.com/jackdewinter/pymarkdown
-#    rev: v0.9.11
-#    hooks:
-#      - id: pymarkdown
   - repo: https://gitlab.com/smop/pre-commit-hooks
     rev: v1.0.0
     hooks:
