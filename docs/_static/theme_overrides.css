@@ -137,7 +137,7 @@ table.apisummarytable {
 
 /* Custom cursor for help with abbreviations */
 /* Could add the .mkdocs-ezglossary-link class if those links should get a help icon */
-abbr[title] {
+abbr[title], .mkdocs-ezglossary-link {
     cursor: help;
 }
 

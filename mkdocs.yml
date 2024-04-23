@@ -5,6 +5,9 @@ edit_uri: ''
 site_author: Tektronix
 copyright: © Copyright 2022, Tektronix
 strict: false  # TODO: set to true
+exclude_docs: |
+  *.py
+  *.txt
 validation:
   omitted_files: warn
   absolute_links: warn
@@ -21,7 +24,7 @@ theme:
   sticky_navigation: true
   features: [content.tooltips]
 extra_css: [_static/theme_overrides.css, _static/code_styles.css]
-extra_javascript: [_static/insert-br.js]
+extra_javascript: []
 markdown_extensions:
   - meta
   - toc:
@@ -65,6 +68,7 @@ plugins:
       inline_refs: none
       markdown_links: true
   - mkdocstrings:
+      enabled: !ENV [TM_DEVICES_API_GENERATION, true]
       enable_inventory: true
       handlers:
         python:  # see https://mkdocstrings.github.io/python/usage/

@@ -45,6 +45,7 @@ licensor
 linter
 linters
 linting
+mailto
 md
 mixin
 mixins
