@@ -148,34 +148,42 @@ abbr[title], .mkdocs-ezglossary-link {
 
 /* Indentation for mkdocstrings. */
 div.doc-contents:not(.first) {
-  padding-left: 25px;
-  border-left: .05rem solid rgba(200, 200, 200, 0.2);
+    padding-left: 25px;
+    border-left: .05rem solid rgba(200, 200, 200, 0.2);
 }
 
 /* Hide the main header symbol */
 h1.doc-heading > code.doc-symbol {
-  display: none;
+    display: none;
 }
+
+/* Make the documentation object names look nicer */
+span.doc-object-name {
+    font-size: 105%;
+    font-family: monospace;
+}
+
+/* Create nice documentation symbols */
 .doc-symbol-parameter::after {
-  content: "parameter";
+    content: "parameter";
 }
 
 .doc-symbol-attribute::after {
-  content: "attribute";
+    content: "attribute";
 }
 
 .doc-symbol-function::after {
-  content: "function";
+    content: "function";
 }
 
 .doc-symbol-method::after {
-  content: "method";
+    content: "method";
 }
 
 .doc-symbol-class::after {
-  content: "class";
+    content: "class";
 }
 
 .doc-symbol-module::after {
-  content: "module";
+    content: "module";
 }

@@ -24,7 +24,7 @@ theme:
   sticky_navigation: true
   features: [content.tooltips]
 extra_css: [_static/theme_overrides.css, _static/code_styles.css]
-extra_javascript: []
+extra_javascript: [_static/insert-br.js, _static/insert-hr.js]
 markdown_extensions:
   - meta
   - toc:
