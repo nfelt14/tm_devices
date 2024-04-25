@@ -513,15 +513,15 @@ class Device(ExtendableMixin, ABC):
         """Compare and verify actual value with expected value.
 
         Args:
-             expected_value: The expected value.
-             actual_value: The actual value.
-             tolerance: The acceptable difference between two floating point values, e.g. 0.0005
-             percentage: A boolean indicating what kind of tolerance check to perform.
-                 False means absolute tolerance: +/- tolerance.
-                 True means percent tolerance: +/- (tolerance / 100) * value.
-             custom_message_prefix: A custom message to be prepended to the failure message.
-             log_error: Indicate if an error should be logged instead of a failure
-             expect_fail: Indicate if a failure is expected and should be treated as a pass
+            expected_value: The expected value.
+            actual_value: The actual value.
+            tolerance: The acceptable difference between two floating point values, e.g. 0.0005
+            percentage: A boolean indicating what kind of tolerance check to perform.
+                False means absolute tolerance: +/- tolerance.
+                True means percent tolerance: +/- (tolerance / 100) * value.
+            custom_message_prefix: A custom message to be prepended to the failure message.
+            log_error: Indicate if an error should be logged instead of a failure
+            expect_fail: Indicate if a failure is expected and should be treated as a pass
 
         Returns:
             Boolean indicating whether the check passed or failed.

@@ -126,7 +126,7 @@ class TMT4(MarginTester):
             timeout: The timeout to wait for an unlocked device in seconds.
 
         Raises:
-            TimeoutError if device does not unlock within timeout.
+            TimeoutError: If the device does not unlock within the timeout.
         """
         start = time.time()
         while time.time() < start + timeout:

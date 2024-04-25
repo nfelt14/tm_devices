@@ -119,3 +119,9 @@ span.doc-object-name {
     font-size: 110%;
     font-family: monospace;
 }
+
+/* Make subpackage summary links always black and larger */
+.subpackage-summary-link-text {
+    color: black !important;
+    font-size: 90% !important;
+}

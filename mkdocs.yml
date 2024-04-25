@@ -152,4 +152,4 @@ nav:
       - contributing/unit_tests.md
       - CODE_OF_CONDUCT.md
       - LICENSE.md
-  - API Reference: reference/  # TODO: change the directory name
+  - API Reference: reference/
