@@ -51,6 +51,18 @@
     margin-bottom: 0;
 }
 
+/* Custom style for links located in top-right */
+.wy-nav-content {
+    position: relative;
+}
+
+.top-right-link {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 1%;
+}
+
 /** No icon for admonitions with no-icon class */
 div.admonition.no-icon > .admonition-title::before {
     content: "";
@@ -85,56 +97,6 @@ div.note.admonition > .admonition-title::before {
     content: "\f05a";
 }
 
-/** Fix Tippy pop-up colors */
-.tippy-box {
-    min-width: fit-content;
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-}
-
-/** Format list pop-ups */
-.tippy-content ul {
-    margin-left: 20px;
-}
-
-.tippy-content li {
-    list-style-type: circle;
-}
-
-.tippy-content li > p {
-    margin: 1px 0;
-}
-
-/** Format glossary pop-ups */
-.tippy-content dt {
-    text-align: left;
-    font-weight: bolder;
-}
-
-.tippy-content dd {
-    text-align: left;
-    font-weight: normal;
-    margin-left: 20px;
-}
-
-/** Customize the API reference */
-span.apisummarylabel {
-    background-color: lightslategray;
-    color: black;
-    font-size: 70%;
-    padding-left: 2px;
-    padding-right: 2px;
-    border-radius: 3px;
-    vertical-align: 15%;
-    padding-bottom: 2px;
-    filter: opacity(40%);
-}
-
-table.apisummarytable {
-    width: 100%;
-}
-
 /* Custom cursor for help with abbreviations */
 /* Could add the .mkdocs-ezglossary-link class if those links should get a help icon */
 abbr[title], .mkdocs-ezglossary-link {
@@ -152,38 +114,8 @@ div.doc-contents:not(.first) {
     border-left: .05rem solid rgba(200, 200, 200, 0.2);
 }
 
-/* Hide the main header symbol */
-h1.doc-heading > code.doc-symbol {
-    display: none;
-}
-
 /* Make the documentation object names look nicer */
 span.doc-object-name {
-    font-size: 105%;
+    font-size: 110%;
     font-family: monospace;
-}
-
-/* Create nice documentation symbols */
-.doc-symbol-parameter::after {
-    content: "parameter";
-}
-
-.doc-symbol-attribute::after {
-    content: "attribute";
-}
-
-.doc-symbol-function::after {
-    content: "function";
-}
-
-.doc-symbol-method::after {
-    content: "method";
-}
-
-.doc-symbol-class::after {
-    content: "class";
-}
-
-.doc-symbol-module::after {
-    content: "module";
 }

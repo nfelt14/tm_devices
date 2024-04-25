@@ -218,10 +218,10 @@ DEVICE_DRIVER_MODEL_MAPPING: Mapping[str, Type[Device]] = MappingProxyType(
         SupportedModels.SS3706A.value: SS3706A,
     }
 )
-"""Dict[str, Device]: A mapping of device model series names to their device driver objects.
+"""A mapping of device model series names to their device driver objects.
 
 Any additions to this class which support a USBTMC connection need to be added to
-the :py:obj:`~tm_devices.helpers.constants_and_dataclasses.USB_MODEL_ID_LOOKUP` constant as well.
+the [tm_devices.helpers.constants_and_dataclasses.USB_MODEL_ID_LOOKUP][] constant as well.
 """
 
 __all__ = [

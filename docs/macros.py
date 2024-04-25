@@ -1,6 +1,9 @@
 """Macros for the documentation."""
 
+import pathlib
 import re
+
+import tomli
 
 from mkdocs_macros.plugin import MacrosPlugin  # pyright: ignore[reportMissingTypeStubs]
 
@@ -36,7 +39,7 @@ PAGE_REPLACEMENTS = {
 }
 
 
-def define_env(env: MacrosPlugin) -> None:  # noqa: ARG001
+def define_env(env: MacrosPlugin) -> None:
     """Define variables, macros and filters.
 
     Notes:
@@ -45,6 +48,12 @@ def define_env(env: MacrosPlugin) -> None:  # noqa: ARG001
         - filter: a function with one of more arguments,
             used to perform a transformation
     """
+    # Read in the current package version number to use in templates and files
+    with open(
+        pathlib.Path(f"{pathlib.Path(__file__).parents[1]}") / "pyproject.toml", "rb"
+    ) as file_handle:
+        pyproject_data = tomli.load(file_handle)
+        env.variables["package_version"] = "v" + pyproject_data["tool"]["poetry"]["version"]
 
 
 def on_post_page_macros(env: MacrosPlugin) -> None:

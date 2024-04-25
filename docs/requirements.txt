@@ -12,3 +12,4 @@ mkdocs-section-index
 mkdocs-spellcheck[codespell,symspellpy]
 mkdocstrings[python]
 pymdown-extensions
+tomli

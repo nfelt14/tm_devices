@@ -13,18 +13,23 @@ validation:
   absolute_links: warn
   unrecognized_links: warn
   not_found: warn
+  anchors: warn
 theme:
   name: readthedocs
   highlightjs: false
-  custom_dir: docs/_templates
+  custom_dir: docs/_templates/readthedocs
   include_homepage_in_sidebar: false
   titles_only: false
-  navigation_depth: 4
+  navigation_depth: 20
   collapse_navigation: true
   sticky_navigation: true
   features: [content.tooltips]
-extra_css: [_static/theme_overrides.css, _static/code_styles.css]
-extra_javascript: [_static/insert-br.js, _static/insert-hr.js]
+extra_css:
+  - _static/css/api_labels.css
+  - _static/css/api_symbols.css
+  - _static/css/code_styles.css
+  - _static/css/theme_overrides.css
+extra_javascript: [_static/js/insert-br.js, _static/js/insert-hr.js]
 markdown_extensions:
   - meta
   - toc:
@@ -70,36 +75,41 @@ plugins:
   - mkdocstrings:
       enabled: !ENV [TM_DEVICES_API_GENERATION, true]
       enable_inventory: true
+      custom_templates: docs/_templates/mkdocstrings
       handlers:
         python:  # see https://mkdocstrings.github.io/python/usage/
           paths: [src]
           options:
+            pre_load_modules: [pyvisa, pyvisa.constants]
             docstring_options:
               ignore_init_summary: true
               trim_doctest_flags: true
             merge_init_into_class: true
             show_inheritance_diagram: true
+            inherited_members: false  # TODO: set to true
+            show_source: false  # a link is included at the top of each page
             docstring_section_style: list
             filters: ['!^_']
             summary: true
             show_signature_annotations: true
             separate_signature: true
+            line_length: 100
             signature_crossrefs: true
             show_labels: true
             heading_level: 1
             show_root_heading: true
-            show_root_full_path: true
-            show_category_heading: true
-            show_symbol_type_heading: false
+            show_root_full_path: false
+            show_category_heading: false
+            show_symbol_type_heading: true
             show_symbol_type_toc: false
           import:
             - url: https://docs.python.org/3/objects.inv
               domains: [std, py]
-            - url: https://pyvisa.readthedocs.io/en/latest/objects.inv
+            - url: https://pyvisa.readthedocs.io/en/stable/objects.inv
               domains: [std, py]
             - url: https://packaging.pypa.io/en/stable/objects.inv
               domains: [std, py]
-            - url: https://docs.python-requests.org/en/latest/objects.inv
+            - url: https://docs.python-requests.org/en/stable/objects.inv
               domains: [std, py]
   - spellcheck:
       known_words: known_words.txt

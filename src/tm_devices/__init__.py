@@ -1,6 +1,6 @@
 """Test & Measurement Device Management.
 
-Provides access to commonly imported items from the tm_devices package.
+Provides access to commonly imported items from the `tm_devices` package.
 
 Examples:
     >>> from tm_devices import DeviceManager

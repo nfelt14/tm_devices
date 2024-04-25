@@ -39,14 +39,14 @@ repos:
       - id: remove-tabs
       - id: forbid-tabs
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.28.1
+    rev: 0.28.2
     hooks:
       - id: check-readthedocs
       - id: check-dependabot
       - id: check-github-actions
       - id: check-github-workflows
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.21.3
+    rev: v3.24.0
     hooks:
       - id: commitizen
         stages: [commit-msg]
@@ -67,7 +67,7 @@ repos:
       - id: mdformat
         args: [--number, --end-of-line, keep]
         # TODO: figure out how to reduce this exclude list
-        exclude: ^(docs/_includes/abbreviations.md|docs/configuration.md|docs/basic_usage.md|docs/advanced/advanced_usage.md|docs/contributing/unit_tests.md)$
+        exclude: ^(docs/_includes/abbreviations.md|docs/configuration.md|docs/key_features.md|docs/basic_usage.md|docs/advanced/advanced_usage.md|docs/contributing/unit_tests.md)$
         additional_dependencies:
           - setuptools  # This is required since Python 3.12 no longer installs setuptools by default in virtual environments
           - mdformat-beautysh
@@ -123,7 +123,7 @@ repos:
         always_run: true
         args: [., --min=10]
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.3.5
+    rev: v0.4.1
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]

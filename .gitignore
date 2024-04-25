@@ -69,6 +69,7 @@ docs/_autoapi/
 docs/reference/
 _readthedocs/
 *site*/
+*.inv
 
 # Jupyter Notebook
 .ipynb_checkpoints

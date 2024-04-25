@@ -150,7 +150,7 @@ call the `.close()` method.
 
 Sometimes there is a need to use a device that is not currently supported by
 `tm_devices`. When this is the case, custom device driver classes can be created
-and passed to the {py:obj}`DeviceManager <tm_devices.DeviceManager>` when it is
+and passed to the [DeviceManager][tm_devices.DeviceManager] when it is
 first instantiated.
 
 In order to do this a few things will need to be created:

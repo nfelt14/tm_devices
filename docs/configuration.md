@@ -16,7 +16,7 @@ configuration options can also be changed during runtime.
 
 See the [Example Usage](basic_usage.md) for more usage examples.
 
-Also see the {py:obj}`tm_devices.DeviceManager` API reference.
+Also see the [DeviceManager][tm_devices.DeviceManager] API reference.
 
 ---
 
@@ -194,7 +194,7 @@ devices:
                 `none`.
 - `device_driver`
     - The name of the Python driver class to use for the device (see the
-        {py:obj}`tm_devices.drivers` API reference for a complete list of all driver
+        [tm_devices.drivers][] API reference for a complete list of all driver
         names).
     - Required when `<connection_type>` is `REST_API`
     - Ignored when `<connection_type>` is not `REST_API`
