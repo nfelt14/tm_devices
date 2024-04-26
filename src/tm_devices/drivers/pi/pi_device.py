@@ -18,7 +18,7 @@ from pyvisa import constants as visa_constants
 from pyvisa import VisaIOError
 
 from tm_devices.drivers.device import Device
-from tm_devices.drivers.pi._ieee488_2_commands import IEEE4882Commands
+from tm_devices.drivers.pi.ieee488_2_commands import IEEE4882Commands
 from tm_devices.helpers import (
     check_visa_connection,
     create_visa_connection,

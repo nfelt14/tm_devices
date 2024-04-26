@@ -8,40 +8,58 @@ This guide will walk through the steps needed to add a new device driver.
 
 1. If the new device is a brand-new device type,
     [add a new device type](./add_new_device_type.md) subpackage
+
 2. Create the new device driver python file and class that inherits the
     appropriate device type/series base class
+
     1. If the new device(s) are part of a series (also referred to as a family),
         add a new series subpackage for them (e.g. `power_supplies/psu2200/`)
+
     2. Create the device driver python file, create a class that inherits from
         the abstracted device type (or series) base class, see
         [example](#example-of-adding-a-new-device-series-parent-driver-class).
         After creating the first driver that inherits from the abstracted type
         base class, the rest should look like the
         [example](#example-of-adding-a-new-device-driver-within-an-existing-device-type)
-        below
+        below.
+
+        !!! note
+
+        For documentation to render for the new driver properly, an `__init__()` method must be defined.
+
 3. Add or update **all** `__init__.py` files within the device type subpackage
     (e.g. `scopes/`, `power_supplies/`) to contain all driver classes and
     subpackage classes defined at that level
+
     - See other `__init__.py` files for examples
+
 4. Update the `SupportedModels` enum exposed in
     `tm_devices/helpers/__init__.py`
+
 5. Update the `___SUPPORTED_MODEL_REGEX_STRING` regex constant inside
     `tm_devices/helpers/functions.py` to include a mapping of the new driver name (model series)
     to a regex string matching the appropriate model strings
+
 6. Update the `DEVICE_DRIVER_MODEL_MAPPING` lookup inside
     `tm_devices/drivers/__init__.py`
+
 7. Update the `__all__` variable inside `tm_devices/drivers/__init__.py` to
     include the new device driver
+
 8. If the device supports VISA USBTMC communication, update the
     `USB_MODEL_ID_LOOKUP` lookup exposed in `tm_devices/helpers/__init__.py`
+
 9. Update the Supported Devices section in `README.rst` to include the new model
+
 10. Update unit tests (and simulated device files)
+
     1. Add a new simulated device driver in the correct folder within
         `tests/sim_devices`
     2. Update `tests/sim_devices/devices.yaml` with a new resource for the new
         driver (Make sure the device name is correct in the `devices.yaml` and in
         the corresponding simulated device file)
     3. Update `tests/test_all_device_drivers.py` with the new simulated resource
+
 11. Run the `tests/verify_physical_device_support.py` script targeting a
     physical device that will use the newly created driver to verify it is
     working properly.

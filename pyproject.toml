@@ -222,6 +222,7 @@ disable = [
   "suppressed-message",  # allowed
   "too-many-arguments",  # caught by ruff
   "too-many-branches",  # caught by ruff
+  "too-many-lines",  # not necessary to check for
   "too-many-statements",  # caught by ruff
   "too-many-statements",  # caught by ruff
   "unused-argument",  # caught by ruff

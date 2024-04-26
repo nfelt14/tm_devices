@@ -72,7 +72,7 @@ plugins:
       use_default: true
       inline_refs: none
       markdown_links: true
-  - mkdocstrings:
+  - mkdocstrings:  # additional customization takes place in docs/generate_api_pages.py
       enabled: !ENV [TM_DEVICES_API_GENERATION, true]
       enable_inventory: true
       custom_templates: docs/_templates/mkdocstrings
@@ -80,16 +80,15 @@ plugins:
         python:  # see https://mkdocstrings.github.io/python/usage/
           paths: [src]
           options:
-            pre_load_modules: [pyvisa, pyvisa.constants]
             docstring_options:
               ignore_init_summary: true
               trim_doctest_flags: true
             merge_init_into_class: true
             show_inheritance_diagram: true
-            inherited_members: false  # TODO: set to true
+            inherited_members: true
             show_source: false  # a link is included at the top of each page
             docstring_section_style: list
-            filters: ['!^_']
+            filters: ['!^_', ^__init__]
             summary: true
             show_signature_annotations: true
             separate_signature: true

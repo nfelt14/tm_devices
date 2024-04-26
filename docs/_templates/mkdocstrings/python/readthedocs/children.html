@@ -34,7 +34,7 @@
             filters=config.filters,
             members_list=members_list,
             inherited_members=config.inherited_members,
-            keep_no_docstrings=config.show_if_no_docstring)|selectattr("is_init_module", "equalto", true)|list
+            keep_no_docstrings=config.show_if_no_docstring)|selectattr("is_init_module", "equalto", true)|list|order_members(config.members_order, members_list)
         %}
             {% if subpackages %}
                 {% filter heading(heading_level, id=html_id ~ "-subpackages") %}Subpackages{% endfilter %}
@@ -45,7 +45,7 @@
             filters=config.filters,
             members_list=members_list,
             inherited_members=config.inherited_members,
-            keep_no_docstrings=config.show_if_no_docstring)
+            keep_no_docstrings=config.show_if_no_docstring)|order_members(config.members_order, members_list)
         %}
             {% if attributes %}
                 {% filter heading(heading_level, id=html_id ~ "-attributes") %}Attributes{% endfilter %}
@@ -56,7 +56,7 @@
             filters=config.filters,
             members_list=members_list,
             inherited_members=config.inherited_members,
-            keep_no_docstrings=config.show_if_no_docstring)
+            keep_no_docstrings=config.show_if_no_docstring)|order_members(config.members_order, members_list)
         %}
             {% if classes %}
                 {% filter heading(heading_level, id=html_id ~ "-classes") %}Classes{% endfilter %}
@@ -67,7 +67,7 @@
             filters=config.filters,
             members_list=members_list,
             inherited_members=config.inherited_members,
-            keep_no_docstrings=config.show_if_no_docstring)
+            keep_no_docstrings=config.show_if_no_docstring)|order_members(config.members_order, members_list)
         %}
             {% if functions %}
                 {% filter heading(heading_level, id=html_id ~ "-functions") %}Functions{% endfilter %}

@@ -124,4 +124,14 @@ span.doc-object-name {
 .subpackage-summary-link-text {
     color: black !important;
     font-size: 90% !important;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+/* Customize link color */
+a.autorefs {
+    color: dodgerblue !important;
+}
+a.autorefs:hover {
+    color: #d600d6 !important;
 }

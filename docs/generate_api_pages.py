@@ -43,6 +43,14 @@ for path in src.rglob("*.py"):
             ("helpers", "__init__"),
         }:
             fd.write("    options:\n      show_if_no_docstring: true\n")
+        if module_path.parts[-2:] == ("commands", "__init__"):
+            fd.write(
+                "    options:\n"
+                "      inherited_members: false\n"
+                "      filters: ['!^_', '^__init__', '^gen_']\n"
+            )
+        elif module_path.parts[1] == "commands":
+            fd.write("    options:\n      inherited_members: false\n\n")
 
     mkdocs_gen_files.set_edit_path(full_doc_path, path.relative_to(root))
 
