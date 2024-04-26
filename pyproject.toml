@@ -348,6 +348,7 @@ order-by-type = false
 ]
 "src/tm_devices/commands/**" = [
   "A003",  # Class attribute is shadowing a python builtin
+  "D104",  # Missing docstring in public package
   "D107",  # Missing docstring in `__init__`
   "ERA001",  # Found commented-out code
   "S105",  # Possible hardcoded password

@@ -3,16 +3,18 @@
     <table>
         <tbody>
         {%- for item in item_list %}
-            <tr>
-                {%- filter stash_crossref(length=item.canonical_path|length) -%}
-                <td>
-                    <span data-autorefs-optional-hover="{{ item.canonical_path }}">
-                        <code class="subpackage-summary-link-text">{{ item.name }}</code>
-                    </span>
-                </td>
-                {%- endfilter -%}
-                <td>{{ item.docstring.parsed[0].value.split("\n")[0]|convert_markdown(heading_level, html_id) if obj.docstring.parsed else '' }}</td>
-            </tr>
+            {%- if item.docstring %}
+                <tr>
+                    {%- filter stash_crossref(length=item.canonical_path|length) -%}
+                    <td>
+                        <span data-autorefs-optional-hover="{{ item.canonical_path }}">
+                            <code class="subpackage-summary-link-text">{{ item.name }}</code>
+                        </span>
+                    </td>
+                    {%- endfilter -%}
+                    <td>{{ item.docstring.parsed[0].value.split("\n")[0]|convert_markdown(heading_level, html_id) }}</td>
+                </tr>
+            {%- endif %}
         {%- endfor %}
         </tbody>
     </table>
