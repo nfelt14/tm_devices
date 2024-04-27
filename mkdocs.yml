@@ -50,7 +50,11 @@ markdown_extensions:
       pygments_style: default
       pygments_lang_class: true
       code_attr_on_pre: true
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
   - pymdownx.inlinehilite
 plugins:
   - search:
@@ -131,20 +135,22 @@ plugins:
       strict_only: true
 not_in_nav: |
   includes/*
-nav:
+nav:  # The first entry in each section needs a hard-coded title to avoid being folded in as the section index
   - index.md
   - The Basics:
-      - key_features.md
+      - Key Features: key_features.md
       - basic_usage.md
       - configuration.md
       - glossary.md
       - CHANGELOG.md
-  - Advanced Topics: [advanced/architecture.md, advanced/advanced_usage.md]
+  - Advanced Topics:
+      - Architectural Overview: advanced/architecture.md
+      - advanced/advanced_usage.md
   - Troubleshooting:
-      - troubleshooting/usage.md
-      - troubleshooting/contributions.md
+      - Troubleshooting Usage: troubleshooting/usage.md
+      - Troubleshooting Contributions: troubleshooting/contributions.md
   - Contributing:
-      - CONTRIBUTING.md
+      - Contributing Guidelines: CONTRIBUTING.md
       - contributing/add_driver_methods.md
       - contributing/add_new_driver.md
       - contributing/add_new_device_type.md

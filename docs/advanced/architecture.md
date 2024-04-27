@@ -51,16 +51,7 @@ between different models of the same device type.
 
 ### Block Diagram
 
-````
-```{autoclasstree} tm_devices.drivers.device_type_classes
----
-full:
-namespace: tm_devices.drivers
-align: center
-alt: Main device types class diagram
----
-```
-````
+{{ auto_class_diagram('tm_devices.drivers.device_type_classes', full=True, namespace='tm_devices.drivers') }}
 
 ---
 
@@ -70,13 +61,4 @@ This package supports many devices, zoom in to see them all!
 
 ### Block Diagram
 
-````
-```{autoclasstree} tm_devices.drivers
----
-full:
-namespace: tm_devices.drivers
-align: center
-alt: Complete device driver class diagram
----
-```
-````
+{{ auto_class_diagram('tm_devices.drivers', full=True, namespace='tm_devices.drivers') }}

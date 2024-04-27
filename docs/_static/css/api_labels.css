@@ -70,3 +70,8 @@
     background-color: #a5caff;
     color: black;
 }
+
+.doc-label-cached > code {
+    background-color: #9555dda3;
+    color: black;
+}

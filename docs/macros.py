@@ -1,7 +1,11 @@
 """Macros for the documentation."""
 
+import inspect
 import pathlib
 import re
+
+from importlib import import_module
+from typing import Any, Generator, Optional, Set, Tuple
 
 import tomli
 
@@ -39,6 +43,118 @@ PAGE_REPLACEMENTS = {
 }
 
 
+####################################################################################################
+# Helper functions
+####################################################################################################
+def import_object(objname: str) -> Any:
+    """Import a python object by its qualified name.
+
+    Args:
+        objname: The fully qualified name of the object.
+
+    Returns:
+        The imported object.
+
+    Raises:
+        ImportError: The object could not be imported.
+    """
+    try:
+        objpath = objname.split(".")
+        modname = objpath.pop(0)
+        obj = import_module(modname)
+        for name in objpath:
+            modname += "." + name
+            try:
+                obj = getattr(obj, name)
+            except AttributeError:
+                obj = import_module(modname)
+        return obj  # noqa: TRY300
+    except (AttributeError, ImportError) as exc:
+        msg = f"Could not import {objname}: {exc}"
+        raise ImportError(msg) from exc
+
+
+def get_classes(*cls_or_modules: str, strict: bool = False) -> Generator[Any, None, None]:
+    """Get all classes from a tuple of classes or modules.
+
+    Args:
+        cls_or_modules: A tuple of classes or modules.
+        strict: A boolean indicating to only consider classes that are strictly defined in that
+            module and not imported from somewhere else.
+
+    Yields:
+        Each class that is found.
+
+    Raises:
+        ValueError: If any of the classes or modules are invalid.
+    """
+    for cls_or_module in cls_or_modules:
+        obj = import_object(cls_or_module)
+
+        if inspect.isclass(obj):
+            yield obj
+
+        elif inspect.ismodule(obj):
+            for obj_ in obj.__dict__.values():
+                if inspect.isclass(obj_) and (
+                    not strict or obj_.__module__.startswith(obj.__name__)
+                ):
+                    yield obj_
+        else:
+            msg = f"{cls_or_module} is not a class nor a module"
+            raise ValueError(msg)
+
+
+def class_diagram(
+    *cls_or_modules: str,
+    full: bool = False,
+    strict: bool = False,
+    namespace: Optional[str] = None,
+) -> str:
+    """Create a mermaid classDiagram for the provided classes or modules.
+
+    Args:
+        cls_or_modules: A tuple of classes or modules.
+        full: A boolean indicating to show the complete class hierarchy.
+        strict: A boolean indicating to only consider classes that are strictly defined in that
+            module and not imported from somewhere else.
+        namespace: Limits the diagram to only include classes defined in this namespace.
+
+    Returns:
+        The mermaid code block with complete syntax for the classDiagram.
+
+    Raises:
+        ValueError: If no classDiagram can be created.
+    """
+    inheritances: Set[Tuple[str, str]] = set()
+
+    def get_tree(cls: Any) -> None:
+        for base in cls.__bases__:
+            if base.__name__ == "object":
+                continue
+            if namespace and not base.__module__.startswith(namespace):
+                continue
+            inheritances.add((base.__name__, cls.__name__))
+            if full:
+                get_tree(base)
+
+    for cls_item in get_classes(*cls_or_modules, strict=strict):
+        get_tree(cls_item)
+
+    if not inheritances:
+        msg = "No class hierarchy can be created."
+        raise ValueError(msg)
+
+    return (
+        "```mermaid\nclassDiagram\n"
+        + "\n".join(f"  {a} <|-- {b}" for a, b in sorted(inheritances))
+        + "\n```"
+    )
+
+
+####################################################################################################
+# Mkdocs Macros functions
+####################################################################################################
 def define_env(env: MacrosPlugin) -> None:
     """Define variables, macros and filters.
 
@@ -54,6 +170,9 @@ def define_env(env: MacrosPlugin) -> None:
     ) as file_handle:
         pyproject_data = tomli.load(file_handle)
         env.variables["package_version"] = "v" + pyproject_data["tool"]["poetry"]["version"]
+
+    # Add the autoclassdiagram macro
+    env.macro(class_diagram, "auto_class_diagram")  # pyright: ignore[reportUnknownMemberType]
 
 
 def on_post_page_macros(env: MacrosPlugin) -> None:
