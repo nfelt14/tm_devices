@@ -453,7 +453,6 @@ setenv =
 commands_pre =
 
 [testenv:docs]
-skip_install = true
 basepython = {env:DOC_PYTHON_VERSION}
 deps =
     -rdocs/requirements.txt
