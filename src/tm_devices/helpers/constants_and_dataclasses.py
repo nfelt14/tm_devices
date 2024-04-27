@@ -4,7 +4,7 @@ import re
 
 from dataclasses import dataclass
 from types import MappingProxyType
-from typing import Final, FrozenSet, List, Mapping, Optional, Protocol, runtime_checkable, Tuple
+from typing import Final, FrozenSet, List, Mapping, Optional, Tuple
 
 from pyvisa import constants as pyvisa_constants
 
@@ -14,12 +14,6 @@ from tm_devices.helpers.dataclass_mixins import (
 )
 from tm_devices.helpers.enums import ConnectionTypes, DeviceTypes, SupportedModels
 from tm_devices.helpers.standalone_functions import validate_address
-
-
-@runtime_checkable
-@dataclass
-class DataclassProtocol(Protocol):
-    """A Protocol class to allow for type hinting things that accept generic dataclasses."""
 
 
 @dataclass
