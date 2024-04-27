@@ -368,7 +368,8 @@ class Device(ExtendableMixin, ABC):
     def check_network_connection(self, verbose: bool = True) -> Tuple[bool, str]:
         """Check the network connection to the device using an external ping command.
 
-        Wrapper function for :py:func:`~tm_devices.helpers.check_network_connection`.
+        Wrapper function for
+        [`check_network_connection`][tm_devices.helpers.check_network_connection].
 
         Args:
             verbose: Set this to False in order to disable printouts.
@@ -387,7 +388,7 @@ class Device(ExtendableMixin, ABC):
     ) -> bool:
         """Check if the given port is open on the device.
 
-        Wrapper function for :py:func:`~tm_devices.helpers.check_port_connection`.
+        Wrapper function for [`check_port_connection`][tm_devices.helpers.check_port_connection].
 
         Args:
             port: The port to check.

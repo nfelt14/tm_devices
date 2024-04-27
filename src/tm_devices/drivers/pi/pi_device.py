@@ -267,7 +267,7 @@ class PIDevice(Device, ABC):
     def check_visa_connection(self, verbose: bool = True) -> bool:
         """Check if a VISA connection can be made to the device.
 
-        Wrapper function for :py:func:`~tm_devices.helpers.check_visa_connection`.
+        Wrapper function for [`check_visa_connection`][tm_devices.helpers.check_visa_connection].
 
         Args:
             verbose: Set this to False in order to disable printouts.
