@@ -68,7 +68,8 @@ docs/autoapi/
 docs/_autoapi/
 docs/reference/
 _readthedocs/
-*site*/
+site*/
+.site*/
 *.inv
 
 # Jupyter Notebook
