@@ -8,10 +8,11 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - MAINWindow:BADGe:BRINgtoview <Qstring>
     - MAINWindow:FONTSize <NR1>
     - MAINWindow:RRBDisplaystate {1|ON|0|OFF}
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

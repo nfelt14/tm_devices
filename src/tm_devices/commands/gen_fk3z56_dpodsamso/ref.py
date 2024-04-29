@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - REF<x>:HORizontal:POSition <NR3>
     - REF<x>:HORizontal:POSition?
     - REF<x>:LABel:NAMe <QString>
@@ -25,6 +25,7 @@ Commands and Queries:
     - REF<x>:VERTical:POSition?
     - REF<x>:VERTical:SCAle <NR3>
     - REF<x>:VERTical:SCAle?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

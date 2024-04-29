@@ -11,9 +11,10 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - timer.measure.t()
     - timer.reset()
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

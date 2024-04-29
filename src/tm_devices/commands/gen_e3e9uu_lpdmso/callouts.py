@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - CALLOUTS:ADDNew <QString>
     - CALLOUTS:CALLOUT<x>:BOOKMark:SOURCE {CH<x>}
     - CALLOUTS:CALLOUT<x>:BOOKMark:SOURCE?
@@ -34,6 +34,7 @@ Commands and Queries:
     - CALLOUTS:CALLOUT<x>:TEXT?
     - CALLOUTS:CALLOUT<x>:TYPE {NOTE|ARROW|RECTANGLE|BOOKMARK}
     - CALLOUTS:CALLOUT<x>:TYPE?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

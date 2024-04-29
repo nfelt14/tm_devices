@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SAVe:EVENTtable:BUS<x> <string>
     - SAVe:MARKS <string>
     - SAVe:MASK <QString>
@@ -18,12 +18,12 @@ Commands and Queries:
     - SAVe:WAVEform [<wfm>,REF<x>]| [<wfm>,<QString>] | [ALL,[QString]]| [DIGITALALL,<QString>]
     - SAVe:WAVEform:DATa:STARt {<NR1>}
     - SAVe:WAVEform:DATa:STOP {<NR1>}
-    - SAVe:WAVEform:FILEFormat {INTERNal|MATHCad|MATLab|SPREADSHEETCsv|
-      SPREADSHEETTxt|TIMEStamp|AUTO}
+    - SAVe:WAVEform:FILEFormat {INTERNal|MATHCad|MATLab|SPREADSHEETCsv| SPREADSHEETTxt|TIMEStamp|AUTO}
     - SAVe:WAVEform:FILEFormat?
     - SAVe:WAVEform:FORCESAMEFilesize {<NR1>|OFF|ON}
     - SAVe:WAVEform:FORCESAMEFilesize?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

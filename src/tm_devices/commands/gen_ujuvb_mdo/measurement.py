@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - MEASUrement:CLEARSNapshot
     - MEASUrement:GATing {OFF|SCREen|CURSor}
     - MEASUrement:GATing?
@@ -20,10 +20,7 @@ Commands and Queries:
     - MEASUrement:IMMed:DELay?
     - MEASUrement:IMMed:SOUrce1 {CH<x>|MATH|D<x>|HIStogram|RF_AMPlitude|RF_FREQuency|RF_PHASe}
     - MEASUrement:IMMed:SOUrce1?
-    - MEASUrement:IMMed:TYPe
-      {AMPlitude|AREa|BURst|CARea|CMEan|CRMs|DELay|FALL|FREQuency|HIGH|HITS|LOW|MAXimum|MEAN|MEDian|
-      MINImum|NDUty|NEDGECount|NOVershoot|NPULSECount|NWIdth|PEAKHits|PEDGECount|PDUty|PERIod|PHAse|
-      PK2Pk|POVershoot|PPULSECount|PWIdth|RISe|RMS|SIGMA<x>|STDdev|TOVershoot|WAVEFORMS}
+    - MEASUrement:IMMed:TYPe {AMPlitude|AREa|BURst|CARea|CMEan|CRMs|DELay|FALL|FREQuency|HIGH|HITS|LOW|MAXimum|MEAN|MEDian|MINImum|NDUty|NEDGECount|NOVershoot|NPULSECount|NWIdth|PEAKHits|PEDGECount|PDUty|PERIod|PHAse|PK2Pk|POVershoot|PPULSECount|PWIdth|RISe|RMS|SIGMA<x>|STDdev|TOVershoot|WAVEFORMS}
     - MEASUrement:IMMed:TYPe?
     - MEASUrement:IMMed:UNIts?
     - MEASUrement:IMMed:VALue?
@@ -49,10 +46,7 @@ Commands and Queries:
     - MEASUrement:MEAS<x>:STATE {OFF|ON|<NR1>}
     - MEASUrement:MEAS<x>:STATE?
     - MEASUrement:MEAS<x>:STDdev?
-    - MEASUrement:MEAS<x>:TYPe
-      {AMPlitude|AREa|BURst|CARea|CMEan|CRMs|DELay|FALL|FREQuency|HIGH|HITS|LOW|MAXimum|MEAN|MEDian|
-      MINImum|NDUty|NEDGECount|NOVershoot|NPULSECount|NWIdth|PEAKHits|PDUty|PEDGECount|PERIod|PHAse|
-      PK2Pk|POVershoot|PPULSECount|PWIdth|RISe|RMS|SIGMA<x>|STDdev|TOVershoot|WAVEFORMS}
+    - MEASUrement:MEAS<x>:TYPe {AMPlitude|AREa|BURst|CARea|CMEan|CRMs|DELay|FALL|FREQuency|HIGH|HITS|LOW|MAXimum|MEAN|MEDian|MINImum|NDUty|NEDGECount|NOVershoot|NPULSECount|NWIdth|PEAKHits|PDUty|PEDGECount|PERIod|PHAse|PK2Pk|POVershoot|PPULSECount|PWIdth|RISe|RMS|SIGMA<x>|STDdev|TOVershoot|WAVEFORMS}
     - MEASUrement:MEAS<x>:TYPe?
     - MEASUrement:MEAS<x>:UNIts?
     - MEASUrement:MEAS<x>:VALue?
@@ -109,7 +103,8 @@ Commands and Queries:
     - MEASUrement:STATIstics:WEIghting?
     - MEASUrement:STATIstics?
     - MEASUrement?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

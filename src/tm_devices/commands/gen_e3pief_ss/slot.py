@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - slot[slot].banks.matrix
     - slot[slot].columns.matrix
     - slot[slot].commonsideohms
@@ -29,6 +29,7 @@ Attributes and Functions:
     - slot[slot].rows.matrix
     - slot[slot].tempsensor
     - slot[slot].thermal.state
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING, Union

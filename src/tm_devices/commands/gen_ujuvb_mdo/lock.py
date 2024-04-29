@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - LOCk:ALL
     - LOCk:FPanel {LOCKed|UNLOCKed}
     - LOCk:FPanel?
@@ -17,6 +17,7 @@ Commands and Queries:
     - LOCk:NONe
     - LOCk:TOUCHscreen {LOCKed|UNLOCKed}
     - LOCk:TOUCHscreen?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

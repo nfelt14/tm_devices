@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - ETHERnet:DHCPbootp {ON|OFF}
     - ETHERnet:DHCPbootp?
     - ETHERnet:DNS:IPADDress <QString>
@@ -30,6 +30,7 @@ Commands and Queries:
     - ETHERnet:PING:STATUS?
     - ETHERnet:SUBNETMask <QString>
     - ETHERnet:SUBNETMask?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

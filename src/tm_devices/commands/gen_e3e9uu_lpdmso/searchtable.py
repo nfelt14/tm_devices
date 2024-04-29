@@ -8,10 +8,11 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SEARCHTABle:ADDNew <qstring>
     - SEARCHTABle:DELete <qstring>
     - SEARCHTABle:list?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

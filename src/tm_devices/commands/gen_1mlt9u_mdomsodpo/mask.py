@@ -9,11 +9,8 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
-    - MASK:COPy:SOUrce {DS1|DS1A|DS1C|DS2|DS3|DS4NA|DS4XNA|STS1Pulse|STS1Eye|STS3
-      |STSX3|CLOCKCoax|CLOCKSymmetrical|DSOContra|DSODouble
-      |DSOSingle|DSOTiming|G703DS1|DS1Rate|DS2RATECoax |DS2RATESymmetrical|G703DS3|DS3Rate|E1Coax
-      |E1Symmetrical|E<x>|HST<x>|NONe|USER |LIMit}
+    ```
+    - MASK:COPy:SOUrce {DS1|DS1A|DS1C|DS2|DS3|DS4NA|DS4XNA|STS1Pulse|STS1Eye|STS3 |STSX3|CLOCKCoax|CLOCKSymmetrical|DSOContra|DSODouble |DSOSingle|DSOTiming|G703DS1|DS1Rate|DS2RATECoax |DS2RATESymmetrical|G703DS3|DS3Rate|E1Coax |E1Symmetrical|E<x>|HST<x>|NONe|USER |LIMit}
     - MASK:COPy:SOUrce?
     - MASK:COPy:USER
     - MASK:COUNt RESET
@@ -32,10 +29,7 @@ Commands and Queries:
     - MASK:MARgin:PERCent?
     - MASK:SOUrce {CH<x>}
     - MASK:SOUrce?
-    - MASK:STANdard {DS1|DS1A|DS1C|DS2|DS3|DS4NA|DS4XNA|STS1Pulse|STS1Eye|STS3
-      |STSX3|CLOCKCoax|CLOCKSymmetrical|DSOContra|DSODouble
-      |DSOSingle|DSOTiming|G703DS1|DS1Rate|DS2RATECoax
-      |DS2RATESymmetrical|G703DS3|DS3Rate|E1Coax|E1Symmetrical |E<x>|HST<x>|NONe |USER|LIMit}
+    - MASK:STANdard {DS1|DS1A|DS1C|DS2|DS3|DS4NA|DS4XNA|STS1Pulse|STS1Eye|STS3 |STSX3|CLOCKCoax|CLOCKSymmetrical|DSOContra|DSODouble |DSOSingle|DSOTiming|G703DS1|DS1Rate|DS2RATECoax |DS2RATESymmetrical|G703DS3|DS3Rate|E1Coax|E1Symmetrical |E<x>|HST<x>|NONe |USER|LIMit}
     - MASK:STANdard?
     - MASK:STOPOnviolation {ON|OFF|<NR1>}
     - MASK:STOPOnviolation?
@@ -105,7 +99,8 @@ Commands and Queries:
     - MASK:USER:VSCAle?
     - MASK:USER:WIDth <NR3>
     - MASK:USER:WIDth?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

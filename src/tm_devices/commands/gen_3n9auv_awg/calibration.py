@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - CALibration:ABORt
     - CALibration:ALL
     - CALibration:ALL?
@@ -26,6 +26,7 @@ Commands and Queries:
     - CALibration:STATe:FACTory? [<subsystem>][,<area>]]
     - CALibration:STATe:USER? [<subsystem>[,<area>]]
     - CALibration:STOP:STATe?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

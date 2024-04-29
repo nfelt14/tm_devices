@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - CH<x>:BANdwidth {TWEnty|FULl|<NR3>}
     - CH<x>:BANdwidth?
     - CH<x>:COUPling {AC|DC|GND}
@@ -50,6 +50,7 @@ Commands and Queries:
     - CH<x>:YUNits <QString>
     - CH<x>:YUNits?
     - CH<x>?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

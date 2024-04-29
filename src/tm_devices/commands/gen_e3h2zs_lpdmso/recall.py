@@ -8,11 +8,12 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - RECAll:MASK <source file>,MASK<x>
     - RECAll:SESsion <file_path>
     - RECAll:SETUp {FACtory|<file_path>}
     - RECAll:WAVEform <source file>,<destination>
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

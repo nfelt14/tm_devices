@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - ALIas {OFF|ON|<NR1>}
     - ALIas:CATalog?
     - ALIas:DEFine <QString><,>{<QString>|<Block>}? <QString>
@@ -18,6 +18,7 @@ Commands and Queries:
     - ALIas:STATE {<NR1>|OFF|ON}
     - ALIas:STATE?
     - ALIas?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

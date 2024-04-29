@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - FGEN:CHANnel[n]:AMPLitude:POWer <NRf>
     - FGEN:CHANnel[n]:AMPLitude:POWer?
     - FGEN:CHANnel[n]:AMPLitude:VOLTage <NRf>
@@ -32,6 +32,7 @@ Commands and Queries:
     - FGEN:CHANnel[n]:SYMMetry?
     - FGEN:CHANnel[n]:TYPE {SINE|SQUare|TRIangle|NOISe|DC|GAUSsian|EXPRise|EXPDecay|NONE}
     - FGEN:CHANnel[n]:TYPE?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

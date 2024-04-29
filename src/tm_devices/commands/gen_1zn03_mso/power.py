@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - POWer:ADDNew 'POWER<x>'
     - POWer:DELete 'POWER<x>'
     - POWer:POWer<x>:CLRESPONSE:AMP<x>Val <NR3>
@@ -43,6 +43,7 @@ Commands and Queries:
     - POWer:POWer<x>:RESUlts:CURRentacq:MAXimum? {PM| GAINCROSSOVERFREQ| GM| PHASECROSSOVERFREQ}
     - POWer:POWer<x>:RESUlts:CURRentacq:MEAN? {PM| GAINCROSSOVERFREQ| GM| PHASECROSSOVERFREQ}
     - POWer:POWer<x>:RESUlts:CURRentacq:MINimum? {PM| GAINCROSSOVERFREQ| GM| PHASECROSSOVERFREQ}
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

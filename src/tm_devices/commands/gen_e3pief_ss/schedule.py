@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - schedule.alarm[N].enable
     - schedule.alarm[N].fractionalseconds
     - schedule.alarm[N].period
@@ -18,6 +18,7 @@ Attributes and Functions:
     - schedule.alarm[N].repetition
     - schedule.alarm[N].seconds
     - schedule.disable()
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING, Union

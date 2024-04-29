@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - TRIGger:IMMediate {ATRigger|BTRigger}
     - TRIGger:IMPedance <impedance>[,<input_trigger>]? [<input_trigger>]
     - TRIGger:INTerval <NR3>
@@ -20,6 +20,7 @@ Commands and Queries:
     - TRIGger:SOURce?
     - TRIGger:WVALue {FIRSt}
     - TRIGger:WVALue?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - OUTPut[n]:ATTenuator:A1 <NR1>
     - OUTPut[n]:ATTenuator:A1?
     - OUTPut[n]:ATTenuator:A2 <NR1>
@@ -33,6 +33,7 @@ Commands and Queries:
     - OUTPut[n]:WVALue:ANALog:STATe?
     - OUTPut[n]:WVALue:MARKer[m] {FIRSt|LOW|HIGH}
     - OUTPut[n]:WVALue:MARKer[m]?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

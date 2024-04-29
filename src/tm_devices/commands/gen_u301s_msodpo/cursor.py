@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - CURSor:FUNCtion {OFF|SCREEN|WAVEform|VBArs|HBArs}
     - CURSor:FUNCtion?
     - CURSor:HBArs:DELTa?
@@ -52,6 +52,7 @@ Commands and Queries:
     - CURSor:XY:RECTangular:Y:POSITION<x>?
     - CURSor:XY:RECTangular:Y:UNIts?
     - CURSor?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

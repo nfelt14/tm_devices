@@ -8,12 +8,13 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - PEAKSTABle:ADDNew <QString>
     - PEAKSTABle:DELete <QString>
     - PEAKSTABle:LIST?
     - PEAKSTABle:TABle<x>:FRESolution {AUTO|PRECISE}
     - PEAKSTABle:TABle<x>:FRESolution?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

@@ -9,15 +9,14 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DIAGnostic:DATA?
     - DIAGnostic:IMMediate
     - DIAGnostic:IMMediate?
-    - DIAGnostic:SELect
-      {ALL|FPANel|AREGister|DTIMing|A1Memory|A2Memory|A3Memory|A4Memory|CREGister|CPLock|O1Register|
-      O1ALevel|O1MLevel|O2Register|O2ALevel|O2MLevel}
+    - DIAGnostic:SELect {ALL|FPANel|AREGister|DTIMing|A1Memory|A2Memory|A3Memory|A4Memory|CREGister|CPLock|O1Register|O1ALevel|O1MLevel|O2Register|O2ALevel|O2MLevel}
     - DIAGnostic:SELect?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Optional, TYPE_CHECKING
 

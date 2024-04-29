@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SELect:B<x> {0|1|OFF|ON}
     - SELect:B<x>?
     - SELect:CH<x> {<NR1>|OFF|ON}
@@ -27,6 +27,7 @@ Commands and Queries:
     - SELect:REF<x> {ON|OFF|<NR1>}
     - SELect:REF<x>?
     - SELect?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

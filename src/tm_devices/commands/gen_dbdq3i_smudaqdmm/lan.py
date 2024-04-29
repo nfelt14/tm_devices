@@ -10,10 +10,11 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - lan.ipconfig()
     - lan.lxidomain
     - lan.macaddress
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING, Union

@@ -8,9 +8,10 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SELect:CH<x> {ON|OFF|1|0}
     - SELect:CH<x>?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

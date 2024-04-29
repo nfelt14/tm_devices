@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SYSTem:DATE <year>,<month>,<day>
     - SYSTem:ERRor:ALL?
     - SYSTem:ERRor:CODE:ALL?
@@ -25,6 +25,7 @@ Commands and Queries:
     - SYSTem:TIME <hour>,<minute>,<second>
     - SYSTem:TIME?
     - SYSTem:VERSion?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - POWer:CURRENTSOurce {CH<x>|REF<x>}
     - POWer:CURRENTSOurce?
     - POWer:DISplay {OFF|ON|0|1}
@@ -232,6 +232,7 @@ Commands and Queries:
     - POWer:TYPe?
     - POWer:VOLTAGESOurce {CH<x>|REF<x>}
     - POWer:VOLTAGESOurce?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

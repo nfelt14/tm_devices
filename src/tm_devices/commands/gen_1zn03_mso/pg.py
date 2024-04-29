@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - PG:AMPlitude {2.5|3.3|5V}
     - PG:AMPlitude?
     - PG:BIT:ONE {HIGH|LOW|TOGGLE|HIGH_Z}
@@ -30,6 +30,7 @@ Commands and Queries:
     - PG:OUTPut:MODe?
     - PG:PATTERNdefinition {MANual|FILE}
     - PG:PATTERNdefinition?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

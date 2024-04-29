@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - MATH:ADDNew <QString>
     - MATH:DELete <QString>
     - MATH:LIST?
@@ -59,15 +59,15 @@ Commands and Queries:
     - MATH:MATH<x>:SIGNeddata?
     - MATH:MATH<x>:SOUrce1 {CH<x>|MATH<x>|REF<x>}
     - MATH:MATH<x>:SOUrce1?
-    - MATH:MATH<x>:SPECTral:WINdow {RECTANGular|HAMMing|
-      HANNing|BLACKMANHarris|KAISERBessel|GAUSSian| FLATTOP2|TEKEXPonential}
+    - MATH:MATH<x>:SPECTral:WINdow {RECTANGular|HAMMing| HANNing|BLACKMANHarris|KAISERBessel|GAUSSian| FLATTOP2|TEKEXPonential}
     - MATH:MATH<x>:SPECTral:WINdow?
     - MATH:MATH<x>:SPI:SUPPortedfields {DATa|MOSIdata|MISOdata}
     - MATH:MATH<x>:SPI:SUPPortedfields?
     - MATH:MATH<x>:TYPe {BASic|FFT|ADVanced}
     - MATH:MATH<x>:TYPe?
     - MATH:MATH<x>:VUNIT <QString>
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - COUnter <REFerence|CLEAR|RESet>
     - COUnter:DURation <nr1>
     - COUnter:DURation?
@@ -42,6 +42,7 @@ Commands and Queries:
     - COUnter:UPDate?
     - COUnter:VIEW <FREQuency|PERiod>
     - COUnter:VIEW?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

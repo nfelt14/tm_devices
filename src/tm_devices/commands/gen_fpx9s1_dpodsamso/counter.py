@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - COUnter:RESULTs:AVGmean?
     - COUnter:RESULTs:DEViation?
     - COUnter:RESULTs:MAXimum?
@@ -17,6 +17,7 @@ Commands and Queries:
     - COUnter:RESULTs:NUMber?
     - COUnter:RESULTs:VALue?
     - COUnter:RESULTs?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

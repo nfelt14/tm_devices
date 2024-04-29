@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SYNChronize:ADJust:STARt
     - SYNChronize:CONFigure <port_configuration>
     - SYNChronize:CONFigure?
@@ -18,6 +18,7 @@ Commands and Queries:
     - SYNChronize:ENABle {OFF|ON|0|1}
     - SYNChronize:ENABle?
     - SYNChronize:TYPE?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

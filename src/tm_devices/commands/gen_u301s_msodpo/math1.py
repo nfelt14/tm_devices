@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - MATH1:DEFine <QString>
     - MATH1:DEFine?
     - MATH1:HORizontal:POSition <NR3>
@@ -35,6 +35,7 @@ Commands and Queries:
     - MATH1:VERTical:SCAle?
     - MATH1:VERTical:UNIts?
     - MATH1?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SAVEON {RESET}
     - SAVEON:COUNt?
     - SAVEON:FILE:AUTOInc {<NR1>|ON|OFF}
@@ -38,6 +38,7 @@ Commands and Queries:
     - SAVEON:TRIGger?
     - SAVEON:WAVEform {<NR1>|ON|OFF}
     - SAVEON:WAVEform?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

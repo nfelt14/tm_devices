@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - EVENt:IMMediate
     - EVENt:IMPedance <ohms>
     - EVENt:IMPedance?
@@ -18,6 +18,7 @@ Commands and Queries:
     - EVENt:LEVel?
     - EVENt:POLarity {POSitive|NEGative}
     - EVENt:POLarity?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

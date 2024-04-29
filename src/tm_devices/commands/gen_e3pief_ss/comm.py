@@ -10,13 +10,14 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - comm.gpib.enable
     - comm.lan.enable
     - comm.lan.rawsockets.enable
     - comm.lan.telnet.enable
     - comm.lan.vxi11.enable
     - comm.lan.web.enable
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING, Union

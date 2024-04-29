@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - EYEMASK:MASK<x>:COUNt:HITS?
     - EYEMASK:MASK<x>:COUNt:SEG<y>:HITS?
     - EYEMASK:MASK<x>:CREATor?
@@ -20,6 +20,7 @@ Commands and Queries:
     - EYEMASK:MASK<x>:TESt:SAMple:THReshold <NR1>
     - EYEMASK:MASK<x>:TESt:SAMple:THReshold?
     - EYEMASK:MASK<x>:TESt:STATUS?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

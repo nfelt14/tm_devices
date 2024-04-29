@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - MMEMory:CATalog?
     - MMEMory:CDIRectory [<directory_name>]
     - MMEMory:CDIRectory?
@@ -19,6 +19,7 @@ Commands and Queries:
     - MMEMory:MDIRectory <directory_name>
     - MMEMory:STORe:STATe {0|1|2|3|4},<file_name>
     - MMEMory:STORe:TRACe EMEMory[1]|EMEMory2,<file_name>
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - scan.add()
     - scan.addsinglestep()
     - scan.buffer
@@ -32,6 +32,7 @@ Attributes and Functions:
     - scan.scaninterval
     - scan.start.stimulus
     - scan.stepcount
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING, Union

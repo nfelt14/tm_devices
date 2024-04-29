@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - VIDPic:AUTOContrast {0|1|OFF|ON}
     - VIDPic:AUTOContrast:UPDATERate <NR1>
     - VIDPic:AUTOContrast:UPDATERate?
@@ -39,6 +39,7 @@ Commands and Queries:
     - VIDPic:SOUrce?
     - VIDPic:STANdard {NTSC|PAL}
     - VIDPic:STANdard?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

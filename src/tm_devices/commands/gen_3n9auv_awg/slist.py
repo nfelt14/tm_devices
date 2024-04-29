@@ -9,13 +9,12 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SLISt:NAME? <sequence_list_index>
     - SLISt:SEQuence:AMPLitude <sequence_name>,<amplitude>? <sequence_name>
     - SLISt:SEQuence:DELete {<sequence_name>|ALL}
     - SLISt:SEQuence:EVENt:JTIMing <sequence_name>, {END|IMMediate}? <sequence_name>
-    - SLISt:SEQuence:EVENt:PJUMp:DEFine <sequence_name>, <pattern>, <jump_step>? <sequence_name>,
-      <pattern>
+    - SLISt:SEQuence:EVENt:PJUMp:DEFine <sequence_name>, <pattern>, <jump_step>? <sequence_name>, <pattern>
     - SLISt:SEQuence:EVENt:PJUMp:ENABle <sequence_name>, {0|1|OFF|ON}? <sequence_name>
     - SLISt:SEQuence:EVENt:PJUMp:SIZE?
     - SLISt:SEQuence:FREQuency <seq_name>,<frequency>? <seq_name>
@@ -27,8 +26,7 @@ Commands and Queries:
     - SLISt:SEQuence:STEP:ADD <sequence_name>,<location>[,<steps to add>]
     - SLISt:SEQuence:STEP:MAX?
     - SLISt:SEQuence:STEP:RCOunt:MAX?
-    - SLISt:SEQuence:STEP[n]:EJINput <sequence_name>,{ATRigger|BTRigger|OFF|ITRigger}?
-      <sequence_name>
+    - SLISt:SEQuence:STEP[n]:EJINput <sequence_name>,{ATRigger|BTRigger|OFF|ITRigger}? <sequence_name>
     - SLISt:SEQuence:STEP[n]:EJUMp <sequence_name>, {<NR1>|NEXT|FIRSt|LAST|END}? <sequence_name>
     - SLISt:SEQuence:STEP[n]:GOTO <sequence_name>, {<NR1>|LAST|FIRSt|NEXT|END}? <sequence_name>
     - SLISt:SEQuence:STEP[n]:RCOunt <sequence_name>, {ONCE|INFinite|<NR1>}? <sequence_name>
@@ -36,22 +34,18 @@ Commands and Queries:
     - SLISt:SEQuence:STEP[n]:TASSet[m]:TYPE? <sequence_name>
     - SLISt:SEQuence:STEP[n]:TASSet[m]:WAVeform <sequence_name>, <waveform_name>
     - SLISt:SEQuence:STEP[n]:TASSet[m]? <sequence_name>
-    - SLISt:SEQuence:STEP[n]:TFLag[m]:AFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}?
-      <sequence_name>
-    - SLISt:SEQuence:STEP[n]:TFLag[m]:BFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}?
-      <sequence_name>
-    - SLISt:SEQuence:STEP[n]:TFLag[m]:CFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}?
-      <sequence_name>
-    - SLISt:SEQuence:STEP[n]:TFLag[m]:DFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}?
-      <sequence_name>
-    - SLISt:SEQuence:STEP[n]:WINPut <sequence_name>, {ATRigger|BTRigger|ITRigger|OFF}?
-      <sequence_name>
+    - SLISt:SEQuence:STEP[n]:TFLag[m]:AFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}? <sequence_name>
+    - SLISt:SEQuence:STEP[n]:TFLag[m]:BFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}? <sequence_name>
+    - SLISt:SEQuence:STEP[n]:TFLag[m]:CFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}? <sequence_name>
+    - SLISt:SEQuence:STEP[n]:TFLag[m]:DFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}? <sequence_name>
+    - SLISt:SEQuence:STEP[n]:WINPut <sequence_name>, {ATRigger|BTRigger|ITRigger|OFF}? <sequence_name>
     - SLISt:SEQuence:TRACk:MAX?
     - SLISt:SEQuence:TRACk? <sequence_name>
     - SLISt:SEQuence:TSTamp? <sequence_name>
     - SLISt:SEQuence:WMUSage? <sequence_name>,<track_number>
     - SLISt:SIZE?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

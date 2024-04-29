@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - CH<x>:BANdwidth {<NR3>|FULl}
     - CH<x>:BANdwidth?
     - CH<x>:CLIPping?
@@ -59,6 +59,7 @@ Commands and Queries:
     - CH<x>:VTERm:BIAS <NR3>
     - CH<x>:VTERm:BIAS?
     - CH<x>?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

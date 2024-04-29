@@ -8,13 +8,14 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - TIMe <QString>
     - TIMe:ZONe <QString>
     - TIMe:ZONe:UTCDELTa <NR3>
     - TIMe:ZONe:UTCDELTa?
     - TIMe:ZONe?
     - TIMe?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

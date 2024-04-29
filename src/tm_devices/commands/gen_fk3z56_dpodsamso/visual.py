@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - VISual:AREA<x>:DISplay {ON|OFF}
     - VISual:AREA<x>:DISplay?
     - VISual:AREA<x>:FLIP {HORIZONTAL|VERTICAL}
@@ -28,8 +28,7 @@ Commands and Queries:
     - VISual:AREA<x>:SHOWLOGic?
     - VISual:AREA<x>:SOURCE<x> {WFMCH<x>}
     - VISual:AREA<x>:SOURCE<x>?
-    - VISual:AREA<x>:VERTICES {<NR3>,<NR3>,<NR3>,<NR3>,<NR3>,<NR3>
-      [,<NR3>,<NR3>,<NR3>,<NR3>[,<NR3>,<NR3>]]}
+    - VISual:AREA<x>:VERTICES {<NR3>,<NR3>,<NR3>,<NR3>,<NR3>,<NR3> [,<NR3>,<NR3>,<NR3>,<NR3>[,<NR3>,<NR3>]]}
     - VISual:AREA<x>:VERTICES?
     - VISual:AREA<x>:WIDTH <nr3>
     - VISual:AREA<x>:WIDTH?
@@ -48,7 +47,8 @@ Commands and Queries:
     - VISual:FILE:RECALL <string>
     - VISual:FILE:SAVE <string>
     - VISual?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

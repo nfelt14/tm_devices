@@ -9,13 +9,12 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SOURce2:AM:DEPTh {<depth>|MINimum|MAXimum}
     - SOURce2:AM:DEPTh?
     - SOURce2:AM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
     - SOURce2:AM:INTernal:FREQuency?
-    - SOURce2:AM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle|RAMP |NRAMp|PRNoise|
-      USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
+    - SOURce2:AM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle|RAMP |NRAMp|PRNoise| USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
     - SOURce2:AM:INTernal:FUNCtion:EFILe <file_name>
     - SOURce2:AM:INTernal:FUNCtion:EFILe?
     - SOURce2:AM:INTernal:FUNCtion?
@@ -37,8 +36,7 @@ Commands and Queries:
     - SOURce2:FM:DEViation?
     - SOURce2:FM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
     - SOURce2:FM:INTernal:FREQuency?
-    - SOURce2:FM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle| RAMP| NRAMp| PRNoise| USER[1]|
-      USER<x>|EMEMory[1]|EMEMory2|EFILe}
+    - SOURce2:FM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle| RAMP| NRAMp| PRNoise| USER[1]| USER<x>|EMEMory[1]|EMEMory2|EFILe}
     - SOURce2:FM:INTernal:FUNCtion:EFILe <file_name>
     - SOURce2:FM:INTernal:FUNCtion:EFILe?
     - SOURce2:FM:INTernal:FUNCtion?
@@ -73,9 +71,7 @@ Commands and Queries:
     - SOURce2:FUNCtion:EFILe?
     - SOURce2:FUNCtion:RAMP:SYMMetry {<symmetry>|MINimum|MAXimum}
     - SOURce2:FUNCtion:RAMP:SYMMetry?
-    - SOURce2:FUNCtion:SHAPe {SINusoid|SQUare|PULSe|RAMP
-      |PRNoise|DC|SINC|GAUSsian|LORentz|ERISe|EDECay|
-      HAVersine|USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
+    - SOURce2:FUNCtion:SHAPe {SINusoid|SQUare|PULSe|RAMP |PRNoise|DC|SINC|GAUSsian|LORentz|ERISe|EDECay| HAVersine|USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
     - SOURce2:FUNCtion:SHAPe?
     - SOURce2:PHASe:ADJust {<phase>|MINimum|MAXimum}
     - SOURce2:PHASe:ADJust?
@@ -84,8 +80,7 @@ Commands and Queries:
     - SOURce2:PM:DEViation?
     - SOURce2:PM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
     - SOURce2:PM:INTernal:FREQuency?
-    - SOURce2:PM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle| RAMP|NRAMp|PRNoise|
-      USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
+    - SOURce2:PM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle| RAMP|NRAMp|PRNoise| USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
     - SOURce2:PM:INTernal:FUNCtion:EFILe <file_name>
     - SOURce2:PM:INTernal:FUNCtion:EFILe?
     - SOURce2:PM:INTernal:FUNCtion?
@@ -111,8 +106,7 @@ Commands and Queries:
     - SOURce2:PWM:DEViation:DCYCle?
     - SOURce2:PWM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
     - SOURce2:PWM:INTernal:FREQuency?
-    - SOURce2:PWM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle
-      |RAMP|NRAMp|PRNoise|USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
+    - SOURce2:PWM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle |RAMP|NRAMp|PRNoise|USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
     - SOURce2:PWM:INTernal:FUNCtion:EFILe <file_name>
     - SOURce2:PWM:INTernal:FUNCtion:EFILe?
     - SOURce2:PWM:INTernal:FUNCtion?
@@ -146,7 +140,8 @@ Commands and Queries:
     - SOURce2:VOLTage:LIMit:LOW?
     - SOURce2:VOLTage:UNIT {VPP|VRMS|DBM}
     - SOURce2:VOLTage:UNIT?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Optional, TYPE_CHECKING
 

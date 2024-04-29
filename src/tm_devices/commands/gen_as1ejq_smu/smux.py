@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - smuX.abort()
     - smuX.buffer.getstats()
     - smuX.buffer.recalculatestats()
@@ -112,6 +112,7 @@ Attributes and Functions:
     - smuX.trigger.source.logY()
     - smuX.trigger.source.set()
     - smuX.trigger.source.stimulus
+    ```
 """
 
 from typing import Any, Dict, Optional, Sequence, TYPE_CHECKING, Union

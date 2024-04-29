@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - RF:CLIPPing?
     - RF:DETECTionmethod:MODe {AUTO|MANual}
     - RF:DETECTionmethod:MODe?
@@ -135,6 +135,7 @@ Commands and Queries:
     - RF:UNIts?
     - RF:WINdow {RECTangular|HAMming|HANning|BLAckmanharris|KAIser|FLATtop}
     - RF:WINdow?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

@@ -8,11 +8,12 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - PILOGger:FILEName <QString>
     - PILOGger:FILEName?
     - PILOGger:STATE {<NR1>|OFF|ON}
     - PILOGger:STATE?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

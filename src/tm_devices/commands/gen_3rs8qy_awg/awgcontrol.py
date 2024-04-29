@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - AWGControl:ARSettings {0|1|ON|OFF}
     - AWGControl:CLOCk:DRATe <NR1>
     - AWGControl:CLOCk:DRATe?
@@ -52,6 +52,7 @@ Commands and Queries:
     - AWGControl:TIMer:SOPLay {OFF|ON|0|1}
     - AWGControl:TIMer:SOPLay?
     - AWGControl:TIMer:STOP
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

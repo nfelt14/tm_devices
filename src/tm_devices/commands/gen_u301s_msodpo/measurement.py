@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - MEASUrement:CLEARSNapshot
     - MEASUrement:GATing {OFF|SCREen|CURSor}
     - MEASUrement:GATing?
@@ -22,10 +22,7 @@ Commands and Queries:
     - MEASUrement:IMMed:SOUrce1?
     - MEASUrement:IMMed:SOUrce2 {CH<x>|MATH<y>|REF<x>}
     - MEASUrement:IMMed:SOUrce2?
-    - MEASUrement:IMMed:TYPe
-      {AMPlitude|AREa|BURst|CARea|CMEan|CRMs|DELay|FALL|FREQuency|HIGH|LOW|MAXimum|MEAN|MINImum|
-      NDUty|NEDGECount|NOVershoot|NPULSECount|NWIdth|PEDGECount|PDUty|PERIod|PHAse|PK2Pk|POVershoot|
-      PPULSECount|PWIdth|RISe|RMS}
+    - MEASUrement:IMMed:TYPe {AMPlitude|AREa|BURst|CARea|CMEan|CRMs|DELay|FALL|FREQuency|HIGH|LOW|MAXimum|MEAN|MINImum|NDUty|NEDGECount|NOVershoot|NPULSECount|NWIdth|PEDGECount|PDUty|PERIod|PHAse|PK2Pk|POVershoot|PPULSECount|PWIdth|RISe|RMS}
     - MEASUrement:IMMed:TYPe?
     - MEASUrement:IMMed:UNIts?
     - MEASUrement:IMMed:VALue?
@@ -55,10 +52,7 @@ Commands and Queries:
     - MEASUrement:MEAS<x>:STATE {OFF|ON|<NR1>}
     - MEASUrement:MEAS<x>:STATE?
     - MEASUrement:MEAS<x>:STDdev?
-    - MEASUrement:MEAS<x>:TYPe
-      {AMPlitude|AREa|BURst|CARea|CMEan|CRMs|DELay|FALL|FREQuency|HIGH|LOW|MAXimum|MEAN|MINImum|
-      NDUty|NEDGECount|NOVershoot|NPULSECount|NWIdth|PDUty|PEDGECount|PERIod|PHAse|PK2Pk|POVershoot|
-      PPULSECount|PWIdth|RISe|RMS}
+    - MEASUrement:MEAS<x>:TYPe {AMPlitude|AREa|BURst|CARea|CMEan|CRMs|DELay|FALL|FREQuency|HIGH|LOW|MAXimum|MEAN|MINImum|NDUty|NEDGECount|NOVershoot|NPULSECount|NWIdth|PDUty|PEDGECount|PERIod|PHAse|PK2Pk|POVershoot|PPULSECount|PWIdth|RISe|RMS}
     - MEASUrement:MEAS<x>:TYPe?
     - MEASUrement:MEAS<x>:UNIts?
     - MEASUrement:MEAS<x>:VALue?
@@ -94,7 +88,8 @@ Commands and Queries:
     - MEASUrement:STATIstics:WEIghting?
     - MEASUrement:STATIstics?
     - MEASUrement?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

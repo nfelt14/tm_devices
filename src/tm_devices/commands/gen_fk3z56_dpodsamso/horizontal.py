@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - HORizontal:ACQDURATION?
     - HORizontal:ACQLENGTH?
     - HORizontal:DIGital:MAGnivu:POSition?
@@ -129,6 +129,7 @@ Commands and Queries:
     - HORizontal:TIMEStamp:CH<x>?
     - HORizontal:TIMEStamp:REF<x>?
     - HORizontal?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

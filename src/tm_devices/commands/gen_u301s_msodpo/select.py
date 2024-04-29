@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SELect {ON|OFF}
     - SELect:BUS<x> {<NR1>|OFF|ON}
     - SELect:BUS<x>?
@@ -22,6 +22,7 @@ Commands and Queries:
     - SELect:MATH1?
     - SELect:REF<x> {ON|OFF|<NR1>}
     - SELect:REF<x>?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

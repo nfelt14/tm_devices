@@ -9,22 +9,21 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - WLISt:NAME? <Index>
     - WLISt:SIZE?
-    - WLISt:WAVeform:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>?
-      <wfm_name>[,<StartIndex>[,<Size>]]
+    - WLISt:WAVeform:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
     - WLISt:WAVeform:DELete {<wfm_name>|ALL}
     - WLISt:WAVeform:LENGth? <wfm_name>
-    - WLISt:WAVeform:MARKer:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>?
-      <wfm_name>[,<StartIndex>[,<Size>]]
+    - WLISt:WAVeform:MARKer:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
     - WLISt:WAVeform:NEW <wfm_name>,<Size>,<Type>
     - WLISt:WAVeform:NORMalize <wfm_name>,<Type>
     - WLISt:WAVeform:PREDefined? <wfm_name>
     - WLISt:WAVeform:RESAmple <wfm_name>,<Size>
     - WLISt:WAVeform:TSTamp? <wfm_name>
     - WLISt:WAVeform:TYPE? <wfm_name>
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Optional, TYPE_CHECKING
 

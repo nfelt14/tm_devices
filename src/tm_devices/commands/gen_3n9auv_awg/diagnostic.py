@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DIAGnostic:ABORt
     - DIAGnostic:CATalog? [{ALL|<subsystem>}[,{ALL|<area>}]]
     - DIAGnostic:CONTrol:COUNt <NR1>
@@ -37,6 +37,7 @@ Commands and Queries:
     - DIAGnostic:TYPE:CATalog?
     - DIAGnostic:TYPE?
     - DIAGnostic:UNSelect {ALL|<'subsystem'>,<'area'>,<'test'>}
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

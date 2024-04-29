@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - *RCL {0|1|2|3|4}
     - *SAV {0|1|2|3|4}
     - MEMory:STATe:DELete {0|1|2|3|4}
@@ -16,6 +16,7 @@ Commands and Queries:
     - MEMory:STATe:RECall:AUTo {ON|OFF|<NR1>}
     - MEMory:STATe:RECall:AUTo?
     - MEMory:STATe:VALid? {0|1|2|3|4}
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

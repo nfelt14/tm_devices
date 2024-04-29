@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - display.activebuffer
     - display.changescreen()
     - display.clear()
@@ -24,6 +24,7 @@ Attributes and Functions:
     - display.readingformat
     - display.settext()
     - display.waitevent()
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING, Union

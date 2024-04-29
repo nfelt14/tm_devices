@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SV:CH<x>:RF_AVErage:NUMAVg <NR1>
     - SV:CH<x>:RF_AVErage:NUMAVg?
     - SV:CH<x>:RF_MAGnitude:FORMat {AMPLINear|POWLINear|POWLOG}
@@ -86,6 +86,7 @@ Commands and Queries:
     - SV:SPECtrogram:CURSor:B?
     - SV:WINDOW {KAISerbessel|RECTangular|HAMMing| HANNing|BLACkmanharris|FLATtop2}
     - SV:WINDOW?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

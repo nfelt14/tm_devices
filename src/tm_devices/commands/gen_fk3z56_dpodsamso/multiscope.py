@@ -9,11 +9,12 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - MULTiscope:CONFig {ATI | TEKCONnect | TIMESYnc}
     - MULTiscope:EXIT
     - MULTiscope:RESTART
     - MULTiscope:STATUS?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

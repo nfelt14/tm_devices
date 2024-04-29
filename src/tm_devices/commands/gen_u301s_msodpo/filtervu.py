@@ -8,10 +8,11 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - FILTERVu:FREQuency <NR3>
     - FILTERVu:FREQuency:AVAILable?
     - FILTERVu:FREQuency?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

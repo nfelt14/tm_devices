@@ -9,10 +9,11 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - AUTOSet {EXECute|UNDo|VFields|VIDeo|VLines}
     - AUTOSet:OVErlay {ON | OFF}
     - AUTOSet:PERcent <NR3>
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

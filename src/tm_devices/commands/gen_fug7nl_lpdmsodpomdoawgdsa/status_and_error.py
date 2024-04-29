@@ -11,11 +11,12 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - *ESE <NR1>
     - *ESE?
     - *SRE <NR1>
     - *SRE?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

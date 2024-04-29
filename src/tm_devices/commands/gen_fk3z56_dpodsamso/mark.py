@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - MARK {NEXT|PREVious}
     - MARK:CREATE {CH<x>|MATH<x>|REF<x>|COLUMN}
     - MARK:DELEte {CH<x>|MATH<x>|SELECTED|REF<x>|ALL|COLUMN}
@@ -28,6 +28,7 @@ Commands and Queries:
     - MARK:SELECTED:ZOOm:SCAle?
     - MARK:TOTal?
     - MARK?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

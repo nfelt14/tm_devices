@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - LINKTRaining:ACQTime <NR1>
     - LINKTRaining:ACQTime?
     - LINKTRaining:ARMscope <OFF | ON>
@@ -22,15 +22,13 @@ Commands and Queries:
     - LINKTRaining:LANE?
     - LINKTRaining:MARK <FRAme | CONtrol | TRAining>
     - LINKTRaining:SETUP <SAVe |RESTore>
-    - LINKTRaining:STANdard <Ethernet_10G_KR | Ethernet_25G_KR | Ethernet_25G_CR | Ethernet_40G_KR4
-      | Ethernet_40G_CR4 | Ethernet_50G_KR | Ethernet_50G_CR | Ethernet_100G_CR10 |
-      Ethernet_100G_CR4 | Ethernet_100G_KR4 | Ethernet_100G_CR2 | Ethernet_100G_KR2 |
-      Ethernet_200G_KR4 | Ethernet_200G_CR4>
+    - LINKTRaining:STANdard <Ethernet_10G_KR | Ethernet_25G_KR | Ethernet_25G_CR | Ethernet_40G_KR4 | Ethernet_40G_CR4 | Ethernet_50G_KR | Ethernet_50G_CR | Ethernet_100G_CR10 | Ethernet_100G_CR4 | Ethernet_100G_KR4 | Ethernet_100G_CR2 | Ethernet_100G_KR2 | Ethernet_200G_KR4 | Ethernet_200G_CR4>
     - LINKTRaining:STANdard?
     - LINKTRaining:STAte <OFF | ON>
     - LINKTRaining:STAte?
     - LINKTRaining:TRIGgeron <FIRst_frame | LASt_frame | ALL_frames>
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

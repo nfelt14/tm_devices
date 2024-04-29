@@ -8,9 +8,10 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - RRB:STATE {<NR1>|OFF|ON}
     - RRB:STATE?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - EMAIL:SETUp:FROMADDRess <QString>
     - EMAIL:SETUp:FROMADDRess?
     - EMAIL:SETUp:HOSTALIASNAMe <QString>
@@ -20,6 +20,7 @@ Commands and Queries:
     - EMAIL:SETUp:SMTPPort?
     - EMAIL:SETUp:SMTPServer <QString>
     - EMAIL:SETUp:SMTPServer?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

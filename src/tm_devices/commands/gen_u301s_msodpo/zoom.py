@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - ZOOm:MODe {ON|OFF|<NR1>}
     - ZOOm:STATE {ON|OFF|<NR1>}
     - ZOOm:ZOOM1:FACtor?
@@ -24,6 +24,7 @@ Commands and Queries:
     - ZOOm:ZOOM1:STATE?
     - ZOOm:ZOOM1?
     - ZOOm?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

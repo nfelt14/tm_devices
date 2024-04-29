@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - LICense:APPID? {<QString>}
     - LICense:COUNt?
     - LICense:ERRor?
@@ -19,6 +19,7 @@ Commands and Queries:
     - LICense:LIST?
     - LICense:VALidate? <QString>
     - LICense?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

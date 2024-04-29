@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - dmm.digitize.analogtrigger.edge.level
     - dmm.digitize.analogtrigger.edge.slope
     - dmm.digitize.analogtrigger.mode
@@ -79,6 +79,7 @@ Attributes and Functions:
     - dmm.measure.unit
     - dmm.reset()
     - dmm.terminals
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING, Union

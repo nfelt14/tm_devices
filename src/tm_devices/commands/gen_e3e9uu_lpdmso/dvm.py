@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DVM RESET
     - DVM:AUTORange {0|1|OFF|ON}
     - DVM:AUTORange?
@@ -25,6 +25,7 @@ Commands and Queries:
     - DVM:SOUrce?
     - DVM:TRIGger:FREQuency:COUNTer {0|1|OFF|ON}
     - DVM:TRIGger:FREQuency:COUNTer?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

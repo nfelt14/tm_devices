@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - script.anonymous
     - script.delete()
     - script.load()
@@ -18,6 +18,7 @@ Attributes and Functions:
     - script.newautorun()
     - script.restore()
     - script.run()
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - ptp.domain
     - ptp.ds.info
     - ptp.enable
@@ -18,6 +18,7 @@ Attributes and Functions:
     - ptp.slavepreferred
     - ptp.time()
     - ptp.utcoffset
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING, Union

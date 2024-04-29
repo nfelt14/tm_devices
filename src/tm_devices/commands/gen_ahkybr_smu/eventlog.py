@@ -11,13 +11,14 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - eventlog.all()
     - eventlog.clear()
     - eventlog.count
     - eventlog.enable
     - eventlog.next()
     - eventlog.overwritemethod
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING, Union

@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DATa {INIT|SNAp}
     - DATa:DESTination REF<x>
     - DATa:DESTination?
@@ -28,6 +28,7 @@ Commands and Queries:
     - DATa:SYNCSOUrces {<NR1>|OFF|ON}
     - DATa:SYNCSOUrces?
     - DATa?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

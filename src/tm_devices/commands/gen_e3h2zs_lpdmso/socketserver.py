@@ -8,13 +8,14 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SOCKETServer:ENAble {0|1|OFF|ON}
     - SOCKETServer:ENAble?
     - SOCKETServer:PORT <NR1>
     - SOCKETServer:PORT?
     - SOCKETServer:PROTOCol {TERMinal|NONe}
     - SOCKETServer:PROTOCol?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

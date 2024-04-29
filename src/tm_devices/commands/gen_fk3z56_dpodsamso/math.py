@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - MATH<x>:DEFine <QString>
     - MATH<x>:DEFine?
     - MATH<x>:FILTer:MODe {CENTered|SHIFted}
@@ -49,8 +49,7 @@ Commands and Queries:
     - MATH<x>:SPECTral:SUPPress?
     - MATH<x>:SPECTral:UNWRap {ON|OFF|<NR1>}
     - MATH<x>:SPECTral:UNWRap?
-    - MATH<x>:SPECTral:WINdow
-      {RECTANGular|HAMMing|HANNing|KAISERBessel|BLACKMANHarris|FLATTOP2|GAUSSian|TEKEXPonential}
+    - MATH<x>:SPECTral:WINdow {RECTANGular|HAMMing|HANNing|KAISERBessel|BLACKMANHarris|FLATTOP2|GAUSSian|TEKEXPonential}
     - MATH<x>:SPECTral:WINdow?
     - MATH<x>:SPECTral?
     - MATH<x>:THRESHold <NR3>
@@ -64,7 +63,8 @@ Commands and Queries:
     - MATH<x>:VERTical:SCAle <NR3>
     - MATH<x>:VERTical:SCAle?
     - MATH<x>?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Optional, TYPE_CHECKING
 

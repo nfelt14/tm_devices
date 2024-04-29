@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - D<x>
     - D<x>:LABel <Qstring>
     - D<x>:LABel?
@@ -16,6 +16,7 @@ Commands and Queries:
     - D<x>:POSition?
     - D<x>:THREshold {ECL|TTL|<NR3>}
     - D<x>:THREshold?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - MMEMory:CATalog? [<msus>]
     - MMEMory:CDIRectory [<directory_name>]
     - MMEMory:CDIRectory?
@@ -38,6 +38,7 @@ Commands and Queries:
     - MMEMory:SAVE:WAVeform:TXT <wfm_name>,<filepath>,<bitdepth>[,<IQ_Component>]
     - MMEMory:SAVE:WAVeform:WFM <wfm_name>,<filepath>[,<IQ Component>]
     - MMEMory:SAVE:WAVeform:WFMX <wfm_name>,<filepath>
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

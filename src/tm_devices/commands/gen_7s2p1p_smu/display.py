@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - display.getlastkey()
     - display.screen
     - display.sendkey()
@@ -18,6 +18,7 @@ Attributes and Functions:
     - display.smuX.limit.func
     - display.smuX.measure.func
     - display.waitkey()
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING, Union

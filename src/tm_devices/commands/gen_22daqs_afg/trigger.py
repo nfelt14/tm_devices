@@ -8,13 +8,14 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - TRIGger:SEQuence:IMMediate
     - TRIGger:SEQuence:SLOPe {POSitive|NEGative}
     - TRIGger:SEQuence:SLOPe?
     - TRIGger:SEQuence:SOURce {TIMer|EXTernal}
     - TRIGger:SEQuence:SOURce?
     - TRIGger:SEQuence:TIMer <seconds>
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

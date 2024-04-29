@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - VERTical:DESKew:FROM:CUSTOMPROPAgation <NR3>
     - VERTical:DESKew:FROM:CUSTOMPROPAgation?
     - VERTical:DESKew:FROM:SOUrce CH<x>
@@ -17,6 +17,7 @@ Commands and Queries:
     - VERTical:DESKew:TO:CUSTOMPROPAgation <NR3>
     - VERTical:DESKew:TO:SOUrce CH<x>
     - VERTical:DESKew:TO:SOUrce?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

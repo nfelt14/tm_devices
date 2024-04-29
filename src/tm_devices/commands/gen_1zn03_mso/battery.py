@@ -8,13 +8,14 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - BATTery:ACPOWer?
     - BATTery:SLOT<1,2>:CHARGE?
     - BATTery:SLOT<1,2>:INSTalled?
     - BATTery:SLOT<1,2>:SERIALnumber?
     - BATTery:SLOT<1,2>:TIMETOEMPty?
     - BATTery:SLOT<1,2>:TIMETOFULL?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

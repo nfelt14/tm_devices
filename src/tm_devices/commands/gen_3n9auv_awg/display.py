@@ -8,9 +8,10 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DISPlay:PLOT:STATe {0|1|OFF|ON}
     - DISPlay:PLOT:STATe?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

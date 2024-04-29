@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SAVe:ASSIgn:FOLder?
     - SAVe:ASSIgn:TYPe {IMAGe|WAVEform|SETUp}
     - SAVe:ASSIgn:TYPe?
@@ -26,6 +26,7 @@ Commands and Queries:
     - SAVe:WAVEform:GATIng?
     - SAVe:WAVEform:SPREADSheet:RESOlution {FULL|REDUced}
     - SAVe:WAVEform:SPREADSheet:RESOlution?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

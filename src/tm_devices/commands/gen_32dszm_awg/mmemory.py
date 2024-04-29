@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - MMEMory:CATalog? [<msus>]
     - MMEMory:CDIRectory [<directory_name>]
     - MMEMory:CDIRectory?
@@ -33,6 +33,7 @@ Commands and Queries:
     - MMEMory:MDIRectory <directory_name>
     - MMEMory:MSIS [<msus>]
     - MMEMory:MSIS?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SEARCH:ADDNew <QString>
     - SEARCH:DELETEALL
     - SEARCH:DELete <QString>
@@ -17,15 +17,13 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:COPy {SEARCHtotrigger|TRIGgertosearch}
     - SEARCH:SEARCH<x>:NAVigate {NEXT|PREVious|MIN|NONE|MAX}
     - SEARCH:SEARCH<x>:TOTAL?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:CONDition
-      {SOF|FRAMEtype|IDentifier|DATa|IDANDDATA|EOF|ERRor|FDBITS}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:CONDition {SOF|FRAMEtype|IDentifier|DATa|IDANDDATA|EOF|ERRor|FDBITS}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:CONDition?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:DIRection {READ|WRITE|NOCARE}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:DIRection?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:OFFSet <NR1>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:OFFSet?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:QUALifier
-      {EQUal|LESSEQual|MOREEQua|UNEQual|LESSthan|MOREthan}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:QUALifier {EQUal|LESSEQual|MOREEQua|UNEQual|LESSthan|MOREthan}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:SIZe <NR1>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:SIZe?
@@ -47,8 +45,7 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:MODe?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:VALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:VALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:CONDition
-      {ADDRess|ADDRANDDATA|DATa|ACKMISS|REPEATstart|STARt|STOP}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:CONDition {ADDRess|ADDRANDDATA|DATa|ACKMISS|REPEATstart|STARt|STOP}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:CONDition?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:DIRection {NOCARE|READ|WRITE}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:DIRection?
@@ -56,13 +53,11 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:SIZe?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:VALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:VALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:CONDition
-      {DATA|IDANDDATA|ERRor|IDentifier|SLEEP|SYNCfield|WAKEup}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:CONDition {DATA|IDANDDATA|ERRor|IDentifier|SLEEP|SYNCfield|WAKEup}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:CONDition?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:HIVALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:HIVALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:QUALifier
-      {EQual|LESSEQual|MOREEQual|UNEQual|LESSthan|MOREthan| INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:QUALifier {EQual|LESSEQual|MOREEQual|UNEQual|LESSthan|MOREthan| INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:SIZe <NR1>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:SIZe?
@@ -88,22 +83,19 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:HIVALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:HIVALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:QUALifier {EQual|UNEQual|LESSthan|MOREthan|
-      LESSEQual|MOREEQual|INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:VALue <Qstring>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:VALue?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:HIVALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:HIVALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:QUALifier {EQual|UNEQual|LESSthan|MOREthan|
-      LESSEQual|MOREEQual|INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:VALue <Qstring>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:VALue?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:HIVALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:HIVALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:QUALifier {EQual|UNEQual|LESSthan|MOREthan|
-      LESSEQual|MOREEQual|INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:VALue <Qstring>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:VALue?
@@ -111,8 +103,7 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:INVERTNIBble:VALue?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:STATus:VALue <Qstring>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:STATus:VALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:QUALifier {EQual|UNEQual|LESSthan|MOREthan|
-      LESSEQual|MOREEQual|INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:HIVALue <NR1>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:HIVALue?
@@ -120,15 +111,13 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:VALue?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:HIVALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:HIVALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:QUALifier {EQual|UNEQual|LESSthan|MOREthan|
-      LESSEQual|MOREEQualINrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQualINrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:VALue <Qstring>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:VALue?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:IDentifier:VALue <Qstring>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:IDentifier:VALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SOUrce {B0|B1|B2|B3|B4|B5|B6|B7|B8|B9|B10|
-      B11|B12|B13|B14|B15|B16}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SOUrce {B0|B1|B2|B3|B4|B5|B6|B7|B8|B9|B10| B11|B12|B13|B14|B15|B16}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SOUrce?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:CONDition {DATA|SS|STARTofframe}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:CONDition?
@@ -180,8 +169,7 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOWLimit?
     - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:POLarity {POSitive|NEGative}
     - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:POLarity?
-    - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce {CH<x>| DCH<x>_D<x>| MATH<x>| REF<x>|
-      REF<x>_D<x>}
+    - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce {CH<x>| DCH<x>_D<x>| MATH<x>| REF<x>| REF<x>_D<x>}
     - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce?
     - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:THReshold <NR3>
     - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:THReshold?
@@ -202,8 +190,7 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:RUNT:WIDth?
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:EDGE {FALL|RISe}
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:EDGE?
-    - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce {CH<x>| DCH<x>_D<x>| MATH<x>| REF<x>|
-      REF<x>_D<x>}
+    - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce {CH<x>| DCH<x>_D<x>| MATH<x>| REF<x>| REF<x>_D<x>}
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce?
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:THReshold <NR3>
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:THReshold?
@@ -239,12 +226,12 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:THReshold?
     - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:TIMe <NR3>
     - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:TIMe?
-    - SEARCH:SEARCH<x>:TRIGger:A:TYPe {EDGE| RUNT| TRANsition| PULSEWidth| TIMEOut| LOGIc| SETHold|
-      Bus}
+    - SEARCH:SEARCH<x>:TRIGger:A:TYPe {EDGE| RUNT| TRANsition| PULSEWidth| TIMEOut| LOGIc| SETHold| Bus}
     - SEARCH:SEARCH<x>:TRIGger:A:TYPe?
     - SEARCH:SELected SEARCH1
     - SEARCH:SELected?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

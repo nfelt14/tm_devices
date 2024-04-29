@@ -10,13 +10,14 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - scriptVar.autorun
     - scriptVar.list()
     - scriptVar.name
     - scriptVar.run()
     - scriptVar.save()
     - scriptVar.source
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING, Union

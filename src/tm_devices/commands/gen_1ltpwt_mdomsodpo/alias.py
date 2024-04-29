@@ -8,13 +8,14 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - ALIas:CATalog?
     - ALIas:DEFine <QString><,>{<QString>|<Block>}? <QString>
     - ALIas:DELEte:ALL
     - ALIas:DELEte:NAMe <QString>
     - ALIas:STATE {<NR1>|OFF|ON}
     - ALIas:STATE?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

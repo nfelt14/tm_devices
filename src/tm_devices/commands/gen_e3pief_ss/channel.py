@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - channel.calibration.adjustcount()
     - channel.calibration.adjustdate()
     - channel.calibration.lock()
@@ -64,6 +64,7 @@ Attributes and Functions:
     - channel.trigger[N].set()
     - channel.trigger[N].wait()
     - channel.write()
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING, Union

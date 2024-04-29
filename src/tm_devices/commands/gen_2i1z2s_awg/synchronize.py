@@ -8,11 +8,12 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SYNChronize:ENABle {0|1|OFF|ON}
     - SYNChronize:ENABle?
     - SYNChronize:TYPE {MASTer|SLAVe}
     - SYNChronize:TYPE?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

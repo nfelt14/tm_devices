@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - CALibrate:CALProbe:CH<x>?
     - CALibrate:INTERNal
     - CALibrate:INTERNal:STARt
@@ -18,6 +18,7 @@ Commands and Queries:
     - CALibrate:RESults:SPC?
     - CALibrate:RESults?
     - CALibrate?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

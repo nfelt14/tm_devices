@@ -10,12 +10,13 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - acal.count
     - acal.lastrun.internaltemp
     - acal.lastrun.tempdiff
     - acal.lastrun.time
     - acal.run()
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

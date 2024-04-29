@@ -9,10 +9,11 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - MATHArbflt<x>:FILepath <QString>
     - MATHArbflt<x>:FILepath?
     - MATHArbflt<x>:READFile FORCe
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

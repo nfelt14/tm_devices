@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - REF<x>:DATE?
     - REF<x>:HORizontal:DELay:TIMe <NR3>
     - REF<x>:HORizontal:DELay:TIMe?
@@ -26,6 +26,7 @@ Commands and Queries:
     - REF<x>:VERTical:SCAle <NR3>
     - REF<x>:VERTical:SCAle?
     - REF<x>?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

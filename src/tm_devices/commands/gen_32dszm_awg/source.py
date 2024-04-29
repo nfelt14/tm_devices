@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SOURce[n]:COMBine:FEED {'ESIGnal'|''}
     - SOURce[n]:COMBine:FEED?
     - SOURce[n]:DAC:RESolution <NR1>
@@ -75,6 +75,7 @@ Commands and Queries:
     - SOURce[n]:VOLTage:LEVel:IMMediate:OFFSet?
     - SOURce[n]:WAVeform <wfm_name>
     - SOURce[n]:WAVeform?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

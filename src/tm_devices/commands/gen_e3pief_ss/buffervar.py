@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - bufferVar.appendmode
     - bufferVar.basetimefractional
     - bufferVar.basetimeseconds
@@ -34,6 +34,7 @@ Attributes and Functions:
     - bufferVar.timestampresolution
     - bufferVar.timestamps[N]
     - bufferVar.units[N]
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING, Union

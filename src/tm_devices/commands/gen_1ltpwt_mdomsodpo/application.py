@@ -8,12 +8,13 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - APPLication:LICENSE:SLOT<x>:LOCation?
     - APPLication:LICENSE:SLOT<x>:TRANSFER EXECute
     - APPLication:LICENSE:SLOT<x>:TYPe?
     - APPLication:TYPe {POWer|LIMITMask|VIDPic|ACTONEVent|NONe}
     - APPLication:TYPe?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

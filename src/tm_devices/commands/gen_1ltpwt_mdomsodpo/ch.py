@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - CH<x>:AMPSVIAVOLTs:ENAble {<NR1>|OFF|ON}
     - CH<x>:AMPSVIAVOLTs:ENAble?
     - CH<x>:AMPSVIAVOLTs:FACtor <NR3>
@@ -62,6 +62,7 @@ Commands and Queries:
     - CH<x>:YUNits <QString>
     - CH<x>:YUNits?
     - CH<x>?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

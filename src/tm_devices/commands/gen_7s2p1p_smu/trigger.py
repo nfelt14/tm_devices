@@ -8,6 +8,7 @@ SMU2601B_Pulse
 THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 
 Please report an issue if one is found.
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

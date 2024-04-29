@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - ROSc:OUT:FREQuency {MHZ10|MHZ100}
     - ROSc:OUT:FREQuency?
     - ROSc:SOUrce {ULTRAsync|INTERnal|EXTernal}{INTERnal|EXTernal|TEKLink}
@@ -17,6 +17,7 @@ Commands and Queries:
     - ROSc:STATE?
     - ROSc:TRACking {STABle|FAST}
     - ROSc:TRACking?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

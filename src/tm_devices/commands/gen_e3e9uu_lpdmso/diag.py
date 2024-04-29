@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DIAg:LOOP:OPTion {FAIL|ONCE|ALWAYS|ONFAIL|NTIMES}
     - DIAg:LOOP:OPTion:NTIMes <NR1>
     - DIAg:LOOP:OPTion:NTIMes?
@@ -21,6 +21,7 @@ Commands and Queries:
     - DIAg:RESUlt?
     - DIAg:SELect {ALL|IO|ANALOG|SYSTEM|ASIC|ACQ|SIGNAL|MEMORY}
     - DIAg:STATE {EXECute|ABOrt}
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

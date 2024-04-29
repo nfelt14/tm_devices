@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - TRIGger FORCe
     - TRIGger:A SETLevel
     - TRIGger:A:BUS {I2C|SPI|CAN|RS232}
@@ -33,13 +33,11 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:CAN:IDentifier:MODe?
     - TRIGger:A:BUS:B<x>:CAN:IDentifier:VALue <QString>
     - TRIGger:A:BUS:B<x>:CAN:IDentifier:VALue?
-    - TRIGger:A:BUS:B<x>:FLEXray:CONDition
-      {SOF|FRAMEType|IDentifier|CYCLEcount|HEADer|DATA|IDANDDATA|EOF|ERROR}
+    - TRIGger:A:BUS:B<x>:FLEXray:CONDition {SOF|FRAMEType|IDentifier|CYCLEcount|HEADer|DATA|IDANDDATA|EOF|ERROR}
     - TRIGger:A:BUS:B<x>:FLEXray:CONDition?
     - TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:HIVALue?
-    - TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:QUALifier
-      {LESSThan|MOREThan|EQUal|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:QUALifier {LESSThan|MOREThan|EQUal|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:QUALifier?
     - TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:VALue <QString>
     - TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:VALue?
@@ -47,8 +45,7 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:FLEXray:DATa:HIVALue?
     - TRIGger:A:BUS:B<x>:FLEXray:DATa:OFFSet <NR1>
     - TRIGger:A:BUS:B<x>:FLEXray:DATa:OFFSet?
-    - TRIGger:A:BUS:B<x>:FLEXray:DATa:QUALifier
-      {LESSThan|MOREThan|EQUal|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:FLEXray:DATa:QUALifier {LESSThan|MOREThan|EQUal|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:FLEXray:DATa:QUALifier?
     - TRIGger:A:BUS:B<x>:FLEXray:DATa:SIZe <NR1>
     - TRIGger:A:BUS:B<x>:FLEXray:DATa:SIZe?
@@ -56,13 +53,11 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:FLEXray:DATa:VALue?
     - TRIGger:A:BUS:B<x>:FLEXray:EOFTYPE {STATic|DYNAMic|ANY}
     - TRIGger:A:BUS:B<x>:FLEXray:EOFTYPE?
-    - TRIGger:A:BUS:B<x>:FLEXray:ERRTYPE {CRCHeader|CRCTrailer|SYNCFrame|STARTupnosync|NULLFRStatic|
-      NULLFRDynamic}
+    - TRIGger:A:BUS:B<x>:FLEXray:ERRTYPE {CRCHeader|CRCTrailer|SYNCFrame|STARTupnosync|NULLFRStatic| NULLFRDynamic}
     - TRIGger:A:BUS:B<x>:FLEXray:ERRTYPE?
     - TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:HIVALue?
-    - TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:QUALifier
-      {LESSThan|MOREThan|EQUal|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:QUALifier {LESSThan|MOREThan|EQUal|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:QUALifier?
     - TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:VALue <QString>
     - TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:VALue?
@@ -96,8 +91,7 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:LIN:CONDition?
     - TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue?
-    - TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier
-      {LESSThan|MOREThan|EQUal|UNEQual|LESSEQual|MOREEQual|INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier {LESSThan|MOREThan|EQUal|UNEQual|LESSEQual|MOREEQual|INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier?
     - TRIGger:A:BUS:B<x>:LIN:DATa:SIZe <NR1>
     - TRIGger:A:BUS:B<x>:LIN:DATa:SIZe?
@@ -109,8 +103,7 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:LIN:IDentifier:VALue?
     - TRIGger:A:BUS:B<x>:PARallel:VALue <QString>
     - TRIGger:A:BUS:B<x>:PARallel:VALue?
-    - TRIGger:A:BUS:B<x>:RS232C:CONDition
-      {RXSTArt|RXDATA|RXENDPacket|RXPARity|TXSTArt|TXDATA|TXENDPacket|TXPARity|}
+    - TRIGger:A:BUS:B<x>:RS232C:CONDition {RXSTArt|RXDATA|RXENDPacket|RXPARity|TXSTArt|TXDATA|TXENDPacket|TXPARity|}
     - TRIGger:A:BUS:B<x>:RS232C:CONDition?
     - TRIGger:A:BUS:B<x>:RS232C:RX:DATa:SIZe <NR1>
     - TRIGger:A:BUS:B<x>:RS232C:RX:DATa:SIZe?
@@ -267,8 +260,7 @@ Commands and Queries:
     - TRIGger:A:VIDeo:CUSTom?
     - TRIGger:A:VIDeo:FIELD {ODD|EVEN|ALLFields|ALLLines|NUMERic}
     - TRIGger:A:VIDeo:FIELD?
-    - TRIGger:A:VIDeo:HDtv:FORMat {HD1080P24|HD720P60|HD480P60|HD1080I50|HD1080P25|
-      HD1080I60|HD1080PSF24}
+    - TRIGger:A:VIDeo:HDtv:FORMat {HD1080P24|HD720P60|HD480P60|HD1080I50|HD1080P25| HD1080I60|HD1080PSF24}
     - TRIGger:A:VIDeo:HDtv:FORMat?
     - TRIGger:A:VIDeo:HOLDoff:FIELD <NR3>
     - TRIGger:A:VIDeo:HOLDoff:FIELD?
@@ -295,7 +287,8 @@ Commands and Queries:
     - TRIGger:FREQuency?
     - TRIGger:STATE?
     - TRIGger?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

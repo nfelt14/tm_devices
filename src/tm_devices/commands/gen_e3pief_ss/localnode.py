@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - localnode.description
     - localnode.emulation
     - localnode.license
@@ -24,6 +24,7 @@ Attributes and Functions:
     - localnode.revision
     - localnode.serialno
     - localnode.showerrors
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING, Union

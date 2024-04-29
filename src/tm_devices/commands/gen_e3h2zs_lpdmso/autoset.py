@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - AUTOSet EXECute
     - AUTOSet:ACQuisition:ENAble {ON|1|OFF|0}
     - AUTOSet:ACQuisition:ENAble?
@@ -22,6 +22,7 @@ Commands and Queries:
     - AUTOSet:VERTical:ENAble?
     - AUTOSet:VERTical:OPTIMize {RESOlution|VISIBility}
     - AUTOSet:VERTical:OPTIMize?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

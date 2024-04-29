@@ -11,7 +11,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - fs.chdir()
     - fs.cwd()
     - fs.is_dir()
@@ -19,6 +19,7 @@ Attributes and Functions:
     - fs.mkdir()
     - fs.readdir()
     - fs.rmdir()
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

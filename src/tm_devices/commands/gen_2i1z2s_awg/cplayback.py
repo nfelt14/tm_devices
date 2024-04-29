@@ -9,10 +9,9 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - CPLayback:CAPTure:FILE <signal_name>,{SIQ|CIQ},<file_path>[,<file_path>]
-    - CPLayback:CAPTure:INSTrument:OSCilloscope
-      <signal_name>,<instrument_name>,<source_1>,<source_2>
+    - CPLayback:CAPTure:INSTrument:OSCilloscope <signal_name>,<instrument_name>,<source_1>,<source_2>
     - CPLayback:CAPTure:INSTrument:RSA <signal_name>,<instrument_name>
     - CPLayback:CLISt:NAME? <index>
     - CPLayback:CLISt:SIGNal:DELete {ALL|signal_name}
@@ -35,7 +34,8 @@ Commands and Queries:
     - CPLayback:COMPile:SRATe:AUTO {0|1|OFF|ON}
     - CPLayback:COMPile:SRATe:AUTO?
     - CPLayback:COMPile:SRATe?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Optional, TYPE_CHECKING
 

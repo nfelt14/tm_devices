@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - HORizontal:DELay:MODe {OFF|ON|<NR1>}
     - HORizontal:DELay:MODe?
     - HORizontal:DELay:TIMe <NR3>
@@ -26,6 +26,7 @@ Commands and Queries:
     - HORizontal:SCAle <NR3>
     - HORizontal:SCAle?
     - HORizontal?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

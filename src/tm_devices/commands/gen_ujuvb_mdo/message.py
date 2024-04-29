@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - MESSage
     - MESSage:BOX <X1>,<Y1>[,<X2>,<Y2>]
     - MESSage:BOX?
@@ -25,6 +25,7 @@ Commands and Queries:
     - MESSage:STATE {OFF|ON|<NR1>}
     - MESSage:STATE?
     - MESSage?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

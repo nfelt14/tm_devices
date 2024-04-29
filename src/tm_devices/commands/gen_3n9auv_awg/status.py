@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - STATus:OPERation:CONDition?
     - STATus:OPERation:ENABle <NR1>
     - STATus:OPERation:ENABle?
@@ -26,6 +26,7 @@ Commands and Queries:
     - STATus:QUEStionable:NTRansition?
     - STATus:QUEStionable:PTRansition <bit_value>
     - STATus:QUEStionable:PTRansition?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

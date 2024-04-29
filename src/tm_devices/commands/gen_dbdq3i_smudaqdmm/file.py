@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - file.close()
     - file.flush()
     - file.mkdir()
@@ -18,6 +18,7 @@ Attributes and Functions:
     - file.read()
     - file.usbdriveexists()
     - file.write()
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

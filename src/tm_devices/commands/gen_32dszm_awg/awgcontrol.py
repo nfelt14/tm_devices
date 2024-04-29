@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - AWGControl:APPLication:RUN <application_name>
     - AWGControl:APPLication:STATe? <application_name>
     - AWGControl:CLOCk:DRATe <divider_rate>
@@ -54,6 +54,7 @@ Commands and Queries:
     - AWGControl:SREStore <file_name>[,<msus>]
     - AWGControl:SSAVe <file_name>[,<msus>]
     - AWGControl:STOP:IMMediate
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

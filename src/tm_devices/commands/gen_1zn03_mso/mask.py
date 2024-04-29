@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - MASK:DELete 'MASK<x>'
     - MASK:MASK<x>:COUNT:HITS?
     - MASK:MASK<x>:COUNT?
@@ -34,6 +34,7 @@ Commands and Queries:
     - MASK:MASK<x>:TOLerance:VERTical?
     - MASK:TESt:WAVEforms <NR1>
     - MASK:TESt:WAVEforms?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

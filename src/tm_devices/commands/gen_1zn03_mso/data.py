@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DATa {INIT|SNAp}
     - DATa:ENCdg {ASCIi| RIBinary| RPBinary| FPBinary| SRIbinary| SRPbinary| SFPbinary}
     - DATa:ENCdg?
@@ -26,6 +26,7 @@ Commands and Queries:
     - DATa:WIDth <NR1>
     - DATa:WIDth?
     - DATa?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

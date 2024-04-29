@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - WFMInpre:BIT_Nr <NR1>
     - WFMInpre:BIT_Nr?
     - WFMInpre:BN_Fmt {RI|RP|FP}
@@ -43,6 +43,7 @@ Commands and Queries:
     - WFMInpre:YZEro <NR3>
     - WFMInpre:YZEro?
     - WFMInpre?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

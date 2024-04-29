@@ -8,11 +8,12 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - AUXout:EDGE {RISing|FALling}
     - AUXout:EDGE?
     - AUXout:SOUrce {ATRIGger|REFOUT|AFG}
     - AUXout:SOUrce?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

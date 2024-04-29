@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - OUTPut[n]:PATH {DCHB|ACDirect|ACAMplified|DCHV}
     - OUTPut[n]:PATH?
     - OUTPut[n]:STATe {0|1|OFF|ON}
@@ -21,6 +21,7 @@ Commands and Queries:
     - OUTPut[n]:WVALue:ANALog:STATe?
     - OUTPut[n]:WVALue:MARKer[m] {FIRSt|LOW|HIGH}
     - OUTPut[n]:WVALue:MARKer[m]?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - HARDCopy {START}
     - HARDCopy:ACTIVeprinter {<NR1>|<name>}
     - HARDCopy:ACTIVeprinter?
@@ -21,6 +21,7 @@ Commands and Queries:
     - HARDCopy:PRINTer:LIST?
     - HARDCopy:PRINTer:REName <name>,<new_name>,<new_server>,<new_address>
     - HARDCopy?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

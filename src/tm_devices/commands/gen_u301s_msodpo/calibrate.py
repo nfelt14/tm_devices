@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - CALibrate:FACtory {STARt|CONTinue|PREVious|ABOrt|DUmp}
     - CALibrate:FACtory:STATus?
     - CALibrate:INTERNal
@@ -19,6 +19,7 @@ Commands and Queries:
     - CALibrate:RESults:SPC?
     - CALibrate:RESults?
     - CALibrate:TEMPerature?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

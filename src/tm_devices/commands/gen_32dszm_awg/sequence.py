@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SEQuence:ELEMent[n]:GOTO:INDex <target>
     - SEQuence:ELEMent[n]:GOTO:INDex?
     - SEQuence:ELEMent[n]:GOTO:STATe <goto_state>
@@ -29,6 +29,7 @@ Commands and Queries:
     - SEQuence:JUMP:IMMediate <target>
     - SEQuence:LENGth <NR1>
     - SEQuence:LENGth?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

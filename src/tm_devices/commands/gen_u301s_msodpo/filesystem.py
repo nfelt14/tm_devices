@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - FILESystem
     - FILESystem:COPy {<source file path>,<destination file path>}
     - FILESystem:CWD {<new working directory path>}
@@ -22,6 +22,7 @@ Commands and Queries:
     - FILESystem:RMDir <directory path>
     - FILESystem:WRITEFile <file path>, <data>
     - FILESystem?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

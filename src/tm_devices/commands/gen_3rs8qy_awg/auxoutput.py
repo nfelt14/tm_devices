@@ -8,11 +8,12 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - AUXoutput[n]:SOURce {AFLag|BFLag|CFLag|DFLag|TIMer}
     - AUXoutput[n]:SOURce:CMAPping <channel>
     - AUXoutput[n]:SOURce:CMAPping?
     - AUXoutput[n]:SOURce?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

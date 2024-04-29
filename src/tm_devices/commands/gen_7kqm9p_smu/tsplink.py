@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - tsplink.group
     - tsplink.initialize()
     - tsplink.line[N].mode
@@ -21,6 +21,7 @@ Attributes and Functions:
     - tsplink.readport()
     - tsplink.state
     - tsplink.writeport()
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING, Union

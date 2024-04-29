@@ -10,9 +10,10 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - bufferVar.capacity
     - bufferVar.statuses[N]
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING, Union

@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - acal.count
     - acal.lastrun.internaltemp
     - acal.lastrun.tempdiff
@@ -19,6 +19,7 @@ Attributes and Functions:
     - acal.revert()
     - acal.run()
     - acal.schedule()
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

@@ -8,10 +8,11 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SETUP1<x>:DATE?
     - SETUP1<x>:LABel <Qstring>
     - SETUP1<x>:TIMe?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

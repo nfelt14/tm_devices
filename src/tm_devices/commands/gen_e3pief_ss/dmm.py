@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - dmm.adjustment.count
     - dmm.aperture
     - dmm.appendbuffer()
@@ -81,6 +81,7 @@ Attributes and Functions:
     - dmm.threertd
     - dmm.threshold
     - dmm.transducer
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING, Union

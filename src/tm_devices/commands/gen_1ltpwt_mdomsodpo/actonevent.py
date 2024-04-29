@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - ACTONEVent:ACTION:AUXOUT:STATE <0|1|OFF|ON>
     - ACTONEVent:ACTION:AUXOUT:STATE?
     - ACTONEVent:ACTION:EMAIL:SETUp:TOADDRess <QString>
@@ -33,6 +33,7 @@ Commands and Queries:
     - ACTONEVent:NUMACQs?
     - ACTONEVent:REPEATCount <NR1>
     - ACTONEVent:REPEATCount?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

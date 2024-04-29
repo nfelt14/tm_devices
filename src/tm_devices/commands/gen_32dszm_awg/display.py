@@ -8,11 +8,12 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DISPlay:WINDow1:STATe <display_state>
     - DISPlay:WINDow1:STATe?
     - DISPlay:WINDow2:STATe <display_state>
     - DISPlay:WINDow2:STATe?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

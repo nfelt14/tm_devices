@@ -8,10 +8,11 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DESkew {SETALLtorec}
     - DESkew:DISPlay {OFF|ON|0|1}
     - DESkew:DISPlay?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

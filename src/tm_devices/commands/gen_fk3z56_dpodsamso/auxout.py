@@ -9,12 +9,13 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - AUXout:EDGE {RISing|FALling}
     - AUXout:EDGE?
     - AUXout:SOUrce {ATRIGger|BTRIGger|DELayed|EVENT|REFOUT}
     - AUXout:SOUrce?
     - AUXout?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

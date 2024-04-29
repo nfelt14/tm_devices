@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DISplay:CLOCk {<NR1>|ON|OFF}
     - DISplay:CLOCk?
     - DISplay:COLOr:MATHCOLOr {DEFAULT|INHERIT}
@@ -42,14 +42,12 @@ Commands and Queries:
     - DISplay:COLOr:REFCOLOr {DEFAULT|INHERIT}
     - DISplay:COLOr:REFCOLOr?
     - DISplay:COLOr?
-    - DISplay:DATa? (BMP| JPEG| PNG | TIFF)[,(FULLSCREEN | GRAticule | FULLNOmenu)[,(COLOr |
-      INKSaver | BLACKANDWhite )]]
+    - DISplay:DATa? (BMP| JPEG| PNG | TIFF)[,(FULLSCREEN | GRAticule | FULLNOmenu)[,(COLOr | INKSaver | BLACKANDWhite )]]
     - DISplay:DESKew {<NR1>|OFF|ON|AUTO}
     - DISplay:DESKew?
     - DISplay:DIGital:HEIght {SMAll|LARge|MEDium|XSMAll}
     - DISplay:DIGital:HEIght?
-    - DISplay:DPOJETPlot? (PLOT1 | PLOT2 | PLOT3 | PLOT4 | SUMMARY)[,(JPEG | JPG | TIF | TIFF | BMP
-      | EMF | PNG)]
+    - DISplay:DPOJETPlot? (PLOT1 | PLOT2 | PLOT3 | PLOT4 | SUMMARY)[,(JPEG | JPG | TIF | TIFF | BMP | EMF | PNG)]
     - DISplay:FILTer {LINEAr|SINX}
     - DISplay:FILTer?
     - DISplay:FORMat {YT|XY|XYZ}
@@ -106,7 +104,8 @@ Commands and Queries:
     - DISplay:WAVEform {<NR1>|OFF|ON}
     - DISplay:WAVEform?
     - DISplay?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

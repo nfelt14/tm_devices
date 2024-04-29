@@ -8,12 +8,13 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - IDNMultiscope:A?
     - IDNMultiscope:B?
     - IDNMultiscope:C?
     - IDNMultiscope:D?
     - IDNMultiscope?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

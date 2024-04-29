@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - EMail {TESt|RESET}
     - EMail:ATTempts <NR1>
     - EMail:ATTempts?
@@ -46,6 +46,7 @@ Commands and Queries:
     - EMail:TRIGger?
     - EMail:WAVEform {<NR1>|ON|OFF}
     - EMail:WAVEform?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

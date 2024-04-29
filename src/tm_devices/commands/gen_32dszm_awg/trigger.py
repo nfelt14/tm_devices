@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - TRIGger:SEQuence:IMMediate
     - TRIGger:SEQuence:IMPedance <impedance>
     - TRIGger:SEQuence:IMPedance?
@@ -26,6 +26,7 @@ Commands and Queries:
     - TRIGger:SEQuence:TIMer?
     - TRIGger:SEQuence:WVALue {FIRSt|LAST}
     - TRIGger:SEQuence:WVALue?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

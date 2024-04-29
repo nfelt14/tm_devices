@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SAVEON:FILE:DEST <QString>
     - SAVEON:FILE:DEST?
     - SAVEON:FILE:NAME <QString>
@@ -25,6 +25,7 @@ Commands and Queries:
     - SAVEON:WAVEform:SOURce {CH<x>|MATH<x>|REF<x>|ALL}
     - SAVEON:WAVEform:SOURce?
     - SAVEON:WAVEform?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

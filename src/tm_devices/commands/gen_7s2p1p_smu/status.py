@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - status.measurement.buffer_available.condition
     - status.measurement.buffer_available.enable
     - status.measurement.buffer_available.event
@@ -108,6 +108,7 @@ Attributes and Functions:
     - status.questionable.unstable_output.ptr
     - status.request_enable
     - status.request_event
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING, Union

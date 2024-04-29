@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DISplay:CLOCk {ON|OFF|<NR1>}
     - DISplay:CLOCk?
     - DISplay:COLor:MODe {NORMal|INVERTed}
@@ -43,6 +43,7 @@ Commands and Queries:
     - DISplay:XY:WITHYT?
     - DISplay:XY?
     - DISplay?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

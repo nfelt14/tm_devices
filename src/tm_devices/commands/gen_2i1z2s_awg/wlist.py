@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - WLISt:LAST?
     - WLISt:LIST?
     - WLISt:NAME? <Index>
@@ -30,8 +30,7 @@ Commands and Queries:
     - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal {CLOCk|PRBS|FILE|SAVictim}
     - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:FILE <filepath>
     - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:FILE?
-    - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:PRBS
-      {PRBS7|PRBS9|PRBS15|PRBS16|PRBS20|PRBS21|PRBS23|PRBS29|PRBS31}
+    - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:PRBS {PRBS7|PRBS9|PRBS15|PRBS16|PRBS20|PRBS21|PRBS23|PRBS29|PRBS31}
     - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:PRBS?
     - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal?
     - WLISt:SPARameter:CASCading:DEEMbed {0|1|OFF|ON}
@@ -66,8 +65,7 @@ Commands and Queries:
     - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal {CLOCk|PRBS|FILE|SAVictim}
     - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:FILE <filepath>
     - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:FILE?
-    - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:PRBS
-      {PRBS7|PRBS9|PRBS15|PRBS16|PRBS20|PRBS21|PRBS23|PRBS29|PRBS31}
+    - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:PRBS {PRBS7|PRBS9|PRBS15|PRBS16|PRBS20|PRBS21|PRBS23|PRBS29|PRBS31}
     - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:PRBS?
     - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal?
     - WLISt:SPARameter:NCAScading:DEEMbed {0|1|OFF|ON}
@@ -100,12 +98,9 @@ Commands and Queries:
     - WLISt:WAVeform:ACFile:SKEW {0|1|OFF|ON}
     - WLISt:WAVeform:ACFile:SKEW?
     - WLISt:WAVeform:AMPLitude <wfm_name>,<amplitude>? <wfm_name>
-    - WLISt:WAVeform:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>?
-      <wfm_name>[,<StartIndex>[,<Size>]]
-    - WLISt:WAVeform:DATA:I <wfm_name>[,<StartIndex>[,<Size>]],<block_data>?
-      <wfm_name>[,<StartIndex>[,<Size>]]
-    - WLISt:WAVeform:DATA:Q <wfm_name>[,<StartIndex>[,<Size>]],<block_data>?
-      <wfm_name>[,<StartIndex>[,<Size>]]
+    - WLISt:WAVeform:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
+    - WLISt:WAVeform:DATA:I <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
+    - WLISt:WAVeform:DATA:Q <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
     - WLISt:WAVeform:DELete {<wfm_name>|ALL}
     - WLISt:WAVeform:FREQuency <wfm_name>,<frequency>
     - WLISt:WAVeform:FREQuency?
@@ -114,8 +109,7 @@ Commands and Queries:
     - WLISt:WAVeform:LENGth? <wfm_name>
     - WLISt:WAVeform:LMAXimum?
     - WLISt:WAVeform:LMINimum?
-    - WLISt:WAVeform:MARKer:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>?
-      <wfm_name>[,<StartIndex>[,<Size>]]
+    - WLISt:WAVeform:MARKer:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
     - WLISt:WAVeform:MIQ <I_wfm_name>,<Q_wfm_name>
     - WLISt:WAVeform:NEW <wfm_name>,<Size>[,<format>]
     - WLISt:WAVeform:NORMalize <wfm_name>,{FSCale|ZREFerence}
@@ -128,7 +122,8 @@ Commands and Queries:
     - WLISt:WAVeform:SRATe <wfm_name>,<sample_rate>? <wfm_name>
     - WLISt:WAVeform:TSTamp? <wfm_name>
     - WLISt:WAVeform:TYPE? <wfm_name>
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

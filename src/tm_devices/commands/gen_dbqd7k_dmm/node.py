@@ -10,10 +10,11 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - node[N].execute()
     - node[N].getglobal()
     - node[N].setglobal()
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

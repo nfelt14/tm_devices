@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - WFMOutpre:BIT_Nr <NR1>
     - WFMOutpre:BIT_Nr?
     - WFMOutpre:BN_Fmt {RI|RP}
@@ -37,6 +37,7 @@ Commands and Queries:
     - WFMOutpre:YUNit?
     - WFMOutpre:YZEro?
     - WFMOutpre?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

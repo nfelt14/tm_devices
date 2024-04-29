@@ -9,12 +9,13 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - RECAll:MASK <QString>
     - RECAll:SETUp {FACtory|<NR1>|<file path>}
     - RECAll:SETUp:DESKew {LOCK|UNLOCK}
     - RECAll:SETUp:DESKew?
     - RECAll:WAVEform <file path>,REF<x>
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

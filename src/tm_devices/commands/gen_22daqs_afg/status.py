@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - *ESE <bit_value>
     - *ESE?
     - *PSC <NR1>
@@ -24,6 +24,7 @@ Commands and Queries:
     - STATus:QUEStionable:ENABle <bit_value>
     - STATus:QUEStionable:ENABle?
     - STATus:QUEStionable:EVENt?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

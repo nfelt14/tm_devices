@@ -11,7 +11,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - tspnet.clear()
     - tspnet.connect()
     - tspnet.disconnect()
@@ -27,6 +27,7 @@ Attributes and Functions:
     - tspnet.tsp.rbtablecopy()
     - tspnet.tsp.runscript()
     - tspnet.write()
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING, Union

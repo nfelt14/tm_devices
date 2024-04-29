@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - ACTONEVent:ENable <NR1>
     - ACTONEVent:ENable?
     - ACTONEVent:LIMITCount <NR1>
@@ -63,6 +63,7 @@ Commands and Queries:
     - ACTONEVent:TRIGger:ACTION:SRQ:STATE?
     - ACTONEVent:TRIGger:ACTION:STOPACQ:STATE {ON|OFF|<NR1>}
     - ACTONEVent:TRIGger:ACTION:STOPACQ:STATE?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

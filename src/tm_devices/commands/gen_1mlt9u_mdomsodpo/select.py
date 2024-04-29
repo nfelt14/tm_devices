@@ -9,15 +9,14 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SELect:B<x> {OFF|ON|0|1}
     - SELect:B<x>?
     - SELect:BUS<x> {OFF|ON|0|1}
     - SELect:BUS<x>?
     - SELect:CH<x> {ON|OFF|1|0}
     - SELect:CH<x>?
-    - SELect:CONTROl {CH<x> |MATH|REF<x>|BUS<x>|D<x>|RF_AMPlitude|RF_FREQuency
-      |RF_PHASe|RF_NORMal|RF_AVErage| RF_MAXHold|RF_MINHold}
+    - SELect:CONTROl {CH<x> |MATH|REF<x>|BUS<x>|D<x>|RF_AMPlitude|RF_FREQuency |RF_PHASe|RF_NORMal|RF_AVErage| RF_MAXHold|RF_MINHold}
     - SELect:CONTROl?
     - SELect:D<x> {<NR1>|OFF|ON}
     - SELect:D<x>?
@@ -43,7 +42,8 @@ Commands and Queries:
     - SELect:RF_PHASe {OFF|ON|0|1}
     - SELect:RF_PHASe?
     - SELect?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

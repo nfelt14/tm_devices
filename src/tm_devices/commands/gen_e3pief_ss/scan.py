@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - scan.abort()
     - scan.add()
     - scan.addimagestep()
@@ -41,6 +41,7 @@ Attributes and Functions:
     - scan.trigger.sequence.clear()
     - scan.trigger.sequence.set()
     - scan.trigger.sequence.stimulus
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING, Union

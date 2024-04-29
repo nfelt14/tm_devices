@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - ACQuire:ENHANCEDEnob {OFF|AUTO}
     - ACQuire:ENHANCEDEnob:STATE?
     - ACQuire:INTERPEightbit {AUTO|ON|OFF}
@@ -35,6 +35,7 @@ Commands and Queries:
     - ACQuire:STOPAfter?
     - ACQuire:SYNcsamples {ON | OFF}
     - ACQuire:SYNcsamples?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

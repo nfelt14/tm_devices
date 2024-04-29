@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - CURSor:FUNCtion {OFF|HBArs|VBArs|SCREEN|WAVEform}
     - CURSor:FUNCtion?
     - CURSor:HBArs:DELTa?
@@ -71,6 +71,7 @@ Commands and Queries:
     - CURSor:XY:YDELta?
     - CURSor:XY?
     - CURSor?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

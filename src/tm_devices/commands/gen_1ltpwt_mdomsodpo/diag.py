@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DIAg:INDIvidual:TESTnumber
     - DIAg:INDIvidual:TESTnumber?
     - DIAg:LOOP:OPTion {ALWAYS|FAIL|ONFAIL|ONCE|NTIMES}
@@ -19,6 +19,7 @@ Commands and Queries:
     - DIAg:RESUlt:LOG?
     - DIAg:SELect {ALL|APPKey|CPU|DISplay|FPAnel|IO|ROM|ACQ|RF|AFG}
     - DIAg:STATE {EXECute|ABORt}
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

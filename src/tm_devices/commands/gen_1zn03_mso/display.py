@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DISplay:CH<x>:INVERTColor COLOR<y>
     - DISplay:CH<x>:INVERTColor?
     - DISplay:CH<x>:NORMALColor COLOR<y>
@@ -237,11 +237,9 @@ Commands and Queries:
     - DISplay:WAVEView1:CH<x>:VERTical:POSition?
     - DISplay:WAVEView1:CH<x>:VERTical:SCAle <NR3>
     - DISplay:WAVEView1:CH<x>:VERTical:SCAle?
-    - DISplay:WAVEView1:CURSor:CURSOR1:ASOUrce {AUTO| CH<x>| BUS<x>| DCH<x>_DALL| MATH<x>| REF<x>|
-      PLOT<x>}
+    - DISplay:WAVEView1:CURSor:CURSOR1:ASOUrce {AUTO| CH<x>| BUS<x>| DCH<x>_DALL| MATH<x>| REF<x>| PLOT<x>}
     - DISplay:WAVEView1:CURSor:CURSOR1:ASOUrce?
-    - DISplay:WAVEView1:CURSor:CURSOR1:BSOUrce {AUTO| CH<x>| BUS<x>| DCH<x>_DALL| MATH<x>| REF<x>|
-      PLOT<x>
+    - DISplay:WAVEView1:CURSor:CURSOR1:BSOUrce {AUTO| CH<x>| BUS<x>| DCH<x>_DALL| MATH<x>| REF<x>| PLOT<x>
     - DISplay:WAVEView1:CURSor:CURSOR1:BSOUrce?
     - DISplay:WAVEView1:CURSor:CURSOR1:DDT?
     - DISplay:WAVEView1:CURSor:CURSOR1:FUNCtion {SCREEN|WAVEFORM|VBArs|HBArs}
@@ -337,7 +335,8 @@ Commands and Queries:
     - DISplay:WAVEform {<NR1>|OFF|ON}
     - DISplay:WAVEform?
     - DISplay?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

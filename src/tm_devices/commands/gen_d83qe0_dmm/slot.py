@@ -10,12 +10,13 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - slot[1].idn
     - slot[1].maxvoltage
     - slot[1].pseudocard
     - slot[1].voltage.endchannel
     - slot[1].voltage.startchannel
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING, Union

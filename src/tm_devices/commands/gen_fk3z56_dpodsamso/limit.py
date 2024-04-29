@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - LIMit:BEEP {<NR1>|OFF|ON}
     - LIMit:BEEP?
     - LIMit:COMpare {RESet}
@@ -51,6 +51,7 @@ Commands and Queries:
     - LIMit:TEMPlate:TOLerance:VERTical <NR3>
     - LIMit:TEMPlate:TOLerance:VERTical?
     - LIMit?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

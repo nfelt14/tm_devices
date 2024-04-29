@@ -10,12 +10,13 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - eventlog.clear()
     - eventlog.getcount()
     - eventlog.next()
     - eventlog.post()
     - eventlog.save()
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

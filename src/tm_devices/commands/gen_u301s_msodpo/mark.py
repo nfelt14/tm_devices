@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - MARK {NEXT|PREVious}
     - MARK:CREATE {CH<x>|MATH|B<x>|REF<x>|COLUMN|DIGItal}
     - MARK:DELEte {CH<x>|MATH|B<x>|REF<x>|COLUMN|DIGItal}
@@ -23,6 +23,7 @@ Commands and Queries:
     - MARK:SELected:ZOOm:POSition?
     - MARK:TOTal?
     - MARK?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

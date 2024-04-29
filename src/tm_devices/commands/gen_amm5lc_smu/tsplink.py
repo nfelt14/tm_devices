@@ -11,7 +11,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - tsplink.group
     - tsplink.master
     - tsplink.node
@@ -31,6 +31,7 @@ Attributes and Functions:
     - tsplink.writebit()
     - tsplink.writeport()
     - tsplink.writeprotect
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING, Union

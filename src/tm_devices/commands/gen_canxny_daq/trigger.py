@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - trigger.blender[N].clear()
     - trigger.blender[N].orenable
     - trigger.blender[N].overrun
@@ -104,6 +104,7 @@ Attributes and Functions:
     - trigger.tsplinkout[N].release()
     - trigger.tsplinkout[N].stimulus
     - trigger.wait()
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING, Union

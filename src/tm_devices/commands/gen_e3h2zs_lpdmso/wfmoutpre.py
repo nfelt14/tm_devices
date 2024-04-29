@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - WFMOutpre:ASC_Fmt?
     - WFMOutpre:BIT_Nr <NR1>
     - WFMOutpre:BIT_Nr?
@@ -39,6 +39,7 @@ Commands and Queries:
     - WFMOutpre:YUNit?
     - WFMOutpre:YZEro?
     - WFMOutpre?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - TRIGger FORCe
     - TRIGger:A SETLevel
     - TRIGger:A:BUS:B<x>:CAN:CONDition {SOF|FRAMEtype|IDentifier|DATa|IDANDDATA|EOF|ERRor|FDBITS}
@@ -52,8 +52,7 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:LIN:CONDition?
     - TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue?
-    - TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual|
-      INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier?
     - TRIGger:A:BUS:B<x>:LIN:DATa:SIZe <NR1>
     - TRIGger:A:BUS:B<x>:LIN:DATa:SIZe?
@@ -79,22 +78,19 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:SENT:ERRType?
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:HIVALue?
-    - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:QUALifier {EQual|UNEQual|LESSthan|MOREthan|
-      LESSEQual|MOREEQual|INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:QUALifier?
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:VALue <Qstring>
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:VALue?
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:HIVALue?
-    - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:QUALifier {EQual|UNEQual|LESSthan|MOREthan|
-      LESSEQual|MOREEQual|INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:QUALifier?
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:VALue <Qstring>
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:VALue?
     - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:HIVALue?
-    - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:QUALifier {EQual|UNEQual|LESSthan|MOREthan|
-      LESSEQual|MOREEQual|INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:QUALifier?
     - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:VALue <Qstring>
     - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:VALue?
@@ -102,13 +98,11 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:SENT:FAST:INVERTNIBble:VALue?
     - TRIGger:A:BUS:B<x>:SENT:FAST:STATus:VALue <Qstring>
     - TRIGger:A:BUS:B<x>:SENT:FAST:STATus:VALue?
-    - TRIGger:A:BUS:B<x>:SENT:PAUSE:QUALifier {EQual|UNEQual|
-      LESSthan|MOREthan|LESSEQual|MOREEQual|Inrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:SENT:PAUSE:QUALifier {EQual|UNEQual| LESSthan|MOREthan|LESSEQual|MOREEQual|Inrange|OUTrange}
     - TRIGger:A:BUS:B<x>:SENT:PAUSE:QUALifier?
     - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:HIVALue?
-    - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:QUALifier {EQual|UNEQual|
-      LESSthan|MOREthan|LESSEQual|MOREEQual| INRange| OUTRange}
+    - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:QUALifier {EQual|UNEQual| LESSthan|MOREthan|LESSEQual|MOREEQual| INRange| OUTRange}
     - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:QUALifier?
     - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:VALue <Qstring>
     - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:VALue?
@@ -199,7 +193,8 @@ Commands and Queries:
     - TRIGger:HYSTeresis:USER:VALue?
     - TRIGger:STATE?
     - TRIGger?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

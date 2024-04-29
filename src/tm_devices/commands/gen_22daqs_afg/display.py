@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DISPlay:BRIGHtness {|MINimum|MAXimum}?[MINimum|MAXimum]
     - DISPlay:CONTrast {<contrast>|MINimum|MAXimum}
     - DISPlay:CONTrast?
@@ -18,6 +18,7 @@ Commands and Queries:
     - DISPlay:WINDow:TEXT:CLEar
     - DISPlay:WINDow:TEXT:DATA <string>
     - DISPlay:WINDow:TEXT:DATA?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

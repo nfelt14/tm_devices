@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - VISual:AREA<x>:ASPEctratio {ON|OFF|<NR1>}
     - VISual:AREA<x>:ASPEctratio?
     - VISual:AREA<x>:FLIP:HORizontal
@@ -44,6 +44,7 @@ Commands and Queries:
     - VISual:SHOWCRiteria?
     - VISual:SHOWEQuation {ON|OFF|<NR1>}
     - VISual:SHOWEQuation?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

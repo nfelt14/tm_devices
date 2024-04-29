@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DCH<x>_D<x>:LABel:COLor <QString>
     - DCH<x>_D<x>:LABel:COLor?
     - DCH<x>_D<x>:LABel:FONT:BOLD {<NR1>|OFF|ON}
@@ -25,6 +25,7 @@ Commands and Queries:
     - DCH<x>_D<x>:LABel:NAMe?
     - DCH<x>_D<x>:THReshold <NR3>
     - DCH<x>_D<x>:THReshold?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

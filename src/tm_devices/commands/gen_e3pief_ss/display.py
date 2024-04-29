@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - display.clear()
     - display.getannunciators()
     - display.getcursor()
@@ -27,6 +27,7 @@ Attributes and Functions:
     - display.setcursor()
     - display.settext()
     - display.waitkey()
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING, Union

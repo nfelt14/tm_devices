@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - BUS
     - BUS:B<x>:CAN:BITRate <NR1>
     - BUS:B<x>:CAN:BITRate?
@@ -133,6 +133,7 @@ Commands and Queries:
     - BUS:THReshold:D<x>?
     - BUS:UPPerthreshold:CH<x> {<NR3>|ECL|TTL}
     - BUS:UPPerthreshold:CH<x>?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

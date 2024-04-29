@@ -9,12 +9,13 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - FASTAcq:HIACQRATE {<NR1>|OFF|ON}
     - FASTAcq:HIACQRATE?
     - FASTAcq:STATE {<NR1>|ON|OFF}
     - FASTAcq:STATE?
     - FASTAcq?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

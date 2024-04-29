@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - ACQuire:MAXSamplerate?
     - ACQuire:MODe {SAMple|PEAKdetect|HIRes|AVErage|ENVelope}
     - ACQuire:MODe?
@@ -24,6 +24,7 @@ Commands and Queries:
     - ACQuire:STOPAfter {RUNSTop|SEQuence}
     - ACQuire:STOPAfter?
     - ACQuire?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

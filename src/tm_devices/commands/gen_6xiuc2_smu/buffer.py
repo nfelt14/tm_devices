@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - buffer.clearstats()
     - buffer.delete()
     - buffer.getstats()
@@ -19,6 +19,7 @@ Attributes and Functions:
     - buffer.saveappend()
     - buffer.write.format()
     - buffer.write.reading()
+    ```
 """
 
 from typing import Any, Dict, Optional, TYPE_CHECKING

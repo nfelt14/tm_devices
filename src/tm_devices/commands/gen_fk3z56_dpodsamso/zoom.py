@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - ZOOm {RESET|RESETLive}
     - ZOOm:GRAticule:SIZE {50|80|100}
     - ZOOm:GRAticule:SIZE?
@@ -97,6 +97,7 @@ Commands and Queries:
     - ZOOm:ZOOM1:STATE?
     - ZOOm:ZOOM1?
     - ZOOm?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

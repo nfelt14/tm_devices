@@ -9,11 +9,11 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
-    - FPAnel:PRESS {AUTOset| BUS| CH1<x>| CLEAR| DEFaultsetup| FORCetrig| GPKNOB1| GPKNOB2| HORZPOS|
-      MATh| REF| RUNSTop| SETTO50| SINGleseq| TOUCHSCReen| TRIGMode| USER| VERTPOS| VERTSCALE}
+    ```
+    - FPAnel:PRESS {AUTOset| BUS| CH1<x>| CLEAR| DEFaultsetup| FORCetrig| GPKNOB1| GPKNOB2| HORZPOS| MATh| REF| RUNSTop| SETTO50| SINGleseq| TOUCHSCReen| TRIGMode| USER| VERTPOS| VERTSCALE}
     - FPAnel:TURN {GPKNOB1| GPKNOB2| HORZPOS| HORZScale| TRIGLevel| VERTPOS| VERTSCALE} [,<NR1>]
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Optional, TYPE_CHECKING
 

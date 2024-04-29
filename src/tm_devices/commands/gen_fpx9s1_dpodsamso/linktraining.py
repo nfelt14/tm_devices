@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - LINKTRaining:ACQTime <NR1>
     - LINKTRaining:ACQTime?
     - LINKTRaining:ARMscope <OFF | ON>
@@ -22,6 +22,7 @@ Commands and Queries:
     - LINKTRaining:LANE?
     - LINKTRaining:MARK <FRAme | CONtrol | TRAining>
     - LINKTRaining:SETUP <SAVe |RESTore>
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

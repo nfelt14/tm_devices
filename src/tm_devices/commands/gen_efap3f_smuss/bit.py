@@ -11,7 +11,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - bit.bitand()
     - bit.bitor()
     - bit.bitxor()
@@ -22,6 +22,7 @@ Attributes and Functions:
     - bit.setfield()
     - bit.test()
     - bit.toggle()
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

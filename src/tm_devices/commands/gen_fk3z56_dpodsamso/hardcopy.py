@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - HARDCopy STARt
     - HARDCopy:FILEName <file path>
     - HARDCopy:FILEName?
@@ -24,6 +24,7 @@ Commands and Queries:
     - HARDCopy:VIEW {FULLSCREEN|GRAticule|FULLNOmenu}
     - HARDCopy:VIEW?
     - HARDCopy?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

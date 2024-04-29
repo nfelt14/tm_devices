@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DISplay:CLOCk {DATEOnly|TIMEOnly|DATETIME|NONe|ON|OFF|<NR1>}
     - DISplay:CLOCk?
     - DISplay:DIGital:HEIght {SMAll|MEDium|LARge}
@@ -32,6 +32,7 @@ Commands and Queries:
     - DISplay:STYle:DOTsonly {ON|OFF|<NR1>}
     - DISplay:STYle:DOTsonly?
     - DISplay?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

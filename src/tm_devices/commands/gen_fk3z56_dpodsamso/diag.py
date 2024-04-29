@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DIAg:CONTROL:HALT {<NR1>|ON|OFF}
     - DIAg:CONTROL:HALT?
     - DIAg:CONTROL:LOOP {<NR1>|ON|OFF}
@@ -44,6 +44,7 @@ Commands and Queries:
     - DIAg:STATE {<NR1>|EXECUTE|ON|OFF}
     - DIAg:STATE?
     - DIAg:STOP
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

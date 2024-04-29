@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - BUS:B<x>:ARINC429A:BITRate {LOW|HI|<NR1>}
     - BUS:B<x>:ARINC429A:BITRate?
     - BUS:B<x>:ARINC429A:DATA:FORMAT {DATA|SDIDATA|SDIDATASSM}
@@ -223,6 +223,7 @@ Commands and Queries:
     - BUS:UPPerthreshold:REF<x> {<NR3>|ECL|TTL}
     - BUS:UPPerthreshold:REF<x>?
     - BUS?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

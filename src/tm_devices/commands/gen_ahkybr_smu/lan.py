@@ -11,7 +11,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - lan.applysettings()
     - lan.autoconnect
     - lan.config.dns.address[N]
@@ -55,6 +55,7 @@ Attributes and Functions:
     - lan.trigger[N].pseudostate
     - lan.trigger[N].stimulus
     - lan.trigger[N].wait()
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING, Union

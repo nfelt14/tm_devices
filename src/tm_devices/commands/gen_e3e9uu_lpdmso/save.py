@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SAVe:EVENTtable:BUS <QString>
     - SAVe:EVENTtable:CUSTom <QString>
     - SAVe:EVENTtable:CUSTom:COMMents <Qstring>
@@ -35,15 +35,14 @@ Commands and Queries:
     - SAVe:SETUp <QString>
     - SAVe:SETUp:INCLUDEREFs {OFF|ON|0|1}
     - SAVe:SETUp:INCLUDEREFs?
-    - SAVe:WAVEform {CH<x>[_DALL|_SV_NORMal|_SV_AVErage|_SV_MAXHold|
-      _SV_MINHold|_MAG_VS_TIME|_FREQ_VS_TIME| _PHASE_VS_TIME| _SV_BASEBAND_IQ]|MATH<x>|REF<x>|ALL|
-      },<QString>
+    - SAVe:WAVEform {CH<x>[_DALL|_SV_NORMal|_SV_AVErage|_SV_MAXHold| _SV_MINHold|_MAG_VS_TIME|_FREQ_VS_TIME| _PHASE_VS_TIME| _SV_BASEBAND_IQ]|MATH<x>|REF<x>|ALL| },<QString>
     - SAVe:WAVEform:GATing {NONe|CURSors|SCREEN|RESAMPLE|SELected}
     - SAVe:WAVEform:GATing:RESAMPLErate <NR1>
     - SAVe:WAVEform:GATing:RESAMPLErate?
     - SAVe:WAVEform:GATing?
     - SAVe:WAVEform:SOURCELIst?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Optional, TYPE_CHECKING
 

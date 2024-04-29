@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - REF:ADDNew <QString>
     - REF:DELete <QString>
     - REF:LIST?
@@ -68,6 +68,7 @@ Commands and Queries:
     - REF<x>_DALL:LABel:XPOS?
     - REF<x>_DALL:LABel:YPOS <NR3>
     - REF<x>_DALL:LABel:YPOS?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

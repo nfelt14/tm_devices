@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - smu.breakdownprotection
     - smu.interlock.enable
     - smu.interlock.tripped
@@ -92,6 +92,7 @@ Attributes and Functions:
     - smu.source.vlimit.level
     - smu.source.vlimit.tripped
     - smu.terminals
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING, Union

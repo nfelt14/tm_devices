@@ -8,10 +8,11 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - ROSc:SOUrce {INTERnal|EXTernal}
     - ROSc:SOUrce?
     - ROSc:STATE?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

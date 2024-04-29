@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DATA:CATalog?
     - DATA:COPY <trace_name>,{EMEMory[1]|EMEMory2}{EMEMory[1]|EMEMory2},{USER[1]|USER<x>}
     - DATA:DATA {EMEMory|EMEMory1|EMEMory2},<binary_block_data>?{EMEMory[1]|EMEMory2}
@@ -19,9 +19,9 @@ Commands and Queries:
     - DATA:DELete:NAME <trace_name>
     - DATA:EMEMCOPY {EMEMory[1]|EMEMory2}, {EMEMory[1]|EMEMory2}
     - DATA:LOCK:STATe {USER[1]|USER2|USER3|USER4},{ON|OFF|<NR1>}?{USER[1]|USER2|USER3|USER4}
-    - DATA:POINts
-      {EMEMory|EMEMory1|EMEMory2}[,<points>|MINimum|MAXimum]?{EMEMory[1]|EMEMory2}{,MIN|MAX}
-"""
+    - DATA:POINts {EMEMory|EMEMory1|EMEMory2}[,<points>|MINimum|MAXimum]?{EMEMory[1]|EMEMory2}{,MIN|MAX}
+    ```
+"""  # noqa: E501
 
 from typing import Optional, TYPE_CHECKING
 

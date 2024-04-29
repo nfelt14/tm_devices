@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - FILESystem:COPy {<source_file_path>,<destination_file_path>}
     - FILESystem:CWD {<new_working_directory_path>}
     - FILESystem:CWD?
@@ -29,6 +29,7 @@ Commands and Queries:
     - FILESystem:UNMOUNT:TEKDrive <QString>
     - FILESystem:WRITEFile <file_path>,<data>
     - FILESystem?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

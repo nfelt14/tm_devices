@@ -10,12 +10,13 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - digio.line[N].mode
     - digio.line[N].reset()
     - digio.line[N].state
     - digio.readport()
     - digio.writeport()
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING, Union

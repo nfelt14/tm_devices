@@ -8,13 +8,14 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - PLOT:ADDNew <QString>
     - PLOT:DELete <QString>
     - PLOT:LIST?
     - PLOT:PLOT<x>:SOUrce1 MEAS<x>
     - PLOT:PLOT<x>:SOUrce1?
     - PLOT:PLOT<x>:TYPe {NONE|XY}
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

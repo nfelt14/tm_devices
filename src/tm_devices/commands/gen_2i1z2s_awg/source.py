@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SOURce:FREQuency <frequency>
     - SOURce:FREQuency?
     - SOURce:IQIMode {I2X|I4X}
@@ -63,6 +63,7 @@ Commands and Queries:
     - SOURce[n]:VOLTage:LEVel:IMMediate:OFFSet?
     - SOURce[n]:WAVeform <wfm_name>
     - SOURce[n]:WAVeform?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

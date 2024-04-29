@@ -9,8 +9,9 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - *SDS <NR1>
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

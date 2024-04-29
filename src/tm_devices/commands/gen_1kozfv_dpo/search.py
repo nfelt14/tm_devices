@@ -9,24 +9,21 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SEARCH:SEARCH<x>:COPy {SEARCHtotrigger|TRIGgertosearch}
     - SEARCH:SEARCH<x>:LIST?
     - SEARCH:SEARCH<x>:STATE {<NR1>|OFF|ON}
     - SEARCH:SEARCH<x>:STATE?
     - SEARCH:SEARCH<x>:TOTal?
-    - SEARCH:SEARCH<x>:TRIG:A:BUS:B<x>:MIL1553B:COMMAND:ADDR:QUAL {LESSthan|MOREthan|EQual
-      |UNEQual|LESSEQual|MOREEQual|INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIG:A:BUS:B<x>:MIL1553B:COMMAND:ADDR:QUAL {LESSthan|MOREthan|EQual |UNEQual|LESSEQual|MOREEQual|INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIG:A:BUS:B<x>:MIL1553B:COMMAND:ADDR:QUAL?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:ARINC429A:CONDition
-      {STARt|END|LABel|DATA|LABELANDDATA|ERRor}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:ARINC429A:CONDition {STARt|END|LABel|DATA|LABELANDDATA|ERRor}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:ARINC429A:CONDition?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:ARINC429A:ERRTYPE {ANY|GAP|WORD|PARity}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:ARINC429A:ERRTYPE?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:ARINC429A:LABel:HIVALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:ARINC429A:LABel:HIVALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:ARINC429A:LABel:QUALifier
-      {LESSthan|MOREthan|Equal|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:ARINC429A:LABel:QUALifier {LESSthan|MOREthan|Equal|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:ARINC429A:LABel:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:ARINC429A:LABel:VALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:ARINC429A:LABel:VALue?
@@ -40,8 +37,7 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:AUDio:DATa:HIVALue?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:AUDio:DATa:OFFSet <NR1>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:AUDio:DATa:OFFSet?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:AUDio:DATa:QUALifier
-      {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual |INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:AUDio:DATa:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual |INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:AUDio:DATa:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:AUDio:DATa:VALue <String>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:AUDio:DATa:VALue?
@@ -51,15 +47,13 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:CAN:ADDRess:MODe?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:CAN:ADDRess:VALue <bin>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:CAN:ADDRess:VALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:CAN:CONDition
-      {SOF|FRAMEtype|IDentifier|DATA|IDANDDATA|EOF|ACKMISS|ERROR|FORMERRor|ANYERRor|FDBRS|FDESI}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:CAN:CONDition {SOF|FRAMEtype|IDentifier|DATA|IDANDDATA|EOF|ACKMISS|ERROR|FORMERRor|ANYERRor|FDBRS|FDESI}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:CAN:CONDition?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:CAN:DATa:DIRection {READ|WRITE|NOCARE}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:CAN:DATa:DIRection?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:CAN:DATa:OFFSet <NR1>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:CAN:DATa:OFFSet?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:CAN:DATa:QUALifier
-      {LESSthan|MOREthan|EQual|UNEQual|LESSEQual}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:CAN:DATa:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:CAN:DATa:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:CAN:DATa:SIZe <NR1>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:CAN:DATa:SIZe?
@@ -79,13 +73,11 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:ETHERnet:DATa:VALue?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:ETHERnet:FRAMETYPe {BASic|QTAG}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:ETHERnet:FRAMETYPe?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:CONDition
-      {SOF|FRAMETypeid|CYCLEcount|HEADer|DATA|IDANDDATA|EOF|ERROR}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:CONDition {SOF|FRAMETypeid|CYCLEcount|HEADer|DATA|IDANDDATA|EOF|ERROR}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:CONDition?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:HIVALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:HIVALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:QUALifier
-      {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual |INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual |INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:VALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:VALue?
@@ -93,8 +85,7 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:DATa:HIVALue?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:DATa:OFFSet <NR1>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:DATa:OFFSet?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:DATa:QUALifier
-      {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:DATa:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:DATa:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:DATa:SIZe <NR1>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:DATa:SIZe?
@@ -102,13 +93,11 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:DATa:VALue?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:EOFTYPE {STATic|DYNAMic|ANY}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:EOFTYPE?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:ERRTYPE
-      {CRCHeader|CRCTrailer|SYNCFrame|STARTupnosync|NULLFRStatic| NULLFRDynamic}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:ERRTYPE {CRCHeader|CRCTrailer|SYNCFrame|STARTupnosync|NULLFRStatic| NULLFRDynamic}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:ERRTYPE?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:HIVALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:HIVALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:QUALifier
-      {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:VALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:VALue?
@@ -126,13 +115,11 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:FLEXray:HEADER:PAYLength?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:I2C:ADDRess:MODe {ADDR7|ADDR10}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:I2C:ADDRess:MODe?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:I2C:ADDRess:TYPe
-      {GENeralcall|STARtbyte|HSmode|EEPROM|USER}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:I2C:ADDRess:TYPe {GENeralcall|STARtbyte|HSmode|EEPROM|USER}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:I2C:ADDRess:TYPe?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:I2C:ADDRess:VALue <bin>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:I2C:ADDRess:VALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:I2C:CONDition
-      {STARt|STOP|REPEATstart|ACKMISS|ADDRess|DATA|ADDRANDDATA}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:I2C:CONDition {STARt|STOP|REPEATstart|ACKMISS|ADDRess|DATA|ADDRANDDATA}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:I2C:CONDition?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:I2C:DATa:DIRection {READ|WRITE|NOCARE}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:I2C:DATa:DIRection?
@@ -140,20 +127,17 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:I2C:DATa:SIZe?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:I2C:DATa:VALue <bin>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:I2C:DATa:VALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:LIN:CONDition
-      {SYNCField|IDentifier|DATA|IDANDDATA|WAKEup|SLEEP|ERROR}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:LIN:CONDition {SYNCField|IDentifier|DATA|IDANDDATA|WAKEup|SLEEP|ERROR}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:LIN:CONDition?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier
-      {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:LIN:DATa:SIZe <NR1>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:LIN:DATa:SIZe?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:LIN:DATa:VALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:LIN:DATa:VALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:LIN:ERRTYPE
-      {SYNC|PARity|CHecksum|HEADertime|RESPtime|FRAMetime}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:LIN:ERRTYPE {SYNC|PARity|CHecksum|HEADertime|RESPtime|FRAMetime}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:LIN:ERRTYPE?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:LIN:IDentifier:VALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:LIN:IDentifier:VALue?
@@ -179,8 +163,7 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:MIL1553B:ERRTYPE?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:MIL1553B:STATus:ADDRess:HIVALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:MIL1553B:STATus:ADDRess:HIVALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:MIL1553B:STATus:ADDRess:QUALifier
-      {LESSthan|MOREthan|EQual|UNEQual|LESSEQual| MOREEQual|INrange| OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:MIL1553B:STATus:ADDRess:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual| MOREEQual|INrange| OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:MIL1553B:STATus:ADDRess:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:MIL1553B:STATus:ADDRess:VALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:MIL1553B:STATus:ADDRess:VALue?
@@ -206,13 +189,11 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:MIL1553B:TIMe:LESSLimit?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:MIL1553B:TIMe:MORELimit <NR3>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:MIL1553B:TIMe:MORELimit?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:MIL1553B:TIMe:QUALifier
-      {LESSthan|MOREthan|INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:MIL1553B:TIMe:QUALifier {LESSthan|MOREthan|INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:MIL1553B:TIMe:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:PARallel:VALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:PARallel:VALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:RS232C:CONDition
-      {RXSTArt|RXDATA|RXENDPacket|TXSTArt|TXDATA|TXENDPacket}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:RS232C:CONDition {RXSTArt|RXDATA|RXENDPacket|TXSTArt|TXDATA|TXENDPacket}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:RS232C:CONDition?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:RS232C:RX:DATa:SIZe
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:RS232C:RX:DATa:SIZe?
@@ -238,8 +219,7 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:ADDRess:HIVALue?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:ADDRess:VALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:ADDRess:VALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:CONDition
-      {SYNC|RESET|SUSPEND|RESUME|EOP|TOKENPacket|DATAPacket |HANDSHAKEPacket|SPECIALPacket|ERRor}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:CONDition {SYNC|RESET|SUSPEND|RESUME|EOP|TOKENPacket|DATAPacket |HANDSHAKEPacket|SPECIALPacket|ERRor}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:CONDition?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:DATa:HIVALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:DATa:HIVALue?
@@ -257,15 +237,13 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:ERRTYPE?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:HANDSHAKEType {ANY|NAK|ACK|STALL}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:HANDSHAKEType?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual
-      |MOREEQual|INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual |MOREEQual|INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:SOFFRAMENUMber <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:SOFFRAMENUMber?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:SPECIALType {ANY|PREamble|RESERVed}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:SPECIALType?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:SPLit:ET:VALue
-      {NOCARE|CONTRol|ISOchronous|BULK|INTERRUPT}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:SPLit:ET:VALue {NOCARE|CONTRol|ISOchronous|BULK|INTERRUPT}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:SPLit:ET:VALue?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:SPLit:HUB:VALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:SPLit:HUB:VALue?
@@ -273,8 +251,7 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:SPLit:PORT:VALue?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:SPLit:SC:VALue {NOCARE|SSPLIT|CSPLIT}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:SPLit:SC:VALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:SPLit:SE:VALue
-      {NOCARE|FULLSPeed|LOWSPeed|ISOSTART|ISOMID|ISOEND|ISOALL}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:SPLit:SE:VALue {NOCARE|FULLSPeed|LOWSPeed|ISOSTART|ISOMID|ISOEND|ISOALL}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:SPLit:SE:VALue?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:TOKENType {ANY|SOF|OUT|IN|SETUP}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:B<x>:USB:TOKENType?
@@ -283,8 +260,7 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS?
     - SEARCH:SEARCH<x>:TRIGger:A:EDGE:SLOpe {RISe|FALL|EITHer}
     - SEARCH:SEARCH<x>:TRIGger:A:EDGE:SLOpe?
-    - SEARCH:SEARCH<x>:TRIGger:A:EDGE:SOUrce {CH<x>|MATH|REF<x>|D<x>|RF_AMPlitude|
-      RF_FREQuency|RF_PHASe}
+    - SEARCH:SEARCH<x>:TRIGger:A:EDGE:SOUrce {CH<x>|MATH|REF<x>|D<x>|RF_AMPlitude| RF_FREQuency|RF_PHASe}
     - SEARCH:SEARCH<x>:TRIGger:A:EDGE:SOUrce?
     - SEARCH:SEARCH<x>:TRIGger:A:LEVel:CH<x> {<NR3>|ECL|TTL}
     - SEARCH:SEARCH<x>:TRIGger:A:LEVel:CH<x>?
@@ -304,8 +280,7 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPut:CH<x>?
     - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPut:CLOCk:EDGE {FALL|RISe}
     - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPut:CLOCk:EDGE?
-    - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPut:CLOCk:SOUrce {CH<x>|MATH|REF|NONe|D<x>|RF_AMPlitude|
-      RF_FREQuency|RF_PHASe}
+    - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPut:CLOCk:SOUrce {CH<x>|MATH|REF|NONe|D<x>|RF_AMPlitude| RF_FREQuency|RF_PHASe}
     - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPut:CLOCk:SOUrce?
     - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPut:D<x> {HIGH|LOW|X}
     - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPut:D<x>?
@@ -343,8 +318,7 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOWLimit?
     - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:POLarity {NEGative|POSitive}
     - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:POLarity?
-    - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce {CH<x>|MATH|REF<x>|D<x>|RF_AMPlitude|
-      RF_FREQuency|RF_PHASe}
+    - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce {CH<x>|MATH|REF<x>|D<x>|RF_AMPlitude| RF_FREQuency|RF_PHASe}
     - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce?
     - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:WHEn {LESSthan|MOREthan|EQual|UNEQual|WIThin|OUTside}
     - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:WHEn?
@@ -354,8 +328,7 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:RISEFall:DELTatime?
     - SEARCH:SEARCH<x>:TRIGger:A:RISEFall:POLarity {EITher|NEGative|POSitive}
     - SEARCH:SEARCH<x>:TRIGger:A:RISEFall:POLarity?
-    - SEARCH:SEARCH<x>:TRIGger:A:RISEFall:SOUrce {CH<x>|MATH|REF<x>|RF_AMPlitude|
-      RF_FREQuency|RF_PHASe}
+    - SEARCH:SEARCH<x>:TRIGger:A:RISEFall:SOUrce {CH<x>|MATH|REF<x>|RF_AMPlitude| RF_FREQuency|RF_PHASe}
     - SEARCH:SEARCH<x>:TRIGger:A:RISEFall:SOUrce?
     - SEARCH:SEARCH<x>:TRIGger:A:RISEFall:WHEn {SLOWer|FASTer|EQual|UNEQual}
     - SEARCH:SEARCH<x>:TRIGger:A:RISEFall:WHEn?
@@ -369,13 +342,11 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:RUNT:WIDth?
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:EDGE {FALL|RISe}
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:EDGE?
-    - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce
-      {CH<x>|MATH|REF1|REF3|REF3|REF4|D<x>|RF_AMPlitude| RF_FREQuency|RF_PHASe}
+    - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce {CH<x>|MATH|REF1|REF3|REF3|REF4|D<x>|RF_AMPlitude| RF_FREQuency|RF_PHASe}
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce?
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:THReshold {<NR3>|TTL|ECL}
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:THReshold?
-    - SEARCH:SEARCH<x>:TRIGger:A:SETHold:DATa:SOUrce
-      {CH<x>|MATH|REF<x>|D<x>|RF_AMPlitude|RF_FREQuency|RF_PHASe}
+    - SEARCH:SEARCH<x>:TRIGger:A:SETHold:DATa:SOUrce {CH<x>|MATH|REF<x>|D<x>|RF_AMPlitude|RF_FREQuency|RF_PHASe}
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:DATa:SOUrce?
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:DATa:THReshold {<NR3>|TTL}
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:DATa:THReshold?
@@ -391,8 +362,7 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:THReshold:REF<x>?
     - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:POLarity {STAYSHigh|STAYSLow|EITher}
     - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:POLarity?
-    - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:SOUrce {CH<x>|MATH|REF<x>|D0|D1|D2|D3|
-      D4|D5|D6|D7|D8|D9|D10|D11|D12|D13|D14|D15| RF_AMPlitude|RF_FREQuency|RF_PHASe}
+    - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:SOUrce {CH<x>|MATH|REF<x>|D0|D1|D2|D3| D4|D5|D6|D7|D8|D9|D10|D11|D12|D13|D14|D15| RF_AMPlitude|RF_FREQuency|RF_PHASe}
     - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:SOUrce?
     - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:TIMe <NR3>
     - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:TIMe?
@@ -400,13 +370,11 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:TRANsition:DELTatime?
     - SEARCH:SEARCH<x>:TRIGger:A:TRANsition:POLarity {EITher|NEGative|POSitive}
     - SEARCH:SEARCH<x>:TRIGger:A:TRANsition:POLarity?
-    - SEARCH:SEARCH<x>:TRIGger:A:TRANsition:SOUrce {CH<x>|MATH|REF<x>|RF_AMPlitude|
-      RF_FREQuency|RF_PHASe}
+    - SEARCH:SEARCH<x>:TRIGger:A:TRANsition:SOUrce {CH<x>|MATH|REF<x>|RF_AMPlitude| RF_FREQuency|RF_PHASe}
     - SEARCH:SEARCH<x>:TRIGger:A:TRANsition:SOUrce?
     - SEARCH:SEARCH<x>:TRIGger:A:TRANsition:WHEn {SLOWer|FASTer|EQual|UNEQual}
     - SEARCH:SEARCH<x>:TRIGger:A:TRANsition:WHEn?
-    - SEARCH:SEARCH<x>:TRIGger:A:TYPe {EDGe|PULSEWidth|SETHold|RUNt|TRANsition|LOGIc|TIMEOut|BUS
-      (with the appropriate application module installed)}
+    - SEARCH:SEARCH<x>:TRIGger:A:TYPe {EDGe|PULSEWidth|SETHold|RUNt|TRANsition|LOGIc|TIMEOut|BUS (with the appropriate application module installed)}
     - SEARCH:SEARCH<x>:TRIGger:A:TYPe?
     - SEARCH:SEARCH<x>:TRIGger:A:UPPerthreshold:CH<x> {TTL}
     - SEARCH:SEARCH<x>:TRIGger:A:UPPerthreshold:CH<x>?
@@ -415,7 +383,8 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:UPPerthreshold:REF<x> {TTL}
     - SEARCH:SEARCH<x>:TRIGger:A:UPPerthreshold:REF<x>?
     - SEARCH?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

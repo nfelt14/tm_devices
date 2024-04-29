@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - TRIGger FORCe
     - TRIGger:A SETLevel
     - TRIGger:A:BANDWidth:RF:HIGH?
@@ -19,8 +19,7 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:ARINC429A:CONDition?
     - TRIGger:A:BUS:B<x>:ARINC429A:DATA:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:ARINC429A:DATA:HIVALue?
-    - TRIGger:A:BUS:B<x>:ARINC429A:DATA:QUALifier
-      {LESSthan|MOREthan|Equal|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:ARINC429A:DATA:QUALifier {LESSthan|MOREthan|Equal|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:ARINC429A:DATA:QUALifier?
     - TRIGger:A:BUS:B<x>:ARINC429A:DATA:VALue <QString>
     - TRIGger:A:BUS:B<x>:ARINC429A:DATA:VALue?
@@ -28,8 +27,7 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:ARINC429A:ERRTYPE?
     - TRIGger:A:BUS:B<x>:ARINC429A:LABel:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:ARINC429A:LABel:HIVALue?
-    - TRIGger:A:BUS:B<x>:ARINC429A:LABel:QUALifier
-      {LESSthan|MOREthan|Equal|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:ARINC429A:LABel:QUALifier {LESSthan|MOREthan|Equal|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:ARINC429A:LABel:QUALifier?
     - TRIGger:A:BUS:B<x>:ARINC429A:LABel:VALue <QString>
     - TRIGger:A:BUS:B<x>:ARINC429A:LABel:VALue?
@@ -43,8 +41,7 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:AUDio:DATa:HIVALue?
     - TRIGger:A:BUS:B<x>:AUDio:DATa:OFFSet <NR1>
     - TRIGger:A:BUS:B<x>:AUDio:DATa:OFFSet?
-    - TRIGger:A:BUS:B<x>:AUDio:DATa:QUALifier
-      {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual|INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:AUDio:DATa:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual|INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:AUDio:DATa:QUALifier?
     - TRIGger:A:BUS:B<x>:AUDio:DATa:VALue <String>
     - TRIGger:A:BUS:B<x>:AUDio:DATa:VALue?
@@ -54,8 +51,7 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:CAN:ADDRess:MODe?
     - TRIGger:A:BUS:B<x>:CAN:ADDRess:VALue <QString>
     - TRIGger:A:BUS:B<x>:CAN:ADDRess:VALue?
-    - TRIGger:A:BUS:B<x>:CAN:CONDition
-      {SOF|FRAMEtype|IDentifier|DATA|IDANDDATA|EOF|ACKMISS|ERROR|FORMERRor|ANYERRor|FDBRS|FDESI}
+    - TRIGger:A:BUS:B<x>:CAN:CONDition {SOF|FRAMEtype|IDentifier|DATA|IDANDDATA|EOF|ACKMISS|ERROR|FORMERRor|ANYERRor|FDBRS|FDESI}
     - TRIGger:A:BUS:B<x>:CAN:CONDition?
     - TRIGger:A:BUS:B<x>:CAN:DATa:DIRection {READ|WRITE|NOCARE}
     - TRIGger:A:BUS:B<x>:CAN:DATa:DIRection?
@@ -77,8 +73,7 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:CAN:IDentifier:MODe?
     - TRIGger:A:BUS:B<x>:CAN:IDentifier:VALue <QString>
     - TRIGger:A:BUS:B<x>:CAN:IDentifier:VALue?
-    - TRIGger:A:BUS:B<x>:ETHERnet:CONDition
-      {SFD|MACADDRess|MACLENgth|IPHeader|TCPHeader|DATa|EOP|IDLe |FCSError|QTAG}
+    - TRIGger:A:BUS:B<x>:ETHERnet:CONDition {SFD|MACADDRess|MACLENgth|IPHeader|TCPHeader|DATa|EOP|IDLe |FCSError|QTAG}
     - TRIGger:A:BUS:B<x>:ETHERnet:CONDition?
     - TRIGger:A:BUS:B<x>:ETHERnet:DATa:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:ETHERnet:DATa:HIVALue?
@@ -110,8 +105,7 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:ETHERnet:MAC:TYPe:VALue?
     - TRIGger:A:BUS:B<x>:ETHERnet:QTAG:VALue <QString>
     - TRIGger:A:BUS:B<x>:ETHERnet:QTAG:VALue?
-    - TRIGger:A:BUS:B<x>:ETHERnet:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual
-      |INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:ETHERnet:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual |INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:ETHERnet:QUALifier?
     - TRIGger:A:BUS:B<x>:ETHERnet:TCPHeader:ACKnum:VALue <QString>
     - TRIGger:A:BUS:B<x>:ETHERnet:TCPHeader:ACKnum:VALue?
@@ -121,13 +115,11 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:ETHERnet:TCPHeader:SEQnum:VALue?
     - TRIGger:A:BUS:B<x>:ETHERnet:TCPHeader:SOUrceport:VALue <QString>
     - TRIGger:A:BUS:B<x>:ETHERnet:TCPHeader:SOUrceport:VALue?
-    - TRIGger:A:BUS:B<x>:FLEXray:CONDition
-      {SOF|FRAMEType|IDentifier|CYCLEcount|HEADer|DATA|IDANDDATA|EOF|ERROR}
+    - TRIGger:A:BUS:B<x>:FLEXray:CONDition {SOF|FRAMEType|IDentifier|CYCLEcount|HEADer|DATA|IDANDDATA|EOF|ERROR}
     - TRIGger:A:BUS:B<x>:FLEXray:CONDition?
     - TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:HIVALue?
-    - TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:QUALifier
-      {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:QUALifier?
     - TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:VALue <QString>
     - TRIGger:A:BUS:B<x>:FLEXray:CYCLEcount:VALue?
@@ -135,8 +127,7 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:FLEXray:DATa:HIVALue?
     - TRIGger:A:BUS:B<x>:FLEXray:DATa:OFFSet <NR1>
     - TRIGger:A:BUS:B<x>:FLEXray:DATa:OFFSet?
-    - TRIGger:A:BUS:B<x>:FLEXray:DATa:QUALifier
-      {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:FLEXray:DATa:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:FLEXray:DATa:QUALifier?
     - TRIGger:A:BUS:B<x>:FLEXray:DATa:SIZe <NR1>
     - TRIGger:A:BUS:B<x>:FLEXray:DATa:SIZe?
@@ -144,13 +135,11 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:FLEXray:DATa:VALue?
     - TRIGger:A:BUS:B<x>:FLEXray:EOFTYPE {STATic|DYNAMic|ANY}
     - TRIGger:A:BUS:B<x>:FLEXray:EOFTYPE?
-    - TRIGger:A:BUS:B<x>:FLEXray:ERRTYPE {CRCHeader|CRCTrailer|SYNCFrame|STARTupnosync|NULLFRStatic|
-      NULLFRDynamic}
+    - TRIGger:A:BUS:B<x>:FLEXray:ERRTYPE {CRCHeader|CRCTrailer|SYNCFrame|STARTupnosync|NULLFRStatic| NULLFRDynamic}
     - TRIGger:A:BUS:B<x>:FLEXray:ERRTYPE?
     - TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:HIVALue?
-    - TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:QUALifier
-      {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:QUALifier?
     - TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:VALue <QString>
     - TRIGger:A:BUS:B<x>:FLEXray:FRAMEID:VALue?
@@ -184,8 +173,7 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:LIN:CONDition?
     - TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue?
-    - TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual|
-      INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier?
     - TRIGger:A:BUS:B<x>:LIN:DATa:SIZe <NR1>
     - TRIGger:A:BUS:B<x>:LIN:DATa:SIZe?
@@ -197,8 +185,7 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:LIN:IDentifier:VALue?
     - TRIGger:A:BUS:B<x>:MIL1553B:COMMAND:ADDRess:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:MIL1553B:COMMAND:ADDRess:HIVALue?
-    - TRIGger:A:BUS:B<x>:MIL1553B:COMMAND:ADDRess:QUALifier
-      {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual|INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:MIL1553B:COMMAND:ADDRess:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual|INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:MIL1553B:COMMAND:ADDRess:QUALifier?
     - TRIGger:A:BUS:B<x>:MIL1553B:COMMAND:ADDRess:VALue <QString>
     - TRIGger:A:BUS:B<x>:MIL1553B:COMMAND:ADDRess:VALue?
@@ -220,8 +207,7 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:MIL1553B:ERRTYPE?
     - TRIGger:A:BUS:B<x>:MIL1553B:STATus:ADDRess:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:MIL1553B:STATus:ADDRess:HIVALue?
-    - TRIGger:A:BUS:B<x>:MIL1553B:STATus:ADDRess:QUALifier
-      {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:MIL1553B:STATus:ADDRess:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:MIL1553B:STATus:ADDRess:QUALifier?
     - TRIGger:A:BUS:B<x>:MIL1553B:STATus:ADDRess:VALue <QString>
     - TRIGger:A:BUS:B<x>:MIL1553B:STATus:ADDRess:VALue?
@@ -277,8 +263,7 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:USB:ADDRess:HIVALue?
     - TRIGger:A:BUS:B<x>:USB:ADDRess:VALue <Qstring>
     - TRIGger:A:BUS:B<x>:USB:ADDRess:VALue?
-    - TRIGger:A:BUS:B<x>:USB:CONDition {SYNC|RESET|SUSPEND|RESUME|EOP|TOKENPacket|DATAPacket
-      |HANDSHAKEPacket|SPECIALPacket|ERRor}
+    - TRIGger:A:BUS:B<x>:USB:CONDition {SYNC|RESET|SUSPEND|RESUME|EOP|TOKENPacket|DATAPacket |HANDSHAKEPacket|SPECIALPacket|ERRor}
     - TRIGger:A:BUS:B<x>:USB:CONDition?
     - TRIGger:A:BUS:B<x>:USB:DATa:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:USB:DATa:HIVALue?
@@ -296,8 +281,7 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:USB:ERRTYPE?
     - TRIGger:A:BUS:B<x>:USB:HANDSHAKEType {ANY|NAK|ACK|STALL}
     - TRIGger:A:BUS:B<x>:USB:HANDSHAKEType?
-    - TRIGger:A:BUS:B<x>:USB:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual
-      |MOREEQual|INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:USB:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual |MOREEQual|INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:USB:QUALifier?
     - TRIGger:A:BUS:B<x>:USB:SOFFRAMENUMber <QString>
     - TRIGger:A:BUS:B<x>:USB:SOFFRAMENUMber?
@@ -311,8 +295,7 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:USB:SPLit:PORT:VALue?
     - TRIGger:A:BUS:B<x>:USB:SPLit:SC:VALue {NOCARE|SSPLIT|CSPLIT}
     - TRIGger:A:BUS:B<x>:USB:SPLit:SC:VALue?
-    - TRIGger:A:BUS:B<x>:USB:SPLit:SE:VALue
-      {NOCARE|FULLSPeed|LOWSPeed|ISOSTART|ISOMID|ISOEND|ISOALL}
+    - TRIGger:A:BUS:B<x>:USB:SPLit:SE:VALue {NOCARE|FULLSPeed|LOWSPeed|ISOSTART|ISOMID|ISOEND|ISOALL}
     - TRIGger:A:BUS:B<x>:USB:SPLit:SE:VALue?
     - TRIGger:A:BUS:B<x>:USB:TOKENType {ANY|SOF|OUT|IN|SETUP}
     - TRIGger:A:BUS:B<x>:USB:TOKENType?
@@ -466,9 +449,7 @@ Commands and Queries:
     - TRIGger:A:VIDeo:POLarity?
     - TRIGger:A:VIDeo:SOUrce {CH<x>}
     - TRIGger:A:VIDeo:SOUrce?
-    - TRIGger:A:VIDeo:STANdard {NTSc|PAL|SECAM|BILevelcustom| TRILevelcustom|
-      HD480P60|HD576P50|HD720P30|HD720P50 |HD720P60|HD875I60|HD1080P24|HD1080SF24|HD1080I50
-      |HD1080I60|HD1080P25|HD1080P30|HD1080P50|HD1080P60}
+    - TRIGger:A:VIDeo:STANdard {NTSc|PAL|SECAM|BILevelcustom| TRILevelcustom| HD480P60|HD576P50|HD720P30|HD720P50 |HD720P60|HD875I60|HD1080P24|HD1080SF24|HD1080I50 |HD1080I60|HD1080P25|HD1080P30|HD1080P50|HD1080P60}
     - TRIGger:A:VIDeo:STANdard?
     - TRIGger:A:VIDeo:SYNC {ODD|EVEN|ALLFields|ALLLines|NUMERic}
     - TRIGger:A:VIDeo:SYNC?
@@ -511,7 +492,8 @@ Commands and Queries:
     - TRIGger:FREQuency?
     - TRIGger:STATE?
     - TRIGger?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

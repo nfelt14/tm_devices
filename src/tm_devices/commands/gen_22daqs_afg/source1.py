@@ -9,13 +9,12 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SOURce1:AM:DEPTh {<depth>|MINimum|MAXimum}
     - SOURce1:AM:DEPTh?
     - SOURce1:AM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
     - SOURce1:AM:INTernal:FREQuency?
-    - SOURce1:AM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle|RAMP |NRAMp|PRNoise|
-      USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
+    - SOURce1:AM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle|RAMP |NRAMp|PRNoise| USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
     - SOURce1:AM:INTernal:FUNCtion:EFILe <file_name>
     - SOURce1:AM:INTernal:FUNCtion:EFILe?
     - SOURce1:AM:INTernal:FUNCtion?
@@ -37,8 +36,7 @@ Commands and Queries:
     - SOURce1:FM:DEViation?
     - SOURce1:FM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
     - SOURce1:FM:INTernal:FREQuency?
-    - SOURce1:FM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle| RAMP| NRAMp| PRNoise| USER[1]|
-      USER<x>|EMEMory[1]|EMEMory2|EFILe}
+    - SOURce1:FM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle| RAMP| NRAMp| PRNoise| USER[1]| USER<x>|EMEMory[1]|EMEMory2|EFILe}
     - SOURce1:FM:INTernal:FUNCtion:EFILe <file_name>
     - SOURce1:FM:INTernal:FUNCtion:EFILe?
     - SOURce1:FM:INTernal:FUNCtion?
@@ -73,9 +71,7 @@ Commands and Queries:
     - SOURce1:FUNCtion:EFILe?
     - SOURce1:FUNCtion:RAMP:SYMMetry {<symmetry>|MINimum|MAXimum}
     - SOURce1:FUNCtion:RAMP:SYMMetry?
-    - SOURce1:FUNCtion:SHAPe {SINusoid|SQUare|PULSe|RAMP
-      |PRNoise|DC|SINC|GAUSsian|LORentz|ERISe|EDECay|
-      HAVersine|USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
+    - SOURce1:FUNCtion:SHAPe {SINusoid|SQUare|PULSe|RAMP |PRNoise|DC|SINC|GAUSsian|LORentz|ERISe|EDECay| HAVersine|USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
     - SOURce1:FUNCtion:SHAPe?
     - SOURce1:PHASe:ADJust {<phase>|MINimum|MAXimum}
     - SOURce1:PHASe:ADJust?
@@ -84,8 +80,7 @@ Commands and Queries:
     - SOURce1:PM:DEViation?
     - SOURce1:PM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
     - SOURce1:PM:INTernal:FREQuency?
-    - SOURce1:PM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle| RAMP|NRAMp|PRNoise|
-      USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
+    - SOURce1:PM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle| RAMP|NRAMp|PRNoise| USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
     - SOURce1:PM:INTernal:FUNCtion:EFILe <file_name>
     - SOURce1:PM:INTernal:FUNCtion:EFILe?
     - SOURce1:PM:INTernal:FUNCtion?
@@ -111,8 +106,7 @@ Commands and Queries:
     - SOURce1:PWM:DEViation:DCYCle?
     - SOURce1:PWM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
     - SOURce1:PWM:INTernal:FREQuency?
-    - SOURce1:PWM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle
-      |RAMP|NRAMp|PRNoise|USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
+    - SOURce1:PWM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle |RAMP|NRAMp|PRNoise|USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
     - SOURce1:PWM:INTernal:FUNCtion:EFILe <file_name>
     - SOURce1:PWM:INTernal:FUNCtion:EFILe?
     - SOURce1:PWM:INTernal:FUNCtion?
@@ -146,7 +140,8 @@ Commands and Queries:
     - SOURce1:VOLTage:LIMit:LOW?
     - SOURce1:VOLTage:UNIT {VPP|VRMS|DBM}
     - SOURce1:VOLTage:UNIT?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Optional, TYPE_CHECKING
 

@@ -10,13 +10,14 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - buffer.clearstats()
     - buffer.delete()
     - buffer.make()
     - buffer.save()
     - buffer.saveappend()
     - buffer.write.format()
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

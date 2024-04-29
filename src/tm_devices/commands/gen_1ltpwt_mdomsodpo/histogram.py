@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - HIStogram:BOX <NR3>, <NR3>, <NR3>, <NR3>
     - HIStogram:BOX?
     - HIStogram:BOXPcnt <NR2>, <NR2>, <NR2>, <NR2>
@@ -24,6 +24,7 @@ Commands and Queries:
     - HIStogram:SOUrce?
     - HIStogram:STARt?
     - HIStogram?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

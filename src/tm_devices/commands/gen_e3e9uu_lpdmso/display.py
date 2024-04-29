@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DISplay:CH<x>:INVERTColor COLOR<y>
     - DISplay:CH<x>:INVERTColor?
     - DISplay:CH<x>:NORMALColor COLOR<y>
@@ -384,6 +384,7 @@ Commands and Queries:
     - DISplay:WAVEform {<NR1>|OFF|ON}
     - DISplay:WAVEform?
     - DISplay?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - CH<x>:BANdwidth {<NR3>|FULl}
     - CH<x>:BANdwidth:FILTer:OPTIMIZation {STEPRESPONSE|FLATNESS}
     - CH<x>:BANdwidth:FILTer:OPTIMIZation?
@@ -121,6 +121,7 @@ Commands and Queries:
     - CH<x>_DALL:LABel:FONT:UNDERline?
     - CH<x>_DALL:LABel:NAMe <QString>
     - CH<x>_DALL:LABel:NAMe?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

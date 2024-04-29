@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - status.condition
     - status.measurement.condition
     - status.measurement.enable
@@ -67,6 +67,7 @@ Attributes and Functions:
     - status.system5.event
     - status.system5.ntr
     - status.system5.ptr
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING, Union

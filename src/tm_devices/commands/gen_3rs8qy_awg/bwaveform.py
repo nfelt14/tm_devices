@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - BWAVeform:AMPLitude <amplitude>
     - BWAVeform:AUTO {length|cycle|duration|freqency|sample rate}
     - BWAVeform:AUTO?
@@ -31,6 +31,7 @@ Commands and Queries:
     - BWAVeform:OFFSet <offset>
     - BWAVeform:RESet
     - BWAVeform:SRATe <sample_rate>
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

@@ -8,9 +8,10 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - AUXOut:SOUrce {ATRIGger|MAIn|REFOut|EVENT|AFG}
     - AUXOut:SOUrce?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

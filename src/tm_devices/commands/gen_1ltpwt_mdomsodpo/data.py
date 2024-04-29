@@ -9,14 +9,13 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - DATa {INIT|SNAp}
     - DATa:DESTination REF<x>
     - DATa:DESTination?
     - DATa:ENCdg {ASCIi|FAStest|RIBinary|RPBinary|SRIbinary|SRPbinary|FPbinary| SFPbinary}
     - DATa:ENCdg?
-    - DATa:SOUrce {CH<x>|MATH|REF<x>|D<x>|DIGital
-      |RF_AMPlitude|RF_FREQuency|RF_PHASe|RF_NORMal|RF_AVErage| RF_MAXHold|RF_MINHold}
+    - DATa:SOUrce {CH<x>|MATH|REF<x>|D<x>|DIGital |RF_AMPlitude|RF_FREQuency|RF_PHASe|RF_NORMal|RF_AVErage| RF_MAXHold|RF_MINHold}
     - DATa:SOUrce?
     - DATa:STARt <NR1>
     - DATa:STARt?
@@ -25,7 +24,8 @@ Commands and Queries:
     - DATa:WIDth <NR1>
     - DATa:WIDth?
     - DATa?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Optional, TYPE_CHECKING
 

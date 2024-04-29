@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - ROSc:OUT:FREQuency {MHZ10|MHZ100}
     - ROSc:OUT:FREQuency?
     - ROSc:OUT:ULTRAsync {OFF|ON}
@@ -18,6 +18,7 @@ Commands and Queries:
     - ROSc:STATE?
     - ROSc:TRACking {STABle|FAST}
     - ROSc:TRACking?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

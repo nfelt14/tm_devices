@@ -9,16 +9,14 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - BUS:B1<x>:DISplay:HIERarchical <QString>
     - BUS:B1<x>:DISplay:HIERarchical?
     - BUS:B1<x>:DISplay:LAYout <QString>
     - BUS:B1<x>:DISplay:LAYout?
     - BUS:B1<x>:USB:HYSTeresis <NR3>
     - BUS:B1<x>:USB:HYSTeresis?
-    - BUS:B<x>:CAN:BITRate {RATE10K|RATE100K|RATE1M|RATE125K | RATE153K|RATE20K|RATE25K|RATE250K |
-      RATE31K|RATE33K|RATE37K|RATE400K | RATE50K|RATE500K|RATE62K|RATE68K |
-      RATE800K|RATE83K|RATE92K|CUSTom}
+    - BUS:B<x>:CAN:BITRate {RATE10K|RATE100K|RATE1M|RATE125K | RATE153K|RATE20K|RATE25K|RATE250K | RATE31K|RATE33K|RATE37K|RATE400K | RATE50K|RATE500K|RATE62K|RATE68K | RATE800K|RATE83K|RATE92K|CUSTom}
     - BUS:B<x>:CAN:BITRate:VALue <nr3>
     - BUS:B<x>:CAN:BITRate:VALue?
     - BUS:B<x>:CAN:BITRate?
@@ -35,11 +33,9 @@ Commands and Queries:
     - BUS:B<x>:ETHERnet:PRObe {DIFFerential|SINGleended}
     - BUS:B<x>:ETHERnet:PRObe?
     - BUS:B<x>:ETHERnet:SOUrce {CH<x>|MATH<x>}
-    - BUS:B<x>:ETHERnet:SOUrce:DMINus {CH<x>| D0|D1|D2|D3 |D4| D5|D6|D7|D8| D9|D10|D11|D12|
-      D13|D14|D15| MATH<x>}
+    - BUS:B<x>:ETHERnet:SOUrce:DMINus {CH<x>| D0|D1|D2|D3 |D4| D5|D6|D7|D8| D9|D10|D11|D12| D13|D14|D15| MATH<x>}
     - BUS:B<x>:ETHERnet:SOUrce:DMINus?
-    - BUS:B<x>:ETHERnet:SOUrce:DPLUs {CH<x>| D0|D1|D2|D3| D4| D5|D6|D7|D8| D9|D10|D11|D12|
-      D13|D14|D15| MATH<x>}
+    - BUS:B<x>:ETHERnet:SOUrce:DPLUs {CH<x>| D0|D1|D2|D3| D4| D5|D6|D7|D8| D9|D10|D11|D12| D13|D14|D15| MATH<x>}
     - BUS:B<x>:ETHERnet:SOUrce:DPLUs?
     - BUS:B<x>:ETHERnet:SOUrce?
     - BUS:B<x>:ETHERnet:TYPe {ENET10BASET|ENET100BASETX}
@@ -54,14 +50,11 @@ Commands and Queries:
     - BUS:B<x>:FLEXRAY:PROBe?
     - BUS:B<x>:FLEXRAY:SIGnal {BDIFFBP|BM|TXRX}
     - BUS:B<x>:FLEXRAY:SIGnal?
-    - BUS:B<x>:FLEXRAY:SOUrce {CH<x> |D0|D1|D10|D11 |D12|D13|D14|D15 |D2|D3|D4|D5 |D6|D7|D8|D9
-      |MATH<x>}
+    - BUS:B<x>:FLEXRAY:SOUrce {CH<x> |D0|D1|D10|D11 |D12|D13|D14|D15 |D2|D3|D4|D5 |D6|D7|D8|D9 |MATH<x>}
     - BUS:B<x>:FLEXRAY:SOUrce?
-    - BUS:B<x>:I2C:CLOCk:SOUrce {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|D11|D12|
-      D13|D14|D15|MATH<x>|}
+    - BUS:B<x>:I2C:CLOCk:SOUrce {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|D11|D12| D13|D14|D15|MATH<x>|}
     - BUS:B<x>:I2C:CLOCk:SOUrce?
-    - BUS:B<x>:I2C:DATa:SOUrce {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|D11|D12|
-      D13|D14|D15|MATH<x>}
+    - BUS:B<x>:I2C:DATa:SOUrce {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|D11|D12| D13|D14|D15|MATH<x>}
     - BUS:B<x>:I2C:DATa:SOUrce?
     - BUS:B<x>:I2C:RWINADDR {No|Yes}
     - BUS:B<x>:I2C:RWINADDR?
@@ -93,38 +86,31 @@ Commands and Queries:
     - BUS:B<x>:MIPICSITWo:CLOCk:TYPe?
     - BUS:B<x>:MIPICSITWo:LANE<x>:SOUrce:DIFFerential {D<x>}
     - BUS:B<x>:MIPICSITWo:LANE<x>:SOUrce:DIFFerential?
-    - BUS:B<x>:MIPICSITWo:LANE<x>:SOUrce:DMINUS {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|
-      D11|D12|D13|D14|D15|MATH<x>}
+    - BUS:B<x>:MIPICSITWo:LANE<x>:SOUrce:DMINUS {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10| D11|D12|D13|D14|D15|MATH<x>}
     - BUS:B<x>:MIPICSITWo:LANE<x>:SOUrce:DMINUS?
-    - BUS:B<x>:MIPICSITWo:LANE<x>:SOUrce:DPLUS {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|
-      D11|D12|D13|D14|D15|MATH<x>}
+    - BUS:B<x>:MIPICSITWo:LANE<x>:SOUrce:DPLUS {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10| D11|D12|D13|D14|D15|MATH<x>}
     - BUS:B<x>:MIPICSITWo:LANE<x>:SOUrce:DPLUS?
     - BUS:B<x>:MIPICSITWo:LANE<x>:TYPe {ANALog|DIGItal}
     - BUS:B<x>:MIPICSITWo:LANE<x>:TYPe?
-    - BUS:B<x>:MIPIDSIOne:CLOCk:SOUrce {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|
-      D11|D12|D13|D14|D15|MATH<x>}
+    - BUS:B<x>:MIPIDSIOne:CLOCk:SOUrce {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10| D11|D12|D13|D14|D15|MATH<x>}
     - BUS:B<x>:MIPIDSIOne:CLOCk:SOUrce?
     - BUS:B<x>:MIPIDSIOne:CLOCk:TYPe {ANALog|DIGItal}
     - BUS:B<x>:MIPIDSIOne:CLOCk:TYPe?
     - BUS:B<x>:MIPIDSIOne:LANE<x>:SOUrce:DIFFerential {D<x>}
     - BUS:B<x>:MIPIDSIOne:LANE<x>:SOUrce:DIFFerential?
-    - BUS:B<x>:MIPIDSIOne:LANE<x>:SOUrce:DMINUS {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|
-      D11|D12|D13|D14|D15|MATH<x>}
+    - BUS:B<x>:MIPIDSIOne:LANE<x>:SOUrce:DMINUS {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10| D11|D12|D13|D14|D15|MATH<x>}
     - BUS:B<x>:MIPIDSIOne:LANE<x>:SOUrce:DMINUS?
-    - BUS:B<x>:MIPIDSIOne:LANE<x>:SOUrce:DPLUS {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|
-      D11|D12|D13|D14|D15|MATH<x>}
+    - BUS:B<x>:MIPIDSIOne:LANE<x>:SOUrce:DPLUS {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10| D11|D12|D13|D14|D15|MATH<x>}
     - BUS:B<x>:MIPIDSIOne:LANE<x>:SOUrce:DPLUS?
     - BUS:B<x>:MIPIDSIOne:LANE<x>:TYPe {ANALog|DIGItal}
     - BUS:B<x>:MIPIDSIOne:LANE<x>:TYPe?
     - BUS:B<x>:PARallel:CLOCk:EDGE {FALL|RISe|EITHer}
     - BUS:B<x>:PARallel:CLOCk:EDGE?
-    - BUS:B<x>:PARallel:CLOCk:SOUrce {CH<x>|D0|D1|D3|D4|D5|D6|D7|D8|D9|D10|
-      D11|D12|D13|D14|D15|MATH<x>}
+    - BUS:B<x>:PARallel:CLOCk:SOUrce {CH<x>|D0|D1|D3|D4|D5|D6|D7|D8|D9|D10| D11|D12|D13|D14|D15|MATH<x>}
     - BUS:B<x>:PARallel:CLOCk:SOUrce?
     - BUS:B<x>:PARallel:ISCLOCKED {YES|NO}
     - BUS:B<x>:PARallel:ISCLOCKED?
-    - BUS:B<x>:PARallel:SOURCES {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|D11|D12|
-      D13|D14|D15|MATH<x>}
+    - BUS:B<x>:PARallel:SOURCES {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|D11|D12| D13|D14|D15|MATH<x>}
     - BUS:B<x>:PARallel:SOURCES?
     - BUS:B<x>:PCIE:BITRate {RATE2500|RATE5000|RATE8000|RATE16000|AUTO|CUSTom}
     - BUS:B<x>:PCIE:BITRate:VALue <nr3>
@@ -134,8 +120,7 @@ Commands and Queries:
     - BUS:B<x>:PCIE:HYSTeresis?
     - BUS:B<x>:PCIE:LANE <nr3>
     - BUS:B<x>:PCIE:LANE?
-    - BUS:B<x>:PCIE:SOUrce {CH<x> | D0|D1|D10|D11 | D12|D13|D14|D15 | D2|D3|D4|D5 | D6|D7|D8|D9 |
-      MATH<x>}
+    - BUS:B<x>:PCIE:SOUrce {CH<x> | D0|D1|D10|D11 | D12|D13|D14|D15 | D2|D3|D4|D5 | D6|D7|D8|D9 | MATH<x>}
     - BUS:B<x>:PCIE:SOUrce?
     - BUS:B<x>:POSition <NR3>
     - BUS:B<x>:POSition?
@@ -163,22 +148,19 @@ Commands and Queries:
     - BUS:B<x>:S64B66B:HYSTeresis?
     - BUS:B<x>:S64B66B:SOUrce { CH1 | CH2 | CH3 | CH4 | MATH1 | MATH2 | MATH3 | MATH4 }
     - BUS:B<x>:S64B66B:SOUrce?
-    - BUS:B<x>:S8B10B:BITRate {CUSTom|RATE1250|RATE1500|RATE2125|RATE2500|RATE3000|RATE3125|
-      RATE4250|RATE5000|RATE6000|RATE6250}
+    - BUS:B<x>:S8B10B:BITRate {CUSTom|RATE1250|RATE1500|RATE2125|RATE2500|RATE3000|RATE3125| RATE4250|RATE5000|RATE6000|RATE6250}
     - BUS:B<x>:S8B10B:BITRate:VALue <NR3>
     - BUS:B<x>:S8B10B:BITRate:VALue?
     - BUS:B<x>:S8B10B:BITRate?
     - BUS:B<x>:S8B10B:HYSTeresis <NR3>
     - BUS:B<x>:S8B10B:HYSTeresis?
-    - BUS:B<x>:S8B10B:SOUrce {CH<x>|D0|D1|D2|D3|D4| D5|D6|D7|D8|D9|D10 |D11|D12|D13|D14|D15|
-      MATH<x>}
+    - BUS:B<x>:S8B10B:SOUrce {CH<x>|D0|D1|D2|D3|D4| D5|D6|D7|D8|D9|D10 |D11|D12|D13|D14|D15| MATH<x>}
     - BUS:B<x>:S8B10B:SOUrce?
     - BUS:B<x>:SPI:BITOrder {LSB|MSB}
     - BUS:B<x>:SPI:BITOrder?
     - BUS:B<x>:SPI:CLOCk:POLarity {FALL|RISE}
     - BUS:B<x>:SPI:CLOCk:POLarity?
-    - BUS:B<x>:SPI:CLOCk:SOUrce {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|D11|D12|
-      D13|D14|D15|MATH<x>}
+    - BUS:B<x>:SPI:CLOCk:SOUrce {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|D11|D12| D13|D14|D15|MATH<x>}
     - BUS:B<x>:SPI:CLOCk:SOUrce?
     - BUS:B<x>:SPI:DATa:DELay <NR1>
     - BUS:B<x>:SPI:DATa:DELay?
@@ -186,8 +168,7 @@ Commands and Queries:
     - BUS:B<x>:SPI:DATa:POLarity?
     - BUS:B<x>:SPI:DATa:SIZe <NR3>
     - BUS:B<x>:SPI:DATa:SIZe?
-    - BUS:B<x>:SPI:DATa:SOUrce {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|
-      D11|D12|D13|D14|D15|MATH<x>}
+    - BUS:B<x>:SPI:DATa:SOUrce {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10| D11|D12|D13|D14|D15|MATH<x>}
     - BUS:B<x>:SPI:DATa:SOUrce?
     - BUS:B<x>:SPI:FRAMING {IDLE|SS}
     - BUS:B<x>:SPI:FRAMING?
@@ -195,22 +176,18 @@ Commands and Queries:
     - BUS:B<x>:SPI:IDLETime?
     - BUS:B<x>:SPI:SELect:POLarity {LOW|HIGH}
     - BUS:B<x>:SPI:SELect:POLarity?
-    - BUS:B<x>:SPI:SELect:SOUrce {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|D11|D12|
-      D13|D14|D15|MATH<x>}
+    - BUS:B<x>:SPI:SELect:SOUrce {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|D11|D12| D13|D14|D15|MATH<x>}
     - BUS:B<x>:SPI:SELect:SOUrce?
-    - BUS:B<x>:TYPe {CAN|CUSTom|FLEXRAY|LIN|I2C|MIPICSITWo|MIPIDSIOne|
-      PARallel|PCIE|RS232c|S8B10B|SPI|USB|ETHernet}
+    - BUS:B<x>:TYPe {CAN|CUSTom|FLEXRAY|LIN|I2C|MIPICSITWo|MIPIDSIOne| PARallel|PCIE|RS232c|S8B10B|SPI|USB|ETHernet}
     - BUS:B<x>:TYPe?
     - BUS:B<x>:USB:BITRate {FULL|HIGH|LOW}
     - BUS:B<x>:USB:BITRate?
     - BUS:B<x>:USB:PRObe {DIFFerential|SINGleended}
     - BUS:B<x>:USB:PRObe?
     - BUS:B<x>:USB:SOUrce {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|D11|D12| D13|D14|D15|MATH<x>}
-    - BUS:B<x>:USB:SOUrce:DMINus {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|D11|D12|
-      D13|D14|D15|MATH<x>}
+    - BUS:B<x>:USB:SOUrce:DMINus {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|D11|D12| D13|D14|D15|MATH<x>}
     - BUS:B<x>:USB:SOUrce:DMINus?
-    - BUS:B<x>:USB:SOUrce:DPLUs {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|D11|D12|
-      D13|D14|D15|MATH<x>}
+    - BUS:B<x>:USB:SOUrce:DPLUs {CH<x>|D0|D1|D2|D3|D4|D5|D6|D7|D8|D9|D10|D11|D12| D13|D14|D15|MATH<x>}
     - BUS:B<x>:USB:SOUrce:DPLUs?
     - BUS:B<x>:USB:SOUrce?
     - BUS:CH<x>:LOWTHRESHold <NR3>
@@ -223,7 +200,8 @@ Commands and Queries:
     - BUS:MATH<x>:THRESHold?
     - BUS:REF<x>:THRESHold <NR3>
     - BUS:REF<x>:THRESHold?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

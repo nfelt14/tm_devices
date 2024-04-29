@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - MARKER:M<x>:AMPLitude:ABSolute?
     - MARKER:M<x>:AMPLitude:DELTa?
     - MARKER:M<x>:FREQuency:ABSolute <NR3>
@@ -31,6 +31,7 @@ Commands and Queries:
     - MARKER:REFERence:FREQuency?
     - MARKER:TYPe {DELTa|ABSolute}
     - MARKER:TYPe?
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

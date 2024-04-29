@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - HISTogram:ADDNew <QString>
     - HISTogram:DELETEALL
     - HISTogram:DELete <QString>
@@ -42,9 +42,7 @@ Commands and Queries:
     - HISTogram:HISTogram<x>:MEASurement:PHITs?
     - HISTogram:HISTogram<x>:MEASurement:PK2PK {ON|OFF}
     - HISTogram:HISTogram<x>:MEASurement:PK2PK?
-    - HISTogram:HISTogram<x>:MEASurement:RESUlts? {COUNt| HITS| MAX| MIN| PK2PK| MODE| MEAN| MEDian|
-      PHITs| STDDev| ONESigma| TWOSigma| THRSigma},{ALLAcqs| CURRentacq| HISTory},{MAXimum| MEAN|
-      MINimum| PK2PK| POPUlation| STDDev}
+    - HISTogram:HISTogram<x>:MEASurement:RESUlts? {COUNt| HITS| MAX| MIN| PK2PK| MODE| MEAN| MEDian| PHITs| STDDev| ONESigma| TWOSigma| THRSigma},{ALLAcqs| CURRentacq| HISTory},{MAXimum| MEAN| MINimum| PK2PK| POPUlation| STDDev}
     - HISTogram:HISTogram<x>:MEASurement:STDDev {ON|OFF}
     - HISTogram:HISTogram<x>:MEASurement:STDDev?
     - HISTogram:HISTogram<x>:MEASurement:THRSigma {ON|OFF}
@@ -61,7 +59,8 @@ Commands and Queries:
     - HISTogram:HISTogram<x>:TRANsparency <NR3>
     - HISTogram:HISTogram<x>:TRANsparency?
     - HISTogram:LIST?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Dict, Optional, TYPE_CHECKING
 

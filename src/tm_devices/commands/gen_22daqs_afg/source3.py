@@ -8,9 +8,10 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SOURce3:POWer:LEVel:IMMediate:AMPLitude {<percent>|MINimum|MAXimum}
     - SOURce3:POWer:LEVel:IMMediate:AMPLitude?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SLISt:NAME? <Index>
     - SLISt:SIZE?
     - SLISt:SUBSequence:DELete {<subseq_name>|ALL}
@@ -17,6 +17,7 @@ Commands and Queries:
     - SLISt:SUBSequence:LENGth <subseq_name>,<NR1>? <subseq_name>
     - SLISt:SUBSequence:NEW <subseq_name>,<length>
     - SLISt:SUBSequence:TSTamp? <subseq_name>
+    ```
 """
 
 from typing import Dict, Optional, TYPE_CHECKING

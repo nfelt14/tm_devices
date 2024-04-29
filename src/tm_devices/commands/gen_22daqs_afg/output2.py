@@ -8,13 +8,14 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - OUTPut2:IMPedance {<ohms>|INFinity|MINimum|MAXimum}
     - OUTPut2:IMPedance?
     - OUTPut2:POLarity {NORMal|INVerted}
     - OUTPut2:POLarity?
     - OUTPut2:STATe {ON|OFF|<NR1>}
     - OUTPut2:STATe?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING

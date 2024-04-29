@@ -9,7 +9,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - AFG:AMPLitude <NR3>
     - AFG:AMPLitude?
     - AFG:ARBitrary:SOUrce <QString>
@@ -19,8 +19,7 @@ Commands and Queries:
     - AFG:BURSt:TRIGger
     - AFG:FREQuency <NR3>
     - AFG:FREQuency?
-    - AFG:FUNCtion {SINE|SQUare|PULSe|RAMP|NOISe|DC|SINC|GAUSsian|LORENtz
-      |ERISe|EDECAy|HAVERSINe|CARDIac|ARBitrary}
+    - AFG:FUNCtion {SINE|SQUare|PULSe|RAMP|NOISe|DC|SINC|GAUSsian|LORENtz |ERISe|EDECAy|HAVERSINe|CARDIac|ARBitrary}
     - AFG:FUNCtion?
     - AFG:HIGHLevel <NR3>
     - AFG:HIGHLevel?
@@ -46,7 +45,8 @@ Commands and Queries:
     - AFG:RAMP:SYMmetry?
     - AFG:SQUare:DUty <NR3>
     - AFG:SQUare:DUty?
-"""
+    ```
+"""  # noqa: E501
 
 from typing import Optional, TYPE_CHECKING
 

@@ -10,7 +10,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Attributes and Functions:
-
+    ```
     - slot[slot].amps.endchannel
     - slot[slot].amps.startchannel
     - slot[slot].analogoutput.endchannel
@@ -30,6 +30,7 @@ Attributes and Functions:
     - slot[slot].totalizer.startchannel
     - slot[slot].voltage.endchannel
     - slot[slot].voltage.startchannel
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING, Union

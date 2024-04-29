@@ -8,7 +8,7 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 
 Commands and Queries:
-
+    ```
     - SYSTem:BEEPer:IMMediate
     - SYSTem:BEEPer:STATe {ON|OFF|<NR1>}
     - SYSTem:BEEPer:STATe?
@@ -25,6 +25,7 @@ Commands and Queries:
     - SYSTem:ULANguage {ENGLish|FRENch|GERMan|JAPanese|KORean|SCHinese| TCHinese|RUSSian}
     - SYSTem:ULANguage?
     - SYSTem:VERSion?
+    ```
 """
 
 from typing import Optional, TYPE_CHECKING
