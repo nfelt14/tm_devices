@@ -7,20 +7,19 @@ import sys
 import time
 
 from importlib.util import find_spec
+from pathlib import Path
 from typing import Generator
 
 import pytest
 
 from conftest import PROJECT_ROOT_DIR
 
-OUTPUT_DIR = f"site_{sys.version_info.major}{sys.version_info.minor}"
-
 
 @pytest.fixture(name="docs_server")
-def fixture_docs_server() -> Generator[str, None, None]:
+def fixture_docs_server(site_dir: str) -> Generator[str, None, None]:
     """Serve the documentation site."""
     port = f"8{sys.version_info.major}{sys.version_info.minor}"
-    cmd = [sys.executable, "-m", "http.server", port, "--directory", OUTPUT_DIR]
+    cmd = [sys.executable, "-m", "http.server", port, "--directory", site_dir]
     with subprocess.Popen(
         cmd,  # noqa: S603
         stdout=subprocess.PIPE,
@@ -35,6 +34,16 @@ def fixture_docs_server() -> Generator[str, None, None]:
             server_process.wait(timeout=10)  # Wait up to 10 seconds for the server to terminate
         except subprocess.TimeoutExpired:
             server_process.kill()  # Force kill if it doesn't terminate in time
+
+
+@pytest.fixture(name="site_dir", scope="session")
+def fixture_site_dir(pytestconfig: pytest.Config) -> str:
+    """Create the site directory path for testing."""
+    site_path = Path(f".site_{sys.version_info.major}{sys.version_info.minor}/")
+    if xml_path := pytestconfig.getoption("xmlpath"):
+        site_path = Path(xml_path).parent / ".site_html/"  # pyright: ignore[reportArgumentType]
+    site_path.mkdir(parents=True, exist_ok=True)
+    return site_path.as_posix()
 
 
 @pytest.fixture(scope="module", autouse=True)
@@ -55,9 +64,9 @@ class TestDocs:  # pylint: disable=no-self-use
     """A collection of documentation tests."""
 
     @pytest.mark.order(1)
-    def test_docs_html(self) -> None:
+    def test_docs_html(self, site_dir: str) -> None:
         """Test creating html documentation."""
-        subprocess.check_call(shlex.split(f"mkdocs build --site-dir={OUTPUT_DIR}"))  # noqa: S603
+        subprocess.check_call(shlex.split(f"mkdocs build --verbose --site-dir={site_dir}"))  # noqa: S603
 
     @pytest.mark.order(2)
     @pytest.mark.depends(on=["test_docs_html"])

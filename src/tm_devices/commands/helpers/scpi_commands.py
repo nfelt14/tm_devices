@@ -292,13 +292,12 @@ class DefaultDictDeviceCommunication(ParentDefaultDictClass):
         """Create an instance of the class.
 
         Args:
-            default_factory: The factory function used to create new values in the dictionary.
             cmd_syntax: The general syntax of the command, the substring that will need
-              to be replaced with the key's value should be ``{key}``.
+                to be replaced with the key's value should be ``{key}``.
             query_syntax: The syntax to send to the device as a query, the substring that will need
-              to be replaced with the key's value should be ``{key}``.
+                to be replaced with the key's value should be ``{key}``.
             write_syntax: The syntax to write to the device, the substring that will need
-              to be replaced with the key's value should be ``{key}``.
+                to be replaced with the key's value should be ``{key}``.
             device: The device to send the query to.
             kwargs: The keyword arguments.
         """

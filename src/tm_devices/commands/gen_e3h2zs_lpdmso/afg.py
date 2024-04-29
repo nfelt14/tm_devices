@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - AFG:AMPLitude <NR3>
     - AFG:AMPLitude?
     - AFG:ARBitrary:SOUrce <QString>
@@ -932,23 +930,22 @@ class AfgArbitrary(SCPICmdRead):
 class AfgAmplitude(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:AMPLitude`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the AFG amplitude in volts, peak to peak.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:AMPLitude?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:AMPLitude?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:AMPLitude value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:AMPLitude <NR3>
         - AFG:AMPLitude?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that represents the AFG amplitude, peak to peak, in
           volts.
     """
@@ -958,7 +955,7 @@ class AfgAmplitude(SCPICmdWrite, SCPICmdRead):
 class Afg(SCPICmdRead):
     """The ``AFG`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -981,6 +978,12 @@ class Afg(SCPICmdRead):
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "AFG") -> None:
+        """Initialize the ``AFG`` command tree.
+
+        Args:
+            device: The Python device driver to use for communication with the device.
+            cmd_syntax: The syntax used to represent the command tree.
+        """
         super().__init__(device, cmd_syntax)
         self._amplitude = AfgAmplitude(device, f"{self._cmd_syntax}:AMPLitude")
         self._arbitrary = AfgArbitrary(device, f"{self._cmd_syntax}:ARBitrary")

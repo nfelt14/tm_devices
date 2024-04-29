@@ -58,7 +58,7 @@ class DeviceTypes(CustomStrEnum):
     """Class holding the valid device types supported.
 
     Any additions to this class need to be added to
-    the [tm_devices.helpers.constants_and_dataclasses.VALID_DEVICE_CONNECTION_TYPES][]
+    the [`tm_devices.helpers.constants_and_dataclasses.VALID_DEVICE_CONNECTION_TYPES`][]
     constant as well.
     """
 

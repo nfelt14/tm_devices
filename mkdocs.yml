@@ -87,7 +87,7 @@ plugins:
         python:  # see https://mkdocstrings.github.io/python/usage/
           paths: [src]
           options:
-            extensions: [griffe_typingdoc]
+            extensions: [griffe_typingdoc, docs/griffe_custom_decorator_labels.py]
             docstring_options:
               ignore_init_summary: true
               trim_doctest_flags: true

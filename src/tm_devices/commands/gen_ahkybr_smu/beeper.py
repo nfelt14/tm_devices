@@ -12,8 +12,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - beeper.beep()
     - beeper.enable
 """
@@ -33,7 +31,7 @@ class Beeper(BaseTSPCmd):
         - ``.OFF``: This command turns the beeper off.
         - ``.ON``: This command turns the beeper on.
 
-    Properties/methods:
+    Properties and methods:
         - ``.beep()``: The ``beeper.beep()`` function.
         - ``.enable``: The ``beeper.enable`` attribute.
     """
@@ -44,22 +42,26 @@ class Beeper(BaseTSPCmd):
     """str: This command turns the beeper on."""
 
     def __init__(self, device: Optional["TSPDevice"] = None, cmd_syntax: str = "beeper") -> None:
+        """Initialize the ``beeper`` command tree.
+
+        Args:
+            device: The Python device driver to use for communication with the device.
+            cmd_syntax: The syntax used to represent the command tree.
+        """
         super().__init__(device, cmd_syntax)
 
     @property
     def enable(self) -> str:
         """Access the ``beeper.enable`` attribute.
 
-        **Description:**
+        Description:
             - This command allows you to turn the beeper on or off.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(beeper.enable)`` query.
             - Setting this property to a value will send the ``beeper.enable = value`` command.
 
-        **TSP Syntax:**
-
-        ::
+        TSP Syntax:
 
             - beeper.enable = value
             - print(beeper.enable)
@@ -81,16 +83,14 @@ class Beeper(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``beeper.enable`` attribute.
 
-        **Description:**
+        Description:
             - This command allows you to turn the beeper on or off.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(beeper.enable)`` query.
             - Setting this property to a value will send the ``beeper.enable = value`` command.
 
-        **TSP Syntax:**
-
-        ::
+        TSP Syntax:
 
             - beeper.enable = value
             - print(beeper.enable)
@@ -114,21 +114,19 @@ class Beeper(BaseTSPCmd):
     def beep(self, duration: float, frequency: float) -> None:
         """Run the ``beeper.beep()`` function.
 
-        **Description:**
-            - This function generates an audible tone.
-
-        **TSP Syntax:**
-
-        ::
-
-            - beeper.beep()
-
         Args:
             duration: The amount of time to play the tone (0.001 s to 100 s).
             frequency: The frequency of the tone in Hertz (Hz).
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
+
+        Description:
+            - This function generates an audible tone.
+
+        TSP Syntax:
+
+            - beeper.beep()
         """
         try:
             self._device.write(  # type: ignore[union-attr]

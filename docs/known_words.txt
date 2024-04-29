@@ -12,6 +12,7 @@ basic_curve_query
 behaviors
 changelog
 ci
+classdiagram
 codebase
 codecov
 config

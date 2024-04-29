@@ -49,9 +49,15 @@ for path in src.rglob("*.py"):
                 "      inherited_members: false\n"
                 "      filters: ['!^_', '^__init__', '^gen_']\n"
                 "      members_order: source\n"
+                "      merge_init_into_class: false\n"
             )
         elif module_path.parts[1] == "commands":
-            fd.write("    options:\n      inherited_members: false\n\n")
+            fd.write(
+                "    options:\n"
+                "      inherited_members: false\n"
+                "      merge_init_into_class: false\n"
+                "      filters: ['!^_']\n"
+            )
         if module_path.parts[-2:] == ("drivers", "__init__"):
             fd.write("    options:\n      members_order: source\n\n")
 

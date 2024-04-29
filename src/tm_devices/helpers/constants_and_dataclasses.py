@@ -518,8 +518,8 @@ VALID_DEVICE_CONNECTION_TYPES: Final[Mapping[DeviceTypes, Tuple[ConnectionTypes,
 )
 """Mapping of each device type to its supported connection types.
 
-Any additions to this class need to be added to the [tm_devices.helpers.enums.DeviceTypes][] enum as
-well.
+Any additions to this class need to be added to the [`tm_devices.helpers.enums.DeviceTypes`][] enum
+as well.
 """
 
 # USBTMC configuration defines
