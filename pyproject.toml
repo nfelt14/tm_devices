@@ -462,8 +462,8 @@ deps =
     -rdocs/requirements.txt
 commands_pre =
 commands =
-    python -c "import shutil; shutil.rmtree('.site_html', ignore_errors=True)"
-    mkdocs --verbose build --site-dir .site_html
+    python -c "import shutil; shutil.rmtree('.results_{envname}', ignore_errors=True)"
+    mkdocs --verbose build --site-dir .results_{envname}
 
 [testenv:doctests]
 basepython = {env:DOC_PYTHON_VERSION}

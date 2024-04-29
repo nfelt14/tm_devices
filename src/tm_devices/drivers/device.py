@@ -231,7 +231,7 @@ class Device(ExtendableMixin, ABC):
 
     @property
     def device_number(self) -> int:
-        """Return the device number, if Device not created through DeviceManager will be -1."""
+        """Return the device number, if it was not created by the DeviceManager it will be -1."""
         return self._device_number
 
     @property
