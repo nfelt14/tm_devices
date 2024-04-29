@@ -157,8 +157,8 @@ nav:  # The first entry in each section needs a hard-coded title to avoid being 
   - Contributing:
       - Contributing Guidelines: CONTRIBUTING.md
       - contributing/add_driver_methods.md
-      - contributing/add_new_driver.md
       - contributing/add_new_device_type.md
+      - contributing/add_new_driver.md
       - contributing/unit_tests.md
       - CODE_OF_CONDUCT.md
       - LICENSE.md

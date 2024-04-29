@@ -30,7 +30,7 @@ configure devices to connect with.
 
 ## VISA backend selection
 
-The `DeviceManager` can be configured to use VISA backends from different VISA implementations.
+The [`DeviceManager`][tm_devices.DeviceManager] can be configured to use VISA backends from different VISA implementations.
 
 <!--codeinclude-->
 [](../examples/miscellaneous/visa_connection_selectivity.py)
@@ -137,10 +137,10 @@ Create and read from a dynamic buffer.
 
 ## Registering the Device Manager to be closed at program termination
 
-Sometimes using the `DeviceManager` class as a context manager is not feasible.
+Sometimes using the [`DeviceManager`][tm_devices.DeviceManager] class as a context manager is not feasible.
 In those instances there is an alternative way to enforce the device manager to
 close when the Python script execution is finished without needing to explicitly
-call the `.close()` method.
+call the [`.close()`][tm_devices.DeviceManager.close] method.
 
 <!--codeinclude-->
 [](../examples/miscellaneous/register_dm_atexit.py)
@@ -150,7 +150,7 @@ call the `.close()` method.
 
 Sometimes there is a need to use a device that is not currently supported by
 `tm_devices`. When this is the case, custom device driver classes can be created
-and passed to the [DeviceManager][tm_devices.DeviceManager] when it is
+and passed to the [`DeviceManager`][tm_devices.DeviceManager] when it is
 first instantiated.
 
 In order to do this a few things will need to be created:

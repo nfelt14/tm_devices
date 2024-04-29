@@ -33,21 +33,22 @@ This guide will walk through the steps needed to add a new device driver.
 
     - See other `__init__.py` files for examples
 
-4. Update the `SupportedModels` enum exposed in
+4. Update the [`SupportedModels`][tm_devices.SupportedModels] enum exposed in
     `tm_devices/helpers/__init__.py`
 
 5. Update the `___SUPPORTED_MODEL_REGEX_STRING` regex constant inside
     `tm_devices/helpers/functions.py` to include a mapping of the new driver name (model series)
     to a regex string matching the appropriate model strings
 
-6. Update the `DEVICE_DRIVER_MODEL_MAPPING` lookup inside
-    `tm_devices/drivers/__init__.py`
+6. Update the [`DEVICE_DRIVER_MODEL_MAPPING`][tm_devices.drivers.DEVICE_DRIVER_MODEL_MAPPING] lookup inside
+    `tm_devices/drivers/device_driver_mapping.py`
 
 7. Update the `__all__` variable inside `tm_devices/drivers/__init__.py` to
     include the new device driver
 
 8. If the device supports VISA USBTMC communication, update the
-    `USB_MODEL_ID_LOOKUP` lookup exposed in `tm_devices/helpers/__init__.py`
+    [`USB_MODEL_ID_LOOKUP`][tm_devices.helpers.USB_MODEL_ID_LOOKUP] lookup exposed
+    in `tm_devices/helpers/__init__.py`
 
 9. Update the Supported Devices section in `README.rst` to include the new model
 

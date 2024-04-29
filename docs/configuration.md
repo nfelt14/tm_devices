@@ -16,7 +16,7 @@ configuration options can also be changed during runtime.
 
 See the [Example Usage](basic_usage.md) for more usage examples.
 
-Also see the [DeviceManager][tm_devices.DeviceManager] API reference.
+Also see the [`DeviceManager`][tm_devices.DeviceManager] API reference.
 
 ---
 

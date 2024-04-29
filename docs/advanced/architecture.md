@@ -6,15 +6,17 @@ An overview of this package's architecture.
 
 ## The Device Manager
 
-The `DeviceManager` class is the backbone of this package. It is what
+The [`DeviceManager`][tm_devices.DeviceManager] class is the backbone of this package. It is what
 facilitates connections to different devices and is responsible for correctly
-selecting the driver for the device being connected to. The `DeviceManager`
+selecting the driver for the device being connected to. The
+[`DeviceManager`][tm_devices.DeviceManager]
 keeps a mapping of all devices in use and provides access to the driver for each
 active device. The device driver is what is responsible for communication with
 the physical device and also contains useful attributes, which contain
 information about the device, and methods, which provide various functionality.
 
-The `DeviceManager` uses a configuration parser (`DMConfigParser`) to read in
+The [`DeviceManager`][tm_devices.DeviceManager] uses a configuration parser
+([`DMConfigParser`][tm_devices.helpers.DMConfigParser]) to read in
 connection information from an optional config file as well as to store
 connection information that is provided directly via python code.
 

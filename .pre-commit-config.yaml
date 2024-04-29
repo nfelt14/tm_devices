@@ -61,27 +61,26 @@ repos:
     rev: 1.16.0
     hooks:
       - id: yamlfix
-  - repo: https://github.com/executablebooks/mdformat
-    rev: 0.7.17
-    hooks:
-      - id: mdformat
-        args: [--number, --end-of-line, keep]
-        # TODO: figure out how to reduce this exclude list
-        exclude: ^(docs/_includes/abbreviations.md|docs/configuration.md|docs/key_features.md|docs/basic_usage.md|docs/advanced/advanced_usage.md|docs/contributing/unit_tests.md)$
-        additional_dependencies:
-          - setuptools  # This is required since Python 3.12 no longer installs setuptools by default in virtual environments
-          - mdformat-beautysh
-          - mdformat-config
-          - mdformat-footnote
-          - mdformat-frontmatter
-          - mdformat-gfm
-          - mdformat-mkdocs
-          - mdformat-shfmt
-          - mdformat-simple-breaks
-          - mdformat-tables
-          - mdformat-toc
-          - mdformat-web
-          - mdformat-wikilink
+# TODO: figure out how to enable this hook, currently it can't handle the links to API documentation.
+#  - repo: https://github.com/executablebooks/mdformat
+#    rev: 0.7.17
+#    hooks:
+#      - id: mdformat
+#        args: [--number, --end-of-line, keep]
+#        additional_dependencies:
+#          - setuptools  # This is required since Python 3.12 no longer installs setuptools by default in virtual environments
+#          - mdformat-beautysh
+#          - mdformat-config
+#          - mdformat-footnote
+#          - mdformat-frontmatter
+#          - mdformat-gfm
+#          - mdformat-mkdocs
+#          - mdformat-shfmt
+#          - mdformat-simple-breaks
+#          - mdformat-tables
+#          - mdformat-toc
+#          - mdformat-web
+#          - mdformat-wikilink
   - repo: https://gitlab.com/smop/pre-commit-hooks
     rev: v1.0.0
     hooks:

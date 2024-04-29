@@ -6,7 +6,7 @@ complex examples.
 
 - Cross-platform support. (Windows, Unix, etc.)
 - Fast and easy setup using the
-    [DeviceManager][tm_devices.DeviceManager] class as the central hub
+    [`DeviceManager`][tm_devices.DeviceManager] class as the central hub
     for automation.
 - Support for many popular Tektronix(TM) and Keithley(TM) Test and Measurement
     products.
