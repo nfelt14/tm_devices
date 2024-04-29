@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - MATHArbflt<x>:FILepath <QString>
     - MATHArbflt<x>:FILepath?
     - MATHArbflt<x>:READFile FORCe
@@ -28,20 +26,19 @@ if TYPE_CHECKING:
 class MatharbfltItemReadfile(SCPICmdWrite):
     """The ``MATHArbflt<x>:READFile`` command.
 
-    **Description:**
+    Description:
         - This command forces a reread of the filter file for each arbitrary filter in use. The <x>
           specifies the filter and can be 1 to 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MATHArbflt<x>:READFile value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATHArbflt<x>:READFile FORCe
+        ```
 
-    **Info:**
+    Info:
         - ``FORCe`` forces a reread of the filter file.
     """
 
@@ -49,25 +46,24 @@ class MatharbfltItemReadfile(SCPICmdWrite):
 class MatharbfltItemFilepath(SCPICmdWrite, SCPICmdRead):
     """The ``MATHArbflt<x>:FILepath`` command.
 
-    **Description:**
+    Description:
         - This command or query sets the file path for a file of filter coefficients for the
           specified arbitrary filter. Setting a path will read that file and load the filter for
           ARBFLT<x>. Access these filters using a Math with an expression of the form 'ARBFlt<x>()'.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATHArbflt<x>:FILepath?`` query.
         - Using the ``.verify(value)`` method will send the ``MATHArbflt<x>:FILepath?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATHArbflt<x>:FILepath value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATHArbflt<x>:FILepath <QString>
         - MATHArbflt<x>:FILepath?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the path to the file of filter coefficients.
     """
 
@@ -77,7 +73,7 @@ class MatharbfltItemFilepath(SCPICmdWrite, SCPICmdRead):
 class MatharbfltItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``MATHArbflt<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATHArbflt<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``MATHArbflt<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -98,27 +94,26 @@ class MatharbfltItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def filepath(self) -> MatharbfltItemFilepath:
         """Return the ``MATHArbflt<x>:FILepath`` command.
 
-        **Description:**
+        Description:
             - This command or query sets the file path for a file of filter coefficients for the
               specified arbitrary filter. Setting a path will read that file and load the filter for
               ARBFLT<x>. Access these filters using a Math with an expression of the form
               'ARBFlt<x>()'.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATHArbflt<x>:FILepath?`` query.
             - Using the ``.verify(value)`` method will send the ``MATHArbflt<x>:FILepath?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATHArbflt<x>:FILepath value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATHArbflt<x>:FILepath <QString>
             - MATHArbflt<x>:FILepath?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the path to the file of filter coefficients.
         """
         return self._filepath
@@ -127,21 +122,20 @@ class MatharbfltItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def readfile(self) -> MatharbfltItemReadfile:
         """Return the ``MATHArbflt<x>:READFile`` command.
 
-        **Description:**
+        Description:
             - This command forces a reread of the filter file for each arbitrary filter in use. The
               <x> specifies the filter and can be 1 to 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MATHArbflt<x>:READFile value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATHArbflt<x>:READFile FORCe
+            ```
 
-        **Info:**
+        Info:
             - ``FORCe`` forces a reread of the filter file.
         """
         return self._readfile

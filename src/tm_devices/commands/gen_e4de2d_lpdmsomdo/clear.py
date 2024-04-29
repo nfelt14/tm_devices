@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CLEAR
 """
 
@@ -25,17 +23,16 @@ if TYPE_CHECKING:
 class Clear(SCPICmdWriteNoArguments):
     """The ``CLEAR`` command.
 
-    **Description:**
+    Description:
         - This command  clears acquisitions, measurements, and waveforms.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``CLEAR`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CLEAR
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "CLEAR") -> None:

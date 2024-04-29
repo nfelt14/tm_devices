@@ -12,8 +12,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - *CLS
     - *ESR?
     - *OPC
@@ -34,20 +32,19 @@ if TYPE_CHECKING:
 class Wai(SCPICmdWriteNoArguments):
     """The ``*WAI`` command.
 
-    **Description:**
+    Description:
         - The ``*WAI`` (Wait) command (no query form) prevents the instrument from executing further
           commands or queries until all pending commands that generate an OPC message are complete.
           This command allows you to synchronize the operation of the instrument with your
           application program. For more information, refer to Synchronization Methods.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``*WAI`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - *WAI
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "*WAI") -> None:
@@ -57,20 +54,19 @@ class Wai(SCPICmdWriteNoArguments):
 class Stb(SCPICmdRead):
     """The ``*STB`` command.
 
-    **Description:**
+    Description:
         - The ``*STB?`` (Read Status Byte) query returns the contents of the Status Byte Register
           (SBR) using the Master Summary Status (MSS) bit. For more information, refer to Registers.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``*STB?`` query.
         - Using the ``.verify(value)`` method will send the ``*STB?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - *STB?
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "*STB") -> None:
@@ -80,7 +76,7 @@ class Stb(SCPICmdRead):
 class Rst(SCPICmdWriteNoArguments):
     """The ``*RST`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) resets the instrument to the factory default settings. This
           command does the following: Recalls the default instrument setup. Clears the current
           ``*DDT`` command. Disables aliases (``:ALIAS:STATE 0``). Disables the user password (for
@@ -104,14 +100,13 @@ class Rst(SCPICmdWriteNoArguments):
           commands. ``*RST`` only resets the programmable interface settings, it does not change the
           user interface settings.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``*RST`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - *RST
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "*RST") -> None:
@@ -121,7 +116,7 @@ class Rst(SCPICmdWriteNoArguments):
 class Opc(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``*OPC`` command.
 
-    **Description:**
+    Description:
         - This command generates the operation complete message in the Standard Event Status
           Register (SESR) when all pending commands that generate an OPC message are complete. The
           ``*OPC?`` query places the ASCII character '1' into the output queue when all such OPC
@@ -132,18 +127,17 @@ class Opc(SCPICmdWriteNoArguments, SCPICmdRead):
           Synchronization Methods. Refer to the Oscilloscope operations that can generate OPC table
           for a list of commands that generate an OPC message.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``*OPC?`` query.
         - Using the ``.verify(value)`` method will send the ``*OPC?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``*OPC`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - *OPC
         - *OPC?
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "*OPC") -> None:
@@ -153,21 +147,20 @@ class Opc(SCPICmdWriteNoArguments, SCPICmdRead):
 class Esr(SCPICmdRead):
     """The ``*ESR`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the contents of the Standard Event Status Register (SESR).
           ``*ESR?`` also clears the SESR (since reading the SESR clears it). For a more detailed
           discussion of the use of these registers, see Registers.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``*ESR?`` query.
         - Using the ``.verify(value)`` method will send the ``*ESR?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - *ESR?
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "*ESR") -> None:
@@ -177,7 +170,7 @@ class Esr(SCPICmdRead):
 class Cls(SCPICmdWriteNoArguments):
     """The ``*CLS`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) clears the following: Event Queue Standard Event Status
           Register Status Byte Register (except the MAV bit) If the ``*CLS`` command immediately
           follows an <EOI>, the Output Queue and MAV bit (Status Byte Register bit 4) are also
@@ -187,14 +180,13 @@ class Cls(SCPICmdWriteNoArguments):
           ``*OPC``. This will happen if a single sequence acquisition operation is still being
           processed when the ``*CLS`` command is executed.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``*CLS`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - *CLS
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "*CLS") -> None:

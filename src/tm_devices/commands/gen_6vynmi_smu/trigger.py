@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - trigger.blender[N].clear()
     - trigger.blender[N].orenable
     - trigger.blender[N].overrun
@@ -120,10 +118,10 @@ if TYPE_CHECKING:
 class TriggerTsplinkoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``trigger.tsplinkout[N]`` command tree.
 
-    **Info:**
+    Info:
         - ``N``, the trigger line (1 to 3).
 
-    Properties/methods:
+    Properties and methods:
         - ``.assert()``: The ``trigger.tsplinkout[N].assert()`` function.
         - ``.logic``: The ``trigger.tsplinkout[N].logic`` attribute.
         - ``.pulsewidth``: The ``trigger.tsplinkout[N].pulsewidth`` attribute.
@@ -135,22 +133,21 @@ class TriggerTsplinkoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def logic(self) -> str:
         """Access the ``trigger.tsplinkout[N].logic`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the trigger output with output logic for a trigger line.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.tsplinkout[N].logic)`` query.
             - Setting this property to a value will send the ``trigger.tsplinkout[N].logic = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.tsplinkout[N].logic = value
             - print(trigger.tsplinkout[N].logic)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
         Raises:
@@ -170,22 +167,21 @@ class TriggerTsplinkoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def logic(self, value: Union[str, float]) -> None:
         """Access the ``trigger.tsplinkout[N].logic`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the trigger output with output logic for a trigger line.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.tsplinkout[N].logic)`` query.
             - Setting this property to a value will send the ``trigger.tsplinkout[N].logic = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.tsplinkout[N].logic = value
             - print(trigger.tsplinkout[N].logic)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
         Raises:
@@ -208,24 +204,23 @@ class TriggerTsplinkoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def pulsewidth(self) -> str:
         """Access the ``trigger.tsplinkout[N].pulsewidth`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the length of time that the trigger line is asserted for output
               triggers.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.tsplinkout[N].pulsewidth)``
               query.
             - Setting this property to a value will send the
               ``trigger.tsplinkout[N].pulsewidth = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.tsplinkout[N].pulsewidth = value
             - print(trigger.tsplinkout[N].pulsewidth)
+            ```
 
-        **Info:**
+        Info:
             - ``width``, the pulse width (0.0 to 100 ks).
             - ``N``, the trigger line (1 to 3).
 
@@ -246,24 +241,23 @@ class TriggerTsplinkoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def pulsewidth(self, value: Union[str, float]) -> None:
         """Access the ``trigger.tsplinkout[N].pulsewidth`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the length of time that the trigger line is asserted for output
               triggers.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.tsplinkout[N].pulsewidth)``
               query.
             - Setting this property to a value will send the
               ``trigger.tsplinkout[N].pulsewidth = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.tsplinkout[N].pulsewidth = value
             - print(trigger.tsplinkout[N].pulsewidth)
+            ```
 
-        **Info:**
+        Info:
             - ``width``, the pulse width (0.0 to 100 ks).
             - ``N``, the trigger line (1 to 3).
 
@@ -287,23 +281,22 @@ class TriggerTsplinkoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def stimulus(self) -> str:
         """Access the ``trigger.tsplinkout[N].stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the event that causes the synchronization line to assert a
               trigger.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.tsplinkout[N].stimulus)`` query.
             - Setting this property to a value will send the
               ``trigger.tsplinkout[N].stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.tsplinkout[N].stimulus = value
             - print(trigger.tsplinkout[N].stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
         Raises:
@@ -323,23 +316,22 @@ class TriggerTsplinkoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def stimulus(self, value: Union[str, float]) -> None:
         """Access the ``trigger.tsplinkout[N].stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the event that causes the synchronization line to assert a
               trigger.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.tsplinkout[N].stimulus)`` query.
             - Setting this property to a value will send the
               ``trigger.tsplinkout[N].stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.tsplinkout[N].stimulus = value
             - print(trigger.tsplinkout[N].stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
         Raises:
@@ -361,17 +353,16 @@ class TriggerTsplinkoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def assert_(self) -> None:
         """Run the ``trigger.tsplinkout[N].assert()`` function.
 
-        **Description:**
+        Description:
             - This function simulates the occurrence of the trigger and generates the corresponding
               trigger event.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.tsplinkout[N].assert()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
         Raises:
@@ -388,16 +379,15 @@ class TriggerTsplinkoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def release(self) -> None:
         """Run the ``trigger.tsplinkout[N].release()`` function.
 
-        **Description:**
+        Description:
             - This function releases a latched trigger on the given TSP-Link trigger line.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.tsplinkout[N].release()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
         Raises:
@@ -415,10 +405,10 @@ class TriggerTsplinkoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
 class TriggerTsplinkinItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``trigger.tsplinkin[N]`` command tree.
 
-    **Info:**
+    Info:
         - ``N``, the trigger line (1 to 3) to clear.
 
-    Properties/methods:
+    Properties and methods:
         - ``.clear()``: The ``trigger.tsplinkin[N].clear()`` function.
         - ``.edge``: The ``trigger.tsplinkin[N].edge`` attribute.
         - ``.overrun``: The ``trigger.tsplinkin[N].overrun`` attribute.
@@ -429,23 +419,22 @@ class TriggerTsplinkinItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def edge(self) -> str:
         """Access the ``trigger.tsplinkin[N].edge`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates which trigger edge controls the trigger event detector for a
               trigger line.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.tsplinkin[N].edge)`` query.
             - Setting this property to a value will send the ``trigger.tsplinkin[N].edge = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.tsplinkin[N].edge = value
             - print(trigger.tsplinkin[N].edge)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
         Raises:
@@ -465,23 +454,22 @@ class TriggerTsplinkinItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def edge(self, value: Union[str, float]) -> None:
         """Access the ``trigger.tsplinkin[N].edge`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates which trigger edge controls the trigger event detector for a
               trigger line.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.tsplinkin[N].edge)`` query.
             - Setting this property to a value will send the ``trigger.tsplinkin[N].edge = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.tsplinkin[N].edge = value
             - print(trigger.tsplinkin[N].edge)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
         Raises:
@@ -504,20 +492,19 @@ class TriggerTsplinkinItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def overrun(self) -> str:
         """Access the ``trigger.tsplinkin[N].overrun`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if the event detector ignored an event while in the detected
               state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.tsplinkin[N].overrun)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(trigger.tsplinkin[N].overrun)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
         Raises:
@@ -536,16 +523,15 @@ class TriggerTsplinkinItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``trigger.tsplinkin[N].clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the event detector for a LAN trigger.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.tsplinkin[N].clear()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3) to clear.
 
         Raises:
@@ -562,14 +548,13 @@ class TriggerTsplinkinItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def wait(self, timeout: float) -> str:
         """Run the ``trigger.tsplinkin[N].wait()`` function.
 
-        **Description:**
+        Description:
             - This function waits for a trigger.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.tsplinkin[N].wait()
+            ```
 
         Args:
             timeout: The timeout value in seconds.
@@ -592,10 +577,10 @@ class TriggerTsplinkinItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
 class TriggerTimerItemStart(BaseTSPCmd):
     """The ``trigger.timer[N].start`` command tree.
 
-    **Info:**
+    Info:
         - ``N``, the trigger timer number (1 to 4).
 
-    Properties/methods:
+    Properties and methods:
         - ``.fractionalseconds``: The ``trigger.timer[N].start.fractionalseconds`` attribute.
         - ``.generate``: The ``trigger.timer[N].start.generate`` attribute.
         - ``.overrun``: The ``trigger.timer[N].start.overrun`` attribute.
@@ -607,24 +592,23 @@ class TriggerTimerItemStart(BaseTSPCmd):
     def fractionalseconds(self) -> str:
         """Access the ``trigger.timer[N].start.fractionalseconds`` attribute.
 
-        **Description:**
+        Description:
             - This attribute configures the fractional seconds of an alarm or a time in the future
               when the timer will start.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(trigger.timer[N].start.fractionalseconds)`` query.
             - Setting this property to a value will send the
               ``trigger.timer[N].start.fractionalseconds = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].start.fractionalseconds = value
             - print(trigger.timer[N].start.fractionalseconds)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -644,24 +628,23 @@ class TriggerTimerItemStart(BaseTSPCmd):
     def fractionalseconds(self, value: Union[str, float]) -> None:
         """Access the ``trigger.timer[N].start.fractionalseconds`` attribute.
 
-        **Description:**
+        Description:
             - This attribute configures the fractional seconds of an alarm or a time in the future
               when the timer will start.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(trigger.timer[N].start.fractionalseconds)`` query.
             - Setting this property to a value will send the
               ``trigger.timer[N].start.fractionalseconds = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].start.fractionalseconds = value
             - print(trigger.timer[N].start.fractionalseconds)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -684,23 +667,22 @@ class TriggerTimerItemStart(BaseTSPCmd):
     def generate(self) -> str:
         """Access the ``trigger.timer[N].start.generate`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies when timer events are generated.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].start.generate)``
               query.
             - Setting this property to a value will send the
               ``trigger.timer[N].start.generate = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].start.generate = value
             - print(trigger.timer[N].start.generate)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -720,23 +702,22 @@ class TriggerTimerItemStart(BaseTSPCmd):
     def generate(self, value: Union[str, float]) -> None:
         """Access the ``trigger.timer[N].start.generate`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies when timer events are generated.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].start.generate)``
               query.
             - Setting this property to a value will send the
               ``trigger.timer[N].start.generate = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].start.generate = value
             - print(trigger.timer[N].start.generate)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -759,19 +740,18 @@ class TriggerTimerItemStart(BaseTSPCmd):
     def overrun(self) -> str:
         """Access the ``trigger.timer[N].start.overrun`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if an event was ignored because of the event detector state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].start.overrun)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(trigger.timer[N].start.overrun)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -791,23 +771,22 @@ class TriggerTimerItemStart(BaseTSPCmd):
     def seconds(self) -> str:
         """Access the ``trigger.timer[N].start.seconds`` attribute.
 
-        **Description:**
+        Description:
             - This attribute configures the seconds of an alarm or a time in the future when the
               timer will start.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].start.seconds)`` query.
             - Setting this property to a value will send the
               ``trigger.timer[N].start.seconds = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].start.seconds = value
             - print(trigger.timer[N].start.seconds)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -827,23 +806,22 @@ class TriggerTimerItemStart(BaseTSPCmd):
     def seconds(self, value: Union[str, float]) -> None:
         """Access the ``trigger.timer[N].start.seconds`` attribute.
 
-        **Description:**
+        Description:
             - This attribute configures the seconds of an alarm or a time in the future when the
               timer will start.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].start.seconds)`` query.
             - Setting this property to a value will send the
               ``trigger.timer[N].start.seconds = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].start.seconds = value
             - print(trigger.timer[N].start.seconds)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -866,23 +844,22 @@ class TriggerTimerItemStart(BaseTSPCmd):
     def stimulus(self) -> str:
         """Access the ``trigger.timer[N].start.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes the event that starts the trigger timer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].start.stimulus)``
               query.
             - Setting this property to a value will send the
               ``trigger.timer[N].start.stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].start.stimulus = value
             - print(trigger.timer[N].start.stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -902,23 +879,22 @@ class TriggerTimerItemStart(BaseTSPCmd):
     def stimulus(self, value: Union[str, float]) -> None:
         """Access the ``trigger.timer[N].start.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes the event that starts the trigger timer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].start.stimulus)``
               query.
             - Setting this property to a value will send the
               ``trigger.timer[N].start.stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].start.stimulus = value
             - print(trigger.timer[N].start.stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -941,10 +917,10 @@ class TriggerTimerItemStart(BaseTSPCmd):
 class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``trigger.timer[N]`` command tree.
 
-    **Info:**
+    Info:
         - ``N``, the trigger timer number (1 to 4).
 
-    Properties/methods:
+    Properties and methods:
         - ``.clear()``: The ``trigger.timer[N].clear()`` function.
         - ``.count``: The ``trigger.timer[N].count`` attribute.
         - ``.delay``: The ``trigger.timer[N].delay`` attribute.
@@ -963,23 +939,22 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def count(self) -> str:
         """Access the ``trigger.timer[N].count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of events to generate each time the timer generates a
               trigger event or is enabled as a timer or alarm.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].count)`` query.
             - Setting this property to a value will send the ``trigger.timer[N].count = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].count = value
             - print(trigger.timer[N].count)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -999,23 +974,22 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def count(self, value: Union[str, float]) -> None:
         """Access the ``trigger.timer[N].count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of events to generate each time the timer generates a
               trigger event or is enabled as a timer or alarm.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].count)`` query.
             - Setting this property to a value will send the ``trigger.timer[N].count = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].count = value
             - print(trigger.timer[N].count)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -1038,22 +1012,21 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def delay(self) -> str:
         """Access the ``trigger.timer[N].delay`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets and reads the timer delay.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].delay)`` query.
             - Setting this property to a value will send the ``trigger.timer[N].delay = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].delay = value
             - print(trigger.timer[N].delay)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -1073,22 +1046,21 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def delay(self, value: Union[str, float]) -> None:
         """Access the ``trigger.timer[N].delay`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets and reads the timer delay.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].delay)`` query.
             - Setting this property to a value will send the ``trigger.timer[N].delay = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].delay = value
             - print(trigger.timer[N].delay)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -1111,22 +1083,21 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def delaylist(self) -> str:
         """Access the ``trigger.timer[N].delaylist`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets an array of timer intervals.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].delaylist)`` query.
             - Setting this property to a value will send the ``trigger.timer[N].delaylist = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].delaylist = value
             - print(trigger.timer[N].delaylist)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -1146,22 +1117,21 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def delaylist(self, value: Union[str, float]) -> None:
         """Access the ``trigger.timer[N].delaylist`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets an array of timer intervals.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].delaylist)`` query.
             - Setting this property to a value will send the ``trigger.timer[N].delaylist = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].delaylist = value
             - print(trigger.timer[N].delaylist)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -1184,22 +1154,21 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``trigger.timer[N].enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables the trigger timer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].enable)`` query.
             - Setting this property to a value will send the ``trigger.timer[N].enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].enable = value
             - print(trigger.timer[N].enable)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -1219,22 +1188,21 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``trigger.timer[N].enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables the trigger timer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].enable)`` query.
             - Setting this property to a value will send the ``trigger.timer[N].enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].enable = value
             - print(trigger.timer[N].enable)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -1257,10 +1225,10 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def start(self) -> TriggerTimerItemStart:
         """Return the ``trigger.timer[N].start`` command tree.
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.fractionalseconds``: The ``trigger.timer[N].start.fractionalseconds`` attribute.
             - ``.generate``: The ``trigger.timer[N].start.generate`` attribute.
             - ``.overrun``: The ``trigger.timer[N].start.overrun`` attribute.
@@ -1272,17 +1240,16 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``trigger.timer[N].clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the timer event detector and overrun indicator for the specified
               trigger timer number.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].clear()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -1299,16 +1266,15 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def reset(self) -> None:
         """Run the ``trigger.timer[N].reset()`` function.
 
-        **Description:**
+        Description:
             - This function resets trigger timer settings to their default values.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].reset()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
         Raises:
@@ -1325,14 +1291,13 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def wait(self, timeout: float) -> str:
         """Run the ``trigger.timer[N].wait()`` function.
 
-        **Description:**
+        Description:
             - This function waits for a trigger.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].wait()
+            ```
 
         Args:
             timeout: Maximum amount of time in seconds to wait for the trigger.
@@ -1356,7 +1321,7 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
 class TriggerModel(BaseTSPCmd):
     """The ``trigger.model`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.abort()``: The ``trigger.model.abort()`` function.
         - ``.getblocklist()``: The ``trigger.model.getblocklist()`` function.
         - ``.getbranchcount()``: The ``trigger.model.getbranchcount()`` function.
@@ -1421,14 +1386,13 @@ class TriggerModel(BaseTSPCmd):
     def abort(self) -> None:
         """Run the ``trigger.model.abort()`` function.
 
-        **Description:**
+        Description:
             - This function stops all trigger model commands on the instrument.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.abort()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1444,14 +1408,13 @@ class TriggerModel(BaseTSPCmd):
     def getblocklist(self) -> str:
         """Run the ``trigger.model.getblocklist()`` function.
 
-        **Description:**
+        Description:
             - This function returns the settings for all trigger model blocks.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.getblocklist()
+            ```
 
         Returns:
             The result of the function call.
@@ -1470,14 +1433,13 @@ class TriggerModel(BaseTSPCmd):
     def getbranchcount(self, block_number: int) -> str:
         """Run the ``trigger.model.getbranchcount()`` function.
 
-        **Description:**
+        Description:
             - This function returns the count value of the trigger model counter block.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.getbranchcount()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -1499,14 +1461,13 @@ class TriggerModel(BaseTSPCmd):
     def initiate(self) -> None:
         """Run the ``trigger.model.initiate()`` function.
 
-        **Description:**
+        Description:
             - This function starts the trigger model.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.initiate()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1528,15 +1489,14 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.load() - ConfigList`` function.
 
-        **Description:**
+        Description:
             - This function loads a trigger-model template configuration that uses source and
               measure configuration lists.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.load()
+            ```
 
         Args:
             measure_config_list: A string that contains the name of the measurement configuration
@@ -1575,15 +1535,14 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.load() - DurationLoop`` function.
 
-        **Description:**
+        Description:
             - This function loads a trigger-model template configuration that makes continuous
               measurements for a specified amount of time.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.load()
+            ```
 
         Args:
             duration: The amount of time for which to make measurements (167 ns to 100 ks).
@@ -1616,14 +1575,13 @@ class TriggerModel(BaseTSPCmd):
     def load_empty(self) -> None:
         """Run the ``trigger.model.load() - Empty`` function.
 
-        **Description:**
+        Description:
             - This function clears the trigger model.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.load()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1660,15 +1618,14 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.load() - GradeBinning`` function.
 
-        **Description:**
+        Description:
             - This function loads a trigger-model template configuration that sets up a grading
               operation.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.load()
+            ```
 
         Args:
             components: The number of components to measure (1 to 268,435,455).
@@ -1754,15 +1711,14 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.load() - LogicTrigger`` function.
 
-        **Description:**
+        Description:
             - This function loads a trigger-model template configuration that sets up a logic
               trigger through the digital I/O.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.load()
+            ```
 
         Args:
             dig_in_line: The digital input line (1 to 6); also, the event that the trigger model
@@ -1809,15 +1765,14 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.load() - LoopUntilEvent`` function.
 
-        **Description:**
+        Description:
             - This function loads a trigger-model template configuration that makes continuous
               measurements until the specified event occurs.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.load()
+            ```
 
         Args:
             trigger_event: The event that ends infinite triggering or readings set to occur before
@@ -1859,15 +1814,14 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.load() - SimpleLoop`` function.
 
-        **Description:**
+        Description:
             - This function loads a trigger-model template configuration that makes a specific
               number of measurements.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.load()
+            ```
 
         Args:
             count: The number of measurements the instrument will make.
@@ -1922,15 +1876,14 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.load() - SortBinning`` function.
 
-        **Description:**
+        Description:
             - This function loads a trigger-model template configuration that sets up a sorting
               operation.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.load()
+            ```
 
         Args:
             components: The number of components to measure (1 to 268,435,455).
@@ -2008,14 +1961,13 @@ class TriggerModel(BaseTSPCmd):
     def pause(self) -> None:
         """Run the ``trigger.model.pause()`` function.
 
-        **Description:**
+        Description:
             - This function pauses a running trigger model.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.pause()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2031,14 +1983,13 @@ class TriggerModel(BaseTSPCmd):
     def resume(self) -> None:
         """Run the ``trigger.model.resume()`` function.
 
-        **Description:**
+        Description:
             - This function continues a paused trigger model.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.resume()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2054,14 +2005,13 @@ class TriggerModel(BaseTSPCmd):
     def setblock_trigger_block_branch_always(self, block_number: int, branch_to_block: str) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_BRANCH_ALWAYS`` function.
 
-        **Description:**
+        Description:
             - This function defines a trigger model block that always goes to a specific block.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2086,15 +2036,14 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_BRANCH_COUNTER`` function.
 
-        **Description:**
+        Description:
             - This function defines a trigger model block that branches to a specified block a
               specified number of times.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2125,15 +2074,14 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_BRANCH_DELTA`` function.
 
-        **Description:**
+        Description:
             - This function defines a trigger model block that goes to a specified block if the
               difference of two measurements meets preset criteria.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2178,15 +2126,14 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_BRANCH_LIMIT_CONSTANT`` function.
 
-        **Description:**
+        Description:
             - This function defines a trigger model block that goes to a specified block if a
               measurement meets preset criteria.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2233,15 +2180,14 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_BRANCH_LIMIT_DYNAMIC`` function.
 
-        **Description:**
+        Description:
             - This function defines a trigger model block that goes to a specified block in the
               trigger model if a measurement meets user-defined criteria.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2279,15 +2225,14 @@ class TriggerModel(BaseTSPCmd):
     def setblock_trigger_block_branch_once(self, block_number: int, branch_to_block: str) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_BRANCH_ONCE`` function.
 
-        **Description:**
+        Description:
             - This function causes the trigger model to branch to a specified building block the
               first time it is encountered in the trigger model.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2312,16 +2257,15 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_BRANCH_ONCE_EXCLUDED`` function.
 
-        **Description:**
+        Description:
             - This function defines a trigger model block that causes the trigger model to go to a
               specified building block every time the trigger model encounters it, except for the
               first time.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2346,14 +2290,13 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_BRANCH_ON_EVENT`` function.
 
-        **Description:**
+        Description:
             - This function branches to a specified block when a specified trigger event occurs.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2380,14 +2323,13 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_BUFFER_CLEAR`` function.
 
-        **Description:**
+        Description:
             - This function defines a trigger model block that clears the reading buffer.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2419,15 +2361,14 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_CONFIG_NEXT`` function.
 
-        **Description:**
+        Description:
             - This function recalls the settings at the next index of a source or measure
               configuration list, or both a source and measure configuration list.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2464,16 +2405,15 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_CONFIG_PREV`` function.
 
-        **Description:**
+        Description:
             - This function defines a trigger model block that recalls the settings stored at the
               previous index in a source or measure configuration list, or both a source and measure
               configuration list.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2515,15 +2455,14 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_CONFIG_RECALL`` function.
 
-        **Description:**
+        Description:
             - This function recalls the system settings that are stored in a source or measure
               configuration list, or both a source and measure configuration list.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2563,14 +2502,13 @@ class TriggerModel(BaseTSPCmd):
     def setblock_trigger_block_delay_constant(self, block_number: int, time: str) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_DELAY_CONSTANT`` function.
 
-        **Description:**
+        Description:
             - This function adds a constant delay to the execution of a trigger model.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2592,15 +2530,14 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_DIGITAL_IO`` function.
 
-        **Description:**
+        Description:
             - This function defines a trigger model block that sets the lines on the digital I/O
               port high or low.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2626,15 +2563,14 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_LOG_EVENT`` function.
 
-        **Description:**
+        Description:
             - This function allows you to log an event in the event log when the trigger model is
               running.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2660,14 +2596,13 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_MEASURE_DIGITIZE`` function.
 
-        **Description:**
+        Description:
             - This function defines a trigger block that makes or digitizes a measurement.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2700,15 +2635,14 @@ class TriggerModel(BaseTSPCmd):
     def setblock_trigger_block_nop(self, block_number: int) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_NOP`` function.
 
-        **Description:**
+        Description:
             - This function creates a placeholder that performs no action in the trigger model;
               available only using remote commands.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2727,15 +2661,14 @@ class TriggerModel(BaseTSPCmd):
     def setblock_trigger_block_notify(self, block_number: int, n: str) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_NOTIFY`` function.
 
-        **Description:**
+        Description:
             - This function defines a trigger model block that generates a trigger event and
               immediately continues to the next block.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2755,14 +2688,13 @@ class TriggerModel(BaseTSPCmd):
     def setblock_trigger_block_reset_branch_count(self, block_number: int, counter: str) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_RESET_BRANCH_COUNT`` function.
 
-        **Description:**
+        Description:
             - This function creates a block in the trigger model that resets a branch counter to 0.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2784,14 +2716,13 @@ class TriggerModel(BaseTSPCmd):
     def setblock_trigger_block_source_output(self, block_number: int, state: str) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_SOURCE_OUTPUT`` function.
 
-        **Description:**
+        Description:
             - This function defines a trigger block that turns the output source on or off.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2811,14 +2742,13 @@ class TriggerModel(BaseTSPCmd):
     def setblock_trigger_block_source_pulse_output(self, block_number: int, state: str) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_SOURCE_PULSE_OUTPUT`` function.
 
-        **Description:**
+        Description:
             - This function defines a pulse trigger block that turns the pulse source on or off.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2848,15 +2778,14 @@ class TriggerModel(BaseTSPCmd):
     ) -> None:
         """Run the ``trigger.model.setblock() - trigger.BLOCK_WAIT`` function.
 
-        **Description:**
+        Description:
             - This function defines a trigger model block that waits for an event before allowing
               the trigger model to continue.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.setblock()
+            ```
 
         Args:
             block_number: The sequence of the block in the trigger model.
@@ -2897,14 +2826,13 @@ class TriggerModel(BaseTSPCmd):
     def state(self) -> str:
         """Run the ``trigger.model.state()`` function.
 
-        **Description:**
+        Description:
             - This function returns the present state of the trigger model.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.model.state()
+            ```
 
         Returns:
             The result of the function call.
@@ -2924,10 +2852,10 @@ class TriggerModel(BaseTSPCmd):
 class TriggerLanoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``trigger.lanout[N]`` command tree.
 
-    **Info:**
+    Info:
         - ``N``, the LAN event number (1 to 8).
 
-    Properties/methods:
+    Properties and methods:
         - ``.assert()``: The ``trigger.lanout[N].assert()`` function.
         - ``.connect()``: The ``trigger.lanout[N].connect()`` function.
         - ``.connected``: The ``trigger.lanout[N].connected`` attribute.
@@ -2942,19 +2870,18 @@ class TriggerLanoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def connected(self) -> str:
         """Access the ``trigger.lanout[N].connected`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN event connection state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.lanout[N].connected)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(trigger.lanout[N].connected)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -2974,23 +2901,22 @@ class TriggerLanoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def ipaddress(self) -> str:
         """Access the ``trigger.lanout[N].ipaddress`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the address (in dotted-decimal format) of UDP or TCP
               listeners.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.lanout[N].ipaddress)`` query.
             - Setting this property to a value will send the ``trigger.lanout[N].ipaddress = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.lanout[N].ipaddress = value
             - print(trigger.lanout[N].ipaddress)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -3010,23 +2936,22 @@ class TriggerLanoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def ipaddress(self, value: Union[str, float]) -> None:
         """Access the ``trigger.lanout[N].ipaddress`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the address (in dotted-decimal format) of UDP or TCP
               listeners.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.lanout[N].ipaddress)`` query.
             - Setting this property to a value will send the ``trigger.lanout[N].ipaddress = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.lanout[N].ipaddress = value
             - print(trigger.lanout[N].ipaddress)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -3049,23 +2974,22 @@ class TriggerLanoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def logic(self) -> str:
         """Access the ``trigger.lanout[N].logic`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the logic on which the trigger event detector and the output
               trigger generator operate on the given trigger line.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.lanout[N].logic)`` query.
             - Setting this property to a value will send the ``trigger.lanout[N].logic = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.lanout[N].logic = value
             - print(trigger.lanout[N].logic)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -3085,23 +3009,22 @@ class TriggerLanoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def logic(self, value: Union[str, float]) -> None:
         """Access the ``trigger.lanout[N].logic`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the logic on which the trigger event detector and the output
               trigger generator operate on the given trigger line.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.lanout[N].logic)`` query.
             - Setting this property to a value will send the ``trigger.lanout[N].logic = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.lanout[N].logic = value
             - print(trigger.lanout[N].logic)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -3124,22 +3047,21 @@ class TriggerLanoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def protocol(self) -> str:
         """Access the ``trigger.lanout[N].protocol`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the LAN protocol to use for sending trigger messages.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.lanout[N].protocol)`` query.
             - Setting this property to a value will send the ``trigger.lanout[N].protocol = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.lanout[N].protocol = value
             - print(trigger.lanout[N].protocol)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -3159,22 +3081,21 @@ class TriggerLanoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def protocol(self, value: Union[str, float]) -> None:
         """Access the ``trigger.lanout[N].protocol`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the LAN protocol to use for sending trigger messages.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.lanout[N].protocol)`` query.
             - Setting this property to a value will send the ``trigger.lanout[N].protocol = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.lanout[N].protocol = value
             - print(trigger.lanout[N].protocol)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -3197,22 +3118,21 @@ class TriggerLanoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def stimulus(self) -> str:
         """Access the ``trigger.lanout[N].stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies events that cause this trigger to assert.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.lanout[N].stimulus)`` query.
             - Setting this property to a value will send the ``trigger.lanout[N].stimulus = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.lanout[N].stimulus = value
             - print(trigger.lanout[N].stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, a number specifying the trigger packet over the LAN for which to set or query
               the trigger source (1 to 8).
 
@@ -3233,22 +3153,21 @@ class TriggerLanoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def stimulus(self, value: Union[str, float]) -> None:
         """Access the ``trigger.lanout[N].stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies events that cause this trigger to assert.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.lanout[N].stimulus)`` query.
             - Setting this property to a value will send the ``trigger.lanout[N].stimulus = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.lanout[N].stimulus = value
             - print(trigger.lanout[N].stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, a number specifying the trigger packet over the LAN for which to set or query
               the trigger source (1 to 8).
 
@@ -3271,17 +3190,16 @@ class TriggerLanoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def assert_(self) -> None:
         """Run the ``trigger.lanout[N].assert()`` function.
 
-        **Description:**
+        Description:
             - This function simulates the occurrence of the trigger and generates the corresponding
               event.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.lanout[N].assert()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -3298,16 +3216,15 @@ class TriggerLanoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def connect(self) -> None:
         """Run the ``trigger.lanout[N].connect()`` function.
 
-        **Description:**
+        Description:
             - This function prepares the event generator for outgoing trigger events.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.lanout[N].connect()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -3324,16 +3241,15 @@ class TriggerLanoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def disconnect(self) -> None:
         """Run the ``trigger.lanout[N].disconnect()`` function.
 
-        **Description:**
+        Description:
             - This function disconnects the LAN trigger event generator.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.lanout[N].disconnect()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -3351,10 +3267,10 @@ class TriggerLanoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
 class TriggerLaninItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``trigger.lanin[N]`` command tree.
 
-    **Info:**
+    Info:
         - ``N``, the LAN event number (1 to 8) to clear.
 
-    Properties/methods:
+    Properties and methods:
         - ``.clear()``: The ``trigger.lanin[N].clear()`` function.
         - ``.edge``: The ``trigger.lanin[N].edge`` attribute.
         - ``.overrun``: The ``trigger.lanin[N].overrun`` attribute.
@@ -3365,23 +3281,22 @@ class TriggerLaninItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def edge(self) -> str:
         """Access the ``trigger.lanin[N].edge`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the trigger operation and detection mode of the specified LAN
               event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.lanin[N].edge)`` query.
             - Setting this property to a value will send the ``trigger.lanin[N].edge = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.lanin[N].edge = value
             - print(trigger.lanin[N].edge)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -3401,23 +3316,22 @@ class TriggerLaninItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def edge(self, value: Union[str, float]) -> None:
         """Access the ``trigger.lanin[N].edge`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the trigger operation and detection mode of the specified LAN
               event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.lanin[N].edge)`` query.
             - Setting this property to a value will send the ``trigger.lanin[N].edge = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.lanin[N].edge = value
             - print(trigger.lanin[N].edge)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -3440,19 +3354,18 @@ class TriggerLaninItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def overrun(self) -> str:
         """Access the ``trigger.lanin[N].overrun`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the overrun status of the LAN event detector.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.lanin[N].overrun)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(trigger.lanin[N].overrun)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -3471,16 +3384,15 @@ class TriggerLaninItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``trigger.lanin[N].clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the event detector for a LAN trigger.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.lanin[N].clear()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8) to clear.
 
         Raises:
@@ -3497,14 +3409,13 @@ class TriggerLaninItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def wait(self, timeout: float) -> str:
         """Run the ``trigger.lanin[N].wait()`` function.
 
-        **Description:**
+        Description:
             - This function waits for an input trigger.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.lanin[N].wait()
+            ```
 
         Args:
             timeout: Maximum amount of time in seconds to wait for the trigger event.
@@ -3527,10 +3438,10 @@ class TriggerLaninItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
 class TriggerDigoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``trigger.digout[N]`` command tree.
 
-    **Info:**
+    Info:
         - ``N``, the digital I/O trigger line (1 to 6).
 
-    Properties/methods:
+    Properties and methods:
         - ``.assert()``: The ``trigger.digout[N].assert()`` function.
         - ``.logic``: The ``trigger.digout[N].logic`` attribute.
         - ``.pulsewidth``: The ``trigger.digout[N].pulsewidth`` attribute.
@@ -3542,23 +3453,22 @@ class TriggerDigoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def logic(self) -> str:
         """Access the ``trigger.digout[N].logic`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the output logic of the trigger event generator to positive or
               negative for the specified line.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.digout[N].logic)`` query.
             - Setting this property to a value will send the ``trigger.digout[N].logic = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.digout[N].logic = value
             - print(trigger.digout[N].logic)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the digital I/O trigger line (1 to 6).
 
         Raises:
@@ -3578,23 +3488,22 @@ class TriggerDigoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def logic(self, value: Union[str, float]) -> None:
         """Access the ``trigger.digout[N].logic`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the output logic of the trigger event generator to positive or
               negative for the specified line.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.digout[N].logic)`` query.
             - Setting this property to a value will send the ``trigger.digout[N].logic = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.digout[N].logic = value
             - print(trigger.digout[N].logic)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the digital I/O trigger line (1 to 6).
 
         Raises:
@@ -3617,23 +3526,22 @@ class TriggerDigoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def pulsewidth(self) -> str:
         """Access the ``trigger.digout[N].pulsewidth`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes the length of time that the trigger line is asserted for
               output triggers.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.digout[N].pulsewidth)`` query.
             - Setting this property to a value will send the
               ``trigger.digout[N].pulsewidth = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.digout[N].pulsewidth = value
             - print(trigger.digout[N].pulsewidth)
+            ```
 
-        **Info:**
+        Info:
             - ``width``, the pulse width (0 to 100 ks).
             - ``N``, the digital I/O trigger line (1 to 6).
 
@@ -3654,23 +3562,22 @@ class TriggerDigoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def pulsewidth(self, value: Union[str, float]) -> None:
         """Access the ``trigger.digout[N].pulsewidth`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes the length of time that the trigger line is asserted for
               output triggers.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.digout[N].pulsewidth)`` query.
             - Setting this property to a value will send the
               ``trigger.digout[N].pulsewidth = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.digout[N].pulsewidth = value
             - print(trigger.digout[N].pulsewidth)
+            ```
 
-        **Info:**
+        Info:
             - ``width``, the pulse width (0 to 100 ks).
             - ``N``, the digital I/O trigger line (1 to 6).
 
@@ -3694,23 +3601,22 @@ class TriggerDigoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def stimulus(self) -> str:
         """Access the ``trigger.digout[N].stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the event that causes a trigger to be asserted on the digital
               output line.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.digout[N].stimulus)`` query.
             - Setting this property to a value will send the ``trigger.digout[N].stimulus = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.digout[N].stimulus = value
             - print(trigger.digout[N].stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the digital I/O trigger line (1 to 6).
 
         Raises:
@@ -3730,23 +3636,22 @@ class TriggerDigoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def stimulus(self, value: Union[str, float]) -> None:
         """Access the ``trigger.digout[N].stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the event that causes a trigger to be asserted on the digital
               output line.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.digout[N].stimulus)`` query.
             - Setting this property to a value will send the ``trigger.digout[N].stimulus = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.digout[N].stimulus = value
             - print(trigger.digout[N].stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the digital I/O trigger line (1 to 6).
 
         Raises:
@@ -3768,16 +3673,15 @@ class TriggerDigoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def assert_(self) -> None:
         """Run the ``trigger.digout[N].assert()`` function.
 
-        **Description:**
+        Description:
             - This function asserts a trigger pulse on one of the digital I/O lines.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.digout[N].assert()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the digital I/O trigger line (1 to 6).
 
         Raises:
@@ -3794,16 +3698,15 @@ class TriggerDigoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def release(self) -> None:
         """Run the ``trigger.digout[N].release()`` function.
 
-        **Description:**
+        Description:
             - This function releases an indefinite length or latched trigger.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.digout[N].release()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the digital I/O trigger line (1 to 6).
 
         Raises:
@@ -3821,10 +3724,10 @@ class TriggerDigoutItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
 class TriggerDiginItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``trigger.digin[N]`` command tree.
 
-    **Info:**
+    Info:
         - ``N``, the digital I/O trigger line (1 to 6).
 
-    Properties/methods:
+    Properties and methods:
         - ``.clear()``: The ``trigger.digin[N].clear()`` function.
         - ``.edge``: The ``trigger.digin[N].edge`` attribute.
         - ``.overrun``: The ``trigger.digin[N].overrun`` attribute.
@@ -3835,23 +3738,22 @@ class TriggerDiginItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def edge(self) -> str:
         """Access the ``trigger.digin[N].edge`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the edge used by the trigger event detector on the given trigger
               line.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.digin[N].edge)`` query.
             - Setting this property to a value will send the ``trigger.digin[N].edge = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.digin[N].edge = value
             - print(trigger.digin[N].edge)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the digital I/O trigger line (1 to 6).
 
         Raises:
@@ -3871,23 +3773,22 @@ class TriggerDiginItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def edge(self, value: Union[str, float]) -> None:
         """Access the ``trigger.digin[N].edge`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the edge used by the trigger event detector on the given trigger
               line.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.digin[N].edge)`` query.
             - Setting this property to a value will send the ``trigger.digin[N].edge = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.digin[N].edge = value
             - print(trigger.digin[N].edge)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the digital I/O trigger line (1 to 6).
 
         Raises:
@@ -3910,19 +3811,18 @@ class TriggerDiginItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def overrun(self) -> str:
         """Access the ``trigger.digin[N].overrun`` attribute.
 
-        **Description:**
+        Description:
             - This attribute returns the event detector overrun status.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.digin[N].overrun)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(trigger.digin[N].overrun)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the digital I/O trigger line (1 to 6).
 
         Raises:
@@ -3941,16 +3841,15 @@ class TriggerDiginItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``trigger.digin[N].clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the trigger event on a digital input line.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.digin[N].clear()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the digital I/O trigger line (1 to 6).
 
         Raises:
@@ -3967,14 +3866,13 @@ class TriggerDiginItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def wait(self, timeout: float) -> str:
         """Run the ``trigger.digin[N].wait()`` function.
 
-        **Description:**
+        Description:
             - This function waits for a trigger.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.digin[N].wait()
+            ```
 
         Args:
             timeout: Timeout in seconds.
@@ -3997,10 +3895,10 @@ class TriggerDiginItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
 class TriggerBlenderItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``trigger.blender[N]`` command tree.
 
-    **Info:**
+    Info:
         - ``N``, the blender number (up to two).
 
-    Properties/methods:
+    Properties and methods:
         - ``.clear()``: The ``trigger.blender[N].clear()`` function.
         - ``.orenable``: The ``trigger.blender[N].orenable`` attribute.
         - ``.overrun``: The ``trigger.blender[N].overrun`` attribute.
@@ -4022,22 +3920,21 @@ class TriggerBlenderItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def orenable(self) -> str:
         """Access the ``trigger.blender[N].orenable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects whether the blender performs OR operations or AND operations.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.blender[N].orenable)`` query.
             - Setting this property to a value will send the ``trigger.blender[N].orenable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.blender[N].orenable = value
             - print(trigger.blender[N].orenable)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the blender number (up to two).
 
         Raises:
@@ -4057,22 +3954,21 @@ class TriggerBlenderItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def orenable(self, value: Union[str, float]) -> None:
         """Access the ``trigger.blender[N].orenable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects whether the blender performs OR operations or AND operations.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.blender[N].orenable)`` query.
             - Setting this property to a value will send the ``trigger.blender[N].orenable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.blender[N].orenable = value
             - print(trigger.blender[N].orenable)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the blender number (up to two).
 
         Raises:
@@ -4095,20 +3991,19 @@ class TriggerBlenderItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def overrun(self) -> str:
         """Access the ``trigger.blender[N].overrun`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates whether or not an event was ignored because of the event
               detector state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.blender[N].overrun)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(trigger.blender[N].overrun)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the blender number (up to two).
 
         Raises:
@@ -4128,23 +4023,22 @@ class TriggerBlenderItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def stimulus(self) -> Dict[int, Union[str, float]]:
         """Access the ``trigger.blender[N].stimulus[M]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the events that trigger the blender.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the
               ``print(trigger.blender[N].stimulus[M])`` query.
             - Setting an item from this property to a value will send the
               ``trigger.blender[N].stimulus[M] = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.blender[N].stimulus[M] = value
             - print(trigger.blender[N].stimulus[M])
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the an integer that represents the trigger event blender (up to two).
             - ``M``, the an integer representing the stimulus index (1 to 4).
 
@@ -4156,17 +4050,16 @@ class TriggerBlenderItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``trigger.blender[N].clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the blender event detector and resets the overrun indicator of
               blender N.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.blender[N].clear()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the blender number (up to two).
 
         Raises:
@@ -4183,16 +4076,15 @@ class TriggerBlenderItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def reset(self) -> None:
         """Run the ``trigger.blender[N].reset()`` function.
 
-        **Description:**
+        Description:
             - This function resets some of the trigger blender settings to their factory defaults.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.blender[N].reset()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger event blender (up to two).
 
         Raises:
@@ -4209,14 +4101,13 @@ class TriggerBlenderItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def wait(self, timeout: float) -> str:
         """Run the ``trigger.blender[N].wait()`` function.
 
-        **Description:**
+        Description:
             - This function waits for a blender trigger event to occur.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.blender[N].wait()
+            ```
 
         Args:
             timeout: Maximum amount of time in seconds to wait for the trigger blender event.
@@ -4407,7 +4298,7 @@ class Trigger(BaseTSPCmd):
         - ``.WAIT_AND``: Each event must occur before the trigger model continues.
         - ``.WAIT_OR``: At least one of the events must occur before the trigger model continues.
 
-    Properties/methods:
+    Properties and methods:
         - ``.blender``: The ``trigger.blender[N]`` command tree.
         - ``.clear()``: The ``trigger.clear()`` function.
         - ``.continuous``: The ``trigger.continuous`` attribute.
@@ -4657,10 +4548,10 @@ class Trigger(BaseTSPCmd):
     def blender(self) -> Dict[int, TriggerBlenderItem]:
         """Return the ``trigger.blender[N]`` command tree.
 
-        **Info:**
+        Info:
             - ``N``, the blender number (up to two).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``trigger.blender[N].clear()`` function.
             - ``.orenable``: The ``trigger.blender[N].orenable`` attribute.
             - ``.overrun``: The ``trigger.blender[N].overrun`` attribute.
@@ -4674,19 +4565,18 @@ class Trigger(BaseTSPCmd):
     def continuous(self) -> str:
         """Access the ``trigger.continuous`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines the trigger mode setting after bootup.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.continuous)`` query.
             - Setting this property to a value will send the ``trigger.continuous = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.continuous = value
             - print(trigger.continuous)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4705,19 +4595,18 @@ class Trigger(BaseTSPCmd):
     def continuous(self, value: Union[str, float]) -> None:
         """Access the ``trigger.continuous`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines the trigger mode setting after bootup.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.continuous)`` query.
             - Setting this property to a value will send the ``trigger.continuous = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.continuous = value
             - print(trigger.continuous)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4739,10 +4628,10 @@ class Trigger(BaseTSPCmd):
     def digin(self) -> Dict[int, TriggerDiginItem]:
         """Return the ``trigger.digin[N]`` command tree.
 
-        **Info:**
+        Info:
             - ``N``, the digital I/O trigger line (1 to 6).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``trigger.digin[N].clear()`` function.
             - ``.edge``: The ``trigger.digin[N].edge`` attribute.
             - ``.overrun``: The ``trigger.digin[N].overrun`` attribute.
@@ -4754,10 +4643,10 @@ class Trigger(BaseTSPCmd):
     def digout(self) -> Dict[int, TriggerDigoutItem]:
         """Return the ``trigger.digout[N]`` command tree.
 
-        **Info:**
+        Info:
             - ``N``, the digital I/O trigger line (1 to 6).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.assert()``: The ``trigger.digout[N].assert()`` function.
             - ``.logic``: The ``trigger.digout[N].logic`` attribute.
             - ``.pulsewidth``: The ``trigger.digout[N].pulsewidth`` attribute.
@@ -4770,10 +4659,10 @@ class Trigger(BaseTSPCmd):
     def lanin(self) -> Dict[int, TriggerLaninItem]:
         """Return the ``trigger.lanin[N]`` command tree.
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8) to clear.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``trigger.lanin[N].clear()`` function.
             - ``.edge``: The ``trigger.lanin[N].edge`` attribute.
             - ``.overrun``: The ``trigger.lanin[N].overrun`` attribute.
@@ -4785,10 +4674,10 @@ class Trigger(BaseTSPCmd):
     def lanout(self) -> Dict[int, TriggerLanoutItem]:
         """Return the ``trigger.lanout[N]`` command tree.
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.assert()``: The ``trigger.lanout[N].assert()`` function.
             - ``.connect()``: The ``trigger.lanout[N].connect()`` function.
             - ``.connected``: The ``trigger.lanout[N].connected`` attribute.
@@ -4804,7 +4693,7 @@ class Trigger(BaseTSPCmd):
     def model(self) -> TriggerModel:
         """Return the ``trigger.model`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.abort()``: The ``trigger.model.abort()`` function.
             - ``.getblocklist()``: The ``trigger.model.getblocklist()`` function.
             - ``.getbranchcount()``: The ``trigger.model.getbranchcount()`` function.
@@ -4871,10 +4760,10 @@ class Trigger(BaseTSPCmd):
     def timer(self) -> Dict[int, TriggerTimerItem]:
         """Return the ``trigger.timer[N]`` command tree.
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 4).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``trigger.timer[N].clear()`` function.
             - ``.count``: The ``trigger.timer[N].count`` attribute.
             - ``.delay``: The ``trigger.timer[N].delay`` attribute.
@@ -4890,10 +4779,10 @@ class Trigger(BaseTSPCmd):
     def tsplinkin(self) -> Dict[int, TriggerTsplinkinItem]:
         """Return the ``trigger.tsplinkin[N]`` command tree.
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3) to clear.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``trigger.tsplinkin[N].clear()`` function.
             - ``.edge``: The ``trigger.tsplinkin[N].edge`` attribute.
             - ``.overrun``: The ``trigger.tsplinkin[N].overrun`` attribute.
@@ -4905,10 +4794,10 @@ class Trigger(BaseTSPCmd):
     def tsplinkout(self) -> Dict[int, TriggerTsplinkoutItem]:
         """Return the ``trigger.tsplinkout[N]`` command tree.
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.assert()``: The ``trigger.tsplinkout[N].assert()`` function.
             - ``.logic``: The ``trigger.tsplinkout[N].logic`` attribute.
             - ``.pulsewidth``: The ``trigger.tsplinkout[N].pulsewidth`` attribute.
@@ -4920,14 +4809,13 @@ class Trigger(BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``trigger.clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears any pending command triggers.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.clear()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4943,14 +4831,13 @@ class Trigger(BaseTSPCmd):
     def wait(self, timeout: float) -> str:
         """Run the ``trigger.wait()`` function.
 
-        **Description:**
+        Description:
             - This function waits for a trigger event.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.wait()
+            ```
 
         Args:
             timeout: Maximum amount of time in seconds to wait for the trigger.

@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SAVEON {RESET}
     - SAVEON:COUNt?
     - SAVEON:FILE:AUTOInc {<NR1>|ON|OFF}
@@ -53,27 +51,26 @@ if TYPE_CHECKING:
 class SaveonWaveform(SCPICmdWrite, SCPICmdRead):
     """The ``SAVEON:WAVEform`` command.
 
-    **Description:**
+    Description:
         - Sets or queries whether to save a waveform when a trigger occurs when ``SAVEON:TRIGGER``
           is ON. The waveform will be saved to the file you selected with ``SAVEON:FILE:NAME``, in
           the location that you selected using ``SAVEON:FILE:DEST``. You can set options for file
           storage (such as file name, file destination, and autoincrement), using the
           ``SAVEON:FILE`` commands.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEON:WAVEform?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEON:WAVEform?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVEON:WAVEform value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEON:WAVEform {<NR1>|ON|OFF}
         - SAVEON:WAVEform?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables Save On Waveform; any other value turns this feature on.
         - ``OFF`` disables Save On Waveform.
         - ``ON`` enables Save On Waveform.
@@ -83,7 +80,7 @@ class SaveonWaveform(SCPICmdWrite, SCPICmdRead):
 class SaveonTrigger(SCPICmdWrite, SCPICmdRead):
     """The ``SAVEON:TRIGger`` command.
 
-    **Description:**
+    Description:
         - Sets or queries whether to save a file when a trigger occurs. You can define the trigger
           using Trigger commands or the instrument user interface. This command is longer necessary.
           Please see Act On Event commands for future development. The trigger will cause the
@@ -95,20 +92,19 @@ class SaveonTrigger(SCPICmdWrite, SCPICmdRead):
           channels, or math waveforms Analog and math waveforms are saved using one file per
           waveform. Digital waveforms are all saved to a single file.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEON:TRIGger?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEON:TRIGger?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVEON:TRIGger value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEON:TRIGger {<NR1>|ON|OFF}
         - SAVEON:TRIGger?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables Save On Trigger; any other value turns this feature on.
         - ``OFF`` disables Save On Trigger.
         - ``ON`` enables Save On Trigger.
@@ -118,24 +114,23 @@ class SaveonTrigger(SCPICmdWrite, SCPICmdRead):
 class SaveonSetup(SCPICmdWrite, SCPICmdRead):
     """The ``SAVEON:SETUP`` command.
 
-    **Description:**
+    Description:
         - Saves the instrument setup when there is an event. Queries the status of this feature (on
           or off).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEON:SETUP?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEON:SETUP?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVEON:SETUP value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEON:SETUP {<NR1>|ON|OFF}
         - SAVEON:SETUP?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the feature; any other value turns this feature on.
         - ``ON`` enables the feature.
         - ``OFF`` disables the feature.
@@ -145,24 +140,23 @@ class SaveonSetup(SCPICmdWrite, SCPICmdRead):
 class SaveonNumevents(SCPICmdWrite, SCPICmdRead):
     """The ``SAVEON:NUMEvents`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the maximum number of events that will be saved. You can use this feature
           to avoid running out of disk space, especially if you save large files.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEON:NUMEvents?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEON:NUMEvents?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVEON:NUMEvents value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEON:NUMEvents <NR3>
         - SAVEON:NUMEvents?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the number of events that will be saved before a reset is required.
     """
 
@@ -170,7 +164,7 @@ class SaveonNumevents(SCPICmdWrite, SCPICmdRead):
 class SaveonMeasurement(SCPICmdWrite, SCPICmdRead):
     """The ``SAVEON:MEASUrement`` command.
 
-    **Description:**
+    Description:
         - Sets or queries whether to save a measurement when any of the following triggers occurs:
           Limit test failure - if set to On. (``SAVEON:LIMIT``) Mask failure - if set to On.
           (``SAVEON:MASK``) Trigger - if set to On. (``SAVEON:TRIGGER``) The image will be saved to
@@ -178,20 +172,19 @@ class SaveonMeasurement(SCPICmdWrite, SCPICmdRead):
           ``SAVEON:FILE:DEST``. You can set options for file storage (such as file name, file
           destination, and autoincrement), using the SaveOn File commands.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEON:MEASUrement?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEON:MEASUrement?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVEON:MEASUrement value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEON:MEASUrement {<NR1>|OFF|ON}
         - SAVEON:MEASUrement?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables Save On Measurement; any other value turns this feature on.
         - ``OFF`` disables Save On Measurement.
         - ``ON`` enables Save On Measurement.
@@ -201,7 +194,7 @@ class SaveonMeasurement(SCPICmdWrite, SCPICmdRead):
 class SaveonMask(SCPICmdWrite, SCPICmdRead):
     """The ``SAVEON:MASK`` command.
 
-    **Description:**
+    Description:
         - Sets or queries whether to save a file when there is a mask failure. When ``SAVEON:MASK``
           is enabled, a mask failure will trigger the instrument to save an image, a measurement,
           and/or a waveform to a file, depending on what you specify using the Related Commands
@@ -213,20 +206,19 @@ class SaveonMask(SCPICmdWrite, SCPICmdRead):
           waveforms Analog and math waveforms are saved using one file per waveform. Digital
           waveforms are all saved to a single file.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEON:MASK?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEON:MASK?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVEON:MASK value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEON:MASK {<NR1>|OFF|ON}
         - SAVEON:MASK?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables Save On Mask; any other value turns this feature on.
         - ``OFF`` disables Save On Mask.
         - ``ON`` enables Save On Mask.
@@ -236,7 +228,7 @@ class SaveonMask(SCPICmdWrite, SCPICmdRead):
 class SaveonLimit(SCPICmdWrite, SCPICmdRead):
     """The ``SAVEON:LIMit`` command.
 
-    **Description:**
+    Description:
         - Sets or queries whether to save a file when there is a limit test failure. When this is
           set to On, a limit test failure will trigger the instrument to save an image, a
           measurement, and/or a waveform to a file, depending on what you specify using the Related
@@ -247,20 +239,19 @@ class SaveonLimit(SCPICmdWrite, SCPICmdRead):
           and math waveforms are saved using one file per waveform. Digital waveforms are all saved
           to a single file.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEON:LIMit?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEON:LIMit?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVEON:LIMit value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEON:LIMit {<NR1>|OFF|ON}
         - SAVEON:LIMit?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables Save On Limit; any other value turns this feature on.
         - ``OFF`` disables Save On Limit.
         - ``ON`` enables Save On Limit.
@@ -270,24 +261,23 @@ class SaveonLimit(SCPICmdWrite, SCPICmdRead):
 class SaveonImage(SCPICmdWrite, SCPICmdRead):
     """The ``SAVEON:IMAGe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether to save a screen capture when a trigger occurs and
           ``SAVEON:TRIGer`` is ON and ``SAVEON:IMAGE`` is ON.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEON:IMAGe?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEON:IMAGe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVEON:IMAGe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEON:IMAGe {<NR1>|OFF|ON}
         - SAVEON:IMAGe?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables Save On Image; any other value turns this feature on.
         - ``OFF`` disables Save On Image.
         - ``ON`` enables Save On Image.
@@ -297,24 +287,23 @@ class SaveonImage(SCPICmdWrite, SCPICmdRead):
 class SaveonFileType(SCPICmdWrite, SCPICmdRead):
     """The ``SAVEON:FILE:TYPE`` command.
 
-    **Description:**
+    Description:
         - Sets or queries whether to use the data and time as the file name (auto) or to use a
           custom file name.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEON:FILE:TYPE?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEON:FILE:TYPE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVEON:FILE:TYPE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEON:FILE:TYPE {AUTO|CUSTOM}
         - SAVEON:FILE:TYPE?
+        ```
 
-    **Info:**
+    Info:
         - ``AUTO`` uses the date and time as the file name for the saved events. An example auto
           file name is: ``20110711_182946``.
         - ``CUSTOM`` uses the file name that you specified using the ``SAVEON:FILE:NAME`` command.
@@ -324,7 +313,7 @@ class SaveonFileType(SCPICmdWrite, SCPICmdRead):
 class SaveonFileName(SCPICmdWrite, SCPICmdRead):
     """The ``SAVEON:FILE:NAME`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the file name to use when the file type is set to Custom. Selecting a file
           name You can select your own file name by entering the desired name in the <string>.
           Follow standard Microsoft Windows naming conventions. The limit is 127 characters, with no
@@ -343,20 +332,19 @@ class SaveonFileName(SCPICmdWrite, SCPICmdRead):
           enter the extension. It will be added automatically, depending on what you are saving. The
           query ``SAVEON:FILE:NAME?`` will return the file name without the extension.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEON:FILE:NAME?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEON:FILE:NAME?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVEON:FILE:NAME value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEON:FILE:NAME <string>
         - SAVEON:FILE:NAME?
+        ```
 
-    **Info:**
+    Info:
         - ``<string>`` is the file name you want to use.
     """
 
@@ -364,50 +352,48 @@ class SaveonFileName(SCPICmdWrite, SCPICmdRead):
 class SaveonFileDest(SCPICmdWrite, SCPICmdRead):
     """The ``SAVEON:FILE:DEST`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the location where files are saved. The default destination is
           C:usersusernameTektronixTekScopeSaveOnTrigger. You can save the files to a local drive or
           network path by entering the desired location in <string>. You can also select to save the
           files to a USB drive, using the browse button in the oscilloscope interface.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEON:FILE:DEST?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEON:FILE:DEST?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVEON:FILE:DEST value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEON:FILE:DEST <string>
         - SAVEON:FILE:DEST?
+        ```
     """
 
 
 class SaveonFileCount(SCPICmdWrite, SCPICmdRead):
     """The ``SAVEON:FILE:COUNt`` command.
 
-    **Description:**
+    Description:
         - <primary></primary> Sets or queries the starting number that will be appended to the
           custom file name when ``SAVEON:FILE:AUTOINC`` is enabled and an image, measurement, or
           waveform is saved. The total of files saved cannot exceed 32767. If this file count is
           reached, files will not be saved until you change the file count to a lower number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEON:FILE:COUNt?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEON:FILE:COUNt?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVEON:FILE:COUNt value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEON:FILE:COUNt <NR3>
         - SAVEON:FILE:COUNt?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the starting number for automatically incrementing the file name.
     """
 
@@ -415,27 +401,26 @@ class SaveonFileCount(SCPICmdWrite, SCPICmdRead):
 class SaveonFileAutoinc(SCPICmdWrite, SCPICmdRead):
     """The ``SAVEON:FILE:AUTOInc`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the state of the auto increment file name feature (on or off). If AUTOInc
           is on, each time that an image, measurement, or waveform is saved to a file, the number
           that is appended to the file name will be augmented automatically, depending on the
           settings that you have made in the Related Commands, below. If AUTOInc is off, the
           previous file will be overwritten.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEON:FILE:AUTOInc?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEON:FILE:AUTOInc?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVEON:FILE:AUTOInc value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEON:FILE:AUTOInc {<NR1>|ON|OFF}
         - SAVEON:FILE:AUTOInc?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 1 enables the Auto increment function; any other value disables the function.
         - ``ON`` indicates that each time that an image, measurement, or waveform is saved, the
           number that is appended to the file name will be augmented automatically.
@@ -447,7 +432,7 @@ class SaveonFileAutoinc(SCPICmdWrite, SCPICmdRead):
 class SaveonFile(SCPICmdRead):
     """The ``SAVEON:FILE`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEON:FILE?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEON:FILE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -472,28 +457,27 @@ class SaveonFile(SCPICmdRead):
     def autoinc(self) -> SaveonFileAutoinc:
         """Return the ``SAVEON:FILE:AUTOInc`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the state of the auto increment file name feature (on or off). If
               AUTOInc is on, each time that an image, measurement, or waveform is saved to a file,
               the number that is appended to the file name will be augmented automatically,
               depending on the settings that you have made in the Related Commands, below. If
               AUTOInc is off, the previous file will be overwritten.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEON:FILE:AUTOInc?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEON:FILE:AUTOInc?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVEON:FILE:AUTOInc value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEON:FILE:AUTOInc {<NR1>|ON|OFF}
             - SAVEON:FILE:AUTOInc?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 1 enables the Auto increment function; any other value disables the
               function.
             - ``ON`` indicates that each time that an image, measurement, or waveform is saved, the
@@ -507,26 +491,25 @@ class SaveonFile(SCPICmdRead):
     def count(self) -> SaveonFileCount:
         """Return the ``SAVEON:FILE:COUNt`` command.
 
-        **Description:**
+        Description:
             - <primary></primary> Sets or queries the starting number that will be appended to the
               custom file name when ``SAVEON:FILE:AUTOINC`` is enabled and an image, measurement, or
               waveform is saved. The total of files saved cannot exceed 32767. If this file count is
               reached, files will not be saved until you change the file count to a lower number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEON:FILE:COUNt?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEON:FILE:COUNt?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVEON:FILE:COUNt value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEON:FILE:COUNt <NR3>
             - SAVEON:FILE:COUNt?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the starting number for automatically incrementing the file name.
         """
         return self._count
@@ -535,24 +518,23 @@ class SaveonFile(SCPICmdRead):
     def dest(self) -> SaveonFileDest:
         """Return the ``SAVEON:FILE:DEST`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the location where files are saved. The default destination is
               C:usersusernameTektronixTekScopeSaveOnTrigger. You can save the files to a local drive
               or network path by entering the desired location in <string>. You can also select to
               save the files to a USB drive, using the browse button in the oscilloscope interface.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEON:FILE:DEST?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEON:FILE:DEST?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVEON:FILE:DEST value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEON:FILE:DEST <string>
             - SAVEON:FILE:DEST?
+            ```
         """
         return self._dest
 
@@ -560,7 +542,7 @@ class SaveonFile(SCPICmdRead):
     def name(self) -> SaveonFileName:
         """Return the ``SAVEON:FILE:NAME`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the file name to use when the file type is set to Custom. Selecting a
               file name You can select your own file name by entering the desired name in the
               <string>. Follow standard Microsoft Windows naming conventions. The limit is 127
@@ -580,20 +562,19 @@ class SaveonFile(SCPICmdRead):
               extension. It will be added automatically, depending on what you are saving. The query
               ``SAVEON:FILE:NAME?`` will return the file name without the extension.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEON:FILE:NAME?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEON:FILE:NAME?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVEON:FILE:NAME value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEON:FILE:NAME <string>
             - SAVEON:FILE:NAME?
+            ```
 
-        **Info:**
+        Info:
             - ``<string>`` is the file name you want to use.
         """
         return self._name
@@ -602,24 +583,23 @@ class SaveonFile(SCPICmdRead):
     def type(self) -> SaveonFileType:
         """Return the ``SAVEON:FILE:TYPE`` command.
 
-        **Description:**
+        Description:
             - Sets or queries whether to use the data and time as the file name (auto) or to use a
               custom file name.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEON:FILE:TYPE?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEON:FILE:TYPE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVEON:FILE:TYPE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEON:FILE:TYPE {AUTO|CUSTOM}
             - SAVEON:FILE:TYPE?
+            ```
 
-        **Info:**
+        Info:
             - ``AUTO`` uses the date and time as the file name for the saved events. An example auto
               file name is: ``20110711_182946``.
             - ``CUSTOM`` uses the file name that you specified using the ``SAVEON:FILE:NAME``
@@ -631,19 +611,18 @@ class SaveonFile(SCPICmdRead):
 class SaveonCount(SCPICmdRead):
     """The ``SAVEON:COUNt`` command.
 
-    **Description:**
+    Description:
         - Returns the number of events (files) that have been saved since the last reset.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEON:COUNt?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEON:COUNt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEON:COUNt?
+        ```
     """
 
 
@@ -651,21 +630,20 @@ class SaveonCount(SCPICmdRead):
 class Saveon(SCPICmdWrite, SCPICmdRead):
     """The ``SAVEON`` command.
 
-    **Description:**
+    Description:
         - Sets the auto-increment file count to 0. Once the number of saved files has reached the
           limit that you set (using the ``SAVEON:NUMevents`` command), no files will be saved until
           you reset the count.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVEON value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEON {RESET}
+        ```
 
-    **Info:**
+    Info:
         - ``RESET`` sets the file count to 0.
 
     Properties:
@@ -698,19 +676,18 @@ class Saveon(SCPICmdWrite, SCPICmdRead):
     def count(self) -> SaveonCount:
         """Return the ``SAVEON:COUNt`` command.
 
-        **Description:**
+        Description:
             - Returns the number of events (files) that have been saved since the last reset.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEON:COUNt?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEON:COUNt?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEON:COUNt?
+            ```
         """
         return self._count
 
@@ -718,7 +695,7 @@ class Saveon(SCPICmdWrite, SCPICmdRead):
     def file(self) -> SaveonFile:
         """Return the ``SAVEON:FILE`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEON:FILE?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEON:FILE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -736,24 +713,23 @@ class Saveon(SCPICmdWrite, SCPICmdRead):
     def image(self) -> SaveonImage:
         """Return the ``SAVEON:IMAGe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether to save a screen capture when a trigger occurs
               and ``SAVEON:TRIGer`` is ON and ``SAVEON:IMAGE`` is ON.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEON:IMAGe?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEON:IMAGe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVEON:IMAGe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEON:IMAGe {<NR1>|OFF|ON}
             - SAVEON:IMAGe?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables Save On Image; any other value turns this feature on.
             - ``OFF`` disables Save On Image.
             - ``ON`` enables Save On Image.
@@ -764,7 +740,7 @@ class Saveon(SCPICmdWrite, SCPICmdRead):
     def limit(self) -> SaveonLimit:
         """Return the ``SAVEON:LIMit`` command.
 
-        **Description:**
+        Description:
             - Sets or queries whether to save a file when there is a limit test failure. When this
               is set to On, a limit test failure will trigger the instrument to save an image, a
               measurement, and/or a waveform to a file, depending on what you specify using the
@@ -775,20 +751,19 @@ class Saveon(SCPICmdWrite, SCPICmdRead):
               autoincrement), using the SaveOn File commands. Analog and math waveforms are saved
               using one file per waveform. Digital waveforms are all saved to a single file.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEON:LIMit?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEON:LIMit?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVEON:LIMit value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEON:LIMit {<NR1>|OFF|ON}
             - SAVEON:LIMit?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables Save On Limit; any other value turns this feature on.
             - ``OFF`` disables Save On Limit.
             - ``ON`` enables Save On Limit.
@@ -799,7 +774,7 @@ class Saveon(SCPICmdWrite, SCPICmdRead):
     def mask(self) -> SaveonMask:
         """Return the ``SAVEON:MASK`` command.
 
-        **Description:**
+        Description:
             - Sets or queries whether to save a file when there is a mask failure. When
               ``SAVEON:MASK`` is enabled, a mask failure will trigger the instrument to save an
               image, a measurement, and/or a waveform to a file, depending on what you specify using
@@ -811,20 +786,19 @@ class Saveon(SCPICmdWrite, SCPICmdRead):
               analog channels, digital channels, or math waveforms Analog and math waveforms are
               saved using one file per waveform. Digital waveforms are all saved to a single file.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEON:MASK?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEON:MASK?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVEON:MASK value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEON:MASK {<NR1>|OFF|ON}
             - SAVEON:MASK?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables Save On Mask; any other value turns this feature on.
             - ``OFF`` disables Save On Mask.
             - ``ON`` enables Save On Mask.
@@ -835,7 +809,7 @@ class Saveon(SCPICmdWrite, SCPICmdRead):
     def measurement(self) -> SaveonMeasurement:
         """Return the ``SAVEON:MEASUrement`` command.
 
-        **Description:**
+        Description:
             - Sets or queries whether to save a measurement when any of the following triggers
               occurs: Limit test failure - if set to On. (``SAVEON:LIMIT``) Mask failure - if set to
               On. (``SAVEON:MASK``) Trigger - if set to On. (``SAVEON:TRIGGER``) The image will be
@@ -843,20 +817,19 @@ class Saveon(SCPICmdWrite, SCPICmdRead):
               selected using ``SAVEON:FILE:DEST``. You can set options for file storage (such as
               file name, file destination, and autoincrement), using the SaveOn File commands.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEON:MEASUrement?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEON:MEASUrement?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVEON:MEASUrement value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEON:MEASUrement {<NR1>|OFF|ON}
             - SAVEON:MEASUrement?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables Save On Measurement; any other value turns this feature on.
             - ``OFF`` disables Save On Measurement.
             - ``ON`` enables Save On Measurement.
@@ -867,24 +840,23 @@ class Saveon(SCPICmdWrite, SCPICmdRead):
     def numevents(self) -> SaveonNumevents:
         """Return the ``SAVEON:NUMEvents`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the maximum number of events that will be saved. You can use this
               feature to avoid running out of disk space, especially if you save large files.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEON:NUMEvents?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEON:NUMEvents?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVEON:NUMEvents value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEON:NUMEvents <NR3>
             - SAVEON:NUMEvents?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the number of events that will be saved before a reset is
               required.
         """
@@ -894,24 +866,23 @@ class Saveon(SCPICmdWrite, SCPICmdRead):
     def setup(self) -> SaveonSetup:
         """Return the ``SAVEON:SETUP`` command.
 
-        **Description:**
+        Description:
             - Saves the instrument setup when there is an event. Queries the status of this feature
               (on or off).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEON:SETUP?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEON:SETUP?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVEON:SETUP value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEON:SETUP {<NR1>|ON|OFF}
             - SAVEON:SETUP?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the feature; any other value turns this feature on.
             - ``ON`` enables the feature.
             - ``OFF`` disables the feature.
@@ -922,7 +893,7 @@ class Saveon(SCPICmdWrite, SCPICmdRead):
     def trigger(self) -> SaveonTrigger:
         """Return the ``SAVEON:TRIGger`` command.
 
-        **Description:**
+        Description:
             - Sets or queries whether to save a file when a trigger occurs. You can define the
               trigger using Trigger commands or the instrument user interface. This command is
               longer necessary. Please see Act On Event commands for future development. The trigger
@@ -935,20 +906,19 @@ class Saveon(SCPICmdWrite, SCPICmdRead):
               are saved using one file per waveform. Digital waveforms are all saved to a single
               file.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEON:TRIGger?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEON:TRIGger?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVEON:TRIGger value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEON:TRIGger {<NR1>|ON|OFF}
             - SAVEON:TRIGger?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables Save On Trigger; any other value turns this feature on.
             - ``OFF`` disables Save On Trigger.
             - ``ON`` enables Save On Trigger.
@@ -959,27 +929,26 @@ class Saveon(SCPICmdWrite, SCPICmdRead):
     def waveform(self) -> SaveonWaveform:
         """Return the ``SAVEON:WAVEform`` command.
 
-        **Description:**
+        Description:
             - Sets or queries whether to save a waveform when a trigger occurs when
               ``SAVEON:TRIGGER`` is ON. The waveform will be saved to the file you selected with
               ``SAVEON:FILE:NAME``, in the location that you selected using ``SAVEON:FILE:DEST``.
               You can set options for file storage (such as file name, file destination, and
               autoincrement), using the ``SAVEON:FILE`` commands.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEON:WAVEform?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEON:WAVEform?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVEON:WAVEform value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEON:WAVEform {<NR1>|ON|OFF}
             - SAVEON:WAVEform?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables Save On Waveform; any other value turns this feature on.
             - ``OFF`` disables Save On Waveform.
             - ``ON`` enables Save On Waveform.

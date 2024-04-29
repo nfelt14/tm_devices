@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - UNDO
 """
 
@@ -25,18 +23,17 @@ if TYPE_CHECKING:
 class Undo(SCPICmdWriteNoArguments):
     """The ``UNDO`` command.
 
-    **Description:**
+    Description:
         - Reverts the instrument settings to a state before the previous command or user interface
           action.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``UNDO`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - UNDO
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "UNDO") -> None:

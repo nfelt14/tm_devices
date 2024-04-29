@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CALibration:ABORt
     - CALibration:ALL
     - CALibration:ALL?
@@ -41,26 +39,25 @@ if TYPE_CHECKING:
 class CalibrationStopState(SCPICmdRead):
     """The ``CALibration:STOP:STATe`` command.
 
-    **Description:**
+    Description:
         - This command returns the state of the calibration procedure.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibration:STOP:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibration:STOP:STATe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibration:STOP:STATe?
+        ```
     """
 
 
 class CalibrationStop(SCPICmdRead):
     """The ``CALibration:STOP`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibration:STOP?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibration:STOP?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -77,19 +74,18 @@ class CalibrationStop(SCPICmdRead):
     def state(self) -> CalibrationStopState:
         """Return the ``CALibration:STOP:STATe`` command.
 
-        **Description:**
+        Description:
             - This command returns the state of the calibration procedure.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibration:STOP:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibration:STOP:STATe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibration:STOP:STATe?
+            ```
         """
         return self._state
 
@@ -97,7 +93,7 @@ class CalibrationStop(SCPICmdRead):
 class CalibrationStateUser(SCPICmdReadWithArguments):
     """The ``CALibration:STATe:USER`` command.
 
-    **Description:**
+    Description:
         - This command returns the current user state of the calibration for the AWG. A calibration
           state will be Calibrated or Uncalibrated. Areas will be calibrated when all procedures for
           that area have been executed and passed. Subsystems will be calibrated when all areas for
@@ -105,25 +101,24 @@ class CalibrationStateUser(SCPICmdReadWithArguments):
           have a temperature and date time. An uncalibrated state will not have a valid temperature
           or date time and should be ignored.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``CALibration:STATe:USER? argument``
           query.
         - Using the ``.verify(argument, value)`` method will send the
           ``CALibration:STATe:USER? argument`` query and raise an AssertionError if the returned
           value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibration:STATe:USER? [<subsystem>[,<area>]]
+        ```
     """
 
 
 class CalibrationStateFactory(SCPICmdReadWithArguments):
     """The ``CALibration:STATe:FACTory`` command.
 
-    **Description:**
+    Description:
         - This command returns the current factory state of the calibration for the AWG. A
           calibration state will be Calibrated or Uncalibrated. Areas will be calibrated when all
           procedures for that area have been executed and passed. Subsystems will be calibrated when
@@ -131,25 +126,24 @@ class CalibrationStateFactory(SCPICmdReadWithArguments):
           state will have a temperature and date time. An uncalibrated state will not have a valid
           temperature or date time and should be ignored.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``CALibration:STATe:FACTory? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``CALibration:STATe:FACTory? argument`` query and raise an AssertionError if the returned
           value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibration:STATe:FACTory? [<subsystem>][,<area>]]
+        ```
     """
 
 
 class CalibrationState(SCPICmdRead):
     """The ``CALibration:STATe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibration:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibration:STATe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -168,7 +162,7 @@ class CalibrationState(SCPICmdRead):
     def factory(self) -> CalibrationStateFactory:
         """Return the ``CALibration:STATe:FACTory`` command.
 
-        **Description:**
+        Description:
             - This command returns the current factory state of the calibration for the AWG. A
               calibration state will be Calibrated or Uncalibrated. Areas will be calibrated when
               all procedures for that area have been executed and passed. Subsystems will be
@@ -176,18 +170,17 @@ class CalibrationState(SCPICmdRead):
               opposed to uncalibrated) state will have a temperature and date time. An uncalibrated
               state will not have a valid temperature or date time and should be ignored.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``CALibration:STATe:FACTory? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``CALibration:STATe:FACTory? argument`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibration:STATe:FACTory? [<subsystem>][,<area>]]
+            ```
         """
         return self._factory
 
@@ -195,7 +188,7 @@ class CalibrationState(SCPICmdRead):
     def user(self) -> CalibrationStateUser:
         """Return the ``CALibration:STATe:USER`` command.
 
-        **Description:**
+        Description:
             - This command returns the current user state of the calibration for the AWG. A
               calibration state will be Calibrated or Uncalibrated. Areas will be calibrated when
               all procedures for that area have been executed and passed. Subsystems will be
@@ -203,18 +196,17 @@ class CalibrationState(SCPICmdRead):
               opposed to uncalibrated) state will have a temperature and date time. An uncalibrated
               state will not have a valid temperature or date time and should be ignored.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``CALibration:STATe:USER? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``CALibration:STATe:USER? argument`` query and raise an AssertionError if the returned
               value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibration:STATe:USER? [<subsystem>[,<area>]]
+            ```
         """
         return self._user
 
@@ -222,95 +214,90 @@ class CalibrationState(SCPICmdRead):
 class CalibrationStart(SCPICmdWriteNoArguments):
     """The ``CALibration:STARt`` command.
 
-    **Description:**
+    Description:
         - This command starts the calibration.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``CALibration:STARt`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibration:STARt
+        ```
     """
 
 
 class CalibrationRunning(SCPICmdRead):
     """The ``CALibration:RUNNing`` command.
 
-    **Description:**
+    Description:
         - This command returns the name of the subsystem, area, and procedure in progress. This
           command can be issued while procedure is in progress.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibration:RUNNing?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibration:RUNNing?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibration:RUNNing?
+        ```
     """
 
 
 class CalibrationResultTime(SCPICmdRead):
     """The ``CALibration:RESult:TIME`` command.
 
-    **Description:**
+    Description:
         - This command returns the time of the last calibration.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibration:RESult:TIME?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibration:RESult:TIME?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibration:RESult:TIME?
+        ```
     """
 
 
 class CalibrationResultTemperature(SCPICmdRead):
     """The ``CALibration:RESult:TEMPerature`` command.
 
-    **Description:**
+    Description:
         - This command returns the temperature of the last calibration. All temperatures are in °C.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibration:RESult:TEMPerature?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibration:RESult:TEMPerature?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibration:RESult:TEMPerature?
+        ```
     """
 
 
 class CalibrationResult(SCPICmdRead):
     """The ``CALibration:RESult`` command.
 
-    **Description:**
+    Description:
         - This command returns the status of the last calibration procedure. This query-only command
           can be issued while calibration is in progress.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibration:RESult?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibration:RESult?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibration:RESult?
+        ```
 
     Properties:
         - ``.temperature``: The ``CALibration:RESult:TEMPerature`` command.
@@ -326,20 +313,19 @@ class CalibrationResult(SCPICmdRead):
     def temperature(self) -> CalibrationResultTemperature:
         """Return the ``CALibration:RESult:TEMPerature`` command.
 
-        **Description:**
+        Description:
             - This command returns the temperature of the last calibration. All temperatures are in
               °C.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibration:RESult:TEMPerature?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibration:RESult:TEMPerature?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibration:RESult:TEMPerature?
+            ```
         """
         return self._temperature
 
@@ -347,19 +333,18 @@ class CalibrationResult(SCPICmdRead):
     def time(self) -> CalibrationResultTime:
         """Return the ``CALibration:RESult:TIME`` command.
 
-        **Description:**
+        Description:
             - This command returns the time of the last calibration.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibration:RESult:TIME?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibration:RESult:TIME?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibration:RESult:TIME?
+            ```
         """
         return self._time
 
@@ -367,45 +352,43 @@ class CalibrationResult(SCPICmdRead):
 class CalibrationRestore(SCPICmdWriteNoArguments):
     """The ``CALibration:RESTore`` command.
 
-    **Description:**
+    Description:
         - This command restores the calibration constants from the factory non-volatile memory and
           copied to user storage.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``CALibration:RESTore`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibration:RESTore
+        ```
     """
 
 
 class CalibrationLogFailuresonly(SCPICmdWrite, SCPICmdRead):
     """The ``CALibration:LOG:FAILuresonly`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the flag that controls the amount of result information saved
           into the log. This controls all tests that pass or fail or only tests that fail. It is
           important to note, that details are generated during the test, and need to be saved during
           the test execution.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibration:LOG:FAILuresonly?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibration:LOG:FAILuresonly?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CALibration:LOG:FAILuresonly value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibration:LOG:FAILuresonly {OFF|ON|0|1}
         - CALibration:LOG:FAILuresonly?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 0.
     """
 
@@ -413,41 +396,39 @@ class CalibrationLogFailuresonly(SCPICmdWrite, SCPICmdRead):
 class CalibrationLogClear(SCPICmdWriteNoArguments):
     """The ``CALibration:LOG:CLEar`` command.
 
-    **Description:**
+    Description:
         - This command clears the results log. The command works when in the active mode for
           calibration. See the ``ACTIVE:MODE`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``CALibration:LOG:CLEar`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibration:LOG:CLEar
+        ```
     """
 
 
 class CalibrationLog(SCPICmdRead):
     """The ``CALibration:LOG`` command.
 
-    **Description:**
+    Description:
         - This command returns a string of continuous concatenated calibration results. The start
           time is recorded plus one or more <cal ``path>:<cal`` name> <result>. This command can be
           issued while calibration is still in progress. Use the ``CALIBRATION:LOG:CLEAR`` command
           to start a fresh log and provide additional information. Log results are still valid if
           the calibration is aborted and the calibration constants are restored.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibration:LOG?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibration:LOG?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibration:LOG?
+        ```
 
     Properties:
         - ``.clear``: The ``CALibration:LOG:CLEar`` command.
@@ -463,18 +444,17 @@ class CalibrationLog(SCPICmdRead):
     def clear(self) -> CalibrationLogClear:
         """Return the ``CALibration:LOG:CLEar`` command.
 
-        **Description:**
+        Description:
             - This command clears the results log. The command works when in the active mode for
               calibration. See the ``ACTIVE:MODE`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``CALibration:LOG:CLEar`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibration:LOG:CLEar
+            ```
         """
         return self._clear
 
@@ -482,27 +462,26 @@ class CalibrationLog(SCPICmdRead):
     def failuresonly(self) -> CalibrationLogFailuresonly:
         """Return the ``CALibration:LOG:FAILuresonly`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the flag that controls the amount of result information
               saved into the log. This controls all tests that pass or fail or only tests that fail.
               It is important to note, that details are generated during the test, and need to be
               saved during the test execution.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibration:LOG:FAILuresonly?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibration:LOG:FAILuresonly?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``CALibration:LOG:FAILuresonly value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibration:LOG:FAILuresonly {OFF|ON|0|1}
             - CALibration:LOG:FAILuresonly?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 0.
         """
         return self._failuresonly
@@ -511,64 +490,61 @@ class CalibrationLog(SCPICmdRead):
 class CalibrationCatalog(SCPICmdReadWithArguments):
     """The ``CALibration:CATalog`` command.
 
-    **Description:**
+    Description:
         - This command returns the list of calibration procedures. All tests are grouped by areas.
           All areas are grouped by subsystems. The available subsystems, areas, and tests depend on
           the type of testing (such as POST or ALL).
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``CALibration:CATalog? argument``
           query.
         - Using the ``.verify(argument, value)`` method will send the
           ``CALibration:CATalog? argument`` query and raise an AssertionError if the returned value
           does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibration:CATalog? [{ALL|<subsystem>}[,{ALL|<area>}]]
+        ```
     """
 
 
 class CalibrationAll(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``CALibration:ALL`` command.
 
-    **Description:**
+    Description:
         - The CALibration[``:ALL``] command performs an internal calibration. The
           CALibration[``:ALL``]? command performs an internal calibration and returns 0 (Pass) or a
           calibration error code.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibration:ALL?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibration:ALL?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``CALibration:ALL`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibration:ALL
         - CALibration:ALL?
+        ```
     """
 
 
 class CalibrationAbort(SCPICmdWriteNoArguments):
     """The ``CALibration:ABORt`` command.
 
-    **Description:**
+    Description:
         - This command stops the self calibration process and restores the previous calibration
           constants.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``CALibration:ABORt`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibration:ABORt
+        ```
     """
 
 
@@ -576,7 +552,7 @@ class CalibrationAbort(SCPICmdWriteNoArguments):
 class Calibration(SCPICmdRead):
     """The ``CALibration`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibration?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibration?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -613,18 +589,17 @@ class Calibration(SCPICmdRead):
     def abort(self) -> CalibrationAbort:
         """Return the ``CALibration:ABORt`` command.
 
-        **Description:**
+        Description:
             - This command stops the self calibration process and restores the previous calibration
               constants.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``CALibration:ABORt`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibration:ABORt
+            ```
         """
         return self._abort
 
@@ -632,23 +607,22 @@ class Calibration(SCPICmdRead):
     def catalog(self) -> CalibrationCatalog:
         """Return the ``CALibration:CATalog`` command.
 
-        **Description:**
+        Description:
             - This command returns the list of calibration procedures. All tests are grouped by
               areas. All areas are grouped by subsystems. The available subsystems, areas, and tests
               depend on the type of testing (such as POST or ALL).
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``CALibration:CATalog? argument``
               query.
             - Using the ``.verify(argument, value)`` method will send the
               ``CALibration:CATalog? argument`` query and raise an AssertionError if the returned
               value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibration:CATalog? [{ALL|<subsystem>}[,{ALL|<area>}]]
+            ```
         """
         return self._catalog
 
@@ -656,7 +630,7 @@ class Calibration(SCPICmdRead):
     def log(self) -> CalibrationLog:
         """Return the ``CALibration:LOG`` command.
 
-        **Description:**
+        Description:
             - This command returns a string of continuous concatenated calibration results. The
               start time is recorded plus one or more <cal ``path>:<cal`` name> <result>. This
               command can be issued while calibration is still in progress. Use the
@@ -664,16 +638,15 @@ class Calibration(SCPICmdRead):
               information. Log results are still valid if the calibration is aborted and the
               calibration constants are restored.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibration:LOG?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibration:LOG?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibration:LOG?
+            ```
 
         Sub-properties:
             - ``.clear``: The ``CALibration:LOG:CLEar`` command.
@@ -685,18 +658,17 @@ class Calibration(SCPICmdRead):
     def restore(self) -> CalibrationRestore:
         """Return the ``CALibration:RESTore`` command.
 
-        **Description:**
+        Description:
             - This command restores the calibration constants from the factory non-volatile memory
               and copied to user storage.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``CALibration:RESTore`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibration:RESTore
+            ```
         """
         return self._restore
 
@@ -704,20 +676,19 @@ class Calibration(SCPICmdRead):
     def result(self) -> CalibrationResult:
         """Return the ``CALibration:RESult`` command.
 
-        **Description:**
+        Description:
             - This command returns the status of the last calibration procedure. This query-only
               command can be issued while calibration is in progress.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibration:RESult?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibration:RESult?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibration:RESult?
+            ```
 
         Sub-properties:
             - ``.temperature``: The ``CALibration:RESult:TEMPerature`` command.
@@ -729,20 +700,19 @@ class Calibration(SCPICmdRead):
     def running(self) -> CalibrationRunning:
         """Return the ``CALibration:RUNNing`` command.
 
-        **Description:**
+        Description:
             - This command returns the name of the subsystem, area, and procedure in progress. This
               command can be issued while procedure is in progress.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibration:RUNNing?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibration:RUNNing?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibration:RUNNing?
+            ```
         """
         return self._running
 
@@ -750,17 +720,16 @@ class Calibration(SCPICmdRead):
     def start(self) -> CalibrationStart:
         """Return the ``CALibration:STARt`` command.
 
-        **Description:**
+        Description:
             - This command starts the calibration.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``CALibration:STARt`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibration:STARt
+            ```
         """
         return self._start
 
@@ -768,7 +737,7 @@ class Calibration(SCPICmdRead):
     def state(self) -> CalibrationState:
         """Return the ``CALibration:STATe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibration:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibration:STATe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -783,7 +752,7 @@ class Calibration(SCPICmdRead):
     def stop(self) -> CalibrationStop:
         """Return the ``CALibration:STOP`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibration:STOP?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibration:STOP?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -797,22 +766,21 @@ class Calibration(SCPICmdRead):
     def all(self) -> CalibrationAll:
         """Return the ``CALibration:ALL`` command.
 
-        **Description:**
+        Description:
             - The CALibration[``:ALL``] command performs an internal calibration. The
               CALibration[``:ALL``]? command performs an internal calibration and returns 0 (Pass)
               or a calibration error code.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibration:ALL?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibration:ALL?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write()`` method will send the ``CALibration:ALL`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibration:ALL
             - CALibration:ALL?
+            ```
         """
         return self._all

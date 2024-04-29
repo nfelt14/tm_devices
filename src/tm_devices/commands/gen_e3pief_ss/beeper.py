@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - beeper.beep()
     - beeper.enable
 """
@@ -28,7 +26,7 @@ if TYPE_CHECKING:
 class Beeper(BaseTSPCmd):
     """The ``beeper`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.beep()``: The ``beeper.beep()`` function.
         - ``.enable``: The ``beeper.enable`` attribute.
     """
@@ -40,19 +38,18 @@ class Beeper(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``beeper.enable`` attribute.
 
-        **Description:**
+        Description:
             - This command allows you to turn the beeper on or off.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(beeper.enable)`` query.
             - Setting this property to a value will send the ``beeper.enable = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - beeper.enable = value
             - print(beeper.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -71,19 +68,18 @@ class Beeper(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``beeper.enable`` attribute.
 
-        **Description:**
+        Description:
             - This command allows you to turn the beeper on or off.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(beeper.enable)`` query.
             - Setting this property to a value will send the ``beeper.enable = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - beeper.enable = value
             - print(beeper.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -104,14 +100,13 @@ class Beeper(BaseTSPCmd):
     def beep(self, duration: float, frequency: float) -> None:
         """Run the ``beeper.beep()`` function.
 
-        **Description:**
+        Description:
             - This function generates an audible tone.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - beeper.beep()
+            ```
 
         Args:
             duration: The amount of time to play the tone (0.001 s to 100 s).

@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - MATH:ADDNew <QString>
     - MATH:DELete <QString>
     - MATH:LIST?
@@ -54,7 +52,8 @@ Commands and Queries:
     - MATH:MATH<x>:FILTer:ORDer?
     - MATH:MATH<x>:FILTer:PRIPple <NR3>
     - MATH:MATH<x>:FILTer:PRIPple?
-    - MATH:MATH<x>:FILTer:RESPonse {BUTTerworth| CHEBYONe| CHEBYTWo| ELLiptical| GAUSsian| BESSelCUSTom}
+    - MATH:MATH<x>:FILTer:RESPonse {BUTTerworth| CHEBYONe| CHEBYTWo| ELLiptical| GAUSsian|
+      BESSelCUSTom}
     - MATH:MATH<x>:FILTer:RESPonse?
     - MATH:MATH<x>:FILTer:ROFactor <NR1>
     - MATH:MATH<x>:FILTer:ROFactor?
@@ -140,7 +139,8 @@ Commands and Queries:
     - MATH:MATH<x>:SPECTral:UNWRap:DEGrees <NR3>
     - MATH:MATH<x>:SPECTral:UNWRap:DEGrees?
     - MATH:MATH<x>:SPECTral:UNWRap?
-    - MATH:MATH<x>:SPECTral:WINdow {RECTANGular|HAMMing| HANNing|BLACKMANHarris|KAISERBessel|GAUSSian| FLATTOP2|TEKEXPonential}
+    - MATH:MATH<x>:SPECTral:WINdow {RECTANGular|HAMMing|
+      HANNing|BLACKMANHarris|KAISERBessel|GAUSSian| FLATTOP2|TEKEXPonential}
     - MATH:MATH<x>:SPECTral:WINdow?
     - MATH:MATH<x>:SPI:SUPPortedfields {DATa|MOSIdata|MISOdata}
     - MATH:MATH<x>:SPI:SUPPortedfields?
@@ -152,7 +152,7 @@ Commands and Queries:
     - MATH:MATH<x>:USB:SUPPortedfields {DATa}
     - MATH:MATH<x>:USB:SUPPortedfields?
     - MATH:MATH<x>:VUNIT <QString>
-"""  # noqa: E501
+"""
 
 from typing import Dict, Optional, TYPE_CHECKING
 
@@ -170,20 +170,19 @@ if TYPE_CHECKING:
 class MathMathItemVunit(SCPICmdWrite):
     """The ``MATH:MATH<x>:VUNIT`` command.
 
-    **Description:**
+    Description:
         - This command specifies or returns the math custom vertical units. The math waveform is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:VUNIT value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:VUNIT <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the custom vertical units.
     """
 
@@ -193,25 +192,24 @@ class MathMathItemVunit(SCPICmdWrite):
 class MathMathItemUsbSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:USB:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for USB bus.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:USB:SUPPortedfields?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:USB:SUPPortedfields?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:USB:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:USB:SUPPortedfields {DATa}
         - MATH:MATH<x>:USB:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
     """
 
@@ -219,7 +217,7 @@ class MathMathItemUsbSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemUsb(SCPICmdRead):
     """The ``MATH:MATH<x>:USB`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:USB?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:USB?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -238,11 +236,11 @@ class MathMathItemUsb(SCPICmdRead):
     def supportedfields(self) -> MathMathItemUsbSupportedfields:
         """Return the ``MATH:MATH<x>:USB:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for USB
               bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:USB:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -251,14 +249,13 @@ class MathMathItemUsb(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:USB:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:USB:SUPPortedfields {DATa}
             - MATH:MATH<x>:USB:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
         """
         return self._supportedfields
@@ -267,19 +264,18 @@ class MathMathItemUsb(SCPICmdRead):
 class MathMathItemType(SCPICmdWrite):
     """The ``MATH:MATH<x>:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the math type. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:TYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:TYPe {BASic|FILTER|FFT|ADVanced}
+        ```
 
-    **Info:**
+    Info:
         - ``BASic`` set the type to basic math.
         - ``FILTER`` sets the math type to filter. Requires UDFLT licenses on 5, 6 series MSO
           instruments and Tekscope (Offline).
@@ -293,25 +289,24 @@ class MathMathItemType(SCPICmdWrite):
 class MathMathItemSvidSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:SVID:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for SVID bus.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SVID:SUPPortedfields?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SVID:SUPPortedfields?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:SVID:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SVID:SUPPortedfields {MPAYload|SPAYload}
         - MATH:MATH<x>:SVID:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``MPAYload`` sets the field type to MPAYload.
         - ``SPAYload`` sets the field type to SPAYload.
     """
@@ -320,7 +315,7 @@ class MathMathItemSvidSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemSvid(SCPICmdRead):
     """The ``MATH:MATH<x>:SVID`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SVID?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SVID?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -339,11 +334,11 @@ class MathMathItemSvid(SCPICmdRead):
     def supportedfields(self) -> MathMathItemSvidSupportedfields:
         """Return the ``MATH:MATH<x>:SVID:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for SVID
               bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SVID:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -352,14 +347,13 @@ class MathMathItemSvid(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:SVID:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SVID:SUPPortedfields {MPAYload|SPAYload}
             - MATH:MATH<x>:SVID:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``MPAYload`` sets the field type to MPAYload.
             - ``SPAYload`` sets the field type to SPAYload.
         """
@@ -369,25 +363,24 @@ class MathMathItemSvid(SCPICmdRead):
 class MathMathItemSpmiSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:SPMI:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for SPMI bus.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPMI:SUPPortedfields?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPMI:SUPPortedfields?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:SPMI:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SPMI:SUPPortedfields {DATa|CDATa|RDATa}
         - MATH:MATH<x>:SPMI:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
         - ``CDATa`` sets the field type to CDATa.
         - ``RDATa`` sets the field type to RDATa.
@@ -397,7 +390,7 @@ class MathMathItemSpmiSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemSpmi(SCPICmdRead):
     """The ``MATH:MATH<x>:SPMI`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPMI?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPMI?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -416,11 +409,11 @@ class MathMathItemSpmi(SCPICmdRead):
     def supportedfields(self) -> MathMathItemSpmiSupportedfields:
         """Return the ``MATH:MATH<x>:SPMI:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for SPMI
               bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPMI:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -429,14 +422,13 @@ class MathMathItemSpmi(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:SPMI:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SPMI:SUPPortedfields {DATa|CDATa|RDATa}
             - MATH:MATH<x>:SPMI:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
             - ``CDATa`` sets the field type to CDATa.
             - ``RDATa`` sets the field type to RDATa.
@@ -447,25 +439,24 @@ class MathMathItemSpmi(SCPICmdRead):
 class MathMathItemSpiSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:SPI:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for SPI bus.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPI:SUPPortedfields?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPI:SUPPortedfields?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:SPI:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SPI:SUPPortedfields {DATa|MOSIdata|MISOdata}
         - MATH:MATH<x>:SPI:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
         - ``MOSIdata`` sets the field type to MOSIdata. MOSIdata field is available to select when
           SPI Bus configuration for Data Inputs is set to Two.
@@ -477,7 +468,7 @@ class MathMathItemSpiSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemSpi(SCPICmdRead):
     """The ``MATH:MATH<x>:SPI`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPI?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPI?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -496,11 +487,11 @@ class MathMathItemSpi(SCPICmdRead):
     def supportedfields(self) -> MathMathItemSpiSupportedfields:
         """Return the ``MATH:MATH<x>:SPI:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for SPI
               bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPI:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -509,14 +500,13 @@ class MathMathItemSpi(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:SPI:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SPI:SUPPortedfields {DATa|MOSIdata|MISOdata}
             - MATH:MATH<x>:SPI:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
             - ``MOSIdata`` sets the field type to MOSIdata. MOSIdata field is available to select
               when SPI Bus configuration for Data Inputs is set to Two.
@@ -529,7 +519,7 @@ class MathMathItemSpi(SCPICmdRead):
 class MathMathItemSpectralWindow(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:SPECTral:WINdow`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the window function used to apply the specified FFT window to
           the input data for the specified math waveform. The Math waveform is specified by x. A
           spectral window determines what the filter shape of the spectral analyzer will be in the
@@ -538,21 +528,20 @@ class MathMathItemSpectralWindow(SCPICmdWrite, SCPICmdRead):
           arguments that specify the window function used to multiply the input data. The windows
           are listed in the order of their ability to resolve frequencies (resolution bandwidth).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:WINdow?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPECTral:WINdow?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:SPECTral:WINdow value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SPECTral:WINdow {RECTANGular|HAMMing| HANNing|BLACKMANHarris|KAISERBessel|GAUSSian| FLATTOP2|TEKEXPonential}
         - MATH:MATH<x>:SPECTral:WINdow?
+        ```
 
-    **Info:**
+    Info:
         - ``RECTANGular`` window function is equivalent to multiplying all gate data by one.
         - ``HAMMing`` window function is based on a cosine series.
         - ``HANNing`` window function is based on a cosine series.
@@ -570,12 +559,12 @@ class MathMathItemSpectralWindow(SCPICmdWrite, SCPICmdRead):
 class MathMathItemSpectralUnwrapDegrees(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:SPECTral:UNWRap:DEGrees`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries how many degrees adjacent phase values can jump before being
           unwrapped. This requires the Spectral type to be Phase and the UNWRAP to be enabled for
           this PI command to have any affect. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:UNWRap:DEGrees?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -584,14 +573,13 @@ class MathMathItemSpectralUnwrapDegrees(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:SPECTral:UNWRap:DEGrees value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SPECTral:UNWRap:DEGrees <NR3>
         - MATH:MATH<x>:SPECTral:UNWRap:DEGrees?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the value of unwrap phase in degrees.
     """
 
@@ -599,25 +587,24 @@ class MathMathItemSpectralUnwrapDegrees(SCPICmdWrite, SCPICmdRead):
 class MathMathItemSpectralUnwrap(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:SPECTral:UNWRap`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether phase unwrap of the spectral analyzer output data is
           enabled. The Math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:UNWRap?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPECTral:UNWRap?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:SPECTral:UNWRap value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SPECTral:UNWRap {OFF|ON|0|1}
         - MATH:MATH<x>:SPECTral:UNWRap?
+        ```
 
-    **Info:**
+    Info:
         - ``0`` disables phase unwrap for the specified math waveform.
         - ``1`` enables phase unwrap for the specified math waveform.
         - ``ON`` enables phase unwrap for the specified math waveform.
@@ -635,12 +622,12 @@ class MathMathItemSpectralUnwrap(SCPICmdWrite, SCPICmdRead):
     def degrees(self) -> MathMathItemSpectralUnwrapDegrees:
         """Return the ``MATH:MATH<x>:SPECTral:UNWRap:DEGrees`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries how many degrees adjacent phase values can jump before
               being unwrapped. This requires the Spectral type to be Phase and the UNWRAP to be
               enabled for this PI command to have any affect. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:UNWRap:DEGrees?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -649,14 +636,13 @@ class MathMathItemSpectralUnwrap(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:SPECTral:UNWRap:DEGrees value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SPECTral:UNWRap:DEGrees <NR3>
             - MATH:MATH<x>:SPECTral:UNWRap:DEGrees?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the value of unwrap phase in degrees.
         """
         return self._degrees
@@ -665,25 +651,24 @@ class MathMathItemSpectralUnwrap(SCPICmdWrite, SCPICmdRead):
 class MathMathItemSpectralType(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:SPECTral:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the FFT type selected for spectral analysis. The math
           waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:TYPE?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPECTral:TYPE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:SPECTral:TYPE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SPECTral:TYPE {MAGNitude|PHASe|REAL|IMAGinary}
         - MATH:MATH<x>:SPECTral:TYPE?
+        ```
 
-    **Info:**
+    Info:
         - ``MAGNitude`` specifies the magnitude spectral function.
         - ``PHASe`` specifies the phase spectral function.
         - ``REAL`` specifies the real spectral function.
@@ -694,12 +679,12 @@ class MathMathItemSpectralType(SCPICmdWrite, SCPICmdRead):
 class MathMathItemSpectralSuppressValue(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:SPECTral:SUPPress:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries in volts the value of suppression threshold of the specified
           math waveform. This requires the Spectral type to be Phase and the Suppression to be
           enabled for this PI command to have any affect. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:SUPPress:VALue?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -708,14 +693,13 @@ class MathMathItemSpectralSuppressValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:SPECTral:SUPPress:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SPECTral:SUPPress:VALue <NR3>
         - MATH:MATH<x>:SPECTral:SUPPress:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the value of suppression threshold of the specified math waveform in volts.
     """
 
@@ -723,26 +707,25 @@ class MathMathItemSpectralSuppressValue(SCPICmdWrite, SCPICmdRead):
 class MathMathItemSpectralSuppress(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:SPECTral:SUPPress`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether suppression threshold for the specified math waveform
           is enabled. This is only applied when Spectral Plot type is Phase. The math waveform is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:SUPPress?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPECTral:SUPPress?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:SPECTral:SUPPress value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SPECTral:SUPPress {OFF|ON|0|1}
         - MATH:MATH<x>:SPECTral:SUPPress?
+        ```
 
-    **Info:**
+    Info:
         - ``0`` disables suppression threshold for the specified math waveform.
         - ``1`` enables suppression threshold for the specified math waveform.
         - ``ON`` enables suppression threshold for the specified math waveform.
@@ -760,13 +743,13 @@ class MathMathItemSpectralSuppress(SCPICmdWrite, SCPICmdRead):
     def value(self) -> MathMathItemSpectralSuppressValue:
         """Return the ``MATH:MATH<x>:SPECTral:SUPPress:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries in volts the value of suppression threshold of the
               specified math waveform. This requires the Spectral type to be Phase and the
               Suppression to be enabled for this PI command to have any affect. The math waveform is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:SUPPress:VALue?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -775,14 +758,13 @@ class MathMathItemSpectralSuppress(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:SPECTral:SUPPress:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SPECTral:SUPPress:VALue <NR3>
             - MATH:MATH<x>:SPECTral:SUPPress:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the value of suppression threshold of the specified math waveform in
               volts.
         """
@@ -792,25 +774,24 @@ class MathMathItemSpectralSuppress(SCPICmdWrite, SCPICmdRead):
 class MathMathItemSpectralSource(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:SPECTral:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the specified spectral math source. This only works with a
           math of type FFT. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPECTral:SOUrce?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:SPECTral:SOUrce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SPECTral:SOUrce {CH<x>|MATH<x>|REF<x>}
         - MATH:MATH<x>:SPECTral:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``MATH:MATH<x>:SPECTRAL:SOURCE`` is for use when the ``MATH:MATH<x>:TYPE`` is FFT.
     """
 
@@ -818,25 +799,24 @@ class MathMathItemSpectralSource(SCPICmdWrite, SCPICmdRead):
 class MathMathItemSpectralPhase(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:SPECTral:PHASE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the units of a SpectralPhase function in the specified math
           definition string. The Math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:PHASE?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPECTral:PHASE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:SPECTral:PHASE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SPECTral:PHASE {DEGrees|RADians|GROUPDelay}
         - MATH:MATH<x>:SPECTral:PHASE?
+        ```
 
-    **Info:**
+    Info:
         - ``DEGREES`` sets the SpectralPhase units to degrees.
         - ``RADIANS`` sets the SpectralPhase units to radians.
         - ``GROUPDELAY`` sets the SpectralPhase units to groupdelay, which computes the derivative
@@ -847,25 +827,24 @@ class MathMathItemSpectralPhase(SCPICmdWrite, SCPICmdRead):
 class MathMathItemSpectralMag(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:SPECTral:MAG`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the units of the SpectralMag function in the specified math
           definition string. The Math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:MAG?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPECTral:MAG?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:SPECTral:MAG value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SPECTral:MAG {LINEAr|DBM}
         - MATH:MATH<x>:SPECTral:MAG?
+        ```
 
-    **Info:**
+    Info:
         - ``LINEAR`` sets the SpectralMag units to linear.
         - ``DBM`` sets the SpectralMag units to decibels. It also sets the Ref Level Offset to a
           value that is the equivalent of 1 mW into 50 Ω.
@@ -875,25 +854,24 @@ class MathMathItemSpectralMag(SCPICmdWrite, SCPICmdRead):
 class MathMathItemSpectralHorz(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:SPECTral:HORZ`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the horizontal display scale of the spectral math waveform.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:HORZ?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPECTral:HORZ?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:SPECTral:HORZ value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SPECTral:HORZ {LOG|LINEAr}
         - MATH:MATH<x>:SPECTral:HORZ?
+        ```
 
-    **Info:**
+    Info:
         - ``LINEAr`` sets the SpectralMag units to linear.
         - ``LOG`` sets the SpectralMag units to log.
     """
@@ -903,7 +881,7 @@ class MathMathItemSpectralHorz(SCPICmdWrite, SCPICmdRead):
 class MathMathItemSpectral(SCPICmdRead):
     """The ``MATH:MATH<x>:SPECTral`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPECTral?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -934,25 +912,24 @@ class MathMathItemSpectral(SCPICmdRead):
     def horz(self) -> MathMathItemSpectralHorz:
         """Return the ``MATH:MATH<x>:SPECTral:HORZ`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the horizontal display scale of the spectral math
               waveform. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:HORZ?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPECTral:HORZ?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:SPECTral:HORZ value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SPECTral:HORZ {LOG|LINEAr}
             - MATH:MATH<x>:SPECTral:HORZ?
+            ```
 
-        **Info:**
+        Info:
             - ``LINEAr`` sets the SpectralMag units to linear.
             - ``LOG`` sets the SpectralMag units to log.
         """
@@ -962,25 +939,24 @@ class MathMathItemSpectral(SCPICmdRead):
     def mag(self) -> MathMathItemSpectralMag:
         """Return the ``MATH:MATH<x>:SPECTral:MAG`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the units of the SpectralMag function in the specified
               math definition string. The Math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:MAG?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPECTral:MAG?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:SPECTral:MAG value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SPECTral:MAG {LINEAr|DBM}
             - MATH:MATH<x>:SPECTral:MAG?
+            ```
 
-        **Info:**
+        Info:
             - ``LINEAR`` sets the SpectralMag units to linear.
             - ``DBM`` sets the SpectralMag units to decibels. It also sets the Ref Level Offset to a
               value that is the equivalent of 1 mW into 50 Ω.
@@ -991,25 +967,24 @@ class MathMathItemSpectral(SCPICmdRead):
     def phase(self) -> MathMathItemSpectralPhase:
         """Return the ``MATH:MATH<x>:SPECTral:PHASE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the units of a SpectralPhase function in the specified
               math definition string. The Math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:PHASE?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPECTral:PHASE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:SPECTral:PHASE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SPECTral:PHASE {DEGrees|RADians|GROUPDelay}
             - MATH:MATH<x>:SPECTral:PHASE?
+            ```
 
-        **Info:**
+        Info:
             - ``DEGREES`` sets the SpectralPhase units to degrees.
             - ``RADIANS`` sets the SpectralPhase units to radians.
             - ``GROUPDELAY`` sets the SpectralPhase units to groupdelay, which computes the
@@ -1021,25 +996,24 @@ class MathMathItemSpectral(SCPICmdRead):
     def source(self) -> MathMathItemSpectralSource:
         """Return the ``MATH:MATH<x>:SPECTral:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the specified spectral math source. This only works with
               a math of type FFT. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPECTral:SOUrce?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:SPECTral:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SPECTral:SOUrce {CH<x>|MATH<x>|REF<x>}
             - MATH:MATH<x>:SPECTral:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``MATH:MATH<x>:SPECTRAL:SOURCE`` is for use when the ``MATH:MATH<x>:TYPE`` is FFT.
         """
         return self._source
@@ -1048,26 +1022,25 @@ class MathMathItemSpectral(SCPICmdRead):
     def suppress(self) -> MathMathItemSpectralSuppress:
         """Return the ``MATH:MATH<x>:SPECTral:SUPPress`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether suppression threshold for the specified math
               waveform is enabled. This is only applied when Spectral Plot type is Phase. The math
               waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:SUPPress?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPECTral:SUPPress?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:SPECTral:SUPPress value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SPECTral:SUPPress {OFF|ON|0|1}
             - MATH:MATH<x>:SPECTral:SUPPress?
+            ```
 
-        **Info:**
+        Info:
             - ``0`` disables suppression threshold for the specified math waveform.
             - ``1`` enables suppression threshold for the specified math waveform.
             - ``ON`` enables suppression threshold for the specified math waveform.
@@ -1082,25 +1055,24 @@ class MathMathItemSpectral(SCPICmdRead):
     def type(self) -> MathMathItemSpectralType:
         """Return the ``MATH:MATH<x>:SPECTral:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the FFT type selected for spectral analysis. The math
               waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:TYPE?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPECTral:TYPE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:SPECTral:TYPE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SPECTral:TYPE {MAGNitude|PHASe|REAL|IMAGinary}
             - MATH:MATH<x>:SPECTral:TYPE?
+            ```
 
-        **Info:**
+        Info:
             - ``MAGNitude`` specifies the magnitude spectral function.
             - ``PHASe`` specifies the phase spectral function.
             - ``REAL`` specifies the real spectral function.
@@ -1112,25 +1084,24 @@ class MathMathItemSpectral(SCPICmdRead):
     def unwrap(self) -> MathMathItemSpectralUnwrap:
         """Return the ``MATH:MATH<x>:SPECTral:UNWRap`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether phase unwrap of the spectral analyzer output data
               is enabled. The Math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:UNWRap?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPECTral:UNWRap?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:SPECTral:UNWRap value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SPECTral:UNWRap {OFF|ON|0|1}
             - MATH:MATH<x>:SPECTral:UNWRap?
+            ```
 
-        **Info:**
+        Info:
             - ``0`` disables phase unwrap for the specified math waveform.
             - ``1`` enables phase unwrap for the specified math waveform.
             - ``ON`` enables phase unwrap for the specified math waveform.
@@ -1145,7 +1116,7 @@ class MathMathItemSpectral(SCPICmdRead):
     def window(self) -> MathMathItemSpectralWindow:
         """Return the ``MATH:MATH<x>:SPECTral:WINdow`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the window function used to apply the specified FFT
               window to the input data for the specified math waveform. The Math waveform is
               specified by x. A spectral window determines what the filter shape of the spectral
@@ -1155,21 +1126,20 @@ class MathMathItemSpectral(SCPICmdRead):
               multiply the input data. The windows are listed in the order of their ability to
               resolve frequencies (resolution bandwidth).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral:WINdow?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPECTral:WINdow?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:SPECTral:WINdow value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SPECTral:WINdow {RECTANGular|HAMMing| HANNing|BLACKMANHarris|KAISERBessel|GAUSSian| FLATTOP2|TEKEXPonential}
             - MATH:MATH<x>:SPECTral:WINdow?
+            ```
 
-        **Info:**
+        Info:
             - ``RECTANGular`` window function is equivalent to multiplying all gate data by one.
             - ``HAMMing`` window function is based on a cosine series.
             - ``HANNing`` window function is based on a cosine series.
@@ -1188,11 +1158,11 @@ class MathMathItemSpectral(SCPICmdRead):
 class MathMathItemSpacewireSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:SPACEWIRe:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for SPACEWIRe
           bus. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPACEWIRe:SUPPortedfields?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1201,14 +1171,13 @@ class MathMathItemSpacewireSupportedfields(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:SPACEWIRe:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SPACEWIRe:SUPPortedfields {DATa}
         - MATH:MATH<x>:SPACEWIRe:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
     """
 
@@ -1216,7 +1185,7 @@ class MathMathItemSpacewireSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemSpacewire(SCPICmdRead):
     """The ``MATH:MATH<x>:SPACEWIRe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPACEWIRe?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPACEWIRe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1235,11 +1204,11 @@ class MathMathItemSpacewire(SCPICmdRead):
     def supportedfields(self) -> MathMathItemSpacewireSupportedfields:
         """Return the ``MATH:MATH<x>:SPACEWIRe:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for
               SPACEWIRe bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MATH:MATH<x>:SPACEWIRe:SUPPortedfields?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1248,14 +1217,13 @@ class MathMathItemSpacewire(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:SPACEWIRe:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SPACEWIRe:SUPPortedfields {DATa}
             - MATH:MATH<x>:SPACEWIRe:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
         """
         return self._supportedfields
@@ -1264,23 +1232,22 @@ class MathMathItemSpacewire(SCPICmdRead):
 class MathMathItemSource1(SCPICmdWrite):
     """The ``MATH:MATH<x>:SOUrce1`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the specified math source. The source in the command can be
           either 1 or 2. This command sets the Basic Math components in the user interface, with two
           sources and a function. You would also need to set the math type to Basic to see the
           change in the user interface but this will not effect the programmable interface. The math
           waveform and source are specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:SOUrce1 value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SOUrce1 {CH<x>|MATH<x>|REF<x>}
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies an analog channel as source.
         - ``MATH<x>`` specifies a math channel as source.
         - ``REF<x>`` specifies a reference waveform as the source.
@@ -1292,25 +1259,24 @@ class MathMathItemSource1(SCPICmdWrite):
 class MathMathItemSmbusSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:SMBUS:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for SMBUS bus.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SMBUS:SUPPortedfields?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SMBUS:SUPPortedfields?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:SMBUS:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SMBUS:SUPPortedfields {DATa}
         - MATH:MATH<x>:SMBUS:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
     """
 
@@ -1318,7 +1284,7 @@ class MathMathItemSmbusSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemSmbus(SCPICmdRead):
     """The ``MATH:MATH<x>:SMBUS`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SMBUS?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SMBUS?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -1337,11 +1303,11 @@ class MathMathItemSmbus(SCPICmdRead):
     def supportedfields(self) -> MathMathItemSmbusSupportedfields:
         """Return the ``MATH:MATH<x>:SMBUS:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for SMBUS
               bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SMBUS:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1350,14 +1316,13 @@ class MathMathItemSmbus(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:SMBUS:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SMBUS:SUPPortedfields {DATa}
             - MATH:MATH<x>:SMBUS:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
         """
         return self._supportedfields
@@ -1366,25 +1331,24 @@ class MathMathItemSmbus(SCPICmdRead):
 class MathMathItemSigneddata(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:SIGNeddata`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries value to denote that bus field is decoded as signed/unsigned
           data for math on bus source. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SIGNeddata?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SIGNeddata?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:SIGNeddata value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SIGNeddata {ON|OFF}
         - MATH:MATH<x>:SIGNeddata?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` indicates that the bus field is decoded as signed data for drawing the math
           waveform.
         - ``OFF`` indicates that the bus field is decoded as unsigned data for drawing the math
@@ -1395,25 +1359,24 @@ class MathMathItemSigneddata(SCPICmdWrite, SCPICmdRead):
 class MathMathItemSentSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:SENT:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for SENT bus.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SENT:SUPPortedfields?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SENT:SUPPortedfields?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:SENT:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SENT:SUPPortedfields {FCData|FCDFirst|FCDTwo|SDATa}
         - MATH:MATH<x>:SENT:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``FCData`` sets the field type to FCData. FCData field is available to select when SENT
           Bus configuration for Fast Data Channels is set to 2.
         - ``FCDFirst`` sets the field type to FCDFirst.
@@ -1426,7 +1389,7 @@ class MathMathItemSentSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemSent(SCPICmdRead):
     """The ``MATH:MATH<x>:SENT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SENT?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SENT?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -1445,11 +1408,11 @@ class MathMathItemSent(SCPICmdRead):
     def supportedfields(self) -> MathMathItemSentSupportedfields:
         """Return the ``MATH:MATH<x>:SENT:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for SENT
               bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SENT:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1458,14 +1421,13 @@ class MathMathItemSent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:SENT:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SENT:SUPPortedfields {FCData|FCDFirst|FCDTwo|SDATa}
             - MATH:MATH<x>:SENT:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``FCData`` sets the field type to FCData. FCData field is available to select when
               SENT Bus configuration for Fast Data Channels is set to 2.
             - ``FCDFirst`` sets the field type to FCDFirst.
@@ -1479,25 +1441,24 @@ class MathMathItemSent(SCPICmdRead):
 class MathMathItemSdlcSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:SDLC:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for SDLC bus.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SDLC:SUPPortedfields?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SDLC:SUPPortedfields?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:SDLC:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:SDLC:SUPPortedfields {DATa}
         - MATH:MATH<x>:SDLC:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
     """
 
@@ -1505,7 +1466,7 @@ class MathMathItemSdlcSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemSdlc(SCPICmdRead):
     """The ``MATH:MATH<x>:SDLC`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:SDLC?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SDLC?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -1524,11 +1485,11 @@ class MathMathItemSdlc(SCPICmdRead):
     def supportedfields(self) -> MathMathItemSdlcSupportedfields:
         """Return the ``MATH:MATH<x>:SDLC:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for SDLC
               bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SDLC:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1537,14 +1498,13 @@ class MathMathItemSdlc(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:SDLC:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SDLC:SUPPortedfields {DATa}
             - MATH:MATH<x>:SDLC:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
         """
         return self._supportedfields
@@ -1553,11 +1513,11 @@ class MathMathItemSdlc(SCPICmdRead):
 class MathMathItemRs232cSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:RS232C:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for RS232C
           bus. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:RS232C:SUPPortedfields?``
           query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:RS232C:SUPPortedfields?``
@@ -1565,14 +1525,13 @@ class MathMathItemRs232cSupportedfields(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:RS232C:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:RS232C:SUPPortedfields {DATa|TXData|RXData}
         - MATH:MATH<x>:RS232C:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
         - ``TXData`` sets the field type to TXData. TXData field can be set when RS232 Bus
           configuration for Data Inputs is set to Two.
@@ -1584,7 +1543,7 @@ class MathMathItemRs232cSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemRs232c(SCPICmdRead):
     """The ``MATH:MATH<x>:RS232C`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:RS232C?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:RS232C?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -1603,11 +1562,11 @@ class MathMathItemRs232c(SCPICmdRead):
     def supportedfields(self) -> MathMathItemRs232cSupportedfields:
         """Return the ``MATH:MATH<x>:RS232C:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for RS232C
               bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:RS232C:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1616,14 +1575,13 @@ class MathMathItemRs232c(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:RS232C:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:RS232C:SUPPortedfields {DATa|TXData|RXData}
             - MATH:MATH<x>:RS232C:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
             - ``TXData`` sets the field type to TXData. TXData field can be set when RS232 Bus
               configuration for Data Inputs is set to Two.
@@ -1636,11 +1594,11 @@ class MathMathItemRs232c(SCPICmdRead):
 class MathMathItemPsifiveSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:PSIFIVe:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for PSIFIVe
           bus. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:PSIFIVe:SUPPortedfields?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1649,14 +1607,13 @@ class MathMathItemPsifiveSupportedfields(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:PSIFIVe:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:PSIFIVe:SUPPortedfields {DATa|DRA|DRB|SDATa}
         - MATH:MATH<x>:PSIFIVe:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
         - ``DRA`` sets the field type to DRA.
         - ``DRB`` sets the field type to DRB.
@@ -1667,7 +1624,7 @@ class MathMathItemPsifiveSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemPsifive(SCPICmdRead):
     """The ``MATH:MATH<x>:PSIFIVe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:PSIFIVe?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:PSIFIVe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1686,11 +1643,11 @@ class MathMathItemPsifive(SCPICmdRead):
     def supportedfields(self) -> MathMathItemPsifiveSupportedfields:
         """Return the ``MATH:MATH<x>:PSIFIVe:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for
               PSIFIVe bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:PSIFIVe:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1699,14 +1656,13 @@ class MathMathItemPsifive(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:PSIFIVe:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:PSIFIVe:SUPPortedfields {DATa|DRA|DRB|SDATa}
             - MATH:MATH<x>:PSIFIVe:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
             - ``DRA`` sets the field type to DRA.
             - ``DRB`` sets the field type to DRB.
@@ -1718,11 +1674,11 @@ class MathMathItemPsifive(SCPICmdRead):
 class MathMathItemParallelSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:PARallel:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for PARallel
           bus. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:PARallel:SUPPortedfields?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1731,14 +1687,13 @@ class MathMathItemParallelSupportedfields(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:PARallel:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:PARallel:SUPPortedfields {DATa}
         - MATH:MATH<x>:PARallel:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
     """
 
@@ -1746,7 +1701,7 @@ class MathMathItemParallelSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemParallel(SCPICmdRead):
     """The ``MATH:MATH<x>:PARallel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:PARallel?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:PARallel?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1765,11 +1720,11 @@ class MathMathItemParallel(SCPICmdRead):
     def supportedfields(self) -> MathMathItemParallelSupportedfields:
         """Return the ``MATH:MATH<x>:PARallel:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for
               PARallel bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:PARallel:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1778,14 +1733,13 @@ class MathMathItemParallel(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:PARallel:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:PARallel:SUPPortedfields {DATa}
             - MATH:MATH<x>:PARallel:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
         """
         return self._supportedfields
@@ -1794,11 +1748,11 @@ class MathMathItemParallel(SCPICmdRead):
 class MathMathItemOnewireSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:ONEWIRe:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for ONEWIRe
           bus. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:ONEWIRe:SUPPortedfields?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1807,14 +1761,13 @@ class MathMathItemOnewireSupportedfields(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:ONEWIRe:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:ONEWIRe:SUPPortedfields {DATa}
         - MATH:MATH<x>:ONEWIRe:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
     """
 
@@ -1822,7 +1775,7 @@ class MathMathItemOnewireSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemOnewire(SCPICmdRead):
     """The ``MATH:MATH<x>:ONEWIRe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:ONEWIRe?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:ONEWIRe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1841,11 +1794,11 @@ class MathMathItemOnewire(SCPICmdRead):
     def supportedfields(self) -> MathMathItemOnewireSupportedfields:
         """Return the ``MATH:MATH<x>:ONEWIRe:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for
               ONEWIRe bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:ONEWIRe:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1854,14 +1807,13 @@ class MathMathItemOnewire(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:ONEWIRe:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:ONEWIRe:SUPPortedfields {DATa}
             - MATH:MATH<x>:ONEWIRe:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
         """
         return self._supportedfields
@@ -1870,11 +1822,11 @@ class MathMathItemOnewire(SCPICmdRead):
 class MathMathItemMil1553bSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:MIL1553B:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for MIL1553B
           bus. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:MIL1553B:SUPPortedfields?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1883,14 +1835,13 @@ class MathMathItemMil1553bSupportedfields(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:MIL1553B:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:MIL1553B:SUPPortedfields {DATa|PAYLoad}
         - MATH:MATH<x>:MIL1553B:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
         - ``PAYLoad`` sets the field type to PAYLoad.
     """
@@ -1899,7 +1850,7 @@ class MathMathItemMil1553bSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemMil1553b(SCPICmdRead):
     """The ``MATH:MATH<x>:MIL1553B`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:MIL1553B?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:MIL1553B?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1918,11 +1869,11 @@ class MathMathItemMil1553b(SCPICmdRead):
     def supportedfields(self) -> MathMathItemMil1553bSupportedfields:
         """Return the ``MATH:MATH<x>:MIL1553B:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for
               MIL1553B bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:MIL1553B:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1931,14 +1882,13 @@ class MathMathItemMil1553b(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:MIL1553B:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:MIL1553B:SUPPortedfields {DATa|PAYLoad}
             - MATH:MATH<x>:MIL1553B:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
             - ``PAYLoad`` sets the field type to PAYLoad.
         """
@@ -1948,25 +1898,24 @@ class MathMathItemMil1553b(SCPICmdRead):
 class MathMathItemMdioSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:MDIO:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for MDIO bus.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:MDIO:SUPPortedfields?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:MDIO:SUPPortedfields?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:MDIO:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:MDIO:SUPPortedfields {DATa}
         - MATH:MATH<x>:MDIO:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
     """
 
@@ -1974,7 +1923,7 @@ class MathMathItemMdioSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemMdio(SCPICmdRead):
     """The ``MATH:MATH<x>:MDIO`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:MDIO?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:MDIO?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -1993,11 +1942,11 @@ class MathMathItemMdio(SCPICmdRead):
     def supportedfields(self) -> MathMathItemMdioSupportedfields:
         """Return the ``MATH:MATH<x>:MDIO:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for MDIO
               bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:MDIO:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2006,14 +1955,13 @@ class MathMathItemMdio(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:MDIO:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:MDIO:SUPPortedfields {DATa}
             - MATH:MATH<x>:MDIO:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
         """
         return self._supportedfields
@@ -2022,25 +1970,24 @@ class MathMathItemMdio(SCPICmdRead):
 class MathMathItemLinSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:LIN:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for LIN bus.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:LIN:SUPPortedfields?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:LIN:SUPPortedfields?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:LIN:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:LIN:SUPPortedfields {DATa}
         - MATH:MATH<x>:LIN:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
     """
 
@@ -2048,7 +1995,7 @@ class MathMathItemLinSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemLin(SCPICmdRead):
     """The ``MATH:MATH<x>:LIN`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:LIN?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:LIN?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2067,11 +2014,11 @@ class MathMathItemLin(SCPICmdRead):
     def supportedfields(self) -> MathMathItemLinSupportedfields:
         """Return the ``MATH:MATH<x>:LIN:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for LIN
               bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:LIN:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2080,14 +2027,13 @@ class MathMathItemLin(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:LIN:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:LIN:SUPPortedfields {DATa}
             - MATH:MATH<x>:LIN:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
         """
         return self._supportedfields
@@ -2096,25 +2042,24 @@ class MathMathItemLin(SCPICmdRead):
 class MathMathItemLabelYpos(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:LABel:YPOS`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the y-position of the specified math label. The Math waveform
           is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:LABel:YPOS?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:LABel:YPOS?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:LABel:YPOS value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:LABel:YPOS <NR1>
         - MATH:MATH<x>:LABel:YPOS?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the location (in pixels) where the label for the selected math waveform is
           displayed, relative to the baseline of the waveform.
     """
@@ -2123,25 +2068,24 @@ class MathMathItemLabelYpos(SCPICmdWrite, SCPICmdRead):
 class MathMathItemLabelXpos(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:LABel:XPOS`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the X position of the specified math label. Maths are
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:LABel:XPOS?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:LABel:XPOS?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:LABel:XPOS value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:LABel:XPOS <NR1>
         - MATH:MATH<x>:LABel:XPOS?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the location (in pixels) where the label for the selected math waveform is
           displayed, relative to the left edge of the display.
     """
@@ -2150,26 +2094,25 @@ class MathMathItemLabelXpos(SCPICmdWrite, SCPICmdRead):
 class MathMathItemLabelName(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:LABel:NAMe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the label string, which is used for annotating the math
           waveform on the screen. The math waveform to which the label is attached is specified by
           x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:LABel:NAMe?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:LABel:NAMe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:LABel:NAMe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:LABel:NAMe <QString>
         - MATH:MATH<x>:LABel:NAMe?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the label to annotate the math waveform.
     """
 
@@ -2179,21 +2122,20 @@ class MathMathItemLabelName(SCPICmdWrite, SCPICmdRead):
 class MathMathItemLabelFontUnderline(SCPICmdWrite):
     """The ``MATH:MATH<x>:LABel:FONT:UNDERline`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the underline state of the specified math label. The math
           waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:LABel:FONT:UNDERline value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:LABel:FONT:UNDERline {<NR1>|OFF|ON}
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 turns off underline, and any other integer turns on underline.
         - ``OFF`` turns off underline.
         - ``ON`` turns on underline.
@@ -2203,21 +2145,20 @@ class MathMathItemLabelFontUnderline(SCPICmdWrite):
 class MathMathItemLabelFontType(SCPICmdWrite):
     """The ``MATH:MATH<x>:LABel:FONT:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries font type of the specified math label, such as Arial or Times
           New Roman. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:LABel:FONT:TYPE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:LABel:FONT:TYPE <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the name of the font type.
     """
 
@@ -2227,21 +2168,20 @@ class MathMathItemLabelFontType(SCPICmdWrite):
 class MathMathItemLabelFontSize(SCPICmdWrite):
     """The ``MATH:MATH<x>:LABel:FONT:SIZE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries font size of the specified math label. The math waveform is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:LABel:FONT:SIZE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:LABel:FONT:SIZE <NR1>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` sets the label size in points.
     """
 
@@ -2249,21 +2189,20 @@ class MathMathItemLabelFontSize(SCPICmdWrite):
 class MathMathItemLabelFontItalic(SCPICmdWrite):
     """The ``MATH:MATH<x>:LABel:FONT:ITALic`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries italic state of the specified math label. The math waveform
           is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:LABel:FONT:ITALic value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:LABel:FONT:ITALic {<NR1>|OFF|ON}
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 turns off italic, and any other integer turns on italic.
         - ``OFF`` turns off italic.
         - ``ON`` turns on italic.
@@ -2273,21 +2212,20 @@ class MathMathItemLabelFontItalic(SCPICmdWrite):
 class MathMathItemLabelFontBold(SCPICmdWrite):
     """The ``MATH:MATH<x>:LABel:FONT:BOLD`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the bold state of the specified math label. The math waveform
           is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:LABel:FONT:BOLD value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:LABel:FONT:BOLD {<NR1>|OFF|ON}
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 turns off bold, and any other integer turns on bold.
         - ``OFF`` turns off bold.
         - ``ON`` turns on bold.
@@ -2297,7 +2235,7 @@ class MathMathItemLabelFontBold(SCPICmdWrite):
 class MathMathItemLabelFont(SCPICmdRead):
     """The ``MATH:MATH<x>:LABel:FONT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:LABel:FONT?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:LABel:FONT?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -2322,21 +2260,20 @@ class MathMathItemLabelFont(SCPICmdRead):
     def bold(self) -> MathMathItemLabelFontBold:
         """Return the ``MATH:MATH<x>:LABel:FONT:BOLD`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the bold state of the specified math label. The math
               waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:LABel:FONT:BOLD value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:LABel:FONT:BOLD {<NR1>|OFF|ON}
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 turns off bold, and any other integer turns on bold.
             - ``OFF`` turns off bold.
             - ``ON`` turns on bold.
@@ -2347,21 +2284,20 @@ class MathMathItemLabelFont(SCPICmdRead):
     def italic(self) -> MathMathItemLabelFontItalic:
         """Return the ``MATH:MATH<x>:LABel:FONT:ITALic`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries italic state of the specified math label. The math
               waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:LABel:FONT:ITALic value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:LABel:FONT:ITALic {<NR1>|OFF|ON}
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 turns off italic, and any other integer turns on italic.
             - ``OFF`` turns off italic.
             - ``ON`` turns on italic.
@@ -2372,21 +2308,20 @@ class MathMathItemLabelFont(SCPICmdRead):
     def size(self) -> MathMathItemLabelFontSize:
         """Return the ``MATH:MATH<x>:LABel:FONT:SIZE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries font size of the specified math label. The math waveform
               is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:LABel:FONT:SIZE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:LABel:FONT:SIZE <NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` sets the label size in points.
         """
         return self._size
@@ -2395,21 +2330,20 @@ class MathMathItemLabelFont(SCPICmdRead):
     def type(self) -> MathMathItemLabelFontType:
         """Return the ``MATH:MATH<x>:LABel:FONT:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries font type of the specified math label, such as Arial or
               Times New Roman. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:LABel:FONT:TYPE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:LABel:FONT:TYPE <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the name of the font type.
         """
         return self._type
@@ -2418,21 +2352,20 @@ class MathMathItemLabelFont(SCPICmdRead):
     def underline(self) -> MathMathItemLabelFontUnderline:
         """Return the ``MATH:MATH<x>:LABel:FONT:UNDERline`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the underline state of the specified math label. The math
               waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:LABel:FONT:UNDERline value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:LABel:FONT:UNDERline {<NR1>|OFF|ON}
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 turns off underline, and any other integer turns on underline.
             - ``OFF`` turns off underline.
             - ``ON`` turns on underline.
@@ -2443,21 +2376,20 @@ class MathMathItemLabelFont(SCPICmdRead):
 class MathMathItemLabelColor(SCPICmdWrite):
     """The ``MATH:MATH<x>:LABel:COLor`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries color of the specified math's label. The math waveform is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:LABel:COLor value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:LABel:COLor <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString`` > is the color of the label. To return the color to the default color, send
           an empty string as in this example: ``:MATH:MATH1:LABEL:COLOR`` ''.
     """
@@ -2468,7 +2400,7 @@ class MathMathItemLabelColor(SCPICmdWrite):
 class MathMathItemLabel(SCPICmdRead):
     """The ``MATH:MATH<x>:LABel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:LABel?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:LABel?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -2493,21 +2425,20 @@ class MathMathItemLabel(SCPICmdRead):
     def color(self) -> MathMathItemLabelColor:
         """Return the ``MATH:MATH<x>:LABel:COLor`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries color of the specified math's label. The math waveform is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:LABel:COLor value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:LABel:COLor <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString`` > is the color of the label. To return the color to the default color,
               send an empty string as in this example: ``:MATH:MATH1:LABEL:COLOR`` ''.
         """
@@ -2517,7 +2448,7 @@ class MathMathItemLabel(SCPICmdRead):
     def font(self) -> MathMathItemLabelFont:
         """Return the ``MATH:MATH<x>:LABel:FONT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:LABel:FONT?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:LABel:FONT?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -2535,26 +2466,25 @@ class MathMathItemLabel(SCPICmdRead):
     def name(self) -> MathMathItemLabelName:
         """Return the ``MATH:MATH<x>:LABel:NAMe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the label string, which is used for annotating the math
               waveform on the screen. The math waveform to which the label is attached is specified
               by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:LABel:NAMe?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:LABel:NAMe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:LABel:NAMe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:LABel:NAMe <QString>
             - MATH:MATH<x>:LABel:NAMe?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the label to annotate the math waveform.
         """
         return self._name
@@ -2563,25 +2493,24 @@ class MathMathItemLabel(SCPICmdRead):
     def xpos(self) -> MathMathItemLabelXpos:
         """Return the ``MATH:MATH<x>:LABel:XPOS`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the X position of the specified math label. Maths are
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:LABel:XPOS?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:LABel:XPOS?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:LABel:XPOS value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:LABel:XPOS <NR1>
             - MATH:MATH<x>:LABel:XPOS?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the location (in pixels) where the label for the selected math waveform
               is displayed, relative to the left edge of the display.
         """
@@ -2591,25 +2520,24 @@ class MathMathItemLabel(SCPICmdRead):
     def ypos(self) -> MathMathItemLabelYpos:
         """Return the ``MATH:MATH<x>:LABel:YPOS`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the y-position of the specified math label. The Math
               waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:LABel:YPOS?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:LABel:YPOS?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:LABel:YPOS value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:LABel:YPOS <NR1>
             - MATH:MATH<x>:LABel:YPOS?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the location (in pixels) where the label for the selected math waveform
               is displayed, relative to the baseline of the waveform.
         """
@@ -2619,21 +2547,20 @@ class MathMathItemLabel(SCPICmdRead):
 class MathMathItemInterpolation(SCPICmdWrite):
     """The ``MATH:MATH<x>:INTERpolation`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether sinc interpolation is enabled for math on bus source.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:INTERpolation value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:INTERpolation {ON|OFF}
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` indicates that the sinc interpolation is used for math waveform.
         - ``OFF`` indicates no interpolation is used for math waveform. Waveform will appear
           'stair-steppy' in this case.
@@ -2643,25 +2570,24 @@ class MathMathItemInterpolation(SCPICmdWrite):
 class MathMathItemI3cSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:I3C:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for I3Cbus.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:I3C:SUPPortedfields?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:I3C:SUPPortedfields?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:I3C:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:I3C:SUPPortedfields {DATa}
         - MATH:MATH<x>:I3C:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
     """
 
@@ -2669,7 +2595,7 @@ class MathMathItemI3cSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemI3c(SCPICmdRead):
     """The ``MATH:MATH<x>:I3C`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:I3C?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:I3C?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2688,11 +2614,11 @@ class MathMathItemI3c(SCPICmdRead):
     def supportedfields(self) -> MathMathItemI3cSupportedfields:
         """Return the ``MATH:MATH<x>:I3C:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for
               I3Cbus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:I3C:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2701,14 +2627,13 @@ class MathMathItemI3c(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:I3C:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:I3C:SUPPortedfields {DATa}
             - MATH:MATH<x>:I3C:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
         """
         return self._supportedfields
@@ -2717,25 +2642,24 @@ class MathMathItemI3c(SCPICmdRead):
 class MathMathItemI2cSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:I2C:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for I2C bus.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:I2C:SUPPortedfields?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:I2C:SUPPortedfields?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:I2C:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:I2C:SUPPortedfields {DATa}
         - MATH:MATH<x>:I2C:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
     """
 
@@ -2743,7 +2667,7 @@ class MathMathItemI2cSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemI2c(SCPICmdRead):
     """The ``MATH:MATH<x>:I2C`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:I2C?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:I2C?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2762,11 +2686,11 @@ class MathMathItemI2c(SCPICmdRead):
     def supportedfields(self) -> MathMathItemI2cSupportedfields:
         """Return the ``MATH:MATH<x>:I2C:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for I2C
               bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:I2C:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2775,14 +2699,13 @@ class MathMathItemI2c(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:I2C:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:I2C:SUPPortedfields {DATa}
             - MATH:MATH<x>:I2C:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
         """
         return self._supportedfields
@@ -2791,24 +2714,23 @@ class MathMathItemI2c(SCPICmdRead):
 class MathMathItemGating(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:GATing`` command.
 
-    **Description:**
+    Description:
         - This command specifies or returns the gating setting. It only applies to Math FFT plots.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:GATing?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:GATing?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:GATing value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:GATing {NONE|SCREEN|CURSor}
         - MATH:MATH<x>:GATing?
+        ```
 
-    **Info:**
+    Info:
         - ``NONE`` turns off math gating.
         - ``SCREEN`` turns on gating, using the left and right edges of the screen.
         - ``CURSor`` limits math to the portion of the waveform between the vertical bar cursors,
@@ -2819,20 +2741,19 @@ class MathMathItemGating(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFunction(SCPICmdWrite):
     """The ``MATH:MATH<x>:FUNCtion`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the basic math arithmetic function. The math waveform is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FUNCtion value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FUNCtion {ADD|SUBtract|MULTiply|DIVide}
+        ```
 
-    **Info:**
+    Info:
         - ``ADD`` sets the basic math function to add.
         - ``SUBtract`` sets the basic math function to subtract.
         - ``MULTiply`` sets the basic math function to multiply.
@@ -2843,11 +2764,11 @@ class MathMathItemFunction(SCPICmdWrite):
 class MathMathItemFlexraySupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FLEXray:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for FLEXray
           bus. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FLEXray:SUPPortedfields?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2856,14 +2777,13 @@ class MathMathItemFlexraySupportedfields(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:FLEXray:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FLEXray:SUPPortedfields {DATa}
         - MATH:MATH<x>:FLEXray:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
     """
 
@@ -2871,7 +2791,7 @@ class MathMathItemFlexraySupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFlexray(SCPICmdRead):
     """The ``MATH:MATH<x>:FLEXray`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FLEXray?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FLEXray?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -2890,11 +2810,11 @@ class MathMathItemFlexray(SCPICmdRead):
     def supportedfields(self) -> MathMathItemFlexraySupportedfields:
         """Return the ``MATH:MATH<x>:FLEXray:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for
               FLEXray bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FLEXray:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2903,14 +2823,13 @@ class MathMathItemFlexray(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:FLEXray:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FLEXray:SUPPortedfields {DATa}
             - MATH:MATH<x>:FLEXray:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
         """
         return self._supportedfields
@@ -2919,24 +2838,23 @@ class MathMathItemFlexray(SCPICmdRead):
 class MathMathItemFilterType(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command specifies or queries the filter type. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:TYPe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:TYPe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:TYPe {LPASs| HPASs| BPASs| BSTop| APASs| HILBert| DIFFerentiator| RC| RRC}
         - MATH:MATH<x>:FILTer:TYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``LPASs`` specifies the filter type as LPASs.
         - ``HPASs`` specifies the filter type as HPASs.
         - ``BPASs`` specifies the filter type as BPASs.
@@ -2952,25 +2870,24 @@ class MathMathItemFilterType(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilterTwidth(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:TWIDth`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the filter Transition Width for Custom filter response. The
           math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:TWIDth?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:TWIDth?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:TWIDth value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:TWIDth <NR3>
         - MATH:MATH<x>:FILTer:TWIDth?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the Transition Width for Custom filter response.
     """
 
@@ -2978,25 +2895,24 @@ class MathMathItemFilterTwidth(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilterSymbols(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:SYMBols`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the symbol for raised cosine or root raised cosine filter.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:SYMBols?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:SYMBols?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:SYMBols value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:SYMBols <NR1>
         - MATH:MATH<x>:FILTer:SYMBols?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the number of symbols for Raised-Cosine (RC) filter type.
     """
 
@@ -3004,25 +2920,24 @@ class MathMathItemFilterSymbols(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilterSource(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the math waveform filter source. The math waveform and source
           are specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:SOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:SOURce?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:SOURce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:SOURce {CH<x>|MATH<x>|REF<x>}
         - MATH:MATH<x>:FILTer:SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies an analog channel as source.
         - ``MATH<x>`` specifies a math channel as source.
         - ``REF<x>`` specifies a reference waveform as the source.
@@ -3032,25 +2947,24 @@ class MathMathItemFilterSource(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilterSduration(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:SDURation`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the symbol duration for raised cosine or root raised cosine
           filter. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:SDURation?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:SDURation?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:SDURation value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:SDURation <NR3>
         - MATH:MATH<x>:FILTer:SDURation?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the number of symbol duration for Root-Raised-Cosine (RRC) filter
           type.
     """
@@ -3059,25 +2973,24 @@ class MathMathItemFilterSduration(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilterSdeviation(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:SDEViation`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the standard deviation in Gaussian filter. The math waveform
           is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:SDEViation?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:SDEViation?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:SDEViation value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:SDEViation <NR3>
         - MATH:MATH<x>:FILTer:SDEViation?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` sets the standard deviation in gaussian filter.
     """
 
@@ -3085,25 +2998,24 @@ class MathMathItemFilterSdeviation(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilterSaveResponse(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:SAVe:RESPonse`` command.
 
-    **Description:**
+    Description:
         - This command set the filter response images to be saved while saving the filter file. The
           math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:SAVe:RESPonse?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:SAVe:RESPonse?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:FILTer:SAVe:RESPonse value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:SAVe:RESPonse {1|0}
         - MATH:MATH<x>:FILTer:SAVe:RESPonse?
+        ```
 
-    **Info:**
+    Info:
         - ``1`` enables the save of the filter response image.
         - ``0`` disables the save of the filter response image. This is the default value.
     """
@@ -3112,20 +3024,19 @@ class MathMathItemFilterSaveResponse(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilterSave(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:SAVe`` command.
 
-    **Description:**
+    Description:
         - This command saves the filter file. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:SAVe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:SAVe <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` saves the created filter in .flt format to the specified save location.
 
     Properties:
@@ -3142,11 +3053,11 @@ class MathMathItemFilterSave(SCPICmdWrite, SCPICmdRead):
     def response(self) -> MathMathItemFilterSaveResponse:
         """Return the ``MATH:MATH<x>:FILTer:SAVe:RESPonse`` command.
 
-        **Description:**
+        Description:
             - This command set the filter response images to be saved while saving the filter file.
               The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:SAVe:RESPonse?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3155,14 +3066,13 @@ class MathMathItemFilterSave(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:FILTer:SAVe:RESPonse value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:SAVe:RESPonse {1|0}
             - MATH:MATH<x>:FILTer:SAVe:RESPonse?
+            ```
 
-        **Info:**
+        Info:
             - ``1`` enables the save of the filter response image.
             - ``0`` disables the save of the filter response image. This is the default value.
         """
@@ -3172,25 +3082,24 @@ class MathMathItemFilterSave(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilterSattenuation(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:SATTenuation`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the stop band attenuation in the filter response. The math
           waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:SATTenuation?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:SATTenuation?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:FILTer:SATTenuation value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:SATTenuation <NR3>
         - MATH:MATH<x>:FILTer:SATTenuation?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` sets the stop band attenuation in the filter response.
     """
 
@@ -3198,25 +3107,24 @@ class MathMathItemFilterSattenuation(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilterRofactor(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:ROFactor`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries roll off factor for raised cosine or root raised cosine
           filter. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:ROFactor?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:ROFactor?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:ROFactor value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:ROFactor <NR1>
         - MATH:MATH<x>:FILTer:ROFactor?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the Roll-off Factor value for Rasied-Cosine(RC) filter type.
     """
 
@@ -3224,25 +3132,24 @@ class MathMathItemFilterRofactor(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilterResponse(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:RESPonse`` command.
 
-    **Description:**
+    Description:
         - This command will load the filter responses and automatically apply filter option. The
           math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:RESPonse?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:RESPonse?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:RESPonse value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:RESPonse {BUTTerworth| CHEBYONe| CHEBYTWo| ELLiptical| GAUSsian| BESSelCUSTom}
         - MATH:MATH<x>:FILTer:RESPonse?
+        ```
 
-    **Info:**
+    Info:
         - ``BUTTerworth`` specifies the filter response as BUTTerworth.
         - ``CHEBYONe`` specifies the filter response as CHEBYONe.
         - ``CHEBYTWo`` specifies the filter response as CHEBYTWo.
@@ -3255,25 +3162,24 @@ class MathMathItemFilterResponse(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilterPripple(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:PRIPple`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the pass band ripple in the filter response. The math
           waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:PRIPple?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:PRIPple?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:PRIPple value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:PRIPple <NR3>
         - MATH:MATH<x>:FILTer:PRIPple?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` sets the pass band ripple in the filter response.
     """
 
@@ -3281,24 +3187,23 @@ class MathMathItemFilterPripple(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilterOrder(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:ORDer`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the filter order. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:ORDer?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:ORDer?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:ORDer value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:ORDer <NR1>
         - MATH:MATH<x>:FILTer:ORDer?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` sets the filter order.
     """
 
@@ -3306,25 +3211,24 @@ class MathMathItemFilterOrder(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilterLoadResponse(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:LOAD:RESPonse`` command.
 
-    **Description:**
+    Description:
         - This command will load the filter responses and automatically apply filter option. The
           math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:LOAD:RESPonse?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:LOAD:RESPonse?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:FILTer:LOAD:RESPonse value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:LOAD:RESPonse {1|0}
         - MATH:MATH<x>:FILTer:LOAD:RESPonse?
+        ```
 
-    **Info:**
+    Info:
         - ``1`` enables recall of filter response image.
         - ``0`` disables recall of filter response image.
     """
@@ -3333,20 +3237,19 @@ class MathMathItemFilterLoadResponse(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilterLoad(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:LOAD`` command.
 
-    **Description:**
+    Description:
         - This command loads the filter file. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:LOAD value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:LOAD <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` sets the path to the filter file to load. Linux default location is C:.
           Windows default location is C:UsersPublicTektronixTekScopeFilters.
 
@@ -3364,11 +3267,11 @@ class MathMathItemFilterLoad(SCPICmdWrite, SCPICmdRead):
     def response(self) -> MathMathItemFilterLoadResponse:
         """Return the ``MATH:MATH<x>:FILTer:LOAD:RESPonse`` command.
 
-        **Description:**
+        Description:
             - This command will load the filter responses and automatically apply filter option. The
               math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:LOAD:RESPonse?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3377,14 +3280,13 @@ class MathMathItemFilterLoad(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:FILTer:LOAD:RESPonse value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:LOAD:RESPonse {1|0}
             - MATH:MATH<x>:FILTer:LOAD:RESPonse?
+            ```
 
-        **Info:**
+        Info:
             - ``1`` enables recall of filter response image.
             - ``0`` disables recall of filter response image.
         """
@@ -3394,25 +3296,24 @@ class MathMathItemFilterLoad(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilterLcfreq(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:LCFReq`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the low cutoff frequency for bandpass or band stop filter.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:LCFReq?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:LCFReq?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:LCFReq value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:LCFReq <NR3>
         - MATH:MATH<x>:FILTer:LCFReq?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` sets the low cutoff frequency for bandpass or band stop filter.
     """
 
@@ -3420,45 +3321,43 @@ class MathMathItemFilterLcfreq(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilterInfo(SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:INFo`` command.
 
-    **Description:**
+    Description:
         - This command returns filter information output when the user creates a filter. The math
           waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:INFo?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:INFo?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:INFo?
+        ```
     """
 
 
 class MathMathItemFilterHcfreq(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:HCFReq`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the high cutoff frequency for bandpass or band stop filter.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:HCFReq?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:HCFReq?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:HCFReq value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:HCFReq <NR3>
         - MATH:MATH<x>:FILTer:HCFReq?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` sets the high cutoff frequency for bandpass or band stop filter.
     """
 
@@ -3466,21 +3365,20 @@ class MathMathItemFilterHcfreq(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilterDesign(SCPICmdWrite):
     """The ``MATH:MATH<x>:FILTer:DESIgn`` command.
 
-    **Description:**
+    Description:
         - This command performs filter specific Apply, Abort, and Generate operations. The math
           waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:DESIgn value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:DESIgn {EXECUTE|ABORT|APPLY}
+        ```
 
-    **Info:**
+    Info:
         - ``EXECUTE`` executes filter file creation.
         - ``APPLY`` applies the filter definition on the Math waveform.
         - ``ABORT`` aborts the filter execution.
@@ -3490,25 +3388,24 @@ class MathMathItemFilterDesign(SCPICmdWrite):
 class MathMathItemFilterDelay(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:DELay`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the delay for all pass filter. The math waveform is specified
           by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:DELay?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:DELay?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:DELay value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:DELay <NR3>
         - MATH:MATH<x>:FILTer:DELay?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` sets the delay for all pass filter.
     """
 
@@ -3516,25 +3413,24 @@ class MathMathItemFilterDelay(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilterCfreq(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer:CFReq`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the filter cutoff frequency. The math waveform is specified
           by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:CFReq?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:CFReq?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:CFReq value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:FILTer:CFReq <NR3>
         - MATH:MATH<x>:FILTer:CFReq?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` sets the filter cutoff frequency.
     """
 
@@ -3543,7 +3439,7 @@ class MathMathItemFilterCfreq(SCPICmdWrite, SCPICmdRead):
 class MathMathItemFilter(SCPICmdRead):
     """The ``MATH:MATH<x>:FILTer`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -3598,25 +3494,24 @@ class MathMathItemFilter(SCPICmdRead):
     def cfreq(self) -> MathMathItemFilterCfreq:
         """Return the ``MATH:MATH<x>:FILTer:CFReq`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the filter cutoff frequency. The math waveform is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:CFReq?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:CFReq?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:CFReq value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:CFReq <NR3>
             - MATH:MATH<x>:FILTer:CFReq?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` sets the filter cutoff frequency.
         """
         return self._cfreq
@@ -3625,25 +3520,24 @@ class MathMathItemFilter(SCPICmdRead):
     def delay(self) -> MathMathItemFilterDelay:
         """Return the ``MATH:MATH<x>:FILTer:DELay`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the delay for all pass filter. The math waveform is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:DELay?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:DELay?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:DELay value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:DELay <NR3>
             - MATH:MATH<x>:FILTer:DELay?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` sets the delay for all pass filter.
         """
         return self._delay
@@ -3652,21 +3546,20 @@ class MathMathItemFilter(SCPICmdRead):
     def design(self) -> MathMathItemFilterDesign:
         """Return the ``MATH:MATH<x>:FILTer:DESIgn`` command.
 
-        **Description:**
+        Description:
             - This command performs filter specific Apply, Abort, and Generate operations. The math
               waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:DESIgn value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:DESIgn {EXECUTE|ABORT|APPLY}
+            ```
 
-        **Info:**
+        Info:
             - ``EXECUTE`` executes filter file creation.
             - ``APPLY`` applies the filter definition on the Math waveform.
             - ``ABORT`` aborts the filter execution.
@@ -3677,25 +3570,24 @@ class MathMathItemFilter(SCPICmdRead):
     def hcfreq(self) -> MathMathItemFilterHcfreq:
         """Return the ``MATH:MATH<x>:FILTer:HCFReq`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the high cutoff frequency for bandpass or band stop
               filter. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:HCFReq?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:HCFReq?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:HCFReq value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:HCFReq <NR3>
             - MATH:MATH<x>:FILTer:HCFReq?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` sets the high cutoff frequency for bandpass or band stop filter.
         """
         return self._hcfreq
@@ -3704,20 +3596,19 @@ class MathMathItemFilter(SCPICmdRead):
     def info(self) -> MathMathItemFilterInfo:
         """Return the ``MATH:MATH<x>:FILTer:INFo`` command.
 
-        **Description:**
+        Description:
             - This command returns filter information output when the user creates a filter. The
               math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:INFo?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:INFo?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:INFo?
+            ```
         """
         return self._info
 
@@ -3725,25 +3616,24 @@ class MathMathItemFilter(SCPICmdRead):
     def lcfreq(self) -> MathMathItemFilterLcfreq:
         """Return the ``MATH:MATH<x>:FILTer:LCFReq`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the low cutoff frequency for bandpass or band stop
               filter. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:LCFReq?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:LCFReq?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:LCFReq value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:LCFReq <NR3>
             - MATH:MATH<x>:FILTer:LCFReq?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` sets the low cutoff frequency for bandpass or band stop filter.
         """
         return self._lcfreq
@@ -3752,20 +3642,19 @@ class MathMathItemFilter(SCPICmdRead):
     def load(self) -> MathMathItemFilterLoad:
         """Return the ``MATH:MATH<x>:FILTer:LOAD`` command.
 
-        **Description:**
+        Description:
             - This command loads the filter file. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:LOAD value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:LOAD <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` sets the path to the filter file to load. Linux default location is C:.
               Windows default location is C:UsersPublicTektronixTekScopeFilters.
 
@@ -3778,24 +3667,23 @@ class MathMathItemFilter(SCPICmdRead):
     def order(self) -> MathMathItemFilterOrder:
         """Return the ``MATH:MATH<x>:FILTer:ORDer`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the filter order. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:ORDer?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:ORDer?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:ORDer value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:ORDer <NR1>
             - MATH:MATH<x>:FILTer:ORDer?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` sets the filter order.
         """
         return self._order
@@ -3804,25 +3692,24 @@ class MathMathItemFilter(SCPICmdRead):
     def pripple(self) -> MathMathItemFilterPripple:
         """Return the ``MATH:MATH<x>:FILTer:PRIPple`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the pass band ripple in the filter response. The math
               waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:PRIPple?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:PRIPple?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:PRIPple value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:PRIPple <NR3>
             - MATH:MATH<x>:FILTer:PRIPple?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` sets the pass band ripple in the filter response.
         """
         return self._pripple
@@ -3831,25 +3718,24 @@ class MathMathItemFilter(SCPICmdRead):
     def response(self) -> MathMathItemFilterResponse:
         """Return the ``MATH:MATH<x>:FILTer:RESPonse`` command.
 
-        **Description:**
+        Description:
             - This command will load the filter responses and automatically apply filter option. The
               math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:RESPonse?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:RESPonse?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:FILTer:RESPonse value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:RESPonse {BUTTerworth| CHEBYONe| CHEBYTWo| ELLiptical| GAUSsian| BESSelCUSTom}
             - MATH:MATH<x>:FILTer:RESPonse?
+            ```
 
-        **Info:**
+        Info:
             - ``BUTTerworth`` specifies the filter response as BUTTerworth.
             - ``CHEBYONe`` specifies the filter response as CHEBYONe.
             - ``CHEBYTWo`` specifies the filter response as CHEBYTWo.
@@ -3863,25 +3749,24 @@ class MathMathItemFilter(SCPICmdRead):
     def rofactor(self) -> MathMathItemFilterRofactor:
         """Return the ``MATH:MATH<x>:FILTer:ROFactor`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries roll off factor for raised cosine or root raised cosine
               filter. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:ROFactor?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:ROFactor?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:FILTer:ROFactor value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:ROFactor <NR1>
             - MATH:MATH<x>:FILTer:ROFactor?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the Roll-off Factor value for Rasied-Cosine(RC) filter type.
         """
         return self._rofactor
@@ -3890,11 +3775,11 @@ class MathMathItemFilter(SCPICmdRead):
     def sattenuation(self) -> MathMathItemFilterSattenuation:
         """Return the ``MATH:MATH<x>:FILTer:SATTenuation`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the stop band attenuation in the filter response. The
               math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:SATTenuation?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3903,14 +3788,13 @@ class MathMathItemFilter(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:FILTer:SATTenuation value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:SATTenuation <NR3>
             - MATH:MATH<x>:FILTer:SATTenuation?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` sets the stop band attenuation in the filter response.
         """
         return self._sattenuation
@@ -3919,20 +3803,19 @@ class MathMathItemFilter(SCPICmdRead):
     def save(self) -> MathMathItemFilterSave:
         """Return the ``MATH:MATH<x>:FILTer:SAVe`` command.
 
-        **Description:**
+        Description:
             - This command saves the filter file. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:SAVe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:SAVe <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` saves the created filter in .flt format to the specified save location.
 
         Sub-properties:
@@ -3944,25 +3827,24 @@ class MathMathItemFilter(SCPICmdRead):
     def sdeviation(self) -> MathMathItemFilterSdeviation:
         """Return the ``MATH:MATH<x>:FILTer:SDEViation`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the standard deviation in Gaussian filter. The math
               waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:SDEViation?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:SDEViation?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:FILTer:SDEViation value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:SDEViation <NR3>
             - MATH:MATH<x>:FILTer:SDEViation?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` sets the standard deviation in gaussian filter.
         """
         return self._sdeviation
@@ -3971,25 +3853,24 @@ class MathMathItemFilter(SCPICmdRead):
     def sduration(self) -> MathMathItemFilterSduration:
         """Return the ``MATH:MATH<x>:FILTer:SDURation`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the symbol duration for raised cosine or root raised
               cosine filter. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:SDURation?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:SDURation?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:FILTer:SDURation value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:SDURation <NR3>
             - MATH:MATH<x>:FILTer:SDURation?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the number of symbol duration for Root-Raised-Cosine (RRC) filter
               type.
         """
@@ -3999,25 +3880,24 @@ class MathMathItemFilter(SCPICmdRead):
     def source(self) -> MathMathItemFilterSource:
         """Return the ``MATH:MATH<x>:FILTer:SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the math waveform filter source. The math waveform and
               source are specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:SOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:SOURce?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:SOURce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:SOURce {CH<x>|MATH<x>|REF<x>}
             - MATH:MATH<x>:FILTer:SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies an analog channel as source.
             - ``MATH<x>`` specifies a math channel as source.
             - ``REF<x>`` specifies a reference waveform as the source.
@@ -4028,25 +3908,24 @@ class MathMathItemFilter(SCPICmdRead):
     def symbols(self) -> MathMathItemFilterSymbols:
         """Return the ``MATH:MATH<x>:FILTer:SYMBols`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the symbol for raised cosine or root raised cosine
               filter. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:SYMBols?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:SYMBols?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:SYMBols value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:SYMBols <NR1>
             - MATH:MATH<x>:FILTer:SYMBols?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the number of symbols for Raised-Cosine (RC) filter type.
         """
         return self._symbols
@@ -4055,25 +3934,24 @@ class MathMathItemFilter(SCPICmdRead):
     def twidth(self) -> MathMathItemFilterTwidth:
         """Return the ``MATH:MATH<x>:FILTer:TWIDth`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the filter Transition Width for Custom filter response.
               The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:TWIDth?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:TWIDth?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:TWIDth value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:TWIDth <NR3>
             - MATH:MATH<x>:FILTer:TWIDth?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the Transition Width for Custom filter response.
         """
         return self._twidth
@@ -4082,25 +3960,24 @@ class MathMathItemFilter(SCPICmdRead):
     def type(self) -> MathMathItemFilterType:
         """Return the ``MATH:MATH<x>:FILTer:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command specifies or queries the filter type. The math waveform is specified by
               x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer:TYPe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FILTer:TYPe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FILTer:TYPe {LPASs| HPASs| BPASs| BSTop| APASs| HILBert| DIFFerentiator| RC| RRC}
             - MATH:MATH<x>:FILTer:TYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``LPASs`` specifies the filter type as LPASs.
             - ``HPASs`` specifies the filter type as HPASs.
             - ``BPASs`` specifies the filter type as BPASs.
@@ -4117,25 +3994,24 @@ class MathMathItemFilter(SCPICmdRead):
 class MathMathItemEusbSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:EUSB:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for EUSB bus.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:EUSB:SUPPortedfields?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:EUSB:SUPPortedfields?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:EUSB:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:EUSB:SUPPortedfields {DATa|DDATa}
         - MATH:MATH<x>:EUSB:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa. DATa field can be set when eUSB Bus configuration
           for Speed is set to High and Signal type is Diff.
         - ``DDATa`` sets the field type to DDATa.
@@ -4145,7 +4021,7 @@ class MathMathItemEusbSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemEusb(SCPICmdRead):
     """The ``MATH:MATH<x>:EUSB`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:EUSB?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:EUSB?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -4164,11 +4040,11 @@ class MathMathItemEusb(SCPICmdRead):
     def supportedfields(self) -> MathMathItemEusbSupportedfields:
         """Return the ``MATH:MATH<x>:EUSB:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for EUSB
               bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:EUSB:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4177,14 +4053,13 @@ class MathMathItemEusb(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:EUSB:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:EUSB:SUPPortedfields {DATa|DDATa}
             - MATH:MATH<x>:EUSB:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa. DATa field can be set when eUSB Bus
               configuration for Speed is set to High and Signal type is Diff.
             - ``DDATa`` sets the field type to DDATa.
@@ -4195,11 +4070,11 @@ class MathMathItemEusb(SCPICmdRead):
 class MathMathItemEthernetSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:ETHERnet:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for ETHERnet
           bus. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:ETHERnet:SUPPortedfields?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4208,14 +4083,13 @@ class MathMathItemEthernetSupportedfields(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:ETHERnet:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:ETHERnet:SUPPortedfields {DATa|IPData|TDATa}
         - MATH:MATH<x>:ETHERnet:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
         - ``IPData`` sets the field type to IPData.
         - ``TDATa`` sets the field type to TDATa.
@@ -4225,7 +4099,7 @@ class MathMathItemEthernetSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemEthernet(SCPICmdRead):
     """The ``MATH:MATH<x>:ETHERnet`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:ETHERnet?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:ETHERnet?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -4244,11 +4118,11 @@ class MathMathItemEthernet(SCPICmdRead):
     def supportedfields(self) -> MathMathItemEthernetSupportedfields:
         """Return the ``MATH:MATH<x>:ETHERnet:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for
               ETHERnet bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:ETHERnet:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4257,14 +4131,13 @@ class MathMathItemEthernet(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:ETHERnet:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:ETHERnet:SUPPortedfields {DATa|IPData|TDATa}
             - MATH:MATH<x>:ETHERnet:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
             - ``IPData`` sets the field type to IPData.
             - ``TDATa`` sets the field type to TDATa.
@@ -4275,11 +4148,11 @@ class MathMathItemEthernet(SCPICmdRead):
 class MathMathItemEthercatSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:ETHERCAT:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for ETHERCAT
           bus. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:ETHERCAT:SUPPortedfields?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4288,14 +4161,13 @@ class MathMathItemEthercatSupportedfields(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:ETHERCAT:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:ETHERCAT:SUPPortedfields {DATa|SDATa|NWVariabledata}
         - MATH:MATH<x>:ETHERCAT:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
         - ``SDATa`` sets the field type to SDATa.
         - ``NWVariabledata`` sets the field type to NWVariabledata.
@@ -4305,7 +4177,7 @@ class MathMathItemEthercatSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemEthercat(SCPICmdRead):
     """The ``MATH:MATH<x>:ETHERCAT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:ETHERCAT?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:ETHERCAT?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -4324,11 +4196,11 @@ class MathMathItemEthercat(SCPICmdRead):
     def supportedfields(self) -> MathMathItemEthercatSupportedfields:
         """Return the ``MATH:MATH<x>:ETHERCAT:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for
               ETHERCAT bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:ETHERCAT:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4337,14 +4209,13 @@ class MathMathItemEthercat(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:ETHERCAT:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:ETHERCAT:SUPPortedfields {DATa|SDATa|NWVariabledata}
             - MATH:MATH<x>:ETHERCAT:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
             - ``SDATa`` sets the field type to SDATa.
             - ``NWVariabledata`` sets the field type to NWVariabledata.
@@ -4355,25 +4226,24 @@ class MathMathItemEthercat(SCPICmdRead):
 class MathMathItemEspiSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:ESPI:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for ESPI bus.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:ESPI:SUPPortedfields?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:ESPI:SUPPortedfields?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:ESPI:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:ESPI:SUPPortedfields {DATa|CDATa|RDATa}
         - MATH:MATH<x>:ESPI:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
         - ``CDATa`` sets the field type to CDATa.
         - ``RDATa`` sets the field type to RDATa.
@@ -4383,7 +4253,7 @@ class MathMathItemEspiSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemEspi(SCPICmdRead):
     """The ``MATH:MATH<x>:ESPI`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:ESPI?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:ESPI?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -4402,11 +4272,11 @@ class MathMathItemEspi(SCPICmdRead):
     def supportedfields(self) -> MathMathItemEspiSupportedfields:
         """Return the ``MATH:MATH<x>:ESPI:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for ESPI
               bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:ESPI:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4415,14 +4285,13 @@ class MathMathItemEspi(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:ESPI:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:ESPI:SUPPortedfields {DATa|CDATa|RDATa}
             - MATH:MATH<x>:ESPI:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
             - ``CDATa`` sets the field type to CDATa.
             - ``RDATa`` sets the field type to RDATa.
@@ -4433,7 +4302,7 @@ class MathMathItemEspi(SCPICmdRead):
 class MathMathItemDefine(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:DEFine`` command.
 
-    **Description:**
+    Description:
         - This command allows you to define new waveforms using mathematical expressions. The query
           form of this command returns the math definition for the specified math waveform. The math
           waveform is specified by x. You can specify a math expression from waveforms, measurements
@@ -4446,20 +4315,19 @@ class MathMathItemDefine(SCPICmdWrite, SCPICmdRead):
           algebraically added, and the base 10 log of the sum is to be shown as the final math
           waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:DEFine?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:DEFine?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:DEFine value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:DEFine <QString>
         - MATH:MATH<x>:DEFine?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` quoted string argument is the mathematical expression that defines the
           waveform. ``MATH:MATH<x>:DEFINE?`` is for use when the ``MATH:MATH<x>:TYPE`` is ADVANCED.
     """
@@ -4470,25 +4338,24 @@ class MathMathItemDefine(SCPICmdWrite, SCPICmdRead):
 class MathMathItemCxpiSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:CXPI:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for CXPI bus.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:CXPI:SUPPortedfields?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:CXPI:SUPPortedfields?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:CXPI:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:CXPI:SUPPortedfields {DATa}
         - MATH:MATH<x>:CXPI:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
     """
 
@@ -4496,7 +4363,7 @@ class MathMathItemCxpiSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemCxpi(SCPICmdRead):
     """The ``MATH:MATH<x>:CXPI`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:CXPI?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:CXPI?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -4515,11 +4382,11 @@ class MathMathItemCxpi(SCPICmdRead):
     def supportedfields(self) -> MathMathItemCxpiSupportedfields:
         """Return the ``MATH:MATH<x>:CXPI:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for CXPI
               bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:CXPI:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4528,14 +4395,13 @@ class MathMathItemCxpi(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:CXPI:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:CXPI:SUPPortedfields {DATa}
             - MATH:MATH<x>:CXPI:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
         """
         return self._supportedfields
@@ -4544,25 +4410,24 @@ class MathMathItemCxpi(SCPICmdRead):
 class MathMathItemCanSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:CAN:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for CAN bus.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:CAN:SUPPortedfields?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:CAN:SUPPortedfields?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:CAN:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:CAN:SUPPortedfields {DATa}
         - MATH:MATH<x>:CAN:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
     """
 
@@ -4570,7 +4435,7 @@ class MathMathItemCanSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemCan(SCPICmdRead):
     """The ``MATH:MATH<x>:CAN`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:CAN?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:CAN?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -4589,11 +4454,11 @@ class MathMathItemCan(SCPICmdRead):
     def supportedfields(self) -> MathMathItemCanSupportedfields:
         """Return the ``MATH:MATH<x>:CAN:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for CAN
               bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:CAN:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4602,14 +4467,13 @@ class MathMathItemCan(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:CAN:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:CAN:SUPPortedfields {DATa}
             - MATH:MATH<x>:CAN:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
         """
         return self._supportedfields
@@ -4618,21 +4482,20 @@ class MathMathItemCan(SCPICmdRead):
 class MathMathItemAvgWeight(SCPICmdWrite):
     """The ``MATH:MATH<x>:AVG:WEIGht`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of acquisitions at which the averaging algorithm
           will begin exponential averaging. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:AVG:WEIGht value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:AVG:WEIGht <NR1>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the number of acquisitions at which the averaging algorithm will begin
           exponential averaging.
     """
@@ -4641,20 +4504,19 @@ class MathMathItemAvgWeight(SCPICmdWrite):
 class MathMathItemAvgMode(SCPICmdWrite):
     """The ``MATH:MATH<x>:AVG:MODE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the math average mode flag. If the flag is set to 1, math
           averaging is turned on. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:AVG:MODE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:AVG:MODE {<NR1>|OFF|ON}
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 turns off average mode, and any other integer turns on average mode.
         - ``OFF`` turns off average mode.
         - ``ON`` turns on average mode.
@@ -4664,7 +4526,7 @@ class MathMathItemAvgMode(SCPICmdWrite):
 class MathMathItemAvg(SCPICmdRead):
     """The ``MATH:MATH<x>:AVG`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:AVG?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:AVG?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -4683,21 +4545,20 @@ class MathMathItemAvg(SCPICmdRead):
     def mode(self) -> MathMathItemAvgMode:
         """Return the ``MATH:MATH<x>:AVG:MODE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the math average mode flag. If the flag is set to 1, math
               averaging is turned on. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:AVG:MODE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:AVG:MODE {<NR1>|OFF|ON}
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 turns off average mode, and any other integer turns on average mode.
             - ``OFF`` turns off average mode.
             - ``ON`` turns on average mode.
@@ -4708,21 +4569,20 @@ class MathMathItemAvg(SCPICmdRead):
     def weight(self) -> MathMathItemAvgWeight:
         """Return the ``MATH:MATH<x>:AVG:WEIGht`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of acquisitions at which the averaging
               algorithm will begin exponential averaging. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:AVG:WEIGht value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:AVG:WEIGht <NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the number of acquisitions at which the averaging algorithm will begin
               exponential averaging.
         """
@@ -4732,11 +4592,11 @@ class MathMathItemAvg(SCPICmdRead):
 class MathMathItemAutoethernetSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:AUTOETHERnet:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for
           AUTOETHERnet bus. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:AUTOETHERnet:SUPPortedfields?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4745,14 +4605,13 @@ class MathMathItemAutoethernetSupportedfields(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:AUTOETHERnet:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:AUTOETHERnet:SUPPortedfields {DATa|IPData|TDATa}
         - MATH:MATH<x>:AUTOETHERnet:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
         - ``IPData`` sets the field type to IPData.
         - ``TDATa`` sets the field type to TDATa.
@@ -4762,7 +4621,7 @@ class MathMathItemAutoethernetSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemAutoethernet(SCPICmdRead):
     """The ``MATH:MATH<x>:AUTOETHERnet`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:AUTOETHERnet?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:AUTOETHERnet?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -4781,11 +4640,11 @@ class MathMathItemAutoethernet(SCPICmdRead):
     def supportedfields(self) -> MathMathItemAutoethernetSupportedfields:
         """Return the ``MATH:MATH<x>:AUTOETHERnet:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for
               AUTOETHERnet bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MATH:MATH<x>:AUTOETHERnet:SUPPortedfields?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4794,14 +4653,13 @@ class MathMathItemAutoethernet(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:AUTOETHERnet:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:AUTOETHERnet:SUPPortedfields {DATa|IPData|TDATa}
             - MATH:MATH<x>:AUTOETHERnet:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
             - ``IPData`` sets the field type to IPData.
             - ``TDATa`` sets the field type to TDATa.
@@ -4812,25 +4670,24 @@ class MathMathItemAutoethernet(SCPICmdRead):
 class MathMathItemAudioSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:AUDIO:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for Audio bus.
           The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:AUDIO:SUPPortedfields?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:AUDIO:SUPPortedfields?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:AUDIO:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:AUDIO:SUPPortedfields {LCHannel|RCHannel|TDMChannel}
         - MATH:MATH<x>:AUDIO:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``LCHannel`` sets the field type to LCHannel.
         - ``RCHannel`` sets the field type to RCHannel.
         - ``TDMChannel`` sets the field type to TDMChannel.
@@ -4840,7 +4697,7 @@ class MathMathItemAudioSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemAudio(SCPICmdRead):
     """The ``MATH:MATH<x>:AUDIO`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:AUDIO?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:AUDIO?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -4859,11 +4716,11 @@ class MathMathItemAudio(SCPICmdRead):
     def supportedfields(self) -> MathMathItemAudioSupportedfields:
         """Return the ``MATH:MATH<x>:AUDIO:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for Audio
               bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:AUDIO:SUPPortedfields?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4872,14 +4729,13 @@ class MathMathItemAudio(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:AUDIO:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:AUDIO:SUPPortedfields {LCHannel|RCHannel|TDMChannel}
             - MATH:MATH<x>:AUDIO:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``LCHannel`` sets the field type to LCHannel.
             - ``RCHannel`` sets the field type to RCHannel.
             - ``TDMChannel`` sets the field type to TDMChannel.
@@ -4890,11 +4746,11 @@ class MathMathItemAudio(SCPICmdRead):
 class MathMathItemArinc429aSupportedfields(SCPICmdWrite, SCPICmdRead):
     """The ``MATH:MATH<x>:ARINC429A:SUPPortedfields`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the field type for the math for the bus source for ARINC429A
           bus. The math waveform is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:ARINC429A:SUPPortedfields?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4903,14 +4759,13 @@ class MathMathItemArinc429aSupportedfields(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MATH:MATH<x>:ARINC429A:SUPPortedfields value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:MATH<x>:ARINC429A:SUPPortedfields {DATa}
         - MATH:MATH<x>:ARINC429A:SUPPortedfields?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the field type to DATa.
     """
 
@@ -4918,7 +4773,7 @@ class MathMathItemArinc429aSupportedfields(SCPICmdWrite, SCPICmdRead):
 class MathMathItemArinc429a(SCPICmdRead):
     """The ``MATH:MATH<x>:ARINC429A`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>:ARINC429A?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:ARINC429A?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -4937,11 +4792,11 @@ class MathMathItemArinc429a(SCPICmdRead):
     def supportedfields(self) -> MathMathItemArinc429aSupportedfields:
         """Return the ``MATH:MATH<x>:ARINC429A:SUPPortedfields`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the field type for the math for the bus source for
               ARINC429A bus. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MATH:MATH<x>:ARINC429A:SUPPortedfields?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4950,14 +4805,13 @@ class MathMathItemArinc429a(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH:MATH<x>:ARINC429A:SUPPortedfields value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:ARINC429A:SUPPortedfields {DATa}
             - MATH:MATH<x>:ARINC429A:SUPPortedfields?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the field type to DATa.
         """
         return self._supportedfields
@@ -4967,7 +4821,7 @@ class MathMathItemArinc429a(SCPICmdRead):
 class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``MATH:MATH<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:MATH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -5060,7 +4914,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def arinc429a(self) -> MathMathItemArinc429a:
         """Return the ``MATH:MATH<x>:ARINC429A`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:ARINC429A?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:ARINC429A?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -5074,7 +4928,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def audio(self) -> MathMathItemAudio:
         """Return the ``MATH:MATH<x>:AUDIO`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:AUDIO?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:AUDIO?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5088,7 +4942,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def autoethernet(self) -> MathMathItemAutoethernet:
         """Return the ``MATH:MATH<x>:AUTOETHERnet`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:AUTOETHERnet?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:AUTOETHERnet?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -5102,7 +4956,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def avg(self) -> MathMathItemAvg:
         """Return the ``MATH:MATH<x>:AVG`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:AVG?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:AVG?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5117,7 +4971,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def can(self) -> MathMathItemCan:
         """Return the ``MATH:MATH<x>:CAN`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:CAN?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:CAN?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5131,7 +4985,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def cxpi(self) -> MathMathItemCxpi:
         """Return the ``MATH:MATH<x>:CXPI`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:CXPI?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:CXPI?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5145,7 +4999,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def define(self) -> MathMathItemDefine:
         """Return the ``MATH:MATH<x>:DEFine`` command.
 
-        **Description:**
+        Description:
             - This command allows you to define new waveforms using mathematical expressions. The
               query form of this command returns the math definition for the specified math
               waveform. The math waveform is specified by x. You can specify a math expression from
@@ -5158,21 +5012,20 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
               channels 1 and 2 are to be algebraically added, and the base 10 log of the sum is to
               be shown as the final math waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:DEFine?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:DEFine?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:DEFine value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:DEFine <QString>
             - MATH:MATH<x>:DEFine?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` quoted string argument is the mathematical expression that defines the
               waveform. ``MATH:MATH<x>:DEFINE?`` is for use when the ``MATH:MATH<x>:TYPE`` is
               ADVANCED.
@@ -5183,7 +5036,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def espi(self) -> MathMathItemEspi:
         """Return the ``MATH:MATH<x>:ESPI`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:ESPI?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:ESPI?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5197,7 +5050,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def ethercat(self) -> MathMathItemEthercat:
         """Return the ``MATH:MATH<x>:ETHERCAT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:ETHERCAT?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:ETHERCAT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5211,7 +5064,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def ethernet(self) -> MathMathItemEthernet:
         """Return the ``MATH:MATH<x>:ETHERnet`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:ETHERnet?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:ETHERnet?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5225,7 +5078,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def eusb(self) -> MathMathItemEusb:
         """Return the ``MATH:MATH<x>:EUSB`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:EUSB?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:EUSB?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5239,7 +5092,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def filter(self) -> MathMathItemFilter:
         """Return the ``MATH:MATH<x>:FILTer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FILTer?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FILTer?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5271,7 +5124,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def flexray(self) -> MathMathItemFlexray:
         """Return the ``MATH:MATH<x>:FLEXray`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:FLEXray?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:FLEXray?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5285,21 +5138,20 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def function(self) -> MathMathItemFunction:
         """Return the ``MATH:MATH<x>:FUNCtion`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the basic math arithmetic function. The math waveform is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:FUNCtion value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:FUNCtion {ADD|SUBtract|MULTiply|DIVide}
+            ```
 
-        **Info:**
+        Info:
             - ``ADD`` sets the basic math function to add.
             - ``SUBtract`` sets the basic math function to subtract.
             - ``MULTiply`` sets the basic math function to multiply.
@@ -5311,25 +5163,24 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def gating(self) -> MathMathItemGating:
         """Return the ``MATH:MATH<x>:GATing`` command.
 
-        **Description:**
+        Description:
             - This command specifies or returns the gating setting. It only applies to Math FFT
               plots. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:GATing?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:GATing?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:GATing value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:GATing {NONE|SCREEN|CURSor}
             - MATH:MATH<x>:GATing?
+            ```
 
-        **Info:**
+        Info:
             - ``NONE`` turns off math gating.
             - ``SCREEN`` turns on gating, using the left and right edges of the screen.
             - ``CURSor`` limits math to the portion of the waveform between the vertical bar
@@ -5341,7 +5192,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def i2c(self) -> MathMathItemI2c:
         """Return the ``MATH:MATH<x>:I2C`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:I2C?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:I2C?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5355,7 +5206,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def i3c(self) -> MathMathItemI3c:
         """Return the ``MATH:MATH<x>:I3C`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:I3C?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:I3C?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5369,21 +5220,20 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def interpolation(self) -> MathMathItemInterpolation:
         """Return the ``MATH:MATH<x>:INTERpolation`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether sinc interpolation is enabled for math on bus
               source. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:INTERpolation value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:INTERpolation {ON|OFF}
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` indicates that the sinc interpolation is used for math waveform.
             - ``OFF`` indicates no interpolation is used for math waveform. Waveform will appear
               'stair-steppy' in this case.
@@ -5394,7 +5244,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def label(self) -> MathMathItemLabel:
         """Return the ``MATH:MATH<x>:LABel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:LABel?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:LABel?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5412,7 +5262,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def lin(self) -> MathMathItemLin:
         """Return the ``MATH:MATH<x>:LIN`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:LIN?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:LIN?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5426,7 +5276,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def mdio(self) -> MathMathItemMdio:
         """Return the ``MATH:MATH<x>:MDIO`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:MDIO?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:MDIO?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5440,7 +5290,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def mil1553b(self) -> MathMathItemMil1553b:
         """Return the ``MATH:MATH<x>:MIL1553B`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:MIL1553B?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:MIL1553B?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5454,7 +5304,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def onewire(self) -> MathMathItemOnewire:
         """Return the ``MATH:MATH<x>:ONEWIRe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:ONEWIRe?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:ONEWIRe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5468,7 +5318,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def parallel(self) -> MathMathItemParallel:
         """Return the ``MATH:MATH<x>:PARallel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:PARallel?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:PARallel?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5482,7 +5332,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def psifive(self) -> MathMathItemPsifive:
         """Return the ``MATH:MATH<x>:PSIFIVe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:PSIFIVe?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:PSIFIVe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5496,7 +5346,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def rs232c(self) -> MathMathItemRs232c:
         """Return the ``MATH:MATH<x>:RS232C`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:RS232C?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:RS232C?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5510,7 +5360,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def sdlc(self) -> MathMathItemSdlc:
         """Return the ``MATH:MATH<x>:SDLC`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SDLC?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SDLC?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5524,7 +5374,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def sent(self) -> MathMathItemSent:
         """Return the ``MATH:MATH<x>:SENT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SENT?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SENT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5538,25 +5388,24 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def signeddata(self) -> MathMathItemSigneddata:
         """Return the ``MATH:MATH<x>:SIGNeddata`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries value to denote that bus field is decoded as
               signed/unsigned data for math on bus source. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SIGNeddata?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SIGNeddata?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:SIGNeddata value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SIGNeddata {ON|OFF}
             - MATH:MATH<x>:SIGNeddata?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` indicates that the bus field is decoded as signed data for drawing the math
               waveform.
             - ``OFF`` indicates that the bus field is decoded as unsigned data for drawing the math
@@ -5568,7 +5417,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def smbus(self) -> MathMathItemSmbus:
         """Return the ``MATH:MATH<x>:SMBUS`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SMBUS?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SMBUS?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5582,24 +5431,23 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def source1(self) -> MathMathItemSource1:
         """Return the ``MATH:MATH<x>:SOUrce1`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the specified math source. The source in the command can
               be either 1 or 2. This command sets the Basic Math components in the user interface,
               with two sources and a function. You would also need to set the math type to Basic to
               see the change in the user interface but this will not effect the programmable
               interface. The math waveform and source are specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:SOUrce1 value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:SOUrce1 {CH<x>|MATH<x>|REF<x>}
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies an analog channel as source.
             - ``MATH<x>`` specifies a math channel as source.
             - ``REF<x>`` specifies a reference waveform as the source.
@@ -5612,7 +5460,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def spacewire(self) -> MathMathItemSpacewire:
         """Return the ``MATH:MATH<x>:SPACEWIRe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPACEWIRe?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPACEWIRe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -5626,7 +5474,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def spectral(self) -> MathMathItemSpectral:
         """Return the ``MATH:MATH<x>:SPECTral`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPECTral?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPECTral?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5647,7 +5495,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def spi(self) -> MathMathItemSpi:
         """Return the ``MATH:MATH<x>:SPI`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPI?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPI?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5661,7 +5509,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def spmi(self) -> MathMathItemSpmi:
         """Return the ``MATH:MATH<x>:SPMI`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SPMI?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SPMI?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5675,7 +5523,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def svid(self) -> MathMathItemSvid:
         """Return the ``MATH:MATH<x>:SVID`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:SVID?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:SVID?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5689,19 +5537,18 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def type(self) -> MathMathItemType:
         """Return the ``MATH:MATH<x>:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the math type. The math waveform is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:TYPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:TYPe {BASic|FILTER|FFT|ADVanced}
+            ```
 
-        **Info:**
+        Info:
             - ``BASic`` set the type to basic math.
             - ``FILTER`` sets the math type to filter. Requires UDFLT licenses on 5, 6 series MSO
               instruments and Tekscope (Offline).
@@ -5716,7 +5563,7 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def usb(self) -> MathMathItemUsb:
         """Return the ``MATH:MATH<x>:USB`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>:USB?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>:USB?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5730,20 +5577,19 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def vunit(self) -> MathMathItemVunit:
         """Return the ``MATH:MATH<x>:VUNIT`` command.
 
-        **Description:**
+        Description:
             - This command specifies or returns the math custom vertical units. The math waveform is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MATH:MATH<x>:VUNIT value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:MATH<x>:VUNIT <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the custom vertical units.
         """
         return self._vunit
@@ -5752,38 +5598,36 @@ class MathMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class MathList(SCPICmdRead):
     """The ``MATH:LIST`` command.
 
-    **Description:**
+    Description:
         - This query returns a comma separated list of all currently defined math waveforms.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH:LIST?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH:LIST?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:LIST?
+        ```
     """
 
 
 class MathDelete(SCPICmdWrite):
     """The ``MATH:DELete`` command.
 
-    **Description:**
+    Description:
         - This command deletes the specified math.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MATH:DELete value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:DELete <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string specifying the math waveform to delete. The quoted string
           is of the form 'MATH<NR1>', where <NR1> is ≥1.
     """
@@ -5794,19 +5638,18 @@ class MathDelete(SCPICmdWrite):
 class MathAddnew(SCPICmdWrite):
     """The ``MATH:ADDNew`` command.
 
-    **Description:**
+    Description:
         - This command adds the specified math.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MATH:ADDNew value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH:ADDNew <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the quoted string specifying the math waveform to add. The argument is of
           the form 'MATH<NR1>', where <NR1> is ≥1.
     """
@@ -5817,7 +5660,7 @@ class MathAddnew(SCPICmdWrite):
 class Math(SCPICmdRead):
     """The ``MATH`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -5842,19 +5685,18 @@ class Math(SCPICmdRead):
     def addnew(self) -> MathAddnew:
         """Return the ``MATH:ADDNew`` command.
 
-        **Description:**
+        Description:
             - This command adds the specified math.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MATH:ADDNew value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:ADDNew <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the quoted string specifying the math waveform to add. The argument
               is of the form 'MATH<NR1>', where <NR1> is ≥1.
         """
@@ -5864,19 +5706,18 @@ class Math(SCPICmdRead):
     def delete(self) -> MathDelete:
         """Return the ``MATH:DELete`` command.
 
-        **Description:**
+        Description:
             - This command deletes the specified math.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MATH:DELete value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:DELete <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string specifying the math waveform to delete. The quoted
               string is of the form 'MATH<NR1>', where <NR1> is ≥1.
         """
@@ -5886,19 +5727,18 @@ class Math(SCPICmdRead):
     def list(self) -> MathList:
         """Return the ``MATH:LIST`` command.
 
-        **Description:**
+        Description:
             - This query returns a comma separated list of all currently defined math waveforms.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:LIST?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:LIST?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH:LIST?
+            ```
         """
         return self._list
 
@@ -5906,7 +5746,7 @@ class Math(SCPICmdRead):
     def math(self) -> Dict[int, MathMathItem]:
         """Return the ``MATH:MATH<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH:MATH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH:MATH<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.

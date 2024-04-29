@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - DISplay:CLOCk {DATEOnly|TIMEOnly|DATETIME|NONe|ON|OFF|<NR1>}
     - DISplay:CLOCk?
     - DISplay:DIGital:HEIght {SMAll|MEDium|LARge}
@@ -47,24 +45,23 @@ if TYPE_CHECKING:
 class DisplayStyleDotsonly(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:STYle:DOTsonly`` command.
 
-    **Description:**
+    Description:
         - This command turns on or off the dots-only mode for the waveforms displayed in the time
           domain.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:STYle:DOTsonly?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:STYle:DOTsonly?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:STYle:DOTsonly value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:STYle:DOTsonly {ON|OFF|<NR1>}
         - DISplay:STYle:DOTsonly?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` or <NR1> ≠ 0 turns on the dots-only display.
         - ``OFF`` or <NR1> = 0 turns off the dots-only display.
     """
@@ -73,7 +70,7 @@ class DisplayStyleDotsonly(SCPICmdWrite, SCPICmdRead):
 class DisplayStyle(SCPICmdRead):
     """The ``DISplay:STYle`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:STYle?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:STYle?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -90,25 +87,24 @@ class DisplayStyle(SCPICmdRead):
     def dotsonly(self) -> DisplayStyleDotsonly:
         """Return the ``DISplay:STYle:DOTsonly`` command.
 
-        **Description:**
+        Description:
             - This command turns on or off the dots-only mode for the waveforms displayed in the
               time domain.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:STYle:DOTsonly?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:STYle:DOTsonly?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:STYle:DOTsonly value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:STYle:DOTsonly {ON|OFF|<NR1>}
             - DISplay:STYle:DOTsonly?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` or <NR1> ≠ 0 turns on the dots-only display.
             - ``OFF`` or <NR1> = 0 turns off the dots-only display.
         """
@@ -118,23 +114,22 @@ class DisplayStyle(SCPICmdRead):
 class DisplayPersistence(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:PERSistence`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the display persistence. This affects the display only.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:PERSistence?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:PERSistence?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:PERSistence value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:PERSistence {<NR3>|CLEAR|AUTO|MINImum|INFInite}
         - DISplay:PERSistence?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the time of the persistence.
         - ``CLEAR`` resets the persist time count down and clears the display of acquired points.
         - ``INFInite`` displays waveform points until a control change resets the acquisition
@@ -153,24 +148,23 @@ class DisplayPersistence(SCPICmdWrite, SCPICmdRead):
 class DisplayIntensityWaveform(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:INTENSITy:WAVEform`` command.
 
-    **Description:**
+    Description:
         - Sets and returns the display waveform intensity settings.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:INTENSITy:WAVEform?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy:WAVEform?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:INTENSITy:WAVEform value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:INTENSITy:WAVEform <NR1>
         - DISplay:INTENSITy:WAVEform?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the waveform intensity and ranges from 1 to 100 percent.
     """
 
@@ -178,24 +172,23 @@ class DisplayIntensityWaveform(SCPICmdWrite, SCPICmdRead):
 class DisplayIntensityGraticule(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:INTENSITy:GRAticule`` command.
 
-    **Description:**
+    Description:
         - Sets and returns the display graticule intensity settings.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:INTENSITy:GRAticule?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy:GRAticule?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:INTENSITy:GRAticule value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:INTENSITy:GRAticule <NR1>
         - DISplay:INTENSITy:GRAticule?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the graticule intensity and ranges from 0 to 100 percent.
     """
 
@@ -203,7 +196,7 @@ class DisplayIntensityGraticule(SCPICmdWrite, SCPICmdRead):
 class DisplayIntensityGlitch(SCPICmdWrite):
     """The ``DISplay:INTENSITy:GLITch`` command.
 
-    **Description:**
+    Description:
         - Sets the intensity of the glitch capture background of the waveform display. The intensity
           can be set from 5 to 100% in increments of 5%. The intensity of the glitch capture
           background can only be adjusted when the glitch capture background is displayed and
@@ -212,17 +205,16 @@ class DisplayIntensityGlitch(SCPICmdWrite):
           filtering. Filtering is enabled if the frequency chosen is different than the
           oscilloscope's full bandwidth.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``DISplay:INTENSITy:GLITch value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:INTENSITy:GLITch {<NR1>}
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the glitch intensity and ranges from 5 to 100 percent.
     """
 
@@ -230,24 +222,23 @@ class DisplayIntensityGlitch(SCPICmdWrite):
 class DisplayIntensityBacklight(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:INTENSITy:BACKLight`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the display backlight intensity setting.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:INTENSITy:BACKLight?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy:BACKLight?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:INTENSITy:BACKLight value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:INTENSITy:BACKLight {LOW|MEDium|HIGH}
         - DISplay:INTENSITy:BACKLight?
+        ```
 
-    **Info:**
+    Info:
         - ``LOW`` selects a low brightness level.
         - ``MEDium`` selects a moderate brightness level.
         - ``HIGH`` selects a full brightness level.
@@ -257,19 +248,18 @@ class DisplayIntensityBacklight(SCPICmdWrite, SCPICmdRead):
 class DisplayIntensity(SCPICmdRead):
     """The ``DISplay:INTENSITy`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the waveform saturation level and screen saver settings.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:INTENSITy?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:INTENSITy?
+        ```
 
     Properties:
         - ``.backlight``: The ``DISplay:INTENSITy:BACKLight`` command.
@@ -289,24 +279,23 @@ class DisplayIntensity(SCPICmdRead):
     def backlight(self) -> DisplayIntensityBacklight:
         """Return the ``DISplay:INTENSITy:BACKLight`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the display backlight intensity setting.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:INTENSITy:BACKLight?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy:BACKLight?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:INTENSITy:BACKLight value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:INTENSITy:BACKLight {LOW|MEDium|HIGH}
             - DISplay:INTENSITy:BACKLight?
+            ```
 
-        **Info:**
+        Info:
             - ``LOW`` selects a low brightness level.
             - ``MEDium`` selects a moderate brightness level.
             - ``HIGH`` selects a full brightness level.
@@ -317,7 +306,7 @@ class DisplayIntensity(SCPICmdRead):
     def glitch(self) -> DisplayIntensityGlitch:
         """Return the ``DISplay:INTENSITy:GLITch`` command.
 
-        **Description:**
+        Description:
             - Sets the intensity of the glitch capture background of the waveform display. The
               intensity can be set from 5 to 100% in increments of 5%. The intensity of the glitch
               capture background can only be adjusted when the glitch capture background is
@@ -326,17 +315,16 @@ class DisplayIntensity(SCPICmdRead):
               ``FILTERVU:FREQUENCY`` to enable filtering. Filtering is enabled if the frequency
               chosen is different than the oscilloscope's full bandwidth.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``DISplay:INTENSITy:GLITch value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:INTENSITy:GLITch {<NR1>}
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the glitch intensity and ranges from 5 to 100 percent.
         """
         return self._glitch
@@ -345,24 +333,23 @@ class DisplayIntensity(SCPICmdRead):
     def graticule(self) -> DisplayIntensityGraticule:
         """Return the ``DISplay:INTENSITy:GRAticule`` command.
 
-        **Description:**
+        Description:
             - Sets and returns the display graticule intensity settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:INTENSITy:GRAticule?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy:GRAticule?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:INTENSITy:GRAticule value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:INTENSITy:GRAticule <NR1>
             - DISplay:INTENSITy:GRAticule?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the graticule intensity and ranges from 0 to 100 percent.
         """
         return self._graticule
@@ -371,24 +358,23 @@ class DisplayIntensity(SCPICmdRead):
     def waveform(self) -> DisplayIntensityWaveform:
         """Return the ``DISplay:INTENSITy:WAVEform`` command.
 
-        **Description:**
+        Description:
             - Sets and returns the display waveform intensity settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:INTENSITy:WAVEform?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy:WAVEform?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:INTENSITy:WAVEform value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:INTENSITy:WAVEform <NR1>
             - DISplay:INTENSITy:WAVEform?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the waveform intensity and ranges from 1 to 100 percent.
         """
         return self._waveform
@@ -397,23 +383,22 @@ class DisplayIntensity(SCPICmdRead):
 class DisplayGraticule(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:GRAticule`` command.
 
-    **Description:**
+    Description:
         - Selects or queries the type of graticule the oscilloscope displays.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:GRAticule?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:GRAticule?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:GRAticule value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:GRAticule {CROSSHair|FRAme|FULl|GRId}
         - DISplay:GRAticule?
+        ```
 
-    **Info:**
+    Info:
         - ``CROSSHair`` specifies a frame and cross hairs.
         - ``FRAme`` specifies a frame only.
         - ``FULl`` specifies a frame, a grid and cross hairs.
@@ -424,24 +409,23 @@ class DisplayGraticule(SCPICmdWrite, SCPICmdRead):
 class DisplayGlitch(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:GLITch`` command.
 
-    **Description:**
+    Description:
         - Controls the display of the glitch capture background of the waveform. Set the intensity
           with ``DISPLAY:INTENSITY:GLITCH``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:GLITch?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:GLITch?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:GLITch value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:GLITch {ON|OFF|<NR1>}
         - DISplay:GLITch?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` or <NR1> ≠ 0 turns on the glitch capture waveform display.
         - ``OFF`` or <NR1> = 0 turns off the glitch capture waveform display.
     """
@@ -450,23 +434,22 @@ class DisplayGlitch(SCPICmdWrite, SCPICmdRead):
 class DisplayFormat(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:FORMat`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the display format.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:FORMat?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:FORMat?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:FORMat value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:FORMat {YT|XY}
         - DISplay:FORMat?
+        ```
 
-    **Info:**
+    Info:
         - ``YT`` sets the display to a voltage versus time format and is the default mode.
         - ``XY`` argument displays one waveform against another. Selecting one source causes its
           corresponding source to be implicitly selected, producing a single trace from the two
@@ -477,23 +460,22 @@ class DisplayFormat(SCPICmdWrite, SCPICmdRead):
 class DisplayDigitalHeight(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:DIGital:HEIght`` command.
 
-    **Description:**
+    Description:
         - This command specifies the number of available digital waveform position slots.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:DIGital:HEIght?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:DIGital:HEIght?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:DIGital:HEIght value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:DIGital:HEIght {SMAll|MEDium|LARge}
         - DISplay:DIGital:HEIght?
+        ```
 
-    **Info:**
+    Info:
         - ``SMAll`` sets the height to display 4 digital waveforms per division.
         - ``MEDium`` sets the height to display 2 digital waveforms per division.
         - ``LARge`` sets the height to display 1 digital waveform per division.
@@ -503,7 +485,7 @@ class DisplayDigitalHeight(SCPICmdWrite, SCPICmdRead):
 class DisplayDigital(SCPICmdRead):
     """The ``DISplay:DIGital`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:DIGital?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:DIGital?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -520,24 +502,23 @@ class DisplayDigital(SCPICmdRead):
     def height(self) -> DisplayDigitalHeight:
         """Return the ``DISplay:DIGital:HEIght`` command.
 
-        **Description:**
+        Description:
             - This command specifies the number of available digital waveform position slots.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:DIGital:HEIght?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:DIGital:HEIght?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:DIGital:HEIght value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:DIGital:HEIght {SMAll|MEDium|LARge}
             - DISplay:DIGital:HEIght?
+            ```
 
-        **Info:**
+        Info:
             - ``SMAll`` sets the height to display 4 digital waveforms per division.
             - ``MEDium`` sets the height to display 2 digital waveforms per division.
             - ``LARge`` sets the height to display 1 digital waveform per division.
@@ -548,24 +529,23 @@ class DisplayDigital(SCPICmdRead):
 class DisplayClock(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:CLOCk`` command.
 
-    **Description:**
+    Description:
         - Sets or returns whether the oscilloscope displays the date and time. The query form of
           this command returns an ON (1) or an OFF (0).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:CLOCk?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:CLOCk?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:CLOCk value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:CLOCk {DATEOnly|TIMEOnly|DATETIME|NONe|ON|OFF|<NR1>}
         - DISplay:CLOCk?
+        ```
 
-    **Info:**
+    Info:
         - ``DATEOnly`` enables the display of date.
         - ``TIMEOnly`` enables the display of time.
         - ``DATETIME or ON`` enables the display of both date and time.
@@ -579,19 +559,18 @@ class DisplayClock(SCPICmdWrite, SCPICmdRead):
 class Display(SCPICmdRead):
     """The ``DISplay`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the current Display settings.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay?
+        ```
 
     Properties:
         - ``.clock``: The ``DISplay:CLOCk`` command.
@@ -619,24 +598,23 @@ class Display(SCPICmdRead):
     def clock(self) -> DisplayClock:
         """Return the ``DISplay:CLOCk`` command.
 
-        **Description:**
+        Description:
             - Sets or returns whether the oscilloscope displays the date and time. The query form of
               this command returns an ON (1) or an OFF (0).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:CLOCk?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:CLOCk?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:CLOCk value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:CLOCk {DATEOnly|TIMEOnly|DATETIME|NONe|ON|OFF|<NR1>}
             - DISplay:CLOCk?
+            ```
 
-        **Info:**
+        Info:
             - ``DATEOnly`` enables the display of date.
             - ``TIMEOnly`` enables the display of time.
             - ``DATETIME or ON`` enables the display of both date and time.
@@ -650,7 +628,7 @@ class Display(SCPICmdRead):
     def digital(self) -> DisplayDigital:
         """Return the ``DISplay:DIGital`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:DIGital?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:DIGital?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -664,23 +642,22 @@ class Display(SCPICmdRead):
     def format(self) -> DisplayFormat:
         """Return the ``DISplay:FORMat`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the display format.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:FORMat?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:FORMat?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:FORMat value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:FORMat {YT|XY}
             - DISplay:FORMat?
+            ```
 
-        **Info:**
+        Info:
             - ``YT`` sets the display to a voltage versus time format and is the default mode.
             - ``XY`` argument displays one waveform against another. Selecting one source causes its
               corresponding source to be implicitly selected, producing a single trace from the two
@@ -692,24 +669,23 @@ class Display(SCPICmdRead):
     def glitch(self) -> DisplayGlitch:
         """Return the ``DISplay:GLITch`` command.
 
-        **Description:**
+        Description:
             - Controls the display of the glitch capture background of the waveform. Set the
               intensity with ``DISPLAY:INTENSITY:GLITCH``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:GLITch?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:GLITch?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:GLITch value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:GLITch {ON|OFF|<NR1>}
             - DISplay:GLITch?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` or <NR1> ≠ 0 turns on the glitch capture waveform display.
             - ``OFF`` or <NR1> = 0 turns off the glitch capture waveform display.
         """
@@ -719,23 +695,22 @@ class Display(SCPICmdRead):
     def graticule(self) -> DisplayGraticule:
         """Return the ``DISplay:GRAticule`` command.
 
-        **Description:**
+        Description:
             - Selects or queries the type of graticule the oscilloscope displays.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:GRAticule?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:GRAticule?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:GRAticule value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:GRAticule {CROSSHair|FRAme|FULl|GRId}
             - DISplay:GRAticule?
+            ```
 
-        **Info:**
+        Info:
             - ``CROSSHair`` specifies a frame and cross hairs.
             - ``FRAme`` specifies a frame only.
             - ``FULl`` specifies a frame, a grid and cross hairs.
@@ -747,20 +722,19 @@ class Display(SCPICmdRead):
     def intensity(self) -> DisplayIntensity:
         """Return the ``DISplay:INTENSITy`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the waveform saturation level and screen saver
               settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:INTENSITy?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:INTENSITy?
+            ```
 
         Sub-properties:
             - ``.backlight``: The ``DISplay:INTENSITy:BACKLight`` command.
@@ -774,24 +748,23 @@ class Display(SCPICmdRead):
     def persistence(self) -> DisplayPersistence:
         """Return the ``DISplay:PERSistence`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the display persistence. This affects the display only.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:PERSistence?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:PERSistence?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:PERSistence value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:PERSistence {<NR3>|CLEAR|AUTO|MINImum|INFInite}
             - DISplay:PERSistence?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the time of the persistence.
             - ``CLEAR`` resets the persist time count down and clears the display of acquired
               points.
@@ -813,7 +786,7 @@ class Display(SCPICmdRead):
     def style(self) -> DisplayStyle:
         """Return the ``DISplay:STYle`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:STYle?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:STYle?`` query and raise
               an AssertionError if the returned value does not match ``value``.

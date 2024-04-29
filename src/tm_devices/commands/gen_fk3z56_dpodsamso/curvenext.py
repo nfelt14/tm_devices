@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CURVENext?
 """
 
@@ -26,7 +24,7 @@ if TYPE_CHECKING:
 class Curvenext(SCPICmdRead):
     """The ``CURVENext`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns unique waveform data from the instrument. This query
           performs just like CURVE?, except multiple uses guarantee that the waveform returned is
           always a new acquisition since the previous CURVENEXT. Note that if the instrument is
@@ -34,16 +32,15 @@ class Curvenext(SCPICmdRead):
           controller for long timeout thresholds. Data will not be transferred until a new waveform
           is acquired since the previous ``:CURVENext?`` response.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURVENext?`` query.
         - Using the ``.verify(value)`` method will send the ``CURVENext?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURVENext?
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "CURVENext") -> None:

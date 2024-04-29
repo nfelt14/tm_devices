@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SETUp:NAMe <NR1>,<QString>? <NR1>
 """
 
@@ -26,23 +24,22 @@ if TYPE_CHECKING:
 class SetupName(SCPICmdWrite):
     """The ``SETUp:NAMe`` command.
 
-    **Description:**
+    Description:
         - This command allows you to create (or query) a name for your saved setups. The default
           name for all user setups is 'User.' The default name for factory setups is 'Factory.' This
           command is equivalent to selecting Save As from the File menu, pressing the Setup button,
           selecting the desired setup location, clicking the keyboard icon, and entering your setup
           name.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SETUp:NAMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SETUp:NAMe <NR1>,<QString>? <NR1>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies a location in which the setup label is stored. Location values range
           from 1 through 10.
         - ``<QString>`` is a string containing the setup label.
@@ -52,7 +49,7 @@ class SetupName(SCPICmdWrite):
 class Setup(SCPICmdRead):
     """The ``SETUp`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SETUp?`` query.
         - Using the ``.verify(value)`` method will send the ``SETUp?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -69,23 +66,22 @@ class Setup(SCPICmdRead):
     def name(self) -> SetupName:
         """Return the ``SETUp:NAMe`` command.
 
-        **Description:**
+        Description:
             - This command allows you to create (or query) a name for your saved setups. The default
               name for all user setups is 'User.' The default name for factory setups is 'Factory.'
               This command is equivalent to selecting Save As from the File menu, pressing the Setup
               button, selecting the desired setup location, clicking the keyboard icon, and entering
               your setup name.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SETUp:NAMe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SETUp:NAMe <NR1>,<QString>? <NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies a location in which the setup label is stored. Location values
               range from 1 through 10.
             - ``<QString>`` is a string containing the setup label.

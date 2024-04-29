@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - localnode.model
 """
 
@@ -33,7 +31,7 @@ class Localnode(BaseTSPCmd):
         - ``.PASSWORD_NONE``: Disable passwords everywhere.
         - ``.PASSWORD_WEB``: Use passwords on the web interface only.
 
-    Properties/methods:
+    Properties and methods:
         - ``.model``: The ``localnode.model`` attribute.
     """
 
@@ -53,17 +51,16 @@ class Localnode(BaseTSPCmd):
     def model(self) -> str:
         """Access the ``localnode.model`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the model number.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(localnode.model)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(localnode.model)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.

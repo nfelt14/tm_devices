@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - TEKSecure
 """
 
@@ -27,20 +25,19 @@ if TYPE_CHECKING:
 class Teksecure(SCPICmdWriteNoArguments):
     """The ``TEKSecure`` command.
 
-    **Description:**
+    Description:
         - This command initializes, for the current user, both waveform and setup memories,
           overwriting any previously stored data. Equivalent to invoking Teksecure from the Utility
           menu. This is a time-consuming operation (3 to 5 minutes) and the instrument is inoperable
           until the TekSecure operation is complete.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``TEKSecure`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TEKSecure
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "TEKSecure") -> None:

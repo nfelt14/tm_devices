@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - MULTiscope:CONFig {ATI | TEKCONnect | TIMESYnc}
     - MULTiscope:EXIT
     - MULTiscope:RESTART
@@ -29,75 +27,71 @@ if TYPE_CHECKING:
 class MultiscopeStatus(SCPICmdRead):
     """The ``MULTiscope:STATUS`` command.
 
-    **Description:**
+    Description:
         - This query returns the current state of oscilloscopes in the MultiScope system.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MULTiscope:STATUS?`` query.
         - Using the ``.verify(value)`` method will send the ``MULTiscope:STATUS?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MULTiscope:STATUS?
+        ```
     """
 
 
 class MultiscopeRestart(SCPICmdWriteNoArguments):
     """The ``MULTiscope:RESTART`` command.
 
-    **Description:**
+    Description:
         - This command instructs the Configuration Managers (and active scope applications) across
           the entire MultiScope configuration to exit and restart themselves.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``MULTiscope:RESTART`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MULTiscope:RESTART
+        ```
     """
 
 
 class MultiscopeExit(SCPICmdWriteNoArguments):
     """The ``MULTiscope:EXIT`` command.
 
-    **Description:**
+    Description:
         - This command instructs the Configuration Managers (and active scope applications) across
           the entire MultiScope configuration to shutdown.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``MULTiscope:EXIT`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MULTiscope:EXIT
+        ```
     """
 
 
 class MultiscopeConfig(SCPICmdWrite):
     """The ``MULTiscope:CONFig`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current MultiScope operational configuration. This
           command is for the Master instrument in the multi-instrument configuration.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MULTiscope:CONFig value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MULTiscope:CONFig {ATI | TEKCONnect | TIMESYnc}
+        ```
 
-    **Info:**
+    Info:
         - ``ATI`` sets the MultiScope system to use the ATI channels.
         - ``TEKCONNECT`` sets the MultiScope system to use the TekConnect channels.
         - ``TIMESYNC`` sets the MultiScope system to use the TekConnect channels in TimeSync mode.
@@ -111,7 +105,7 @@ class MultiscopeConfig(SCPICmdWrite):
 class Multiscope(SCPICmdRead):
     """The ``MULTiscope`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MULTiscope?`` query.
         - Using the ``.verify(value)`` method will send the ``MULTiscope?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -134,20 +128,19 @@ class Multiscope(SCPICmdRead):
     def config(self) -> MultiscopeConfig:
         """Return the ``MULTiscope:CONFig`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current MultiScope operational configuration. This
               command is for the Master instrument in the multi-instrument configuration.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MULTiscope:CONFig value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MULTiscope:CONFig {ATI | TEKCONnect | TIMESYnc}
+            ```
 
-        **Info:**
+        Info:
             - ``ATI`` sets the MultiScope system to use the ATI channels.
             - ``TEKCONNECT`` sets the MultiScope system to use the TekConnect channels.
             - ``TIMESYNC`` sets the MultiScope system to use the TekConnect channels in TimeSync
@@ -162,18 +155,17 @@ class Multiscope(SCPICmdRead):
     def exit(self) -> MultiscopeExit:
         """Return the ``MULTiscope:EXIT`` command.
 
-        **Description:**
+        Description:
             - This command instructs the Configuration Managers (and active scope applications)
               across the entire MultiScope configuration to shutdown.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``MULTiscope:EXIT`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MULTiscope:EXIT
+            ```
         """
         return self._exit
 
@@ -181,18 +173,17 @@ class Multiscope(SCPICmdRead):
     def restart(self) -> MultiscopeRestart:
         """Return the ``MULTiscope:RESTART`` command.
 
-        **Description:**
+        Description:
             - This command instructs the Configuration Managers (and active scope applications)
               across the entire MultiScope configuration to exit and restart themselves.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``MULTiscope:RESTART`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MULTiscope:RESTART
+            ```
         """
         return self._restart
 
@@ -200,18 +191,17 @@ class Multiscope(SCPICmdRead):
     def status(self) -> MultiscopeStatus:
         """Return the ``MULTiscope:STATUS`` command.
 
-        **Description:**
+        Description:
             - This query returns the current state of oscilloscopes in the MultiScope system.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MULTiscope:STATUS?`` query.
             - Using the ``.verify(value)`` method will send the ``MULTiscope:STATUS?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MULTiscope:STATUS?
+            ```
         """
         return self._status

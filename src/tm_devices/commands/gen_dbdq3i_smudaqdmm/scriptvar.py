@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - scriptVar.run()
     - scriptVar.save()
     - scriptVar.source
@@ -29,10 +27,10 @@ if TYPE_CHECKING:
 class Scriptvar(BaseTSPCmd):
     """The ``scriptVar`` command tree.
 
-    **Info:**
+    Info:
         - ``scriptVar``, the name of the variable that references the script.
 
-    Properties/methods:
+    Properties and methods:
         - ``.run()``: The ``scriptVar.run()`` function.
         - ``.save()``: The ``scriptVar.save()`` function.
         - ``.source``: The ``scriptVar.source`` attribute.
@@ -45,19 +43,18 @@ class Scriptvar(BaseTSPCmd):
     def source(self) -> str:
         """Access the ``scriptVar.source`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source code of a script.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scriptVar.source)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(scriptVar.source)
+            ```
 
-        **Info:**
+        Info:
             - ``scriptVar``, the name of the variable that references the script that contains the
               source code.
 
@@ -77,16 +74,15 @@ class Scriptvar(BaseTSPCmd):
     def run(self) -> None:
         """Run the ``scriptVar.run()`` function.
 
-        **Description:**
+        Description:
             - This function runs a script.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scriptVar.run()
+            ```
 
-        **Info:**
+        Info:
             - ``scriptVar``, the name of the variable that references the script.
 
         Raises:
@@ -103,14 +99,13 @@ class Scriptvar(BaseTSPCmd):
     def save(self, filename: Optional[str] = None) -> None:
         """Run the ``scriptVar.save()`` function.
 
-        **Description:**
+        Description:
             - This function saves the script to nonvolatile memory or to a USB flash drive.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scriptVar.save()
+            ```
 
         Args:
             filename (optional): A string that contains the file name to use when saving the script

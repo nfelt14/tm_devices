@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - ZOOm:MODe {ON|OFF|<NR1>}
     - ZOOm:STATE {ON|OFF|<NR1>}
     - ZOOm:ZOOM1:FACtor?
@@ -40,43 +38,41 @@ if TYPE_CHECKING:
 class ZoomZoom1Trigpos(SCPICmdRead):
     """The ``ZOOm:ZOOM1:TRIGPOS`` command.
 
-    **Description:**
+    Description:
         - This query returns the time at the center of the zoom box relative to the trigger position
           of the currently selected time domain waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:TRIGPOS?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:TRIGPOS?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:TRIGPOS?
+        ```
     """
 
 
 class ZoomZoom1State(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:STATE`` command.
 
-    **Description:**
+    Description:
         - This command turns the specified zoom on or off. <x> can only be 1.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:STATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:STATE {ON|OFF|<NR1>}
         - ZOOm:ZOOM1:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` turns Zoom 1 on.
         - ``OFF`` turns Zoom 1 off.
         - ``<NR1>`` is an integer. 0 disables the specified zoom; any other value enables the
@@ -87,23 +83,22 @@ class ZoomZoom1State(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1Scale(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command specifies the horizontal scale of the zoom box. <x> can only be 1.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:SCAle?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:SCAle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:SCAle <NR3>
         - ZOOm:ZOOM1:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the horizontal scale of the zoom box.
     """
 
@@ -111,24 +106,23 @@ class ZoomZoom1Scale(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1Position(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:POSition`` command.
 
-    **Description:**
+    Description:
         - Sets the horizontal position of the zoom box, in terms of 0 to 100.0% of upper window. <x>
           can only be 1.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:POSition?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:POSition <NR3>
         - ZOOm:ZOOM1:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the horizontal position as a percent
           of the upper window.
     """
@@ -137,25 +131,24 @@ class ZoomZoom1Position(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1HorizontalScale(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:HORizontal:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command specifies the zoom horizontal scale factor for the specified zoom, where x is
           the integer 1 representing the single zoom window. <x> can only be 1.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:HORizontal:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:HORizontal:SCAle?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:HORizontal:SCAle value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:HORizontal:SCAle <NR3>
         - ZOOm:ZOOM1:HORizontal:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the amount of expansion in the horizontal direction in 1-2 -5 increments.
     """
 
@@ -163,25 +156,24 @@ class ZoomZoom1HorizontalScale(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1HorizontalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:HORizontal:POSition`` command.
 
-    **Description:**
+    Description:
         - This command specifies the horizontal position for the specified zoom, where x is the
           integer 1 representing the single zoom window. <x> can only be 1.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:HORizontal:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:HORizontal:POSition?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:HORizontal:POSition value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:HORizontal:POSition <NR3>
         - ZOOm:ZOOM1:HORizontal:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a value from 0 to 100.00 and is the percent of the upper window that is to
           the left of screen center, when the zoom factor is 1× or greater.
     """
@@ -190,7 +182,7 @@ class ZoomZoom1HorizontalPosition(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1Horizontal(SCPICmdRead):
     """The ``ZOOm:ZOOM1:HORizontal`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:HORizontal?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:HORizontal?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -209,25 +201,24 @@ class ZoomZoom1Horizontal(SCPICmdRead):
     def position(self) -> ZoomZoom1HorizontalPosition:
         """Return the ``ZOOm:ZOOM1:HORizontal:POSition`` command.
 
-        **Description:**
+        Description:
             - This command specifies the horizontal position for the specified zoom, where x is the
               integer 1 representing the single zoom window. <x> can only be 1.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:HORizontal:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:HORizontal:POSition?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``ZOOm:ZOOM1:HORizontal:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:HORizontal:POSition <NR3>
             - ZOOm:ZOOM1:HORizontal:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a value from 0 to 100.00 and is the percent of the upper window that is
               to the left of screen center, when the zoom factor is 1× or greater.
         """
@@ -237,25 +228,24 @@ class ZoomZoom1Horizontal(SCPICmdRead):
     def scale(self) -> ZoomZoom1HorizontalScale:
         """Return the ``ZOOm:ZOOM1:HORizontal:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command specifies the zoom horizontal scale factor for the specified zoom, where
               x is the integer 1 representing the single zoom window. <x> can only be 1.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:HORizontal:SCAle?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:HORizontal:SCAle?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:HORizontal:SCAle value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:HORizontal:SCAle <NR3>
             - ZOOm:ZOOM1:HORizontal:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the amount of expansion in the horizontal direction in 1-2 -5 increments.
         """
         return self._scale
@@ -264,39 +254,37 @@ class ZoomZoom1Horizontal(SCPICmdRead):
 class ZoomZoom1Factor(SCPICmdRead):
     """The ``ZOOm:ZOOM1:FACtor`` command.
 
-    **Description:**
+    Description:
         - Returns the zoom factor of a particular zoom box. <x> can only be 1.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:FACtor?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:FACtor?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:FACtor?
+        ```
     """
 
 
 class ZoomZoom1(SCPICmdRead):
     """The ``ZOOm:ZOOM1`` command.
 
-    **Description:**
+    Description:
         - Returns the current vertical and horizontal positioning and scaling of the display. <x>
           can only be 1.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1?
+        ```
 
     Properties:
         - ``.factor``: The ``ZOOm:ZOOM1:FACtor`` command.
@@ -320,19 +308,18 @@ class ZoomZoom1(SCPICmdRead):
     def factor(self) -> ZoomZoom1Factor:
         """Return the ``ZOOm:ZOOM1:FACtor`` command.
 
-        **Description:**
+        Description:
             - Returns the zoom factor of a particular zoom box. <x> can only be 1.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:FACtor?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:FACtor?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:FACtor?
+            ```
         """
         return self._factor
 
@@ -340,7 +327,7 @@ class ZoomZoom1(SCPICmdRead):
     def horizontal(self) -> ZoomZoom1Horizontal:
         """Return the ``ZOOm:ZOOM1:HORizontal`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:HORizontal?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:HORizontal?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -355,25 +342,24 @@ class ZoomZoom1(SCPICmdRead):
     def position(self) -> ZoomZoom1Position:
         """Return the ``ZOOm:ZOOM1:POSition`` command.
 
-        **Description:**
+        Description:
             - Sets the horizontal position of the zoom box, in terms of 0 to 100.0% of upper window.
               <x> can only be 1.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:POSition?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:POSition value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:POSition <NR3>
             - ZOOm:ZOOM1:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the horizontal position as a
               percent of the upper window.
         """
@@ -383,23 +369,22 @@ class ZoomZoom1(SCPICmdRead):
     def scale(self) -> ZoomZoom1Scale:
         """Return the ``ZOOm:ZOOM1:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command specifies the horizontal scale of the zoom box. <x> can only be 1.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:SCAle?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:SCAle?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:SCAle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:SCAle <NR3>
             - ZOOm:ZOOM1:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the horizontal scale of the zoom
               box.
         """
@@ -409,23 +394,22 @@ class ZoomZoom1(SCPICmdRead):
     def state(self) -> ZoomZoom1State:
         """Return the ``ZOOm:ZOOM1:STATE`` command.
 
-        **Description:**
+        Description:
             - This command turns the specified zoom on or off. <x> can only be 1.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:STATE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:STATE {ON|OFF|<NR1>}
             - ZOOm:ZOOM1:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` turns Zoom 1 on.
             - ``OFF`` turns Zoom 1 off.
             - ``<NR1>`` is an integer. 0 disables the specified zoom; any other value enables the
@@ -437,20 +421,19 @@ class ZoomZoom1(SCPICmdRead):
     def trigpos(self) -> ZoomZoom1Trigpos:
         """Return the ``ZOOm:ZOOM1:TRIGPOS`` command.
 
-        **Description:**
+        Description:
             - This query returns the time at the center of the zoom box relative to the trigger
               position of the currently selected time domain waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:TRIGPOS?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:TRIGPOS?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:TRIGPOS?
+            ```
         """
         return self._trigpos
 
@@ -458,20 +441,19 @@ class ZoomZoom1(SCPICmdRead):
 class ZoomState(SCPICmdWrite):
     """The ``ZOOm:STATE`` command.
 
-    **Description:**
+    Description:
         - Turns Zoom mode on or off. The Zoom query returns the current state of Zoom mode. This
           command is equivalent to pressing the zoom button located on the front panel.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``ZOOm:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:STATE {ON|OFF|<NR1>}
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` turns on Zoom mode.
         - ``OFF`` turns off Zoom mode.
         - ``<NR1>`` is an integer. 0 turns off Zoom mode; any other value turns on Zoom mode.
@@ -481,20 +463,19 @@ class ZoomState(SCPICmdWrite):
 class ZoomMode(SCPICmdWrite):
     """The ``ZOOm:MODe`` command.
 
-    **Description:**
+    Description:
         - Turns Zoom mode on or off. The Zoom query returns the current state of Zoom mode. This
           command is equivalent to pressing the zoom button located on the front panel.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``ZOOm:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:MODe {ON|OFF|<NR1>}
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` turns on Zoom mode.
         - ``OFF`` turns off Zoom mode.
         - ``<NR1>`` is an integer. 0 turns off Zoom mode; any other value turns on Zoom mode.
@@ -504,19 +485,18 @@ class ZoomMode(SCPICmdWrite):
 class Zoom(SCPICmdRead):
     """The ``ZOOm`` command.
 
-    **Description:**
+    Description:
         - Returns the current vertical and horizontal positioning and scaling of the display.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm?
+        ```
 
     Properties:
         - ``.zoom1``: The ``ZOOm:ZOOM1`` command.
@@ -534,20 +514,19 @@ class Zoom(SCPICmdRead):
     def zoom1(self) -> ZoomZoom1:
         """Return the ``ZOOm:ZOOM1`` command.
 
-        **Description:**
+        Description:
             - Returns the current vertical and horizontal positioning and scaling of the display.
               <x> can only be 1.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1?
+            ```
 
         Sub-properties:
             - ``.factor``: The ``ZOOm:ZOOM1:FACtor`` command.
@@ -563,20 +542,19 @@ class Zoom(SCPICmdRead):
     def mode(self) -> ZoomMode:
         """Return the ``ZOOm:MODe`` command.
 
-        **Description:**
+        Description:
             - Turns Zoom mode on or off. The Zoom query returns the current state of Zoom mode. This
               command is equivalent to pressing the zoom button located on the front panel.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``ZOOm:MODe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:MODe {ON|OFF|<NR1>}
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` turns on Zoom mode.
             - ``OFF`` turns off Zoom mode.
             - ``<NR1>`` is an integer. 0 turns off Zoom mode; any other value turns on Zoom mode.
@@ -587,20 +565,19 @@ class Zoom(SCPICmdRead):
     def state(self) -> ZoomState:
         """Return the ``ZOOm:STATE`` command.
 
-        **Description:**
+        Description:
             - Turns Zoom mode on or off. The Zoom query returns the current state of Zoom mode. This
               command is equivalent to pressing the zoom button located on the front panel.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``ZOOm:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:STATE {ON|OFF|<NR1>}
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` turns on Zoom mode.
             - ``OFF`` turns off Zoom mode.
             - ``<NR1>`` is an integer. 0 turns off Zoom mode; any other value turns on Zoom mode.

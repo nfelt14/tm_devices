@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - format.asciiprecision
     - format.byteorder
     - format.data
@@ -52,7 +50,7 @@ class Format(BaseTSPCmd):
           printnumber() and
           printbuffer() functions to be least significant byte first.
 
-    Properties/methods:
+    Properties and methods:
         - ``.asciiprecision``: The ``format.asciiprecision`` attribute.
         - ``.byteorder``: The ``format.byteorder`` attribute.
         - ``.data``: The ``format.data`` attribute.
@@ -93,23 +91,22 @@ printbuffer() functions to be least significant byte first."""
     def asciiprecision(self) -> str:
         """Access the ``format.asciiprecision`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the precision (number of digits) for all numbers returned in the
               ASCII format.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(format.asciiprecision)`` query.
             - Setting this property to a value will send the ``format.asciiprecision = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - format.asciiprecision = value
             - print(format.asciiprecision)
+            ```
 
-        **Info:**
+        Info:
             - ``precision``, a number representing the number of digits to be printed for numbers
               printed with the print(), printbuffer(), and printnumber() functions; must be a number
               between 1 and 16.
@@ -131,23 +128,22 @@ printbuffer() functions to be least significant byte first."""
     def asciiprecision(self, value: Union[str, float]) -> None:
         """Access the ``format.asciiprecision`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the precision (number of digits) for all numbers returned in the
               ASCII format.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(format.asciiprecision)`` query.
             - Setting this property to a value will send the ``format.asciiprecision = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - format.asciiprecision = value
             - print(format.asciiprecision)
+            ```
 
-        **Info:**
+        Info:
             - ``precision``, a number representing the number of digits to be printed for numbers
               printed with the print(), printbuffer(), and printnumber() functions; must be a number
               between 1 and 16.
@@ -172,22 +168,21 @@ printbuffer() functions to be least significant byte first."""
     def byteorder(self) -> str:
         """Access the ``format.byteorder`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the binary byte order for the data that is printed using the
               printnumber() and printbuffer() functions.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(format.byteorder)`` query.
             - Setting this property to a value will send the ``format.byteorder = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - format.byteorder = value
             - print(format.byteorder)
+            ```
 
-        **Info:**
+        Info:
             - ``order``, the byte order value as follows:
 
                 * Most significant byte first: 0, format.NORMAL, format.NETWORK, or format.BIGENDIAN
@@ -210,22 +205,21 @@ printbuffer() functions to be least significant byte first."""
     def byteorder(self, value: Union[str, float]) -> None:
         """Access the ``format.byteorder`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the binary byte order for the data that is printed using the
               printnumber() and printbuffer() functions.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(format.byteorder)`` query.
             - Setting this property to a value will send the ``format.byteorder = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - format.byteorder = value
             - print(format.byteorder)
+            ```
 
-        **Info:**
+        Info:
             - ``order``, the byte order value as follows:
 
                 * Most significant byte first: 0, format.NORMAL, format.NETWORK, or format.BIGENDIAN
@@ -251,20 +245,19 @@ printbuffer() functions to be least significant byte first."""
     def data(self) -> str:
         """Access the ``format.data`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the data format for data that is printed using the printnumber()
               and printbuffer() functions.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(format.data)`` query.
             - Setting this property to a value will send the ``format.data = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - format.data = value
             - print(format.data)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -283,20 +276,19 @@ printbuffer() functions to be least significant byte first."""
     def data(self, value: Union[str, float]) -> None:
         """Access the ``format.data`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the data format for data that is printed using the printnumber()
               and printbuffer() functions.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(format.data)`` query.
             - Setting this property to a value will send the ``format.data = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - format.data = value
             - print(format.data)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.

@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - AWGControl:ARSettings {0|1|ON|OFF}
     - AWGControl:CLOCk:DRATe <NR1>
     - AWGControl:CLOCk:DRATe?
@@ -45,24 +43,23 @@ if TYPE_CHECKING:
 class AwgcontrolStopImmediate(SCPICmdWriteNoArguments):
     """The ``AWGControl:STOP:IMMediate`` command.
 
-    **Description:**
+    Description:
         - This command stops the output of a waveform or a sequence.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``AWGControl:STOP:IMMediate`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AWGControl:STOP:IMMediate
+        ```
     """
 
 
 class AwgcontrolStop(SCPICmdRead):
     """The ``AWGControl:STOP`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AWGControl:STOP?`` query.
         - Using the ``.verify(value)`` method will send the ``AWGControl:STOP?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -79,17 +76,16 @@ class AwgcontrolStop(SCPICmdRead):
     def immediate(self) -> AwgcontrolStopImmediate:
         """Return the ``AWGControl:STOP:IMMediate`` command.
 
-        **Description:**
+        Description:
             - This command stops the output of a waveform or a sequence.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``AWGControl:STOP:IMMediate`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AWGControl:STOP:IMMediate
+            ```
         """
         return self._immediate
 
@@ -97,81 +93,77 @@ class AwgcontrolStop(SCPICmdRead):
 class AwgcontrolSsave(SCPICmdWrite):
     """The ``AWGControl:SSAVe`` command.
 
-    **Description:**
+    Description:
         - This command saves the AWG's setup with waveforms.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``AWGControl:SSAVe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AWGControl:SSAVe <filepath>[,<msus>]
+        ```
     """
 
 
 class AwgcontrolSrestore(SCPICmdWrite):
     """The ``AWGControl:SREStore`` command.
 
-    **Description:**
+    Description:
         - This command opens a setup file into the AWG's setup memory.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``AWGControl:SREStore value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AWGControl:SREStore <filepath>[,<msus>]
+        ```
     """
 
 
 class AwgcontrolSname(SCPICmdRead):
     """The ``AWGControl:SNAMe`` command.
 
-    **Description:**
+    Description:
         - This command returns the AWG's most recently saved setup location. The response contains
           the full path for the file, including the disk drive letter (msus or, mass storage unit
           specifier).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AWGControl:SNAMe?`` query.
         - Using the ``.verify(value)`` method will send the ``AWGControl:SNAMe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AWGControl:SNAMe?
+        ```
     """
 
 
 class AwgcontrolRunImmediate(SCPICmdWriteNoArguments):
     """The ``AWGControl:RUN:IMMediate`` command.
 
-    **Description:**
+    Description:
         - This command initiates the output of a waveform or sequence. This is equivalent to pushing
           the play button on the front-panel or display. The AWG can be put in the run state only
           when waveforms or sequences are assigned to channels.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``AWGControl:RUN:IMMediate`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AWGControl:RUN:IMMediate
+        ```
     """
 
 
 class AwgcontrolRun(SCPICmdRead):
     """The ``AWGControl:RUN`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AWGControl:RUN?`` query.
         - Using the ``.verify(value)`` method will send the ``AWGControl:RUN?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -188,19 +180,18 @@ class AwgcontrolRun(SCPICmdRead):
     def immediate(self) -> AwgcontrolRunImmediate:
         """Return the ``AWGControl:RUN:IMMediate`` command.
 
-        **Description:**
+        Description:
             - This command initiates the output of a waveform or sequence. This is equivalent to
               pushing the play button on the front-panel or display. The AWG can be put in the run
               state only when waveforms or sequences are assigned to channels.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``AWGControl:RUN:IMMediate`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AWGControl:RUN:IMMediate
+            ```
         """
         return self._immediate
 
@@ -208,42 +199,40 @@ class AwgcontrolRun(SCPICmdRead):
 class AwgcontrolRstate(SCPICmdRead):
     """The ``AWGControl:RSTate`` command.
 
-    **Description:**
+    Description:
         - This command returns the run state of the AWG.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AWGControl:RSTate?`` query.
         - Using the ``.verify(value)`` method will send the ``AWGControl:RSTate?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AWGControl:RSTate?
+        ```
     """
 
 
 class AwgcontrolRmode(SCPICmdWrite, SCPICmdRead):
     """The ``AWGControl:RMODe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the run mode of the AWG for Channel 1.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AWGControl:RMODe?`` query.
         - Using the ``.verify(value)`` method will send the ``AWGControl:RMODe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AWGControl:RMODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AWGControl:RMODe {CONTinuous|TRIGgered|GATed}
         - AWGControl:RMODe?
+        ```
 
-    **Info:**
+    Info:
         - ``CONTinuous`` sets the Run Mode to Continuous (not waiting for a trigger event).
           TRIGgered sets the Run Mode to Triggered, waiting for a trigger event. One waveform play
           out cycle completes, then play out stops, waiting for the next trigger event. GATed sets
@@ -255,24 +244,23 @@ class AwgcontrolRmode(SCPICmdWrite, SCPICmdRead):
 class AwgcontrolPjumpSedge(SCPICmdWrite, SCPICmdRead):
     """The ``AWGControl:PJUMp:SEDGe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the active Strobe Edge to use for Pattern Jump when Pattern
           Jump is enabled for Sequencing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AWGControl:PJUMp:SEDGe?`` query.
         - Using the ``.verify(value)`` method will send the ``AWGControl:PJUMp:SEDGe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AWGControl:PJUMp:SEDGe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AWGControl:PJUMp:SEDGe {FALLing|RISing}
         - AWGControl:PJUMp:SEDGe?
+        ```
 
-    **Info:**
+    Info:
         - ``FALLing`` sets the falling edge of the strobe signal to the active edge. 256 input
           patterns are available.
         - ``RISing`` sets the rising edge of the strobe signal to the active edge. 256 input
@@ -283,33 +271,32 @@ class AwgcontrolPjumpSedge(SCPICmdWrite, SCPICmdRead):
 class AwgcontrolPjumpJstrobe(SCPICmdWrite, SCPICmdRead):
     """The ``AWGControl:PJUMp:JSTRobe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns if the pattern jump is set (enabled or disabled) to always
           occur on the strobe signal. With this setting disabled, the pattern jump requires a strobe
           signal and a pattern address change to initiate a jump. With this setting enabled, the
           pattern jump disregards the pattern address change condition, causing the jump to always
           occur on the strobe signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AWGControl:PJUMp:JSTRobe?`` query.
         - Using the ``.verify(value)`` method will send the ``AWGControl:PJUMp:JSTRobe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AWGControl:PJUMp:JSTRobe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AWGControl:PJUMp:JSTRobe {0|1|OFF|ON}
         - AWGControl:PJUMp:JSTRobe?
+        ```
     """
 
 
 class AwgcontrolPjump(SCPICmdRead):
     """The ``AWGControl:PJUMp`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AWGControl:PJUMp?`` query.
         - Using the ``.verify(value)`` method will send the ``AWGControl:PJUMp?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -328,26 +315,25 @@ class AwgcontrolPjump(SCPICmdRead):
     def jstrobe(self) -> AwgcontrolPjumpJstrobe:
         """Return the ``AWGControl:PJUMp:JSTRobe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns if the pattern jump is set (enabled or disabled) to
               always occur on the strobe signal. With this setting disabled, the pattern jump
               requires a strobe signal and a pattern address change to initiate a jump. With this
               setting enabled, the pattern jump disregards the pattern address change condition,
               causing the jump to always occur on the strobe signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AWGControl:PJUMp:JSTRobe?`` query.
             - Using the ``.verify(value)`` method will send the ``AWGControl:PJUMp:JSTRobe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AWGControl:PJUMp:JSTRobe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AWGControl:PJUMp:JSTRobe {0|1|OFF|ON}
             - AWGControl:PJUMp:JSTRobe?
+            ```
         """
         return self._jstrobe
 
@@ -355,25 +341,24 @@ class AwgcontrolPjump(SCPICmdRead):
     def sedge(self) -> AwgcontrolPjumpSedge:
         """Return the ``AWGControl:PJUMp:SEDGe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the active Strobe Edge to use for Pattern Jump when
               Pattern Jump is enabled for Sequencing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AWGControl:PJUMp:SEDGe?`` query.
             - Using the ``.verify(value)`` method will send the ``AWGControl:PJUMp:SEDGe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AWGControl:PJUMp:SEDGe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AWGControl:PJUMp:SEDGe {FALLing|RISing}
             - AWGControl:PJUMp:SEDGe?
+            ```
 
-        **Info:**
+        Info:
             - ``FALLing`` sets the falling edge of the strobe signal to the active edge. 256 input
               patterns are available.
             - ``RISing`` sets the rising edge of the strobe signal to the active edge. 256 input
@@ -385,26 +370,25 @@ class AwgcontrolPjump(SCPICmdRead):
 class AwgcontrolConfigureCnumber(SCPICmdRead):
     """The ``AWGControl:CONFigure:CNUMber`` command.
 
-    **Description:**
+    Description:
         - This command returns the number of channels available on the AWG.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AWGControl:CONFigure:CNUMber?`` query.
         - Using the ``.verify(value)`` method will send the ``AWGControl:CONFigure:CNUMber?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AWGControl:CONFigure:CNUMber?
+        ```
     """
 
 
 class AwgcontrolConfigure(SCPICmdRead):
     """The ``AWGControl:CONFigure`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AWGControl:CONFigure?`` query.
         - Using the ``.verify(value)`` method will send the ``AWGControl:CONFigure?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -421,19 +405,18 @@ class AwgcontrolConfigure(SCPICmdRead):
     def cnumber(self) -> AwgcontrolConfigureCnumber:
         """Return the ``AWGControl:CONFigure:CNUMber`` command.
 
-        **Description:**
+        Description:
             - This command returns the number of channels available on the AWG.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AWGControl:CONFigure:CNUMber?`` query.
             - Using the ``.verify(value)`` method will send the ``AWGControl:CONFigure:CNUMber?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AWGControl:CONFigure:CNUMber?
+            ```
         """
         return self._cnumber
 
@@ -441,42 +424,40 @@ class AwgcontrolConfigure(SCPICmdRead):
 class AwgcontrolCompile(SCPICmdWrite):
     """The ``AWGControl:COMPile`` command.
 
-    **Description:**
+    Description:
         - This command compiles an equation file and imports the waveforms (created by the equation
           file) into the arbitrary waveform generator.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``AWGControl:COMPile value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AWGControl:COMPile <filename>
+        ```
     """
 
 
 class AwgcontrolClockSource(SCPICmdWrite, SCPICmdRead):
     """The ``AWGControl:CLOCk:SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the source of the clock.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AWGControl:CLOCk:SOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``AWGControl:CLOCk:SOURce?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AWGControl:CLOCk:SOURce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AWGControl:CLOCk:SOURce {INTernal|EXTernal|EFIXed|EVARiable}
         - AWGControl:CLOCk:SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``INTernal`` - clock signal is generated internally and the reference frequency is derived
           by the internal oscillator. EFIXed - clock is generated internally and the reference
           frequency is derived from a fixed 10 MHz reference supplied at the Reference In connector.
@@ -491,29 +472,28 @@ class AwgcontrolClockSource(SCPICmdWrite, SCPICmdRead):
 class AwgcontrolClockPhaseAdjust(SCPICmdWrite, SCPICmdRead):
     """The ``AWGControl:CLOCk:PHASe:ADJust`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the internal clock phase adjustment of the AWG.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AWGControl:CLOCk:PHASe:ADJust?`` query.
         - Using the ``.verify(value)`` method will send the ``AWGControl:CLOCk:PHASe:ADJust?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AWGControl:CLOCk:PHASe:ADJust value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AWGControl:CLOCk:PHASe:ADJust <NR1>
         - AWGControl:CLOCk:PHASe:ADJust?
+        ```
     """
 
 
 class AwgcontrolClockPhase(SCPICmdRead):
     """The ``AWGControl:CLOCk:PHASe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AWGControl:CLOCk:PHASe?`` query.
         - Using the ``.verify(value)`` method will send the ``AWGControl:CLOCk:PHASe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -530,22 +510,21 @@ class AwgcontrolClockPhase(SCPICmdRead):
     def adjust(self) -> AwgcontrolClockPhaseAdjust:
         """Return the ``AWGControl:CLOCk:PHASe:ADJust`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the internal clock phase adjustment of the AWG.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AWGControl:CLOCk:PHASe:ADJust?`` query.
             - Using the ``.verify(value)`` method will send the ``AWGControl:CLOCk:PHASe:ADJust?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``AWGControl:CLOCk:PHASe:ADJust value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AWGControl:CLOCk:PHASe:ADJust <NR1>
             - AWGControl:CLOCk:PHASe:ADJust?
+            ```
         """
         return self._adjust
 
@@ -553,23 +532,22 @@ class AwgcontrolClockPhase(SCPICmdRead):
 class AwgcontrolClockDrate(SCPICmdWrite, SCPICmdRead):
     """The ``AWGControl:CLOCk:DRATe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the divider rate for the external clock.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AWGControl:CLOCk:DRATe?`` query.
         - Using the ``.verify(value)`` method will send the ``AWGControl:CLOCk:DRATe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AWGControl:CLOCk:DRATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AWGControl:CLOCk:DRATe <NR1>
         - AWGControl:CLOCk:DRATe?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 1.
     """
 
@@ -577,7 +555,7 @@ class AwgcontrolClockDrate(SCPICmdWrite, SCPICmdRead):
 class AwgcontrolClock(SCPICmdRead):
     """The ``AWGControl:CLOCk`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AWGControl:CLOCk?`` query.
         - Using the ``.verify(value)`` method will send the ``AWGControl:CLOCk?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -598,7 +576,7 @@ class AwgcontrolClock(SCPICmdRead):
     def phase(self) -> AwgcontrolClockPhase:
         """Return the ``AWGControl:CLOCk:PHASe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AWGControl:CLOCk:PHASe?`` query.
             - Using the ``.verify(value)`` method will send the ``AWGControl:CLOCk:PHASe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -612,24 +590,23 @@ class AwgcontrolClock(SCPICmdRead):
     def drate(self) -> AwgcontrolClockDrate:
         """Return the ``AWGControl:CLOCk:DRATe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the divider rate for the external clock.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AWGControl:CLOCk:DRATe?`` query.
             - Using the ``.verify(value)`` method will send the ``AWGControl:CLOCk:DRATe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AWGControl:CLOCk:DRATe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AWGControl:CLOCk:DRATe <NR1>
             - AWGControl:CLOCk:DRATe?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 1.
         """
         return self._drate
@@ -638,24 +615,23 @@ class AwgcontrolClock(SCPICmdRead):
     def source(self) -> AwgcontrolClockSource:
         """Return the ``AWGControl:CLOCk:SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the source of the clock.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AWGControl:CLOCk:SOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``AWGControl:CLOCk:SOURce?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AWGControl:CLOCk:SOURce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AWGControl:CLOCk:SOURce {INTernal|EXTernal|EFIXed|EVARiable}
             - AWGControl:CLOCk:SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``INTernal`` - clock signal is generated internally and the reference frequency is
               derived by the internal oscillator. EFIXed - clock is generated internally and the
               reference frequency is derived from a fixed 10 MHz reference supplied at the Reference
@@ -671,7 +647,7 @@ class AwgcontrolClock(SCPICmdRead):
 class AwgcontrolArsettings(SCPICmdWrite):
     """The ``AWGControl:ARSettings`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the state (enabled or disabled) of whether or not to apply
           the recommended settings of waveforms and sequences when they are assigned to a channel.
           When enabled, the system attempts to use the waveform's recommended settings (sample rate,
@@ -679,14 +655,13 @@ class AwgcontrolArsettings(SCPICmdWrite):
           within sequence tracks assigned to a channel. Recommended settings are defined as part the
           waveform properties and sequence properties.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``AWGControl:ARSettings value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AWGControl:ARSettings {0|1|ON|OFF}
+        ```
     """
 
 
@@ -694,7 +669,7 @@ class AwgcontrolArsettings(SCPICmdWrite):
 class Awgcontrol(SCPICmdRead):
     """The ``AWGControl`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AWGControl?`` query.
         - Using the ``.verify(value)`` method will send the ``AWGControl?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -733,7 +708,7 @@ class Awgcontrol(SCPICmdRead):
     def arsettings(self) -> AwgcontrolArsettings:
         """Return the ``AWGControl:ARSettings`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the state (enabled or disabled) of whether or not to
               apply the recommended settings of waveforms and sequences when they are assigned to a
               channel. When enabled, the system attempts to use the waveform's recommended settings
@@ -741,15 +716,14 @@ class Awgcontrol(SCPICmdRead):
               includes waveforms within sequence tracks assigned to a channel. Recommended settings
               are defined as part the waveform properties and sequence properties.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``AWGControl:ARSettings value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AWGControl:ARSettings {0|1|ON|OFF}
+            ```
         """
         return self._arsettings
 
@@ -757,18 +731,17 @@ class Awgcontrol(SCPICmdRead):
     def compile(self) -> AwgcontrolCompile:
         """Return the ``AWGControl:COMPile`` command.
 
-        **Description:**
+        Description:
             - This command compiles an equation file and imports the waveforms (created by the
               equation file) into the arbitrary waveform generator.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``AWGControl:COMPile value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AWGControl:COMPile <filename>
+            ```
         """
         return self._compile
 
@@ -776,7 +749,7 @@ class Awgcontrol(SCPICmdRead):
     def configure(self) -> AwgcontrolConfigure:
         """Return the ``AWGControl:CONFigure`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AWGControl:CONFigure?`` query.
             - Using the ``.verify(value)`` method will send the ``AWGControl:CONFigure?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -790,7 +763,7 @@ class Awgcontrol(SCPICmdRead):
     def pjump(self) -> AwgcontrolPjump:
         """Return the ``AWGControl:PJUMp`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AWGControl:PJUMp?`` query.
             - Using the ``.verify(value)`` method will send the ``AWGControl:PJUMp?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -805,23 +778,22 @@ class Awgcontrol(SCPICmdRead):
     def rmode(self) -> AwgcontrolRmode:
         """Return the ``AWGControl:RMODe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the run mode of the AWG for Channel 1.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AWGControl:RMODe?`` query.
             - Using the ``.verify(value)`` method will send the ``AWGControl:RMODe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AWGControl:RMODe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AWGControl:RMODe {CONTinuous|TRIGgered|GATed}
             - AWGControl:RMODe?
+            ```
 
-        **Info:**
+        Info:
             - ``CONTinuous`` sets the Run Mode to Continuous (not waiting for a trigger event).
               TRIGgered sets the Run Mode to Triggered, waiting for a trigger event. One waveform
               play out cycle completes, then play out stops, waiting for the next trigger event.
@@ -834,19 +806,18 @@ class Awgcontrol(SCPICmdRead):
     def rstate(self) -> AwgcontrolRstate:
         """Return the ``AWGControl:RSTate`` command.
 
-        **Description:**
+        Description:
             - This command returns the run state of the AWG.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AWGControl:RSTate?`` query.
             - Using the ``.verify(value)`` method will send the ``AWGControl:RSTate?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AWGControl:RSTate?
+            ```
         """
         return self._rstate
 
@@ -854,7 +825,7 @@ class Awgcontrol(SCPICmdRead):
     def run(self) -> AwgcontrolRun:
         """Return the ``AWGControl:RUN`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AWGControl:RUN?`` query.
             - Using the ``.verify(value)`` method will send the ``AWGControl:RUN?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -868,21 +839,20 @@ class Awgcontrol(SCPICmdRead):
     def sname(self) -> AwgcontrolSname:
         """Return the ``AWGControl:SNAMe`` command.
 
-        **Description:**
+        Description:
             - This command returns the AWG's most recently saved setup location. The response
               contains the full path for the file, including the disk drive letter (msus or, mass
               storage unit specifier).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AWGControl:SNAMe?`` query.
             - Using the ``.verify(value)`` method will send the ``AWGControl:SNAMe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AWGControl:SNAMe?
+            ```
         """
         return self._sname
 
@@ -890,18 +860,17 @@ class Awgcontrol(SCPICmdRead):
     def srestore(self) -> AwgcontrolSrestore:
         """Return the ``AWGControl:SREStore`` command.
 
-        **Description:**
+        Description:
             - This command opens a setup file into the AWG's setup memory.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``AWGControl:SREStore value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AWGControl:SREStore <filepath>[,<msus>]
+            ```
         """
         return self._srestore
 
@@ -909,17 +878,16 @@ class Awgcontrol(SCPICmdRead):
     def ssave(self) -> AwgcontrolSsave:
         """Return the ``AWGControl:SSAVe`` command.
 
-        **Description:**
+        Description:
             - This command saves the AWG's setup with waveforms.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``AWGControl:SSAVe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AWGControl:SSAVe <filepath>[,<msus>]
+            ```
         """
         return self._ssave
 
@@ -927,7 +895,7 @@ class Awgcontrol(SCPICmdRead):
     def stop(self) -> AwgcontrolStop:
         """Return the ``AWGControl:STOP`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AWGControl:STOP?`` query.
             - Using the ``.verify(value)`` method will send the ``AWGControl:STOP?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -941,7 +909,7 @@ class Awgcontrol(SCPICmdRead):
     def clock(self) -> AwgcontrolClock:
         """Return the ``AWGControl:CLOCk`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AWGControl:CLOCk?`` query.
             - Using the ``.verify(value)`` method will send the ``AWGControl:CLOCk?`` query and
               raise an AssertionError if the returned value does not match ``value``.

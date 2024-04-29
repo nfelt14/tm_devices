@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - TIMe <QString>
     - TIMe?
 """
@@ -26,25 +24,24 @@ if TYPE_CHECKING:
 class Time(SCPICmdWrite, SCPICmdRead):
     """The ``TIMe`` command.
 
-    **Description:**
+    Description:
         - This command sets the time in the form ``hh:mm:ss`` where hh refers to a two-digit hour
           number, mm refers to a two-digit minute number from 01 to 60, and ss refers to a two-digit
           second number from 01 to 60.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TIMe?`` query.
         - Using the ``.verify(value)`` method will send the ``TIMe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TIMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TIMe <QString>
         - TIMe?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string representing the desired time.
     """
 

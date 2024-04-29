@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - errorqueue.next()
 """
 
@@ -27,7 +25,7 @@ if TYPE_CHECKING:
 class Errorqueue(BaseTSPCmd):
     """The ``errorqueue`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.next()``: The ``errorqueue.next()`` function.
     """
 
@@ -39,15 +37,14 @@ class Errorqueue(BaseTSPCmd):
     def next(self) -> str:
         """Run the ``errorqueue.next()`` function.
 
-        **Description:**
+        Description:
             - This function reads the oldest entry from the error queue and removes it from the
               queue.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - errorqueue.next()
+            ```
 
         Returns:
             The result of the function call.

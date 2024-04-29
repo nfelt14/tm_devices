@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - HDR {<NR1>|OFF|ON}
     - HDR?
 """
@@ -27,24 +25,23 @@ if TYPE_CHECKING:
 class Hdr(SCPICmdWrite, SCPICmdRead):
     """The ``HDR`` command.
 
-    **Description:**
+    Description:
         - This command is identical to the HEADer query and is included for backward compatibility
           purposes.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HDR?`` query.
         - Using the ``.verify(value)`` method will send the ``HDR?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HDR value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HDR {<NR1>|OFF|ON}
         - HDR?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 sets the Response Header Enable State to false; any other value sets this
           state to true, which causes the instrument to send headers on query responses.
         - ``OFF`` sets the Response Header Enable State to false. This causes the instrument to omit

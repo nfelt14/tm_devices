@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - EVQty?
 """
 
@@ -27,21 +25,20 @@ if TYPE_CHECKING:
 class Evqty(SCPICmdRead):
     """The ``EVQty`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the number of events that are enabled in the queue. This
           is useful when using the ALLEV query, since it lets you know exactly how many events will
           be returned.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EVQty?`` query.
         - Using the ``.verify(value)`` method will send the ``EVQty?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EVQty?
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "EVQty") -> None:

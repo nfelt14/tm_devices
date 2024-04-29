@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - trigger.blender[N].clear()
     - trigger.blender[N].orenable
     - trigger.blender[N].overrun
@@ -50,13 +48,13 @@ if TYPE_CHECKING:
 class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``trigger.timer[N]`` command tree.
 
-    **Info:**
+    Info:
         - ``N``, the trigger timer number (1 to 8).
 
     Constants:
         - ``.EVENT_ID``: The trigger timer event number.
 
-    Properties/methods:
+    Properties and methods:
         - ``.clear()``: The ``trigger.timer[N].clear()`` function.
         - ``.count``: The ``trigger.timer[N].count`` attribute.
         - ``.delay``: The ``trigger.timer[N].delay`` attribute.
@@ -82,23 +80,22 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def count(self) -> str:
         """Access the ``trigger.timer[N].count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of events to generate each time the timer generates a
               trigger event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].count)`` query.
             - Setting this property to a value will send the ``trigger.timer[N].count = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].count = value
             - print(trigger.timer[N].count)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 8).
 
         Raises:
@@ -118,23 +115,22 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def count(self, value: Union[str, float]) -> None:
         """Access the ``trigger.timer[N].count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of events to generate each time the timer generates a
               trigger event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].count)`` query.
             - Setting this property to a value will send the ``trigger.timer[N].count = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].count = value
             - print(trigger.timer[N].count)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 8).
 
         Raises:
@@ -157,22 +153,21 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def delay(self) -> str:
         """Access the ``trigger.timer[N].delay`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets and reads the timer delay.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].delay)`` query.
             - Setting this property to a value will send the ``trigger.timer[N].delay = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].delay = value
             - print(trigger.timer[N].delay)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 8).
 
         Raises:
@@ -192,22 +187,21 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def delay(self, value: Union[str, float]) -> None:
         """Access the ``trigger.timer[N].delay`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets and reads the timer delay.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].delay)`` query.
             - Setting this property to a value will send the ``trigger.timer[N].delay = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].delay = value
             - print(trigger.timer[N].delay)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 8).
 
         Raises:
@@ -230,22 +224,21 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def delaylist(self) -> str:
         """Access the ``trigger.timer[N].delaylist`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets an array of timer intervals.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].delaylist)`` query.
             - Setting this property to a value will send the ``trigger.timer[N].delaylist = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].delaylist = value
             - print(trigger.timer[N].delaylist)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 8).
 
         Raises:
@@ -265,22 +258,21 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def delaylist(self, value: Union[str, float]) -> None:
         """Access the ``trigger.timer[N].delaylist`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets an array of timer intervals.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].delaylist)`` query.
             - Setting this property to a value will send the ``trigger.timer[N].delaylist = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].delaylist = value
             - print(trigger.timer[N].delaylist)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 8).
 
         Raises:
@@ -303,19 +295,18 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def overrun(self) -> str:
         """Access the ``trigger.timer[N].overrun`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if an event was ignored because of the event detector state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].overrun)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(trigger.timer[N].overrun)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 8).
 
         Raises:
@@ -335,22 +326,21 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def passthrough(self) -> str:
         """Access the ``trigger.timer[N].passthrough`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the timer trigger pass-through mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].passthrough)`` query.
             - Setting this property to a value will send the
               ``trigger.timer[N].passthrough = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].passthrough = value
             - print(trigger.timer[N].passthrough)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 8).
 
         Raises:
@@ -370,22 +360,21 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def passthrough(self, value: Union[str, float]) -> None:
         """Access the ``trigger.timer[N].passthrough`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the timer trigger pass-through mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].passthrough)`` query.
             - Setting this property to a value will send the
               ``trigger.timer[N].passthrough = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].passthrough = value
             - print(trigger.timer[N].passthrough)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 8).
 
         Raises:
@@ -408,22 +397,21 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def stimulus(self) -> str:
         """Access the ``trigger.timer[N].stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies which event starts the timer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].stimulus)`` query.
             - Setting this property to a value will send the ``trigger.timer[N].stimulus = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].stimulus = value
             - print(trigger.timer[N].stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 8).
 
         Raises:
@@ -443,22 +431,21 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def stimulus(self, value: Union[str, float]) -> None:
         """Access the ``trigger.timer[N].stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies which event starts the timer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.timer[N].stimulus)`` query.
             - Setting this property to a value will send the ``trigger.timer[N].stimulus = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].stimulus = value
             - print(trigger.timer[N].stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 8).
 
         Raises:
@@ -480,17 +467,16 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``trigger.timer[N].clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the timer event detector and overrun indicator for the specified
               trigger timer number.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].clear()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 8).
 
         Raises:
@@ -507,16 +493,15 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def reset(self) -> None:
         """Run the ``trigger.timer[N].reset()`` function.
 
-        **Description:**
+        Description:
             - This function resets some of the trigger timer settings to their factory defaults.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].reset()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 8).
 
         Raises:
@@ -533,14 +518,13 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def wait(self, timeout: float) -> str:
         """Run the ``trigger.timer[N].wait()`` function.
 
-        **Description:**
+        Description:
             - This function waits for a trigger.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.timer[N].wait()
+            ```
 
         Args:
             timeout: Maximum amount of time in seconds to wait for the trigger.
@@ -563,13 +547,13 @@ class TriggerTimerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
 class TriggerGeneratorItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``trigger.generator[N]`` command tree.
 
-    **Info:**
+    Info:
         - ``N``, the generator number (1 or 2).
 
     Constants:
         - ``.EVENT_ID``: The trigger event generated by the trigger event generator.
 
-    Properties/methods:
+    Properties and methods:
         - ``.assert()``: The ``trigger.generator[N].assert()`` function.
     """
 
@@ -586,16 +570,15 @@ class TriggerGeneratorItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def assert_(self) -> None:
         """Run the ``trigger.generator[N].assert()`` function.
 
-        **Description:**
+        Description:
             - This function generates a trigger event.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.generator[N].assert()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the generator number (1 or 2).
 
         Raises:
@@ -613,13 +596,13 @@ class TriggerGeneratorItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
 class TriggerBlenderItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``trigger.blender[N]`` command tree.
 
-    **Info:**
+    Info:
         - ``N``, the blender number (up to six).
 
     Constants:
         - ``.EVENT_ID``: The trigger blender event number.
 
-    Properties/methods:
+    Properties and methods:
         - ``.clear()``: The ``trigger.blender[N].clear()`` function.
         - ``.orenable``: The ``trigger.blender[N].orenable`` attribute.
         - ``.overrun``: The ``trigger.blender[N].overrun`` attribute.
@@ -648,22 +631,21 @@ class TriggerBlenderItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def orenable(self) -> str:
         """Access the ``trigger.blender[N].orenable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects whether the blender performs OR operations or AND operations.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.blender[N].orenable)`` query.
             - Setting this property to a value will send the ``trigger.blender[N].orenable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.blender[N].orenable = value
             - print(trigger.blender[N].orenable)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the blender number (up to six).
 
         Raises:
@@ -683,22 +665,21 @@ class TriggerBlenderItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def orenable(self, value: Union[str, float]) -> None:
         """Access the ``trigger.blender[N].orenable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects whether the blender performs OR operations or AND operations.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.blender[N].orenable)`` query.
             - Setting this property to a value will send the ``trigger.blender[N].orenable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.blender[N].orenable = value
             - print(trigger.blender[N].orenable)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the blender number (up to six).
 
         Raises:
@@ -721,20 +702,19 @@ class TriggerBlenderItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def overrun(self) -> str:
         """Access the ``trigger.blender[N].overrun`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates whether or not an event was ignored because of the event
               detector state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(trigger.blender[N].overrun)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(trigger.blender[N].overrun)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the blender number (up to six).
 
         Raises:
@@ -754,23 +734,22 @@ class TriggerBlenderItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def stimulus(self) -> Dict[int, Union[str, float]]:
         """Access the ``trigger.blender[N].stimulus[M]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the events that trigger the blender.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the
               ``print(trigger.blender[N].stimulus[M])`` query.
             - Setting an item from this property to a value will send the
               ``trigger.blender[N].stimulus[M] = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.blender[N].stimulus[M] = value
             - print(trigger.blender[N].stimulus[M])
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the an integer representing the trigger event blender (up to six).
             - ``M``, the an integer representing the stimulus index (1 to 4).
 
@@ -782,17 +761,16 @@ class TriggerBlenderItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``trigger.blender[N].clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the blender event detector and resets the overrun indicator of
               blender N.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.blender[N].clear()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the blender number (up to six).
 
         Raises:
@@ -809,16 +787,15 @@ class TriggerBlenderItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def reset(self) -> None:
         """Run the ``trigger.blender[N].reset()`` function.
 
-        **Description:**
+        Description:
             - This function resets some of the trigger blender settings to their factory defaults.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.blender[N].reset()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger event blender (up to six).
 
         Raises:
@@ -835,14 +812,13 @@ class TriggerBlenderItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def wait(self, timeout: float) -> str:
         """Run the ``trigger.blender[N].wait()`` function.
 
-        **Description:**
+        Description:
             - This function waits for a blender trigger event to occur.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.blender[N].wait()
+            ```
 
         Args:
             timeout: Maximum amount of time in seconds to wait for the trigger blender event.
@@ -868,7 +844,7 @@ class Trigger(BaseTSPCmd):
     Constants:
         - ``.EVENT_ID``: The command interface trigger event number.
 
-    Properties/methods:
+    Properties and methods:
         - ``.blender``: The ``trigger.blender[N]`` command tree.
         - ``.clear()``: The ``trigger.clear()`` function.
         - ``.generator``: The ``trigger.generator[N]`` command tree.
@@ -895,13 +871,13 @@ class Trigger(BaseTSPCmd):
     def blender(self) -> Dict[int, TriggerBlenderItem]:
         """Return the ``trigger.blender[N]`` command tree.
 
-        **Info:**
+        Info:
             - ``N``, the blender number (up to six).
 
         Constants:
             - ``.EVENT_ID``: The trigger blender event number.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``trigger.blender[N].clear()`` function.
             - ``.orenable``: The ``trigger.blender[N].orenable`` attribute.
             - ``.overrun``: The ``trigger.blender[N].overrun`` attribute.
@@ -915,13 +891,13 @@ class Trigger(BaseTSPCmd):
     def generator(self) -> Dict[int, TriggerGeneratorItem]:
         """Return the ``trigger.generator[N]`` command tree.
 
-        **Info:**
+        Info:
             - ``N``, the generator number (1 or 2).
 
         Constants:
             - ``.EVENT_ID``: The trigger event generated by the trigger event generator.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.assert()``: The ``trigger.generator[N].assert()`` function.
         """
         return self._generator
@@ -930,13 +906,13 @@ class Trigger(BaseTSPCmd):
     def timer(self) -> Dict[int, TriggerTimerItem]:
         """Return the ``trigger.timer[N]`` command tree.
 
-        **Info:**
+        Info:
             - ``N``, the trigger timer number (1 to 8).
 
         Constants:
             - ``.EVENT_ID``: The trigger timer event number.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``trigger.timer[N].clear()`` function.
             - ``.count``: The ``trigger.timer[N].count`` attribute.
             - ``.delay``: The ``trigger.timer[N].delay`` attribute.
@@ -952,14 +928,13 @@ class Trigger(BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``trigger.clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the command interface trigger event detector.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.clear()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -975,14 +950,13 @@ class Trigger(BaseTSPCmd):
     def wait(self, timeout: float) -> str:
         """Run the ``trigger.wait()`` function.
 
-        **Description:**
+        Description:
             - This function waits for a command interface trigger event.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - trigger.wait()
+            ```
 
         Args:
             timeout: Maximum amount of time in seconds to wait for the trigger.

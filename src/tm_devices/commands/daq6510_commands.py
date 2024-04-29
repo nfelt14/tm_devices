@@ -589,7 +589,7 @@ class DAQ6510Commands:
     This provides access to all the commands for the DAQ6510 device. See the documentation of each
     property for more usage information.
 
-    Properties/methods:
+    Properties and methods:
         - ``.available()``: The ``available()`` function.
         - ``.beeper``: The ``beeper`` command tree.
         - ``.buffer_var``: The ``bufferVar`` command tree.
@@ -675,7 +675,7 @@ class DAQ6510Commands:
     def beeper(self) -> Beeper:
         """Return the ``beeper`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.beep()``: The ``beeper.beep()`` function.
         """
         return self._beeper
@@ -793,7 +793,7 @@ class DAQ6510Commands:
             - ``.UNIT_WATT``: Set units of measure to watts.
             - ``.UNIT_X``: Set units of measure to buffer.UNIT_X.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.channelmath()``: The ``buffer.channelmath()`` function.
             - ``.clearstats()``: The ``buffer.clearstats()`` function.
             - ``.delete()``: The ``buffer.delete()`` function.
@@ -809,11 +809,11 @@ class DAQ6510Commands:
     def buffer_var(self) -> Dict[str, Buffervar]:
         """Return the ``bufferVar`` command tree.
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.capacity``: The ``bufferVar.capacity`` attribute.
             - ``.channels``: The ``bufferVar.channels[N]`` attribute.
             - ``.clear()``: The ``bufferVar.clear()`` function.
@@ -882,7 +882,7 @@ class DAQ6510Commands:
             - ``.TYPE_SWITCH``: Switch channel.
             - ``.TYPE_TOTALIZER``: Totalizer channel.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.close()``: The ``channel.close()`` function.
             - ``.getclose()``: The ``channel.getclose()`` function.
             - ``.getcommonside()``: The ``channel.getcommonside()`` function.
@@ -920,7 +920,7 @@ class DAQ6510Commands:
         Constants:
             - ``.CAPACITY``: The maximum number of entries that you can store in the data queue.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.add()``: The ``dataqueue.add()`` function.
             - ``.clear()``: The ``dataqueue.clear()`` function.
             - ``.count``: The ``dataqueue.count`` attribute.
@@ -944,7 +944,7 @@ class DAQ6510Commands:
             - ``.STATE_HIGH``: Set the line high.
             - ``.STATE_LOW``: Set the line low.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.line``: The ``digio.line[N]`` command tree.
             - ``.readport()``: The ``digio.readport()`` function.
             - ``.writeport()``: The ``digio.writeport()`` function.
@@ -1014,7 +1014,7 @@ class DAQ6510Commands:
             - ``.STATE_LCD_75``: Set display to 75% brightness.
             - ``.STATE_LCD_OFF``: Set display to off.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.activebuffer``: The ``display.activebuffer`` attribute.
             - ``.changescreen()``: The ``display.changescreen()`` function.
             - ``.clear()``: The ``display.clear()`` function.
@@ -1245,7 +1245,7 @@ class DAQ6510Commands:
             - ``.UNIT_KELVIN``: Display Kelvin as units of measurement.
             - ``.UNIT_VOLT``: Display voltage as units for the voltage function.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.digitize``: The ``dmm.digitize`` command tree.
             - ``.measure``: The ``dmm.measure`` command tree.
             - ``.reset()``: The ``dmm.reset()`` function.
@@ -1263,7 +1263,7 @@ class DAQ6510Commands:
             - ``.SEV_INFO``: Returns the number of information messages in the event log.
             - ``.SEV_WARN``: Returns the number of warnings in the event log.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``eventlog.clear()`` function.
             - ``.getcount()``: The ``eventlog.getcount()`` function.
             - ``.next()``: The ``eventlog.next()`` function.
@@ -1288,7 +1288,7 @@ class DAQ6510Commands:
               string if no number was found; returns nil if the current file position is at the end
               of file.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.close()``: The ``file.close()`` function.
             - ``.flush()``: The ``file.flush()`` function.
             - ``.mkdir()``: The ``file.mkdir()`` function.
@@ -1317,7 +1317,7 @@ class DAQ6510Commands:
             - ``.REAL64``: Sets the data format for data that is printed using the printnumber() and
               printbuffer() functions to be double-precision IEEE Std 754 binary format.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.asciiprecision``: The ``format.asciiprecision`` attribute.
             - ``.byteorder``: The ``format.byteorder`` attribute.
             - ``.data``: The ``format.data`` attribute.
@@ -1328,7 +1328,7 @@ class DAQ6510Commands:
     def fs(self) -> Fs:
         """Return the ``fs`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.chdir()``: The ``fs.chdir()`` function.
             - ``.cwd()``: The ``fs.cwd()`` function.
             - ``.is_dir()``: The ``fs.is_dir()`` function.
@@ -1343,7 +1343,7 @@ class DAQ6510Commands:
     def gpib(self) -> Gpib:
         """Return the ``gpib`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.address``: The ``gpib.address`` attribute.
         """
         return self._gpib
@@ -1365,7 +1365,7 @@ class DAQ6510Commands:
             - ``.PROTOCOL_TCP``: Sets the LAN protocol to use for sending trigger messages to TCP.
             - ``.PROTOCOL_UDP``: Sets the LAN protocol to use for sending trigger messages to UDP.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.ipconfig()``: The ``lan.ipconfig()`` function.
             - ``.lxidomain``: The ``lan.lxidomain`` attribute.
             - ``.macaddress``: The ``lan.macaddress`` attribute.
@@ -1387,7 +1387,7 @@ class DAQ6510Commands:
             - ``.DISABLE``: Do not generate prompts in response to command messages.
             - ``.ENABLE``: Generate prompts in response to command messages.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.access``: The ``localnode.access`` attribute.
             - ``.gettime()``: The ``localnode.gettime()`` function.
             - ``.linefreq``: The ``localnode.linefreq`` attribute.
@@ -1406,10 +1406,10 @@ class DAQ6510Commands:
     def node(self) -> Dict[int, NodeItem]:
         """Return the ``node[N]`` command tree.
 
-        **Info:**
+        Info:
             - ``N``, the node number of this instrument (1 to 63).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.execute()``: The ``node[N].execute()`` function.
             - ``.getglobal()``: The ``node[N].getglobal()`` function.
             - ``.setglobal()``: The ``node[N].setglobal()`` function.
@@ -1455,7 +1455,7 @@ class DAQ6510Commands:
               scans.
             - ``.WRITE_NEVER``: Do not write data to a file.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.add()``: The ``scan.add()`` function.
             - ``.addsinglestep()``: The ``scan.addsinglestep()`` function.
             - ``.addwrite()``: The ``scan.addwrite()`` function.
@@ -1482,7 +1482,7 @@ class DAQ6510Commands:
     def script(self) -> Script:
         """Return the ``script`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.delete()``: The ``script.delete()`` function.
             - ``.load()``: The ``script.load()`` function.
         """
@@ -1492,10 +1492,10 @@ class DAQ6510Commands:
     def script_var(self) -> Dict[str, Scriptvar]:
         """Return the ``scriptVar`` command tree.
 
-        **Info:**
+        Info:
             - ``scriptVar``, the name of the variable that references the script.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.run()``: The ``scriptVar.run()`` function.
             - ``.save()``: The ``scriptVar.save()`` function.
             - ``.source``: The ``scriptVar.source`` attribute.
@@ -1515,10 +1515,10 @@ class DAQ6510Commands:
     def slotx(self) -> Dict[int, SlotItem]:
         """Return the ``slot[slot]`` command tree.
 
-        **Info:**
+        Info:
             - ``slot``, the slot number.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.amps``: The ``slot[slot].amps`` command tree.
             - ``.analogoutput``: The ``slot[slot].analogoutput`` command tree.
             - ``.commonsideohms``: The ``slot[slot].commonsideohms`` attribute.
@@ -1564,7 +1564,7 @@ class DAQ6510Commands:
             - ``.QSB``: B3. Set summary bit indicates that an enabled questionable event has
               occurred.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``status.clear()`` function.
             - ``.condition``: The ``status.condition`` attribute.
             - ``.operation``: The ``status.operation`` command tree.
@@ -1579,7 +1579,7 @@ class DAQ6510Commands:
     def timer(self) -> Timer:
         """Return the ``timer`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.cleartime()``: The ``timer.cleartime()`` function.
             - ``.gettime()``: The ``timer.gettime()`` function.
         """
@@ -1721,7 +1721,7 @@ class DAQ6510Commands:
             - ``.WAIT_OR``: At least one of the events must occur before the trigger model
               continues.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.blender``: The ``trigger.blender[N]`` command tree.
             - ``.clear()``: The ``trigger.clear()`` function.
             - ``.continuous``: The ``trigger.continuous`` attribute.
@@ -1752,7 +1752,7 @@ class DAQ6510Commands:
             - ``.STATE_HIGH``: High state of the synchronization line.
             - ``.STATE_LOW``: Low state of the synchronization line.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.group``: The ``tsplink.group`` attribute.
             - ``.initialize()``: The ``tsplink.initialize()`` function.
             - ``.line``: The ``tsplink.line[N]`` command tree.
@@ -1768,7 +1768,7 @@ class DAQ6510Commands:
     def tspnet(self) -> Tspnet:
         """Return the ``tspnet`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``tspnet.clear()`` function.
             - ``.connect()``: The ``tspnet.connect()`` function.
             - ``.disconnect()``: The ``tspnet.disconnect()`` function.
@@ -1788,7 +1788,7 @@ class DAQ6510Commands:
     def upgrade(self) -> Upgrade:
         """Return the ``upgrade`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.previous()``: The ``upgrade.previous()`` function.
             - ``.unit()``: The ``upgrade.unit()`` function.
         """
@@ -1798,7 +1798,7 @@ class DAQ6510Commands:
     def userstring(self) -> Userstring:
         """Return the ``userstring`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.add()``: The ``userstring.add()`` function.
             - ``.delete()``: The ``userstring.delete()`` function.
             - ``.get()``: The ``userstring.get()`` function.
@@ -1808,14 +1808,13 @@ class DAQ6510Commands:
     def available(self, functionality: str) -> str:
         """Run the ``available()`` function.
 
-        **Description:**
+        Description:
             - This function checks for the presence of specific instrument functionality.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - available()
+            ```
 
         Args:
             functionality: The functionality to check for.
@@ -1837,15 +1836,14 @@ class DAQ6510Commands:
     def createconfigscript(self, script_name: str) -> None:
         """Run the ``createconfigscript()`` function.
 
-        **Description:**
+        Description:
             - This function creates a setup file that captures most of the present settings of the
               instrument.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - createconfigscript()
+            ```
 
         Args:
             script_name: A string that represents the name of the script to be created.
@@ -1864,14 +1862,13 @@ class DAQ6510Commands:
     def delay(self, seconds: int) -> None:
         """Run the ``delay()`` function.
 
-        **Description:**
+        Description:
             - This function delays the execution of the commands that follow it.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - delay()
+            ```
 
         Args:
             seconds: The number of seconds to delay (0 s to 100 ks).
@@ -1890,14 +1887,13 @@ class DAQ6510Commands:
     def exit(self) -> None:
         """Run the ``exit()`` function.
 
-        **Description:**
+        Description:
             - This function stops a script that is presently running.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - exit()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1913,15 +1909,14 @@ class DAQ6510Commands:
     def opc(self) -> None:
         """Run the ``opc()`` function.
 
-        **Description:**
+        Description:
             - This function sets the operation complete (OPC) bit after all pending commands,
               including overlapped commands, have been executed.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - opc()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1937,14 +1932,13 @@ class DAQ6510Commands:
     def print(self, value: str) -> None:
         """Run the ``print()`` function.
 
-        **Description:**
+        Description:
             - This function generates a response message.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print()
+            ```
 
         Args:
             value: The first argument to output.
@@ -1963,14 +1957,13 @@ class DAQ6510Commands:
     def printbuffer(self, start_index: int, end_index: int, buffer_var: str) -> str:
         """Run the ``printbuffer()`` function.
 
-        **Description:**
+        Description:
             - This function prints data from tables or reading buffer subtables.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - printbuffer()
+            ```
 
         Args:
             start_index: Beginning index of the buffer to print; this must be more than one and less
@@ -1997,14 +1990,13 @@ class DAQ6510Commands:
     def printnumber(self, value: str) -> str:
         """Run the ``printnumber()`` function.
 
-        **Description:**
+        Description:
             - This function prints numbers using the configured format.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - printnumber()
+            ```
 
         Args:
             value: First value to print in the configured format.
@@ -2026,14 +2018,13 @@ class DAQ6510Commands:
     def reset(self, system: Optional[str] = None) -> None:
         """Run the ``reset()`` function.
 
-        **Description:**
+        Description:
             - This function resets commands to their default settings and clears the buffers.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - reset()
+            ```
 
         Args:
             system (optional): If the node is the master, the entire system is reset.
@@ -2053,14 +2044,13 @@ class DAQ6510Commands:
     def waitcomplete(self, group: Optional[str] = None) -> None:
         """Run the ``waitcomplete()`` function.
 
-        **Description:**
+        Description:
             - This function waits for all previously started overlapped commands to complete.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - waitcomplete()
+            ```
 
         Args:
             group (optional): Specifies which TSP-Link group on which to wait.
@@ -2108,7 +2098,7 @@ class DAQ6510Mixin:
         This provides access to all the commands for the DAQ6510 device. See the documentation of
         each sub-property for more usage information.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.available()``: The ``available()`` function.
             - ``.beeper``: The ``beeper`` command tree.
             - ``.buffer_var``: The ``bufferVar`` command tree.

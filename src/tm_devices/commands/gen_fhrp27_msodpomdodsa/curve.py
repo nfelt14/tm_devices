@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CURVe {<Block>|<asc curve>}
     - CURVe?
 """
@@ -28,7 +26,7 @@ if TYPE_CHECKING:
 class Curve(SCPICmdWrite, SCPICmdRead):
     """The ``CURVe`` command.
 
-    **Description:**
+    Description:
         - The ``CURVe`` command transfers the waveform data points the oscilloscope's internal
           reference memory location (REF1-4), which is specified by the to ``DATa:DESTination``
           command. The ``CURVe?`` query transfers data the oscilloscope; the source waveform is
@@ -48,20 +46,19 @@ class Curve(SCPICmdWrite, SCPICmdRead):
           the number of bytes in the data that immediately follows this binary block header. The
           Waveform Transfer command group text contains more comprehensive information.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURVe?`` query.
         - Using the ``.verify(value)`` method will send the ``CURVe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CURVe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURVe {<Block>|<asc curve>}
         - CURVe?
+        ```
 
-    **Info:**
+    Info:
         - ``<Block>`` is the waveform data in binary format. The waveform is formatted as follows.
         - ``<asc curve>`` is the waveform data in ASCII format. The format for ASCII data is
           <NR1>[,<NR1>..], where each <NR1> represents a data point. For RF frequency domain

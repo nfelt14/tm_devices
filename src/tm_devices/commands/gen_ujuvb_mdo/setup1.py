@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SETUP1<x>:DATE?
     - SETUP1<x>:LABel <Qstring>
     - SETUP1<x>:TIMe?
@@ -27,40 +25,38 @@ if TYPE_CHECKING:
 class Setup1ItemTime(SCPICmdRead):
     """The ``SETUP1<x>:TIMe`` command.
 
-    **Description:**
+    Description:
         - Returns the time when the oscilloscope setup was saved for the specified channel <x>,
           where x can be 1 through 10.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SETUP1<x>:TIMe?`` query.
         - Using the ``.verify(value)`` method will send the ``SETUP1<x>:TIMe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SETUP1<x>:TIMe?
+        ```
     """
 
 
 class Setup1ItemLabel(SCPICmdWrite):
     """The ``SETUP1<x>:LABel`` command.
 
-    **Description:**
+    Description:
         - This command specifies the setup label for the specified channel <x>, where x can be 1
           through 10.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SETUP1<x>:LABel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SETUP1<x>:LABel <Qstring>
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` is an alphanumeric string of characters, enclosed in quotes, that defines
           the label text for SETUP<x>. The length of the string is limited to 30 characters.
     """
@@ -69,27 +65,26 @@ class Setup1ItemLabel(SCPICmdWrite):
 class Setup1ItemDate(SCPICmdRead):
     """The ``SETUP1<x>:DATE`` command.
 
-    **Description:**
+    Description:
         - Returns the date when the oscilloscope setup was saved for the specified channel <x>,
           where x can be 1 through 10.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SETUP1<x>:DATE?`` query.
         - Using the ``.verify(value)`` method will send the ``SETUP1<x>:DATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SETUP1<x>:DATE?
+        ```
     """
 
 
 class Setup1Item(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``SETUP1<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SETUP1<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``SETUP1<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -110,20 +105,19 @@ class Setup1Item(ValidatedDynamicNumberCmd, SCPICmdRead):
     def date(self) -> Setup1ItemDate:
         """Return the ``SETUP1<x>:DATE`` command.
 
-        **Description:**
+        Description:
             - Returns the date when the oscilloscope setup was saved for the specified channel <x>,
               where x can be 1 through 10.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SETUP1<x>:DATE?`` query.
             - Using the ``.verify(value)`` method will send the ``SETUP1<x>:DATE?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SETUP1<x>:DATE?
+            ```
         """
         return self._date
 
@@ -131,20 +125,19 @@ class Setup1Item(ValidatedDynamicNumberCmd, SCPICmdRead):
     def label(self) -> Setup1ItemLabel:
         """Return the ``SETUP1<x>:LABel`` command.
 
-        **Description:**
+        Description:
             - This command specifies the setup label for the specified channel <x>, where x can be 1
               through 10.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SETUP1<x>:LABel value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SETUP1<x>:LABel <Qstring>
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` is an alphanumeric string of characters, enclosed in quotes, that
               defines the label text for SETUP<x>. The length of the string is limited to 30
               characters.
@@ -155,19 +148,18 @@ class Setup1Item(ValidatedDynamicNumberCmd, SCPICmdRead):
     def time(self) -> Setup1ItemTime:
         """Return the ``SETUP1<x>:TIMe`` command.
 
-        **Description:**
+        Description:
             - Returns the time when the oscilloscope setup was saved for the specified channel <x>,
               where x can be 1 through 10.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SETUP1<x>:TIMe?`` query.
             - Using the ``.verify(value)`` method will send the ``SETUP1<x>:TIMe?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SETUP1<x>:TIMe?
+            ```
         """
         return self._time

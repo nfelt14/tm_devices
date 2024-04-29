@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - ALLOcate:WAVEform:REF<x>?
 """
 
@@ -26,27 +24,26 @@ if TYPE_CHECKING:
 class AllocateWaveformRefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``ALLOcate:WAVEform:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the record length for the specified reference waveform, if
           active, or zero (0) if not active (that is, no slot exists for the reference waveform).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ALLOcate:WAVEform:REF<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``ALLOcate:WAVEform:REF<x>?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ALLOcate:WAVEform:REF<x>?
+        ```
     """
 
 
 class AllocateWaveform(SCPICmdRead):
     """The ``ALLOcate:WAVEform`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ALLOcate:WAVEform?`` query.
         - Using the ``.verify(value)`` method will send the ``ALLOcate:WAVEform?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -65,21 +62,20 @@ class AllocateWaveform(SCPICmdRead):
     def ref(self) -> Dict[int, AllocateWaveformRefItem]:
         """Return the ``ALLOcate:WAVEform:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the record length for the specified reference
               waveform, if active, or zero (0) if not active (that is, no slot exists for the
               reference waveform).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ALLOcate:WAVEform:REF<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``ALLOcate:WAVEform:REF<x>?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ALLOcate:WAVEform:REF<x>?
+            ```
         """
         return self._ref
 
@@ -87,7 +83,7 @@ class AllocateWaveform(SCPICmdRead):
 class Allocate(SCPICmdRead):
     """The ``ALLOcate`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ALLOcate?`` query.
         - Using the ``.verify(value)`` method will send the ``ALLOcate?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -104,7 +100,7 @@ class Allocate(SCPICmdRead):
     def waveform(self) -> AllocateWaveform:
         """Return the ``ALLOcate:WAVEform`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ALLOcate:WAVEform?`` query.
             - Using the ``.verify(value)`` method will send the ``ALLOcate:WAVEform?`` query and
               raise an AssertionError if the returned value does not match ``value``.

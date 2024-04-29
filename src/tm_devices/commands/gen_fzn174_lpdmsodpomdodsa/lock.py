@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - LOCk {ALL|NONe}
     - LOCk?
 """
@@ -28,7 +26,7 @@ if TYPE_CHECKING:
 class Lock(SCPICmdWrite, SCPICmdRead):
     """The ``LOCk`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables the touch screen and all front panel buttons and knobs.
           There is no front panel equivalent. When the front panel is locked, the front panel
           commands will not work and will not generate error events. You can work around a locked
@@ -36,20 +34,19 @@ class Lock(SCPICmdWrite, SCPICmdRead):
           front-panel commands. For example, to set the trigger level to 50%, you could use
           ``TRIGger:A SETLevel``. To force a trigger, you could use TRIGger FORCe.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LOCk?`` query.
         - Using the ``.verify(value)`` method will send the ``LOCk?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LOCk value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LOCk {ALL|NONe}
         - LOCk?
+        ```
 
-    **Info:**
+    Info:
         - ``ALL`` disables all front panel controls and the touch screen.
         - ``NONe`` enables all front panel controls and the touch screen. The UNLock ALL command
           only unlocks the front panel controls.

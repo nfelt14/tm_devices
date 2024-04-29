@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - PILOGger:FILEName <QString>
     - PILOGger:FILEName?
     - PILOGger:STATE {<NR1>|OFF|ON}
@@ -28,25 +26,24 @@ if TYPE_CHECKING:
 class PiloggerState(SCPICmdWrite, SCPICmdRead):
     """The ``PILOGger:STATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the state of the programmatic interface command log. If the
           location specified by ``PILOGGER:FILENAME`` does not exist or is not writable, attempts to
           turn the PI command logger ON will fail, and the state will be set to 0 (OFF).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PILOGger:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``PILOGger:STATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``PILOGger:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PILOGger:STATE {<NR1>|OFF|ON}
         - PILOGger:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the PI command logger; any other value turns the PI command logger
           on.
         - ``OFF`` disables the PI command logger.
@@ -57,24 +54,23 @@ class PiloggerState(SCPICmdWrite, SCPICmdRead):
 class PiloggerFilename(SCPICmdWrite, SCPICmdRead):
     """The ``PILOGger:FILEName`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the location where the programmatic interface command log
           will be saved.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PILOGger:FILEName?`` query.
         - Using the ``.verify(value)`` method will send the ``PILOGger:FILEName?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``PILOGger:FILEName value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PILOGger:FILEName <QString>
         - PILOGger:FILEName?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string that defines the file path that specifies the location to
           save the command log, in the format '[<path>]<filename.ext>'. Specifying a path is
           optional. If no path is entered, the instrument will search in the current working
@@ -87,7 +83,7 @@ class PiloggerFilename(SCPICmdWrite, SCPICmdRead):
 class Pilogger(SCPICmdRead):
     """The ``PILOGger`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PILOGger?`` query.
         - Using the ``.verify(value)`` method will send the ``PILOGger?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -106,24 +102,23 @@ class Pilogger(SCPICmdRead):
     def filename(self) -> PiloggerFilename:
         """Return the ``PILOGger:FILEName`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the location where the programmatic interface command log
               will be saved.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PILOGger:FILEName?`` query.
             - Using the ``.verify(value)`` method will send the ``PILOGger:FILEName?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``PILOGger:FILEName value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PILOGger:FILEName <QString>
             - PILOGger:FILEName?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string that defines the file path that specifies the
               location to save the command log, in the format '[<path>]<filename.ext>'. Specifying a
               path is optional. If no path is entered, the instrument will search in the current
@@ -135,26 +130,25 @@ class Pilogger(SCPICmdRead):
     def state(self) -> PiloggerState:
         """Return the ``PILOGger:STATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the state of the programmatic interface command log. If
               the location specified by ``PILOGGER:FILENAME`` does not exist or is not writable,
               attempts to turn the PI command logger ON will fail, and the state will be set to 0
               (OFF).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PILOGger:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``PILOGger:STATE?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``PILOGger:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PILOGger:STATE {<NR1>|OFF|ON}
             - PILOGger:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the PI command logger; any other value turns the PI command
               logger on.
             - ``OFF`` disables the PI command logger.

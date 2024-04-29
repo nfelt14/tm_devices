@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - VISual:AREA<x>:ASPEctratio {ON|OFF|<NR1>}
     - VISual:AREA<x>:ASPEctratio?
     - VISual:AREA<x>:FLIP:HORizontal
@@ -65,23 +63,22 @@ if TYPE_CHECKING:
 class VisualShowequation(SCPICmdWrite, SCPICmdRead):
     """The ``VISual:SHOWEQuation`` command.
 
-    **Description:**
+    Description:
         - Shows or hides the Visual Trigger area combination logic equation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VISual:SHOWEQuation?`` query.
         - Using the ``.verify(value)`` method will send the ``VISual:SHOWEQuation?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VISual:SHOWEQuation value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:SHOWEQuation {ON|OFF|<NR1>}
         - VISual:SHOWEQuation?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` shows the Visual Trigger area combination logic equation.
         - ``OFF`` hides the Visual Trigger area combination logic equation.
         - ``<NR1>`` is an integer number. 0 hides the area combination logic equation; any other
@@ -92,23 +89,22 @@ class VisualShowequation(SCPICmdWrite, SCPICmdRead):
 class VisualShowcriteria(SCPICmdWrite, SCPICmdRead):
     """The ``VISual:SHOWCRiteria`` command.
 
-    **Description:**
+    Description:
         - Sets or queries display of the area names and hit criteria for all visual trigger areas.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VISual:SHOWCRiteria?`` query.
         - Using the ``.verify(value)`` method will send the ``VISual:SHOWCRiteria?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VISual:SHOWCRiteria value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:SHOWCRiteria {ON|OFF|<NR1>}
         - VISual:SHOWCRiteria?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables display of the area name and hit criteria labels (In, Out, Don't care
           icons) of all Visual Trigger areas.
         - ``OFF`` hides the area name and hit criteria labels (In, Out, Don't care icons) of all
@@ -122,23 +118,22 @@ class VisualShowcriteria(SCPICmdWrite, SCPICmdRead):
 class VisualShowareas(SCPICmdWrite, SCPICmdRead):
     """The ``VISual:SHOWAReas`` command.
 
-    **Description:**
+    Description:
         - Shows or hides all Visual Trigger areas.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VISual:SHOWAReas?`` query.
         - Using the ``.verify(value)`` method will send the ``VISual:SHOWAReas?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VISual:SHOWAReas value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:SHOWAReas {ON|OFF|<NR1>}
         - VISual:SHOWAReas?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` shows all Visual Trigger areas.
         - ``OFF`` hides all Visual Trigger areas.
         - ``<NR1>`` is an integer number. 0 hides all Visual Trigger areas; any other value shows
@@ -149,23 +144,22 @@ class VisualShowareas(SCPICmdWrite, SCPICmdRead):
 class VisualEquation(SCPICmdWrite, SCPICmdRead):
     r"""The ``VISual:EQUation`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the Visual Trigger area combination logic equation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VISual:EQUation?`` query.
         - Using the ``.verify(value)`` method will send the ``VISual:EQUation?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VISual:EQUation value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:EQUation <Qstring>
         - VISual:EQUation?
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` defines the Visual Trigger area combination logic equation. The equation is
           made up of area names (A<x>) combined with logic operators AND, OR, or XOR (&, \|, ^). It
           may also contain parentheses for grouping. The equation must be true to have a valid
@@ -177,23 +171,22 @@ class VisualEquation(SCPICmdWrite, SCPICmdRead):
 class VisualEnable(SCPICmdWrite, SCPICmdRead):
     """The ``VISual:ENAble`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the status (on or off) of the Visual Trigger mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VISual:ENAble?`` query.
         - Using the ``.verify(value)`` method will send the ``VISual:ENAble?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VISual:ENAble value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:ENAble {ON|OFF|<NR1>}
         - VISual:ENAble?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the Visual Trigger mode.
         - ``OFF`` disables the Visual Trigger mode.
         - ``<NR1>`` is an integer number. 0 turns off the Visual Trigger mode; any other value
@@ -204,42 +197,40 @@ class VisualEnable(SCPICmdWrite, SCPICmdRead):
 class VisualDeleteall(SCPICmdWriteNoArguments):
     """The ``VISual:DELETEALL`` command.
 
-    **Description:**
+    Description:
         - Deletes all Visual Trigger areas.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``VISual:DELETEALL`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:DELETEALL
+        ```
     """
 
 
 class VisualAreaItemYposition(SCPICmdWrite, SCPICmdRead):
     """The ``VISual:AREA<x>:YPOSition`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the vertical (Y-axis) center position of the specified Visual Trigger
           area.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VISual:AREA<x>:YPOSition?`` query.
         - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:YPOSition?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:YPOSition value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:AREA<x>:YPOSition <NR3>
         - VISual:AREA<x>:YPOSition?
+        ```
 
-    **Info:**
+    Info:
         - ``Area<x>`` specifies the integer number of a Visual Trigger area.
         - ``<NR3>`` specifies the vertical position of the center of the Visual Trigger area, in
           amplitude (volts, amps).
@@ -249,25 +240,24 @@ class VisualAreaItemYposition(SCPICmdWrite, SCPICmdRead):
 class VisualAreaItemXposition(SCPICmdWrite, SCPICmdRead):
     """The ``VISual:AREA<x>:XPOSition`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the horizontal (X-axis) center position of the specified Visual Trigger
           area.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VISual:AREA<x>:XPOSition?`` query.
         - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:XPOSition?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:XPOSition value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:AREA<x>:XPOSition <NR3>
         - VISual:AREA<x>:XPOSition?
+        ```
 
-    **Info:**
+    Info:
         - ``Area<x>`` specifies the integer number of a Visual Trigger area.
         - ``<NR3>`` specifies the horizontal position of the center of the Visual Trigger area, in
           seconds.
@@ -277,23 +267,22 @@ class VisualAreaItemXposition(SCPICmdWrite, SCPICmdRead):
 class VisualAreaItemWidth(SCPICmdWrite, SCPICmdRead):
     """The ``VISual:AREA<x>:WIDTH`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the width of the specified Visual Trigger area.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VISual:AREA<x>:WIDTH?`` query.
         - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:WIDTH?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:WIDTH value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:AREA<x>:WIDTH <NR3>
         - VISual:AREA<x>:WIDTH?
+        ```
 
-    **Info:**
+    Info:
         - ``Area<x>`` specifies the integer number of a Visual Trigger area.
         - ``<NR3>`` specifies the width of the Visual Trigger area in seconds.
     """
@@ -302,25 +291,24 @@ class VisualAreaItemWidth(SCPICmdWrite, SCPICmdRead):
 class VisualAreaItemVertices(SCPICmdWrite, SCPICmdRead):
     """The ``VISual:AREA<x>:VERTICES`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the X and Y vertex coordinate values for all vertices of the specified
           Visual Trigger area. Vertex values must be set in pairs.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VISual:AREA<x>:VERTICES?`` query.
         - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:VERTICES?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:VERTICES value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:AREA<x>:VERTICES '<NR3>, <NR3>, <NR3>, <NR3>, <NR3>, <NR3> [,<NR3>, <NR3>, ...]'
         - VISual:AREA<x>:VERTICES?
+        ```
 
-    **Info:**
+    Info:
         - ``Area<x>`` specifies the integer number of a Visual Trigger area.
         - ``<NR3>, <NR3>`` specifies the X, Y coordinate pair of each vertex in an area. The first
           value is X (time) and the second value is Y (amplitude). There must be a minimum of three
@@ -333,24 +321,23 @@ class VisualAreaItemVertices(SCPICmdWrite, SCPICmdRead):
 class VisualAreaItemSource(SCPICmdWrite, SCPICmdRead):
     """The ``VISual:AREA<x>:SOUrce`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the signal source for the specified Visual Trigger area. The source can
           only be an analog channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VISual:AREA<x>:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:SOUrce?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:AREA<x>:SOUrce {CH<x>}
         - VISual:AREA<x>:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``Area<x>`` specifies the integer number of a Visual Trigger area.
         - ``CH<x>`` sets the source channel number for the specified area. The channel number is
           specified by <x>.
@@ -360,23 +347,22 @@ class VisualAreaItemSource(SCPICmdWrite, SCPICmdRead):
 class VisualAreaItemShape(SCPICmdWrite, SCPICmdRead):
     """The ``VISual:AREA<x>:SHAPE`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the current shape of the area.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VISual:AREA<x>:SHAPE?`` query.
         - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:SHAPE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:SHAPE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:AREA<x>:SHAPE {TRIAngle|RECTangle|TRAPezoid|HEXAgon}
         - VISual:AREA<x>:SHAPE?
+        ```
 
-    **Info:**
+    Info:
         - ``Area<x>`` specifies the integer number of a Visual Trigger area.
         - ``TRIAngle`` sets the specified area to a triangular shape (three vertices). If the area
           does not exist, the instrument creates a new triangular area with the specified area
@@ -395,24 +381,23 @@ class VisualAreaItemShape(SCPICmdWrite, SCPICmdRead):
 class VisualAreaItemRotation(SCPICmdWrite, SCPICmdRead):
     """The ``VISual:AREA<x>:ROTAtion`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the rotation angle of the specified Visual Trigger area.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VISual:AREA<x>:ROTAtion?`` query.
         - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:ROTAtion?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:ROTAtion value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:AREA<x>:ROTAtion <NR3>
         - VISual:AREA<x>:ROTAtion?
+        ```
 
-    **Info:**
+    Info:
         - ``Area<x>`` specifies the integer number of a Visual Trigger area.
         - ``<NR3>`` specifies the rotation angle of the Visual Trigger area, in positive degrees
           from 0 to 360. Zero degrees is referenced from when the area was created.
@@ -422,19 +407,18 @@ class VisualAreaItemRotation(SCPICmdWrite, SCPICmdRead):
 class VisualAreaItemReset(SCPICmdWriteNoArguments):
     """The ``VISual:AREA<x>:RESET`` command.
 
-    **Description:**
+    Description:
         - Sets the specified Visual Trigger area shape to a default-sized triangle.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``VISual:AREA<x>:RESET`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:AREA<x>:RESET
+        ```
 
-    **Info:**
+    Info:
         - ``Area<x>`` specifies the integer number of a Visual Trigger area.
     """
 
@@ -442,23 +426,22 @@ class VisualAreaItemReset(SCPICmdWriteNoArguments):
 class VisualAreaItemHittype(SCPICmdWrite, SCPICmdRead):
     """The ``VISual:AREA<x>:HITType`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the area hit logic true condition for the specified Visual Trigger area.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VISual:AREA<x>:HITType?`` query.
         - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:HITType?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:HITType value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:AREA<x>:HITType {IN|OUT|DONTcare}
         - VISual:AREA<x>:HITType?
+        ```
 
-    **Info:**
+    Info:
         - ``Area<x>`` specifies the integer number of a Visual Trigger area.
         - ``IN`` specifies that the waveform must intrude anywhere into the specified area to be
           true.
@@ -473,23 +456,22 @@ class VisualAreaItemHittype(SCPICmdWrite, SCPICmdRead):
 class VisualAreaItemHeight(SCPICmdWrite, SCPICmdRead):
     """The ``VISual:AREA<x>:HEIGht`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the height of the specified Visual Trigger area.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VISual:AREA<x>:HEIGht?`` query.
         - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:HEIGht?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:HEIGht value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:AREA<x>:HEIGht <NR3>
         - VISual:AREA<x>:HEIGht?
+        ```
 
-    **Info:**
+    Info:
         - ``Area<x>`` specifies the integer number of a Visual Trigger area.
         - ``<NR3>`` specifies the height of the Visual Trigger area in amplitude.
     """
@@ -498,19 +480,18 @@ class VisualAreaItemHeight(SCPICmdWrite, SCPICmdRead):
 class VisualAreaItemFlipVertical(SCPICmdWriteNoArguments):
     """The ``VISual:AREA<x>:FLIP:VERTical`` command.
 
-    **Description:**
+    Description:
         - Flips the specified Visual Trigger area vertically around its center point.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``VISual:AREA<x>:FLIP:VERTical`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:AREA<x>:FLIP:VERTical
+        ```
 
-    **Info:**
+    Info:
         - ``Area<x>`` specifies the integer number of a Visual Trigger area.
     """
 
@@ -518,19 +499,18 @@ class VisualAreaItemFlipVertical(SCPICmdWriteNoArguments):
 class VisualAreaItemFlipHorizontal(SCPICmdWriteNoArguments):
     """The ``VISual:AREA<x>:FLIP:HORizontal`` command.
 
-    **Description:**
+    Description:
         - Flips the specified Visual Trigger area horizontally around its center point.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``VISual:AREA<x>:FLIP:HORizontal`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:AREA<x>:FLIP:HORizontal
+        ```
 
-    **Info:**
+    Info:
         - ``Area<x>`` specifies the integer number of a Visual Trigger area.
     """
 
@@ -538,7 +518,7 @@ class VisualAreaItemFlipHorizontal(SCPICmdWriteNoArguments):
 class VisualAreaItemFlip(SCPICmdRead):
     """The ``VISual:AREA<x>:FLIP`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VISual:AREA<x>:FLIP?`` query.
         - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:FLIP?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -557,20 +537,19 @@ class VisualAreaItemFlip(SCPICmdRead):
     def horizontal(self) -> VisualAreaItemFlipHorizontal:
         """Return the ``VISual:AREA<x>:FLIP:HORizontal`` command.
 
-        **Description:**
+        Description:
             - Flips the specified Visual Trigger area horizontally around its center point.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``VISual:AREA<x>:FLIP:HORizontal``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:AREA<x>:FLIP:HORizontal
+            ```
 
-        **Info:**
+        Info:
             - ``Area<x>`` specifies the integer number of a Visual Trigger area.
         """
         return self._horizontal
@@ -579,19 +558,18 @@ class VisualAreaItemFlip(SCPICmdRead):
     def vertical(self) -> VisualAreaItemFlipVertical:
         """Return the ``VISual:AREA<x>:FLIP:VERTical`` command.
 
-        **Description:**
+        Description:
             - Flips the specified Visual Trigger area vertically around its center point.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``VISual:AREA<x>:FLIP:VERTical`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:AREA<x>:FLIP:VERTical
+            ```
 
-        **Info:**
+        Info:
             - ``Area<x>`` specifies the integer number of a Visual Trigger area.
         """
         return self._vertical
@@ -600,24 +578,23 @@ class VisualAreaItemFlip(SCPICmdRead):
 class VisualAreaItemAspectratio(SCPICmdWrite, SCPICmdRead):
     """The ``VISual:AREA<x>:ASPEctratio`` command.
 
-    **Description:**
+    Description:
         - Sets or queries whether the aspect ratio of the specified Visual Trigger area is locked.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VISual:AREA<x>:ASPEctratio?`` query.
         - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:ASPEctratio?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:ASPEctratio value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VISual:AREA<x>:ASPEctratio {ON|OFF|<NR1>}
         - VISual:AREA<x>:ASPEctratio?
+        ```
 
-    **Info:**
+    Info:
         - ``Area<x>`` specifies the integer number of a Visual Trigger area.
         - ``ON`` locks the aspect ratio of the specified Visual Trigger area. The aspect ratio is
           kept constant when the height or width of the area changes.
@@ -631,7 +608,7 @@ class VisualAreaItemAspectratio(SCPICmdWrite, SCPICmdRead):
 class VisualAreaItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``VISual:AREA<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VISual:AREA<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -670,25 +647,24 @@ class VisualAreaItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def aspectratio(self) -> VisualAreaItemAspectratio:
         """Return the ``VISual:AREA<x>:ASPEctratio`` command.
 
-        **Description:**
+        Description:
             - Sets or queries whether the aspect ratio of the specified Visual Trigger area is
               locked.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual:AREA<x>:ASPEctratio?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:ASPEctratio?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:ASPEctratio value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:AREA<x>:ASPEctratio {ON|OFF|<NR1>}
             - VISual:AREA<x>:ASPEctratio?
+            ```
 
-        **Info:**
+        Info:
             - ``Area<x>`` specifies the integer number of a Visual Trigger area.
             - ``ON`` locks the aspect ratio of the specified Visual Trigger area. The aspect ratio
               is kept constant when the height or width of the area changes.
@@ -703,7 +679,7 @@ class VisualAreaItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def flip(self) -> VisualAreaItemFlip:
         """Return the ``VISual:AREA<x>:FLIP`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual:AREA<x>:FLIP?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:FLIP?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -718,24 +694,23 @@ class VisualAreaItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def height(self) -> VisualAreaItemHeight:
         """Return the ``VISual:AREA<x>:HEIGht`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the height of the specified Visual Trigger area.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual:AREA<x>:HEIGht?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:HEIGht?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:HEIGht value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:AREA<x>:HEIGht <NR3>
             - VISual:AREA<x>:HEIGht?
+            ```
 
-        **Info:**
+        Info:
             - ``Area<x>`` specifies the integer number of a Visual Trigger area.
             - ``<NR3>`` specifies the height of the Visual Trigger area in amplitude.
         """
@@ -745,25 +720,24 @@ class VisualAreaItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def hittype(self) -> VisualAreaItemHittype:
         """Return the ``VISual:AREA<x>:HITType`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the area hit logic true condition for the specified Visual Trigger
               area.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual:AREA<x>:HITType?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:HITType?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:HITType value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:AREA<x>:HITType {IN|OUT|DONTcare}
             - VISual:AREA<x>:HITType?
+            ```
 
-        **Info:**
+        Info:
             - ``Area<x>`` specifies the integer number of a Visual Trigger area.
             - ``IN`` specifies that the waveform must intrude anywhere into the specified area to be
               true.
@@ -779,19 +753,18 @@ class VisualAreaItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def reset(self) -> VisualAreaItemReset:
         """Return the ``VISual:AREA<x>:RESET`` command.
 
-        **Description:**
+        Description:
             - Sets the specified Visual Trigger area shape to a default-sized triangle.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``VISual:AREA<x>:RESET`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:AREA<x>:RESET
+            ```
 
-        **Info:**
+        Info:
             - ``Area<x>`` specifies the integer number of a Visual Trigger area.
         """
         return self._reset
@@ -800,24 +773,23 @@ class VisualAreaItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def rotation(self) -> VisualAreaItemRotation:
         """Return the ``VISual:AREA<x>:ROTAtion`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the rotation angle of the specified Visual Trigger area.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual:AREA<x>:ROTAtion?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:ROTAtion?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:ROTAtion value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:AREA<x>:ROTAtion <NR3>
             - VISual:AREA<x>:ROTAtion?
+            ```
 
-        **Info:**
+        Info:
             - ``Area<x>`` specifies the integer number of a Visual Trigger area.
             - ``<NR3>`` specifies the rotation angle of the Visual Trigger area, in positive degrees
               from 0 to 360. Zero degrees is referenced from when the area was created.
@@ -828,24 +800,23 @@ class VisualAreaItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def shape(self) -> VisualAreaItemShape:
         """Return the ``VISual:AREA<x>:SHAPE`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the current shape of the area.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual:AREA<x>:SHAPE?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:SHAPE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:SHAPE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:AREA<x>:SHAPE {TRIAngle|RECTangle|TRAPezoid|HEXAgon}
             - VISual:AREA<x>:SHAPE?
+            ```
 
-        **Info:**
+        Info:
             - ``Area<x>`` specifies the integer number of a Visual Trigger area.
             - ``TRIAngle`` sets the specified area to a triangular shape (three vertices). If the
               area does not exist, the instrument creates a new triangular area with the specified
@@ -866,25 +837,24 @@ class VisualAreaItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def source(self) -> VisualAreaItemSource:
         """Return the ``VISual:AREA<x>:SOUrce`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the signal source for the specified Visual Trigger area. The source
               can only be an analog channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual:AREA<x>:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:SOUrce?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:SOUrce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:AREA<x>:SOUrce {CH<x>}
             - VISual:AREA<x>:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``Area<x>`` specifies the integer number of a Visual Trigger area.
             - ``CH<x>`` sets the source channel number for the specified area. The channel number is
               specified by <x>.
@@ -895,25 +865,24 @@ class VisualAreaItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def vertices(self) -> VisualAreaItemVertices:
         """Return the ``VISual:AREA<x>:VERTICES`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the X and Y vertex coordinate values for all vertices of the specified
               Visual Trigger area. Vertex values must be set in pairs.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual:AREA<x>:VERTICES?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:VERTICES?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:VERTICES value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:AREA<x>:VERTICES '<NR3>, <NR3>, <NR3>, <NR3>, <NR3>, <NR3> [,<NR3>, <NR3>, ...]'
             - VISual:AREA<x>:VERTICES?
+            ```
 
-        **Info:**
+        Info:
             - ``Area<x>`` specifies the integer number of a Visual Trigger area.
             - ``<NR3>, <NR3>`` specifies the X, Y coordinate pair of each vertex in an area. The
               first value is X (time) and the second value is Y (amplitude). There must be a minimum
@@ -927,24 +896,23 @@ class VisualAreaItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def width(self) -> VisualAreaItemWidth:
         """Return the ``VISual:AREA<x>:WIDTH`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the width of the specified Visual Trigger area.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual:AREA<x>:WIDTH?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:WIDTH?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:WIDTH value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:AREA<x>:WIDTH <NR3>
             - VISual:AREA<x>:WIDTH?
+            ```
 
-        **Info:**
+        Info:
             - ``Area<x>`` specifies the integer number of a Visual Trigger area.
             - ``<NR3>`` specifies the width of the Visual Trigger area in seconds.
         """
@@ -954,25 +922,24 @@ class VisualAreaItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def xposition(self) -> VisualAreaItemXposition:
         """Return the ``VISual:AREA<x>:XPOSition`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the horizontal (X-axis) center position of the specified Visual
               Trigger area.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual:AREA<x>:XPOSition?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:XPOSition?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:XPOSition value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:AREA<x>:XPOSition <NR3>
             - VISual:AREA<x>:XPOSition?
+            ```
 
-        **Info:**
+        Info:
             - ``Area<x>`` specifies the integer number of a Visual Trigger area.
             - ``<NR3>`` specifies the horizontal position of the center of the Visual Trigger area,
               in seconds.
@@ -983,25 +950,24 @@ class VisualAreaItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def yposition(self) -> VisualAreaItemYposition:
         """Return the ``VISual:AREA<x>:YPOSition`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the vertical (Y-axis) center position of the specified Visual Trigger
               area.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual:AREA<x>:YPOSition?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>:YPOSition?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VISual:AREA<x>:YPOSition value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:AREA<x>:YPOSition <NR3>
             - VISual:AREA<x>:YPOSition?
+            ```
 
-        **Info:**
+        Info:
             - ``Area<x>`` specifies the integer number of a Visual Trigger area.
             - ``<NR3>`` specifies the vertical position of the center of the Visual Trigger area, in
               amplitude (volts, amps).
@@ -1012,7 +978,7 @@ class VisualAreaItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class Visual(SCPICmdRead):
     """The ``VISual`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VISual?`` query.
         - Using the ``.verify(value)`` method will send the ``VISual?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1043,7 +1009,7 @@ class Visual(SCPICmdRead):
     def area(self) -> Dict[int, VisualAreaItem]:
         """Return the ``VISual:AREA<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual:AREA<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual:AREA<x>?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -1068,17 +1034,16 @@ class Visual(SCPICmdRead):
     def deleteall(self) -> VisualDeleteall:
         """Return the ``VISual:DELETEALL`` command.
 
-        **Description:**
+        Description:
             - Deletes all Visual Trigger areas.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``VISual:DELETEALL`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:DELETEALL
+            ```
         """
         return self._deleteall
 
@@ -1086,23 +1051,22 @@ class Visual(SCPICmdRead):
     def enable(self) -> VisualEnable:
         """Return the ``VISual:ENAble`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the status (on or off) of the Visual Trigger mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual:ENAble?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual:ENAble?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VISual:ENAble value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:ENAble {ON|OFF|<NR1>}
             - VISual:ENAble?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the Visual Trigger mode.
             - ``OFF`` disables the Visual Trigger mode.
             - ``<NR1>`` is an integer number. 0 turns off the Visual Trigger mode; any other value
@@ -1114,23 +1078,22 @@ class Visual(SCPICmdRead):
     def equation(self) -> VisualEquation:
         r"""Return the ``VISual:EQUation`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the Visual Trigger area combination logic equation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual:EQUation?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual:EQUation?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VISual:EQUation value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:EQUation <Qstring>
             - VISual:EQUation?
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` defines the Visual Trigger area combination logic equation. The equation
               is made up of area names (A<x>) combined with logic operators AND, OR, or XOR (&, \|,
               ^). It may also contain parentheses for grouping. The equation must be true to have a
@@ -1143,23 +1106,22 @@ class Visual(SCPICmdRead):
     def showareas(self) -> VisualShowareas:
         """Return the ``VISual:SHOWAReas`` command.
 
-        **Description:**
+        Description:
             - Shows or hides all Visual Trigger areas.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual:SHOWAReas?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual:SHOWAReas?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VISual:SHOWAReas value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:SHOWAReas {ON|OFF|<NR1>}
             - VISual:SHOWAReas?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` shows all Visual Trigger areas.
             - ``OFF`` hides all Visual Trigger areas.
             - ``<NR1>`` is an integer number. 0 hides all Visual Trigger areas; any other value
@@ -1171,25 +1133,24 @@ class Visual(SCPICmdRead):
     def showcriteria(self) -> VisualShowcriteria:
         """Return the ``VISual:SHOWCRiteria`` command.
 
-        **Description:**
+        Description:
             - Sets or queries display of the area names and hit criteria for all visual trigger
               areas.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual:SHOWCRiteria?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual:SHOWCRiteria?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VISual:SHOWCRiteria value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:SHOWCRiteria {ON|OFF|<NR1>}
             - VISual:SHOWCRiteria?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables display of the area name and hit criteria labels (In, Out, Don't care
               icons) of all Visual Trigger areas.
             - ``OFF`` hides the area name and hit criteria labels (In, Out, Don't care icons) of all
@@ -1204,24 +1165,23 @@ class Visual(SCPICmdRead):
     def showequation(self) -> VisualShowequation:
         """Return the ``VISual:SHOWEQuation`` command.
 
-        **Description:**
+        Description:
             - Shows or hides the Visual Trigger area combination logic equation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual:SHOWEQuation?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual:SHOWEQuation?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VISual:SHOWEQuation value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual:SHOWEQuation {ON|OFF|<NR1>}
             - VISual:SHOWEQuation?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` shows the Visual Trigger area combination logic equation.
             - ``OFF`` hides the Visual Trigger area combination logic equation.
             - ``<NR1>`` is an integer number. 0 hides the area combination logic equation; any other

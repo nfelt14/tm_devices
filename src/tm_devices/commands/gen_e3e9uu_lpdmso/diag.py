@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - DIAg:LOOP:OPTion {FAIL|ONCE|ALWAYS|ONFAIL|NTIMES}
     - DIAg:LOOP:OPTion:NTIMes <NR1>
     - DIAg:LOOP:OPTion:NTIMes?
@@ -36,19 +34,18 @@ if TYPE_CHECKING:
 class DiagState(SCPICmdWrite):
     """The ``DIAg:STATE`` command.
 
-    **Description:**
+    Description:
         - This command starts or aborts Self Test. Abort happens after group under test completes.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``DIAg:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAg:STATE {EXECute|ABOrt}
+        ```
 
-    **Info:**
+    Info:
         - ``EXECUTE`` starts execution of the diagnostics.
         - ``ABOrt`` disables diagnostics capabilities and returns the instrument to a normal
           operating state.
@@ -58,19 +55,18 @@ class DiagState(SCPICmdWrite):
 class DiagSelect(SCPICmdWrite):
     """The ``DIAg:SELect`` command.
 
-    **Description:**
+    Description:
         - This command selects an available diagnostic area.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``DIAg:SELect value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAg:SELect {ALL|IO|ANALOG|SYSTEM|ASIC|ACQ|SIGNAL|MEMORY}
+        ```
 
-    **Info:**
+    Info:
         - ``ALL`` selects all diagnostic areas.
         - ``IO`` selects the IO group.
         - ``ANALOG`` selects the ANALOG diagnostic area.
@@ -85,59 +81,56 @@ class DiagSelect(SCPICmdWrite):
 class DiagResultLog(SCPICmdRead):
     """The ``DIAg:RESUlt:LOG`` command.
 
-    **Description:**
+    Description:
         - This query returns the test Pass/Fail status of each diagnostic area. It does not return
           the overall status.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAg:RESUlt:LOG?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAg:RESUlt:LOG?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAg:RESUlt:LOG?
+        ```
     """
 
 
 class DiagResultFlag(SCPICmdRead):
     """The ``DIAg:RESUlt:FLAg`` command.
 
-    **Description:**
+    Description:
         - This query returns the status of the diagnostic test area that has been selected.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAg:RESUlt:FLAg?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAg:RESUlt:FLAg?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAg:RESUlt:FLAg?
+        ```
     """
 
 
 class DiagResult(SCPICmdRead):
     """The ``DIAg:RESUlt`` command.
 
-    **Description:**
+    Description:
         - This query returns both the overall diagnostics test results and the results of each
           individual test area.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAg:RESUlt?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAg:RESUlt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAg:RESUlt?
+        ```
 
     Properties:
         - ``.flag``: The ``DIAg:RESUlt:FLAg`` command.
@@ -153,19 +146,18 @@ class DiagResult(SCPICmdRead):
     def flag(self) -> DiagResultFlag:
         """Return the ``DIAg:RESUlt:FLAg`` command.
 
-        **Description:**
+        Description:
             - This query returns the status of the diagnostic test area that has been selected.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAg:RESUlt:FLAg?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAg:RESUlt:FLAg?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAg:RESUlt:FLAg?
+            ```
         """
         return self._flag
 
@@ -173,20 +165,19 @@ class DiagResult(SCPICmdRead):
     def log(self) -> DiagResultLog:
         """Return the ``DIAg:RESUlt:LOG`` command.
 
-        **Description:**
+        Description:
             - This query returns the test Pass/Fail status of each diagnostic area. It does not
               return the overall status.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAg:RESUlt:LOG?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAg:RESUlt:LOG?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAg:RESUlt:LOG?
+            ```
         """
         return self._log
 
@@ -194,23 +185,22 @@ class DiagResult(SCPICmdRead):
 class DiagMode(SCPICmdWrite, SCPICmdRead):
     """The ``DIAg:MODe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the diagnostics mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAg:MODe?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAg:MODe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DIAg:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAg:MODe {POST|EXTENDED|SERVICE}
         - DIAg:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``POST`` specifies the power on self test diagnostics.
         - ``EXTENDED`` specifies the extended diagnostics.
         - ``SERVICE`` specifies the service diagnostics.
@@ -220,41 +210,39 @@ class DiagMode(SCPICmdWrite, SCPICmdRead):
 class DiagLoopStop(SCPICmdWriteNoArguments):
     """The ``DIAg:LOOP:STOP`` command.
 
-    **Description:**
+    Description:
         - Request that diagnostics stop looping.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``DIAg:LOOP:STOP`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAg:LOOP:STOP
+        ```
     """
 
 
 class DiagLoopOptionNtimes(SCPICmdWrite, SCPICmdRead):
     """The ``DIAg:LOOP:OPTion:NTIMes`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries how many loops to run, if N-times is being used.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAg:LOOP:OPTion:NTIMes?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAg:LOOP:OPTion:NTIMes?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DIAg:LOOP:OPTion:NTIMes value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAg:LOOP:OPTion:NTIMes <NR1>
         - DIAg:LOOP:OPTion:NTIMes?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is how many loops to run.
     """
 
@@ -262,23 +250,22 @@ class DiagLoopOptionNtimes(SCPICmdWrite, SCPICmdRead):
 class DiagLoopOption(SCPICmdWrite, SCPICmdRead):
     """The ``DIAg:LOOP:OPTion`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the type of looping desired.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAg:LOOP:OPTion?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAg:LOOP:OPTion?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DIAg:LOOP:OPTion value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAg:LOOP:OPTion {FAIL|ONCE|ALWAYS|ONFAIL|NTIMES}
         - DIAg:LOOP:OPTion?
+        ```
 
-    **Info:**
+    Info:
         - ``Fail`` - run until a failure is found, then halt.
         - ``Once`` - run through one loop.
         - ``Always`` - run forever.
@@ -297,24 +284,23 @@ class DiagLoopOption(SCPICmdWrite, SCPICmdRead):
     def ntimes(self) -> DiagLoopOptionNtimes:
         """Return the ``DIAg:LOOP:OPTion:NTIMes`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries how many loops to run, if N-times is being used.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAg:LOOP:OPTion:NTIMes?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAg:LOOP:OPTion:NTIMes?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DIAg:LOOP:OPTion:NTIMes value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAg:LOOP:OPTion:NTIMes <NR1>
             - DIAg:LOOP:OPTion:NTIMes?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is how many loops to run.
         """
         return self._ntimes
@@ -323,7 +309,7 @@ class DiagLoopOption(SCPICmdWrite, SCPICmdRead):
 class DiagLoop(SCPICmdRead):
     """The ``DIAg:LOOP`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAg:LOOP?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAg:LOOP?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -342,23 +328,22 @@ class DiagLoop(SCPICmdRead):
     def option(self) -> DiagLoopOption:
         """Return the ``DIAg:LOOP:OPTion`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the type of looping desired.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAg:LOOP:OPTion?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAg:LOOP:OPTion?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DIAg:LOOP:OPTion value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAg:LOOP:OPTion {FAIL|ONCE|ALWAYS|ONFAIL|NTIMES}
             - DIAg:LOOP:OPTion?
+            ```
 
-        **Info:**
+        Info:
             - ``Fail`` - run until a failure is found, then halt.
             - ``Once`` - run through one loop.
             - ``Always`` - run forever.
@@ -374,17 +359,16 @@ class DiagLoop(SCPICmdRead):
     def stop(self) -> DiagLoopStop:
         """Return the ``DIAg:LOOP:STOP`` command.
 
-        **Description:**
+        Description:
             - Request that diagnostics stop looping.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``DIAg:LOOP:STOP`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAg:LOOP:STOP
+            ```
         """
         return self._stop
 
@@ -392,7 +376,7 @@ class DiagLoop(SCPICmdRead):
 class Diag(SCPICmdRead):
     """The ``DIAg`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAg?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAg?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -417,7 +401,7 @@ class Diag(SCPICmdRead):
     def loop(self) -> DiagLoop:
         """Return the ``DIAg:LOOP`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAg:LOOP?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAg:LOOP?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -432,23 +416,22 @@ class Diag(SCPICmdRead):
     def mode(self) -> DiagMode:
         """Return the ``DIAg:MODe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the diagnostics mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAg:MODe?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAg:MODe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DIAg:MODe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAg:MODe {POST|EXTENDED|SERVICE}
             - DIAg:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``POST`` specifies the power on self test diagnostics.
             - ``EXTENDED`` specifies the extended diagnostics.
             - ``SERVICE`` specifies the service diagnostics.
@@ -459,20 +442,19 @@ class Diag(SCPICmdRead):
     def result(self) -> DiagResult:
         """Return the ``DIAg:RESUlt`` command.
 
-        **Description:**
+        Description:
             - This query returns both the overall diagnostics test results and the results of each
               individual test area.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAg:RESUlt?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAg:RESUlt?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAg:RESUlt?
+            ```
 
         Sub-properties:
             - ``.flag``: The ``DIAg:RESUlt:FLAg`` command.
@@ -484,19 +466,18 @@ class Diag(SCPICmdRead):
     def select(self) -> DiagSelect:
         """Return the ``DIAg:SELect`` command.
 
-        **Description:**
+        Description:
             - This command selects an available diagnostic area.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``DIAg:SELect value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAg:SELect {ALL|IO|ANALOG|SYSTEM|ASIC|ACQ|SIGNAL|MEMORY}
+            ```
 
-        **Info:**
+        Info:
             - ``ALL`` selects all diagnostic areas.
             - ``IO`` selects the IO group.
             - ``ANALOG`` selects the ANALOG diagnostic area.
@@ -512,20 +493,19 @@ class Diag(SCPICmdRead):
     def state(self) -> DiagState:
         """Return the ``DIAg:STATE`` command.
 
-        **Description:**
+        Description:
             - This command starts or aborts Self Test. Abort happens after group under test
               completes.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``DIAg:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAg:STATE {EXECute|ABOrt}
+            ```
 
-        **Info:**
+        Info:
             - ``EXECUTE`` starts execution of the diagnostics.
             - ``ABOrt`` disables diagnostics capabilities and returns the instrument to a normal
               operating state.

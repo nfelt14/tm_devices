@@ -12,8 +12,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - setup.poweron
     - setup.recall()
     - setup.save()
@@ -30,7 +28,7 @@ if TYPE_CHECKING:
 class Setup(BaseTSPCmd):
     """The ``setup`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.poweron``: The ``setup.poweron`` attribute.
         - ``.recall()``: The ``setup.recall()`` function.
         - ``.save()``: The ``setup.save()`` function.
@@ -43,19 +41,18 @@ class Setup(BaseTSPCmd):
     def poweron(self) -> str:
         """Access the ``setup.poweron`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies which saved setup to recall when the instrument is turned on.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(setup.poweron)`` query.
             - Setting this property to a value will send the ``setup.poweron = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - setup.poweron = value
             - print(setup.poweron)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -74,19 +71,18 @@ class Setup(BaseTSPCmd):
     def poweron(self, value: Union[str, float]) -> None:
         """Access the ``setup.poweron`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies which saved setup to recall when the instrument is turned on.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(setup.poweron)`` query.
             - Setting this property to a value will send the ``setup.poweron = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - setup.poweron = value
             - print(setup.poweron)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -107,14 +103,13 @@ class Setup(BaseTSPCmd):
     def recall(self, id_: str) -> None:
         """Run the ``setup.recall()`` function.
 
-        **Description:**
+        Description:
             - This function recalls settings from a saved setup.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - setup.recall()
+            ```
 
         Args:
             id_: An integer or string that specifies the location of the setup to recall.
@@ -133,14 +128,13 @@ class Setup(BaseTSPCmd):
     def save(self, id_: int) -> None:
         """Run the ``setup.save()`` function.
 
-        **Description:**
+        Description:
             - This function saves the present setup as a user-saved setup.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - setup.save()
+            ```
 
         Args:
             id_: An integer or string specifying where to save the user setup.

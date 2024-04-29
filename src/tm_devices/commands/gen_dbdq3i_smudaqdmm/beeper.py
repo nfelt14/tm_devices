@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - beeper.beep()
 """
 
@@ -27,7 +25,7 @@ if TYPE_CHECKING:
 class Beeper(BaseTSPCmd):
     """The ``beeper`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.beep()``: The ``beeper.beep()`` function.
     """
 
@@ -37,14 +35,13 @@ class Beeper(BaseTSPCmd):
     def beep(self, duration: float, frequency: float) -> None:
         """Run the ``beeper.beep()`` function.
 
-        **Description:**
+        Description:
             - This function generates an audible tone.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - beeper.beep()
+            ```
 
         Args:
             duration: The amount of time to play the tone (0.001 s to 100 s).

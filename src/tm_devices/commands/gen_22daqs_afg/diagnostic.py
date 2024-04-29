@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - DIAGnostic:ALL
     - DIAGnostic:ALL?
 """
@@ -26,29 +24,28 @@ if TYPE_CHECKING:
 class DiagnosticAll(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``DIAGnostic:ALL`` command.
 
-    **Description:**
+    Description:
         - The DIAGnostic[``:ALL``] command performs a self-test. The DIAGnostic[``:ALL``]? command
           returns the results after executing the test.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAGnostic:ALL?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAGnostic:ALL?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``DIAGnostic:ALL`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAGnostic:ALL
         - DIAGnostic:ALL?
+        ```
     """
 
 
 class Diagnostic(SCPICmdRead):
     """The ``DIAGnostic`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAGnostic?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAGnostic?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -65,21 +62,20 @@ class Diagnostic(SCPICmdRead):
     def all(self) -> DiagnosticAll:
         """Return the ``DIAGnostic:ALL`` command.
 
-        **Description:**
+        Description:
             - The DIAGnostic[``:ALL``] command performs a self-test. The DIAGnostic[``:ALL``]?
               command returns the results after executing the test.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAGnostic:ALL?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAGnostic:ALL?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write()`` method will send the ``DIAGnostic:ALL`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAGnostic:ALL
             - DIAGnostic:ALL?
+            ```
         """
         return self._all

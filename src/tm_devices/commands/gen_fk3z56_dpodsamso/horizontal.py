@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - HORizontal:ACQDURATION?
     - HORizontal:ACQLENGTH?
     - HORizontal:DIGital:MAGnivu:POSition?
@@ -153,47 +151,45 @@ if TYPE_CHECKING:
 class HorizontalTimestampRefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``HORizontal:TIMEStamp:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This query returns the horizontal timebase for the reference waveform. The reference is
           specified by x. The value of x can range from 1 through 4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:TIMEStamp:REF<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:TIMEStamp:REF<x>?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:TIMEStamp:REF<x>?
+        ```
     """
 
 
 class HorizontalTimestampChannel(ValidatedChannel, SCPICmdRead):
     """The ``HORizontal:TIMEStamp:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This query returns the horizontal timebase for the channel. The channel is specified by x.
           The value of x can range from 1 through 4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:TIMEStamp:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:TIMEStamp:CH<x>?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:TIMEStamp:CH<x>?
+        ```
     """
 
 
 class HorizontalTimestamp(SCPICmdRead):
     """The ``HORizontal:TIMEStamp`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:TIMEStamp?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:TIMEStamp?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -216,20 +212,19 @@ class HorizontalTimestamp(SCPICmdRead):
     def ch(self) -> Dict[int, HorizontalTimestampChannel]:
         """Return the ``HORizontal:TIMEStamp:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This query returns the horizontal timebase for the channel. The channel is specified
               by x. The value of x can range from 1 through 4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:TIMEStamp:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:TIMEStamp:CH<x>?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:TIMEStamp:CH<x>?
+            ```
         """
         return self._ch
 
@@ -237,20 +232,19 @@ class HorizontalTimestamp(SCPICmdRead):
     def ref(self) -> Dict[int, HorizontalTimestampRefItem]:
         """Return the ``HORizontal:TIMEStamp:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This query returns the horizontal timebase for the reference waveform. The reference
               is specified by x. The value of x can range from 1 through 4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:TIMEStamp:REF<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:TIMEStamp:REF<x>?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:TIMEStamp:REF<x>?
+            ```
         """
         return self._ref
 
@@ -258,26 +252,25 @@ class HorizontalTimestamp(SCPICmdRead):
 class HorizontalRoll(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:ROLL`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the Roll Mode status. Use Roll Mode when you want to view
           data at very slow sweep speeds. It is useful for observing data samples on the screen as
           they occur. This command is equivalent to selecting Horizontal/Acquisition Setup from the
           Horiz/Acq menu, selecting the Acquisition tab, and setting the Roll Mode to Auto or Off.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:ROLL?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:ROLL?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:ROLL value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:ROLL {AUTO|OFF|ON}
         - HORizontal:ROLL?
+        ```
 
-    **Info:**
+    Info:
         - ``AUTO`` enables Roll Mode, if the time/division is set appropriately.
         - ``OFF`` disables Roll Mode.
         - ``ON`` enables Roll Mode, if the time/division is set appropriately.
@@ -287,26 +280,25 @@ class HorizontalRoll(SCPICmdWrite, SCPICmdRead):
 class HorizontalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the horizontal position as a percent of screen width. When
           Horizontal Delay Mode is turned off, this command is equivalent to adjusting the
           HORIZONTAL POSITION knob on the front panel. When Horizontal Delay Mode is turned on, the
           horizontal position is forced to 50%.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:POSition?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:POSition <NR3>
         - HORizontal:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is from 0 to ≈100 and is the position of the trigger point on the screen (0 =
           left edge, 100 = right edge).
     """
@@ -315,23 +307,22 @@ class HorizontalPosition(SCPICmdWrite, SCPICmdRead):
 class HorizontalModeScale(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:MODE:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the horizontal scale.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:MODE:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:MODE:SCAle?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:MODE:SCAle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:MODE:SCAle <NR1>
         - HORizontal:MODE:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the horizontal scale in seconds per division.
     """
 
@@ -339,24 +330,23 @@ class HorizontalModeScale(SCPICmdWrite, SCPICmdRead):
 class HorizontalModeSamplerate(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:MODE:SAMPLERate`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the sample rate.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:MODE:SAMPLERate?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:MODE:SAMPLERate?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:MODE:SAMPLERate value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:MODE:SAMPLERate <NR1>
         - HORizontal:MODE:SAMPLERate?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the sample rate in samples per second.
     """
 
@@ -364,24 +354,23 @@ class HorizontalModeSamplerate(SCPICmdWrite, SCPICmdRead):
 class HorizontalModeRecordlength(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:MODE:RECOrdlength`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the record length.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:MODE:RECOrdlength?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:MODE:RECOrdlength?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:MODE:RECOrdlength value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:MODE:RECOrdlength <NR1>
         - HORizontal:MODE:RECOrdlength?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the record length in samples. Manual mode lets you change the record length,
           while the record length is read only for Automatic mode.
     """
@@ -390,10 +379,10 @@ class HorizontalModeRecordlength(SCPICmdWrite, SCPICmdRead):
 class HorizontalModeAutoLimitrecordlen(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:MODE:AUTO:LIMITrecordlen`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the record length limit used by the auto horizontal mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:MODE:AUTO:LIMITrecordlen?``
           query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:MODE:AUTO:LIMITrecordlen?``
@@ -401,14 +390,13 @@ class HorizontalModeAutoLimitrecordlen(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``HORizontal:MODE:AUTO:LIMITrecordlen value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:MODE:AUTO:LIMITrecordlen <NR1>
         - HORizontal:MODE:AUTO:LIMITrecordlen?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the record length limit in samples.
     """
 
@@ -416,7 +404,7 @@ class HorizontalModeAutoLimitrecordlen(SCPICmdWrite, SCPICmdRead):
 class HorizontalModeAuto(SCPICmdRead):
     """The ``HORizontal:MODE:AUTO`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:MODE:AUTO?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:MODE:AUTO?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -435,10 +423,10 @@ class HorizontalModeAuto(SCPICmdRead):
     def limitrecordlen(self) -> HorizontalModeAutoLimitrecordlen:
         """Return the ``HORizontal:MODE:AUTO:LIMITrecordlen`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the record length limit used by the auto horizontal mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:MODE:AUTO:LIMITrecordlen?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -447,14 +435,13 @@ class HorizontalModeAuto(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HORizontal:MODE:AUTO:LIMITrecordlen value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:MODE:AUTO:LIMITrecordlen <NR1>
             - HORizontal:MODE:AUTO:LIMITrecordlen?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the record length limit in samples.
         """
         return self._limitrecordlen
@@ -463,23 +450,22 @@ class HorizontalModeAuto(SCPICmdRead):
 class HorizontalMode(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:MODE`` command.
 
-    **Description:**
+    Description:
         - This command set or queries the horizontal mode. Auto mode is the factory default.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:MODE?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:MODE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:MODE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:MODE {AUTO|CONStant|MANual}
         - HORizontal:MODE?
+        ```
 
-    **Info:**
+    Info:
         - ``AUTO`` selects the automatic horizontal model. Auto mode attempts to keep record length
           constant as you change the time per division setting. Record length is read only.
         - ``CONSTANT`` selects the constant horizontal model. Constant mode attempts to keep sample
@@ -505,7 +491,7 @@ class HorizontalMode(SCPICmdWrite, SCPICmdRead):
     def auto(self) -> HorizontalModeAuto:
         """Return the ``HORizontal:MODE:AUTO`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:MODE:AUTO?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:MODE:AUTO?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -519,24 +505,23 @@ class HorizontalMode(SCPICmdWrite, SCPICmdRead):
     def recordlength(self) -> HorizontalModeRecordlength:
         """Return the ``HORizontal:MODE:RECOrdlength`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the record length.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:MODE:RECOrdlength?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:MODE:RECOrdlength?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``HORizontal:MODE:RECOrdlength value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:MODE:RECOrdlength <NR1>
             - HORizontal:MODE:RECOrdlength?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the record length in samples. Manual mode lets you change the record
               length, while the record length is read only for Automatic mode.
         """
@@ -546,24 +531,23 @@ class HorizontalMode(SCPICmdWrite, SCPICmdRead):
     def samplerate(self) -> HorizontalModeSamplerate:
         """Return the ``HORizontal:MODE:SAMPLERate`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the sample rate.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:MODE:SAMPLERate?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:MODE:SAMPLERate?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HORizontal:MODE:SAMPLERate value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:MODE:SAMPLERate <NR1>
             - HORizontal:MODE:SAMPLERate?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the sample rate in samples per second.
         """
         return self._samplerate
@@ -572,24 +556,23 @@ class HorizontalMode(SCPICmdWrite, SCPICmdRead):
     def scale(self) -> HorizontalModeScale:
         """Return the ``HORizontal:MODE:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the horizontal scale.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:MODE:SCAle?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:MODE:SCAle?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HORizontal:MODE:SCAle value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:MODE:SCAle <NR1>
             - HORizontal:MODE:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the horizontal scale in seconds per division.
         """
         return self._scale
@@ -598,24 +581,23 @@ class HorizontalMode(SCPICmdWrite, SCPICmdRead):
 class HorizontalMainUnitsString(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:MAIn:UNIts:STRing`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the units string for the horizontal time base.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:MAIn:UNIts:STRing?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:MAIn:UNIts:STRing?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:MAIn:UNIts:STRing value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:MAIn:UNIts:STRing <QString>
         - HORizontal:MAIn:UNIts:STRing?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the time base units string.
     """
 
@@ -625,24 +607,23 @@ class HorizontalMainUnitsString(SCPICmdWrite, SCPICmdRead):
 class HorizontalMainUnits(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:MAIn:UNIts`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the units for the horizontal time base. It is equivalent to
           setting the ``HORizontal:MAIn:UNIts:STRing``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:MAIn:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:MAIn:UNIts?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:MAIn:UNIts value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:MAIn:UNIts <QString>
         - HORizontal:MAIn:UNIts?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the time base units string.
 
     Properties:
@@ -659,24 +640,23 @@ class HorizontalMainUnits(SCPICmdWrite, SCPICmdRead):
     def string(self) -> HorizontalMainUnitsString:
         """Return the ``HORizontal:MAIn:UNIts:STRing`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the units string for the horizontal time base.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:MAIn:UNIts:STRing?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:MAIn:UNIts:STRing?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``HORizontal:MAIn:UNIts:STRing value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:MAIn:UNIts:STRing <QString>
             - HORizontal:MAIn:UNIts:STRing?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the time base units string.
         """
         return self._string
@@ -685,65 +665,62 @@ class HorizontalMainUnits(SCPICmdWrite, SCPICmdRead):
 class HorizontalMainScale(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``HORizontal:MAIn:SCAle`` command.
 
-    **Description:**
+    Description:
         - This c
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:MAIn:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:MAIn:SCAle?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``HORizontal:MAIn:SCAle`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:MAIn:SCAle
         - HORizontal:MAIn:SCAle?
+        ```
     """
 
 
 class HorizontalMainInterpratio(SCPICmdRead):
     """The ``HORizontal:MAIn:INTERPRatio`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the Horizontal interpolation ratio.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:MAIn:INTERPRatio?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:MAIn:INTERPRatio?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:MAIn:INTERPRatio?
+        ```
     """
 
 
 class HorizontalMainDelayTime(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:MAIn:DELay:TIMe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the time base trigger delay time. This command is equivalent
           to selecting Position/Scale from the Horiz/Acq menu and choosing a value for Horiz Delay.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:MAIn:DELay:TIMe?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:MAIn:DELay:TIMe?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:MAIn:DELay:TIMe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:MAIn:DELay:TIMe <NR3>
         - HORizontal:MAIn:DELay:TIMe?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the time base trigger delay time setting, typically represented in
           seconds.
     """
@@ -752,26 +729,25 @@ class HorizontalMainDelayTime(SCPICmdWrite, SCPICmdRead):
 class HorizontalMainDelayPosition(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:MAIn:DELay:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the time base position when Horizontal Delay Mode is turned
           on. This command is equivalent to selecting Horizontal/Acquisition Setup from the
           Horiz/Acq menu and then entering a Ref Point value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:MAIn:DELay:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:MAIn:DELay:POSition?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:MAIn:DELay:POSition value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:MAIn:DELay:POSition <NR3>
         - HORizontal:MAIn:DELay:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is from 0 to ≈100 and is the percentage of the waveform that is displayed left
           of the center graticule.
     """
@@ -780,25 +756,24 @@ class HorizontalMainDelayPosition(SCPICmdWrite, SCPICmdRead):
 class HorizontalMainDelayMode(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:MAIn:DELay:MODe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the time base trigger delay mode. This command is equivalent
           to choosing Delay Mode On from the Horiz/Acq menu.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:MAIn:DELay:MODe?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:MAIn:DELay:MODe?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:MAIn:DELay:MODe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:MAIn:DELay:MODe {<NR1>|ON|OFF}
         - HORizontal:MAIn:DELay:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the time base trigger delay mode, any other value enables the time
           base trigger delay mode.
         - ``ON`` enables the time base trigger delay mode.
@@ -809,7 +784,7 @@ class HorizontalMainDelayMode(SCPICmdWrite, SCPICmdRead):
 class HorizontalMainDelay(SCPICmdRead):
     """The ``HORizontal:MAIn:DELay`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:MAIn:DELay?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:MAIn:DELay?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -830,25 +805,24 @@ class HorizontalMainDelay(SCPICmdRead):
     def mode(self) -> HorizontalMainDelayMode:
         """Return the ``HORizontal:MAIn:DELay:MODe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the time base trigger delay mode. This command is
               equivalent to choosing Delay Mode On from the Horiz/Acq menu.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:MAIn:DELay:MODe?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:MAIn:DELay:MODe?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HORizontal:MAIn:DELay:MODe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:MAIn:DELay:MODe {<NR1>|ON|OFF}
             - HORizontal:MAIn:DELay:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the time base trigger delay mode, any other value enables the
               time base trigger delay mode.
             - ``ON`` enables the time base trigger delay mode.
@@ -860,26 +834,25 @@ class HorizontalMainDelay(SCPICmdRead):
     def position(self) -> HorizontalMainDelayPosition:
         """Return the ``HORizontal:MAIn:DELay:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the time base position when Horizontal Delay Mode is
               turned on. This command is equivalent to selecting Horizontal/Acquisition Setup from
               the Horiz/Acq menu and then entering a Ref Point value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:MAIn:DELay:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:MAIn:DELay:POSition?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``HORizontal:MAIn:DELay:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:MAIn:DELay:POSition <NR3>
             - HORizontal:MAIn:DELay:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is from 0 to ≈100 and is the percentage of the waveform that is displayed
               left of the center graticule.
         """
@@ -889,26 +862,25 @@ class HorizontalMainDelay(SCPICmdRead):
     def time(self) -> HorizontalMainDelayTime:
         """Return the ``HORizontal:MAIn:DELay:TIMe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the time base trigger delay time. This command is
               equivalent to selecting Position/Scale from the Horiz/Acq menu and choosing a value
               for Horiz Delay.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:MAIn:DELay:TIMe?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:MAIn:DELay:TIMe?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HORizontal:MAIn:DELay:TIMe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:MAIn:DELay:TIMe <NR3>
             - HORizontal:MAIn:DELay:TIMe?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the time base trigger delay time setting, typically represented in
               seconds.
         """
@@ -918,20 +890,19 @@ class HorizontalMainDelay(SCPICmdRead):
 class HorizontalMain(SCPICmdRead):
     """The ``HORizontal:MAIn`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the time per division of the time base. This command is
           equivalent to selecting Position/Scale from the Horiz/Acq menu.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:MAIn?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:MAIn?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:MAIn?
+        ```
 
     Properties:
         - ``.interpratio``: The ``HORizontal:MAIn:INTERPRatio`` command.
@@ -951,19 +922,18 @@ class HorizontalMain(SCPICmdRead):
     def interpratio(self) -> HorizontalMainInterpratio:
         """Return the ``HORizontal:MAIn:INTERPRatio`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the Horizontal interpolation ratio.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:MAIn:INTERPRatio?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:MAIn:INTERPRatio?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:MAIn:INTERPRatio?
+            ```
         """
         return self._interpratio
 
@@ -971,21 +941,20 @@ class HorizontalMain(SCPICmdRead):
     def scale(self) -> HorizontalMainScale:
         """Return the ``HORizontal:MAIn:SCAle`` command.
 
-        **Description:**
+        Description:
             - This c
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:MAIn:SCAle?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:MAIn:SCAle?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write()`` method will send the ``HORizontal:MAIn:SCAle`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:MAIn:SCAle
             - HORizontal:MAIn:SCAle?
+            ```
         """
         return self._scale
 
@@ -993,25 +962,24 @@ class HorizontalMain(SCPICmdRead):
     def units(self) -> HorizontalMainUnits:
         """Return the ``HORizontal:MAIn:UNIts`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the units for the horizontal time base. It is equivalent
               to setting the ``HORizontal:MAIn:UNIts:STRing``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:MAIn:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:MAIn:UNIts?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HORizontal:MAIn:UNIts value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:MAIn:UNIts <QString>
             - HORizontal:MAIn:UNIts?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the time base units string.
 
         Sub-properties:
@@ -1023,7 +991,7 @@ class HorizontalMain(SCPICmdRead):
     def delay(self) -> HorizontalMainDelay:
         """Return the ``HORizontal:MAIn:DELay`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:MAIn:DELay?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:MAIn:DELay?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1039,51 +1007,49 @@ class HorizontalMain(SCPICmdRead):
 class HorizontalFastframeXzeroSelectedRefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``HORizontal:FASTframe:XZEro:SELECTED:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the time from the trigger to the trigger sample on the
           selected reference waveform. REF<x> can be REF1, REF2, REF3, or REF4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HORizontal:FASTframe:XZEro:SELECTED:REF<x>?`` query.
         - Using the ``.verify(value)`` method will send the
           ``HORizontal:FASTframe:XZEro:SELECTED:REF<x>?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:XZEro:SELECTED:REF<x>?
+        ```
     """
 
 
 class HorizontalFastframeXzeroSelectedChannel(ValidatedChannel, SCPICmdRead):
     """The ``HORizontal:FASTframe:XZEro:SELECTED:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the time from the trigger to the trigger sample on the
           selected channel. CH<x> can be CH1, CH2, CH3, or CH4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:XZEro:SELECTED:CH<x>?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``HORizontal:FASTframe:XZEro:SELECTED:CH<x>?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:XZEro:SELECTED:CH<x>?
+        ```
     """
 
 
 class HorizontalFastframeXzeroSelected(SCPICmdRead):
     """The ``HORizontal:FASTframe:XZEro:SELECTED`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:XZEro:SELECTED?``
           query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:XZEro:SELECTED?``
@@ -1107,22 +1073,21 @@ class HorizontalFastframeXzeroSelected(SCPICmdRead):
     def ch(self) -> Dict[int, HorizontalFastframeXzeroSelectedChannel]:
         """Return the ``HORizontal:FASTframe:XZEro:SELECTED:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the time from the trigger to the trigger sample on the
               selected channel. CH<x> can be CH1, CH2, CH3, or CH4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:XZEro:SELECTED:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:FASTframe:XZEro:SELECTED:CH<x>?`` query and raise an AssertionError if
               the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:XZEro:SELECTED:CH<x>?
+            ```
         """
         return self._ch
 
@@ -1130,22 +1095,21 @@ class HorizontalFastframeXzeroSelected(SCPICmdRead):
     def ref(self) -> Dict[int, HorizontalFastframeXzeroSelectedRefItem]:
         """Return the ``HORizontal:FASTframe:XZEro:SELECTED:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the time from the trigger to the trigger sample on the
               selected reference waveform. REF<x> can be REF1, REF2, REF3, or REF4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:XZEro:SELECTED:REF<x>?`` query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:FASTframe:XZEro:SELECTED:REF<x>?`` query and raise an AssertionError if
               the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:XZEro:SELECTED:REF<x>?
+            ```
         """
         return self._ref
 
@@ -1153,46 +1117,44 @@ class HorizontalFastframeXzeroSelected(SCPICmdRead):
 class HorizontalFastframeXzeroRef(SCPICmdRead):
     """The ``HORizontal:FASTframe:XZEro:REF`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the sub-sample time between the trigger sample (designated
           by ``PT_OFF``) and the occurrence of the actual trigger for the waveform specified by the
           ``DATa:SOUrce`` command for the reference frame. This value is in units of
           ``WFMOutpre:XUNit``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:XZEro:REF?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:XZEro:REF?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:XZEro:REF?
+        ```
     """
 
 
 class HorizontalFastframeXzeroFrameRefItem(ValidatedDynamicNumberCmd, SCPICmdReadWithArguments):
     """The ``HORizontal:FASTframe:XZEro:FRAme:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This command queries the time from the trigger to the trigger sample of the specified
           frame on the specified reference.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``HORizontal:FASTframe:XZEro:FRAme:REF<x>? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``HORizontal:FASTframe:XZEro:FRAme:REF<x>? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:XZEro:FRAme:REF<x>? <NR1>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies a frame on the specified reference.
     """
 
@@ -1200,24 +1162,23 @@ class HorizontalFastframeXzeroFrameRefItem(ValidatedDynamicNumberCmd, SCPICmdRea
 class HorizontalFastframeXzeroFrameChannel(ValidatedChannel, SCPICmdReadWithArguments):
     """The ``HORizontal:FASTframe:XZEro:FRAme:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This command queries the time from the trigger to the trigger sample of the specified
           frame on the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``HORizontal:FASTframe:XZEro:FRAme:CH<x>? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``HORizontal:FASTframe:XZEro:FRAme:CH<x>? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:XZEro:FRAme:CH<x>? <NR1>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies a frame on the specified channel.
     """
 
@@ -1225,7 +1186,7 @@ class HorizontalFastframeXzeroFrameChannel(ValidatedChannel, SCPICmdReadWithArgu
 class HorizontalFastframeXzeroFrame(SCPICmdRead):
     """The ``HORizontal:FASTframe:XZEro:FRAme`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:XZEro:FRAme?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:XZEro:FRAme?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -1248,24 +1209,23 @@ class HorizontalFastframeXzeroFrame(SCPICmdRead):
     def ch(self) -> Dict[int, HorizontalFastframeXzeroFrameChannel]:
         """Return the ``HORizontal:FASTframe:XZEro:FRAme:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This command queries the time from the trigger to the trigger sample of the specified
               frame on the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``HORizontal:FASTframe:XZEro:FRAme:CH<x>? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``HORizontal:FASTframe:XZEro:FRAme:CH<x>? argument`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:XZEro:FRAme:CH<x>? <NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies a frame on the specified channel.
         """
         return self._ch
@@ -1274,24 +1234,23 @@ class HorizontalFastframeXzeroFrame(SCPICmdRead):
     def ref(self) -> Dict[int, HorizontalFastframeXzeroFrameRefItem]:
         """Return the ``HORizontal:FASTframe:XZEro:FRAme:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This command queries the time from the trigger to the trigger sample of the specified
               frame on the specified reference.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``HORizontal:FASTframe:XZEro:FRAme:REF<x>? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``HORizontal:FASTframe:XZEro:FRAme:REF<x>? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:XZEro:FRAme:REF<x>? <NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies a frame on the specified reference.
         """
         return self._ref
@@ -1300,24 +1259,23 @@ class HorizontalFastframeXzeroFrame(SCPICmdRead):
 class HorizontalFastframeXzeroAllRefItem(ValidatedDynamicNumberCmd, SCPICmdReadWithArguments):
     """The ``HORizontal:FASTframe:XZEro:ALL:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This command queries the time from the trigger to the trigger sample of the specified
           frames on the specified reference.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``HORizontal:FASTframe:XZEro:ALL:REF<x>? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``HORizontal:FASTframe:XZEro:ALL:REF<x>? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:XZEro:ALL:REF<x>? <NR1>,<NR1>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the first and last frame of a range of frames.
     """
 
@@ -1325,24 +1283,23 @@ class HorizontalFastframeXzeroAllRefItem(ValidatedDynamicNumberCmd, SCPICmdReadW
 class HorizontalFastframeXzeroAllChannel(ValidatedChannel, SCPICmdReadWithArguments):
     """The ``HORizontal:FASTframe:XZEro:ALL:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This command queries the time from the trigger to the trigger sample of the specified
           frames on the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``HORizontal:FASTframe:XZEro:ALL:CH<x>? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``HORizontal:FASTframe:XZEro:ALL:CH<x>? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:XZEro:ALL:CH<x>? <NR1>,<NR1>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the first and last frame of a range of frames.
     """
 
@@ -1350,7 +1307,7 @@ class HorizontalFastframeXzeroAllChannel(ValidatedChannel, SCPICmdReadWithArgume
 class HorizontalFastframeXzeroAll(SCPICmdRead):
     """The ``HORizontal:FASTframe:XZEro:ALL`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:XZEro:ALL?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:XZEro:ALL?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -1373,24 +1330,23 @@ class HorizontalFastframeXzeroAll(SCPICmdRead):
     def ch(self) -> Dict[int, HorizontalFastframeXzeroAllChannel]:
         """Return the ``HORizontal:FASTframe:XZEro:ALL:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This command queries the time from the trigger to the trigger sample of the specified
               frames on the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``HORizontal:FASTframe:XZEro:ALL:CH<x>? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``HORizontal:FASTframe:XZEro:ALL:CH<x>? argument`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:XZEro:ALL:CH<x>? <NR1>,<NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the first and last frame of a range of frames.
         """
         return self._ch
@@ -1399,24 +1355,23 @@ class HorizontalFastframeXzeroAll(SCPICmdRead):
     def ref(self) -> Dict[int, HorizontalFastframeXzeroAllRefItem]:
         """Return the ``HORizontal:FASTframe:XZEro:ALL:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This command queries the time from the trigger to the trigger sample of the specified
               frames on the specified reference.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``HORizontal:FASTframe:XZEro:ALL:REF<x>? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``HORizontal:FASTframe:XZEro:ALL:REF<x>? argument`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:XZEro:ALL:REF<x>? <NR1>,<NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the first and last frame of a range of frames.
         """
         return self._ref
@@ -1425,7 +1380,7 @@ class HorizontalFastframeXzeroAll(SCPICmdRead):
 class HorizontalFastframeXzero(SCPICmdRead):
     """The ``HORizontal:FASTframe:XZEro`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:XZEro?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:XZEro?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -1448,7 +1403,7 @@ class HorizontalFastframeXzero(SCPICmdRead):
     def all(self) -> HorizontalFastframeXzeroAll:
         """Return the ``HORizontal:FASTframe:XZEro:ALL`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:XZEro:ALL?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:XZEro:ALL?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -1463,7 +1418,7 @@ class HorizontalFastframeXzero(SCPICmdRead):
     def frame(self) -> HorizontalFastframeXzeroFrame:
         """Return the ``HORizontal:FASTframe:XZEro:FRAme`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:XZEro:FRAme?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1480,22 +1435,21 @@ class HorizontalFastframeXzero(SCPICmdRead):
     def ref(self) -> HorizontalFastframeXzeroRef:
         """Return the ``HORizontal:FASTframe:XZEro:REF`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the sub-sample time between the trigger sample
               (designated by ``PT_OFF``) and the occurrence of the actual trigger for the waveform
               specified by the ``DATa:SOUrce`` command for the reference frame. This value is in
               units of ``WFMOutpre:XUNit``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:XZEro:REF?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:XZEro:REF?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:XZEro:REF?
+            ```
         """
         return self._ref
 
@@ -1503,7 +1457,7 @@ class HorizontalFastframeXzero(SCPICmdRead):
     def selected(self) -> HorizontalFastframeXzeroSelected:
         """Return the ``HORizontal:FASTframe:XZEro:SELECTED`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:XZEro:SELECTED?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1520,7 +1474,7 @@ class HorizontalFastframeXzero(SCPICmdRead):
 class HorizontalFastframeTrack(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:FASTframe:TRACk`` command.
 
-    **Description:**
+    Description:
         - This command sets up or queries the state of FastFrame tracking feature. This command is
           equivalent to selecting FastFrame Setup from the Horiz/Acq menu and then clicking the
           desired Frame Tracking state. When FastFrame Track is set to 'live', the channel and math
@@ -1537,21 +1491,20 @@ class HorizontalFastframeTrack(SCPICmdWrite, SCPICmdRead):
           then Selected Frame Ch2, Ch3, Ch4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3 and Ref4
           are also set to Frame 3.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:TRACk?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:TRACk?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:FASTframe:TRACk value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TRACk {LIVE|ALL}
         - HORizontal:FASTframe:TRACk?
+        ```
 
-    **Info:**
+    Info:
         - ``LIVE`` sets FastFrame Track to Live.
         - ``ALL`` sets FastFrame Track to All.
     """
@@ -1560,7 +1513,7 @@ class HorizontalFastframeTrack(SCPICmdWrite, SCPICmdRead):
 class HorizontalFastframeTimestampSelectedRefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``HORizontal:FASTframe:TIMEStamp:SELECTED:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the absolute trigger date and time for the FastFrame
           Selected, within the specified waveform. Valid waveforms include CH<x>, MATH<x> and
           REF<x>. The x variable can be expressed as an integer ranging from 1 through 4. The format
@@ -1568,25 +1521,24 @@ class HorizontalFastframeTimestampSelectedRefItem(ValidatedDynamicNumberCmd, SCP
           month, and year ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions
           of a second to picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:SELECTED:REF<x>?`` query.
         - Using the ``.verify(value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:SELECTED:REF<x>?`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:SELECTED:REF<x>?
+        ```
     """
 
 
 class HorizontalFastframeTimestampSelectedMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``HORizontal:FASTframe:TIMEStamp:SELECTED:MATH<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the absolute trigger date and time for the FastFrame
           Selected, within the specified waveform. Valid waveforms include CH<x>, MATH<x> and
           REF<x>. The x variable can be expressed as an integer ranging from 1 through 4. The format
@@ -1594,25 +1546,24 @@ class HorizontalFastframeTimestampSelectedMathItem(ValidatedDynamicNumberCmd, SC
           month, and year ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions
           of a second to picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:SELECTED:MATH<x>?`` query.
         - Using the ``.verify(value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:SELECTED:MATH<x>?`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:SELECTED:MATH<x>?
+        ```
     """
 
 
 class HorizontalFastframeTimestampSelectedDigitalBit(ValidatedDigitalBit, SCPICmdRead):
     """The ``HORizontal:FASTframe:TIMEStamp:SELECTED:D<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the absolute trigger date and time for the FastFrame
           Selected, within the specified waveform. Valid waveforms include CH<x>, MATH<x> and
           REF<x>. The x variable can be expressed as an integer ranging from 1 through 4. The format
@@ -1620,25 +1571,24 @@ class HorizontalFastframeTimestampSelectedDigitalBit(ValidatedDigitalBit, SCPICm
           month, and year ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions
           of a second to picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:SELECTED:D<x>?`` query.
         - Using the ``.verify(value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:SELECTED:D<x>?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:SELECTED:D<x>?
+        ```
     """
 
 
 class HorizontalFastframeTimestampSelectedChannel(ValidatedChannel, SCPICmdRead):
     """The ``HORizontal:FASTframe:TIMEStamp:SELECTED:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the absolute trigger date and time for the FastFrame
           Selected, within the specified waveform. Valid waveforms include CH<x>, MATH<x> and
           REF<x>. The x variable can be expressed as an integer ranging from 1 through 4. The format
@@ -1646,25 +1596,24 @@ class HorizontalFastframeTimestampSelectedChannel(ValidatedChannel, SCPICmdRead)
           month, and year ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions
           of a second to picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:SELECTED:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:SELECTED:CH<x>?`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:SELECTED:CH<x>?
+        ```
     """
 
 
 class HorizontalFastframeTimestampSelected(SCPICmdRead):
     """The ``HORizontal:FASTframe:TIMEStamp:SELECTED`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:TIMEStamp:SELECTED?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1713,7 +1662,7 @@ class HorizontalFastframeTimestampSelected(SCPICmdRead):
     def ch(self) -> Dict[int, HorizontalFastframeTimestampSelectedChannel]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:SELECTED:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the absolute trigger date and time for the FastFrame
               Selected, within the specified waveform. Valid waveforms include CH<x>, MATH<x> and
               REF<x>. The x variable can be expressed as an integer ranging from 1 through 4. The
@@ -1721,18 +1670,17 @@ class HorizontalFastframeTimestampSelected(SCPICmdRead):
               YYYY is day, month, and year ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx
               xxx is fractions of a second to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:SELECTED:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:SELECTED:CH<x>?`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:SELECTED:CH<x>?
+            ```
         """
         return self._ch
 
@@ -1740,7 +1688,7 @@ class HorizontalFastframeTimestampSelected(SCPICmdRead):
     def math(self) -> Dict[int, HorizontalFastframeTimestampSelectedMathItem]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:SELECTED:MATH<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the absolute trigger date and time for the FastFrame
               Selected, within the specified waveform. Valid waveforms include CH<x>, MATH<x> and
               REF<x>. The x variable can be expressed as an integer ranging from 1 through 4. The
@@ -1748,18 +1696,17 @@ class HorizontalFastframeTimestampSelected(SCPICmdRead):
               YYYY is day, month, and year ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx
               xxx is fractions of a second to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:SELECTED:MATH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:SELECTED:MATH<x>?`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:SELECTED:MATH<x>?
+            ```
         """
         return self._math
 
@@ -1767,7 +1714,7 @@ class HorizontalFastframeTimestampSelected(SCPICmdRead):
     def ref(self) -> Dict[int, HorizontalFastframeTimestampSelectedRefItem]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:SELECTED:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the absolute trigger date and time for the FastFrame
               Selected, within the specified waveform. Valid waveforms include CH<x>, MATH<x> and
               REF<x>. The x variable can be expressed as an integer ranging from 1 through 4. The
@@ -1775,18 +1722,17 @@ class HorizontalFastframeTimestampSelected(SCPICmdRead):
               YYYY is day, month, and year ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx
               xxx is fractions of a second to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:SELECTED:REF<x>?`` query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:SELECTED:REF<x>?`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:SELECTED:REF<x>?
+            ```
         """
         return self._ref
 
@@ -1794,7 +1740,7 @@ class HorizontalFastframeTimestampSelected(SCPICmdRead):
     def d(self) -> Dict[int, HorizontalFastframeTimestampSelectedDigitalBit]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:SELECTED:D<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the absolute trigger date and time for the FastFrame
               Selected, within the specified waveform. Valid waveforms include CH<x>, MATH<x> and
               REF<x>. The x variable can be expressed as an integer ranging from 1 through 4. The
@@ -1802,18 +1748,17 @@ class HorizontalFastframeTimestampSelected(SCPICmdRead):
               YYYY is day, month, and year ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx
               xxx is fractions of a second to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:SELECTED:D<x>?`` query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:SELECTED:D<x>?`` query and raise an AssertionError if
               the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:SELECTED:D<x>?
+            ```
         """
         return self._d
 
@@ -1821,47 +1766,45 @@ class HorizontalFastframeTimestampSelected(SCPICmdRead):
 class HorizontalFastframeTimestampRef(SCPICmdRead):
     """The ``HORizontal:FASTframe:TIMEStamp:REF`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the absolute trigger date and time for FastFrame
           reference. The format of the output is as follows: DD MON YYYY ``HH:MM:SS``.xxx xxx xxx
           xxx DD MON YYYY is day, month, and year ``HH:MM:SS`` is hours, minutes, and seconds .xxx
           xxx xxx xxx is fractions of a second to picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:TIMEStamp:REF?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:TIMEStamp:REF?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:REF?
+        ```
     """
 
 
 class HorizontalFastframeTimestampFrameRefItem(ValidatedDynamicNumberCmd, SCPICmdReadWithArguments):
     """The ``HORizontal:FASTframe:TIMEStamp:FRAMe:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the absolute trigger date and time for the specified frame
           and waveform. Valid waveforms include CH<x>, MATH<x> and REF<x>. The x variable can be
           expressed as an integer ranging from 1 through 4. The format of the output is as follows:
           DD MON YYYY ``HH:MM:SS``.xxx xxx xxx xxx DD MON YYYY is day, month, and year ``HH:MM:SS``
           is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a second to picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:FRAMe:REF<x>? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:FRAMe:REF<x>? argument`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:FRAMe:REF<x>? <NR1>
+        ```
     """
 
 
@@ -1870,82 +1813,79 @@ class HorizontalFastframeTimestampFrameMathItem(
 ):
     """The ``HORizontal:FASTframe:TIMEStamp:FRAMe:MATH<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the absolute trigger date and time for the specified frame
           and waveform. Valid waveforms include CH<x>, MATH<x> and REF<x>. The x variable can be
           expressed as an integer ranging from 1 through 4. The format of the output is as follows:
           DD MON YYYY ``HH:MM:SS``.xxx xxx xxx xxx DD MON YYYY is day, month, and year ``HH:MM:SS``
           is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a second to picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:FRAMe:MATH<x>? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:FRAMe:MATH<x>? argument`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:FRAMe:MATH<x>? <NR1>
+        ```
     """
 
 
 class HorizontalFastframeTimestampFrameDigitalBit(ValidatedDigitalBit, SCPICmdReadWithArguments):
     """The ``HORizontal:FASTframe:TIMEStamp:FRAMe:D<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the absolute trigger date and time for the specified frame
           and waveform. Valid waveforms include CH<x>, MATH<x> and REF<x>. The x variable can be
           expressed as an integer ranging from 1 through 4. The format of the output is as follows:
           DD MON YYYY ``HH:MM:SS``.xxx xxx xxx xxx DD MON YYYY is day, month, and year ``HH:MM:SS``
           is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a second to picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:FRAMe:D<x>? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:FRAMe:D<x>? argument`` query and raise an AssertionError
           if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:FRAMe:D<x>? <NR1>
+        ```
     """
 
 
 class HorizontalFastframeTimestampFrameChannel(ValidatedChannel, SCPICmdReadWithArguments):
     """The ``HORizontal:FASTframe:TIMEStamp:FRAMe:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the absolute trigger date and time for the specified frame
           and waveform. Valid waveforms include CH<x>, MATH<x> and REF<x>. The x variable can be
           expressed as an integer ranging from 1 through 4. The format of the output is as follows:
           DD MON YYYY ``HH:MM:SS``.xxx xxx xxx xxx DD MON YYYY is day, month, and year ``HH:MM:SS``
           is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a second to picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:FRAMe:CH<x>? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:FRAMe:CH<x>? argument`` query and raise an AssertionError
           if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:FRAMe:CH<x>? <NR1>
+        ```
     """
 
 
 class HorizontalFastframeTimestampFrame(SCPICmdRead):
     """The ``HORizontal:FASTframe:TIMEStamp:FRAMe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:TIMEStamp:FRAMe?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1990,7 +1930,7 @@ class HorizontalFastframeTimestampFrame(SCPICmdRead):
     def ch(self) -> Dict[int, HorizontalFastframeTimestampFrameChannel]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:FRAMe:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the absolute trigger date and time for the specified
               frame and waveform. Valid waveforms include CH<x>, MATH<x> and REF<x>. The x variable
               can be expressed as an integer ranging from 1 through 4. The format of the output is
@@ -1998,18 +1938,17 @@ class HorizontalFastframeTimestampFrame(SCPICmdRead):
               year ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a
               second to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:FRAMe:CH<x>? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:FRAMe:CH<x>? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:FRAMe:CH<x>? <NR1>
+            ```
         """
         return self._ch
 
@@ -2017,7 +1956,7 @@ class HorizontalFastframeTimestampFrame(SCPICmdRead):
     def math(self) -> Dict[int, HorizontalFastframeTimestampFrameMathItem]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:FRAMe:MATH<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the absolute trigger date and time for the specified
               frame and waveform. Valid waveforms include CH<x>, MATH<x> and REF<x>. The x variable
               can be expressed as an integer ranging from 1 through 4. The format of the output is
@@ -2025,18 +1964,17 @@ class HorizontalFastframeTimestampFrame(SCPICmdRead):
               year ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a
               second to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:FRAMe:MATH<x>? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:FRAMe:MATH<x>? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:FRAMe:MATH<x>? <NR1>
+            ```
         """
         return self._math
 
@@ -2044,7 +1982,7 @@ class HorizontalFastframeTimestampFrame(SCPICmdRead):
     def ref(self) -> Dict[int, HorizontalFastframeTimestampFrameRefItem]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:FRAMe:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the absolute trigger date and time for the specified
               frame and waveform. Valid waveforms include CH<x>, MATH<x> and REF<x>. The x variable
               can be expressed as an integer ranging from 1 through 4. The format of the output is
@@ -2052,18 +1990,17 @@ class HorizontalFastframeTimestampFrame(SCPICmdRead):
               year ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a
               second to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:FRAMe:REF<x>? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:FRAMe:REF<x>? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:FRAMe:REF<x>? <NR1>
+            ```
         """
         return self._ref
 
@@ -2071,7 +2008,7 @@ class HorizontalFastframeTimestampFrame(SCPICmdRead):
     def d(self) -> Dict[int, HorizontalFastframeTimestampFrameDigitalBit]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:FRAMe:D<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the absolute trigger date and time for the specified
               frame and waveform. Valid waveforms include CH<x>, MATH<x> and REF<x>. The x variable
               can be expressed as an integer ranging from 1 through 4. The format of the output is
@@ -2079,18 +2016,17 @@ class HorizontalFastframeTimestampFrame(SCPICmdRead):
               year ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a
               second to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:FRAMe:D<x>? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:FRAMe:D<x>? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:FRAMe:D<x>? <NR1>
+            ```
         """
         return self._d
 
@@ -2098,7 +2034,7 @@ class HorizontalFastframeTimestampFrame(SCPICmdRead):
 class HorizontalFastframeTimestampDeltaRefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``HORizontal:FASTframe:TIMEStamp:DELTa:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the relative time between the triggers of the FastFrame
           Selected and the FastFrame Reference, within the specified waveform. Valid waveforms
           include CH<x>, MATH<x>, and REF<x>. The x variable can be expressed as an integer ranging
@@ -2106,25 +2042,24 @@ class HorizontalFastframeTimestampDeltaRefItem(ValidatedDynamicNumberCmd, SCPICm
           ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a second to
           picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:DELTa:REF<x>?`` query.
         - Using the ``.verify(value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:DELTa:REF<x>?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:DELTa:REF<x>?
+        ```
     """
 
 
 class HorizontalFastframeTimestampDeltaMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``HORizontal:FASTframe:TIMEStamp:DELTa:MATH<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the relative time between the triggers of the FastFrame
           Selected and the FastFrame Reference, within the specified waveform. Valid waveforms
           include CH<x>, MATH<x>, and REF<x>. The x variable can be expressed as an integer ranging
@@ -2132,25 +2067,24 @@ class HorizontalFastframeTimestampDeltaMathItem(ValidatedDynamicNumberCmd, SCPIC
           ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a second to
           picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:DELTa:MATH<x>?`` query.
         - Using the ``.verify(value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:DELTa:MATH<x>?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:DELTa:MATH<x>?
+        ```
     """
 
 
 class HorizontalFastframeTimestampDeltaDigitalBit(ValidatedDigitalBit, SCPICmdRead):
     """The ``HORizontal:FASTframe:TIMEStamp:DELTa:D<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the relative time between the triggers of the FastFrame
           Selected and the FastFrame Reference, within the specified waveform. Valid waveforms
           include CH<x>, MATH<x>, and REF<x>. The x variable can be expressed as an integer ranging
@@ -2158,25 +2092,24 @@ class HorizontalFastframeTimestampDeltaDigitalBit(ValidatedDigitalBit, SCPICmdRe
           ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a second to
           picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:TIMEStamp:DELTa:D<x>?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:DELTa:D<x>?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:DELTa:D<x>?
+        ```
     """
 
 
 class HorizontalFastframeTimestampDeltaChannel(ValidatedChannel, SCPICmdRead):
     """The ``HORizontal:FASTframe:TIMEStamp:DELTa:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the relative time between the triggers of the FastFrame
           Selected and the FastFrame Reference, within the specified waveform. Valid waveforms
           include CH<x>, MATH<x>, and REF<x>. The x variable can be expressed as an integer ranging
@@ -2184,25 +2117,24 @@ class HorizontalFastframeTimestampDeltaChannel(ValidatedChannel, SCPICmdRead):
           ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a second to
           picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:DELTa:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:DELTa:CH<x>?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:DELTa:CH<x>?
+        ```
     """
 
 
 class HorizontalFastframeTimestampDelta(SCPICmdRead):
     """The ``HORizontal:FASTframe:TIMEStamp:DELTa`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:TIMEStamp:DELTa?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2247,7 +2179,7 @@ class HorizontalFastframeTimestampDelta(SCPICmdRead):
     def ch(self) -> Dict[int, HorizontalFastframeTimestampDeltaChannel]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:DELTa:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the relative time between the triggers of the
               FastFrame Selected and the FastFrame Reference, within the specified waveform. Valid
               waveforms include CH<x>, MATH<x>, and REF<x>. The x variable can be expressed as an
@@ -2255,18 +2187,17 @@ class HorizontalFastframeTimestampDelta(SCPICmdRead):
               ``HH:MM:SS``.xxx xxx xxx xxx ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx
               xxx is fractions of a second to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:DELTa:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:DELTa:CH<x>?`` query and raise an AssertionError if
               the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:DELTa:CH<x>?
+            ```
         """
         return self._ch
 
@@ -2274,7 +2205,7 @@ class HorizontalFastframeTimestampDelta(SCPICmdRead):
     def math(self) -> Dict[int, HorizontalFastframeTimestampDeltaMathItem]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:DELTa:MATH<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the relative time between the triggers of the
               FastFrame Selected and the FastFrame Reference, within the specified waveform. Valid
               waveforms include CH<x>, MATH<x>, and REF<x>. The x variable can be expressed as an
@@ -2282,18 +2213,17 @@ class HorizontalFastframeTimestampDelta(SCPICmdRead):
               ``HH:MM:SS``.xxx xxx xxx xxx ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx
               xxx is fractions of a second to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:DELTa:MATH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:DELTa:MATH<x>?`` query and raise an AssertionError if
               the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:DELTa:MATH<x>?
+            ```
         """
         return self._math
 
@@ -2301,7 +2231,7 @@ class HorizontalFastframeTimestampDelta(SCPICmdRead):
     def ref(self) -> Dict[int, HorizontalFastframeTimestampDeltaRefItem]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:DELTa:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the relative time between the triggers of the
               FastFrame Selected and the FastFrame Reference, within the specified waveform. Valid
               waveforms include CH<x>, MATH<x>, and REF<x>. The x variable can be expressed as an
@@ -2309,18 +2239,17 @@ class HorizontalFastframeTimestampDelta(SCPICmdRead):
               ``HH:MM:SS``.xxx xxx xxx xxx ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx
               xxx is fractions of a second to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:DELTa:REF<x>?`` query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:DELTa:REF<x>?`` query and raise an AssertionError if
               the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:DELTa:REF<x>?
+            ```
         """
         return self._ref
 
@@ -2328,7 +2257,7 @@ class HorizontalFastframeTimestampDelta(SCPICmdRead):
     def d(self) -> Dict[int, HorizontalFastframeTimestampDeltaDigitalBit]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:DELTa:D<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the relative time between the triggers of the
               FastFrame Selected and the FastFrame Reference, within the specified waveform. Valid
               waveforms include CH<x>, MATH<x>, and REF<x>. The x variable can be expressed as an
@@ -2336,18 +2265,17 @@ class HorizontalFastframeTimestampDelta(SCPICmdRead):
               ``HH:MM:SS``.xxx xxx xxx xxx ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx
               xxx is fractions of a second to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:DELTa:D<x>?`` query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:DELTa:D<x>?`` query and raise an AssertionError if
               the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:DELTa:D<x>?
+            ```
         """
         return self._d
 
@@ -2357,25 +2285,24 @@ class HorizontalFastframeTimestampBetweenRefItem(
 ):
     """The ``HORizontal:FASTframe:TIMEStamp:BETWeen:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the relative trigger for the delta time between the
           specified frames, within the specified waveform. Valid waveforms include CH<x>, MATH<x>
           and REF<x>. The x variable can be expressed as an integer ranging from 1 through 4. The
           format of the delta time output is as follows: ``HH:MM:SS``.xxx xxx xxx xxx ``HH:MM:SS``
           is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a second to picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:BETWeen:REF<x>? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:BETWeen:REF<x>? argument`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:BETWeen:REF<x>? <NR1>, <NR1>
+        ```
     """
 
 
@@ -2384,82 +2311,79 @@ class HorizontalFastframeTimestampBetweenMathItem(
 ):
     """The ``HORizontal:FASTframe:TIMEStamp:BETWeen:MATH<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the relative trigger for the delta time between the
           specified frames, within the specified waveform. Valid waveforms include CH<x>, MATH<x>
           and REF<x>. The x variable can be expressed as an integer ranging from 1 through 4. The
           format of the delta time output is as follows: ``HH:MM:SS``.xxx xxx xxx xxx ``HH:MM:SS``
           is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a second to picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:BETWeen:MATH<x>? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:BETWeen:MATH<x>? argument`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:BETWeen:MATH<x>? <NR1>, <NR1>
+        ```
     """
 
 
 class HorizontalFastframeTimestampBetweenDigitalBit(ValidatedDigitalBit, SCPICmdReadWithArguments):
     """The ``HORizontal:FASTframe:TIMEStamp:BETWeen:D<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the relative trigger for the delta time between the
           specified frames, within the specified waveform. Valid waveforms include CH<x>, MATH<x>
           and REF<x>. The x variable can be expressed as an integer ranging from 1 through 4. The
           format of the delta time output is as follows: ``HH:MM:SS``.xxx xxx xxx xxx ``HH:MM:SS``
           is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a second to picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:BETWeen:D<x>? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:BETWeen:D<x>? argument`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:BETWeen:D<x>? <NR1>, <NR1>
+        ```
     """
 
 
 class HorizontalFastframeTimestampBetweenChannel(ValidatedChannel, SCPICmdReadWithArguments):
     """The ``HORizontal:FASTframe:TIMEStamp:BETWeen:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the relative trigger for the delta time between the
           specified frames, within the specified waveform. Valid waveforms include CH<x>, MATH<x>
           and REF<x>. The x variable can be expressed as an integer ranging from 1 through 4. The
           format of the delta time output is as follows: ``HH:MM:SS``.xxx xxx xxx xxx ``HH:MM:SS``
           is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a second to picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:BETWeen:CH<x>? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:BETWeen:CH<x>? argument`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:BETWeen:CH<x>? <NR1>, <NR1>
+        ```
     """
 
 
 class HorizontalFastframeTimestampBetween(SCPICmdRead):
     """The ``HORizontal:FASTframe:TIMEStamp:BETWeen`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:TIMEStamp:BETWeen?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2508,7 +2432,7 @@ class HorizontalFastframeTimestampBetween(SCPICmdRead):
     def ch(self) -> Dict[int, HorizontalFastframeTimestampBetweenChannel]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:BETWeen:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the relative trigger for the delta time between the
               specified frames, within the specified waveform. Valid waveforms include CH<x>,
               MATH<x> and REF<x>. The x variable can be expressed as an integer ranging from 1
@@ -2516,18 +2440,17 @@ class HorizontalFastframeTimestampBetween(SCPICmdRead):
               xxx ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a
               second to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:BETWeen:CH<x>? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:BETWeen:CH<x>? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:BETWeen:CH<x>? <NR1>, <NR1>
+            ```
         """
         return self._ch
 
@@ -2535,7 +2458,7 @@ class HorizontalFastframeTimestampBetween(SCPICmdRead):
     def math(self) -> Dict[int, HorizontalFastframeTimestampBetweenMathItem]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:BETWeen:MATH<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the relative trigger for the delta time between the
               specified frames, within the specified waveform. Valid waveforms include CH<x>,
               MATH<x> and REF<x>. The x variable can be expressed as an integer ranging from 1
@@ -2543,18 +2466,17 @@ class HorizontalFastframeTimestampBetween(SCPICmdRead):
               xxx ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a
               second to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:BETWeen:MATH<x>? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:BETWeen:MATH<x>? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:BETWeen:MATH<x>? <NR1>, <NR1>
+            ```
         """
         return self._math
 
@@ -2562,7 +2484,7 @@ class HorizontalFastframeTimestampBetween(SCPICmdRead):
     def ref(self) -> Dict[int, HorizontalFastframeTimestampBetweenRefItem]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:BETWeen:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the relative trigger for the delta time between the
               specified frames, within the specified waveform. Valid waveforms include CH<x>,
               MATH<x> and REF<x>. The x variable can be expressed as an integer ranging from 1
@@ -2570,18 +2492,17 @@ class HorizontalFastframeTimestampBetween(SCPICmdRead):
               xxx ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a
               second to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:BETWeen:REF<x>? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:BETWeen:REF<x>? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:BETWeen:REF<x>? <NR1>, <NR1>
+            ```
         """
         return self._ref
 
@@ -2589,7 +2510,7 @@ class HorizontalFastframeTimestampBetween(SCPICmdRead):
     def d(self) -> Dict[int, HorizontalFastframeTimestampBetweenDigitalBit]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:BETWeen:D<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the relative trigger for the delta time between the
               specified frames, within the specified waveform. Valid waveforms include CH<x>,
               MATH<x> and REF<x>. The x variable can be expressed as an integer ranging from 1
@@ -2597,18 +2518,17 @@ class HorizontalFastframeTimestampBetween(SCPICmdRead):
               xxx ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a
               second to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:BETWeen:D<x>? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:BETWeen:D<x>? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:BETWeen:D<x>? <NR1>, <NR1>
+            ```
         """
         return self._d
 
@@ -2616,7 +2536,7 @@ class HorizontalFastframeTimestampBetween(SCPICmdRead):
 class HorizontalFastframeTimestampAllRefItem(ValidatedDynamicNumberCmd, SCPICmdReadWithArguments):
     """The ``HORizontal:FASTframe:TIMEStamp:ALL:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the frame number and time stamp for each frame between
           requested frames, inclusive, within the specified waveform. Argument order is unimportant.
           Valid waveforms include CH<x>, MATH<x> and REF<x>. The x variable can be expressed as an
@@ -2624,25 +2544,24 @@ class HorizontalFastframeTimestampAllRefItem(ValidatedDynamicNumberCmd, SCPICmdR
           ``HH:MM:SS``.xxx xxx xxx xxx DD MON YYYY is day, month, and year ``HH:MM:SS`` is hours,
           minutes, and seconds .xxx xxx xxx xxx is fractions of a second to picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:ALL:REF<x>? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:ALL:REF<x>? argument`` query and raise an AssertionError
           if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:ALL:REF<x>? <NR1>, <NR1>
+        ```
     """
 
 
 class HorizontalFastframeTimestampAllMathItem(ValidatedDynamicNumberCmd, SCPICmdReadWithArguments):
     """The ``HORizontal:FASTframe:TIMEStamp:ALL:MATH<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the frame number and time stamp for each frame between
           requested frames, inclusive, within the specified waveform. Argument order is unimportant.
           Valid waveforms include CH<x>, MATH<x> and REF<x>. The x variable can be expressed as an
@@ -2650,25 +2569,24 @@ class HorizontalFastframeTimestampAllMathItem(ValidatedDynamicNumberCmd, SCPICmd
           ``HH:MM:SS``.xxx xxx xxx xxx DD MON YYYY is day, month, and year ``HH:MM:SS`` is hours,
           minutes, and seconds .xxx xxx xxx xxx is fractions of a second to picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:ALL:MATH<x>? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:ALL:MATH<x>? argument`` query and raise an AssertionError
           if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:ALL:MATH<x>? <NR1>, <NR1>
+        ```
     """
 
 
 class HorizontalFastframeTimestampAllDigitalBit(ValidatedDigitalBit, SCPICmdReadWithArguments):
     """The ``HORizontal:FASTframe:TIMEStamp:ALL:D<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the frame number and time stamp for each frame between
           requested frames, inclusive, within the specified waveform. Argument order is unimportant.
           Valid waveforms include CH<x>, MATH<x> and REF<x>. The x variable can be expressed as an
@@ -2676,25 +2594,24 @@ class HorizontalFastframeTimestampAllDigitalBit(ValidatedDigitalBit, SCPICmdRead
           ``HH:MM:SS``.xxx xxx xxx xxx DD MON YYYY is day, month, and year ``HH:MM:SS`` is hours,
           minutes, and seconds .xxx xxx xxx xxx is fractions of a second to picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:ALL:D<x>? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:ALL:D<x>? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:ALL:D<x>? <NR1>, <NR1>
+        ```
     """
 
 
 class HorizontalFastframeTimestampAllChannel(ValidatedChannel, SCPICmdReadWithArguments):
     """The ``HORizontal:FASTframe:TIMEStamp:ALL:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the frame number and time stamp for each frame between
           requested frames, inclusive, within the specified waveform. Argument order is unimportant.
           Valid waveforms include CH<x>, MATH<x> and REF<x>. The x variable can be expressed as an
@@ -2702,25 +2619,24 @@ class HorizontalFastframeTimestampAllChannel(ValidatedChannel, SCPICmdReadWithAr
           ``HH:MM:SS``.xxx xxx xxx xxx DD MON YYYY is day, month, and year ``HH:MM:SS`` is hours,
           minutes, and seconds .xxx xxx xxx xxx is fractions of a second to picoseconds
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:ALL:CH<x>? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``HORizontal:FASTframe:TIMEStamp:ALL:CH<x>? argument`` query and raise an AssertionError
           if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:TIMEStamp:ALL:CH<x>? <NR1>, <NR1>
+        ```
     """
 
 
 class HorizontalFastframeTimestampAll(SCPICmdRead):
     """The ``HORizontal:FASTframe:TIMEStamp:ALL`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:TIMEStamp:ALL?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:TIMEStamp:ALL?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -2755,7 +2671,7 @@ class HorizontalFastframeTimestampAll(SCPICmdRead):
     def ch(self) -> Dict[int, HorizontalFastframeTimestampAllChannel]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:ALL:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the frame number and time stamp for each frame between
               requested frames, inclusive, within the specified waveform. Argument order is
               unimportant. Valid waveforms include CH<x>, MATH<x> and REF<x>. The x variable can be
@@ -2764,18 +2680,17 @@ class HorizontalFastframeTimestampAll(SCPICmdRead):
               ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a second
               to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:ALL:CH<x>? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:ALL:CH<x>? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:ALL:CH<x>? <NR1>, <NR1>
+            ```
         """
         return self._ch
 
@@ -2783,7 +2698,7 @@ class HorizontalFastframeTimestampAll(SCPICmdRead):
     def math(self) -> Dict[int, HorizontalFastframeTimestampAllMathItem]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:ALL:MATH<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the frame number and time stamp for each frame between
               requested frames, inclusive, within the specified waveform. Argument order is
               unimportant. Valid waveforms include CH<x>, MATH<x> and REF<x>. The x variable can be
@@ -2792,18 +2707,17 @@ class HorizontalFastframeTimestampAll(SCPICmdRead):
               ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a second
               to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:ALL:MATH<x>? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:ALL:MATH<x>? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:ALL:MATH<x>? <NR1>, <NR1>
+            ```
         """
         return self._math
 
@@ -2811,7 +2725,7 @@ class HorizontalFastframeTimestampAll(SCPICmdRead):
     def ref(self) -> Dict[int, HorizontalFastframeTimestampAllRefItem]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:ALL:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the frame number and time stamp for each frame between
               requested frames, inclusive, within the specified waveform. Argument order is
               unimportant. Valid waveforms include CH<x>, MATH<x> and REF<x>. The x variable can be
@@ -2820,18 +2734,17 @@ class HorizontalFastframeTimestampAll(SCPICmdRead):
               ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a second
               to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:ALL:REF<x>? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:ALL:REF<x>? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:ALL:REF<x>? <NR1>, <NR1>
+            ```
         """
         return self._ref
 
@@ -2839,7 +2752,7 @@ class HorizontalFastframeTimestampAll(SCPICmdRead):
     def d(self) -> Dict[int, HorizontalFastframeTimestampAllDigitalBit]:
         """Return the ``HORizontal:FASTframe:TIMEStamp:ALL:D<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the frame number and time stamp for each frame between
               requested frames, inclusive, within the specified waveform. Argument order is
               unimportant. Valid waveforms include CH<x>, MATH<x> and REF<x>. The x variable can be
@@ -2848,18 +2761,17 @@ class HorizontalFastframeTimestampAll(SCPICmdRead):
               ``HH:MM:SS`` is hours, minutes, and seconds .xxx xxx xxx xxx is fractions of a second
               to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:ALL:D<x>? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:ALL:D<x>? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:ALL:D<x>? <NR1>, <NR1>
+            ```
         """
         return self._d
 
@@ -2867,7 +2779,7 @@ class HorizontalFastframeTimestampAll(SCPICmdRead):
 class HorizontalFastframeTimestamp(SCPICmdRead):
     """The ``HORizontal:FASTframe:TIMEStamp`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:TIMEStamp?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:TIMEStamp?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -2896,7 +2808,7 @@ class HorizontalFastframeTimestamp(SCPICmdRead):
     def all(self) -> HorizontalFastframeTimestampAll:
         """Return the ``HORizontal:FASTframe:TIMEStamp:ALL`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:TIMEStamp:ALL?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2915,7 +2827,7 @@ class HorizontalFastframeTimestamp(SCPICmdRead):
     def between(self) -> HorizontalFastframeTimestampBetween:
         """Return the ``HORizontal:FASTframe:TIMEStamp:BETWeen`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:BETWeen?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2934,7 +2846,7 @@ class HorizontalFastframeTimestamp(SCPICmdRead):
     def delta(self) -> HorizontalFastframeTimestampDelta:
         """Return the ``HORizontal:FASTframe:TIMEStamp:DELTa`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:TIMEStamp:DELTa?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2953,7 +2865,7 @@ class HorizontalFastframeTimestamp(SCPICmdRead):
     def frame(self) -> HorizontalFastframeTimestampFrame:
         """Return the ``HORizontal:FASTframe:TIMEStamp:FRAMe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:TIMEStamp:FRAMe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2972,24 +2884,23 @@ class HorizontalFastframeTimestamp(SCPICmdRead):
     def ref(self) -> HorizontalFastframeTimestampRef:
         """Return the ``HORizontal:FASTframe:TIMEStamp:REF`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the absolute trigger date and time for FastFrame
               reference. The format of the output is as follows: DD MON YYYY ``HH:MM:SS``.xxx xxx
               xxx xxx DD MON YYYY is day, month, and year ``HH:MM:SS`` is hours, minutes, and
               seconds .xxx xxx xxx xxx is fractions of a second to picoseconds
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:TIMEStamp:REF?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:REF?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TIMEStamp:REF?
+            ```
         """
         return self._ref
 
@@ -2997,7 +2908,7 @@ class HorizontalFastframeTimestamp(SCPICmdRead):
     def selected(self) -> HorizontalFastframeTimestampSelected:
         """Return the ``HORizontal:FASTframe:TIMEStamp:SELECTED`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:TIMEStamp:SELECTED?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3016,28 +2927,27 @@ class HorizontalFastframeTimestamp(SCPICmdRead):
 class HorizontalFastframeSumframe(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:FASTframe:SUMFrame`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the summary frame mode. When ENVelope is selected, the last
           frame in a FastFrame acquisition is an envelope of all the prior frames in the
           acquisition. When AVErage is selected, the last frame is replaced with a frame that is the
           computed average of all the prior frames in the acquisition. For the summary frame control
           to be active, the number of frames must be two or greater.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:SUMFrame?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:SUMFrame?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:FASTframe:SUMFrame value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:SUMFrame {NONe|AVErage|ENVelope}
         - HORizontal:FASTframe:SUMFrame?
+        ```
 
-    **Info:**
+    Info:
         - ``NONE`` turns off the summary mode for FastFrame. This is the default setting.
         - ``AVErage`` argument displays the last frame in a FastFrame acquisition as a frame that is
           the computed average of all the prior frames in the acquisition.
@@ -3049,28 +2959,27 @@ class HorizontalFastframeSumframe(SCPICmdWrite, SCPICmdRead):
 class HorizontalFastframeState(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:FASTframe:STATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the state of FastFrame acquisition. This is equivalent to
           setting FastFrame to On in the FastFrame Setup menu. FastFrame lets users capture a series
           of triggered acquisitions with minimal time between them. The digitizing instrument in
           FastFrame mode is ready to accept a continuous burst of triggers 400 ms after the
           controller sends the ``ACQUIRE:STATE RUN`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:STATE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:FASTframe:STATE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:STATE {<NR1>|ON|OFF}
         - HORizontal:FASTframe:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 turns off horizontal FastFrame; any other value turns on horizontal
           FastFrame.
         - ``<ON>`` turns on horizontal FastFrame.
@@ -3081,24 +2990,23 @@ class HorizontalFastframeState(SCPICmdWrite, SCPICmdRead):
 class HorizontalFastframeSixteenbit(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:FASTframe:SIXteenbit`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries FastFrame sixteen bit.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:SIXteenbit?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:SIXteenbit?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:FASTframe:SIXteenbit value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:SIXteenbit {<NR1>|OFF|ON}
         - HORizontal:FASTframe:SIXteenbit?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the function; any other value enables it.
         - ``OFF`` disables the function. When OFF, fastframe data is 8 bit.
         - ``ON`` enables the function. When ON and when the summary frame is average, the data for
@@ -3109,10 +3017,10 @@ class HorizontalFastframeSixteenbit(SCPICmdWrite, SCPICmdRead):
 class HorizontalFastframeSingleframemath(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:FASTframe:SINGLEFramemath`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries FastFrame single frame math.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:SINGLEFramemath?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3121,14 +3029,13 @@ class HorizontalFastframeSingleframemath(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``HORizontal:FASTframe:SINGLEFramemath value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:SINGLEFramemath {<NR1>|OFF|ON}
         - HORizontal:FASTframe:SINGLEFramemath?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the function; any other value enables it.
         - ``OFF`` disables the function.
         - ``ON`` enables the function.
@@ -3138,24 +3045,23 @@ class HorizontalFastframeSingleframemath(SCPICmdWrite, SCPICmdRead):
 class HorizontalFastframeSequence(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:FASTframe:SEQuence`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the FastFrame single-sequence mode stop condition.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:SEQuence?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:SEQuence?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:FASTframe:SEQuence value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:SEQuence {FIRst|LAST}
         - HORizontal:FASTframe:SEQuence?
+        ```
 
-    **Info:**
+    Info:
         - ``FIRst`` sets single sequence to stop after n frames.
         - ``LAST`` sets single sequence to stop manually.
     """
@@ -3164,13 +3070,13 @@ class HorizontalFastframeSequence(SCPICmdWrite, SCPICmdRead):
 class HorizontalFastframeSelectedSource(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:FASTframe:SELECTED:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the FastFrame source waveform. This is equivalent to
           selecting FastFrame Setup from the Horiz/Acq menu, and then choosing the waveform source.
           Valid waveforms include CH<x> and MATH<x>. The x variable can be expressed as an integer
           ranging from 1 through 4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:SELECTED:SOUrce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3179,14 +3085,13 @@ class HorizontalFastframeSelectedSource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``HORizontal:FASTframe:SELECTED:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:SELECTED:SOUrce <NR1>
         - HORizontal:FASTframe:SELECTED:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the selected frame number on the specified waveform.
     """
 
@@ -3194,11 +3099,11 @@ class HorizontalFastframeSelectedSource(SCPICmdWrite, SCPICmdRead):
 class HorizontalFastframeSelectedRefItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:FASTframe:SELECTED:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the FastFrame selected frame number on the specified
           waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:SELECTED:REF<x>?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3207,14 +3112,13 @@ class HorizontalFastframeSelectedRefItem(ValidatedDynamicNumberCmd, SCPICmdWrite
         - Using the ``.write(value)`` method will send the
           ``HORizontal:FASTframe:SELECTED:REF<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:SELECTED:REF<x> <NRF>
         - HORizontal:FASTframe:SELECTED:REF<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NRF>`` is the selected frame number.
     """
 
@@ -3222,11 +3126,11 @@ class HorizontalFastframeSelectedRefItem(ValidatedDynamicNumberCmd, SCPICmdWrite
 class HorizontalFastframeSelectedMathItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:FASTframe:SELECTED:MATH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the FastFrame selected frame number on the specified
           waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:SELECTED:MATH<x>?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3235,14 +3139,13 @@ class HorizontalFastframeSelectedMathItem(ValidatedDynamicNumberCmd, SCPICmdWrit
         - Using the ``.write(value)`` method will send the
           ``HORizontal:FASTframe:SELECTED:MATH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:SELECTED:MATH<x> <NRF>
         - HORizontal:FASTframe:SELECTED:MATH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NRF>`` is the selected frame number.
     """
 
@@ -3250,11 +3153,11 @@ class HorizontalFastframeSelectedMathItem(ValidatedDynamicNumberCmd, SCPICmdWrit
 class HorizontalFastframeSelectedChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:FASTframe:SELECTED:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the FastFrame selected frame number on the specified
           waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:SELECTED:CH<x>?``
           query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:SELECTED:CH<x>?``
@@ -3262,14 +3165,13 @@ class HorizontalFastframeSelectedChannel(ValidatedChannel, SCPICmdWrite, SCPICmd
         - Using the ``.write(value)`` method will send the
           ``HORizontal:FASTframe:SELECTED:CH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:SELECTED:CH<x> <NRF>
         - HORizontal:FASTframe:SELECTED:CH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NRF>`` is the selected frame number.
     """
 
@@ -3277,7 +3179,7 @@ class HorizontalFastframeSelectedChannel(ValidatedChannel, SCPICmdWrite, SCPICmd
 class HorizontalFastframeSelected(SCPICmdRead):
     """The ``HORizontal:FASTframe:SELECTED`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:SELECTED?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:SELECTED?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -3306,11 +3208,11 @@ class HorizontalFastframeSelected(SCPICmdRead):
     def ch(self) -> Dict[int, HorizontalFastframeSelectedChannel]:
         """Return the ``HORizontal:FASTframe:SELECTED:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the FastFrame selected frame number on the specified
               waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:SELECTED:CH<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3319,14 +3221,13 @@ class HorizontalFastframeSelected(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:SELECTED:CH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:SELECTED:CH<x> <NRF>
             - HORizontal:FASTframe:SELECTED:CH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NRF>`` is the selected frame number.
         """
         return self._ch
@@ -3335,11 +3236,11 @@ class HorizontalFastframeSelected(SCPICmdRead):
     def math(self) -> Dict[int, HorizontalFastframeSelectedMathItem]:
         """Return the ``HORizontal:FASTframe:SELECTED:MATH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the FastFrame selected frame number on the specified
               waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:SELECTED:MATH<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3348,14 +3249,13 @@ class HorizontalFastframeSelected(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:SELECTED:MATH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:SELECTED:MATH<x> <NRF>
             - HORizontal:FASTframe:SELECTED:MATH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NRF>`` is the selected frame number.
         """
         return self._math
@@ -3364,11 +3264,11 @@ class HorizontalFastframeSelected(SCPICmdRead):
     def ref(self) -> Dict[int, HorizontalFastframeSelectedRefItem]:
         """Return the ``HORizontal:FASTframe:SELECTED:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the FastFrame selected frame number on the specified
               waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:SELECTED:REF<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3377,14 +3277,13 @@ class HorizontalFastframeSelected(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:SELECTED:REF<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:SELECTED:REF<x> <NRF>
             - HORizontal:FASTframe:SELECTED:REF<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NRF>`` is the selected frame number.
         """
         return self._ref
@@ -3393,13 +3292,13 @@ class HorizontalFastframeSelected(SCPICmdRead):
     def source(self) -> HorizontalFastframeSelectedSource:
         """Return the ``HORizontal:FASTframe:SELECTED:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the FastFrame source waveform. This is equivalent to
               selecting FastFrame Setup from the Horiz/Acq menu, and then choosing the waveform
               source. Valid waveforms include CH<x> and MATH<x>. The x variable can be expressed as
               an integer ranging from 1 through 4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:SELECTED:SOUrce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3408,14 +3307,13 @@ class HorizontalFastframeSelected(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:SELECTED:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:SELECTED:SOUrce <NR1>
             - HORizontal:FASTframe:SELECTED:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the selected frame number on the specified waveform.
         """
         return self._source
@@ -3424,25 +3322,24 @@ class HorizontalFastframeSelected(SCPICmdRead):
 class HorizontalFastframeRefSource(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:FASTframe:REF:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries FastFrame Reference waveform source. This is equivalent to
           selecting FastFrame Setup from the Horiz/Acq menu and choosing the referenc e source.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:REF:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:REF:SOUrce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:FASTframe:REF:SOUrce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:REF:SOUrce <wfm>
         - HORizontal:FASTframe:REF:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``<wfm>`` specifies the FastFrame Reference waveform source. Valid waveforms include CH<x>
           and MATH<x> The x variable can be expressed as an integer ranging from 1 through 4.
     """
@@ -3451,24 +3348,23 @@ class HorizontalFastframeRefSource(SCPICmdWrite, SCPICmdRead):
 class HorizontalFastframeRefFrame(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:FASTframe:REF:FRAme`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the reference frame number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:REF:FRAme?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:REF:FRAme?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:FASTframe:REF:FRAme value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:REF:FRAme <NR1>
         - HORizontal:FASTframe:REF:FRAme?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the reference frame number.
     """
 
@@ -3476,7 +3372,7 @@ class HorizontalFastframeRefFrame(SCPICmdWrite, SCPICmdRead):
 class HorizontalFastframeRef(SCPICmdRead):
     """The ``HORizontal:FASTframe:REF`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:REF?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:REF?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -3495,24 +3391,23 @@ class HorizontalFastframeRef(SCPICmdRead):
     def frame(self) -> HorizontalFastframeRefFrame:
         """Return the ``HORizontal:FASTframe:REF:FRAme`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the reference frame number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:REF:FRAme?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:REF:FRAme?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:REF:FRAme value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:REF:FRAme <NR1>
             - HORizontal:FASTframe:REF:FRAme?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the reference frame number.
         """
         return self._frame
@@ -3521,12 +3416,12 @@ class HorizontalFastframeRef(SCPICmdRead):
     def source(self) -> HorizontalFastframeRefSource:
         """Return the ``HORizontal:FASTframe:REF:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries FastFrame Reference waveform source. This is equivalent
               to selecting FastFrame Setup from the Horiz/Acq menu and choosing the referenc e
               source.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:REF:SOUrce?``
               query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:REF:SOUrce?``
@@ -3534,14 +3429,13 @@ class HorizontalFastframeRef(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:REF:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:REF:SOUrce <wfm>
             - HORizontal:FASTframe:REF:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``<wfm>`` specifies the FastFrame Reference waveform source. Valid waveforms include
               CH<x> and MATH<x> The x variable can be expressed as an integer ranging from 1 through
               4.
@@ -3554,13 +3448,13 @@ class HorizontalFastframeMultipleframesNumframesRefItem(
 ):
     """The ``HORizontal:FASTframe:MULtipleframes:NUMFRames:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of frames on the specified waveform for the
           FastFrame multiple frames feature. The multiple frames feature supports displaying
           multiple frames in an overlaid manner. Valid waveforms include CH<x>, MATH<x> and REF<x>.
           The x variable can be expressed as an integer ranging from 1 through 4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:NUMFRames:REF<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3569,14 +3463,13 @@ class HorizontalFastframeMultipleframesNumframesRefItem(
         - Using the ``.write(value)`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:NUMFRames:REF<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:MULtipleframes:NUMFRames:REF<x> <NR1>
         - HORizontal:FASTframe:MULtipleframes:NUMFRames:REF<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` represents the number of frames on the specified waveform.
     """
 
@@ -3586,13 +3479,13 @@ class HorizontalFastframeMultipleframesNumframesMathItem(
 ):
     """The ``HORizontal:FASTframe:MULtipleframes:NUMFRames:MATH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of frames on the specified waveform for the
           FastFrame multiple frames feature. The multiple frames feature supports displaying
           multiple frames in an overlaid manner. Valid waveforms include CH<x>, MATH<x> and REF<x>.
           The x variable can be expressed as an integer ranging from 1 through 4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:NUMFRames:MATH<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3601,14 +3494,13 @@ class HorizontalFastframeMultipleframesNumframesMathItem(
         - Using the ``.write(value)`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:NUMFRames:MATH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:MULtipleframes:NUMFRames:MATH<x> <NR1>
         - HORizontal:FASTframe:MULtipleframes:NUMFRames:MATH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` represents the number of frames on the specified waveform.
     """
 
@@ -3618,13 +3510,13 @@ class HorizontalFastframeMultipleframesNumframesDigitalBit(
 ):
     """The ``HORizontal:FASTframe:MULtipleframes:NUMFRames:D<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of frames on the specified waveform for the
           FastFrame multiple frames feature. The multiple frames feature supports displaying
           multiple frames in an overlaid manner. Valid waveforms include CH<x>, MATH<x> and REF<x>.
           The x variable can be expressed as an integer ranging from 1 through 4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:NUMFRames:D<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3633,14 +3525,13 @@ class HorizontalFastframeMultipleframesNumframesDigitalBit(
         - Using the ``.write(value)`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:NUMFRames:D<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:MULtipleframes:NUMFRames:D<x> <NR1>
         - HORizontal:FASTframe:MULtipleframes:NUMFRames:D<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` represents the number of frames on the specified waveform.
     """
 
@@ -3650,13 +3541,13 @@ class HorizontalFastframeMultipleframesNumframesChannel(
 ):
     """The ``HORizontal:FASTframe:MULtipleframes:NUMFRames:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of frames on the specified waveform for the
           FastFrame multiple frames feature. The multiple frames feature supports displaying
           multiple frames in an overlaid manner. Valid waveforms include CH<x>, MATH<x> and REF<x>.
           The x variable can be expressed as an integer ranging from 1 through 4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:NUMFRames:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3665,14 +3556,13 @@ class HorizontalFastframeMultipleframesNumframesChannel(
         - Using the ``.write(value)`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:NUMFRames:CH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:MULtipleframes:NUMFRames:CH<x> <NR1>
         - HORizontal:FASTframe:MULtipleframes:NUMFRames:CH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` represents the number of frames on the specified waveform.
     """
 
@@ -3680,7 +3570,7 @@ class HorizontalFastframeMultipleframesNumframesChannel(
 class HorizontalFastframeMultipleframesNumframes(SCPICmdRead):
     """The ``HORizontal:FASTframe:MULtipleframes:NUMFRames`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:NUMFRames?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3729,13 +3619,13 @@ class HorizontalFastframeMultipleframesNumframes(SCPICmdRead):
     def ch(self) -> Dict[int, HorizontalFastframeMultipleframesNumframesChannel]:
         """Return the ``HORizontal:FASTframe:MULtipleframes:NUMFRames:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of frames on the specified waveform for the
               FastFrame multiple frames feature. The multiple frames feature supports displaying
               multiple frames in an overlaid manner. Valid waveforms include CH<x>, MATH<x> and
               REF<x>. The x variable can be expressed as an integer ranging from 1 through 4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:NUMFRames:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3744,14 +3634,13 @@ class HorizontalFastframeMultipleframesNumframes(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:NUMFRames:CH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:MULtipleframes:NUMFRames:CH<x> <NR1>
             - HORizontal:FASTframe:MULtipleframes:NUMFRames:CH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` represents the number of frames on the specified waveform.
         """
         return self._ch
@@ -3760,13 +3649,13 @@ class HorizontalFastframeMultipleframesNumframes(SCPICmdRead):
     def math(self) -> Dict[int, HorizontalFastframeMultipleframesNumframesMathItem]:
         """Return the ``HORizontal:FASTframe:MULtipleframes:NUMFRames:MATH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of frames on the specified waveform for the
               FastFrame multiple frames feature. The multiple frames feature supports displaying
               multiple frames in an overlaid manner. Valid waveforms include CH<x>, MATH<x> and
               REF<x>. The x variable can be expressed as an integer ranging from 1 through 4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:NUMFRames:MATH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3775,14 +3664,13 @@ class HorizontalFastframeMultipleframesNumframes(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:NUMFRames:MATH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:MULtipleframes:NUMFRames:MATH<x> <NR1>
             - HORizontal:FASTframe:MULtipleframes:NUMFRames:MATH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` represents the number of frames on the specified waveform.
         """
         return self._math
@@ -3791,13 +3679,13 @@ class HorizontalFastframeMultipleframesNumframes(SCPICmdRead):
     def ref(self) -> Dict[int, HorizontalFastframeMultipleframesNumframesRefItem]:
         """Return the ``HORizontal:FASTframe:MULtipleframes:NUMFRames:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of frames on the specified waveform for the
               FastFrame multiple frames feature. The multiple frames feature supports displaying
               multiple frames in an overlaid manner. Valid waveforms include CH<x>, MATH<x> and
               REF<x>. The x variable can be expressed as an integer ranging from 1 through 4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:NUMFRames:REF<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3806,14 +3694,13 @@ class HorizontalFastframeMultipleframesNumframes(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:NUMFRames:REF<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:MULtipleframes:NUMFRames:REF<x> <NR1>
             - HORizontal:FASTframe:MULtipleframes:NUMFRames:REF<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` represents the number of frames on the specified waveform.
         """
         return self._ref
@@ -3822,13 +3709,13 @@ class HorizontalFastframeMultipleframesNumframes(SCPICmdRead):
     def d(self) -> Dict[int, HorizontalFastframeMultipleframesNumframesDigitalBit]:
         """Return the ``HORizontal:FASTframe:MULtipleframes:NUMFRames:D<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of frames on the specified waveform for the
               FastFrame multiple frames feature. The multiple frames feature supports displaying
               multiple frames in an overlaid manner. Valid waveforms include CH<x>, MATH<x> and
               REF<x>. The x variable can be expressed as an integer ranging from 1 through 4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:NUMFRames:D<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3837,14 +3724,13 @@ class HorizontalFastframeMultipleframesNumframes(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:NUMFRames:D<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:MULtipleframes:NUMFRames:D<x> <NR1>
             - HORizontal:FASTframe:MULtipleframes:NUMFRames:D<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` represents the number of frames on the specified waveform.
         """
         return self._d
@@ -3853,11 +3739,11 @@ class HorizontalFastframeMultipleframesNumframes(SCPICmdRead):
 class HorizontalFastframeMultipleframesMode(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:FASTframe:MULtipleframes:MODe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the mode for the FastFrame multiple frames feature. This
           feature displays multiple frames in an overlaid manner.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:MULtipleframes:MODe?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3866,14 +3752,13 @@ class HorizontalFastframeMultipleframesMode(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:MULtipleframes:MODe {OFF|OVERlay|ONLYOVERlay}
         - HORizontal:FASTframe:MULtipleframes:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` turns off the multiple frames mode.
         - ``OVERlay`` sets the multiple frames mode to overlay.
     """
@@ -3884,13 +3769,13 @@ class HorizontalFastframeMultipleframesFramestartRefItem(
 ):
     """The ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the start frame number on the specified waveform for the
           FastFrame multiple frames feature. Valid waveforms include CH<x>, MATH<x>, and REF<x>. The
           value of x can be an integer ranging from 1 through 4. The multiple frames feature
           supports displaying multiple frames in an overlaid manner.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:REF<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3899,14 +3784,13 @@ class HorizontalFastframeMultipleframesFramestartRefItem(
         - Using the ``.write(value)`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:REF<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:MULtipleframes:FRAMESTart:REF<x> <NR1>
         - HORizontal:FASTframe:MULtipleframes:FRAMESTart:REF<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the start frame number on the specified waveform.
     """
 
@@ -3916,13 +3800,13 @@ class HorizontalFastframeMultipleframesFramestartMathItem(
 ):
     """The ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:MATH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the start frame number on the specified waveform for the
           FastFrame multiple frames feature. Valid waveforms include CH<x>, MATH<x>, and REF<x>. The
           value of x can be an integer ranging from 1 through 4. The multiple frames feature
           supports displaying multiple frames in an overlaid manner.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:MATH<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3931,14 +3815,13 @@ class HorizontalFastframeMultipleframesFramestartMathItem(
         - Using the ``.write(value)`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:MATH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:MULtipleframes:FRAMESTart:MATH<x> <NR1>
         - HORizontal:FASTframe:MULtipleframes:FRAMESTart:MATH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the start frame number on the specified waveform.
     """
 
@@ -3948,13 +3831,13 @@ class HorizontalFastframeMultipleframesFramestartDigitalBit(
 ):
     """The ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:D<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the start frame number on the specified waveform for the
           FastFrame multiple frames feature. Valid waveforms include CH<x>, MATH<x>, and REF<x>. The
           value of x can be an integer ranging from 1 through 4. The multiple frames feature
           supports displaying multiple frames in an overlaid manner.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:D<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3963,14 +3846,13 @@ class HorizontalFastframeMultipleframesFramestartDigitalBit(
         - Using the ``.write(value)`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:D<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:MULtipleframes:FRAMESTart:D<x> <NR1>
         - HORizontal:FASTframe:MULtipleframes:FRAMESTart:D<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the start frame number on the specified waveform.
     """
 
@@ -3980,13 +3862,13 @@ class HorizontalFastframeMultipleframesFramestartChannel(
 ):
     """The ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the start frame number on the specified waveform for the
           FastFrame multiple frames feature. Valid waveforms include CH<x>, MATH<x>, and REF<x>. The
           value of x can be an integer ranging from 1 through 4. The multiple frames feature
           supports displaying multiple frames in an overlaid manner.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3995,14 +3877,13 @@ class HorizontalFastframeMultipleframesFramestartChannel(
         - Using the ``.write(value)`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:CH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:MULtipleframes:FRAMESTart:CH<x> <NR1>
         - HORizontal:FASTframe:MULtipleframes:FRAMESTart:CH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the start frame number on the specified waveform.
     """
 
@@ -4010,7 +3891,7 @@ class HorizontalFastframeMultipleframesFramestartChannel(
 class HorizontalFastframeMultipleframesFramestart(SCPICmdRead):
     """The ``HORizontal:FASTframe:MULtipleframes:FRAMESTart`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HORizontal:FASTframe:MULtipleframes:FRAMESTart?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -4059,13 +3940,13 @@ class HorizontalFastframeMultipleframesFramestart(SCPICmdRead):
     def ch(self) -> Dict[int, HorizontalFastframeMultipleframesFramestartChannel]:
         """Return the ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the start frame number on the specified waveform for the
               FastFrame multiple frames feature. Valid waveforms include CH<x>, MATH<x>, and REF<x>.
               The value of x can be an integer ranging from 1 through 4. The multiple frames feature
               supports displaying multiple frames in an overlaid manner.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4074,14 +3955,13 @@ class HorizontalFastframeMultipleframesFramestart(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:CH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:MULtipleframes:FRAMESTart:CH<x> <NR1>
             - HORizontal:FASTframe:MULtipleframes:FRAMESTart:CH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the start frame number on the specified waveform.
         """
         return self._ch
@@ -4090,13 +3970,13 @@ class HorizontalFastframeMultipleframesFramestart(SCPICmdRead):
     def math(self) -> Dict[int, HorizontalFastframeMultipleframesFramestartMathItem]:
         """Return the ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:MATH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the start frame number on the specified waveform for the
               FastFrame multiple frames feature. Valid waveforms include CH<x>, MATH<x>, and REF<x>.
               The value of x can be an integer ranging from 1 through 4. The multiple frames feature
               supports displaying multiple frames in an overlaid manner.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:MATH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4105,14 +3985,13 @@ class HorizontalFastframeMultipleframesFramestart(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:MATH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:MULtipleframes:FRAMESTart:MATH<x> <NR1>
             - HORizontal:FASTframe:MULtipleframes:FRAMESTart:MATH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the start frame number on the specified waveform.
         """
         return self._math
@@ -4121,13 +4000,13 @@ class HorizontalFastframeMultipleframesFramestart(SCPICmdRead):
     def ref(self) -> Dict[int, HorizontalFastframeMultipleframesFramestartRefItem]:
         """Return the ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the start frame number on the specified waveform for the
               FastFrame multiple frames feature. Valid waveforms include CH<x>, MATH<x>, and REF<x>.
               The value of x can be an integer ranging from 1 through 4. The multiple frames feature
               supports displaying multiple frames in an overlaid manner.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:REF<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4136,14 +4015,13 @@ class HorizontalFastframeMultipleframesFramestart(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:REF<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:MULtipleframes:FRAMESTart:REF<x> <NR1>
             - HORizontal:FASTframe:MULtipleframes:FRAMESTart:REF<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the start frame number on the specified waveform.
         """
         return self._ref
@@ -4152,13 +4030,13 @@ class HorizontalFastframeMultipleframesFramestart(SCPICmdRead):
     def d(self) -> Dict[int, HorizontalFastframeMultipleframesFramestartDigitalBit]:
         """Return the ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:D<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the start frame number on the specified waveform for the
               FastFrame multiple frames feature. Valid waveforms include CH<x>, MATH<x>, and REF<x>.
               The value of x can be an integer ranging from 1 through 4. The multiple frames feature
               supports displaying multiple frames in an overlaid manner.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:D<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4167,14 +4045,13 @@ class HorizontalFastframeMultipleframesFramestart(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:FRAMESTart:D<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:MULtipleframes:FRAMESTart:D<x> <NR1>
             - HORizontal:FASTframe:MULtipleframes:FRAMESTart:D<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the start frame number on the specified waveform.
         """
         return self._d
@@ -4183,7 +4060,7 @@ class HorizontalFastframeMultipleframesFramestart(SCPICmdRead):
 class HorizontalFastframeMultipleframes(SCPICmdRead):
     """The ``HORizontal:FASTframe:MULtipleframes`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:MULtipleframes?``
           query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:MULtipleframes?``
@@ -4209,7 +4086,7 @@ class HorizontalFastframeMultipleframes(SCPICmdRead):
     def framestart(self) -> HorizontalFastframeMultipleframesFramestart:
         """Return the ``HORizontal:FASTframe:MULtipleframes:FRAMESTart`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:FRAMESTart?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4228,11 +4105,11 @@ class HorizontalFastframeMultipleframes(SCPICmdRead):
     def mode(self) -> HorizontalFastframeMultipleframesMode:
         """Return the ``HORizontal:FASTframe:MULtipleframes:MODe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the mode for the FastFrame multiple frames feature. This
               feature displays multiple frames in an overlaid manner.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:MODe?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4241,14 +4118,13 @@ class HorizontalFastframeMultipleframes(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:MODe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:MULtipleframes:MODe {OFF|OVERlay|ONLYOVERlay}
             - HORizontal:FASTframe:MULtipleframes:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` turns off the multiple frames mode.
             - ``OVERlay`` sets the multiple frames mode to overlay.
         """
@@ -4258,7 +4134,7 @@ class HorizontalFastframeMultipleframes(SCPICmdRead):
     def numframes(self) -> HorizontalFastframeMultipleframesNumframes:
         """Return the ``HORizontal:FASTframe:MULtipleframes:NUMFRames`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:FASTframe:MULtipleframes:NUMFRames?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4277,46 +4153,44 @@ class HorizontalFastframeMultipleframes(SCPICmdRead):
 class HorizontalFastframeMaxframes(SCPICmdRead):
     """The ``HORizontal:FASTframe:MAXFRames`` command.
 
-    **Description:**
+    Description:
         - This query returns the maximum number of frames.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:MAXFRames?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:MAXFRames?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:MAXFRames?
+        ```
     """
 
 
 class HorizontalFastframeLength(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:FASTframe:LENgth`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the horizontal record length to the number of sample points
           in each frame. This command is equivalent to selecting FastFrame Setup from the Horiz/Acq
           menu and entering a value in the Rec Length box. FastFrame captures a series of triggered
           acquisitions with minimal intervening time between them.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:LENgth?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:LENgth?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:FASTframe:LENgth value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:LENgth <NR1>
         - HORizontal:FASTframe:LENgth?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` represents the supported value for horizontal record length in Fast Frame mode.
           In addition, to the allowable record length in normal (single frame) mode, 50 and 250
           point record lengths are permitted in Fast Frame mode.
@@ -4326,24 +4200,23 @@ class HorizontalFastframeLength(SCPICmdWrite, SCPICmdRead):
 class HorizontalFastframeFramelock(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:FASTframe:FRAMELock`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries FastFrame frame lock.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:FRAMELock?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:FRAMELock?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:FASTframe:FRAMELock value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:FRAMELock {ON|OFF|<NR1>}
         - HORizontal:FASTframe:FRAMELock?
+        ```
 
-    **Info:**
+    Info:
         - ``<ON>`` enables frame lock.
         - ``<OFF>`` disables frame lock.
         - ``<NR1>`` = 0 disables frame lock; any other value enables framelock.
@@ -4353,24 +4226,23 @@ class HorizontalFastframeFramelock(SCPICmdWrite, SCPICmdRead):
 class HorizontalFastframeCount(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:FASTframe:COUNt`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the number of frames.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe:COUNt?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:COUNt?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:FASTframe:COUNt value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe:COUNt <NR1>
         - HORizontal:FASTframe:COUNt?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the number of frames.
     """
 
@@ -4379,19 +4251,18 @@ class HorizontalFastframeCount(SCPICmdWrite, SCPICmdRead):
 class HorizontalFastframe(SCPICmdRead):
     """The ``HORizontal:FASTframe`` command.
 
-    **Description:**
+    Description:
         - This query returns all information under ``horizontal:fastframe``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:FASTframe?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:FASTframe?
+        ```
 
     Properties:
         - ``.count``: The ``HORizontal:FASTframe:COUNt`` command.
@@ -4437,24 +4308,23 @@ class HorizontalFastframe(SCPICmdRead):
     def count(self) -> HorizontalFastframeCount:
         """Return the ``HORizontal:FASTframe:COUNt`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the number of frames.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:COUNt?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:COUNt?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HORizontal:FASTframe:COUNt value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:COUNt <NR1>
             - HORizontal:FASTframe:COUNt?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the number of frames.
         """
         return self._count
@@ -4463,24 +4333,23 @@ class HorizontalFastframe(SCPICmdRead):
     def framelock(self) -> HorizontalFastframeFramelock:
         """Return the ``HORizontal:FASTframe:FRAMELock`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries FastFrame frame lock.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:FRAMELock?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:FRAMELock?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:FRAMELock value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:FRAMELock {ON|OFF|<NR1>}
             - HORizontal:FASTframe:FRAMELock?
+            ```
 
-        **Info:**
+        Info:
             - ``<ON>`` enables frame lock.
             - ``<OFF>`` disables frame lock.
             - ``<NR1>`` = 0 disables frame lock; any other value enables framelock.
@@ -4491,27 +4360,26 @@ class HorizontalFastframe(SCPICmdRead):
     def length(self) -> HorizontalFastframeLength:
         """Return the ``HORizontal:FASTframe:LENgth`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the horizontal record length to the number of sample
               points in each frame. This command is equivalent to selecting FastFrame Setup from the
               Horiz/Acq menu and entering a value in the Rec Length box. FastFrame captures a series
               of triggered acquisitions with minimal intervening time between them.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:LENgth?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:LENgth?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HORizontal:FASTframe:LENgth value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:LENgth <NR1>
             - HORizontal:FASTframe:LENgth?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` represents the supported value for horizontal record length in Fast Frame
               mode. In addition, to the allowable record length in normal (single frame) mode, 50
               and 250 point record lengths are permitted in Fast Frame mode.
@@ -4522,19 +4390,18 @@ class HorizontalFastframe(SCPICmdRead):
     def maxframes(self) -> HorizontalFastframeMaxframes:
         """Return the ``HORizontal:FASTframe:MAXFRames`` command.
 
-        **Description:**
+        Description:
             - This query returns the maximum number of frames.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:MAXFRames?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:MAXFRames?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:MAXFRames?
+            ```
         """
         return self._maxframes
 
@@ -4542,7 +4409,7 @@ class HorizontalFastframe(SCPICmdRead):
     def multipleframes(self) -> HorizontalFastframeMultipleframes:
         """Return the ``HORizontal:FASTframe:MULtipleframes`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:MULtipleframes?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4560,7 +4427,7 @@ class HorizontalFastframe(SCPICmdRead):
     def ref(self) -> HorizontalFastframeRef:
         """Return the ``HORizontal:FASTframe:REF`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:REF?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:REF?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -4575,7 +4442,7 @@ class HorizontalFastframe(SCPICmdRead):
     def selected(self) -> HorizontalFastframeSelected:
         """Return the ``HORizontal:FASTframe:SELECTED`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:SELECTED?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:SELECTED?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -4592,24 +4459,23 @@ class HorizontalFastframe(SCPICmdRead):
     def sequence(self) -> HorizontalFastframeSequence:
         """Return the ``HORizontal:FASTframe:SEQuence`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the FastFrame single-sequence mode stop condition.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:SEQuence?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:SEQuence?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:SEQuence value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:SEQuence {FIRst|LAST}
             - HORizontal:FASTframe:SEQuence?
+            ```
 
-        **Info:**
+        Info:
             - ``FIRst`` sets single sequence to stop after n frames.
             - ``LAST`` sets single sequence to stop manually.
         """
@@ -4619,10 +4485,10 @@ class HorizontalFastframe(SCPICmdRead):
     def singleframemath(self) -> HorizontalFastframeSingleframemath:
         """Return the ``HORizontal:FASTframe:SINGLEFramemath`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries FastFrame single frame math.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:SINGLEFramemath?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4631,14 +4497,13 @@ class HorizontalFastframe(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:SINGLEFramemath value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:SINGLEFramemath {<NR1>|OFF|ON}
             - HORizontal:FASTframe:SINGLEFramemath?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the function; any other value enables it.
             - ``OFF`` disables the function.
             - ``ON`` enables the function.
@@ -4649,10 +4514,10 @@ class HorizontalFastframe(SCPICmdRead):
     def sixteenbit(self) -> HorizontalFastframeSixteenbit:
         """Return the ``HORizontal:FASTframe:SIXteenbit`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries FastFrame sixteen bit.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:SIXteenbit?``
               query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:SIXteenbit?``
@@ -4660,14 +4525,13 @@ class HorizontalFastframe(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:SIXteenbit value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:SIXteenbit {<NR1>|OFF|ON}
             - HORizontal:FASTframe:SIXteenbit?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the function; any other value enables it.
             - ``OFF`` disables the function. When OFF, fastframe data is 8 bit.
             - ``ON`` enables the function. When ON and when the summary frame is average, the data
@@ -4679,28 +4543,27 @@ class HorizontalFastframe(SCPICmdRead):
     def state(self) -> HorizontalFastframeState:
         """Return the ``HORizontal:FASTframe:STATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the state of FastFrame acquisition. This is equivalent to
               setting FastFrame to On in the FastFrame Setup menu. FastFrame lets users capture a
               series of triggered acquisitions with minimal time between them. The digitizing
               instrument in FastFrame mode is ready to accept a continuous burst of triggers 400 ms
               after the controller sends the ``ACQUIRE:STATE RUN`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:STATE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HORizontal:FASTframe:STATE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:STATE {<NR1>|ON|OFF}
             - HORizontal:FASTframe:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 turns off horizontal FastFrame; any other value turns on horizontal
               FastFrame.
             - ``<ON>`` turns on horizontal FastFrame.
@@ -4712,28 +4575,27 @@ class HorizontalFastframe(SCPICmdRead):
     def sumframe(self) -> HorizontalFastframeSumframe:
         """Return the ``HORizontal:FASTframe:SUMFrame`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the summary frame mode. When ENVelope is selected, the
               last frame in a FastFrame acquisition is an envelope of all the prior frames in the
               acquisition. When AVErage is selected, the last frame is replaced with a frame that is
               the computed average of all the prior frames in the acquisition. For the summary frame
               control to be active, the number of frames must be two or greater.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:SUMFrame?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:SUMFrame?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``HORizontal:FASTframe:SUMFrame value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:SUMFrame {NONe|AVErage|ENVelope}
             - HORizontal:FASTframe:SUMFrame?
+            ```
 
-        **Info:**
+        Info:
             - ``NONE`` turns off the summary mode for FastFrame. This is the default setting.
             - ``AVErage`` argument displays the last frame in a FastFrame acquisition as a frame
               that is the computed average of all the prior frames in the acquisition.
@@ -4746,7 +4608,7 @@ class HorizontalFastframe(SCPICmdRead):
     def timestamp(self) -> HorizontalFastframeTimestamp:
         """Return the ``HORizontal:FASTframe:TIMEStamp`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:TIMEStamp?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:TIMEStamp?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -4765,7 +4627,7 @@ class HorizontalFastframe(SCPICmdRead):
     def track(self) -> HorizontalFastframeTrack:
         """Return the ``HORizontal:FASTframe:TRACk`` command.
 
-        **Description:**
+        Description:
             - This command sets up or queries the state of FastFrame tracking feature. This command
               is equivalent to selecting FastFrame Setup from the Horiz/Acq menu and then clicking
               the desired Frame Tracking state. When FastFrame Track is set to 'live', the channel
@@ -4782,21 +4644,20 @@ class HorizontalFastframe(SCPICmdRead):
               set the Selected Frame Source Ch1 to Frame 3, then Selected Frame Ch2, Ch3, Ch4,
               Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3 and Ref4 are also set to Frame 3.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:TRACk?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:TRACk?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HORizontal:FASTframe:TRACk value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe:TRACk {LIVE|ALL}
             - HORizontal:FASTframe:TRACk?
+            ```
 
-        **Info:**
+        Info:
             - ``LIVE`` sets FastFrame Track to Live.
             - ``ALL`` sets FastFrame Track to All.
         """
@@ -4806,7 +4667,7 @@ class HorizontalFastframe(SCPICmdRead):
     def xzero(self) -> HorizontalFastframeXzero:
         """Return the ``HORizontal:FASTframe:XZEro`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe:XZEro?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe:XZEro?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -4823,78 +4684,74 @@ class HorizontalFastframe(SCPICmdRead):
 class HorizontalDivisions(SCPICmdRead):
     """The ``HORizontal:DIVisions`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the number of graticule divisions.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DIVisions?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:DIVisions?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:DIVisions?
+        ```
     """
 
 
 class HorizontalDigitalSamplerateMain(SCPICmdRead):
     """The ``HORizontal:DIGital:SAMPLERate:MAIn`` command.
 
-    **Description:**
+    Description:
         - Returns the sample rate of the main digital acquisition.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DIGital:SAMPLERate:MAIn?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:DIGital:SAMPLERate:MAIn?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:DIGital:SAMPLERate:MAIn?
+        ```
     """
 
 
 class HorizontalDigitalSamplerateMagnivu(SCPICmdRead):
     """The ``HORizontal:DIGital:SAMPLERate:MAGnivu`` command.
 
-    **Description:**
+    Description:
         - Returns the sample rate of the MagniVu digital acquisition.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DIGital:SAMPLERate:MAGnivu?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``HORizontal:DIGital:SAMPLERate:MAGnivu?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:DIGital:SAMPLERate:MAGnivu?
+        ```
     """
 
 
 class HorizontalDigitalSamplerate(SCPICmdRead):
     """The ``HORizontal:DIGital:SAMPLERate`` command.
 
-    **Description:**
+    Description:
         - This command queries the sample rate of the digital acquisition.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DIGital:SAMPLERate?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:DIGital:SAMPLERate?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:DIGital:SAMPLERate?
+        ```
 
     Properties:
         - ``.magnivu``: The ``HORizontal:DIGital:SAMPLERate:MAGnivu`` command.
@@ -4910,21 +4767,20 @@ class HorizontalDigitalSamplerate(SCPICmdRead):
     def magnivu(self) -> HorizontalDigitalSamplerateMagnivu:
         """Return the ``HORizontal:DIGital:SAMPLERate:MAGnivu`` command.
 
-        **Description:**
+        Description:
             - Returns the sample rate of the MagniVu digital acquisition.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:DIGital:SAMPLERate:MAGnivu?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:DIGital:SAMPLERate:MAGnivu?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:DIGital:SAMPLERate:MAGnivu?
+            ```
         """
         return self._magnivu
 
@@ -4932,21 +4788,20 @@ class HorizontalDigitalSamplerate(SCPICmdRead):
     def main(self) -> HorizontalDigitalSamplerateMain:
         """Return the ``HORizontal:DIGital:SAMPLERate:MAIn`` command.
 
-        **Description:**
+        Description:
             - Returns the sample rate of the main digital acquisition.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:DIGital:SAMPLERate:MAIn?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:DIGital:SAMPLERate:MAIn?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:DIGital:SAMPLERate:MAIn?
+            ```
         """
         return self._main
 
@@ -4954,61 +4809,58 @@ class HorizontalDigitalSamplerate(SCPICmdRead):
 class HorizontalDigitalRecordlengthMain(SCPICmdRead):
     """The ``HORizontal:DIGital:RECOrdlength:MAIn`` command.
 
-    **Description:**
+    Description:
         - Returns the record length of the main digital acquisition.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DIGital:RECOrdlength:MAIn?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``HORizontal:DIGital:RECOrdlength:MAIn?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:DIGital:RECOrdlength:MAIn?
+        ```
     """
 
 
 class HorizontalDigitalRecordlengthMagnivu(SCPICmdRead):
     """The ``HORizontal:DIGital:RECOrdlength:MAGnivu`` command.
 
-    **Description:**
+    Description:
         - Returns the record length of the MagniVu digital acquisition.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DIGital:RECOrdlength:MAGnivu?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``HORizontal:DIGital:RECOrdlength:MAGnivu?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:DIGital:RECOrdlength:MAGnivu?
+        ```
     """
 
 
 class HorizontalDigitalRecordlength(SCPICmdRead):
     """The ``HORizontal:DIGital:RECOrdlength`` command.
 
-    **Description:**
+    Description:
         - This command queries the record length of the digital acquisition.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DIGital:RECOrdlength?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:DIGital:RECOrdlength?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:DIGital:RECOrdlength?
+        ```
 
     Properties:
         - ``.magnivu``: The ``HORizontal:DIGital:RECOrdlength:MAGnivu`` command.
@@ -5024,21 +4876,20 @@ class HorizontalDigitalRecordlength(SCPICmdRead):
     def magnivu(self) -> HorizontalDigitalRecordlengthMagnivu:
         """Return the ``HORizontal:DIGital:RECOrdlength:MAGnivu`` command.
 
-        **Description:**
+        Description:
             - Returns the record length of the MagniVu digital acquisition.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:DIGital:RECOrdlength:MAGnivu?`` query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:DIGital:RECOrdlength:MAGnivu?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:DIGital:RECOrdlength:MAGnivu?
+            ```
         """
         return self._magnivu
 
@@ -5046,21 +4897,20 @@ class HorizontalDigitalRecordlength(SCPICmdRead):
     def main(self) -> HorizontalDigitalRecordlengthMain:
         """Return the ``HORizontal:DIGital:RECOrdlength:MAIn`` command.
 
-        **Description:**
+        Description:
             - Returns the record length of the main digital acquisition.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:DIGital:RECOrdlength:MAIn?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:DIGital:RECOrdlength:MAIn?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:DIGital:RECOrdlength:MAIn?
+            ```
         """
         return self._main
 
@@ -5068,31 +4918,30 @@ class HorizontalDigitalRecordlength(SCPICmdRead):
 class HorizontalDigitalMagnivuPosition(SCPICmdRead):
     """The ``HORizontal:DIGital:MAGnivu:POSition`` command.
 
-    **Description:**
+    Description:
         - This command queries the horizontal position of the trigger in percent, within the MagniVu
           digital acquisition. The MagniVu digital acquisition always includes the trigger. When the
           trigger position is adjusted near the edges of the display, the horizontal position of the
           MagniVu acquisition is adjusted to keep as much of the MagniVu acquisition in the display
           region as possible.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DIGital:MAGnivu:POSition?``
           query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:DIGital:MAGnivu:POSition?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:DIGital:MAGnivu:POSition?
+        ```
     """
 
 
 class HorizontalDigitalMagnivu(SCPICmdRead):
     """The ``HORizontal:DIGital:MAGnivu`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DIGital:MAGnivu?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:DIGital:MAGnivu?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -5109,25 +4958,24 @@ class HorizontalDigitalMagnivu(SCPICmdRead):
     def position(self) -> HorizontalDigitalMagnivuPosition:
         """Return the ``HORizontal:DIGital:MAGnivu:POSition`` command.
 
-        **Description:**
+        Description:
             - This command queries the horizontal position of the trigger in percent, within the
               MagniVu digital acquisition. The MagniVu digital acquisition always includes the
               trigger. When the trigger position is adjusted near the edges of the display, the
               horizontal position of the MagniVu acquisition is adjusted to keep as much of the
               MagniVu acquisition in the display region as possible.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:DIGital:MAGnivu:POSition?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:DIGital:MAGnivu:POSition?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:DIGital:MAGnivu:POSition?
+            ```
         """
         return self._position
 
@@ -5135,7 +4983,7 @@ class HorizontalDigitalMagnivu(SCPICmdRead):
 class HorizontalDigital(SCPICmdRead):
     """The ``HORizontal:DIGital`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DIGital?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:DIGital?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -5158,7 +5006,7 @@ class HorizontalDigital(SCPICmdRead):
     def magnivu(self) -> HorizontalDigitalMagnivu:
         """Return the ``HORizontal:DIGital:MAGnivu`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:DIGital:MAGnivu?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:DIGital:MAGnivu?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -5172,20 +5020,19 @@ class HorizontalDigital(SCPICmdRead):
     def recordlength(self) -> HorizontalDigitalRecordlength:
         """Return the ``HORizontal:DIGital:RECOrdlength`` command.
 
-        **Description:**
+        Description:
             - This command queries the record length of the digital acquisition.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:DIGital:RECOrdlength?``
               query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:DIGital:RECOrdlength?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:DIGital:RECOrdlength?
+            ```
 
         Sub-properties:
             - ``.magnivu``: The ``HORizontal:DIGital:RECOrdlength:MAGnivu`` command.
@@ -5197,19 +5044,18 @@ class HorizontalDigital(SCPICmdRead):
     def samplerate(self) -> HorizontalDigitalSamplerate:
         """Return the ``HORizontal:DIGital:SAMPLERate`` command.
 
-        **Description:**
+        Description:
             - This command queries the sample rate of the digital acquisition.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:DIGital:SAMPLERate?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:DIGital:SAMPLERate?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:DIGital:SAMPLERate?
+            ```
 
         Sub-properties:
             - ``.magnivu``: The ``HORizontal:DIGital:SAMPLERate:MAGnivu`` command.
@@ -5221,38 +5067,36 @@ class HorizontalDigital(SCPICmdRead):
 class HorizontalAcqlength(SCPICmdRead):
     """The ``HORizontal:ACQLENGTH`` command.
 
-    **Description:**
+    Description:
         - This query returns the record length.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:ACQLENGTH?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:ACQLENGTH?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:ACQLENGTH?
+        ```
     """
 
 
 class HorizontalAcqduration(SCPICmdRead):
     """The ``HORizontal:ACQDURATION`` command.
 
-    **Description:**
+    Description:
         - This query returns the timebase duration.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:ACQDURATION?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:ACQDURATION?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:ACQDURATION?
+        ```
     """
 
 
@@ -5260,19 +5104,18 @@ class HorizontalAcqduration(SCPICmdRead):
 class Horizontal(SCPICmdRead):
     """The ``HORizontal`` command.
 
-    **Description:**
+    Description:
         - Queries the current horizontal settings.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal?
+        ```
 
     Properties:
         - ``.acqduration``: The ``HORizontal:ACQDURATION`` command.
@@ -5304,19 +5147,18 @@ class Horizontal(SCPICmdRead):
     def acqduration(self) -> HorizontalAcqduration:
         """Return the ``HORizontal:ACQDURATION`` command.
 
-        **Description:**
+        Description:
             - This query returns the timebase duration.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:ACQDURATION?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:ACQDURATION?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:ACQDURATION?
+            ```
         """
         return self._acqduration
 
@@ -5324,19 +5166,18 @@ class Horizontal(SCPICmdRead):
     def acqlength(self) -> HorizontalAcqlength:
         """Return the ``HORizontal:ACQLENGTH`` command.
 
-        **Description:**
+        Description:
             - This query returns the record length.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:ACQLENGTH?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:ACQLENGTH?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:ACQLENGTH?
+            ```
         """
         return self._acqlength
 
@@ -5344,7 +5185,7 @@ class Horizontal(SCPICmdRead):
     def digital(self) -> HorizontalDigital:
         """Return the ``HORizontal:DIGital`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:DIGital?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:DIGital?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5360,19 +5201,18 @@ class Horizontal(SCPICmdRead):
     def divisions(self) -> HorizontalDivisions:
         """Return the ``HORizontal:DIVisions`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the number of graticule divisions.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:DIVisions?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:DIVisions?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:DIVisions?
+            ```
         """
         return self._divisions
 
@@ -5380,19 +5220,18 @@ class Horizontal(SCPICmdRead):
     def fastframe(self) -> HorizontalFastframe:
         """Return the ``HORizontal:FASTframe`` command.
 
-        **Description:**
+        Description:
             - This query returns all information under ``horizontal:fastframe``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:FASTframe?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:FASTframe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:FASTframe?
+            ```
 
         Sub-properties:
             - ``.count``: The ``HORizontal:FASTframe:COUNt`` command.
@@ -5417,23 +5256,22 @@ class Horizontal(SCPICmdRead):
     def mode(self) -> HorizontalMode:
         """Return the ``HORizontal:MODE`` command.
 
-        **Description:**
+        Description:
             - This command set or queries the horizontal mode. Auto mode is the factory default.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:MODE?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:MODE?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HORizontal:MODE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:MODE {AUTO|CONStant|MANual}
             - HORizontal:MODE?
+            ```
 
-        **Info:**
+        Info:
             - ``AUTO`` selects the automatic horizontal model. Auto mode attempts to keep record
               length constant as you change the time per division setting. Record length is read
               only.
@@ -5455,27 +5293,26 @@ class Horizontal(SCPICmdRead):
     def position(self) -> HorizontalPosition:
         """Return the ``HORizontal:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the horizontal position as a percent of screen width.
               When Horizontal Delay Mode is turned off, this command is equivalent to adjusting the
               HORIZONTAL POSITION knob on the front panel. When Horizontal Delay Mode is turned on,
               the horizontal position is forced to 50%.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:POSition?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HORizontal:POSition value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:POSition <NR3>
             - HORizontal:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is from 0 to ≈100 and is the position of the trigger point on the screen (0
               = left edge, 100 = right edge).
         """
@@ -5485,27 +5322,26 @@ class Horizontal(SCPICmdRead):
     def roll(self) -> HorizontalRoll:
         """Return the ``HORizontal:ROLL`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Roll Mode status. Use Roll Mode when you want to view
               data at very slow sweep speeds. It is useful for observing data samples on the screen
               as they occur. This command is equivalent to selecting Horizontal/Acquisition Setup
               from the Horiz/Acq menu, selecting the Acquisition tab, and setting the Roll Mode to
               Auto or Off.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:ROLL?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:ROLL?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HORizontal:ROLL value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:ROLL {AUTO|OFF|ON}
             - HORizontal:ROLL?
+            ```
 
-        **Info:**
+        Info:
             - ``AUTO`` enables Roll Mode, if the time/division is set appropriately.
             - ``OFF`` disables Roll Mode.
             - ``ON`` enables Roll Mode, if the time/division is set appropriately.
@@ -5516,7 +5352,7 @@ class Horizontal(SCPICmdRead):
     def timestamp(self) -> HorizontalTimestamp:
         """Return the ``HORizontal:TIMEStamp`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:TIMEStamp?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:TIMEStamp?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5531,20 +5367,19 @@ class Horizontal(SCPICmdRead):
     def main(self) -> HorizontalMain:
         """Return the ``HORizontal:MAIn`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the time per division of the time base. This command
               is equivalent to selecting Position/Scale from the Horiz/Acq menu.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:MAIn?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:MAIn?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:MAIn?
+            ```
 
         Sub-properties:
             - ``.interpratio``: The ``HORizontal:MAIn:INTERPRatio`` command.

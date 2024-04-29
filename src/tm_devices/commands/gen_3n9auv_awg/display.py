@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - DISPlay:PLOT:STATe {0|1|OFF|ON}
     - DISPlay:PLOT:STATe?
 """
@@ -26,25 +24,24 @@ if TYPE_CHECKING:
 class DisplayPlotState(SCPICmdWrite, SCPICmdRead):
     """The ``DISPlay:PLOT:STATe`` command.
 
-    **Description:**
+    Description:
         - This command minimizes or restores the plot's display area on the Home screen's channel
           window of the AWG. This command only minimizes or restores the display area; it does not
           close the window. Plots in the Function generator window are not affected.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISPlay:PLOT:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``DISPlay:PLOT:STATe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISPlay:PLOT:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISPlay:PLOT:STATe {0|1|OFF|ON}
         - DISPlay:PLOT:STATe?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 1.
     """
 
@@ -52,7 +49,7 @@ class DisplayPlotState(SCPICmdWrite, SCPICmdRead):
 class DisplayPlot(SCPICmdRead):
     """The ``DISPlay:PLOT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISPlay:PLOT?`` query.
         - Using the ``.verify(value)`` method will send the ``DISPlay:PLOT?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -69,25 +66,24 @@ class DisplayPlot(SCPICmdRead):
     def state(self) -> DisplayPlotState:
         """Return the ``DISPlay:PLOT:STATe`` command.
 
-        **Description:**
+        Description:
             - This command minimizes or restores the plot's display area on the Home screen's
               channel window of the AWG. This command only minimizes or restores the display area;
               it does not close the window. Plots in the Function generator window are not affected.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISPlay:PLOT:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``DISPlay:PLOT:STATe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISPlay:PLOT:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISPlay:PLOT:STATe {0|1|OFF|ON}
             - DISPlay:PLOT:STATe?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 1.
         """
         return self._state
@@ -96,7 +92,7 @@ class DisplayPlot(SCPICmdRead):
 class Display(SCPICmdRead):
     """The ``DISPlay`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISPlay?`` query.
         - Using the ``.verify(value)`` method will send the ``DISPlay?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -113,7 +109,7 @@ class Display(SCPICmdRead):
     def plot(self) -> DisplayPlot:
         """Return the ``DISPlay:PLOT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISPlay:PLOT?`` query.
             - Using the ``.verify(value)`` method will send the ``DISPlay:PLOT?`` query and raise an
               AssertionError if the returned value does not match ``value``.

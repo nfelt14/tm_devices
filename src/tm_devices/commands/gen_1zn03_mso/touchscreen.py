@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - TOUCHSCReen:STATe {0|1|OFF|ON}
     - TOUCHSCReen:STATe?
 """
@@ -26,26 +24,25 @@ if TYPE_CHECKING:
 class TouchscreenState(SCPICmdWrite, SCPICmdRead):
     """The ``TOUCHSCReen:STATe`` command.
 
-    **Description:**
+    Description:
         - This sets or queries the enabled state of the touch screen only. This command is
           equivalent to pushing the Touch Off button on the front panel. To completely disable front
           panel operation, use the command LOCK ALL. To re-enable the front panel, send the command
           LOCK NONE.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TOUCHSCReen:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``TOUCHSCReen:STATe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TOUCHSCReen:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TOUCHSCReen:STATe {0|1|OFF|ON}
         - TOUCHSCReen:STATe?
+        ```
 
-    **Info:**
+    Info:
         - ``0`` disables the touch screen.
         - ``ON`` enables the touch screen.
         - ``OFF`` disables the touch screen.
@@ -55,7 +52,7 @@ class TouchscreenState(SCPICmdWrite, SCPICmdRead):
 class Touchscreen(SCPICmdRead):
     """The ``TOUCHSCReen`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TOUCHSCReen?`` query.
         - Using the ``.verify(value)`` method will send the ``TOUCHSCReen?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -74,26 +71,25 @@ class Touchscreen(SCPICmdRead):
     def state(self) -> TouchscreenState:
         """Return the ``TOUCHSCReen:STATe`` command.
 
-        **Description:**
+        Description:
             - This sets or queries the enabled state of the touch screen only. This command is
               equivalent to pushing the Touch Off button on the front panel. To completely disable
               front panel operation, use the command LOCK ALL. To re-enable the front panel, send
               the command LOCK NONE.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TOUCHSCReen:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``TOUCHSCReen:STATe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TOUCHSCReen:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TOUCHSCReen:STATe {0|1|OFF|ON}
             - TOUCHSCReen:STATe?
+            ```
 
-        **Info:**
+        Info:
             - ``0`` disables the touch screen.
             - ``ON`` enables the touch screen.
             - ``OFF`` disables the touch screen.

@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SYSTem:DATE <year>,<month>,<day>
     - SYSTem:ERRor:ALL?
     - SYSTem:ERRor:CODE:ALL?
@@ -35,84 +33,80 @@ if TYPE_CHECKING:
 class SystemVersion(SCPICmdRead):
     """The ``SYSTem:VERSion`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the conformed SCPI version of the instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem:VERSion?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem:VERSion?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYSTem:VERSion?
+        ```
     """
 
 
 class SystemTime(SCPICmdWrite, SCPICmdRead):
     """The ``SYSTem:TIME`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the system time (hours, minutes and seconds). This command is
           equivalent to the time setting through the Windows Control Panel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem:TIME?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem:TIME?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SYSTem:TIME value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYSTem:TIME <hour>,<minute>,<second>
         - SYSTem:TIME?
+        ```
     """
 
 
 class SystemErrorNext(SCPICmdRead):
     """The ``SYSTem:ERRor:NEXT`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the contents of the Error/Event queue.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem:ERRor:NEXT?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor:NEXT?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYSTem:ERRor:NEXT?
+        ```
     """
 
 
 class SystemErrorDialog(SCPICmdWrite, SCPICmdRead):
     """The ``SYSTem:ERRor:DIALog`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables error dialogs from displaying on the UI when an error
           condition occurs on the AWG.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem:ERRor:DIALog?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor:DIALog?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SYSTem:ERRor:DIALog value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYSTem:ERRor:DIALog <show_dialog>
         - SYSTem:ERRor:DIALog?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this value to 1.
     """
 
@@ -120,66 +114,63 @@ class SystemErrorDialog(SCPICmdWrite, SCPICmdRead):
 class SystemErrorCount(SCPICmdRead):
     """The ``SYSTem:ERRor:COUNt`` command.
 
-    **Description:**
+    Description:
         - This command returns the error and event queue for the number of unread items.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem:ERRor:COUNt?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor:COUNt?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYSTem:ERRor:COUNt?
+        ```
     """
 
 
 class SystemErrorCodeNext(SCPICmdRead):
     """The ``SYSTem:ERRor:CODE:NEXT`` command.
 
-    **Description:**
+    Description:
         - This command returns the error and event queue for the next item and removes it from the
           queue.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem:ERRor:CODE:NEXT?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor:CODE:NEXT?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYSTem:ERRor:CODE:NEXT?
+        ```
     """
 
 
 class SystemErrorCodeAll(SCPICmdRead):
     """The ``SYSTem:ERRor:CODE:ALL`` command.
 
-    **Description:**
+    Description:
         - This command returns the error and event queue for the codes of all the unread items and
           removes them from the queue.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem:ERRor:CODE:ALL?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor:CODE:ALL?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYSTem:ERRor:CODE:ALL?
+        ```
     """
 
 
 class SystemErrorCode(SCPICmdRead):
     """The ``SYSTem:ERRor:CODE`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem:ERRor:CODE?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor:CODE?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -198,20 +189,19 @@ class SystemErrorCode(SCPICmdRead):
     def all(self) -> SystemErrorCodeAll:
         """Return the ``SYSTem:ERRor:CODE:ALL`` command.
 
-        **Description:**
+        Description:
             - This command returns the error and event queue for the codes of all the unread items
               and removes them from the queue.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem:ERRor:CODE:ALL?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor:CODE:ALL?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYSTem:ERRor:CODE:ALL?
+            ```
         """
         return self._all
 
@@ -219,20 +209,19 @@ class SystemErrorCode(SCPICmdRead):
     def next(self) -> SystemErrorCodeNext:
         """Return the ``SYSTem:ERRor:CODE:NEXT`` command.
 
-        **Description:**
+        Description:
             - This command returns the error and event queue for the next item and removes it from
               the queue.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem:ERRor:CODE:NEXT?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor:CODE:NEXT?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYSTem:ERRor:CODE:NEXT?
+            ```
         """
         return self._next
 
@@ -240,27 +229,26 @@ class SystemErrorCode(SCPICmdRead):
 class SystemErrorAll(SCPICmdRead):
     """The ``SYSTem:ERRor:ALL`` command.
 
-    **Description:**
+    Description:
         - This command returns the error and event queue for all the unread items and removes them
           from the queue.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem:ERRor:ALL?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor:ALL?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYSTem:ERRor:ALL?
+        ```
     """
 
 
 class SystemErrorCmd(SCPICmdRead):
     """The ``SYSTem:ERRor`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem:ERRor?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -285,20 +273,19 @@ class SystemErrorCmd(SCPICmdRead):
     def all(self) -> SystemErrorAll:
         """Return the ``SYSTem:ERRor:ALL`` command.
 
-        **Description:**
+        Description:
             - This command returns the error and event queue for all the unread items and removes
               them from the queue.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem:ERRor:ALL?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor:ALL?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYSTem:ERRor:ALL?
+            ```
         """
         return self._all
 
@@ -306,7 +293,7 @@ class SystemErrorCmd(SCPICmdRead):
     def code(self) -> SystemErrorCode:
         """Return the ``SYSTem:ERRor:CODE`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem:ERRor:CODE?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor:CODE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -321,19 +308,18 @@ class SystemErrorCmd(SCPICmdRead):
     def count(self) -> SystemErrorCount:
         """Return the ``SYSTem:ERRor:COUNt`` command.
 
-        **Description:**
+        Description:
             - This command returns the error and event queue for the number of unread items.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem:ERRor:COUNt?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor:COUNt?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYSTem:ERRor:COUNt?
+            ```
         """
         return self._count
 
@@ -341,25 +327,24 @@ class SystemErrorCmd(SCPICmdRead):
     def dialog(self) -> SystemErrorDialog:
         """Return the ``SYSTem:ERRor:DIALog`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables error dialogs from displaying on the UI when an error
               condition occurs on the AWG.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem:ERRor:DIALog?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor:DIALog?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SYSTem:ERRor:DIALog value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYSTem:ERRor:DIALog <show_dialog>
             - SYSTem:ERRor:DIALog?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this value to 1.
         """
         return self._dialog
@@ -368,19 +353,18 @@ class SystemErrorCmd(SCPICmdRead):
     def next(self) -> SystemErrorNext:
         """Return the ``SYSTem:ERRor:NEXT`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the contents of the Error/Event queue.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem:ERRor:NEXT?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor:NEXT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYSTem:ERRor:NEXT?
+            ```
         """
         return self._next
 
@@ -388,25 +372,24 @@ class SystemErrorCmd(SCPICmdRead):
 class SystemDate(SCPICmdWrite):
     """The ``SYSTem:DATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the system date. When the values are nonintegers, they are
           rounded off to nearest integral values.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SYSTem:DATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYSTem:DATE <year>,<month>,<day>
+        ```
     """
 
 
 class System(SCPICmdRead):
     """The ``SYSTem`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -429,18 +412,17 @@ class System(SCPICmdRead):
     def date(self) -> SystemDate:
         """Return the ``SYSTem:DATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the system date. When the values are nonintegers, they
               are rounded off to nearest integral values.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SYSTem:DATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYSTem:DATE <year>,<month>,<day>
+            ```
         """
         return self._date
 
@@ -448,7 +430,7 @@ class System(SCPICmdRead):
     def error(self) -> SystemError:
         """Return the ``SYSTem:ERRor`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem:ERRor?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -466,22 +448,21 @@ class System(SCPICmdRead):
     def time(self) -> SystemTime:
         """Return the ``SYSTem:TIME`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the system time (hours, minutes and seconds). This
               command is equivalent to the time setting through the Windows Control Panel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem:TIME?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem:TIME?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SYSTem:TIME value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYSTem:TIME <hour>,<minute>,<second>
             - SYSTem:TIME?
+            ```
         """
         return self._time
 
@@ -489,18 +470,17 @@ class System(SCPICmdRead):
     def version(self) -> SystemVersion:
         """Return the ``SYSTem:VERSion`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the conformed SCPI version of the instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem:VERSion?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem:VERSion?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYSTem:VERSion?
+            ```
         """
         return self._version

@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - AUXin:PRObe
     - AUXin:PRObe:AUTOZero EXECute
     - AUXin:PRObe:CALibrate:CALIBRATABLe?
@@ -42,44 +40,42 @@ if TYPE_CHECKING:
 class AuxinProbeUnits(SCPICmdRead):
     """The ``AUXin:PRObe:UNIts`` command.
 
-    **Description:**
+    Description:
         - Returns a string describing the units of measure of the probe attached to the Aux Input
           connector.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXin:PRObe:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:UNIts?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXin:PRObe:UNIts?
+        ```
     """
 
 
 class AuxinProbeSignal(SCPICmdWrite, SCPICmdRead):
     """The ``AUXin:PRObe:SIGnal`` command.
 
-    **Description:**
+    Description:
         - This command changes the input bypass setting on VPI probes that support input bypass, for
           example the TCP0001. If sent to a probe that does not support input bypass, it is ignored.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXin:PRObe:SIGnal?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:SIGnal?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXin:PRObe:SIGnal value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXin:PRObe:SIGnal {BYPass|PASS}
         - AUXin:PRObe:SIGnal?
+        ```
 
-    **Info:**
+    Info:
         - ``ByPass`` sets the probe to Bypass mode.
         - ``PASS`` sets the probe to Pass mode.
     """
@@ -88,64 +84,61 @@ class AuxinProbeSignal(SCPICmdWrite, SCPICmdRead):
 class AuxinProbeResistance(SCPICmdRead):
     """The ``AUXin:PRObe:RESistance`` command.
 
-    **Description:**
+    Description:
         - Returns the resistance of the probe attached to the front panel Aux In connector.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXin:PRObe:RESistance?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:RESistance?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXin:PRObe:RESistance?
+        ```
     """
 
 
 class AuxinProbeIdType(SCPICmdRead):
     """The ``AUXin:PRObe:ID:TYPe`` command.
 
-    **Description:**
+    Description:
         - Returns the type of probe that is attached to the Aux Input connector.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXin:PRObe:ID:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:ID:TYPe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXin:PRObe:ID:TYPe?
+        ```
     """
 
 
 class AuxinProbeIdSernumber(SCPICmdRead):
     """The ``AUXin:PRObe:ID:SERnumber`` command.
 
-    **Description:**
+    Description:
         - Returns the serial number of the probe that is attached to the Aux Input connector.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXin:PRObe:ID:SERnumber?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:ID:SERnumber?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXin:PRObe:ID:SERnumber?
+        ```
     """
 
 
 class AuxinProbeId(SCPICmdRead):
     """The ``AUXin:PRObe:ID`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXin:PRObe:ID?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:ID?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -164,19 +157,18 @@ class AuxinProbeId(SCPICmdRead):
     def sernumber(self) -> AuxinProbeIdSernumber:
         """Return the ``AUXin:PRObe:ID:SERnumber`` command.
 
-        **Description:**
+        Description:
             - Returns the serial number of the probe that is attached to the Aux Input connector.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXin:PRObe:ID:SERnumber?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:ID:SERnumber?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXin:PRObe:ID:SERnumber?
+            ```
         """
         return self._sernumber
 
@@ -184,19 +176,18 @@ class AuxinProbeId(SCPICmdRead):
     def type(self) -> AuxinProbeIdType:
         """Return the ``AUXin:PRObe:ID:TYPe`` command.
 
-        **Description:**
+        Description:
             - Returns the type of probe that is attached to the Aux Input connector.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXin:PRObe:ID:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:ID:TYPe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXin:PRObe:ID:TYPe?
+            ```
         """
         return self._type
 
@@ -204,23 +195,22 @@ class AuxinProbeId(SCPICmdRead):
 class AuxinProbeGain(SCPICmdWrite, SCPICmdRead):
     """The ``AUXin:PRObe:GAIN`` command.
 
-    **Description:**
+    Description:
         - Specifies the gain factor of a probe that is attached to the Aux Input connector.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXin:PRObe:GAIN?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:GAIN?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXin:PRObe:GAIN value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXin:PRObe:GAIN <NR3>
         - AUXin:PRObe:GAIN?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the probe gain, which is probe
           dependent.
     """
@@ -229,24 +219,23 @@ class AuxinProbeGain(SCPICmdWrite, SCPICmdRead):
 class AuxinProbeForcedrange(SCPICmdWrite, SCPICmdRead):
     """The ``AUXin:PRObe:FORCEDRange`` command.
 
-    **Description:**
+    Description:
         - Changes or returns the range on a TekVPI probe attached to the Aux Input connector.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXin:PRObe:FORCEDRange?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:FORCEDRange?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXin:PRObe:FORCEDRange value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXin:PRObe:FORCEDRange <NR3>
         - AUXin:PRObe:FORCEDRange?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the probe range, which is probe
           dependent.
     """
@@ -255,41 +244,39 @@ class AuxinProbeForcedrange(SCPICmdWrite, SCPICmdRead):
 class AuxinProbeDegaussState(SCPICmdRead):
     """The ``AUXin:PRObe:DEGAUss:STATE`` command.
 
-    **Description:**
+    Description:
         - Returns the state of the probe degauss ( NEEDED, RECOMMENDED, PASSED, FAILED, RUNNING ).
           The command will return PASSED for probes that do not support degauss operations.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXin:PRObe:DEGAUss:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:DEGAUss:STATE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXin:PRObe:DEGAUss:STATE?
+        ```
     """
 
 
 class AuxinProbeDegauss(SCPICmdWrite, SCPICmdRead):
     """The ``AUXin:PRObe:DEGAUss`` command.
 
-    **Description:**
+    Description:
         - Starts a degauss/autozero cycle on a TekVPI current probe attached to the Aux Input
           connector. If you send this command to a probe that does not support this function, it is
           ignored.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``AUXin:PRObe:DEGAUss value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXin:PRObe:DEGAUss {EXECute}
+        ```
 
-    **Info:**
+    Info:
         - ``EXECute`` starts a probe degauss cycle.
 
     Properties:
@@ -304,20 +291,19 @@ class AuxinProbeDegauss(SCPICmdWrite, SCPICmdRead):
     def state(self) -> AuxinProbeDegaussState:
         """Return the ``AUXin:PRObe:DEGAUss:STATE`` command.
 
-        **Description:**
+        Description:
             - Returns the state of the probe degauss ( NEEDED, RECOMMENDED, PASSED, FAILED, RUNNING
               ). The command will return PASSED for probes that do not support degauss operations.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXin:PRObe:DEGAUss:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:DEGAUss:STATE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXin:PRObe:DEGAUss:STATE?
+            ```
         """
         return self._state
 
@@ -325,22 +311,21 @@ class AuxinProbeDegauss(SCPICmdWrite, SCPICmdRead):
 class AuxinProbeCommand(SCPICmdWrite):
     """The ``AUXin:PRObe:COMMAND`` command.
 
-    **Description:**
+    Description:
         - Sets the state of the probe control specified with the first argument to the state
           specified with the second argument. The commands and states are unique to the attached
           probe type. Only certain VPI probes support this command. See the probe documentation for
           how to set these string arguments.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``AUXin:PRObe:COMMAND value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXin:PRObe:COMMAND <QString>, <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` are quoted strings specifying the probe command and value to set in the
           probe attached to the Aux Input connector.
     """
@@ -349,27 +334,26 @@ class AuxinProbeCommand(SCPICmdWrite):
 class AuxinProbeCalibrateCalibratable(SCPICmdRead):
     """The ``AUXin:PRObe:CALibrate:CALIBRATABLe`` command.
 
-    **Description:**
+    Description:
         - This query indicates whether the attached probe is calibratable. It returns a boolean
           value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXin:PRObe:CALibrate:CALIBRATABLe?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:CALibrate:CALIBRATABLe?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXin:PRObe:CALibrate:CALIBRATABLe?
+        ```
     """
 
 
 class AuxinProbeCalibrate(SCPICmdRead):
     """The ``AUXin:PRObe:CALibrate`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXin:PRObe:CALibrate?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:CALibrate?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -388,22 +372,21 @@ class AuxinProbeCalibrate(SCPICmdRead):
     def calibratable(self) -> AuxinProbeCalibrateCalibratable:
         """Return the ``AUXin:PRObe:CALibrate:CALIBRATABLe`` command.
 
-        **Description:**
+        Description:
             - This query indicates whether the attached probe is calibratable. It returns a boolean
               value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXin:PRObe:CALibrate:CALIBRATABLe?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``AUXin:PRObe:CALibrate:CALIBRATABLe?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXin:PRObe:CALibrate:CALIBRATABLe?
+            ```
         """
         return self._calibratable
 
@@ -411,20 +394,19 @@ class AuxinProbeCalibrate(SCPICmdRead):
 class AuxinProbeAutozero(SCPICmdWrite):
     """The ``AUXin:PRObe:AUTOZero`` command.
 
-    **Description:**
+    Description:
         - This command executes the attached probe's Auto Zero function, for probes that support
           this feature. See your probe documentation for more details.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``AUXin:PRObe:AUTOZero value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXin:PRObe:AUTOZero EXECute
+        ```
 
-    **Info:**
+    Info:
         - ``EXECute`` sets the probe to autozero.
     """
 
@@ -433,21 +415,20 @@ class AuxinProbeAutozero(SCPICmdWrite):
 class AuxinProbe(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``AUXin:PRObe`` command.
 
-    **Description:**
+    Description:
         - Returns all information concerning the probe attached to Aux Input connector.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXin:PRObe?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXin:PRObe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``AUXin:PRObe`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXin:PRObe
         - AUXin:PRObe?
+        ```
 
     Properties:
         - ``.autozero``: The ``AUXin:PRObe:AUTOZero`` command.
@@ -479,21 +460,20 @@ class AuxinProbe(SCPICmdWriteNoArguments, SCPICmdRead):
     def autozero(self) -> AuxinProbeAutozero:
         """Return the ``AUXin:PRObe:AUTOZero`` command.
 
-        **Description:**
+        Description:
             - This command executes the attached probe's Auto Zero function, for probes that support
               this feature. See your probe documentation for more details.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``AUXin:PRObe:AUTOZero value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXin:PRObe:AUTOZero EXECute
+            ```
 
-        **Info:**
+        Info:
             - ``EXECute`` sets the probe to autozero.
         """
         return self._autozero
@@ -502,7 +482,7 @@ class AuxinProbe(SCPICmdWriteNoArguments, SCPICmdRead):
     def calibrate(self) -> AuxinProbeCalibrate:
         """Return the ``AUXin:PRObe:CALibrate`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXin:PRObe:CALibrate?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:CALibrate?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -516,23 +496,22 @@ class AuxinProbe(SCPICmdWriteNoArguments, SCPICmdRead):
     def command(self) -> AuxinProbeCommand:
         """Return the ``AUXin:PRObe:COMMAND`` command.
 
-        **Description:**
+        Description:
             - Sets the state of the probe control specified with the first argument to the state
               specified with the second argument. The commands and states are unique to the attached
               probe type. Only certain VPI probes support this command. See the probe documentation
               for how to set these string arguments.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``AUXin:PRObe:COMMAND value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXin:PRObe:COMMAND <QString>, <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` are quoted strings specifying the probe command and value to set in the
               probe attached to the Aux Input connector.
         """
@@ -542,22 +521,21 @@ class AuxinProbe(SCPICmdWriteNoArguments, SCPICmdRead):
     def degauss(self) -> AuxinProbeDegauss:
         """Return the ``AUXin:PRObe:DEGAUss`` command.
 
-        **Description:**
+        Description:
             - Starts a degauss/autozero cycle on a TekVPI current probe attached to the Aux Input
               connector. If you send this command to a probe that does not support this function, it
               is ignored.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``AUXin:PRObe:DEGAUss value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXin:PRObe:DEGAUss {EXECute}
+            ```
 
-        **Info:**
+        Info:
             - ``EXECute`` starts a probe degauss cycle.
 
         Sub-properties:
@@ -569,24 +547,23 @@ class AuxinProbe(SCPICmdWriteNoArguments, SCPICmdRead):
     def forcedrange(self) -> AuxinProbeForcedrange:
         """Return the ``AUXin:PRObe:FORCEDRange`` command.
 
-        **Description:**
+        Description:
             - Changes or returns the range on a TekVPI probe attached to the Aux Input connector.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXin:PRObe:FORCEDRange?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:FORCEDRange?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXin:PRObe:FORCEDRange value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXin:PRObe:FORCEDRange <NR3>
             - AUXin:PRObe:FORCEDRange?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the probe range, which is probe
               dependent.
         """
@@ -596,23 +573,22 @@ class AuxinProbe(SCPICmdWriteNoArguments, SCPICmdRead):
     def gain(self) -> AuxinProbeGain:
         """Return the ``AUXin:PRObe:GAIN`` command.
 
-        **Description:**
+        Description:
             - Specifies the gain factor of a probe that is attached to the Aux Input connector.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXin:PRObe:GAIN?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:GAIN?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXin:PRObe:GAIN value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXin:PRObe:GAIN <NR3>
             - AUXin:PRObe:GAIN?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the probe gain, which is probe
               dependent.
         """
@@ -622,7 +598,7 @@ class AuxinProbe(SCPICmdWriteNoArguments, SCPICmdRead):
     def id(self) -> AuxinProbeId:
         """Return the ``AUXin:PRObe:ID`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXin:PRObe:ID?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:ID?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -637,19 +613,18 @@ class AuxinProbe(SCPICmdWriteNoArguments, SCPICmdRead):
     def resistance(self) -> AuxinProbeResistance:
         """Return the ``AUXin:PRObe:RESistance`` command.
 
-        **Description:**
+        Description:
             - Returns the resistance of the probe attached to the front panel Aux In connector.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXin:PRObe:RESistance?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:RESistance?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXin:PRObe:RESistance?
+            ```
         """
         return self._resistance
 
@@ -657,25 +632,24 @@ class AuxinProbe(SCPICmdWriteNoArguments, SCPICmdRead):
     def signal(self) -> AuxinProbeSignal:
         """Return the ``AUXin:PRObe:SIGnal`` command.
 
-        **Description:**
+        Description:
             - This command changes the input bypass setting on VPI probes that support input bypass,
               for example the TCP0001. If sent to a probe that does not support input bypass, it is
               ignored.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXin:PRObe:SIGnal?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:SIGnal?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXin:PRObe:SIGnal value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXin:PRObe:SIGnal {BYPass|PASS}
             - AUXin:PRObe:SIGnal?
+            ```
 
-        **Info:**
+        Info:
             - ``ByPass`` sets the probe to Bypass mode.
             - ``PASS`` sets the probe to Pass mode.
         """
@@ -685,20 +659,19 @@ class AuxinProbe(SCPICmdWriteNoArguments, SCPICmdRead):
     def units(self) -> AuxinProbeUnits:
         """Return the ``AUXin:PRObe:UNIts`` command.
 
-        **Description:**
+        Description:
             - Returns a string describing the units of measure of the probe attached to the Aux
               Input connector.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXin:PRObe:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXin:PRObe:UNIts?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXin:PRObe:UNIts?
+            ```
         """
         return self._units
 
@@ -706,19 +679,18 @@ class AuxinProbe(SCPICmdWriteNoArguments, SCPICmdRead):
 class Auxin(SCPICmdRead):
     """The ``AUXin`` command.
 
-    **Description:**
+    Description:
         - Returns all Aux Input connector parameters.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXin?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXin?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXin?
+        ```
 
     Properties:
         - ``.probe``: The ``AUXin:PRObe`` command.
@@ -732,21 +704,20 @@ class Auxin(SCPICmdRead):
     def probe(self) -> AuxinProbe:
         """Return the ``AUXin:PRObe`` command.
 
-        **Description:**
+        Description:
             - Returns all information concerning the probe attached to Aux Input connector.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXin:PRObe?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXin:PRObe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write()`` method will send the ``AUXin:PRObe`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXin:PRObe
             - AUXin:PRObe?
+            ```
 
         Sub-properties:
             - ``.autozero``: The ``AUXin:PRObe:AUTOZero`` command.

@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - REM <QString>
 """
 
@@ -27,21 +25,20 @@ if TYPE_CHECKING:
 class Rem(SCPICmdWrite):
     """The ``REM`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) embeds a comment within programs as a means of internally
           documenting the programs. This is how to embed comments in a .set file. The instrument
           ignores these embedded comment lines.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``REM value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - REM <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a string that can contain a maximum of 80 characters.
     """
 

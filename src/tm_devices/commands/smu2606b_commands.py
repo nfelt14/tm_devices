@@ -656,7 +656,7 @@ class SMU2606BCommands:
     This provides access to all the commands for the SMU2606B device. See the documentation of each
     property for more usage information.
 
-    Properties/methods:
+    Properties and methods:
         - ``.beeper``: The ``beeper`` command tree.
         - ``.bit``: The ``bit`` command tree.
         - ``.buffer_var``: The ``bufferVar`` command tree.
@@ -768,7 +768,7 @@ class SMU2606BCommands:
             - ``.OFF``: This command turns the beeper off.
             - ``.ON``: This command turns the beeper on.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.beep()``: The ``beeper.beep()`` function.
             - ``.enable``: The ``beeper.enable`` attribute.
         """
@@ -778,7 +778,7 @@ class SMU2606BCommands:
     def bit(self) -> Bit:
         """Return the ``bit`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.bitand()``: The ``bit.bitand()`` function.
             - ``.bitor()``: The ``bit.bitor()`` function.
             - ``.bitxor()``: The ``bit.bitxor()`` function.
@@ -796,11 +796,11 @@ class SMU2606BCommands:
     def buffer_var(self) -> Dict[str, Buffervar]:
         """Return the ``bufferVar`` command tree.
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
               or a dedicated reading buffer.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.appendmode``: The ``bufferVar.appendmode`` attribute.
             - ``.basetimestamp``: The ``bufferVar.basetimestamp`` attribute.
             - ``.cachemode``: The ``bufferVar.cachemode`` attribute.
@@ -832,7 +832,7 @@ class SMU2606BCommands:
         Constants:
             - ``.CAPACITY``: The maximum number of entries that you can store in the data queue.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.add()``: The ``dataqueue.add()`` function.
             - ``.clear()``: The ``dataqueue.clear()`` function.
             - ``.count``: The ``dataqueue.count`` attribute.
@@ -878,7 +878,7 @@ class SMU2606BCommands:
               output trigger generator operate on the specified trigger line to detect rising-edge
               triggers as input and assert a TTL-low pulse for output.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.readbit()``: The ``digio.readbit()`` function.
             - ``.readport()``: The ``digio.readport()`` function.
             - ``.trigger``: The ``digio.trigger[N]`` command tree.
@@ -978,7 +978,7 @@ class SMU2606BCommands:
             - ``.WHEEL_LEFT``: Represents turning the Navigation wheel left.
             - ``.WHEEL_RIGHT``: Represents turning the Navigation wheel right.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``display.clear()`` function.
             - ``.getannunciators()``: The ``display.getannunciators()`` function.
             - ``.getcursor()``: The ``display.getcursor()`` function.
@@ -1004,7 +1004,7 @@ class SMU2606BCommands:
     def errorqueue(self) -> Errorqueue:
         """Return the ``errorqueue`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``errorqueue.clear()`` function.
             - ``.count``: The ``errorqueue.count`` attribute.
             - ``.next()``: The ``errorqueue.next()`` function.
@@ -1021,7 +1021,7 @@ class SMU2606BCommands:
             - ``.DISCARD_OLDEST``: Delete old entries are deleted as new events are logged.
             - ``.ENABLE``: Enable the event log.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.all()``: The ``eventlog.all()`` function.
             - ``.clear()``: The ``eventlog.clear()`` function.
             - ``.count``: The ``eventlog.count`` attribute.
@@ -1064,7 +1064,7 @@ class SMU2606BCommands:
               printnumber() and
               printbuffer() functions to be least significant byte first.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.asciiprecision``: The ``format.asciiprecision`` attribute.
             - ``.byteorder``: The ``format.byteorder`` attribute.
             - ``.data``: The ``format.data`` attribute.
@@ -1075,7 +1075,7 @@ class SMU2606BCommands:
     def fs(self) -> Fs:
         """Return the ``fs`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.chdir()``: The ``fs.chdir()`` function.
             - ``.cwd()``: The ``fs.cwd()`` function.
             - ``.is_dir()``: The ``fs.is_dir()`` function.
@@ -1090,7 +1090,7 @@ class SMU2606BCommands:
     def io(self) -> Io:
         """Return the ``io`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.close()``: The ``io.close()`` function.
             - ``.flush()``: The ``io.flush()`` function.
             - ``.input()``: The ``io.input()`` function.
@@ -1135,7 +1135,7 @@ class SMU2606BCommands:
               LAN event to rising edge (positive state).
             - ``.UDP``: Use UDP protocol.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.applysettings()``: The ``lan.applysettings()`` function.
             - ``.autoconnect``: The ``lan.autoconnect`` attribute.
             - ``.config``: The ``lan.config`` command tree.
@@ -1161,7 +1161,7 @@ class SMU2606BCommands:
             - ``.PASSWORD_NONE``: Disable passwords everywhere.
             - ``.PASSWORD_WEB``: Use passwords on the web interface only.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.autolinefreq``: The ``localnode.autolinefreq`` attribute.
             - ``.description``: The ``localnode.description`` attribute.
             - ``.license``: The ``localnode.license`` attribute.
@@ -1182,10 +1182,10 @@ class SMU2606BCommands:
     def node(self) -> Dict[int, NodeItem]:
         """Return the ``node[N]`` command tree.
 
-        **Info:**
+        Info:
             - ``N``, the node number of this instrument.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.execute()``: The ``node[N].execute()`` function.
             - ``.getglobal()``: The ``node[N].getglobal()`` function.
             - ``.setglobal()``: The ``node[N].setglobal()`` function.
@@ -1196,7 +1196,7 @@ class SMU2606BCommands:
     def os(self) -> Os:
         """Return the ``os`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.remove()``: The ``os.remove()`` function.
             - ``.rename()``: The ``os.rename()`` function.
             - ``.time()``: The ``os.time()`` function.
@@ -1207,7 +1207,7 @@ class SMU2606BCommands:
     def script(self) -> Script:
         """Return the ``script`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.anonymous``: The ``script.anonymous`` attribute.
             - ``.delete()``: The ``script.delete()`` function.
             - ``.load()``: The ``script.load()`` function.
@@ -1222,10 +1222,10 @@ class SMU2606BCommands:
     def script_var(self) -> Dict[str, Scriptvar]:
         """Return the ``scriptVar`` command tree.
 
-        **Info:**
+        Info:
             - ``scriptVar``, the name of the variable that references the script.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.autorun``: The ``scriptVar.autorun`` attribute.
             - ``.list()``: The ``scriptVar.list()`` function.
             - ``.name``: The ``scriptVar.name`` attribute.
@@ -1239,7 +1239,7 @@ class SMU2606BCommands:
     def setup(self) -> Setup:
         """Return the ``setup`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.poweron``: The ``setup.poweron`` attribute.
             - ``.recall()``: The ``setup.recall()`` function.
             - ``.save()``: The ``setup.save()`` function.
@@ -1321,7 +1321,7 @@ class SMU2606BCommands:
             - ``.SOURCE_IDLE``: Sets the source level to the programmed (idle) level at the end of
               the pulse.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.abort()``: The ``smuX.abort()`` function.
             - ``.buffer``: The ``smuX.buffer`` command tree.
             - ``.cal``: The ``smuX.cal`` command tree.
@@ -1378,7 +1378,7 @@ class SMU2606BCommands:
             - ``.SYSTEM_SUMMARY_BIT``: B1. Set summary bit indicates that an enabled system event
               has occurred.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.condition``: The ``status.condition`` attribute.
             - ``.measurement``: The ``status.measurement`` command tree.
             - ``.node_enable``: The ``status.node_enable`` attribute.
@@ -1401,7 +1401,7 @@ class SMU2606BCommands:
     def timer(self) -> Timer:
         """Return the ``timer`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.measure``: The ``timer.measure`` command tree.
             - ``.reset()``: The ``timer.reset()`` function.
         """
@@ -1414,7 +1414,7 @@ class SMU2606BCommands:
         Constants:
             - ``.EVENT_ID``: The command interface trigger event number.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.blender``: The ``trigger.blender[N]`` command tree.
             - ``.clear()``: The ``trigger.clear()`` function.
             - ``.generator``: The ``trigger.generator[N]`` command tree.
@@ -1450,7 +1450,7 @@ class SMU2606BCommands:
             - ``.TRIG_SYNCHRONOUSM``: Detects rising-edge triggers as an input. Asserts a TTL-low
               pulse for output.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.group``: The ``tsplink.group`` attribute.
             - ``.master``: The ``tsplink.master`` attribute.
             - ``.node``: The ``tsplink.node`` attribute.
@@ -1475,7 +1475,7 @@ class SMU2606BCommands:
             - ``.TERM_LF``: Set the device line termination sequence to LF.
             - ``.TERM_LFCR``: Set the device line termination sequence to LFCR.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``tspnet.clear()`` function.
             - ``.connect()``: The ``tspnet.connect()`` function.
             - ``.disconnect()``: The ``tspnet.disconnect()`` function.
@@ -1495,7 +1495,7 @@ class SMU2606BCommands:
     def userstring(self) -> Userstring:
         """Return the ``userstring`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.add()``: The ``userstring.add()`` function.
             - ``.delete()``: The ``userstring.delete()`` function.
             - ``.get()``: The ``userstring.get()`` function.
@@ -1521,15 +1521,14 @@ class SMU2606BCommands:
     ) -> str:
         """Run the ``ConfigPulseIMeasureV()`` function.
 
-        **Description:**
+        Description:
             - This KIPulse factory script function configures a current pulse train with a voltage
               measurement at each point.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - ConfigPulseIMeasureV()
+            ```
 
         Args:
             smu: Instrument channel (for example, smua refers to SMU channel A).
@@ -1605,15 +1604,14 @@ class SMU2606BCommands:
     ) -> str:
         """Run the ``ConfigPulseIMeasureVSweepLin()`` function.
 
-        **Description:**
+        Description:
             - This KIPulse factory script function configures a linear pulsed current sweep with a
               voltage measurement at each point.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - ConfigPulseIMeasureVSweepLin()
+            ```
 
         Args:
             smu: Instrument channel (for example, smua refers to SMU channel A).
@@ -1691,15 +1689,14 @@ class SMU2606BCommands:
     ) -> str:
         """Run the ``ConfigPulseIMeasureVSweepLog()`` function.
 
-        **Description:**
+        Description:
             - This KIPulse factory script function configures a voltage pulse train with a current
               measurement at each point.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - ConfigPulseIMeasureVSweepLog()
+            ```
 
         Args:
             smu: Instrument channel (for example, smua refers to SMU channel A).
@@ -1776,15 +1773,14 @@ class SMU2606BCommands:
     ) -> str:
         """Run the ``ConfigPulseVMeasureI()`` function.
 
-        **Description:**
+        Description:
             - This KIPulse factory script function configures a voltage pulse train with a current
               measurement at each point.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - ConfigPulseVMeasureI()
+            ```
 
         Args:
             smu: Instrument channel (for example, smua refers to SMU channel A).
@@ -1860,15 +1856,14 @@ class SMU2606BCommands:
     ) -> str:
         """Run the ``ConfigPulseVMeasureISweepLin()`` function.
 
-        **Description:**
+        Description:
             - This KIPulse factory script function configures a voltage pulse train with a current
               measurement at each point.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - ConfigPulseVMeasureISweepLin()
+            ```
 
         Args:
             smu: Instrument channel (for example, smua refers to SMU channel A).
@@ -1946,15 +1941,14 @@ class SMU2606BCommands:
     ) -> str:
         """Run the ``ConfigPulseVMeasureISweepLog()`` function.
 
-        **Description:**
+        Description:
             - This KIPulse factory script function configures a voltage pulse train with a current
               measurement at each point.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - ConfigPulseVMeasureISweepLog()
+            ```
 
         Args:
             smu: Instrument channel (for example, smua refers to SMU channel A).
@@ -2015,15 +2009,14 @@ class SMU2606BCommands:
     def initiate_pulse_test(self, tag: int) -> str:
         """Run the ``InitiatePulseTest()`` function.
 
-        **Description:**
+        Description:
             - This KIPulse factory script function initiates the pulse configuration assigned to
               tag.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - InitiatePulseTest()
+            ```
 
         Args:
             tag: Numeric identifier of the pulse configuration to be initiated.
@@ -2045,15 +2038,14 @@ class SMU2606BCommands:
     def initiate_pulse_test_dual(self, tag1: int, tag2: int) -> str:
         """Run the ``InitiatePulseTestDual()`` function.
 
-        **Description:**
+        Description:
             - This KIPulse factory script function initiates the pulse configuration assigned tag1
               and tag2.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - InitiatePulseTestDual()
+            ```
 
         Args:
             tag1: Numeric identifier of the first pulse configuration to be initiated.
@@ -2078,15 +2070,14 @@ class SMU2606BCommands:
     ) -> None:
         """Run the ``PulseIMeasureV()`` function.
 
-        **Description:**
+        Description:
             - This KIPulse factory script function performs a specified number of pulse I, measure V
               cycles.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - PulseIMeasureV()
+            ```
 
         Args:
             smu: Instrument channel (for example, smua refers to SMU channel A).
@@ -2114,15 +2105,14 @@ class SMU2606BCommands:
     ) -> None:
         """Run the ``PulseVMeasureI()`` function.
 
-        **Description:**
+        Description:
             - This KIPulse factory script function performs a specified number of pulse V, measure I
               cycles.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - PulseVMeasureI()
+            ```
 
         Args:
             smu: Instrument channel (for example, smua refers to SMU channel A).
@@ -2148,15 +2138,14 @@ class SMU2606BCommands:
     def query_pulse_config(self, tag: int) -> str:
         """Run the ``QueryPulseConfig()`` function.
 
-        **Description:**
+        Description:
             - This KIPulse factory script function allows you to inspect the settings of the
               preconfigured pulse train assigned to tag.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - QueryPulseConfig()
+            ```
 
         Args:
             tag: Numeric identifier to be assigned to the defined pulse train.
@@ -2180,15 +2169,14 @@ class SMU2606BCommands:
     ) -> None:
         """Run the ``SweepILinMeasureV()`` function.
 
-        **Description:**
+        Description:
             - This KISweep factory script function performs a linear current sweep with voltage
               measured at every step (point).
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - SweepILinMeasureV()
+            ```
 
         Args:
             smu_x: Source-measure unit (SMU) channel (for example, smua refers to SMU channel A).
@@ -2212,15 +2200,14 @@ class SMU2606BCommands:
     def sweep_i_list_measure_v(self, smu_x: str, ilist: str, stime: str, points: str) -> None:
         """Run the ``SweepIListMeasureV()`` function.
 
-        **Description:**
+        Description:
             - This KISweep factory script function performs a current list sweep with voltage
               measured at every step (point).
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - SweepIListMeasureV()
+            ```
 
         Args:
             smu_x: Source-measure unit (SMU) channel (for example, smua refers to SMU channel A).
@@ -2245,15 +2232,14 @@ class SMU2606BCommands:
     ) -> None:
         """Run the ``SweepILogMeasureV()`` function.
 
-        **Description:**
+        Description:
             - This KISweep factory script function performs a logarithmic current sweep with voltage
               measured at every step (point).
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - SweepILogMeasureV()
+            ```
 
         Args:
             smu_x: Source-measure unit (SMU) channel (for example, smua.reset() applies to SMU
@@ -2280,15 +2266,14 @@ class SMU2606BCommands:
     ) -> None:
         """Run the ``SweepVLinMeasureI()`` function.
 
-        **Description:**
+        Description:
             - This KISweep factory script function performs a linear voltage sweep with current
               measured at every step (point).
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - SweepVLinMeasureI()
+            ```
 
         Args:
             smu_x: Source-measure unit (SMU) channel (for example, smua.reset() applies to SMU
@@ -2313,15 +2298,14 @@ class SMU2606BCommands:
     def sweep_v_list_measure_i(self, smu_x: str, vlist: str, stime: str, points: str) -> None:
         """Run the ``SweepVListMeasureI()`` function.
 
-        **Description:**
+        Description:
             - This KISweep factory script function performs a voltage list sweep with current
               measured at every step (point).
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - SweepVListMeasureI()
+            ```
 
         Args:
             smu_x: Source-measure unit (SMU) channel (for example, smua.reset() applies to SMU
@@ -2347,15 +2331,14 @@ class SMU2606BCommands:
     ) -> None:
         """Run the ``SweepVLogMeasureI()`` function.
 
-        **Description:**
+        Description:
             - This KISweep factory script function performs a logarithmic voltage sweep with current
               measured at every step (point).
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - SweepVLogMeasureI()
+            ```
 
         Args:
             smu_x: Source-measure unit (SMU) channel (for example, smua applies to SMU channel A).
@@ -2379,14 +2362,13 @@ class SMU2606BCommands:
     def delay(self, seconds: int) -> None:
         """Run the ``delay()`` function.
 
-        **Description:**
+        Description:
             - This function delays the execution of the commands that follow it.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - delay()
+            ```
 
         Args:
             seconds: The number of seconds to delay (0 s to 100 ks).
@@ -2405,14 +2387,13 @@ class SMU2606BCommands:
     def exit(self) -> None:
         """Run the ``exit()`` function.
 
-        **Description:**
+        Description:
             - This function stops a script that is presently running.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - exit()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2428,14 +2409,13 @@ class SMU2606BCommands:
     def gettimezone(self) -> str:
         """Run the ``gettimezone()`` function.
 
-        **Description:**
+        Description:
             - This function retrieves the local time zone.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - gettimezone()
+            ```
 
         Returns:
             The result of the function call.
@@ -2454,15 +2434,14 @@ class SMU2606BCommands:
     def gm_isweep(self, smu: str, start_i: str, stop_i: str, points: str) -> str:
         """Run the ``gm_isweep()`` function.
 
-        **Description:**
+        Description:
             - This KIParlib factory script function performs a linear current sweep and calculates
               the transconductance (Gm) at each point.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - gm_isweep()
+            ```
 
         Args:
             smu: Instrument channel (for example, smua refers to SMU channel A).
@@ -2487,15 +2466,14 @@ class SMU2606BCommands:
     def gm_vsweep(self, smu: str, start_v: str, stop_v: str, points: str) -> str:
         """Run the ``gm_vsweep()`` function.
 
-        **Description:**
+        Description:
             - This KIParlib factory script function performs a linear voltage sweep and calculates
               the transconductance (Gm) at each point.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - gm_vsweep()
+            ```
 
         Args:
             smu: Instrument channel (for example, smua refers to SMU channel A).
@@ -2528,15 +2506,14 @@ class SMU2606BCommands:
     ) -> str:
         """Run the ``i_leakage_measure()`` function.
 
-        **Description:**
+        Description:
             - This KIHighC factory script function performs a current leakage measurement after
               stepping the output voltage.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - i_leakage_measure()
+            ```
 
         Args:
             smu_x: Instrument channel (for example, smua refers to SMU channel A).
@@ -2581,16 +2558,15 @@ class SMU2606BCommands:
     ) -> str:
         """Run the ``i_leakage_threshold()`` function.
 
-        **Description:**
+        Description:
             - This KIHighC factory script function measures the current and compares it to a
               threshold. This continues until either the measured current drops below the threshold
               or the timeout expires.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - i_leakage_threshold()
+            ```
 
         Args:
             smu_x: Source-measure unit (SMU) channel (for example, smua applies to SMU channel A).
@@ -2628,14 +2604,13 @@ class SMU2606BCommands:
     def makegetter(self, table: str, attribute_name: str) -> str:
         """Run the ``makegetter()`` function.
 
-        **Description:**
+        Description:
             - This function creates a function to get the value of an attribute.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - makegetter()
+            ```
 
         Args:
             table: Read-only table where the attribute is located.
@@ -2658,14 +2633,13 @@ class SMU2606BCommands:
     def makesetter(self, table: str, attribute_name: str) -> str:
         """Run the ``makesetter()`` function.
 
-        **Description:**
+        Description:
             - This function creates a function that, when called, sets the value of an attribute.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - makesetter()
+            ```
 
         Args:
             table: Read-only table where the attribute is located.
@@ -2688,15 +2662,14 @@ class SMU2606BCommands:
     def meminfo(self) -> str:
         """Run the ``meminfo()`` function.
 
-        **Description:**
+        Description:
             - This function returns the present amount of available memory and the total amount of
               memory in the instrument.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - meminfo()
+            ```
 
         Returns:
             The result of the function call.
@@ -2715,15 +2688,14 @@ class SMU2606BCommands:
     def opc(self) -> None:
         """Run the ``opc()`` function.
 
-        **Description:**
+        Description:
             - This function sets the operation complete status bit when all overlapped commands are
               completed.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - opc()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2739,14 +2711,13 @@ class SMU2606BCommands:
     def print(self, value: str) -> None:
         """Run the ``print()`` function.
 
-        **Description:**
+        Description:
             - This function generates a response message.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print()
+            ```
 
         Args:
             value: The first argument to output.
@@ -2765,14 +2736,13 @@ class SMU2606BCommands:
     def printbuffer(self, start_index: int, end_index: int, buffer_var: str) -> str:
         """Run the ``printbuffer()`` function.
 
-        **Description:**
+        Description:
             - This function prints data from tables or reading buffer subtables.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - printbuffer()
+            ```
 
         Args:
             start_index: Beginning index of the buffer to print; this must be more than one and less
@@ -2798,14 +2768,13 @@ class SMU2606BCommands:
     def printnumber(self, value: str) -> str:
         """Run the ``printnumber()`` function.
 
-        **Description:**
+        Description:
             - This function prints numbers using the configured format.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - printnumber()
+            ```
 
         Args:
             value: First value to print in the configured format.
@@ -2827,14 +2796,13 @@ class SMU2606BCommands:
     def reset(self, system: Optional[str] = None) -> None:
         """Run the ``reset()`` function.
 
-        **Description:**
+        Description:
             - This function resets commands to their default settings.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - reset()
+            ```
 
         Args:
             system (optional): What to reset.
@@ -2854,15 +2822,14 @@ class SMU2606BCommands:
     def savebuffer(self, buffer: str, format_type: str, file_name: str) -> None:
         """Run the ``savebuffer()`` function.
 
-        **Description:**
+        Description:
             - This KISavebuffer factory script function saves a specified reading buffer as either a
               .csv file or an .xml file.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - savebuffer()
+            ```
 
         Args:
             buffer: The reading buffer to save.
@@ -2883,14 +2850,13 @@ class SMU2606BCommands:
     def settime(self, time: str) -> None:
         """Run the ``settime()`` function.
 
-        **Description:**
+        Description:
             - This function sets the real-time clock (sets present time of the system).
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - settime()
+            ```
 
         Args:
             time: The time in seconds since January 1, 1970 UTC.
@@ -2915,14 +2881,13 @@ class SMU2606BCommands:
     ) -> None:
         """Run the ``settimezone()`` function.
 
-        **Description:**
+        Description:
             - This function sets the local time zone.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - settimezone()
+            ```
 
         Args:
             offset: String representing offset from UTC.
@@ -2954,14 +2919,13 @@ class SMU2606BCommands:
     def waitcomplete(self, group: Optional[str] = None) -> None:
         """Run the ``waitcomplete()`` function.
 
-        **Description:**
+        Description:
             - This function waits for all previously started overlapped commands to complete.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - waitcomplete()
+            ```
 
         Args:
             group (optional): Specifies which TSP-Link group on which to wait.
@@ -3009,7 +2973,7 @@ class SMU2606BMixin:
         This provides access to all the commands for the SMU2606B device. See the documentation of
         each sub-property for more usage information.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.beeper``: The ``beeper`` command tree.
             - ``.bit``: The ``bit`` command tree.
             - ``.buffer_var``: The ``bufferVar`` command tree.

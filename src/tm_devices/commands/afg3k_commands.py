@@ -140,18 +140,17 @@ class AFG3KCommands:
     def abort(self) -> Abort:
         """Return the ``ABORt`` command.
 
-        **Description:**
+        Description:
             - Initializes all the current trigger system parameters and resets all trigger
               sequences.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``ABORt`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ABORt
+            ```
         """
         return self._abort
 
@@ -159,7 +158,7 @@ class AFG3KCommands:
     def afgcontrol(self) -> Afgcontrol:
         """Return the ``AFGControl`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFGControl?`` query.
             - Using the ``.verify(value)`` method will send the ``AFGControl?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -173,20 +172,19 @@ class AFG3KCommands:
     def cal(self) -> Cal:
         """Return the ``*CAL`` command.
 
-        **Description:**
+        Description:
             - This query-only command starts signal path calibration (SPC) and returns the status
               upon completion.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*CAL?`` query.
             - Using the ``.verify(value)`` method will send the ``*CAL?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *CAL?
+            ```
         """
         return self._cal
 
@@ -194,7 +192,7 @@ class AFG3KCommands:
     def calibration(self) -> Calibration:
         """Return the ``CALibration`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibration?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibration?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -208,7 +206,7 @@ class AFG3KCommands:
     def cls(self) -> Cls:
         """Return the ``*CLS`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) clears the following: Event Queue Standard Event Status
               Register Status Byte Register (except the MAV bit) If the ``*CLS`` command immediately
               follows an <EOI>, the Output Queue and MAV bit (Status Byte Register bit 4) are also
@@ -218,14 +216,13 @@ class AFG3KCommands:
               by an ``*OPC``. This will happen if a single sequence acquisition operation is still
               being processed when the ``*CLS`` command is executed.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*CLS`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *CLS
+            ```
         """
         return self._cls
 
@@ -233,7 +230,7 @@ class AFG3KCommands:
     def data(self) -> Data:
         """Return the ``DATA`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DATA?`` query.
             - Using the ``.verify(value)`` method will send the ``DATA?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -254,7 +251,7 @@ class AFG3KCommands:
     def diagnostic(self) -> Diagnostic:
         """Return the ``DIAGnostic`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAGnostic?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAGnostic?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -268,7 +265,7 @@ class AFG3KCommands:
     def display(self) -> Display:
         """Return the ``DISPlay`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISPlay?`` query.
             - Using the ``.verify(value)`` method will send the ``DISPlay?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -285,25 +282,24 @@ class AFG3KCommands:
     def ese(self) -> Ese:
         """Return the ``*ESE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the bits in the Event Status Enable Register (ESER) used
               in the status and events reporting system of the arbitrary function generator. The
               query command returns the contents of the ESER.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*ESE?`` query.
             - Using the ``.verify(value)`` method will send the ``*ESE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*ESE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *ESE <bit_value>
             - *ESE?
+            ```
 
-        **Info:**
+        Info:
             - ``<bit_value>::=<NR1>``
         """
         return self._ese
@@ -312,21 +308,20 @@ class AFG3KCommands:
     def esr(self) -> Esr:
         """Return the ``*ESR`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the contents of the Standard Event Status Register
               (SESR). ``*ESR?`` also clears the SESR (since reading the SESR clears it). For a more
               detailed discussion of the use of these registers, see Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*ESR?`` query.
             - Using the ``.verify(value)`` method will send the ``*ESR?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *ESR?
+            ```
         """
         return self._esr
 
@@ -334,7 +329,7 @@ class AFG3KCommands:
     def hcopy(self) -> Hcopy:
         """Return the ``HCOPy`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HCOPy?`` query.
             - Using the ``.verify(value)`` method will send the ``HCOPy?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -348,19 +343,18 @@ class AFG3KCommands:
     def idn(self) -> Idn:
         """Return the ``*IDN`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the instrument identification code.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*IDN?`` query.
             - Using the ``.verify(value)`` method will send the ``*IDN?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *IDN?
+            ```
         """
         return self._idn
 
@@ -368,7 +362,7 @@ class AFG3KCommands:
     def memory(self) -> Memory:
         """Return the ``MEMory`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEMory?`` query.
             - Using the ``.verify(value)`` method will send the ``MEMory?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -382,7 +376,7 @@ class AFG3KCommands:
     def mmemory(self) -> Mmemory:
         """Return the ``MMEMory`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -402,7 +396,7 @@ class AFG3KCommands:
     def opc(self) -> Opc:
         """Return the ``*OPC`` command.
 
-        **Description:**
+        Description:
             - This command generates the operation complete message in the Standard Event Status
               Register (SESR) when all pending commands that generate an OPC message are complete.
               The ``*OPC?`` query places the ASCII character '1' into the output queue when all such
@@ -413,18 +407,17 @@ class AFG3KCommands:
               information, see Synchronization Methods. Refer to the Oscilloscope operations that
               can generate OPC table for a list of commands that generate an OPC message.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*OPC?`` query.
             - Using the ``.verify(value)`` method will send the ``*OPC?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write()`` method will send the ``*OPC`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *OPC
             - *OPC?
+            ```
         """
         return self._opc
 
@@ -432,23 +425,22 @@ class AFG3KCommands:
     def opt(self) -> Opt:
         """Return the ``*OPT`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns a comma separated list of installed options as an
               arbitrary ASCII string (no quotes) of the form:
               ``<optionCode>:<optionDescription>``,``<optionCode>:<optionDescription>``... The last
               section of each entry (the text following the last hyphen) indicates the license type.
               If no options are found, NONE is returned.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*OPT?`` query.
             - Using the ``.verify(value)`` method will send the ``*OPT?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *OPT?
+            ```
         """
         return self._opt
 
@@ -456,7 +448,7 @@ class AFG3KCommands:
     def output(self) -> Output:
         """Return the ``OUTPut`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -470,7 +462,7 @@ class AFG3KCommands:
     def output1(self) -> Output1:
         """Return the ``OUTPut1`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut1?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut1?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -486,7 +478,7 @@ class AFG3KCommands:
     def output2(self) -> Output2:
         """Return the ``OUTPut2`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut2?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut2?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -502,24 +494,23 @@ class AFG3KCommands:
     def psc(self) -> Psc:
         """Return the ``*PSC`` command.
 
-        **Description:**
+        Description:
             - This command sets and queries the power-on status flag that controls the automatic
               power-on execution of SRER and ESER. When ``*PSC`` is true, SRER and ESER are set to 0
               at power-on. When ``*PSC`` is false, the current values in the SRER and ESER are
               preserved in nonvolatile memory when power is shut off and are restored at power-on.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*PSC?`` query.
             - Using the ``.verify(value)`` method will send the ``*PSC?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*PSC value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *PSC <NR1>
             - *PSC?
+            ```
         """
         return self._psc
 
@@ -527,19 +518,18 @@ class AFG3KCommands:
     def rcl(self) -> Rcl:
         """Return the ``*RCL`` command.
 
-        **Description:**
+        Description:
             - This command restores the state of the instrument from a copy of the settings stored
               in the setup memory. The settings are stored using the ``*SAV`` command. If the
               specified setup memory is deleted, this command causes an error.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``*RCL value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *RCL {0|1|2|3|4}
+            ```
         """
         return self._rcl
 
@@ -547,7 +537,7 @@ class AFG3KCommands:
     def rst(self) -> Rst:
         """Return the ``*RST`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) resets the instrument to the factory default settings.
               This command does the following: Recalls the default instrument setup. Clears the
               current ``*DDT`` command. Disables aliases (``:ALIAS:STATE 0``). Disables the user
@@ -572,14 +562,13 @@ class AFG3KCommands:
               with the WFMOutpre commands. ``*RST`` only resets the programmable interface settings,
               it does not change the user interface settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*RST`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *RST
+            ```
         """
         return self._rst
 
@@ -587,20 +576,19 @@ class AFG3KCommands:
     def sav(self) -> Sav:
         """Return the ``*SAV`` command.
 
-        **Description:**
+        Description:
             - This command stores the current settings of the arbitrary function generator to a
               specified setup memory location. A setup memory location numbered 0 ( last setup
               memory) is automatically overwritten by the setups when you power off the instrument.
               If a specified numbered setup memory is locked, this command causes an error.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``*SAV value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *SAV {0|1|2|3|4}
+            ```
         """
         return self._sav
 
@@ -608,7 +596,7 @@ class AFG3KCommands:
     def source(self) -> Source:
         """Return the ``SOURce`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -622,7 +610,7 @@ class AFG3KCommands:
     def source1(self) -> Source1:
         """Return the ``SOURce1`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -648,7 +636,7 @@ class AFG3KCommands:
     def source2(self) -> Source2:
         """Return the ``SOURce2`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce2?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce2?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -674,7 +662,7 @@ class AFG3KCommands:
     def source3(self) -> Source3:
         """Return the ``SOURce3`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce3?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce3?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -688,7 +676,7 @@ class AFG3KCommands:
     def source4(self) -> Source4:
         """Return the ``SOURce4`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce4?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce4?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -702,21 +690,20 @@ class AFG3KCommands:
     def sre(self) -> Sre:
         """Return the ``*SRE`` command.
 
-        **Description:**
+        Description:
             - This command sets and queries the bits in the Service Request Enable Register (SRER).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*SRE?`` query.
             - Using the ``.verify(value)`` method will send the ``*SRE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*SRE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *SRE <bit_value>
             - *SRE?
+            ```
         """
         return self._sre
 
@@ -724,7 +711,7 @@ class AFG3KCommands:
     def status(self) -> Status:
         """Return the ``STATus`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``STATus?`` query.
             - Using the ``.verify(value)`` method will send the ``STATus?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -740,21 +727,20 @@ class AFG3KCommands:
     def stb(self) -> Stb:
         """Return the ``*STB`` command.
 
-        **Description:**
+        Description:
             - The ``*STB?`` (Read Status Byte) query returns the contents of the Status Byte
               Register (SBR) using the Master Summary Status (MSS) bit. For more information, refer
               to Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*STB?`` query.
             - Using the ``.verify(value)`` method will send the ``*STB?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *STB?
+            ```
         """
         return self._stb
 
@@ -762,7 +748,7 @@ class AFG3KCommands:
     def system(self) -> System:
         """Return the ``SYSTem`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -783,17 +769,16 @@ class AFG3KCommands:
     def trg(self) -> Trg:
         """Return the ``*TRG`` command.
 
-        **Description:**
+        Description:
             - Performs a group execute trigger on commands defined by ``*DDT``.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*TRG`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *TRG
+            ```
         """
         return self._trg
 
@@ -801,7 +786,7 @@ class AFG3KCommands:
     def trigger(self) -> Trigger:
         """Return the ``TRIGger`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -815,19 +800,18 @@ class AFG3KCommands:
     def tst(self) -> Tst:
         """Return the ``*TST`` command.
 
-        **Description:**
+        Description:
             - Tests (self-test) the interface and returns a 0.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*TST?`` query.
             - Using the ``.verify(value)`` method will send the ``*TST?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *TST?
+            ```
         """
         return self._tst
 
@@ -835,20 +819,19 @@ class AFG3KCommands:
     def wai(self) -> Wai:
         """Return the ``*WAI`` command.
 
-        **Description:**
+        Description:
             - The ``*WAI`` (Wait) command (no query form) prevents the instrument from executing
               further commands or queries until all pending commands that generate an OPC message
               are complete. This command allows you to synchronize the operation of the instrument
               with your application program. For more information, refer to Synchronization Methods.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*WAI`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *WAI
+            ```
         """
         return self._wai
 

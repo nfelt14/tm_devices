@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - LICense:APPID? {<QString>}
     - LICense:COUNt?
     - LICense:ERRor?
@@ -35,23 +33,22 @@ if TYPE_CHECKING:
 class LicenseValidate(SCPICmdReadWithArguments):
     """The ``LICense:VALidate`` command.
 
-    **Description:**
+    Description:
         - This query accepts a license nomenclature as an argument and returns True (1) if that
           nomenclature is active and any required hardware is installed, or False (0) if either the
           nomenclature is not active or required hardware is not installed.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``LICense:VALidate? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the ``LICense:VALidate? argument``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LICense:VALidate? <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the license nomenclature.
     """
 
@@ -59,25 +56,24 @@ class LicenseValidate(SCPICmdReadWithArguments):
 class LicenseUninstall(SCPICmdReadWithArguments):
     """The ``LICense:UNINSTALL`` command.
 
-    **Description:**
+    Description:
         - Returns the exit license indicated for the user to return to their TekAMS account. Active
           licenses can be specified by their nomenclature. TransactionIDs can be used to specify an
           active license or a previously uninstalled license. In either case, the exit-license is
           returned as block data.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``LICense:UNINSTALL? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``LICense:UNINSTALL? argument`` query and raise an AssertionError if the returned value
           does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LICense:UNINSTALL? <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the nomenclature of an active license or a TransactionIDs to specify an
           active license or a previously uninstalled license.
     """
@@ -86,63 +82,60 @@ class LicenseUninstall(SCPICmdReadWithArguments):
 class LicenseList(SCPICmdRead):
     """The ``LICense:LIST`` command.
 
-    **Description:**
+    Description:
         - This query returns the active license nomenclatures as a comma-separated list of strings.
           Duplicate nomenclatures, that is, the same license but with different expiration dates,
           are included.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LICense:LIST?`` query.
         - Using the ``.verify(value)`` method will send the ``LICense:LIST?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LICense:LIST?
+        ```
     """
 
 
 class LicenseItem(SCPICmdReadWithArguments):
     """The ``LICense:ITEM`` command.
 
-    **Description:**
+    Description:
         - This query returns the details pertaining to a specific license. The NR1 argument is
           zero-indexed. If no argument is provided, zero is assumed.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``LICense:ITEM? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the ``LICense:ITEM? argument``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LICense:ITEM? <NR1>
+        ```
     """
 
 
 class LicenseInstall(SCPICmdWrite):
     """The ``LICense:INSTall`` command.
 
-    **Description:**
+    Description:
         - This command accepts a block data license and installs it on the instrument. Restarting
           the instrument may be necessary to fully activate the additional capabilities. The format
           of the block data in the argument must have the following: #<File size (Number of
           characters in LIC file)> <LIC file content>
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``LICense:INSTall value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LICense:INSTall <Block>
+        ```
 
-    **Info:**
+    Info:
         - ``<Block>`` is the license in block data format.
     """
 
@@ -150,100 +143,95 @@ class LicenseInstall(SCPICmdWrite):
 class LicenseHid(SCPICmdRead):
     """The ``LICense:HID`` command.
 
-    **Description:**
+    Description:
         - This query returns the instrument HostID unique identifier.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LICense:HID?`` query.
         - Using the ``.verify(value)`` method will send the ``LICense:HID?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LICense:HID?
+        ```
     """
 
 
 class LicenseGmt(SCPICmdRead):
     """The ``LICense:GMT`` command.
 
-    **Description:**
+    Description:
         - This query returns the GMT time in ISO 8601 format, the local date, 24 hour time and
           time-zone offset.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LICense:GMT?`` query.
         - Using the ``.verify(value)`` method will send the ``LICense:GMT?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LICense:GMT?
+        ```
     """
 
 
 class LicenseError(SCPICmdRead):
     """The ``LICense:ERRor`` command.
 
-    **Description:**
+    Description:
         - This query-only command prompts the instrument to return all events and their messages
           (delimited by commas), and removes the returned events from the Event Queue. This command
           is an alias for ALLEV?.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LICense:ERRor?`` query.
         - Using the ``.verify(value)`` method will send the ``LICense:ERRor?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LICense:ERRor?
+        ```
     """
 
 
 class LicenseCount(SCPICmdRead):
     """The ``LICense:COUNt`` command.
 
-    **Description:**
+    Description:
         - This query returns a count of the number of active licenses installed.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LICense:COUNt?`` query.
         - Using the ``.verify(value)`` method will send the ``LICense:COUNt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LICense:COUNt?
+        ```
     """
 
 
 class LicenseAppid(SCPICmdReadWithArguments):
     """The ``LICense:APPID`` command.
 
-    **Description:**
+    Description:
         - This query returns a comma-separated list of the active application IDs. If a string
           argument is provided, a '0' or '1' is returned, according to whether the string matches an
           active application ID.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``LICense:APPID? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the ``LICense:APPID? argument``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LICense:APPID? {<QString>}
+        ```
     """
 
 
@@ -251,19 +239,18 @@ class LicenseAppid(SCPICmdReadWithArguments):
 class License(SCPICmdRead):
     """The ``LICense`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns all license parameters.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LICense?`` query.
         - Using the ``.verify(value)`` method will send the ``LICense?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LICense?
+        ```
 
     Properties:
         - ``.appid``: The ``LICense:APPID`` command.
@@ -295,22 +282,21 @@ class License(SCPICmdRead):
     def appid(self) -> LicenseAppid:
         """Return the ``LICense:APPID`` command.
 
-        **Description:**
+        Description:
             - This query returns a comma-separated list of the active application IDs. If a string
               argument is provided, a '0' or '1' is returned, according to whether the string
               matches an active application ID.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``LICense:APPID? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``LICense:APPID? argument`` query and raise an AssertionError if the returned value
               does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LICense:APPID? {<QString>}
+            ```
         """
         return self._appid
 
@@ -318,19 +304,18 @@ class License(SCPICmdRead):
     def count(self) -> LicenseCount:
         """Return the ``LICense:COUNt`` command.
 
-        **Description:**
+        Description:
             - This query returns a count of the number of active licenses installed.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LICense:COUNt?`` query.
             - Using the ``.verify(value)`` method will send the ``LICense:COUNt?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LICense:COUNt?
+            ```
         """
         return self._count
 
@@ -338,21 +323,20 @@ class License(SCPICmdRead):
     def error(self) -> LicenseError:
         """Return the ``LICense:ERRor`` command.
 
-        **Description:**
+        Description:
             - This query-only command prompts the instrument to return all events and their messages
               (delimited by commas), and removes the returned events from the Event Queue. This
               command is an alias for ALLEV?.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LICense:ERRor?`` query.
             - Using the ``.verify(value)`` method will send the ``LICense:ERRor?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LICense:ERRor?
+            ```
         """
         return self._error
 
@@ -360,20 +344,19 @@ class License(SCPICmdRead):
     def gmt(self) -> LicenseGmt:
         """Return the ``LICense:GMT`` command.
 
-        **Description:**
+        Description:
             - This query returns the GMT time in ISO 8601 format, the local date, 24 hour time and
               time-zone offset.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LICense:GMT?`` query.
             - Using the ``.verify(value)`` method will send the ``LICense:GMT?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LICense:GMT?
+            ```
         """
         return self._gmt
 
@@ -381,19 +364,18 @@ class License(SCPICmdRead):
     def hid(self) -> LicenseHid:
         """Return the ``LICense:HID`` command.
 
-        **Description:**
+        Description:
             - This query returns the instrument HostID unique identifier.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LICense:HID?`` query.
             - Using the ``.verify(value)`` method will send the ``LICense:HID?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LICense:HID?
+            ```
         """
         return self._hid
 
@@ -401,22 +383,21 @@ class License(SCPICmdRead):
     def install(self) -> LicenseInstall:
         """Return the ``LICense:INSTall`` command.
 
-        **Description:**
+        Description:
             - This command accepts a block data license and installs it on the instrument.
               Restarting the instrument may be necessary to fully activate the additional
               capabilities. The format of the block data in the argument must have the following:
               #<File size (Number of characters in LIC file)> <LIC file content>
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``LICense:INSTall value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LICense:INSTall <Block>
+            ```
 
-        **Info:**
+        Info:
             - ``<Block>`` is the license in block data format.
         """
         return self._install
@@ -425,20 +406,19 @@ class License(SCPICmdRead):
     def item(self) -> LicenseItem:
         """Return the ``LICense:ITEM`` command.
 
-        **Description:**
+        Description:
             - This query returns the details pertaining to a specific license. The NR1 argument is
               zero-indexed. If no argument is provided, zero is assumed.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``LICense:ITEM? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the ``LICense:ITEM? argument``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LICense:ITEM? <NR1>
+            ```
         """
         return self._item
 
@@ -446,21 +426,20 @@ class License(SCPICmdRead):
     def list(self) -> LicenseList:
         """Return the ``LICense:LIST`` command.
 
-        **Description:**
+        Description:
             - This query returns the active license nomenclatures as a comma-separated list of
               strings. Duplicate nomenclatures, that is, the same license but with different
               expiration dates, are included.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LICense:LIST?`` query.
             - Using the ``.verify(value)`` method will send the ``LICense:LIST?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LICense:LIST?
+            ```
         """
         return self._list
 
@@ -468,26 +447,25 @@ class License(SCPICmdRead):
     def uninstall(self) -> LicenseUninstall:
         """Return the ``LICense:UNINSTALL`` command.
 
-        **Description:**
+        Description:
             - Returns the exit license indicated for the user to return to their TekAMS account.
               Active licenses can be specified by their nomenclature. TransactionIDs can be used to
               specify an active license or a previously uninstalled license. In either case, the
               exit-license is returned as block data.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``LICense:UNINSTALL? argument``
               query.
             - Using the ``.verify(argument, value)`` method will send the
               ``LICense:UNINSTALL? argument`` query and raise an AssertionError if the returned
               value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LICense:UNINSTALL? <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the nomenclature of an active license or a TransactionIDs to specify
               an active license or a previously uninstalled license.
         """
@@ -497,25 +475,24 @@ class License(SCPICmdRead):
     def validate(self) -> LicenseValidate:
         """Return the ``LICense:VALidate`` command.
 
-        **Description:**
+        Description:
             - This query accepts a license nomenclature as an argument and returns True (1) if that
               nomenclature is active and any required hardware is installed, or False (0) if either
               the nomenclature is not active or required hardware is not installed.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``LICense:VALidate? argument``
               query.
             - Using the ``.verify(argument, value)`` method will send the
               ``LICense:VALidate? argument`` query and raise an AssertionError if the returned value
               does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LICense:VALidate? <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the license nomenclature.
         """
         return self._validate

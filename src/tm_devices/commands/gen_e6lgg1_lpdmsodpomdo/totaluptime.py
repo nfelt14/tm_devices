@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - TOTaluptime?
 """
 
@@ -26,20 +24,19 @@ if TYPE_CHECKING:
 class Totaluptime(SCPICmdRead):
     """The ``TOTaluptime`` command.
 
-    **Description:**
+    Description:
         - Total number of hours the instrument has been turned on since the NV memory was last
           programmed, usually during the initial manufacturing process.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TOTaluptime?`` query.
         - Using the ``.verify(value)`` method will send the ``TOTaluptime?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TOTaluptime?
+        ```
     """
 
     def __init__(

@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - lan.ipconfig()
     - lan.lxidomain
     - lan.macaddress
@@ -42,7 +40,7 @@ class Lan(BaseTSPCmd):
         - ``.PROTOCOL_TCP``: Sets the LAN protocol to use for sending trigger messages to TCP.
         - ``.PROTOCOL_UDP``: Sets the LAN protocol to use for sending trigger messages to UDP.
 
-    Properties/methods:
+    Properties and methods:
         - ``.ipconfig()``: The ``lan.ipconfig()`` function.
         - ``.lxidomain``: The ``lan.lxidomain`` attribute.
         - ``.macaddress``: The ``lan.macaddress`` attribute.
@@ -70,21 +68,20 @@ class Lan(BaseTSPCmd):
     def lxidomain(self) -> str:
         """Access the ``lan.lxidomain`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LXI domain.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.lxidomain)`` query.
             - Setting this property to a value will send the ``lan.lxidomain = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.lxidomain = value
             - print(lan.lxidomain)
+            ```
 
-        **Info:**
+        Info:
             - ``domain``, the LXI domain number (0 to 255).
 
         Raises:
@@ -104,21 +101,20 @@ class Lan(BaseTSPCmd):
     def lxidomain(self, value: Union[str, float]) -> None:
         """Access the ``lan.lxidomain`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LXI domain.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.lxidomain)`` query.
             - Setting this property to a value will send the ``lan.lxidomain = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.lxidomain = value
             - print(lan.lxidomain)
+            ```
 
-        **Info:**
+        Info:
             - ``domain``, the LXI domain number (0 to 255).
 
         Raises:
@@ -141,17 +137,16 @@ class Lan(BaseTSPCmd):
     def macaddress(self) -> str:
         """Access the ``lan.macaddress`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes the LAN MAC address.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.macaddress)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(lan.macaddress)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -175,14 +170,13 @@ class Lan(BaseTSPCmd):
     ) -> str:
         """Run the ``lan.ipconfig()`` function.
 
-        **Description:**
+        Description:
             - This function specifies the LAN configuration for the instrument.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.ipconfig()
+            ```
 
         Args:
             method (optional): The method for configuring LAN settings; it can be one of the

@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - MCH<x>:MAXAMPLitude <NR3>
     - MCH<x>:MINAMPLitude <NR3>
 """
@@ -27,7 +25,7 @@ if TYPE_CHECKING:
 class MchItemMinamplitude(SCPICmdWrite):
     """The ``MCH<x>:MINAMPLitude`` command.
 
-    **Description:**
+    Description:
         - These commands set or query the minimum/maximum amplitude vertical setting for the
           unmapped channels on an UltraSync stack master oscilloscope. These two commands are used
           together to set the vertical amplitude range for the unmapped channels on an UltraSync
@@ -74,16 +72,15 @@ class MchItemMinamplitude(SCPICmdWrite):
           oscilloscope). All channels are mapped channels, and so are always available as trigger
           sources.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MCH<x>:MINAMPLitude value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MCH<x>:MINAMPLitude <NR3>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` the minimum/maximum amplitude vertical setting for the unmapped channels on an
           UltraSync stack master oscilloscope.
     """
@@ -92,7 +89,7 @@ class MchItemMinamplitude(SCPICmdWrite):
 class MchItemMaxamplitude(SCPICmdWrite):
     """The ``MCH<x>:MAXAMPLitude`` command.
 
-    **Description:**
+    Description:
         - These commands set or query the minimum/maximum amplitude vertical setting for the
           unmapped channels on an UltraSync stack master oscilloscope. These two commands are used
           together to set the vertical amplitude range for the unmapped channels on an UltraSync
@@ -139,16 +136,15 @@ class MchItemMaxamplitude(SCPICmdWrite):
           oscilloscope). All channels are mapped channels, and so are always available as trigger
           sources.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MCH<x>:MAXAMPLitude value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MCH<x>:MAXAMPLitude <NR3>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` the minimum/maximum amplitude vertical setting for the unmapped channels on an
           UltraSync stack master oscilloscope.
     """
@@ -157,7 +153,7 @@ class MchItemMaxamplitude(SCPICmdWrite):
 class MchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``MCH<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MCH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``MCH<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -176,7 +172,7 @@ class MchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def minamplitude(self) -> MchItemMinamplitude:
         """Return the ``MCH<x>:MINAMPLitude`` command.
 
-        **Description:**
+        Description:
             - These commands set or query the minimum/maximum amplitude vertical setting for the
               unmapped channels on an UltraSync stack master oscilloscope. These two commands are
               used together to set the vertical amplitude range for the unmapped channels on an
@@ -225,17 +221,16 @@ class MchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
               trigger sources. Case 5 Standalone mode (single oscilloscope). All channels are mapped
               channels, and so are always available as trigger sources.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MCH<x>:MINAMPLitude value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MCH<x>:MINAMPLitude <NR3>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` the minimum/maximum amplitude vertical setting for the unmapped channels on
               an UltraSync stack master oscilloscope.
         """
@@ -245,7 +240,7 @@ class MchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def maxamplitude(self) -> MchItemMaxamplitude:
         """Return the ``MCH<x>:MAXAMPLitude`` command.
 
-        **Description:**
+        Description:
             - These commands set or query the minimum/maximum amplitude vertical setting for the
               unmapped channels on an UltraSync stack master oscilloscope. These two commands are
               used together to set the vertical amplitude range for the unmapped channels on an
@@ -294,17 +289,16 @@ class MchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
               trigger sources. Case 5 Standalone mode (single oscilloscope). All channels are mapped
               channels, and so are always available as trigger sources.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MCH<x>:MAXAMPLitude value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MCH<x>:MAXAMPLitude <NR3>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` the minimum/maximum amplitude vertical setting for the unmapped channels on
               an UltraSync stack master oscilloscope.
         """

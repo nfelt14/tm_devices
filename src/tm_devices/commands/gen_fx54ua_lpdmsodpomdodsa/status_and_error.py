@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - *PUD {<Block>|<QString>}
     - *PUD?
 """
@@ -28,25 +26,24 @@ if TYPE_CHECKING:
 class Pud(SCPICmdWrite, SCPICmdRead):
     """The ``*PUD`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries a string of Protected User Data. This data is protected by
           the PASSWord command. You can modify it only by first entering the correct password. This
           password is not necessary to query the data.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``*PUD?`` query.
         - Using the ``.verify(value)`` method will send the ``*PUD?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``*PUD value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - *PUD {<Block>|<QString>}
         - *PUD?
+        ```
 
-    **Info:**
+    Info:
         - ``<Block>`` is a block containing up to 100 characters.
         - ``<QString>`` is a string containing up to 100 characters.
     """

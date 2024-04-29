@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - MMEMory:CATalog? [<msus>]
     - MMEMory:CDIRectory [<directory_name>]
     - MMEMory:CDIRectory?
@@ -53,103 +51,98 @@ if TYPE_CHECKING:
 class MmemorySaveWaveformWfmx(SCPICmdWrite):
     """The ``MMEMory:SAVE:WAVeform:WFMX`` command.
 
-    **Description:**
+    Description:
         - This command exports a waveform given a unique waveform name to an eligible storage
           location from the AWG's waveforms as the .WFMX file type.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:SAVE:WAVeform:WFMX value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:SAVE:WAVeform:WFMX <wfm_name>,<filepath>
+        ```
     """
 
 
 class MmemorySaveWaveformWfm(SCPICmdWrite):
     """The ``MMEMory:SAVE:WAVeform:WFM`` command.
 
-    **Description:**
+    Description:
         - This command exports a waveform given a unique waveform name to an eligible storage
           location from the AWG's waveforms as the .WFM file type. The .WFM file type is compatible
           with the AWG 400/500/600/700/5000/7000 instruments.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:SAVE:WAVeform:WFM value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:SAVE:WAVeform:WFM <wfm_name>,<filepath>[,<IQ Component>]
+        ```
     """
 
 
 class MmemorySaveWaveformTxt(SCPICmdWrite):
     """The ``MMEMory:SAVE:WAVeform:TXT`` command.
 
-    **Description:**
+    Description:
         - This command exports a waveform given a unique waveform name to an eligible storage
           location from the AWG's waveforms as a text file as the .TXT file type.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:SAVE:WAVeform:TXT value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:SAVE:WAVeform:TXT <wfm_name>,<filepath>,<bitdepth>[,<IQ_Component>]
+        ```
     """
 
 
 class MmemorySaveWaveformTiq(SCPICmdWrite):
     """The ``MMEMory:SAVE:WAVeform:TIQ`` command.
 
-    **Description:**
+    Description:
         - This command exports an IQ waveform given a unique waveform name to an eligible storage
           location from the arbitrary waveform generator's assets as the .TIQ file type.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:SAVE:WAVeform:TIQ value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:SAVE:WAVeform:TIQ <wfm_name>,<filepath>
+        ```
     """
 
 
 class MmemorySaveWaveformMat(SCPICmdWrite):
     """The ``MMEMory:SAVE:WAVeform:MAT`` command.
 
-    **Description:**
+    Description:
         - This command exports a waveform given a unique waveform name to an eligible storage
           location from the AWG's waveforms with the AWG Specific MATLAB file format (MAT 5).
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:SAVE:WAVeform:MAT value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:SAVE:WAVeform:MAT <wfm_name>,<filepath>
+        ```
     """
 
 
 class MmemorySaveWaveform(SCPICmdRead):
     """The ``MMEMory:SAVE:WAVeform`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:SAVE:WAVeform?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:SAVE:WAVeform?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -174,19 +167,18 @@ class MmemorySaveWaveform(SCPICmdRead):
     def mat(self) -> MmemorySaveWaveformMat:
         """Return the ``MMEMory:SAVE:WAVeform:MAT`` command.
 
-        **Description:**
+        Description:
             - This command exports a waveform given a unique waveform name to an eligible storage
               location from the AWG's waveforms with the AWG Specific MATLAB file format (MAT 5).
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:SAVE:WAVeform:MAT value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:SAVE:WAVeform:MAT <wfm_name>,<filepath>
+            ```
         """
         return self._mat
 
@@ -194,19 +186,18 @@ class MmemorySaveWaveform(SCPICmdRead):
     def tiq(self) -> MmemorySaveWaveformTiq:
         """Return the ``MMEMory:SAVE:WAVeform:TIQ`` command.
 
-        **Description:**
+        Description:
             - This command exports an IQ waveform given a unique waveform name to an eligible
               storage location from the arbitrary waveform generator's assets as the .TIQ file type.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:SAVE:WAVeform:TIQ value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:SAVE:WAVeform:TIQ <wfm_name>,<filepath>
+            ```
         """
         return self._tiq
 
@@ -214,19 +205,18 @@ class MmemorySaveWaveform(SCPICmdRead):
     def txt(self) -> MmemorySaveWaveformTxt:
         """Return the ``MMEMory:SAVE:WAVeform:TXT`` command.
 
-        **Description:**
+        Description:
             - This command exports a waveform given a unique waveform name to an eligible storage
               location from the AWG's waveforms as a text file as the .TXT file type.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:SAVE:WAVeform:TXT value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:SAVE:WAVeform:TXT <wfm_name>,<filepath>,<bitdepth>[,<IQ_Component>]
+            ```
         """
         return self._txt
 
@@ -234,20 +224,19 @@ class MmemorySaveWaveform(SCPICmdRead):
     def wfm(self) -> MmemorySaveWaveformWfm:
         """Return the ``MMEMory:SAVE:WAVeform:WFM`` command.
 
-        **Description:**
+        Description:
             - This command exports a waveform given a unique waveform name to an eligible storage
               location from the AWG's waveforms as the .WFM file type. The .WFM file type is
               compatible with the AWG 400/500/600/700/5000/7000 instruments.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:SAVE:WAVeform:WFM value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:SAVE:WAVeform:WFM <wfm_name>,<filepath>[,<IQ Component>]
+            ```
         """
         return self._wfm
 
@@ -255,19 +244,18 @@ class MmemorySaveWaveform(SCPICmdRead):
     def wfmx(self) -> MmemorySaveWaveformWfmx:
         """Return the ``MMEMory:SAVE:WAVeform:WFMX`` command.
 
-        **Description:**
+        Description:
             - This command exports a waveform given a unique waveform name to an eligible storage
               location from the AWG's waveforms as the .WFMX file type.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:SAVE:WAVeform:WFMX value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:SAVE:WAVeform:WFMX <wfm_name>,<filepath>
+            ```
         """
         return self._wfmx
 
@@ -275,43 +263,41 @@ class MmemorySaveWaveform(SCPICmdRead):
 class MmemorySaveSetup(SCPICmdWrite):
     """The ``MMEMory:SAVE:SETup`` command.
 
-    **Description:**
+    Description:
         - This command saves the AWG's setup and optionally includes the assets (waveforms and
           sequences). This command supports the native setup file format (.AWGX).
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:SAVE:SETup value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:SAVE:SETup <filepath>[,<with_assets>]
+        ```
     """
 
 
 class MmemorySaveSequence(SCPICmdWrite):
     """The ``MMEMory:SAVE:SEQuence`` command.
 
-    **Description:**
+    Description:
         - This command exports a sequence given a unique name to an eligible storage location as the
           .SEQX file type.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:SAVE:SEQuence value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:SAVE:SEQuence <sequence>,<filepath>
+        ```
     """
 
 
 class MmemorySave(SCPICmdRead):
     """The ``MMEMory:SAVE`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:SAVE?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:SAVE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -332,19 +318,18 @@ class MmemorySave(SCPICmdRead):
     def sequence(self) -> MmemorySaveSequence:
         """Return the ``MMEMory:SAVE:SEQuence`` command.
 
-        **Description:**
+        Description:
             - This command exports a sequence given a unique name to an eligible storage location as
               the .SEQX file type.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:SAVE:SEQuence value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:SAVE:SEQuence <sequence>,<filepath>
+            ```
         """
         return self._sequence
 
@@ -352,18 +337,17 @@ class MmemorySave(SCPICmdRead):
     def setup(self) -> MmemorySaveSetup:
         """Return the ``MMEMory:SAVE:SETup`` command.
 
-        **Description:**
+        Description:
             - This command saves the AWG's setup and optionally includes the assets (waveforms and
               sequences). This command supports the native setup file format (.AWGX).
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:SAVE:SETup value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:SAVE:SETup <filepath>[,<with_assets>]
+            ```
         """
         return self._setup
 
@@ -371,7 +355,7 @@ class MmemorySave(SCPICmdRead):
     def waveform(self) -> MmemorySaveWaveform:
         """Return the ``MMEMory:SAVE:WAVeform`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:SAVE:WAVeform?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory:SAVE:WAVeform?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -389,100 +373,95 @@ class MmemorySave(SCPICmdRead):
 class MmemoryOpenTxt(SCPICmdWrite):
     """The ``MMEMory:OPEN:TXT`` command.
 
-    **Description:**
+    Description:
         - This command loads a waveform from a .TXT file into the AWG's waveform list.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:OPEN:TXT value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:OPEN:TXT <filepath>,<bitdepth>
+        ```
     """
 
 
 class MmemoryOpenSetup(SCPICmdWrite):
     """The ``MMEMory:OPEN:SETup`` command.
 
-    **Description:**
+    Description:
         - This command restores a setup file designated by the <filepath>. The supported file format
           is the native setup format (.AWGX).
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:OPEN:SETup value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:OPEN:SETup <filepath>
+        ```
     """
 
 
 class MmemoryOpenSassetWaveform(SCPICmdWrite):
     """The ``MMEMory:OPEN:SASSet:WAVeform`` command.
 
-    **Description:**
+    Description:
         - This command loads a single waveform if ``<desired_waveform>`` is designated. Otherwise
           the command imports all waveforms within the designated file in <filepath>. File formats
           supported: .AWG - AWG5000, AWG7000 Series waveforms.AWGX - AWG70000 Series waveforms.MAT -
           MATLAB files.SEQX - AWG70000 Series sequences
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:OPEN:SASSet:WAVeform value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:OPEN:SASSet:WAVeform <filepath>[,<desired_waveform>]
+        ```
     """
 
 
 class MmemoryOpenSassetSequenceMropened(SCPICmdRead):
     """The ``MMEMory:OPEN:SASSet:SEQuence:MROPened`` command.
 
-    **Description:**
+    Description:
         - This command returns which sequence was most recently added or replaced from the most
           recently opened or imported sequence file.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:OPEN:SASSet:SEQuence:MROPened?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``MMEMory:OPEN:SASSet:SEQuence:MROPened?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:OPEN:SASSet:SEQuence:MROPened?
+        ```
     """
 
 
 class MmemoryOpenSassetSequence(SCPICmdWrite, SCPICmdRead):
     """The ``MMEMory:OPEN:SASSet:SEQuence`` command.
 
-    **Description:**
+    Description:
         - This command loads all sequences, or a single sequence if ``<desired_sequence>`` is
           designated, into the Sequences list and all associated (used) sequences and waveforms
           within the designated file in <filepath>. File formats supported: .AWG - AWG7000 Series
           setup.AWGX - AWG70000 Series setup.SEQ - AWG400, AWG500, AWG600 Series sequence.SEQX -
           AWG70000 Series sequence
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:OPEN:SASSet:SEQuence value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:OPEN:SASSet:SEQuence <filepath>[,<desired_sequence>]
+        ```
 
     Properties:
         - ``.mropened``: The ``MMEMory:OPEN:SASSet:SEQuence:MROPened`` command.
@@ -496,22 +475,21 @@ class MmemoryOpenSassetSequence(SCPICmdWrite, SCPICmdRead):
     def mropened(self) -> MmemoryOpenSassetSequenceMropened:
         """Return the ``MMEMory:OPEN:SASSet:SEQuence:MROPened`` command.
 
-        **Description:**
+        Description:
             - This command returns which sequence was most recently added or replaced from the most
               recently opened or imported sequence file.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:OPEN:SASSet:SEQuence:MROPened?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``MMEMory:OPEN:SASSet:SEQuence:MROPened?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:OPEN:SASSet:SEQuence:MROPened?
+            ```
         """
         return self._mropened
 
@@ -519,7 +497,7 @@ class MmemoryOpenSassetSequence(SCPICmdWrite, SCPICmdRead):
 class MmemoryOpenSasset(SCPICmdRead):
     """The ``MMEMory:OPEN:SASSet`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:OPEN:SASSet?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:OPEN:SASSet?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -538,22 +516,21 @@ class MmemoryOpenSasset(SCPICmdRead):
     def sequence(self) -> MmemoryOpenSassetSequence:
         """Return the ``MMEMory:OPEN:SASSet:SEQuence`` command.
 
-        **Description:**
+        Description:
             - This command loads all sequences, or a single sequence if ``<desired_sequence>`` is
               designated, into the Sequences list and all associated (used) sequences and waveforms
               within the designated file in <filepath>. File formats supported: .AWG - AWG7000
               Series setup.AWGX - AWG70000 Series setup.SEQ - AWG400, AWG500, AWG600 Series
               sequence.SEQX - AWG70000 Series sequence
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``MMEMory:OPEN:SASSet:SEQuence value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:OPEN:SASSet:SEQuence <filepath>[,<desired_sequence>]
+            ```
 
         Sub-properties:
             - ``.mropened``: The ``MMEMory:OPEN:SASSet:SEQuence:MROPened`` command.
@@ -564,21 +541,20 @@ class MmemoryOpenSasset(SCPICmdRead):
     def waveform(self) -> MmemoryOpenSassetWaveform:
         """Return the ``MMEMory:OPEN:SASSet:WAVeform`` command.
 
-        **Description:**
+        Description:
             - This command loads a single waveform if ``<desired_waveform>`` is designated.
               Otherwise the command imports all waveforms within the designated file in <filepath>.
               File formats supported: .AWG - AWG5000, AWG7000 Series waveforms.AWGX - AWG70000
               Series waveforms.MAT - MATLAB files.SEQX - AWG70000 Series sequences
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``MMEMory:OPEN:SASSet:WAVeform value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:OPEN:SASSet:WAVeform <filepath>[,<desired_waveform>]
+            ```
         """
         return self._waveform
 
@@ -586,49 +562,47 @@ class MmemoryOpenSasset(SCPICmdRead):
 class MmemoryOpenParameterSiq(SCPICmdWrite, SCPICmdRead):
     """The ``MMEMory:OPEN:PARameter:SIQ`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns if the IQ waveform (from supported formats) is separated into
           two separate _I and _Q waveforms while importing. File formats supported: .TMP - Midas
           BLUE waveform.PRM - Midas BLUE waveform.IQT - Tektronix RSA IQ Pair.TIQ - IQ Pair.MAT -
           .Matlab files from Tektronix RSA instruments
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:OPEN:PARameter:SIQ?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:OPEN:PARameter:SIQ?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MMEMory:OPEN:PARameter:SIQ value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:OPEN:PARameter:SIQ {0|1|OFF|ON}
         - MMEMory:OPEN:PARameter:SIQ?
+        ```
     """
 
 
 class MmemoryOpenParameterNormalize(SCPICmdWrite):
     """The ``MMEMory:OPEN:PARameter:NORMalize`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries if the imported data is normalized during select file format
           import operations. The imported waveform data (for select file formats) is normalized
           based on the option set in this command. File formats supported: .WFM -
           AWG400/AWG500/AWG600/AWG700 Series waveform.AWG - AWG5000, AWG7000 Series waveform.TXT -
           Analog text files from AWG.RFD - RFXpress AWG Series waveforms.MAT - Matlab files
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``MMEMory:OPEN:PARameter:NORMalize value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:OPEN:PARameter:NORMalize <Type>
+        ```
 
-    **Info:**
+    Info:
         - ``NONE`` will not normalize the imported data. The data may contain points outside of the
           AWG's amplitude range. FSCale normalizes the imported data to the full amplitude range.
           ZREFerence normalizes the imported data while preserving the offset.
@@ -639,7 +613,7 @@ class MmemoryOpenParameterNormalize(SCPICmdWrite):
 class MmemoryOpenParameter(SCPICmdRead):
     """The ``MMEMory:OPEN:PARameter`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:OPEN:PARameter?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:OPEN:PARameter?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -658,24 +632,23 @@ class MmemoryOpenParameter(SCPICmdRead):
     def normalize(self) -> MmemoryOpenParameterNormalize:
         """Return the ``MMEMory:OPEN:PARameter:NORMalize`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries if the imported data is normalized during select file
               format import operations. The imported waveform data (for select file formats) is
               normalized based on the option set in this command. File formats supported: .WFM -
               AWG400/AWG500/AWG600/AWG700 Series waveform.AWG - AWG5000, AWG7000 Series waveform.TXT
               - Analog text files from AWG.RFD - RFXpress AWG Series waveforms.MAT - Matlab files
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``MMEMory:OPEN:PARameter:NORMalize value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:OPEN:PARameter:NORMalize <Type>
+            ```
 
-        **Info:**
+        Info:
             - ``NONE`` will not normalize the imported data. The data may contain points outside of
               the AWG's amplitude range. FSCale normalizes the imported data to the full amplitude
               range. ZREFerence normalizes the imported data while preserving the offset.
@@ -687,25 +660,24 @@ class MmemoryOpenParameter(SCPICmdRead):
     def siq(self) -> MmemoryOpenParameterSiq:
         """Return the ``MMEMory:OPEN:PARameter:SIQ`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns if the IQ waveform (from supported formats) is separated
               into two separate _I and _Q waveforms while importing. File formats supported: .TMP -
               Midas BLUE waveform.PRM - Midas BLUE waveform.IQT - Tektronix RSA IQ Pair.TIQ - IQ
               Pair.MAT - .Matlab files from Tektronix RSA instruments
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:OPEN:PARameter:SIQ?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory:OPEN:PARameter:SIQ?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MMEMory:OPEN:PARameter:SIQ value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:OPEN:PARameter:SIQ {0|1|OFF|ON}
             - MMEMory:OPEN:PARameter:SIQ?
+            ```
         """
         return self._siq
 
@@ -713,7 +685,7 @@ class MmemoryOpenParameter(SCPICmdRead):
 class MmemoryOpen(SCPICmdWrite, SCPICmdRead):
     """The ``MMEMory:OPEN`` command.
 
-    **Description:**
+    Description:
         - This command loads a file into the AWG waveform list. File formats supported: .WFMX -
           AWG70000 Series waveform file format.ISF - TDS3000 and DPO4000 waveform file format.TDS -
           TDS5000/TDS6000/TDS7000, DPO7000/DPO70000/DSA70000 Series waveform file format.WFM -
@@ -724,14 +696,13 @@ class MmemoryOpen(SCPICmdWrite, SCPICmdRead):
           sequence file format.SEQ - AWG400/AWG500/AWG600 sequence format.TMP - Midas BLUE file
           format.PRM - Midas BLUE file format
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:OPEN value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:OPEN <filepath>
+        ```
 
     Properties:
         - ``.sasset``: The ``MMEMory:OPEN:SASSet`` command tree.
@@ -751,7 +722,7 @@ class MmemoryOpen(SCPICmdWrite, SCPICmdRead):
     def sasset(self) -> MmemoryOpenSasset:
         """Return the ``MMEMory:OPEN:SASSet`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:OPEN:SASSet?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory:OPEN:SASSet?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -766,18 +737,17 @@ class MmemoryOpen(SCPICmdWrite, SCPICmdRead):
     def setup(self) -> MmemoryOpenSetup:
         """Return the ``MMEMory:OPEN:SETup`` command.
 
-        **Description:**
+        Description:
             - This command restores a setup file designated by the <filepath>. The supported file
               format is the native setup format (.AWGX).
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:OPEN:SETup value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:OPEN:SETup <filepath>
+            ```
         """
         return self._setup
 
@@ -785,17 +755,16 @@ class MmemoryOpen(SCPICmdWrite, SCPICmdRead):
     def txt(self) -> MmemoryOpenTxt:
         """Return the ``MMEMory:OPEN:TXT`` command.
 
-        **Description:**
+        Description:
             - This command loads a waveform from a .TXT file into the AWG's waveform list.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:OPEN:TXT value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:OPEN:TXT <filepath>,<bitdepth>
+            ```
         """
         return self._txt
 
@@ -803,7 +772,7 @@ class MmemoryOpen(SCPICmdWrite, SCPICmdRead):
     def parameter(self) -> MmemoryOpenParameter:
         """Return the ``MMEMory:OPEN:PARameter`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:OPEN:PARameter?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory:OPEN:PARameter?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -818,69 +787,66 @@ class MmemoryOpen(SCPICmdWrite, SCPICmdRead):
 class MmemoryMsis(SCPICmdWrite, SCPICmdRead):
     """The ``MMEMory:MSIS`` command.
 
-    **Description:**
+    Description:
         - This command selects or returns a mass storage device used by all MMEMory commands. <msus>
           specifies a drive using a drive letter. The drive letter can represent hard disk drives,
           network drives, external DVD/CD-RW drives, or USB memory.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:MSIS?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:MSIS?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MMEMory:MSIS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:MSIS [<msus>]
         - MMEMory:MSIS?
+        ```
     """
 
 
 class MmemoryMdirectory(SCPICmdWrite):
     """The ``MMEMory:MDIRectory`` command.
 
-    **Description:**
+    Description:
         - This command creates a directory in the mass storage system. If the specified directory is
           locked in the mass storage system, this command causes an error.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:MDIRectory value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:MDIRectory <directory_name>
+        ```
     """
 
 
 class MmemoryImportParameterNormalize(SCPICmdWrite, SCPICmdRead):
     """The ``MMEMory:IMPort:PARameter:NORMalize`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries if the imported data is normalized during select file format
           import operations. The imported waveform data (for select file formats) is normalized
           based on the option set in this command. File Formats supported: .WFM -
           AWG400/AWG500/AWG600/AWG700 Series waveform.AWG - AWG5000,AWG7000 Series waveforms.TXT -
           Analog text files from AWG.RFD - RFXpress AWG Series waveforms
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:IMPort:PARameter:NORMalize?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:IMPort:PARameter:NORMalize?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MMEMory:IMPort:PARameter:NORMalize value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:IMPort:PARameter:NORMalize <Type>
         - MMEMory:IMPort:PARameter:NORMalize?
+        ```
 
-    **Info:**
+    Info:
         - ``NONE`` will not normalize the imported data. The data may contain points outside of the
           AWG's amplitude range. FSCale normalizes the imported data to the full amplitude range.
           ZREFerence normalizes the imported data while preserving the offset.
@@ -890,7 +856,7 @@ class MmemoryImportParameterNormalize(SCPICmdWrite, SCPICmdRead):
 class MmemoryImportParameter(SCPICmdRead):
     """The ``MMEMory:IMPort:PARameter`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:IMPort:PARameter?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:IMPort:PARameter?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -907,14 +873,14 @@ class MmemoryImportParameter(SCPICmdRead):
     def normalize(self) -> MmemoryImportParameterNormalize:
         """Return the ``MMEMory:IMPort:PARameter:NORMalize`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries if the imported data is normalized during select file
               format import operations. The imported waveform data (for select file formats) is
               normalized based on the option set in this command. File Formats supported: .WFM -
               AWG400/AWG500/AWG600/AWG700 Series waveform.AWG - AWG5000,AWG7000 Series waveforms.TXT
               - Analog text files from AWG.RFD - RFXpress AWG Series waveforms
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:IMPort:PARameter:NORMalize?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -923,14 +889,13 @@ class MmemoryImportParameter(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MMEMory:IMPort:PARameter:NORMalize value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:IMPort:PARameter:NORMalize <Type>
             - MMEMory:IMPort:PARameter:NORMalize?
+            ```
 
-        **Info:**
+        Info:
             - ``NONE`` will not normalize the imported data. The data may contain points outside of
               the AWG's amplitude range. FSCale normalizes the imported data to the full amplitude
               range. ZREFerence normalizes the imported data while preserving the offset.
@@ -941,7 +906,7 @@ class MmemoryImportParameter(SCPICmdRead):
 class MmemoryImport(SCPICmdWrite, SCPICmdRead):
     """The ``MMEMory:IMPort`` command.
 
-    **Description:**
+    Description:
         - This command imports a file into the AWG's waveform list. File formats supported: ISF -
           TDS3000 and DPO4000 waveform formatTDS - TDS5000/TDS6000/TDS7000,
           DPO7000/DPO70000/DSA70000 Series waveformTXT - Text file with analog dataTXT8 - Text file
@@ -951,14 +916,13 @@ class MmemoryImport(SCPICmdWrite, SCPICmdRead):
           pattern fileTFW - AFG3000 Series waveform file formatIQT - RSA3000 Series waveform file
           formatTIQ - RSA6000 Series waveform file format
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:IMPort value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:IMPort <wfm_name>,<filepath>,<type>
+        ```
 
     Properties:
         - ``.parameter``: The ``MMEMory:IMPort:PARameter`` command tree.
@@ -972,7 +936,7 @@ class MmemoryImport(SCPICmdWrite, SCPICmdRead):
     def parameter(self) -> MmemoryImportParameter:
         """Return the ``MMEMory:IMPort:PARameter`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:IMPort:PARameter?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory:IMPort:PARameter?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -986,55 +950,52 @@ class MmemoryImport(SCPICmdWrite, SCPICmdRead):
 class MmemoryDelete(SCPICmdWrite):
     """The ``MMEMory:DELete`` command.
 
-    **Description:**
+    Description:
         - This command deletes a file or directory from the AWG's hard disk. When used on a
           directory, this command succeeds only if the directory is empty.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:DELete value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:DELete <file_name>[,<msus>]
+        ```
     """
 
 
 class MmemoryDataSize(SCPICmdReadWithArguments):
     """The ``MMEMory:DATA:SIZE`` command.
 
-    **Description:**
+    Description:
         - This command returns the size in bytes of a selected file.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``MMEMory:DATA:SIZE? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``MMEMory:DATA:SIZE? argument`` query and raise an AssertionError if the returned value
           does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:DATA:SIZE? <file_path>
+        ```
     """
 
 
 class MmemoryData(SCPICmdWrite, SCPICmdRead):
     """The ``MMEMory:DATA`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns block data to/from a file in the current mass storage device.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:DATA value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:DATA <file_path>[,<start_index>],<block_data>? <file_path>[,<start_index>[,<size>]]
+        ```
 
     Properties:
         - ``.size``: The ``MMEMory:DATA:SIZE`` command.
@@ -1048,21 +1009,20 @@ class MmemoryData(SCPICmdWrite, SCPICmdRead):
     def size(self) -> MmemoryDataSize:
         """Return the ``MMEMory:DATA:SIZE`` command.
 
-        **Description:**
+        Description:
             - This command returns the size in bytes of a selected file.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``MMEMory:DATA:SIZE? argument``
               query.
             - Using the ``.verify(argument, value)`` method will send the
               ``MMEMory:DATA:SIZE? argument`` query and raise an AssertionError if the returned
               value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:DATA:SIZE? <file_path>
+            ```
         """
         return self._size
 
@@ -1070,40 +1030,38 @@ class MmemoryData(SCPICmdWrite, SCPICmdRead):
 class MmemoryCdirectory(SCPICmdWrite, SCPICmdRead):
     """The ``MMEMory:CDIRectory`` command.
 
-    **Description:**
+    Description:
         - This command changes the current working directory in the mass storage system.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:CDIRectory?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:CDIRectory?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MMEMory:CDIRectory value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:CDIRectory [<directory_name>]
         - MMEMory:CDIRectory?
+        ```
     """
 
 
 class MmemoryCatalog(SCPICmdReadWithArguments):
     """The ``MMEMory:CATalog`` command.
 
-    **Description:**
+    Description:
         - This command returns the current contents and state of the mass storage media.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``MMEMory:CATalog? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the ``MMEMory:CATalog? argument``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:CATalog? [<msus>]
+        ```
     """
 
 
@@ -1111,7 +1069,7 @@ class MmemoryCatalog(SCPICmdReadWithArguments):
 class Mmemory(SCPICmdRead):
     """The ``MMEMory`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1144,21 +1102,20 @@ class Mmemory(SCPICmdRead):
     def catalog(self) -> MmemoryCatalog:
         """Return the ``MMEMory:CATalog`` command.
 
-        **Description:**
+        Description:
             - This command returns the current contents and state of the mass storage media.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``MMEMory:CATalog? argument``
               query.
             - Using the ``.verify(argument, value)`` method will send the
               ``MMEMory:CATalog? argument`` query and raise an AssertionError if the returned value
               does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:CATalog? [<msus>]
+            ```
         """
         return self._catalog
 
@@ -1166,21 +1123,20 @@ class Mmemory(SCPICmdRead):
     def cdirectory(self) -> MmemoryCdirectory:
         """Return the ``MMEMory:CDIRectory`` command.
 
-        **Description:**
+        Description:
             - This command changes the current working directory in the mass storage system.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:CDIRectory?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory:CDIRectory?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MMEMory:CDIRectory value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:CDIRectory [<directory_name>]
             - MMEMory:CDIRectory?
+            ```
         """
         return self._cdirectory
 
@@ -1188,18 +1144,17 @@ class Mmemory(SCPICmdRead):
     def data(self) -> MmemoryData:
         """Return the ``MMEMory:DATA`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns block data to/from a file in the current mass storage
               device.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:DATA value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:DATA <file_path>[,<start_index>],<block_data>? <file_path>[,<start_index>[,<size>]]
+            ```
 
         Sub-properties:
             - ``.size``: The ``MMEMory:DATA:SIZE`` command.
@@ -1210,18 +1165,17 @@ class Mmemory(SCPICmdRead):
     def delete(self) -> MmemoryDelete:
         """Return the ``MMEMory:DELete`` command.
 
-        **Description:**
+        Description:
             - This command deletes a file or directory from the AWG's hard disk. When used on a
               directory, this command succeeds only if the directory is empty.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:DELete value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:DELete <file_name>[,<msus>]
+            ```
         """
         return self._delete
 
@@ -1229,7 +1183,7 @@ class Mmemory(SCPICmdRead):
     def import_(self) -> MmemoryImport:
         """Return the ``MMEMory:IMPort`` command.
 
-        **Description:**
+        Description:
             - This command imports a file into the AWG's waveform list. File formats supported: ISF
               - TDS3000 and DPO4000 waveform formatTDS - TDS5000/TDS6000/TDS7000,
               DPO7000/DPO70000/DSA70000 Series waveformTXT - Text file with analog dataTXT8 - Text
@@ -1239,14 +1193,13 @@ class Mmemory(SCPICmdRead):
               pattern fileTFW - AFG3000 Series waveform file formatIQT - RSA3000 Series waveform
               file formatTIQ - RSA6000 Series waveform file format
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:IMPort value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:IMPort <wfm_name>,<filepath>,<type>
+            ```
 
         Sub-properties:
             - ``.parameter``: The ``MMEMory:IMPort:PARameter`` command tree.
@@ -1257,18 +1210,17 @@ class Mmemory(SCPICmdRead):
     def mdirectory(self) -> MmemoryMdirectory:
         """Return the ``MMEMory:MDIRectory`` command.
 
-        **Description:**
+        Description:
             - This command creates a directory in the mass storage system. If the specified
               directory is locked in the mass storage system, this command causes an error.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:MDIRectory value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:MDIRectory <directory_name>
+            ```
         """
         return self._mdirectory
 
@@ -1276,23 +1228,22 @@ class Mmemory(SCPICmdRead):
     def msis(self) -> MmemoryMsis:
         """Return the ``MMEMory:MSIS`` command.
 
-        **Description:**
+        Description:
             - This command selects or returns a mass storage device used by all MMEMory commands.
               <msus> specifies a drive using a drive letter. The drive letter can represent hard
               disk drives, network drives, external DVD/CD-RW drives, or USB memory.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:MSIS?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory:MSIS?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MMEMory:MSIS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:MSIS [<msus>]
             - MMEMory:MSIS?
+            ```
         """
         return self._msis
 
@@ -1300,7 +1251,7 @@ class Mmemory(SCPICmdRead):
     def open(self) -> MmemoryOpen:
         """Return the ``MMEMory:OPEN`` command.
 
-        **Description:**
+        Description:
             - This command loads a file into the AWG waveform list. File formats supported: .WFMX -
               AWG70000 Series waveform file format.ISF - TDS3000 and DPO4000 waveform file
               format.TDS - TDS5000/TDS6000/TDS7000, DPO7000/DPO70000/DSA70000 Series waveform file
@@ -1311,14 +1262,13 @@ class Mmemory(SCPICmdRead):
               format.SEQX - AWG70000 Series sequence file format.SEQ - AWG400/AWG500/AWG600 sequence
               format.TMP - Midas BLUE file format.PRM - Midas BLUE file format
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:OPEN value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:OPEN <filepath>
+            ```
 
         Sub-properties:
             - ``.sasset``: The ``MMEMory:OPEN:SASSet`` command tree.
@@ -1332,7 +1282,7 @@ class Mmemory(SCPICmdRead):
     def save(self) -> MmemorySave:
         """Return the ``MMEMory:SAVE`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:SAVE?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory:SAVE?`` query and raise an
               AssertionError if the returned value does not match ``value``.

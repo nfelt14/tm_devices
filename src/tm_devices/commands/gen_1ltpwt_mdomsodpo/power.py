@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - POWer:CURRENTSOurce {CH<x>|REF<x>}
     - POWer:CURRENTSOurce?
     - POWer:DISplay {OFF|ON|0|1}
@@ -253,23 +251,22 @@ if TYPE_CHECKING:
 class PowerVoltagesource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:VOLTAGESOurce`` command.
 
-    **Description:**
+    Description:
         - This command specifies the voltage source for the power application.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:VOLTAGESOurce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:VOLTAGESOurce?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:VOLTAGESOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:VOLTAGESOurce {CH<x>|REF<x>}
         - POWer:VOLTAGESOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` sets the analog channel 1-4 or reference waveform 1-4 as the voltage source. x
           has a minimum of 1 and a maximum of 4.
     """
@@ -278,23 +275,22 @@ class PowerVoltagesource(SCPICmdWrite, SCPICmdRead):
 class PowerType(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command specifies the power application measurement type.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:TYPe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:TYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:TYPe {NONe|QUALity|SWITCHingloss|SOA|HARMonics|RIPPle|MODULationanalysis|DESKew}
         - POWer:TYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``NONe`` Use to set the measurement type to None.
         - ``QUALity`` Use the power quality functions to obtain measurements and statistics about
           the general power quality in your test circuit.
@@ -327,24 +323,23 @@ class PowerType(SCPICmdWrite, SCPICmdRead):
 class PowerSwlossVcesat(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SWLoss:VCEsat`` command.
 
-    **Description:**
+    Description:
         - This command specifies VCESAT value for use in switching loss calculations when the
           conduction calculation method is VCESAT.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:VCEsat?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:VCEsat?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SWLoss:VCEsat value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:VCEsat <NR3>
         - POWer:SWLoss:VCEsat?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the VCEsat switching loss calculation.
     """
 
@@ -352,64 +347,61 @@ class PowerSwlossVcesat(SCPICmdWrite, SCPICmdRead):
 class PowerSwlossTotalPowerMin(SCPICmdRead):
     """The ``POWer:SWLoss:TOTal:POWer:MIN`` command.
 
-    **Description:**
+    Description:
         - Returns the minimum total power loss.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TOTal:POWer:MIN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOTal:POWer:MIN?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:TOTal:POWer:MIN?
+        ```
     """
 
 
 class PowerSwlossTotalPowerMean(SCPICmdRead):
     """The ``POWer:SWLoss:TOTal:POWer:MEAN`` command.
 
-    **Description:**
+    Description:
         - Returns the mean total power loss.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TOTal:POWer:MEAN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOTal:POWer:MEAN?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:TOTal:POWer:MEAN?
+        ```
     """
 
 
 class PowerSwlossTotalPowerMax(SCPICmdRead):
     """The ``POWer:SWLoss:TOTal:POWer:MAX`` command.
 
-    **Description:**
+    Description:
         - Returns the maximum total power loss.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TOTal:POWer:MAX?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOTal:POWer:MAX?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:TOTal:POWer:MAX?
+        ```
     """
 
 
 class PowerSwlossTotalPower(SCPICmdRead):
     """The ``POWer:SWLoss:TOTal:POWer`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TOTal:POWer?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOTal:POWer?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -430,19 +422,18 @@ class PowerSwlossTotalPower(SCPICmdRead):
     def max(self) -> PowerSwlossTotalPowerMax:
         """Return the ``POWer:SWLoss:TOTal:POWer:MAX`` command.
 
-        **Description:**
+        Description:
             - Returns the maximum total power loss.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TOTal:POWer:MAX?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOTal:POWer:MAX?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:TOTal:POWer:MAX?
+            ```
         """
         return self._max
 
@@ -450,19 +441,18 @@ class PowerSwlossTotalPower(SCPICmdRead):
     def mean(self) -> PowerSwlossTotalPowerMean:
         """Return the ``POWer:SWLoss:TOTal:POWer:MEAN`` command.
 
-        **Description:**
+        Description:
             - Returns the mean total power loss.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TOTal:POWer:MEAN?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOTal:POWer:MEAN?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:TOTal:POWer:MEAN?
+            ```
         """
         return self._mean
 
@@ -470,19 +460,18 @@ class PowerSwlossTotalPower(SCPICmdRead):
     def min(self) -> PowerSwlossTotalPowerMin:
         """Return the ``POWer:SWLoss:TOTal:POWer:MIN`` command.
 
-        **Description:**
+        Description:
             - Returns the minimum total power loss.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TOTal:POWer:MIN?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOTal:POWer:MIN?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:TOTal:POWer:MIN?
+            ```
         """
         return self._min
 
@@ -490,64 +479,61 @@ class PowerSwlossTotalPower(SCPICmdRead):
 class PowerSwlossTotalEnergyMin(SCPICmdRead):
     """The ``POWer:SWLoss:TOTal:ENERGY:MIN`` command.
 
-    **Description:**
+    Description:
         - Returns the minimum total energy for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TOTal:ENERGY:MIN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOTal:ENERGY:MIN?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:TOTal:ENERGY:MIN?
+        ```
     """
 
 
 class PowerSwlossTotalEnergyMean(SCPICmdRead):
     """The ``POWer:SWLoss:TOTal:ENERGY:MEAN`` command.
 
-    **Description:**
+    Description:
         - Returns the mean total energy for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TOTal:ENERGY:MEAN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOTal:ENERGY:MEAN?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:TOTal:ENERGY:MEAN?
+        ```
     """
 
 
 class PowerSwlossTotalEnergyMax(SCPICmdRead):
     """The ``POWer:SWLoss:TOTal:ENERGY:MAX`` command.
 
-    **Description:**
+    Description:
         - Returns the maximum total energy for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TOTal:ENERGY:MAX?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOTal:ENERGY:MAX?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:TOTal:ENERGY:MAX?
+        ```
     """
 
 
 class PowerSwlossTotalEnergy(SCPICmdRead):
     """The ``POWer:SWLoss:TOTal:ENERGY`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TOTal:ENERGY?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOTal:ENERGY?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -568,19 +554,18 @@ class PowerSwlossTotalEnergy(SCPICmdRead):
     def max(self) -> PowerSwlossTotalEnergyMax:
         """Return the ``POWer:SWLoss:TOTal:ENERGY:MAX`` command.
 
-        **Description:**
+        Description:
             - Returns the maximum total energy for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TOTal:ENERGY:MAX?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOTal:ENERGY:MAX?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:TOTal:ENERGY:MAX?
+            ```
         """
         return self._max
 
@@ -588,19 +573,18 @@ class PowerSwlossTotalEnergy(SCPICmdRead):
     def mean(self) -> PowerSwlossTotalEnergyMean:
         """Return the ``POWer:SWLoss:TOTal:ENERGY:MEAN`` command.
 
-        **Description:**
+        Description:
             - Returns the mean total energy for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TOTal:ENERGY:MEAN?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOTal:ENERGY:MEAN?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:TOTal:ENERGY:MEAN?
+            ```
         """
         return self._mean
 
@@ -608,19 +592,18 @@ class PowerSwlossTotalEnergy(SCPICmdRead):
     def min(self) -> PowerSwlossTotalEnergyMin:
         """Return the ``POWer:SWLoss:TOTal:ENERGY:MIN`` command.
 
-        **Description:**
+        Description:
             - Returns the minimum total energy for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TOTal:ENERGY:MIN?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOTal:ENERGY:MIN?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:TOTal:ENERGY:MIN?
+            ```
         """
         return self._min
 
@@ -628,7 +611,7 @@ class PowerSwlossTotalEnergy(SCPICmdRead):
 class PowerSwlossTotal(SCPICmdRead):
     """The ``POWer:SWLoss:TOTal`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TOTal?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOTal?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -647,7 +630,7 @@ class PowerSwlossTotal(SCPICmdRead):
     def energy(self) -> PowerSwlossTotalEnergy:
         """Return the ``POWer:SWLoss:TOTal:ENERGY`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TOTal:ENERGY?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOTal:ENERGY?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -663,7 +646,7 @@ class PowerSwlossTotal(SCPICmdRead):
     def power(self) -> PowerSwlossTotalPower:
         """Return the ``POWer:SWLoss:TOTal:POWer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TOTal:POWer?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOTal:POWer?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -679,64 +662,61 @@ class PowerSwlossTotal(SCPICmdRead):
 class PowerSwlossTonPowerMin(SCPICmdRead):
     """The ``POWer:SWLoss:TON:POWer:MIN`` command.
 
-    **Description:**
+    Description:
         - Returns the minimum Ton power for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TON:POWer:MIN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TON:POWer:MIN?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:TON:POWer:MIN?
+        ```
     """
 
 
 class PowerSwlossTonPowerMean(SCPICmdRead):
     """The ``POWer:SWLoss:TON:POWer:MEAN`` command.
 
-    **Description:**
+    Description:
         - Returns the mean Ton power for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TON:POWer:MEAN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TON:POWer:MEAN?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:TON:POWer:MEAN?
+        ```
     """
 
 
 class PowerSwlossTonPowerMax(SCPICmdRead):
     """The ``POWer:SWLoss:TON:POWer:MAX`` command.
 
-    **Description:**
+    Description:
         - Returns the maximum Ton power for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TON:POWer:MAX?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TON:POWer:MAX?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:TON:POWer:MAX?
+        ```
     """
 
 
 class PowerSwlossTonPower(SCPICmdRead):
     """The ``POWer:SWLoss:TON:POWer`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TON:POWer?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TON:POWer?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -757,19 +737,18 @@ class PowerSwlossTonPower(SCPICmdRead):
     def max(self) -> PowerSwlossTonPowerMax:
         """Return the ``POWer:SWLoss:TON:POWer:MAX`` command.
 
-        **Description:**
+        Description:
             - Returns the maximum Ton power for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TON:POWer:MAX?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TON:POWer:MAX?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:TON:POWer:MAX?
+            ```
         """
         return self._max
 
@@ -777,19 +756,18 @@ class PowerSwlossTonPower(SCPICmdRead):
     def mean(self) -> PowerSwlossTonPowerMean:
         """Return the ``POWer:SWLoss:TON:POWer:MEAN`` command.
 
-        **Description:**
+        Description:
             - Returns the mean Ton power for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TON:POWer:MEAN?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TON:POWer:MEAN?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:TON:POWer:MEAN?
+            ```
         """
         return self._mean
 
@@ -797,19 +775,18 @@ class PowerSwlossTonPower(SCPICmdRead):
     def min(self) -> PowerSwlossTonPowerMin:
         """Return the ``POWer:SWLoss:TON:POWer:MIN`` command.
 
-        **Description:**
+        Description:
             - Returns the minimum Ton power for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TON:POWer:MIN?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TON:POWer:MIN?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:TON:POWer:MIN?
+            ```
         """
         return self._min
 
@@ -817,64 +794,61 @@ class PowerSwlossTonPower(SCPICmdRead):
 class PowerSwlossTonEnergyMin(SCPICmdRead):
     """The ``POWer:SWLoss:TON:ENERGY:MIN`` command.
 
-    **Description:**
+    Description:
         - Returns the minimum Ton energy for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TON:ENERGY:MIN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TON:ENERGY:MIN?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:TON:ENERGY:MIN?
+        ```
     """
 
 
 class PowerSwlossTonEnergyMean(SCPICmdRead):
     """The ``POWer:SWLoss:TON:ENERGY:MEAN`` command.
 
-    **Description:**
+    Description:
         - Returns the mean Ton energy for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TON:ENERGY:MEAN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TON:ENERGY:MEAN?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:TON:ENERGY:MEAN?
+        ```
     """
 
 
 class PowerSwlossTonEnergyMax(SCPICmdRead):
     """The ``POWer:SWLoss:TON:ENERGY:MAX`` command.
 
-    **Description:**
+    Description:
         - Returns the maximum Ton energy for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TON:ENERGY:MAX?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TON:ENERGY:MAX?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:TON:ENERGY:MAX?
+        ```
     """
 
 
 class PowerSwlossTonEnergy(SCPICmdRead):
     """The ``POWer:SWLoss:TON:ENERGY`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TON:ENERGY?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TON:ENERGY?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -895,19 +869,18 @@ class PowerSwlossTonEnergy(SCPICmdRead):
     def max(self) -> PowerSwlossTonEnergyMax:
         """Return the ``POWer:SWLoss:TON:ENERGY:MAX`` command.
 
-        **Description:**
+        Description:
             - Returns the maximum Ton energy for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TON:ENERGY:MAX?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TON:ENERGY:MAX?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:TON:ENERGY:MAX?
+            ```
         """
         return self._max
 
@@ -915,19 +888,18 @@ class PowerSwlossTonEnergy(SCPICmdRead):
     def mean(self) -> PowerSwlossTonEnergyMean:
         """Return the ``POWer:SWLoss:TON:ENERGY:MEAN`` command.
 
-        **Description:**
+        Description:
             - Returns the mean Ton energy for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TON:ENERGY:MEAN?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TON:ENERGY:MEAN?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:TON:ENERGY:MEAN?
+            ```
         """
         return self._mean
 
@@ -935,19 +907,18 @@ class PowerSwlossTonEnergy(SCPICmdRead):
     def min(self) -> PowerSwlossTonEnergyMin:
         """Return the ``POWer:SWLoss:TON:ENERGY:MIN`` command.
 
-        **Description:**
+        Description:
             - Returns the minimum Ton energy for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TON:ENERGY:MIN?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TON:ENERGY:MIN?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:TON:ENERGY:MIN?
+            ```
         """
         return self._min
 
@@ -955,7 +926,7 @@ class PowerSwlossTonEnergy(SCPICmdRead):
 class PowerSwlossTon(SCPICmdRead):
     """The ``POWer:SWLoss:TON`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TON?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TON?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -974,7 +945,7 @@ class PowerSwlossTon(SCPICmdRead):
     def energy(self) -> PowerSwlossTonEnergy:
         """Return the ``POWer:SWLoss:TON:ENERGY`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TON:ENERGY?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TON:ENERGY?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -990,7 +961,7 @@ class PowerSwlossTon(SCPICmdRead):
     def power(self) -> PowerSwlossTonPower:
         """Return the ``POWer:SWLoss:TON:POWer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TON:POWer?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TON:POWer?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -1006,64 +977,61 @@ class PowerSwlossTon(SCPICmdRead):
 class PowerSwlossToffPowerMin(SCPICmdRead):
     """The ``POWer:SWLoss:TOFF:POWer:MIN`` command.
 
-    **Description:**
+    Description:
         - Returns the minimum Toff power for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TOFF:POWer:MIN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOFF:POWer:MIN?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:TOFF:POWer:MIN?
+        ```
     """
 
 
 class PowerSwlossToffPowerMean(SCPICmdRead):
     """The ``POWer:SWLoss:TOFF:POWer:MEAN`` command.
 
-    **Description:**
+    Description:
         - Returns the mean Toff power for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TOFF:POWer:MEAN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOFF:POWer:MEAN?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:TOFF:POWer:MEAN?
+        ```
     """
 
 
 class PowerSwlossToffPowerMax(SCPICmdRead):
     """The ``POWer:SWLoss:TOFF:POWer:MAX`` command.
 
-    **Description:**
+    Description:
         - Returns the maximum Toff power for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TOFF:POWer:MAX?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOFF:POWer:MAX?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:TOFF:POWer:MAX?
+        ```
     """
 
 
 class PowerSwlossToffPower(SCPICmdRead):
     """The ``POWer:SWLoss:TOFF:POWer`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TOFF:POWer?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOFF:POWer?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1084,19 +1052,18 @@ class PowerSwlossToffPower(SCPICmdRead):
     def max(self) -> PowerSwlossToffPowerMax:
         """Return the ``POWer:SWLoss:TOFF:POWer:MAX`` command.
 
-        **Description:**
+        Description:
             - Returns the maximum Toff power for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TOFF:POWer:MAX?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOFF:POWer:MAX?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:TOFF:POWer:MAX?
+            ```
         """
         return self._max
 
@@ -1104,19 +1071,18 @@ class PowerSwlossToffPower(SCPICmdRead):
     def mean(self) -> PowerSwlossToffPowerMean:
         """Return the ``POWer:SWLoss:TOFF:POWer:MEAN`` command.
 
-        **Description:**
+        Description:
             - Returns the mean Toff power for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TOFF:POWer:MEAN?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOFF:POWer:MEAN?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:TOFF:POWer:MEAN?
+            ```
         """
         return self._mean
 
@@ -1124,19 +1090,18 @@ class PowerSwlossToffPower(SCPICmdRead):
     def min(self) -> PowerSwlossToffPowerMin:
         """Return the ``POWer:SWLoss:TOFF:POWer:MIN`` command.
 
-        **Description:**
+        Description:
             - Returns the minimum Toff power for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TOFF:POWer:MIN?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOFF:POWer:MIN?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:TOFF:POWer:MIN?
+            ```
         """
         return self._min
 
@@ -1144,64 +1109,61 @@ class PowerSwlossToffPower(SCPICmdRead):
 class PowerSwlossToffEnergyMin(SCPICmdRead):
     """The ``POWer:SWLoss:TOFF:ENERGY:MIN`` command.
 
-    **Description:**
+    Description:
         - Returns the minimum Toff energy for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TOFF:ENERGY:MIN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOFF:ENERGY:MIN?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:TOFF:ENERGY:MIN?
+        ```
     """
 
 
 class PowerSwlossToffEnergyMean(SCPICmdRead):
     """The ``POWer:SWLoss:TOFF:ENERGY:MEAN`` command.
 
-    **Description:**
+    Description:
         - Returns the mean Toff energy for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TOFF:ENERGY:MEAN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOFF:ENERGY:MEAN?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:TOFF:ENERGY:MEAN?
+        ```
     """
 
 
 class PowerSwlossToffEnergyMax(SCPICmdRead):
     """The ``POWer:SWLoss:TOFF:ENERGY:MAX`` command.
 
-    **Description:**
+    Description:
         - Returns the maximum Toff energy for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TOFF:ENERGY:MAX?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOFF:ENERGY:MAX?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:TOFF:ENERGY:MAX?
+        ```
     """
 
 
 class PowerSwlossToffEnergy(SCPICmdRead):
     """The ``POWer:SWLoss:TOFF:ENERGY`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TOFF:ENERGY?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOFF:ENERGY?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1222,19 +1184,18 @@ class PowerSwlossToffEnergy(SCPICmdRead):
     def max(self) -> PowerSwlossToffEnergyMax:
         """Return the ``POWer:SWLoss:TOFF:ENERGY:MAX`` command.
 
-        **Description:**
+        Description:
             - Returns the maximum Toff energy for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TOFF:ENERGY:MAX?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOFF:ENERGY:MAX?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:TOFF:ENERGY:MAX?
+            ```
         """
         return self._max
 
@@ -1242,19 +1203,18 @@ class PowerSwlossToffEnergy(SCPICmdRead):
     def mean(self) -> PowerSwlossToffEnergyMean:
         """Return the ``POWer:SWLoss:TOFF:ENERGY:MEAN`` command.
 
-        **Description:**
+        Description:
             - Returns the mean Toff energy for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TOFF:ENERGY:MEAN?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOFF:ENERGY:MEAN?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:TOFF:ENERGY:MEAN?
+            ```
         """
         return self._mean
 
@@ -1262,19 +1222,18 @@ class PowerSwlossToffEnergy(SCPICmdRead):
     def min(self) -> PowerSwlossToffEnergyMin:
         """Return the ``POWer:SWLoss:TOFF:ENERGY:MIN`` command.
 
-        **Description:**
+        Description:
             - Returns the minimum Toff energy for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TOFF:ENERGY:MIN?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOFF:ENERGY:MIN?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:TOFF:ENERGY:MIN?
+            ```
         """
         return self._min
 
@@ -1282,7 +1241,7 @@ class PowerSwlossToffEnergy(SCPICmdRead):
 class PowerSwlossToff(SCPICmdRead):
     """The ``POWer:SWLoss:TOFF`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:TOFF?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOFF?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -1301,7 +1260,7 @@ class PowerSwlossToff(SCPICmdRead):
     def energy(self) -> PowerSwlossToffEnergy:
         """Return the ``POWer:SWLoss:TOFF:ENERGY`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TOFF:ENERGY?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOFF:ENERGY?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -1317,7 +1276,7 @@ class PowerSwlossToff(SCPICmdRead):
     def power(self) -> PowerSwlossToffPower:
         """Return the ``POWer:SWLoss:TOFF:POWer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TOFF:POWer?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOFF:POWer?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -1333,11 +1292,11 @@ class PowerSwlossToff(SCPICmdRead):
 class PowerSwlossReflevelPercentLowvoltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SWLoss:REFLevel:PERCent:LOWVoltage`` command.
 
-    **Description:**
+    Description:
         - This command specifies the low voltage reference level used in switching loss power
           measurements in percent.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:REFLevel:PERCent:LOWVoltage?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1346,14 +1305,13 @@ class PowerSwlossReflevelPercentLowvoltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:SWLoss:REFLevel:PERCent:LOWVoltage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:REFLevel:PERCent:LOWVoltage <NR3>
         - POWer:SWLoss:REFLevel:PERCent:LOWVoltage?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the low voltage reference level in
           percent.
     """
@@ -1362,11 +1320,11 @@ class PowerSwlossReflevelPercentLowvoltage(SCPICmdWrite, SCPICmdRead):
 class PowerSwlossReflevelPercentLowcurrent(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SWLoss:REFLevel:PERCent:LOWCurrent`` command.
 
-    **Description:**
+    Description:
         - This command specifies the low current reference level used in switching loss power
           measurements in percent.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:REFLevel:PERCent:LOWCurrent?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1375,14 +1333,13 @@ class PowerSwlossReflevelPercentLowcurrent(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:SWLoss:REFLevel:PERCent:LOWCurrent value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:REFLevel:PERCent:LOWCurrent <NR3>
         - POWer:SWLoss:REFLevel:PERCent:LOWCurrent?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the low voltage reference level
           percent.
     """
@@ -1391,11 +1348,11 @@ class PowerSwlossReflevelPercentLowcurrent(SCPICmdWrite, SCPICmdRead):
 class PowerSwlossReflevelPercentGatemid(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SWLoss:REFLevel:PERCent:GATEMid`` command.
 
-    **Description:**
+    Description:
         - This command specifies the mid voltage reference level used in switching loss power
           measurements in percent.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:REFLevel:PERCent:GATEMid?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1404,14 +1361,13 @@ class PowerSwlossReflevelPercentGatemid(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:SWLoss:REFLevel:PERCent:GATEMid value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:REFLevel:PERCent:GATEMid <NR3>
         - POWer:SWLoss:REFLevel:PERCent:GATEMid?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the mid voltage reference level in
           volts.
     """
@@ -1420,7 +1376,7 @@ class PowerSwlossReflevelPercentGatemid(SCPICmdWrite, SCPICmdRead):
 class PowerSwlossReflevelPercent(SCPICmdRead):
     """The ``POWer:SWLoss:REFLevel:PERCent`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:REFLevel:PERCent?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:REFLevel:PERCent?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -1445,11 +1401,11 @@ class PowerSwlossReflevelPercent(SCPICmdRead):
     def gatemid(self) -> PowerSwlossReflevelPercentGatemid:
         """Return the ``POWer:SWLoss:REFLevel:PERCent:GATEMid`` command.
 
-        **Description:**
+        Description:
             - This command specifies the mid voltage reference level used in switching loss power
               measurements in percent.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:REFLevel:PERCent:GATEMid?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1458,14 +1414,13 @@ class PowerSwlossReflevelPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:SWLoss:REFLevel:PERCent:GATEMid value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:REFLevel:PERCent:GATEMid <NR3>
             - POWer:SWLoss:REFLevel:PERCent:GATEMid?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the mid voltage reference level in
               volts.
         """
@@ -1475,11 +1430,11 @@ class PowerSwlossReflevelPercent(SCPICmdRead):
     def lowcurrent(self) -> PowerSwlossReflevelPercentLowcurrent:
         """Return the ``POWer:SWLoss:REFLevel:PERCent:LOWCurrent`` command.
 
-        **Description:**
+        Description:
             - This command specifies the low current reference level used in switching loss power
               measurements in percent.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:SWLoss:REFLevel:PERCent:LOWCurrent?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1488,14 +1443,13 @@ class PowerSwlossReflevelPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:SWLoss:REFLevel:PERCent:LOWCurrent value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:REFLevel:PERCent:LOWCurrent <NR3>
             - POWer:SWLoss:REFLevel:PERCent:LOWCurrent?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the low voltage reference level
               percent.
         """
@@ -1505,11 +1459,11 @@ class PowerSwlossReflevelPercent(SCPICmdRead):
     def lowvoltage(self) -> PowerSwlossReflevelPercentLowvoltage:
         """Return the ``POWer:SWLoss:REFLevel:PERCent:LOWVoltage`` command.
 
-        **Description:**
+        Description:
             - This command specifies the low voltage reference level used in switching loss power
               measurements in percent.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:SWLoss:REFLevel:PERCent:LOWVoltage?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1518,14 +1472,13 @@ class PowerSwlossReflevelPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:SWLoss:REFLevel:PERCent:LOWVoltage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:REFLevel:PERCent:LOWVoltage <NR3>
             - POWer:SWLoss:REFLevel:PERCent:LOWVoltage?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the low voltage reference level in
               percent.
         """
@@ -1535,11 +1488,11 @@ class PowerSwlossReflevelPercent(SCPICmdRead):
 class PowerSwlossReflevelAbsoluteLowvoltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SWLoss:REFLevel:ABSolute:LOWVoltage`` command.
 
-    **Description:**
+    Description:
         - This command specifies the low voltage reference level used in switching loss power
           measurements in volts.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:REFLevel:ABSolute:LOWVoltage?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1548,14 +1501,13 @@ class PowerSwlossReflevelAbsoluteLowvoltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:SWLoss:REFLevel:ABSolute:LOWVoltage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:REFLevel:ABSolute:LOWVoltage <NR3>
         - POWer:SWLoss:REFLevel:ABSolute:LOWVoltage?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the low voltage reference level in
           volts.
     """
@@ -1564,11 +1516,11 @@ class PowerSwlossReflevelAbsoluteLowvoltage(SCPICmdWrite, SCPICmdRead):
 class PowerSwlossReflevelAbsoluteLowcurrent(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SWLoss:REFLevel:ABSolute:LOWCurrent`` command.
 
-    **Description:**
+    Description:
         - This command specifies the low current reference level used in switching loss power
           measurements in amperes.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:REFLevel:ABSolute:LOWCurrent?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1577,14 +1529,13 @@ class PowerSwlossReflevelAbsoluteLowcurrent(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:SWLoss:REFLevel:ABSolute:LOWCurrent value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:REFLevel:ABSolute:LOWCurrent <NR3>
         - POWer:SWLoss:REFLevel:ABSolute:LOWCurrent?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the low voltage current level in
           amperes.
     """
@@ -1593,11 +1544,11 @@ class PowerSwlossReflevelAbsoluteLowcurrent(SCPICmdWrite, SCPICmdRead):
 class PowerSwlossReflevelAbsoluteGatemid(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SWLoss:REFLevel:ABSolute:GATEMid`` command.
 
-    **Description:**
+    Description:
         - This command specifies the mid voltage reference level used in switching loss power
           measurements in volts.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:REFLevel:ABSolute:GATEMid?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1606,14 +1557,13 @@ class PowerSwlossReflevelAbsoluteGatemid(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:SWLoss:REFLevel:ABSolute:GATEMid value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:REFLevel:ABSolute:GATEMid <NR3>
         - POWer:SWLoss:REFLevel:ABSolute:GATEMid?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the mid voltage reference level in
           volts.
     """
@@ -1622,7 +1572,7 @@ class PowerSwlossReflevelAbsoluteGatemid(SCPICmdWrite, SCPICmdRead):
 class PowerSwlossReflevelAbsolute(SCPICmdRead):
     """The ``POWer:SWLoss:REFLevel:ABSolute`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:REFLevel:ABSolute?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:REFLevel:ABSolute?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -1647,11 +1597,11 @@ class PowerSwlossReflevelAbsolute(SCPICmdRead):
     def gatemid(self) -> PowerSwlossReflevelAbsoluteGatemid:
         """Return the ``POWer:SWLoss:REFLevel:ABSolute:GATEMid`` command.
 
-        **Description:**
+        Description:
             - This command specifies the mid voltage reference level used in switching loss power
               measurements in volts.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:SWLoss:REFLevel:ABSolute:GATEMid?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1660,14 +1610,13 @@ class PowerSwlossReflevelAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:SWLoss:REFLevel:ABSolute:GATEMid value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:REFLevel:ABSolute:GATEMid <NR3>
             - POWer:SWLoss:REFLevel:ABSolute:GATEMid?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the mid voltage reference level in
               volts.
         """
@@ -1677,11 +1626,11 @@ class PowerSwlossReflevelAbsolute(SCPICmdRead):
     def lowcurrent(self) -> PowerSwlossReflevelAbsoluteLowcurrent:
         """Return the ``POWer:SWLoss:REFLevel:ABSolute:LOWCurrent`` command.
 
-        **Description:**
+        Description:
             - This command specifies the low current reference level used in switching loss power
               measurements in amperes.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:SWLoss:REFLevel:ABSolute:LOWCurrent?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1690,14 +1639,13 @@ class PowerSwlossReflevelAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:SWLoss:REFLevel:ABSolute:LOWCurrent value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:REFLevel:ABSolute:LOWCurrent <NR3>
             - POWer:SWLoss:REFLevel:ABSolute:LOWCurrent?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the low voltage current level in
               amperes.
         """
@@ -1707,11 +1655,11 @@ class PowerSwlossReflevelAbsolute(SCPICmdRead):
     def lowvoltage(self) -> PowerSwlossReflevelAbsoluteLowvoltage:
         """Return the ``POWer:SWLoss:REFLevel:ABSolute:LOWVoltage`` command.
 
-        **Description:**
+        Description:
             - This command specifies the low voltage reference level used in switching loss power
               measurements in volts.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:SWLoss:REFLevel:ABSolute:LOWVoltage?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1720,14 +1668,13 @@ class PowerSwlossReflevelAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:SWLoss:REFLevel:ABSolute:LOWVoltage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:REFLevel:ABSolute:LOWVoltage <NR3>
             - POWer:SWLoss:REFLevel:ABSolute:LOWVoltage?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the low voltage reference level in
               volts.
         """
@@ -1737,7 +1684,7 @@ class PowerSwlossReflevelAbsolute(SCPICmdRead):
 class PowerSwlossReflevel(SCPICmdRead):
     """The ``POWer:SWLoss:REFLevel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:REFLevel?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:REFLevel?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1756,7 +1703,7 @@ class PowerSwlossReflevel(SCPICmdRead):
     def absolute(self) -> PowerSwlossReflevelAbsolute:
         """Return the ``POWer:SWLoss:REFLevel:ABSolute`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:REFLevel:ABSolute?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:REFLevel:ABSolute?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -1772,7 +1719,7 @@ class PowerSwlossReflevel(SCPICmdRead):
     def percent(self) -> PowerSwlossReflevelPercent:
         """Return the ``POWer:SWLoss:REFLevel:PERCent`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:REFLevel:PERCent?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:REFLevel:PERCent?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -1788,24 +1735,23 @@ class PowerSwlossReflevel(SCPICmdRead):
 class PowerSwlossRdson(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SWLoss:RDSon`` command.
 
-    **Description:**
+    Description:
         - This command specifies the user RDSON value for use in switching loss calculations when
           the conduction calculation method is RDSON.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:RDSon?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:RDSon?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SWLoss:RDSon value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:RDSon <NR3>
         - POWer:SWLoss:RDSon?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the RDSON switching loss calculation.
     """
 
@@ -1813,67 +1759,64 @@ class PowerSwlossRdson(SCPICmdWrite, SCPICmdRead):
 class PowerSwlossNumcycles(SCPICmdReadWithArguments):
     """The ``POWer:SWLoss:NUMCYCles`` command.
 
-    **Description:**
+    Description:
         - Returns the number of cycles counted for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``POWer:SWLoss:NUMCYCles? argument``
           query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:SWLoss:NUMCYCles? argument`` query and raise an AssertionError if the returned
           value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:NUMCYCles? <NR3>
+        ```
     """
 
 
 class PowerSwlossGateTurnon(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SWLoss:GATe:TURNON`` command.
 
-    **Description:**
+    Description:
         - This command specifies the gate turn on level for switching loss power measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:GATe:TURNON?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:GATe:TURNON?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SWLoss:GATe:TURNON value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:GATe:TURNON <NR3>
         - POWer:SWLoss:GATe:TURNON?
+        ```
     """
 
 
 class PowerSwlossGatePolarity(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SWLoss:GATe:POLarity`` command.
 
-    **Description:**
+    Description:
         - This command specifies the switching loss gate polarity.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:GATe:POLarity?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:GATe:POLarity?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SWLoss:GATe:POLarity value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:GATe:POLarity {FALL|RISe}
         - POWer:SWLoss:GATe:POLarity?
+        ```
 
-    **Info:**
+    Info:
         - ``FALL`` sets falling edge as the switching loss gate polarity.
         - ``RISe`` sets rising edge as the switching loss gate polarity.
     """
@@ -1882,7 +1825,7 @@ class PowerSwlossGatePolarity(SCPICmdWrite, SCPICmdRead):
 class PowerSwlossGate(SCPICmdRead):
     """The ``POWer:SWLoss:GATe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:GATe?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:GATe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -1901,24 +1844,23 @@ class PowerSwlossGate(SCPICmdRead):
     def polarity(self) -> PowerSwlossGatePolarity:
         """Return the ``POWer:SWLoss:GATe:POLarity`` command.
 
-        **Description:**
+        Description:
             - This command specifies the switching loss gate polarity.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:GATe:POLarity?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:GATe:POLarity?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SWLoss:GATe:POLarity value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:GATe:POLarity {FALL|RISe}
             - POWer:SWLoss:GATe:POLarity?
+            ```
 
-        **Info:**
+        Info:
             - ``FALL`` sets falling edge as the switching loss gate polarity.
             - ``RISe`` sets rising edge as the switching loss gate polarity.
         """
@@ -1928,22 +1870,21 @@ class PowerSwlossGate(SCPICmdRead):
     def turnon(self) -> PowerSwlossGateTurnon:
         """Return the ``POWer:SWLoss:GATe:TURNON`` command.
 
-        **Description:**
+        Description:
             - This command specifies the gate turn on level for switching loss power measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:GATe:TURNON?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:GATe:TURNON?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SWLoss:GATe:TURNON value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:GATe:TURNON <NR3>
             - POWer:SWLoss:GATe:TURNON?
+            ```
         """
         return self._turnon
 
@@ -1951,24 +1892,23 @@ class PowerSwlossGate(SCPICmdRead):
 class PowerSwlossDisplay(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SWLoss:DISplay`` command.
 
-    **Description:**
+    Description:
         - This command specifies the display selection for switching loss results: All measurements,
           energy loss measurements or power loss measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:DISplay?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:DISplay?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SWLoss:DISplay value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:DISplay {ALL|ENERGYLoss|POWERLoss}
         - POWer:SWLoss:DISplay?
+        ```
 
-    **Info:**
+    Info:
         - ``ALL`` displays both energy and power loss measurements in the results.
         - ``ENERGYLoss`` displays only energy loss measurements in the results.
         - ``POWERLoss`` displays only power loss measurements in the results.
@@ -1978,64 +1918,61 @@ class PowerSwlossDisplay(SCPICmdWrite, SCPICmdRead):
 class PowerSwlossConductionPowerMin(SCPICmdRead):
     """The ``POWer:SWLoss:CONDuction:POWer:MIN`` command.
 
-    **Description:**
+    Description:
         - Returns the minimum conduction power for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDuction:POWer:MIN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:CONDuction:POWer:MIN?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:CONDuction:POWer:MIN?
+        ```
     """
 
 
 class PowerSwlossConductionPowerMean(SCPICmdRead):
     """The ``POWer:SWLoss:CONDuction:POWer:MEAN`` command.
 
-    **Description:**
+    Description:
         - Returns the mean conduction power for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDuction:POWer:MEAN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:CONDuction:POWer:MEAN?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:CONDuction:POWer:MEAN?
+        ```
     """
 
 
 class PowerSwlossConductionPowerMax(SCPICmdRead):
     """The ``POWer:SWLoss:CONDuction:POWer:MAX`` command.
 
-    **Description:**
+    Description:
         - Returns the maximum conduction power for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDuction:POWer:MAX?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:CONDuction:POWer:MAX?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:CONDuction:POWer:MAX?
+        ```
     """
 
 
 class PowerSwlossConductionPower(SCPICmdRead):
     """The ``POWer:SWLoss:CONDuction:POWer`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDuction:POWer?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:CONDuction:POWer?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -2056,21 +1993,20 @@ class PowerSwlossConductionPower(SCPICmdRead):
     def max(self) -> PowerSwlossConductionPowerMax:
         """Return the ``POWer:SWLoss:CONDuction:POWer:MAX`` command.
 
-        **Description:**
+        Description:
             - Returns the maximum conduction power for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDuction:POWer:MAX?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:SWLoss:CONDuction:POWer:MAX?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:CONDuction:POWer:MAX?
+            ```
         """
         return self._max
 
@@ -2078,21 +2014,20 @@ class PowerSwlossConductionPower(SCPICmdRead):
     def mean(self) -> PowerSwlossConductionPowerMean:
         """Return the ``POWer:SWLoss:CONDuction:POWer:MEAN`` command.
 
-        **Description:**
+        Description:
             - Returns the mean conduction power for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDuction:POWer:MEAN?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:SWLoss:CONDuction:POWer:MEAN?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:CONDuction:POWer:MEAN?
+            ```
         """
         return self._mean
 
@@ -2100,21 +2035,20 @@ class PowerSwlossConductionPower(SCPICmdRead):
     def min(self) -> PowerSwlossConductionPowerMin:
         """Return the ``POWer:SWLoss:CONDuction:POWer:MIN`` command.
 
-        **Description:**
+        Description:
             - Returns the minimum conduction power for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDuction:POWer:MIN?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:SWLoss:CONDuction:POWer:MIN?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:CONDuction:POWer:MIN?
+            ```
         """
         return self._min
 
@@ -2122,66 +2056,63 @@ class PowerSwlossConductionPower(SCPICmdRead):
 class PowerSwlossConductionEnergyMin(SCPICmdRead):
     """The ``POWer:SWLoss:CONDuction:ENERGY:MIN`` command.
 
-    **Description:**
+    Description:
         - Returns the minimum conduction energy for the switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDuction:ENERGY:MIN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:CONDuction:ENERGY:MIN?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:CONDuction:ENERGY:MIN?
+        ```
     """
 
 
 class PowerSwlossConductionEnergyMean(SCPICmdRead):
     """The ``POWer:SWLoss:CONDuction:ENERGY:MEAN`` command.
 
-    **Description:**
+    Description:
         - Returns the mean conduction energy in the conduction period for the switching loss
           calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDuction:ENERGY:MEAN?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:CONDuction:ENERGY:MEAN?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:CONDuction:ENERGY:MEAN?
+        ```
     """
 
 
 class PowerSwlossConductionEnergyMax(SCPICmdRead):
     """The ``POWer:SWLoss:CONDuction:ENERGY:MAX`` command.
 
-    **Description:**
+    Description:
         - Returns the maximum conduction energy for switching loss calculation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDuction:ENERGY:MAX?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:CONDuction:ENERGY:MAX?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:CONDuction:ENERGY:MAX?
+        ```
     """
 
 
 class PowerSwlossConductionEnergy(SCPICmdRead):
     """The ``POWer:SWLoss:CONDuction:ENERGY`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDuction:ENERGY?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:CONDuction:ENERGY?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -2202,21 +2133,20 @@ class PowerSwlossConductionEnergy(SCPICmdRead):
     def max(self) -> PowerSwlossConductionEnergyMax:
         """Return the ``POWer:SWLoss:CONDuction:ENERGY:MAX`` command.
 
-        **Description:**
+        Description:
             - Returns the maximum conduction energy for switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDuction:ENERGY:MAX?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:SWLoss:CONDuction:ENERGY:MAX?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:CONDuction:ENERGY:MAX?
+            ```
         """
         return self._max
 
@@ -2224,22 +2154,21 @@ class PowerSwlossConductionEnergy(SCPICmdRead):
     def mean(self) -> PowerSwlossConductionEnergyMean:
         """Return the ``POWer:SWLoss:CONDuction:ENERGY:MEAN`` command.
 
-        **Description:**
+        Description:
             - Returns the mean conduction energy in the conduction period for the switching loss
               calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDuction:ENERGY:MEAN?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:SWLoss:CONDuction:ENERGY:MEAN?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:CONDuction:ENERGY:MEAN?
+            ```
         """
         return self._mean
 
@@ -2247,21 +2176,20 @@ class PowerSwlossConductionEnergy(SCPICmdRead):
     def min(self) -> PowerSwlossConductionEnergyMin:
         """Return the ``POWer:SWLoss:CONDuction:ENERGY:MIN`` command.
 
-        **Description:**
+        Description:
             - Returns the minimum conduction energy for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDuction:ENERGY:MIN?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:SWLoss:CONDuction:ENERGY:MIN?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:CONDuction:ENERGY:MIN?
+            ```
         """
         return self._min
 
@@ -2269,7 +2197,7 @@ class PowerSwlossConductionEnergy(SCPICmdRead):
 class PowerSwlossConduction(SCPICmdRead):
     """The ``POWer:SWLoss:CONDuction`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDuction?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:CONDuction?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -2288,7 +2216,7 @@ class PowerSwlossConduction(SCPICmdRead):
     def energy(self) -> PowerSwlossConductionEnergy:
         """Return the ``POWer:SWLoss:CONDuction:ENERGY`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDuction:ENERGY?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:CONDuction:ENERGY?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -2304,7 +2232,7 @@ class PowerSwlossConduction(SCPICmdRead):
     def power(self) -> PowerSwlossConductionPower:
         """Return the ``POWer:SWLoss:CONDuction:POWer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDuction:POWer?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:CONDuction:POWer?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -2320,24 +2248,23 @@ class PowerSwlossConduction(SCPICmdRead):
 class PowerSwlossCondcalcmethod(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SWLoss:CONDCALCmethod`` command.
 
-    **Description:**
+    Description:
         - This command specifies the power application switching loss conduction calculation method.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDCALCmethod?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:CONDCALCmethod?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SWLoss:CONDCALCmethod value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SWLoss:CONDCALCmethod {VOLTage|RDSon|VCEsat}
         - POWer:SWLoss:CONDCALCmethod?
+        ```
 
-    **Info:**
+    Info:
         - ``VOLTage`` sets voltage as the conduction calculation method.
         - ``RDSon`` sets RDSon as the conduction calculation method.
         - ``VCEsat`` sets VCEsat as the conduction calculation method.
@@ -2348,7 +2275,7 @@ class PowerSwlossCondcalcmethod(SCPICmdWrite, SCPICmdRead):
 class PowerSwloss(SCPICmdRead):
     """The ``POWer:SWLoss`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SWLoss?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SWLoss?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2387,25 +2314,24 @@ class PowerSwloss(SCPICmdRead):
     def condcalcmethod(self) -> PowerSwlossCondcalcmethod:
         """Return the ``POWer:SWLoss:CONDCALCmethod`` command.
 
-        **Description:**
+        Description:
             - This command specifies the power application switching loss conduction calculation
               method.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDCALCmethod?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:CONDCALCmethod?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SWLoss:CONDCALCmethod value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:CONDCALCmethod {VOLTage|RDSon|VCEsat}
             - POWer:SWLoss:CONDCALCmethod?
+            ```
 
-        **Info:**
+        Info:
             - ``VOLTage`` sets voltage as the conduction calculation method.
             - ``RDSon`` sets RDSon as the conduction calculation method.
             - ``VCEsat`` sets VCEsat as the conduction calculation method.
@@ -2416,7 +2342,7 @@ class PowerSwloss(SCPICmdRead):
     def conduction(self) -> PowerSwlossConduction:
         """Return the ``POWer:SWLoss:CONDuction`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:CONDuction?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:CONDuction?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -2431,25 +2357,24 @@ class PowerSwloss(SCPICmdRead):
     def display(self) -> PowerSwlossDisplay:
         """Return the ``POWer:SWLoss:DISplay`` command.
 
-        **Description:**
+        Description:
             - This command specifies the display selection for switching loss results: All
               measurements, energy loss measurements or power loss measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:DISplay?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:DISplay?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SWLoss:DISplay value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:DISplay {ALL|ENERGYLoss|POWERLoss}
             - POWer:SWLoss:DISplay?
+            ```
 
-        **Info:**
+        Info:
             - ``ALL`` displays both energy and power loss measurements in the results.
             - ``ENERGYLoss`` displays only energy loss measurements in the results.
             - ``POWERLoss`` displays only power loss measurements in the results.
@@ -2460,7 +2385,7 @@ class PowerSwloss(SCPICmdRead):
     def gate(self) -> PowerSwlossGate:
         """Return the ``POWer:SWLoss:GATe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:GATe?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:GATe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -2475,21 +2400,20 @@ class PowerSwloss(SCPICmdRead):
     def numcycles(self) -> PowerSwlossNumcycles:
         """Return the ``POWer:SWLoss:NUMCYCles`` command.
 
-        **Description:**
+        Description:
             - Returns the number of cycles counted for the switching loss calculation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:SWLoss:NUMCYCles? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:SWLoss:NUMCYCles? argument`` query and raise an AssertionError if the returned
               value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:NUMCYCles? <NR3>
+            ```
         """
         return self._numcycles
 
@@ -2497,24 +2421,23 @@ class PowerSwloss(SCPICmdRead):
     def rdson(self) -> PowerSwlossRdson:
         """Return the ``POWer:SWLoss:RDSon`` command.
 
-        **Description:**
+        Description:
             - This command specifies the user RDSON value for use in switching loss calculations
               when the conduction calculation method is RDSON.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:RDSon?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:RDSon?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SWLoss:RDSon value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:RDSon <NR3>
             - POWer:SWLoss:RDSon?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the RDSON switching loss
               calculation.
         """
@@ -2524,7 +2447,7 @@ class PowerSwloss(SCPICmdRead):
     def reflevel(self) -> PowerSwlossReflevel:
         """Return the ``POWer:SWLoss:REFLevel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:REFLevel?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:REFLevel?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -2539,7 +2462,7 @@ class PowerSwloss(SCPICmdRead):
     def toff(self) -> PowerSwlossToff:
         """Return the ``POWer:SWLoss:TOFF`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TOFF?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOFF?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -2554,7 +2477,7 @@ class PowerSwloss(SCPICmdRead):
     def ton(self) -> PowerSwlossTon:
         """Return the ``POWer:SWLoss:TON`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TON?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TON?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -2569,7 +2492,7 @@ class PowerSwloss(SCPICmdRead):
     def total(self) -> PowerSwlossTotal:
         """Return the ``POWer:SWLoss:TOTal`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:TOTal?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:TOTal?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -2584,25 +2507,24 @@ class PowerSwloss(SCPICmdRead):
     def vcesat(self) -> PowerSwlossVcesat:
         """Return the ``POWer:SWLoss:VCEsat`` command.
 
-        **Description:**
+        Description:
             - This command specifies VCESAT value for use in switching loss calculations when the
               conduction calculation method is VCESAT.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss:VCEsat?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss:VCEsat?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SWLoss:VCEsat value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SWLoss:VCEsat <NR3>
             - POWer:SWLoss:VCEsat?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the VCEsat switching loss
               calculation.
         """
@@ -2612,26 +2534,25 @@ class PowerSwloss(SCPICmdRead):
 class PowerStatisticsWeighting(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:STATIstics:WEIghting`` command.
 
-    **Description:**
+    Description:
         - Sets the number of samples which are included for the statistics computations for mean and
           the standard deviation. Performs the same function as the
           ``MEASUREMENT:STATISTICS:WEIGHTING`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:STATIstics:WEIghting?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:STATIstics:WEIghting?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:STATIstics:WEIghting value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:STATIstics:WEIghting <NR1>;Ranges {L,2,1000}
         - POWer:STATIstics:WEIghting?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the number of samples used for the mean and standard deviation statistical
           accumulations.
     """
@@ -2640,24 +2561,23 @@ class PowerStatisticsWeighting(SCPICmdWrite, SCPICmdRead):
 class PowerStatisticsMode(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:STATIstics:MODe`` command.
 
-    **Description:**
+    Description:
         - Enables or disables the display of the measurement statistics. Performs the same function
           as the ``MEASUREMENT:STATISTICS:MODE`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:STATIstics:MODe?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:STATIstics:MODe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:STATIstics:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:STATIstics:MODe {OFF|ALL}
         - POWer:STATIstics:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``ALL`` turns on measurement statistics display.
         - ``OFF`` turns all measurements statistics off.
     """
@@ -2666,20 +2586,19 @@ class PowerStatisticsMode(SCPICmdWrite, SCPICmdRead):
 class PowerStatistics(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:STATIstics`` command.
 
-    **Description:**
+    Description:
         - Clears all the accumulated statistics of all measurements. Performs the same function as
           the ``MEASUREMENT:STATISTICS`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``POWer:STATIstics value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:STATIstics {RESET}
+        ```
 
-    **Info:**
+    Info:
         - ``RESET`` clears the measurement statistics.
 
     Properties:
@@ -2696,25 +2615,24 @@ class PowerStatistics(SCPICmdWrite, SCPICmdRead):
     def mode(self) -> PowerStatisticsMode:
         """Return the ``POWer:STATIstics:MODe`` command.
 
-        **Description:**
+        Description:
             - Enables or disables the display of the measurement statistics. Performs the same
               function as the ``MEASUREMENT:STATISTICS:MODE`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:STATIstics:MODe?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:STATIstics:MODe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:STATIstics:MODe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:STATIstics:MODe {OFF|ALL}
             - POWer:STATIstics:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``ALL`` turns on measurement statistics display.
             - ``OFF`` turns all measurements statistics off.
         """
@@ -2724,26 +2642,25 @@ class PowerStatistics(SCPICmdWrite, SCPICmdRead):
     def weighting(self) -> PowerStatisticsWeighting:
         """Return the ``POWer:STATIstics:WEIghting`` command.
 
-        **Description:**
+        Description:
             - Sets the number of samples which are included for the statistics computations for mean
               and the standard deviation. Performs the same function as the
               ``MEASUREMENT:STATISTICS:WEIGHTING`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:STATIstics:WEIghting?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:STATIstics:WEIghting?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:STATIstics:WEIghting value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:STATIstics:WEIghting <NR1>;Ranges {L,2,1000}
             - POWer:STATIstics:WEIghting?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the number of samples used for the mean and standard deviation
               statistical accumulations.
         """
@@ -2753,64 +2670,61 @@ class PowerStatistics(SCPICmdWrite, SCPICmdRead):
 class PowerSoaResultState(SCPICmdRead):
     """The ``POWer:SOA:RESult:STATE`` command.
 
-    **Description:**
+    Description:
         - Returns the pass/fail state of the SOA test.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:RESult:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:RESult:STATE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:RESult:STATE?
+        ```
     """
 
 
 class PowerSoaResultNumacq(SCPICmdRead):
     """The ``POWer:SOA:RESult:NUMACq`` command.
 
-    **Description:**
+    Description:
         - Returns the number of acquisitions in the test.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:RESult:NUMACq?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:RESult:NUMACq?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:RESult:NUMACq?
+        ```
     """
 
 
 class PowerSoaResultFailuresQty(SCPICmdRead):
     """The ``POWer:SOA:RESult:FAILures:QTY`` command.
 
-    **Description:**
+    Description:
         - Returns the number of failures in the test.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:RESult:FAILures:QTY?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:RESult:FAILures:QTY?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:RESult:FAILures:QTY?
+        ```
     """
 
 
 class PowerSoaResultFailures(SCPICmdRead):
     """The ``POWer:SOA:RESult:FAILures`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:RESult:FAILures?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:RESult:FAILures?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -2827,19 +2741,18 @@ class PowerSoaResultFailures(SCPICmdRead):
     def qty(self) -> PowerSoaResultFailuresQty:
         """Return the ``POWer:SOA:RESult:FAILures:QTY`` command.
 
-        **Description:**
+        Description:
             - Returns the number of failures in the test.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:RESult:FAILures:QTY?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:RESult:FAILures:QTY?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:RESult:FAILures:QTY?
+            ```
         """
         return self._qty
 
@@ -2847,7 +2760,7 @@ class PowerSoaResultFailures(SCPICmdRead):
 class PowerSoaResult(SCPICmdRead):
     """The ``POWer:SOA:RESult`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:RESult?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:RESult?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2868,7 +2781,7 @@ class PowerSoaResult(SCPICmdRead):
     def failures(self) -> PowerSoaResultFailures:
         """Return the ``POWer:SOA:RESult:FAILures`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:RESult:FAILures?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:RESult:FAILures?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -2882,19 +2795,18 @@ class PowerSoaResult(SCPICmdRead):
     def numacq(self) -> PowerSoaResultNumacq:
         """Return the ``POWer:SOA:RESult:NUMACq`` command.
 
-        **Description:**
+        Description:
             - Returns the number of acquisitions in the test.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:RESult:NUMACq?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:RESult:NUMACq?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:RESult:NUMACq?
+            ```
         """
         return self._numacq
 
@@ -2902,19 +2814,18 @@ class PowerSoaResult(SCPICmdRead):
     def state(self) -> PowerSoaResultState:
         """Return the ``POWer:SOA:RESult:STATE`` command.
 
-        **Description:**
+        Description:
             - Returns the pass/fail state of the SOA test.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:RESult:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:RESult:STATE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:RESult:STATE?
+            ```
         """
         return self._state
 
@@ -2922,23 +2833,22 @@ class PowerSoaResult(SCPICmdRead):
 class PowerSoaPlottype(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SOA:PLOTTYPe`` command.
 
-    **Description:**
+    Description:
         - This command specifies the Safe Operating Area (SOA) plot type.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:PLOTTYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:PLOTTYPe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SOA:PLOTTYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:PLOTTYPe {LOG|LINear}
         - POWer:SOA:PLOTTYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``LOG`` for logarithmic SOA plot type.
         - ``LINear`` for linear SOA plot type.
     """
@@ -2947,24 +2857,23 @@ class PowerSoaPlottype(SCPICmdWrite, SCPICmdRead):
 class PowerSoaMaskStoponviol(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SOA:MASK:STOPOnviol`` command.
 
-    **Description:**
+    Description:
         - This command specifies the enabled state of the mask stop on violation condition.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:MASK:STOPOnviol?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:MASK:STOPOnviol?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SOA:MASK:STOPOnviol value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:MASK:STOPOnviol {OFF|ON|0|1}
         - POWer:SOA:MASK:STOPOnviol?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` or 0 enables mask stop on violations.
         - ``ON`` or 1 disables mask stop on violations.
     """
@@ -2973,23 +2882,22 @@ class PowerSoaMaskStoponviol(SCPICmdWrite, SCPICmdRead):
 class PowerSoaMaskState(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SOA:MASK:STATE`` command.
 
-    **Description:**
+    Description:
         - This command specifies the state of the mask for SOA calculations.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:MASK:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:MASK:STATE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SOA:MASK:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:MASK:STATE {OFF|LIMITS|POINTS}
         - POWer:SOA:MASK:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` disables mask testing.
         - ``LIMITS`` enables mask testing based on limits specified using
           ``POWER:SOA:MASK:MAXAMPS``, ``POWER:SOA:MASK:MAXVOLTS``, and ``POWER:SOA:MASK:MAXWATTS``
@@ -3001,43 +2909,41 @@ class PowerSoaMaskState(SCPICmdWrite, SCPICmdRead):
 class PowerSoaMaskNrPt(SCPICmdRead):
     """The ``POWer:SOA:MASK:NR_Pt`` command.
 
-    **Description:**
+    Description:
         - Returns the number of mask points defined.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:MASK:NR_Pt?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:MASK:NR_Pt?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:MASK:NR_Pt?
+        ```
     """
 
 
 class PowerSoaMaskMaxwatts(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SOA:MASK:MAXWatts`` command.
 
-    **Description:**
+    Description:
         - This command specifies the maximum power applied to SOA mask testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:MASK:MAXWatts?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:MASK:MAXWatts?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SOA:MASK:MAXWatts value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:MASK:MAXWatts <NR3>
         - POWer:SOA:MASK:MAXWatts?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the maximum power applied to SOA mask
           testing.
     """
@@ -3046,24 +2952,23 @@ class PowerSoaMaskMaxwatts(SCPICmdWrite, SCPICmdRead):
 class PowerSoaMaskMaxvolts(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SOA:MASK:MAXVolts`` command.
 
-    **Description:**
+    Description:
         - This command specifies the maximum voltage applied to SOA mask testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:MASK:MAXVolts?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:MASK:MAXVolts?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SOA:MASK:MAXVolts value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:MASK:MAXVolts <NR3>
         - POWer:SOA:MASK:MAXVolts?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the maximum voltage applied to SOA
           mask testing.
     """
@@ -3072,23 +2977,22 @@ class PowerSoaMaskMaxvolts(SCPICmdWrite, SCPICmdRead):
 class PowerSoaMaskMaxamps(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SOA:MASK:MAXAmps`` command.
 
-    **Description:**
+    Description:
         - This command specifies the maximum current applied to SOA mask testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:MASK:MAXAmps?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:MASK:MAXAmps?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SOA:MASK:MAXAmps value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:MASK:MAXAmps <NR3>
         - POWer:SOA:MASK:MAXAmps?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the maximum current applied to SOA
           mask testing.
     """
@@ -3097,26 +3001,25 @@ class PowerSoaMaskMaxamps(SCPICmdWrite, SCPICmdRead):
 class PowerSoaMaskDefine(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SOA:MASK:DEFine`` command.
 
-    **Description:**
+    Description:
         - This command specifies the X (volts) and Y (Amps) coordinates of the current SOA mask. You
           can specify the number of points from 2 to 10, minimum being 2. Successive X values must
           be ≥ the preceding X values. The number of XY points sent determines the value of
           ``NR_PT``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:MASK:DEFine?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:MASK:DEFine?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SOA:MASK:DEFine value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:MASK:DEFine <NR3>
         - POWer:SOA:MASK:DEFine?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that represents the SOA mask coordinates.
     """
 
@@ -3124,7 +3027,7 @@ class PowerSoaMaskDefine(SCPICmdWrite, SCPICmdRead):
 class PowerSoaMask(SCPICmdRead):
     """The ``POWer:SOA:MASK`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:MASK?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:MASK?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -3153,27 +3056,26 @@ class PowerSoaMask(SCPICmdRead):
     def define(self) -> PowerSoaMaskDefine:
         """Return the ``POWer:SOA:MASK:DEFine`` command.
 
-        **Description:**
+        Description:
             - This command specifies the X (volts) and Y (Amps) coordinates of the current SOA mask.
               You can specify the number of points from 2 to 10, minimum being 2. Successive X
               values must be ≥ the preceding X values. The number of XY points sent determines the
               value of ``NR_PT``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:MASK:DEFine?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:MASK:DEFine?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SOA:MASK:DEFine value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:MASK:DEFine <NR3>
             - POWer:SOA:MASK:DEFine?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that represents the SOA mask coordinates.
         """
         return self._define
@@ -3182,24 +3084,23 @@ class PowerSoaMask(SCPICmdRead):
     def maxamps(self) -> PowerSoaMaskMaxamps:
         """Return the ``POWer:SOA:MASK:MAXAmps`` command.
 
-        **Description:**
+        Description:
             - This command specifies the maximum current applied to SOA mask testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:MASK:MAXAmps?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:MASK:MAXAmps?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SOA:MASK:MAXAmps value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:MASK:MAXAmps <NR3>
             - POWer:SOA:MASK:MAXAmps?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the maximum current applied to SOA
               mask testing.
         """
@@ -3209,24 +3110,23 @@ class PowerSoaMask(SCPICmdRead):
     def maxvolts(self) -> PowerSoaMaskMaxvolts:
         """Return the ``POWer:SOA:MASK:MAXVolts`` command.
 
-        **Description:**
+        Description:
             - This command specifies the maximum voltage applied to SOA mask testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:MASK:MAXVolts?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:MASK:MAXVolts?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SOA:MASK:MAXVolts value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:MASK:MAXVolts <NR3>
             - POWer:SOA:MASK:MAXVolts?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the maximum voltage applied to SOA
               mask testing.
         """
@@ -3236,24 +3136,23 @@ class PowerSoaMask(SCPICmdRead):
     def maxwatts(self) -> PowerSoaMaskMaxwatts:
         """Return the ``POWer:SOA:MASK:MAXWatts`` command.
 
-        **Description:**
+        Description:
             - This command specifies the maximum power applied to SOA mask testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:MASK:MAXWatts?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:MASK:MAXWatts?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SOA:MASK:MAXWatts value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:MASK:MAXWatts <NR3>
             - POWer:SOA:MASK:MAXWatts?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the maximum power applied to SOA
               mask testing.
         """
@@ -3263,19 +3162,18 @@ class PowerSoaMask(SCPICmdRead):
     def nr_pt(self) -> PowerSoaMaskNrPt:
         """Return the ``POWer:SOA:MASK:NR_Pt`` command.
 
-        **Description:**
+        Description:
             - Returns the number of mask points defined.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:MASK:NR_Pt?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:MASK:NR_Pt?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:MASK:NR_Pt?
+            ```
         """
         return self._nr_pt
 
@@ -3283,24 +3181,23 @@ class PowerSoaMask(SCPICmdRead):
     def state(self) -> PowerSoaMaskState:
         """Return the ``POWer:SOA:MASK:STATE`` command.
 
-        **Description:**
+        Description:
             - This command specifies the state of the mask for SOA calculations.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:MASK:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:MASK:STATE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SOA:MASK:STATE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:MASK:STATE {OFF|LIMITS|POINTS}
             - POWer:SOA:MASK:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` disables mask testing.
             - ``LIMITS`` enables mask testing based on limits specified using
               ``POWER:SOA:MASK:MAXAMPS``, ``POWER:SOA:MASK:MAXVOLTS``, and
@@ -3313,24 +3210,23 @@ class PowerSoaMask(SCPICmdRead):
     def stoponviol(self) -> PowerSoaMaskStoponviol:
         """Return the ``POWer:SOA:MASK:STOPOnviol`` command.
 
-        **Description:**
+        Description:
             - This command specifies the enabled state of the mask stop on violation condition.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:MASK:STOPOnviol?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:MASK:STOPOnviol?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SOA:MASK:STOPOnviol value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:MASK:STOPOnviol {OFF|ON|0|1}
             - POWer:SOA:MASK:STOPOnviol?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` or 0 enables mask stop on violations.
             - ``ON`` or 1 disables mask stop on violations.
         """
@@ -3340,23 +3236,22 @@ class PowerSoaMask(SCPICmdRead):
 class PowerSoaLogYmin(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SOA:LOG:YMIN`` command.
 
-    **Description:**
+    Description:
         - This command specifies the user YMIN value for use in Log SOA calculations.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:LOG:YMIN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:LOG:YMIN?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SOA:LOG:YMIN value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:LOG:YMIN <NR3>
         - POWer:SOA:LOG:YMIN?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the YMIN value used for log SOA
           calculations.
     """
@@ -3365,23 +3260,22 @@ class PowerSoaLogYmin(SCPICmdWrite, SCPICmdRead):
 class PowerSoaLogYmax(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SOA:LOG:YMAX`` command.
 
-    **Description:**
+    Description:
         - This command specifies the user YMAX value for use in Log SOA calculations.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:LOG:YMAX?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:LOG:YMAX?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SOA:LOG:YMAX value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:LOG:YMAX <NR3>
         - POWer:SOA:LOG:YMAX?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the YMAX value used for log SOA
           calculations.
     """
@@ -3390,23 +3284,22 @@ class PowerSoaLogYmax(SCPICmdWrite, SCPICmdRead):
 class PowerSoaLogXmin(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SOA:LOG:XMIN`` command.
 
-    **Description:**
+    Description:
         - This command specifies the user XMIN value for use in Log SOA calculations.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:LOG:XMIN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:LOG:XMIN?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SOA:LOG:XMIN value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:LOG:XMIN <NR3>
         - POWer:SOA:LOG:XMIN?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the XMIN value used for log SOA
           calculations.
     """
@@ -3415,23 +3308,22 @@ class PowerSoaLogXmin(SCPICmdWrite, SCPICmdRead):
 class PowerSoaLogXmax(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SOA:LOG:XMAX`` command.
 
-    **Description:**
+    Description:
         - This command specifies the user XMAX value for use in Log SOA calculations.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:LOG:XMAX?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:LOG:XMAX?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SOA:LOG:XMAX value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:LOG:XMAX <NR3>
         - POWer:SOA:LOG:XMAX?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the XMAX value used for log SOA
           calculations.
     """
@@ -3440,7 +3332,7 @@ class PowerSoaLogXmax(SCPICmdWrite, SCPICmdRead):
 class PowerSoaLog(SCPICmdRead):
     """The ``POWer:SOA:LOG`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:LOG?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:LOG?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -3463,23 +3355,22 @@ class PowerSoaLog(SCPICmdRead):
     def xmax(self) -> PowerSoaLogXmax:
         """Return the ``POWer:SOA:LOG:XMAX`` command.
 
-        **Description:**
+        Description:
             - This command specifies the user XMAX value for use in Log SOA calculations.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:LOG:XMAX?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:LOG:XMAX?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SOA:LOG:XMAX value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:LOG:XMAX <NR3>
             - POWer:SOA:LOG:XMAX?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the XMAX value used for log SOA
               calculations.
         """
@@ -3489,23 +3380,22 @@ class PowerSoaLog(SCPICmdRead):
     def xmin(self) -> PowerSoaLogXmin:
         """Return the ``POWer:SOA:LOG:XMIN`` command.
 
-        **Description:**
+        Description:
             - This command specifies the user XMIN value for use in Log SOA calculations.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:LOG:XMIN?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:LOG:XMIN?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SOA:LOG:XMIN value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:LOG:XMIN <NR3>
             - POWer:SOA:LOG:XMIN?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the XMIN value used for log SOA
               calculations.
         """
@@ -3515,23 +3405,22 @@ class PowerSoaLog(SCPICmdRead):
     def ymax(self) -> PowerSoaLogYmax:
         """Return the ``POWer:SOA:LOG:YMAX`` command.
 
-        **Description:**
+        Description:
             - This command specifies the user YMAX value for use in Log SOA calculations.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:LOG:YMAX?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:LOG:YMAX?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SOA:LOG:YMAX value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:LOG:YMAX <NR3>
             - POWer:SOA:LOG:YMAX?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the YMAX value used for log SOA
               calculations.
         """
@@ -3541,23 +3430,22 @@ class PowerSoaLog(SCPICmdRead):
     def ymin(self) -> PowerSoaLogYmin:
         """Return the ``POWer:SOA:LOG:YMIN`` command.
 
-        **Description:**
+        Description:
             - This command specifies the user YMIN value for use in Log SOA calculations.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:LOG:YMIN?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:LOG:YMIN?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SOA:LOG:YMIN value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:LOG:YMIN <NR3>
             - POWer:SOA:LOG:YMIN?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the YMIN value used for log SOA
               calculations.
         """
@@ -3567,23 +3455,22 @@ class PowerSoaLog(SCPICmdRead):
 class PowerSoaLinearYmin(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SOA:LINear:YMIN`` command.
 
-    **Description:**
+    Description:
         - This command specifies the user YMIN value for use in linear SOA calculations.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:LINear:YMIN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:LINear:YMIN?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SOA:LINear:YMIN value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:LINear:YMIN <NR3>
         - POWer:SOA:LINear:YMIN?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the YMIN value used for linear SOA
           calculations.
     """
@@ -3592,23 +3479,22 @@ class PowerSoaLinearYmin(SCPICmdWrite, SCPICmdRead):
 class PowerSoaLinearYmax(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SOA:LINear:YMAX`` command.
 
-    **Description:**
+    Description:
         - This command specifies the user YMAX value for use in linear SOA calculations.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:LINear:YMAX?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:LINear:YMAX?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SOA:LINear:YMAX value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:LINear:YMAX <NR3>
         - POWer:SOA:LINear:YMAX?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the YMAX value used for linear SOA
           calculations.
     """
@@ -3617,23 +3503,22 @@ class PowerSoaLinearYmax(SCPICmdWrite, SCPICmdRead):
 class PowerSoaLinearXmin(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SOA:LINear:XMIN`` command.
 
-    **Description:**
+    Description:
         - This command specifies the user XMIN value for use in linear SOA calculations.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:LINear:XMIN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:LINear:XMIN?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SOA:LINear:XMIN value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:LINear:XMIN <NR3>
         - POWer:SOA:LINear:XMIN?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the XMIN value used for linear SOA
           calculations.
     """
@@ -3642,23 +3527,22 @@ class PowerSoaLinearXmin(SCPICmdWrite, SCPICmdRead):
 class PowerSoaLinearXmax(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:SOA:LINear:XMAX`` command.
 
-    **Description:**
+    Description:
         - This command specifies the user XMAX value for use in linear SOA calculations.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:LINear:XMAX?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:LINear:XMAX?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:SOA:LINear:XMAX value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:SOA:LINear:XMAX <NR3>
         - POWer:SOA:LINear:XMAX?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the XMAX value used for linear SOA
           calculations.
     """
@@ -3667,7 +3551,7 @@ class PowerSoaLinearXmax(SCPICmdWrite, SCPICmdRead):
 class PowerSoaLinear(SCPICmdRead):
     """The ``POWer:SOA:LINear`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA:LINear?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA:LINear?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -3690,24 +3574,23 @@ class PowerSoaLinear(SCPICmdRead):
     def xmax(self) -> PowerSoaLinearXmax:
         """Return the ``POWer:SOA:LINear:XMAX`` command.
 
-        **Description:**
+        Description:
             - This command specifies the user XMAX value for use in linear SOA calculations.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:LINear:XMAX?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:LINear:XMAX?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SOA:LINear:XMAX value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:LINear:XMAX <NR3>
             - POWer:SOA:LINear:XMAX?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the XMAX value used for linear SOA
               calculations.
         """
@@ -3717,24 +3600,23 @@ class PowerSoaLinear(SCPICmdRead):
     def xmin(self) -> PowerSoaLinearXmin:
         """Return the ``POWer:SOA:LINear:XMIN`` command.
 
-        **Description:**
+        Description:
             - This command specifies the user XMIN value for use in linear SOA calculations.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:LINear:XMIN?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:LINear:XMIN?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SOA:LINear:XMIN value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:LINear:XMIN <NR3>
             - POWer:SOA:LINear:XMIN?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the XMIN value used for linear SOA
               calculations.
         """
@@ -3744,24 +3626,23 @@ class PowerSoaLinear(SCPICmdRead):
     def ymax(self) -> PowerSoaLinearYmax:
         """Return the ``POWer:SOA:LINear:YMAX`` command.
 
-        **Description:**
+        Description:
             - This command specifies the user YMAX value for use in linear SOA calculations.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:LINear:YMAX?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:LINear:YMAX?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SOA:LINear:YMAX value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:LINear:YMAX <NR3>
             - POWer:SOA:LINear:YMAX?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the YMAX value used for linear SOA
               calculations.
         """
@@ -3771,24 +3652,23 @@ class PowerSoaLinear(SCPICmdRead):
     def ymin(self) -> PowerSoaLinearYmin:
         """Return the ``POWer:SOA:LINear:YMIN`` command.
 
-        **Description:**
+        Description:
             - This command specifies the user YMIN value for use in linear SOA calculations.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:LINear:YMIN?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:LINear:YMIN?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SOA:LINear:YMIN value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:LINear:YMIN <NR3>
             - POWer:SOA:LINear:YMIN?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the YMIN value used for linear SOA
               calculations.
         """
@@ -3798,7 +3678,7 @@ class PowerSoaLinear(SCPICmdRead):
 class PowerSoa(SCPICmdRead):
     """The ``POWer:SOA`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:SOA?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:SOA?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -3823,7 +3703,7 @@ class PowerSoa(SCPICmdRead):
     def linear(self) -> PowerSoaLinear:
         """Return the ``POWer:SOA:LINear`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:LINear?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:LINear?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -3840,7 +3720,7 @@ class PowerSoa(SCPICmdRead):
     def log(self) -> PowerSoaLog:
         """Return the ``POWer:SOA:LOG`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:LOG?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:LOG?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -3857,7 +3737,7 @@ class PowerSoa(SCPICmdRead):
     def mask(self) -> PowerSoaMask:
         """Return the ``POWer:SOA:MASK`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:MASK?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:MASK?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -3877,23 +3757,22 @@ class PowerSoa(SCPICmdRead):
     def plottype(self) -> PowerSoaPlottype:
         """Return the ``POWer:SOA:PLOTTYPe`` command.
 
-        **Description:**
+        Description:
             - This command specifies the Safe Operating Area (SOA) plot type.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:PLOTTYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:PLOTTYPe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:SOA:PLOTTYPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:SOA:PLOTTYPe {LOG|LINear}
             - POWer:SOA:PLOTTYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``LOG`` for logarithmic SOA plot type.
             - ``LINear`` for linear SOA plot type.
         """
@@ -3903,7 +3782,7 @@ class PowerSoa(SCPICmdRead):
     def result(self) -> PowerSoaResult:
         """Return the ``POWer:SOA:RESult`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA:RESult?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA:RESult?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -3919,21 +3798,20 @@ class PowerSoa(SCPICmdRead):
 class PowerRippleSource(SCPICmdWrite):
     """The ``POWer:RIPPle:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command specifies the source waveform for ripple tests. The voltage source waveform
           is specified using the ``POWER:VOLTAGESOURCE`` command and the current waveform is
           specified using the ``POWER:CURRENTSOURCE`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``POWer:RIPPle:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:RIPPle:SOUrce {VOLTage|CURRent}
+        ```
 
-    **Info:**
+    Info:
         - ``VOLTage`` specifies voltage source waveform for ripple tests.
         - ``CURRent`` specifies current source waveform for ripple tests.
     """
@@ -3942,102 +3820,97 @@ class PowerRippleSource(SCPICmdWrite):
 class PowerRippleResultsStddev(SCPICmdRead):
     """The ``POWer:RIPPle:RESults:STDdev`` command.
 
-    **Description:**
+    Description:
         - Returns the standard deviation of the peak-to-peak ripple measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:RIPPle:RESults:STDdev?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:RIPPle:RESults:STDdev?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:RIPPle:RESults:STDdev?
+        ```
     """
 
 
 class PowerRippleResultsMin(SCPICmdRead):
     """The ``POWer:RIPPle:RESults:MIN`` command.
 
-    **Description:**
+    Description:
         - Returns the minimum of the peak-to-peak ripple measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:RIPPle:RESults:MIN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:RIPPle:RESults:MIN?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:RIPPle:RESults:MIN?
+        ```
     """
 
 
 class PowerRippleResultsMean(SCPICmdRead):
     """The ``POWer:RIPPle:RESults:MEAN`` command.
 
-    **Description:**
+    Description:
         - Returns the mean of the peak-to-peak ripple measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:RIPPle:RESults:MEAN?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:RIPPle:RESults:MEAN?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:RIPPle:RESults:MEAN?
+        ```
     """
 
 
 class PowerRippleResultsMax(SCPICmdRead):
     """The ``POWer:RIPPle:RESults:MAX`` command.
 
-    **Description:**
+    Description:
         - Returns the maximum of the peak-to-peak ripple measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:RIPPle:RESults:MAX?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:RIPPle:RESults:MAX?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:RIPPle:RESults:MAX?
+        ```
     """
 
 
 class PowerRippleResultsAmplitude(SCPICmdRead):
     """The ``POWer:RIPPle:RESults:AMPLitude`` command.
 
-    **Description:**
+    Description:
         - Returns the peak-to-peak ripple measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:RIPPle:RESults:AMPLitude?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:RIPPle:RESults:AMPLitude?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:RIPPle:RESults:AMPLitude?
+        ```
     """
 
 
 class PowerRippleResults(SCPICmdRead):
     """The ``POWer:RIPPle:RESults`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:RIPPle:RESults?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:RIPPle:RESults?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -4062,19 +3935,18 @@ class PowerRippleResults(SCPICmdRead):
     def amplitude(self) -> PowerRippleResultsAmplitude:
         """Return the ``POWer:RIPPle:RESults:AMPLitude`` command.
 
-        **Description:**
+        Description:
             - Returns the peak-to-peak ripple measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:RIPPle:RESults:AMPLitude?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:RIPPle:RESults:AMPLitude?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:RIPPle:RESults:AMPLitude?
+            ```
         """
         return self._amplitude
 
@@ -4082,19 +3954,18 @@ class PowerRippleResults(SCPICmdRead):
     def max(self) -> PowerRippleResultsMax:
         """Return the ``POWer:RIPPle:RESults:MAX`` command.
 
-        **Description:**
+        Description:
             - Returns the maximum of the peak-to-peak ripple measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:RIPPle:RESults:MAX?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:RIPPle:RESults:MAX?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:RIPPle:RESults:MAX?
+            ```
         """
         return self._max
 
@@ -4102,19 +3973,18 @@ class PowerRippleResults(SCPICmdRead):
     def mean(self) -> PowerRippleResultsMean:
         """Return the ``POWer:RIPPle:RESults:MEAN`` command.
 
-        **Description:**
+        Description:
             - Returns the mean of the peak-to-peak ripple measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:RIPPle:RESults:MEAN?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:RIPPle:RESults:MEAN?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:RIPPle:RESults:MEAN?
+            ```
         """
         return self._mean
 
@@ -4122,19 +3992,18 @@ class PowerRippleResults(SCPICmdRead):
     def min(self) -> PowerRippleResultsMin:
         """Return the ``POWer:RIPPle:RESults:MIN`` command.
 
-        **Description:**
+        Description:
             - Returns the minimum of the peak-to-peak ripple measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:RIPPle:RESults:MIN?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:RIPPle:RESults:MIN?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:RIPPle:RESults:MIN?
+            ```
         """
         return self._min
 
@@ -4142,19 +4011,18 @@ class PowerRippleResults(SCPICmdRead):
     def stddev(self) -> PowerRippleResultsStddev:
         """Return the ``POWer:RIPPle:RESults:STDdev`` command.
 
-        **Description:**
+        Description:
             - Returns the standard deviation of the peak-to-peak ripple measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:RIPPle:RESults:STDdev?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:RIPPle:RESults:STDdev?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:RIPPle:RESults:STDdev?
+            ```
         """
         return self._stddev
 
@@ -4162,20 +4030,19 @@ class PowerRippleResults(SCPICmdRead):
 class PowerRipple(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:RIPPle`` command.
 
-    **Description:**
+    Description:
         - This command performs a vertical autoset for ripple measurements or sets the vertical
           offset to 0.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``POWer:RIPPle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:RIPPle {VERTAUTOset|VERTDEFault}
+        ```
 
-    **Info:**
+    Info:
         - ``VERTAUTOset`` automatically scales the source waveform to optimize ripple measurements.
         - ``VERTDEFault`` sets the vertical offset of the source waveform to 0 volts (for voltage
           source) or 0 amperes (for current source).
@@ -4194,7 +4061,7 @@ class PowerRipple(SCPICmdWrite, SCPICmdRead):
     def results(self) -> PowerRippleResults:
         """Return the ``POWer:RIPPle:RESults`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:RIPPle:RESults?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:RIPPle:RESults?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -4212,22 +4079,21 @@ class PowerRipple(SCPICmdWrite, SCPICmdRead):
     def source(self) -> PowerRippleSource:
         """Return the ``POWer:RIPPle:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command specifies the source waveform for ripple tests. The voltage source
               waveform is specified using the ``POWER:VOLTAGESOURCE`` command and the current
               waveform is specified using the ``POWER:CURRENTSOURCE`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``POWer:RIPPle:SOUrce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:RIPPle:SOUrce {VOLTage|CURRent}
+            ```
 
-        **Info:**
+        Info:
             - ``VOLTage`` specifies voltage source waveform for ripple tests.
             - ``CURRent`` specifies current source waveform for ripple tests.
         """
@@ -4237,27 +4103,26 @@ class PowerRipple(SCPICmdWrite, SCPICmdRead):
 class PowerReflevelPercentMidItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``POWer:REFLevel:PERCent:MID<x>`` command.
 
-    **Description:**
+    Description:
         - This command specifies one of 3 mid reference percentage levels to be used for power
           measurements. MID1 is used on the user's voltage waveform. MID2 is used on the user's
           current waveform. MID3 is used on the user's gate waveform. (MID3 is specific to power
           applications.)
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:REFLevel:PERCent:MID<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:REFLevel:PERCent:MID<x>?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:REFLevel:PERCent:MID<x> value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:REFLevel:PERCent:MID<x> <NR3>; Ranges={D,0.0,100.0}
         - POWer:REFLevel:PERCent:MID<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the mid value in percentage.
     """
 
@@ -4265,24 +4130,23 @@ class PowerReflevelPercentMidItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPIC
 class PowerReflevelPercentLow(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:REFLevel:PERCent:LOW`` command.
 
-    **Description:**
+    Description:
         - This command specifies the low reference percent level to be used for power measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:REFLevel:PERCent:LOW?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:REFLevel:PERCent:LOW?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:REFLevel:PERCent:LOW value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:REFLevel:PERCent:LOW <NR3>; Ranges={D,0.0,100.0}
         - POWer:REFLevel:PERCent:LOW?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the low value in percentage.
     """
 
@@ -4290,24 +4154,23 @@ class PowerReflevelPercentLow(SCPICmdWrite, SCPICmdRead):
 class PowerReflevelPercentHigh(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:REFLevel:PERCent:HIGH`` command.
 
-    **Description:**
+    Description:
         - This command specifies the top reference percent level to be used for power measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:REFLevel:PERCent:HIGH?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:REFLevel:PERCent:HIGH?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:REFLevel:PERCent:HIGH value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:REFLevel:PERCent:HIGH <NR3>; Ranges={D,0.0,100.0}
         - POWer:REFLevel:PERCent:HIGH?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the high value in percent.
     """
 
@@ -4315,20 +4178,19 @@ class PowerReflevelPercentHigh(SCPICmdWrite, SCPICmdRead):
 class PowerReflevelPercent(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:REFLevel:PERCent`` command.
 
-    **Description:**
+    Description:
         - This command sets the reference levels to be used for power measurements to the default
           percentage values.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``POWer:REFLevel:PERCent value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:REFLevel:PERCent <SETTODEFaults>
+        ```
 
-    **Info:**
+    Info:
         - ``SETTODEFaults`` sets the reference levels to their default percentage values.
 
     Properties:
@@ -4349,25 +4211,24 @@ class PowerReflevelPercent(SCPICmdWrite, SCPICmdRead):
     def high(self) -> PowerReflevelPercentHigh:
         """Return the ``POWer:REFLevel:PERCent:HIGH`` command.
 
-        **Description:**
+        Description:
             - This command specifies the top reference percent level to be used for power
               measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:REFLevel:PERCent:HIGH?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:REFLevel:PERCent:HIGH?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:REFLevel:PERCent:HIGH value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:REFLevel:PERCent:HIGH <NR3>; Ranges={D,0.0,100.0}
             - POWer:REFLevel:PERCent:HIGH?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the high value in percent.
         """
         return self._high
@@ -4376,25 +4237,24 @@ class PowerReflevelPercent(SCPICmdWrite, SCPICmdRead):
     def low(self) -> PowerReflevelPercentLow:
         """Return the ``POWer:REFLevel:PERCent:LOW`` command.
 
-        **Description:**
+        Description:
             - This command specifies the low reference percent level to be used for power
               measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:REFLevel:PERCent:LOW?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:REFLevel:PERCent:LOW?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:REFLevel:PERCent:LOW value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:REFLevel:PERCent:LOW <NR3>; Ranges={D,0.0,100.0}
             - POWer:REFLevel:PERCent:LOW?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the low value in percentage.
         """
         return self._low
@@ -4403,27 +4263,26 @@ class PowerReflevelPercent(SCPICmdWrite, SCPICmdRead):
     def mid(self) -> Dict[int, PowerReflevelPercentMidItem]:
         """Return the ``POWer:REFLevel:PERCent:MID<x>`` command.
 
-        **Description:**
+        Description:
             - This command specifies one of 3 mid reference percentage levels to be used for power
               measurements. MID1 is used on the user's voltage waveform. MID2 is used on the user's
               current waveform. MID3 is used on the user's gate waveform. (MID3 is specific to power
               applications.)
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:REFLevel:PERCent:MID<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:REFLevel:PERCent:MID<x>?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:REFLevel:PERCent:MID<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:REFLevel:PERCent:MID<x> <NR3>; Ranges={D,0.0,100.0}
             - POWer:REFLevel:PERCent:MID<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the mid value in percentage.
         """
         return self._mid
@@ -4432,24 +4291,23 @@ class PowerReflevelPercent(SCPICmdWrite, SCPICmdRead):
 class PowerReflevelMethod(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:REFLevel:METHod`` command.
 
-    **Description:**
+    Description:
         - This command specifies the method used to calculate the 0% and 100% reference level to be
           used for power measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:REFLevel:METHod?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:REFLevel:METHod?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:REFLevel:METHod value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:REFLevel:METHod {ABSolute|PERCent}
         - POWer:REFLevel:METHod?
+        ```
 
-    **Info:**
+    Info:
         - ``ABSolute`` specifies that the reference levels are set explicitly using the
           ``MEASUrement:REFLevel:ABSolute`` commands. This method is useful when precise values are
           required.
@@ -4462,25 +4320,24 @@ class PowerReflevelMethod(SCPICmdWrite, SCPICmdRead):
 class PowerReflevelHysteresis(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:REFLevel:HYSTeresis`` command.
 
-    **Description:**
+    Description:
         - This command specifies the reference level hysteresis value to be used for power
           measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:REFLevel:HYSTeresis?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:REFLevel:HYSTeresis?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:REFLevel:HYSTeresis value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:REFLevel:HYSTeresis <NR3>
         - POWer:REFLevel:HYSTeresis?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the hysteresis value.
     """
 
@@ -4488,26 +4345,25 @@ class PowerReflevelHysteresis(SCPICmdWrite, SCPICmdRead):
 class PowerReflevelAbsoluteMidItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``POWer:REFLevel:ABSolute:MID<x>`` command.
 
-    **Description:**
+    Description:
         - This command specifies the mid reference level to be used for power measurements. MID1 is
           used on the user's voltage waveform. MID2 is used on the user's current waveform. MID3 is
           used on the user's gate waveform. (MID3 is specific to the power application.)
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:REFLevel:ABSolute:MID<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:REFLevel:ABSolute:MID<x>?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:REFLevel:ABSolute:MID<x> value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:REFLevel:ABSolute:MID<x> <NR3>; Ranges={D,-1e6,+1E6}
         - POWer:REFLevel:ABSolute:MID<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the absolute mid reference value.
     """
 
@@ -4515,24 +4371,23 @@ class PowerReflevelAbsoluteMidItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPI
 class PowerReflevelAbsoluteLow(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:REFLevel:ABSolute:LOW`` command.
 
-    **Description:**
+    Description:
         - This command specifies the low reference level to be used for power measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:REFLevel:ABSolute:LOW?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:REFLevel:ABSolute:LOW?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:REFLevel:ABSolute:LOW value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:REFLevel:ABSolute:LOW <NR3>; Ranges={D,-1e6,+1E6}
         - POWer:REFLevel:ABSolute:LOW?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the absolute low value in volts.
           Default value is 0.0E+0.
     """
@@ -4541,24 +4396,23 @@ class PowerReflevelAbsoluteLow(SCPICmdWrite, SCPICmdRead):
 class PowerReflevelAbsoluteHigh(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:REFLevel:ABSolute:HIGH`` command.
 
-    **Description:**
+    Description:
         - This command specifies the top reference level to be used for power measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:REFLevel:ABSolute:HIGH?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:REFLevel:ABSolute:HIGH?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:REFLevel:ABSolute:HIGH value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:REFLevel:ABSolute:HIGH <NR3>; Ranges={D,-1e6,+1E6}
         - POWer:REFLevel:ABSolute:HIGH?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the absolute high value in volts.
           Default value is 0.0E+0.
     """
@@ -4567,21 +4421,20 @@ class PowerReflevelAbsoluteHigh(SCPICmdWrite, SCPICmdRead):
 class PowerReflevelAbsolute(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:REFLevel:ABSolute`` command.
 
-    **Description:**
+    Description:
         - This command sets the reference levels to be used for power measurements their default
           unit values.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``POWer:REFLevel:ABSolute value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:REFLevel:ABSolute {SETTODEFaults}
+        ```
 
-    **Info:**
+    Info:
         - ``SETTODEFaults`` sets the reference levels to their default values.
 
     Properties:
@@ -4602,24 +4455,23 @@ class PowerReflevelAbsolute(SCPICmdWrite, SCPICmdRead):
     def high(self) -> PowerReflevelAbsoluteHigh:
         """Return the ``POWer:REFLevel:ABSolute:HIGH`` command.
 
-        **Description:**
+        Description:
             - This command specifies the top reference level to be used for power measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:REFLevel:ABSolute:HIGH?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:REFLevel:ABSolute:HIGH?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:REFLevel:ABSolute:HIGH value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:REFLevel:ABSolute:HIGH <NR3>; Ranges={D,-1e6,+1E6}
             - POWer:REFLevel:ABSolute:HIGH?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the absolute high value in volts.
               Default value is 0.0E+0.
         """
@@ -4629,24 +4481,23 @@ class PowerReflevelAbsolute(SCPICmdWrite, SCPICmdRead):
     def low(self) -> PowerReflevelAbsoluteLow:
         """Return the ``POWer:REFLevel:ABSolute:LOW`` command.
 
-        **Description:**
+        Description:
             - This command specifies the low reference level to be used for power measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:REFLevel:ABSolute:LOW?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:REFLevel:ABSolute:LOW?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:REFLevel:ABSolute:LOW value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:REFLevel:ABSolute:LOW <NR3>; Ranges={D,-1e6,+1E6}
             - POWer:REFLevel:ABSolute:LOW?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the absolute low value in volts.
               Default value is 0.0E+0.
         """
@@ -4656,26 +4507,25 @@ class PowerReflevelAbsolute(SCPICmdWrite, SCPICmdRead):
     def mid(self) -> Dict[int, PowerReflevelAbsoluteMidItem]:
         """Return the ``POWer:REFLevel:ABSolute:MID<x>`` command.
 
-        **Description:**
+        Description:
             - This command specifies the mid reference level to be used for power measurements. MID1
               is used on the user's voltage waveform. MID2 is used on the user's current waveform.
               MID3 is used on the user's gate waveform. (MID3 is specific to the power application.)
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:REFLevel:ABSolute:MID<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:REFLevel:ABSolute:MID<x>?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:REFLevel:ABSolute:MID<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:REFLevel:ABSolute:MID<x> <NR3>; Ranges={D,-1e6,+1E6}
             - POWer:REFLevel:ABSolute:MID<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the absolute mid reference value.
         """
         return self._mid
@@ -4684,7 +4534,7 @@ class PowerReflevelAbsolute(SCPICmdWrite, SCPICmdRead):
 class PowerReflevel(SCPICmdRead):
     """The ``POWer:REFLevel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:REFLevel?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:REFLevel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -4707,21 +4557,20 @@ class PowerReflevel(SCPICmdRead):
     def absolute(self) -> PowerReflevelAbsolute:
         """Return the ``POWer:REFLevel:ABSolute`` command.
 
-        **Description:**
+        Description:
             - This command sets the reference levels to be used for power measurements their default
               unit values.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``POWer:REFLevel:ABSolute value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:REFLevel:ABSolute {SETTODEFaults}
+            ```
 
-        **Info:**
+        Info:
             - ``SETTODEFaults`` sets the reference levels to their default values.
 
         Sub-properties:
@@ -4735,25 +4584,24 @@ class PowerReflevel(SCPICmdRead):
     def hysteresis(self) -> PowerReflevelHysteresis:
         """Return the ``POWer:REFLevel:HYSTeresis`` command.
 
-        **Description:**
+        Description:
             - This command specifies the reference level hysteresis value to be used for power
               measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:REFLevel:HYSTeresis?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:REFLevel:HYSTeresis?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:REFLevel:HYSTeresis value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:REFLevel:HYSTeresis <NR3>
             - POWer:REFLevel:HYSTeresis?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the hysteresis value.
         """
         return self._hysteresis
@@ -4762,25 +4610,24 @@ class PowerReflevel(SCPICmdRead):
     def method(self) -> PowerReflevelMethod:
         """Return the ``POWer:REFLevel:METHod`` command.
 
-        **Description:**
+        Description:
             - This command specifies the method used to calculate the 0% and 100% reference level to
               be used for power measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:REFLevel:METHod?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:REFLevel:METHod?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:REFLevel:METHod value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:REFLevel:METHod {ABSolute|PERCent}
             - POWer:REFLevel:METHod?
+            ```
 
-        **Info:**
+        Info:
             - ``ABSolute`` specifies that the reference levels are set explicitly using the
               ``MEASUrement:REFLevel:ABSolute`` commands. This method is useful when precise values
               are required.
@@ -4794,21 +4641,20 @@ class PowerReflevel(SCPICmdRead):
     def percent(self) -> PowerReflevelPercent:
         """Return the ``POWer:REFLevel:PERCent`` command.
 
-        **Description:**
+        Description:
             - This command sets the reference levels to be used for power measurements to the
               default percentage values.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``POWer:REFLevel:PERCent value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:REFLevel:PERCent <SETTODEFaults>
+            ```
 
-        **Info:**
+        Info:
             - ``SETTODEFaults`` sets the reference levels to their default percentage values.
 
         Sub-properties:
@@ -4822,195 +4668,185 @@ class PowerReflevel(SCPICmdRead):
 class PowerQualityVrms(SCPICmdRead):
     """The ``POWer:QUALity:VRMS`` command.
 
-    **Description:**
+    Description:
         - Returns the RMS voltage measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:VRMS?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:VRMS?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:VRMS?
+        ```
     """
 
 
 class PowerQualityVcrestfactor(SCPICmdRead):
     """The ``POWer:QUALity:VCRESTfactor`` command.
 
-    **Description:**
+    Description:
         - This query returns the measurement for the voltage crest factor.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:VCRESTfactor?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:VCRESTfactor?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:VCRESTfactor?
+        ```
     """
 
 
 class PowerQualityTruepwr(SCPICmdRead):
     """The ``POWer:QUALity:TRUEpwr`` command.
 
-    **Description:**
+    Description:
         - Returns the true power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:TRUEpwr?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:TRUEpwr?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:TRUEpwr?
+        ```
     """
 
 
 class PowerQualityReactpwr(SCPICmdRead):
     """The ``POWer:QUALity:REACTpwr`` command.
 
-    **Description:**
+    Description:
         - Returns the reactive power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:REACTpwr?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:REACTpwr?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:REACTpwr?
+        ```
     """
 
 
 class PowerQualityPowerfactor(SCPICmdRead):
     """The ``POWer:QUALity:POWERFACtor`` command.
 
-    **Description:**
+    Description:
         - Returns the power factor measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:POWERFACtor?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:POWERFACtor?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:POWERFACtor?
+        ```
     """
 
 
 class PowerQualityPhaseangle(SCPICmdRead):
     """The ``POWer:QUALity:PHASEangle`` command.
 
-    **Description:**
+    Description:
         - Returns the phase angle measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:PHASEangle?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:PHASEangle?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:PHASEangle?
+        ```
     """
 
 
 class PowerQualityIrms(SCPICmdRead):
     """The ``POWer:QUALity:IRMS`` command.
 
-    **Description:**
+    Description:
         - Returns the RMS current measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:IRMS?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:IRMS?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:IRMS?
+        ```
     """
 
 
 class PowerQualityIcrestfactor(SCPICmdRead):
     """The ``POWer:QUALity:ICRESTfactor`` command.
 
-    **Description:**
+    Description:
         - Returns the current crest factor measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:ICRESTfactor?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:ICRESTfactor?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:ICRESTfactor?
+        ```
     """
 
 
 class PowerQualityFrequency(SCPICmdRead):
     """The ``POWer:QUALity:FREQuency`` command.
 
-    **Description:**
+    Description:
         - Returns the frequency measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:FREQuency?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:FREQuency?
+        ```
     """
 
 
 class PowerQualityFreqreference(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:QUALity:FREQREFerence`` command.
 
-    **Description:**
+    Description:
         - This command specifies the power quality frequency reference.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:FREQREFerence?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:FREQREFerence?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:QUALity:FREQREFerence value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:FREQREFerence {VOLTage|CURRent}
         - POWer:QUALity:FREQREFerence?
+        ```
 
-    **Info:**
+    Info:
         - ``VOLTage`` sets voltage as the power quality frequency reference source.
         - ``CURRent`` sets current as the power quality frequency reference source.
     """
@@ -5019,24 +4855,23 @@ class PowerQualityFreqreference(SCPICmdWrite, SCPICmdRead):
 class PowerQualityDisplayVrms(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:QUALity:DISplay:VRMS`` command.
 
-    **Description:**
+    Description:
         - This command specifies the display state for the rms voltage readout.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:VRMS?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:DISplay:VRMS?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:QUALity:DISplay:VRMS value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:DISplay:VRMS {OFF|ON|0|1}
         - POWer:QUALity:DISplay:VRMS?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` or 0 turns off the rms voltage display.
         - ``ON`` or 1 turns on the rms voltage display.
     """
@@ -5045,24 +4880,23 @@ class PowerQualityDisplayVrms(SCPICmdWrite, SCPICmdRead):
 class PowerQualityDisplayVcrestfactor(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:QUALity:DISplay:VCRESTfactor`` command.
 
-    **Description:**
+    Description:
         - This command specifies the display state for the voltage crest factor readout.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:VCRESTfactor?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:DISplay:VCRESTfactor?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:QUALity:DISplay:VCRESTfactor value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:DISplay:VCRESTfactor {OFF|ON|0|1}
         - POWer:QUALity:DISplay:VCRESTfactor?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` or 0 turns off the voltage crest factor display.
         - ``ON`` or 1 turns on the voltage crest factor display.
     """
@@ -5071,24 +4905,23 @@ class PowerQualityDisplayVcrestfactor(SCPICmdWrite, SCPICmdRead):
 class PowerQualityDisplayTruepwr(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:QUALity:DISplay:TRUEpwr`` command.
 
-    **Description:**
+    Description:
         - This command specifies the display state for the true power readout.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:TRUEpwr?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:DISplay:TRUEpwr?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:QUALity:DISplay:TRUEpwr value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:DISplay:TRUEpwr {OFF|ON|0|1}
         - POWer:QUALity:DISplay:TRUEpwr?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` or 0 turns off the true power display.
         - ``ON`` or 1 turns on the true power display.
     """
@@ -5097,24 +4930,23 @@ class PowerQualityDisplayTruepwr(SCPICmdWrite, SCPICmdRead):
 class PowerQualityDisplayReactpwr(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:QUALity:DISplay:REACTpwr`` command.
 
-    **Description:**
+    Description:
         - This command specifies the display state for the reactor power readout.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:REACTpwr?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:DISplay:REACTpwr?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:QUALity:DISplay:REACTpwr value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:DISplay:REACTpwr {OFF|ON|0|1}
         - POWer:QUALity:DISplay:REACTpwr?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` or 0 turns off the reactor power display.
         - ``ON`` or 1 turns on the reactor power display.
     """
@@ -5123,24 +4955,23 @@ class PowerQualityDisplayReactpwr(SCPICmdWrite, SCPICmdRead):
 class PowerQualityDisplayPowerfactor(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:QUALity:DISplay:POWERFACtor`` command.
 
-    **Description:**
+    Description:
         - This command specifies the display state for the power factor readout.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:POWERFACtor?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:DISplay:POWERFACtor?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:QUALity:DISplay:POWERFACtor value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:DISplay:POWERFACtor {OFF|ON|0|1}
         - POWer:QUALity:DISplay:POWERFACtor?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` or 0 turns off the power factor display.
         - ``ON`` or 1 turns on the power factor display.
     """
@@ -5149,24 +4980,23 @@ class PowerQualityDisplayPowerfactor(SCPICmdWrite, SCPICmdRead):
 class PowerQualityDisplayPhaseangle(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:QUALity:DISplay:PHASEangle`` command.
 
-    **Description:**
+    Description:
         - This command specifies the display state for the phase angle readout.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:PHASEangle?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:DISplay:PHASEangle?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:QUALity:DISplay:PHASEangle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:DISplay:PHASEangle {OFF|ON|0|1}
         - POWer:QUALity:DISplay:PHASEangle?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` or 0 turns off the phase angle display.
         - ``ON`` or 1 turns on the phase angle display.
     """
@@ -5175,24 +5005,23 @@ class PowerQualityDisplayPhaseangle(SCPICmdWrite, SCPICmdRead):
 class PowerQualityDisplayIrms(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:QUALity:DISplay:IRMS`` command.
 
-    **Description:**
+    Description:
         - This command specifies the display state for the rms current readout.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:IRMS?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:DISplay:IRMS?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:QUALity:DISplay:IRMS value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:DISplay:IRMS {OFF|ON|0|1}
         - POWer:QUALity:DISplay:IRMS?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` or 0 turns off the rms current display.
         - ``ON`` or 1 turns on the rms current display.
     """
@@ -5201,24 +5030,23 @@ class PowerQualityDisplayIrms(SCPICmdWrite, SCPICmdRead):
 class PowerQualityDisplayIcrestfactor(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:QUALity:DISplay:ICRESTfactor`` command.
 
-    **Description:**
+    Description:
         - This command specifies the display state for the current crest factor readout.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:ICRESTfactor?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:DISplay:ICRESTfactor?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:QUALity:DISplay:ICRESTfactor value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:DISplay:ICRESTfactor {OFF|ON|0|1}
         - POWer:QUALity:DISplay:ICRESTfactor?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` or 0 turns off the current crest factor display.
         - ``ON`` or 1 turns on the current crest factor display.
     """
@@ -5227,24 +5055,23 @@ class PowerQualityDisplayIcrestfactor(SCPICmdWrite, SCPICmdRead):
 class PowerQualityDisplayFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:QUALity:DISplay:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command specifies the display state for the frequency readout.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:DISplay:FREQuency?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:QUALity:DISplay:FREQuency value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:DISplay:FREQuency {OFF|ON|0|1}
         - POWer:QUALity:DISplay:FREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` or 0 turns off the frequency display.
         - ``ON`` or 1 turns on the frequency display.
     """
@@ -5253,24 +5080,23 @@ class PowerQualityDisplayFrequency(SCPICmdWrite, SCPICmdRead):
 class PowerQualityDisplayApppwr(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:QUALity:DISplay:APPpwr`` command.
 
-    **Description:**
+    Description:
         - This command specifies the display state for the apparent power readout.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:APPpwr?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:DISplay:APPpwr?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:QUALity:DISplay:APPpwr value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:DISplay:APPpwr {OFF|ON|0|1}
         - POWer:QUALity:DISplay:APPpwr?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` or 0 turns off the apparent power display.
         - ``ON`` or 1 turns on the apparent power display.
     """
@@ -5280,7 +5106,7 @@ class PowerQualityDisplayApppwr(SCPICmdWrite, SCPICmdRead):
 class PowerQualityDisplay(SCPICmdRead):
     """The ``POWer:QUALity:DISplay`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:DISplay?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -5321,24 +5147,23 @@ class PowerQualityDisplay(SCPICmdRead):
     def apppwr(self) -> PowerQualityDisplayApppwr:
         """Return the ``POWer:QUALity:DISplay:APPpwr`` command.
 
-        **Description:**
+        Description:
             - This command specifies the display state for the apparent power readout.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:APPpwr?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity:DISplay:APPpwr?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:QUALity:DISplay:APPpwr value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:DISplay:APPpwr {OFF|ON|0|1}
             - POWer:QUALity:DISplay:APPpwr?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` or 0 turns off the apparent power display.
             - ``ON`` or 1 turns on the apparent power display.
         """
@@ -5348,10 +5173,10 @@ class PowerQualityDisplay(SCPICmdRead):
     def frequency(self) -> PowerQualityDisplayFrequency:
         """Return the ``POWer:QUALity:DISplay:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command specifies the display state for the frequency readout.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:FREQuency?``
               query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity:DISplay:FREQuency?``
@@ -5359,14 +5184,13 @@ class PowerQualityDisplay(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:QUALity:DISplay:FREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:DISplay:FREQuency {OFF|ON|0|1}
             - POWer:QUALity:DISplay:FREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` or 0 turns off the frequency display.
             - ``ON`` or 1 turns on the frequency display.
         """
@@ -5376,10 +5200,10 @@ class PowerQualityDisplay(SCPICmdRead):
     def icrestfactor(self) -> PowerQualityDisplayIcrestfactor:
         """Return the ``POWer:QUALity:DISplay:ICRESTfactor`` command.
 
-        **Description:**
+        Description:
             - This command specifies the display state for the current crest factor readout.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:ICRESTfactor?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5388,14 +5212,13 @@ class PowerQualityDisplay(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:QUALity:DISplay:ICRESTfactor value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:DISplay:ICRESTfactor {OFF|ON|0|1}
             - POWer:QUALity:DISplay:ICRESTfactor?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` or 0 turns off the current crest factor display.
             - ``ON`` or 1 turns on the current crest factor display.
         """
@@ -5405,24 +5228,23 @@ class PowerQualityDisplay(SCPICmdRead):
     def irms(self) -> PowerQualityDisplayIrms:
         """Return the ``POWer:QUALity:DISplay:IRMS`` command.
 
-        **Description:**
+        Description:
             - This command specifies the display state for the rms current readout.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:IRMS?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity:DISplay:IRMS?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:QUALity:DISplay:IRMS value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:DISplay:IRMS {OFF|ON|0|1}
             - POWer:QUALity:DISplay:IRMS?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` or 0 turns off the rms current display.
             - ``ON`` or 1 turns on the rms current display.
         """
@@ -5432,10 +5254,10 @@ class PowerQualityDisplay(SCPICmdRead):
     def phaseangle(self) -> PowerQualityDisplayPhaseangle:
         """Return the ``POWer:QUALity:DISplay:PHASEangle`` command.
 
-        **Description:**
+        Description:
             - This command specifies the display state for the phase angle readout.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:PHASEangle?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5444,14 +5266,13 @@ class PowerQualityDisplay(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:QUALity:DISplay:PHASEangle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:DISplay:PHASEangle {OFF|ON|0|1}
             - POWer:QUALity:DISplay:PHASEangle?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` or 0 turns off the phase angle display.
             - ``ON`` or 1 turns on the phase angle display.
         """
@@ -5461,10 +5282,10 @@ class PowerQualityDisplay(SCPICmdRead):
     def powerfactor(self) -> PowerQualityDisplayPowerfactor:
         """Return the ``POWer:QUALity:DISplay:POWERFACtor`` command.
 
-        **Description:**
+        Description:
             - This command specifies the display state for the power factor readout.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:POWERFACtor?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5473,14 +5294,13 @@ class PowerQualityDisplay(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:QUALity:DISplay:POWERFACtor value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:DISplay:POWERFACtor {OFF|ON|0|1}
             - POWer:QUALity:DISplay:POWERFACtor?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` or 0 turns off the power factor display.
             - ``ON`` or 1 turns on the power factor display.
         """
@@ -5490,24 +5310,23 @@ class PowerQualityDisplay(SCPICmdRead):
     def reactpwr(self) -> PowerQualityDisplayReactpwr:
         """Return the ``POWer:QUALity:DISplay:REACTpwr`` command.
 
-        **Description:**
+        Description:
             - This command specifies the display state for the reactor power readout.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:REACTpwr?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity:DISplay:REACTpwr?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:QUALity:DISplay:REACTpwr value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:DISplay:REACTpwr {OFF|ON|0|1}
             - POWer:QUALity:DISplay:REACTpwr?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` or 0 turns off the reactor power display.
             - ``ON`` or 1 turns on the reactor power display.
         """
@@ -5517,24 +5336,23 @@ class PowerQualityDisplay(SCPICmdRead):
     def truepwr(self) -> PowerQualityDisplayTruepwr:
         """Return the ``POWer:QUALity:DISplay:TRUEpwr`` command.
 
-        **Description:**
+        Description:
             - This command specifies the display state for the true power readout.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:TRUEpwr?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity:DISplay:TRUEpwr?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:QUALity:DISplay:TRUEpwr value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:DISplay:TRUEpwr {OFF|ON|0|1}
             - POWer:QUALity:DISplay:TRUEpwr?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` or 0 turns off the true power display.
             - ``ON`` or 1 turns on the true power display.
         """
@@ -5544,10 +5362,10 @@ class PowerQualityDisplay(SCPICmdRead):
     def vcrestfactor(self) -> PowerQualityDisplayVcrestfactor:
         """Return the ``POWer:QUALity:DISplay:VCRESTfactor`` command.
 
-        **Description:**
+        Description:
             - This command specifies the display state for the voltage crest factor readout.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:VCRESTfactor?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5556,14 +5374,13 @@ class PowerQualityDisplay(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:QUALity:DISplay:VCRESTfactor value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:DISplay:VCRESTfactor {OFF|ON|0|1}
             - POWer:QUALity:DISplay:VCRESTfactor?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` or 0 turns off the voltage crest factor display.
             - ``ON`` or 1 turns on the voltage crest factor display.
         """
@@ -5573,24 +5390,23 @@ class PowerQualityDisplay(SCPICmdRead):
     def vrms(self) -> PowerQualityDisplayVrms:
         """Return the ``POWer:QUALity:DISplay:VRMS`` command.
 
-        **Description:**
+        Description:
             - This command specifies the display state for the rms voltage readout.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay:VRMS?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity:DISplay:VRMS?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:QUALity:DISplay:VRMS value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:DISplay:VRMS {OFF|ON|0|1}
             - POWer:QUALity:DISplay:VRMS?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` or 0 turns off the rms voltage display.
             - ``ON`` or 1 turns on the rms voltage display.
         """
@@ -5600,19 +5416,18 @@ class PowerQualityDisplay(SCPICmdRead):
 class PowerQualityApppwr(SCPICmdRead):
     """The ``POWer:QUALity:APPpwr`` command.
 
-    **Description:**
+    Description:
         - Returns the apparent power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity:APPpwr?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity:APPpwr?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:QUALity:APPpwr?
+        ```
     """
 
 
@@ -5620,7 +5435,7 @@ class PowerQualityApppwr(SCPICmdRead):
 class PowerQuality(SCPICmdRead):
     """The ``POWer:QUALity`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:QUALity?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:QUALity?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -5659,19 +5474,18 @@ class PowerQuality(SCPICmdRead):
     def apppwr(self) -> PowerQualityApppwr:
         """Return the ``POWer:QUALity:APPpwr`` command.
 
-        **Description:**
+        Description:
             - Returns the apparent power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:APPpwr?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity:APPpwr?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:APPpwr?
+            ```
         """
         return self._apppwr
 
@@ -5679,7 +5493,7 @@ class PowerQuality(SCPICmdRead):
     def display(self) -> PowerQualityDisplay:
         """Return the ``POWer:QUALity:DISplay`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:DISplay?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity:DISplay?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5702,24 +5516,23 @@ class PowerQuality(SCPICmdRead):
     def freqreference(self) -> PowerQualityFreqreference:
         """Return the ``POWer:QUALity:FREQREFerence`` command.
 
-        **Description:**
+        Description:
             - This command specifies the power quality frequency reference.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:FREQREFerence?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity:FREQREFerence?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:QUALity:FREQREFerence value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:FREQREFerence {VOLTage|CURRent}
             - POWer:QUALity:FREQREFerence?
+            ```
 
-        **Info:**
+        Info:
             - ``VOLTage`` sets voltage as the power quality frequency reference source.
             - ``CURRent`` sets current as the power quality frequency reference source.
         """
@@ -5729,19 +5542,18 @@ class PowerQuality(SCPICmdRead):
     def frequency(self) -> PowerQualityFrequency:
         """Return the ``POWer:QUALity:FREQuency`` command.
 
-        **Description:**
+        Description:
             - Returns the frequency measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity:FREQuency?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:FREQuency?
+            ```
         """
         return self._frequency
 
@@ -5749,19 +5561,18 @@ class PowerQuality(SCPICmdRead):
     def icrestfactor(self) -> PowerQualityIcrestfactor:
         """Return the ``POWer:QUALity:ICRESTfactor`` command.
 
-        **Description:**
+        Description:
             - Returns the current crest factor measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:ICRESTfactor?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity:ICRESTfactor?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:ICRESTfactor?
+            ```
         """
         return self._icrestfactor
 
@@ -5769,19 +5580,18 @@ class PowerQuality(SCPICmdRead):
     def irms(self) -> PowerQualityIrms:
         """Return the ``POWer:QUALity:IRMS`` command.
 
-        **Description:**
+        Description:
             - Returns the RMS current measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:IRMS?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity:IRMS?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:IRMS?
+            ```
         """
         return self._irms
 
@@ -5789,19 +5599,18 @@ class PowerQuality(SCPICmdRead):
     def phaseangle(self) -> PowerQualityPhaseangle:
         """Return the ``POWer:QUALity:PHASEangle`` command.
 
-        **Description:**
+        Description:
             - Returns the phase angle measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:PHASEangle?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity:PHASEangle?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:PHASEangle?
+            ```
         """
         return self._phaseangle
 
@@ -5809,19 +5618,18 @@ class PowerQuality(SCPICmdRead):
     def powerfactor(self) -> PowerQualityPowerfactor:
         """Return the ``POWer:QUALity:POWERFACtor`` command.
 
-        **Description:**
+        Description:
             - Returns the power factor measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:POWERFACtor?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity:POWERFACtor?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:POWERFACtor?
+            ```
         """
         return self._powerfactor
 
@@ -5829,19 +5637,18 @@ class PowerQuality(SCPICmdRead):
     def reactpwr(self) -> PowerQualityReactpwr:
         """Return the ``POWer:QUALity:REACTpwr`` command.
 
-        **Description:**
+        Description:
             - Returns the reactive power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:REACTpwr?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity:REACTpwr?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:REACTpwr?
+            ```
         """
         return self._reactpwr
 
@@ -5849,19 +5656,18 @@ class PowerQuality(SCPICmdRead):
     def truepwr(self) -> PowerQualityTruepwr:
         """Return the ``POWer:QUALity:TRUEpwr`` command.
 
-        **Description:**
+        Description:
             - Returns the true power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:TRUEpwr?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity:TRUEpwr?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:TRUEpwr?
+            ```
         """
         return self._truepwr
 
@@ -5869,19 +5675,18 @@ class PowerQuality(SCPICmdRead):
     def vcrestfactor(self) -> PowerQualityVcrestfactor:
         """Return the ``POWer:QUALity:VCRESTfactor`` command.
 
-        **Description:**
+        Description:
             - This query returns the measurement for the voltage crest factor.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:VCRESTfactor?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity:VCRESTfactor?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:VCRESTfactor?
+            ```
         """
         return self._vcrestfactor
 
@@ -5889,19 +5694,18 @@ class PowerQuality(SCPICmdRead):
     def vrms(self) -> PowerQualityVrms:
         """Return the ``POWer:QUALity:VRMS`` command.
 
-        **Description:**
+        Description:
             - Returns the RMS voltage measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity:VRMS?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity:VRMS?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:QUALity:VRMS?
+            ```
         """
         return self._vrms
 
@@ -5909,23 +5713,22 @@ class PowerQuality(SCPICmdRead):
 class PowerModulationType(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:MODulation:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command specifies the modulation type.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:MODulation:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:MODulation:TYPe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:MODulation:TYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:MODulation:TYPe {PWIdth|NWIdth|PERIod|PDUty|NDUty|FREQuency}
         - POWer:MODulation:TYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``PWIdth`` (positive width) is the distance (time) between the middle reference (default =
           50%) amplitude points of a positive pulse. The measurement is made on all the cycles in
           the waveform or gated region.
@@ -5952,26 +5755,25 @@ class PowerModulationType(SCPICmdWrite, SCPICmdRead):
 class PowerModulationSource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:MODulation:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command specifies the source waveform for modulation tests. The voltage source
           waveform is specified using the ``POWER:VOLTAGESOURCE`` command and the current waveform
           is specified using the ``POWER:CURRENTSOURCE`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:MODulation:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:MODulation:SOUrce?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:MODulation:SOUrce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:MODulation:SOUrce {VOLTage|CURRent}
         - POWer:MODulation:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``VOLTage`` specifies voltage source waveform for modulation tests.
         - ``CURRent`` specifies current source waveform for modulation tests.
     """
@@ -5980,7 +5782,7 @@ class PowerModulationSource(SCPICmdWrite, SCPICmdRead):
 class PowerModulation(SCPICmdRead):
     """The ``POWer:MODulation`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:MODulation?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:MODulation?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -5999,26 +5801,25 @@ class PowerModulation(SCPICmdRead):
     def source(self) -> PowerModulationSource:
         """Return the ``POWer:MODulation:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command specifies the source waveform for modulation tests. The voltage source
               waveform is specified using the ``POWER:VOLTAGESOURCE`` command and the current
               waveform is specified using the ``POWER:CURRENTSOURCE`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:MODulation:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:MODulation:SOUrce?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:MODulation:SOUrce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:MODulation:SOUrce {VOLTage|CURRent}
             - POWer:MODulation:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``VOLTage`` specifies voltage source waveform for modulation tests.
             - ``CURRent`` specifies current source waveform for modulation tests.
         """
@@ -6028,24 +5829,23 @@ class PowerModulation(SCPICmdRead):
     def type(self) -> PowerModulationType:
         """Return the ``POWer:MODulation:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command specifies the modulation type.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:MODulation:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:MODulation:TYPe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:MODulation:TYPe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:MODulation:TYPe {PWIdth|NWIdth|PERIod|PDUty|NDUty|FREQuency}
             - POWer:MODulation:TYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``PWIdth`` (positive width) is the distance (time) between the middle reference
               (default = 50%) amplitude points of a positive pulse. The measurement is made on all
               the cycles in the waveform or gated region.
@@ -6074,23 +5874,22 @@ class PowerModulation(SCPICmdRead):
 class PowerIndicators(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:INDICators`` command.
 
-    **Description:**
+    Description:
         - This command specifies the state of the measurement indicators for the power application.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:INDICators?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:INDICators?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:INDICators value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:INDICators {OFF|ON|0|1}
         - POWer:INDICators?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` or 0 turns off the measurement indicators.
         - ``ON`` or 1 turns on the measurement indicators.
     """
@@ -6099,24 +5898,23 @@ class PowerIndicators(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsStandard(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:STANDard`` command.
 
-    **Description:**
+    Description:
         - This command specifies the standard for harmonics tests.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:STANDard?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:STANDard?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:HARMonics:STANDard value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:STANDard {NONe|IEC|MIL}
         - POWer:HARMonics:STANDard?
+        ```
 
-    **Info:**
+    Info:
         - ``NONe`` sets no standard for harmonic tests.
         - ``IEC`` sets IEC 610003-2 standard for harmonic tests.
         - ``MIL`` sets MIL1399 standard for harmonic tests.
@@ -6126,25 +5924,24 @@ class PowerHarmonicsStandard(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsSource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:SOURce`` command.
 
-    **Description:**
+    Description:
         - This command specifies the source waveform for harmonics tests. The voltage source
           waveform is specified using the ``POWER:VOLTAGESOURCE`` command and the current waveform
           is specified using the ``POWER:CURRENTSOURCE`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:SOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:SOURce?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:HARMonics:SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:SOURce {VOLTage|CURRent}
         - POWer:HARMonics:SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``VOLTage`` specifies voltage source waveform for harmonic tests.
         - ``CURRent`` specifies current source waveform for harmonic tests.
     """
@@ -6153,244 +5950,232 @@ class PowerHarmonicsSource(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsResultsThdr(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:THDR`` command.
 
-    **Description:**
+    Description:
         - Returns the Total Harmonic Distortion (THD) in percentage, measured as a ratio to the RMS
           value of the source waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:THDR?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:RESults:THDR?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:THDR?
+        ```
     """
 
 
 class PowerHarmonicsResultsThdf(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:THDF`` command.
 
-    **Description:**
+    Description:
         - Returns the Total Harmonic Distortion (THD) in percentage, measured as a ratio to the RMS
           value of the fundamental component of the source waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:THDF?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:RESults:THDF?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:THDF?
+        ```
     """
 
 
 class PowerHarmonicsResultsSave(SCPICmdWrite):
     """The ``POWer:HARMonics:RESults:SAVe`` command.
 
-    **Description:**
+    Description:
         - Saves the harmonic results to the specified file in CSV format.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``POWer:HARMonics:RESults:SAVe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:SAVe <String>
+        ```
     """
 
 
 class PowerHarmonicsResultsRms(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:RMS`` command.
 
-    **Description:**
+    Description:
         - Returns the root mean square value of the harmonics source waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:RMS?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:RESults:RMS?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:RMS?
+        ```
     """
 
 
 class PowerHarmonicsResultsPassfail(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:PASSFail`` command.
 
-    **Description:**
+    Description:
         - Returns the overall harmonics test result: PASS, FAIL or NA.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:PASSFail?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:RESults:PASSFail?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:PASSFail?
+        ```
     """
 
 
 class PowerHarmonicsResultsIecPower(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:IEC:POWer`` command.
 
-    **Description:**
+    Description:
         - Returns the IEC input power that is used to calculate limits.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:IEC:POWer?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:RESults:IEC:POWer?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:IEC:POWer?
+        ```
     """
 
 
 class PowerHarmonicsResultsIecPowerfactor(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:IEC:POWERFactor`` command.
 
-    **Description:**
+    Description:
         - Returns the IEC power factor measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:IEC:POWERFactor?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``POWer:HARMonics:RESults:IEC:POWERFactor?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:IEC:POWERFactor?
+        ```
     """
 
 
 class PowerHarmonicsResultsIecPohl(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:IEC:POHL`` command.
 
-    **Description:**
+    Description:
         - Returns the IEC POHL measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:IEC:POHL?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:RESults:IEC:POHL?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:IEC:POHL?
+        ```
     """
 
 
 class PowerHarmonicsResultsIecPohc(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:IEC:POHC`` command.
 
-    **Description:**
+    Description:
         - Returns the IEC POHC measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:IEC:POHC?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:RESults:IEC:POHC?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:IEC:POHC?
+        ```
     """
 
 
 class PowerHarmonicsResultsIecHarm5alternate(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:IEC:HARM5ALTernate`` command.
 
-    **Description:**
+    Description:
         - Returns the overall harmonics test result for the 5th harmonic.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``POWer:HARMonics:RESults:IEC:HARM5ALTernate?`` query.
         - Using the ``.verify(value)`` method will send the
           ``POWer:HARMonics:RESults:IEC:HARM5ALTernate?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:IEC:HARM5ALTernate?
+        ```
     """
 
 
 class PowerHarmonicsResultsIecHarm3alternate(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:IEC:HARM3ALTernate`` command.
 
-    **Description:**
+    Description:
         - Returns the IEC harmonics test result for the 3rd harmonic.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``POWer:HARMonics:RESults:IEC:HARM3ALTernate?`` query.
         - Using the ``.verify(value)`` method will send the
           ``POWer:HARMonics:RESults:IEC:HARM3ALTernate?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:IEC:HARM3ALTernate?
+        ```
     """
 
 
 class PowerHarmonicsResultsIecFundamental(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:IEC:FUNDamental`` command.
 
-    **Description:**
+    Description:
         - Returns the IEC fundamental current used in calculating limits.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:IEC:FUNDamental?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``POWer:HARMonics:RESults:IEC:FUNDamental?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:IEC:FUNDamental?
+        ```
     """
 
 
 class PowerHarmonicsResultsIec(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:IEC`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:IEC?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:RESults:IEC?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -6427,21 +6212,20 @@ class PowerHarmonicsResultsIec(SCPICmdRead):
     def fundamental(self) -> PowerHarmonicsResultsIecFundamental:
         """Return the ``POWer:HARMonics:RESults:IEC:FUNDamental`` command.
 
-        **Description:**
+        Description:
             - Returns the IEC fundamental current used in calculating limits.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:HARMonics:RESults:IEC:FUNDamental?`` query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:HARMonics:RESults:IEC:FUNDamental?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:IEC:FUNDamental?
+            ```
         """
         return self._fundamental
 
@@ -6449,21 +6233,20 @@ class PowerHarmonicsResultsIec(SCPICmdRead):
     def harm3alternate(self) -> PowerHarmonicsResultsIecHarm3alternate:
         """Return the ``POWer:HARMonics:RESults:IEC:HARM3ALTernate`` command.
 
-        **Description:**
+        Description:
             - Returns the IEC harmonics test result for the 3rd harmonic.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:HARMonics:RESults:IEC:HARM3ALTernate?`` query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:HARMonics:RESults:IEC:HARM3ALTernate?`` query and raise an AssertionError if
               the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:IEC:HARM3ALTernate?
+            ```
         """
         return self._harm3alternate
 
@@ -6471,21 +6254,20 @@ class PowerHarmonicsResultsIec(SCPICmdRead):
     def harm5alternate(self) -> PowerHarmonicsResultsIecHarm5alternate:
         """Return the ``POWer:HARMonics:RESults:IEC:HARM5ALTernate`` command.
 
-        **Description:**
+        Description:
             - Returns the overall harmonics test result for the 5th harmonic.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:HARMonics:RESults:IEC:HARM5ALTernate?`` query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:HARMonics:RESults:IEC:HARM5ALTernate?`` query and raise an AssertionError if
               the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:IEC:HARM5ALTernate?
+            ```
         """
         return self._harm5alternate
 
@@ -6493,21 +6275,20 @@ class PowerHarmonicsResultsIec(SCPICmdRead):
     def pohc(self) -> PowerHarmonicsResultsIecPohc:
         """Return the ``POWer:HARMonics:RESults:IEC:POHC`` command.
 
-        **Description:**
+        Description:
             - Returns the IEC POHC measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:IEC:POHC?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:HARMonics:RESults:IEC:POHC?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:IEC:POHC?
+            ```
         """
         return self._pohc
 
@@ -6515,21 +6296,20 @@ class PowerHarmonicsResultsIec(SCPICmdRead):
     def pohl(self) -> PowerHarmonicsResultsIecPohl:
         """Return the ``POWer:HARMonics:RESults:IEC:POHL`` command.
 
-        **Description:**
+        Description:
             - Returns the IEC POHL measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:IEC:POHL?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:HARMonics:RESults:IEC:POHL?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:IEC:POHL?
+            ```
         """
         return self._pohl
 
@@ -6537,21 +6317,20 @@ class PowerHarmonicsResultsIec(SCPICmdRead):
     def powerfactor(self) -> PowerHarmonicsResultsIecPowerfactor:
         """Return the ``POWer:HARMonics:RESults:IEC:POWERFactor`` command.
 
-        **Description:**
+        Description:
             - Returns the IEC power factor measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:HARMonics:RESults:IEC:POWERFactor?`` query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:HARMonics:RESults:IEC:POWERFactor?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:IEC:POWERFactor?
+            ```
         """
         return self._powerfactor
 
@@ -6559,21 +6338,20 @@ class PowerHarmonicsResultsIec(SCPICmdRead):
     def power(self) -> PowerHarmonicsResultsIecPower:
         """Return the ``POWer:HARMonics:RESults:IEC:POWer`` command.
 
-        **Description:**
+        Description:
             - Returns the IEC input power that is used to calculate limits.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:IEC:POWer?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:HARMonics:RESults:IEC:POWer?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:IEC:POWer?
+            ```
         """
         return self._power
 
@@ -6581,30 +6359,29 @@ class PowerHarmonicsResultsIec(SCPICmdRead):
 class PowerHarmonicsResultsHarItemTestMilNormal(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:HAR<x>:TEST:MIL:NORMAL`` command.
 
-    **Description:**
+    Description:
         - Returns the test result for the specified harmonic for the MIL-STD-1399 Section 300A
           testing standard. This query is analogous to that for the IEC 61000-3-2 standard
           ``POWER:HARMONICS:RESULTS:HAR1400:TEST:IEC:NORMAL`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``POWer:HARMonics:RESults:HAR<x>:TEST:MIL:NORMAL?`` query.
         - Using the ``.verify(value)`` method will send the
           ``POWer:HARMonics:RESults:HAR<x>:TEST:MIL:NORMAL?`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:HAR<x>:TEST:MIL:NORMAL?
+        ```
     """
 
 
 class PowerHarmonicsResultsHarItemTestMil(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:HAR<x>:TEST:MIL`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:HAR<x>:TEST:MIL?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -6625,23 +6402,22 @@ class PowerHarmonicsResultsHarItemTestMil(SCPICmdRead):
     def normal(self) -> PowerHarmonicsResultsHarItemTestMilNormal:
         """Return the ``POWer:HARMonics:RESults:HAR<x>:TEST:MIL:NORMAL`` command.
 
-        **Description:**
+        Description:
             - Returns the test result for the specified harmonic for the MIL-STD-1399 Section 300A
               testing standard. This query is analogous to that for the IEC 61000-3-2 standard
               ``POWER:HARMONICS:RESULTS:HAR1400:TEST:IEC:NORMAL`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:TEST:MIL:NORMAL?`` query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:TEST:MIL:NORMAL?`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:HAR<x>:TEST:MIL:NORMAL?
+            ```
         """
         return self._normal
 
@@ -6649,71 +6425,68 @@ class PowerHarmonicsResultsHarItemTestMil(SCPICmdRead):
 class PowerHarmonicsResultsHarItemTestIecPohclimit(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC:POHCLIMit`` command.
 
-    **Description:**
+    Description:
         - Specifies if the higher harmonic limit (and conditions) for the 21st and higher order odd
           harmonics are met.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC:POHCLIMit?`` query.
         - Using the ``.verify(value)`` method will send the
           ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC:POHCLIMit?`` query and raise an AssertionError
           if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:HAR<x>:TEST:IEC:POHCLIMit?
+        ```
     """
 
 
 class PowerHarmonicsResultsHarItemTestIecNormal(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC:NORMAL`` command.
 
-    **Description:**
+    Description:
         - Specifies if the Normal IEC harmonic limits are met.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC:NORMAL?`` query.
         - Using the ``.verify(value)`` method will send the
           ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC:NORMAL?`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:HAR<x>:TEST:IEC:NORMAL?
+        ```
     """
 
 
 class PowerHarmonicsResultsHarItemTestIecClassalimit(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC:CLASSALIMit`` command.
 
-    **Description:**
+    Description:
         - Specifies if the IEC Class A higher harmonic limit (and conditions) are met.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC:CLASSALIMit?`` query.
         - Using the ``.verify(value)`` method will send the
           ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC:CLASSALIMit?`` query and raise an AssertionError
           if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:HAR<x>:TEST:IEC:CLASSALIMit?
+        ```
     """
 
 
 class PowerHarmonicsResultsHarItemTestIec(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -6742,21 +6515,20 @@ class PowerHarmonicsResultsHarItemTestIec(SCPICmdRead):
     def classalimit(self) -> PowerHarmonicsResultsHarItemTestIecClassalimit:
         """Return the ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC:CLASSALIMit`` command.
 
-        **Description:**
+        Description:
             - Specifies if the IEC Class A higher harmonic limit (and conditions) are met.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC:CLASSALIMit?`` query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC:CLASSALIMit?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:HAR<x>:TEST:IEC:CLASSALIMit?
+            ```
         """
         return self._classalimit
 
@@ -6764,21 +6536,20 @@ class PowerHarmonicsResultsHarItemTestIec(SCPICmdRead):
     def normal(self) -> PowerHarmonicsResultsHarItemTestIecNormal:
         """Return the ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC:NORMAL`` command.
 
-        **Description:**
+        Description:
             - Specifies if the Normal IEC harmonic limits are met.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC:NORMAL?`` query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC:NORMAL?`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:HAR<x>:TEST:IEC:NORMAL?
+            ```
         """
         return self._normal
 
@@ -6786,22 +6557,21 @@ class PowerHarmonicsResultsHarItemTestIec(SCPICmdRead):
     def pohclimit(self) -> PowerHarmonicsResultsHarItemTestIecPohclimit:
         """Return the ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC:POHCLIMit`` command.
 
-        **Description:**
+        Description:
             - Specifies if the higher harmonic limit (and conditions) for the 21st and higher order
               odd harmonics are met.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC:POHCLIMit?`` query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC:POHCLIMit?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:HAR<x>:TEST:IEC:POHCLIMit?
+            ```
         """
         return self._pohclimit
 
@@ -6809,7 +6579,7 @@ class PowerHarmonicsResultsHarItemTestIec(SCPICmdRead):
 class PowerHarmonicsResultsHarItemTest(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:HAR<x>:TEST`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:HAR<x>:TEST?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:RESults:HAR<x>:TEST?``
@@ -6829,7 +6599,7 @@ class PowerHarmonicsResultsHarItemTest(SCPICmdRead):
     def iec(self) -> PowerHarmonicsResultsHarItemTestIec:
         """Return the ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:TEST:IEC?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6847,7 +6617,7 @@ class PowerHarmonicsResultsHarItemTest(SCPICmdRead):
     def mil(self) -> PowerHarmonicsResultsHarItemTestMil:
         """Return the ``POWer:HARMonics:RESults:HAR<x>:TEST:MIL`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:TEST:MIL?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6863,49 +6633,47 @@ class PowerHarmonicsResultsHarItemTest(SCPICmdRead):
 class PowerHarmonicsResultsHarItemRmsPercent(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:HAR<x>:RMS:PERCent`` command.
 
-    **Description:**
+    Description:
         - Returns the RMS magnitude of the harmonic expressed as a percentage of the fundamental.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``POWer:HARMonics:RESults:HAR<x>:RMS:PERCent?`` query.
         - Using the ``.verify(value)`` method will send the
           ``POWer:HARMonics:RESults:HAR<x>:RMS:PERCent?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:HAR<x>:RMS:PERCent?
+        ```
     """
 
 
 class PowerHarmonicsResultsHarItemRmsAbsolute(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:HAR<x>:RMS:ABSolute`` command.
 
-    **Description:**
+    Description:
         - Returns the RMS magnitude of the harmonic in absolute units.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``POWer:HARMonics:RESults:HAR<x>:RMS:ABSolute?`` query.
         - Using the ``.verify(value)`` method will send the
           ``POWer:HARMonics:RESults:HAR<x>:RMS:ABSolute?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:HAR<x>:RMS:ABSolute?
+        ```
     """
 
 
 class PowerHarmonicsResultsHarItemRms(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:HAR<x>:RMS`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:HAR<x>:RMS?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:RESults:HAR<x>:RMS?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -6928,21 +6696,20 @@ class PowerHarmonicsResultsHarItemRms(SCPICmdRead):
     def absolute(self) -> PowerHarmonicsResultsHarItemRmsAbsolute:
         """Return the ``POWer:HARMonics:RESults:HAR<x>:RMS:ABSolute`` command.
 
-        **Description:**
+        Description:
             - Returns the RMS magnitude of the harmonic in absolute units.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:RMS:ABSolute?`` query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:RMS:ABSolute?`` query and raise an AssertionError if
               the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:HAR<x>:RMS:ABSolute?
+            ```
         """
         return self._absolute
 
@@ -6950,22 +6717,21 @@ class PowerHarmonicsResultsHarItemRms(SCPICmdRead):
     def percent(self) -> PowerHarmonicsResultsHarItemRmsPercent:
         """Return the ``POWer:HARMonics:RESults:HAR<x>:RMS:PERCent`` command.
 
-        **Description:**
+        Description:
             - Returns the RMS magnitude of the harmonic expressed as a percentage of the
               fundamental.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:RMS:PERCent?`` query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:RMS:PERCent?`` query and raise an AssertionError if
               the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:HAR<x>:RMS:PERCent?
+            ```
         """
         return self._percent
 
@@ -6973,98 +6739,94 @@ class PowerHarmonicsResultsHarItemRms(SCPICmdRead):
 class PowerHarmonicsResultsHarItemPhase(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:HAR<x>:PHASe`` command.
 
-    **Description:**
+    Description:
         - Returns the phase of the harmonic in degrees. The phase is measured relative to the
           zero-crossing of the reference waveform. When there is no reference waveform, the phase is
           relative to the fundamental component.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:HAR<x>:PHASe?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``POWer:HARMonics:RESults:HAR<x>:PHASe?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:HAR<x>:PHASe?
+        ```
     """
 
 
 class PowerHarmonicsResultsHarItemLimit(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:HAR<x>:LIMit`` command.
 
-    **Description:**
+    Description:
         - The IEC and MIL standards specify a limit for each harmonic magnitude. Returns the limit
           in absolute units, or as a percentage of the fundamental as specified by the standard. IEC
           Class C (Table 2) and MIL standards specify the limit as a percentage of the fundamental.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:HAR<x>:LIMit?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``POWer:HARMonics:RESults:HAR<x>:LIMit?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:HAR<x>:LIMit?
+        ```
     """
 
 
 class PowerHarmonicsResultsHarItemIecmax(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:HAR<x>:IECMAX`` command.
 
-    **Description:**
+    Description:
         - The IEC Standard specifies harmonics measurements to be computed in time windows, with
           each time window being nominally 200 ms. This returns the maximum of the RMS magnitude of
           the harmonic, computed across successive 200 ms time windows within an observation period
           entered by the user.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:HAR<x>:IECMAX?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``POWer:HARMonics:RESults:HAR<x>:IECMAX?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:HAR<x>:IECMAX?
+        ```
     """
 
 
 class PowerHarmonicsResultsHarItemFrequency(SCPICmdRead):
     """The ``POWer:HARMonics:RESults:HAR<x>:FREQuency`` command.
 
-    **Description:**
+    Description:
         - Returns the frequency of the harmonic.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:HAR<x>:FREQuency?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``POWer:HARMonics:RESults:HAR<x>:FREQuency?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:RESults:HAR<x>:FREQuency?
+        ```
     """
 
 
 class PowerHarmonicsResultsHarItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``POWer:HARMonics:RESults:HAR<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:HAR<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:RESults:HAR<x>?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -7093,21 +6855,20 @@ class PowerHarmonicsResultsHarItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def frequency(self) -> PowerHarmonicsResultsHarItemFrequency:
         """Return the ``POWer:HARMonics:RESults:HAR<x>:FREQuency`` command.
 
-        **Description:**
+        Description:
             - Returns the frequency of the harmonic.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:FREQuency?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:HAR<x>:FREQuency?
+            ```
         """
         return self._frequency
 
@@ -7115,24 +6876,23 @@ class PowerHarmonicsResultsHarItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def iecmax(self) -> PowerHarmonicsResultsHarItemIecmax:
         """Return the ``POWer:HARMonics:RESults:HAR<x>:IECMAX`` command.
 
-        **Description:**
+        Description:
             - The IEC Standard specifies harmonics measurements to be computed in time windows, with
               each time window being nominally 200 ms. This returns the maximum of the RMS magnitude
               of the harmonic, computed across successive 200 ms time windows within an observation
               period entered by the user.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:HAR<x>:IECMAX?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:IECMAX?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:HAR<x>:IECMAX?
+            ```
         """
         return self._iecmax
 
@@ -7140,24 +6900,23 @@ class PowerHarmonicsResultsHarItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def limit(self) -> PowerHarmonicsResultsHarItemLimit:
         """Return the ``POWer:HARMonics:RESults:HAR<x>:LIMit`` command.
 
-        **Description:**
+        Description:
             - The IEC and MIL standards specify a limit for each harmonic magnitude. Returns the
               limit in absolute units, or as a percentage of the fundamental as specified by the
               standard. IEC Class C (Table 2) and MIL standards specify the limit as a percentage of
               the fundamental.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:HAR<x>:LIMit?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:LIMit?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:HAR<x>:LIMit?
+            ```
         """
         return self._limit
 
@@ -7165,23 +6924,22 @@ class PowerHarmonicsResultsHarItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def phase(self) -> PowerHarmonicsResultsHarItemPhase:
         """Return the ``POWer:HARMonics:RESults:HAR<x>:PHASe`` command.
 
-        **Description:**
+        Description:
             - Returns the phase of the harmonic in degrees. The phase is measured relative to the
               zero-crossing of the reference waveform. When there is no reference waveform, the
               phase is relative to the fundamental component.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:HAR<x>:PHASe?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:HARMonics:RESults:HAR<x>:PHASe?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:HAR<x>:PHASe?
+            ```
         """
         return self._phase
 
@@ -7189,7 +6947,7 @@ class PowerHarmonicsResultsHarItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def rms(self) -> PowerHarmonicsResultsHarItemRms:
         """Return the ``POWer:HARMonics:RESults:HAR<x>:RMS`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:HAR<x>:RMS?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -7206,7 +6964,7 @@ class PowerHarmonicsResultsHarItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def test(self) -> PowerHarmonicsResultsHarItemTest:
         """Return the ``POWer:HARMonics:RESults:HAR<x>:TEST`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:HAR<x>:TEST?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -7223,7 +6981,7 @@ class PowerHarmonicsResultsHarItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class PowerHarmonicsResults(SCPICmdRead):
     """The ``POWer:HARMonics:RESults`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:RESults?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -7254,7 +7012,7 @@ class PowerHarmonicsResults(SCPICmdRead):
     def har(self) -> Dict[int, PowerHarmonicsResultsHarItem]:
         """Return the ``POWer:HARMonics:RESults:HAR<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:HAR<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:RESults:HAR<x>?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -7273,7 +7031,7 @@ class PowerHarmonicsResults(SCPICmdRead):
     def iec(self) -> PowerHarmonicsResultsIec:
         """Return the ``POWer:HARMonics:RESults:IEC`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:IEC?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:RESults:IEC?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -7293,21 +7051,20 @@ class PowerHarmonicsResults(SCPICmdRead):
     def passfail(self) -> PowerHarmonicsResultsPassfail:
         """Return the ``POWer:HARMonics:RESults:PASSFail`` command.
 
-        **Description:**
+        Description:
             - Returns the overall harmonics test result: PASS, FAIL or NA.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:PASSFail?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:HARMonics:RESults:PASSFail?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:PASSFail?
+            ```
         """
         return self._passfail
 
@@ -7315,19 +7072,18 @@ class PowerHarmonicsResults(SCPICmdRead):
     def rms(self) -> PowerHarmonicsResultsRms:
         """Return the ``POWer:HARMonics:RESults:RMS`` command.
 
-        **Description:**
+        Description:
             - Returns the root mean square value of the harmonics source waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:RMS?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:RESults:RMS?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:RMS?
+            ```
         """
         return self._rms
 
@@ -7335,18 +7091,17 @@ class PowerHarmonicsResults(SCPICmdRead):
     def save(self) -> PowerHarmonicsResultsSave:
         """Return the ``POWer:HARMonics:RESults:SAVe`` command.
 
-        **Description:**
+        Description:
             - Saves the harmonic results to the specified file in CSV format.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``POWer:HARMonics:RESults:SAVe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:SAVe <String>
+            ```
         """
         return self._save
 
@@ -7354,20 +7109,19 @@ class PowerHarmonicsResults(SCPICmdRead):
     def thdf(self) -> PowerHarmonicsResultsThdf:
         """Return the ``POWer:HARMonics:RESults:THDF`` command.
 
-        **Description:**
+        Description:
             - Returns the Total Harmonic Distortion (THD) in percentage, measured as a ratio to the
               RMS value of the fundamental component of the source waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:THDF?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:RESults:THDF?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:THDF?
+            ```
         """
         return self._thdf
 
@@ -7375,20 +7129,19 @@ class PowerHarmonicsResults(SCPICmdRead):
     def thdr(self) -> PowerHarmonicsResultsThdr:
         """Return the ``POWer:HARMonics:RESults:THDR`` command.
 
-        **Description:**
+        Description:
             - Returns the Total Harmonic Distortion (THD) in percentage, measured as a ratio to the
               RMS value of the source waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults:THDR?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:RESults:THDR?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:RESults:THDR?
+            ```
         """
         return self._thdr
 
@@ -7396,25 +7149,24 @@ class PowerHarmonicsResults(SCPICmdRead):
 class PowerHarmonicsNrHarmonics(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:NR_HARMonics`` command.
 
-    **Description:**
+    Description:
         - This command specifies the number of harmonics (value ranging from 20 to 400) when the
           harmonics standard is NONe.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:NR_HARMonics?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:NR_HARMonics?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:HARMonics:NR_HARMonics value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:NR_HARMonics <NR3>
         - POWer:HARMonics:NR_HARMonics?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the number of harmonics.
     """
 
@@ -7422,25 +7174,24 @@ class PowerHarmonicsNrHarmonics(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsMilPowerlevel(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:MIL:POWERLEVel`` command.
 
-    **Description:**
+    Description:
         - This command specifies the power level for calculating limits for MIL-STD-1399 Section
           300A harmonics tests.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:MIL:POWERLEVel?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:MIL:POWERLEVel?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:HARMonics:MIL:POWERLEVel value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:MIL:POWERLEVel {LOW|HIGH}
         - POWer:HARMonics:MIL:POWERLEVel?
+        ```
 
-    **Info:**
+    Info:
         - ``LOW`` specifies low power level for MIL-STD-1399 harmonics tests.
         - ``HIGH`` specifies high power level for MIL-STD-1399 harmonics tests.
     """
@@ -7449,25 +7200,24 @@ class PowerHarmonicsMilPowerlevel(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsMilLinefrequency(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:MIL:LINEFREQuency`` command.
 
-    **Description:**
+    Description:
         - This command specifies the line frequency for MIL-STD-1399 Section 300A harmonics tests.
           Valid values are 60 or 400 Hz.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:MIL:LINEFREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:MIL:LINEFREQuency?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:HARMonics:MIL:LINEFREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:MIL:LINEFREQuency <NR1>
         - POWer:HARMonics:MIL:LINEFREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is an unsigned integer that specifies the line frequency for the MIL standard.
     """
 
@@ -7475,10 +7225,10 @@ class PowerHarmonicsMilLinefrequency(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsMilFundamentalUserCurrent(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:MIL:FUNDamental:USER:CURrent`` command.
 
-    **Description:**
+    Description:
         - This command specifies RMS amperes for USER CALCmethod.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``POWer:HARMonics:MIL:FUNDamental:USER:CURrent?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7487,14 +7237,13 @@ class PowerHarmonicsMilFundamentalUserCurrent(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:HARMonics:MIL:FUNDamental:USER:CURrent value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:MIL:FUNDamental:USER:CURrent <NR3>
         - POWer:HARMonics:MIL:FUNDamental:USER:CURrent?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the current in amperes for USER
           CALCmethod.
     """
@@ -7503,7 +7252,7 @@ class PowerHarmonicsMilFundamentalUserCurrent(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsMilFundamentalUser(SCPICmdRead):
     """The ``POWer:HARMonics:MIL:FUNDamental:USER`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:MIL:FUNDamental:USER?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -7524,10 +7273,10 @@ class PowerHarmonicsMilFundamentalUser(SCPICmdRead):
     def current(self) -> PowerHarmonicsMilFundamentalUserCurrent:
         """Return the ``POWer:HARMonics:MIL:FUNDamental:USER:CURrent`` command.
 
-        **Description:**
+        Description:
             - This command specifies RMS amperes for USER CALCmethod.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:HARMonics:MIL:FUNDamental:USER:CURrent?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7536,14 +7285,13 @@ class PowerHarmonicsMilFundamentalUser(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:HARMonics:MIL:FUNDamental:USER:CURrent value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:MIL:FUNDamental:USER:CURrent <NR3>
             - POWer:HARMonics:MIL:FUNDamental:USER:CURrent?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the current in amperes for USER
               CALCmethod.
         """
@@ -7553,11 +7301,11 @@ class PowerHarmonicsMilFundamentalUser(SCPICmdRead):
 class PowerHarmonicsMilFundamentalCalcmethod(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:MIL:FUNDamental:CALCmethod`` command.
 
-    **Description:**
+    Description:
         - This command specifies the measurement method for the MIL harmonics fundamental current
           for use in calculating limits.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``POWer:HARMonics:MIL:FUNDamental:CALCmethod?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7566,14 +7314,13 @@ class PowerHarmonicsMilFundamentalCalcmethod(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:HARMonics:MIL:FUNDamental:CALCmethod value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:MIL:FUNDamental:CALCmethod {MEAS|USER}
         - POWer:HARMonics:MIL:FUNDamental:CALCmethod?
+        ```
 
-    **Info:**
+    Info:
         - ``MEAS`` specifies that the value of the fundamental current used in calculating limits is
           measured.
         - ``USER`` specifies that the value of the fundamental current used in calculated limits is
@@ -7584,7 +7331,7 @@ class PowerHarmonicsMilFundamentalCalcmethod(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsMilFundamental(SCPICmdRead):
     """The ``POWer:HARMonics:MIL:FUNDamental`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:MIL:FUNDamental?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:MIL:FUNDamental?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -7605,11 +7352,11 @@ class PowerHarmonicsMilFundamental(SCPICmdRead):
     def calcmethod(self) -> PowerHarmonicsMilFundamentalCalcmethod:
         """Return the ``POWer:HARMonics:MIL:FUNDamental:CALCmethod`` command.
 
-        **Description:**
+        Description:
             - This command specifies the measurement method for the MIL harmonics fundamental
               current for use in calculating limits.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:HARMonics:MIL:FUNDamental:CALCmethod?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7618,14 +7365,13 @@ class PowerHarmonicsMilFundamental(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:HARMonics:MIL:FUNDamental:CALCmethod value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:MIL:FUNDamental:CALCmethod {MEAS|USER}
             - POWer:HARMonics:MIL:FUNDamental:CALCmethod?
+            ```
 
-        **Info:**
+        Info:
             - ``MEAS`` specifies that the value of the fundamental current used in calculating
               limits is measured.
             - ``USER`` specifies that the value of the fundamental current used in calculated limits
@@ -7637,7 +7383,7 @@ class PowerHarmonicsMilFundamental(SCPICmdRead):
     def user(self) -> PowerHarmonicsMilFundamentalUser:
         """Return the ``POWer:HARMonics:MIL:FUNDamental:USER`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:MIL:FUNDamental:USER?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -7653,7 +7399,7 @@ class PowerHarmonicsMilFundamental(SCPICmdRead):
 class PowerHarmonicsMil(SCPICmdRead):
     """The ``POWer:HARMonics:MIL`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:MIL?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:MIL?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -7676,7 +7422,7 @@ class PowerHarmonicsMil(SCPICmdRead):
     def fundamental(self) -> PowerHarmonicsMilFundamental:
         """Return the ``POWer:HARMonics:MIL:FUNDamental`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:MIL:FUNDamental?``
               query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:MIL:FUNDamental?``
@@ -7692,11 +7438,11 @@ class PowerHarmonicsMil(SCPICmdRead):
     def linefrequency(self) -> PowerHarmonicsMilLinefrequency:
         """Return the ``POWer:HARMonics:MIL:LINEFREQuency`` command.
 
-        **Description:**
+        Description:
             - This command specifies the line frequency for MIL-STD-1399 Section 300A harmonics
               tests. Valid values are 60 or 400 Hz.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:MIL:LINEFREQuency?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -7705,14 +7451,13 @@ class PowerHarmonicsMil(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:HARMonics:MIL:LINEFREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:MIL:LINEFREQuency <NR1>
             - POWer:HARMonics:MIL:LINEFREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is an unsigned integer that specifies the line frequency for the MIL
               standard.
         """
@@ -7722,25 +7467,24 @@ class PowerHarmonicsMil(SCPICmdRead):
     def powerlevel(self) -> PowerHarmonicsMilPowerlevel:
         """Return the ``POWer:HARMonics:MIL:POWERLEVel`` command.
 
-        **Description:**
+        Description:
             - This command specifies the power level for calculating limits for MIL-STD-1399 Section
               300A harmonics tests.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:MIL:POWERLEVel?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:MIL:POWERLEVel?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:HARMonics:MIL:POWERLEVel value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:MIL:POWERLEVel {LOW|HIGH}
             - POWer:HARMonics:MIL:POWERLEVel?
+            ```
 
-        **Info:**
+        Info:
             - ``LOW`` specifies low power level for MIL-STD-1399 harmonics tests.
             - ``HIGH`` specifies high power level for MIL-STD-1399 harmonics tests.
         """
@@ -7750,24 +7494,23 @@ class PowerHarmonicsMil(SCPICmdRead):
 class PowerHarmonicsIecPowerfactor(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:IEC:POWERFACtor`` command.
 
-    **Description:**
+    Description:
         - This command specifies the rated power factor for IEC harmonics.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:IEC:POWERFACtor?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:IEC:POWERFACtor?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:HARMonics:IEC:POWERFACtor value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:IEC:POWERFACtor <NR3>
         - POWer:HARMonics:IEC:POWERFACtor?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the power factor. Valid values ranges
           from 0 to 1 in increments of 0.1.
     """
@@ -7776,24 +7519,23 @@ class PowerHarmonicsIecPowerfactor(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsIecObsperiod(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:IEC:OBSPERiod`` command.
 
-    **Description:**
+    Description:
         - This command specifies the IEC observation period.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:IEC:OBSPERiod?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:IEC:OBSPERiod?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:HARMonics:IEC:OBSPERiod value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:IEC:OBSPERiod <NR3>
         - POWer:HARMonics:IEC:OBSPERiod?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the IEC observation period. Valid
           values ranges from 0.2 to 10 s.
     """
@@ -7802,24 +7544,23 @@ class PowerHarmonicsIecObsperiod(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsIecLinefrequency(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:IEC:LINEFREQuency`` command.
 
-    **Description:**
+    Description:
         - This command specifies the line frequency for the IEC standard.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:IEC:LINEFREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:IEC:LINEFREQuency?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:HARMonics:IEC:LINEFREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:IEC:LINEFREQuency <NR1>
         - POWer:HARMonics:IEC:LINEFREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is an unsigned integer that specifies the line frequency. The valid values are
           50 and 60.
     """
@@ -7828,24 +7569,23 @@ class PowerHarmonicsIecLinefrequency(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsIecInputpower(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:IEC:INPUTPOWer`` command.
 
-    **Description:**
+    Description:
         - This command specifies the class D rated input power for IEC harmonics.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:IEC:INPUTPOWer?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:IEC:INPUTPOWer?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:HARMonics:IEC:INPUTPOWer value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:IEC:INPUTPOWer <NR3>
         - POWer:HARMonics:IEC:INPUTPOWer?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the class D input power. Valid values
           ranges from 0 to 600 in increments of 10. The unit of measure is watt.
     """
@@ -7854,24 +7594,23 @@ class PowerHarmonicsIecInputpower(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsIecGrouping(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:IEC:GROUPing`` command.
 
-    **Description:**
+    Description:
         - This command specifies the enabled state for grouping of IEC harmonics.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:IEC:GROUPing?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:IEC:GROUPing?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:HARMonics:IEC:GROUPing value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:IEC:GROUPing {OFF|ON|1|0}
         - POWer:HARMonics:IEC:GROUPing?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` or 1 enables grouping of IEC harmonics.
         - ``OFF`` or 0 disables grouping of IEC harmonics.
     """
@@ -7880,25 +7619,24 @@ class PowerHarmonicsIecGrouping(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsIecFundamental(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:IEC:FUNDamental`` command.
 
-    **Description:**
+    Description:
         - This command specifies the rated fundamental current for IEC harmonics. Valid values
           ranges from 0 to 16 in increments of 0.1. The unit is ampere.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:IEC:FUNDamental?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:IEC:FUNDamental?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:HARMonics:IEC:FUNDamental value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:IEC:FUNDamental <NR3>
         - POWer:HARMonics:IEC:FUNDamental?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the fundamental current in amperes.
     """
 
@@ -7906,24 +7644,23 @@ class PowerHarmonicsIecFundamental(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsIecFilter(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:IEC:FILter`` command.
 
-    **Description:**
+    Description:
         - This command specifies the enabled state for filtering of IEC harmonics.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:IEC:FILter?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:IEC:FILter?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:HARMonics:IEC:FILter value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:IEC:FILter {OFF|ON|0|1}
         - POWer:HARMonics:IEC:FILter?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` or 1 enables filtering of IEC harmonics.
         - ``OFF`` or 0 disables filtering of IEC harmonics.
     """
@@ -7932,24 +7669,23 @@ class PowerHarmonicsIecFilter(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsIecClass(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:IEC:CLAss`` command.
 
-    **Description:**
+    Description:
         - This command specifies the equipment class for IEC harmonics.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:IEC:CLAss?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:IEC:CLAss?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:HARMonics:IEC:CLAss value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:IEC:CLAss {A|B|C<x>|D}
         - POWer:HARMonics:IEC:CLAss?
+        ```
 
-    **Info:**
+    Info:
         - ``A`` specifies Class A Equipment.
         - ``B`` specifies Class B Equipment.
         - ``C1`` specifies Class C Equipment that use Table 1 limits of the IEC standard.
@@ -7963,7 +7699,7 @@ class PowerHarmonicsIecClass(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsIec(SCPICmdRead):
     """The ``POWer:HARMonics:IEC`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:IEC?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:IEC?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -7996,24 +7732,23 @@ class PowerHarmonicsIec(SCPICmdRead):
     def class_(self) -> PowerHarmonicsIecClass:
         """Return the ``POWer:HARMonics:IEC:CLAss`` command.
 
-        **Description:**
+        Description:
             - This command specifies the equipment class for IEC harmonics.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:IEC:CLAss?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:IEC:CLAss?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:HARMonics:IEC:CLAss value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:IEC:CLAss {A|B|C<x>|D}
             - POWer:HARMonics:IEC:CLAss?
+            ```
 
-        **Info:**
+        Info:
             - ``A`` specifies Class A Equipment.
             - ``B`` specifies Class B Equipment.
             - ``C1`` specifies Class C Equipment that use Table 1 limits of the IEC standard.
@@ -8027,24 +7762,23 @@ class PowerHarmonicsIec(SCPICmdRead):
     def filter(self) -> PowerHarmonicsIecFilter:
         """Return the ``POWer:HARMonics:IEC:FILter`` command.
 
-        **Description:**
+        Description:
             - This command specifies the enabled state for filtering of IEC harmonics.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:IEC:FILter?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:IEC:FILter?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:HARMonics:IEC:FILter value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:IEC:FILter {OFF|ON|0|1}
             - POWer:HARMonics:IEC:FILter?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` or 1 enables filtering of IEC harmonics.
             - ``OFF`` or 0 disables filtering of IEC harmonics.
         """
@@ -8054,11 +7788,11 @@ class PowerHarmonicsIec(SCPICmdRead):
     def fundamental(self) -> PowerHarmonicsIecFundamental:
         """Return the ``POWer:HARMonics:IEC:FUNDamental`` command.
 
-        **Description:**
+        Description:
             - This command specifies the rated fundamental current for IEC harmonics. Valid values
               ranges from 0 to 16 in increments of 0.1. The unit is ampere.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:IEC:FUNDamental?``
               query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:IEC:FUNDamental?``
@@ -8066,14 +7800,13 @@ class PowerHarmonicsIec(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:HARMonics:IEC:FUNDamental value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:IEC:FUNDamental <NR3>
             - POWer:HARMonics:IEC:FUNDamental?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the fundamental current in
               amperes.
         """
@@ -8083,24 +7816,23 @@ class PowerHarmonicsIec(SCPICmdRead):
     def grouping(self) -> PowerHarmonicsIecGrouping:
         """Return the ``POWer:HARMonics:IEC:GROUPing`` command.
 
-        **Description:**
+        Description:
             - This command specifies the enabled state for grouping of IEC harmonics.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:IEC:GROUPing?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:IEC:GROUPing?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:HARMonics:IEC:GROUPing value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:IEC:GROUPing {OFF|ON|1|0}
             - POWer:HARMonics:IEC:GROUPing?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` or 1 enables grouping of IEC harmonics.
             - ``OFF`` or 0 disables grouping of IEC harmonics.
         """
@@ -8110,24 +7842,23 @@ class PowerHarmonicsIec(SCPICmdRead):
     def inputpower(self) -> PowerHarmonicsIecInputpower:
         """Return the ``POWer:HARMonics:IEC:INPUTPOWer`` command.
 
-        **Description:**
+        Description:
             - This command specifies the class D rated input power for IEC harmonics.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:IEC:INPUTPOWer?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:IEC:INPUTPOWer?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:HARMonics:IEC:INPUTPOWer value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:IEC:INPUTPOWer <NR3>
             - POWer:HARMonics:IEC:INPUTPOWer?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the class D input power. Valid
               values ranges from 0 to 600 in increments of 10. The unit of measure is watt.
         """
@@ -8137,10 +7868,10 @@ class PowerHarmonicsIec(SCPICmdRead):
     def linefrequency(self) -> PowerHarmonicsIecLinefrequency:
         """Return the ``POWer:HARMonics:IEC:LINEFREQuency`` command.
 
-        **Description:**
+        Description:
             - This command specifies the line frequency for the IEC standard.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:IEC:LINEFREQuency?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -8149,14 +7880,13 @@ class PowerHarmonicsIec(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:HARMonics:IEC:LINEFREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:IEC:LINEFREQuency <NR1>
             - POWer:HARMonics:IEC:LINEFREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is an unsigned integer that specifies the line frequency. The valid values
               are 50 and 60.
         """
@@ -8166,24 +7896,23 @@ class PowerHarmonicsIec(SCPICmdRead):
     def obsperiod(self) -> PowerHarmonicsIecObsperiod:
         """Return the ``POWer:HARMonics:IEC:OBSPERiod`` command.
 
-        **Description:**
+        Description:
             - This command specifies the IEC observation period.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:IEC:OBSPERiod?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:IEC:OBSPERiod?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:HARMonics:IEC:OBSPERiod value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:IEC:OBSPERiod <NR3>
             - POWer:HARMonics:IEC:OBSPERiod?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the IEC observation period. Valid
               values ranges from 0.2 to 10 s.
         """
@@ -8193,10 +7922,10 @@ class PowerHarmonicsIec(SCPICmdRead):
     def powerfactor(self) -> PowerHarmonicsIecPowerfactor:
         """Return the ``POWer:HARMonics:IEC:POWERFACtor`` command.
 
-        **Description:**
+        Description:
             - This command specifies the rated power factor for IEC harmonics.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:IEC:POWERFACtor?``
               query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:IEC:POWERFACtor?``
@@ -8204,14 +7933,13 @@ class PowerHarmonicsIec(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:HARMonics:IEC:POWERFACtor value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:IEC:POWERFACtor <NR3>
             - POWer:HARMonics:IEC:POWERFACtor?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the power factor. Valid values
               ranges from 0 to 1 in increments of 0.1.
         """
@@ -8221,11 +7949,11 @@ class PowerHarmonicsIec(SCPICmdRead):
 class PowerHarmonicsFreqrefFixedfreqvalue(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:FREQRef:FIXEDFREQValue`` command.
 
-    **Description:**
+    Description:
         - This command specifies the frequency value when the ``:FREQRef`` selection is
           FIXEDFREQuency.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:FREQRef:FIXEDFREQValue?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -8234,14 +7962,13 @@ class PowerHarmonicsFreqrefFixedfreqvalue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:HARMonics:FREQRef:FIXEDFREQValue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:FREQRef:FIXEDFREQValue <NR3>
         - POWer:HARMonics:FREQRef:FIXEDFREQValue?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the fixed frequency value.
     """
 
@@ -8249,24 +7976,23 @@ class PowerHarmonicsFreqrefFixedfreqvalue(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsFreqref(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:FREQRef`` command.
 
-    **Description:**
+    Description:
         - This command specifies the frequency reference used when the harmonic standard is None.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:FREQRef?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:FREQRef?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:HARMonics:FREQRef value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:FREQRef {VOLTage|CURRent|HARMSOURce|FIXEDFREQuency}
         - POWer:HARMonics:FREQRef?
+        ```
 
-    **Info:**
+    Info:
         - ``VOLTage`` to use a voltage waveform as the frequency reference.
         - ``CURRent`` to use a current waveform as the frequency reference.
         - ``HARMSOURce`` to use a harmonic source waveform as the frequency reference.
@@ -8287,11 +8013,11 @@ class PowerHarmonicsFreqref(SCPICmdWrite, SCPICmdRead):
     def fixedfreqvalue(self) -> PowerHarmonicsFreqrefFixedfreqvalue:
         """Return the ``POWer:HARMonics:FREQRef:FIXEDFREQValue`` command.
 
-        **Description:**
+        Description:
             - This command specifies the frequency value when the ``:FREQRef`` selection is
               FIXEDFREQuency.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:HARMonics:FREQRef:FIXEDFREQValue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -8300,14 +8026,13 @@ class PowerHarmonicsFreqref(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:HARMonics:FREQRef:FIXEDFREQValue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:FREQRef:FIXEDFREQValue <NR3>
             - POWer:HARMonics:FREQRef:FIXEDFREQValue?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the fixed frequency value.
         """
         return self._fixedfreqvalue
@@ -8316,24 +8041,23 @@ class PowerHarmonicsFreqref(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsDisplayType(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:DISplay:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command specifies the display type for harmonics tests.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:DISplay:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:DISplay:TYPe?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:HARMonics:DISplay:TYPe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:DISplay:TYPe {GRAph|TABle}
         - POWer:HARMonics:DISplay:TYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``GRAph`` displays harmonic tests results in graphical format.
         - ``TABle`` displays harmonic tests results in tabular format.
     """
@@ -8342,24 +8066,23 @@ class PowerHarmonicsDisplayType(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsDisplaySelect(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:HARMonics:DISplay:SELect`` command.
 
-    **Description:**
+    Description:
         - This command specifies the harmonics to be displayed when the harmonics standard is NONe.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:DISplay:SELect?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:DISplay:SELect?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:HARMonics:DISplay:SELect value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:HARMonics:DISplay:SELect {ODD|EVEN|ALL}
         - POWer:HARMonics:DISplay:SELect?
+        ```
 
-    **Info:**
+    Info:
         - ``ODD`` to display only odd harmonics.
         - ``EVEN`` to display only even harmonics.
         - ``ALL`` to display both odd and even harmonics.
@@ -8369,7 +8092,7 @@ class PowerHarmonicsDisplaySelect(SCPICmdWrite, SCPICmdRead):
 class PowerHarmonicsDisplay(SCPICmdRead):
     """The ``POWer:HARMonics:DISplay`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics:DISplay?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:DISplay?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -8388,25 +8111,24 @@ class PowerHarmonicsDisplay(SCPICmdRead):
     def select(self) -> PowerHarmonicsDisplaySelect:
         """Return the ``POWer:HARMonics:DISplay:SELect`` command.
 
-        **Description:**
+        Description:
             - This command specifies the harmonics to be displayed when the harmonics standard is
               NONe.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:DISplay:SELect?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:DISplay:SELect?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:HARMonics:DISplay:SELect value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:DISplay:SELect {ODD|EVEN|ALL}
             - POWer:HARMonics:DISplay:SELect?
+            ```
 
-        **Info:**
+        Info:
             - ``ODD`` to display only odd harmonics.
             - ``EVEN`` to display only even harmonics.
             - ``ALL`` to display both odd and even harmonics.
@@ -8417,24 +8139,23 @@ class PowerHarmonicsDisplay(SCPICmdRead):
     def type(self) -> PowerHarmonicsDisplayType:
         """Return the ``POWer:HARMonics:DISplay:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command specifies the display type for harmonics tests.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:DISplay:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:DISplay:TYPe?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:HARMonics:DISplay:TYPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:DISplay:TYPe {GRAph|TABle}
             - POWer:HARMonics:DISplay:TYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``GRAph`` displays harmonic tests results in graphical format.
             - ``TABle`` displays harmonic tests results in tabular format.
         """
@@ -8445,7 +8166,7 @@ class PowerHarmonicsDisplay(SCPICmdRead):
 class PowerHarmonics(SCPICmdRead):
     """The ``POWer:HARMonics`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:HARMonics?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:HARMonics?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -8476,7 +8197,7 @@ class PowerHarmonics(SCPICmdRead):
     def display(self) -> PowerHarmonicsDisplay:
         """Return the ``POWer:HARMonics:DISplay`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:DISplay?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:DISplay?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -8491,25 +8212,24 @@ class PowerHarmonics(SCPICmdRead):
     def freqref(self) -> PowerHarmonicsFreqref:
         """Return the ``POWer:HARMonics:FREQRef`` command.
 
-        **Description:**
+        Description:
             - This command specifies the frequency reference used when the harmonic standard is
               None.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:FREQRef?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:FREQRef?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:HARMonics:FREQRef value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:FREQRef {VOLTage|CURRent|HARMSOURce|FIXEDFREQuency}
             - POWer:HARMonics:FREQRef?
+            ```
 
-        **Info:**
+        Info:
             - ``VOLTage`` to use a voltage waveform as the frequency reference.
             - ``CURRent`` to use a current waveform as the frequency reference.
             - ``HARMSOURce`` to use a harmonic source waveform as the frequency reference.
@@ -8525,7 +8245,7 @@ class PowerHarmonics(SCPICmdRead):
     def iec(self) -> PowerHarmonicsIec:
         """Return the ``POWer:HARMonics:IEC`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:IEC?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:IEC?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -8546,7 +8266,7 @@ class PowerHarmonics(SCPICmdRead):
     def mil(self) -> PowerHarmonicsMil:
         """Return the ``POWer:HARMonics:MIL`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:MIL?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:MIL?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -8562,25 +8282,24 @@ class PowerHarmonics(SCPICmdRead):
     def nr_harmonics(self) -> PowerHarmonicsNrHarmonics:
         """Return the ``POWer:HARMonics:NR_HARMonics`` command.
 
-        **Description:**
+        Description:
             - This command specifies the number of harmonics (value ranging from 20 to 400) when the
               harmonics standard is NONe.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:NR_HARMonics?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:NR_HARMonics?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:HARMonics:NR_HARMonics value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:NR_HARMonics <NR3>
             - POWer:HARMonics:NR_HARMonics?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the number of harmonics.
         """
         return self._nr_harmonics
@@ -8589,7 +8308,7 @@ class PowerHarmonics(SCPICmdRead):
     def results(self) -> PowerHarmonicsResults:
         """Return the ``POWer:HARMonics:RESults`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:RESults?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:RESults?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -8609,26 +8328,25 @@ class PowerHarmonics(SCPICmdRead):
     def source(self) -> PowerHarmonicsSource:
         """Return the ``POWer:HARMonics:SOURce`` command.
 
-        **Description:**
+        Description:
             - This command specifies the source waveform for harmonics tests. The voltage source
               waveform is specified using the ``POWER:VOLTAGESOURCE`` command and the current
               waveform is specified using the ``POWER:CURRENTSOURCE`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:SOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:SOURce?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:HARMonics:SOURce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:SOURce {VOLTage|CURRent}
             - POWer:HARMonics:SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``VOLTage`` specifies voltage source waveform for harmonic tests.
             - ``CURRent`` specifies current source waveform for harmonic tests.
         """
@@ -8638,24 +8356,23 @@ class PowerHarmonics(SCPICmdRead):
     def standard(self) -> PowerHarmonicsStandard:
         """Return the ``POWer:HARMonics:STANDard`` command.
 
-        **Description:**
+        Description:
             - This command specifies the standard for harmonics tests.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics:STANDard?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics:STANDard?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:HARMonics:STANDard value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:HARMonics:STANDard {NONe|IEC|MIL}
             - POWer:HARMonics:STANDard?
+            ```
 
-        **Info:**
+        Info:
             - ``NONe`` sets no standard for harmonic tests.
             - ``IEC`` sets IEC 610003-2 standard for harmonic tests.
             - ``MIL`` sets MIL1399 standard for harmonic tests.
@@ -8666,23 +8383,22 @@ class PowerHarmonics(SCPICmdRead):
 class PowerGating(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:GATing`` command.
 
-    **Description:**
+    Description:
         - This command specifies the power application gating.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:GATing?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:GATing?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:GATing value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:GATing {OFF|SCREen|CURSor}
         - POWer:GATing?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` turns off measurement gating (full record).
         - ``SCREen`` turns on gating, using the left and right edges of the screen.
         - ``CURSor`` limits measurements to the portion of the waveform between the vertical bar
@@ -8693,23 +8409,22 @@ class PowerGating(SCPICmdWrite, SCPICmdRead):
 class PowerGatesource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:GATESOurce`` command.
 
-    **Description:**
+    Description:
         - This command specifies the gate source for the power application.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:GATESOurce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:GATESOurce?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:GATESOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:GATESOurce {CH<x>|REF<x>|NONe}
         - POWer:GATESOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` sets an analog channel as the gate source. x has a minimum of 1 and a maximum of
           4.
         - ``REF<x>`` sets a reference waveform as the gate source. x has a minimum of 1 and a
@@ -8721,25 +8436,24 @@ class PowerGatesource(SCPICmdWrite, SCPICmdRead):
 class PowerDisplay(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:DISplay`` command.
 
-    **Description:**
+    Description:
         - This command controls whether or not to display the power test results. This is the
           equivalent to pressing the Test button and then selecting the power application. The same
           control is provided for each application.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:DISplay?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:DISplay?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:DISplay value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:DISplay {OFF|ON|0|1}
         - POWer:DISplay?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` or 0 turns off the display settings.
         - ``ON`` or 1 turns on the display settings.
     """
@@ -8748,23 +8462,22 @@ class PowerDisplay(SCPICmdWrite, SCPICmdRead):
 class PowerCurrentsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:CURRENTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command specifies the current source for the power application.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:CURRENTSOurce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:CURRENTSOurce?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:CURRENTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:CURRENTSOurce {CH<x>|REF<x>}
         - POWer:CURRENTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` sets an analog channel as the current source. x has a minimum of 1 and a maximum
           of 4.
         - ``REF<x>`` sets a reference waveform as the current source. x has a minimum of 1 and a
@@ -8776,7 +8489,7 @@ class PowerCurrentsource(SCPICmdWrite, SCPICmdRead):
 class Power(SCPICmdRead):
     """The ``POWer`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -8821,24 +8534,23 @@ class Power(SCPICmdRead):
     def currentsource(self) -> PowerCurrentsource:
         """Return the ``POWer:CURRENTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command specifies the current source for the power application.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:CURRENTSOurce?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:CURRENTSOurce?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:CURRENTSOurce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:CURRENTSOurce {CH<x>|REF<x>}
             - POWer:CURRENTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` sets an analog channel as the current source. x has a minimum of 1 and a
               maximum of 4.
             - ``REF<x>`` sets a reference waveform as the current source. x has a minimum of 1 and a
@@ -8850,25 +8562,24 @@ class Power(SCPICmdRead):
     def display(self) -> PowerDisplay:
         """Return the ``POWer:DISplay`` command.
 
-        **Description:**
+        Description:
             - This command controls whether or not to display the power test results. This is the
               equivalent to pressing the Test button and then selecting the power application. The
               same control is provided for each application.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:DISplay?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:DISplay?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:DISplay value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:DISplay {OFF|ON|0|1}
             - POWer:DISplay?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` or 0 turns off the display settings.
             - ``ON`` or 1 turns on the display settings.
         """
@@ -8878,23 +8589,22 @@ class Power(SCPICmdRead):
     def gatesource(self) -> PowerGatesource:
         """Return the ``POWer:GATESOurce`` command.
 
-        **Description:**
+        Description:
             - This command specifies the gate source for the power application.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:GATESOurce?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:GATESOurce?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:GATESOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:GATESOurce {CH<x>|REF<x>|NONe}
             - POWer:GATESOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` sets an analog channel as the gate source. x has a minimum of 1 and a
               maximum of 4.
             - ``REF<x>`` sets a reference waveform as the gate source. x has a minimum of 1 and a
@@ -8907,23 +8617,22 @@ class Power(SCPICmdRead):
     def gating(self) -> PowerGating:
         """Return the ``POWer:GATing`` command.
 
-        **Description:**
+        Description:
             - This command specifies the power application gating.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:GATing?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:GATing?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:GATing value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:GATing {OFF|SCREen|CURSor}
             - POWer:GATing?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` turns off measurement gating (full record).
             - ``SCREen`` turns on gating, using the left and right edges of the screen.
             - ``CURSor`` limits measurements to the portion of the waveform between the vertical bar
@@ -8935,7 +8644,7 @@ class Power(SCPICmdRead):
     def harmonics(self) -> PowerHarmonics:
         """Return the ``POWer:HARMonics`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:HARMonics?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:HARMonics?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -8956,24 +8665,23 @@ class Power(SCPICmdRead):
     def indicators(self) -> PowerIndicators:
         """Return the ``POWer:INDICators`` command.
 
-        **Description:**
+        Description:
             - This command specifies the state of the measurement indicators for the power
               application.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:INDICators?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:INDICators?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:INDICators value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:INDICators {OFF|ON|0|1}
             - POWer:INDICators?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` or 0 turns off the measurement indicators.
             - ``ON`` or 1 turns on the measurement indicators.
         """
@@ -8983,7 +8691,7 @@ class Power(SCPICmdRead):
     def modulation(self) -> PowerModulation:
         """Return the ``POWer:MODulation`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:MODulation?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:MODulation?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -8998,7 +8706,7 @@ class Power(SCPICmdRead):
     def quality(self) -> PowerQuality:
         """Return the ``POWer:QUALity`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:QUALity?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:QUALity?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -9023,7 +8731,7 @@ class Power(SCPICmdRead):
     def reflevel(self) -> PowerReflevel:
         """Return the ``POWer:REFLevel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:REFLevel?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:REFLevel?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -9040,20 +8748,19 @@ class Power(SCPICmdRead):
     def ripple(self) -> PowerRipple:
         """Return the ``POWer:RIPPle`` command.
 
-        **Description:**
+        Description:
             - This command performs a vertical autoset for ripple measurements or sets the vertical
               offset to 0.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``POWer:RIPPle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:RIPPle {VERTAUTOset|VERTDEFault}
+            ```
 
-        **Info:**
+        Info:
             - ``VERTAUTOset`` automatically scales the source waveform to optimize ripple
               measurements.
             - ``VERTDEFault`` sets the vertical offset of the source waveform to 0 volts (for
@@ -9069,7 +8776,7 @@ class Power(SCPICmdRead):
     def soa(self) -> PowerSoa:
         """Return the ``POWer:SOA`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SOA?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SOA?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -9087,20 +8794,19 @@ class Power(SCPICmdRead):
     def statistics(self) -> PowerStatistics:
         """Return the ``POWer:STATIstics`` command.
 
-        **Description:**
+        Description:
             - Clears all the accumulated statistics of all measurements. Performs the same function
               as the ``MEASUREMENT:STATISTICS`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``POWer:STATIstics value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:STATIstics {RESET}
+            ```
 
-        **Info:**
+        Info:
             - ``RESET`` clears the measurement statistics.
 
         Sub-properties:
@@ -9113,7 +8819,7 @@ class Power(SCPICmdRead):
     def swloss(self) -> PowerSwloss:
         """Return the ``POWer:SWLoss`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:SWLoss?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:SWLoss?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -9137,23 +8843,22 @@ class Power(SCPICmdRead):
     def type(self) -> PowerType:
         """Return the ``POWer:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command specifies the power application measurement type.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:TYPe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:TYPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:TYPe {NONe|QUALity|SWITCHingloss|SOA|HARMonics|RIPPle|MODULationanalysis|DESKew}
             - POWer:TYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``NONe`` Use to set the measurement type to None.
             - ``QUALity`` Use the power quality functions to obtain measurements and statistics
               about the general power quality in your test circuit.
@@ -9188,24 +8893,23 @@ class Power(SCPICmdRead):
     def voltagesource(self) -> PowerVoltagesource:
         """Return the ``POWer:VOLTAGESOurce`` command.
 
-        **Description:**
+        Description:
             - This command specifies the voltage source for the power application.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:VOLTAGESOurce?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:VOLTAGESOurce?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:VOLTAGESOurce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:VOLTAGESOurce {CH<x>|REF<x>}
             - POWer:VOLTAGESOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` sets the analog channel 1-4 or reference waveform 1-4 as the voltage source.
               x has a minimum of 1 and a maximum of 4.
         """

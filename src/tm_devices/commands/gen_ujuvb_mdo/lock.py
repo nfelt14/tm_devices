@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - LOCk:ALL
     - LOCk:FPanel {LOCKed|UNLOCKed}
     - LOCk:FPanel?
@@ -32,23 +30,22 @@ if TYPE_CHECKING:
 class LockTouchscreen(SCPICmdWrite, SCPICmdRead):
     """The ``LOCk:TOUCHscreen`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables the touchscreen.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LOCk:TOUCHscreen?`` query.
         - Using the ``.verify(value)`` method will send the ``LOCk:TOUCHscreen?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LOCk:TOUCHscreen value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LOCk:TOUCHscreen {LOCKed|UNLOCKed}
         - LOCk:TOUCHscreen?
+        ```
 
-    **Info:**
+    Info:
         - ``LOCKed`` disables the touchscreen.
         - ``UNLOCKed`` enables the touchscreen.
     """
@@ -57,40 +54,38 @@ class LockTouchscreen(SCPICmdWrite, SCPICmdRead):
 class LockNone(SCPICmdWriteNoArguments):
     """The ``LOCk:NONe`` command.
 
-    **Description:**
+    Description:
         - This command enables the front panel, mouse, and touchscreen.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``LOCk:NONe`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LOCk:NONe
+        ```
     """
 
 
 class LockMouse(SCPICmdWrite, SCPICmdRead):
     """The ``LOCk:MOUse`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables the mouse.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LOCk:MOUse?`` query.
         - Using the ``.verify(value)`` method will send the ``LOCk:MOUse?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LOCk:MOUse value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LOCk:MOUse {LOCKed|UNLOCKed}
         - LOCk:MOUse?
+        ```
 
-    **Info:**
+    Info:
         - ``LOCKed`` disables the mouse.
         - ``UNLOCKed`` enables the mouse.
     """
@@ -99,23 +94,22 @@ class LockMouse(SCPICmdWrite, SCPICmdRead):
 class LockFpanel(SCPICmdWrite, SCPICmdRead):
     """The ``LOCk:FPanel`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables the front panel buttons and knobs.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LOCk:FPanel?`` query.
         - Using the ``.verify(value)`` method will send the ``LOCk:FPanel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LOCk:FPanel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LOCk:FPanel {LOCKed|UNLOCKed}
         - LOCk:FPanel?
+        ```
 
-    **Info:**
+    Info:
         - ``LOCKed`` disables the front panel.
         - ``UNLOCKed`` enables the front panel.
     """
@@ -124,24 +118,23 @@ class LockFpanel(SCPICmdWrite, SCPICmdRead):
 class LockAll(SCPICmdWriteNoArguments):
     """The ``LOCk:ALL`` command.
 
-    **Description:**
+    Description:
         - This command disables the front panel, mouse, and touchscreen.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``LOCk:ALL`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LOCk:ALL
+        ```
     """
 
 
 class Lock(SCPICmdRead):
     """The ``LOCk`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LOCk?`` query.
         - Using the ``.verify(value)`` method will send the ``LOCk?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -166,17 +159,16 @@ class Lock(SCPICmdRead):
     def all(self) -> LockAll:
         """Return the ``LOCk:ALL`` command.
 
-        **Description:**
+        Description:
             - This command disables the front panel, mouse, and touchscreen.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``LOCk:ALL`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LOCk:ALL
+            ```
         """
         return self._all
 
@@ -184,23 +176,22 @@ class Lock(SCPICmdRead):
     def fpanel(self) -> LockFpanel:
         """Return the ``LOCk:FPanel`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables the front panel buttons and knobs.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LOCk:FPanel?`` query.
             - Using the ``.verify(value)`` method will send the ``LOCk:FPanel?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LOCk:FPanel value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LOCk:FPanel {LOCKed|UNLOCKed}
             - LOCk:FPanel?
+            ```
 
-        **Info:**
+        Info:
             - ``LOCKed`` disables the front panel.
             - ``UNLOCKed`` enables the front panel.
         """
@@ -210,23 +201,22 @@ class Lock(SCPICmdRead):
     def mouse(self) -> LockMouse:
         """Return the ``LOCk:MOUse`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables the mouse.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LOCk:MOUse?`` query.
             - Using the ``.verify(value)`` method will send the ``LOCk:MOUse?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LOCk:MOUse value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LOCk:MOUse {LOCKed|UNLOCKed}
             - LOCk:MOUse?
+            ```
 
-        **Info:**
+        Info:
             - ``LOCKed`` disables the mouse.
             - ``UNLOCKed`` enables the mouse.
         """
@@ -236,17 +226,16 @@ class Lock(SCPICmdRead):
     def none(self) -> LockNone:
         """Return the ``LOCk:NONe`` command.
 
-        **Description:**
+        Description:
             - This command enables the front panel, mouse, and touchscreen.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``LOCk:NONe`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LOCk:NONe
+            ```
         """
         return self._none
 
@@ -254,23 +243,22 @@ class Lock(SCPICmdRead):
     def touchscreen(self) -> LockTouchscreen:
         """Return the ``LOCk:TOUCHscreen`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables the touchscreen.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LOCk:TOUCHscreen?`` query.
             - Using the ``.verify(value)`` method will send the ``LOCk:TOUCHscreen?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LOCk:TOUCHscreen value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LOCk:TOUCHscreen {LOCKed|UNLOCKed}
             - LOCk:TOUCHscreen?
+            ```
 
-        **Info:**
+        Info:
             - ``LOCKed`` disables the touchscreen.
             - ``UNLOCKed`` enables the touchscreen.
         """

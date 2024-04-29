@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - smu.interlock.enable
     - smu.interlock.tripped
     - smu.measure.autorange
@@ -112,7 +110,7 @@ if TYPE_CHECKING:
 class SmuSourceVlimit(BaseTSPCmd):
     """The ``smu.source.vlimit`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.level``: The ``smu.source.vlimit.level`` attribute.
         - ``.tripped``: The ``smu.source.vlimit.tripped`` attribute.
     """
@@ -121,20 +119,19 @@ class SmuSourceVlimit(BaseTSPCmd):
     def level(self) -> str:
         """Access the ``smu.source.vlimit.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the source limit for measurements. (voltage)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.vlimit.level)`` query.
             - Setting this property to a value will send the ``smu.source.vlimit.level = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.vlimit.level = value
             - print(smu.source.vlimit.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -153,20 +150,19 @@ class SmuSourceVlimit(BaseTSPCmd):
     def level(self, value: Union[str, float]) -> None:
         """Access the ``smu.source.vlimit.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the source limit for measurements. (voltage)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.vlimit.level)`` query.
             - Setting this property to a value will send the ``smu.source.vlimit.level = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.vlimit.level = value
             - print(smu.source.vlimit.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -188,18 +184,17 @@ class SmuSourceVlimit(BaseTSPCmd):
     def tripped(self) -> str:
         """Access the ``smu.source.vlimit.tripped`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if the source exceeded the limits that were set for the
               selected measurements. (voltage)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.vlimit.tripped)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(smu.source.vlimit.tripped)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -218,7 +213,7 @@ class SmuSourceVlimit(BaseTSPCmd):
 class SmuSourceProtect(BaseTSPCmd):
     """The ``smu.source.protect`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.level``: The ``smu.source.protect.level`` attribute.
         - ``.tripped``: The ``smu.source.protect.tripped`` attribute.
     """
@@ -227,20 +222,19 @@ class SmuSourceProtect(BaseTSPCmd):
     def level(self) -> str:
         """Access the ``smu.source.protect.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the overvoltage protection setting of the source output.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.protect.level)`` query.
             - Setting this property to a value will send the ``smu.source.protect.level = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.protect.level = value
             - print(smu.source.protect.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -259,20 +253,19 @@ class SmuSourceProtect(BaseTSPCmd):
     def level(self, value: Union[str, float]) -> None:
         """Access the ``smu.source.protect.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the overvoltage protection setting of the source output.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.protect.level)`` query.
             - Setting this property to a value will send the ``smu.source.protect.level = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.protect.level = value
             - print(smu.source.protect.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -294,17 +287,16 @@ class SmuSourceProtect(BaseTSPCmd):
     def tripped(self) -> str:
         """Access the ``smu.source.protect.tripped`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if the overvoltage source protection feature is active.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.protect.tripped)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(smu.source.protect.tripped)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -323,7 +315,7 @@ class SmuSourceProtect(BaseTSPCmd):
 class SmuSourceIlimit(BaseTSPCmd):
     """The ``smu.source.ilimit`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.level``: The ``smu.source.ilimit.level`` attribute.
         - ``.tripped``: The ``smu.source.ilimit.tripped`` attribute.
     """
@@ -332,20 +324,19 @@ class SmuSourceIlimit(BaseTSPCmd):
     def level(self) -> str:
         """Access the ``smu.source.ilimit.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the source limit for measurements. (current)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.ilimit.level)`` query.
             - Setting this property to a value will send the ``smu.source.ilimit.level = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.ilimit.level = value
             - print(smu.source.ilimit.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -364,20 +355,19 @@ class SmuSourceIlimit(BaseTSPCmd):
     def level(self, value: Union[str, float]) -> None:
         """Access the ``smu.source.ilimit.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the source limit for measurements. (current)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.ilimit.level)`` query.
             - Setting this property to a value will send the ``smu.source.ilimit.level = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.ilimit.level = value
             - print(smu.source.ilimit.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -399,18 +389,17 @@ class SmuSourceIlimit(BaseTSPCmd):
     def tripped(self) -> str:
         """Access the ``smu.source.ilimit.tripped`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if the source exceeded the limits that were set for the
               selected measurements. (current)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.ilimit.tripped)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(smu.source.ilimit.tripped)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -429,7 +418,7 @@ class SmuSourceIlimit(BaseTSPCmd):
 class SmuSourceConfiglist(BaseTSPCmd):
     """The ``smu.source.configlist`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.catalog()``: The ``smu.source.configlist.catalog()`` function.
         - ``.create()``: The ``smu.source.configlist.create()`` function.
         - ``.delete()``: The ``smu.source.configlist.delete()`` function.
@@ -443,14 +432,13 @@ class SmuSourceConfiglist(BaseTSPCmd):
     def catalog(self) -> str:
         """Run the ``smu.source.configlist.catalog()`` function.
 
-        **Description:**
+        Description:
             - This function returns the name of one source configuration list.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.configlist.catalog()
+            ```
 
         Returns:
             The result of the function call.
@@ -469,14 +457,13 @@ class SmuSourceConfiglist(BaseTSPCmd):
     def create(self, list_name: str) -> None:
         """Run the ``smu.source.configlist.create()`` function.
 
-        **Description:**
+        Description:
             - This function creates an empty source configuration list.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.configlist.create()
+            ```
 
         Args:
             list_name: A string that represents the name of a source configuration list.
@@ -495,14 +482,13 @@ class SmuSourceConfiglist(BaseTSPCmd):
     def delete(self, list_name: str, index: Optional[int] = None) -> None:
         """Run the ``smu.source.configlist.delete()`` function.
 
-        **Description:**
+        Description:
             - This function deletes a source configuration list.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.configlist.delete()
+            ```
 
         Args:
             list_name: A string that represents the name of a source configuration list.
@@ -531,15 +517,14 @@ class SmuSourceConfiglist(BaseTSPCmd):
     def query(self, list_name: str, index: int, field_separator: Optional[str] = None) -> str:
         """Run the ``smu.source.configlist.query()`` function.
 
-        **Description:**
+        Description:
             - This function returns a list of TSP commands and parameter settings that are stored in
               the specified configuration index.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.configlist.query()
+            ```
 
         Args:
             list_name: A string that represents the name of a source configuration list.
@@ -580,15 +565,14 @@ class SmuSourceConfiglist(BaseTSPCmd):
     ) -> None:
         """Run the ``smu.source.configlist.recall()`` function.
 
-        **Description:**
+        Description:
             - This function recalls a specific configuration index in a specific source
               configuration list and an optional measure configuration list.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.configlist.recall()
+            ```
 
         Args:
             list_name: A string that represents the name of a source configuration list.
@@ -623,15 +607,14 @@ class SmuSourceConfiglist(BaseTSPCmd):
     def size(self, list_name: str) -> str:
         """Run the ``smu.source.configlist.size()`` function.
 
-        **Description:**
+        Description:
             - This function returns the number of configuration indexes in a source configuration
               list.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.configlist.size()
+            ```
 
         Args:
             list_name: A string that represents the name of a source configuration list.
@@ -653,14 +636,13 @@ class SmuSourceConfiglist(BaseTSPCmd):
     def store(self, list_name: str, index: Optional[int] = None) -> None:
         """Run the ``smu.source.configlist.store()`` function.
 
-        **Description:**
+        Description:
             - This function stores the active source settings into the named configuration list.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.configlist.store()
+            ```
 
         Args:
             list_name: A string that represents the name of a source configuration list.
@@ -689,15 +671,14 @@ class SmuSourceConfiglist(BaseTSPCmd):
     def storefunc(self, config_list_name: str, function: str, index: Optional[int] = None) -> None:
         """Run the ``smu.source.configlist.storefunc()`` function.
 
-        **Description:**
+        Description:
             - This function allows you to store the settings for a source function into a source
               configuration list whether or not the function is active.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.configlist.storefunc()
+            ```
 
         Args:
             config_list_name: Name of the configuration list in which to store the function
@@ -731,7 +712,7 @@ class SmuSourceConfiglist(BaseTSPCmd):
 class SmuSource(BaseTSPCmd):
     """The ``smu.source`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.autodelay``: The ``smu.source.autodelay`` attribute.
         - ``.autorange``: The ``smu.source.autorange`` attribute.
         - ``.configlist``: The ``smu.source.configlist`` command tree.
@@ -772,21 +753,20 @@ class SmuSource(BaseTSPCmd):
     def autodelay(self) -> str:
         """Access the ``smu.source.autodelay`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the automatic delay that occurs when the source is
               turned on.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.autodelay)`` query.
             - Setting this property to a value will send the ``smu.source.autodelay = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.autodelay = value
             - print(smu.source.autodelay)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -805,21 +785,20 @@ class SmuSource(BaseTSPCmd):
     def autodelay(self, value: Union[str, float]) -> None:
         """Access the ``smu.source.autodelay`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the automatic delay that occurs when the source is
               turned on.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.autodelay)`` query.
             - Setting this property to a value will send the ``smu.source.autodelay = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.autodelay = value
             - print(smu.source.autodelay)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -841,21 +820,20 @@ class SmuSource(BaseTSPCmd):
     def autorange(self) -> str:
         """Access the ``smu.source.autorange`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the range is selected manually or automatically for the
               selected source function or voltage source.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.autorange)`` query.
             - Setting this property to a value will send the ``smu.source.autorange = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.autorange = value
             - print(smu.source.autorange)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -874,21 +852,20 @@ class SmuSource(BaseTSPCmd):
     def autorange(self, value: Union[str, float]) -> None:
         """Access the ``smu.source.autorange`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the range is selected manually or automatically for the
               selected source function or voltage source.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.autorange)`` query.
             - Setting this property to a value will send the ``smu.source.autorange = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.autorange = value
             - print(smu.source.autorange)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -910,7 +887,7 @@ class SmuSource(BaseTSPCmd):
     def configlist(self) -> SmuSourceConfiglist:
         """Return the ``smu.source.configlist`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.catalog()``: The ``smu.source.configlist.catalog()`` function.
             - ``.create()``: The ``smu.source.configlist.create()`` function.
             - ``.delete()``: The ``smu.source.configlist.delete()`` function.
@@ -926,19 +903,18 @@ class SmuSource(BaseTSPCmd):
     def delay(self) -> str:
         """Access the ``smu.source.delay`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source delay.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.delay)`` query.
             - Setting this property to a value will send the ``smu.source.delay = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.delay = value
             - print(smu.source.delay)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -957,19 +933,18 @@ class SmuSource(BaseTSPCmd):
     def delay(self, value: Union[str, float]) -> None:
         """Access the ``smu.source.delay`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source delay.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.delay)`` query.
             - Setting this property to a value will send the ``smu.source.delay = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.delay = value
             - print(smu.source.delay)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -991,19 +966,18 @@ class SmuSource(BaseTSPCmd):
     def func(self) -> str:
         """Access the ``smu.source.func`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source function, which can be voltage or current.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.func)`` query.
             - Setting this property to a value will send the ``smu.source.func = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.func = value
             - print(smu.source.func)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1022,19 +996,18 @@ class SmuSource(BaseTSPCmd):
     def func(self, value: Union[str, float]) -> None:
         """Access the ``smu.source.func`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source function, which can be voltage or current.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.func)`` query.
             - Setting this property to a value will send the ``smu.source.func = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.func = value
             - print(smu.source.func)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1056,19 +1029,18 @@ class SmuSource(BaseTSPCmd):
     def highc(self) -> str:
         """Access the ``smu.source.highc`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables high-capacitance mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.highc)`` query.
             - Setting this property to a value will send the ``smu.source.highc = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.highc = value
             - print(smu.source.highc)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1087,19 +1059,18 @@ class SmuSource(BaseTSPCmd):
     def highc(self, value: Union[str, float]) -> None:
         """Access the ``smu.source.highc`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables high-capacitance mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.highc)`` query.
             - Setting this property to a value will send the ``smu.source.highc = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.highc = value
             - print(smu.source.highc)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1121,19 +1092,18 @@ class SmuSource(BaseTSPCmd):
     def level(self) -> str:
         """Access the ``smu.source.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute immediately selects a fixed amplitude for the selected source function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.level)`` query.
             - Setting this property to a value will send the ``smu.source.level = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.level = value
             - print(smu.source.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1152,19 +1122,18 @@ class SmuSource(BaseTSPCmd):
     def level(self, value: Union[str, float]) -> None:
         """Access the ``smu.source.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute immediately selects a fixed amplitude for the selected source function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.level)`` query.
             - Setting this property to a value will send the ``smu.source.level = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.level = value
             - print(smu.source.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1186,19 +1155,18 @@ class SmuSource(BaseTSPCmd):
     def offmode(self) -> str:
         """Access the ``smu.source.offmode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the state of the source when the output is turned off.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.offmode)`` query.
             - Setting this property to a value will send the ``smu.source.offmode = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.offmode = value
             - print(smu.source.offmode)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1217,19 +1185,18 @@ class SmuSource(BaseTSPCmd):
     def offmode(self, value: Union[str, float]) -> None:
         """Access the ``smu.source.offmode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the state of the source when the output is turned off.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.offmode)`` query.
             - Setting this property to a value will send the ``smu.source.offmode = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.offmode = value
             - print(smu.source.offmode)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1251,19 +1218,18 @@ class SmuSource(BaseTSPCmd):
     def output(self) -> str:
         """Access the ``smu.source.output`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the source output.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.output)`` query.
             - Setting this property to a value will send the ``smu.source.output = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.output = value
             - print(smu.source.output)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1282,19 +1248,18 @@ class SmuSource(BaseTSPCmd):
     def output(self, value: Union[str, float]) -> None:
         """Access the ``smu.source.output`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the source output.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.output)`` query.
             - Setting this property to a value will send the ``smu.source.output = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.output = value
             - print(smu.source.output)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1316,7 +1281,7 @@ class SmuSource(BaseTSPCmd):
     def protect(self) -> SmuSourceProtect:
         """Return the ``smu.source.protect`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.level``: The ``smu.source.protect.level`` attribute.
             - ``.tripped``: The ``smu.source.protect.tripped`` attribute.
         """
@@ -1326,19 +1291,18 @@ class SmuSource(BaseTSPCmd):
     def range(self) -> str:
         """Access the ``smu.source.range`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the range for the source for the selected source function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.range)`` query.
             - Setting this property to a value will send the ``smu.source.range = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.range = value
             - print(smu.source.range)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1357,19 +1321,18 @@ class SmuSource(BaseTSPCmd):
     def range(self, value: Union[str, float]) -> None:
         """Access the ``smu.source.range`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the range for the source for the selected source function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.range)`` query.
             - Setting this property to a value will send the ``smu.source.range = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.range = value
             - print(smu.source.range)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1391,21 +1354,20 @@ class SmuSource(BaseTSPCmd):
     def readback(self) -> str:
         """Access the ``smu.source.readback`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the instrument records the measured source value or the
               configured source value when making a measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.readback)`` query.
             - Setting this property to a value will send the ``smu.source.readback = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.readback = value
             - print(smu.source.readback)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1424,21 +1386,20 @@ class SmuSource(BaseTSPCmd):
     def readback(self, value: Union[str, float]) -> None:
         """Access the ``smu.source.readback`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the instrument records the measured source value or the
               configured source value when making a measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.source.readback)`` query.
             - Setting this property to a value will send the ``smu.source.readback = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.readback = value
             - print(smu.source.readback)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1460,23 +1421,22 @@ class SmuSource(BaseTSPCmd):
     def userdelay(self) -> Dict[int, Union[str, float]]:
         """Access the ``smu.source.userdelay[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets a user-defined delay that you can use in the trigger model.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the ``print(smu.source.userdelay[N])``
               query.
             - Setting an item from this property to a value will send the
               ``smu.source.userdelay[N] = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.userdelay[N] = value
             - print(smu.source.userdelay[N])
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the number that identifies this user delay (1 to 5).
 
         Raises:
@@ -1488,7 +1448,7 @@ class SmuSource(BaseTSPCmd):
     def ilimit(self) -> SmuSourceIlimit:
         """Return the ``smu.source.ilimit`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.level``: The ``smu.source.ilimit.level`` attribute.
             - ``.tripped``: The ``smu.source.ilimit.tripped`` attribute.
         """
@@ -1498,7 +1458,7 @@ class SmuSource(BaseTSPCmd):
     def vlimit(self) -> SmuSourceVlimit:
         """Return the ``smu.source.vlimit`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.level``: The ``smu.source.vlimit.level`` attribute.
             - ``.tripped``: The ``smu.source.vlimit.tripped`` attribute.
         """
@@ -1507,14 +1467,13 @@ class SmuSource(BaseTSPCmd):
     def getattribute(self, function: str, setting: str) -> str:
         """Run the ``smu.source.getattribute()`` function.
 
-        **Description:**
+        Description:
             - This function returns the setting for a function attribute.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.getattribute()
+            ```
 
         Args:
             function: The source function.
@@ -1538,15 +1497,14 @@ class SmuSource(BaseTSPCmd):
     def setattribute(self, function: str, setting: str, value: str) -> None:
         """Run the ``smu.source.setattribute()`` function.
 
-        **Description:**
+        Description:
             - This function allows you to set up a source function whether or not the function is
               active.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.setattribute()
+            ```
 
         Args:
             function: The source function; set to one of the following values.
@@ -1580,14 +1538,13 @@ class SmuSource(BaseTSPCmd):
     ) -> None:
         """Run the ``smu.source.sweeplinear()`` function.
 
-        **Description:**
+        Description:
             - This function sets up a linear sweep for a fixed number of measurement points.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.sweeplinear()
+            ```
 
         Args:
             config_list_name: A string that contains the name of the configuration list that the
@@ -1652,15 +1609,14 @@ class SmuSource(BaseTSPCmd):
     ) -> None:
         """Run the ``smu.source.sweeplinearstep()`` function.
 
-        **Description:**
+        Description:
             - This function sets up a linear source sweep configuration list and trigger model with
               a fixed number of steps.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.sweeplinearstep()
+            ```
 
         Args:
             config_list_name: A string that contains the name of the configuration list that the
@@ -1718,15 +1674,14 @@ class SmuSource(BaseTSPCmd):
     ) -> None:
         """Run the ``smu.source.sweeplist()`` function.
 
-        **Description:**
+        Description:
             - This function sets up a sweep based on a configuration list, which allows you to
               customize the sweep.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.sweeplist()
+            ```
 
         Args:
             config_list_name: The name of the source configuration list that the sweep uses; this
@@ -1781,14 +1736,13 @@ class SmuSource(BaseTSPCmd):
     ) -> None:
         """Run the ``smu.source.sweeplog()`` function.
 
-        **Description:**
+        Description:
             - This function sets up a logarithmic sweep for a set number of measurement points.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.source.sweeplog()
+            ```
 
         Args:
             config_list_name: A string that contains the name of the configuration list that the
@@ -1843,7 +1797,7 @@ class SmuSource(BaseTSPCmd):
 class SmuMeasureRel(BaseTSPCmd):
     """The ``smu.measure.rel`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.acquire()``: The ``smu.measure.rel.acquire()`` function.
         - ``.enable``: The ``smu.measure.rel.enable`` attribute.
         - ``.level``: The ``smu.measure.rel.level`` attribute.
@@ -1853,21 +1807,20 @@ class SmuMeasureRel(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``smu.measure.rel.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the application of a relative offset value to the
               measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.rel.enable)`` query.
             - Setting this property to a value will send the ``smu.measure.rel.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.rel.enable = value
             - print(smu.measure.rel.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1886,21 +1839,20 @@ class SmuMeasureRel(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.rel.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the application of a relative offset value to the
               measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.rel.enable)`` query.
             - Setting this property to a value will send the ``smu.measure.rel.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.rel.enable = value
             - print(smu.measure.rel.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1922,20 +1874,19 @@ class SmuMeasureRel(BaseTSPCmd):
     def level(self) -> str:
         """Access the ``smu.measure.rel.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the relative offset value.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.rel.level)`` query.
             - Setting this property to a value will send the ``smu.measure.rel.level = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.rel.level = value
             - print(smu.measure.rel.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1954,20 +1905,19 @@ class SmuMeasureRel(BaseTSPCmd):
     def level(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.rel.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the relative offset value.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.rel.level)`` query.
             - Setting this property to a value will send the ``smu.measure.rel.level = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.rel.level = value
             - print(smu.measure.rel.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1988,14 +1938,13 @@ class SmuMeasureRel(BaseTSPCmd):
     def acquire(self) -> str:
         """Run the ``smu.measure.rel.acquire()`` function.
 
-        **Description:**
+        Description:
             - This function acquires a measurement and stores it as the relative offset value.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.rel.acquire()
+            ```
 
         Returns:
             The result of the function call.
@@ -2015,7 +1964,7 @@ class SmuMeasureRel(BaseTSPCmd):
 class SmuMeasureMathMxb(BaseTSPCmd):
     """The ``smu.measure.math.mxb`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.bfactor``: The ``smu.measure.math.mxb.bfactor`` attribute.
         - ``.mfactor``: The ``smu.measure.math.mxb.mfactor`` attribute.
     """
@@ -2024,20 +1973,19 @@ class SmuMeasureMathMxb(BaseTSPCmd):
     def bfactor(self) -> str:
         """Access the ``smu.measure.math.mxb.bfactor`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the offset, b, for the y = mx + b operation.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.math.mxb.bfactor)`` query.
             - Setting this property to a value will send the
               ``smu.measure.math.mxb.bfactor = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.math.mxb.bfactor = value
             - print(smu.measure.math.mxb.bfactor)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2056,20 +2004,19 @@ class SmuMeasureMathMxb(BaseTSPCmd):
     def bfactor(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.math.mxb.bfactor`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the offset, b, for the y = mx + b operation.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.math.mxb.bfactor)`` query.
             - Setting this property to a value will send the
               ``smu.measure.math.mxb.bfactor = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.math.mxb.bfactor = value
             - print(smu.measure.math.mxb.bfactor)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2091,20 +2038,19 @@ class SmuMeasureMathMxb(BaseTSPCmd):
     def mfactor(self) -> str:
         """Access the ``smu.measure.math.mxb.mfactor`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the scale factor, m, for the y = mx + b math operation.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.math.mxb.mfactor)`` query.
             - Setting this property to a value will send the
               ``smu.measure.math.mxb.mfactor = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.math.mxb.mfactor = value
             - print(smu.measure.math.mxb.mfactor)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2123,20 +2069,19 @@ class SmuMeasureMathMxb(BaseTSPCmd):
     def mfactor(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.math.mxb.mfactor`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the scale factor, m, for the y = mx + b math operation.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.math.mxb.mfactor)`` query.
             - Setting this property to a value will send the
               ``smu.measure.math.mxb.mfactor = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.math.mxb.mfactor = value
             - print(smu.measure.math.mxb.mfactor)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2158,7 +2103,7 @@ class SmuMeasureMathMxb(BaseTSPCmd):
 class SmuMeasureMath(BaseTSPCmd):
     """The ``smu.measure.math`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.enable``: The ``smu.measure.math.enable`` attribute.
         - ``.format``: The ``smu.measure.math.format`` attribute.
         - ``.mxb``: The ``smu.measure.math.mxb`` command tree.
@@ -2173,21 +2118,20 @@ class SmuMeasureMath(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``smu.measure.math.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables math operations on measurements for the selected
               measurement function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.math.enable)`` query.
             - Setting this property to a value will send the ``smu.measure.math.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.math.enable = value
             - print(smu.measure.math.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2206,21 +2150,20 @@ class SmuMeasureMath(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.math.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables math operations on measurements for the selected
               measurement function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.math.enable)`` query.
             - Setting this property to a value will send the ``smu.measure.math.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.math.enable = value
             - print(smu.measure.math.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2242,21 +2185,20 @@ class SmuMeasureMath(BaseTSPCmd):
     def format(self) -> str:
         """Access the ``smu.measure.math.format`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies which math operation is performed on measurements when math
               operations are enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.math.format)`` query.
             - Setting this property to a value will send the ``smu.measure.math.format = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.math.format = value
             - print(smu.measure.math.format)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2275,21 +2217,20 @@ class SmuMeasureMath(BaseTSPCmd):
     def format(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.math.format`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies which math operation is performed on measurements when math
               operations are enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.math.format)`` query.
             - Setting this property to a value will send the ``smu.measure.math.format = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.math.format = value
             - print(smu.measure.math.format)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2311,7 +2252,7 @@ class SmuMeasureMath(BaseTSPCmd):
     def mxb(self) -> SmuMeasureMathMxb:
         """Return the ``smu.measure.math.mxb`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.bfactor``: The ``smu.measure.math.mxb.bfactor`` attribute.
             - ``.mfactor``: The ``smu.measure.math.mxb.mfactor`` attribute.
         """
@@ -2321,21 +2262,20 @@ class SmuMeasureMath(BaseTSPCmd):
     def percent(self) -> str:
         """Access the ``smu.measure.math.percent`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the reference constant that is used when math operations are
               set to percent.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.math.percent)`` query.
             - Setting this property to a value will send the ``smu.measure.math.percent = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.math.percent = value
             - print(smu.measure.math.percent)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2354,21 +2294,20 @@ class SmuMeasureMath(BaseTSPCmd):
     def percent(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.math.percent`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the reference constant that is used when math operations are
               set to percent.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.math.percent)`` query.
             - Setting this property to a value will send the ``smu.measure.math.percent = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.math.percent = value
             - print(smu.measure.math.percent)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2390,7 +2329,7 @@ class SmuMeasureMath(BaseTSPCmd):
 class SmuMeasureLimitItemLow(BaseTSPCmd):
     """The ``smu.measure.limit[r].low`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.value``: The ``smu.measure.limit[r].low.value`` attribute.
     """
 
@@ -2398,20 +2337,19 @@ class SmuMeasureLimitItemLow(BaseTSPCmd):
     def value(self) -> str:
         """Access the ``smu.measure.limit[r].low.value`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the lower limit for a limit test. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.limit[r].low.value)`` query.
             - Setting this property to a value will send the
               ``smu.measure.limit[r].low.value = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.limit[r].low.value = value
             - print(smu.measure.limit[r].low.value)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2430,20 +2368,19 @@ class SmuMeasureLimitItemLow(BaseTSPCmd):
     def value(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.limit[r].low.value`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the lower limit for a limit test. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.limit[r].low.value)`` query.
             - Setting this property to a value will send the
               ``smu.measure.limit[r].low.value = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.limit[r].low.value = value
             - print(smu.measure.limit[r].low.value)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2465,7 +2402,7 @@ class SmuMeasureLimitItemLow(BaseTSPCmd):
 class SmuMeasureLimitItemHigh(BaseTSPCmd):
     """The ``smu.measure.limit[r].high`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.value``: The ``smu.measure.limit[r].high.value`` attribute.
     """
 
@@ -2473,21 +2410,20 @@ class SmuMeasureLimitItemHigh(BaseTSPCmd):
     def value(self) -> str:
         """Access the ``smu.measure.limit[r].high.value`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the upper limit for a limit test. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.limit[r].high.value)``
               query.
             - Setting this property to a value will send the
               ``smu.measure.limit[r].high.value = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.limit[r].high.value = value
             - print(smu.measure.limit[r].high.value)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2506,21 +2442,20 @@ class SmuMeasureLimitItemHigh(BaseTSPCmd):
     def value(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.limit[r].high.value`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the upper limit for a limit test. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.limit[r].high.value)``
               query.
             - Setting this property to a value will send the
               ``smu.measure.limit[r].high.value = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.limit[r].high.value = value
             - print(smu.measure.limit[r].high.value)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2542,7 +2477,7 @@ class SmuMeasureLimitItemHigh(BaseTSPCmd):
 class SmuMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``smu.measure.limit[r]`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.audible``: The ``smu.measure.limit[r].audible`` attribute.
         - ``.autoclear``: The ``smu.measure.limit[r].autoclear`` attribute.
         - ``.clear()``: The ``smu.measure.limit[r].clear()`` function.
@@ -2561,21 +2496,20 @@ class SmuMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def audible(self) -> str:
         """Access the ``smu.measure.limit[r].audible`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the instrument beeper sounds when a limit test passes or
               fails. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.limit[r].audible)`` query.
             - Setting this property to a value will send the
               ``smu.measure.limit[r].audible = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.limit[r].audible = value
             - print(smu.measure.limit[r].audible)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2594,21 +2528,20 @@ class SmuMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def audible(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.limit[r].audible`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the instrument beeper sounds when a limit test passes or
               fails. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.limit[r].audible)`` query.
             - Setting this property to a value will send the
               ``smu.measure.limit[r].audible = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.limit[r].audible = value
             - print(smu.measure.limit[r].audible)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2630,21 +2563,20 @@ class SmuMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def autoclear(self) -> str:
         """Access the ``smu.measure.limit[r].autoclear`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if the test result for limit Y should be cleared
               automatically or not. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.limit[r].autoclear)`` query.
             - Setting this property to a value will send the
               ``smu.measure.limit[r].autoclear = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.limit[r].autoclear = value
             - print(smu.measure.limit[r].autoclear)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2663,21 +2595,20 @@ class SmuMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def autoclear(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.limit[r].autoclear`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if the test result for limit Y should be cleared
               automatically or not. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.limit[r].autoclear)`` query.
             - Setting this property to a value will send the
               ``smu.measure.limit[r].autoclear = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.limit[r].autoclear = value
             - print(smu.measure.limit[r].autoclear)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2699,21 +2630,20 @@ class SmuMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``smu.measure.limit[r].enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables a limit test on the measurement from the selected
               measure function. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.limit[r].enable)`` query.
             - Setting this property to a value will send the ``smu.measure.limit[r].enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.limit[r].enable = value
             - print(smu.measure.limit[r].enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2732,21 +2662,20 @@ class SmuMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.limit[r].enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables a limit test on the measurement from the selected
               measure function. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.limit[r].enable)`` query.
             - Setting this property to a value will send the ``smu.measure.limit[r].enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.limit[r].enable = value
             - print(smu.measure.limit[r].enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2768,17 +2697,16 @@ class SmuMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def fail(self) -> str:
         """Access the ``smu.measure.limit[r].fail`` attribute.
 
-        **Description:**
+        Description:
             - This attribute queries the results of a limit test. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.limit[r].fail)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(smu.measure.limit[r].fail)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2797,7 +2725,7 @@ class SmuMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def high(self) -> SmuMeasureLimitItemHigh:
         """Return the ``smu.measure.limit[r].high`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.value``: The ``smu.measure.limit[r].high.value`` attribute.
         """
         return self._high
@@ -2806,7 +2734,7 @@ class SmuMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def low(self) -> SmuMeasureLimitItemLow:
         """Return the ``smu.measure.limit[r].low`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.value``: The ``smu.measure.limit[r].low.value`` attribute.
         """
         return self._low
@@ -2814,15 +2742,14 @@ class SmuMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``smu.measure.limit[r].clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the results of the limit test defined by Y for the selected
               measurement function. (r = resistance in ohms)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.limit[r].clear()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2839,7 +2766,7 @@ class SmuMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
 class SmuMeasureFilter(BaseTSPCmd):
     """The ``smu.measure.filter`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.count``: The ``smu.measure.filter.count`` attribute.
         - ``.enable``: The ``smu.measure.filter.enable`` attribute.
         - ``.type``: The ``smu.measure.filter.type`` attribute.
@@ -2849,21 +2776,20 @@ class SmuMeasureFilter(BaseTSPCmd):
     def count(self) -> str:
         """Access the ``smu.measure.filter.count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of measurements that are averaged when filtering is
               enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.filter.count)`` query.
             - Setting this property to a value will send the ``smu.measure.filter.count = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.filter.count = value
             - print(smu.measure.filter.count)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2882,21 +2808,20 @@ class SmuMeasureFilter(BaseTSPCmd):
     def count(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.filter.count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of measurements that are averaged when filtering is
               enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.filter.count)`` query.
             - Setting this property to a value will send the ``smu.measure.filter.count = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.filter.count = value
             - print(smu.measure.filter.count)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2918,21 +2843,20 @@ class SmuMeasureFilter(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``smu.measure.filter.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the averaging filter for the selected measurement
               function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.filter.enable)`` query.
             - Setting this property to a value will send the ``smu.measure.filter.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.filter.enable = value
             - print(smu.measure.filter.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2951,21 +2875,20 @@ class SmuMeasureFilter(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.filter.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the averaging filter for the selected measurement
               function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.filter.enable)`` query.
             - Setting this property to a value will send the ``smu.measure.filter.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.filter.enable = value
             - print(smu.measure.filter.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2987,21 +2910,20 @@ class SmuMeasureFilter(BaseTSPCmd):
     def type(self) -> str:
         """Access the ``smu.measure.filter.type`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the type of averaging filter that is used for the selected measure
               function when the measurement filter is enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.filter.type)`` query.
             - Setting this property to a value will send the ``smu.measure.filter.type = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.filter.type = value
             - print(smu.measure.filter.type)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3020,21 +2942,20 @@ class SmuMeasureFilter(BaseTSPCmd):
     def type(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.filter.type`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the type of averaging filter that is used for the selected measure
               function when the measurement filter is enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.filter.type)`` query.
             - Setting this property to a value will send the ``smu.measure.filter.type = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.filter.type = value
             - print(smu.measure.filter.type)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3056,7 +2977,7 @@ class SmuMeasureFilter(BaseTSPCmd):
 class SmuMeasureConfiglist(BaseTSPCmd):
     """The ``smu.measure.configlist`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.catalog()``: The ``smu.measure.configlist.catalog()`` function.
         - ``.create()``: The ``smu.measure.configlist.create()`` function.
         - ``.delete()``: The ``smu.measure.configlist.delete()`` function.
@@ -3070,15 +2991,14 @@ class SmuMeasureConfiglist(BaseTSPCmd):
     def catalog(self) -> str:
         """Run the ``smu.measure.configlist.catalog()`` function.
 
-        **Description:**
+        Description:
             - This function returns the name of one measure configuration list that is stored on the
               instrument.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.configlist.catalog()
+            ```
 
         Returns:
             The result of the function call.
@@ -3097,14 +3017,13 @@ class SmuMeasureConfiglist(BaseTSPCmd):
     def create(self, list_name: str) -> None:
         """Run the ``smu.measure.configlist.create()`` function.
 
-        **Description:**
+        Description:
             - This function creates an empty measure configuration list.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.configlist.create()
+            ```
 
         Args:
             list_name: A string that represents the name of a measure configuration list.
@@ -3123,14 +3042,13 @@ class SmuMeasureConfiglist(BaseTSPCmd):
     def delete(self, list_name: str, index: Optional[int] = None) -> None:
         """Run the ``smu.measure.configlist.delete()`` function.
 
-        **Description:**
+        Description:
             - This function deletes a measure configuration list.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.configlist.delete()
+            ```
 
         Args:
             list_name: A string that represents the name of a measure configuration list.
@@ -3159,15 +3077,14 @@ class SmuMeasureConfiglist(BaseTSPCmd):
     def query(self, list_name: str, index: int, field_separator: Optional[str] = None) -> str:
         """Run the ``smu.measure.configlist.query()`` function.
 
-        **Description:**
+        Description:
             - This function returns a list of TSP commands and parameter settings that are stored in
               the specified configuration index.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.configlist.query()
+            ```
 
         Args:
             list_name: A string that represents the name of a measure configuration list.
@@ -3207,15 +3124,14 @@ class SmuMeasureConfiglist(BaseTSPCmd):
     ) -> None:
         """Run the ``smu.measure.configlist.recall()`` function.
 
-        **Description:**
+        Description:
             - This function recalls a configuration index in a measure configuration list and an
               optional source configuration list.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.configlist.recall()
+            ```
 
         Args:
             list_name: A string that represents the name of a measure configuration list.
@@ -3250,15 +3166,14 @@ class SmuMeasureConfiglist(BaseTSPCmd):
     def size(self, list_name: str) -> str:
         """Run the ``smu.measure.configlist.size()`` function.
 
-        **Description:**
+        Description:
             - This function returns the size (number of configuration indexes) of a measure
               configuration list.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.configlist.size()
+            ```
 
         Args:
             list_name: A string that represents the name of a measure configuration list.
@@ -3280,14 +3195,13 @@ class SmuMeasureConfiglist(BaseTSPCmd):
     def store(self, list_name: str, index: Optional[int] = None) -> None:
         """Run the ``smu.measure.configlist.store()`` function.
 
-        **Description:**
+        Description:
             - This function stores the active measure settings into the named configuration list.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.configlist.store()
+            ```
 
         Args:
             list_name: A string that represents the name of a measure configuration list.
@@ -3316,15 +3230,14 @@ class SmuMeasureConfiglist(BaseTSPCmd):
     def storefunc(self, list_name: str, function: str, index: Optional[int] = None) -> None:
         """Run the ``smu.measure.configlist.storefunc()`` function.
 
-        **Description:**
+        Description:
             - This function allows you to store the settings for a measure function into a measure
               configuration list whether or not the function is active.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.configlist.storefunc()
+            ```
 
         Args:
             list_name: Name of the configuration list in which to store the function settings.
@@ -3356,7 +3269,7 @@ class SmuMeasureConfiglist(BaseTSPCmd):
 class SmuMeasureAutozero(BaseTSPCmd):
     """The ``smu.measure.autozero`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.enable``: The ``smu.measure.autozero.enable`` attribute.
         - ``.once()``: The ``smu.measure.autozero.once()`` function.
     """
@@ -3365,21 +3278,20 @@ class SmuMeasureAutozero(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``smu.measure.autozero.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables automatic updates to the internal reference
               measurements (autozero) of the instrument.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.autozero.enable)`` query.
             - Setting this property to a value will send the ``smu.measure.autozero.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.autozero.enable = value
             - print(smu.measure.autozero.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3398,21 +3310,20 @@ class SmuMeasureAutozero(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.autozero.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables automatic updates to the internal reference
               measurements (autozero) of the instrument.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.autozero.enable)`` query.
             - Setting this property to a value will send the ``smu.measure.autozero.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.autozero.enable = value
             - print(smu.measure.autozero.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3433,15 +3344,14 @@ class SmuMeasureAutozero(BaseTSPCmd):
     def once(self) -> None:
         """Run the ``smu.measure.autozero.once()`` function.
 
-        **Description:**
+        Description:
             - This function causes the instrument to refresh the reference and zero measurements
               once.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.autozero.once()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3459,7 +3369,7 @@ class SmuMeasureAutozero(BaseTSPCmd):
 class SmuMeasure(BaseTSPCmd):
     """The ``smu.measure`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.autorange``: The ``smu.measure.autorange`` attribute.
         - ``.autorangehigh``: The ``smu.measure.autorangehigh`` attribute.
         - ``.autorangelow``: The ``smu.measure.autorangelow`` attribute.
@@ -3506,21 +3416,20 @@ class SmuMeasure(BaseTSPCmd):
     def autorange(self) -> str:
         """Access the ``smu.measure.autorange`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the measurement range is set manually or automatically
               for the selected measure function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.autorange)`` query.
             - Setting this property to a value will send the ``smu.measure.autorange = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.autorange = value
             - print(smu.measure.autorange)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3539,21 +3448,20 @@ class SmuMeasure(BaseTSPCmd):
     def autorange(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.autorange`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the measurement range is set manually or automatically
               for the selected measure function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.autorange)`` query.
             - Setting this property to a value will send the ``smu.measure.autorange = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.autorange = value
             - print(smu.measure.autorange)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3575,21 +3483,20 @@ class SmuMeasure(BaseTSPCmd):
     def autorangehigh(self) -> str:
         """Access the ``smu.measure.autorangehigh`` attribute.
 
-        **Description:**
+        Description:
             - When autorange is selected, this attribute represents the highest measurement range
               that is used when the instrument selects the measurement range automatically.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.autorangehigh)`` query.
             - Setting this property to a value will send the ``smu.measure.autorangehigh = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.autorangehigh = value
             - print(smu.measure.autorangehigh)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3608,21 +3515,20 @@ class SmuMeasure(BaseTSPCmd):
     def autorangehigh(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.autorangehigh`` attribute.
 
-        **Description:**
+        Description:
             - When autorange is selected, this attribute represents the highest measurement range
               that is used when the instrument selects the measurement range automatically.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.autorangehigh)`` query.
             - Setting this property to a value will send the ``smu.measure.autorangehigh = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.autorangehigh = value
             - print(smu.measure.autorangehigh)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3644,21 +3550,20 @@ class SmuMeasure(BaseTSPCmd):
     def autorangelow(self) -> str:
         """Access the ``smu.measure.autorangelow`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the lower limit for measurements of the selected function when
               the range is selected automatically.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.autorangelow)`` query.
             - Setting this property to a value will send the ``smu.measure.autorangelow = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.autorangelow = value
             - print(smu.measure.autorangelow)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3677,21 +3582,20 @@ class SmuMeasure(BaseTSPCmd):
     def autorangelow(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.autorangelow`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the lower limit for measurements of the selected function when
               the range is selected automatically.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.autorangelow)`` query.
             - Setting this property to a value will send the ``smu.measure.autorangelow = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.autorangelow = value
             - print(smu.measure.autorangelow)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3713,21 +3617,20 @@ class SmuMeasure(BaseTSPCmd):
     def autorangerebound(self) -> str:
         """Access the ``smu.measure.autorangerebound`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the instrument restores the measure range to match the
               limit range after making a measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.autorangerebound)`` query.
             - Setting this property to a value will send the
               ``smu.measure.autorangerebound = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.autorangerebound = value
             - print(smu.measure.autorangerebound)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3746,21 +3649,20 @@ class SmuMeasure(BaseTSPCmd):
     def autorangerebound(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.autorangerebound`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the instrument restores the measure range to match the
               limit range after making a measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.autorangerebound)`` query.
             - Setting this property to a value will send the
               ``smu.measure.autorangerebound = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.autorangerebound = value
             - print(smu.measure.autorangerebound)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3782,7 +3684,7 @@ class SmuMeasure(BaseTSPCmd):
     def autozero(self) -> SmuMeasureAutozero:
         """Return the ``smu.measure.autozero`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.enable``: The ``smu.measure.autozero.enable`` attribute.
             - ``.once()``: The ``smu.measure.autozero.once()`` function.
         """
@@ -3792,7 +3694,7 @@ class SmuMeasure(BaseTSPCmd):
     def configlist(self) -> SmuMeasureConfiglist:
         """Return the ``smu.measure.configlist`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.catalog()``: The ``smu.measure.configlist.catalog()`` function.
             - ``.create()``: The ``smu.measure.configlist.create()`` function.
             - ``.delete()``: The ``smu.measure.configlist.delete()`` function.
@@ -3808,20 +3710,19 @@ class SmuMeasure(BaseTSPCmd):
     def count(self) -> str:
         """Access the ``smu.measure.count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of measurements to make when a measurement is
               requested.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.count)`` query.
             - Setting this property to a value will send the ``smu.measure.count = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.count = value
             - print(smu.measure.count)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3840,20 +3741,19 @@ class SmuMeasure(BaseTSPCmd):
     def count(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of measurements to make when a measurement is
               requested.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.count)`` query.
             - Setting this property to a value will send the ``smu.measure.count = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.count = value
             - print(smu.measure.count)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3875,23 +3775,22 @@ class SmuMeasure(BaseTSPCmd):
     def displaydigits(self) -> str:
         """Access the ``smu.measure.displaydigits`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines the number of digits that are displayed for measurements on
               the front panel for the selected function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.displaydigits)`` query.
             - Setting this property to a value will send the ``smu.measure.displaydigits = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.displaydigits = value
             - print(smu.measure.displaydigits)
+            ```
 
-        **Info:**
+        Info:
             - ``digits``, the 6½ display digits: smu.DIGITS_6_5
               5½ display digits: smu.DIGITS_5_5
               4½ display digits: smu.DIGITS_4_5
@@ -3914,23 +3813,22 @@ class SmuMeasure(BaseTSPCmd):
     def displaydigits(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.displaydigits`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines the number of digits that are displayed for measurements on
               the front panel for the selected function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.displaydigits)`` query.
             - Setting this property to a value will send the ``smu.measure.displaydigits = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.displaydigits = value
             - print(smu.measure.displaydigits)
+            ```
 
-        **Info:**
+        Info:
             - ``digits``, the 6½ display digits: smu.DIGITS_6_5
               5½ display digits: smu.DIGITS_5_5
               4½ display digits: smu.DIGITS_4_5
@@ -3956,7 +3854,7 @@ class SmuMeasure(BaseTSPCmd):
     def filter(self) -> SmuMeasureFilter:
         """Return the ``smu.measure.filter`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.count``: The ``smu.measure.filter.count`` attribute.
             - ``.enable``: The ``smu.measure.filter.enable`` attribute.
             - ``.type``: The ``smu.measure.filter.type`` attribute.
@@ -3967,19 +3865,18 @@ class SmuMeasure(BaseTSPCmd):
     def func(self) -> str:
         """Access the ``smu.measure.func`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the active measure function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.func)`` query.
             - Setting this property to a value will send the ``smu.measure.func = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.func = value
             - print(smu.measure.func)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3998,19 +3895,18 @@ class SmuMeasure(BaseTSPCmd):
     def func(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.func`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the active measure function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.func)`` query.
             - Setting this property to a value will send the ``smu.measure.func = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.func = value
             - print(smu.measure.func)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4032,7 +3928,7 @@ class SmuMeasure(BaseTSPCmd):
     def limit(self) -> Dict[int, SmuMeasureLimitItem]:
         """Return the ``smu.measure.limit[r]`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.audible``: The ``smu.measure.limit[r].audible`` attribute.
             - ``.autoclear``: The ``smu.measure.limit[r].autoclear`` attribute.
             - ``.clear()``: The ``smu.measure.limit[r].clear()`` function.
@@ -4047,7 +3943,7 @@ class SmuMeasure(BaseTSPCmd):
     def math(self) -> SmuMeasureMath:
         """Return the ``smu.measure.math`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.enable``: The ``smu.measure.math.enable`` attribute.
             - ``.format``: The ``smu.measure.math.format`` attribute.
             - ``.mxb``: The ``smu.measure.math.mxb`` command tree.
@@ -4059,20 +3955,19 @@ class SmuMeasure(BaseTSPCmd):
     def nplc(self) -> str:
         """Access the ``smu.measure.nplc`` attribute.
 
-        **Description:**
+        Description:
             - This command sets the time that the input signal is measured for the selected
               function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.nplc)`` query.
             - Setting this property to a value will send the ``smu.measure.nplc = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.nplc = value
             - print(smu.measure.nplc)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4091,20 +3986,19 @@ class SmuMeasure(BaseTSPCmd):
     def nplc(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.nplc`` attribute.
 
-        **Description:**
+        Description:
             - This command sets the time that the input signal is measured for the selected
               function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.nplc)`` query.
             - Setting this property to a value will send the ``smu.measure.nplc = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.nplc = value
             - print(smu.measure.nplc)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4126,20 +4020,19 @@ class SmuMeasure(BaseTSPCmd):
     def offsetcompensation(self) -> str:
         """Access the ``smu.measure.offsetcompensation`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if offset compensation is used.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.offsetcompensation)`` query.
             - Setting this property to a value will send the
               ``smu.measure.offsetcompensation = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.offsetcompensation = value
             - print(smu.measure.offsetcompensation)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4158,20 +4051,19 @@ class SmuMeasure(BaseTSPCmd):
     def offsetcompensation(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.offsetcompensation`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if offset compensation is used.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.offsetcompensation)`` query.
             - Setting this property to a value will send the
               ``smu.measure.offsetcompensation = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.offsetcompensation = value
             - print(smu.measure.offsetcompensation)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4193,19 +4085,18 @@ class SmuMeasure(BaseTSPCmd):
     def range(self) -> str:
         """Access the ``smu.measure.range`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines the positive full-scale measure range.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.range)`` query.
             - Setting this property to a value will send the ``smu.measure.range = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.range = value
             - print(smu.measure.range)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4224,19 +4115,18 @@ class SmuMeasure(BaseTSPCmd):
     def range(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.range`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines the positive full-scale measure range.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.range)`` query.
             - Setting this property to a value will send the ``smu.measure.range = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.range = value
             - print(smu.measure.range)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4258,7 +4148,7 @@ class SmuMeasure(BaseTSPCmd):
     def rel(self) -> SmuMeasureRel:
         """Return the ``smu.measure.rel`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.acquire()``: The ``smu.measure.rel.acquire()`` function.
             - ``.enable``: The ``smu.measure.rel.enable`` attribute.
             - ``.level``: The ``smu.measure.rel.level`` attribute.
@@ -4269,19 +4159,18 @@ class SmuMeasure(BaseTSPCmd):
     def sense(self) -> str:
         """Access the ``smu.measure.sense`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects local (2-wire) or remote (4-wire) sensing.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.sense)`` query.
             - Setting this property to a value will send the ``smu.measure.sense = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.sense = value
             - print(smu.measure.sense)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4300,19 +4189,18 @@ class SmuMeasure(BaseTSPCmd):
     def sense(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.sense`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects local (2-wire) or remote (4-wire) sensing.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.sense)`` query.
             - Setting this property to a value will send the ``smu.measure.sense = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.sense = value
             - print(smu.measure.sense)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4334,20 +4222,19 @@ class SmuMeasure(BaseTSPCmd):
     def unit(self) -> str:
         """Access the ``smu.measure.unit`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the units of measurement that are displayed on the front panel of
               the instrument and stored in the reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.unit)`` query.
             - Setting this property to a value will send the ``smu.measure.unit = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.unit = value
             - print(smu.measure.unit)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4366,20 +4253,19 @@ class SmuMeasure(BaseTSPCmd):
     def unit(self, value: Union[str, float]) -> None:
         """Access the ``smu.measure.unit`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the units of measurement that are displayed on the front panel of
               the instrument and stored in the reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.measure.unit)`` query.
             - Setting this property to a value will send the ``smu.measure.unit = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.unit = value
             - print(smu.measure.unit)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4401,23 +4287,22 @@ class SmuMeasure(BaseTSPCmd):
     def userdelay(self) -> Dict[int, Union[str, float]]:
         """Access the ``smu.measure.userdelay[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets a user-defined delay that you can use in the trigger model.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the ``print(smu.measure.userdelay[N])``
               query.
             - Setting an item from this property to a value will send the
               ``smu.measure.userdelay[N] = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.userdelay[N] = value
             - print(smu.measure.userdelay[N])
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the user delay to which this time applies (1 to 5).
 
         Raises:
@@ -4428,14 +4313,13 @@ class SmuMeasure(BaseTSPCmd):
     def getattribute(self, function: str, setting: str) -> str:
         """Run the ``smu.measure.getattribute()`` function.
 
-        **Description:**
+        Description:
             - This function returns the setting for a function attribute.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.getattribute()
+            ```
 
         Args:
             function: The measurement function.
@@ -4459,15 +4343,14 @@ class SmuMeasure(BaseTSPCmd):
     def read(self, buffer_name: Optional[str] = None) -> str:
         """Run the ``smu.measure.read()`` function.
 
-        **Description:**
+        Description:
             - This function makes measurements, places them in a reading buffer, and returns the
               last reading.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.read()
+            ```
 
         Args:
             buffer_name (optional): The name of the reading buffer, which may be a default buffer
@@ -4492,15 +4375,14 @@ class SmuMeasure(BaseTSPCmd):
     def readwithtime(self, buffer_name: Optional[str] = None) -> str:
         """Run the ``smu.measure.readwithtime()`` function.
 
-        **Description:**
+        Description:
             - This function initiates measurements and returns the last actual measurement and time
               information in UTC format without using the trigger model.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.readwithtime()
+            ```
 
         Args:
             buffer_name (optional): The name of the reading buffer, which may be a default buffer
@@ -4525,15 +4407,14 @@ class SmuMeasure(BaseTSPCmd):
     def setattribute(self, function: str, setting: str, value: str) -> None:
         """Run the ``smu.measure.setattribute()`` function.
 
-        **Description:**
+        Description:
             - This function allows you to set up a measure function whether or not the function is
               active.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.measure.setattribute()
+            ```
 
         Args:
             function: The measurement function.
@@ -4556,7 +4437,7 @@ class SmuMeasure(BaseTSPCmd):
 class SmuInterlock(BaseTSPCmd):
     """The ``smu.interlock`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.enable``: The ``smu.interlock.enable`` attribute.
         - ``.tripped``: The ``smu.interlock.tripped`` attribute.
     """
@@ -4565,21 +4446,20 @@ class SmuInterlock(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``smu.interlock.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the output can be turned on when the interlock is not
               engaged.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.interlock.enable)`` query.
             - Setting this property to a value will send the ``smu.interlock.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.interlock.enable = value
             - print(smu.interlock.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4598,21 +4478,20 @@ class SmuInterlock(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``smu.interlock.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the output can be turned on when the interlock is not
               engaged.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.interlock.enable)`` query.
             - Setting this property to a value will send the ``smu.interlock.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.interlock.enable = value
             - print(smu.interlock.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4634,17 +4513,16 @@ class SmuInterlock(BaseTSPCmd):
     def tripped(self) -> str:
         """Access the ``smu.interlock.tripped`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates that the interlock has been tripped.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.interlock.tripped)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(smu.interlock.tripped)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4770,7 +4648,7 @@ class Smu(BaseTSPCmd):
         - ``.UNIT_WATT``: Set unit of measure to power (only available for voltage or current
           measurements).
 
-    Properties/methods:
+    Properties and methods:
         - ``.interlock``: The ``smu.interlock`` command tree.
         - ``.measure``: The ``smu.measure`` command tree.
         - ``.reset()``: The ``smu.reset()`` function.
@@ -4989,7 +4867,7 @@ class Smu(BaseTSPCmd):
     def interlock(self) -> SmuInterlock:
         """Return the ``smu.interlock`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.enable``: The ``smu.interlock.enable`` attribute.
             - ``.tripped``: The ``smu.interlock.tripped`` attribute.
         """
@@ -4999,7 +4877,7 @@ class Smu(BaseTSPCmd):
     def measure(self) -> SmuMeasure:
         """Return the ``smu.measure`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.autorange``: The ``smu.measure.autorange`` attribute.
             - ``.autorangehigh``: The ``smu.measure.autorangehigh`` attribute.
             - ``.autorangelow``: The ``smu.measure.autorangelow`` attribute.
@@ -5030,7 +4908,7 @@ class Smu(BaseTSPCmd):
     def source(self) -> SmuSource:
         """Return the ``smu.source`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.autodelay``: The ``smu.source.autodelay`` attribute.
             - ``.autorange``: The ``smu.source.autorange`` attribute.
             - ``.configlist``: The ``smu.source.configlist`` command tree.
@@ -5059,20 +4937,19 @@ class Smu(BaseTSPCmd):
     def terminals(self) -> str:
         """Access the ``smu.terminals`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes which set of input and output terminals the instrument is
               using.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.terminals)`` query.
             - Setting this property to a value will send the ``smu.terminals = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.terminals = value
             - print(smu.terminals)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5091,20 +4968,19 @@ class Smu(BaseTSPCmd):
     def terminals(self, value: Union[str, float]) -> None:
         """Access the ``smu.terminals`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes which set of input and output terminals the instrument is
               using.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smu.terminals)`` query.
             - Setting this property to a value will send the ``smu.terminals = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.terminals = value
             - print(smu.terminals)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5125,15 +5001,14 @@ class Smu(BaseTSPCmd):
     def reset(self) -> None:
         """Run the ``smu.reset()`` function.
 
-        **Description:**
+        Description:
             - This function turns off the output and resets the commands that begin with smu. to
               their default settings.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smu.reset()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.

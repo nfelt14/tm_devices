@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - EVMsg?
 """
 
@@ -27,21 +25,20 @@ if TYPE_CHECKING:
 class Evmsg(SCPICmdRead):
     """The ``EVMsg`` command.
 
-    **Description:**
+    Description:
         - This query-only command removes a single event code from the Event Queue that is
           associated with the results of the last ESR read and returns the event code with an
           explanatory message. For more information, see Event Handling.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EVMsg?`` query.
         - Using the ``.verify(value)`` method will send the ``EVMsg?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EVMsg?
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "EVMsg") -> None:

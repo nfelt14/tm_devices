@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - PLOT:ADDNew <QString>
     - PLOT:DELete <QString>
     - PLOT:LIST?
@@ -35,19 +33,18 @@ if TYPE_CHECKING:
 class PlotPlotItemType(SCPICmdWrite):
     """The ``PLOT:PLOT<x>:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the current plot type of the specified plot.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``PLOT:PLOT<x>:TYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PLOT:PLOT<x>:TYPe {NONE|XY}
+        ```
 
-    **Info:**
+    Info:
         - ``<x>`` is the plot number. This is the equivalent of the number shown on a plot heading
           in the UI.
         - ``NONE`` does not create a plot.
@@ -58,23 +55,22 @@ class PlotPlotItemType(SCPICmdWrite):
 class PlotPlotItemSource1(SCPICmdWrite, SCPICmdRead):
     """The ``PLOT:PLOT<x>:SOUrce1`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the plot source.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PLOT:PLOT<x>:SOUrce1?`` query.
         - Using the ``.verify(value)`` method will send the ``PLOT:PLOT<x>:SOUrce1?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``PLOT:PLOT<x>:SOUrce1 value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PLOT:PLOT<x>:SOUrce1 MEAS<x>
         - PLOT:PLOT<x>:SOUrce1?
+        ```
 
-    **Info:**
+    Info:
         - ``MEAS<x>`` is the specified measurement source for the specified plot.
     """
 
@@ -82,7 +78,7 @@ class PlotPlotItemSource1(SCPICmdWrite, SCPICmdRead):
 class PlotPlotItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``PLOT:PLOT<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PLOT:PLOT<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``PLOT:PLOT<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -101,24 +97,23 @@ class PlotPlotItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def source1(self) -> PlotPlotItemSource1:
         """Return the ``PLOT:PLOT<x>:SOUrce1`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the plot source.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PLOT:PLOT<x>:SOUrce1?`` query.
             - Using the ``.verify(value)`` method will send the ``PLOT:PLOT<x>:SOUrce1?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``PLOT:PLOT<x>:SOUrce1 value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PLOT:PLOT<x>:SOUrce1 MEAS<x>
             - PLOT:PLOT<x>:SOUrce1?
+            ```
 
-        **Info:**
+        Info:
             - ``MEAS<x>`` is the specified measurement source for the specified plot.
         """
         return self._source1
@@ -127,19 +122,18 @@ class PlotPlotItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def type(self) -> PlotPlotItemType:
         """Return the ``PLOT:PLOT<x>:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the current plot type of the specified plot.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``PLOT:PLOT<x>:TYPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PLOT:PLOT<x>:TYPe {NONE|XY}
+            ```
 
-        **Info:**
+        Info:
             - ``<x>`` is the plot number. This is the equivalent of the number shown on a plot
               heading in the UI.
             - ``NONE`` does not create a plot.
@@ -151,38 +145,36 @@ class PlotPlotItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class PlotList(SCPICmdRead):
     """The ``PLOT:LIST`` command.
 
-    **Description:**
+    Description:
         - This command lists all currently defined plots.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PLOT:LIST?`` query.
         - Using the ``.verify(value)`` method will send the ``PLOT:LIST?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PLOT:LIST?
+        ```
     """
 
 
 class PlotDelete(SCPICmdWrite):
     """The ``PLOT:DELete`` command.
 
-    **Description:**
+    Description:
         - This command deletes the specified plot.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``PLOT:DELete value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PLOT:DELete <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the specified plot. Argument is of the form 'PLOT<NR1>, where <NR1> is ≥
           1).
     """
@@ -193,19 +185,18 @@ class PlotDelete(SCPICmdWrite):
 class PlotAddnew(SCPICmdWrite):
     """The ``PLOT:ADDNew`` command.
 
-    **Description:**
+    Description:
         - This command adds the specified plot.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``PLOT:ADDNew value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PLOT:ADDNew <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the specified plot. The argument is of the form 'PLOT<NR1>', where <NR1>
           ≥ 1.
     """
@@ -216,7 +207,7 @@ class PlotAddnew(SCPICmdWrite):
 class Plot(SCPICmdRead):
     """The ``PLOT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PLOT?`` query.
         - Using the ``.verify(value)`` method will send the ``PLOT?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -241,19 +232,18 @@ class Plot(SCPICmdRead):
     def addnew(self) -> PlotAddnew:
         """Return the ``PLOT:ADDNew`` command.
 
-        **Description:**
+        Description:
             - This command adds the specified plot.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``PLOT:ADDNew value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PLOT:ADDNew <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the specified plot. The argument is of the form 'PLOT<NR1>', where
               <NR1> ≥ 1.
         """
@@ -263,19 +253,18 @@ class Plot(SCPICmdRead):
     def delete(self) -> PlotDelete:
         """Return the ``PLOT:DELete`` command.
 
-        **Description:**
+        Description:
             - This command deletes the specified plot.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``PLOT:DELete value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PLOT:DELete <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the specified plot. Argument is of the form 'PLOT<NR1>, where <NR1>
               is ≥ 1).
         """
@@ -285,19 +274,18 @@ class Plot(SCPICmdRead):
     def list(self) -> PlotList:
         """Return the ``PLOT:LIST`` command.
 
-        **Description:**
+        Description:
             - This command lists all currently defined plots.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PLOT:LIST?`` query.
             - Using the ``.verify(value)`` method will send the ``PLOT:LIST?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PLOT:LIST?
+            ```
         """
         return self._list
 
@@ -305,7 +293,7 @@ class Plot(SCPICmdRead):
     def plot(self) -> Dict[int, PlotPlotItem]:
         """Return the ``PLOT:PLOT<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PLOT:PLOT<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``PLOT:PLOT<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.

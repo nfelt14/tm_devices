@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - AFG:AMPLitude <NR3>
     - AFG:AMPLitude?
     - AFG:ARBitrary:ARB<x>:DATE?
@@ -30,7 +28,8 @@ Commands and Queries:
     - AFG:ARBitrary:EMEM:POINTS?
     - AFG:FREQuency <NR3>
     - AFG:FREQuency?
-    - AFG:FUNCtion {SINE|SQUare|PULSe|RAMP|NOISe|DC|SINC|GAUSsian|LORENtz |ERISe|EDECAy|HAVERSINe|CARDIac|ARBitrary}
+    - AFG:FUNCtion {SINE|SQUare|PULSe|RAMP|NOISe|DC|SINC|GAUSsian|LORENtz
+      |ERISe|EDECAy|HAVERSINe|CARDIac|ARBitrary}
     - AFG:FUNCtion?
     - AFG:HIGHLevel <NR3>
     - AFG:HIGHLevel?
@@ -58,7 +57,7 @@ Commands and Queries:
     - AFG:RAMP:SYMmetry?
     - AFG:SQUare:DUty <NR3>
     - AFG:SQUare:DUty?
-"""  # noqa: E501
+"""
 
 from typing import Dict, Optional, TYPE_CHECKING
 
@@ -76,24 +75,23 @@ if TYPE_CHECKING:
 class AfgSquareDuty(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:SQUare:DUty`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the AFG duty cycle in percent. The minimum is 10.0%, maximum is 90.0%
           and increment is 0.10%.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:SQUare:DUty?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:SQUare:DUty?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:SQUare:DUty value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:SQUare:DUty <NR3>
         - AFG:SQUare:DUty?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the floating point number that represents the AFG duty cycle, as a
           percentage.
     """
@@ -102,7 +100,7 @@ class AfgSquareDuty(SCPICmdWrite, SCPICmdRead):
 class AfgSquare(SCPICmdRead):
     """The ``AFG:SQUare`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:SQUare?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:SQUare?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -119,24 +117,23 @@ class AfgSquare(SCPICmdRead):
     def duty(self) -> AfgSquareDuty:
         """Return the ``AFG:SQUare:DUty`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the AFG duty cycle in percent. The minimum is 10.0%, maximum is
               90.0% and increment is 0.10%.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:SQUare:DUty?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:SQUare:DUty?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:SQUare:DUty value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:SQUare:DUty <NR3>
             - AFG:SQUare:DUty?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the floating point number that represents the AFG duty cycle, as a
               percentage.
         """
@@ -146,24 +143,23 @@ class AfgSquare(SCPICmdRead):
 class AfgRampSymmetry(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:RAMP:SYMmetry`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the AFG ramp symmetry in percent. Minimum is 0.0%, maximum is 100.0% and
           increment is 0.10%.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:RAMP:SYMmetry?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:RAMP:SYMmetry?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:RAMP:SYMmetry value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:RAMP:SYMmetry <NR3>
         - AFG:RAMP:SYMmetry?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the floating point number that represents the AFG ramp symmetry, as a
           percentage.
     """
@@ -172,7 +168,7 @@ class AfgRampSymmetry(SCPICmdWrite, SCPICmdRead):
 class AfgRamp(SCPICmdRead):
     """The ``AFG:RAMP`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:RAMP?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:RAMP?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -189,24 +185,23 @@ class AfgRamp(SCPICmdRead):
     def symmetry(self) -> AfgRampSymmetry:
         """Return the ``AFG:RAMP:SYMmetry`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the AFG ramp symmetry in percent. Minimum is 0.0%, maximum is 100.0%
               and increment is 0.10%.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:RAMP:SYMmetry?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:RAMP:SYMmetry?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:RAMP:SYMmetry value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:RAMP:SYMmetry <NR3>
             - AFG:RAMP:SYMmetry?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the floating point number that represents the AFG ramp symmetry, as a
               percentage.
         """
@@ -216,23 +211,22 @@ class AfgRamp(SCPICmdRead):
 class AfgPulseWidth(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:PULse:WIDth`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the AFG pulse width, in seconds.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:PULse:WIDth?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:PULse:WIDth?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:PULse:WIDth value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:PULse:WIDth <NR3>
         - AFG:PULse:WIDth?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the floating point number that represents the pulse width, in seconds.
     """
 
@@ -240,7 +234,7 @@ class AfgPulseWidth(SCPICmdWrite, SCPICmdRead):
 class AfgPulse(SCPICmdRead):
     """The ``AFG:PULse`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:PULse?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:PULse?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -257,23 +251,22 @@ class AfgPulse(SCPICmdRead):
     def width(self) -> AfgPulseWidth:
         """Return the ``AFG:PULse:WIDth`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the AFG pulse width, in seconds.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:PULse:WIDth?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:PULse:WIDth?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:PULse:WIDth value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:PULse:WIDth <NR3>
             - AFG:PULse:WIDth?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the floating point number that represents the pulse width, in seconds.
         """
         return self._width
@@ -282,46 +275,44 @@ class AfgPulse(SCPICmdRead):
 class AfgPhase(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:PHASe`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the AFG phase. The AFG phase setting controls the phase difference
           between the trigger signal output and the AFG waveform output. Phase is expressed in
           degrees and ranges from -180.0 to 180.0 in increments of 0.1 degrees.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:PHASe?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:PHASe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:PHASe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:PHASe <NR3>
         - AFG:PHASe?
+        ```
     """
 
 
 class AfgPeriod(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:PERIod`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the period of the AFG waveform, in seconds.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:PERIod?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:PERIod?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:PERIod value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:PERIod <NR3>
         - AFG:PERIod?
+        ```
 
-    **Info:**
+    Info:
         - ``NR3`` is the floating point number that represents the AFG period value, in seconds.
     """
 
@@ -329,23 +320,22 @@ class AfgPeriod(SCPICmdWrite, SCPICmdRead):
 class AfgOutputState(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:OUTPut:STATE`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the AFG output state.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:OUTPut:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:OUTPut:STATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:OUTPut:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:OUTPut:STATE {0|1|OFF|ON}
         - AFG:OUTPut:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``1`` or ON turns on the AFG output state.
         - ``0`` or OFF turns it off.
     """
@@ -354,24 +344,23 @@ class AfgOutputState(SCPICmdWrite, SCPICmdRead):
 class AfgOutputLoadImpedance(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:OUTPut:LOAd:IMPEDance`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the AFG output load impedance.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:OUTPut:LOAd:IMPEDance?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:OUTPut:LOAd:IMPEDance?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:OUTPut:LOAd:IMPEDance value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:OUTPut:LOAd:IMPEDance {FIFty|HIGHZ}
         - AFG:OUTPut:LOAd:IMPEDance?
+        ```
 
-    **Info:**
+    Info:
         - ``FIFty`` sets the output load impedance to 50 Ohms.
         - ``HIGHZ`` sets the output load impedance to the high-impedance state.
     """
@@ -380,7 +369,7 @@ class AfgOutputLoadImpedance(SCPICmdWrite, SCPICmdRead):
 class AfgOutputLoad(SCPICmdRead):
     """The ``AFG:OUTPut:LOAd`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:OUTPut:LOAd?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:OUTPut:LOAd?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -397,24 +386,23 @@ class AfgOutputLoad(SCPICmdRead):
     def impedance(self) -> AfgOutputLoadImpedance:
         """Return the ``AFG:OUTPut:LOAd:IMPEDance`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the AFG output load impedance.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:OUTPut:LOAd:IMPEDance?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:OUTPut:LOAd:IMPEDance?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:OUTPut:LOAd:IMPEDance value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:OUTPut:LOAd:IMPEDance {FIFty|HIGHZ}
             - AFG:OUTPut:LOAd:IMPEDance?
+            ```
 
-        **Info:**
+        Info:
             - ``FIFty`` sets the output load impedance to 50 Ohms.
             - ``HIGHZ`` sets the output load impedance to the high-impedance state.
         """
@@ -424,7 +412,7 @@ class AfgOutputLoad(SCPICmdRead):
 class AfgOutput(SCPICmdRead):
     """The ``AFG:OUTPut`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:OUTPut?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:OUTPut?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -443,7 +431,7 @@ class AfgOutput(SCPICmdRead):
     def load(self) -> AfgOutputLoad:
         """Return the ``AFG:OUTPut:LOAd`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:OUTPut:LOAd?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:OUTPut:LOAd?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -457,23 +445,22 @@ class AfgOutput(SCPICmdRead):
     def state(self) -> AfgOutputState:
         """Return the ``AFG:OUTPut:STATE`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the AFG output state.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:OUTPut:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:OUTPut:STATE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:OUTPut:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:OUTPut:STATE {0|1|OFF|ON}
             - AFG:OUTPut:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``1`` or ON turns on the AFG output state.
             - ``0`` or OFF turns it off.
         """
@@ -483,23 +470,22 @@ class AfgOutput(SCPICmdRead):
 class AfgOffset(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:OFFSet`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the AFG offset value, in volts.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:OFFSet?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:OFFSet?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:OFFSet value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:OFFSet <NR3>
         - AFG:OFFSet?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that represents the AFG offset, in volts.
     """
 
@@ -507,23 +493,22 @@ class AfgOffset(SCPICmdWrite, SCPICmdRead):
 class AfgNoiseaddState(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:NOISEAdd:STATE`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the AFG additive noise state.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:NOISEAdd:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:NOISEAdd:STATE?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:NOISEAdd:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:NOISEAdd:STATE {0|1|OFF|ON}
         - AFG:NOISEAdd:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``1`` or ON turns on the AFG additive noise state.
         - ``0`` or OFF turns it off.
     """
@@ -532,24 +517,23 @@ class AfgNoiseaddState(SCPICmdWrite, SCPICmdRead):
 class AfgNoiseaddPercent(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:NOISEAdd:PERCent`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the AFG additive noise level as a percentage. Minimum is 0.0%, maximum
           is 100.0% and increment is 1.0%.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:NOISEAdd:PERCent?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:NOISEAdd:PERCent?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:NOISEAdd:PERCent value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:NOISEAdd:PERCent <NR3>
         - AFG:NOISEAdd:PERCent?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the floating point number that represents the AFG additive noise level, as a
           percentage.
     """
@@ -558,7 +542,7 @@ class AfgNoiseaddPercent(SCPICmdWrite, SCPICmdRead):
 class AfgNoiseadd(SCPICmdRead):
     """The ``AFG:NOISEAdd`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:NOISEAdd?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:NOISEAdd?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -577,25 +561,24 @@ class AfgNoiseadd(SCPICmdRead):
     def percent(self) -> AfgNoiseaddPercent:
         """Return the ``AFG:NOISEAdd:PERCent`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the AFG additive noise level as a percentage. Minimum is 0.0%,
               maximum is 100.0% and increment is 1.0%.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:NOISEAdd:PERCent?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:NOISEAdd:PERCent?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:NOISEAdd:PERCent value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:NOISEAdd:PERCent <NR3>
             - AFG:NOISEAdd:PERCent?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the floating point number that represents the AFG additive noise level,
               as a percentage.
         """
@@ -605,23 +588,22 @@ class AfgNoiseadd(SCPICmdRead):
     def state(self) -> AfgNoiseaddState:
         """Return the ``AFG:NOISEAdd:STATE`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the AFG additive noise state.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:NOISEAdd:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:NOISEAdd:STATE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:NOISEAdd:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:NOISEAdd:STATE {0|1|OFF|ON}
             - AFG:NOISEAdd:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``1`` or ON turns on the AFG additive noise state.
             - ``0`` or OFF turns it off.
         """
@@ -631,24 +613,23 @@ class AfgNoiseadd(SCPICmdRead):
 class AfgLowlevel(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:LOWLevel`` command.
 
-    **Description:**
+    Description:
         - This command sets (or queries) the low level value of the output waveform, in volts, when
           using the arbitrary function generator feature.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:LOWLevel?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:LOWLevel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:LOWLevel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:LOWLevel <NR3>
         - AFG:LOWLevel?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the floating point number that represents the AFG low level value, in volts.
     """
 
@@ -656,7 +637,7 @@ class AfgLowlevel(SCPICmdWrite, SCPICmdRead):
 class AfgLevelpreset(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:LEVELPreset`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the AFG preset levels to values that correspond to the logic standard
           specified by the argument. The presets set the following vertical controls: AMPLitude
           OFFSet HIGHLevel LOWLevel Note that once any of these vertical settings are changed from
@@ -666,20 +647,19 @@ class AfgLevelpreset(SCPICmdWrite, SCPICmdRead):
           Impedance HIGHZ LEVEL Preset High Low High Low TTL N/A 5.0V ``CMOS_5_0V N``/A 5.0V
           ``CMOS_3_3V 2``.5V 0V 3.3V 0V ``CMOS_2_5V 2``.5V 0V 2.5V 0V ECL -0.85V -1.65V -0.9V -1.7V
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:LEVELPreset?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:LEVELPreset?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:LEVELPreset value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:LEVELPreset {CMOS_5_0V|CMOS_3_3V|CMOS_2_5V|ECL|TTL|USER}
         - AFG:LEVELPreset?
+        ```
 
-    **Info:**
+    Info:
         - ``CMOS_5_0V`` - standard 5-volt CMOS levels. Not available when the load impedance is 50
           Ohm.
         - ``CMOS_3_3V`` - standard 3.3-volt CMOS levels.
@@ -694,24 +674,23 @@ class AfgLevelpreset(SCPICmdWrite, SCPICmdRead):
 class AfgHighlevel(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:HIGHLevel`` command.
 
-    **Description:**
+    Description:
         - This command sets (or queries) the high level value of the output waveform, in volts, when
           using the arbitrary function generator feature.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:HIGHLevel?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:HIGHLevel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:HIGHLevel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:HIGHLevel <NR3>
         - AFG:HIGHLevel?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that represents the AFG high level value, in volts.
     """
 
@@ -719,23 +698,22 @@ class AfgHighlevel(SCPICmdWrite, SCPICmdRead):
 class AfgFunction(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:FUNCtion`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) which AFG function to execute.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:FUNCtion?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:FUNCtion?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:FUNCtion value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:FUNCtion {SINE|SQUare|PULSe|RAMP|NOISe|DC|SINC|GAUSsian|LORENtz |ERISe|EDECAy|HAVERSINe|CARDIac|ARBitrary}
         - AFG:FUNCtion?
+        ```
 
-    **Info:**
+    Info:
         - ``SINE``
         - ``SQUare``
         - ``PULSe``
@@ -756,23 +734,22 @@ class AfgFunction(SCPICmdWrite, SCPICmdRead):
 class AfgFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:FREQuency`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the AFG frequency, in Hz.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:FREQuency?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:FREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:FREQuency <NR3>
         - AFG:FREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the floating point number that represents the AFG frequency, in Hz.
     """
 
@@ -780,27 +757,26 @@ class AfgFrequency(SCPICmdWrite, SCPICmdRead):
 class AfgArbitraryEmemPointsEncdg(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:ARBitrary:EMEM:POINTS:ENCdg`` command.
 
-    **Description:**
+    Description:
         - This command specifies the data encoding format for the ``AFG:ARBITRARY:EMEM:POINTS``
           query (either ASCII or binary). The default is ASCii. This setting is non-volatile and is
           reset by default setup or TekSecure. Refer to the ``AFG:ARBITRARY:EMEM:POINTS`` command
           description for more information.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:ARBitrary:EMEM:POINTS:ENCdg?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:EMEM:POINTS:ENCdg?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:ARBitrary:EMEM:POINTS:ENCdg value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:ARBitrary:EMEM:POINTS:ENCdg {ASCii|BINary}
         - AFG:ARBitrary:EMEM:POINTS:ENCdg?
+        ```
 
-    **Info:**
+    Info:
         - ``ASCii`` - ASCII NR3 format.
         - ``BINary`` - IEEE488.2 binary block in 4-byte floating point format.
     """
@@ -809,7 +785,7 @@ class AfgArbitraryEmemPointsEncdg(SCPICmdWrite, SCPICmdRead):
 class AfgArbitraryEmemPointsByteorder(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:ARBitrary:EMEM:POINTS:BYTEORDer`` command.
 
-    **Description:**
+    Description:
         - ``:BYTEORDer This`` command specifies the byte order for the
           ``AFG:ARBITRARY:EMEM:POINTS?`` query when the ``AFG:ARBITRARY:EMEM:POINTS:ENCDG`` is set
           to BINary and when binary block data is sent for the  ``AFG:ARBITRARY:EMEM:POINTS``
@@ -818,7 +794,7 @@ class AfgArbitraryEmemPointsByteorder(SCPICmdWrite, SCPICmdRead):
           default setup or TekSecure. Refer to the ``AFG:ARBITRARY:EMEM:POINTS`` command description
           for more information.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:ARBitrary:EMEM:POINTS:BYTEORDer?``
           query.
         - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:EMEM:POINTS:BYTEORDer?``
@@ -826,14 +802,13 @@ class AfgArbitraryEmemPointsByteorder(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``AFG:ARBitrary:EMEM:POINTS:BYTEORDer value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:ARBitrary:EMEM:POINTS:BYTEORDer <LSB> |<MSB>
         - AFG:ARBitrary:EMEM:POINTS:BYTEORDer?
+        ```
 
-    **Info:**
+    Info:
         - ``LSB`` - Least significant byte first (little endian).
         - ``MSB`` - Most significant byte first (big endian).
     """
@@ -842,7 +817,7 @@ class AfgArbitraryEmemPointsByteorder(SCPICmdWrite, SCPICmdRead):
 class AfgArbitraryEmemPoints(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:ARBitrary:EMEM:POINTS`` command.
 
-    **Description:**
+    Description:
         - Specifies which points to load into the AFG arbitrary waveform edit memory. The point data
           to be loaded may be specified as an IEEE488.2 binary block with 4-byte floating point data
           values, or as a comma-separated list of NR2 or NR3 data values. The data values must be in
@@ -858,21 +833,20 @@ class AfgArbitraryEmemPoints(SCPICmdWrite, SCPICmdRead):
           encoding, the byte order specified by the ``AFG:ARBITRARY:EMEM:POINTS:BYTEORDER`` command.
           Refer to the ``AFG:ARBITRARY:EMEM:POINTS:ENCDG`` command description for more information.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:ARBitrary:EMEM:POINTS?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:EMEM:POINTS?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:ARBitrary:EMEM:POINTS value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:ARBitrary:EMEM:POINTS <BlockWfmInDTO> |<NrfWfmInDTO>
         - AFG:ARBitrary:EMEM:POINTS?
+        ```
 
-    **Info:**
+    Info:
         - ``BlockWfmInDTO`` - an IEEE488.2 binary block with 4-byte floating point data values.
         - ``NrfWfmInDTO`` - a comma-separated list of NR2 or NR3 data values.
 
@@ -890,7 +864,7 @@ class AfgArbitraryEmemPoints(SCPICmdWrite, SCPICmdRead):
     def byteorder(self) -> AfgArbitraryEmemPointsByteorder:
         """Return the ``AFG:ARBitrary:EMEM:POINTS:BYTEORDer`` command.
 
-        **Description:**
+        Description:
             - ``:BYTEORDer This`` command specifies the byte order for the
               ``AFG:ARBITRARY:EMEM:POINTS?`` query when the ``AFG:ARBITRARY:EMEM:POINTS:ENCDG`` is
               set to BINary and when binary block data is sent for the
@@ -899,7 +873,7 @@ class AfgArbitraryEmemPoints(SCPICmdWrite, SCPICmdRead):
               setting is non-volatile and is reset by default setup or TekSecure. Refer to the
               ``AFG:ARBITRARY:EMEM:POINTS`` command description for more information.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:ARBitrary:EMEM:POINTS:BYTEORDer?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -908,14 +882,13 @@ class AfgArbitraryEmemPoints(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``AFG:ARBitrary:EMEM:POINTS:BYTEORDer value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:ARBitrary:EMEM:POINTS:BYTEORDer <LSB> |<MSB>
             - AFG:ARBitrary:EMEM:POINTS:BYTEORDer?
+            ```
 
-        **Info:**
+        Info:
             - ``LSB`` - Least significant byte first (little endian).
             - ``MSB`` - Most significant byte first (big endian).
         """
@@ -925,13 +898,13 @@ class AfgArbitraryEmemPoints(SCPICmdWrite, SCPICmdRead):
     def encdg(self) -> AfgArbitraryEmemPointsEncdg:
         """Return the ``AFG:ARBitrary:EMEM:POINTS:ENCdg`` command.
 
-        **Description:**
+        Description:
             - This command specifies the data encoding format for the ``AFG:ARBITRARY:EMEM:POINTS``
               query (either ASCII or binary). The default is ASCii. This setting is non-volatile and
               is reset by default setup or TekSecure. Refer to the ``AFG:ARBITRARY:EMEM:POINTS``
               command description for more information.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:ARBitrary:EMEM:POINTS:ENCdg?``
               query.
             - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:EMEM:POINTS:ENCdg?``
@@ -939,14 +912,13 @@ class AfgArbitraryEmemPoints(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``AFG:ARBitrary:EMEM:POINTS:ENCdg value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:ARBitrary:EMEM:POINTS:ENCdg {ASCii|BINary}
             - AFG:ARBitrary:EMEM:POINTS:ENCdg?
+            ```
 
-        **Info:**
+        Info:
             - ``ASCii`` - ASCII NR3 format.
             - ``BINary`` - IEEE488.2 binary block in 4-byte floating point format.
         """
@@ -956,29 +928,28 @@ class AfgArbitraryEmemPoints(SCPICmdWrite, SCPICmdRead):
 class AfgArbitraryEmemNumpoints(SCPICmdRead):
     """The ``AFG:ARBitrary:EMEM:NUMPoints`` command.
 
-    **Description:**
+    Description:
         - Returns the number of points in the AFB arbitrary waveform edit memory. This value will be
           used with the ``AFG:ARBITRARY:EMEM:GENERATE`` command in the event that the number of
           points is not specified. See the ``AFG:ARBITRARY:EMEM:GENERATE`` command description for
           more information.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:ARBitrary:EMEM:NUMPoints?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:EMEM:NUMPoints?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:ARBitrary:EMEM:NUMPoints?
+        ```
     """
 
 
 class AfgArbitraryEmemGenerate(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:ARBitrary:EMEM:GENerate`` command.
 
-    **Description:**
+    Description:
         - This command generates the arbitrary waveform function specified by the enumeration
           argument. The NR1 argument is optional; it can be used to specify the number of points; if
           it is used, it also sets the value that will be used by ``AFG:ARBITRARY:EMEM:NUMPOINTS``
@@ -988,21 +959,20 @@ class AfgArbitraryEmemGenerate(SCPICmdWrite, SCPICmdRead):
           this command, use ``AFG:ARBITRARY:EMEM:FUNCTION`` (This value is not reset by default
           setup or by power cycle).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:ARBitrary:EMEM:GENerate?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:EMEM:GENerate?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:ARBitrary:EMEM:GENerate value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:ARBitrary:EMEM:GENerate {SINE|SQUare|PULSe|RAMP|NOISe[,NR1]}
         - AFG:ARBitrary:EMEM:GENerate?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` (Optional) Specifies the number of points for the arbitrary waveform function.
           The number of points, if specified, must be >= 2 and <= 131072. The default number of
           points is 100.
@@ -1017,29 +987,28 @@ class AfgArbitraryEmemGenerate(SCPICmdWrite, SCPICmdRead):
 class AfgArbitraryEmemFunction(SCPICmdRead):
     """The ``AFG:ARBitrary:EMEM:FUNCtion`` command.
 
-    **Description:**
+    Description:
         - Returns the currently selected arbitrary waveform pre-defined function. The pre-defined
           ARB function is selected using the command ``AFG:ARBITRARY:EMEM:GENERATE``. This query may
           also return USER, which indicates that the arbitrary waveform in edit memory has been
           altered from one of the predefined functions.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:ARBitrary:EMEM:FUNCtion?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:EMEM:FUNCtion?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:ARBitrary:EMEM:FUNCtion?
+        ```
     """
 
 
 class AfgArbitraryEmem(SCPICmdRead):
     """The ``AFG:ARBitrary:EMEM`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:ARBitrary:EMEM?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:EMEM?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -1062,23 +1031,22 @@ class AfgArbitraryEmem(SCPICmdRead):
     def function(self) -> AfgArbitraryEmemFunction:
         """Return the ``AFG:ARBitrary:EMEM:FUNCtion`` command.
 
-        **Description:**
+        Description:
             - Returns the currently selected arbitrary waveform pre-defined function. The
               pre-defined ARB function is selected using the command
               ``AFG:ARBITRARY:EMEM:GENERATE``. This query may also return USER, which indicates that
               the arbitrary waveform in edit memory has been altered from one of the predefined
               functions.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:ARBitrary:EMEM:FUNCtion?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:EMEM:FUNCtion?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:ARBitrary:EMEM:FUNCtion?
+            ```
         """
         return self._function
 
@@ -1086,7 +1054,7 @@ class AfgArbitraryEmem(SCPICmdRead):
     def generate(self) -> AfgArbitraryEmemGenerate:
         """Return the ``AFG:ARBitrary:EMEM:GENerate`` command.
 
-        **Description:**
+        Description:
             - This command generates the arbitrary waveform function specified by the enumeration
               argument. The NR1 argument is optional; it can be used to specify the number of
               points; if it is used, it also sets the value that will be used by
@@ -1096,21 +1064,20 @@ class AfgArbitraryEmem(SCPICmdRead):
               waveform function set by this command, use ``AFG:ARBITRARY:EMEM:FUNCTION`` (This value
               is not reset by default setup or by power cycle).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:ARBitrary:EMEM:GENerate?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:EMEM:GENerate?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:ARBitrary:EMEM:GENerate value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:ARBitrary:EMEM:GENerate {SINE|SQUare|PULSe|RAMP|NOISe[,NR1]}
             - AFG:ARBitrary:EMEM:GENerate?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` (Optional) Specifies the number of points for the arbitrary waveform
               function. The number of points, if specified, must be >= 2 and <= 131072. The default
               number of points is 100.
@@ -1126,22 +1093,21 @@ class AfgArbitraryEmem(SCPICmdRead):
     def numpoints(self) -> AfgArbitraryEmemNumpoints:
         """Return the ``AFG:ARBitrary:EMEM:NUMPoints`` command.
 
-        **Description:**
+        Description:
             - Returns the number of points in the AFB arbitrary waveform edit memory. This value
               will be used with the ``AFG:ARBITRARY:EMEM:GENERATE`` command in the event that the
               number of points is not specified. See the ``AFG:ARBITRARY:EMEM:GENERATE`` command
               description for more information.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:ARBitrary:EMEM:NUMPoints?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:EMEM:NUMPoints?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:ARBitrary:EMEM:NUMPoints?
+            ```
         """
         return self._numpoints
 
@@ -1149,7 +1115,7 @@ class AfgArbitraryEmem(SCPICmdRead):
     def points(self) -> AfgArbitraryEmemPoints:
         """Return the ``AFG:ARBitrary:EMEM:POINTS`` command.
 
-        **Description:**
+        Description:
             - Specifies which points to load into the AFG arbitrary waveform edit memory. The point
               data to be loaded may be specified as an IEEE488.2 binary block with 4-byte floating
               point data values, or as a comma-separated list of NR2 or NR3 data values. The data
@@ -1167,21 +1133,20 @@ class AfgArbitraryEmem(SCPICmdRead):
               ``AFG:ARBITRARY:EMEM:POINTS:BYTEORDER`` command. Refer to the
               ``AFG:ARBITRARY:EMEM:POINTS:ENCDG`` command description for more information.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:ARBitrary:EMEM:POINTS?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:EMEM:POINTS?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:ARBitrary:EMEM:POINTS value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:ARBitrary:EMEM:POINTS <BlockWfmInDTO> |<NrfWfmInDTO>
             - AFG:ARBitrary:EMEM:POINTS?
+            ```
 
-        **Info:**
+        Info:
             - ``BlockWfmInDTO`` - an IEEE488.2 binary block with 4-byte floating point data values.
             - ``NrfWfmInDTO`` - a comma-separated list of NR2 or NR3 data values.
 
@@ -1195,41 +1160,39 @@ class AfgArbitraryEmem(SCPICmdRead):
 class AfgArbitraryArbItemTime(SCPICmdRead):
     """The ``AFG:ARBitrary:ARB<x>:TIMe`` command.
 
-    **Description:**
+    Description:
         - Returns the time that the data in the specified arbitrary waveform slot was saved.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:ARBitrary:ARB<x>:TIMe?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:ARB<x>:TIMe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:ARBitrary:ARB<x>:TIMe?
+        ```
     """
 
 
 class AfgArbitraryArbItemLabel(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:ARBitrary:ARB<x>:LABel`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the waveform label for arbitrary waveform slots 1- 4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:ARBitrary:ARB<x>:LABel?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:ARB<x>:LABel?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:ARBitrary:ARB<x>:LABel value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:ARBitrary:ARB<x>:LABel <QString>
         - AFG:ARBitrary:ARB<x>:LABel?
+        ```
     """
 
     _WRAP_ARG_WITH_QUOTES = True
@@ -1238,26 +1201,25 @@ class AfgArbitraryArbItemLabel(SCPICmdWrite, SCPICmdRead):
 class AfgArbitraryArbItemDate(SCPICmdRead):
     """The ``AFG:ARBitrary:ARB<x>:DATE`` command.
 
-    **Description:**
+    Description:
         - Returns the date that the data in the specified arbitrary waveform slot 1-4 was saved.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:ARBitrary:ARB<x>:DATE?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:ARB<x>:DATE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:ARBitrary:ARB<x>:DATE?
+        ```
     """
 
 
 class AfgArbitraryArbItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``AFG:ARBitrary:ARB<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:ARBitrary:ARB<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:ARB<x>?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1278,19 +1240,18 @@ class AfgArbitraryArbItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def date(self) -> AfgArbitraryArbItemDate:
         """Return the ``AFG:ARBitrary:ARB<x>:DATE`` command.
 
-        **Description:**
+        Description:
             - Returns the date that the data in the specified arbitrary waveform slot 1-4 was saved.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:ARBitrary:ARB<x>:DATE?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:ARB<x>:DATE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:ARBitrary:ARB<x>:DATE?
+            ```
         """
         return self._date
 
@@ -1298,22 +1259,21 @@ class AfgArbitraryArbItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def label(self) -> AfgArbitraryArbItemLabel:
         """Return the ``AFG:ARBitrary:ARB<x>:LABel`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the waveform label for arbitrary waveform slots 1- 4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:ARBitrary:ARB<x>:LABel?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:ARB<x>:LABel?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:ARBitrary:ARB<x>:LABel value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:ARBitrary:ARB<x>:LABel <QString>
             - AFG:ARBitrary:ARB<x>:LABel?
+            ```
         """
         return self._label
 
@@ -1321,19 +1281,18 @@ class AfgArbitraryArbItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def time(self) -> AfgArbitraryArbItemTime:
         """Return the ``AFG:ARBitrary:ARB<x>:TIMe`` command.
 
-        **Description:**
+        Description:
             - Returns the time that the data in the specified arbitrary waveform slot was saved.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:ARBitrary:ARB<x>:TIMe?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:ARB<x>:TIMe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:ARBitrary:ARB<x>:TIMe?
+            ```
         """
         return self._time
 
@@ -1341,7 +1300,7 @@ class AfgArbitraryArbItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class AfgArbitrary(SCPICmdRead):
     """The ``AFG:ARBitrary`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:ARBitrary?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1362,7 +1321,7 @@ class AfgArbitrary(SCPICmdRead):
     def arb(self) -> Dict[int, AfgArbitraryArbItem]:
         """Return the ``AFG:ARBitrary:ARB<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:ARBitrary:ARB<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:ARB<x>?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1378,7 +1337,7 @@ class AfgArbitrary(SCPICmdRead):
     def emem(self) -> AfgArbitraryEmem:
         """Return the ``AFG:ARBitrary:EMEM`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:ARBitrary:EMEM?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary:EMEM?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1395,23 +1354,22 @@ class AfgArbitrary(SCPICmdRead):
 class AfgAmplitude(SCPICmdWrite, SCPICmdRead):
     """The ``AFG:AMPLitude`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the AFG amplitude in volts, peak to peak.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG:AMPLitude?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG:AMPLitude?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AFG:AMPLitude value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFG:AMPLitude <NR3>
         - AFG:AMPLitude?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that represents the AFG amplitude, peak to peak, in
           volts.
     """
@@ -1421,7 +1379,7 @@ class AfgAmplitude(SCPICmdWrite, SCPICmdRead):
 class Afg(SCPICmdRead):
     """The ``AFG`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFG?`` query.
         - Using the ``.verify(value)`` method will send the ``AFG?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1466,23 +1424,22 @@ class Afg(SCPICmdRead):
     def amplitude(self) -> AfgAmplitude:
         """Return the ``AFG:AMPLitude`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the AFG amplitude in volts, peak to peak.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:AMPLitude?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:AMPLitude?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:AMPLitude value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:AMPLitude <NR3>
             - AFG:AMPLitude?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that represents the AFG amplitude, peak to peak,
               in volts.
         """
@@ -1492,7 +1449,7 @@ class Afg(SCPICmdRead):
     def arbitrary(self) -> AfgArbitrary:
         """Return the ``AFG:ARBitrary`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:ARBitrary?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:ARBitrary?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -1507,23 +1464,22 @@ class Afg(SCPICmdRead):
     def frequency(self) -> AfgFrequency:
         """Return the ``AFG:FREQuency`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the AFG frequency, in Hz.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:FREQuency?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:FREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:FREQuency <NR3>
             - AFG:FREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the floating point number that represents the AFG frequency, in Hz.
         """
         return self._frequency
@@ -1532,23 +1488,22 @@ class Afg(SCPICmdRead):
     def function(self) -> AfgFunction:
         """Return the ``AFG:FUNCtion`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) which AFG function to execute.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:FUNCtion?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:FUNCtion?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:FUNCtion value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:FUNCtion {SINE|SQUare|PULSe|RAMP|NOISe|DC|SINC|GAUSsian|LORENtz |ERISe|EDECAy|HAVERSINe|CARDIac|ARBitrary}
             - AFG:FUNCtion?
+            ```
 
-        **Info:**
+        Info:
             - ``SINE``
             - ``SQUare``
             - ``PULSe``
@@ -1570,24 +1525,23 @@ class Afg(SCPICmdRead):
     def highlevel(self) -> AfgHighlevel:
         """Return the ``AFG:HIGHLevel`` command.
 
-        **Description:**
+        Description:
             - This command sets (or queries) the high level value of the output waveform, in volts,
               when using the arbitrary function generator feature.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:HIGHLevel?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:HIGHLevel?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:HIGHLevel value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:HIGHLevel <NR3>
             - AFG:HIGHLevel?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that represents the AFG high level value, in
               volts.
         """
@@ -1597,7 +1551,7 @@ class Afg(SCPICmdRead):
     def levelpreset(self) -> AfgLevelpreset:
         """Return the ``AFG:LEVELPreset`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the AFG preset levels to values that correspond to the logic
               standard specified by the argument. The presets set the following vertical controls:
               AMPLitude OFFSet HIGHLevel LOWLevel Note that once any of these vertical settings are
@@ -1608,20 +1562,19 @@ class Afg(SCPICmdRead):
               ``CMOS_5_0V N``/A 5.0V ``CMOS_3_3V 2``.5V 0V 3.3V 0V ``CMOS_2_5V 2``.5V 0V 2.5V 0V ECL
               -0.85V -1.65V -0.9V -1.7V
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:LEVELPreset?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:LEVELPreset?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:LEVELPreset value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:LEVELPreset {CMOS_5_0V|CMOS_3_3V|CMOS_2_5V|ECL|TTL|USER}
             - AFG:LEVELPreset?
+            ```
 
-        **Info:**
+        Info:
             - ``CMOS_5_0V`` - standard 5-volt CMOS levels. Not available when the load impedance is
               50 Ohm.
             - ``CMOS_3_3V`` - standard 3.3-volt CMOS levels.
@@ -1637,24 +1590,23 @@ class Afg(SCPICmdRead):
     def lowlevel(self) -> AfgLowlevel:
         """Return the ``AFG:LOWLevel`` command.
 
-        **Description:**
+        Description:
             - This command sets (or queries) the low level value of the output waveform, in volts,
               when using the arbitrary function generator feature.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:LOWLevel?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:LOWLevel?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:LOWLevel value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:LOWLevel <NR3>
             - AFG:LOWLevel?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the floating point number that represents the AFG low level value, in
               volts.
         """
@@ -1664,7 +1616,7 @@ class Afg(SCPICmdRead):
     def noiseadd(self) -> AfgNoiseadd:
         """Return the ``AFG:NOISEAdd`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:NOISEAdd?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:NOISEAdd?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1679,23 +1631,22 @@ class Afg(SCPICmdRead):
     def offset(self) -> AfgOffset:
         """Return the ``AFG:OFFSet`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the AFG offset value, in volts.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:OFFSet?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:OFFSet?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:OFFSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:OFFSet <NR3>
             - AFG:OFFSet?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that represents the AFG offset, in volts.
         """
         return self._offset
@@ -1704,7 +1655,7 @@ class Afg(SCPICmdRead):
     def output(self) -> AfgOutput:
         """Return the ``AFG:OUTPut`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:OUTPut?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:OUTPut?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1719,23 +1670,22 @@ class Afg(SCPICmdRead):
     def period(self) -> AfgPeriod:
         """Return the ``AFG:PERIod`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the period of the AFG waveform, in seconds.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:PERIod?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:PERIod?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:PERIod value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:PERIod <NR3>
             - AFG:PERIod?
+            ```
 
-        **Info:**
+        Info:
             - ``NR3`` is the floating point number that represents the AFG period value, in seconds.
         """
         return self._period
@@ -1744,23 +1694,22 @@ class Afg(SCPICmdRead):
     def phase(self) -> AfgPhase:
         """Return the ``AFG:PHASe`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the AFG phase. The AFG phase setting controls the phase difference
               between the trigger signal output and the AFG waveform output. Phase is expressed in
               degrees and ranges from -180.0 to 180.0 in increments of 0.1 degrees.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:PHASe?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:PHASe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AFG:PHASe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFG:PHASe <NR3>
             - AFG:PHASe?
+            ```
         """
         return self._phase
 
@@ -1768,7 +1717,7 @@ class Afg(SCPICmdRead):
     def pulse(self) -> AfgPulse:
         """Return the ``AFG:PULse`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:PULse?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:PULse?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1782,7 +1731,7 @@ class Afg(SCPICmdRead):
     def ramp(self) -> AfgRamp:
         """Return the ``AFG:RAMP`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:RAMP?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:RAMP?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1796,7 +1745,7 @@ class Afg(SCPICmdRead):
     def square(self) -> AfgSquare:
         """Return the ``AFG:SQUare`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG:SQUare?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG:SQUare?`` query and raise an
               AssertionError if the returned value does not match ``value``.

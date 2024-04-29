@@ -10,13 +10,12 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SLISt:NAME? <sequence_list_index>
     - SLISt:SEQuence:AMPLitude <sequence_name>,<amplitude>? <sequence_name>
     - SLISt:SEQuence:DELete {<sequence_name>|ALL}
     - SLISt:SEQuence:EVENt:JTIMing <sequence_name>, {END|IMMediate}? <sequence_name>
-    - SLISt:SEQuence:EVENt:PJUMp:DEFine <sequence_name>, <pattern>, <jump_step>? <sequence_name>, <pattern>
+    - SLISt:SEQuence:EVENt:PJUMp:DEFine <sequence_name>, <pattern>, <jump_step>? <sequence_name>,
+      <pattern>
     - SLISt:SEQuence:EVENt:PJUMp:ENABle <sequence_name>, {0|1|OFF|ON}? <sequence_name>
     - SLISt:SEQuence:EVENt:PJUMp:SIZE?
     - SLISt:SEQuence:FREQuency <seq_name>,<frequency>? <seq_name>
@@ -28,7 +27,8 @@ Commands and Queries:
     - SLISt:SEQuence:STEP:ADD <sequence_name>,<location>[,<steps to add>]
     - SLISt:SEQuence:STEP:MAX?
     - SLISt:SEQuence:STEP:RCOunt:MAX?
-    - SLISt:SEQuence:STEP[n]:EJINput <sequence_name>,{ATRigger|BTRigger|OFF|ITRigger}? <sequence_name>
+    - SLISt:SEQuence:STEP[n]:EJINput <sequence_name>,{ATRigger|BTRigger|OFF|ITRigger}?
+      <sequence_name>
     - SLISt:SEQuence:STEP[n]:EJUMp <sequence_name>, {<NR1>|NEXT|FIRSt|LAST|END}? <sequence_name>
     - SLISt:SEQuence:STEP[n]:GOTO <sequence_name>, {<NR1>|LAST|FIRSt|NEXT|END}? <sequence_name>
     - SLISt:SEQuence:STEP[n]:RCOunt <sequence_name>, {ONCE|INFinite|<NR1>}? <sequence_name>
@@ -36,17 +36,22 @@ Commands and Queries:
     - SLISt:SEQuence:STEP[n]:TASSet[m]:TYPE? <sequence_name>
     - SLISt:SEQuence:STEP[n]:TASSet[m]:WAVeform <sequence_name>, <waveform_name>
     - SLISt:SEQuence:STEP[n]:TASSet[m]? <sequence_name>
-    - SLISt:SEQuence:STEP[n]:TFLag[m]:AFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}? <sequence_name>
-    - SLISt:SEQuence:STEP[n]:TFLag[m]:BFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}? <sequence_name>
-    - SLISt:SEQuence:STEP[n]:TFLag[m]:CFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}? <sequence_name>
-    - SLISt:SEQuence:STEP[n]:TFLag[m]:DFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}? <sequence_name>
-    - SLISt:SEQuence:STEP[n]:WINPut <sequence_name>, {ATRigger|BTRigger|ITRigger|OFF}? <sequence_name>
+    - SLISt:SEQuence:STEP[n]:TFLag[m]:AFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}?
+      <sequence_name>
+    - SLISt:SEQuence:STEP[n]:TFLag[m]:BFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}?
+      <sequence_name>
+    - SLISt:SEQuence:STEP[n]:TFLag[m]:CFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}?
+      <sequence_name>
+    - SLISt:SEQuence:STEP[n]:TFLag[m]:DFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}?
+      <sequence_name>
+    - SLISt:SEQuence:STEP[n]:WINPut <sequence_name>, {ATRigger|BTRigger|ITRigger|OFF}?
+      <sequence_name>
     - SLISt:SEQuence:TRACk:MAX?
     - SLISt:SEQuence:TRACk? <sequence_name>
     - SLISt:SEQuence:TSTamp? <sequence_name>
     - SLISt:SEQuence:WMUSage? <sequence_name>,<track_number>
     - SLISt:SIZE?
-"""  # noqa: E501
+"""
 
 from typing import Dict, Optional, TYPE_CHECKING
 
@@ -65,103 +70,98 @@ if TYPE_CHECKING:
 class SlistSize(SCPICmdRead):
     """The ``SLISt:SIZE`` command.
 
-    **Description:**
+    Description:
         - This command returns the number sequences in sequence list.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SLISt:SIZE?`` query.
         - Using the ``.verify(value)`` method will send the ``SLISt:SIZE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SIZE?
+        ```
     """
 
 
 class SlistSequenceWmusage(SCPICmdReadWithArguments):
     """The ``SLISt:SEQuence:WMUSage`` command.
 
-    **Description:**
+    Description:
         - This command returns the total waveform memory usage (in sample points) for the specified
           sequence track for the named sequence.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``SLISt:SEQuence:WMUSage? argument``
           query.
         - Using the ``.verify(argument, value)`` method will send the
           ``SLISt:SEQuence:WMUSage? argument`` query and raise an AssertionError if the returned
           value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:WMUSage? <sequence_name>,<track_number>
+        ```
     """
 
 
 class SlistSequenceTstamp(SCPICmdReadWithArguments):
     """The ``SLISt:SEQuence:TSTamp`` command.
 
-    **Description:**
+    Description:
         - This command returns the timestamp of the named sequence. Every sequence has a timestamp
           that indicates when the sequence was created or last modified.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``SLISt:SEQuence:TSTamp? argument``
           query.
         - Using the ``.verify(argument, value)`` method will send the
           ``SLISt:SEQuence:TSTamp? argument`` query and raise an AssertionError if the returned
           value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:TSTamp? <sequence_name>
+        ```
     """
 
 
 class SlistSequenceTrackMax(SCPICmdRead):
     """The ``SLISt:SEQuence:TRACk:MAX`` command.
 
-    **Description:**
+    Description:
         - This command returns the maximum number of tracks allowed in a sequence
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SLISt:SEQuence:TRACk:MAX?`` query.
         - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:TRACk:MAX?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:TRACk:MAX?
+        ```
     """
 
 
 class SlistSequenceTrack(SCPICmdReadWithArguments):
     """The ``SLISt:SEQuence:TRACk`` command.
 
-    **Description:**
+    Description:
         - This command returns the number of tracks defined in the specified sequence.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``SLISt:SEQuence:TRACk? argument``
           query.
         - Using the ``.verify(argument, value)`` method will send the
           ``SLISt:SEQuence:TRACk? argument`` query and raise an AssertionError if the returned value
           does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:TRACk? <sequence_name>
+        ```
 
     Properties:
         - ``.max``: The ``SLISt:SEQuence:TRACk:MAX`` command.
@@ -175,19 +175,18 @@ class SlistSequenceTrack(SCPICmdReadWithArguments):
     def max(self) -> SlistSequenceTrackMax:
         """Return the ``SLISt:SEQuence:TRACk:MAX`` command.
 
-        **Description:**
+        Description:
             - This command returns the maximum number of tracks allowed in a sequence
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SLISt:SEQuence:TRACk:MAX?`` query.
             - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:TRACk:MAX?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:TRACk:MAX?
+            ```
         """
         return self._max
 
@@ -195,23 +194,22 @@ class SlistSequenceTrack(SCPICmdReadWithArguments):
 class SlistSequenceStepItemWinput(SCPICmdWrite):
     """The ``SLISt:SEQuence:STEP[n]:WINPut`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the trigger source for the wait input state for a step. Send
           a trigger signal in one of the following ways: Use an external trigger signal. Push the
           Force Trigger button on the front panel. Send the TRG or ``TRIGGER:IMMEDIATE`` remote
           commands. Use the Internal Trigger.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:STEP[n]:WINPut value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:STEP[n]:WINPut <sequence_name>, {ATRigger|BTRigger|ITRigger|OFF}? <sequence_name>
+        ```
 
-    **Info:**
+    Info:
         - ``ATRigger`` - This enables the sequencer to move due to a trigger event from the A
           Trigger Input connector or the A Force Trigger front panel button. BTRigger - This enables
           the sequencer to move due to a trigger event from the B Trigger Input connector or the B
@@ -224,20 +222,19 @@ class SlistSequenceStepItemWinput(SCPICmdWrite):
 class SlistSequenceStepItemTflagItemDflag(SCPICmdWrite):
     """The ``SLISt:SEQuence:STEP[n]:TFLag[m]:DFLag`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Flag D value of the track in a sequence step.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``SLISt:SEQuence:STEP[n]:TFLag[m]:DFLag value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:STEP[n]:TFLag[m]:DFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}? <sequence_name>
+        ```
 
-    **Info:**
+    Info:
         - ``NCHange`` - The flag state continues to be in the state is defined in the previous step
           Default value. HIGH - The flag signal transitions to the high state. LOW - The flag signal
           transitions to the low state. TOGGle - The flag signal transitions to the high state if
@@ -249,20 +246,19 @@ class SlistSequenceStepItemTflagItemDflag(SCPICmdWrite):
 class SlistSequenceStepItemTflagItemCflag(SCPICmdWrite):
     """The ``SLISt:SEQuence:STEP[n]:TFLag[m]:CFLag`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Flag C value of the track in a sequence step.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``SLISt:SEQuence:STEP[n]:TFLag[m]:CFLag value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:STEP[n]:TFLag[m]:CFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}? <sequence_name>
+        ```
 
-    **Info:**
+    Info:
         - ``NCHange`` - The flag state continues to be in the state is defined in the previous step
           Default value. HIGH - The flag signal transitions to the high state. LOW - The flag signal
           transitions to the low state. TOGGle - The flag signal transitions to the high state if
@@ -274,20 +270,19 @@ class SlistSequenceStepItemTflagItemCflag(SCPICmdWrite):
 class SlistSequenceStepItemTflagItemBflag(SCPICmdWrite):
     """The ``SLISt:SEQuence:STEP[n]:TFLag[m]:BFLag`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Flag B value of the track in a sequence step.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``SLISt:SEQuence:STEP[n]:TFLag[m]:BFLag value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:STEP[n]:TFLag[m]:BFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}? <sequence_name>
+        ```
 
-    **Info:**
+    Info:
         - ``NCHange`` - The flag state continues to be in the state is defined in the previous step
           Default value. HIGH - The flag signal transitions to the high state. LOW - The flag signal
           transitions to the low state. TOGGle - The flag signal transitions to the high state if
@@ -299,20 +294,19 @@ class SlistSequenceStepItemTflagItemBflag(SCPICmdWrite):
 class SlistSequenceStepItemTflagItemAflag(SCPICmdWrite):
     """The ``SLISt:SEQuence:STEP[n]:TFLag[m]:AFLag`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Flag A value of the track in a sequence step.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``SLISt:SEQuence:STEP[n]:TFLag[m]:AFLag value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:STEP[n]:TFLag[m]:AFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}? <sequence_name>
+        ```
 
-    **Info:**
+    Info:
         - ``NCHange`` - The flag state continues to be in the state is defined in the previous step
           Default value. HIGH - The flag signal transitions to the high state. LOW - The flag signal
           transitions to the low state. TOGGle - The flag signal transitions to the high state if
@@ -324,7 +318,7 @@ class SlistSequenceStepItemTflagItemAflag(SCPICmdWrite):
 class SlistSequenceStepItemTflagItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``SLISt:SEQuence:STEP[n]:TFLag[m]`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SLISt:SEQuence:STEP[n]:TFLag[m]?`` query.
         - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:STEP[n]:TFLag[m]?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -347,20 +341,19 @@ class SlistSequenceStepItemTflagItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def aflag(self) -> SlistSequenceStepItemTflagItemAflag:
         """Return the ``SLISt:SEQuence:STEP[n]:TFLag[m]:AFLag`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Flag A value of the track in a sequence step.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``SLISt:SEQuence:STEP[n]:TFLag[m]:AFLag value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:STEP[n]:TFLag[m]:AFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}? <sequence_name>
+            ```
 
-        **Info:**
+        Info:
             - ``NCHange`` - The flag state continues to be in the state is defined in the previous
               step Default value. HIGH - The flag signal transitions to the high state. LOW - The
               flag signal transitions to the low state. TOGGle - The flag signal transitions to the
@@ -373,20 +366,19 @@ class SlistSequenceStepItemTflagItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def bflag(self) -> SlistSequenceStepItemTflagItemBflag:
         """Return the ``SLISt:SEQuence:STEP[n]:TFLag[m]:BFLag`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Flag B value of the track in a sequence step.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``SLISt:SEQuence:STEP[n]:TFLag[m]:BFLag value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:STEP[n]:TFLag[m]:BFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}? <sequence_name>
+            ```
 
-        **Info:**
+        Info:
             - ``NCHange`` - The flag state continues to be in the state is defined in the previous
               step Default value. HIGH - The flag signal transitions to the high state. LOW - The
               flag signal transitions to the low state. TOGGle - The flag signal transitions to the
@@ -399,20 +391,19 @@ class SlistSequenceStepItemTflagItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def cflag(self) -> SlistSequenceStepItemTflagItemCflag:
         """Return the ``SLISt:SEQuence:STEP[n]:TFLag[m]:CFLag`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Flag C value of the track in a sequence step.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``SLISt:SEQuence:STEP[n]:TFLag[m]:CFLag value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:STEP[n]:TFLag[m]:CFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}? <sequence_name>
+            ```
 
-        **Info:**
+        Info:
             - ``NCHange`` - The flag state continues to be in the state is defined in the previous
               step Default value. HIGH - The flag signal transitions to the high state. LOW - The
               flag signal transitions to the low state. TOGGle - The flag signal transitions to the
@@ -425,20 +416,19 @@ class SlistSequenceStepItemTflagItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def dflag(self) -> SlistSequenceStepItemTflagItemDflag:
         """Return the ``SLISt:SEQuence:STEP[n]:TFLag[m]:DFLag`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Flag D value of the track in a sequence step.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``SLISt:SEQuence:STEP[n]:TFLag[m]:DFLag value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:STEP[n]:TFLag[m]:DFLag <sequence_name>, {NCHange|HIGH|LOW|TOGGle|PULSe}? <sequence_name>
+            ```
 
-        **Info:**
+        Info:
             - ``NCHange`` - The flag state continues to be in the state is defined in the previous
               step Default value. HIGH - The flag signal transitions to the high state. LOW - The
               flag signal transitions to the low state. TOGGle - The flag signal transitions to the
@@ -451,65 +441,62 @@ class SlistSequenceStepItemTflagItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class SlistSequenceStepItemTassetItemWaveform(SCPICmdWrite):
     """The ``SLISt:SEQuence:STEP[n]:TASSet[m]:WAVeform`` command.
 
-    **Description:**
+    Description:
         - This command assigns a waveform for a specific sequence's step and track. This waveform is
           played whenever the playing sequence reaches this step. A track in a sequence is assigned
           to a channel with the command [SOURce[n]]``:CASSET:SEQ``.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``SLISt:SEQuence:STEP[n]:TASSet[m]:WAVeform value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:STEP[n]:TASSet[m]:WAVeform <sequence_name>, <waveform_name>
+        ```
     """
 
 
 class SlistSequenceStepItemTassetItemType(SCPICmdReadWithArguments):
     """The ``SLISt:SEQuence:STEP[n]:TASSet[m]:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command returns the type of asset assigned at the step and track for a specified
           sequence. The types of assets are waveform and subsequence.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``SLISt:SEQuence:STEP[n]:TASSet[m]:TYPE? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``SLISt:SEQuence:STEP[n]:TASSet[m]:TYPE? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:STEP[n]:TASSet[m]:TYPE? <sequence_name>
+        ```
     """
 
 
 class SlistSequenceStepItemTassetItem(ValidatedDynamicNumberCmd, SCPICmdReadWithArguments):
     """The ``SLISt:SEQuence:STEP[n]:TASSet[m]`` command.
 
-    **Description:**
+    Description:
         - This command returns the name of the waveform or subsequence at the specified sequence's
           step number and track asset value. Waveform or subsequence can be distinguished by the
           ``SLIST:SEQUENCE:STEPN:TASSETM:TYPE`` query.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``SLISt:SEQuence:STEP[n]:TASSet[m]? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``SLISt:SEQuence:STEP[n]:TASSet[m]? argument`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:STEP[n]:TASSet[m]? <sequence_name>
+        ```
 
     Properties:
         - ``.type``: The ``SLISt:SEQuence:STEP[n]:TASSet[m]:TYPE`` command.
@@ -527,22 +514,21 @@ class SlistSequenceStepItemTassetItem(ValidatedDynamicNumberCmd, SCPICmdReadWith
     def type(self) -> SlistSequenceStepItemTassetItemType:
         """Return the ``SLISt:SEQuence:STEP[n]:TASSet[m]:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command returns the type of asset assigned at the step and track for a specified
               sequence. The types of assets are waveform and subsequence.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``SLISt:SEQuence:STEP[n]:TASSet[m]:TYPE? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``SLISt:SEQuence:STEP[n]:TASSet[m]:TYPE? argument`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:STEP[n]:TASSet[m]:TYPE? <sequence_name>
+            ```
         """
         return self._type
 
@@ -550,20 +536,19 @@ class SlistSequenceStepItemTassetItem(ValidatedDynamicNumberCmd, SCPICmdReadWith
     def waveform(self) -> SlistSequenceStepItemTassetItemWaveform:
         """Return the ``SLISt:SEQuence:STEP[n]:TASSet[m]:WAVeform`` command.
 
-        **Description:**
+        Description:
             - This command assigns a waveform for a specific sequence's step and track. This
               waveform is played whenever the playing sequence reaches this step. A track in a
               sequence is assigned to a channel with the command [SOURce[n]]``:CASSET:SEQ``.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``SLISt:SEQuence:STEP[n]:TASSet[m]:WAVeform value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:STEP[n]:TASSet[m]:WAVeform <sequence_name>, <waveform_name>
+            ```
         """
         return self._waveform
 
@@ -571,25 +556,24 @@ class SlistSequenceStepItemTassetItem(ValidatedDynamicNumberCmd, SCPICmdReadWith
 class SlistSequenceStepItemTassetSequence(SCPICmdWrite):
     """The ``SLISt:SEQuence:STEP[n]:TASSet:SEQuence`` command.
 
-    **Description:**
+    Description:
         - This command assigns a subsequence for a specific sequence's step and track.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``SLISt:SEQuence:STEP[n]:TASSet:SEQuence value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:STEP[n]:TASSet:SEQuence <sequence_name>, <subsequence_name>
+        ```
     """
 
 
 class SlistSequenceStepItemTasset(SCPICmdRead):
     """The ``SLISt:SEQuence:STEP[n]:TASSet`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SLISt:SEQuence:STEP[n]:TASSet?`` query.
         - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:STEP[n]:TASSet?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -606,18 +590,17 @@ class SlistSequenceStepItemTasset(SCPICmdRead):
     def sequence(self) -> SlistSequenceStepItemTassetSequence:
         """Return the ``SLISt:SEQuence:STEP[n]:TASSet:SEQuence`` command.
 
-        **Description:**
+        Description:
             - This command assigns a subsequence for a specific sequence's step and track.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``SLISt:SEQuence:STEP[n]:TASSet:SEQuence value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:STEP[n]:TASSet:SEQuence <sequence_name>, <subsequence_name>
+            ```
         """
         return self._sequence
 
@@ -625,21 +608,20 @@ class SlistSequenceStepItemTasset(SCPICmdRead):
 class SlistSequenceStepItemRcount(SCPICmdWrite):
     """The ``SLISt:SEQuence:STEP[n]:RCOunt`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the repeat count, which is the number of times the assigned
           waveform(s) play before proceeding to the next step in the sequence.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:STEP[n]:RCOunt value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:STEP[n]:RCOunt <sequence_name>, {ONCE|INFinite|<NR1>}? <sequence_name>
+        ```
 
-    **Info:**
+    Info:
         - ``ONCE`` - Plays the waveform one time during this sequence step. INFinte - Plays the
           waveform continuously during this sequence step.<NR1> - Plays this waveform the selected
           number of times during this sequence step. The allowed value is between 1 and 2^20.
@@ -649,24 +631,23 @@ class SlistSequenceStepItemRcount(SCPICmdWrite):
 class SlistSequenceStepItemGoto(SCPICmdWrite):
     """The ``SLISt:SEQuence:STEP[n]:GOTO`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the target step for the GOTO command of the sequencer at the
           specified step. After generating the waveform(s) specified in a sequence step, the
           sequencer jumps to the step specified as the GOTO step. This is an unconditional jump. If
           the GOTO step is not specified, the sequencer moves to the next step. If the Repeat Count
           is Infinite, the specified GOTO step is not used.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:STEP[n]:GOTO value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:STEP[n]:GOTO <sequence_name>, {<NR1>|LAST|FIRSt|NEXT|END}? <sequence_name>
+        ```
 
-    **Info:**
+    Info:
         - ``LAST`` - This enables the sequencer to go to the last step in the sequence. FIRSt - This
           enables the sequencer to go to first step in the sequence. NEXT - This enables the
           sequencer to go to the next sequence step. (The ``SLISt:SEQuence:STEP``[n]``:EJUMp:STEP``
@@ -678,22 +659,21 @@ class SlistSequenceStepItemGoto(SCPICmdWrite):
 class SlistSequenceStepItemEjump(SCPICmdWrite):
     """The ``SLISt:SEQuence:STEP[n]:EJUMp`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the step that the specified sequence will jump to on a
           trigger event. This setting is only available if the event jump input has been selected as
           Trigger A or Trigger B for the specified step.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:STEP[n]:EJUMp value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:STEP[n]:EJUMp <sequence_name>, {<NR1>|NEXT|FIRSt|LAST|END}? <sequence_name>
+        ```
 
-    **Info:**
+    Info:
         - ``NEXT`` - This enables the sequencer to jump to the next sequence step. FIRSt - This
           enables the sequencer to jump to first step in the sequence. LAST - This enables the
           sequencer to jump to the last step in the sequence. END - This enables the sequencer to
@@ -704,22 +684,21 @@ class SlistSequenceStepItemEjump(SCPICmdWrite):
 class SlistSequenceStepItemEjinput(SCPICmdWrite):
     """The ``SLISt:SEQuence:STEP[n]:EJINput`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns wether the sequence will jump when it receives Trigger A,
           Trigger B, Internal Trigger, or no jump at all. This is settable for every step in a
           sequence.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:STEP[n]:EJINput value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:STEP[n]:EJINput <sequence_name>,{ATRigger|BTRigger|OFF|ITRigger}? <sequence_name>
+        ```
 
-    **Info:**
+    Info:
         - ``ATRigger`` - This enables the sequencer to jump to the event of a ATRIG. BTRigger - This
           enables the sequencer to jump to the event of a BTRIG. ITRigger - This enables the
           sequencer to jump to the event of an Internal Trigger. OFF - Ignores all events, even if
@@ -732,7 +711,7 @@ class SlistSequenceStepItemEjinput(SCPICmdWrite):
 class SlistSequenceStepItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``SLISt:SEQuence:STEP[n]`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SLISt:SEQuence:STEP[n]?`` query.
         - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:STEP[n]?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -767,22 +746,21 @@ class SlistSequenceStepItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def ejinput(self) -> SlistSequenceStepItemEjinput:
         """Return the ``SLISt:SEQuence:STEP[n]:EJINput`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns wether the sequence will jump when it receives Trigger A,
               Trigger B, Internal Trigger, or no jump at all. This is settable for every step in a
               sequence.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``SLISt:SEQuence:STEP[n]:EJINput value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:STEP[n]:EJINput <sequence_name>,{ATRigger|BTRigger|OFF|ITRigger}? <sequence_name>
+            ```
 
-        **Info:**
+        Info:
             - ``ATRigger`` - This enables the sequencer to jump to the event of a ATRIG. BTRigger -
               This enables the sequencer to jump to the event of a BTRIG. ITRigger - This enables
               the sequencer to jump to the event of an Internal Trigger. OFF - Ignores all events,
@@ -795,22 +773,21 @@ class SlistSequenceStepItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def ejump(self) -> SlistSequenceStepItemEjump:
         """Return the ``SLISt:SEQuence:STEP[n]:EJUMp`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the step that the specified sequence will jump to on a
               trigger event. This setting is only available if the event jump input has been
               selected as Trigger A or Trigger B for the specified step.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``SLISt:SEQuence:STEP[n]:EJUMp value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:STEP[n]:EJUMp <sequence_name>, {<NR1>|NEXT|FIRSt|LAST|END}? <sequence_name>
+            ```
 
-        **Info:**
+        Info:
             - ``NEXT`` - This enables the sequencer to jump to the next sequence step. FIRSt - This
               enables the sequencer to jump to first step in the sequence. LAST - This enables the
               sequencer to jump to the last step in the sequence. END - This enables the sequencer
@@ -822,24 +799,23 @@ class SlistSequenceStepItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def goto(self) -> SlistSequenceStepItemGoto:
         """Return the ``SLISt:SEQuence:STEP[n]:GOTO`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the target step for the GOTO command of the sequencer at
               the specified step. After generating the waveform(s) specified in a sequence step, the
               sequencer jumps to the step specified as the GOTO step. This is an unconditional jump.
               If the GOTO step is not specified, the sequencer moves to the next step. If the Repeat
               Count is Infinite, the specified GOTO step is not used.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:STEP[n]:GOTO value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:STEP[n]:GOTO <sequence_name>, {<NR1>|LAST|FIRSt|NEXT|END}? <sequence_name>
+            ```
 
-        **Info:**
+        Info:
             - ``LAST`` - This enables the sequencer to go to the last step in the sequence. FIRSt -
               This enables the sequencer to go to first step in the sequence. NEXT - This enables
               the sequencer to go to the next sequence step. (The
@@ -852,21 +828,20 @@ class SlistSequenceStepItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def rcount(self) -> SlistSequenceStepItemRcount:
         """Return the ``SLISt:SEQuence:STEP[n]:RCOunt`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the repeat count, which is the number of times the
               assigned waveform(s) play before proceeding to the next step in the sequence.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``SLISt:SEQuence:STEP[n]:RCOunt value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:STEP[n]:RCOunt <sequence_name>, {ONCE|INFinite|<NR1>}? <sequence_name>
+            ```
 
-        **Info:**
+        Info:
             - ``ONCE`` - Plays the waveform one time during this sequence step. INFinte - Plays the
               waveform continuously during this sequence step.<NR1> - Plays this waveform the
               selected number of times during this sequence step. The allowed value is between 1 and
@@ -878,7 +853,7 @@ class SlistSequenceStepItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def tasset(self) -> SlistSequenceStepItemTasset:
         """Return the ``SLISt:SEQuence:STEP[n]:TASSet`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SLISt:SEQuence:STEP[n]:TASSet?`` query.
             - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:STEP[n]:TASSet?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -892,23 +867,22 @@ class SlistSequenceStepItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def tassetx(self) -> Dict[int, SlistSequenceStepItemTassetItem]:
         """Return the ``SLISt:SEQuence:STEP[n]:TASSet[m]`` command.
 
-        **Description:**
+        Description:
             - This command returns the name of the waveform or subsequence at the specified
               sequence's step number and track asset value. Waveform or subsequence can be
               distinguished by the ``SLIST:SEQUENCE:STEPN:TASSETM:TYPE`` query.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``SLISt:SEQuence:STEP[n]:TASSet[m]? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``SLISt:SEQuence:STEP[n]:TASSet[m]? argument`` query and raise an AssertionError if
               the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:STEP[n]:TASSet[m]? <sequence_name>
+            ```
 
         Sub-properties:
             - ``.type``: The ``SLISt:SEQuence:STEP[n]:TASSet[m]:TYPE`` command.
@@ -920,7 +894,7 @@ class SlistSequenceStepItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def tflag(self) -> Dict[int, SlistSequenceStepItemTflagItem]:
         """Return the ``SLISt:SEQuence:STEP[n]:TFLag[m]`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SLISt:SEQuence:STEP[n]:TFLag[m]?``
               query.
             - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:STEP[n]:TFLag[m]?``
@@ -938,23 +912,22 @@ class SlistSequenceStepItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def winput(self) -> SlistSequenceStepItemWinput:
         """Return the ``SLISt:SEQuence:STEP[n]:WINPut`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the trigger source for the wait input state for a step.
               Send a trigger signal in one of the following ways: Use an external trigger signal.
               Push the Force Trigger button on the front panel. Send the TRG or
               ``TRIGGER:IMMEDIATE`` remote commands. Use the Internal Trigger.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``SLISt:SEQuence:STEP[n]:WINPut value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:STEP[n]:WINPut <sequence_name>, {ATRigger|BTRigger|ITRigger|OFF}? <sequence_name>
+            ```
 
-        **Info:**
+        Info:
             - ``ATRigger`` - This enables the sequencer to move due to a trigger event from the A
               Trigger Input connector or the A Force Trigger front panel button. BTRigger - This
               enables the sequencer to move due to a trigger event from the B Trigger Input
@@ -968,26 +941,25 @@ class SlistSequenceStepItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class SlistSequenceStepRcountMax(SCPICmdRead):
     """The ``SLISt:SEQuence:STEP:RCOunt:MAX`` command.
 
-    **Description:**
+    Description:
         - This command returns the maximum number of repeats allowed for a step in a sequence.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SLISt:SEQuence:STEP:RCOunt:MAX?`` query.
         - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:STEP:RCOunt:MAX?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:STEP:RCOunt:MAX?
+        ```
     """
 
 
 class SlistSequenceStepRcount(SCPICmdRead):
     """The ``SLISt:SEQuence:STEP:RCOunt`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SLISt:SEQuence:STEP:RCOunt?`` query.
         - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:STEP:RCOunt?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -1004,19 +976,18 @@ class SlistSequenceStepRcount(SCPICmdRead):
     def max(self) -> SlistSequenceStepRcountMax:
         """Return the ``SLISt:SEQuence:STEP:RCOunt:MAX`` command.
 
-        **Description:**
+        Description:
             - This command returns the maximum number of repeats allowed for a step in a sequence.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SLISt:SEQuence:STEP:RCOunt:MAX?`` query.
             - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:STEP:RCOunt:MAX?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:STEP:RCOunt:MAX?
+            ```
         """
         return self._max
 
@@ -1024,26 +995,25 @@ class SlistSequenceStepRcount(SCPICmdRead):
 class SlistSequenceStepMax(SCPICmdRead):
     """The ``SLISt:SEQuence:STEP:MAX`` command.
 
-    **Description:**
+    Description:
         - This command returns the maximum number of steps allowed in a sequence.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SLISt:SEQuence:STEP:MAX?`` query.
         - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:STEP:MAX?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:STEP:MAX?
+        ```
     """
 
 
 class SlistSequenceStepAdd(SCPICmdWrite):
     """The ``SLISt:SEQuence:STEP:ADD`` command.
 
-    **Description:**
+    Description:
         - This command adds steps to the named sequence. If the specified location is occupied, the
           step(s) are inserted prior to the specified step. If the specified location is the first
           unoccupied step in the sequence, the step(s) are appended to the sequence. If the
@@ -1052,22 +1022,21 @@ class SlistSequenceStepAdd(SCPICmdWrite):
           sequence with 25 steps, and you specify to add 5 steps beginning at location 30, steps
           will be added to fill the gap between steps 25 and 30.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:STEP:ADD value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:STEP:ADD <sequence_name>,<location>[,<steps to add>]
+        ```
     """
 
 
 class SlistSequenceStep(SCPICmdRead):
     """The ``SLISt:SEQuence:STEP`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SLISt:SEQuence:STEP?`` query.
         - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:STEP?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -1088,7 +1057,7 @@ class SlistSequenceStep(SCPICmdRead):
     def add(self) -> SlistSequenceStepAdd:
         """Return the ``SLISt:SEQuence:STEP:ADD`` command.
 
-        **Description:**
+        Description:
             - This command adds steps to the named sequence. If the specified location is occupied,
               the step(s) are inserted prior to the specified step. If the specified location is the
               first unoccupied step in the sequence, the step(s) are appended to the sequence. If
@@ -1097,15 +1066,14 @@ class SlistSequenceStep(SCPICmdRead):
               you have a sequence with 25 steps, and you specify to add 5 steps beginning at
               location 30, steps will be added to fill the gap between steps 25 and 30.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:STEP:ADD value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:STEP:ADD <sequence_name>,<location>[,<steps to add>]
+            ```
         """
         return self._add
 
@@ -1113,19 +1081,18 @@ class SlistSequenceStep(SCPICmdRead):
     def max(self) -> SlistSequenceStepMax:
         """Return the ``SLISt:SEQuence:STEP:MAX`` command.
 
-        **Description:**
+        Description:
             - This command returns the maximum number of steps allowed in a sequence.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SLISt:SEQuence:STEP:MAX?`` query.
             - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:STEP:MAX?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:STEP:MAX?
+            ```
         """
         return self._max
 
@@ -1133,7 +1100,7 @@ class SlistSequenceStep(SCPICmdRead):
     def rcount(self) -> SlistSequenceStepRcount:
         """Return the ``SLISt:SEQuence:STEP:RCOunt`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SLISt:SEQuence:STEP:RCOunt?`` query.
             - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:STEP:RCOunt?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -1147,154 +1114,146 @@ class SlistSequenceStep(SCPICmdRead):
 class SlistSequenceSrate(SCPICmdWrite):
     """The ``SLISt:SEQuence:SRATe`` command.
 
-    **Description:**
+    Description:
         - The command sets or returns the Recommended Sampling Rate of the specified sequence.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:SRATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:SRATe <sequence_name>,<sample_rate>? <sequence_name>
+        ```
     """
 
 
 class SlistSequenceRflag(SCPICmdWrite):
     """The ``SLISt:SEQuence:RFLag`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Enable Flag Repeat value for the sequence. If the value
           is ON, then the flags will change each time that the step plays out. For example if Wfm1
           is at a step in Sequence with repeat 2 and one of the flags is set to Toggle, then the
           flag state will toggle twice at this step if the Enable Flag Repeat value is ON.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:RFLag value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:RFLag <sequence_name>, {0|1|OFF|ON}? <sequence_name>
+        ```
     """
 
 
 class SlistSequenceOffset(SCPICmdWrite):
     """The ``SLISt:SEQuence:OFFSet`` command.
 
-    **Description:**
+    Description:
         - The command sets or returns the Recommended Offset of the specified sequence.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:OFFSet value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:OFFSet <sequence_name>,<offset>? <sequence_name>
+        ```
     """
 
 
 class SlistSequenceNew(SCPICmdWrite):
     """The ``SLISt:SEQuence:NEW`` command.
 
-    **Description:**
+    Description:
         - This command creates a new sequence with the selected name, number of steps, and number of
           tracks.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:NEW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:NEW <sequence_name>,<number_of_steps>[,<number_of_tracks>]
+        ```
     """
 
 
 class SlistSequenceLength(SCPICmdReadWithArguments):
     """The ``SLISt:SEQuence:LENGth`` command.
 
-    **Description:**
+    Description:
         - This command returns the total number of steps in the named sequence.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``SLISt:SEQuence:LENGth? argument``
           query.
         - Using the ``.verify(argument, value)`` method will send the
           ``SLISt:SEQuence:LENGth? argument`` query and raise an AssertionError if the returned
           value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:LENGth? <sequence_name>
+        ```
     """
 
 
 class SlistSequenceFrequency(SCPICmdWrite):
     """The ``SLISt:SEQuence:FREQuency`` command.
 
-    **Description:**
+    Description:
         - The command sets or returns the recommended frequency of the specified sequence when the
           sequence contains IQ waveforms.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:FREQuency value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:FREQuency <seq_name>,<frequency>? <seq_name>
+        ```
     """
 
 
 class SlistSequenceEventPjumpSize(SCPICmdRead):
     """The ``SLISt:SEQuence:EVENt:PJUMp:SIZE`` command.
 
-    **Description:**
+    Description:
         - This command returns the maximum number of entries in the pattern jump table.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SLISt:SEQuence:EVENt:PJUMp:SIZE?`` query.
         - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:EVENt:PJUMp:SIZE?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:EVENt:PJUMp:SIZE?
+        ```
     """
 
 
 class SlistSequenceEventPjumpEnable(SCPICmdWrite):
     """The ``SLISt:SEQuence:EVENt:PJUMp:ENABle`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Event Pattern Jump state (enabled or disabled) for the
           named sequence. When enabled, the data at the Pattern Jump In connector can be strobed in,
           causing a sequence to jump to a defined step. The sequence and step are defined with the
           command ``SLIST:SEQUENCE:EVENT:PJUMP:DEFINE``.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``SLISt:SEQuence:EVENt:PJUMp:ENABle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:EVENt:PJUMp:ENABle <sequence_name>, {0|1|OFF|ON}? <sequence_name>
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 0.
     """
 
@@ -1302,29 +1261,28 @@ class SlistSequenceEventPjumpEnable(SCPICmdWrite):
 class SlistSequenceEventPjumpDefine(SCPICmdWrite):
     """The ``SLISt:SEQuence:EVENt:PJUMp:DEFine`` command.
 
-    **Description:**
+    Description:
         - This command associates an event pattern with the jump-to-step for Pattern Jump. The query
           returns the jump step associated to the specified pattern. The event pattern is read from
           the Pattern Jump In connector on the rear panel. Eight bits of data and a strobe are
           required. When the strobed event pattern is received, an event pattern jump is created,
           moving the sequence to the step defined in this command.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``SLISt:SEQuence:EVENt:PJUMp:DEFine value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:EVENt:PJUMp:DEFine <sequence_name>, <pattern>, <jump_step>? <sequence_name>, <pattern>
+        ```
     """  # noqa: E501
 
 
 class SlistSequenceEventPjump(SCPICmdRead):
     """The ``SLISt:SEQuence:EVENt:PJUMp`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SLISt:SEQuence:EVENt:PJUMp?`` query.
         - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:EVENt:PJUMp?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -1345,22 +1303,21 @@ class SlistSequenceEventPjump(SCPICmdRead):
     def define(self) -> SlistSequenceEventPjumpDefine:
         """Return the ``SLISt:SEQuence:EVENt:PJUMp:DEFine`` command.
 
-        **Description:**
+        Description:
             - This command associates an event pattern with the jump-to-step for Pattern Jump. The
               query returns the jump step associated to the specified pattern. The event pattern is
               read from the Pattern Jump In connector on the rear panel. Eight bits of data and a
               strobe are required. When the strobed event pattern is received, an event pattern jump
               is created, moving the sequence to the step defined in this command.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``SLISt:SEQuence:EVENt:PJUMp:DEFine value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:EVENt:PJUMp:DEFine <sequence_name>, <pattern>, <jump_step>? <sequence_name>, <pattern>
+            ```
         """  # noqa: E501
         return self._define
 
@@ -1368,23 +1325,22 @@ class SlistSequenceEventPjump(SCPICmdRead):
     def enable(self) -> SlistSequenceEventPjumpEnable:
         """Return the ``SLISt:SEQuence:EVENt:PJUMp:ENABle`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Event Pattern Jump state (enabled or disabled) for
               the named sequence. When enabled, the data at the Pattern Jump In connector can be
               strobed in, causing a sequence to jump to a defined step. The sequence and step are
               defined with the command ``SLIST:SEQUENCE:EVENT:PJUMP:DEFINE``.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``SLISt:SEQuence:EVENt:PJUMp:ENABle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:EVENt:PJUMp:ENABle <sequence_name>, {0|1|OFF|ON}? <sequence_name>
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 0.
         """
         return self._enable
@@ -1393,20 +1349,19 @@ class SlistSequenceEventPjump(SCPICmdRead):
     def size(self) -> SlistSequenceEventPjumpSize:
         """Return the ``SLISt:SEQuence:EVENt:PJUMp:SIZE`` command.
 
-        **Description:**
+        Description:
             - This command returns the maximum number of entries in the pattern jump table.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SLISt:SEQuence:EVENt:PJUMp:SIZE?``
               query.
             - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:EVENt:PJUMp:SIZE?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:EVENt:PJUMp:SIZE?
+            ```
         """
         return self._size
 
@@ -1414,22 +1369,21 @@ class SlistSequenceEventPjump(SCPICmdRead):
 class SlistSequenceEventJtiming(SCPICmdWrite):
     """The ``SLISt:SEQuence:EVENt:JTIMing`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the condition of when the sequencer jumps upon a logic event,
           pattern jump, or software forced jump. The jump can occur immediately or at the end of the
           current sequence step.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:EVENt:JTIMing value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:EVENt:JTIMing <sequence_name>, {END|IMMediate}? <sequence_name>
+        ```
 
-    **Info:**
+    Info:
         - ``END`` - on receiving an event, wait until the end of current step before jumping to
           specified event jump step IMMediate - on receiving an event, immediately jump to specified
           event jump step.
@@ -1439,7 +1393,7 @@ class SlistSequenceEventJtiming(SCPICmdWrite):
 class SlistSequenceEvent(SCPICmdRead):
     """The ``SLISt:SEQuence:EVENt`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SLISt:SEQuence:EVENt?`` query.
         - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:EVENt?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1458,22 +1412,21 @@ class SlistSequenceEvent(SCPICmdRead):
     def jtiming(self) -> SlistSequenceEventJtiming:
         """Return the ``SLISt:SEQuence:EVENt:JTIMing`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the condition of when the sequencer jumps upon a logic
               event, pattern jump, or software forced jump. The jump can occur immediately or at the
               end of the current sequence step.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``SLISt:SEQuence:EVENt:JTIMing value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:EVENt:JTIMing <sequence_name>, {END|IMMediate}? <sequence_name>
+            ```
 
-        **Info:**
+        Info:
             - ``END`` - on receiving an event, wait until the end of current step before jumping to
               specified event jump step IMMediate - on receiving an event, immediately jump to
               specified event jump step.
@@ -1484,7 +1437,7 @@ class SlistSequenceEvent(SCPICmdRead):
     def pjump(self) -> SlistSequenceEventPjump:
         """Return the ``SLISt:SEQuence:EVENt:PJUMp`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SLISt:SEQuence:EVENt:PJUMp?`` query.
             - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:EVENt:PJUMp?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -1500,36 +1453,34 @@ class SlistSequenceEvent(SCPICmdRead):
 class SlistSequenceDelete(SCPICmdWrite):
     """The ``SLISt:SEQuence:DELete`` command.
 
-    **Description:**
+    Description:
         - This command deletes a specific sequence or all sequences from the sequence list.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:DELete value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:DELete {<sequence_name>|ALL}
+        ```
     """
 
 
 class SlistSequenceAmplitude(SCPICmdWrite):
     """The ``SLISt:SEQuence:AMPLitude`` command.
 
-    **Description:**
+    Description:
         - The command sets or returns the Recommended Amplitude (peak-to-peak) of the specified
           sequence.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:AMPLitude value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:SEQuence:AMPLitude <sequence_name>,<amplitude>? <sequence_name>
+        ```
     """
 
 
@@ -1537,7 +1488,7 @@ class SlistSequenceAmplitude(SCPICmdWrite):
 class SlistSequence(SCPICmdRead):
     """The ``SLISt:SEQuence`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SLISt:SEQuence?`` query.
         - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1582,19 +1533,18 @@ class SlistSequence(SCPICmdRead):
     def amplitude(self) -> SlistSequenceAmplitude:
         """Return the ``SLISt:SEQuence:AMPLitude`` command.
 
-        **Description:**
+        Description:
             - The command sets or returns the Recommended Amplitude (peak-to-peak) of the specified
               sequence.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:AMPLitude value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:AMPLitude <sequence_name>,<amplitude>? <sequence_name>
+            ```
         """
         return self._amplitude
 
@@ -1602,18 +1552,17 @@ class SlistSequence(SCPICmdRead):
     def delete(self) -> SlistSequenceDelete:
         """Return the ``SLISt:SEQuence:DELete`` command.
 
-        **Description:**
+        Description:
             - This command deletes a specific sequence or all sequences from the sequence list.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:DELete value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:DELete {<sequence_name>|ALL}
+            ```
         """
         return self._delete
 
@@ -1621,7 +1570,7 @@ class SlistSequence(SCPICmdRead):
     def event(self) -> SlistSequenceEvent:
         """Return the ``SLISt:SEQuence:EVENt`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SLISt:SEQuence:EVENt?`` query.
             - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:EVENt?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1636,19 +1585,18 @@ class SlistSequence(SCPICmdRead):
     def frequency(self) -> SlistSequenceFrequency:
         """Return the ``SLISt:SEQuence:FREQuency`` command.
 
-        **Description:**
+        Description:
             - The command sets or returns the recommended frequency of the specified sequence when
               the sequence contains IQ waveforms.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:FREQuency value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:FREQuency <seq_name>,<frequency>? <seq_name>
+            ```
         """
         return self._frequency
 
@@ -1656,21 +1604,20 @@ class SlistSequence(SCPICmdRead):
     def length(self) -> SlistSequenceLength:
         """Return the ``SLISt:SEQuence:LENGth`` command.
 
-        **Description:**
+        Description:
             - This command returns the total number of steps in the named sequence.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``SLISt:SEQuence:LENGth? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``SLISt:SEQuence:LENGth? argument`` query and raise an AssertionError if the returned
               value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:LENGth? <sequence_name>
+            ```
         """
         return self._length
 
@@ -1678,18 +1625,17 @@ class SlistSequence(SCPICmdRead):
     def new(self) -> SlistSequenceNew:
         """Return the ``SLISt:SEQuence:NEW`` command.
 
-        **Description:**
+        Description:
             - This command creates a new sequence with the selected name, number of steps, and
               number of tracks.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:NEW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:NEW <sequence_name>,<number_of_steps>[,<number_of_tracks>]
+            ```
         """
         return self._new
 
@@ -1697,18 +1643,17 @@ class SlistSequence(SCPICmdRead):
     def offset(self) -> SlistSequenceOffset:
         """Return the ``SLISt:SEQuence:OFFSet`` command.
 
-        **Description:**
+        Description:
             - The command sets or returns the Recommended Offset of the specified sequence.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:OFFSet value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:OFFSet <sequence_name>,<offset>? <sequence_name>
+            ```
         """
         return self._offset
 
@@ -1716,22 +1661,21 @@ class SlistSequence(SCPICmdRead):
     def rflag(self) -> SlistSequenceRflag:
         """Return the ``SLISt:SEQuence:RFLag`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Enable Flag Repeat value for the sequence. If the
               value is ON, then the flags will change each time that the step plays out. For example
               if Wfm1 is at a step in Sequence with repeat 2 and one of the flags is set to Toggle,
               then the flag state will toggle twice at this step if the Enable Flag Repeat value is
               ON.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:RFLag value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:RFLag <sequence_name>, {0|1|OFF|ON}? <sequence_name>
+            ```
         """
         return self._rflag
 
@@ -1739,18 +1683,17 @@ class SlistSequence(SCPICmdRead):
     def srate(self) -> SlistSequenceSrate:
         """Return the ``SLISt:SEQuence:SRATe`` command.
 
-        **Description:**
+        Description:
             - The command sets or returns the Recommended Sampling Rate of the specified sequence.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SLISt:SEQuence:SRATe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:SRATe <sequence_name>,<sample_rate>? <sequence_name>
+            ```
         """
         return self._srate
 
@@ -1758,7 +1701,7 @@ class SlistSequence(SCPICmdRead):
     def step(self) -> SlistSequenceStep:
         """Return the ``SLISt:SEQuence:STEP`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SLISt:SEQuence:STEP?`` query.
             - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:STEP?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1774,7 +1717,7 @@ class SlistSequence(SCPICmdRead):
     def stepx(self) -> Dict[int, SlistSequenceStepItem]:
         """Return the ``SLISt:SEQuence:STEP[n]`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SLISt:SEQuence:STEP[n]?`` query.
             - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence:STEP[n]?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -1795,21 +1738,20 @@ class SlistSequence(SCPICmdRead):
     def track(self) -> SlistSequenceTrack:
         """Return the ``SLISt:SEQuence:TRACk`` command.
 
-        **Description:**
+        Description:
             - This command returns the number of tracks defined in the specified sequence.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``SLISt:SEQuence:TRACk? argument``
               query.
             - Using the ``.verify(argument, value)`` method will send the
               ``SLISt:SEQuence:TRACk? argument`` query and raise an AssertionError if the returned
               value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:TRACk? <sequence_name>
+            ```
 
         Sub-properties:
             - ``.max``: The ``SLISt:SEQuence:TRACk:MAX`` command.
@@ -1820,22 +1762,21 @@ class SlistSequence(SCPICmdRead):
     def tstamp(self) -> SlistSequenceTstamp:
         """Return the ``SLISt:SEQuence:TSTamp`` command.
 
-        **Description:**
+        Description:
             - This command returns the timestamp of the named sequence. Every sequence has a
               timestamp that indicates when the sequence was created or last modified.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``SLISt:SEQuence:TSTamp? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``SLISt:SEQuence:TSTamp? argument`` query and raise an AssertionError if the returned
               value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:TSTamp? <sequence_name>
+            ```
         """
         return self._tstamp
 
@@ -1843,22 +1784,21 @@ class SlistSequence(SCPICmdRead):
     def wmusage(self) -> SlistSequenceWmusage:
         """Return the ``SLISt:SEQuence:WMUSage`` command.
 
-        **Description:**
+        Description:
             - This command returns the total waveform memory usage (in sample points) for the
               specified sequence track for the named sequence.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``SLISt:SEQuence:WMUSage? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``SLISt:SEQuence:WMUSage? argument`` query and raise an AssertionError if the returned
               value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SEQuence:WMUSage? <sequence_name>,<track_number>
+            ```
         """
         return self._wmusage
 
@@ -1866,26 +1806,25 @@ class SlistSequence(SCPICmdRead):
 class SlistName(SCPICmdReadWithArguments):
     """The ``SLISt:NAME`` command.
 
-    **Description:**
+    Description:
         - This command returns the name of the sequence at the specified sequence list index.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``SLISt:NAME? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the ``SLISt:NAME? argument`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SLISt:NAME? <sequence_list_index>
+        ```
     """
 
 
 class Slist(SCPICmdRead):
     """The ``SLISt`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SLISt?`` query.
         - Using the ``.verify(value)`` method will send the ``SLISt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1906,19 +1845,18 @@ class Slist(SCPICmdRead):
     def name(self) -> SlistName:
         """Return the ``SLISt:NAME`` command.
 
-        **Description:**
+        Description:
             - This command returns the name of the sequence at the specified sequence list index.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``SLISt:NAME? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the ``SLISt:NAME? argument``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:NAME? <sequence_list_index>
+            ```
         """
         return self._name
 
@@ -1926,7 +1864,7 @@ class Slist(SCPICmdRead):
     def sequence(self) -> SlistSequence:
         """Return the ``SLISt:SEQuence`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SLISt:SEQuence?`` query.
             - Using the ``.verify(value)`` method will send the ``SLISt:SEQuence?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -1953,18 +1891,17 @@ class Slist(SCPICmdRead):
     def size(self) -> SlistSize:
         """Return the ``SLISt:SIZE`` command.
 
-        **Description:**
+        Description:
             - This command returns the number sequences in sequence list.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SLISt:SIZE?`` query.
             - Using the ``.verify(value)`` method will send the ``SLISt:SIZE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SLISt:SIZE?
+            ```
         """
         return self._size

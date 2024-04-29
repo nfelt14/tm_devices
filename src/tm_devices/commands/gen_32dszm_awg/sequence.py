@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SEQuence:ELEMent[n]:GOTO:INDex <target>
     - SEQuence:ELEMent[n]:GOTO:INDex?
     - SEQuence:ELEMent[n]:GOTO:STATe <goto_state>
@@ -49,7 +47,7 @@ if TYPE_CHECKING:
 class SequenceLength(SCPICmdWrite, SCPICmdRead):
     """The ``SEQuence:LENGth`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the sequence length. Use this command to create an
           uninitialized sequence. You can also use the command to clear all sequence elements in a
           single action by passing 0 as the parameter. However, this action cannot be undone so
@@ -58,20 +56,19 @@ class SequenceLength(SCPICmdWrite, SCPICmdRead):
           For example if ``SEQuence:LENGth?`` returns 200 and you subsequently send
           ``SEQuence:LENGth 21``, all sequence elements except the first 20 will be deleted.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEQuence:LENGth?`` query.
         - Using the ``.verify(value)`` method will send the ``SEQuence:LENGth?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SEQuence:LENGth value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEQuence:LENGth <NR1>
         - SEQuence:LENGth?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>``
     """
 
@@ -79,22 +76,21 @@ class SequenceLength(SCPICmdWrite, SCPICmdRead):
 class SequenceJumpImmediate(SCPICmdWrite):
     """The ``SEQuence:JUMP:IMMediate`` command.
 
-    **Description:**
+    Description:
         - This command forces the sequencer to jump to the specified element index. This is called a
           Force jump. This command does not require an event for executing the jump. Also, the Jump
           target specified for event jump is not used here.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SEQuence:JUMP:IMMediate value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEQuence:JUMP:IMMediate <target>
+        ```
 
-    **Info:**
+    Info:
         - ``<target>`` ::=<NR1>.
     """
 
@@ -102,7 +98,7 @@ class SequenceJumpImmediate(SCPICmdWrite):
 class SequenceJump(SCPICmdRead):
     """The ``SEQuence:JUMP`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEQuence:JUMP?`` query.
         - Using the ``.verify(value)`` method will send the ``SEQuence:JUMP?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -119,22 +115,21 @@ class SequenceJump(SCPICmdRead):
     def immediate(self) -> SequenceJumpImmediate:
         """Return the ``SEQuence:JUMP:IMMediate`` command.
 
-        **Description:**
+        Description:
             - This command forces the sequencer to jump to the specified element index. This is
               called a Force jump. This command does not require an event for executing the jump.
               Also, the Jump target specified for event jump is not used here.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SEQuence:JUMP:IMMediate value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEQuence:JUMP:IMMediate <target>
+            ```
 
-        **Info:**
+        Info:
             - ``<target>`` ::=<NR1>.
         """
         return self._immediate
@@ -143,20 +138,19 @@ class SequenceJump(SCPICmdRead):
 class SequenceElementItemWaveformItem(ValidatedDynamicNumberCmd, SCPICmdWrite):
     """The ``SEQuence:ELEMent[n]:WAVeform[m]`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the waveform for a sequence element.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SEQuence:ELEMent[n]:WAVeform[m] value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEQuence:ELEMent[n]:WAVeform[m] [1|2|3|4] <wfm_name>[1|2|3|4]?
+        ```
 
-    **Info:**
+    Info:
         - ``<wfm_name`` >::=<string>.
     """
 
@@ -164,27 +158,26 @@ class SequenceElementItemWaveformItem(ValidatedDynamicNumberCmd, SCPICmdWrite):
 class SequenceElementItemTwait(SCPICmdWrite, SCPICmdRead):
     """The ``SEQuence:ELEMent[n]:TWAit`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the wait trigger state for an element. Send a
           trigger signal in one of the following ways: By using an external trigger signal. By
           pressing the 'Force Trigger' button on the front panel. By sending the ``*TRG`` remote
           command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:TWAit?`` query.
         - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:TWAit?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SEQuence:ELEMent[n]:TWAit value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEQuence:ELEMent[n]:TWAit <Boolean>
         - SEQuence:ELEMent[n]:TWAit?
+        ```
 
-    **Info:**
+    Info:
         - ``<wait_trigger_state>`` ::=<Boolean>.
         - ``0`` indicates OFF.
         - ``1`` indicates ON.
@@ -194,27 +187,26 @@ class SequenceElementItemTwait(SCPICmdWrite, SCPICmdRead):
 class SequenceElementItemSubsequence(SCPICmdWrite, SCPICmdRead):
     """The ``SEQuence:ELEMent[n]:SUBSequence`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the subsequence for a sequence element. The
           AWG5012B, AWG5000C, and AWG7000C (option 09) series instruments support Subsequence. The
           subsequence name can be a null string (''). When a waveform is assigned to this sequence,
           the command returns ''.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:SUBSequence?`` query.
         - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:SUBSequence?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SEQuence:ELEMent[n]:SUBSequence value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEQuence:ELEMent[n]:SUBSequence <subseq_name>
         - SEQuence:ELEMent[n]:SUBSequence?
+        ```
 
-    **Info:**
+    Info:
         - ``<subseq_name>`` ::=<string>.
     """
 
@@ -222,27 +214,26 @@ class SequenceElementItemSubsequence(SCPICmdWrite, SCPICmdRead):
 class SequenceElementItemLoopInfinite(SCPICmdWrite, SCPICmdRead):
     """The ``SEQuence:ELEMent[n]:LOOP:INFinite`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the infinite looping state for a sequence element.
           When an infinite loop is set on an element, the sequencer continuously executes that
           element. To break the infinite loop, either issue the ``AWGCONTROL:STOP:IMMEDIATE``
           command or change the run mode to Continuous by using ``AWGCONTROL:RMODE`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:LOOP:INFinite?`` query.
         - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:LOOP:INFinite?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``SEQuence:ELEMent[n]:LOOP:INFinite value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEQuence:ELEMent[n]:LOOP:INFinite <loop_state>
         - SEQuence:ELEMent[n]:LOOP:INFinite?
+        ```
 
-    **Info:**
+    Info:
         - ``<loop_state>`` ::=<Boolean>.
         - ``0`` indicates OFF.
         - ``1`` indicates ON.
@@ -252,25 +243,24 @@ class SequenceElementItemLoopInfinite(SCPICmdWrite, SCPICmdRead):
 class SequenceElementItemLoopCount(SCPICmdWrite, SCPICmdRead):
     """The ``SEQuence:ELEMent[n]:LOOP:COUNt`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the loop count. Loop count setting for an element
           is ignored if ``SEQUENCE:ELEMENTN:LOOP:INFINITE`` is set to ON.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:LOOP:COUNt?`` query.
         - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:LOOP:COUNt?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SEQuence:ELEMent[n]:LOOP:COUNt value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEQuence:ELEMent[n]:LOOP:COUNt <NR1>
         - SEQuence:ELEMent[n]:LOOP:COUNt?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>``
     """
 
@@ -278,7 +268,7 @@ class SequenceElementItemLoopCount(SCPICmdWrite, SCPICmdRead):
 class SequenceElementItemLoop(SCPICmdRead):
     """The ``SEQuence:ELEMent[n]:LOOP`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:LOOP?`` query.
         - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:LOOP?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -297,25 +287,24 @@ class SequenceElementItemLoop(SCPICmdRead):
     def count(self) -> SequenceElementItemLoopCount:
         """Return the ``SEQuence:ELEMent[n]:LOOP:COUNt`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the loop count. Loop count setting for an
               element is ignored if ``SEQUENCE:ELEMENTN:LOOP:INFINITE`` is set to ON.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:LOOP:COUNt?`` query.
             - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:LOOP:COUNt?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SEQuence:ELEMent[n]:LOOP:COUNt value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEQuence:ELEMent[n]:LOOP:COUNt <NR1>
             - SEQuence:ELEMent[n]:LOOP:COUNt?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>``
         """
         return self._count
@@ -324,14 +313,14 @@ class SequenceElementItemLoop(SCPICmdRead):
     def infinite(self) -> SequenceElementItemLoopInfinite:
         """Return the ``SEQuence:ELEMent[n]:LOOP:INFinite`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the infinite looping state for a sequence
               element. When an infinite loop is set on an element, the sequencer continuously
               executes that element. To break the infinite loop, either issue the
               ``AWGCONTROL:STOP:IMMEDIATE`` command or change the run mode to Continuous by using
               ``AWGCONTROL:RMODE`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:LOOP:INFinite?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -340,14 +329,13 @@ class SequenceElementItemLoop(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEQuence:ELEMent[n]:LOOP:INFinite value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEQuence:ELEMent[n]:LOOP:INFinite <loop_state>
             - SEQuence:ELEMent[n]:LOOP:INFinite?
+            ```
 
-        **Info:**
+        Info:
             - ``<loop_state>`` ::=<Boolean>.
             - ``0`` indicates OFF.
             - ``1`` indicates ON.
@@ -358,27 +346,26 @@ class SequenceElementItemLoop(SCPICmdRead):
 class SequenceElementItemJtargetType(SCPICmdWrite, SCPICmdRead):
     """The ``SEQuence:ELEMent[n]:JTARget:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the event jump target type for the jump. Generate
           an event in one of the following ways: By connecting an external cable to instrument rear
           panel for external event. By pressing the Force Event button on the front panel. By
           sending the ``EVENT:IMMEDIATE`` remote command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:JTARget:TYPE?`` query.
         - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:JTARget:TYPE?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``SEQuence:ELEMent[n]:JTARget:TYPE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEQuence:ELEMent[n]:JTARget:TYPE {INDex|NEXT|OFF}
         - SEQuence:ELEMent[n]:JTARget:TYPE?
+        ```
 
-    **Info:**
+    Info:
         - ``INDex`` . This enables the sequencer to jump to an index set using
           ``SEQuence:ELEMent1:JTARget:INDexcommand``.
         - ``NEXT`` . This enables the sequencer to jump to the next sequence element.
@@ -391,26 +378,25 @@ class SequenceElementItemJtargetType(SCPICmdWrite, SCPICmdRead):
 class SequenceElementItemJtargetIndex(SCPICmdWrite, SCPICmdRead):
     """The ``SEQuence:ELEMent[n]:JTARget:INDex`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the target index for the sequencer's event jump
           operation. Note that this will take effect only when ``SEQUENCE:ELEMENTN:JTARGET:TYPE`` is
           set to INDex.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:JTARget:INDex?`` query.
         - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:JTARget:INDex?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``SEQuence:ELEMent[n]:JTARget:INDex value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEQuence:ELEMent[n]:JTARget:INDex <target>
         - SEQuence:ELEMent[n]:JTARget:INDex?
+        ```
 
-    **Info:**
+    Info:
         - ``<target>`` ::=<NR1>.
         - ``<n>`` is an index number of sequence.
     """
@@ -419,7 +405,7 @@ class SequenceElementItemJtargetIndex(SCPICmdWrite, SCPICmdRead):
 class SequenceElementItemJtarget(SCPICmdRead):
     """The ``SEQuence:ELEMent[n]:JTARget`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:JTARget?`` query.
         - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:JTARget?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -438,12 +424,12 @@ class SequenceElementItemJtarget(SCPICmdRead):
     def index(self) -> SequenceElementItemJtargetIndex:
         """Return the ``SEQuence:ELEMent[n]:JTARget:INDex`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the target index for the sequencer's event jump
               operation. Note that this will take effect only when
               ``SEQUENCE:ELEMENTN:JTARGET:TYPE`` is set to INDex.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:JTARget:INDex?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -452,14 +438,13 @@ class SequenceElementItemJtarget(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEQuence:ELEMent[n]:JTARget:INDex value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEQuence:ELEMent[n]:JTARget:INDex <target>
             - SEQuence:ELEMent[n]:JTARget:INDex?
+            ```
 
-        **Info:**
+        Info:
             - ``<target>`` ::=<NR1>.
             - ``<n>`` is an index number of sequence.
         """
@@ -469,13 +454,13 @@ class SequenceElementItemJtarget(SCPICmdRead):
     def type(self) -> SequenceElementItemJtargetType:
         """Return the ``SEQuence:ELEMent[n]:JTARget:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the event jump target type for the jump.
               Generate an event in one of the following ways: By connecting an external cable to
               instrument rear panel for external event. By pressing the Force Event button on the
               front panel. By sending the ``EVENT:IMMEDIATE`` remote command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:JTARget:TYPE?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -484,14 +469,13 @@ class SequenceElementItemJtarget(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEQuence:ELEMent[n]:JTARget:TYPE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEQuence:ELEMent[n]:JTARget:TYPE {INDex|NEXT|OFF}
             - SEQuence:ELEMent[n]:JTARget:TYPE?
+            ```
 
-        **Info:**
+        Info:
             - ``INDex`` . This enables the sequencer to jump to an index set using
               ``SEQuence:ELEMent1:JTARget:INDexcommand``.
             - ``NEXT`` . This enables the sequencer to jump to the next sequence element.
@@ -505,25 +489,24 @@ class SequenceElementItemJtarget(SCPICmdRead):
 class SequenceElementItemGotoState(SCPICmdWrite, SCPICmdRead):
     """The ``SEQuence:ELEMent[n]:GOTO:STATe`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the GOTO state of the sequencer. For the
           ``SEQUENCE:ELEMENTN:GOTO:INDEX`` command to take effect, the GOTO state must be set to ON.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:GOTO:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:GOTO:STATe?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SEQuence:ELEMent[n]:GOTO:STATe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEQuence:ELEMent[n]:GOTO:STATe <goto_state>
         - SEQuence:ELEMent[n]:GOTO:STATe?
+        ```
 
-    **Info:**
+    Info:
         - ``<goto_state>`` ::=<Boolean>.
         - ``0`` indicates OFF.
         - ``1`` indicates ON.
@@ -533,7 +516,7 @@ class SequenceElementItemGotoState(SCPICmdWrite, SCPICmdRead):
 class SequenceElementItemGotoIndex(SCPICmdWrite, SCPICmdRead):
     """The ``SEQuence:ELEMent[n]:GOTO:INDex`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the target index for the GOTO command of the
           sequencer. After generating the waveform specified in a sequence element, the sequencer
           jumps to the element specified as GOTO target. This is an unconditional jump. If GOTO
@@ -542,21 +525,20 @@ class SequenceElementItemGotoIndex(SCPICmdWrite, SCPICmdRead):
           command to work, the ``SEQUENCE:ELEMENTN:GOTO:STATE`` must be ON and the sequence element
           must exist. Note that the first element of a sequence is taken to be 1 not 0.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:GOTO:INDex?`` query.
         - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:GOTO:INDex?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SEQuence:ELEMent[n]:GOTO:INDex value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEQuence:ELEMent[n]:GOTO:INDex <target>
         - SEQuence:ELEMent[n]:GOTO:INDex?
+        ```
 
-    **Info:**
+    Info:
         - ``<target>`` ::=<NR1>.
     """
 
@@ -564,7 +546,7 @@ class SequenceElementItemGotoIndex(SCPICmdWrite, SCPICmdRead):
 class SequenceElementItemGoto(SCPICmdRead):
     """The ``SEQuence:ELEMent[n]:GOTO`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:GOTO?`` query.
         - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:GOTO?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -583,7 +565,7 @@ class SequenceElementItemGoto(SCPICmdRead):
     def index(self) -> SequenceElementItemGotoIndex:
         """Return the ``SEQuence:ELEMent[n]:GOTO:INDex`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the target index for the GOTO command of the
               sequencer. After generating the waveform specified in a sequence element, the
               sequencer jumps to the element specified as GOTO target. This is an unconditional
@@ -593,21 +575,20 @@ class SequenceElementItemGoto(SCPICmdRead):
               must be ON and the sequence element must exist. Note that the first element of a
               sequence is taken to be 1 not 0.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:GOTO:INDex?`` query.
             - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:GOTO:INDex?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SEQuence:ELEMent[n]:GOTO:INDex value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEQuence:ELEMent[n]:GOTO:INDex <target>
             - SEQuence:ELEMent[n]:GOTO:INDex?
+            ```
 
-        **Info:**
+        Info:
             - ``<target>`` ::=<NR1>.
         """
         return self._index
@@ -616,26 +597,25 @@ class SequenceElementItemGoto(SCPICmdRead):
     def state(self) -> SequenceElementItemGotoState:
         """Return the ``SEQuence:ELEMent[n]:GOTO:STATe`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the GOTO state of the sequencer. For the
               ``SEQUENCE:ELEMENTN:GOTO:INDEX`` command to take effect, the GOTO state must be set to
               ON.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:GOTO:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:GOTO:STATe?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SEQuence:ELEMent[n]:GOTO:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEQuence:ELEMent[n]:GOTO:STATe <goto_state>
             - SEQuence:ELEMent[n]:GOTO:STATe?
+            ```
 
-        **Info:**
+        Info:
             - ``<goto_state>`` ::=<Boolean>.
             - ``0`` indicates OFF.
             - ``1`` indicates ON.
@@ -646,7 +626,7 @@ class SequenceElementItemGoto(SCPICmdRead):
 class SequenceElementItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``SEQuence:ELEMent[n]`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]?`` query.
         - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -677,7 +657,7 @@ class SequenceElementItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def goto(self) -> SequenceElementItemGoto:
         """Return the ``SEQuence:ELEMent[n]:GOTO`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:GOTO?`` query.
             - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:GOTO?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -692,7 +672,7 @@ class SequenceElementItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def jtarget(self) -> SequenceElementItemJtarget:
         """Return the ``SEQuence:ELEMent[n]:JTARget`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:JTARget?`` query.
             - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:JTARget?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -707,7 +687,7 @@ class SequenceElementItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def loop(self) -> SequenceElementItemLoop:
         """Return the ``SEQuence:ELEMent[n]:LOOP`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:LOOP?`` query.
             - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:LOOP?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -722,13 +702,13 @@ class SequenceElementItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def subsequence(self) -> SequenceElementItemSubsequence:
         """Return the ``SEQuence:ELEMent[n]:SUBSequence`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the subsequence for a sequence element. The
               AWG5012B, AWG5000C, and AWG7000C (option 09) series instruments support Subsequence.
               The subsequence name can be a null string (''). When a waveform is assigned to this
               sequence, the command returns ''.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:SUBSequence?``
               query.
             - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:SUBSequence?``
@@ -736,14 +716,13 @@ class SequenceElementItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEQuence:ELEMent[n]:SUBSequence value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEQuence:ELEMent[n]:SUBSequence <subseq_name>
             - SEQuence:ELEMent[n]:SUBSequence?
+            ```
 
-        **Info:**
+        Info:
             - ``<subseq_name>`` ::=<string>.
         """
         return self._subsequence
@@ -752,27 +731,26 @@ class SequenceElementItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def twait(self) -> SequenceElementItemTwait:
         """Return the ``SEQuence:ELEMent[n]:TWAit`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the wait trigger state for an element. Send a
               trigger signal in one of the following ways: By using an external trigger signal. By
               pressing the 'Force Trigger' button on the front panel. By sending the ``*TRG`` remote
               command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]:TWAit?`` query.
             - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]:TWAit?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SEQuence:ELEMent[n]:TWAit value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEQuence:ELEMent[n]:TWAit <Boolean>
             - SEQuence:ELEMent[n]:TWAit?
+            ```
 
-        **Info:**
+        Info:
             - ``<wait_trigger_state>`` ::=<Boolean>.
             - ``0`` indicates OFF.
             - ``1`` indicates ON.
@@ -783,20 +761,19 @@ class SequenceElementItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def waveform(self) -> Dict[int, SequenceElementItemWaveformItem]:
         """Return the ``SEQuence:ELEMent[n]:WAVeform[m]`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the waveform for a sequence element.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``SEQuence:ELEMent[n]:WAVeform[m] value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEQuence:ELEMent[n]:WAVeform[m] [1|2|3|4] <wfm_name>[1|2|3|4]?
+            ```
 
-        **Info:**
+        Info:
             - ``<wfm_name`` >::=<string>.
         """
         return self._waveform
@@ -805,7 +782,7 @@ class SequenceElementItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class Sequence(SCPICmdRead):
     """The ``SEQuence`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEQuence?`` query.
         - Using the ``.verify(value)`` method will send the ``SEQuence?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -828,7 +805,7 @@ class Sequence(SCPICmdRead):
     def element(self) -> Dict[int, SequenceElementItem]:
         """Return the ``SEQuence:ELEMent[n]`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEQuence:ELEMent[n]?`` query.
             - Using the ``.verify(value)`` method will send the ``SEQuence:ELEMent[n]?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -847,7 +824,7 @@ class Sequence(SCPICmdRead):
     def jump(self) -> SequenceJump:
         """Return the ``SEQuence:JUMP`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEQuence:JUMP?`` query.
             - Using the ``.verify(value)`` method will send the ``SEQuence:JUMP?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -861,7 +838,7 @@ class Sequence(SCPICmdRead):
     def length(self) -> SequenceLength:
         """Return the ``SEQuence:LENGth`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the sequence length. Use this command to create
               an uninitialized sequence. You can also use the command to clear all sequence elements
               in a single action by passing 0 as the parameter. However, this action cannot be
@@ -871,20 +848,19 @@ class Sequence(SCPICmdRead):
               send ``SEQuence:LENGth 21``, all sequence elements except the first 20 will be
               deleted.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEQuence:LENGth?`` query.
             - Using the ``.verify(value)`` method will send the ``SEQuence:LENGth?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SEQuence:LENGth value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEQuence:LENGth <NR1>
             - SEQuence:LENGth?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>``
         """
         return self._length

@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - VERTical:DESKew:FROM:CUSTOMPROPAgation <NR3>
     - VERTical:DESKew:FROM:CUSTOMPROPAgation?
     - VERTical:DESKew:FROM:SOUrce CH<x>
@@ -32,25 +30,24 @@ if TYPE_CHECKING:
 class VerticalDeskewToSource(SCPICmdWrite, SCPICmdRead):
     """The ``VERTical:DESKew:TO:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the target channel for performing channel-to-channel deskew
           adjustment. Target sources can be any of the live analog channels.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VERTical:DESKew:TO:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``VERTical:DESKew:TO:SOUrce?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VERTical:DESKew:TO:SOUrce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VERTical:DESKew:TO:SOUrce CH<x>
         - VERTical:DESKew:TO:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies an analog channel as the source.
     """
 
@@ -58,22 +55,21 @@ class VerticalDeskewToSource(SCPICmdWrite, SCPICmdRead):
 class VerticalDeskewToCustompropagation(SCPICmdWrite):
     """The ``VERTical:DESKew:TO:CUSTOMPROPAgation`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries a target (TO) delay that can be specified by the user when
           the propagation delay of the target (TO) probe used for deskew cannot be detected
           automatically.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``VERTical:DESKew:TO:CUSTOMPROPAgation value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VERTical:DESKew:TO:CUSTOMPROPAgation <NR3>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a target (TO) delay that can be specified by the user when the propagation
           delay of the target (TO) probe used for deskew cannot be detected automatically.
     """
@@ -82,7 +78,7 @@ class VerticalDeskewToCustompropagation(SCPICmdWrite):
 class VerticalDeskewTo(SCPICmdRead):
     """The ``VERTical:DESKew:TO`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VERTical:DESKew:TO?`` query.
         - Using the ``.verify(value)`` method will send the ``VERTical:DESKew:TO?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -103,22 +99,21 @@ class VerticalDeskewTo(SCPICmdRead):
     def custompropagation(self) -> VerticalDeskewToCustompropagation:
         """Return the ``VERTical:DESKew:TO:CUSTOMPROPAgation`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries a target (TO) delay that can be specified by the user
               when the propagation delay of the target (TO) probe used for deskew cannot be detected
               automatically.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``VERTical:DESKew:TO:CUSTOMPROPAgation value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VERTical:DESKew:TO:CUSTOMPROPAgation <NR3>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a target (TO) delay that can be specified by the user when the
               propagation delay of the target (TO) probe used for deskew cannot be detected
               automatically.
@@ -129,25 +124,24 @@ class VerticalDeskewTo(SCPICmdRead):
     def source(self) -> VerticalDeskewToSource:
         """Return the ``VERTical:DESKew:TO:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the target channel for performing channel-to-channel
               deskew adjustment. Target sources can be any of the live analog channels.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VERTical:DESKew:TO:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``VERTical:DESKew:TO:SOUrce?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VERTical:DESKew:TO:SOUrce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VERTical:DESKew:TO:SOUrce CH<x>
             - VERTical:DESKew:TO:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies an analog channel as the source.
         """
         return self._source
@@ -156,19 +150,18 @@ class VerticalDeskewTo(SCPICmdRead):
 class VerticalDeskewStatic(SCPICmdWrite):
     """The ``VERTical:DESKew:STATIC`` command.
 
-    **Description:**
+    Description:
         - This command executes static deskew using the deskew settings.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``VERTical:DESKew:STATIC value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VERTical:DESKew:STATIC EXECute
+        ```
 
-    **Info:**
+    Info:
         - ``EXECute`` will execute static deskew using the deskew settings.
     """
 
@@ -176,25 +169,24 @@ class VerticalDeskewStatic(SCPICmdWrite):
 class VerticalDeskewFromSource(SCPICmdWrite, SCPICmdRead):
     """The ``VERTical:DESKew:FROM:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the source channel for performing channel-to-channel deskew
           adjustment. Sources can be any of the analog channels.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VERTical:DESKew:FROM:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``VERTical:DESKew:FROM:SOUrce?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VERTical:DESKew:FROM:SOUrce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VERTical:DESKew:FROM:SOUrce CH<x>
         - VERTical:DESKew:FROM:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies an analog channel as the source.
     """
 
@@ -202,12 +194,12 @@ class VerticalDeskewFromSource(SCPICmdWrite, SCPICmdRead):
 class VerticalDeskewFromCustompropagation(SCPICmdWrite, SCPICmdRead):
     """The ``VERTical:DESKew:FROM:CUSTOMPROPAgation`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries a target (FROM) delay that you can specify when the
           propagation delay of the target (FROM) probe used for deskew cannot be detected
           automatically.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VERTical:DESKew:FROM:CUSTOMPROPAgation?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -216,14 +208,13 @@ class VerticalDeskewFromCustompropagation(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``VERTical:DESKew:FROM:CUSTOMPROPAgation value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VERTical:DESKew:FROM:CUSTOMPROPAgation <NR3>
         - VERTical:DESKew:FROM:CUSTOMPROPAgation?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a target (FROM) delay that you can specify when the propagation delay of the
           target (FROM) probe used for deskew cannot be detected automatically.
     """
@@ -232,7 +223,7 @@ class VerticalDeskewFromCustompropagation(SCPICmdWrite, SCPICmdRead):
 class VerticalDeskewFrom(SCPICmdRead):
     """The ``VERTical:DESKew:FROM`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VERTical:DESKew:FROM?`` query.
         - Using the ``.verify(value)`` method will send the ``VERTical:DESKew:FROM?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -253,12 +244,12 @@ class VerticalDeskewFrom(SCPICmdRead):
     def custompropagation(self) -> VerticalDeskewFromCustompropagation:
         """Return the ``VERTical:DESKew:FROM:CUSTOMPROPAgation`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries a target (FROM) delay that you can specify when the
               propagation delay of the target (FROM) probe used for deskew cannot be detected
               automatically.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``VERTical:DESKew:FROM:CUSTOMPROPAgation?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -267,14 +258,13 @@ class VerticalDeskewFrom(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``VERTical:DESKew:FROM:CUSTOMPROPAgation value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VERTical:DESKew:FROM:CUSTOMPROPAgation <NR3>
             - VERTical:DESKew:FROM:CUSTOMPROPAgation?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a target (FROM) delay that you can specify when the propagation delay of
               the target (FROM) probe used for deskew cannot be detected automatically.
         """
@@ -284,25 +274,24 @@ class VerticalDeskewFrom(SCPICmdRead):
     def source(self) -> VerticalDeskewFromSource:
         """Return the ``VERTical:DESKew:FROM:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the source channel for performing channel-to-channel
               deskew adjustment. Sources can be any of the analog channels.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VERTical:DESKew:FROM:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``VERTical:DESKew:FROM:SOUrce?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VERTical:DESKew:FROM:SOUrce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VERTical:DESKew:FROM:SOUrce CH<x>
             - VERTical:DESKew:FROM:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies an analog channel as the source.
         """
         return self._source
@@ -311,7 +300,7 @@ class VerticalDeskewFrom(SCPICmdRead):
 class VerticalDeskew(SCPICmdRead):
     """The ``VERTical:DESKew`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VERTical:DESKew?`` query.
         - Using the ``.verify(value)`` method will send the ``VERTical:DESKew?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -332,7 +321,7 @@ class VerticalDeskew(SCPICmdRead):
     def from_(self) -> VerticalDeskewFrom:
         """Return the ``VERTical:DESKew:FROM`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VERTical:DESKew:FROM?`` query.
             - Using the ``.verify(value)`` method will send the ``VERTical:DESKew:FROM?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -347,20 +336,19 @@ class VerticalDeskew(SCPICmdRead):
     def static(self) -> VerticalDeskewStatic:
         """Return the ``VERTical:DESKew:STATIC`` command.
 
-        **Description:**
+        Description:
             - This command executes static deskew using the deskew settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``VERTical:DESKew:STATIC value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VERTical:DESKew:STATIC EXECute
+            ```
 
-        **Info:**
+        Info:
             - ``EXECute`` will execute static deskew using the deskew settings.
         """
         return self._static
@@ -369,7 +357,7 @@ class VerticalDeskew(SCPICmdRead):
     def to(self) -> VerticalDeskewTo:
         """Return the ``VERTical:DESKew:TO`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VERTical:DESKew:TO?`` query.
             - Using the ``.verify(value)`` method will send the ``VERTical:DESKew:TO?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -384,7 +372,7 @@ class VerticalDeskew(SCPICmdRead):
 class Vertical(SCPICmdRead):
     """The ``VERTical`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VERTical?`` query.
         - Using the ``.verify(value)`` method will send the ``VERTical?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -401,7 +389,7 @@ class Vertical(SCPICmdRead):
     def deskew(self) -> VerticalDeskew:
         """Return the ``VERTical:DESKew`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VERTical:DESKew?`` query.
             - Using the ``.verify(value)`` method will send the ``VERTical:DESKew?`` query and raise
               an AssertionError if the returned value does not match ``value``.

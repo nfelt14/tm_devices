@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SEARCHTABle:ADDNew <qstring>
     - SEARCHTABle:DELete <qstring>
     - SEARCHTABle:list?
@@ -27,40 +25,38 @@ if TYPE_CHECKING:
 class SearchtableList(SCPICmdRead):
     """The ``SEARCHTABle:list`` command.
 
-    **Description:**
+    Description:
         - This command queries all search event table in an Option 5-WIN (Microsoft Windows 10 OS)
           TekExpress compliance testing application.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCHTABle:list?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCHTABle:list?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCHTABle:list?
+        ```
     """
 
 
 class SearchtableDelete(SCPICmdWrite):
     """The ``SEARCHTABle:DELete`` command.
 
-    **Description:**
+    Description:
         - This command deletes a search event table in an Option 5-WIN (Microsoft Windows 10 OS)
           TekExpress compliance testing application.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SEARCHTABle:DELete value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCHTABle:DELete <qstring>
+        ```
 
-    **Info:**
+    Info:
         - ``<qstring>`` contains the name of the search table. 'TABLE' should be the argument prefix
           followed by a non-zero integer.
     """
@@ -69,20 +65,19 @@ class SearchtableDelete(SCPICmdWrite):
 class SearchtableAddnew(SCPICmdWrite):
     """The ``SEARCHTABle:ADDNew`` command.
 
-    **Description:**
+    Description:
         - This command adds a new search event table in an Option 5-WIN (Microsoft Windows 10 OS)
           TekExpress compliance testing application.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SEARCHTABle:ADDNew value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCHTABle:ADDNew <qstring>
+        ```
 
-    **Info:**
+    Info:
         - ``<qstring>`` contains the name of the search table. 'TABLE' should be the argument prefix
           followed by a non-zero integer.
     """
@@ -91,7 +86,7 @@ class SearchtableAddnew(SCPICmdWrite):
 class Searchtable(SCPICmdRead):
     """The ``SEARCHTABle`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCHTABle?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCHTABle?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -114,20 +109,19 @@ class Searchtable(SCPICmdRead):
     def addnew(self) -> SearchtableAddnew:
         """Return the ``SEARCHTABle:ADDNew`` command.
 
-        **Description:**
+        Description:
             - This command adds a new search event table in an Option 5-WIN (Microsoft Windows 10
               OS) TekExpress compliance testing application.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SEARCHTABle:ADDNew value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCHTABle:ADDNew <qstring>
+            ```
 
-        **Info:**
+        Info:
             - ``<qstring>`` contains the name of the search table. 'TABLE' should be the argument
               prefix followed by a non-zero integer.
         """
@@ -137,20 +131,19 @@ class Searchtable(SCPICmdRead):
     def delete(self) -> SearchtableDelete:
         """Return the ``SEARCHTABle:DELete`` command.
 
-        **Description:**
+        Description:
             - This command deletes a search event table in an Option 5-WIN (Microsoft Windows 10 OS)
               TekExpress compliance testing application.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SEARCHTABle:DELete value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCHTABle:DELete <qstring>
+            ```
 
-        **Info:**
+        Info:
             - ``<qstring>`` contains the name of the search table. 'TABLE' should be the argument
               prefix followed by a non-zero integer.
         """
@@ -160,19 +153,18 @@ class Searchtable(SCPICmdRead):
     def list(self) -> SearchtableList:
         """Return the ``SEARCHTABle:list`` command.
 
-        **Description:**
+        Description:
             - This command queries all search event table in an Option 5-WIN (Microsoft Windows 10
               OS) TekExpress compliance testing application.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCHTABle:list?`` query.
             - Using the ``.verify(value)`` method will send the ``SEARCHTABle:list?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCHTABle:list?
+            ```
         """
         return self._list

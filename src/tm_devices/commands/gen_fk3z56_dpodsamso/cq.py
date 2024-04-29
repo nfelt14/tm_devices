@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CQ<x>:THRESHold <NR3>
     - CQ<x>:THRESHold?
 """
@@ -27,24 +25,23 @@ if TYPE_CHECKING:
 class CqItemThreshold(SCPICmdWrite, SCPICmdRead):
     """The ``CQ<x>:THRESHold`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the comparable threshold for converting the clock/qualifier
           signal to its digital form, where x is zero.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CQ<x>:THRESHold?`` query.
         - Using the ``.verify(value)`` method will send the ``CQ<x>:THRESHold?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CQ<x>:THRESHold value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CQ<x>:THRESHold <NR3>
         - CQ<x>:THRESHold?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the channel/qualifier threshold in volts.
     """
 
@@ -52,7 +49,7 @@ class CqItemThreshold(SCPICmdWrite, SCPICmdRead):
 class CqItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``CQ<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CQ<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``CQ<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -69,24 +66,23 @@ class CqItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def threshold(self) -> CqItemThreshold:
         """Return the ``CQ<x>:THRESHold`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the comparable threshold for converting the
               clock/qualifier signal to its digital form, where x is zero.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CQ<x>:THRESHold?`` query.
             - Using the ``.verify(value)`` method will send the ``CQ<x>:THRESHold?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CQ<x>:THRESHold value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CQ<x>:THRESHold <NR3>
             - CQ<x>:THRESHold?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the channel/qualifier threshold in volts.
         """
         return self._threshold

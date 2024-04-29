@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - eventlog.all()
     - eventlog.clear()
     - eventlog.count
@@ -32,7 +30,7 @@ if TYPE_CHECKING:
 class Eventlog(BaseTSPCmd):
     """The ``eventlog`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.all()``: The ``eventlog.all()`` function.
         - ``.clear()``: The ``eventlog.clear()`` function.
         - ``.count``: The ``eventlog.count`` attribute.
@@ -48,17 +46,16 @@ class Eventlog(BaseTSPCmd):
     def count(self) -> str:
         """Access the ``eventlog.count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute returns the number of unread events in the event log.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(eventlog.count)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(eventlog.count)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -77,19 +74,18 @@ class Eventlog(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``eventlog.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the event log.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(eventlog.enable)`` query.
             - Setting this property to a value will send the ``eventlog.enable = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - eventlog.enable = value
             - print(eventlog.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -108,19 +104,18 @@ class Eventlog(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``eventlog.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the event log.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(eventlog.enable)`` query.
             - Setting this property to a value will send the ``eventlog.enable = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - eventlog.enable = value
             - print(eventlog.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -142,22 +137,21 @@ class Eventlog(BaseTSPCmd):
     def overwritemethod(self) -> str:
         """Access the ``eventlog.overwritemethod`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls how the event log processes events if the event log is full.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(eventlog.overwritemethod)`` query.
             - Setting this property to a value will send the ``eventlog.overwritemethod = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - eventlog.overwritemethod = value
             - print(eventlog.overwritemethod)
+            ```
 
-        **Info:**
+        Info:
             - ``method``, the set to one of the following values:
 
                 * 0 or eventlog.DISCARD_NEWEST: New entries are not logged
@@ -180,22 +174,21 @@ class Eventlog(BaseTSPCmd):
     def overwritemethod(self, value: Union[str, float]) -> None:
         """Access the ``eventlog.overwritemethod`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls how the event log processes events if the event log is full.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(eventlog.overwritemethod)`` query.
             - Setting this property to a value will send the ``eventlog.overwritemethod = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - eventlog.overwritemethod = value
             - print(eventlog.overwritemethod)
+            ```
 
-        **Info:**
+        Info:
             - ``method``, the set to one of the following values:
 
                 * 0 or eventlog.DISCARD_NEWEST: New entries are not logged
@@ -220,15 +213,14 @@ class Eventlog(BaseTSPCmd):
     def all(self) -> str:
         """Run the ``eventlog.all()`` function.
 
-        **Description:**
+        Description:
             - This function returns all entries from the event log as a single string and removes
               them from the event log.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - eventlog.all()
+            ```
 
         Returns:
             The result of the function call.
@@ -247,14 +239,13 @@ class Eventlog(BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``eventlog.clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the event log.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - eventlog.clear()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -270,14 +261,13 @@ class Eventlog(BaseTSPCmd):
     def next(self, event_type: Optional[str] = None) -> str:
         """Run the ``eventlog.next()`` function.
 
-        **Description:**
+        Description:
             - This function returns the oldest unread event message from the event log.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - eventlog.next()
+            ```
 
         Args:
             event_type (optional): Limits the return to specific event log types; set a cumulative

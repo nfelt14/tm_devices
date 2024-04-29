@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CALibrate:INTERNal
     - CALibrate:INTERNal:STARt
     - CALibrate:INTERNal:STATus?
@@ -29,77 +27,73 @@ if TYPE_CHECKING:
 class CalibratePwrupstatus(SCPICmdRead):
     """The ``CALibrate:PWRUpstatus`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the current status of the power-up calibration.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibrate:PWRUpstatus?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibrate:PWRUpstatus?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibrate:PWRUpstatus?
+        ```
     """
 
 
 class CalibrateInternalStatus(SCPICmdRead):
     """The ``CALibrate:INTERNal:STATus`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the current status of the signal path calibration.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibrate:INTERNal:STATus?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibrate:INTERNal:STATus?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibrate:INTERNal:STATus?
+        ```
     """
 
 
 class CalibrateInternalStart(SCPICmdWriteNoArguments):
     """The ``CALibrate:INTERNal:STARt`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) starts the signal path calibration (SPC) of the analog
           channels. This command is the same as the ``CALIBRATE:INTERNAL`` command. You can use the
           ``CALIBRATE:INTERNAL:STATUS`` query to return the current status of the signal path
           calibration of the instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``CALibrate:INTERNal:STARt`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibrate:INTERNal:STARt
+        ```
     """
 
 
 class CalibrateInternal(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``CALibrate:INTERNal`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) starts the signal path calibration (SPC) of the instrument.
           You can use the ``CALIBRATE:INTERNAL:STATUS`` query to return the current status of the
           signal path calibration of the instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``CALibrate:INTERNal`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibrate:INTERNal
+        ```
 
     Properties:
         - ``.start``: The ``CALibrate:INTERNal:STARt`` command.
@@ -115,20 +109,19 @@ class CalibrateInternal(SCPICmdWriteNoArguments, SCPICmdRead):
     def start(self) -> CalibrateInternalStart:
         """Return the ``CALibrate:INTERNal:STARt`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) starts the signal path calibration (SPC) of the analog
               channels. This command is the same as the ``CALIBRATE:INTERNAL`` command. You can use
               the ``CALIBRATE:INTERNAL:STATUS`` query to return the current status of the signal
               path calibration of the instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``CALibrate:INTERNal:STARt`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibrate:INTERNal:STARt
+            ```
         """
         return self._start
 
@@ -136,19 +129,18 @@ class CalibrateInternal(SCPICmdWriteNoArguments, SCPICmdRead):
     def status(self) -> CalibrateInternalStatus:
         """Return the ``CALibrate:INTERNal:STATus`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the current status of the signal path calibration.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibrate:INTERNal:STATus?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibrate:INTERNal:STATus?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibrate:INTERNal:STATus?
+            ```
         """
         return self._status
 
@@ -156,19 +148,18 @@ class CalibrateInternal(SCPICmdWriteNoArguments, SCPICmdRead):
 class Calibrate(SCPICmdRead):
     """The ``CALibrate`` command.
 
-    **Description:**
+    Description:
         - This query returns the status of signal path calibration.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibrate?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibrate?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibrate?
+        ```
 
     Properties:
         - ``.internal``: The ``CALibrate:INTERNal`` command.
@@ -184,19 +175,18 @@ class Calibrate(SCPICmdRead):
     def internal(self) -> CalibrateInternal:
         """Return the ``CALibrate:INTERNal`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) starts the signal path calibration (SPC) of the
               instrument. You can use the ``CALIBRATE:INTERNAL:STATUS`` query to return the current
               status of the signal path calibration of the instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``CALibrate:INTERNal`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibrate:INTERNal
+            ```
 
         Sub-properties:
             - ``.start``: The ``CALibrate:INTERNal:STARt`` command.
@@ -208,18 +198,17 @@ class Calibrate(SCPICmdRead):
     def pwrupstatus(self) -> CalibratePwrupstatus:
         """Return the ``CALibrate:PWRUpstatus`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the current status of the power-up calibration.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibrate:PWRUpstatus?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibrate:PWRUpstatus?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibrate:PWRUpstatus?
+            ```
         """
         return self._pwrupstatus

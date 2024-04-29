@@ -42,12 +42,6 @@ class Beeper(BaseTSPCmd):
     """str: This command turns the beeper on."""
 
     def __init__(self, device: Optional["TSPDevice"] = None, cmd_syntax: str = "beeper") -> None:
-        """Initialize the ``beeper`` command tree.
-
-        Args:
-            device: The Python device driver to use for communication with the device.
-            cmd_syntax: The syntax used to represent the command tree.
-        """
         super().__init__(device, cmd_syntax)
 
     @property
@@ -62,9 +56,10 @@ class Beeper(BaseTSPCmd):
             - Setting this property to a value will send the ``beeper.enable = value`` command.
 
         TSP Syntax:
-
+            ```
             - beeper.enable = value
             - print(beeper.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -91,9 +86,10 @@ class Beeper(BaseTSPCmd):
             - Setting this property to a value will send the ``beeper.enable = value`` command.
 
         TSP Syntax:
-
+            ```
             - beeper.enable = value
             - print(beeper.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -114,19 +110,20 @@ class Beeper(BaseTSPCmd):
     def beep(self, duration: float, frequency: float) -> None:
         """Run the ``beeper.beep()`` function.
 
+        Description:
+            - This function generates an audible tone.
+
+        TSP Syntax:
+            ```
+            - beeper.beep()
+            ```
+
         Args:
             duration: The amount of time to play the tone (0.001 s to 100 s).
             frequency: The frequency of the tone in Hertz (Hz).
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
-
-        Description:
-            - This function generates an audible tone.
-
-        TSP Syntax:
-
-            - beeper.beep()
         """
         try:
             self._device.write(  # type: ignore[union-attr]

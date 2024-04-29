@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - HISTogram:ADDNew <QString>
     - HISTogram:DELETEALL
     - HISTogram:DELete <QString>
@@ -44,7 +42,9 @@ Commands and Queries:
     - HISTogram:HISTogram<x>:MEASurement:PHITs?
     - HISTogram:HISTogram<x>:MEASurement:PK2PK {ON|OFF}
     - HISTogram:HISTogram<x>:MEASurement:PK2PK?
-    - HISTogram:HISTogram<x>:MEASurement:RESUlts? {COUNt| HITS| MAX| MIN| PK2PK| MODE| MEAN| MEDian| PHITs| STDDev| ONESigma| TWOSigma| THRSigma},{ALLAcqs| CURRentacq| HISTory},{MAXimum| MEAN| MINimum| PK2PK| POPUlation| STDDev}
+    - HISTogram:HISTogram<x>:MEASurement:RESUlts? {COUNt| HITS| MAX| MIN| PK2PK| MODE| MEAN| MEDian|
+      PHITs| STDDev| ONESigma| TWOSigma| THRSigma},{ALLAcqs| CURRentacq| HISTory},{MAXimum| MEAN|
+      MINimum| PK2PK| POPUlation| STDDev}
     - HISTogram:HISTogram<x>:MEASurement:STDDev {ON|OFF}
     - HISTogram:HISTogram<x>:MEASurement:STDDev?
     - HISTogram:HISTogram<x>:MEASurement:THRSigma {ON|OFF}
@@ -61,7 +61,7 @@ Commands and Queries:
     - HISTogram:HISTogram<x>:TRANsparency <NR3>
     - HISTogram:HISTogram<x>:TRANsparency?
     - HISTogram:LIST?
-"""  # noqa: E501
+"""
 
 from typing import Dict, Optional, TYPE_CHECKING
 
@@ -81,29 +81,28 @@ if TYPE_CHECKING:
 class HistogramList(SCPICmdRead):
     """The ``HISTogram:LIST`` command.
 
-    **Description:**
+    Description:
         - This query returns a comma separated list of all currently defined histograms.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:LIST?`` query.
         - Using the ``.verify(value)`` method will send the ``HISTogram:LIST?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:LIST?
+        ```
     """
 
 
 class HistogramHistogramItemTransparency(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:TRANsparency`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the transparency of the histogram bins.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:TRANsparency?``
           query.
         - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>:TRANsparency?``
@@ -111,14 +110,13 @@ class HistogramHistogramItemTransparency(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``HISTogram:HISTogram<x>:TRANsparency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:TRANsparency <NR3>
         - HISTogram:HISTogram<x>:TRANsparency?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``<NR3>`` specifies the transparency as a percentage, with a minimum of 0 and a maximum of
           100.
@@ -128,25 +126,24 @@ class HistogramHistogramItemTransparency(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemState(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:STATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether histogram calculations are enabled for the specified
           histogram.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>:STATE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HISTogram:HISTogram<x>:STATE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:STATE {ON|OFF}
         - HISTogram:HISTogram<x>:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``ON`` enables the histogram calculations.
         - ``OFF`` disables the histogram calculations.
@@ -156,25 +153,24 @@ class HistogramHistogramItemState(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemSource(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries which source waveform will be compared against the histogram
           box when the histogram testing is enabled.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>:SOUrce?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HISTogram:HISTogram<x>:SOUrce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:SOUrce {CH<x>|MATH<x>|REF<x>}
         - HISTogram:HISTogram<x>:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``CH<x>`` specifies an analog channel as source.
         - ``MATH<x>`` specifies a math channel as source.
@@ -185,26 +181,25 @@ class HistogramHistogramItemSource(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemSize(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:SIZe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the height or width of the specified histogram bins in
           divisions. This size can be larger than the box, which allows you to view the histogram
           bins easily.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:SIZe?`` query.
         - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>:SIZe?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HISTogram:HISTogram<x>:SIZe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:SIZe <NR3>
         - HISTogram:HISTogram<x>:SIZe?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``<NR3>`` specifies the number of divisions to set the height or width of the histogram
           bins to.
@@ -214,20 +209,19 @@ class HistogramHistogramItemSize(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemSave(SCPICmdWrite):
     """The ``HISTogram:HISTogram<x>:SAVe`` command.
 
-    **Description:**
+    Description:
         - This command saves the specified histograms data as a comma separated list of values.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``HISTogram:HISTogram<x>:SAVe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:SAVe <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``<QString>`` is the file path to save the .csv file to.
     """
@@ -238,11 +232,11 @@ class HistogramHistogramItemSave(SCPICmdWrite):
 class HistogramHistogramItemMeasurementTwosigma(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:MEASurement:TWOSigma`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the µ±2(sigma) measurement is enabled on the
           histogram.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HISTogram:HISTogram<x>:MEASurement:TWOSigma?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -251,14 +245,13 @@ class HistogramHistogramItemMeasurementTwosigma(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``HISTogram:HISTogram<x>:MEASurement:TWOSigma value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:MEASurement:TWOSigma {ON|OFF}
         - HISTogram:HISTogram<x>:MEASurement:TWOSigma?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``ON`` enables the µ±2(sigma) measurement.
         - ``OFF`` disables the µ±2(sigma) measurement.
@@ -268,11 +261,11 @@ class HistogramHistogramItemMeasurementTwosigma(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemMeasurementThrsigma(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:MEASurement:THRSigma`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the µ±3(sigma) measurement is enabled on the
           histogram.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HISTogram:HISTogram<x>:MEASurement:THRSigma?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -281,14 +274,13 @@ class HistogramHistogramItemMeasurementThrsigma(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``HISTogram:HISTogram<x>:MEASurement:THRSigma value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:MEASurement:THRSigma {ON|OFF}
         - HISTogram:HISTogram<x>:MEASurement:THRSigma?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``ON`` enables the µ±3(sigma) measurement.
         - ``OFF`` disables the µ±3(sigma) measurement.
@@ -298,11 +290,11 @@ class HistogramHistogramItemMeasurementThrsigma(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemMeasurementStddev(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:MEASurement:STDDev`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the Standard Deviation measurement is enabled on the
           histogram.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:MEASurement:STDDev?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -311,14 +303,13 @@ class HistogramHistogramItemMeasurementStddev(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``HISTogram:HISTogram<x>:MEASurement:STDDev value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:MEASurement:STDDev {ON|OFF}
         - HISTogram:HISTogram<x>:MEASurement:STDDev?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``ON`` enables the Standard Deviation measurement.
         - ``OFF`` disables the Standard Deviation measurement.
@@ -328,27 +319,26 @@ class HistogramHistogramItemMeasurementStddev(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemMeasurementResults(SCPICmdReadWithArguments):
     """The ``HISTogram:HISTogram<x>:MEASurement:RESUlts`` command.
 
-    **Description:**
+    Description:
         - This query only command returns the measurement results from the specified histogram. The
           argument must be in the form of {argument 1},{argument 2},{argument 3}. Argument 1
           specifies which histogram measurement to return results for. Argument 2 specifies which
           acquisitions to return measurement results for. Argument 3 specifies which statistic to
           return measurement results for.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``HISTogram:HISTogram<x>:MEASurement:RESUlts? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``HISTogram:HISTogram<x>:MEASurement:RESUlts? argument`` query and raise an AssertionError
           if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:MEASurement:RESUlts? {COUNt| HITS| MAX| MIN| PK2PK| MODE| MEAN| MEDian| PHITs| STDDev| ONESigma| TWOSigma| THRSigma},{ALLAcqs| CURRentacq| HISTory},{MAXimum| MEAN| MINimum| PK2PK| POPUlation| STDDev}
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``COUNt`` specifies the Count as the histogram measurement to return results for.
         - ``HITS`` specifies the Hits as the histogram measurement to return results for.
@@ -379,11 +369,11 @@ class HistogramHistogramItemMeasurementResults(SCPICmdReadWithArguments):
 class HistogramHistogramItemMeasurementPk2pk(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:MEASurement:PK2PK`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the Peak-to-peak measurement is enabled on the
           histogram.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:MEASurement:PK2PK?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -392,14 +382,13 @@ class HistogramHistogramItemMeasurementPk2pk(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``HISTogram:HISTogram<x>:MEASurement:PK2PK value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:MEASurement:PK2PK {ON|OFF}
         - HISTogram:HISTogram<x>:MEASurement:PK2PK?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``ON`` enables the Peak-to-peak measurement.
         - ``OFF`` disables the Peak-to-peak measurement.
@@ -409,11 +398,11 @@ class HistogramHistogramItemMeasurementPk2pk(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemMeasurementPhits(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:MEASurement:PHITs`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the Peak Hits measurement is enabled on the
           histogram.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:MEASurement:PHITs?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -422,14 +411,13 @@ class HistogramHistogramItemMeasurementPhits(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``HISTogram:HISTogram<x>:MEASurement:PHITs value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:MEASurement:PHITs {ON|OFF}
         - HISTogram:HISTogram<x>:MEASurement:PHITs?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``ON`` enables the Peak Hits measurement.
         - ``OFF`` disables the Peak Hits measurement.
@@ -439,11 +427,11 @@ class HistogramHistogramItemMeasurementPhits(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemMeasurementOnesigma(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:MEASurement:ONESigma`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the µ±1(sigma) measurement is enabled on the
           histogram.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``HISTogram:HISTogram<x>:MEASurement:ONESigma?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -452,14 +440,13 @@ class HistogramHistogramItemMeasurementOnesigma(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``HISTogram:HISTogram<x>:MEASurement:ONESigma value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:MEASurement:ONESigma {ON|OFF}
         - HISTogram:HISTogram<x>:MEASurement:ONESigma?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``ON`` enables the µ±1(sigma) measurement.
         - ``OFF`` disables the µ±1(sigma) measurement.
@@ -469,10 +456,10 @@ class HistogramHistogramItemMeasurementOnesigma(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemMeasurementMode(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:MEASurement:MODE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the Mode measurement is enabled on the histogram.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:MEASurement:MODE?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -481,14 +468,13 @@ class HistogramHistogramItemMeasurementMode(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``HISTogram:HISTogram<x>:MEASurement:MODE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:MEASurement:MODE {ON|OFF}
         - HISTogram:HISTogram<x>:MEASurement:MODE?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``ON`` enables the Mode measurement.
         - ``OFF`` disables the Mode measurement.
@@ -498,10 +484,10 @@ class HistogramHistogramItemMeasurementMode(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemMeasurementMin(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:MEASurement:MIN`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the Min measurement is enabled on the histogram.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:MEASurement:MIN?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -510,14 +496,13 @@ class HistogramHistogramItemMeasurementMin(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``HISTogram:HISTogram<x>:MEASurement:MIN value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:MEASurement:MIN {ON|OFF}
         - HISTogram:HISTogram<x>:MEASurement:MIN?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``ON`` enables the Min measurement.
         - ``OFF`` disables the Min measurement.
@@ -527,10 +512,10 @@ class HistogramHistogramItemMeasurementMin(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemMeasurementMedian(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:MEASurement:MEDian`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the Median measurement is enabled on the histogram.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:MEASurement:MEDian?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -539,14 +524,13 @@ class HistogramHistogramItemMeasurementMedian(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``HISTogram:HISTogram<x>:MEASurement:MEDian value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:MEASurement:MEDian {ON|OFF}
         - HISTogram:HISTogram<x>:MEASurement:MEDian?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``ON`` enables the Median measurement.
         - ``OFF`` disables the Median measurement.
@@ -556,10 +540,10 @@ class HistogramHistogramItemMeasurementMedian(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemMeasurementMean(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:MEASurement:MEAN`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the Mean measurement is enabled on the histogram.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:MEASurement:MEAN?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -568,14 +552,13 @@ class HistogramHistogramItemMeasurementMean(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``HISTogram:HISTogram<x>:MEASurement:MEAN value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:MEASurement:MEAN {ON|OFF}
         - HISTogram:HISTogram<x>:MEASurement:MEAN?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``ON`` enables the Mean measurement.
         - ``OFF`` disables the Mean measurement.
@@ -585,10 +568,10 @@ class HistogramHistogramItemMeasurementMean(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemMeasurementMax(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:MEASurement:MAX`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the Max measurement is enabled on the histogram.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:MEASurement:MAX?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -597,14 +580,13 @@ class HistogramHistogramItemMeasurementMax(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``HISTogram:HISTogram<x>:MEASurement:MAX value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:MEASurement:MAX {ON|OFF}
         - HISTogram:HISTogram<x>:MEASurement:MAX?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``ON`` enables the Max measurement.
         - ``OFF`` disables the Max measurement.
@@ -614,11 +596,11 @@ class HistogramHistogramItemMeasurementMax(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemMeasurementHits(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:MEASurement:HITS`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the Hits in Box measurement is enabled on the
           histogram.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:MEASurement:HITS?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -627,14 +609,13 @@ class HistogramHistogramItemMeasurementHits(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``HISTogram:HISTogram<x>:MEASurement:HITS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:MEASurement:HITS {ON|OFF}
         - HISTogram:HISTogram<x>:MEASurement:HITS?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``ON`` enables the Hits in Box measurement.
         - ``OFF`` disables the Hits in Box measurement.
@@ -644,11 +625,11 @@ class HistogramHistogramItemMeasurementHits(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemMeasurementCount(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:MEASurement:COUNt`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the waveform count measurement is enabled on the
           histogram.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:MEASurement:COUNt?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -657,14 +638,13 @@ class HistogramHistogramItemMeasurementCount(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``HISTogram:HISTogram<x>:MEASurement:COUNt value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:MEASurement:COUNt {ON|OFF}
         - HISTogram:HISTogram<x>:MEASurement:COUNt?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``ON`` enables the waveform count measurement.
         - ``OFF`` disables the waveform count measurement.
@@ -675,12 +655,12 @@ class HistogramHistogramItemMeasurementCount(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemMeasurement(SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:MEASurement`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:MEASurement?`` query.
         - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>:MEASurement?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
 
     Properties:
@@ -729,11 +709,11 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
     def count(self) -> HistogramHistogramItemMeasurementCount:
         """Return the ``HISTogram:HISTogram<x>:MEASurement:COUNt`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the waveform count measurement is enabled on the
               histogram.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:COUNt?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -742,14 +722,13 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:COUNt value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:MEASurement:COUNt {ON|OFF}
             - HISTogram:HISTogram<x>:MEASurement:COUNt?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``ON`` enables the waveform count measurement.
             - ``OFF`` disables the waveform count measurement.
@@ -760,11 +739,11 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
     def hits(self) -> HistogramHistogramItemMeasurementHits:
         """Return the ``HISTogram:HISTogram<x>:MEASurement:HITS`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the Hits in Box measurement is enabled on the
               histogram.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:HITS?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -773,14 +752,13 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:HITS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:MEASurement:HITS {ON|OFF}
             - HISTogram:HISTogram<x>:MEASurement:HITS?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``ON`` enables the Hits in Box measurement.
             - ``OFF`` disables the Hits in Box measurement.
@@ -791,10 +769,10 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
     def max(self) -> HistogramHistogramItemMeasurementMax:
         """Return the ``HISTogram:HISTogram<x>:MEASurement:MAX`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the Max measurement is enabled on the histogram.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:MAX?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -803,14 +781,13 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:MAX value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:MEASurement:MAX {ON|OFF}
             - HISTogram:HISTogram<x>:MEASurement:MAX?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``ON`` enables the Max measurement.
             - ``OFF`` disables the Max measurement.
@@ -821,10 +798,10 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
     def mean(self) -> HistogramHistogramItemMeasurementMean:
         """Return the ``HISTogram:HISTogram<x>:MEASurement:MEAN`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the Mean measurement is enabled on the histogram.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:MEAN?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -833,14 +810,13 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:MEAN value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:MEASurement:MEAN {ON|OFF}
             - HISTogram:HISTogram<x>:MEASurement:MEAN?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``ON`` enables the Mean measurement.
             - ``OFF`` disables the Mean measurement.
@@ -851,11 +827,11 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
     def median(self) -> HistogramHistogramItemMeasurementMedian:
         """Return the ``HISTogram:HISTogram<x>:MEASurement:MEDian`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the Median measurement is enabled on the
               histogram.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:MEDian?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -864,14 +840,13 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:MEDian value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:MEASurement:MEDian {ON|OFF}
             - HISTogram:HISTogram<x>:MEASurement:MEDian?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``ON`` enables the Median measurement.
             - ``OFF`` disables the Median measurement.
@@ -882,10 +857,10 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
     def min(self) -> HistogramHistogramItemMeasurementMin:
         """Return the ``HISTogram:HISTogram<x>:MEASurement:MIN`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the Min measurement is enabled on the histogram.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:MIN?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -894,14 +869,13 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:MIN value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:MEASurement:MIN {ON|OFF}
             - HISTogram:HISTogram<x>:MEASurement:MIN?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``ON`` enables the Min measurement.
             - ``OFF`` disables the Min measurement.
@@ -912,10 +886,10 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
     def mode(self) -> HistogramHistogramItemMeasurementMode:
         """Return the ``HISTogram:HISTogram<x>:MEASurement:MODE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the Mode measurement is enabled on the histogram.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:MODE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -924,14 +898,13 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:MODE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:MEASurement:MODE {ON|OFF}
             - HISTogram:HISTogram<x>:MEASurement:MODE?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``ON`` enables the Mode measurement.
             - ``OFF`` disables the Mode measurement.
@@ -942,11 +915,11 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
     def onesigma(self) -> HistogramHistogramItemMeasurementOnesigma:
         """Return the ``HISTogram:HISTogram<x>:MEASurement:ONESigma`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the µ±1(sigma) measurement is enabled on the
               histogram.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:ONESigma?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -955,14 +928,13 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:ONESigma value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:MEASurement:ONESigma {ON|OFF}
             - HISTogram:HISTogram<x>:MEASurement:ONESigma?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``ON`` enables the µ±1(sigma) measurement.
             - ``OFF`` disables the µ±1(sigma) measurement.
@@ -973,11 +945,11 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
     def phits(self) -> HistogramHistogramItemMeasurementPhits:
         """Return the ``HISTogram:HISTogram<x>:MEASurement:PHITs`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the Peak Hits measurement is enabled on the
               histogram.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:PHITs?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -986,14 +958,13 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:PHITs value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:MEASurement:PHITs {ON|OFF}
             - HISTogram:HISTogram<x>:MEASurement:PHITs?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``ON`` enables the Peak Hits measurement.
             - ``OFF`` disables the Peak Hits measurement.
@@ -1004,11 +975,11 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
     def pk2pk(self) -> HistogramHistogramItemMeasurementPk2pk:
         """Return the ``HISTogram:HISTogram<x>:MEASurement:PK2PK`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the Peak-to-peak measurement is enabled on the
               histogram.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:PK2PK?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1017,14 +988,13 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:PK2PK value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:MEASurement:PK2PK {ON|OFF}
             - HISTogram:HISTogram<x>:MEASurement:PK2PK?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``ON`` enables the Peak-to-peak measurement.
             - ``OFF`` disables the Peak-to-peak measurement.
@@ -1035,27 +1005,26 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
     def results(self) -> HistogramHistogramItemMeasurementResults:
         """Return the ``HISTogram:HISTogram<x>:MEASurement:RESUlts`` command.
 
-        **Description:**
+        Description:
             - This query only command returns the measurement results from the specified histogram.
               The argument must be in the form of {argument 1},{argument 2},{argument 3}. Argument 1
               specifies which histogram measurement to return results for. Argument 2 specifies
               which acquisitions to return measurement results for. Argument 3 specifies which
               statistic to return measurement results for.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:RESUlts? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:RESUlts? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:MEASurement:RESUlts? {COUNt| HITS| MAX| MIN| PK2PK| MODE| MEAN| MEDian| PHITs| STDDev| ONESigma| TWOSigma| THRSigma},{ALLAcqs| CURRentacq| HISTory},{MAXimum| MEAN| MINimum| PK2PK| POPUlation| STDDev}
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``COUNt`` specifies the Count as the histogram measurement to return results for.
             - ``HITS`` specifies the Hits as the histogram measurement to return results for.
@@ -1090,11 +1059,11 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
     def stddev(self) -> HistogramHistogramItemMeasurementStddev:
         """Return the ``HISTogram:HISTogram<x>:MEASurement:STDDev`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the Standard Deviation measurement is enabled on
               the histogram.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:STDDev?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1103,14 +1072,13 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:STDDev value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:MEASurement:STDDev {ON|OFF}
             - HISTogram:HISTogram<x>:MEASurement:STDDev?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``ON`` enables the Standard Deviation measurement.
             - ``OFF`` disables the Standard Deviation measurement.
@@ -1121,11 +1089,11 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
     def thrsigma(self) -> HistogramHistogramItemMeasurementThrsigma:
         """Return the ``HISTogram:HISTogram<x>:MEASurement:THRSigma`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the µ±3(sigma) measurement is enabled on the
               histogram.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:THRSigma?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1134,14 +1102,13 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:THRSigma value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:MEASurement:THRSigma {ON|OFF}
             - HISTogram:HISTogram<x>:MEASurement:THRSigma?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``ON`` enables the µ±3(sigma) measurement.
             - ``OFF`` disables the µ±3(sigma) measurement.
@@ -1152,11 +1119,11 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
     def twosigma(self) -> HistogramHistogramItemMeasurementTwosigma:
         """Return the ``HISTogram:HISTogram<x>:MEASurement:TWOSigma`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the µ±2(sigma) measurement is enabled on the
               histogram.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:TWOSigma?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1165,14 +1132,13 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement:TWOSigma value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:MEASurement:TWOSigma {ON|OFF}
             - HISTogram:HISTogram<x>:MEASurement:TWOSigma?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``ON`` enables the µ±2(sigma) measurement.
             - ``OFF`` disables the µ±2(sigma) measurement.
@@ -1183,24 +1149,23 @@ class HistogramHistogramItemMeasurement(SCPICmdRead):
 class HistogramHistogramItemFunction(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:FUNCtion`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the histogram mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:FUNCtion?`` query.
         - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>:FUNCtion?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HISTogram:HISTogram<x>:FUNCtion value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:FUNCtion {HORizontal|VERTical}
         - HISTogram:HISTogram<x>:FUNCtion?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``HORizontal`` sets the histogram mode to horizontal.
         - ``VERTical`` sets the histogram mode to vertical.
@@ -1210,24 +1175,23 @@ class HistogramHistogramItemFunction(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemDisplay(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:DISPlay`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the histogram scaling display setting.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:DISPlay?`` query.
         - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>:DISPlay?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HISTogram:HISTogram<x>:DISPlay value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:DISPlay {LINEAr|LOG}
         - HISTogram:HISTogram<x>:DISPlay?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``LINEAr`` sets the histogram scaling to linear mode.
         - ``LOG`` sets the histogram scaling to logarithmic mode.
@@ -1237,44 +1201,42 @@ class HistogramHistogramItemDisplay(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemData(SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:DATa`` command.
 
-    **Description:**
+    Description:
         - This query only command returns a comma separated list of numbers representing the
           histogram bin data.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:DATa?`` query.
         - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>:DATa?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:DATa?
+        ```
     """
 
 
 class HistogramHistogramItemBstate(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:BSTate`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the histogram badge is displayed.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:BSTate?`` query.
         - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>:BSTate?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HISTogram:HISTogram<x>:BSTate value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:BSTate {ON|OFF}
         - HISTogram:HISTogram<x>:BSTate?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``ON`` enables the histogram badge display.
         - ``OFF`` disables the histogram badge display.
@@ -1284,26 +1246,25 @@ class HistogramHistogramItemBstate(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItemBox(SCPICmdWrite, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>:BOX`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the top, left, bottom and right positions of the histogram
           box in source waveform coordinates. The argument is of the form
           <top>,<left>,<bottom>,<right>.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:BOX?`` query.
         - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>:BOX?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HISTogram:HISTogram<x>:BOX value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:HISTogram<x>:BOX <NR3>,<NR3>,<NR3>,<NR3>
         - HISTogram:HISTogram<x>:BOX?
+        ```
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
         - ``<NR3>`` specifies four position values, separated by commas. The values are the top,
           left, bottom, and right coordinates in that order.
@@ -1314,12 +1275,12 @@ class HistogramHistogramItemBox(SCPICmdWrite, SCPICmdRead):
 class HistogramHistogramItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``HISTogram:HISTogram<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``HISTogram<x>`` specifies the histogram number.
 
     Properties:
@@ -1358,26 +1319,25 @@ class HistogramHistogramItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def box(self) -> HistogramHistogramItemBox:
         """Return the ``HISTogram:HISTogram<x>:BOX`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the top, left, bottom and right positions of the
               histogram box in source waveform coordinates. The argument is of the form
               <top>,<left>,<bottom>,<right>.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:BOX?`` query.
             - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>:BOX?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HISTogram:HISTogram<x>:BOX value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:BOX <NR3>,<NR3>,<NR3>,<NR3>
             - HISTogram:HISTogram<x>:BOX?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``<NR3>`` specifies four position values, separated by commas. The values are the top,
               left, bottom, and right coordinates in that order.
@@ -1388,24 +1348,23 @@ class HistogramHistogramItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def bstate(self) -> HistogramHistogramItemBstate:
         """Return the ``HISTogram:HISTogram<x>:BSTate`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the histogram badge is displayed.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:BSTate?`` query.
             - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>:BSTate?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:BSTate value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:BSTate {ON|OFF}
             - HISTogram:HISTogram<x>:BSTate?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``ON`` enables the histogram badge display.
             - ``OFF`` disables the histogram badge display.
@@ -1416,20 +1375,19 @@ class HistogramHistogramItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def data(self) -> HistogramHistogramItemData:
         """Return the ``HISTogram:HISTogram<x>:DATa`` command.
 
-        **Description:**
+        Description:
             - This query only command returns a comma separated list of numbers representing the
               histogram bin data.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:DATa?`` query.
             - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>:DATa?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:DATa?
+            ```
         """
         return self._data
 
@@ -1437,24 +1395,23 @@ class HistogramHistogramItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def display(self) -> HistogramHistogramItemDisplay:
         """Return the ``HISTogram:HISTogram<x>:DISPlay`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the histogram scaling display setting.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:DISPlay?`` query.
             - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>:DISPlay?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:DISPlay value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:DISPlay {LINEAr|LOG}
             - HISTogram:HISTogram<x>:DISPlay?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``LINEAr`` sets the histogram scaling to linear mode.
             - ``LOG`` sets the histogram scaling to logarithmic mode.
@@ -1465,10 +1422,10 @@ class HistogramHistogramItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def function(self) -> HistogramHistogramItemFunction:
         """Return the ``HISTogram:HISTogram<x>:FUNCtion`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the histogram mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:FUNCtion?``
               query.
             - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>:FUNCtion?``
@@ -1476,14 +1433,13 @@ class HistogramHistogramItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:FUNCtion value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:FUNCtion {HORizontal|VERTical}
             - HISTogram:HISTogram<x>:FUNCtion?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``HORizontal`` sets the histogram mode to horizontal.
             - ``VERTical`` sets the histogram mode to vertical.
@@ -1494,14 +1450,14 @@ class HistogramHistogramItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def measurement(self) -> HistogramHistogramItemMeasurement:
         """Return the ``HISTogram:HISTogram<x>:MEASurement`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:MEASurement?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``HISTogram:HISTogram<x>:MEASurement?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
 
         Sub-properties:
@@ -1526,20 +1482,19 @@ class HistogramHistogramItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def save(self) -> HistogramHistogramItemSave:
         """Return the ``HISTogram:HISTogram<x>:SAVe`` command.
 
-        **Description:**
+        Description:
             - This command saves the specified histograms data as a comma separated list of values.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``HISTogram:HISTogram<x>:SAVe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:SAVe <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``<QString>`` is the file path to save the .csv file to.
         """
@@ -1549,26 +1504,25 @@ class HistogramHistogramItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def size(self) -> HistogramHistogramItemSize:
         """Return the ``HISTogram:HISTogram<x>:SIZe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the height or width of the specified histogram bins in
               divisions. This size can be larger than the box, which allows you to view the
               histogram bins easily.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:SIZe?`` query.
             - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>:SIZe?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HISTogram:HISTogram<x>:SIZe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:SIZe <NR3>
             - HISTogram:HISTogram<x>:SIZe?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``<NR3>`` specifies the number of divisions to set the height or width of the
               histogram bins to.
@@ -1579,25 +1533,24 @@ class HistogramHistogramItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def source(self) -> HistogramHistogramItemSource:
         """Return the ``HISTogram:HISTogram<x>:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries which source waveform will be compared against the
               histogram box when the histogram testing is enabled.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>:SOUrce?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:SOUrce {CH<x>|MATH<x>|REF<x>}
             - HISTogram:HISTogram<x>:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``CH<x>`` specifies an analog channel as source.
             - ``MATH<x>`` specifies a math channel as source.
@@ -1609,25 +1562,24 @@ class HistogramHistogramItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def state(self) -> HistogramHistogramItemState:
         """Return the ``HISTogram:HISTogram<x>:STATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether histogram calculations are enabled for the
               specified histogram.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>:STATE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:STATE {ON|OFF}
             - HISTogram:HISTogram<x>:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``ON`` enables the histogram calculations.
             - ``OFF`` disables the histogram calculations.
@@ -1638,10 +1590,10 @@ class HistogramHistogramItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def transparency(self) -> HistogramHistogramItemTransparency:
         """Return the ``HISTogram:HISTogram<x>:TRANsparency`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the transparency of the histogram bins.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>:TRANsparency?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1650,14 +1602,13 @@ class HistogramHistogramItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``HISTogram:HISTogram<x>:TRANsparency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:HISTogram<x>:TRANsparency <NR3>
             - HISTogram:HISTogram<x>:TRANsparency?
+            ```
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
             - ``<NR3>`` specifies the transparency as a percentage, with a minimum of 0 and a
               maximum of 100.
@@ -1668,19 +1619,18 @@ class HistogramHistogramItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class HistogramDelete(SCPICmdWrite):
     """The ``HISTogram:DELete`` command.
 
-    **Description:**
+    Description:
         - This command deletes the specified histogram.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``HISTogram:DELete value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:DELete <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the waveform histogram to delete. The argument is of the form
           'HIST<NR1>', where NR1 is a number value ≥ 1.
     """
@@ -1691,37 +1641,35 @@ class HistogramDelete(SCPICmdWrite):
 class HistogramDeleteall(SCPICmdWriteNoArguments):
     """The ``HISTogram:DELETEALL`` command.
 
-    **Description:**
+    Description:
         - This command deletes all the active instances of histograms defined in the scope
           application.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``HISTogram:DELETEALL`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:DELETEALL
+        ```
     """
 
 
 class HistogramAddnew(SCPICmdWrite):
     """The ``HISTogram:ADDNew`` command.
 
-    **Description:**
+    Description:
         - This command adds the specified waveform histogram.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``HISTogram:ADDNew value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HISTogram:ADDNew <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the waveform histogram to add. The argument is of the form
           'HIST<NR1>', where NR1 is a number value ≥ 1.
     """
@@ -1732,7 +1680,7 @@ class HistogramAddnew(SCPICmdWrite):
 class Histogram(SCPICmdRead):
     """The ``HISTogram`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HISTogram?`` query.
         - Using the ``.verify(value)`` method will send the ``HISTogram?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1759,19 +1707,18 @@ class Histogram(SCPICmdRead):
     def addnew(self) -> HistogramAddnew:
         """Return the ``HISTogram:ADDNew`` command.
 
-        **Description:**
+        Description:
             - This command adds the specified waveform histogram.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``HISTogram:ADDNew value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:ADDNew <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the waveform histogram to add. The argument is of the form
               'HIST<NR1>', where NR1 is a number value ≥ 1.
         """
@@ -1781,18 +1728,17 @@ class Histogram(SCPICmdRead):
     def deleteall(self) -> HistogramDeleteall:
         """Return the ``HISTogram:DELETEALL`` command.
 
-        **Description:**
+        Description:
             - This command deletes all the active instances of histograms defined in the scope
               application.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``HISTogram:DELETEALL`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:DELETEALL
+            ```
         """
         return self._deleteall
 
@@ -1800,19 +1746,18 @@ class Histogram(SCPICmdRead):
     def delete(self) -> HistogramDelete:
         """Return the ``HISTogram:DELete`` command.
 
-        **Description:**
+        Description:
             - This command deletes the specified histogram.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``HISTogram:DELete value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:DELete <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the waveform histogram to delete. The argument is of the form
               'HIST<NR1>', where NR1 is a number value ≥ 1.
         """
@@ -1822,12 +1767,12 @@ class Histogram(SCPICmdRead):
     def histogram(self) -> Dict[int, HistogramHistogramItem]:
         """Return the ``HISTogram:HISTogram<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HISTogram:HISTogram<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``HISTogram:HISTogram<x>?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``HISTogram<x>`` specifies the histogram number.
 
         Sub-properties:
@@ -1849,18 +1794,17 @@ class Histogram(SCPICmdRead):
     def list(self) -> HistogramList:
         """Return the ``HISTogram:LIST`` command.
 
-        **Description:**
+        Description:
             - This query returns a comma separated list of all currently defined histograms.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HISTogram:LIST?`` query.
             - Using the ``.verify(value)`` method will send the ``HISTogram:LIST?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HISTogram:LIST?
+            ```
         """
         return self._list

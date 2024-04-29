@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - HIStogram:BOX <NR3>, <NR3>, <NR3>, <NR3>
     - HIStogram:BOX?
     - HIStogram:BOXPcnt <NR2>, <NR2>, <NR2>, <NR2>
@@ -39,7 +37,7 @@ if TYPE_CHECKING:
 class HistogramStart(SCPICmdRead):
     """The ``HIStogram:STARt`` command.
 
-    **Description:**
+    Description:
         - Returns the time (horizontal) or vertical units value (vertical) of the first bin where
           the histogram data starts. The ``HISTOGRAM:MODE`` must be either HORizontal or VERTical
           for a value to be returned. If the mode is OFF, an error event is set and nothing is
@@ -47,40 +45,38 @@ class HistogramStart(SCPICmdRead):
           left bin. If the ``HISTOGRAM:MODE`` is VERTical the value returned is the vertical units
           value of the top bin. The returned value is an <NR3>.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HIStogram:STARt?`` query.
         - Using the ``.verify(value)`` method will send the ``HIStogram:STARt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HIStogram:STARt?
+        ```
     """
 
 
 class HistogramSource(SCPICmdWrite, SCPICmdRead):
     """The ``HIStogram:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries which source will be compared against the histogram box when
           the histogram testing is enabled.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HIStogram:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``HIStogram:SOUrce?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HIStogram:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HIStogram:SOUrce {CH1|CH2|CH3|CH4|MATH|REF1|CH2|CH3|CH4}
         - HIStogram:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` selects the analog channel waveform to use as the source for the histogram. The
           x variable can be expressed as an integer ranging from 1 through 4. x has a minimum of 1
           and a maximum of 4.
@@ -93,25 +89,24 @@ class HistogramSource(SCPICmdWrite, SCPICmdRead):
 class HistogramMode(SCPICmdWrite, SCPICmdRead):
     """The ``HIStogram:MODe`` command.
 
-    **Description:**
+    Description:
         - This command selects the type of histogram to create or disables the histogram display.
           The query form either returns the current histogram type or that the histogram display is
           disabled.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HIStogram:MODe?`` query.
         - Using the ``.verify(value)`` method will send the ``HIStogram:MODe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HIStogram:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HIStogram:MODe {HORizontal|VERTical|OFF}
         - HIStogram:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``HORizontal`` enables a horizontally positioned histogram that shows time distribution.
         - ``VERTical`` enables a vertically positioned histogram that shows a voltage distribution,
           or another distribution such as amperes.
@@ -122,7 +117,7 @@ class HistogramMode(SCPICmdWrite, SCPICmdRead):
 class HistogramEnd(SCPICmdRead):
     """The ``HIStogram:END`` command.
 
-    **Description:**
+    Description:
         - Returns the time (horizontal) or vertical units value (vertical) of the last bin where the
           histogram data ends. The ``HISTOGRAM:MODE`` must be either HORizontal or VERTical for a
           value to be returned. If the mode is OFF, an error event is set and nothing is returned.
@@ -130,40 +125,38 @@ class HistogramEnd(SCPICmdRead):
           If the ``HISTOGRAM:MODE`` is VERTical the value returned is the vertical units value of
           the bottom bin. The returned value is an <NR3>.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HIStogram:END?`` query.
         - Using the ``.verify(value)`` method will send the ``HIStogram:END?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HIStogram:END?
+        ```
     """
 
 
 class HistogramDisplay(SCPICmdWrite, SCPICmdRead):
     """The ``HIStogram:DISplay`` command.
 
-    **Description:**
+    Description:
         - This command sets the scaling of the histogram data display to be the count of each
           histogram bin or the log of that count. The default scaling is linear.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HIStogram:DISplay?`` query.
         - Using the ``.verify(value)`` method will send the ``HIStogram:DISplay?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HIStogram:DISplay value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HIStogram:DISplay {OFF|LOG|LINEAr}
         - HIStogram:DISplay?
+        ```
 
-    **Info:**
+    Info:
         - ``<LOG>`` sets the histogram display to logarithmic scaling.
         - ``<LINEAr>`` sets the histogram display to linear scaling. This is the default setting.
     """
@@ -172,7 +165,7 @@ class HistogramDisplay(SCPICmdWrite, SCPICmdRead):
 class HistogramData(SCPICmdRead):
     """The ``HIStogram:DATa`` command.
 
-    **Description:**
+    Description:
         - This query returns the histogram data when ``HIStogram:MODe`` is HORizontal or VERTical.
           If the mode is OFF, then no data is returned and an error event is set. The data values
           returned for this query represent the number of times the histogram source waveform
@@ -186,36 +179,34 @@ class HistogramData(SCPICmdRead):
           of the horizontal bins can be derived using the ``HISTOGRAM:START`` and ``HISTOGRAM:END``
           queries.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HIStogram:DATa?`` query.
         - Using the ``.verify(value)`` method will send the ``HIStogram:DATa?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HIStogram:DATa?
+        ```
     """
 
 
 class HistogramCount(SCPICmdWrite):
     """The ``HIStogram:COUNt`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) clears the count and statistics for the histogram and the
           histogram source data. If the histogram is on, then counting restarts.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``HIStogram:COUNt value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HIStogram:COUNt RESET
+        ```
 
-    **Info:**
+    Info:
         - ``RESET``
     """
 
@@ -223,27 +214,26 @@ class HistogramCount(SCPICmdWrite):
 class HistogramBoxpcnt(SCPICmdWrite, SCPICmdRead):
     """The ``HIStogram:BOXPcnt`` command.
 
-    **Description:**
+    Description:
         - This command specifies the histogram box coordinates in terms of percentages of the full
           screen extents of the source waveform. The arguments refer to the left (percent of the
           horizontal screen extent), top (percent of the vertical screen extent), right (percent of
           the horizontal screen extent), bottom (percent of the vertical screen extent). The valid
           range for these values is 0.0 to 100.0.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HIStogram:BOXPcnt?`` query.
         - Using the ``.verify(value)`` method will send the ``HIStogram:BOXPcnt?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HIStogram:BOXPcnt value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HIStogram:BOXPcnt <NR2>, <NR2>, <NR2>, <NR2>
         - HIStogram:BOXPcnt?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the left position of the histogram box
           in percentage coordinates. The default value is 20%.
         - ``<NR3>`` specifies the top position of the histogram box in percentage coordinates. The
@@ -258,24 +248,23 @@ class HistogramBoxpcnt(SCPICmdWrite, SCPICmdRead):
 class HistogramBox(SCPICmdWrite, SCPICmdRead):
     """The ``HIStogram:BOX`` command.
 
-    **Description:**
+    Description:
         - This command specifies the histogram box coordinates in terms of source waveform vertical
           and horizontal units.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HIStogram:BOX?`` query.
         - Using the ``.verify(value)`` method will send the ``HIStogram:BOX?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HIStogram:BOX value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HIStogram:BOX <NR3>, <NR3>, <NR3>, <NR3>
         - HIStogram:BOX?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the left position of the histogram box
           in source waveform horizontal units.
         - ``<NR3>`` specifies the top position of the histogram box in source waveform vertical
@@ -291,21 +280,20 @@ class HistogramBox(SCPICmdWrite, SCPICmdRead):
 class Histogram(SCPICmdRead):
     """The ``HIStogram`` command.
 
-    **Description:**
+    Description:
         - This query-only query returns all histogram parameters; it queries the state of all
           histogram parameters that the user can set. This command is equivalent to selecting
           Waveform Histograms from the Measure menu.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HIStogram?`` query.
         - Using the ``.verify(value)`` method will send the ``HIStogram?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HIStogram?
+        ```
 
     Properties:
         - ``.box``: The ``HIStogram:BOX`` command.
@@ -335,24 +323,23 @@ class Histogram(SCPICmdRead):
     def box(self) -> HistogramBox:
         """Return the ``HIStogram:BOX`` command.
 
-        **Description:**
+        Description:
             - This command specifies the histogram box coordinates in terms of source waveform
               vertical and horizontal units.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HIStogram:BOX?`` query.
             - Using the ``.verify(value)`` method will send the ``HIStogram:BOX?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HIStogram:BOX value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HIStogram:BOX <NR3>, <NR3>, <NR3>, <NR3>
             - HIStogram:BOX?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the left position of the histogram
               box in source waveform horizontal units.
             - ``<NR3>`` specifies the top position of the histogram box in source waveform vertical
@@ -368,27 +355,26 @@ class Histogram(SCPICmdRead):
     def boxpcnt(self) -> HistogramBoxpcnt:
         """Return the ``HIStogram:BOXPcnt`` command.
 
-        **Description:**
+        Description:
             - This command specifies the histogram box coordinates in terms of percentages of the
               full screen extents of the source waveform. The arguments refer to the left (percent
               of the horizontal screen extent), top (percent of the vertical screen extent), right
               (percent of the horizontal screen extent), bottom (percent of the vertical screen
               extent). The valid range for these values is 0.0 to 100.0.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HIStogram:BOXPcnt?`` query.
             - Using the ``.verify(value)`` method will send the ``HIStogram:BOXPcnt?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HIStogram:BOXPcnt value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HIStogram:BOXPcnt <NR2>, <NR2>, <NR2>, <NR2>
             - HIStogram:BOXPcnt?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the left position of the histogram
               box in percentage coordinates. The default value is 20%.
             - ``<NR3>`` specifies the top position of the histogram box in percentage coordinates.
@@ -404,20 +390,19 @@ class Histogram(SCPICmdRead):
     def count(self) -> HistogramCount:
         """Return the ``HIStogram:COUNt`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) clears the count and statistics for the histogram and the
               histogram source data. If the histogram is on, then counting restarts.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``HIStogram:COUNt value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HIStogram:COUNt RESET
+            ```
 
-        **Info:**
+        Info:
             - ``RESET``
         """
         return self._count
@@ -426,7 +411,7 @@ class Histogram(SCPICmdRead):
     def data(self) -> HistogramData:
         """Return the ``HIStogram:DATa`` command.
 
-        **Description:**
+        Description:
             - This query returns the histogram data when ``HIStogram:MODe`` is HORizontal or
               VERTical. If the mode is OFF, then no data is returned and an error event is set. The
               data values returned for this query represent the number of times the histogram source
@@ -440,16 +425,15 @@ class Histogram(SCPICmdRead):
               column. The time of occurrence for each of the horizontal bins can be derived using
               the ``HISTOGRAM:START`` and ``HISTOGRAM:END`` queries.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HIStogram:DATa?`` query.
             - Using the ``.verify(value)`` method will send the ``HIStogram:DATa?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HIStogram:DATa?
+            ```
         """
         return self._data
 
@@ -457,24 +441,23 @@ class Histogram(SCPICmdRead):
     def display(self) -> HistogramDisplay:
         """Return the ``HIStogram:DISplay`` command.
 
-        **Description:**
+        Description:
             - This command sets the scaling of the histogram data display to be the count of each
               histogram bin or the log of that count. The default scaling is linear.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HIStogram:DISplay?`` query.
             - Using the ``.verify(value)`` method will send the ``HIStogram:DISplay?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HIStogram:DISplay value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HIStogram:DISplay {OFF|LOG|LINEAr}
             - HIStogram:DISplay?
+            ```
 
-        **Info:**
+        Info:
             - ``<LOG>`` sets the histogram display to logarithmic scaling.
             - ``<LINEAr>`` sets the histogram display to linear scaling. This is the default
               setting.
@@ -485,7 +468,7 @@ class Histogram(SCPICmdRead):
     def end(self) -> HistogramEnd:
         """Return the ``HIStogram:END`` command.
 
-        **Description:**
+        Description:
             - Returns the time (horizontal) or vertical units value (vertical) of the last bin where
               the histogram data ends. The ``HISTOGRAM:MODE`` must be either HORizontal or VERTical
               for a value to be returned. If the mode is OFF, an error event is set and nothing is
@@ -493,16 +476,15 @@ class Histogram(SCPICmdRead):
               the right bin. If the ``HISTOGRAM:MODE`` is VERTical the value returned is the
               vertical units value of the bottom bin. The returned value is an <NR3>.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HIStogram:END?`` query.
             - Using the ``.verify(value)`` method will send the ``HIStogram:END?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HIStogram:END?
+            ```
         """
         return self._end
 
@@ -510,25 +492,24 @@ class Histogram(SCPICmdRead):
     def mode(self) -> HistogramMode:
         """Return the ``HIStogram:MODe`` command.
 
-        **Description:**
+        Description:
             - This command selects the type of histogram to create or disables the histogram
               display. The query form either returns the current histogram type or that the
               histogram display is disabled.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HIStogram:MODe?`` query.
             - Using the ``.verify(value)`` method will send the ``HIStogram:MODe?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HIStogram:MODe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HIStogram:MODe {HORizontal|VERTical|OFF}
             - HIStogram:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``HORizontal`` enables a horizontally positioned histogram that shows time
               distribution.
             - ``VERTical`` enables a vertically positioned histogram that shows a voltage
@@ -541,24 +522,23 @@ class Histogram(SCPICmdRead):
     def source(self) -> HistogramSource:
         """Return the ``HIStogram:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries which source will be compared against the histogram box
               when the histogram testing is enabled.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HIStogram:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``HIStogram:SOUrce?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HIStogram:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HIStogram:SOUrce {CH1|CH2|CH3|CH4|MATH|REF1|CH2|CH3|CH4}
             - HIStogram:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` selects the analog channel waveform to use as the source for the histogram.
               The x variable can be expressed as an integer ranging from 1 through 4. x has a
               minimum of 1 and a maximum of 4.
@@ -572,7 +552,7 @@ class Histogram(SCPICmdRead):
     def start(self) -> HistogramStart:
         """Return the ``HIStogram:STARt`` command.
 
-        **Description:**
+        Description:
             - Returns the time (horizontal) or vertical units value (vertical) of the first bin
               where the histogram data starts. The ``HISTOGRAM:MODE`` must be either HORizontal or
               VERTical for a value to be returned. If the mode is OFF, an error event is set and
@@ -580,15 +560,14 @@ class Histogram(SCPICmdRead):
               the time of the left bin. If the ``HISTOGRAM:MODE`` is VERTical the value returned is
               the vertical units value of the top bin. The returned value is an <NR3>.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HIStogram:STARt?`` query.
             - Using the ``.verify(value)`` method will send the ``HIStogram:STARt?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HIStogram:STARt?
+            ```
         """
         return self._start

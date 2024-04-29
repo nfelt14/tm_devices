@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - INSTrument:COUPle:SOURce <state>
     - INSTrument:COUPle:SOURce?
 """
@@ -26,24 +24,23 @@ if TYPE_CHECKING:
 class InstrumentCoupleSource(SCPICmdWrite, SCPICmdRead):
     r"""The ``INSTrument:COUPle:SOURce`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the coupled state for a channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``INSTrument:COUPle:SOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``INSTrument:COUPle:SOURce?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``INSTrument:COUPle:SOURce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - INSTrument:COUPle:SOURce <state>
         - INSTrument:COUPle:SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``<state>`` ::={NONE\|PAIR\|ALL}.
         - ``NONE``
         - ``PAIR`` - CH1 to CH2 and CH3 to CH4.
@@ -54,7 +51,7 @@ class InstrumentCoupleSource(SCPICmdWrite, SCPICmdRead):
 class InstrumentCouple(SCPICmdRead):
     """The ``INSTrument:COUPle`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``INSTrument:COUPle?`` query.
         - Using the ``.verify(value)`` method will send the ``INSTrument:COUPle?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -71,24 +68,23 @@ class InstrumentCouple(SCPICmdRead):
     def source(self) -> InstrumentCoupleSource:
         r"""Return the ``INSTrument:COUPle:SOURce`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the coupled state for a channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``INSTrument:COUPle:SOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``INSTrument:COUPle:SOURce?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``INSTrument:COUPle:SOURce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - INSTrument:COUPle:SOURce <state>
             - INSTrument:COUPle:SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``<state>`` ::={NONE\|PAIR\|ALL}.
             - ``NONE``
             - ``PAIR`` - CH1 to CH2 and CH3 to CH4.
@@ -100,7 +96,7 @@ class InstrumentCouple(SCPICmdRead):
 class Instrument(SCPICmdRead):
     """The ``INSTrument`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``INSTrument?`` query.
         - Using the ``.verify(value)`` method will send the ``INSTrument?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -117,7 +113,7 @@ class Instrument(SCPICmdRead):
     def couple(self) -> InstrumentCouple:
         """Return the ``INSTrument:COUPle`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``INSTrument:COUPle?`` query.
             - Using the ``.verify(value)`` method will send the ``INSTrument:COUPle?`` query and
               raise an AssertionError if the returned value does not match ``value``.

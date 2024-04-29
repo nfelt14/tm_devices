@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - ETHERnet:DHCPbootp {ON|OFF}
     - ETHERnet:DHCPbootp?
     - ETHERnet:DNS:IPADDress <QString>
@@ -47,23 +45,22 @@ if TYPE_CHECKING:
 class EthernetSubnetmask(SCPICmdWrite, SCPICmdRead):
     """The ``ETHERnet:SUBNETMask`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the instrument subnet mask value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ETHERnet:SUBNETMask?`` query.
         - Using the ``.verify(value)`` method will send the ``ETHERnet:SUBNETMask?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ETHERnet:SUBNETMask value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ETHERnet:SUBNETMask <QString>
         - ETHERnet:SUBNETMask?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the subnet mask value, enclosed in quotes.
     """
 
@@ -73,37 +70,35 @@ class EthernetSubnetmask(SCPICmdWrite, SCPICmdRead):
 class EthernetPingStatus(SCPICmdRead):
     """The ``ETHERnet:PING:STATus`` command.
 
-    **Description:**
+    Description:
         - Returns the results of sending the ``ETHERNET:PING`` command to ping the gateway IP
           address.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ETHERnet:PING:STATus?`` query.
         - Using the ``.verify(value)`` method will send the ``ETHERnet:PING:STATus?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ETHERnet:PING:STATus?
+        ```
     """
 
 
 class EthernetPing(SCPICmdWrite, SCPICmdRead):
     """The ``ETHERnet:PING`` command.
 
-    **Description:**
+    Description:
         - Sends a ping packet to the instrument gateway and sets the status accordingly.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``ETHERnet:PING value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ETHERnet:PING EXECute
+        ```
 
     Properties:
         - ``.status``: The ``ETHERnet:PING:STATus`` command.
@@ -117,20 +112,19 @@ class EthernetPing(SCPICmdWrite, SCPICmdRead):
     def status(self) -> EthernetPingStatus:
         """Return the ``ETHERnet:PING:STATus`` command.
 
-        **Description:**
+        Description:
             - Returns the results of sending the ``ETHERNET:PING`` command to ping the gateway IP
               address.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet:PING:STATus?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet:PING:STATus?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ETHERnet:PING:STATus?
+            ```
         """
         return self._status
 
@@ -138,23 +132,22 @@ class EthernetPing(SCPICmdWrite, SCPICmdRead):
 class EthernetNetworkconfig(SCPICmdWrite, SCPICmdRead):
     """The ``ETHERnet:NETWORKCONFig`` command.
 
-    **Description:**
+    Description:
         - This command specifies the Ethernet network configuration setting.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ETHERnet:NETWORKCONFig?`` query.
         - Using the ``.verify(value)`` method will send the ``ETHERnet:NETWORKCONFig?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ETHERnet:NETWORKCONFig value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ETHERnet:NETWORKCONFig {AUTOmatic|MANual}
         - ETHERnet:NETWORKCONFig?
+        ```
 
-    **Info:**
+    Info:
         - ``AUTOmatic`` specifies that the instrument's IP address, subnet mask and gateway settings
           will be received from a DHCP server on the local network.
         - ``MANual`` specifies that the Ethernet settings will be configured manually, using
@@ -165,23 +158,22 @@ class EthernetNetworkconfig(SCPICmdWrite, SCPICmdRead):
 class EthernetName(SCPICmdWrite, SCPICmdRead):
     """The ``ETHERnet:NAME`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the instrument Ethernet hostname assigned to the instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ETHERnet:NAME?`` query.
         - Using the ``.verify(value)`` method will send the ``ETHERnet:NAME?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ETHERnet:NAME value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ETHERnet:NAME <QString>
         - ETHERnet:NAME?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the network name assigned to the instrument, enclosed in quotes.
     """
 
@@ -191,44 +183,42 @@ class EthernetName(SCPICmdWrite, SCPICmdRead):
 class EthernetLxiLanStatus(SCPICmdRead):
     """The ``ETHERnet:LXI:LAN:STATus`` command.
 
-    **Description:**
+    Description:
         - This query returns the LXI network status: one of OK, FAULT, or IDENTIFY. IDENTIFY
           indicates that the device identify mode is enabled.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ETHERnet:LXI:LAN:STATus?`` query.
         - Using the ``.verify(value)`` method will send the ``ETHERnet:LXI:LAN:STATus?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ETHERnet:LXI:LAN:STATus?
+        ```
     """
 
 
 class EthernetLxiLanServicename(SCPICmdWrite, SCPICmdRead):
     """The ``ETHERnet:LXI:LAN:SERVICENAMe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the service name used for the LXI interface.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ETHERnet:LXI:LAN:SERVICENAMe?`` query.
         - Using the ``.verify(value)`` method will send the ``ETHERnet:LXI:LAN:SERVICENAMe?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ETHERnet:LXI:LAN:SERVICENAMe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ETHERnet:LXI:LAN:SERVICENAMe <QString>
         - ETHERnet:LXI:LAN:SERVICENAMe?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string of up to 64 characters that specifies the mDNS service
           name used for the LXI interface.
     """
@@ -239,24 +229,23 @@ class EthernetLxiLanServicename(SCPICmdWrite, SCPICmdRead):
 class EthernetLxiLanReset(SCPICmdWriteNoArguments):
     """The ``ETHERnet:LXI:LAN:RESET`` command.
 
-    **Description:**
+    Description:
         - This command resets the LXI local area network.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``ETHERnet:LXI:LAN:RESET`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ETHERnet:LXI:LAN:RESET
+        ```
     """
 
 
 class EthernetLxiLan(SCPICmdRead):
     """The ``ETHERnet:LXI:LAN`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ETHERnet:LXI:LAN?`` query.
         - Using the ``.verify(value)`` method will send the ``ETHERnet:LXI:LAN?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -277,17 +266,16 @@ class EthernetLxiLan(SCPICmdRead):
     def reset(self) -> EthernetLxiLanReset:
         """Return the ``ETHERnet:LXI:LAN:RESET`` command.
 
-        **Description:**
+        Description:
             - This command resets the LXI local area network.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``ETHERnet:LXI:LAN:RESET`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ETHERnet:LXI:LAN:RESET
+            ```
         """
         return self._reset
 
@@ -295,24 +283,23 @@ class EthernetLxiLan(SCPICmdRead):
     def servicename(self) -> EthernetLxiLanServicename:
         """Return the ``ETHERnet:LXI:LAN:SERVICENAMe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the service name used for the LXI interface.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet:LXI:LAN:SERVICENAMe?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet:LXI:LAN:SERVICENAMe?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``ETHERnet:LXI:LAN:SERVICENAMe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ETHERnet:LXI:LAN:SERVICENAMe <QString>
             - ETHERnet:LXI:LAN:SERVICENAMe?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string of up to 64 characters that specifies the mDNS
               service name used for the LXI interface.
         """
@@ -322,20 +309,19 @@ class EthernetLxiLan(SCPICmdRead):
     def status(self) -> EthernetLxiLanStatus:
         """Return the ``ETHERnet:LXI:LAN:STATus`` command.
 
-        **Description:**
+        Description:
             - This query returns the LXI network status: one of OK, FAULT, or IDENTIFY. IDENTIFY
               indicates that the device identify mode is enabled.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet:LXI:LAN:STATus?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet:LXI:LAN:STATus?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ETHERnet:LXI:LAN:STATus?
+            ```
         """
         return self._status
 
@@ -343,7 +329,7 @@ class EthernetLxiLan(SCPICmdRead):
 class EthernetLxi(SCPICmdRead):
     """The ``ETHERnet:LXI`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ETHERnet:LXI?`` query.
         - Using the ``.verify(value)`` method will send the ``ETHERnet:LXI?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -360,7 +346,7 @@ class EthernetLxi(SCPICmdRead):
     def lan(self) -> EthernetLxiLan:
         """Return the ``ETHERnet:LXI:LAN`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet:LXI:LAN?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet:LXI:LAN?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -376,23 +362,22 @@ class EthernetLxi(SCPICmdRead):
 class EthernetIpaddress(SCPICmdWrite, SCPICmdRead):
     """The ``ETHERnet:IPADDress`` command.
 
-    **Description:**
+    Description:
         - This command sets the IP address assigned to the instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ETHERnet:IPADDress?`` query.
         - Using the ``.verify(value)`` method will send the ``ETHERnet:IPADDress?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ETHERnet:IPADDress value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ETHERnet:IPADDress <QString>
         - ETHERnet:IPADDress?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a standard IP address value, enclosed in quotes.
     """
 
@@ -402,24 +387,23 @@ class EthernetIpaddress(SCPICmdWrite, SCPICmdRead):
 class EthernetGatewayIpaddress(SCPICmdWrite, SCPICmdRead):
     """The ``ETHERnet:GATEWay:IPADDress`` command.
 
-    **Description:**
+    Description:
         - This command specifies the network gateway IP address.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ETHERnet:GATEWay:IPADDress?`` query.
         - Using the ``.verify(value)`` method will send the ``ETHERnet:GATEWay:IPADDress?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ETHERnet:GATEWay:IPADDress value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ETHERnet:GATEWay:IPADDress <QString>
         - ETHERnet:GATEWay:IPADDress?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a standard IP address value, enclosed in quotes.
     """
 
@@ -429,7 +413,7 @@ class EthernetGatewayIpaddress(SCPICmdWrite, SCPICmdRead):
 class EthernetGateway(SCPICmdRead):
     """The ``ETHERnet:GATEWay`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ETHERnet:GATEWay?`` query.
         - Using the ``.verify(value)`` method will send the ``ETHERnet:GATEWay?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -446,24 +430,23 @@ class EthernetGateway(SCPICmdRead):
     def ipaddress(self) -> EthernetGatewayIpaddress:
         """Return the ``ETHERnet:GATEWay:IPADDress`` command.
 
-        **Description:**
+        Description:
             - This command specifies the network gateway IP address.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet:GATEWay:IPADDress?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet:GATEWay:IPADDress?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ETHERnet:GATEWay:IPADDress value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ETHERnet:GATEWay:IPADDress <QString>
             - ETHERnet:GATEWay:IPADDress?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a standard IP address value, enclosed in quotes.
         """
         return self._ipaddress
@@ -472,27 +455,26 @@ class EthernetGateway(SCPICmdRead):
 class EthernetEnetAddress(SCPICmdRead):
     """The ``ETHERnet:ENET:ADDress`` command.
 
-    **Description:**
+    Description:
         - Returns the Ethernet address (MAC address) value assigned to the instrument. This is
           assigned at the factory and can not be changed.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ETHERnet:ENET:ADDress?`` query.
         - Using the ``.verify(value)`` method will send the ``ETHERnet:ENET:ADDress?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ETHERnet:ENET:ADDress?
+        ```
     """
 
 
 class EthernetEnet(SCPICmdRead):
     """The ``ETHERnet:ENET`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ETHERnet:ENET?`` query.
         - Using the ``.verify(value)`` method will send the ``ETHERnet:ENET?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -509,20 +491,19 @@ class EthernetEnet(SCPICmdRead):
     def address(self) -> EthernetEnetAddress:
         """Return the ``ETHERnet:ENET:ADDress`` command.
 
-        **Description:**
+        Description:
             - Returns the Ethernet address (MAC address) value assigned to the instrument. This is
               assigned at the factory and can not be changed.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet:ENET:ADDress?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet:ENET:ADDress?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ETHERnet:ENET:ADDress?
+            ```
         """
         return self._address
 
@@ -530,23 +511,22 @@ class EthernetEnet(SCPICmdRead):
 class EthernetDomainname(SCPICmdWrite, SCPICmdRead):
     """The ``ETHERnet:DOMAINname`` command.
 
-    **Description:**
+    Description:
         - This command specifies the network domain name.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ETHERnet:DOMAINname?`` query.
         - Using the ``.verify(value)`` method will send the ``ETHERnet:DOMAINname?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ETHERnet:DOMAINname value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ETHERnet:DOMAINname <QString>
         - ETHERnet:DOMAINname?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the network domain name, enclosed in quotes.
     """
 
@@ -556,23 +536,22 @@ class EthernetDomainname(SCPICmdWrite, SCPICmdRead):
 class EthernetDnsIpaddress(SCPICmdWrite, SCPICmdRead):
     """The ``ETHERnet:DNS:IPADDress`` command.
 
-    **Description:**
+    Description:
         - This command specifies the network Domain Name Server (DNS) IP address.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ETHERnet:DNS:IPADDress?`` query.
         - Using the ``.verify(value)`` method will send the ``ETHERnet:DNS:IPADDress?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ETHERnet:DNS:IPADDress value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ETHERnet:DNS:IPADDress <QString>
         - ETHERnet:DNS:IPADDress?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a standard IP address value, enclosed in quotes.
     """
 
@@ -582,7 +561,7 @@ class EthernetDnsIpaddress(SCPICmdWrite, SCPICmdRead):
 class EthernetDns(SCPICmdRead):
     """The ``ETHERnet:DNS`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ETHERnet:DNS?`` query.
         - Using the ``.verify(value)`` method will send the ``ETHERnet:DNS?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -599,24 +578,23 @@ class EthernetDns(SCPICmdRead):
     def ipaddress(self) -> EthernetDnsIpaddress:
         """Return the ``ETHERnet:DNS:IPADDress`` command.
 
-        **Description:**
+        Description:
             - This command specifies the network Domain Name Server (DNS) IP address.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet:DNS:IPADDress?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet:DNS:IPADDress?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ETHERnet:DNS:IPADDress value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ETHERnet:DNS:IPADDress <QString>
             - ETHERnet:DNS:IPADDress?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a standard IP address value, enclosed in quotes.
         """
         return self._ipaddress
@@ -625,24 +603,23 @@ class EthernetDns(SCPICmdRead):
 class EthernetDhcpbootp(SCPICmdWrite, SCPICmdRead):
     """The ``ETHERnet:DHCPbootp`` command.
 
-    **Description:**
+    Description:
         - This command sets the network configuration method to DHCP (that is ON) or static IP
           address (that is OFF).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ETHERnet:DHCPbootp?`` query.
         - Using the ``.verify(value)`` method will send the ``ETHERnet:DHCPbootp?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ETHERnet:DHCPbootp value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ETHERnet:DHCPbootp {ON|OFF}
         - ETHERnet:DHCPbootp?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the instrument to search the network for a DHCP server in order to
           automatically assign a dynamic IP address to the instrument.
         - ``OFF`` disables the instrument to search the network for a DHCP server.
@@ -653,7 +630,7 @@ class EthernetDhcpbootp(SCPICmdWrite, SCPICmdRead):
 class Ethernet(SCPICmdRead):
     """The ``ETHERnet`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ETHERnet?`` query.
         - Using the ``.verify(value)`` method will send the ``ETHERnet?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -690,24 +667,23 @@ class Ethernet(SCPICmdRead):
     def dhcpbootp(self) -> EthernetDhcpbootp:
         """Return the ``ETHERnet:DHCPbootp`` command.
 
-        **Description:**
+        Description:
             - This command sets the network configuration method to DHCP (that is ON) or static IP
               address (that is OFF).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet:DHCPbootp?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet:DHCPbootp?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ETHERnet:DHCPbootp value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ETHERnet:DHCPbootp {ON|OFF}
             - ETHERnet:DHCPbootp?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the instrument to search the network for a DHCP server in order to
               automatically assign a dynamic IP address to the instrument.
             - ``OFF`` disables the instrument to search the network for a DHCP server.
@@ -718,7 +694,7 @@ class Ethernet(SCPICmdRead):
     def dns(self) -> EthernetDns:
         """Return the ``ETHERnet:DNS`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet:DNS?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet:DNS?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -732,24 +708,23 @@ class Ethernet(SCPICmdRead):
     def domainname(self) -> EthernetDomainname:
         """Return the ``ETHERnet:DOMAINname`` command.
 
-        **Description:**
+        Description:
             - This command specifies the network domain name.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet:DOMAINname?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet:DOMAINname?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ETHERnet:DOMAINname value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ETHERnet:DOMAINname <QString>
             - ETHERnet:DOMAINname?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the network domain name, enclosed in quotes.
         """
         return self._domainname
@@ -758,7 +733,7 @@ class Ethernet(SCPICmdRead):
     def enet(self) -> EthernetEnet:
         """Return the ``ETHERnet:ENET`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet:ENET?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet:ENET?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -772,7 +747,7 @@ class Ethernet(SCPICmdRead):
     def gateway(self) -> EthernetGateway:
         """Return the ``ETHERnet:GATEWay`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet:GATEWay?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet:GATEWay?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -786,23 +761,22 @@ class Ethernet(SCPICmdRead):
     def ipaddress(self) -> EthernetIpaddress:
         """Return the ``ETHERnet:IPADDress`` command.
 
-        **Description:**
+        Description:
             - This command sets the IP address assigned to the instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet:IPADDress?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet:IPADDress?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ETHERnet:IPADDress value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ETHERnet:IPADDress <QString>
             - ETHERnet:IPADDress?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a standard IP address value, enclosed in quotes.
         """
         return self._ipaddress
@@ -811,7 +785,7 @@ class Ethernet(SCPICmdRead):
     def lxi(self) -> EthernetLxi:
         """Return the ``ETHERnet:LXI`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet:LXI?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet:LXI?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -825,24 +799,23 @@ class Ethernet(SCPICmdRead):
     def name(self) -> EthernetName:
         """Return the ``ETHERnet:NAME`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the instrument Ethernet hostname assigned to the
               instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet:NAME?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet:NAME?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ETHERnet:NAME value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ETHERnet:NAME <QString>
             - ETHERnet:NAME?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the network name assigned to the instrument, enclosed in quotes.
         """
         return self._name
@@ -851,24 +824,23 @@ class Ethernet(SCPICmdRead):
     def networkconfig(self) -> EthernetNetworkconfig:
         """Return the ``ETHERnet:NETWORKCONFig`` command.
 
-        **Description:**
+        Description:
             - This command specifies the Ethernet network configuration setting.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet:NETWORKCONFig?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet:NETWORKCONFig?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ETHERnet:NETWORKCONFig value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ETHERnet:NETWORKCONFig {AUTOmatic|MANual}
             - ETHERnet:NETWORKCONFig?
+            ```
 
-        **Info:**
+        Info:
             - ``AUTOmatic`` specifies that the instrument's IP address, subnet mask and gateway
               settings will be received from a DHCP server on the local network.
             - ``MANual`` specifies that the Ethernet settings will be configured manually, using
@@ -880,17 +852,16 @@ class Ethernet(SCPICmdRead):
     def ping(self) -> EthernetPing:
         """Return the ``ETHERnet:PING`` command.
 
-        **Description:**
+        Description:
             - Sends a ping packet to the instrument gateway and sets the status accordingly.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``ETHERnet:PING value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ETHERnet:PING EXECute
+            ```
 
         Sub-properties:
             - ``.status``: The ``ETHERnet:PING:STATus`` command.
@@ -901,24 +872,23 @@ class Ethernet(SCPICmdRead):
     def subnetmask(self) -> EthernetSubnetmask:
         """Return the ``ETHERnet:SUBNETMask`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the instrument subnet mask value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet:SUBNETMask?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet:SUBNETMask?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ETHERnet:SUBNETMask value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ETHERnet:SUBNETMask <QString>
             - ETHERnet:SUBNETMask?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the subnet mask value, enclosed in quotes.
         """
         return self._subnetmask

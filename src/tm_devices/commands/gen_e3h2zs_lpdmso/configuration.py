@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CONFIGuration:ANALOg:BANDWidth?
 """
 
@@ -25,26 +23,25 @@ if TYPE_CHECKING:
 class ConfigurationAnalogBandwidth(SCPICmdRead):
     """The ``CONFIGuration:ANALOg:BANDWidth`` command.
 
-    **Description:**
+    Description:
         - This command queries the maximum licensed bandwidth of the instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CONFIGuration:ANALOg:BANDWidth?`` query.
         - Using the ``.verify(value)`` method will send the ``CONFIGuration:ANALOg:BANDWidth?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CONFIGuration:ANALOg:BANDWidth?
+        ```
     """
 
 
 class ConfigurationAnalog(SCPICmdRead):
     """The ``CONFIGuration:ANALOg`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CONFIGuration:ANALOg?`` query.
         - Using the ``.verify(value)`` method will send the ``CONFIGuration:ANALOg?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -61,19 +58,18 @@ class ConfigurationAnalog(SCPICmdRead):
     def bandwidth(self) -> ConfigurationAnalogBandwidth:
         """Return the ``CONFIGuration:ANALOg:BANDWidth`` command.
 
-        **Description:**
+        Description:
             - This command queries the maximum licensed bandwidth of the instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CONFIGuration:ANALOg:BANDWidth?`` query.
             - Using the ``.verify(value)`` method will send the ``CONFIGuration:ANALOg:BANDWidth?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CONFIGuration:ANALOg:BANDWidth?
+            ```
         """
         return self._bandwidth
 
@@ -81,7 +77,7 @@ class ConfigurationAnalog(SCPICmdRead):
 class Configuration(SCPICmdRead):
     """The ``CONFIGuration`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CONFIGuration?`` query.
         - Using the ``.verify(value)`` method will send the ``CONFIGuration?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -100,7 +96,7 @@ class Configuration(SCPICmdRead):
     def analog(self) -> ConfigurationAnalog:
         """Return the ``CONFIGuration:ANALOg`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CONFIGuration:ANALOg?`` query.
             - Using the ``.verify(value)`` method will send the ``CONFIGuration:ANALOg?`` query and
               raise an AssertionError if the returned value does not match ``value``.

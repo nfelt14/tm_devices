@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - *RCL <NR1>
     - *SAV <NR1>
 """
@@ -28,20 +26,19 @@ if TYPE_CHECKING:
 class Sav(SCPICmdWrite):
     """The ``*SAV`` command.
 
-    **Description:**
+    Description:
         - Stores the state of the oscilloscope to a specified memory location. You can use the
           ``*RCL`` command to restore the oscilloscope to this saved state at a later time.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``*SAV value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - *SAV <NR1>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies a location in which to save the state of the oscilloscope. Location
           values range from 1 through 10. Using an out-of-range location value causes an execution
           error. Any settings that have been stored previously at this location will be overwritten.
@@ -54,20 +51,19 @@ class Sav(SCPICmdWrite):
 class Rcl(SCPICmdWrite):
     """The ``*RCL`` command.
 
-    **Description:**
+    Description:
         - This command restores the state of the oscilloscope from a copy of the settings stored in
           memory (The settings are stored using the ``*SAV`` command).
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``*RCL value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - *RCL <NR1>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is a value in the range from 1 to 10, which specifies a saved setup storage
           location.
     """

@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - OUTPut[n]:PATH {DCHB|ACDirect|ACAMplified|DCHV}
     - OUTPut[n]:PATH?
     - OUTPut[n]:STATe {0|1|OFF|ON}
@@ -41,26 +39,25 @@ if TYPE_CHECKING:
 class OutputItemWvalueMarkerItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``OUTPut[n]:WVALue:MARKer[m]`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the output condition of the specified marker of the specified
           channel while the instrument is in the waiting-for-trigger state or for a brief period
           after the waveform loads to the DAC and before the first point plays.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut[n]:WVALue:MARKer[m]?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut[n]:WVALue:MARKer[m]?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``OUTPut[n]:WVALue:MARKer[m] value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - OUTPut[n]:WVALue:MARKer[m] {FIRSt|LOW|HIGH}
         - OUTPut[n]:WVALue:MARKer[m]?
+        ```
 
-    **Info:**
+    Info:
         - ``FIRSt`` sets the marker output level to match the first point in the waveform when the
           channel is in the waiting-for-trigger state. LOW sets the marker output to a logic level
           low for when the channel is in the waiting-for-trigger state. HIGH sets the marker output
@@ -74,26 +71,25 @@ class OutputItemWvalueMarkerItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICm
 class OutputItemWvalueAnalogState(SCPICmdWrite, SCPICmdRead):
     """The ``OUTPut[n]:WVALue:ANALog:STATe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the output condition of a waveform of the specified channel
           while the instrument is in the waiting-for-trigger state or for a brief period after the
           waveform loads to the DAC and before the first point plays.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut[n]:WVALue:ANALog:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut[n]:WVALue:ANALog:STATe?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``OUTPut[n]:WVALue:ANALog:STATe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - OUTPut[n]:WVALue:ANALog:STATe {FIRSt|ZERO}
         - OUTPut[n]:WVALue:ANALog:STATe?
+        ```
 
-    **Info:**
+    Info:
         - ``FIRSt`` sets the output level for channel 'n' to match the first point in the waveform
           when channel 'n' is in the Waiting-for-trigger state. ZERO sets the output level for
           channel 'n' to 0 volts when channel 'n' is in the Waiting-for-trigger state.[n] determines
@@ -105,7 +101,7 @@ class OutputItemWvalueAnalogState(SCPICmdWrite, SCPICmdRead):
 class OutputItemWvalueAnalog(SCPICmdRead):
     """The ``OUTPut[n]:WVALue:ANALog`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut[n]:WVALue:ANALog?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut[n]:WVALue:ANALog?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -122,26 +118,25 @@ class OutputItemWvalueAnalog(SCPICmdRead):
     def state(self) -> OutputItemWvalueAnalogState:
         """Return the ``OUTPut[n]:WVALue:ANALog:STATe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the output condition of a waveform of the specified
               channel while the instrument is in the waiting-for-trigger state or for a brief period
               after the waveform loads to the DAC and before the first point plays.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut[n]:WVALue:ANALog:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut[n]:WVALue:ANALog:STATe?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``OUTPut[n]:WVALue:ANALog:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - OUTPut[n]:WVALue:ANALog:STATe {FIRSt|ZERO}
             - OUTPut[n]:WVALue:ANALog:STATe?
+            ```
 
-        **Info:**
+        Info:
             - ``FIRSt`` sets the output level for channel 'n' to match the first point in the
               waveform when channel 'n' is in the Waiting-for-trigger state. ZERO sets the output
               level for channel 'n' to 0 volts when channel 'n' is in the Waiting-for-trigger
@@ -154,7 +149,7 @@ class OutputItemWvalueAnalog(SCPICmdRead):
 class OutputItemWvalue(SCPICmdRead):
     """The ``OUTPut[n]:WVALue`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut[n]:WVALue?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut[n]:WVALue?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -175,26 +170,25 @@ class OutputItemWvalue(SCPICmdRead):
     def marker(self) -> Dict[int, OutputItemWvalueMarkerItem]:
         """Return the ``OUTPut[n]:WVALue:MARKer[m]`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the output condition of the specified marker of the
               specified channel while the instrument is in the waiting-for-trigger state or for a
               brief period after the waveform loads to the DAC and before the first point plays.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut[n]:WVALue:MARKer[m]?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut[n]:WVALue:MARKer[m]?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``OUTPut[n]:WVALue:MARKer[m] value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - OUTPut[n]:WVALue:MARKer[m] {FIRSt|LOW|HIGH}
             - OUTPut[n]:WVALue:MARKer[m]?
+            ```
 
-        **Info:**
+        Info:
             - ``FIRSt`` sets the marker output level to match the first point in the waveform when
               the channel is in the waiting-for-trigger state. LOW sets the marker output to a logic
               level low for when the channel is in the waiting-for-trigger state. HIGH sets the
@@ -209,7 +203,7 @@ class OutputItemWvalue(SCPICmdRead):
     def analog(self) -> OutputItemWvalueAnalog:
         """Return the ``OUTPut[n]:WVALue:ANALog`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut[n]:WVALue:ANALog?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut[n]:WVALue:ANALog?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -223,25 +217,24 @@ class OutputItemWvalue(SCPICmdRead):
 class OutputItemSvalueMarkerItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``OUTPut[n]:SVALue:MARKer[m]`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the output data position of the specified marker of the
           specified channel when in the stopped state.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut[n]:SVALue:MARKer[m]?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut[n]:SVALue:MARKer[m]?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``OUTPut[n]:SVALue:MARKer[m] value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - OUTPut[n]:SVALue:MARKer[m] {OFF|LOW}
         - OUTPut[n]:SVALue:MARKer[m]?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` sets the stop state marker output for channel 'n' to open (electrically
           disconnected). LOW sets the stop state marker output for channel 'n' value to 0 volts.[n]
           determines the channel number. If omitted, interpreted as 1.[m] determines the marker
@@ -253,25 +246,24 @@ class OutputItemSvalueMarkerItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICm
 class OutputItemSvalueAnalogState(SCPICmdWrite, SCPICmdRead):
     """The ``OUTPut[n]:SVALue:ANALog:STATe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the output condition of a waveform of the specified channel
           while the instrument is in the stopped state.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut[n]:SVALue:ANALog:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut[n]:SVALue:ANALog:STATe?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``OUTPut[n]:SVALue:ANALog:STATe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - OUTPut[n]:SVALue:ANALog:STATe {OFF|ZERO}
         - OUTPut[n]:SVALue:ANALog:STATe?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` sets the stop state output for channel 'n' to open (electrically disconnected).
           ZERO sets the stop state output value for channel 'n' to 0 volts.[n] determines the
           channel number. If omitted, interpreted as 1.
@@ -282,7 +274,7 @@ class OutputItemSvalueAnalogState(SCPICmdWrite, SCPICmdRead):
 class OutputItemSvalueAnalog(SCPICmdRead):
     """The ``OUTPut[n]:SVALue:ANALog`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut[n]:SVALue:ANALog?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut[n]:SVALue:ANALog?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -299,25 +291,24 @@ class OutputItemSvalueAnalog(SCPICmdRead):
     def state(self) -> OutputItemSvalueAnalogState:
         """Return the ``OUTPut[n]:SVALue:ANALog:STATe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the output condition of a waveform of the specified
               channel while the instrument is in the stopped state.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut[n]:SVALue:ANALog:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut[n]:SVALue:ANALog:STATe?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``OUTPut[n]:SVALue:ANALog:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - OUTPut[n]:SVALue:ANALog:STATe {OFF|ZERO}
             - OUTPut[n]:SVALue:ANALog:STATe?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` sets the stop state output for channel 'n' to open (electrically
               disconnected). ZERO sets the stop state output value for channel 'n' to 0 volts.[n]
               determines the channel number. If omitted, interpreted as 1.
@@ -329,7 +320,7 @@ class OutputItemSvalueAnalog(SCPICmdRead):
 class OutputItemSvalue(SCPICmdRead):
     """The ``OUTPut[n]:SVALue`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut[n]:SVALue?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut[n]:SVALue?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -350,25 +341,24 @@ class OutputItemSvalue(SCPICmdRead):
     def marker(self) -> Dict[int, OutputItemSvalueMarkerItem]:
         """Return the ``OUTPut[n]:SVALue:MARKer[m]`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the output data position of the specified marker of the
               specified channel when in the stopped state.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut[n]:SVALue:MARKer[m]?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut[n]:SVALue:MARKer[m]?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``OUTPut[n]:SVALue:MARKer[m] value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - OUTPut[n]:SVALue:MARKer[m] {OFF|LOW}
             - OUTPut[n]:SVALue:MARKer[m]?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` sets the stop state marker output for channel 'n' to open (electrically
               disconnected). LOW sets the stop state marker output for channel 'n' value to 0
               volts.[n] determines the channel number. If omitted, interpreted as 1.[m] determines
@@ -381,7 +371,7 @@ class OutputItemSvalue(SCPICmdRead):
     def analog(self) -> OutputItemSvalueAnalog:
         """Return the ``OUTPut[n]:SVALue:ANALog`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut[n]:SVALue:ANALog?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut[n]:SVALue:ANALog?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -395,23 +385,22 @@ class OutputItemSvalue(SCPICmdRead):
 class OutputItemState(SCPICmdWrite, SCPICmdRead):
     """The ``OUTPut[n]:STATe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the output state of the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut[n]:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut[n]:STATe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``OUTPut[n]:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - OUTPut[n]:STATe {0|1|OFF|ON}
         - OUTPut[n]:STATe?
+        ```
 
-    **Info:**
+    Info:
         - ``0`` or OFF disables the channel's output. 1 or ON enables the channel's output.[n]
           determines the channel number. If omitted, interpreted as 1.
         - ``*RST`` sets all channels to 0.
@@ -421,23 +410,22 @@ class OutputItemState(SCPICmdWrite, SCPICmdRead):
 class OutputItemPath(SCPICmdWrite, SCPICmdRead):
     """The ``OUTPut[n]:PATH`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the output signal path of the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut[n]:PATH?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut[n]:PATH?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``OUTPut[n]:PATH value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - OUTPut[n]:PATH {DCHB|ACDirect|ACAMplified|DCHV}
         - OUTPut[n]:PATH?
+        ```
 
-    **Info:**
+    Info:
         - ``DCHB`` sets the signal path to DC High Bandwidth, going directly from the DAC to the
           channel's (+) and (-) differential outputs. DCHV sets the signal path toDC High Voltage,
           going from the DAC through an additional amplifier, then to the channel's (+) and (-)
@@ -451,7 +439,7 @@ class OutputItemPath(SCPICmdWrite, SCPICmdRead):
 class OutputItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``OUTPut[n]`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut[n]?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut[n]?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -474,23 +462,22 @@ class OutputItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def path(self) -> OutputItemPath:
         """Return the ``OUTPut[n]:PATH`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the output signal path of the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut[n]:PATH?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut[n]:PATH?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``OUTPut[n]:PATH value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - OUTPut[n]:PATH {DCHB|ACDirect|ACAMplified|DCHV}
             - OUTPut[n]:PATH?
+            ```
 
-        **Info:**
+        Info:
             - ``DCHB`` sets the signal path to DC High Bandwidth, going directly from the DAC to the
               channel's (+) and (-) differential outputs. DCHV sets the signal path toDC High
               Voltage, going from the DAC through an additional amplifier, then to the channel's (+)
@@ -505,7 +492,7 @@ class OutputItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def svalue(self) -> OutputItemSvalue:
         """Return the ``OUTPut[n]:SVALue`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut[n]:SVALue?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut[n]:SVALue?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -520,7 +507,7 @@ class OutputItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def wvalue(self) -> OutputItemWvalue:
         """Return the ``OUTPut[n]:WVALue`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut[n]:WVALue?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut[n]:WVALue?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -535,23 +522,22 @@ class OutputItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def state(self) -> OutputItemState:
         """Return the ``OUTPut[n]:STATe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the output state of the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut[n]:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut[n]:STATe?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``OUTPut[n]:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - OUTPut[n]:STATe {0|1|OFF|ON}
             - OUTPut[n]:STATe?
+            ```
 
-        **Info:**
+        Info:
             - ``0`` or OFF disables the channel's output. 1 or ON enables the channel's output.[n]
               determines the channel number. If omitted, interpreted as 1.
             - ``*RST`` sets all channels to 0.

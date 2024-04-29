@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - OUTPut:TRIGger:MODE {TRIGger|SYNC}
     - OUTPut:TRIGger:MODE?
 """
@@ -26,7 +24,7 @@ if TYPE_CHECKING:
 class OutputTriggerMode(SCPICmdWrite, SCPICmdRead):
     """The ``OUTPut:TRIGger:MODE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the mode (trigger or sync) for Trigger Output signal. When
           the burst count is set to Inf-Cycles in burst mode, TRIGger indicates that the infinite
           number of cycles of waveform will be output from the Trigger Output connector. When the
@@ -34,25 +32,24 @@ class OutputTriggerMode(SCPICmdWrite, SCPICmdRead):
           output from the Trigger Output connector when the Inf-Cycles starts. When Run Mode is
           specified other than Burst Inf-Cycles, TRIGger and SYNC have the same effect.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut:TRIGger:MODE?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut:TRIGger:MODE?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``OUTPut:TRIGger:MODE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - OUTPut:TRIGger:MODE {TRIGger|SYNC}
         - OUTPut:TRIGger:MODE?
+        ```
     """
 
 
 class OutputTrigger(SCPICmdRead):
     """The ``OUTPut:TRIGger`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut:TRIGger?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut:TRIGger?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -69,7 +66,7 @@ class OutputTrigger(SCPICmdRead):
     def mode(self) -> OutputTriggerMode:
         """Return the ``OUTPut:TRIGger:MODE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the mode (trigger or sync) for Trigger Output signal.
               When the burst count is set to Inf-Cycles in burst mode, TRIGger indicates that the
               infinite number of cycles of waveform will be output from the Trigger Output
@@ -78,19 +75,18 @@ class OutputTrigger(SCPICmdRead):
               Inf-Cycles starts. When Run Mode is specified other than Burst Inf-Cycles, TRIGger and
               SYNC have the same effect.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut:TRIGger:MODE?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut:TRIGger:MODE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``OUTPut:TRIGger:MODE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - OUTPut:TRIGger:MODE {TRIGger|SYNC}
             - OUTPut:TRIGger:MODE?
+            ```
         """
         return self._mode
 
@@ -98,7 +94,7 @@ class OutputTrigger(SCPICmdRead):
 class Output(SCPICmdRead):
     """The ``OUTPut`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -115,7 +111,7 @@ class Output(SCPICmdRead):
     def trigger(self) -> OutputTrigger:
         """Return the ``OUTPut:TRIGger`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut:TRIGger?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut:TRIGger?`` query and raise
               an AssertionError if the returned value does not match ``value``.

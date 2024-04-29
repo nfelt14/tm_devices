@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - RECAll:MASK <source file>,MASK<x>
     - RECAll:SESsion <file_path>
     - RECAll:SETUp {FACtory|<file_path>}
@@ -28,19 +26,18 @@ if TYPE_CHECKING:
 class RecallWaveform(SCPICmdWrite):
     """The ``RECAll:WAVEform`` command.
 
-    **Description:**
+    Description:
         - This command recalls a stored waveform to a reference memory location.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``RECAll:WAVEform value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RECAll:WAVEform <source file>,<destination>
+        ```
 
-    **Info:**
+    Info:
         - ``<source file>`` is the source file. The file is expected to be located in a directory
           relative to the current working directory (specified by ``FILESYSTEM:CWD``) unless a
           complete path is specified.
@@ -52,21 +49,20 @@ class RecallWaveform(SCPICmdWrite):
 class RecallSetup(SCPICmdWrite):
     """The ``RECAll:SETUp`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) returns stored or factory settings to the instrument from a
           copy of the settings stored in memory. This command performs the same function as
           selecting Recall from the File menu, and then choosing the Setup button.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``RECAll:SETUp value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RECAll:SETUp {FACtory|<file_path>}
+        ```
 
-    **Info:**
+    Info:
         - ``FACtory`` restores the factory setup. Performs the same operation as the ``:FACtory``
           command.
         - ``<file_path>`` specifies a location for an instrument setup file. <file path> is a quoted
@@ -79,20 +75,19 @@ class RecallSetup(SCPICmdWrite):
 class RecallSession(SCPICmdWrite):
     """The ``RECAll:SESsion`` command.
 
-    **Description:**
+    Description:
         - Restores the state of the instrument, including reference waveforms, from a saved session
           file.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``RECAll:SESsion value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RECAll:SESsion <file_path>
+        ```
 
-    **Info:**
+    Info:
         - ``<file_path>`` is the file path that specifies the location of the specified instrument
           session file.
     """
@@ -101,21 +96,20 @@ class RecallSession(SCPICmdWrite):
 class RecallMask(SCPICmdWrite):
     """The ``RECAll:MASK`` command.
 
-    **Description:**
+    Description:
         - This command recalls a saved mask definition from a Mask File. File suffixes can be xml or
           msk. If the specified mask test already exists the mask associated with that mask test
           will be replaced, otherwise a new mask test is created.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``RECAll:MASK value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RECAll:MASK <source file>,MASK<x>
+        ```
 
-    **Info:**
+    Info:
         - ``MASK<x>`` is the destination mask.
         - ``<source file>`` is the source file. The file is expected to be located in a directory
           relative to the current working directory (specified by ``FILESYSTEM:CWD``) unless a
@@ -126,7 +120,7 @@ class RecallMask(SCPICmdWrite):
 class Recall(SCPICmdRead):
     """The ``RECAll`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RECAll?`` query.
         - Using the ``.verify(value)`` method will send the ``RECAll?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -149,21 +143,20 @@ class Recall(SCPICmdRead):
     def mask(self) -> RecallMask:
         """Return the ``RECAll:MASK`` command.
 
-        **Description:**
+        Description:
             - This command recalls a saved mask definition from a Mask File. File suffixes can be
               xml or msk. If the specified mask test already exists the mask associated with that
               mask test will be replaced, otherwise a new mask test is created.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``RECAll:MASK value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RECAll:MASK <source file>,MASK<x>
+            ```
 
-        **Info:**
+        Info:
             - ``MASK<x>`` is the destination mask.
             - ``<source file>`` is the source file. The file is expected to be located in a
               directory relative to the current working directory (specified by ``FILESYSTEM:CWD``)
@@ -175,20 +168,19 @@ class Recall(SCPICmdRead):
     def session(self) -> RecallSession:
         """Return the ``RECAll:SESsion`` command.
 
-        **Description:**
+        Description:
             - Restores the state of the instrument, including reference waveforms, from a saved
               session file.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``RECAll:SESsion value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RECAll:SESsion <file_path>
+            ```
 
-        **Info:**
+        Info:
             - ``<file_path>`` is the file path that specifies the location of the specified
               instrument session file.
         """
@@ -198,21 +190,20 @@ class Recall(SCPICmdRead):
     def setup(self) -> RecallSetup:
         """Return the ``RECAll:SETUp`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) returns stored or factory settings to the instrument from
               a copy of the settings stored in memory. This command performs the same function as
               selecting Recall from the File menu, and then choosing the Setup button.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``RECAll:SETUp value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RECAll:SETUp {FACtory|<file_path>}
+            ```
 
-        **Info:**
+        Info:
             - ``FACtory`` restores the factory setup. Performs the same operation as the
               ``:FACtory`` command.
             - ``<file_path>`` specifies a location for an instrument setup file. <file path> is a
@@ -227,19 +218,18 @@ class Recall(SCPICmdRead):
     def waveform(self) -> RecallWaveform:
         """Return the ``RECAll:WAVEform`` command.
 
-        **Description:**
+        Description:
             - This command recalls a stored waveform to a reference memory location.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``RECAll:WAVEform value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RECAll:WAVEform <source file>,<destination>
+            ```
 
-        **Info:**
+        Info:
             - ``<source file>`` is the source file. The file is expected to be located in a
               directory relative to the current working directory (specified by ``FILESYSTEM:CWD``)
               unless a complete path is specified.

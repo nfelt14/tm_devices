@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - PAUSe <NR3>
 """
 
@@ -26,20 +24,19 @@ if TYPE_CHECKING:
 class Pause(SCPICmdWrite):
     """The ``PAUSe`` command.
 
-    **Description:**
+    Description:
         - This command causes the interface to pause the specified number of seconds before
           processing any other commands.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``PAUSe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PAUSe <NR3>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the specified number of seconds the interface is to pause before processing
           any other commands. The pause time is specified as a floating point value in seconds and
           must be > 0.0 and ≥1800.0.

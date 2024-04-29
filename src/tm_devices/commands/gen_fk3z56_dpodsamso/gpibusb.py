@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - GPIBUsb:ADDress?
     - GPIBUsb:HWVersion
     - GPIBUsb:HWVersion?
@@ -29,68 +27,65 @@ if TYPE_CHECKING:
 class GpibusbId(SCPICmdRead):
     """The ``GPIBUsb:ID`` command.
 
-    **Description:**
+    Description:
         - Returns the identification string of the connected TEK-USB-488 adaptor option and firmware
           version. If a TEK-USB-488.2 option is not connected, the system returns 'Not detected'.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``GPIBUsb:ID?`` query.
         - Using the ``.verify(value)`` method will send the ``GPIBUsb:ID?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - GPIBUsb:ID?
+        ```
     """
 
 
 class GpibusbHwversion(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``GPIBUsb:HWVersion`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the current GPIB hardware version for a connected TEK-USB-488
           adaptor module.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``GPIBUsb:HWVersion?`` query.
         - Using the ``.verify(value)`` method will send the ``GPIBUsb:HWVersion?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``GPIBUsb:HWVersion`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - GPIBUsb:HWVersion
         - GPIBUsb:HWVersion?
+        ```
     """
 
 
 class GpibusbAddress(SCPICmdRead):
     """The ``GPIBUsb:ADDress`` command.
 
-    **Description:**
+    Description:
         - Returns the current GPIB address setting for a connected TEK-USB-488 adaptor option.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``GPIBUsb:ADDress?`` query.
         - Using the ``.verify(value)`` method will send the ``GPIBUsb:ADDress?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - GPIBUsb:ADDress?
+        ```
     """
 
 
 class Gpibusb(SCPICmdRead):
     """The ``GPIBUsb`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``GPIBUsb?`` query.
         - Using the ``.verify(value)`` method will send the ``GPIBUsb?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -111,19 +106,18 @@ class Gpibusb(SCPICmdRead):
     def address(self) -> GpibusbAddress:
         """Return the ``GPIBUsb:ADDress`` command.
 
-        **Description:**
+        Description:
             - Returns the current GPIB address setting for a connected TEK-USB-488 adaptor option.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``GPIBUsb:ADDress?`` query.
             - Using the ``.verify(value)`` method will send the ``GPIBUsb:ADDress?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - GPIBUsb:ADDress?
+            ```
         """
         return self._address
 
@@ -131,22 +125,21 @@ class Gpibusb(SCPICmdRead):
     def hwversion(self) -> GpibusbHwversion:
         """Return the ``GPIBUsb:HWVersion`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the current GPIB hardware version for a connected
               TEK-USB-488 adaptor module.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``GPIBUsb:HWVersion?`` query.
             - Using the ``.verify(value)`` method will send the ``GPIBUsb:HWVersion?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write()`` method will send the ``GPIBUsb:HWVersion`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - GPIBUsb:HWVersion
             - GPIBUsb:HWVersion?
+            ```
         """
         return self._hwversion
 
@@ -154,20 +147,19 @@ class Gpibusb(SCPICmdRead):
     def id(self) -> GpibusbId:
         """Return the ``GPIBUsb:ID`` command.
 
-        **Description:**
+        Description:
             - Returns the identification string of the connected TEK-USB-488 adaptor option and
               firmware version. If a TEK-USB-488.2 option is not connected, the system returns 'Not
               detected'.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``GPIBUsb:ID?`` query.
             - Using the ``.verify(value)`` method will send the ``GPIBUsb:ID?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - GPIBUsb:ID?
+            ```
         """
         return self._id

@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SV:CH<x>:RF_AVErage:NUMAVg <NR1>
     - SV:CH<x>:RF_AVErage:NUMAVg?
     - SV:CH<x>:RF_MAGnitude:FORMat {AMPLINear|POWLINear|POWLOG}
@@ -107,26 +105,25 @@ if TYPE_CHECKING:
 class SvWindow(SCPICmdWrite, SCPICmdRead):
     """The ``SV:WINDOW`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the window type used by the windowing function of the
           Spectrum View. The windowing function is a Fast Fourier Transform (FFT) technique used to
           minimize the discontinuities between successive frames of an RF time domain signal. The
           default window type is Blackman-Harris.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:WINDOW?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:WINDOW?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:WINDOW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:WINDOW {KAISerbessel|RECTangular|HAMMing| HANNing|BLACkmanharris|FLATtop2}
         - SV:WINDOW?
+        ```
 
-    **Info:**
+    Info:
         - ``KAISerbessel`` specifies the Kaiser-Bessel window type (a high or moderate resolution
           window).
         - ``RECTangular`` specifies the Rectangular window type (a window function is equivalent to
@@ -145,25 +142,24 @@ class SvWindow(SCPICmdWrite, SCPICmdRead):
 class SvSpectrogramCursorB(SCPICmdWrite, SCPICmdRead):
     """The ``SV:SPECtrogram:CURSor:B`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the spectrum trace at cursor B position is selected
           or not.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:SPECtrogram:CURSor:B?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:SPECtrogram:CURSor:B?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:SPECtrogram:CURSor:B value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:SPECtrogram:CURSor:B {1|0|ON|OFF}
         - SV:SPECtrogram:CURSor:B?
+        ```
 
-    **Info:**
+    Info:
         - ``1`` on the spectrum trace for cursor B position.
         - ``0`` turns off the spectrum trace for cursor B position. Off is the default.
         - ``ON`` turns on the spectrum trace for cursor B position.
@@ -174,25 +170,24 @@ class SvSpectrogramCursorB(SCPICmdWrite, SCPICmdRead):
 class SvSpectrogramCursorA(SCPICmdWrite, SCPICmdRead):
     """The ``SV:SPECtrogram:CURSor:A`` command.
 
-    **Description:**
+    Description:
         - This command sets or Queries whether the spectrum trace at cursor A position is selected
           or not.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:SPECtrogram:CURSor:A?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:SPECtrogram:CURSor:A?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:SPECtrogram:CURSor:A value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:SPECtrogram:CURSor:A {1|0|ON|OFF}
         - SV:SPECtrogram:CURSor:A?
+        ```
 
-    **Info:**
+    Info:
         - ``1`` turns on the spectrum trace for cursor A position.
         - ``0`` turns off the spectrum trace for cursor A position. Off is the default.
         - ``ON`` turns on the spectrum trace for cursor A position.
@@ -203,7 +198,7 @@ class SvSpectrogramCursorA(SCPICmdWrite, SCPICmdRead):
 class SvSpectrogramCursor(SCPICmdRead):
     """The ``SV:SPECtrogram:CURSor`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:SPECtrogram:CURSor?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:SPECtrogram:CURSor?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -222,25 +217,24 @@ class SvSpectrogramCursor(SCPICmdRead):
     def a(self) -> SvSpectrogramCursorA:
         """Return the ``SV:SPECtrogram:CURSor:A`` command.
 
-        **Description:**
+        Description:
             - This command sets or Queries whether the spectrum trace at cursor A position is
               selected or not.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:SPECtrogram:CURSor:A?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:SPECtrogram:CURSor:A?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:SPECtrogram:CURSor:A value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:SPECtrogram:CURSor:A {1|0|ON|OFF}
             - SV:SPECtrogram:CURSor:A?
+            ```
 
-        **Info:**
+        Info:
             - ``1`` turns on the spectrum trace for cursor A position.
             - ``0`` turns off the spectrum trace for cursor A position. Off is the default.
             - ``ON`` turns on the spectrum trace for cursor A position.
@@ -252,25 +246,24 @@ class SvSpectrogramCursor(SCPICmdRead):
     def b(self) -> SvSpectrogramCursorB:
         """Return the ``SV:SPECtrogram:CURSor:B`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the spectrum trace at cursor B position is
               selected or not.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:SPECtrogram:CURSor:B?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:SPECtrogram:CURSor:B?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:SPECtrogram:CURSor:B value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:SPECtrogram:CURSor:B {1|0|ON|OFF}
             - SV:SPECtrogram:CURSor:B?
+            ```
 
-        **Info:**
+        Info:
             - ``1`` on the spectrum trace for cursor B position.
             - ``0`` turns off the spectrum trace for cursor B position. Off is the default.
             - ``ON`` turns on the spectrum trace for cursor B position.
@@ -282,26 +275,25 @@ class SvSpectrogramCursor(SCPICmdRead):
 class SvSpectrogramCscaleMin(SCPICmdWrite, SCPICmdRead):
     """The ``SV:SPECtrogram:CSCale:MIN`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the minimum color scale value. Minimum must be < Maximum.
           Thus, if the user is adjusting Minimum up to the point where it would be the same as
           Minimum, then Maximum begins incrementing as needed to stay 1 dB above minimum.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:SPECtrogram:CSCale:MIN?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:SPECtrogram:CSCale:MIN?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:SPECtrogram:CSCale:MIN value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:SPECtrogram:CSCale:MIN <NR3>
         - SV:SPECtrogram:CSCale:MIN?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` sets the minimum color scale value. The default value is -100.0 and the valid
           range is -170.0 to 99.0.
     """
@@ -310,26 +302,25 @@ class SvSpectrogramCscaleMin(SCPICmdWrite, SCPICmdRead):
 class SvSpectrogramCscaleMax(SCPICmdWrite, SCPICmdRead):
     """The ``SV:SPECtrogram:CSCale:MAX`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the maximum color scale value. Maximum must be > Minimum.
           Thus, if the user is adjusting Maximum down to the point where it would be the same as
           Minimum, then Minimum begins decrementing as needed to stay 1 dB below Maximum.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:SPECtrogram:CSCale:MAX?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:SPECtrogram:CSCale:MAX?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:SPECtrogram:CSCale:MAX value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:SPECtrogram:CSCale:MAX <NR3>
         - SV:SPECtrogram:CSCale:MAX?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` sets the maximum color scale value. The default value is 0.0 and the valid range
           is -169.0 to 100.0.
     """
@@ -338,7 +329,7 @@ class SvSpectrogramCscaleMax(SCPICmdWrite, SCPICmdRead):
 class SvSpectrogramCscale(SCPICmdRead):
     """The ``SV:SPECtrogram:CSCale`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:SPECtrogram:CSCale?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:SPECtrogram:CSCale?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -357,26 +348,25 @@ class SvSpectrogramCscale(SCPICmdRead):
     def max(self) -> SvSpectrogramCscaleMax:
         """Return the ``SV:SPECtrogram:CSCale:MAX`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the maximum color scale value. Maximum must be > Minimum.
               Thus, if the user is adjusting Maximum down to the point where it would be the same as
               Minimum, then Minimum begins decrementing as needed to stay 1 dB below Maximum.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:SPECtrogram:CSCale:MAX?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:SPECtrogram:CSCale:MAX?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:SPECtrogram:CSCale:MAX value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:SPECtrogram:CSCale:MAX <NR3>
             - SV:SPECtrogram:CSCale:MAX?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` sets the maximum color scale value. The default value is 0.0 and the valid
               range is -169.0 to 100.0.
         """
@@ -386,26 +376,25 @@ class SvSpectrogramCscale(SCPICmdRead):
     def min(self) -> SvSpectrogramCscaleMin:
         """Return the ``SV:SPECtrogram:CSCale:MIN`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the minimum color scale value. Minimum must be < Maximum.
               Thus, if the user is adjusting Minimum up to the point where it would be the same as
               Minimum, then Maximum begins incrementing as needed to stay 1 dB above minimum.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:SPECtrogram:CSCale:MIN?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:SPECtrogram:CSCale:MIN?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:SPECtrogram:CSCale:MIN value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:SPECtrogram:CSCale:MIN <NR3>
             - SV:SPECtrogram:CSCale:MIN?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` sets the minimum color scale value. The default value is -100.0 and the
               valid range is -170.0 to 99.0.
         """
@@ -415,7 +404,7 @@ class SvSpectrogramCscale(SCPICmdRead):
 class SvSpectrogram(SCPICmdRead):
     """The ``SV:SPECtrogram`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:SPECtrogram?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:SPECtrogram?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -434,7 +423,7 @@ class SvSpectrogram(SCPICmdRead):
     def cscale(self) -> SvSpectrogramCscale:
         """Return the ``SV:SPECtrogram:CSCale`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:SPECtrogram:CSCale?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:SPECtrogram:CSCale?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -449,7 +438,7 @@ class SvSpectrogram(SCPICmdRead):
     def cursor(self) -> SvSpectrogramCursor:
         """Return the ``SV:SPECtrogram:CURSor`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:SPECtrogram:CURSor?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:SPECtrogram:CURSor?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -464,7 +453,7 @@ class SvSpectrogram(SCPICmdRead):
 class SvSpanrbwratio(SCPICmdWrite, SCPICmdRead):
     """The ``SV:SPANRBWRatio`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the ratio of the span to the resolution bandwidth (RBW) that
           will be used when the RBW Mode is set to AUTO. The span is the width of the frequency
           domain trace in Hz, which is equal to the stop frequency minus the start frequency. The
@@ -472,20 +461,19 @@ class SvSpanrbwratio(SCPICmdWrite, SCPICmdRead):
           trace. The default RBW ratio is 1000 : 1. Use the command ``SV:RBWMode`` to set the RBW
           Mode to Automatic.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:SPANRBWRatio?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:SPANRBWRatio?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:SPANRBWRatio value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:SPANRBWRatio <NR3>
         - SV:SPANRBWRatio?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the span-to-RBW ratio.
     """
 
@@ -493,26 +481,25 @@ class SvSpanrbwratio(SCPICmdWrite, SCPICmdRead):
 class SvSpan(SCPICmdWrite, SCPICmdRead):
     """The ``SV:SPAN`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the span setting for all channels in the Spectrum View. The
           span is the range of frequencies that can be observed centered on the center frequency.
           This is the width of the frequency domain trace, which is from the center frequency -
           ½span to the center frequency + ½ span.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:SPAN?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:SPAN?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:SPAN value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:SPAN <NR3>
         - SV:SPAN?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the span value in Hz.
     """
 
@@ -520,24 +507,23 @@ class SvSpan(SCPICmdWrite, SCPICmdRead):
 class SvRfPhaseReferenceMaster(SCPICmdWrite, SCPICmdRead):
     """The ``SV:RF_PHASe:REFerence:MASTer`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the channel used as the Master Phase Reference.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:RF_PHASe:REFerence:MASTer?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:RF_PHASe:REFerence:MASTer?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:RF_PHASe:REFerence:MASTer value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:RF_PHASe:REFerence:MASTer {CH<x>|NONE}
         - SV:RF_PHASe:REFerence:MASTer?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` sets the specified channel as the Master Phase Reference source.
         - ``NONE`` indicates that there is no Master Phase Reference.
     """
@@ -546,7 +532,7 @@ class SvRfPhaseReferenceMaster(SCPICmdWrite, SCPICmdRead):
 class SvRfPhaseReference(SCPICmdRead):
     """The ``SV:RF_PHASe:REFerence`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:RF_PHASe:REFerence?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:RF_PHASe:REFerence?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -563,24 +549,23 @@ class SvRfPhaseReference(SCPICmdRead):
     def master(self) -> SvRfPhaseReferenceMaster:
         """Return the ``SV:RF_PHASe:REFerence:MASTer`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the channel used as the Master Phase Reference.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:RF_PHASe:REFerence:MASTer?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:RF_PHASe:REFerence:MASTer?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SV:RF_PHASe:REFerence:MASTer value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:RF_PHASe:REFerence:MASTer {CH<x>|NONE}
             - SV:RF_PHASe:REFerence:MASTer?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` sets the specified channel as the Master Phase Reference source.
             - ``NONE`` indicates that there is no Master Phase Reference.
         """
@@ -590,7 +575,7 @@ class SvRfPhaseReference(SCPICmdRead):
 class SvRfPhase(SCPICmdRead):
     """The ``SV:RF_PHASe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:RF_PHASe?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:RF_PHASe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -607,7 +592,7 @@ class SvRfPhase(SCPICmdRead):
     def reference(self) -> SvRfPhaseReference:
         """Return the ``SV:RF_PHASe:REFerence`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:RF_PHASe:REFerence?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:RF_PHASe:REFerence?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -621,24 +606,23 @@ class SvRfPhase(SCPICmdRead):
 class SvRbwmode(SCPICmdWrite, SCPICmdRead):
     """The ``SV:RBWMode`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the resolution bandwidth (RBW) mode, either Automatic or
           Manual.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:RBWMode?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:RBWMode?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:RBWMode value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:RBWMode {AUTOmatic|MANual}
         - SV:RBWMode?
+        ```
 
-    **Info:**
+    Info:
         - ``AUTOmatic`` specifies the resolution bandwidth automatically as the span is changed. The
           default behavior is ``1000:1``, but you can set it to other values in a 1-2-5 sequence
           (e.g. 10000, 20000, 50000). To specify the RBW ratio that will be used when the mode is
@@ -651,7 +635,7 @@ class SvRbwmode(SCPICmdWrite, SCPICmdRead):
 class SvRbw(SCPICmdWrite, SCPICmdRead):
     """The ``SV:RBW`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the resolution bandwidth (RBW) when the RBW mode has been set
           to MANUAL (using the command ``SV:RBWMode``). The resolution bandwidth is the width of the
           narrowest measurable band of frequencies in a Spectrum View trace. By default, the RBW
@@ -660,20 +644,19 @@ class SvRbw(SCPICmdWrite, SCPICmdRead):
           input signal contains two carriers separated by 1 kHz, you will not be able to
           discriminate between them unless the RBW is less than 1 kHz.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:RBW?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:RBW?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:RBW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:RBW <NR3>
         - SV:RBW?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the width of the narrowest measurable band of frequencies in a
           Spectrum View trace, in Hz.
     """
@@ -682,7 +665,7 @@ class SvRbw(SCPICmdWrite, SCPICmdRead):
 class SvMarkerType(SCPICmdWrite, SCPICmdRead):
     """The ``SV:MARKER:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the peak marker type (either DELTa or ABSolute). An Absolute
           marker shows the frequency and amplitude at the location of the marker. A Delta marker
           shows the frequency and amplitude of the marker relative to the Reference Marker. The
@@ -690,20 +673,19 @@ class SvMarkerType(SCPICmdWrite, SCPICmdRead):
           The marker amplitude measurements are in dBm for Absolute, or in dBc (dB below carrier
           amplitude) for Delta.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:MARKER:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:MARKER:TYPe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:MARKER:TYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:MARKER:TYPe {DELta|ABSolute}
         - SV:MARKER:TYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``DELTa`` specifies to display the frequency and amplitude of the peak markers relative to
           the Reference Marker. The relative amplitude is in dBc (dB below carrier amplitude); the
           relative frequency is in Hz.
@@ -715,60 +697,57 @@ class SvMarkerType(SCPICmdWrite, SCPICmdRead):
 class SvMarkerReferenceFrequency(SCPICmdRead):
     """The ``SV:MARKER:REFERence:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command queries the frequency of the Reference Marker, in Hz, when the Spectrum View
           trace markers are on.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:MARKER:REFERence:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:MARKER:REFERence:FREQuency?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:MARKER:REFERence:FREQuency?
+        ```
     """
 
 
 class SvMarkerReferenceAmplitude(SCPICmdRead):
     """The ``SV:MARKER:REFERence:AMPLITUDE`` command.
 
-    **Description:**
+    Description:
         - This command queries the amplitude (vertical) value of the Reference Marker in user-set
           units. This value indicates the absolute amplitude of the Reference Marker, regardless of
           whether the other markers are manual or automatic.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:MARKER:REFERence:AMPLITUDE?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:MARKER:REFERence:AMPLITUDE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:MARKER:REFERence:AMPLITUDE?
+        ```
     """
 
 
 class SvMarkerReference(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``SV:MARKER:REFERence`` command.
 
-    **Description:**
+    Description:
         - This command sets the Center Frequency of the currently selected Spectrum View channel to
           the frequency indicated by the Reference Marker, in effect moving the Reference Marker to
           the center of the screen.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``SV:MARKER:REFERence`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:MARKER:REFERence
+        ```
 
     Properties:
         - ``.amplitude``: The ``SV:MARKER:REFERence:AMPLITUDE`` command.
@@ -784,21 +763,20 @@ class SvMarkerReference(SCPICmdWriteNoArguments, SCPICmdRead):
     def amplitude(self) -> SvMarkerReferenceAmplitude:
         """Return the ``SV:MARKER:REFERence:AMPLITUDE`` command.
 
-        **Description:**
+        Description:
             - This command queries the amplitude (vertical) value of the Reference Marker in
               user-set units. This value indicates the absolute amplitude of the Reference Marker,
               regardless of whether the other markers are manual or automatic.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:MARKER:REFERence:AMPLITUDE?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:MARKER:REFERence:AMPLITUDE?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:MARKER:REFERence:AMPLITUDE?
+            ```
         """
         return self._amplitude
 
@@ -806,20 +784,19 @@ class SvMarkerReference(SCPICmdWriteNoArguments, SCPICmdRead):
     def frequency(self) -> SvMarkerReferenceFrequency:
         """Return the ``SV:MARKER:REFERence:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command queries the frequency of the Reference Marker, in Hz, when the Spectrum
               View trace markers are on.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:MARKER:REFERence:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:MARKER:REFERence:FREQuency?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:MARKER:REFERence:FREQuency?
+            ```
         """
         return self._frequency
 
@@ -827,45 +804,43 @@ class SvMarkerReference(SCPICmdWriteNoArguments, SCPICmdRead):
 class SvMarkerPeaksFrequency(SCPICmdRead):
     """The ``SV:MARKER:PEAKS:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command queries the peak frequencies for the Spectrum View trace peak markers.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:MARKER:PEAKS:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:MARKER:PEAKS:FREQuency?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:MARKER:PEAKS:FREQuency?
+        ```
     """
 
 
 class SvMarkerPeaksAmplitude(SCPICmdRead):
     """The ``SV:MARKER:PEAKS:AMPLITUDE`` command.
 
-    **Description:**
+    Description:
         - This command queries the peak amplitudes for the Spectrum View trace peak markers.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:MARKER:PEAKS:AMPLITUDE?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:MARKER:PEAKS:AMPLITUDE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:MARKER:PEAKS:AMPLITUDE?
+        ```
     """
 
 
 class SvMarkerPeaks(SCPICmdRead):
     """The ``SV:MARKER:PEAKS`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:MARKER:PEAKS?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:MARKER:PEAKS?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -884,19 +859,18 @@ class SvMarkerPeaks(SCPICmdRead):
     def amplitude(self) -> SvMarkerPeaksAmplitude:
         """Return the ``SV:MARKER:PEAKS:AMPLITUDE`` command.
 
-        **Description:**
+        Description:
             - This command queries the peak amplitudes for the Spectrum View trace peak markers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:MARKER:PEAKS:AMPLITUDE?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:MARKER:PEAKS:AMPLITUDE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:MARKER:PEAKS:AMPLITUDE?
+            ```
         """
         return self._amplitude
 
@@ -904,19 +878,18 @@ class SvMarkerPeaks(SCPICmdRead):
     def frequency(self) -> SvMarkerPeaksFrequency:
         """Return the ``SV:MARKER:PEAKS:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command queries the peak frequencies for the Spectrum View trace peak markers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:MARKER:PEAKS:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:MARKER:PEAKS:FREQuency?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:MARKER:PEAKS:FREQuency?
+            ```
         """
         return self._frequency
 
@@ -924,26 +897,25 @@ class SvMarkerPeaks(SCPICmdRead):
 class SvMarkerPeakThreshold(SCPICmdWrite, SCPICmdRead):
     """The ``SV:MARKER:PEAK:THReshold`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the minimum peak threshold value required to mark a peak.
           Only peaks with an amplitude greater than the threshold value will qualify for peak marker
           placement. Applies to all spectrum traces, and to each trace in its own vertical units.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:MARKER:PEAK:THReshold?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:MARKER:PEAK:THReshold?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:MARKER:PEAK:THReshold value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:MARKER:PEAK:THReshold <NR3>
         - SV:MARKER:PEAK:THReshold?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the peak marker threshold value. The range of values is -200.0 to
           200.0.
     """
@@ -952,7 +924,7 @@ class SvMarkerPeakThreshold(SCPICmdWrite, SCPICmdRead):
 class SvMarkerPeakState(SCPICmdWrite, SCPICmdRead):
     """The ``SV:MARKER:PEAK:STATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries showing peak markers on spectrum traces in the Spectrum View
           window. There are up to 11 markers. The maximum number of markers can be set using the
           command ``SV:MARKER:PEAK:MAXimum``. The peak markers find amplitude peaks based upon
@@ -960,20 +932,19 @@ class SvMarkerPeakState(SCPICmdWrite, SCPICmdRead):
           ``SV:MARKER:PEAK:THReshold`` commands.) Each peak marker has a readout associated with it.
           These can be absolute or delta readouts (set with the ``SV:MARKER:TYPe`` command.)
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:MARKER:PEAK:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:MARKER:PEAK:STATE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:MARKER:PEAK:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:MARKER:PEAK:STATE {ON|1|OFF|0}
         - SV:MARKER:PEAK:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``1`` enables showing peak marker icons on spectrum trace waveforms.
         - ``ON`` enables showing peak marker icons on spectrum trace waveforms.
         - ``0`` disables showing peak marker icons on spectrum trace waveforms.
@@ -984,7 +955,7 @@ class SvMarkerPeakState(SCPICmdWrite, SCPICmdRead):
 class SvMarkerPeakMaximum(SCPICmdWrite, SCPICmdRead):
     """The ``SV:MARKER:PEAK:MAXimum`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the maximum number of Spectrum View peak markers that can be
           placed on spectrum traces. the Spectrum View window can show between 1 and 11 peak markers
           on all spectrum traces. The default is 5. To turn on the peak markers, use the command
@@ -993,20 +964,19 @@ class SvMarkerPeakMaximum(SCPICmdWrite, SCPICmdRead):
           If more peaks than the maximum are detected that meet the threshold and excursion
           criteria, only the highest amplitude peaks will have markers placed on them.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:MARKER:PEAK:MAXimum?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:MARKER:PEAK:MAXimum?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:MARKER:PEAK:MAXimum value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:MARKER:PEAK:MAXimum <NR1>
         - SV:MARKER:PEAK:MAXimum?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is an integer value that specifies the maximum number of peak markers to display
           on spectrum traces. he range of values is 1 to 11.
     """
@@ -1015,7 +985,7 @@ class SvMarkerPeakMaximum(SCPICmdWrite, SCPICmdRead):
 class SvMarkerPeakExcursion(SCPICmdWrite, SCPICmdRead):
     """The ``SV:MARKER:PEAK:EXCURsion`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the minimum peak excursion value, in dB, for the Spectrum
           View trace peak markers. Peak excursion refers to the minimum amount a spectrum signal
           needs to fall in amplitude between marked peaks to be considered another valid peak. If
@@ -1023,21 +993,20 @@ class SvMarkerPeakExcursion(SCPICmdWrite, SCPICmdRead):
           associated markers. If the peak excursion value is high, fewer peaks will have associated
           markers.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:MARKER:PEAK:EXCURsion?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:MARKER:PEAK:EXCURsion?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:MARKER:PEAK:EXCURsion value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:MARKER:PEAK:EXCURsion <NR3>
         - SV:MARKER:PEAK:EXCURsion?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the peak marker excursion value in dB. The range of values is 0.0 dB
           to 200.0 dB.
     """
@@ -1046,7 +1015,7 @@ class SvMarkerPeakExcursion(SCPICmdWrite, SCPICmdRead):
 class SvMarkerPeak(SCPICmdRead):
     """The ``SV:MARKER:PEAK`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:MARKER:PEAK?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:MARKER:PEAK?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1069,7 +1038,7 @@ class SvMarkerPeak(SCPICmdRead):
     def excursion(self) -> SvMarkerPeakExcursion:
         """Return the ``SV:MARKER:PEAK:EXCURsion`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the minimum peak excursion value, in dB, for the Spectrum
               View trace peak markers. Peak excursion refers to the minimum amount a spectrum signal
               needs to fall in amplitude between marked peaks to be considered another valid peak.
@@ -1077,21 +1046,20 @@ class SvMarkerPeak(SCPICmdRead):
               have associated markers. If the peak excursion value is high, fewer peaks will have
               associated markers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:MARKER:PEAK:EXCURsion?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:MARKER:PEAK:EXCURsion?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:MARKER:PEAK:EXCURsion value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:MARKER:PEAK:EXCURsion <NR3>
             - SV:MARKER:PEAK:EXCURsion?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the peak marker excursion value in dB. The range of values is 0.0
               dB to 200.0 dB.
         """
@@ -1101,7 +1069,7 @@ class SvMarkerPeak(SCPICmdRead):
     def maximum(self) -> SvMarkerPeakMaximum:
         """Return the ``SV:MARKER:PEAK:MAXimum`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the maximum number of Spectrum View peak markers that can
               be placed on spectrum traces. the Spectrum View window can show between 1 and 11 peak
               markers on all spectrum traces. The default is 5. To turn on the peak markers, use the
@@ -1111,21 +1079,20 @@ class SvMarkerPeak(SCPICmdRead):
               and excursion criteria, only the highest amplitude peaks will have markers placed on
               them.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:MARKER:PEAK:MAXimum?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:MARKER:PEAK:MAXimum?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:MARKER:PEAK:MAXimum value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:MARKER:PEAK:MAXimum <NR1>
             - SV:MARKER:PEAK:MAXimum?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is an integer value that specifies the maximum number of peak markers to
               display on spectrum traces. he range of values is 1 to 11.
         """
@@ -1135,7 +1102,7 @@ class SvMarkerPeak(SCPICmdRead):
     def state(self) -> SvMarkerPeakState:
         """Return the ``SV:MARKER:PEAK:STATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries showing peak markers on spectrum traces in the Spectrum
               View window. There are up to 11 markers. The maximum number of markers can be set
               using the command ``SV:MARKER:PEAK:MAXimum``. The peak markers find amplitude peaks
@@ -1144,21 +1111,20 @@ class SvMarkerPeak(SCPICmdRead):
               with it. These can be absolute or delta readouts (set with the ``SV:MARKER:TYPe``
               command.)
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:MARKER:PEAK:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:MARKER:PEAK:STATE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:MARKER:PEAK:STATE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:MARKER:PEAK:STATE {ON|1|OFF|0}
             - SV:MARKER:PEAK:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``1`` enables showing peak marker icons on spectrum trace waveforms.
             - ``ON`` enables showing peak marker icons on spectrum trace waveforms.
             - ``0`` disables showing peak marker icons on spectrum trace waveforms.
@@ -1170,27 +1136,26 @@ class SvMarkerPeak(SCPICmdRead):
     def threshold(self) -> SvMarkerPeakThreshold:
         """Return the ``SV:MARKER:PEAK:THReshold`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the minimum peak threshold value required to mark a peak.
               Only peaks with an amplitude greater than the threshold value will qualify for peak
               marker placement. Applies to all spectrum traces, and to each trace in its own
               vertical units.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:MARKER:PEAK:THReshold?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:MARKER:PEAK:THReshold?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:MARKER:PEAK:THReshold value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:MARKER:PEAK:THReshold <NR3>
             - SV:MARKER:PEAK:THReshold?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the peak marker threshold value. The range of values is -200.0 to
               200.0.
         """
@@ -1200,7 +1165,7 @@ class SvMarkerPeak(SCPICmdRead):
 class SvMarker(SCPICmdRead):
     """The ``SV:MARKER`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:MARKER?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:MARKER?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1223,7 +1188,7 @@ class SvMarker(SCPICmdRead):
     def peak(self) -> SvMarkerPeak:
         """Return the ``SV:MARKER:PEAK`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:MARKER:PEAK?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:MARKER:PEAK?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -1240,7 +1205,7 @@ class SvMarker(SCPICmdRead):
     def peaks(self) -> SvMarkerPeaks:
         """Return the ``SV:MARKER:PEAKS`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:MARKER:PEAKS?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:MARKER:PEAKS?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -1255,19 +1220,18 @@ class SvMarker(SCPICmdRead):
     def reference(self) -> SvMarkerReference:
         """Return the ``SV:MARKER:REFERence`` command.
 
-        **Description:**
+        Description:
             - This command sets the Center Frequency of the currently selected Spectrum View channel
               to the frequency indicated by the Reference Marker, in effect moving the Reference
               Marker to the center of the screen.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``SV:MARKER:REFERence`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:MARKER:REFERence
+            ```
 
         Sub-properties:
             - ``.amplitude``: The ``SV:MARKER:REFERence:AMPLITUDE`` command.
@@ -1279,7 +1243,7 @@ class SvMarker(SCPICmdRead):
     def type(self) -> SvMarkerType:
         """Return the ``SV:MARKER:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the peak marker type (either DELTa or ABSolute). An
               Absolute marker shows the frequency and amplitude at the location of the marker. A
               Delta marker shows the frequency and amplitude of the marker relative to the Reference
@@ -1287,20 +1251,19 @@ class SvMarker(SCPICmdRead):
               this command. The marker amplitude measurements are in dBm for Absolute, or in dBc (dB
               below carrier amplitude) for Delta.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:MARKER:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:MARKER:TYPe?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:MARKER:TYPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:MARKER:TYPe {DELta|ABSolute}
             - SV:MARKER:TYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``DELTa`` specifies to display the frequency and amplitude of the peak markers
               relative to the Reference Marker. The relative amplitude is in dBc (dB below carrier
               amplitude); the relative frequency is in Hz.
@@ -1313,24 +1276,23 @@ class SvMarker(SCPICmdRead):
 class SvLockspectrum(SCPICmdWrite, SCPICmdRead):
     """The ``SV:LOCKSpectrum`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the Spectrum Time value is locked across all spectrum
           trace channels in the Spectrum View.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:LOCKSpectrum?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:LOCKSpectrum?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:LOCKSpectrum value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:LOCKSpectrum {ON|1|OFF|0}
         - SV:LOCKSpectrum?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` sets all spectrum traces channels in the Spectrum View window to use the same
           Spectrum Time value. When the Spectrum Time of any channel is changed, the Spectrum Time
           of all other channels is automatically changed to match that value.
@@ -1347,24 +1309,23 @@ class SvLockspectrum(SCPICmdWrite, SCPICmdRead):
 class SvLockcenter(SCPICmdWrite, SCPICmdRead):
     """The ``SV:LOCKCenter`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the Center Frequency setting is locked across all
           channels in the Spectrum View.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:LOCKCenter?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:LOCKCenter?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:LOCKCenter value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:LOCKCenter {ON|1|OFF|0}
         - SV:LOCKCenter?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` sets all spectrum traces channels in the Spectrum View window to use the same
           center frequency value. When the center frequency of any channel is changed, the center
           frequency of all other channels is automatically changed to match that value.
@@ -1381,24 +1342,23 @@ class SvLockcenter(SCPICmdWrite, SCPICmdRead):
 class SvChannelUnits(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:UNIts`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the absolute logarithmic amplitude vertical scale units to
           show in the specified spectrum trace channel of the Spectrum View.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:UNIts?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:CH<x>:UNIts value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:UNIts {DBM|DBUW|DBMV|DBUV|DBMA|DBUA}
         - SV:CH<x>:UNIts?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the analog channel to use as the Spectrum View source.
         - ``DBM`` specifies Decibel milliwatts (dBm).
         - ``DBUW`` specifies Decibel microwatts (dBµW).
@@ -1412,25 +1372,24 @@ class SvChannelUnits(SCPICmdWrite, SCPICmdRead):
 class SvChannelSquelchThreshold(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:SQUELCH:THReshold`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the Squelch threshold value for the RF vs Time traces for the
           specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:SQUELCH:THReshold?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SQUELCH:THReshold?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:CH<x>:SQUELCH:THReshold value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:SQUELCH:THReshold <NR3>
         - SV:CH<x>:SQUELCH:THReshold?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number of the Magnitude vs. Time trace.
         - ``NR3`` sets the threshold value, in volts, applied to the Magnitude vs. Time trace that
           determines whether or not to show the Frequency and Phase vs. Time traces for the same
@@ -1441,7 +1400,7 @@ class SvChannelSquelchThreshold(SCPICmdWrite, SCPICmdRead):
 class SvChannelSquelchState(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:SQUELCH:STATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether Squelch is enabled for the RF vs Time traces for the
           specified channel. The frequency vs. time and phase vs. time traces aren't meaningful when
           the transmitting signal is turned off, as they just show broadband noise that clutters up
@@ -1450,20 +1409,19 @@ class SvChannelSquelchState(SCPICmdWrite, SCPICmdRead):
           shown only when the magnitude vs. time trace is above the threshold and they are blanked
           out when it's below the threshold.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:SQUELCH:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SQUELCH:STATE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:CH<x>:SQUELCH:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:SQUELCH:STATE {ON|OFF}
         - SV:CH<x>:SQUELCH:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number of the Frequency or Phase vs. Time trace.
         - ``ON`` enables (turns on) Squelch calculations.
         - ``OFF`` disables (turns off) Squelch calculations.
@@ -1473,12 +1431,12 @@ class SvChannelSquelchState(SCPICmdWrite, SCPICmdRead):
 class SvChannelSquelch(SCPICmdRead):
     """The ``SV:CH<x>:SQUELCH`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:SQUELCH?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SQUELCH?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number of the Frequency or Phase vs. Time trace.
 
     Properties:
@@ -1495,7 +1453,7 @@ class SvChannelSquelch(SCPICmdRead):
     def state(self) -> SvChannelSquelchState:
         """Return the ``SV:CH<x>:SQUELCH:STATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether Squelch is enabled for the RF vs Time traces for
               the specified channel. The frequency vs. time and phase vs. time traces aren't
               meaningful when the transmitting signal is turned off, as they just show broadband
@@ -1504,21 +1462,20 @@ class SvChannelSquelch(SCPICmdRead):
               frequency and phase vs. time traces are shown only when the magnitude vs. time trace
               is above the threshold and they are blanked out when it's below the threshold.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:SQUELCH:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SQUELCH:STATE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:CH<x>:SQUELCH:STATE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:SQUELCH:STATE {ON|OFF}
             - SV:CH<x>:SQUELCH:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number of the Frequency or Phase vs. Time trace.
             - ``ON`` enables (turns on) Squelch calculations.
             - ``OFF`` disables (turns off) Squelch calculations.
@@ -1529,25 +1486,24 @@ class SvChannelSquelch(SCPICmdRead):
     def threshold(self) -> SvChannelSquelchThreshold:
         """Return the ``SV:CH<x>:SQUELCH:THReshold`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Squelch threshold value for the RF vs Time traces for
               the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:SQUELCH:THReshold?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SQUELCH:THReshold?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:CH<x>:SQUELCH:THReshold value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:SQUELCH:THReshold <NR3>
             - SV:CH<x>:SQUELCH:THReshold?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number of the Magnitude vs. Time trace.
             - ``NR3`` sets the threshold value, in volts, applied to the Magnitude vs. Time trace
               that determines whether or not to show the Frequency and Phase vs. Time traces for the
@@ -1559,25 +1515,24 @@ class SvChannelSquelch(SCPICmdRead):
 class SvChannelSelectSpectrogram(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:SELect:SPECtrogram`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the spectrogram plot for the specified channel is
           displayed in the Spectrum View. The channel number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:SELect:SPECtrogram?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELect:SPECtrogram?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:CH<x>:SELect:SPECtrogram value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:SELect:SPECtrogram {ON|OFF}
         - SV:CH<x>:SELect:SPECtrogram?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` turns on spectrogram.
         - ``OFF`` turns of spectrogram.
     """
@@ -1586,25 +1541,24 @@ class SvChannelSelectSpectrogram(SCPICmdWrite, SCPICmdRead):
 class SvChannelSelectRfPhase(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:SELect:RF_PHASe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the Phase vs. Time trace for the specified channel is
           displayed in the Waveform View.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:SELect:RF_PHASe?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELect:RF_PHASe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:CH<x>:SELect:RF_PHASe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:SELect:RF_PHASe {ON|OFF}
         - SV:CH<x>:SELect:RF_PHASe?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number of the Phase vs. Time trace.
         - ``ON`` enables display of the Phase vs. Time trace.
         - ``OFF`` disables display of the Phase vs. Time trace.
@@ -1614,25 +1568,24 @@ class SvChannelSelectRfPhase(SCPICmdWrite, SCPICmdRead):
 class SvChannelSelectRfNormal(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:SELect:RF_NORMal`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the Normal trace is displayed for the specified
           spectrum trace channel in the Spectrum View.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:SELect:RF_NORMal?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELect:RF_NORMal?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:CH<x>:SELect:RF_NORMal value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:SELect:RF_NORMal {ON|1|OFF|0}
         - SV:CH<x>:SELect:RF_NORMal?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the spectrum trace channel source.
         - ``ON`` enables the display of the Normal trace for the specified spectrum trace channel.
         - ``OFF`` disables the display of the Normal trace for the specified spectrum trace channel.
@@ -1644,25 +1597,24 @@ class SvChannelSelectRfNormal(SCPICmdWrite, SCPICmdRead):
 class SvChannelSelectRfMinhold(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:SELect:RF_MINHold`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the Min Hold trace is displayed for the specified
           spectrum trace channel in the Spectrum View.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:SELect:RF_MINHold?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELect:RF_MINHold?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:CH<x>:SELect:RF_MINHold value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:SELect:RF_MINHold {ON|1|OFF|0}
         - SV:CH<x>:SELect:RF_MINHold?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the spectrum trace channel source.
         - ``ON`` enables the display of the Min Hold trace for the specified spectrum trace channel.
         - ``OFF`` disables the display of the Min Hold trace for the specified spectrum trace
@@ -1675,25 +1627,24 @@ class SvChannelSelectRfMinhold(SCPICmdWrite, SCPICmdRead):
 class SvChannelSelectRfMaxhold(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:SELect:RF_MAXHold`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the Max Hold trace is displayed for the specified
           spectrum trace channel in the Spectrum View.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:SELect:RF_MAXHold?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELect:RF_MAXHold?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:CH<x>:SELect:RF_MAXHold value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:SELect:RF_MAXHold {ON|1|OFF|0}
         - SV:CH<x>:SELect:RF_MAXHold?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the spectrum trace channel source.
         - ``ON`` enables the display of the Max Hold trace for the specified spectrum trace channel.
         - ``OFF`` disables the display of the Max Hold trace for the specified spectrum trace
@@ -1706,25 +1657,24 @@ class SvChannelSelectRfMaxhold(SCPICmdWrite, SCPICmdRead):
 class SvChannelSelectRfMagnitude(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:SELect:RF_MAGnitude`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the Magnitude vs. Time trace for the specified
           channel is displayed in the Waveform View.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:SELect:RF_MAGnitude?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELect:RF_MAGnitude?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:CH<x>:SELect:RF_MAGnitude value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:SELect:RF_MAGnitude {ON|OFF}
         - SV:CH<x>:SELect:RF_MAGnitude?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number of the Magnitude vs. Time trace.
         - ``ON`` enables display of the Magnitude vs. Time trace.
         - ``OFF`` disables display of the Magnitude vs. Time trace.
@@ -1734,25 +1684,24 @@ class SvChannelSelectRfMagnitude(SCPICmdWrite, SCPICmdRead):
 class SvChannelSelectRfFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:SELect:RF_FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the Frequency vs. Time trace for the specified
           channel is displayed in the Waveform View.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:SELect:RF_FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELect:RF_FREQuency?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:CH<x>:SELect:RF_FREQuency value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:SELect:RF_FREQuency {ON|OFF}
         - SV:CH<x>:SELect:RF_FREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number of the Frequency vs. Time trace.
         - ``ON`` enables display of the Frequency vs. Time trace.
         - ``OFF`` disables display of the Frequency vs. Time trace.
@@ -1762,25 +1711,24 @@ class SvChannelSelectRfFrequency(SCPICmdWrite, SCPICmdRead):
 class SvChannelSelectRfAverage(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:SELect:RF_AVErage`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the Average trace is displayed for the specified
           spectrum trace channel in the Spectrum View.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:SELect:RF_AVErage?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELect:RF_AVErage?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:CH<x>:SELect:RF_AVErage value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:SELect:RF_AVErage {ON|1|OFF|0}
         - SV:CH<x>:SELect:RF_AVErage?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the spectrum trace channel source.
         - ``ON`` enables the display of the Average trace for the specified spectrum trace channel.
         - ``OFF`` disables the display of the Average trace for the specified spectrum trace
@@ -1794,12 +1742,12 @@ class SvChannelSelectRfAverage(SCPICmdWrite, SCPICmdRead):
 class SvChannelSelect(SCPICmdRead):
     """The ``SV:CH<x>:SELect`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:SELect?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELect?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the spectrum trace channel source.
 
     Properties:
@@ -1828,25 +1776,24 @@ class SvChannelSelect(SCPICmdRead):
     def rf_average(self) -> SvChannelSelectRfAverage:
         """Return the ``SV:CH<x>:SELect:RF_AVErage`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the Average trace is displayed for the specified
               spectrum trace channel in the Spectrum View.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:SELect:RF_AVErage?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELect:RF_AVErage?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:CH<x>:SELect:RF_AVErage value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:SELect:RF_AVErage {ON|1|OFF|0}
             - SV:CH<x>:SELect:RF_AVErage?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the spectrum trace channel source.
             - ``ON`` enables the display of the Average trace for the specified spectrum trace
               channel.
@@ -1863,25 +1810,24 @@ class SvChannelSelect(SCPICmdRead):
     def rf_frequency(self) -> SvChannelSelectRfFrequency:
         """Return the ``SV:CH<x>:SELect:RF_FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the Frequency vs. Time trace for the specified
               channel is displayed in the Waveform View.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:SELect:RF_FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELect:RF_FREQuency?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SV:CH<x>:SELect:RF_FREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:SELect:RF_FREQuency {ON|OFF}
             - SV:CH<x>:SELect:RF_FREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number of the Frequency vs. Time trace.
             - ``ON`` enables display of the Frequency vs. Time trace.
             - ``OFF`` disables display of the Frequency vs. Time trace.
@@ -1892,25 +1838,24 @@ class SvChannelSelect(SCPICmdRead):
     def rf_magnitude(self) -> SvChannelSelectRfMagnitude:
         """Return the ``SV:CH<x>:SELect:RF_MAGnitude`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the Magnitude vs. Time trace for the specified
               channel is displayed in the Waveform View.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:SELect:RF_MAGnitude?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELect:RF_MAGnitude?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SV:CH<x>:SELect:RF_MAGnitude value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:SELect:RF_MAGnitude {ON|OFF}
             - SV:CH<x>:SELect:RF_MAGnitude?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number of the Magnitude vs. Time trace.
             - ``ON`` enables display of the Magnitude vs. Time trace.
             - ``OFF`` disables display of the Magnitude vs. Time trace.
@@ -1921,25 +1866,24 @@ class SvChannelSelect(SCPICmdRead):
     def rf_maxhold(self) -> SvChannelSelectRfMaxhold:
         """Return the ``SV:CH<x>:SELect:RF_MAXHold`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the Max Hold trace is displayed for the specified
               spectrum trace channel in the Spectrum View.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:SELect:RF_MAXHold?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELect:RF_MAXHold?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:CH<x>:SELect:RF_MAXHold value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:SELect:RF_MAXHold {ON|1|OFF|0}
             - SV:CH<x>:SELect:RF_MAXHold?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the spectrum trace channel source.
             - ``ON`` enables the display of the Max Hold trace for the specified spectrum trace
               channel.
@@ -1956,25 +1900,24 @@ class SvChannelSelect(SCPICmdRead):
     def rf_minhold(self) -> SvChannelSelectRfMinhold:
         """Return the ``SV:CH<x>:SELect:RF_MINHold`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the Min Hold trace is displayed for the specified
               spectrum trace channel in the Spectrum View.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:SELect:RF_MINHold?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELect:RF_MINHold?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:CH<x>:SELect:RF_MINHold value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:SELect:RF_MINHold {ON|1|OFF|0}
             - SV:CH<x>:SELect:RF_MINHold?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the spectrum trace channel source.
             - ``ON`` enables the display of the Min Hold trace for the specified spectrum trace
               channel.
@@ -1991,25 +1934,24 @@ class SvChannelSelect(SCPICmdRead):
     def rf_normal(self) -> SvChannelSelectRfNormal:
         """Return the ``SV:CH<x>:SELect:RF_NORMal`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the Normal trace is displayed for the specified
               spectrum trace channel in the Spectrum View.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:SELect:RF_NORMal?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELect:RF_NORMal?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:CH<x>:SELect:RF_NORMal value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:SELect:RF_NORMal {ON|1|OFF|0}
             - SV:CH<x>:SELect:RF_NORMal?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the spectrum trace channel source.
             - ``ON`` enables the display of the Normal trace for the specified spectrum trace
               channel.
@@ -2026,25 +1968,24 @@ class SvChannelSelect(SCPICmdRead):
     def rf_phase(self) -> SvChannelSelectRfPhase:
         """Return the ``SV:CH<x>:SELect:RF_PHASe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the Phase vs. Time trace for the specified
               channel is displayed in the Waveform View.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:SELect:RF_PHASe?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELect:RF_PHASe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:CH<x>:SELect:RF_PHASe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:SELect:RF_PHASe {ON|OFF}
             - SV:CH<x>:SELect:RF_PHASe?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number of the Phase vs. Time trace.
             - ``ON`` enables display of the Phase vs. Time trace.
             - ``OFF`` disables display of the Phase vs. Time trace.
@@ -2055,25 +1996,24 @@ class SvChannelSelect(SCPICmdRead):
     def spectrogram(self) -> SvChannelSelectSpectrogram:
         """Return the ``SV:CH<x>:SELect:SPECtrogram`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the spectrogram plot for the specified channel is
               displayed in the Spectrum View. The channel number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:SELect:SPECtrogram?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELect:SPECtrogram?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:CH<x>:SELect:SPECtrogram value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:SELect:SPECtrogram {ON|OFF}
             - SV:CH<x>:SELect:SPECtrogram?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` turns on spectrogram.
             - ``OFF`` turns of spectrogram.
         """
@@ -2083,25 +2023,24 @@ class SvChannelSelect(SCPICmdRead):
 class SvChannelSeltrace(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:SELTrace`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the spectrum trace type to show for the specified channel in
           the Spectrum View. Each channel's spectrum trace can display up to four traces; a Normal
           trace (default), a Max Hold trace, a Min Hold trace and an Average trace.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:SELTrace?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELTrace?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:CH<x>:SELTrace value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:SELTrace {NORMal|MAXHold|MINHold|AVErage}
         - SV:CH<x>:SELTrace?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the analog channel to use as the Spectrum View source.
         - ``NORMal`` selects the Normal trace for the specified spectrum trace channel. If the
           specified spectrum trace channel does not have a Normal trace, this command is ignored.
@@ -2117,25 +2056,24 @@ class SvChannelSeltrace(SCPICmdWrite, SCPICmdRead):
 class SvChannelRfPhaseWrapState(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:RF_PHASe:WRAP:STATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether Phase Wrap is applied to the Phase vs. Time trace for
           the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:RF_PHASe:WRAP:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_PHASe:WRAP:STATE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:CH<x>:RF_PHASe:WRAP:STATE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:RF_PHASe:WRAP:STATE {ON|OFF}
         - SV:CH<x>:RF_PHASe:WRAP:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number of the Phase vs. Time trace.
         - ``ON`` enables applying phase wrap on the specified Phase vs. Time channel trace.
         - ``OFF`` disables applying phase wrap on the specified Phase vs. Time channel trace.
@@ -2145,25 +2083,24 @@ class SvChannelRfPhaseWrapState(SCPICmdWrite, SCPICmdRead):
 class SvChannelRfPhaseWrapDegrees(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:RF_PHASe:WRAP:DEGrees`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the Phase Wrap limit for the Phase vs. Time trace for the
           specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:RF_PHASe:WRAP:DEGrees?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_PHASe:WRAP:DEGrees?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:CH<x>:RF_PHASe:WRAP:DEGrees value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:RF_PHASe:WRAP:DEGrees <NR3>
         - SV:CH<x>:RF_PHASe:WRAP:DEGrees?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number of the Phase vs. Time trace.
         - ``NR3`` sets the number of wrap degrees, from 180 degrees to infinity. When Phase Wrap is
           enabled, the phase values in the Phase vs Time waveform are constrained to be within ± the
@@ -2175,12 +2112,12 @@ class SvChannelRfPhaseWrapDegrees(SCPICmdWrite, SCPICmdRead):
 class SvChannelRfPhaseWrap(SCPICmdRead):
     """The ``SV:CH<x>:RF_PHASe:WRAP`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:RF_PHASe:WRAP?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_PHASe:WRAP?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number of the Phase vs. Time trace.
 
     Properties:
@@ -2197,25 +2134,24 @@ class SvChannelRfPhaseWrap(SCPICmdRead):
     def degrees(self) -> SvChannelRfPhaseWrapDegrees:
         """Return the ``SV:CH<x>:RF_PHASe:WRAP:DEGrees`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Phase Wrap limit for the Phase vs. Time trace for the
               specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:RF_PHASe:WRAP:DEGrees?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_PHASe:WRAP:DEGrees?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SV:CH<x>:RF_PHASe:WRAP:DEGrees value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:RF_PHASe:WRAP:DEGrees <NR3>
             - SV:CH<x>:RF_PHASe:WRAP:DEGrees?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number of the Phase vs. Time trace.
             - ``NR3`` sets the number of wrap degrees, from 180 degrees to infinity. When Phase Wrap
               is enabled, the phase values in the Phase vs Time waveform are constrained to be
@@ -2228,25 +2164,24 @@ class SvChannelRfPhaseWrap(SCPICmdRead):
     def state(self) -> SvChannelRfPhaseWrapState:
         """Return the ``SV:CH<x>:RF_PHASe:WRAP:STATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether Phase Wrap is applied to the Phase vs. Time trace
               for the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:RF_PHASe:WRAP:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_PHASe:WRAP:STATE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SV:CH<x>:RF_PHASe:WRAP:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:RF_PHASe:WRAP:STATE {ON|OFF}
             - SV:CH<x>:RF_PHASe:WRAP:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number of the Phase vs. Time trace.
             - ``ON`` enables applying phase wrap on the specified Phase vs. Time channel trace.
             - ``OFF`` disables applying phase wrap on the specified Phase vs. Time channel trace.
@@ -2257,24 +2192,23 @@ class SvChannelRfPhaseWrap(SCPICmdRead):
 class SvChannelRfPhaseReferenceTime(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:RF_PHASe:REFerence:TIMe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the channel Phase Reference time in seconds.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:RF_PHASe:REFerence:TIMe?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_PHASe:REFerence:TIMe?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``SV:CH<x>:RF_PHASe:REFerence:TIMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:RF_PHASe:REFerence:TIMe <NR3>
         - SV:CH<x>:RF_PHASe:REFerence:TIMe?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number of the Phase vs. Time trace.
         - ``NR3`` is the Phase Reference time, in seconds. This indicates the time at which the
           phase value set by ``SV:CH<x>:RF_PHASe:REFerence:DEGrees`` is applied. If the phase
@@ -2289,11 +2223,11 @@ class SvChannelRfPhaseReferenceTime(SCPICmdWrite, SCPICmdRead):
 class SvChannelRfPhaseReferencePosition(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:RF_PHASe:REFerence:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the channel Phase Reference is located at the Trigger
           position or at the Cursor A position.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:RF_PHASe:REFerence:POSition?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2302,14 +2236,13 @@ class SvChannelRfPhaseReferencePosition(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SV:CH<x>:RF_PHASe:REFerence:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:RF_PHASe:REFerence:POSition {TRIGger|CURSor}
         - SV:CH<x>:RF_PHASe:REFerence:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number of the Phase vs. Time trace.
         - ``TRIGger`` sets the Phase Reference location to the Trigger position.
         - ``CURSor`` sets the channel Phase Reference location to the phase time set by
@@ -2320,10 +2253,10 @@ class SvChannelRfPhaseReferencePosition(SCPICmdWrite, SCPICmdRead):
 class SvChannelRfPhaseReferenceDegrees(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:RF_PHASe:REFerence:DEGrees`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the channel Phase Reference value in degrees.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:RF_PHASe:REFerence:DEGrees?``
           query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_PHASe:REFerence:DEGrees?``
@@ -2331,14 +2264,13 @@ class SvChannelRfPhaseReferenceDegrees(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SV:CH<x>:RF_PHASe:REFerence:DEGrees value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:RF_PHASe:REFerence:DEGrees <NR3>
         - SV:CH<x>:RF_PHASe:REFerence:DEGrees?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number of the Phase vs. Time trace.
         - ``NR3`` is the Phase Reference value, in degrees. This indicates a fixed phase value at
           the phase time set by ``SV:CH<x>:RF_PHASe:REFerence:TIMe``. If CH<x> is the master phase
@@ -2349,12 +2281,12 @@ class SvChannelRfPhaseReferenceDegrees(SCPICmdWrite, SCPICmdRead):
 class SvChannelRfPhaseReference(SCPICmdRead):
     """The ``SV:CH<x>:RF_PHASe:REFerence`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:RF_PHASe:REFerence?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_PHASe:REFerence?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number of the Phase vs. Time trace.
 
     Properties:
@@ -2373,10 +2305,10 @@ class SvChannelRfPhaseReference(SCPICmdRead):
     def degrees(self) -> SvChannelRfPhaseReferenceDegrees:
         """Return the ``SV:CH<x>:RF_PHASe:REFerence:DEGrees`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the channel Phase Reference value in degrees.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:RF_PHASe:REFerence:DEGrees?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2385,14 +2317,13 @@ class SvChannelRfPhaseReference(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SV:CH<x>:RF_PHASe:REFerence:DEGrees value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:RF_PHASe:REFerence:DEGrees <NR3>
             - SV:CH<x>:RF_PHASe:REFerence:DEGrees?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number of the Phase vs. Time trace.
             - ``NR3`` is the Phase Reference value, in degrees. This indicates a fixed phase value
               at the phase time set by ``SV:CH<x>:RF_PHASe:REFerence:TIMe``. If CH<x> is the master
@@ -2405,11 +2336,11 @@ class SvChannelRfPhaseReference(SCPICmdRead):
     def position(self) -> SvChannelRfPhaseReferencePosition:
         """Return the ``SV:CH<x>:RF_PHASe:REFerence:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the channel Phase Reference is located at the
               Trigger position or at the Cursor A position.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:RF_PHASe:REFerence:POSition?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2418,14 +2349,13 @@ class SvChannelRfPhaseReference(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SV:CH<x>:RF_PHASe:REFerence:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:RF_PHASe:REFerence:POSition {TRIGger|CURSor}
             - SV:CH<x>:RF_PHASe:REFerence:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number of the Phase vs. Time trace.
             - ``TRIGger`` sets the Phase Reference location to the Trigger position.
             - ``CURSor`` sets the channel Phase Reference location to the phase time set by
@@ -2437,10 +2367,10 @@ class SvChannelRfPhaseReference(SCPICmdRead):
     def time(self) -> SvChannelRfPhaseReferenceTime:
         """Return the ``SV:CH<x>:RF_PHASe:REFerence:TIMe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the channel Phase Reference time in seconds.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:RF_PHASe:REFerence:TIMe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2449,14 +2379,13 @@ class SvChannelRfPhaseReference(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SV:CH<x>:RF_PHASe:REFerence:TIMe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:RF_PHASe:REFerence:TIMe <NR3>
             - SV:CH<x>:RF_PHASe:REFerence:TIMe?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number of the Phase vs. Time trace.
             - ``NR3`` is the Phase Reference time, in seconds. This indicates the time at which the
               phase value set by ``SV:CH<x>:RF_PHASe:REFerence:DEGrees`` is applied. If the phase
@@ -2472,12 +2401,12 @@ class SvChannelRfPhaseReference(SCPICmdRead):
 class SvChannelRfPhase(SCPICmdRead):
     """The ``SV:CH<x>:RF_PHASe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:RF_PHASe?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_PHASe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number of the Phase vs. Time trace.
 
     Properties:
@@ -2494,12 +2423,12 @@ class SvChannelRfPhase(SCPICmdRead):
     def reference(self) -> SvChannelRfPhaseReference:
         """Return the ``SV:CH<x>:RF_PHASe:REFerence`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:RF_PHASe:REFerence?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_PHASe:REFerence?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number of the Phase vs. Time trace.
 
         Sub-properties:
@@ -2513,12 +2442,12 @@ class SvChannelRfPhase(SCPICmdRead):
     def wrap(self) -> SvChannelRfPhaseWrap:
         """Return the ``SV:CH<x>:RF_PHASe:WRAP`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:RF_PHASe:WRAP?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_PHASe:WRAP?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number of the Phase vs. Time trace.
 
         Sub-properties:
@@ -2531,25 +2460,24 @@ class SvChannelRfPhase(SCPICmdRead):
 class SvChannelRfMagnitudeFormat(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:RF_MAGnitude:FORMat`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the format of the Magnitude vs. Time trace for the specified
           channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:RF_MAGnitude:FORMat?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_MAGnitude:FORMat?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:CH<x>:RF_MAGnitude:FORMat value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:RF_MAGnitude:FORMat {AMPLINear|POWLINear|POWLOG}
         - SV:CH<x>:RF_MAGnitude:FORMat?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number of the Magnitude vs. Time trace.
         - ``AMPLINear`` (Amplitude (linear)) sets the magnitude in Volts with square root conversion
           of linear power values.
@@ -2563,12 +2491,12 @@ class SvChannelRfMagnitudeFormat(SCPICmdWrite, SCPICmdRead):
 class SvChannelRfMagnitude(SCPICmdRead):
     """The ``SV:CH<x>:RF_MAGnitude`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:RF_MAGnitude?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_MAGnitude?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number of the Magnitude vs. Time trace.
 
     Properties:
@@ -2583,25 +2511,24 @@ class SvChannelRfMagnitude(SCPICmdRead):
     def format(self) -> SvChannelRfMagnitudeFormat:
         """Return the ``SV:CH<x>:RF_MAGnitude:FORMat`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the format of the Magnitude vs. Time trace for the
               specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:RF_MAGnitude:FORMat?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_MAGnitude:FORMat?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SV:CH<x>:RF_MAGnitude:FORMat value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:RF_MAGnitude:FORMat {AMPLINear|POWLINear|POWLOG}
             - SV:CH<x>:RF_MAGnitude:FORMat?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number of the Magnitude vs. Time trace.
             - ``AMPLINear`` (Amplitude (linear)) sets the magnitude in Volts with square root
               conversion of linear power values.
@@ -2616,26 +2543,25 @@ class SvChannelRfMagnitude(SCPICmdRead):
 class SvChannelRfAverageNumavg(SCPICmdWrite, SCPICmdRead):
     """The ``SV:CH<x>:RF_AVErage:NUMAVg`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of acquisitions to be used when creating the
           Average trace for the specified spectrum trace channel in the Spectrum View. The Average
           spectrum trace shows the average of values from multiple acquisitions at each trace point.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:RF_AVErage:NUMAVg?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_AVErage:NUMAVg?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SV:CH<x>:RF_AVErage:NUMAVg value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SV:CH<x>:RF_AVErage:NUMAVg <NR1>
         - SV:CH<x>:RF_AVErage:NUMAVg?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the spectrum trace channel source.
         - ``<NR1>`` specifies the number of acquisitions to average. The range is 2 - 512, in
           exponential increments.
@@ -2645,12 +2571,12 @@ class SvChannelRfAverageNumavg(SCPICmdWrite, SCPICmdRead):
 class SvChannelRfAverage(SCPICmdRead):
     """The ``SV:CH<x>:RF_AVErage`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>:RF_AVErage?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_AVErage?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the spectrum trace channel source.
 
     Properties:
@@ -2665,27 +2591,26 @@ class SvChannelRfAverage(SCPICmdRead):
     def numavg(self) -> SvChannelRfAverageNumavg:
         """Return the ``SV:CH<x>:RF_AVErage:NUMAVg`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of acquisitions to be used when creating the
               Average trace for the specified spectrum trace channel in the Spectrum View. The
               Average spectrum trace shows the average of values from multiple acquisitions at each
               trace point.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:RF_AVErage:NUMAVg?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_AVErage:NUMAVg?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:CH<x>:RF_AVErage:NUMAVg value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:RF_AVErage:NUMAVg <NR1>
             - SV:CH<x>:RF_AVErage:NUMAVg?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the spectrum trace channel source.
             - ``<NR1>`` specifies the number of acquisitions to average. The range is 2 - 512, in
               exponential increments.
@@ -2696,12 +2621,12 @@ class SvChannelRfAverage(SCPICmdRead):
 class SvChannel(ValidatedChannel, SCPICmdRead):
     """The ``SV:CH<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``SV:CH<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the spectrum trace channel source.
 
     Properties:
@@ -2728,12 +2653,12 @@ class SvChannel(ValidatedChannel, SCPICmdRead):
     def rf_average(self) -> SvChannelRfAverage:
         """Return the ``SV:CH<x>:RF_AVErage`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:RF_AVErage?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_AVErage?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the spectrum trace channel source.
 
         Sub-properties:
@@ -2745,12 +2670,12 @@ class SvChannel(ValidatedChannel, SCPICmdRead):
     def rf_magnitude(self) -> SvChannelRfMagnitude:
         """Return the ``SV:CH<x>:RF_MAGnitude`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:RF_MAGnitude?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_MAGnitude?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number of the Magnitude vs. Time trace.
 
         Sub-properties:
@@ -2762,12 +2687,12 @@ class SvChannel(ValidatedChannel, SCPICmdRead):
     def rf_phase(self) -> SvChannelRfPhase:
         """Return the ``SV:CH<x>:RF_PHASe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:RF_PHASe?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:RF_PHASe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number of the Phase vs. Time trace.
 
         Sub-properties:
@@ -2780,25 +2705,24 @@ class SvChannel(ValidatedChannel, SCPICmdRead):
     def seltrace(self) -> SvChannelSeltrace:
         """Return the ``SV:CH<x>:SELTrace`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the spectrum trace type to show for the specified channel
               in the Spectrum View. Each channel's spectrum trace can display up to four traces; a
               Normal trace (default), a Max Hold trace, a Min Hold trace and an Average trace.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:SELTrace?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELTrace?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:CH<x>:SELTrace value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:SELTrace {NORMal|MAXHold|MINHold|AVErage}
             - SV:CH<x>:SELTrace?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the analog channel to use as the Spectrum View source.
             - ``NORMal`` selects the Normal trace for the specified spectrum trace channel. If the
               specified spectrum trace channel does not have a Normal trace, this command is
@@ -2819,12 +2743,12 @@ class SvChannel(ValidatedChannel, SCPICmdRead):
     def select(self) -> SvChannelSelect:
         """Return the ``SV:CH<x>:SELect`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:SELect?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SELect?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the spectrum trace channel source.
 
         Sub-properties:
@@ -2843,12 +2767,12 @@ class SvChannel(ValidatedChannel, SCPICmdRead):
     def squelch(self) -> SvChannelSquelch:
         """Return the ``SV:CH<x>:SQUELCH`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:SQUELCH?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:SQUELCH?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number of the Frequency or Phase vs. Time trace.
 
         Sub-properties:
@@ -2861,24 +2785,23 @@ class SvChannel(ValidatedChannel, SCPICmdRead):
     def units(self) -> SvChannelUnits:
         """Return the ``SV:CH<x>:UNIts`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the absolute logarithmic amplitude vertical scale units
               to show in the specified spectrum trace channel of the Spectrum View.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>:UNIts?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:CH<x>:UNIts value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:CH<x>:UNIts {DBM|DBUW|DBMV|DBUV|DBMA|DBUA}
             - SV:CH<x>:UNIts?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the analog channel to use as the Spectrum View source.
             - ``DBM`` specifies Decibel milliwatts (dBm).
             - ``DBUW`` specifies Decibel microwatts (dBµW).
@@ -2894,7 +2817,7 @@ class SvChannel(ValidatedChannel, SCPICmdRead):
 class Sv(SCPICmdRead):
     """The ``SV`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SV?`` query.
         - Using the ``.verify(value)`` method will send the ``SV?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2933,12 +2856,12 @@ class Sv(SCPICmdRead):
     def ch(self) -> Dict[int, SvChannel]:
         """Return the ``SV:CH<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:CH<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the spectrum trace channel source.
 
         Sub-properties:
@@ -2956,24 +2879,23 @@ class Sv(SCPICmdRead):
     def lockcenter(self) -> SvLockcenter:
         """Return the ``SV:LOCKCenter`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the Center Frequency setting is locked across all
               channels in the Spectrum View.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:LOCKCenter?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:LOCKCenter?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:LOCKCenter value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:LOCKCenter {ON|1|OFF|0}
             - SV:LOCKCenter?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` sets all spectrum traces channels in the Spectrum View window to use the same
               center frequency value. When the center frequency of any channel is changed, the
               center frequency of all other channels is automatically changed to match that value.
@@ -2991,24 +2913,23 @@ class Sv(SCPICmdRead):
     def lockspectrum(self) -> SvLockspectrum:
         """Return the ``SV:LOCKSpectrum`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the Spectrum Time value is locked across all
               spectrum trace channels in the Spectrum View.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:LOCKSpectrum?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:LOCKSpectrum?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:LOCKSpectrum value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:LOCKSpectrum {ON|1|OFF|0}
             - SV:LOCKSpectrum?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` sets all spectrum traces channels in the Spectrum View window to use the same
               Spectrum Time value. When the Spectrum Time of any channel is changed, the Spectrum
               Time of all other channels is automatically changed to match that value.
@@ -3026,7 +2947,7 @@ class Sv(SCPICmdRead):
     def marker(self) -> SvMarker:
         """Return the ``SV:MARKER`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:MARKER?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:MARKER?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3043,7 +2964,7 @@ class Sv(SCPICmdRead):
     def rbw(self) -> SvRbw:
         """Return the ``SV:RBW`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the resolution bandwidth (RBW) when the RBW mode has been
               set to MANUAL (using the command ``SV:RBWMode``). The resolution bandwidth is the
               width of the narrowest measurable band of frequencies in a Spectrum View trace. By
@@ -3052,20 +2973,19 @@ class Sv(SCPICmdRead):
               domain. For example, if the input signal contains two carriers separated by 1 kHz, you
               will not be able to discriminate between them unless the RBW is less than 1 kHz.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:RBW?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:RBW?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:RBW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:RBW <NR3>
             - SV:RBW?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the width of the narrowest measurable band of frequencies in a
               Spectrum View trace, in Hz.
         """
@@ -3075,24 +2995,23 @@ class Sv(SCPICmdRead):
     def rbwmode(self) -> SvRbwmode:
         """Return the ``SV:RBWMode`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the resolution bandwidth (RBW) mode, either Automatic or
               Manual.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:RBWMode?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:RBWMode?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:RBWMode value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:RBWMode {AUTOmatic|MANual}
             - SV:RBWMode?
+            ```
 
-        **Info:**
+        Info:
             - ``AUTOmatic`` specifies the resolution bandwidth automatically as the span is changed.
               The default behavior is ``1000:1``, but you can set it to other values in a 1-2-5
               sequence (e.g. 10000, 20000, 50000). To specify the RBW ratio that will be used when
@@ -3106,7 +3025,7 @@ class Sv(SCPICmdRead):
     def rf_phase(self) -> SvRfPhase:
         """Return the ``SV:RF_PHASe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:RF_PHASe?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:RF_PHASe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3120,26 +3039,25 @@ class Sv(SCPICmdRead):
     def span(self) -> SvSpan:
         """Return the ``SV:SPAN`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the span setting for all channels in the Spectrum View.
               The span is the range of frequencies that can be observed centered on the center
               frequency. This is the width of the frequency domain trace, which is from the center
               frequency - ½span to the center frequency + ½ span.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:SPAN?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:SPAN?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:SPAN value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:SPAN <NR3>
             - SV:SPAN?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the span value in Hz.
         """
         return self._span
@@ -3148,7 +3066,7 @@ class Sv(SCPICmdRead):
     def spanrbwratio(self) -> SvSpanrbwratio:
         """Return the ``SV:SPANRBWRatio`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the ratio of the span to the resolution bandwidth (RBW)
               that will be used when the RBW Mode is set to AUTO. The span is the width of the
               frequency domain trace in Hz, which is equal to the stop frequency minus the start
@@ -3156,20 +3074,19 @@ class Sv(SCPICmdRead):
               frequency domain trace. The default RBW ratio is 1000 : 1. Use the command
               ``SV:RBWMode`` to set the RBW Mode to Automatic.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:SPANRBWRatio?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:SPANRBWRatio?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:SPANRBWRatio value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:SPANRBWRatio <NR3>
             - SV:SPANRBWRatio?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the span-to-RBW ratio.
         """
         return self._spanrbwratio
@@ -3178,7 +3095,7 @@ class Sv(SCPICmdRead):
     def spectrogram(self) -> SvSpectrogram:
         """Return the ``SV:SPECtrogram`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:SPECtrogram?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:SPECtrogram?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -3193,26 +3110,25 @@ class Sv(SCPICmdRead):
     def window(self) -> SvWindow:
         """Return the ``SV:WINDOW`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the window type used by the windowing function of the
               Spectrum View. The windowing function is a Fast Fourier Transform (FFT) technique used
               to minimize the discontinuities between successive frames of an RF time domain signal.
               The default window type is Blackman-Harris.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV:WINDOW?`` query.
             - Using the ``.verify(value)`` method will send the ``SV:WINDOW?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SV:WINDOW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SV:WINDOW {KAISerbessel|RECTangular|HAMMing| HANNing|BLACkmanharris|FLATtop2}
             - SV:WINDOW?
+            ```
 
-        **Info:**
+        Info:
             - ``KAISerbessel`` specifies the Kaiser-Bessel window type (a high or moderate
               resolution window).
             - ``RECTangular`` specifies the Rectangular window type (a window function is equivalent

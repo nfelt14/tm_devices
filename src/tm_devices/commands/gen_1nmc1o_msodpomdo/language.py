@@ -10,11 +10,11 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
-    - LANGuage {ENGLish|FRENch|GERMan|ITALian|SPANish|PORTUguese|JAPAnese|KOREan|RUSSian|SIMPlifiedchinese|TRADitionalchinese}
+    - LANGuage
+      {ENGLish|FRENch|GERMan|ITALian|SPANish|PORTUguese|JAPAnese|KOREan|RUSSian|SIMPlifiedchinese|
+      TRADitionalchinese}
     - LANGuage?
-"""  # noqa: E501
+"""
 
 from typing import Optional, TYPE_CHECKING
 
@@ -27,23 +27,22 @@ if TYPE_CHECKING:
 class Language(SCPICmdWrite, SCPICmdRead):
     """The ``LANGuage`` command.
 
-    **Description:**
+    Description:
         - This command specifies the user interface display language. This command only affects the
           oscilloscope displayed language. Remote commands and their responses are always in
           English.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LANGuage?`` query.
         - Using the ``.verify(value)`` method will send the ``LANGuage?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LANGuage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LANGuage {ENGLish|FRENch|GERMan|ITALian|SPANish|PORTUguese|JAPAnese|KOREan|RUSSian|SIMPlifiedchinese|TRADitionalchinese}
         - LANGuage?
+        ```
     """  # noqa: E501
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "LANGuage") -> None:

@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SELect:CH<x> {ON|OFF|1|0}
     - SELect:CH<x>?
     - SELect:DCH<x>:DAll {ON|OFF|<NR1>}
@@ -34,23 +32,22 @@ if TYPE_CHECKING:
 class SelectDchItemDall(SCPICmdWrite, SCPICmdRead):
     """The ``SELect:DCH<x>:DAll`` command.
 
-    **Description:**
+    Description:
         - This command turns on or off all constituent digital channels.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SELect:DCH<x>:DAll?`` query.
         - Using the ``.verify(value)`` method will send the ``SELect:DCH<x>:DAll?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SELect:DCH<x>:DAll value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SELect:DCH<x>:DAll {ON|OFF|<NR1>}
         - SELect:DCH<x>:DAll?
+        ```
 
-    **Info:**
+    Info:
         - ``DCH<x>`` specifies the digital channel. The supported value is 1.
         - ``<NR1>`` = 0 disables the specified digital channel; any other value turns the on the
           digital channel.
@@ -62,12 +59,12 @@ class SelectDchItemDall(SCPICmdWrite, SCPICmdRead):
 class SelectDchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``SELect:DCH<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SELect:DCH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``SELect:DCH<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``DCH<x>`` specifies the digital channel. The supported value is 1.
 
     Properties:
@@ -82,23 +79,22 @@ class SelectDchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def dall(self) -> SelectDchItemDall:
         """Return the ``SELect:DCH<x>:DAll`` command.
 
-        **Description:**
+        Description:
             - This command turns on or off all constituent digital channels.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SELect:DCH<x>:DAll?`` query.
             - Using the ``.verify(value)`` method will send the ``SELect:DCH<x>:DAll?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SELect:DCH<x>:DAll value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SELect:DCH<x>:DAll {ON|OFF|<NR1>}
             - SELect:DCH<x>:DAll?
+            ```
 
-        **Info:**
+        Info:
             - ``DCH<x>`` specifies the digital channel. The supported value is 1.
             - ``<NR1>`` = 0 disables the specified digital channel; any other value turns the on the
               digital channel.
@@ -111,25 +107,24 @@ class SelectDchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class SelectChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
     """The ``SELect:CH<x>`` command.
 
-    **Description:**
+    Description:
         - Turns the display of the channel <x> waveform on or off, where <x > is the channel number.
           This command also resets the acquisition. The query returns whether the channel is on or
           off but does not indicate whether it is the specified waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SELect:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``SELect:CH<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SELect:CH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SELect:CH<x> {ON|OFF|1|0}
         - SELect:CH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` turns on the display of the specified waveform. This waveform also becomes the
           selected waveform.
         - ``OFF`` turns off the display of the specified waveform.
@@ -142,7 +137,7 @@ class SelectChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
 class Select(SCPICmdRead):
     """The ``SELect`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SELect?`` query.
         - Using the ``.verify(value)`` method will send the ``SELect?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -165,25 +160,24 @@ class Select(SCPICmdRead):
     def ch(self) -> Dict[int, SelectChannel]:
         """Return the ``SELect:CH<x>`` command.
 
-        **Description:**
+        Description:
             - Turns the display of the channel <x> waveform on or off, where <x > is the channel
               number. This command also resets the acquisition. The query returns whether the
               channel is on or off but does not indicate whether it is the specified waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SELect:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``SELect:CH<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SELect:CH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SELect:CH<x> {ON|OFF|1|0}
             - SELect:CH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` turns on the display of the specified waveform. This waveform also becomes the
               selected waveform.
             - ``OFF`` turns off the display of the specified waveform.
@@ -197,12 +191,12 @@ class Select(SCPICmdRead):
     def dch(self) -> Dict[int, SelectDchItem]:
         """Return the ``SELect:DCH<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SELect:DCH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``SELect:DCH<x>?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``DCH<x>`` specifies the digital channel. The supported value is 1.
 
         Sub-properties:

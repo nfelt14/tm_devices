@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - display.clear()
     - display.getannunciators()
     - display.getcursor()
@@ -55,7 +53,7 @@ class DisplayTrigger(BaseTSPCmd):
 class DisplayLoadmenu(BaseTSPCmd):
     """The ``display.loadmenu`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.add()``: The ``display.loadmenu.add()`` function.
         - ``.delete()``: The ``display.loadmenu.delete()`` function.
     """
@@ -63,15 +61,14 @@ class DisplayLoadmenu(BaseTSPCmd):
     def add(self, display_name: str, code: str, memory: Optional[str] = None) -> None:
         """Run the ``display.loadmenu.add()`` function.
 
-        **Description:**
+        Description:
             - This function adds an entry to the USER TESTS menu, which can be accessed by pressing
               the LOAD key on the front panel.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.loadmenu.add()
+            ```
 
         Args:
             display_name: The name that is added to the USER TESTS menu.
@@ -101,15 +98,14 @@ class DisplayLoadmenu(BaseTSPCmd):
     def delete(self, display_name: str) -> None:
         """Run the ``display.loadmenu.delete()`` function.
 
-        **Description:**
+        Description:
             - This function removes an entry from the USER TESTS menu, which can be accessed using
               the LOAD key on the front panel.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.loadmenu.delete()
+            ```
 
         Args:
             display_name: The name to be deleted from the USER TESTS menu.
@@ -129,7 +125,7 @@ class DisplayLoadmenu(BaseTSPCmd):
 class Display(BaseTSPCmd):
     """The ``display`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.clear()``: The ``display.clear()`` function.
         - ``.getannunciators()``: The ``display.getannunciators()`` function.
         - ``.getcursor()``: The ``display.getcursor()`` function.
@@ -157,7 +153,7 @@ class Display(BaseTSPCmd):
     def loadmenu(self) -> DisplayLoadmenu:
         """Return the ``display.loadmenu`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.add()``: The ``display.loadmenu.add()`` function.
             - ``.delete()``: The ``display.loadmenu.delete()`` function.
         """
@@ -167,23 +163,22 @@ class Display(BaseTSPCmd):
     def locallockout(self) -> str:
         """Access the ``display.locallockout`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes whether or not the EXIT (LOCAL) key on the instrument
               virtualfront panel is enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.locallockout)`` query.
             - Setting this property to a value will send the ``display.locallockout = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.locallockout = value
             - print(display.locallockout)
+            ```
 
-        **Info:**
+        Info:
             - ``lockout``, the 0 or display.UNLOCK: Unlocks EXIT (LOCAL) key
               1 or display.LOCK: Locks out EXIT (LOCAL) key.
 
@@ -204,23 +199,22 @@ class Display(BaseTSPCmd):
     def locallockout(self, value: Union[str, float]) -> None:
         """Access the ``display.locallockout`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes whether or not the EXIT (LOCAL) key on the instrument
               virtualfront panel is enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.locallockout)`` query.
             - Setting this property to a value will send the ``display.locallockout = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.locallockout = value
             - print(display.locallockout)
+            ```
 
-        **Info:**
+        Info:
             - ``lockout``, the 0 or display.UNLOCK: Unlocks EXIT (LOCAL) key
               1 or display.LOCK: Locks out EXIT (LOCAL) key.
 
@@ -244,19 +238,18 @@ class Display(BaseTSPCmd):
     def screen(self) -> str:
         """Access the ``display.screen`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the selected display screen.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.screen)`` query.
             - Setting this property to a value will send the ``display.screen = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.screen = value
             - print(display.screen)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -275,19 +268,18 @@ class Display(BaseTSPCmd):
     def screen(self, value: Union[str, float]) -> None:
         """Access the ``display.screen`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the selected display screen.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.screen)`` query.
             - Setting this property to a value will send the ``display.screen = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.screen = value
             - print(display.screen)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -318,14 +310,13 @@ class Display(BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``display.clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the text from the front-panel USER swipe screen.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.clear()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -341,14 +332,13 @@ class Display(BaseTSPCmd):
     def getannunciators(self) -> str:
         """Run the ``display.getannunciators()`` function.
 
-        **Description:**
+        Description:
             - This function reads the annunciators (indicators) that are presently turned on.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.getannunciators()
+            ```
 
         Returns:
             The result of the function call.
@@ -367,15 +357,14 @@ class Display(BaseTSPCmd):
     def getcursor(self) -> str:
         """Run the ``display.getcursor()`` function.
 
-        **Description:**
+        Description:
             - This function reads the present position of the cursor on the virtualfront-panel
               display.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.getcursor()
+            ```
 
         Returns:
             The result of the function call.
@@ -394,14 +383,13 @@ class Display(BaseTSPCmd):
     def getlastkey(self) -> str:
         """Run the ``display.getlastkey()`` function.
 
-        **Description:**
+        Description:
             - This function retrieves the key code for the last pressed key.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.getlastkey()
+            ```
 
         Returns:
             The result of the function call.
@@ -426,14 +414,13 @@ class Display(BaseTSPCmd):
     ) -> str:
         """Run the ``display.gettext()`` function.
 
-        **Description:**
+        Description:
             - This function reads the text displayed on the virtualfront panel.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.gettext()
+            ```
 
         Args:
             embellished (optional): Indicates type of returned text.
@@ -478,15 +465,14 @@ class Display(BaseTSPCmd):
     ) -> str:
         """Run the ``display.inputvalue()`` function.
 
-        **Description:**
+        Description:
             - This function displays a formatted input field on the virtualfront-panel display that
               the operator can edit.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.inputvalue()
+            ```
 
         Args:
             format_: A string that defines how the input field is formatted; see Details for more
@@ -522,14 +508,13 @@ class Display(BaseTSPCmd):
     def menu(self, name: str, items: str) -> str:
         """Run the ``display.menu()`` function.
 
-        **Description:**
+        Description:
             - This function presents a menu on the virtualfront-panel display.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.menu()
+            ```
 
         Args:
             name: Menu name to display on the top line.
@@ -552,15 +537,14 @@ class Display(BaseTSPCmd):
     def prompt(self, button_id: str, prompt_text: str) -> str:
         """Run the ``display.prompt()`` function.
 
-        **Description:**
+        Description:
             - This function allows you to create an interactive dialog prompt that displays a custom
               message on the front-panel display.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.prompt()
+            ```
 
         Args:
             button_id: The type of prompt to display; choose one of the following options.
@@ -583,14 +567,13 @@ class Display(BaseTSPCmd):
     def sendkey(self, key_code: str) -> None:
         """Run the ``display.sendkey()`` function.
 
-        **Description:**
+        Description:
             - This function sends a code that simulates the action of a front-panel control.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.sendkey()
+            ```
 
         Args:
             key_code: A parameter that specifies the key press to simulate; see Details for more
@@ -610,14 +593,13 @@ class Display(BaseTSPCmd):
     def setcursor(self, row: str, column: str, style: Optional[str] = None) -> None:
         """Run the ``display.setcursor()`` function.
 
-        **Description:**
+        Description:
             - This function sets the position of the cursor.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.setcursor()
+            ```
 
         Args:
             row: The row number for the cursor (1 or 2).
@@ -650,14 +632,13 @@ class Display(BaseTSPCmd):
     ) -> None:
         """Run the ``display.settext()`` function.
 
-        **Description:**
+        Description:
             - This function defines the text that is displayed on the front-panel USER swipe screen.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.settext()
+            ```
 
         Args:
             user_display_text1 (optional): String that contains the message for the top line of the
@@ -687,14 +668,13 @@ class Display(BaseTSPCmd):
     def waitkey(self) -> str:
         """Run the ``display.waitkey()`` function.
 
-        **Description:**
+        Description:
             - This function captures the key code value for the next front-panel action.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.waitkey()
+            ```
 
         Returns:
             The result of the function call.

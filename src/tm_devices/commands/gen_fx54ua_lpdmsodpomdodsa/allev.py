@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - ALLEv?
 """
 
@@ -27,22 +25,21 @@ if TYPE_CHECKING:
 class Allev(SCPICmdRead):
     """The ``ALLEv`` command.
 
-    **Description:**
+    Description:
         - This query-only command prompts the instrument to return all events and their messages
           (delimited by commas), and removes the returned events from the Event Queue. Use the
           ``*ESR?`` query to enable the events to be returned. This command is similar to repeatedly
           sending ``*EVMsg?`` queries to the instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ALLEv?`` query.
         - Using the ``.verify(value)`` method will send the ``ALLEv?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ALLEv?
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "ALLEv") -> None:

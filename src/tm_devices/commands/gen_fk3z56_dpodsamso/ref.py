@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - REF<x>:HORizontal:POSition <NR3>
     - REF<x>:HORizontal:POSition?
     - REF<x>:LABel:NAMe <QString>
@@ -40,26 +38,25 @@ if TYPE_CHECKING:
 class RefItemVerticalScale(SCPICmdWrite, SCPICmdRead):
     """The ``REF<x>:VERTical:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command specifies the vertical scale for the reference waveform specified by <x>.
           This setting controls the display only. For a signal with constant amplitude, increasing
           the scale causes the waveform to be displayed smaller. Decreasing the scale causes the
           waveform to be displayed larger.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``REF<x>:VERTical:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``REF<x>:VERTical:SCAle?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``REF<x>:VERTical:SCAle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - REF<x>:VERTical:SCAle <NR3>
         - REF<x>:VERTical:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the gain in user units-per-division.
     """
 
@@ -67,7 +64,7 @@ class RefItemVerticalScale(SCPICmdWrite, SCPICmdRead):
 class RefItemVerticalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``REF<x>:VERTical:POSition`` command.
 
-    **Description:**
+    Description:
         - This command specifies the vertical position of the reference waveform specified by <x>.
           Increasing the position value of a waveform causes the waveform to move up, and decreasing
           the position value causes the waveform to move down. Position adjusts only the display
@@ -76,21 +73,20 @@ class RefItemVerticalPosition(SCPICmdWrite, SCPICmdRead):
           2.0, the signal represented by that reference will be displayed at 2.0 divisions above the
           center of the screen.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``REF<x>:VERTical:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``REF<x>:VERTical:POSition?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``REF<x>:VERTical:POSition value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - REF<x>:VERTical:POSition <NR3>
         - REF<x>:VERTical:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the desired position, in divisions
           from the center horizontal graticule. The range is from -5.0 to 5.0 divisions.
     """
@@ -99,7 +95,7 @@ class RefItemVerticalPosition(SCPICmdWrite, SCPICmdRead):
 class RefItemVertical(SCPICmdRead):
     """The ``REF<x>:VERTical`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``REF<x>:VERTical?`` query.
         - Using the ``.verify(value)`` method will send the ``REF<x>:VERTical?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -118,7 +114,7 @@ class RefItemVertical(SCPICmdRead):
     def position(self) -> RefItemVerticalPosition:
         """Return the ``REF<x>:VERTical:POSition`` command.
 
-        **Description:**
+        Description:
             - This command specifies the vertical position of the reference waveform specified by
               <x>. Increasing the position value of a waveform causes the waveform to move up, and
               decreasing the position value causes the waveform to move down. Position adjusts only
@@ -127,21 +123,20 @@ class RefItemVertical(SCPICmdRead):
               position for Reference 3 is set to 2.0, the signal represented by that reference will
               be displayed at 2.0 divisions above the center of the screen.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``REF<x>:VERTical:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``REF<x>:VERTical:POSition?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``REF<x>:VERTical:POSition value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - REF<x>:VERTical:POSition <NR3>
             - REF<x>:VERTical:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the desired position, in divisions
               from the center horizontal graticule. The range is from -5.0 to 5.0 divisions.
         """
@@ -151,27 +146,26 @@ class RefItemVertical(SCPICmdRead):
     def scale(self) -> RefItemVerticalScale:
         """Return the ``REF<x>:VERTical:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command specifies the vertical scale for the reference waveform specified by <x>.
               This setting controls the display only. For a signal with constant amplitude,
               increasing the scale causes the waveform to be displayed smaller. Decreasing the scale
               causes the waveform to be displayed larger.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``REF<x>:VERTical:SCAle?`` query.
             - Using the ``.verify(value)`` method will send the ``REF<x>:VERTical:SCAle?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``REF<x>:VERTical:SCAle value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - REF<x>:VERTical:SCAle <NR3>
             - REF<x>:VERTical:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the gain in user
               units-per-division.
         """
@@ -181,24 +175,23 @@ class RefItemVertical(SCPICmdRead):
 class RefItemThreshold(SCPICmdWrite, SCPICmdRead):
     """The ``REF<x>:THRESHold`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the comparable threshold for converting the reference signal
           to digital form for the channel specified by x. The value of x can range from 1 through 4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``REF<x>:THRESHold?`` query.
         - Using the ``.verify(value)`` method will send the ``REF<x>:THRESHold?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``REF<x>:THRESHold value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - REF<x>:THRESHold <NR3>
         - REF<x>:THRESHold?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the reference threshold in volts.
     """
 
@@ -206,7 +199,7 @@ class RefItemThreshold(SCPICmdWrite, SCPICmdRead):
 class RefItemLabelYpos(SCPICmdWrite, SCPICmdRead):
     """The ``REF<x>:LABel:YPOS`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the Y screen offset at which the label (attached to the
           displayed waveform of the specified reference) is displayed, relative to the center of the
           screen. The reference waveform is specified by x. The value of x can range from 1 through
@@ -214,20 +207,19 @@ class RefItemLabelYpos(SCPICmdWrite, SCPICmdRead):
           choosing Label from the drop-down list, selecting the tab associated with the reference
           for which you want to position a label, and entering a value in the Y Position box.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``REF<x>:LABel:YPOS?`` query.
         - Using the ``.verify(value)`` method will send the ``REF<x>:LABel:YPOS?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``REF<x>:LABel:YPOS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - REF<x>:LABel:YPOS <NR1>
         - REF<x>:LABel:YPOS?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the location (in divisions) where the waveform label for the selected
           reference is displayed, relative to the waveform handle. Arguments should be integers
           ranging from 10 to -10.
@@ -237,7 +229,7 @@ class RefItemLabelYpos(SCPICmdWrite, SCPICmdRead):
 class RefItemLabelXpos(SCPICmdWrite, SCPICmdRead):
     """The ``REF<x>:LABel:XPOS`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the X screen offset at which the label (attached to the
           displayed waveform of the specified reference) is displayed, relative to the left edge of
           the screen The reference waveform is specified by x. The value of x can range from 1
@@ -245,20 +237,19 @@ class RefItemLabelXpos(SCPICmdWrite, SCPICmdRead):
           choosing Label from the drop-down list, selecting the tab associated with the reference
           for which you want to position a label, and entering a value in the X Position box.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``REF<x>:LABel:XPOS?`` query.
         - Using the ``.verify(value)`` method will send the ``REF<x>:LABel:XPOS?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``REF<x>:LABel:XPOS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - REF<x>:LABel:XPOS <NR1>
         - REF<x>:LABel:XPOS?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the location (control in divisions) where the waveform label for the selected
           reference is displayed, relative to the left edge of the screen. Arguments should be
           integers ranging from 0 through 10.
@@ -268,27 +259,26 @@ class RefItemLabelXpos(SCPICmdWrite, SCPICmdRead):
 class RefItemLabelName(SCPICmdWrite, SCPICmdRead):
     """The ``REF<x>:LABel:NAMe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the label of the designated waveform. The reference waveform
           is specified by x. The value of x can range from 1 through 4. This command is equivalent
           to selecting Reference Waveforms from the File menu, choosing Label from the drop-down
           list, selecting the tab associated with the reference for which you want to create a
           label, and entering a label in the Label box.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``REF<x>:LABel:NAMe?`` query.
         - Using the ``.verify(value)`` method will send the ``REF<x>:LABel:NAMe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``REF<x>:LABel:NAMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - REF<x>:LABel:NAMe <QString>
         - REF<x>:LABel:NAMe?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the character string that will be used for the reference waveform label
           name.
     """
@@ -299,23 +289,22 @@ class RefItemLabelName(SCPICmdWrite, SCPICmdRead):
 class RefItemLabel(SCPICmdRead):
     """The ``REF<x>:LABel`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns a branch query containing the waveform label name and the
           coordinates at which the label (attached to the displayed waveform of the specified
           reference) is displayed. The reference waveform is specified by x. The value of x can
           range from 1 through 4. This command is equivalent to selecting Reference Waveforms from
           the File menu and then choosing Label from the drop-down list.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``REF<x>:LABel?`` query.
         - Using the ``.verify(value)`` method will send the ``REF<x>:LABel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - REF<x>:LABel?
+        ```
 
     Properties:
         - ``.name``: The ``REF<x>:LABel:NAMe`` command.
@@ -333,27 +322,26 @@ class RefItemLabel(SCPICmdRead):
     def name(self) -> RefItemLabelName:
         """Return the ``REF<x>:LABel:NAMe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the label of the designated waveform. The reference
               waveform is specified by x. The value of x can range from 1 through 4. This command is
               equivalent to selecting Reference Waveforms from the File menu, choosing Label from
               the drop-down list, selecting the tab associated with the reference for which you want
               to create a label, and entering a label in the Label box.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``REF<x>:LABel:NAMe?`` query.
             - Using the ``.verify(value)`` method will send the ``REF<x>:LABel:NAMe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``REF<x>:LABel:NAMe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - REF<x>:LABel:NAMe <QString>
             - REF<x>:LABel:NAMe?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the character string that will be used for the reference waveform
               label name.
         """
@@ -363,7 +351,7 @@ class RefItemLabel(SCPICmdRead):
     def xpos(self) -> RefItemLabelXpos:
         """Return the ``REF<x>:LABel:XPOS`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the X screen offset at which the label (attached to the
               displayed waveform of the specified reference) is displayed, relative to the left edge
               of the screen The reference waveform is specified by x. The value of x can range from
@@ -372,20 +360,19 @@ class RefItemLabel(SCPICmdRead):
               reference for which you want to position a label, and entering a value in the X
               Position box.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``REF<x>:LABel:XPOS?`` query.
             - Using the ``.verify(value)`` method will send the ``REF<x>:LABel:XPOS?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``REF<x>:LABel:XPOS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - REF<x>:LABel:XPOS <NR1>
             - REF<x>:LABel:XPOS?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the location (control in divisions) where the waveform label for the
               selected reference is displayed, relative to the left edge of the screen. Arguments
               should be integers ranging from 0 through 10.
@@ -396,7 +383,7 @@ class RefItemLabel(SCPICmdRead):
     def ypos(self) -> RefItemLabelYpos:
         """Return the ``REF<x>:LABel:YPOS`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Y screen offset at which the label (attached to the
               displayed waveform of the specified reference) is displayed, relative to the center of
               the screen. The reference waveform is specified by x. The value of x can range from 1
@@ -405,20 +392,19 @@ class RefItemLabel(SCPICmdRead):
               reference for which you want to position a label, and entering a value in the Y
               Position box.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``REF<x>:LABel:YPOS?`` query.
             - Using the ``.verify(value)`` method will send the ``REF<x>:LABel:YPOS?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``REF<x>:LABel:YPOS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - REF<x>:LABel:YPOS <NR1>
             - REF<x>:LABel:YPOS?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the location (in divisions) where the waveform label for the selected
               reference is displayed, relative to the waveform handle. Arguments should be integers
               ranging from 10 to -10.
@@ -429,28 +415,27 @@ class RefItemLabel(SCPICmdRead):
 class RefItemHorizontalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``REF<x>:HORizontal:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the horizontal display position of the reference waveform.
           The reference waveform is specified by x. The value of x can range from 1 through 4. This
           command is equivalent to selecting Reference Waveforms from the File menu, choosing
           Reference Setup¼ from the drop-down list, selecting a reference waveform, and then
           entering the horizontal position value using the multipurpose knob.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``REF<x>:HORizontal:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``REF<x>:HORizontal:POSition?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``REF<x>:HORizontal:POSition value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - REF<x>:HORizontal:POSition <NR3>
         - REF<x>:HORizontal:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` argument specifies the horizontal position of the specified reference waveform
           in percentage of the waveform that is displayed to the right of the center vertical
           graticule. The range of this argument is from 0 through 100.
@@ -460,7 +445,7 @@ class RefItemHorizontalPosition(SCPICmdWrite, SCPICmdRead):
 class RefItemHorizontal(SCPICmdRead):
     """The ``REF<x>:HORizontal`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``REF<x>:HORizontal?`` query.
         - Using the ``.verify(value)`` method will send the ``REF<x>:HORizontal?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -477,28 +462,27 @@ class RefItemHorizontal(SCPICmdRead):
     def position(self) -> RefItemHorizontalPosition:
         """Return the ``REF<x>:HORizontal:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the horizontal display position of the reference
               waveform. The reference waveform is specified by x. The value of x can range from 1
               through 4. This command is equivalent to selecting Reference Waveforms from the File
               menu, choosing Reference Setup¼ from the drop-down list, selecting a reference
               waveform, and then entering the horizontal position value using the multipurpose knob.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``REF<x>:HORizontal:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``REF<x>:HORizontal:POSition?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``REF<x>:HORizontal:POSition value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - REF<x>:HORizontal:POSition <NR3>
             - REF<x>:HORizontal:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` argument specifies the horizontal position of the specified reference
               waveform in percentage of the waveform that is displayed to the right of the center
               vertical graticule. The range of this argument is from 0 through 100.
@@ -509,7 +493,7 @@ class RefItemHorizontal(SCPICmdRead):
 class RefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``REF<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``REF<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``REF<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -532,7 +516,7 @@ class RefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def horizontal(self) -> RefItemHorizontal:
         """Return the ``REF<x>:HORizontal`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``REF<x>:HORizontal?`` query.
             - Using the ``.verify(value)`` method will send the ``REF<x>:HORizontal?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -546,23 +530,22 @@ class RefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def label(self) -> RefItemLabel:
         """Return the ``REF<x>:LABel`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns a branch query containing the waveform label name and
               the coordinates at which the label (attached to the displayed waveform of the
               specified reference) is displayed. The reference waveform is specified by x. The value
               of x can range from 1 through 4. This command is equivalent to selecting Reference
               Waveforms from the File menu and then choosing Label from the drop-down list.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``REF<x>:LABel?`` query.
             - Using the ``.verify(value)`` method will send the ``REF<x>:LABel?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - REF<x>:LABel?
+            ```
 
         Sub-properties:
             - ``.name``: The ``REF<x>:LABel:NAMe`` command.
@@ -575,25 +558,24 @@ class RefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def threshold(self) -> RefItemThreshold:
         """Return the ``REF<x>:THRESHold`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the comparable threshold for converting the reference
               signal to digital form for the channel specified by x. The value of x can range from 1
               through 4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``REF<x>:THRESHold?`` query.
             - Using the ``.verify(value)`` method will send the ``REF<x>:THRESHold?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``REF<x>:THRESHold value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - REF<x>:THRESHold <NR3>
             - REF<x>:THRESHold?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the reference threshold in volts.
         """
         return self._threshold
@@ -602,7 +584,7 @@ class RefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def vertical(self) -> RefItemVertical:
         """Return the ``REF<x>:VERTical`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``REF<x>:VERTical?`` query.
             - Using the ``.verify(value)`` method will send the ``REF<x>:VERTical?`` query and raise
               an AssertionError if the returned value does not match ``value``.

@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - display.clear()
     - display.getannunciators()
     - display.getcursor()
@@ -58,7 +56,7 @@ class DisplayTrigger(BaseTSPCmd):
         - ``.EVENT_ID``: The event ID of the event generated when the virtualfront-panel TRIG key is
           pressed.
 
-    Properties/methods:
+    Properties and methods:
         - ``.clear()``: The ``display.trigger.clear()`` function.
         - ``.overrun``: The ``display.trigger.overrun`` attribute.
         - ``.wait()``: The ``display.trigger.wait()`` function.
@@ -71,17 +69,16 @@ class DisplayTrigger(BaseTSPCmd):
     def overrun(self) -> str:
         """Access the ``display.trigger.overrun`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the event detector overrun status.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.trigger.overrun)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(display.trigger.overrun)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -99,14 +96,13 @@ class DisplayTrigger(BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``display.trigger.clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the virtualfront-panel trigger event detector.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.trigger.clear()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -122,14 +118,13 @@ class DisplayTrigger(BaseTSPCmd):
     def wait(self, timeout: float) -> str:
         """Run the ``display.trigger.wait()`` function.
 
-        **Description:**
+        Description:
             - This function waits for the TRIG key on the virtualfront panel to be pressed.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.trigger.wait()
+            ```
 
         Args:
             timeout: Timeout in seconds.
@@ -152,7 +147,7 @@ class DisplayTrigger(BaseTSPCmd):
 class DisplaySmuxItemMeasure(BaseTSPCmd):
     """The ``display.smuX.measure`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.func``: The ``display.smuX.measure.func`` attribute.
     """
 
@@ -160,20 +155,19 @@ class DisplaySmuxItemMeasure(BaseTSPCmd):
     def func(self) -> str:
         """Access the ``display.smuX.measure.func`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the type of measurement that is being displayed.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.smuX.measure.func)`` query.
             - Setting this property to a value will send the ``display.smuX.measure.func = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.smuX.measure.func = value
             - print(display.smuX.measure.func)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -192,20 +186,19 @@ class DisplaySmuxItemMeasure(BaseTSPCmd):
     def func(self, value: Union[str, float]) -> None:
         """Access the ``display.smuX.measure.func`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the type of measurement that is being displayed.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.smuX.measure.func)`` query.
             - Setting this property to a value will send the ``display.smuX.measure.func = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.smuX.measure.func = value
             - print(display.smuX.measure.func)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -227,11 +220,11 @@ class DisplaySmuxItemMeasure(BaseTSPCmd):
 class DisplaySmuxItemLimit(BaseTSPCmd):
     """The ``display.smuX.limit`` command tree.
 
-    **Info:**
+    Info:
         - ``X``, the source-measure unit (SMU) channel (for example, display.smua.limit.func applies
           to SMU channel A).
 
-    Properties/methods:
+    Properties and methods:
         - ``.func``: The ``display.smuX.limit.func`` attribute.
     """
 
@@ -239,23 +232,22 @@ class DisplaySmuxItemLimit(BaseTSPCmd):
     def func(self) -> str:
         """Access the ``display.smuX.limit.func`` attribute.
 
-        **Description:**
+        Description:
             - If you are using a display mode that shows a single channel, this attribute specifies
               the type of limit value setting displayed.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.smuX.limit.func)`` query.
             - Setting this property to a value will send the ``display.smuX.limit.func = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.smuX.limit.func = value
             - print(display.smuX.limit.func)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, display.smua.limit.func
               applies to SMU channel A).
 
@@ -276,23 +268,22 @@ class DisplaySmuxItemLimit(BaseTSPCmd):
     def func(self, value: Union[str, float]) -> None:
         """Access the ``display.smuX.limit.func`` attribute.
 
-        **Description:**
+        Description:
             - If you are using a display mode that shows a single channel, this attribute specifies
               the type of limit value setting displayed.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.smuX.limit.func)`` query.
             - Setting this property to a value will send the ``display.smuX.limit.func = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.smuX.limit.func = value
             - print(display.smuX.limit.func)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, display.smua.limit.func
               applies to SMU channel A).
 
@@ -316,11 +307,11 @@ class DisplaySmuxItemLimit(BaseTSPCmd):
 class DisplaySmuxItem(ValidatedChannel, BaseTSPCmd):
     """The ``display.smuX`` command tree.
 
-    **Info:**
+    Info:
         - ``X``, the source-measure unit (SMU) channel (for example, display.smua.digits applies to
           SMU channel A).
 
-    Properties/methods:
+    Properties and methods:
         - ``.digits``: The ``display.smuX.digits`` attribute.
         - ``.limit``: The ``display.smuX.limit`` command tree.
         - ``.measure``: The ``display.smuX.measure`` command tree.
@@ -335,23 +326,22 @@ class DisplaySmuxItem(ValidatedChannel, BaseTSPCmd):
     def digits(self) -> str:
         """Access the ``display.smuX.digits`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the virtualfront-panel display resolution of the selected
               measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.smuX.digits)`` query.
             - Setting this property to a value will send the ``display.smuX.digits = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.smuX.digits = value
             - print(display.smuX.digits)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, display.smua.digits applies
               to SMU channel A).
 
@@ -372,23 +362,22 @@ class DisplaySmuxItem(ValidatedChannel, BaseTSPCmd):
     def digits(self, value: Union[str, float]) -> None:
         """Access the ``display.smuX.digits`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the virtualfront-panel display resolution of the selected
               measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.smuX.digits)`` query.
             - Setting this property to a value will send the ``display.smuX.digits = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.smuX.digits = value
             - print(display.smuX.digits)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, display.smua.digits applies
               to SMU channel A).
 
@@ -412,11 +401,11 @@ class DisplaySmuxItem(ValidatedChannel, BaseTSPCmd):
     def limit(self) -> DisplaySmuxItemLimit:
         """Return the ``display.smuX.limit`` command tree.
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, display.smua.limit.func
               applies to SMU channel A).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.func``: The ``display.smuX.limit.func`` attribute.
         """
         return self._limit
@@ -425,7 +414,7 @@ class DisplaySmuxItem(ValidatedChannel, BaseTSPCmd):
     def measure(self) -> DisplaySmuxItemMeasure:
         """Return the ``display.smuX.measure`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.func``: The ``display.smuX.measure.func`` attribute.
         """
         return self._measure
@@ -434,7 +423,7 @@ class DisplaySmuxItem(ValidatedChannel, BaseTSPCmd):
 class DisplayLoadmenu(BaseTSPCmd):
     """The ``display.loadmenu`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.add()``: The ``display.loadmenu.add()`` function.
         - ``.delete()``: The ``display.loadmenu.delete()`` function.
     """
@@ -442,15 +431,14 @@ class DisplayLoadmenu(BaseTSPCmd):
     def add(self, display_name: str, code: str, memory: Optional[str] = None) -> None:
         """Run the ``display.loadmenu.add()`` function.
 
-        **Description:**
+        Description:
             - This function adds an entry to the USER menu, which can be accessed by pressing the
               LOAD key on the virtualfront panel.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.loadmenu.add()
+            ```
 
         Args:
             display_name: The name that is added to the USER menu.
@@ -480,15 +468,14 @@ class DisplayLoadmenu(BaseTSPCmd):
     def delete(self, display_name: str) -> None:
         """Run the ``display.loadmenu.delete()`` function.
 
-        **Description:**
+        Description:
             - This function removes an entry from the USER menu, which can be accessed using the
               LOAD key on the virtualfront panel.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.loadmenu.delete()
+            ```
 
         Args:
             display_name: The name to be deleted from the USER menu.
@@ -594,7 +581,7 @@ class Display(BaseTSPCmd):
         - ``.WHEEL_LEFT``: Represents turning the Navigation wheel left.
         - ``.WHEEL_RIGHT``: Represents turning the Navigation wheel right.
 
-    Properties/methods:
+    Properties and methods:
         - ``.clear()``: The ``display.clear()`` function.
         - ``.getannunciators()``: The ``display.getannunciators()`` function.
         - ``.getcursor()``: The ``display.getcursor()`` function.
@@ -784,7 +771,7 @@ For two-channel products, this is the SRC key for Channel A."""
     def loadmenu(self) -> DisplayLoadmenu:
         """Return the ``display.loadmenu`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.add()``: The ``display.loadmenu.add()`` function.
             - ``.delete()``: The ``display.loadmenu.delete()`` function.
         """
@@ -794,23 +781,22 @@ For two-channel products, this is the SRC key for Channel A."""
     def locallockout(self) -> str:
         """Access the ``display.locallockout`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes whether or not the EXIT (LOCAL) key on the instrument
               virtualfront panel is enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.locallockout)`` query.
             - Setting this property to a value will send the ``display.locallockout = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.locallockout = value
             - print(display.locallockout)
+            ```
 
-        **Info:**
+        Info:
             - ``lockout``, the 0 or display.UNLOCK: Unlocks EXIT (LOCAL) key
               1 or display.LOCK: Locks out EXIT (LOCAL) key.
 
@@ -831,23 +817,22 @@ For two-channel products, this is the SRC key for Channel A."""
     def locallockout(self, value: Union[str, float]) -> None:
         """Access the ``display.locallockout`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes whether or not the EXIT (LOCAL) key on the instrument
               virtualfront panel is enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.locallockout)`` query.
             - Setting this property to a value will send the ``display.locallockout = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.locallockout = value
             - print(display.locallockout)
+            ```
 
-        **Info:**
+        Info:
             - ``lockout``, the 0 or display.UNLOCK: Unlocks EXIT (LOCAL) key
               1 or display.LOCK: Locks out EXIT (LOCAL) key.
 
@@ -871,20 +856,19 @@ For two-channel products, this is the SRC key for Channel A."""
     def numpad(self) -> str:
         """Access the ``display.numpad`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls whether the virtualfront panel keys act as a numeric keypad
               during value entry.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.numpad)`` query.
             - Setting this property to a value will send the ``display.numpad = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.numpad = value
             - print(display.numpad)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -903,20 +887,19 @@ For two-channel products, this is the SRC key for Channel A."""
     def numpad(self, value: Union[str, float]) -> None:
         """Access the ``display.numpad`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls whether the virtualfront panel keys act as a numeric keypad
               during value entry.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.numpad)`` query.
             - Setting this property to a value will send the ``display.numpad = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.numpad = value
             - print(display.numpad)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -938,19 +921,18 @@ For two-channel products, this is the SRC key for Channel A."""
     def screen(self) -> str:
         """Access the ``display.screen`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the selected display screen.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.screen)`` query.
             - Setting this property to a value will send the ``display.screen = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.screen = value
             - print(display.screen)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -969,19 +951,18 @@ For two-channel products, this is the SRC key for Channel A."""
     def screen(self, value: Union[str, float]) -> None:
         """Access the ``display.screen`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the selected display screen.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.screen)`` query.
             - Setting this property to a value will send the ``display.screen = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.screen = value
             - print(display.screen)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1003,11 +984,11 @@ For two-channel products, this is the SRC key for Channel A."""
     def smu(self) -> Dict[str, DisplaySmuxItem]:
         """Return the ``display.smuX`` command tree.
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, display.smua.digits applies
               to SMU channel A).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.digits``: The ``display.smuX.digits`` attribute.
             - ``.limit``: The ``display.smuX.limit`` command tree.
             - ``.measure``: The ``display.smuX.measure`` command tree.
@@ -1022,7 +1003,7 @@ For two-channel products, this is the SRC key for Channel A."""
             - ``.EVENT_ID``: The event ID of the event generated when the virtualfront-panel TRIG
               key is pressed.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``display.trigger.clear()`` function.
             - ``.overrun``: The ``display.trigger.overrun`` attribute.
             - ``.wait()``: The ``display.trigger.wait()`` function.
@@ -1032,14 +1013,13 @@ For two-channel products, this is the SRC key for Channel A."""
     def clear(self) -> None:
         """Run the ``display.clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears all lines of the virtualfront-panel display.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.clear()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1055,14 +1035,13 @@ For two-channel products, this is the SRC key for Channel A."""
     def getannunciators(self) -> str:
         """Run the ``display.getannunciators()`` function.
 
-        **Description:**
+        Description:
             - This function reads the annunciators (indicators) that are presently turned on.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.getannunciators()
+            ```
 
         Returns:
             The result of the function call.
@@ -1081,15 +1060,14 @@ For two-channel products, this is the SRC key for Channel A."""
     def getcursor(self) -> str:
         """Run the ``display.getcursor()`` function.
 
-        **Description:**
+        Description:
             - This function reads the present position of the cursor on the virtualfront-panel
               display.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.getcursor()
+            ```
 
         Returns:
             The result of the function call.
@@ -1108,14 +1086,13 @@ For two-channel products, this is the SRC key for Channel A."""
     def getlastkey(self) -> str:
         """Run the ``display.getlastkey()`` function.
 
-        **Description:**
+        Description:
             - This function retrieves the key code for the last pressed key.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.getlastkey()
+            ```
 
         Returns:
             The result of the function call.
@@ -1140,14 +1117,13 @@ For two-channel products, this is the SRC key for Channel A."""
     ) -> str:
         """Run the ``display.gettext()`` function.
 
-        **Description:**
+        Description:
             - This function reads the text displayed on the virtualfront panel.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.gettext()
+            ```
 
         Args:
             embellished (optional): Indicates type of returned text.
@@ -1192,15 +1168,14 @@ For two-channel products, this is the SRC key for Channel A."""
     ) -> str:
         """Run the ``display.inputvalue()`` function.
 
-        **Description:**
+        Description:
             - This function displays a formatted input field on the virtualfront-panel display that
               the operator can edit.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.inputvalue()
+            ```
 
         Args:
             format_: A string that defines how the input field is formatted; see Details for more
@@ -1236,14 +1211,13 @@ For two-channel products, this is the SRC key for Channel A."""
     def menu(self, name: str, items: str) -> str:
         """Run the ``display.menu()`` function.
 
-        **Description:**
+        Description:
             - This function presents a menu on the virtualfront-panel display.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.menu()
+            ```
 
         Args:
             name: Menu name to display on the top line.
@@ -1274,15 +1248,14 @@ For two-channel products, this is the SRC key for Channel A."""
     ) -> str:
         """Run the ``display.prompt()`` function.
 
-        **Description:**
+        Description:
             - This function prompts the user to enter a parameter from the virtualfront panel of the
               instrument.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.prompt()
+            ```
 
         Args:
             format_: A string that defines how the input field is formatted; see Details for more
@@ -1324,14 +1297,13 @@ For two-channel products, this is the SRC key for Channel A."""
     def sendkey(self, key_code: str) -> None:
         """Run the ``display.sendkey()`` function.
 
-        **Description:**
+        Description:
             - This function sends a code that simulates the action of a virtualfront-panel control.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.sendkey()
+            ```
 
         Args:
             key_code: A parameter that specifies the key press to simulate; see Details for more
@@ -1351,14 +1323,13 @@ For two-channel products, this is the SRC key for Channel A."""
     def setcursor(self, row: str, column: str, style: Optional[str] = None) -> None:
         """Run the ``display.setcursor()`` function.
 
-        **Description:**
+        Description:
             - This function sets the position of the cursor.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.setcursor()
+            ```
 
         Args:
             row: The row number for the cursor (1 or 2).
@@ -1389,14 +1360,13 @@ For two-channel products, this is the SRC key for Channel A."""
     def settext(self, text: str) -> None:
         """Run the ``display.settext()`` function.
 
-        **Description:**
+        Description:
             - This function displays text on the virtualfront-panel user screen.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.settext()
+            ```
 
         Args:
             text: Text message to be displayed, with optional character codes.
@@ -1415,14 +1385,13 @@ For two-channel products, this is the SRC key for Channel A."""
     def waitkey(self) -> str:
         """Run the ``display.waitkey()`` function.
 
-        **Description:**
+        Description:
             - This function captures the key code value for the next virtualfront-panel action.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.waitkey()
+            ```
 
         Returns:
             The result of the function call.

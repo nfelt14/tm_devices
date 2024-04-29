@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CONNected:REQUested:STATus <NR1>
     - CONNected:STATus?
     - CONNected:USAGe:TRack:REQUested:STATus <NR1>
@@ -28,44 +26,42 @@ if TYPE_CHECKING:
 class ConnectedUsageTrackStatus(SCPICmdRead):
     """The ``CONNected:USAGe:TRack:STATus`` command.
 
-    **Description:**
+    Description:
         - This query command returns the tracking usage status of the Connected Scope Preference
           feature. On the instrument, the feature is found in Utility > User Preferences > Other >
           Connected Scope Preferences.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CONNected:USAGe:TRack:STATus?`` query.
         - Using the ``.verify(value)`` method will send the ``CONNected:USAGe:TRack:STATus?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CONNected:USAGe:TRack:STATus?
+        ```
     """
 
 
 class ConnectedUsageTrackRequestedStatus(SCPICmdWrite):
     """The ``CONNected:USAGe:TRack:REQUested:STATus`` command.
 
-    **Description:**
+    Description:
         - This command sets the tracking usage status of the Connected Scope Preference feature.
           After issuing the status command, the ``CONNected:SAVEPREferences`` command should be set
           immediately to make the feature enabled. On the instrument, the feature is found in
           Utility > User Preferences > Other > Connected Scope Preferences.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``CONNected:USAGe:TRack:REQUested:STATus value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CONNected:USAGe:TRack:REQUested:STATus <NR1>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` enables or disables the Connected Scope Preference feature. The argument can be
           either 1 or 0. Setting 1 will enable the tracking usage status of the Connected Scope
           Preference feature.
@@ -75,7 +71,7 @@ class ConnectedUsageTrackRequestedStatus(SCPICmdWrite):
 class ConnectedUsageTrackRequested(SCPICmdRead):
     """The ``CONNected:USAGe:TRack:REQUested`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CONNected:USAGe:TRack:REQUested?`` query.
         - Using the ``.verify(value)`` method will send the ``CONNected:USAGe:TRack:REQUested?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -92,23 +88,22 @@ class ConnectedUsageTrackRequested(SCPICmdRead):
     def status(self) -> ConnectedUsageTrackRequestedStatus:
         """Return the ``CONNected:USAGe:TRack:REQUested:STATus`` command.
 
-        **Description:**
+        Description:
             - This command sets the tracking usage status of the Connected Scope Preference feature.
               After issuing the status command, the ``CONNected:SAVEPREferences`` command should be
               set immediately to make the feature enabled. On the instrument, the feature is found
               in Utility > User Preferences > Other > Connected Scope Preferences.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``CONNected:USAGe:TRack:REQUested:STATus value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CONNected:USAGe:TRack:REQUested:STATus <NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` enables or disables the Connected Scope Preference feature. The argument can
               be either 1 or 0. Setting 1 will enable the tracking usage status of the Connected
               Scope Preference feature.
@@ -119,7 +114,7 @@ class ConnectedUsageTrackRequested(SCPICmdRead):
 class ConnectedUsageTrack(SCPICmdRead):
     """The ``CONNected:USAGe:TRack`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CONNected:USAGe:TRack?`` query.
         - Using the ``.verify(value)`` method will send the ``CONNected:USAGe:TRack?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -138,7 +133,7 @@ class ConnectedUsageTrack(SCPICmdRead):
     def requested(self) -> ConnectedUsageTrackRequested:
         """Return the ``CONNected:USAGe:TRack:REQUested`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CONNected:USAGe:TRack:REQUested?``
               query.
             - Using the ``.verify(value)`` method will send the ``CONNected:USAGe:TRack:REQUested?``
@@ -153,21 +148,20 @@ class ConnectedUsageTrack(SCPICmdRead):
     def status(self) -> ConnectedUsageTrackStatus:
         """Return the ``CONNected:USAGe:TRack:STATus`` command.
 
-        **Description:**
+        Description:
             - This query command returns the tracking usage status of the Connected Scope Preference
               feature. On the instrument, the feature is found in Utility > User Preferences > Other
               > Connected Scope Preferences.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CONNected:USAGe:TRack:STATus?`` query.
             - Using the ``.verify(value)`` method will send the ``CONNected:USAGe:TRack:STATus?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CONNected:USAGe:TRack:STATus?
+            ```
         """
         return self._status
 
@@ -175,7 +169,7 @@ class ConnectedUsageTrack(SCPICmdRead):
 class ConnectedUsage(SCPICmdRead):
     """The ``CONNected:USAGe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CONNected:USAGe?`` query.
         - Using the ``.verify(value)`` method will send the ``CONNected:USAGe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -192,7 +186,7 @@ class ConnectedUsage(SCPICmdRead):
     def track(self) -> ConnectedUsageTrack:
         """Return the ``CONNected:USAGe:TRack`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CONNected:USAGe:TRack?`` query.
             - Using the ``.verify(value)`` method will send the ``CONNected:USAGe:TRack?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -207,44 +201,42 @@ class ConnectedUsage(SCPICmdRead):
 class ConnectedStatus(SCPICmdRead):
     """The ``CONNected:STATus`` command.
 
-    **Description:**
+    Description:
         - This query command returns the status of the Connected Scope Preference feature. On the
           instrument, the feature is found in Utility > User Preferences > Other > Connected Scope
           Preferences.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CONNected:STATus?`` query.
         - Using the ``.verify(value)`` method will send the ``CONNected:STATus?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CONNected:STATus?
+        ```
     """
 
 
 class ConnectedRequestedStatus(SCPICmdWrite):
     """The ``CONNected:REQUested:STATus`` command.
 
-    **Description:**
+    Description:
         - This command sets the status of the Connected Scope Preference feature. After issuing the
           status command, the ``CONNected:SAVEPREferences`` command should be set immediately to
           make the feature enabled. On the instrument, the feature is found in Utility > User
           Preferences > Other > Connected Scope Preferences.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CONNected:REQUested:STATus value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CONNected:REQUested:STATus <NR1>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` enables or disables the Connected Scope Preference feature. The argument can be
           either 1 or 0. Setting 1 will enable the feature.
     """
@@ -253,7 +245,7 @@ class ConnectedRequestedStatus(SCPICmdWrite):
 class ConnectedRequested(SCPICmdRead):
     """The ``CONNected:REQUested`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CONNected:REQUested?`` query.
         - Using the ``.verify(value)`` method will send the ``CONNected:REQUested?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -270,23 +262,22 @@ class ConnectedRequested(SCPICmdRead):
     def status(self) -> ConnectedRequestedStatus:
         """Return the ``CONNected:REQUested:STATus`` command.
 
-        **Description:**
+        Description:
             - This command sets the status of the Connected Scope Preference feature. After issuing
               the status command, the ``CONNected:SAVEPREferences`` command should be set
               immediately to make the feature enabled. On the instrument, the feature is found in
               Utility > User Preferences > Other > Connected Scope Preferences.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CONNected:REQUested:STATus value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CONNected:REQUested:STATus <NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` enables or disables the Connected Scope Preference feature. The argument can
               be either 1 or 0. Setting 1 will enable the feature.
         """
@@ -296,7 +287,7 @@ class ConnectedRequested(SCPICmdRead):
 class Connected(SCPICmdRead):
     """The ``CONNected`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CONNected?`` query.
         - Using the ``.verify(value)`` method will send the ``CONNected?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -317,7 +308,7 @@ class Connected(SCPICmdRead):
     def requested(self) -> ConnectedRequested:
         """Return the ``CONNected:REQUested`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CONNected:REQUested?`` query.
             - Using the ``.verify(value)`` method will send the ``CONNected:REQUested?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -331,21 +322,20 @@ class Connected(SCPICmdRead):
     def status(self) -> ConnectedStatus:
         """Return the ``CONNected:STATus`` command.
 
-        **Description:**
+        Description:
             - This query command returns the status of the Connected Scope Preference feature. On
               the instrument, the feature is found in Utility > User Preferences > Other > Connected
               Scope Preferences.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CONNected:STATus?`` query.
             - Using the ``.verify(value)`` method will send the ``CONNected:STATus?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CONNected:STATus?
+            ```
         """
         return self._status
 
@@ -353,7 +343,7 @@ class Connected(SCPICmdRead):
     def usage(self) -> ConnectedUsage:
         """Return the ``CONNected:USAGe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CONNected:USAGe?`` query.
             - Using the ``.verify(value)`` method will send the ``CONNected:USAGe?`` query and raise
               an AssertionError if the returned value does not match ``value``.

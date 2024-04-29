@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - display.activebuffer
     - display.changescreen()
     - display.clear()
@@ -40,7 +38,7 @@ if TYPE_CHECKING:
 class DisplayInput(BaseTSPCmd):
     """The ``display.input`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.number()``: The ``display.input.number()`` function.
         - ``.option()``: The ``display.input.option()`` function.
         - ``.prompt()``: The ``display.input.prompt()`` function.
@@ -57,15 +55,14 @@ class DisplayInput(BaseTSPCmd):
     ) -> str:
         """Run the ``display.input.number()`` function.
 
-        **Description:**
+        Description:
             - This function allows you to create a prompt that requests a number from the user on
               the front-panel display.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.input.number()
+            ```
 
         Args:
             dialog_title: A string that contains the text to be displayed as the title of the dialog
@@ -103,15 +100,14 @@ class DisplayInput(BaseTSPCmd):
     def option(self, dialog_title: str, button_title1: str, button_title2: str) -> str:
         """Run the ``display.input.option()`` function.
 
-        **Description:**
+        Description:
             - This function allows you to create an option dialog box with customizable buttons on
               the front-panel display.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.input.option()
+            ```
 
         Args:
             dialog_title: A string that contains the text to be displayed as the title of the dialog
@@ -139,15 +135,14 @@ class DisplayInput(BaseTSPCmd):
     def prompt(self, button_set: str, dialog_title: str) -> str:
         """Run the ``display.input.prompt()`` function.
 
-        **Description:**
+        Description:
             - This function allows you to create a prompt that accepts a user response from the
               front-panel display.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.input.prompt()
+            ```
 
         Args:
             button_set: The set of buttons to display.
@@ -171,15 +166,14 @@ class DisplayInput(BaseTSPCmd):
     def string(self, dialog_title: str, text_format: Optional[str] = None) -> str:
         """Run the ``display.input.string()`` function.
 
-        **Description:**
+        Description:
             - This function allows you to create a dialog box that requests text from the user
               through the front-panel display.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.input.string()
+            ```
 
         Args:
             dialog_title: A string that contains the text to be displayed as the title of the dialog
@@ -260,7 +254,7 @@ class Display(BaseTSPCmd):
         - ``.STATE_LCD_75``: Set display to 75% brightness.
         - ``.STATE_LCD_OFF``: Set display to off.
 
-    Properties/methods:
+    Properties and methods:
         - ``.activebuffer``: The ``display.activebuffer`` attribute.
         - ``.changescreen()``: The ``display.changescreen()`` function.
         - ``.clear()``: The ``display.clear()`` function.
@@ -363,21 +357,20 @@ the instrument."""  # noqa: E501
     def activebuffer(self) -> str:
         """Access the ``display.activebuffer`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines which buffer is used for measurements that are displayed on
               the front panel.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.activebuffer)`` query.
             - Setting this property to a value will send the ``display.activebuffer = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.activebuffer = value
             - print(display.activebuffer)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -396,21 +389,20 @@ the instrument."""  # noqa: E501
     def activebuffer(self, value: Union[str, float]) -> None:
         """Access the ``display.activebuffer`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines which buffer is used for measurements that are displayed on
               the front panel.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.activebuffer)`` query.
             - Setting this property to a value will send the ``display.activebuffer = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.activebuffer = value
             - print(display.activebuffer)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -432,7 +424,7 @@ the instrument."""  # noqa: E501
     def input(self) -> DisplayInput:
         """Return the ``display.input`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.number()``: The ``display.input.number()`` function.
             - ``.option()``: The ``display.input.option()`` function.
             - ``.prompt()``: The ``display.input.prompt()`` function.
@@ -444,19 +436,18 @@ the instrument."""  # noqa: E501
     def lightstate(self) -> str:
         """Access the ``display.lightstate`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the light output level of the front-panel display.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.lightstate)`` query.
             - Setting this property to a value will send the ``display.lightstate = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.lightstate = value
             - print(display.lightstate)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -475,19 +466,18 @@ the instrument."""  # noqa: E501
     def lightstate(self, value: Union[str, float]) -> None:
         """Access the ``display.lightstate`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the light output level of the front-panel display.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.lightstate)`` query.
             - Setting this property to a value will send the ``display.lightstate = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.lightstate = value
             - print(display.lightstate)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -509,23 +499,22 @@ the instrument."""  # noqa: E501
     def readingformat(self) -> str:
         """Access the ``display.readingformat`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines the format that is used to display measurement readings on
               the front-panel display of the instrument.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.readingformat)`` query.
             - Setting this property to a value will send the ``display.readingformat = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.readingformat = value
             - print(display.readingformat)
+            ```
 
-        **Info:**
+        Info:
             - ``format``, the use exponent format: display.FORMAT_EXPONENT
               Add a prefix to the units symbol, such as k, m, or µ: display.FORMAT_PREFIX.
 
@@ -546,23 +535,22 @@ the instrument."""  # noqa: E501
     def readingformat(self, value: Union[str, float]) -> None:
         """Access the ``display.readingformat`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines the format that is used to display measurement readings on
               the front-panel display of the instrument.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.readingformat)`` query.
             - Setting this property to a value will send the ``display.readingformat = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.readingformat = value
             - print(display.readingformat)
+            ```
 
-        **Info:**
+        Info:
             - ``format``, the use exponent format: display.FORMAT_EXPONENT
               Add a prefix to the units symbol, such as k, m, or µ: display.FORMAT_PREFIX.
 
@@ -586,21 +574,20 @@ the instrument."""  # noqa: E501
     def watchchannels(self) -> str:
         """Access the ``display.watchchannels`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines which channels are set to be watch channels on the front
               panel.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.watchchannels)`` query.
             - Setting this property to a value will send the ``display.watchchannels = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.watchchannels = value
             - print(display.watchchannels)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -619,21 +606,20 @@ the instrument."""  # noqa: E501
     def watchchannels(self, value: Union[str, float]) -> None:
         """Access the ``display.watchchannels`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines which channels are set to be watch channels on the front
               panel.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.watchchannels)`` query.
             - Setting this property to a value will send the ``display.watchchannels = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.watchchannels = value
             - print(display.watchchannels)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -654,14 +640,13 @@ the instrument."""  # noqa: E501
     def changescreen(self, screen_name: str) -> None:
         """Run the ``display.changescreen()`` function.
 
-        **Description:**
+        Description:
             - This function changes which front-panel screen is displayed.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.changescreen()
+            ```
 
         Args:
             screen_name: The screen to display.
@@ -680,14 +665,13 @@ the instrument."""  # noqa: E501
     def clear(self) -> None:
         """Run the ``display.clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the text from the front-panel USER swipe screen.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.clear()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -703,15 +687,14 @@ the instrument."""  # noqa: E501
     def delete(self, prompt_id: str) -> None:
         """Run the ``display.delete()`` function.
 
-        **Description:**
+        Description:
             - This function allows you to remove a prompt on the front-panel display that was
               created with display.prompt().
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.delete()
+            ```
 
         Args:
             prompt_id: The identifier defined by display.prompt().
@@ -730,15 +713,14 @@ the instrument."""  # noqa: E501
     def prompt(self, button_id: str, prompt_text: str) -> str:
         """Run the ``display.prompt()`` function.
 
-        **Description:**
+        Description:
             - This function allows you to create an interactive dialog prompt that displays a custom
               message on the front-panel display.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.prompt()
+            ```
 
         Args:
             button_id: The type of prompt to display; choose one of the following options.
@@ -763,14 +745,13 @@ the instrument."""  # noqa: E501
     ) -> None:
         """Run the ``display.settext()`` function.
 
-        **Description:**
+        Description:
             - This function defines the text that is displayed on the front-panel USER swipe screen.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.settext()
+            ```
 
         Args:
             user_display_text1 (optional): String that contains the message for the top line of the
@@ -800,15 +781,14 @@ the instrument."""  # noqa: E501
     def waitevent(self, timeout: Optional[float] = None) -> str:
         """Run the ``display.waitevent()`` function.
 
-        **Description:**
+        Description:
             - This function causes the instrument to wait for a user to respond to a prompt that was
               created with a prompt command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.waitevent()
+            ```
 
         Args:
             timeout (optional): The amount of time to wait before timing out; time is 0 to 300 s,

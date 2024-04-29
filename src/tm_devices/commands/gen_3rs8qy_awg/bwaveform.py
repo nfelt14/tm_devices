@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - BWAVeform:AMPLitude <amplitude>
     - BWAVeform:AUTO {length|cycle|duration|freqency|sample rate}
     - BWAVeform:AUTO?
@@ -46,132 +44,125 @@ if TYPE_CHECKING:
 class BwaveformSrate(SCPICmdWrite):
     """The ``BWAVeform:SRATe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Sample Rate for the waveform created by the Basic
           Waveform editor plug-in.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``BWAVeform:SRATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BWAVeform:SRATe <sample_rate>
+        ```
     """
 
 
 class BwaveformReset(SCPICmdWriteNoArguments):
     """The ``BWAVeform:RESet`` command.
 
-    **Description:**
+    Description:
         - This command resets the Basic Waveform editor plug-in to its default values.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``BWAVeform:RESet`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BWAVeform:RESet
+        ```
     """
 
 
 class BwaveformOffset(SCPICmdWrite):
     """The ``BWAVeform:OFFSet`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Offset voltage value for the waveform created by the
           Basic Waveform editor plug-in. This setting can be affected if the system is set to use
           the full DAC range. Using the full DAC range is the default setting. Refer to the command
           ``BWAVEFORM:FDRANGE`` for more information.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``BWAVeform:OFFSet value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BWAVeform:OFFSet <offset>
+        ```
     """
 
 
 class BwaveformLow(SCPICmdWrite):
     """The ``BWAVeform:LOW`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Low voltage value for the waveform created by the Basic
           Waveform editor plug-in.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``BWAVeform:LOW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BWAVeform:LOW <low>
+        ```
     """
 
 
 class BwaveformLength(SCPICmdWrite):
     """The ``BWAVeform:LENGth`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Length for the waveform created by the Basic Waveform
           editor plug-in.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``BWAVeform:LENGth value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BWAVeform:LENGth <length>
+        ```
     """
 
 
 class BwaveformHigh(SCPICmdWrite):
     """The ``BWAVeform:HIGH`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the High voltage value for the waveform created by the Basic
           Waveform editor plug-in.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``BWAVeform:HIGH value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BWAVeform:HIGH <high>
+        ```
     """
 
 
 class BwaveformFunction(SCPICmdWrite, SCPICmdRead):
     """The ``BWAVeform:FUNCtion`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Basic Waveform editor plug-in waveform type.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``BWAVeform:FUNCtion?`` query.
         - Using the ``.verify(value)`` method will send the ``BWAVeform:FUNCtion?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``BWAVeform:FUNCtion value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BWAVeform:FUNCtion {sine|square|triangle|ramp|noise|DC}
         - BWAVeform:FUNCtion?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to SINE.
     """
 
@@ -179,25 +170,24 @@ class BwaveformFunction(SCPICmdWrite, SCPICmdRead):
 class BwaveformFrequency(SCPICmdWrite):
     """The ``BWAVeform:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Frequency for the waveform created by the Basic Waveform
           editor plug-in.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``BWAVeform:FREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BWAVeform:FREQuency <frequency>
+        ```
     """
 
 
 class BwaveformFdrange(SCPICmdWrite):
     """The ``BWAVeform:FDRange`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the state (enabled or disabled) of the Basic Waveform editor
           plug-in to use or not use the full DAC range during compile. Using the full DAC range when
           compiling waveforms results in waveforms with the best resolution. When enabled, if the
@@ -212,139 +202,132 @@ class BwaveformFdrange(SCPICmdWrite):
           recommended amplitude is set to the maximum value and the recommended offset is set to 0.
           The control is not available for a DC waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``BWAVeform:FDRange value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BWAVeform:FDRange {OFF|ON|0|1}
+        ```
     """
 
 
 class BwaveformCycle(SCPICmdWrite):
     """The ``BWAVeform:CYCLe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Cycle value (number of times the waveform repeats) for
           the waveform created by the Basic Waveform editor plug-in.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``BWAVeform:CYCLe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BWAVeform:CYCLe <cycle>
+        ```
     """
 
 
 class BwaveformCompilePlay(SCPICmdWrite, SCPICmdRead):
     """The ``BWAVeform:COMPile:PLAY`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the state (enabled or disabled) of the Basic Waveform editor
           to either immediately play the waveform after compile or just compile.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``BWAVeform:COMPile:PLAY?`` query.
         - Using the ``.verify(value)`` method will send the ``BWAVeform:COMPile:PLAY?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``BWAVeform:COMPile:PLAY value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BWAVeform:COMPile:PLAY {0|1|OFF|ON}
         - BWAVeform:COMPile:PLAY?
+        ```
     """
 
 
 class BwaveformCompileName(SCPICmdWrite, SCPICmdRead):
     """The ``BWAVeform:COMPile:NAME`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the name of the Basic Waveform editor plug-in compiled
           waveform. If the name already exists in the Waveform List, the name is appended with an
           underscore suffix such as '``Waveform_1``'.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``BWAVeform:COMPile:NAME?`` query.
         - Using the ``.verify(value)`` method will send the ``BWAVeform:COMPile:NAME?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``BWAVeform:COMPile:NAME value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BWAVeform:COMPile:NAME <waveform_name>
         - BWAVeform:COMPile:NAME?
+        ```
     """
 
 
 class BwaveformCompileChannel(SCPICmdWrite):
     """The ``BWAVeform:COMPile:CHANnel`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the playout channel intended for the compiled waveform of the
           Basic Waveform editor plug-in. The selected channel is also used to define the amplitude
           and offset range.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``BWAVeform:COMPile:CHANnel value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BWAVeform:COMPile:CHANnel {NONE|<channel_number>}
+        ```
     """
 
 
 class BwaveformCompileCassign(SCPICmdWrite, SCPICmdRead):
     """The ``BWAVeform:COMPile:CASSign`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the state (enabled or disabled) of the Basic Waveform editor
           to compile the waveform and immediately assign it to a specified channel (enabled) or just
           compile the waveform (disabled).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``BWAVeform:COMPile:CASSign?`` query.
         - Using the ``.verify(value)`` method will send the ``BWAVeform:COMPile:CASSign?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``BWAVeform:COMPile:CASSign value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BWAVeform:COMPile:CASSign {0|1|OFF|ON}
         - BWAVeform:COMPile:CASSign?
+        ```
     """
 
 
 class BwaveformCompile(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``BWAVeform:COMPile`` command.
 
-    **Description:**
+    Description:
         - This command initiates the Basic Waveform editor plug-in compile process. The created
           waveform is placed in the Waveform List.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``BWAVeform:COMPile`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BWAVeform:COMPile
+        ```
 
     Properties:
         - ``.cassign``: The ``BWAVeform:COMPile:CASSign`` command.
@@ -364,24 +347,23 @@ class BwaveformCompile(SCPICmdWriteNoArguments, SCPICmdRead):
     def cassign(self) -> BwaveformCompileCassign:
         """Return the ``BWAVeform:COMPile:CASSign`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the state (enabled or disabled) of the Basic Waveform
               editor to compile the waveform and immediately assign it to a specified channel
               (enabled) or just compile the waveform (disabled).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BWAVeform:COMPile:CASSign?`` query.
             - Using the ``.verify(value)`` method will send the ``BWAVeform:COMPile:CASSign?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``BWAVeform:COMPile:CASSign value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BWAVeform:COMPile:CASSign {0|1|OFF|ON}
             - BWAVeform:COMPile:CASSign?
+            ```
         """
         return self._cassign
 
@@ -389,20 +371,19 @@ class BwaveformCompile(SCPICmdWriteNoArguments, SCPICmdRead):
     def channel(self) -> BwaveformCompileChannel:
         """Return the ``BWAVeform:COMPile:CHANnel`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the playout channel intended for the compiled waveform of
               the Basic Waveform editor plug-in. The selected channel is also used to define the
               amplitude and offset range.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``BWAVeform:COMPile:CHANnel value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BWAVeform:COMPile:CHANnel {NONE|<channel_number>}
+            ```
         """
         return self._channel
 
@@ -410,24 +391,23 @@ class BwaveformCompile(SCPICmdWriteNoArguments, SCPICmdRead):
     def name(self) -> BwaveformCompileName:
         """Return the ``BWAVeform:COMPile:NAME`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the name of the Basic Waveform editor plug-in compiled
               waveform. If the name already exists in the Waveform List, the name is appended with
               an underscore suffix such as '``Waveform_1``'.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BWAVeform:COMPile:NAME?`` query.
             - Using the ``.verify(value)`` method will send the ``BWAVeform:COMPile:NAME?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``BWAVeform:COMPile:NAME value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BWAVeform:COMPile:NAME <waveform_name>
             - BWAVeform:COMPile:NAME?
+            ```
         """
         return self._name
 
@@ -435,23 +415,22 @@ class BwaveformCompile(SCPICmdWriteNoArguments, SCPICmdRead):
     def play(self) -> BwaveformCompilePlay:
         """Return the ``BWAVeform:COMPile:PLAY`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the state (enabled or disabled) of the Basic Waveform
               editor to either immediately play the waveform after compile or just compile.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BWAVeform:COMPile:PLAY?`` query.
             - Using the ``.verify(value)`` method will send the ``BWAVeform:COMPile:PLAY?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``BWAVeform:COMPile:PLAY value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BWAVeform:COMPile:PLAY {0|1|OFF|ON}
             - BWAVeform:COMPile:PLAY?
+            ```
         """
         return self._play
 
@@ -459,24 +438,23 @@ class BwaveformCompile(SCPICmdWriteNoArguments, SCPICmdRead):
 class BwaveformAuto(SCPICmdWrite, SCPICmdRead):
     """The ``BWAVeform:AUTO`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Basic Waveform editor plug-in Auto Calculate setting,
           determining which value is automatically calculated.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``BWAVeform:AUTO?`` query.
         - Using the ``.verify(value)`` method will send the ``BWAVeform:AUTO?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``BWAVeform:AUTO value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BWAVeform:AUTO {length|cycle|duration|freqency|sample rate}
         - BWAVeform:AUTO?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to Cycle.
     """
 
@@ -484,20 +462,19 @@ class BwaveformAuto(SCPICmdWrite, SCPICmdRead):
 class BwaveformAmplitude(SCPICmdWrite):
     """The ``BWAVeform:AMPLitude`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the peak-to-peak Amplitude value for the waveform created by
           the Basic Waveform editor plug-in. This setting can be affected if the system is set to
           use the full DAC range. Using the full DAC range is the default setting. Refer to the
           command ``BWAVEFORM:FDRANGE`` for more information.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``BWAVeform:AMPLitude value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BWAVeform:AMPLitude <amplitude>
+        ```
     """
 
 
@@ -505,7 +482,7 @@ class BwaveformAmplitude(SCPICmdWrite):
 class Bwaveform(SCPICmdRead):
     """The ``BWAVeform`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``BWAVeform?`` query.
         - Using the ``.verify(value)`` method will send the ``BWAVeform?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -546,21 +523,20 @@ class Bwaveform(SCPICmdRead):
     def amplitude(self) -> BwaveformAmplitude:
         """Return the ``BWAVeform:AMPLitude`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the peak-to-peak Amplitude value for the waveform created
               by the Basic Waveform editor plug-in. This setting can be affected if the system is
               set to use the full DAC range. Using the full DAC range is the default setting. Refer
               to the command ``BWAVEFORM:FDRANGE`` for more information.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``BWAVeform:AMPLitude value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BWAVeform:AMPLitude <amplitude>
+            ```
         """
         return self._amplitude
 
@@ -568,24 +544,23 @@ class Bwaveform(SCPICmdRead):
     def auto(self) -> BwaveformAuto:
         """Return the ``BWAVeform:AUTO`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Basic Waveform editor plug-in Auto Calculate setting,
               determining which value is automatically calculated.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BWAVeform:AUTO?`` query.
             - Using the ``.verify(value)`` method will send the ``BWAVeform:AUTO?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``BWAVeform:AUTO value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BWAVeform:AUTO {length|cycle|duration|freqency|sample rate}
             - BWAVeform:AUTO?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to Cycle.
         """
         return self._auto
@@ -594,18 +569,17 @@ class Bwaveform(SCPICmdRead):
     def compile(self) -> BwaveformCompile:
         """Return the ``BWAVeform:COMPile`` command.
 
-        **Description:**
+        Description:
             - This command initiates the Basic Waveform editor plug-in compile process. The created
               waveform is placed in the Waveform List.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``BWAVeform:COMPile`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BWAVeform:COMPile
+            ```
 
         Sub-properties:
             - ``.cassign``: The ``BWAVeform:COMPile:CASSign`` command.
@@ -619,18 +593,17 @@ class Bwaveform(SCPICmdRead):
     def cycle(self) -> BwaveformCycle:
         """Return the ``BWAVeform:CYCLe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Cycle value (number of times the waveform repeats)
               for the waveform created by the Basic Waveform editor plug-in.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``BWAVeform:CYCLe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BWAVeform:CYCLe <cycle>
+            ```
         """
         return self._cycle
 
@@ -638,7 +611,7 @@ class Bwaveform(SCPICmdRead):
     def fdrange(self) -> BwaveformFdrange:
         """Return the ``BWAVeform:FDRange`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the state (enabled or disabled) of the Basic Waveform
               editor plug-in to use or not use the full DAC range during compile. Using the full DAC
               range when compiling waveforms results in waveforms with the best resolution. When
@@ -654,14 +627,13 @@ class Bwaveform(SCPICmdRead):
               to the maximum value and the recommended offset is set to 0. The control is not
               available for a DC waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``BWAVeform:FDRange value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BWAVeform:FDRange {OFF|ON|0|1}
+            ```
         """
         return self._fdrange
 
@@ -669,19 +641,18 @@ class Bwaveform(SCPICmdRead):
     def frequency(self) -> BwaveformFrequency:
         """Return the ``BWAVeform:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Frequency for the waveform created by the Basic
               Waveform editor plug-in.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``BWAVeform:FREQuency value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BWAVeform:FREQuency <frequency>
+            ```
         """
         return self._frequency
 
@@ -689,23 +660,22 @@ class Bwaveform(SCPICmdRead):
     def function(self) -> BwaveformFunction:
         """Return the ``BWAVeform:FUNCtion`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Basic Waveform editor plug-in waveform type.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BWAVeform:FUNCtion?`` query.
             - Using the ``.verify(value)`` method will send the ``BWAVeform:FUNCtion?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``BWAVeform:FUNCtion value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BWAVeform:FUNCtion {sine|square|triangle|ramp|noise|DC}
             - BWAVeform:FUNCtion?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to SINE.
         """
         return self._function
@@ -714,18 +684,17 @@ class Bwaveform(SCPICmdRead):
     def high(self) -> BwaveformHigh:
         """Return the ``BWAVeform:HIGH`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the High voltage value for the waveform created by the
               Basic Waveform editor plug-in.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``BWAVeform:HIGH value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BWAVeform:HIGH <high>
+            ```
         """
         return self._high
 
@@ -733,18 +702,17 @@ class Bwaveform(SCPICmdRead):
     def length(self) -> BwaveformLength:
         """Return the ``BWAVeform:LENGth`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Length for the waveform created by the Basic Waveform
               editor plug-in.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``BWAVeform:LENGth value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BWAVeform:LENGth <length>
+            ```
         """
         return self._length
 
@@ -752,18 +720,17 @@ class Bwaveform(SCPICmdRead):
     def low(self) -> BwaveformLow:
         """Return the ``BWAVeform:LOW`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Low voltage value for the waveform created by the
               Basic Waveform editor plug-in.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``BWAVeform:LOW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BWAVeform:LOW <low>
+            ```
         """
         return self._low
 
@@ -771,20 +738,19 @@ class Bwaveform(SCPICmdRead):
     def offset(self) -> BwaveformOffset:
         """Return the ``BWAVeform:OFFSet`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Offset voltage value for the waveform created by the
               Basic Waveform editor plug-in. This setting can be affected if the system is set to
               use the full DAC range. Using the full DAC range is the default setting. Refer to the
               command ``BWAVEFORM:FDRANGE`` for more information.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``BWAVeform:OFFSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BWAVeform:OFFSet <offset>
+            ```
         """
         return self._offset
 
@@ -792,17 +758,16 @@ class Bwaveform(SCPICmdRead):
     def reset(self) -> BwaveformReset:
         """Return the ``BWAVeform:RESet`` command.
 
-        **Description:**
+        Description:
             - This command resets the Basic Waveform editor plug-in to its default values.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``BWAVeform:RESet`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BWAVeform:RESet
+            ```
         """
         return self._reset
 
@@ -810,17 +775,16 @@ class Bwaveform(SCPICmdRead):
     def srate(self) -> BwaveformSrate:
         """Return the ``BWAVeform:SRATe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Sample Rate for the waveform created by the Basic
               Waveform editor plug-in.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``BWAVeform:SRATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BWAVeform:SRATe <sample_rate>
+            ```
         """
         return self._srate

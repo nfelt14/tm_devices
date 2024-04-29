@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - RECAll:MASK <QString>
     - RECAll:SETUp {FACtory|<NR1>|<file path>}
     - RECAll:SETUp:DESKew {LOCK|UNLOCK}
@@ -30,21 +28,20 @@ if TYPE_CHECKING:
 class RecallWaveform(SCPICmdWrite):
     r"""The ``RECAll:WAVEform`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) recalls a stored waveform to a reference location. This
           command is equivalent to selecting Recall from the File menu, and then pressing the
           Waveform button.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``RECAll:WAVEform value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RECAll:WAVEform <file path>,REF<x>
+        ```
 
-    **Info:**
+    Info:
         - ``<file path>`` specifies a location for a stored waveform file. <file path> is a quoted
           string that defines the file name and path. Input the file path using the form
           ``<drive>:<dir>``/<filename>.<drive> and one or more <dir>s are optional. If you do not
@@ -60,24 +57,23 @@ class RecallWaveform(SCPICmdWrite):
 class RecallSetupDeskew(SCPICmdWrite, SCPICmdRead):
     """The ``RECAll:SETUp:DESKew`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the deskew values that are affected by a default setup or a
           recalled setup.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RECAll:SETUp:DESKew?`` query.
         - Using the ``.verify(value)`` method will send the ``RECAll:SETUp:DESKew?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RECAll:SETUp:DESKew value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RECAll:SETUp:DESKew {LOCK|UNLOCK}
         - RECAll:SETUp:DESKew?
+        ```
 
-    **Info:**
+    Info:
         - ``LOCK`` a default or a recall setup will not change the deskew settings when this option
           is selected.
         - ``UNLOCK`` a default setup will reset the deskew settings to factory values and a recall
@@ -88,20 +84,19 @@ class RecallSetupDeskew(SCPICmdWrite, SCPICmdRead):
 class RecallSetup(SCPICmdWrite, SCPICmdRead):
     """The ``RECAll:SETUp`` command.
 
-    **Description:**
+    Description:
         - Restores the state of the oscilloscope from a copy of the settings stored in memory. The
           settings are stored using the ``*SAV`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``RECAll:SETUp value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RECAll:SETUp {FACtory|<NR1>|<file path>}
+        ```
 
-    **Info:**
+    Info:
         - ``FACtory`` restores the factory setup.
         - ``<NR1>`` is a value in the range from 1 to 10, which specifies a saved setup storage
           location.
@@ -124,25 +119,24 @@ class RecallSetup(SCPICmdWrite, SCPICmdRead):
     def deskew(self) -> RecallSetupDeskew:
         """Return the ``RECAll:SETUp:DESKew`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the deskew values that are affected by a default setup or
               a recalled setup.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RECAll:SETUp:DESKew?`` query.
             - Using the ``.verify(value)`` method will send the ``RECAll:SETUp:DESKew?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RECAll:SETUp:DESKew value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RECAll:SETUp:DESKew {LOCK|UNLOCK}
             - RECAll:SETUp:DESKew?
+            ```
 
-        **Info:**
+        Info:
             - ``LOCK`` a default or a recall setup will not change the deskew settings when this
               option is selected.
             - ``UNLOCK`` a default setup will reset the deskew settings to factory values and a
@@ -154,21 +148,20 @@ class RecallSetup(SCPICmdWrite, SCPICmdRead):
 class RecallMask(SCPICmdWrite):
     """The ``RECAll:MASK`` command.
 
-    **Description:**
+    Description:
         - This command recalls the mask from a specified file that was saved to the current working
           directory using the ``SAVE:MASK`` command. A series of examples showing how to use mask
           commands for typical tasks is included in an appendix.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``RECAll:MASK value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RECAll:MASK <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``QString`` is a quoted string that is the name of the mask definition being recalled from
           the current working directory.
     """
@@ -179,7 +172,7 @@ class RecallMask(SCPICmdWrite):
 class Recall(SCPICmdRead):
     """The ``RECAll`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RECAll?`` query.
         - Using the ``.verify(value)`` method will send the ``RECAll?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -200,21 +193,20 @@ class Recall(SCPICmdRead):
     def mask(self) -> RecallMask:
         """Return the ``RECAll:MASK`` command.
 
-        **Description:**
+        Description:
             - This command recalls the mask from a specified file that was saved to the current
               working directory using the ``SAVE:MASK`` command. A series of examples showing how to
               use mask commands for typical tasks is included in an appendix.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``RECAll:MASK value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RECAll:MASK <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``QString`` is a quoted string that is the name of the mask definition being recalled
               from the current working directory.
         """
@@ -224,20 +216,19 @@ class Recall(SCPICmdRead):
     def setup(self) -> RecallSetup:
         """Return the ``RECAll:SETUp`` command.
 
-        **Description:**
+        Description:
             - Restores the state of the oscilloscope from a copy of the settings stored in memory.
               The settings are stored using the ``*SAV`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``RECAll:SETUp value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RECAll:SETUp {FACtory|<NR1>|<file path>}
+            ```
 
-        **Info:**
+        Info:
             - ``FACtory`` restores the factory setup.
             - ``<NR1>`` is a value in the range from 1 to 10, which specifies a saved setup storage
               location.
@@ -258,21 +249,20 @@ class Recall(SCPICmdRead):
     def waveform(self) -> RecallWaveform:
         r"""Return the ``RECAll:WAVEform`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) recalls a stored waveform to a reference location. This
               command is equivalent to selecting Recall from the File menu, and then pressing the
               Waveform button.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``RECAll:WAVEform value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RECAll:WAVEform <file path>,REF<x>
+            ```
 
-        **Info:**
+        Info:
             - ``<file path>`` specifies a location for a stored waveform file. <file path> is a
               quoted string that defines the file name and path. Input the file path using the form
               ``<drive>:<dir>``/<filename>.<drive> and one or more <dir>s are optional. If you do

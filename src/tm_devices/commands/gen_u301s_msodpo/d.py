@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - D<x>
     - D<x>:LABel <Qstring>
     - D<x>:LABel?
@@ -31,24 +29,23 @@ if TYPE_CHECKING:
 class DigitalBitThreshold(SCPICmdWrite, SCPICmdRead):
     """The ``D<x>:THREshold`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the logical threshold for digital channel <x>, where x is the channel
           number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``D<x>:THREshold?`` query.
         - Using the ``.verify(value)`` method will send the ``D<x>:THREshold?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``D<x>:THREshold value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - D<x>:THREshold {ECL|TTL|<NR3>}
         - D<x>:THREshold?
+        ```
 
-    **Info:**
+    Info:
         - ``ECL`` sets the digital threshold for channel <x> to a preset ECL high level of -1.3V.
         - ``TTL`` sets the digital threshold for channel <x> to a preset TTL high level of 1.4V.
         - ``<NR3>`` specifies the digital threshold for channel <x> in volts.
@@ -58,24 +55,23 @@ class DigitalBitThreshold(SCPICmdWrite, SCPICmdRead):
 class DigitalBitPosition(SCPICmdWrite, SCPICmdRead):
     """The ``D<x>:POSition`` command.
 
-    **Description:**
+    Description:
         - This command specifies the vertical position for digital channel <x>, where x is the
           channel number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``D<x>:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``D<x>:POSition?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``D<x>:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - D<x>:POSition <NR3>
         - D<x>:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the position of the digital channel,
           in slot units. Use the oscilloscope front-panel controls to place the channel; then query
           the channel to obtain an exact value for the position.
@@ -85,24 +81,23 @@ class DigitalBitPosition(SCPICmdWrite, SCPICmdRead):
 class DigitalBitLabel(SCPICmdWrite, SCPICmdRead):
     """The ``D<x>:LABel`` command.
 
-    **Description:**
+    Description:
         - This command specifies the waveform label for digital channel <x>, where x is the channel
           number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``D<x>:LABel?`` query.
         - Using the ``.verify(value)`` method will send the ``D<x>:LABel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``D<x>:LABel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - D<x>:LABel <Qstring>
         - D<x>:LABel?
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` is an alphanumeric string of text, enclosed in quotes, that contains the
           text label information for the digital channel <x> waveform. The text string is limited to
           30 characters.
@@ -112,17 +107,16 @@ class DigitalBitLabel(SCPICmdWrite, SCPICmdRead):
 class DigitalBit(ValidatedDigitalBit, SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``D<x>`` command.
 
-    **Description:**
+    Description:
         - This command specifies parameters for digital channel <x>, where x is the channel number.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``D<x>`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - D<x>
+        ```
 
     Properties:
         - ``.label``: The ``D<x>:LABel`` command.
@@ -140,24 +134,23 @@ class DigitalBit(ValidatedDigitalBit, SCPICmdWriteNoArguments, SCPICmdRead):
     def label(self) -> DigitalBitLabel:
         """Return the ``D<x>:LABel`` command.
 
-        **Description:**
+        Description:
             - This command specifies the waveform label for digital channel <x>, where x is the
               channel number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``D<x>:LABel?`` query.
             - Using the ``.verify(value)`` method will send the ``D<x>:LABel?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``D<x>:LABel value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - D<x>:LABel <Qstring>
             - D<x>:LABel?
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` is an alphanumeric string of text, enclosed in quotes, that contains the
               text label information for the digital channel <x> waveform. The text string is
               limited to 30 characters.
@@ -168,24 +161,23 @@ class DigitalBit(ValidatedDigitalBit, SCPICmdWriteNoArguments, SCPICmdRead):
     def position(self) -> DigitalBitPosition:
         """Return the ``D<x>:POSition`` command.
 
-        **Description:**
+        Description:
             - This command specifies the vertical position for digital channel <x>, where x is the
               channel number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``D<x>:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``D<x>:POSition?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``D<x>:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - D<x>:POSition <NR3>
             - D<x>:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the position of the digital
               channel, in slot units. Use the oscilloscope front-panel controls to place the
               channel; then query the channel to obtain an exact value for the position.
@@ -196,24 +188,23 @@ class DigitalBit(ValidatedDigitalBit, SCPICmdWriteNoArguments, SCPICmdRead):
     def threshold(self) -> DigitalBitThreshold:
         """Return the ``D<x>:THREshold`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the logical threshold for digital channel <x>, where x is the channel
               number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``D<x>:THREshold?`` query.
             - Using the ``.verify(value)`` method will send the ``D<x>:THREshold?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``D<x>:THREshold value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - D<x>:THREshold {ECL|TTL|<NR3>}
             - D<x>:THREshold?
+            ```
 
-        **Info:**
+        Info:
             - ``ECL`` sets the digital threshold for channel <x> to a preset ECL high level of
               -1.3V.
             - ``TTL`` sets the digital threshold for channel <x> to a preset TTL high level of 1.4V.

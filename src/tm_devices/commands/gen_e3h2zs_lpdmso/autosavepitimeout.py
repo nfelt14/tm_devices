@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - AUTOSAVEPITIMEOUT <NR1>
     - AUTOSAVEPITIMEOUT?
 """
@@ -26,24 +24,23 @@ if TYPE_CHECKING:
 class Autosavepitimeout(SCPICmdWrite, SCPICmdRead):
     """The ``AUTOSAVEPITIMEOUT`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the idle time from the programmable interface before
           auto-save occurs.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUTOSAVEPITIMEOUT?`` query.
         - Using the ``.verify(value)`` method will send the ``AUTOSAVEPITIMEOUT?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUTOSAVEPITIMEOUT value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUTOSAVEPITIMEOUT <NR1>
         - AUTOSAVEPITIMEOUT?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>``
     """
 

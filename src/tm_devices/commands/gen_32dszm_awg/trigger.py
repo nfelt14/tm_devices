@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - TRIGger:SEQuence:IMMediate
     - TRIGger:SEQuence:IMPedance <impedance>
     - TRIGger:SEQuence:IMPedance?
@@ -41,26 +39,25 @@ if TYPE_CHECKING:
 class TriggerSequenceWvalue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:SEQuence:WVALue`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the output data position of a waveform while the
           instrument is in the waiting-for-trigger state. This is valid only when Run Mode is
           Triggered or Gated.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:SEQuence:WVALue?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:WVALue?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:WVALue value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:SEQuence:WVALue {FIRSt|LAST}
         - TRIGger:SEQuence:WVALue?
+        ```
 
-    **Info:**
+    Info:
         - ``FIRSt`` specifies the first value of the waveform as the output level.
         - ``LAST`` specifies the last value of the waveform as the output level.
     """
@@ -69,23 +66,22 @@ class TriggerSequenceWvalue(SCPICmdWrite, SCPICmdRead):
 class TriggerSequenceTimer(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:SEQuence:TIMer`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the internal trigger rate (trigger interval).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:SEQuence:TIMer?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:TIMer?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:TIMer value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:SEQuence:TIMer <NR3>
         - TRIGger:SEQuence:TIMer?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>``
     """
 
@@ -93,24 +89,23 @@ class TriggerSequenceTimer(SCPICmdWrite, SCPICmdRead):
 class TriggerSequenceSource(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:SEQuence:SOURce`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the trigger source.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:SEQuence:SOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:SOURce?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:SOURce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:SEQuence:SOURce {INTernal|EXTernal}
         - TRIGger:SEQuence:SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``INTernal`` selects internal clock as the trigger source.
         - ``EXTernal`` selects external clock as the trigger source.
     """
@@ -119,23 +114,22 @@ class TriggerSequenceSource(SCPICmdWrite, SCPICmdRead):
 class TriggerSequenceSlope(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:SEQuence:SLOPe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the slope of trigger signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:SEQuence:SLOPe?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:SLOPe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:SLOPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:SEQuence:SLOPe {POSitive|NEGative}
         - TRIGger:SEQuence:SLOPe?
+        ```
 
-    **Info:**
+    Info:
         - ``POSitive`` indicates that the event occurs on the rising edge of the external trigger
           signal.
         - ``NEGative`` indicates that the event occurs on the falling edge of the external trigger
@@ -146,25 +140,24 @@ class TriggerSequenceSlope(SCPICmdWrite, SCPICmdRead):
 class TriggerSequencePolarity(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:SEQuence:POLarity`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the trigger input polarity. It is used to set
           polarity in gated mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:SEQuence:POLarity?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:POLarity?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:POLarity value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:SEQuence:POLarity {POSitive|NEGative}
         - TRIGger:SEQuence:POLarity?
+        ```
 
-    **Info:**
+    Info:
         - ``POSitive`` means the gate signal is activated when the external trigger signal is
           greater (more Positive) than the trigger level.
         - ``NEGative`` means the gate signal is activated when the external trigger signal is less
@@ -175,25 +168,24 @@ class TriggerSequencePolarity(SCPICmdWrite, SCPICmdRead):
 class TriggerSequenceMode(SCPICmdWrite, SCPICmdRead):
     r"""The ``TRIGger:SEQuence:MODE`` command.
 
-    **Description:**
+    Description:
         - (AWG7000B and AWG7000C Series only) This command and query sets or returns the trigger
           timing. It is used in the Triggered or Sequence mode. Trigger timing can be set when the
           external trigger source is selected.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:SEQuence:MODE?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:MODE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:MODE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:SEQuence:MODE <trigger_type>
         - TRIGger:SEQuence:MODE?
+        ```
 
-    **Info:**
+    Info:
         - ``<trigger_type`` >::={SYNChronous\|ASYNchronous}.
     """
 
@@ -201,23 +193,22 @@ class TriggerSequenceMode(SCPICmdWrite, SCPICmdRead):
 class TriggerSequenceLevel(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:SEQuence:LEVel`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the trigger input level (threshold).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:SEQuence:LEVel?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:LEVel?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:LEVel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:SEQuence:LEVel <NR3>
         - TRIGger:SEQuence:LEVel?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>``
     """
 
@@ -225,25 +216,24 @@ class TriggerSequenceLevel(SCPICmdWrite, SCPICmdRead):
 class TriggerSequenceImpedance(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:SEQuence:IMPedance`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the trigger impedance. It applies only to the
           external trigger.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:SEQuence:IMPedance?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:IMPedance?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:IMPedance value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:SEQuence:IMPedance <impedance>
         - TRIGger:SEQuence:IMPedance?
+        ```
 
-    **Info:**
+    Info:
         - ``<impedance>`` ::=<NR3> the value will be 50 and 1000.
     """
 
@@ -251,17 +241,16 @@ class TriggerSequenceImpedance(SCPICmdWrite, SCPICmdRead):
 class TriggerSequenceImmediate(SCPICmdWriteNoArguments):
     """The ``TRIGger:SEQuence:IMMediate`` command.
 
-    **Description:**
+    Description:
         - This command forces a trigger event to occur.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``TRIGger:SEQuence:IMMediate`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:SEQuence:IMMediate
+        ```
     """
 
 
@@ -269,7 +258,7 @@ class TriggerSequenceImmediate(SCPICmdWriteNoArguments):
 class TriggerSequence(SCPICmdRead):
     """The ``TRIGger:SEQuence`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:SEQuence?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -302,25 +291,24 @@ class TriggerSequence(SCPICmdRead):
     def impedance(self) -> TriggerSequenceImpedance:
         """Return the ``TRIGger:SEQuence:IMPedance`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the trigger impedance. It applies only to the
               external trigger.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:SEQuence:IMPedance?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:IMPedance?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:IMPedance value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:SEQuence:IMPedance <impedance>
             - TRIGger:SEQuence:IMPedance?
+            ```
 
-        **Info:**
+        Info:
             - ``<impedance>`` ::=<NR3> the value will be 50 and 1000.
         """
         return self._impedance
@@ -329,24 +317,23 @@ class TriggerSequence(SCPICmdRead):
     def level(self) -> TriggerSequenceLevel:
         """Return the ``TRIGger:SEQuence:LEVel`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the trigger input level (threshold).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:SEQuence:LEVel?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:LEVel?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:LEVel value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:SEQuence:LEVel <NR3>
             - TRIGger:SEQuence:LEVel?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>``
         """
         return self._level
@@ -355,26 +342,25 @@ class TriggerSequence(SCPICmdRead):
     def mode(self) -> TriggerSequenceMode:
         r"""Return the ``TRIGger:SEQuence:MODE`` command.
 
-        **Description:**
+        Description:
             - (AWG7000B and AWG7000C Series only) This command and query sets or returns the trigger
               timing. It is used in the Triggered or Sequence mode. Trigger timing can be set when
               the external trigger source is selected.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:SEQuence:MODE?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:MODE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:MODE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:SEQuence:MODE <trigger_type>
             - TRIGger:SEQuence:MODE?
+            ```
 
-        **Info:**
+        Info:
             - ``<trigger_type`` >::={SYNChronous\|ASYNchronous}.
         """
         return self._mode
@@ -383,25 +369,24 @@ class TriggerSequence(SCPICmdRead):
     def polarity(self) -> TriggerSequencePolarity:
         """Return the ``TRIGger:SEQuence:POLarity`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the trigger input polarity. It is used to set
               polarity in gated mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:SEQuence:POLarity?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:POLarity?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:POLarity value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:SEQuence:POLarity {POSitive|NEGative}
             - TRIGger:SEQuence:POLarity?
+            ```
 
-        **Info:**
+        Info:
             - ``POSitive`` means the gate signal is activated when the external trigger signal is
               greater (more Positive) than the trigger level.
             - ``NEGative`` means the gate signal is activated when the external trigger signal is
@@ -413,24 +398,23 @@ class TriggerSequence(SCPICmdRead):
     def slope(self) -> TriggerSequenceSlope:
         """Return the ``TRIGger:SEQuence:SLOPe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the slope of trigger signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:SEQuence:SLOPe?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:SLOPe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:SLOPe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:SEQuence:SLOPe {POSitive|NEGative}
             - TRIGger:SEQuence:SLOPe?
+            ```
 
-        **Info:**
+        Info:
             - ``POSitive`` indicates that the event occurs on the rising edge of the external
               trigger signal.
             - ``NEGative`` indicates that the event occurs on the falling edge of the external
@@ -442,24 +426,23 @@ class TriggerSequence(SCPICmdRead):
     def source(self) -> TriggerSequenceSource:
         """Return the ``TRIGger:SEQuence:SOURce`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the trigger source.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:SEQuence:SOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:SOURce?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:SOURce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:SEQuence:SOURce {INTernal|EXTernal}
             - TRIGger:SEQuence:SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``INTernal`` selects internal clock as the trigger source.
             - ``EXTernal`` selects external clock as the trigger source.
         """
@@ -469,24 +452,23 @@ class TriggerSequence(SCPICmdRead):
     def timer(self) -> TriggerSequenceTimer:
         """Return the ``TRIGger:SEQuence:TIMer`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the internal trigger rate (trigger interval).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:SEQuence:TIMer?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:TIMer?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:TIMer value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:SEQuence:TIMer <NR3>
             - TRIGger:SEQuence:TIMer?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>``
         """
         return self._timer
@@ -495,26 +477,25 @@ class TriggerSequence(SCPICmdRead):
     def wvalue(self) -> TriggerSequenceWvalue:
         """Return the ``TRIGger:SEQuence:WVALue`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the output data position of a waveform while
               the instrument is in the waiting-for-trigger state. This is valid only when Run Mode
               is Triggered or Gated.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:SEQuence:WVALue?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:WVALue?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:WVALue value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:SEQuence:WVALue {FIRSt|LAST}
             - TRIGger:SEQuence:WVALue?
+            ```
 
-        **Info:**
+        Info:
             - ``FIRSt`` specifies the first value of the waveform as the output level.
             - ``LAST`` specifies the last value of the waveform as the output level.
         """
@@ -524,17 +505,16 @@ class TriggerSequence(SCPICmdRead):
     def immediate(self) -> TriggerSequenceImmediate:
         """Return the ``TRIGger:SEQuence:IMMediate`` command.
 
-        **Description:**
+        Description:
             - This command forces a trigger event to occur.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``TRIGger:SEQuence:IMMediate`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:SEQuence:IMMediate
+            ```
         """
         return self._immediate
 
@@ -542,7 +522,7 @@ class TriggerSequence(SCPICmdRead):
 class Trigger(SCPICmdRead):
     """The ``TRIGger`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -559,7 +539,7 @@ class Trigger(SCPICmdRead):
     def sequence(self) -> TriggerSequence:
         """Return the ``TRIGger:SEQuence`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:SEQuence?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence?`` query and
               raise an AssertionError if the returned value does not match ``value``.

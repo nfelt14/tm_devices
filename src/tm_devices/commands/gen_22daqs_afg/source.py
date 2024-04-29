@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SOURce:ROSCillator:SOURce {INTernal|EXTernal}
     - SOURce:ROSCillator:SOURce?
 """
@@ -26,29 +24,28 @@ if TYPE_CHECKING:
 class SourceRoscillatorSource(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce:ROSCillator:SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets the reference clock to either internal or external.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce:ROSCillator:SOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce:ROSCillator:SOURce?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce:ROSCillator:SOURce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce:ROSCillator:SOURce {INTernal|EXTernal}
         - SOURce:ROSCillator:SOURce?
+        ```
     """
 
 
 class SourceRoscillator(SCPICmdRead):
     """The ``SOURce:ROSCillator`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce:ROSCillator?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce:ROSCillator?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -65,22 +62,21 @@ class SourceRoscillator(SCPICmdRead):
     def source(self) -> SourceRoscillatorSource:
         """Return the ``SOURce:ROSCillator:SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets the reference clock to either internal or external.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce:ROSCillator:SOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce:ROSCillator:SOURce?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce:ROSCillator:SOURce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce:ROSCillator:SOURce {INTernal|EXTernal}
             - SOURce:ROSCillator:SOURce?
+            ```
         """
         return self._source
 
@@ -88,7 +84,7 @@ class SourceRoscillator(SCPICmdRead):
 class Source(SCPICmdRead):
     """The ``SOURce`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -105,7 +101,7 @@ class Source(SCPICmdRead):
     def roscillator(self) -> SourceRoscillator:
         """Return the ``SOURce:ROSCillator`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce:ROSCillator?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce:ROSCillator?`` query and
               raise an AssertionError if the returned value does not match ``value``.

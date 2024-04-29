@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CURVe?
 """
 
@@ -25,7 +23,7 @@ if TYPE_CHECKING:
 class Curve(SCPICmdRead):
     """The ``CURVe`` command.
 
-    **Description:**
+    Description:
         - This command transfers waveform data from the instrument. Each waveform that is
           transferred has an associated waveform preamble that contains information such as data
           format and scale. The ``CURVe?`` query transfers data from the instrument. The data source
@@ -62,16 +60,15 @@ class Curve(SCPICmdRead):
           then 500 rows will be returned for each channel. To calculate the number of rows, you can
           use- (number of bytes from curve header/``BYT_NR``)/1000.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURVe?`` query.
         - Using the ``.verify(value)`` method will send the ``CURVe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURVe?
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "CURVe") -> None:

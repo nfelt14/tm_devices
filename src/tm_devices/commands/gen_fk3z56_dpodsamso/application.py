@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - APPLication:ACTivate <string>
     - APPLication:SCOPEAPP:WINDOW {FULLSCREEN|MINIMIZED}
     - APPLication:SCOPEAPP:WINDOW?
@@ -28,25 +26,24 @@ if TYPE_CHECKING:
 class ApplicationScopeappWindow(SCPICmdWrite, SCPICmdRead):
     """The ``APPLication:SCOPEAPP:WINDOW`` command.
 
-    **Description:**
+    Description:
         - Sets or queries whether the oscilloscope application is minimized or displayed full
           screen.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``APPLication:SCOPEAPP:WINDOW?`` query.
         - Using the ``.verify(value)`` method will send the ``APPLication:SCOPEAPP:WINDOW?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``APPLication:SCOPEAPP:WINDOW value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - APPLication:SCOPEAPP:WINDOW {FULLSCREEN|MINIMIZED}
         - APPLication:SCOPEAPP:WINDOW?
+        ```
 
-    **Info:**
+    Info:
         - ``FULLSCREEN`` sets the oscilloscope display to fill the oscilloscope screen.
         - ``MINIMIZED`` minimizes the oscilloscope display to an icon at the bottom of the screen.
     """
@@ -55,7 +52,7 @@ class ApplicationScopeappWindow(SCPICmdWrite, SCPICmdRead):
 class ApplicationScopeapp(SCPICmdRead):
     """The ``APPLication:SCOPEAPP`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``APPLication:SCOPEAPP?`` query.
         - Using the ``.verify(value)`` method will send the ``APPLication:SCOPEAPP?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -72,25 +69,24 @@ class ApplicationScopeapp(SCPICmdRead):
     def window(self) -> ApplicationScopeappWindow:
         """Return the ``APPLication:SCOPEAPP:WINDOW`` command.
 
-        **Description:**
+        Description:
             - Sets or queries whether the oscilloscope application is minimized or displayed full
               screen.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``APPLication:SCOPEAPP:WINDOW?`` query.
             - Using the ``.verify(value)`` method will send the ``APPLication:SCOPEAPP:WINDOW?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``APPLication:SCOPEAPP:WINDOW value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - APPLication:SCOPEAPP:WINDOW {FULLSCREEN|MINIMIZED}
             - APPLication:SCOPEAPP:WINDOW?
+            ```
 
-        **Info:**
+        Info:
             - ``FULLSCREEN`` sets the oscilloscope display to fill the oscilloscope screen.
             - ``MINIMIZED`` minimizes the oscilloscope display to an icon at the bottom of the
               screen.
@@ -101,22 +97,21 @@ class ApplicationScopeapp(SCPICmdRead):
 class ApplicationActivate(SCPICmdWrite):
     """The ``APPLication:ACTivate`` command.
 
-    **Description:**
+    Description:
         - For legacy Java based applications, starts the application specified in the string. The
           available applications depend on the oscilloscope model and installed options. (DPOJET and
           DPOJET-based applications do not require this command and are started automatically by
           sending them any command, such as DPOJET: VERsion? )
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``APPLication:ACTivate value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - APPLication:ACTivate <string>
+        ```
 
-    **Info:**
+    Info:
         - ``<string>`` is the name of the application that you want to start. Enter the application
           name exactly as it appears in the oscilloscope Analyze menu.
     """
@@ -125,7 +120,7 @@ class ApplicationActivate(SCPICmdWrite):
 class Application(SCPICmdRead):
     """The ``APPLication`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``APPLication?`` query.
         - Using the ``.verify(value)`` method will send the ``APPLication?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -146,23 +141,22 @@ class Application(SCPICmdRead):
     def activate(self) -> ApplicationActivate:
         """Return the ``APPLication:ACTivate`` command.
 
-        **Description:**
+        Description:
             - For legacy Java based applications, starts the application specified in the string.
               The available applications depend on the oscilloscope model and installed options.
               (DPOJET and DPOJET-based applications do not require this command and are started
               automatically by sending them any command, such as DPOJET: VERsion? )
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``APPLication:ACTivate value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - APPLication:ACTivate <string>
+            ```
 
-        **Info:**
+        Info:
             - ``<string>`` is the name of the application that you want to start. Enter the
               application name exactly as it appears in the oscilloscope Analyze menu.
         """
@@ -172,7 +166,7 @@ class Application(SCPICmdRead):
     def scopeapp(self) -> ApplicationScopeapp:
         """Return the ``APPLication:SCOPEAPP`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``APPLication:SCOPEAPP?`` query.
             - Using the ``.verify(value)`` method will send the ``APPLication:SCOPEAPP?`` query and
               raise an AssertionError if the returned value does not match ``value``.

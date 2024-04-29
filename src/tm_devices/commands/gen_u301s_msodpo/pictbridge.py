@@ -10,17 +10,19 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - PICTBridge:DATEPrint {DEFLT|OFF|ON}
     - PICTBridge:DEFault
     - PICTBridge:IDPrint {DEFLT|OFF|ON}
     - PICTBridge:IDPrint?
-    - PICTBridge:IMAGESize {DEFLT|IN2P5BY3P25|L|IN4BY6|L2|IN8BY10|L4|E|CARD|HAGAKIPC|CM6BY8|CM7BY10|CM9BY13|CM10BY15|CM13BY18|CM15BY21|CM18BY24| A4|LETTER}
-    - PICTBridge:PAPERSize {DEFLT|L|L2|HAGAKIPCARD|MM54BY86|MM100BY150|IN4BY6|IN8BY10|LETTER|IN11BY17|A0|A1|A2|A3|A4|A5|A6|A7|A8|A9|B0|B1|B2|B3| B4|B5|B6|B7|B8|B9|ROLL89MM|ROLL127MM|ROLL100MM|ROLL210MM}
+    - PICTBridge:IMAGESize
+      {DEFLT|IN2P5BY3P25|L|IN4BY6|L2|IN8BY10|L4|E|CARD|HAGAKIPC|CM6BY8|CM7BY10|CM9BY13|CM10BY15|
+      CM13BY18|CM15BY21|CM18BY24| A4|LETTER}
+    - PICTBridge:PAPERSize
+      {DEFLT|L|L2|HAGAKIPCARD|MM54BY86|MM100BY150|IN4BY6|IN8BY10|LETTER|IN11BY17|A0|A1|A2|A3|A4|A5|
+      A6|A7|A8|A9|B0|B1|B2|B3| B4|B5|B6|B7|B8|B9|ROLL89MM|ROLL127MM|ROLL100MM|ROLL210MM}
     - PICTBridge:PAPERType {DEFLT|PLAIN|PHOTO|FASTPHOTO}
     - PICTBridge:PRINTQual {DEFLT|NRMAL|FINE|DRAFT}
-"""  # noqa: E501
+"""
 
 from typing import Optional, TYPE_CHECKING
 
@@ -33,19 +35,18 @@ if TYPE_CHECKING:
 class PictbridgePrintqual(SCPICmdWrite):
     """The ``PICTBridge:PRINTQual`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the output print quality.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``PICTBridge:PRINTQual value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PICTBridge:PRINTQual {DEFLT|NRMAL|FINE|DRAFT}
+        ```
 
-    **Info:**
+    Info:
         - ``DEFLT`` for the default quality print.
         - ``NRMAL`` for a normal quality print.
         - ``FINE`` for a fine quality print.
@@ -56,19 +57,18 @@ class PictbridgePrintqual(SCPICmdWrite):
 class PictbridgePapertype(SCPICmdWrite):
     """The ``PICTBridge:PAPERType`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the paper type.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``PICTBridge:PAPERType value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PICTBridge:PAPERType {DEFLT|PLAIN|PHOTO|FASTPHOTO}
+        ```
 
-    **Info:**
+    Info:
         - ``DEFLT`` for a default print paper type.
         - ``PLAIN`` for a plain print paper type.
         - ``PHOTO`` for a photo print paper type.
@@ -79,19 +79,18 @@ class PictbridgePapertype(SCPICmdWrite):
 class PictbridgePapersize(SCPICmdWrite):
     """The ``PICTBridge:PAPERSize`` command.
 
-    **Description:**
+    Description:
         - Sets the output print paper size.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``PICTBridge:PAPERSize value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PICTBridge:PAPERSize {DEFLT|L|L2|HAGAKIPCARD|MM54BY86|MM100BY150|IN4BY6|IN8BY10|LETTER|IN11BY17|A0|A1|A2|A3|A4|A5|A6|A7|A8|A9|B0|B1|B2|B3| B4|B5|B6|B7|B8|B9|ROLL89MM|ROLL127MM|ROLL100MM|ROLL210MM}
+        ```
 
-    **Info:**
+    Info:
         - ``DEFLT`` for a default paper size.
         - ``L`` for a paper size L.
         - ``L2`` for a paper size 2L.
@@ -132,19 +131,18 @@ class PictbridgePapersize(SCPICmdWrite):
 class PictbridgeImagesize(SCPICmdWrite):
     """The ``PICTBridge:IMAGESize`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the image print size.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``PICTBridge:IMAGESize value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PICTBridge:IMAGESize {DEFLT|IN2P5BY3P25|L|IN4BY6|L2|IN8BY10|L4|E|CARD|HAGAKIPC|CM6BY8|CM7BY10|CM9BY13|CM10BY15|CM13BY18|CM15BY21|CM18BY24| A4|LETTER}
+        ```
 
-    **Info:**
+    Info:
         - ``DEFLT`` for a default image print size.
         - ``IN2P5BY3P25`` for a ``2_5````*3_25`` image print size.
         - ``L`` for a ``3_5````*5`` image print size.
@@ -170,23 +168,22 @@ class PictbridgeImagesize(SCPICmdWrite):
 class PictbridgeIdprint(SCPICmdWrite, SCPICmdRead):
     """The ``PICTBridge:IDPrint`` command.
 
-    **Description:**
+    Description:
         - Enables or disables printing the oscilloscope model and serial number on the print output.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PICTBridge:IDPrint?`` query.
         - Using the ``.verify(value)`` method will send the ``PICTBridge:IDPrint?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``PICTBridge:IDPrint value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PICTBridge:IDPrint {DEFLT|OFF|ON}
         - PICTBridge:IDPrint?
+        ```
 
-    **Info:**
+    Info:
         - ``DEFLT`` is the default setting of the printer.
         - ``ON`` enables the oscilloscope model and serial number print on the print output.
         - ``OFF`` disables the oscilloscope model and serial number print on the print output.
@@ -196,37 +193,35 @@ class PictbridgeIdprint(SCPICmdWrite, SCPICmdRead):
 class PictbridgeDefault(SCPICmdWriteNoArguments):
     """The ``PICTBridge:DEFault`` command.
 
-    **Description:**
+    Description:
         - Sets the arguments for all PictBridge commands to their default values. The default values
           are same as printer default settings.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``PICTBridge:DEFault`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PICTBridge:DEFault
+        ```
     """
 
 
 class PictbridgeDateprint(SCPICmdWrite):
     """The ``PICTBridge:DATEPrint`` command.
 
-    **Description:**
+    Description:
         - Enables or disables printing the date on the print output.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``PICTBridge:DATEPrint value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PICTBridge:DATEPrint {DEFLT|OFF|ON}
+        ```
 
-    **Info:**
+    Info:
         - ``DEFLT`` is the default setting of the printer.
         - ``ON`` enables the date print on the print output.
         - ``OFF`` disables the date print on the print output.
@@ -236,7 +231,7 @@ class PictbridgeDateprint(SCPICmdWrite):
 class Pictbridge(SCPICmdRead):
     """The ``PICTBridge`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PICTBridge?`` query.
         - Using the ``.verify(value)`` method will send the ``PICTBridge?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -265,20 +260,19 @@ class Pictbridge(SCPICmdRead):
     def dateprint(self) -> PictbridgeDateprint:
         """Return the ``PICTBridge:DATEPrint`` command.
 
-        **Description:**
+        Description:
             - Enables or disables printing the date on the print output.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``PICTBridge:DATEPrint value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PICTBridge:DATEPrint {DEFLT|OFF|ON}
+            ```
 
-        **Info:**
+        Info:
             - ``DEFLT`` is the default setting of the printer.
             - ``ON`` enables the date print on the print output.
             - ``OFF`` disables the date print on the print output.
@@ -289,18 +283,17 @@ class Pictbridge(SCPICmdRead):
     def default(self) -> PictbridgeDefault:
         """Return the ``PICTBridge:DEFault`` command.
 
-        **Description:**
+        Description:
             - Sets the arguments for all PictBridge commands to their default values. The default
               values are same as printer default settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``PICTBridge:DEFault`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PICTBridge:DEFault
+            ```
         """
         return self._default
 
@@ -308,24 +301,23 @@ class Pictbridge(SCPICmdRead):
     def idprint(self) -> PictbridgeIdprint:
         """Return the ``PICTBridge:IDPrint`` command.
 
-        **Description:**
+        Description:
             - Enables or disables printing the oscilloscope model and serial number on the print
               output.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PICTBridge:IDPrint?`` query.
             - Using the ``.verify(value)`` method will send the ``PICTBridge:IDPrint?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``PICTBridge:IDPrint value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PICTBridge:IDPrint {DEFLT|OFF|ON}
             - PICTBridge:IDPrint?
+            ```
 
-        **Info:**
+        Info:
             - ``DEFLT`` is the default setting of the printer.
             - ``ON`` enables the oscilloscope model and serial number print on the print output.
             - ``OFF`` disables the oscilloscope model and serial number print on the print output.
@@ -336,20 +328,19 @@ class Pictbridge(SCPICmdRead):
     def imagesize(self) -> PictbridgeImagesize:
         """Return the ``PICTBridge:IMAGESize`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the image print size.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``PICTBridge:IMAGESize value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PICTBridge:IMAGESize {DEFLT|IN2P5BY3P25|L|IN4BY6|L2|IN8BY10|L4|E|CARD|HAGAKIPC|CM6BY8|CM7BY10|CM9BY13|CM10BY15|CM13BY18|CM15BY21|CM18BY24| A4|LETTER}
+            ```
 
-        **Info:**
+        Info:
             - ``DEFLT`` for a default image print size.
             - ``IN2P5BY3P25`` for a ``2_5````*3_25`` image print size.
             - ``L`` for a ``3_5````*5`` image print size.
@@ -376,20 +367,19 @@ class Pictbridge(SCPICmdRead):
     def papersize(self) -> PictbridgePapersize:
         """Return the ``PICTBridge:PAPERSize`` command.
 
-        **Description:**
+        Description:
             - Sets the output print paper size.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``PICTBridge:PAPERSize value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PICTBridge:PAPERSize {DEFLT|L|L2|HAGAKIPCARD|MM54BY86|MM100BY150|IN4BY6|IN8BY10|LETTER|IN11BY17|A0|A1|A2|A3|A4|A5|A6|A7|A8|A9|B0|B1|B2|B3| B4|B5|B6|B7|B8|B9|ROLL89MM|ROLL127MM|ROLL100MM|ROLL210MM}
+            ```
 
-        **Info:**
+        Info:
             - ``DEFLT`` for a default paper size.
             - ``L`` for a paper size L.
             - ``L2`` for a paper size 2L.
@@ -431,20 +421,19 @@ class Pictbridge(SCPICmdRead):
     def papertype(self) -> PictbridgePapertype:
         """Return the ``PICTBridge:PAPERType`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the paper type.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``PICTBridge:PAPERType value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PICTBridge:PAPERType {DEFLT|PLAIN|PHOTO|FASTPHOTO}
+            ```
 
-        **Info:**
+        Info:
             - ``DEFLT`` for a default print paper type.
             - ``PLAIN`` for a plain print paper type.
             - ``PHOTO`` for a photo print paper type.
@@ -456,20 +445,19 @@ class Pictbridge(SCPICmdRead):
     def printqual(self) -> PictbridgePrintqual:
         """Return the ``PICTBridge:PRINTQual`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the output print quality.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``PICTBridge:PRINTQual value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PICTBridge:PRINTQual {DEFLT|NRMAL|FINE|DRAFT}
+            ```
 
-        **Info:**
+        Info:
             - ``DEFLT`` for the default quality print.
             - ``NRMAL`` for a normal quality print.
             - ``FINE`` for a fine quality print.

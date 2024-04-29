@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - OUTPut2:IMPedance {<ohms>|INFinity|MINimum|MAXimum}
     - OUTPut2:IMPedance?
     - OUTPut2:POLarity {NORMal|INVerted}
@@ -30,51 +28,49 @@ if TYPE_CHECKING:
 class Output2State(SCPICmdWrite, SCPICmdRead):
     """The ``OUTPut2:STATe`` command.
 
-    **Description:**
+    Description:
         - This command sets or query whether to enable the arbitrary function generator output for
           the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut2:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut2:STATe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``OUTPut2:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - OUTPut2:STATe {ON|OFF|<NR1>}
         - OUTPut2:STATe?
+        ```
     """
 
 
 class Output2Polarity(SCPICmdWrite, SCPICmdRead):
     """The ``OUTPut2:POLarity`` command.
 
-    **Description:**
+    Description:
         - This command inverts a specified output waveform relative to the offset level. The query
           command returns the polarity for the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut2:POLarity?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut2:POLarity?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``OUTPut2:POLarity value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - OUTPut2:POLarity {NORMal|INVerted}
         - OUTPut2:POLarity?
+        ```
     """
 
 
 class Output2Impedance(SCPICmdWrite, SCPICmdRead):
     """The ``OUTPut2:IMPedance`` command.
 
-    **Description:**
+    Description:
         - The ``OUTPut:IMPedance`` command sets the output load impedance for the specified channel.
           The specified value is used for amplitude, offset, and high/low level settings. You can
           set the impedance to any value from 1 Ω to 10 kΩ with a resolution of 1 Ω or 3 digits. The
@@ -82,25 +78,24 @@ class Output2Impedance(SCPICmdWrite, SCPICmdRead):
           impedance setting in ohms. If the load impedance is set to INFinity, the query command
           returns '9.9E+37'.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut2:IMPedance?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut2:IMPedance?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``OUTPut2:IMPedance value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - OUTPut2:IMPedance {<ohms>|INFinity|MINimum|MAXimum}
         - OUTPut2:IMPedance?
+        ```
     """
 
 
 class Output2(SCPICmdRead):
     """The ``OUTPut2`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut2?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut2?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -121,7 +116,7 @@ class Output2(SCPICmdRead):
     def impedance(self) -> Output2Impedance:
         """Return the ``OUTPut2:IMPedance`` command.
 
-        **Description:**
+        Description:
             - The ``OUTPut:IMPedance`` command sets the output load impedance for the specified
               channel. The specified value is used for amplitude, offset, and high/low level
               settings. You can set the impedance to any value from 1 Ω to 10 kΩ with a resolution
@@ -129,18 +124,17 @@ class Output2(SCPICmdRead):
               returns the current load impedance setting in ohms. If the load impedance is set to
               INFinity, the query command returns '9.9E+37'.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut2:IMPedance?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut2:IMPedance?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``OUTPut2:IMPedance value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - OUTPut2:IMPedance {<ohms>|INFinity|MINimum|MAXimum}
             - OUTPut2:IMPedance?
+            ```
         """
         return self._impedance
 
@@ -148,22 +142,21 @@ class Output2(SCPICmdRead):
     def polarity(self) -> Output2Polarity:
         """Return the ``OUTPut2:POLarity`` command.
 
-        **Description:**
+        Description:
             - This command inverts a specified output waveform relative to the offset level. The
               query command returns the polarity for the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut2:POLarity?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut2:POLarity?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``OUTPut2:POLarity value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - OUTPut2:POLarity {NORMal|INVerted}
             - OUTPut2:POLarity?
+            ```
         """
         return self._polarity
 
@@ -171,21 +164,20 @@ class Output2(SCPICmdRead):
     def state(self) -> Output2State:
         """Return the ``OUTPut2:STATe`` command.
 
-        **Description:**
+        Description:
             - This command sets or query whether to enable the arbitrary function generator output
               for the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut2:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut2:STATe?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``OUTPut2:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - OUTPut2:STATe {ON|OFF|<NR1>}
             - OUTPut2:STATe?
+            ```
         """
         return self._state

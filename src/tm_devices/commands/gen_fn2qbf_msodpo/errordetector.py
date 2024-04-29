@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - ERRORDetector:ALERT {ON|OFF|<NR1>}
     - ERRORDetector:ALERT?
     - ERRORDetector:ALIGNCHARacter:MINus?
@@ -57,7 +55,12 @@ Commands and Queries:
     - ERRORDetector:BIT:TEST:TIME:MINUTES?
     - ERRORDetector:BIT:TEST:TIME:SECOnds?
     - ERRORDetector:BIT:TEST:TIME?
-    - ERRORDetector:BITRate {RATEcustom:CUSTOM |RATE312000000:RATE312 |RATE1250000000:RATE1250 |RATE1500000000:RATE1500 |RATE2125000000:RATE2125 |RATE2500000000:RATE2500 |RATE3000000000:RATE3000 |RATE3125000000:RATE3125 |RATE4250000000:RATE4250 |RATE5000000000:RATE5000 |RATE6000000000:RATE6000 |RATE6250000000:RATE6250}DPO70000SX{RATE3200 | RATE3600 | RATE4000 | RATE4400 | RATE4800 | RATE5200 | RATE5600 | RATE6000 | RATE6400 | CUSTOM}
+    - ERRORDetector:BITRate {RATEcustom:CUSTOM |RATE312000000:RATE312 |RATE1250000000:RATE1250
+      |RATE1500000000:RATE1500 |RATE2125000000:RATE2125 |RATE2500000000:RATE2500
+      |RATE3000000000:RATE3000 |RATE3125000000:RATE3125 |RATE4250000000:RATE4250
+      |RATE5000000000:RATE5000 |RATE6000000000:RATE6000 |RATE6250000000:RATE6250}DPO70000SX{RATE3200
+      | RATE3600 | RATE4000 | RATE4400 | RATE4800 | RATE5200 | RATE5600 | RATE6000 | RATE6400 |
+      CUSTOM}
     - ERRORDetector:BITRate:VALue <NR3>
     - ERRORDetector:BITRate:VALue?
     - ERRORDetector:BITRate?
@@ -114,7 +117,11 @@ Commands and Queries:
     - ERRORDetector:MAXALIGNS?
     - ERRORDetector:PATTERNNAME <Qstring>
     - ERRORDetector:PATTERNNAME?
-    - ERRORDetector:PREset {SATA1_CJTPAT_BIT | SATA2_CJTPAT_BIT | SATA3_CJTPAT_BIT | SATA3_FRAME | SATA3_CHAR | SATA3_HFTP_BIT | SATA3_LBP_BIT | SATA3_LFTP_BIT | SATA3_MFTP_BIT | USB3_SYMBOL | USB3_CHAR | PCIE1_COMP_BIT | PCIE2_COMP_BIT | ANY_CJTPAT_BIT | ANY_CJTPAT_CHAR | CUSTOM}DPO70000SX{CUSTOM_SETUP | PRBS7_BIT_ERROR | PRBS9_BIT_ERROR | PRBS11_BIT_ERROR | PRBS16_BIT_ERROR | PRBS23_BIT_ERROR}
+    - ERRORDetector:PREset {SATA1_CJTPAT_BIT | SATA2_CJTPAT_BIT | SATA3_CJTPAT_BIT | SATA3_FRAME |
+      SATA3_CHAR | SATA3_HFTP_BIT | SATA3_LBP_BIT | SATA3_LFTP_BIT | SATA3_MFTP_BIT | USB3_SYMBOL |
+      USB3_CHAR | PCIE1_COMP_BIT | PCIE2_COMP_BIT | ANY_CJTPAT_BIT | ANY_CJTPAT_CHAR |
+      CUSTOM}DPO70000SX{CUSTOM_SETUP | PRBS7_BIT_ERROR | PRBS9_BIT_ERROR | PRBS11_BIT_ERROR |
+      PRBS16_BIT_ERROR | PRBS23_BIT_ERROR}
     - ERRORDetector:PREset:APPLY
     - ERRORDetector:SAVEIMAGE {OFF | ON}
     - ERRORDetector:SAVEIMAGE?
@@ -124,7 +131,8 @@ Commands and Queries:
     - ERRORDetector:SCRAMBLED?
     - ERRORDetector:SENDEMAIL {OFF | ON}
     - ERRORDetector:SENDEMAIL?
-    - ERRORDetector:SIGnaltype {SATAGEN<x>| USB3|PCIEGEN<x>|ANY8B10B|PRBS7|PRBS9}?DPO70000SX{CUSTOM | PRBS7 | PRBS9 | PRBS11 | PRBS16 |PRBS23}
+    - ERRORDetector:SIGnaltype {SATAGEN<x>| USB3|PCIEGEN<x>|ANY8B10B|PRBS7|PRBS9}?DPO70000SX{CUSTOM
+      | PRBS7 | PRBS9 | PRBS11 | PRBS16 |PRBS23}
     - ERRORDetector:SSC {ON|OFF}
     - ERRORDetector:SSC?
     - ERRORDetector:STANdard <LIST>
@@ -162,7 +170,7 @@ Commands and Queries:
     - ERRORDetector:TIMEformat?
     - ERRORDetector:TYPe {BIT | FRAME | SYMBOL | CHARACTER | PRBS7 | PRBS9}
     - ERRORDetector:TYPe?
-"""  # noqa: E501
+"""
 
 from typing import Dict, Optional, TYPE_CHECKING
 
@@ -181,23 +189,22 @@ if TYPE_CHECKING:
 class ErrordetectorType(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the error detector type.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:TYPe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:TYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:TYPe {BIT | FRAME | SYMBOL | CHARACTER | PRBS7 | PRBS9}
         - ERRORDetector:TYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``BIT`` sets the error detector type to bit.
         - ``FRAME`` sets the error detector type to frame.
         - ``SYMBOL`` sets the error detector type to symbol.
@@ -210,125 +217,119 @@ class ErrordetectorType(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorTimeformat(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:TIMEformat`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries error detector Elapsed Time Format as DDHHMMSS or Seconds.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:TIMEformat?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:TIMEformat?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:TIMEformat value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:TIMEformat {DDHHMMSS | SECONDS}
         - ERRORDetector:TIMEformat?
+        ```
     """
 
 
 class ErrordetectorSymbolTestTimeSeconds(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:TIME:SECOnds`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed time seconds component for symbol error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:TIME:SECOnds?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:SYMBOL:TEST:TIME:SECOnds?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:TIME:SECOnds?
+        ```
     """
 
 
 class ErrordetectorSymbolTestTimeMinutes(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:TIME:MINUTES`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed time minutes component for symbol error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:TIME:MINUTES?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:SYMBOL:TEST:TIME:MINUTES?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:TIME:MINUTES?
+        ```
     """
 
 
 class ErrordetectorSymbolTestTimeHours(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:TIME:HOURS`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed time hours component for symbol error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:TIME:HOURS?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:SYMBOL:TEST:TIME:HOURS?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:TIME:HOURS?
+        ```
     """
 
 
 class ErrordetectorSymbolTestTimeDays(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:TIME:DAYS`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed time days component for symbol error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:TIME:DAYS?``
           query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL:TEST:TIME:DAYS?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:TIME:DAYS?
+        ```
     """
 
 
 class ErrordetectorSymbolTestTime(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:TIME`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed time (in days, hours, minutes, and seconds) for symbol
           error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:TIME?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL:TEST:TIME?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:TIME?
+        ```
 
     Properties:
         - ``.days``: The ``ERRORDetector:SYMBOL:TEST:TIME:DAYS`` command.
@@ -348,21 +349,20 @@ class ErrordetectorSymbolTestTime(SCPICmdRead):
     def days(self) -> ErrordetectorSymbolTestTimeDays:
         """Return the ``ERRORDetector:SYMBOL:TEST:TIME:DAYS`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed time days component for symbol error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:TIME:DAYS?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:SYMBOL:TEST:TIME:DAYS?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:TIME:DAYS?
+            ```
         """
         return self._days
 
@@ -370,21 +370,20 @@ class ErrordetectorSymbolTestTime(SCPICmdRead):
     def hours(self) -> ErrordetectorSymbolTestTimeHours:
         """Return the ``ERRORDetector:SYMBOL:TEST:TIME:HOURS`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed time hours component for symbol error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:TIME:HOURS?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:SYMBOL:TEST:TIME:HOURS?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:TIME:HOURS?
+            ```
         """
         return self._hours
 
@@ -392,21 +391,20 @@ class ErrordetectorSymbolTestTime(SCPICmdRead):
     def minutes(self) -> ErrordetectorSymbolTestTimeMinutes:
         """Return the ``ERRORDetector:SYMBOL:TEST:TIME:MINUTES`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed time minutes component for symbol error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ERRORDetector:SYMBOL:TEST:TIME:MINUTES?`` query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:SYMBOL:TEST:TIME:MINUTES?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:TIME:MINUTES?
+            ```
         """
         return self._minutes
 
@@ -414,21 +412,20 @@ class ErrordetectorSymbolTestTime(SCPICmdRead):
     def seconds(self) -> ErrordetectorSymbolTestTimeSeconds:
         """Return the ``ERRORDetector:SYMBOL:TEST:TIME:SECOnds`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed time seconds component for symbol error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ERRORDetector:SYMBOL:TEST:TIME:SECOnds?`` query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:SYMBOL:TEST:TIME:SECOnds?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:TIME:SECOnds?
+            ```
         """
         return self._seconds
 
@@ -436,103 +433,98 @@ class ErrordetectorSymbolTestTime(SCPICmdRead):
 class ErrordetectorSymbolTestStatusStart(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:STATUS:START`` command.
 
-    **Description:**
+    Description:
         - This command queries the START status for symbol error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:STATUS:START?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:SYMBOL:TEST:STATUS:START?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:STATUS:START?
+        ```
     """
 
 
 class ErrordetectorSymbolTestStatusSignal(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:STATUS:SIGNAL`` command.
 
-    **Description:**
+    Description:
         - This command queries the SIGNAL status for the symbol error test.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:STATUS:SIGNAL?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:SYMBOL:TEST:STATUS:SIGNAL?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:STATUS:SIGNAL?
+        ```
     """
 
 
 class ErrordetectorSymbolTestStatusMaxAp(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:STATUS:MAX_AP`` command.
 
-    **Description:**
+    Description:
         - This command queries the ``MAX_AP`` status for the symbol error test.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:STATUS:MAX_AP?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:SYMBOL:TEST:STATUS:MAX_AP?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:STATUS:MAX_AP?
+        ```
     """
 
 
 class ErrordetectorSymbolTestStatusLock(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:STATUS:LOCK`` command.
 
-    **Description:**
+    Description:
         - This command queries the LOCK status for the symbol error test.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:STATUS:LOCK?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:SYMBOL:TEST:STATUS:LOCK?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:STATUS:LOCK?
+        ```
     """
 
 
 class ErrordetectorSymbolTestStatus(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:STATUS`` command.
 
-    **Description:**
+    Description:
         - This command queries all of the status for the symbol error test.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:STATUS?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL:TEST:STATUS?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:STATUS?
+        ```
 
     Properties:
         - ``.lock``: The ``ERRORDetector:SYMBOL:TEST:STATUS:LOCK`` command.
@@ -552,21 +544,20 @@ class ErrordetectorSymbolTestStatus(SCPICmdRead):
     def lock(self) -> ErrordetectorSymbolTestStatusLock:
         """Return the ``ERRORDetector:SYMBOL:TEST:STATUS:LOCK`` command.
 
-        **Description:**
+        Description:
             - This command queries the LOCK status for the symbol error test.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:STATUS:LOCK?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:SYMBOL:TEST:STATUS:LOCK?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:STATUS:LOCK?
+            ```
         """
         return self._lock
 
@@ -574,21 +565,20 @@ class ErrordetectorSymbolTestStatus(SCPICmdRead):
     def max_ap(self) -> ErrordetectorSymbolTestStatusMaxAp:
         """Return the ``ERRORDetector:SYMBOL:TEST:STATUS:MAX_AP`` command.
 
-        **Description:**
+        Description:
             - This command queries the ``MAX_AP`` status for the symbol error test.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ERRORDetector:SYMBOL:TEST:STATUS:MAX_AP?`` query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:SYMBOL:TEST:STATUS:MAX_AP?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:STATUS:MAX_AP?
+            ```
         """
         return self._max_ap
 
@@ -596,21 +586,20 @@ class ErrordetectorSymbolTestStatus(SCPICmdRead):
     def signal(self) -> ErrordetectorSymbolTestStatusSignal:
         """Return the ``ERRORDetector:SYMBOL:TEST:STATUS:SIGNAL`` command.
 
-        **Description:**
+        Description:
             - This command queries the SIGNAL status for the symbol error test.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ERRORDetector:SYMBOL:TEST:STATUS:SIGNAL?`` query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:SYMBOL:TEST:STATUS:SIGNAL?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:STATUS:SIGNAL?
+            ```
         """
         return self._signal
 
@@ -618,21 +607,20 @@ class ErrordetectorSymbolTestStatus(SCPICmdRead):
     def start(self) -> ErrordetectorSymbolTestStatusStart:
         """Return the ``ERRORDetector:SYMBOL:TEST:STATUS:START`` command.
 
-        **Description:**
+        Description:
             - This command queries the START status for symbol error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ERRORDetector:SYMBOL:TEST:STATUS:START?`` query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:SYMBOL:TEST:STATUS:START?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:STATUS:START?
+            ```
         """
         return self._start
 
@@ -640,215 +628,204 @@ class ErrordetectorSymbolTestStatus(SCPICmdRead):
 class ErrordetectorSymbolTestSeconds(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:SECOnds`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed duration time (in seconds) for symbol error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:SECOnds?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL:TEST:SECOnds?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:SECOnds?
+        ```
     """
 
 
 class ErrordetectorSymbolTestResults(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:RESults`` command.
 
-    **Description:**
+    Description:
         - This command queries all of the results for symbol error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:RESults?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL:TEST:RESults?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:RESults?
+        ```
     """
 
 
 class ErrordetectorSymbolTestRate(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:RATE`` command.
 
-    **Description:**
+    Description:
         - This command queries the calculated symbol error rate for symbol error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:RATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL:TEST:RATE?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:RATE?
+        ```
     """
 
 
 class ErrordetectorSymbolTestMaxaligns(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:MAXALIGNS`` command.
 
-    **Description:**
+    Description:
         - This command queries the maximum consecutive skip order sets encountered for symbol error
           testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:MAXALIGNS?``
           query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL:TEST:MAXALIGNS?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:MAXALIGNS?
+        ```
     """
 
 
 class ErrordetectorSymbolTestDuration(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:DURATION`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed duration (in units of symbols) for symbol error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:DURATION?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL:TEST:DURATION?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:DURATION?
+        ```
     """
 
 
 class ErrordetectorSymbolTestDisparity(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:DISParity`` command.
 
-    **Description:**
+    Description:
         - This command queries the disparity error count for symbol error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:DISParity?``
           query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL:TEST:DISParity?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:DISParity?
+        ```
     """
 
 
 class ErrordetectorSymbolTestCount(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:COUNt`` command.
 
-    **Description:**
+    Description:
         - This command queries the symbol error count for symbol error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:COUNt?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL:TEST:COUNt?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:COUNt?
+        ```
     """
 
 
 class ErrordetectorSymbolTestBitrate(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:BITRate`` command.
 
-    **Description:**
+    Description:
         - This command queries the calculated bit error rate for symbol error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:BITRate?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL:TEST:BITRate?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:BITRate?
+        ```
     """
 
 
 class ErrordetectorSymbolTestBitduration(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:BITDURATION`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed duration in units of bits tested for symbol error
           testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:BITDURATION?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:SYMBOL:TEST:BITDURATION?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:BITDURATION?
+        ```
     """
 
 
 class ErrordetectorSymbolTestBitcount(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:BITCOUNT`` command.
 
-    **Description:**
+    Description:
         - This command queries the bit error count (number of bad bits) for symbol error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:BITCOUNT?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL:TEST:BITCOUNT?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:BITCOUNT?
+        ```
     """
 
 
 class ErrordetectorSymbolTestBadchars(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST:BADCHARS`` command.
 
-    **Description:**
+    Description:
         - This command queries the illegal character count for symbol error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:BADCHARS?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL:TEST:BADCHARS?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST:BADCHARS?
+        ```
     """
 
 
@@ -856,27 +833,26 @@ class ErrordetectorSymbolTestBadchars(SCPICmdRead):
 class ErrordetectorSymbolTest(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:SYMBOL:TEST`` command.
 
-    **Description:**
+    Description:
         - This command initiates and terminates symbol error testing for the arguments START and
           STOP. Zeroes the symbol error results for the argument CLEAR. Re-synchronizes the
           recovered clock for the argument SYNC. This command also queries all of the symbol test
           settings and results for symbol error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL:TEST?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:SYMBOL:TEST value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL:TEST <START|STOP|CLEAR>
         - ERRORDetector:SYMBOL:TEST?
+        ```
 
-    **Info:**
+    Info:
         - ``START`` initiates symbol and bit error testing.
         - ``STOP`` terminates symbol and bit error testing.
         - ``CLEAR`` zeroes the symbol and bit error counts, duration, bit error rate, and symbol
@@ -921,21 +897,20 @@ class ErrordetectorSymbolTest(SCPICmdWrite, SCPICmdRead):
     def badchars(self) -> ErrordetectorSymbolTestBadchars:
         """Return the ``ERRORDetector:SYMBOL:TEST:BADCHARS`` command.
 
-        **Description:**
+        Description:
             - This command queries the illegal character count for symbol error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:BADCHARS?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:SYMBOL:TEST:BADCHARS?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:BADCHARS?
+            ```
         """
         return self._badchars
 
@@ -943,22 +918,21 @@ class ErrordetectorSymbolTest(SCPICmdWrite, SCPICmdRead):
     def bitcount(self) -> ErrordetectorSymbolTestBitcount:
         """Return the ``ERRORDetector:SYMBOL:TEST:BITCOUNT`` command.
 
-        **Description:**
+        Description:
             - This command queries the bit error count (number of bad bits) for symbol error
               testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:BITCOUNT?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:SYMBOL:TEST:BITCOUNT?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:BITCOUNT?
+            ```
         """
         return self._bitcount
 
@@ -966,22 +940,21 @@ class ErrordetectorSymbolTest(SCPICmdWrite, SCPICmdRead):
     def bitduration(self) -> ErrordetectorSymbolTestBitduration:
         """Return the ``ERRORDetector:SYMBOL:TEST:BITDURATION`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed duration in units of bits tested for symbol error
               testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:BITDURATION?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:SYMBOL:TEST:BITDURATION?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:BITDURATION?
+            ```
         """
         return self._bitduration
 
@@ -989,21 +962,20 @@ class ErrordetectorSymbolTest(SCPICmdWrite, SCPICmdRead):
     def bitrate(self) -> ErrordetectorSymbolTestBitrate:
         """Return the ``ERRORDetector:SYMBOL:TEST:BITRate`` command.
 
-        **Description:**
+        Description:
             - This command queries the calculated bit error rate for symbol error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:BITRate?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:SYMBOL:TEST:BITRate?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:BITRate?
+            ```
         """
         return self._bitrate
 
@@ -1011,20 +983,19 @@ class ErrordetectorSymbolTest(SCPICmdWrite, SCPICmdRead):
     def count(self) -> ErrordetectorSymbolTestCount:
         """Return the ``ERRORDetector:SYMBOL:TEST:COUNt`` command.
 
-        **Description:**
+        Description:
             - This command queries the symbol error count for symbol error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:COUNt?``
               query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL:TEST:COUNt?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:COUNt?
+            ```
         """
         return self._count
 
@@ -1032,21 +1003,20 @@ class ErrordetectorSymbolTest(SCPICmdWrite, SCPICmdRead):
     def disparity(self) -> ErrordetectorSymbolTestDisparity:
         """Return the ``ERRORDetector:SYMBOL:TEST:DISParity`` command.
 
-        **Description:**
+        Description:
             - This command queries the disparity error count for symbol error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:DISParity?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:SYMBOL:TEST:DISParity?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:DISParity?
+            ```
         """
         return self._disparity
 
@@ -1054,22 +1024,21 @@ class ErrordetectorSymbolTest(SCPICmdWrite, SCPICmdRead):
     def duration(self) -> ErrordetectorSymbolTestDuration:
         """Return the ``ERRORDetector:SYMBOL:TEST:DURATION`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed duration (in units of symbols) for symbol error
               testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:DURATION?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:SYMBOL:TEST:DURATION?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:DURATION?
+            ```
         """
         return self._duration
 
@@ -1077,22 +1046,21 @@ class ErrordetectorSymbolTest(SCPICmdWrite, SCPICmdRead):
     def maxaligns(self) -> ErrordetectorSymbolTestMaxaligns:
         """Return the ``ERRORDetector:SYMBOL:TEST:MAXALIGNS`` command.
 
-        **Description:**
+        Description:
             - This command queries the maximum consecutive skip order sets encountered for symbol
               error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:MAXALIGNS?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:SYMBOL:TEST:MAXALIGNS?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:MAXALIGNS?
+            ```
         """
         return self._maxaligns
 
@@ -1100,19 +1068,18 @@ class ErrordetectorSymbolTest(SCPICmdWrite, SCPICmdRead):
     def rate(self) -> ErrordetectorSymbolTestRate:
         """Return the ``ERRORDetector:SYMBOL:TEST:RATE`` command.
 
-        **Description:**
+        Description:
             - This command queries the calculated symbol error rate for symbol error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:RATE?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL:TEST:RATE?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:RATE?
+            ```
         """
         return self._rate
 
@@ -1120,21 +1087,20 @@ class ErrordetectorSymbolTest(SCPICmdWrite, SCPICmdRead):
     def results(self) -> ErrordetectorSymbolTestResults:
         """Return the ``ERRORDetector:SYMBOL:TEST:RESults`` command.
 
-        **Description:**
+        Description:
             - This command queries all of the results for symbol error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:RESults?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:SYMBOL:TEST:RESults?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:RESults?
+            ```
         """
         return self._results
 
@@ -1142,21 +1108,20 @@ class ErrordetectorSymbolTest(SCPICmdWrite, SCPICmdRead):
     def seconds(self) -> ErrordetectorSymbolTestSeconds:
         """Return the ``ERRORDetector:SYMBOL:TEST:SECOnds`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed duration time (in seconds) for symbol error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:SECOnds?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:SYMBOL:TEST:SECOnds?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:SECOnds?
+            ```
         """
         return self._seconds
 
@@ -1164,21 +1129,20 @@ class ErrordetectorSymbolTest(SCPICmdWrite, SCPICmdRead):
     def status(self) -> ErrordetectorSymbolTestStatus:
         """Return the ``ERRORDetector:SYMBOL:TEST:STATUS`` command.
 
-        **Description:**
+        Description:
             - This command queries all of the status for the symbol error test.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:STATUS?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:SYMBOL:TEST:STATUS?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:STATUS?
+            ```
 
         Sub-properties:
             - ``.lock``: The ``ERRORDetector:SYMBOL:TEST:STATUS:LOCK`` command.
@@ -1192,20 +1156,19 @@ class ErrordetectorSymbolTest(SCPICmdWrite, SCPICmdRead):
     def time(self) -> ErrordetectorSymbolTestTime:
         """Return the ``ERRORDetector:SYMBOL:TEST:TIME`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed time (in days, hours, minutes, and seconds) for
               symbol error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST:TIME?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL:TEST:TIME?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST:TIME?
+            ```
 
         Sub-properties:
             - ``.days``: The ``ERRORDetector:SYMBOL:TEST:TIME:DAYS`` command.
@@ -1219,19 +1182,18 @@ class ErrordetectorSymbolTest(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorSymbol(SCPICmdRead):
     """The ``ERRORDetector:SYMBOL`` command.
 
-    **Description:**
+    Description:
         - This command queries all symbol error settings, status, and results.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SYMBOL?
+        ```
 
     Properties:
         - ``.test``: The ``ERRORDetector:SYMBOL:TEST`` command.
@@ -1245,27 +1207,26 @@ class ErrordetectorSymbol(SCPICmdRead):
     def test(self) -> ErrordetectorSymbolTest:
         """Return the ``ERRORDetector:SYMBOL:TEST`` command.
 
-        **Description:**
+        Description:
             - This command initiates and terminates symbol error testing for the arguments START and
               STOP. Zeroes the symbol error results for the argument CLEAR. Re-synchronizes the
               recovered clock for the argument SYNC. This command also queries all of the symbol
               test settings and results for symbol error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL:TEST?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL:TEST?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:SYMBOL:TEST value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL:TEST <START|STOP|CLEAR>
             - ERRORDetector:SYMBOL:TEST?
+            ```
 
-        **Info:**
+        Info:
             - ``START`` initiates symbol and bit error testing.
             - ``STOP`` terminates symbol and bit error testing.
             - ``CLEAR`` zeroes the symbol and bit error counts, duration, bit error rate, and symbol
@@ -1293,25 +1254,24 @@ class ErrordetectorSymbol(SCPICmdRead):
 class ErrordetectorStopwhen(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:STOPWHEN`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the stopping condition. The test can be stopped when the
           count, time, or number of errors elapses. If the STOPWHEN value is MANUAL, the test runs
           until a TEST STOP command is received.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:STOPWHEN?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:STOPWHEN?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:STOPWHEN value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:STOPWHEN <MANUAL | COUNT | TIME | ERROR>DPO70000SX<MANUAL>
         - ERRORDetector:STOPWHEN?
+        ```
 
-    **Info:**
+    Info:
         - ``MANUAL`` indicates that the test must be stopped by issuing a TEST STOP command. This is
           the default.
         - ``COUNT`` stops the test when ``DURATION:COUNT`` comparisons are made. The comparisons can
@@ -1324,7 +1284,7 @@ class ErrordetectorStopwhen(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorStatus(SCPICmdRead):
     """The ``ERRORDetector:STATus`` command.
 
-    **Description:**
+    Description:
         - Queries only the 'most significant' or 'summary' status of the error detector. All of the
           status flags for each test type may be obtained from the
           ``ERRORdetector:<TESTTYPE>:TEST:STATUS`` commands. LOCK refers to the recovered clock.
@@ -1334,40 +1294,38 @@ class ErrordetectorStatus(SCPICmdRead):
           maximum consecutive Align (or SkipSets) Primitives as specified in the ERRORDetector:
           <TESTTYPE>MAXALIGNS command
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:STATus?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:STATus?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:STATus?
+        ```
     """
 
 
 class ErrordetectorState(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:STATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the status of the error option. STATE must be ON to use the
           error detector feature.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:STATE?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:STATE {<NR1>| OFF | ON}?DPO70000SX{OFF | ON}
         - ERRORDetector:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the software error detector feature.
         - ``OFF`` disables the software error detector feature. This is the default.
         - ``<NR1>`` = 0 disables the error detector; any other value enables the error detector.
@@ -1377,23 +1335,22 @@ class ErrordetectorState(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorStandard(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:STANdard`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the standard selection for error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:STANdard?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:STANdard?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:STANdard value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:STANdard <LIST>
         - ERRORDetector:STANdard?
+        ```
 
-    **Info:**
+    Info:
         - ``<LIST>`` is the supported standard.
     """
 
@@ -1401,23 +1358,22 @@ class ErrordetectorStandard(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorSsc(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:SSC`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the status of the spread spectrum clock tracking option.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SSC?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SSC?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:SSC value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SSC {ON|OFF}
         - ERRORDetector:SSC?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables spread spectrum clock tracking. For error detector, the spread spectrum
           clock tracking should always be turned on.
         - ``OFF`` disables spread spectrum clock tracking. For serial trigger, the spread spectrum
@@ -1428,23 +1384,22 @@ class ErrordetectorSsc(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorSignaltype(SCPICmdWrite):
     """The ``ERRORDetector:SIGnaltype`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries error detector Signal Type control. Setting the signal type
           establishes the bit rate appropriate for the standard, as well as establishing the testing
           algorithm. Custom bit rates may be used as well. See the ``ERRORDetector:BITRATE`` and
           ``ERRORDetector:BITRATE:VALue`` commands.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``ERRORDetector:SIGnaltype value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SIGnaltype {SATAGEN<x>| USB3|PCIEGEN<x>|ANY8B10B|PRBS7|PRBS9}?DPO70000SX{CUSTOM | PRBS7 | PRBS9 | PRBS11 | PRBS16 |PRBS23}
+        ```
 
-    **Info:**
+    Info:
         - ``The DPO70000SX only supports PRBS7, PRBS9, PRBS11, PRBS16, PRBS23, and CUSTOM.``
     """  # noqa: E501
 
@@ -1452,7 +1407,7 @@ class ErrordetectorSignaltype(SCPICmdWrite):
 class ErrordetectorSendemail(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:SENDEMAIL`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries error detector Send Email control. When set to ON, a email
           will be sent to the recipient, defined elsewhere in the PI, when the error detector
           detects an error (because detecting an error triggers the instrument). The default number
@@ -1460,21 +1415,20 @@ class ErrordetectorSendemail(SCPICmdWrite, SCPICmdRead):
           or SaveWfm parameters to ON, the email will contain these items. Send Email is an
           alternate way of setting the E-mail on Trigger actions defined elsewhere in the PI.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SENDEMAIL?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SENDEMAIL?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:SENDEMAIL value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SENDEMAIL {OFF | ON}
         - ERRORDetector:SENDEMAIL?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` disables the send email feature.
         - ``ON`` enables the send email feature.
     """
@@ -1483,24 +1437,23 @@ class ErrordetectorSendemail(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorScrambled(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:SCRAMBLED`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the status of the error detection data scrambling option.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SCRAMBLED?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SCRAMBLED?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:SCRAMBLED value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SCRAMBLED {ON | OFF}
         - ERRORDetector:SCRAMBLED?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the error detection data scrambling option. This is the default option.
         - ``OFF`` disables the error detection data scrambling option.
     """
@@ -1509,7 +1462,7 @@ class ErrordetectorScrambled(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorSavewfm(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:SAVEWFM`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries error detector Save Waveform (WFM) control. When set to ON, a
           waveform object will be made when the error detector detects an error (because detecting
           an error triggers the instrument). The waveforms are saved in the
@@ -1520,20 +1473,19 @@ class ErrordetectorSavewfm(SCPICmdWrite, SCPICmdRead):
           as an attachedment. SaveImage is an alternate way of setting the Save on Trigger actions
           defined elsewhere in the PI.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SAVEWFM?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SAVEWFM?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:SAVEWFM value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SAVEWFM {OFF | ON}
         - ERRORDetector:SAVEWFM?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` turns off the error detector save waveform feature.
         - ``ON`` turns on the error detector save waveform feature.
     """
@@ -1542,7 +1494,7 @@ class ErrordetectorSavewfm(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorSaveimage(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:SAVEIMAGE`` command.
 
-    **Description:**
+    Description:
         - Sets or queries error detector Save Image control. When set to ON, a screen shot will be
           made when the error detector detects an error (because detecting an error triggers the
           scope). The images are saved in the C:Users<yourName> TektronixTekScopeSaveOnTrigger
@@ -1552,46 +1504,44 @@ class ErrordetectorSaveimage(SCPICmdWrite, SCPICmdRead):
           the recipient (set elsewhere in the trigger PI). SaveImage is an alternate way of setting
           the Save on Trigger actions defined elsewhere in the PI.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:SAVEIMAGE?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:SAVEIMAGE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:SAVEIMAGE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:SAVEIMAGE {OFF | ON}
         - ERRORDetector:SAVEIMAGE?
+        ```
     """
 
 
 class ErrordetectorPresetApply(SCPICmdWriteNoArguments):
     """The ``ERRORDetector:PREset:APPLY`` command.
 
-    **Description:**
+    Description:
         - This command causes selected preset setup to be applied. Until this command is received by
           the instrument, the selected preset has not been applied. This mimics the user interface
           operation, which allows window shopping various preset setups, without actually applying
           them to the instrument setup.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``ERRORDetector:PREset:APPLY`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:PREset:APPLY
+        ```
     """
 
 
 class ErrordetectorPreset(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:PREset`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries error detector font preset selection. A number of preset
           setups are selected by this parameter to cover the more common cases. The preset names
           attempt to indicate the standard, signal pattern, and test type employed. The bit rate
@@ -1604,14 +1554,13 @@ class ErrordetectorPreset(SCPICmdWrite, SCPICmdRead):
           Pattern. ``USB3_SYMBOL`` preset expects the USB3 standard ``CP0_SKP`` signal. You can set
           a PATTERNNAME for each setup.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``ERRORDetector:PREset value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:PREset {SATA1_CJTPAT_BIT | SATA2_CJTPAT_BIT | SATA3_CJTPAT_BIT | SATA3_FRAME | SATA3_CHAR | SATA3_HFTP_BIT | SATA3_LBP_BIT | SATA3_LFTP_BIT | SATA3_MFTP_BIT | USB3_SYMBOL | USB3_CHAR | PCIE1_COMP_BIT | PCIE2_COMP_BIT | ANY_CJTPAT_BIT | ANY_CJTPAT_CHAR | CUSTOM}DPO70000SX{CUSTOM_SETUP | PRBS7_BIT_ERROR | PRBS9_BIT_ERROR | PRBS11_BIT_ERROR | PRBS16_BIT_ERROR | PRBS23_BIT_ERROR}
+        ```
 
     Properties:
         - ``.apply``: The ``ERRORDetector:PREset:APPLY`` command.
@@ -1625,20 +1574,19 @@ class ErrordetectorPreset(SCPICmdWrite, SCPICmdRead):
     def apply(self) -> ErrordetectorPresetApply:
         """Return the ``ERRORDetector:PREset:APPLY`` command.
 
-        **Description:**
+        Description:
             - This command causes selected preset setup to be applied. Until this command is
               received by the instrument, the selected preset has not been applied. This mimics the
               user interface operation, which allows window shopping various preset setups, without
               actually applying them to the instrument setup.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``ERRORDetector:PREset:APPLY`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:PREset:APPLY
+            ```
         """
         return self._apply
 
@@ -1646,26 +1594,25 @@ class ErrordetectorPreset(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorPatternname(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:PATTERNNAME`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the pattern name stored in the setup file. Setting this name
           has no functional effect on the instrument, but it is a convenient reminder to users as to
           which setup is in effect.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:PATTERNNAME?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:PATTERNNAME?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:PATTERNNAME value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:PATTERNNAME <Qstring>
         - ERRORDetector:PATTERNNAME?
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` is a quoted string representing a pattern name.
     """
 
@@ -1673,25 +1620,24 @@ class ErrordetectorPatternname(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorMaxaligns(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:MAXALIGNS`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the maximum consecutive align primitives before a
           ``MAX_AP_FAIL`` error is reported.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:MAXALIGNS?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:MAXALIGNS?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:MAXALIGNS value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:MAXALIGNS <NR1>
         - ERRORDetector:MAXALIGNS?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is a integer. The limit values are 0 to 63 and the default is 8.
     """
 
@@ -1699,101 +1645,96 @@ class ErrordetectorMaxaligns(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorFrameTestTimeSeconds(SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST:TIME:SECOnds`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed time seconds component for frame error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:TIME:SECOnds?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:FRAme:TEST:TIME:SECOnds?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST:TIME:SECOnds?
+        ```
     """
 
 
 class ErrordetectorFrameTestTimeMinutes(SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST:TIME:MINUTES`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed time minutes component for frame error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:TIME:MINUTES?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:FRAme:TEST:TIME:MINUTES?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST:TIME:MINUTES?
+        ```
     """
 
 
 class ErrordetectorFrameTestTimeHours(SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST:TIME:HOURS`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed time hours component for frame error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:TIME:HOURS?``
           query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:TEST:TIME:HOURS?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST:TIME:HOURS?
+        ```
     """
 
 
 class ErrordetectorFrameTestTimeDays(SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST:TIME:DAYS`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed time days component for frame error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:TIME:DAYS?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:TEST:TIME:DAYS?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST:TIME:DAYS?
+        ```
     """
 
 
 class ErrordetectorFrameTestTime(SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST:TIME`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed time (in days, hours, minutes, and seconds) for frame
           error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:TIME?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:TEST:TIME?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST:TIME?
+        ```
 
     Properties:
         - ``.days``: The ``ERRORDetector:FRAme:TEST:TIME:DAYS`` command.
@@ -1813,21 +1754,20 @@ class ErrordetectorFrameTestTime(SCPICmdRead):
     def days(self) -> ErrordetectorFrameTestTimeDays:
         """Return the ``ERRORDetector:FRAme:TEST:TIME:DAYS`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed time days component for frame error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:TIME:DAYS?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:FRAme:TEST:TIME:DAYS?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST:TIME:DAYS?
+            ```
         """
         return self._days
 
@@ -1835,21 +1775,20 @@ class ErrordetectorFrameTestTime(SCPICmdRead):
     def hours(self) -> ErrordetectorFrameTestTimeHours:
         """Return the ``ERRORDetector:FRAme:TEST:TIME:HOURS`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed time hours component for frame error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:TIME:HOURS?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:FRAme:TEST:TIME:HOURS?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST:TIME:HOURS?
+            ```
         """
         return self._hours
 
@@ -1857,21 +1796,20 @@ class ErrordetectorFrameTestTime(SCPICmdRead):
     def minutes(self) -> ErrordetectorFrameTestTimeMinutes:
         """Return the ``ERRORDetector:FRAme:TEST:TIME:MINUTES`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed time minutes component for frame error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:TIME:MINUTES?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:FRAme:TEST:TIME:MINUTES?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST:TIME:MINUTES?
+            ```
         """
         return self._minutes
 
@@ -1879,21 +1817,20 @@ class ErrordetectorFrameTestTime(SCPICmdRead):
     def seconds(self) -> ErrordetectorFrameTestTimeSeconds:
         """Return the ``ERRORDetector:FRAme:TEST:TIME:SECOnds`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed time seconds component for frame error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:TIME:SECOnds?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:FRAme:TEST:TIME:SECOnds?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST:TIME:SECOnds?
+            ```
         """
         return self._seconds
 
@@ -1901,103 +1838,98 @@ class ErrordetectorFrameTestTime(SCPICmdRead):
 class ErrordetectorFrameTestStatusStart(SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST:STATUS:START`` command.
 
-    **Description:**
+    Description:
         - This command returns the START status for frame error tests.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:STATUS:START?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:FRAme:TEST:STATUS:START?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST:STATUS:START?
+        ```
     """
 
 
 class ErrordetectorFrameTestStatusSignal(SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST:STATUS:SIGNAL`` command.
 
-    **Description:**
+    Description:
         - This command queries the SIGNAL status for the frame error test.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:STATUS:SIGNAL?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:FRAme:TEST:STATUS:SIGNAL?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST:STATUS:SIGNAL?
+        ```
     """
 
 
 class ErrordetectorFrameTestStatusMaxAp(SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST:STATUS:MAX_AP`` command.
 
-    **Description:**
+    Description:
         - This command queries the ``MAX_AP`` status for the frame error test.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:STATUS:MAX_AP?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:FRAme:TEST:STATUS:MAX_AP?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST:STATUS:MAX_AP?
+        ```
     """
 
 
 class ErrordetectorFrameTestStatusLock(SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST:STATUS:LOCK`` command.
 
-    **Description:**
+    Description:
         - This command queries the LOCK status for the frame error test.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:STATUS:LOCK?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:FRAme:TEST:STATUS:LOCK?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST:STATUS:LOCK?
+        ```
     """
 
 
 class ErrordetectorFrameTestStatus(SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST:STATUS`` command.
 
-    **Description:**
+    Description:
         - This command queries all of the status for frame error status.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:STATUS?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:TEST:STATUS?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST:STATUS?
+        ```
 
     Properties:
         - ``.lock``: The ``ERRORDetector:FRAme:TEST:STATUS:LOCK`` command.
@@ -2017,21 +1949,20 @@ class ErrordetectorFrameTestStatus(SCPICmdRead):
     def lock(self) -> ErrordetectorFrameTestStatusLock:
         """Return the ``ERRORDetector:FRAme:TEST:STATUS:LOCK`` command.
 
-        **Description:**
+        Description:
             - This command queries the LOCK status for the frame error test.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:STATUS:LOCK?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:FRAme:TEST:STATUS:LOCK?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST:STATUS:LOCK?
+            ```
         """
         return self._lock
 
@@ -2039,21 +1970,20 @@ class ErrordetectorFrameTestStatus(SCPICmdRead):
     def max_ap(self) -> ErrordetectorFrameTestStatusMaxAp:
         """Return the ``ERRORDetector:FRAme:TEST:STATUS:MAX_AP`` command.
 
-        **Description:**
+        Description:
             - This command queries the ``MAX_AP`` status for the frame error test.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ERRORDetector:FRAme:TEST:STATUS:MAX_AP?`` query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:FRAme:TEST:STATUS:MAX_AP?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST:STATUS:MAX_AP?
+            ```
         """
         return self._max_ap
 
@@ -2061,21 +1991,20 @@ class ErrordetectorFrameTestStatus(SCPICmdRead):
     def signal(self) -> ErrordetectorFrameTestStatusSignal:
         """Return the ``ERRORDetector:FRAme:TEST:STATUS:SIGNAL`` command.
 
-        **Description:**
+        Description:
             - This command queries the SIGNAL status for the frame error test.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ERRORDetector:FRAme:TEST:STATUS:SIGNAL?`` query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:FRAme:TEST:STATUS:SIGNAL?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST:STATUS:SIGNAL?
+            ```
         """
         return self._signal
 
@@ -2083,21 +2012,20 @@ class ErrordetectorFrameTestStatus(SCPICmdRead):
     def start(self) -> ErrordetectorFrameTestStatusStart:
         """Return the ``ERRORDetector:FRAme:TEST:STATUS:START`` command.
 
-        **Description:**
+        Description:
             - This command returns the START status for frame error tests.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:STATUS:START?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:FRAme:TEST:STATUS:START?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST:STATUS:START?
+            ```
         """
         return self._start
 
@@ -2105,153 +2033,145 @@ class ErrordetectorFrameTestStatus(SCPICmdRead):
 class ErrordetectorFrameTestSeconds(SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST:SECOnds`` command.
 
-    **Description:**
+    Description:
         - This command queries the result of elapsed duration in seconds for frame error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:SECOnds?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:TEST:SECOnds?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST:SECOnds?
+        ```
     """
 
 
 class ErrordetectorFrameTestResults(SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST:RESults`` command.
 
-    **Description:**
+    Description:
         - This command queries all the results for frame error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:RESults?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:TEST:RESults?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST:RESults?
+        ```
     """
 
 
 class ErrordetectorFrameTestRate(SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST:RATE`` command.
 
-    **Description:**
+    Description:
         - This command queries the calculated frame error rate.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:RATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:TEST:RATE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST:RATE?
+        ```
     """
 
 
 class ErrordetectorFrameTestMaxaligns(SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST:MAXALIGNS`` command.
 
-    **Description:**
+    Description:
         - This command queries the result of the maximum consecutive aligns encountered for frame
           error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:MAXALIGNS?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:TEST:MAXALIGNS?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST:MAXALIGNS?
+        ```
     """
 
 
 class ErrordetectorFrameTestDuration(SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST:DURATION`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed duration in number of frames.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:DURATION?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:TEST:DURATION?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST:DURATION?
+        ```
     """
 
 
 class ErrordetectorFrameTestDisparity(SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST:DISParity`` command.
 
-    **Description:**
+    Description:
         - This command queries the disparity error count for frame error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:DISParity?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:TEST:DISParity?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST:DISParity?
+        ```
     """
 
 
 class ErrordetectorFrameTestCount(SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST:COUNt`` command.
 
-    **Description:**
+    Description:
         - This command queries the test error count for frame error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:COUNt?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:TEST:COUNt?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST:COUNt?
+        ```
     """
 
 
 class ErrordetectorFrameTestBadchars(SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST:BADCHARS`` command.
 
-    **Description:**
+    Description:
         - This command queries the illegal character count for frame error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:BADCHARS?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:TEST:BADCHARS?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST:BADCHARS?
+        ```
     """
 
 
@@ -2259,26 +2179,25 @@ class ErrordetectorFrameTestBadchars(SCPICmdRead):
 class ErrordetectorFrameTest(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:FRAme:TEST`` command.
 
-    **Description:**
+    Description:
         - This command and query initiates and terminates frame error testing for the arguments
           START and STOP. Zeroes the frame error results for the argument CLEAR. Re-synchronizes the
           recovered clock for the argument SYNC.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:TEST?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:FRAme:TEST value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:TEST <START|STOP|CLEAR|SYNC>
         - ERRORDetector:FRAme:TEST?
+        ```
 
-    **Info:**
+    Info:
         - ``START`` initiates the frame error test counting of errors and duration.
         - ``STOP`` terminates the frame error test counting of frame errors and duration.
         - ``CLEAR`` zeroes the frame error test count, duration, and rate.
@@ -2314,21 +2233,20 @@ class ErrordetectorFrameTest(SCPICmdWrite, SCPICmdRead):
     def badchars(self) -> ErrordetectorFrameTestBadchars:
         """Return the ``ERRORDetector:FRAme:TEST:BADCHARS`` command.
 
-        **Description:**
+        Description:
             - This command queries the illegal character count for frame error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:BADCHARS?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:FRAme:TEST:BADCHARS?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST:BADCHARS?
+            ```
         """
         return self._badchars
 
@@ -2336,19 +2254,18 @@ class ErrordetectorFrameTest(SCPICmdWrite, SCPICmdRead):
     def count(self) -> ErrordetectorFrameTestCount:
         """Return the ``ERRORDetector:FRAme:TEST:COUNt`` command.
 
-        **Description:**
+        Description:
             - This command queries the test error count for frame error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:COUNt?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:TEST:COUNt?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST:COUNt?
+            ```
         """
         return self._count
 
@@ -2356,21 +2273,20 @@ class ErrordetectorFrameTest(SCPICmdWrite, SCPICmdRead):
     def disparity(self) -> ErrordetectorFrameTestDisparity:
         """Return the ``ERRORDetector:FRAme:TEST:DISParity`` command.
 
-        **Description:**
+        Description:
             - This command queries the disparity error count for frame error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:DISParity?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:FRAme:TEST:DISParity?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST:DISParity?
+            ```
         """
         return self._disparity
 
@@ -2378,21 +2294,20 @@ class ErrordetectorFrameTest(SCPICmdWrite, SCPICmdRead):
     def duration(self) -> ErrordetectorFrameTestDuration:
         """Return the ``ERRORDetector:FRAme:TEST:DURATION`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed duration in number of frames.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:DURATION?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:FRAme:TEST:DURATION?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST:DURATION?
+            ```
         """
         return self._duration
 
@@ -2400,22 +2315,21 @@ class ErrordetectorFrameTest(SCPICmdWrite, SCPICmdRead):
     def maxaligns(self) -> ErrordetectorFrameTestMaxaligns:
         """Return the ``ERRORDetector:FRAme:TEST:MAXALIGNS`` command.
 
-        **Description:**
+        Description:
             - This command queries the result of the maximum consecutive aligns encountered for
               frame error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:MAXALIGNS?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:FRAme:TEST:MAXALIGNS?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST:MAXALIGNS?
+            ```
         """
         return self._maxaligns
 
@@ -2423,19 +2337,18 @@ class ErrordetectorFrameTest(SCPICmdWrite, SCPICmdRead):
     def rate(self) -> ErrordetectorFrameTestRate:
         """Return the ``ERRORDetector:FRAme:TEST:RATE`` command.
 
-        **Description:**
+        Description:
             - This command queries the calculated frame error rate.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:RATE?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:TEST:RATE?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST:RATE?
+            ```
         """
         return self._rate
 
@@ -2443,21 +2356,20 @@ class ErrordetectorFrameTest(SCPICmdWrite, SCPICmdRead):
     def results(self) -> ErrordetectorFrameTestResults:
         """Return the ``ERRORDetector:FRAme:TEST:RESults`` command.
 
-        **Description:**
+        Description:
             - This command queries all the results for frame error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:RESults?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:FRAme:TEST:RESults?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST:RESults?
+            ```
         """
         return self._results
 
@@ -2465,22 +2377,21 @@ class ErrordetectorFrameTest(SCPICmdWrite, SCPICmdRead):
     def seconds(self) -> ErrordetectorFrameTestSeconds:
         """Return the ``ERRORDetector:FRAme:TEST:SECOnds`` command.
 
-        **Description:**
+        Description:
             - This command queries the result of elapsed duration in seconds for frame error
               testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:SECOnds?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:FRAme:TEST:SECOnds?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST:SECOnds?
+            ```
         """
         return self._seconds
 
@@ -2488,20 +2399,19 @@ class ErrordetectorFrameTest(SCPICmdWrite, SCPICmdRead):
     def status(self) -> ErrordetectorFrameTestStatus:
         """Return the ``ERRORDetector:FRAme:TEST:STATUS`` command.
 
-        **Description:**
+        Description:
             - This command queries all of the status for frame error status.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:STATUS?``
               query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:TEST:STATUS?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST:STATUS?
+            ```
 
         Sub-properties:
             - ``.lock``: The ``ERRORDetector:FRAme:TEST:STATUS:LOCK`` command.
@@ -2515,20 +2425,19 @@ class ErrordetectorFrameTest(SCPICmdWrite, SCPICmdRead):
     def time(self) -> ErrordetectorFrameTestTime:
         """Return the ``ERRORDetector:FRAme:TEST:TIME`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed time (in days, hours, minutes, and seconds) for frame
               error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST:TIME?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:TEST:TIME?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST:TIME?
+            ```
 
         Sub-properties:
             - ``.days``: The ``ERRORDetector:FRAme:TEST:TIME:DAYS`` command.
@@ -2542,24 +2451,23 @@ class ErrordetectorFrameTest(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorFrameSof(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:FRAme:SOF`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the Start of Frame for frame error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:SOF?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:SOF?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:FRAme:SOF value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:SOF <Qstring>
         - ERRORDetector:FRAme:SOF?
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` is a quoted string representing a 32-bit pattern.
     """
 
@@ -2567,10 +2475,10 @@ class ErrordetectorFrameSof(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorFrameInitialcrcvalue(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:FRAme:INITIALCRCVALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the initial CRC value for frame error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:INITIALCRCVALue?``
           query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:INITIALCRCVALue?``
@@ -2578,14 +2486,13 @@ class ErrordetectorFrameInitialcrcvalue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ERRORDetector:FRAme:INITIALCRCVALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:INITIALCRCVALue <NR1>
         - ERRORDetector:FRAme:INITIALCRCVALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is a value defined by the selected standard.
     """
 
@@ -2593,24 +2500,23 @@ class ErrordetectorFrameInitialcrcvalue(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorFrameEof(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:FRAme:EOF`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the End of Frame for frame error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:EOF?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:EOF?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:FRAme:EOF value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme:EOF <Qstring>
         - ERRORDetector:FRAme:EOF?
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` is a quoted string representing a 32-bit pattern.
     """
 
@@ -2618,19 +2524,18 @@ class ErrordetectorFrameEof(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorFrame(SCPICmdRead):
     """The ``ERRORDetector:FRAme`` command.
 
-    **Description:**
+    Description:
         - This command queries all frame error settings, status, and results.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FRAme?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FRAme?
+        ```
 
     Properties:
         - ``.eof``: The ``ERRORDetector:FRAme:EOF`` command.
@@ -2652,24 +2557,23 @@ class ErrordetectorFrame(SCPICmdRead):
     def eof(self) -> ErrordetectorFrameEof:
         """Return the ``ERRORDetector:FRAme:EOF`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the End of Frame for frame error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:EOF?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:EOF?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:FRAme:EOF value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:EOF <Qstring>
             - ERRORDetector:FRAme:EOF?
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` is a quoted string representing a 32-bit pattern.
         """
         return self._eof
@@ -2678,10 +2582,10 @@ class ErrordetectorFrame(SCPICmdRead):
     def initialcrcvalue(self) -> ErrordetectorFrameInitialcrcvalue:
         """Return the ``ERRORDetector:FRAme:INITIALCRCVALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the initial CRC value for frame error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:INITIALCRCVALue?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2690,14 +2594,13 @@ class ErrordetectorFrame(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ERRORDetector:FRAme:INITIALCRCVALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:INITIALCRCVALue <NR1>
             - ERRORDetector:FRAme:INITIALCRCVALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is a value defined by the selected standard.
         """
         return self._initialcrcvalue
@@ -2706,24 +2609,23 @@ class ErrordetectorFrame(SCPICmdRead):
     def sof(self) -> ErrordetectorFrameSof:
         """Return the ``ERRORDetector:FRAme:SOF`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Start of Frame for frame error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:SOF?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:SOF?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:FRAme:SOF value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:SOF <Qstring>
             - ERRORDetector:FRAme:SOF?
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` is a quoted string representing a 32-bit pattern.
         """
         return self._sof
@@ -2732,26 +2634,25 @@ class ErrordetectorFrame(SCPICmdRead):
     def test(self) -> ErrordetectorFrameTest:
         """Return the ``ERRORDetector:FRAme:TEST`` command.
 
-        **Description:**
+        Description:
             - This command and query initiates and terminates frame error testing for the arguments
               START and STOP. Zeroes the frame error results for the argument CLEAR. Re-synchronizes
               the recovered clock for the argument SYNC.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme:TEST?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme:TEST?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:FRAme:TEST value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme:TEST <START|STOP|CLEAR|SYNC>
             - ERRORDetector:FRAme:TEST?
+            ```
 
-        **Info:**
+        Info:
             - ``START`` initiates the frame error test counting of errors and duration.
             - ``STOP`` terminates the frame error test counting of frame errors and duration.
             - ``CLEAR`` zeroes the frame error test count, duration, and rate.
@@ -2775,24 +2676,23 @@ class ErrordetectorFrame(SCPICmdRead):
 class ErrordetectorFontsize(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:FONTSIze`` command.
 
-    **Description:**
+    Description:
         - Sets or queries error detector font size selection. Currently, the font size only applied
           the error detector UI control window.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FONTSIze?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FONTSIze?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:FONTSIze value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FONTSIze {DEFAULT | LARGE | XLARGE}
         - ERRORDetector:FONTSIze?
+        ```
 
-    **Info:**
+    Info:
         - ``DEFAULT`` sets the font size to the default size.
         - ``LARGE`` sets the font size to large.
         - ``XLARGE`` sets the font size to extra large.
@@ -2802,24 +2702,23 @@ class ErrordetectorFontsize(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorFileSave(SCPICmdWrite):
     """The ``ERRORDetector:FILE:SAVe`` command.
 
-    **Description:**
+    Description:
         - This command initiates a file save of error detector parameters to a text file. Argument
           is the file name. The setup files are supplied with the instrument. You can also save your
           own setup files. For example, the setup for the USB ``CP0_SKP`` signal test pattern is
           supplied in 'C:UsersPublicTektronixTekScopeErrorDetector
           ``UsbCP0_SKPsymbolErrorSetup``.txt'.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``ERRORDetector:FILE:SAVe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FILE:SAVe <fileName>
+        ```
 
-    **Info:**
+    Info:
         - ``<fileName>`` is the file name and file location. The default location is
           'C:UsersPublicTektronixTekScopeErrorDetector' and the setup file is in TXT format.
     """
@@ -2828,24 +2727,23 @@ class ErrordetectorFileSave(SCPICmdWrite):
 class ErrordetectorFileRecall(SCPICmdWrite):
     """The ``ERRORDetector:FILE:RECAll`` command.
 
-    **Description:**
+    Description:
         - This command initiates a file recall of error detector parameters from a text file.
           Argument is the file name. The setup files are supplied with the instrument. You can also
           create your own setup files. The setup for the USB ``CP0_SKP`` signal test pattern is
           supplied in 'C:UsersPublicTektronixTekScopeErrorDetector
           ``UsbCP0_SKPsymbolErrorSetup``.txt'.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``ERRORDetector:FILE:RECAll value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:FILE:RECAll <fileName>
+        ```
 
-    **Info:**
+    Info:
         - ``<fileName>`` is the file name and file location. The default location is
           'C:UsersPublicTektronixTekScopeErrorDetector' and the setup file is in TXT format.
     """
@@ -2854,7 +2752,7 @@ class ErrordetectorFileRecall(SCPICmdWrite):
 class ErrordetectorFile(SCPICmdRead):
     """The ``ERRORDetector:FILE`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:FILE?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:FILE?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -2873,24 +2771,23 @@ class ErrordetectorFile(SCPICmdRead):
     def recall(self) -> ErrordetectorFileRecall:
         """Return the ``ERRORDetector:FILE:RECAll`` command.
 
-        **Description:**
+        Description:
             - This command initiates a file recall of error detector parameters from a text file.
               Argument is the file name. The setup files are supplied with the instrument. You can
               also create your own setup files. The setup for the USB ``CP0_SKP`` signal test
               pattern is supplied in 'C:UsersPublicTektronixTekScopeErrorDetector
               ``UsbCP0_SKPsymbolErrorSetup``.txt'.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``ERRORDetector:FILE:RECAll value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FILE:RECAll <fileName>
+            ```
 
-        **Info:**
+        Info:
             - ``<fileName>`` is the file name and file location. The default location is
               'C:UsersPublicTektronixTekScopeErrorDetector' and the setup file is in TXT format.
         """
@@ -2900,24 +2797,23 @@ class ErrordetectorFile(SCPICmdRead):
     def save(self) -> ErrordetectorFileSave:
         """Return the ``ERRORDetector:FILE:SAVe`` command.
 
-        **Description:**
+        Description:
             - This command initiates a file save of error detector parameters to a text file.
               Argument is the file name. The setup files are supplied with the instrument. You can
               also save your own setup files. For example, the setup for the USB ``CP0_SKP`` signal
               test pattern is supplied in 'C:UsersPublicTektronixTekScopeErrorDetector
               ``UsbCP0_SKPsymbolErrorSetup``.txt'.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``ERRORDetector:FILE:SAVe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FILE:SAVe <fileName>
+            ```
 
-        **Info:**
+        Info:
             - ``<fileName>`` is the file name and file location. The default location is
               'C:UsersPublicTektronixTekScopeErrorDetector' and the setup file is in TXT format.
         """
@@ -2927,24 +2823,23 @@ class ErrordetectorFile(SCPICmdRead):
 class ErrordetectorErrorlimit(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:ERRORLIMIT`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the error limit value to use when STOPWHEN is ERROR.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:ERRORLIMIT?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:ERRORLIMIT?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:ERRORLIMIT value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:ERRORLIMIT <NR1>
         - ERRORDetector:ERRORLIMIT?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the maximum number of errors.
     """
 
@@ -2952,10 +2847,10 @@ class ErrordetectorErrorlimit(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorDurationTimeSeconds(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:DURATION:TIME:SECOnds`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the test duration time seconds component for error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:DURATION:TIME:SECOnds?``
           query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:DURATION:TIME:SECOnds?``
@@ -2963,14 +2858,13 @@ class ErrordetectorDurationTimeSeconds(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ERRORDetector:DURATION:TIME:SECOnds value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:DURATION:TIME:SECOnds <NR1>
         - ERRORDetector:DURATION:TIME:SECOnds?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is a number for the test duration time seconds component.
     """
 
@@ -2978,10 +2872,10 @@ class ErrordetectorDurationTimeSeconds(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorDurationTimeMinutes(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:DURATION:TIME:MINUTES`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the test duration time minutes component for error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:DURATION:TIME:MINUTES?``
           query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:DURATION:TIME:MINUTES?``
@@ -2989,14 +2883,13 @@ class ErrordetectorDurationTimeMinutes(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ERRORDetector:DURATION:TIME:MINUTES value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:DURATION:TIME:MINUTES <NR1>
         - ERRORDetector:DURATION:TIME:MINUTES?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is a number for the test duration time minutes component.
     """
 
@@ -3004,24 +2897,23 @@ class ErrordetectorDurationTimeMinutes(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorDurationTimeHours(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:DURATION:TIME:HOURS`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the test duration time hours component.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:DURATION:TIME:HOURS?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:DURATION:TIME:HOURS?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``ERRORDetector:DURATION:TIME:HOURS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:DURATION:TIME:HOURS <NR1>
         - ERRORDetector:DURATION:TIME:HOURS?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is a number for the test duration time hours component.
     """
 
@@ -3029,24 +2921,23 @@ class ErrordetectorDurationTimeHours(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorDurationTimeDays(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:DURATION:TIME:DAYS`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the test duration time days component.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:DURATION:TIME:DAYS?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:DURATION:TIME:DAYS?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``ERRORDetector:DURATION:TIME:DAYS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:DURATION:TIME:DAYS <NR1>
         - ERRORDetector:DURATION:TIME:DAYS?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is a number for the test duration time days component.
     """
 
@@ -3054,24 +2945,23 @@ class ErrordetectorDurationTimeDays(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorDurationTime(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:DURATION:TIME`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the test duration time in days, hours, minutes, and seconds.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:DURATION:TIME?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:DURATION:TIME?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:DURATION:TIME value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:DURATION:TIME <NR1>
         - ERRORDetector:DURATION:TIME?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the test duration time in days, hours, minutes, and seconds. It is in the
           format <DD, HH, MM, SS>.
 
@@ -3093,10 +2983,10 @@ class ErrordetectorDurationTime(SCPICmdWrite, SCPICmdRead):
     def days(self) -> ErrordetectorDurationTimeDays:
         """Return the ``ERRORDetector:DURATION:TIME:DAYS`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the test duration time days component.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:DURATION:TIME:DAYS?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3105,14 +2995,13 @@ class ErrordetectorDurationTime(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ERRORDetector:DURATION:TIME:DAYS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:DURATION:TIME:DAYS <NR1>
             - ERRORDetector:DURATION:TIME:DAYS?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is a number for the test duration time days component.
         """
         return self._days
@@ -3121,10 +3010,10 @@ class ErrordetectorDurationTime(SCPICmdWrite, SCPICmdRead):
     def hours(self) -> ErrordetectorDurationTimeHours:
         """Return the ``ERRORDetector:DURATION:TIME:HOURS`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the test duration time hours component.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:DURATION:TIME:HOURS?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3133,14 +3022,13 @@ class ErrordetectorDurationTime(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ERRORDetector:DURATION:TIME:HOURS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:DURATION:TIME:HOURS <NR1>
             - ERRORDetector:DURATION:TIME:HOURS?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is a number for the test duration time hours component.
         """
         return self._hours
@@ -3149,11 +3037,11 @@ class ErrordetectorDurationTime(SCPICmdWrite, SCPICmdRead):
     def minutes(self) -> ErrordetectorDurationTimeMinutes:
         """Return the ``ERRORDetector:DURATION:TIME:MINUTES`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the test duration time minutes component for error
               testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:DURATION:TIME:MINUTES?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3162,14 +3050,13 @@ class ErrordetectorDurationTime(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ERRORDetector:DURATION:TIME:MINUTES value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:DURATION:TIME:MINUTES <NR1>
             - ERRORDetector:DURATION:TIME:MINUTES?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is a number for the test duration time minutes component.
         """
         return self._minutes
@@ -3178,11 +3065,11 @@ class ErrordetectorDurationTime(SCPICmdWrite, SCPICmdRead):
     def seconds(self) -> ErrordetectorDurationTimeSeconds:
         """Return the ``ERRORDetector:DURATION:TIME:SECOnds`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the test duration time seconds component for error
               testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:DURATION:TIME:SECOnds?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3191,14 +3078,13 @@ class ErrordetectorDurationTime(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ERRORDetector:DURATION:TIME:SECOnds value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:DURATION:TIME:SECOnds <NR1>
             - ERRORDetector:DURATION:TIME:SECOnds?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is a number for the test duration time seconds component.
         """
         return self._seconds
@@ -3207,24 +3093,23 @@ class ErrordetectorDurationTime(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorDurationSeconds(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:DURATION:SECOnds`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the test duration in seconds.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:DURATION:SECOnds?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:DURATION:SECOnds?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:DURATION:SECOnds value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:DURATION:SECOnds <NR1>
         - ERRORDetector:DURATION:SECOnds?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the test duration in seconds.
     """
 
@@ -3232,26 +3117,25 @@ class ErrordetectorDurationSeconds(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorDurationCount(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:DURATION:COUNt`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the test duration count as the number of bits, frames,
           symbols, or characters to be tested for error testing. (Frame, symbol, and character
           testing not available on the DPO70000SX instruments.)
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:DURATION:COUNt?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:DURATION:COUNt?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:DURATION:COUNt value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:DURATION:COUNt <NR1>
         - ERRORDetector:DURATION:COUNt?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` indicates the number of bits, frame, symbols, or characters to be tested for the
           test duration count. (Frame, symbol, and character testing not available on the DPO70000SX
           instruments.).
@@ -3261,7 +3145,7 @@ class ErrordetectorDurationCount(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorDuration(SCPICmdRead):
     """The ``ERRORDetector:DURATION`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:DURATION?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:DURATION?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -3282,26 +3166,25 @@ class ErrordetectorDuration(SCPICmdRead):
     def count(self) -> ErrordetectorDurationCount:
         """Return the ``ERRORDetector:DURATION:COUNt`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the test duration count as the number of bits, frames,
               symbols, or characters to be tested for error testing. (Frame, symbol, and character
               testing not available on the DPO70000SX instruments.)
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:DURATION:COUNt?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:DURATION:COUNt?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``ERRORDetector:DURATION:COUNt value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:DURATION:COUNt <NR1>
             - ERRORDetector:DURATION:COUNt?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` indicates the number of bits, frame, symbols, or characters to be tested for
               the test duration count. (Frame, symbol, and character testing not available on the
               DPO70000SX instruments.).
@@ -3312,24 +3195,23 @@ class ErrordetectorDuration(SCPICmdRead):
     def seconds(self) -> ErrordetectorDurationSeconds:
         """Return the ``ERRORDetector:DURATION:SECOnds`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the test duration in seconds.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:DURATION:SECOnds?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:DURATION:SECOnds?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``ERRORDetector:DURATION:SECOnds value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:DURATION:SECOnds <NR1>
             - ERRORDetector:DURATION:SECOnds?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the test duration in seconds.
         """
         return self._seconds
@@ -3338,25 +3220,24 @@ class ErrordetectorDuration(SCPICmdRead):
     def time(self) -> ErrordetectorDurationTime:
         """Return the ``ERRORDetector:DURATION:TIME`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the test duration time in days, hours, minutes, and
               seconds.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:DURATION:TIME?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:DURATION:TIME?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:DURATION:TIME value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:DURATION:TIME <NR1>
             - ERRORDetector:DURATION:TIME?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the test duration time in days, hours, minutes, and seconds. It is in the
               format <DD, HH, MM, SS>.
 
@@ -3372,23 +3253,22 @@ class ErrordetectorDuration(SCPICmdRead):
 class ErrordetectorChannel(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:CHANnel`` command.
 
-    **Description:**
+    Description:
         - Sets or queries error detector channel selection.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:CHANnel?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:CHANnel?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:CHANnel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:CHANnel {CH1 | CH2 | CH3 | CH4}
         - ERRORDetector:CHANnel?
+        ```
 
-    **Info:**
+    Info:
         - ``CHx`` is the error detector channel selection.
     """
 
@@ -3396,27 +3276,26 @@ class ErrordetectorChannel(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorBitrateValue(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:BITRate:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries error detector custom bitrate value for error detection. To
           set the custom value, you must also set ``ERRORDetector:BITTRATE`` to CUSTOM. The bitrate
           range is nominally 1.25 Gb/s to 6.25 Gb/s. Special coding also allows the custom bitrate
           to range from 200 Mb/s to 350 Mb/s for PRBS7 and PRBS9 only.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BITRate:VALue?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BITRate:VALue?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:BITRate:VALue value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BITRate:VALue <NR3>
         - ERRORDetector:BITRate:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the custom bit rate value.
     """
 
@@ -3424,27 +3303,26 @@ class ErrordetectorBitrateValue(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorBitrate(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:BITRate`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries error detector bitrate enumeration for error detection. There
           are two bitrate enumerations for each standard: 1) The standard bitrate, for example
           RATE6000 (meaning 6.0Gb/s, for SATA Gen3); and 2) Custom. When Custom is selected the
           ``ERRORDetector:BITRATE:VALUE`` must also be set to the specific desired bitrate. For
           example, 6.1 Gb/s.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BITRate?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BITRate?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:BITRate value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BITRate {RATEcustom:CUSTOM |RATE312000000:RATE312 |RATE1250000000:RATE1250 |RATE1500000000:RATE1500 |RATE2125000000:RATE2125 |RATE2500000000:RATE2500 |RATE3000000000:RATE3000 |RATE3125000000:RATE3125 |RATE4250000000:RATE4250 |RATE5000000000:RATE5000 |RATE6000000000:RATE6000 |RATE6250000000:RATE6250}DPO70000SX{RATE3200 | RATE3600 | RATE4000 | RATE4400 | RATE4800 | RATE5200 | RATE5600 | RATE6000 | RATE6400 | CUSTOM}
         - ERRORDetector:BITRate?
+        ```
 
-    **Info:**
+    Info:
         - ``RATE3200..to..RATE6400`` sets the error detector bit rate to the specified value.
           RATE3200 indicates a bitrate of 3.2 Gb/s, etc.
         - ``:ERRORDETECTOR:BITRATE:VALUE`` command.
@@ -3461,27 +3339,26 @@ class ErrordetectorBitrate(SCPICmdWrite, SCPICmdRead):
     def value(self) -> ErrordetectorBitrateValue:
         """Return the ``ERRORDetector:BITRate:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries error detector custom bitrate value for error detection.
               To set the custom value, you must also set ``ERRORDetector:BITTRATE`` to CUSTOM. The
               bitrate range is nominally 1.25 Gb/s to 6.25 Gb/s. Special coding also allows the
               custom bitrate to range from 200 Mb/s to 350 Mb/s for PRBS7 and PRBS9 only.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BITRate:VALue?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:BITRate:VALue?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:BITRate:VALue value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BITRate:VALue <NR3>
             - ERRORDetector:BITRate:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the custom bit rate value.
         """
         return self._value
@@ -3490,98 +3367,93 @@ class ErrordetectorBitrate(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorBitTestTimeSeconds(SCPICmdRead):
     """The ``ERRORDetector:BIT:TEST:TIME:SECOnds`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed time seconds component for bit error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:TIME:SECOnds?``
           query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:TIME:SECOnds?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:TEST:TIME:SECOnds?
+        ```
     """
 
 
 class ErrordetectorBitTestTimeMinutes(SCPICmdRead):
     """The ``ERRORDetector:BIT:TEST:TIME:MINUTES`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed time minutes component for bit error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:TIME:MINUTES?``
           query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:TIME:MINUTES?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:TEST:TIME:MINUTES?
+        ```
     """
 
 
 class ErrordetectorBitTestTimeHours(SCPICmdRead):
     """The ``ERRORDetector:BIT:TEST:TIME:HOURS`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed time hours component for bit error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:TIME:HOURS?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:TIME:HOURS?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:TEST:TIME:HOURS?
+        ```
     """
 
 
 class ErrordetectorBitTestTimeDays(SCPICmdRead):
     """The ``ERRORDetector:BIT:TEST:TIME:DAYS`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed time days component for bit error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:TIME:DAYS?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:TIME:DAYS?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:TEST:TIME:DAYS?
+        ```
     """
 
 
 class ErrordetectorBitTestTime(SCPICmdRead):
     """The ``ERRORDetector:BIT:TEST:TIME`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed time (in days, hours, minutes, and seconds) for bit error
           testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:TIME?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:TIME?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:TEST:TIME?
+        ```
 
     Properties:
         - ``.days``: The ``ERRORDetector:BIT:TEST:TIME:DAYS`` command.
@@ -3601,21 +3473,20 @@ class ErrordetectorBitTestTime(SCPICmdRead):
     def days(self) -> ErrordetectorBitTestTimeDays:
         """Return the ``ERRORDetector:BIT:TEST:TIME:DAYS`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed time days component for bit error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:TIME:DAYS?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:BIT:TEST:TIME:DAYS?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:TEST:TIME:DAYS?
+            ```
         """
         return self._days
 
@@ -3623,21 +3494,20 @@ class ErrordetectorBitTestTime(SCPICmdRead):
     def hours(self) -> ErrordetectorBitTestTimeHours:
         """Return the ``ERRORDetector:BIT:TEST:TIME:HOURS`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed time hours component for bit error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:TIME:HOURS?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:BIT:TEST:TIME:HOURS?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:TEST:TIME:HOURS?
+            ```
         """
         return self._hours
 
@@ -3645,21 +3515,20 @@ class ErrordetectorBitTestTime(SCPICmdRead):
     def minutes(self) -> ErrordetectorBitTestTimeMinutes:
         """Return the ``ERRORDetector:BIT:TEST:TIME:MINUTES`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed time minutes component for bit error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:TIME:MINUTES?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:BIT:TEST:TIME:MINUTES?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:TEST:TIME:MINUTES?
+            ```
         """
         return self._minutes
 
@@ -3667,21 +3536,20 @@ class ErrordetectorBitTestTime(SCPICmdRead):
     def seconds(self) -> ErrordetectorBitTestTimeSeconds:
         """Return the ``ERRORDetector:BIT:TEST:TIME:SECOnds`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed time seconds component for bit error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:TIME:SECOnds?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:BIT:TEST:TIME:SECOnds?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:TEST:TIME:SECOnds?
+            ```
         """
         return self._seconds
 
@@ -3689,119 +3557,113 @@ class ErrordetectorBitTestTime(SCPICmdRead):
 class ErrordetectorBitTestStatusSync(SCPICmdRead):
     """The ``ERRORDetector:BIT:TEST:STATUS:SYNC`` command.
 
-    **Description:**
+    Description:
         - This command queries the SYNC status for bit error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:STATUS:SYNC?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:STATUS:SYNC?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:TEST:STATUS:SYNC?
+        ```
     """
 
 
 class ErrordetectorBitTestStatusStart(SCPICmdRead):
     """The ``ERRORDetector:BIT:TEST:STATUS:START`` command.
 
-    **Description:**
+    Description:
         - This command queries the START status for bit error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:STATUS:START?``
           query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:STATUS:START?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:TEST:STATUS:START?
+        ```
     """
 
 
 class ErrordetectorBitTestStatusSignal(SCPICmdRead):
     """The ``ERRORDetector:BIT:TEST:STATUS:SIGNAL`` command.
 
-    **Description:**
+    Description:
         - This command queries the SIGNAL status for bit error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:STATUS:SIGNAL?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:BIT:TEST:STATUS:SIGNAL?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:TEST:STATUS:SIGNAL?
+        ```
     """
 
 
 class ErrordetectorBitTestStatusMaxAp(SCPICmdRead):
     """The ``ERRORDetector:BIT:TEST:STATUS:MAX_AP`` command.
 
-    **Description:**
+    Description:
         - This command queries the ``MAX_AP`` status for bit error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:STATUS:MAX_AP?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:BIT:TEST:STATUS:MAX_AP?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:TEST:STATUS:MAX_AP?
+        ```
     """
 
 
 class ErrordetectorBitTestStatusLock(SCPICmdRead):
     """The ``ERRORDetector:BIT:TEST:STATUS:LOCK`` command.
 
-    **Description:**
+    Description:
         - This command queries the LOCK status for bit error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:STATUS:LOCK?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:STATUS:LOCK?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:TEST:STATUS:LOCK?
+        ```
     """
 
 
 class ErrordetectorBitTestStatus(SCPICmdRead):
     """The ``ERRORDetector:BIT:TEST:STATUS`` command.
 
-    **Description:**
+    Description:
         - This command queries all of the bit error test status bits.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:STATUS?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:STATUS?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:TEST:STATUS?
+        ```
 
     Properties:
         - ``.lock``: The ``ERRORDetector:BIT:TEST:STATUS:LOCK`` command.
@@ -3823,21 +3685,20 @@ class ErrordetectorBitTestStatus(SCPICmdRead):
     def lock(self) -> ErrordetectorBitTestStatusLock:
         """Return the ``ERRORDetector:BIT:TEST:STATUS:LOCK`` command.
 
-        **Description:**
+        Description:
             - This command queries the LOCK status for bit error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:STATUS:LOCK?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:BIT:TEST:STATUS:LOCK?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:TEST:STATUS:LOCK?
+            ```
         """
         return self._lock
 
@@ -3845,21 +3706,20 @@ class ErrordetectorBitTestStatus(SCPICmdRead):
     def max_ap(self) -> ErrordetectorBitTestStatusMaxAp:
         """Return the ``ERRORDetector:BIT:TEST:STATUS:MAX_AP`` command.
 
-        **Description:**
+        Description:
             - This command queries the ``MAX_AP`` status for bit error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:STATUS:MAX_AP?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:BIT:TEST:STATUS:MAX_AP?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:TEST:STATUS:MAX_AP?
+            ```
         """
         return self._max_ap
 
@@ -3867,21 +3727,20 @@ class ErrordetectorBitTestStatus(SCPICmdRead):
     def signal(self) -> ErrordetectorBitTestStatusSignal:
         """Return the ``ERRORDetector:BIT:TEST:STATUS:SIGNAL`` command.
 
-        **Description:**
+        Description:
             - This command queries the SIGNAL status for bit error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:STATUS:SIGNAL?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:BIT:TEST:STATUS:SIGNAL?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:TEST:STATUS:SIGNAL?
+            ```
         """
         return self._signal
 
@@ -3889,21 +3748,20 @@ class ErrordetectorBitTestStatus(SCPICmdRead):
     def start(self) -> ErrordetectorBitTestStatusStart:
         """Return the ``ERRORDetector:BIT:TEST:STATUS:START`` command.
 
-        **Description:**
+        Description:
             - This command queries the START status for bit error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:STATUS:START?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:BIT:TEST:STATUS:START?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:TEST:STATUS:START?
+            ```
         """
         return self._start
 
@@ -3911,21 +3769,20 @@ class ErrordetectorBitTestStatus(SCPICmdRead):
     def sync(self) -> ErrordetectorBitTestStatusSync:
         """Return the ``ERRORDetector:BIT:TEST:STATUS:SYNC`` command.
 
-        **Description:**
+        Description:
             - This command queries the SYNC status for bit error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:STATUS:SYNC?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:BIT:TEST:STATUS:SYNC?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:TEST:STATUS:SYNC?
+            ```
         """
         return self._sync
 
@@ -3933,116 +3790,110 @@ class ErrordetectorBitTestStatus(SCPICmdRead):
 class ErrordetectorBitTestSeconds(SCPICmdRead):
     """The ``ERRORDetector:BIT:TEST:SECOnds`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed time in seconds for bit error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:SECOnds?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:SECOnds?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:TEST:SECOnds?
+        ```
     """
 
 
 class ErrordetectorBitTestResults(SCPICmdRead):
     """The ``ERRORDetector:BIT:TEST:RESults`` command.
 
-    **Description:**
+    Description:
         - This command queries all of the results for bit error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:RESults?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:RESults?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:TEST:RESults?
+        ```
     """
 
 
 class ErrordetectorBitTestRate(SCPICmdRead):
     """The ``ERRORDetector:BIT:TEST:RATE`` command.
 
-    **Description:**
+    Description:
         - This command queries the calculated bit error rate for bit error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:RATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:RATE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:TEST:RATE?
+        ```
     """
 
 
 class ErrordetectorBitTestMaxaligns(SCPICmdRead):
     """The ``ERRORDetector:BIT:TEST:MAXALIGNS`` command.
 
-    **Description:**
+    Description:
         - This command queries the maximum consecutive SATA align primitives or USB skip order sets
           for bit error testing. The maximum number of align primitives is a design parameter of the
           bus standard.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:MAXALIGNS?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:MAXALIGNS?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:TEST:MAXALIGNS?
+        ```
     """
 
 
 class ErrordetectorBitTestDuration(SCPICmdRead):
     """The ``ERRORDetector:BIT:TEST:DURATION`` command.
 
-    **Description:**
+    Description:
         - This command queries the elapsed duration (in units of bits) tested for bit error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:DURATION?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:DURATION?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:TEST:DURATION?
+        ```
     """
 
 
 class ErrordetectorBitTestCount(SCPICmdRead):
     """The ``ERRORDetector:BIT:TEST:COUNt`` command.
 
-    **Description:**
+    Description:
         - This command queries the bit error count for bit error testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:COUNt?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:COUNt?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:TEST:COUNt?
+        ```
     """
 
 
@@ -4050,22 +3901,21 @@ class ErrordetectorBitTestCount(SCPICmdRead):
 class ErrordetectorBitTest(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:BIT:TEST`` command.
 
-    **Description:**
+    Description:
         - This command initiates and terminates bit error testing for the arguments START and STOP.
           It zeroes bit error test results for the argument CLEAR. It also copies the test pattern
           from the signal to memory for the argument LEARN. It re-synchronizes the recovered clock
           for argument SYNC.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``ERRORDetector:BIT:TEST value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:TEST <LEARN | START | STOP | CLEAR | SYNC>DPO70000SX<START | STOP | CLEAR>
+        ```
 
-    **Info:**
+    Info:
         - ``LEARN`` copies the test pattern from the signal to the hardware template memory.
         - ``START`` initiates bit error counting of bit errors and duration.
         - ``STOP`` terminates bit error counting of bit errors and duration.
@@ -4098,19 +3948,18 @@ class ErrordetectorBitTest(SCPICmdWrite, SCPICmdRead):
     def count(self) -> ErrordetectorBitTestCount:
         """Return the ``ERRORDetector:BIT:TEST:COUNt`` command.
 
-        **Description:**
+        Description:
             - This command queries the bit error count for bit error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:COUNt?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:COUNt?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:TEST:COUNt?
+            ```
         """
         return self._count
 
@@ -4118,21 +3967,20 @@ class ErrordetectorBitTest(SCPICmdWrite, SCPICmdRead):
     def duration(self) -> ErrordetectorBitTestDuration:
         """Return the ``ERRORDetector:BIT:TEST:DURATION`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed duration (in units of bits) tested for bit error
               testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:DURATION?``
               query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:DURATION?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:TEST:DURATION?
+            ```
         """
         return self._duration
 
@@ -4140,23 +3988,22 @@ class ErrordetectorBitTest(SCPICmdWrite, SCPICmdRead):
     def maxaligns(self) -> ErrordetectorBitTestMaxaligns:
         """Return the ``ERRORDetector:BIT:TEST:MAXALIGNS`` command.
 
-        **Description:**
+        Description:
             - This command queries the maximum consecutive SATA align primitives or USB skip order
               sets for bit error testing. The maximum number of align primitives is a design
               parameter of the bus standard.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:MAXALIGNS?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:BIT:TEST:MAXALIGNS?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:TEST:MAXALIGNS?
+            ```
         """
         return self._maxaligns
 
@@ -4164,19 +4011,18 @@ class ErrordetectorBitTest(SCPICmdWrite, SCPICmdRead):
     def rate(self) -> ErrordetectorBitTestRate:
         """Return the ``ERRORDetector:BIT:TEST:RATE`` command.
 
-        **Description:**
+        Description:
             - This command queries the calculated bit error rate for bit error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:RATE?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:RATE?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:TEST:RATE?
+            ```
         """
         return self._rate
 
@@ -4184,19 +4030,18 @@ class ErrordetectorBitTest(SCPICmdWrite, SCPICmdRead):
     def results(self) -> ErrordetectorBitTestResults:
         """Return the ``ERRORDetector:BIT:TEST:RESults`` command.
 
-        **Description:**
+        Description:
             - This command queries all of the results for bit error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:RESults?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:RESults?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:TEST:RESults?
+            ```
         """
         return self._results
 
@@ -4204,19 +4049,18 @@ class ErrordetectorBitTest(SCPICmdWrite, SCPICmdRead):
     def seconds(self) -> ErrordetectorBitTestSeconds:
         """Return the ``ERRORDetector:BIT:TEST:SECOnds`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed time in seconds for bit error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:SECOnds?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:SECOnds?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:TEST:SECOnds?
+            ```
         """
         return self._seconds
 
@@ -4224,19 +4068,18 @@ class ErrordetectorBitTest(SCPICmdWrite, SCPICmdRead):
     def status(self) -> ErrordetectorBitTestStatus:
         """Return the ``ERRORDetector:BIT:TEST:STATUS`` command.
 
-        **Description:**
+        Description:
             - This command queries all of the bit error test status bits.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:STATUS?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:STATUS?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:TEST:STATUS?
+            ```
 
         Sub-properties:
             - ``.lock``: The ``ERRORDetector:BIT:TEST:STATUS:LOCK`` command.
@@ -4251,20 +4094,19 @@ class ErrordetectorBitTest(SCPICmdWrite, SCPICmdRead):
     def time(self) -> ErrordetectorBitTestTime:
         """Return the ``ERRORDetector:BIT:TEST:TIME`` command.
 
-        **Description:**
+        Description:
             - This command queries the elapsed time (in days, hours, minutes, and seconds) for bit
               error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:TEST:TIME?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:TEST:TIME?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:TEST:TIME?
+            ```
 
         Sub-properties:
             - ``.days``: The ``ERRORDetector:BIT:TEST:TIME:DAYS`` command.
@@ -4278,42 +4120,40 @@ class ErrordetectorBitTest(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorBitSyncpatternPlusItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``ERRORDetector:BIT:SYNCPATtern:PLUS<x>`` command.
 
-    **Description:**
+    Description:
         - This command queries the four RD+ bit string sync pattern elements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:SYNCPATtern:PLUS<x>?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:BIT:SYNCPATtern:PLUS<x>?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:SYNCPATtern:PLUS<x>?
+        ```
     """
 
 
 class ErrordetectorBitSyncpatternMinusItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``ERRORDetector:BIT:SYNCPATtern:MINus<x>`` command.
 
-    **Description:**
+    Description:
         - This command queries the four RD- bit string sync pattern elements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:SYNCPATtern:MINus<x>?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:BIT:SYNCPATtern:MINus<x>?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:SYNCPATtern:MINus<x>?
+        ```
     """
 
 
@@ -4322,12 +4162,12 @@ class ErrordetectorBitSyncpatternDisparityItem(
 ):
     """The ``ERRORDetector:BIT:SYNCPATtern:DISParity<x>`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the four sync pattern Disparity elements, when the ``SYNCpat:ADVanced`` is
           ON. When Advanced is off, the DISParity alternates based on the DISParity of the first
           element.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``ERRORDetector:BIT:SYNCPATtern:DISParity<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -4336,14 +4176,13 @@ class ErrordetectorBitSyncpatternDisparityItem(
         - Using the ``.write(value)`` method will send the
           ``ERRORDetector:BIT:SYNCPATtern:DISParity<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:SYNCPATtern:DISParity<x> {RDPLUS | RDMINUS}
         - ERRORDetector:BIT:SYNCPATtern:DISParity<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``RDPLUS`` sets the sync pattern disparity element to RDPLUS.
         - ``RDMINUS`` sets the sync pattern disparity element to RDMINUS.
     """
@@ -4352,10 +4191,10 @@ class ErrordetectorBitSyncpatternDisparityItem(
 class ErrordetectorBitSyncpatternBitstring(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:BIT:SYNCPATtern:BITString`` command.
 
-    **Description:**
+    Description:
         - This command queries the 10-, 20-, 30-, or 40-bit sync pattern in bit string form.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:SYNCPATtern:BITString?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4364,14 +4203,13 @@ class ErrordetectorBitSyncpatternBitstring(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ERRORDetector:BIT:SYNCPATtern:BITString value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:SYNCPATtern:BITString <QString>
         - ERRORDetector:BIT:SYNCPATtern:BITString?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the bit string.
     """
 
@@ -4381,7 +4219,7 @@ class ErrordetectorBitSyncpatternBitstring(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorBitSyncpattern(SCPICmdRead):
     """The ``ERRORDetector:BIT:SYNCPATtern`` command.
 
-    **Description:**
+    Description:
         - This command queries all of the sync pattern forms and associated settings for non-USB bit
           error testing. The SYNCPATtern consists of one to four symbolic 10-bit 8B10B characters
           and their matching RD+ and RD- bit string equivalents. It is required for all non-USB bit
@@ -4394,16 +4232,15 @@ class ErrordetectorBitSyncpattern(SCPICmdRead):
           and the others alternate disparity. When Advanced is On, the Disparity is set for each
           SyncPattern element.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:SYNCPATtern?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:SYNCPATtern?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:SYNCPATtern?
+        ```
 
     Properties:
         - ``.bitstring``: The ``ERRORDetector:BIT:SYNCPATtern:BITString`` command.
@@ -4435,10 +4272,10 @@ class ErrordetectorBitSyncpattern(SCPICmdRead):
     def bitstring(self) -> ErrordetectorBitSyncpatternBitstring:
         """Return the ``ERRORDetector:BIT:SYNCPATtern:BITString`` command.
 
-        **Description:**
+        Description:
             - This command queries the 10-, 20-, 30-, or 40-bit sync pattern in bit string form.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ERRORDetector:BIT:SYNCPATtern:BITString?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4447,14 +4284,13 @@ class ErrordetectorBitSyncpattern(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ERRORDetector:BIT:SYNCPATtern:BITString value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:SYNCPATtern:BITString <QString>
             - ERRORDetector:BIT:SYNCPATtern:BITString?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the bit string.
         """
         return self._bitstring
@@ -4463,12 +4299,12 @@ class ErrordetectorBitSyncpattern(SCPICmdRead):
     def disparity(self) -> Dict[int, ErrordetectorBitSyncpatternDisparityItem]:
         """Return the ``ERRORDetector:BIT:SYNCPATtern:DISParity<x>`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the four sync pattern Disparity elements, when the
               ``SYNCpat:ADVanced`` is ON. When Advanced is off, the DISParity alternates based on
               the DISParity of the first element.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ERRORDetector:BIT:SYNCPATtern:DISParity<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4477,14 +4313,13 @@ class ErrordetectorBitSyncpattern(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ERRORDetector:BIT:SYNCPATtern:DISParity<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:SYNCPATtern:DISParity<x> {RDPLUS | RDMINUS}
             - ERRORDetector:BIT:SYNCPATtern:DISParity<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``RDPLUS`` sets the sync pattern disparity element to RDPLUS.
             - ``RDMINUS`` sets the sync pattern disparity element to RDMINUS.
         """
@@ -4494,21 +4329,20 @@ class ErrordetectorBitSyncpattern(SCPICmdRead):
     def minus(self) -> Dict[int, ErrordetectorBitSyncpatternMinusItem]:
         """Return the ``ERRORDetector:BIT:SYNCPATtern:MINus<x>`` command.
 
-        **Description:**
+        Description:
             - This command queries the four RD- bit string sync pattern elements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ERRORDetector:BIT:SYNCPATtern:MINus<x>?`` query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:BIT:SYNCPATtern:MINus<x>?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:SYNCPATtern:MINus<x>?
+            ```
         """
         return self._minus
 
@@ -4516,21 +4350,20 @@ class ErrordetectorBitSyncpattern(SCPICmdRead):
     def plus(self) -> Dict[int, ErrordetectorBitSyncpatternPlusItem]:
         """Return the ``ERRORDetector:BIT:SYNCPATtern:PLUS<x>`` command.
 
-        **Description:**
+        Description:
             - This command queries the four RD+ bit string sync pattern elements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:SYNCPATtern:PLUS<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:BIT:SYNCPATtern:PLUS<x>?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:SYNCPATtern:PLUS<x>?
+            ```
         """
         return self._plus
 
@@ -4538,25 +4371,24 @@ class ErrordetectorBitSyncpattern(SCPICmdRead):
 class ErrordetectorBitLength(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:BIT:LENgth`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the signal test pattern length in bits for non-USB bit error
           testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT:LENgth?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:LENgth?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:BIT:LENgth value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:BIT:LENgth <NR1>
         - ERRORDetector:BIT:LENgth?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` indicates the bit length of the signal test pattern.
     """
 
@@ -4564,7 +4396,7 @@ class ErrordetectorBitLength(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorBit(SCPICmdRead):
     """The ``ERRORDetector:BIT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:BIT?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -4585,25 +4417,24 @@ class ErrordetectorBit(SCPICmdRead):
     def length(self) -> ErrordetectorBitLength:
         """Return the ``ERRORDetector:BIT:LENgth`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the signal test pattern length in bits for non-USB bit
               error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:LENgth?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:LENgth?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:BIT:LENgth value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:LENgth <NR1>
             - ERRORDetector:BIT:LENgth?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` indicates the bit length of the signal test pattern.
         """
         return self._length
@@ -4612,7 +4443,7 @@ class ErrordetectorBit(SCPICmdRead):
     def syncpattern(self) -> ErrordetectorBitSyncpattern:
         """Return the ``ERRORDetector:BIT:SYNCPATtern`` command.
 
-        **Description:**
+        Description:
             - This command queries all of the sync pattern forms and associated settings for non-USB
               bit error testing. The SYNCPATtern consists of one to four symbolic 10-bit 8B10B
               characters and their matching RD+ and RD- bit string equivalents. It is required for
@@ -4625,16 +4456,15 @@ class ErrordetectorBit(SCPICmdRead):
               (leftmost) syncpattern element, and the others alternate disparity. When Advanced is
               On, the Disparity is set for each SyncPattern element.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT:SYNCPATtern?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT:SYNCPATtern?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:SYNCPATtern?
+            ```
 
         Sub-properties:
             - ``.bitstring``: The ``ERRORDetector:BIT:SYNCPATtern:BITString`` command.
@@ -4648,23 +4478,22 @@ class ErrordetectorBit(SCPICmdRead):
     def test(self) -> ErrordetectorBitTest:
         """Return the ``ERRORDetector:BIT:TEST`` command.
 
-        **Description:**
+        Description:
             - This command initiates and terminates bit error testing for the arguments START and
               STOP. It zeroes bit error test results for the argument CLEAR. It also copies the test
               pattern from the signal to memory for the argument LEARN. It re-synchronizes the
               recovered clock for argument SYNC.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``ERRORDetector:BIT:TEST value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BIT:TEST <LEARN | START | STOP | CLEAR | SYNC>DPO70000SX<START | STOP | CLEAR>
+            ```
 
-        **Info:**
+        Info:
             - ``LEARN`` copies the test pattern from the signal to the hardware template memory.
             - ``START`` initiates bit error counting of bit errors and duration.
             - ``STOP`` terminates bit error counting of bit errors and duration.
@@ -4687,11 +4516,11 @@ class ErrordetectorBit(SCPICmdRead):
 class ErrordetectorAlignprimitiveSymbols(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``ERRORDetector:ALIGNPRIMitive:SYMBOLS`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the four align primitive symbols. You can set one or more symbols with the
           command, but they must be done in order. The query returns all four symbols.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNPRIMitive:SYMBOLS?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4700,14 +4529,13 @@ class ErrordetectorAlignprimitiveSymbols(SCPICmdWriteNoArguments, SCPICmdRead):
         - Using the ``.write()`` method will send the ``ERRORDetector:ALIGNPRIMitive:SYMBOLS``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:ALIGNPRIMitive:SYMBOLS
         - ERRORDetector:ALIGNPRIMitive:SYMBOLS?
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` is a quoted string representing one of the four align primitive symbols,
           such as 'K28.5'. You can set one or more of the symbols with a single command, but the
           symbols must be set in order.
@@ -4717,11 +4545,11 @@ class ErrordetectorAlignprimitiveSymbols(SCPICmdWriteNoArguments, SCPICmdRead):
 class ErrordetectorAlignprimitiveSymbolItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:ALIGNPRIMitive:SYMBOL<x>`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the align primitive symbol. The individual symbolic array elements may be
           accessed through SYMbol1, SYMBol2, etc.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNPRIMitive:SYMBOL<x>?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4730,14 +4558,13 @@ class ErrordetectorAlignprimitiveSymbolItem(ValidatedDynamicNumberCmd, SCPICmdWr
         - Using the ``.write(value)`` method will send the
           ``ERRORDetector:ALIGNPRIMitive:SYMBOL<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:ALIGNPRIMitive:SYMBOL<x> <QString>
         - ERRORDetector:ALIGNPRIMitive:SYMBOL<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string representing the symbolic align primitive symbols such as
           K28.5.
     """
@@ -4748,24 +4575,23 @@ class ErrordetectorAlignprimitiveSymbolItem(ValidatedDynamicNumberCmd, SCPICmdWr
 class ErrordetectorAlignprimitiveState(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:ALIGNPRIMitive:STATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the status of the RD- align primitive option.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNPRIMitive:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:ALIGNPRIMitive:STATE?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``ERRORDetector:ALIGNPRIMitive:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:ALIGNPRIMitive:STATE {<NR1>|OFF|ON}
         - ERRORDetector:ALIGNPRIMitive:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the align primitive option.
         - ``OFF`` disables the align primitive option.
         - ``<NR1>`` = 0 disables the align primitive option; any other value enables the option.
@@ -4775,101 +4601,96 @@ class ErrordetectorAlignprimitiveState(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorAlignprimitivePlusItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``ERRORDetector:ALIGNPRIMitive:PLUS<x>`` command.
 
-    **Description:**
+    Description:
         - This command queries the align primitive plus value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNPRIMitive:PLUS<x>?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:ALIGNPRIMitive:PLUS<x>?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:ALIGNPRIMitive:PLUS<x>?
+        ```
     """
 
 
 class ErrordetectorAlignprimitivePlus(SCPICmdRead):
     """The ``ERRORDetector:ALIGNPRIMitive:PLUS`` command.
 
-    **Description:**
+    Description:
         - This command queries the four RD+ align primitive bit string values.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNPRIMitive:PLUS?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:ALIGNPRIMitive:PLUS?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:ALIGNPRIMitive:PLUS?
+        ```
     """
 
 
 class ErrordetectorAlignprimitiveMinusItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``ERRORDetector:ALIGNPRIMitive:MINus<x>`` command.
 
-    **Description:**
+    Description:
         - This command queries the RD- align primitive bit string values.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNPRIMitive:MINus<x>?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``ERRORDetector:ALIGNPRIMitive:MINus<x>?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:ALIGNPRIMitive:MINus<x>?
+        ```
     """
 
 
 class ErrordetectorAlignprimitiveMinus(SCPICmdRead):
     """The ``ERRORDetector:ALIGNPRIMitive:MINUS`` command.
 
-    **Description:**
+    Description:
         - This command queries the RD- align primitive bit string values.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNPRIMitive:MINUS?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:ALIGNPRIMitive:MINUS?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:ALIGNPRIMitive:MINUS?
+        ```
     """
 
 
 class ErrordetectorAlignprimitive(SCPICmdRead):
     """The ``ERRORDetector:ALIGNPRIMitive`` command.
 
-    **Description:**
+    Description:
         - This command queries all of the align primitive values, including its state (ON=1/OFF=0),
           the length four array of symbolic character values, and the RD+ and RD- .length four
           arrays of bit string values.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNPRIMitive?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:ALIGNPRIMitive?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:ALIGNPRIMitive?
+        ```
 
     Properties:
         - ``.minus``: The ``ERRORDetector:ALIGNPRIMitive:MINUS`` command.
@@ -4905,21 +4726,20 @@ class ErrordetectorAlignprimitive(SCPICmdRead):
     def minus(self) -> ErrordetectorAlignprimitiveMinus:
         """Return the ``ERRORDetector:ALIGNPRIMitive:MINUS`` command.
 
-        **Description:**
+        Description:
             - This command queries the RD- align primitive bit string values.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNPRIMitive:MINUS?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:ALIGNPRIMitive:MINUS?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:ALIGNPRIMitive:MINUS?
+            ```
         """
         return self._minus
 
@@ -4927,21 +4747,20 @@ class ErrordetectorAlignprimitive(SCPICmdRead):
     def minusx(self) -> Dict[int, ErrordetectorAlignprimitiveMinusItem]:
         """Return the ``ERRORDetector:ALIGNPRIMitive:MINus<x>`` command.
 
-        **Description:**
+        Description:
             - This command queries the RD- align primitive bit string values.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNPRIMitive:MINus<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:ALIGNPRIMitive:MINus<x>?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:ALIGNPRIMitive:MINus<x>?
+            ```
         """
         return self._minusx
 
@@ -4949,21 +4768,20 @@ class ErrordetectorAlignprimitive(SCPICmdRead):
     def plus(self) -> ErrordetectorAlignprimitivePlus:
         """Return the ``ERRORDetector:ALIGNPRIMitive:PLUS`` command.
 
-        **Description:**
+        Description:
             - This command queries the four RD+ align primitive bit string values.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNPRIMitive:PLUS?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:ALIGNPRIMitive:PLUS?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:ALIGNPRIMitive:PLUS?
+            ```
         """
         return self._plus
 
@@ -4971,21 +4789,20 @@ class ErrordetectorAlignprimitive(SCPICmdRead):
     def plusx(self) -> Dict[int, ErrordetectorAlignprimitivePlusItem]:
         """Return the ``ERRORDetector:ALIGNPRIMitive:PLUS<x>`` command.
 
-        **Description:**
+        Description:
             - This command queries the align primitive plus value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNPRIMitive:PLUS<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:ALIGNPRIMitive:PLUS<x>?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:ALIGNPRIMitive:PLUS<x>?
+            ```
         """
         return self._plusx
 
@@ -4993,10 +4810,10 @@ class ErrordetectorAlignprimitive(SCPICmdRead):
     def state(self) -> ErrordetectorAlignprimitiveState:
         """Return the ``ERRORDetector:ALIGNPRIMitive:STATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the status of the RD- align primitive option.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNPRIMitive:STATE?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5005,14 +4822,13 @@ class ErrordetectorAlignprimitive(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ERRORDetector:ALIGNPRIMitive:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:ALIGNPRIMitive:STATE {<NR1>|OFF|ON}
             - ERRORDetector:ALIGNPRIMitive:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the align primitive option.
             - ``OFF`` disables the align primitive option.
             - ``<NR1>`` = 0 disables the align primitive option; any other value enables the option.
@@ -5023,11 +4839,11 @@ class ErrordetectorAlignprimitive(SCPICmdRead):
     def symbol(self) -> Dict[int, ErrordetectorAlignprimitiveSymbolItem]:
         """Return the ``ERRORDetector:ALIGNPRIMitive:SYMBOL<x>`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the align primitive symbol. The individual symbolic array elements may
               be accessed through SYMbol1, SYMBol2, etc.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ERRORDetector:ALIGNPRIMitive:SYMBOL<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -5036,14 +4852,13 @@ class ErrordetectorAlignprimitive(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ERRORDetector:ALIGNPRIMitive:SYMBOL<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:ALIGNPRIMitive:SYMBOL<x> <QString>
             - ERRORDetector:ALIGNPRIMitive:SYMBOL<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string representing the symbolic align primitive symbols
               such as K28.5.
         """
@@ -5053,11 +4868,11 @@ class ErrordetectorAlignprimitive(SCPICmdRead):
     def symbols(self) -> ErrordetectorAlignprimitiveSymbols:
         """Return the ``ERRORDetector:ALIGNPRIMitive:SYMBOLS`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the four align primitive symbols. You can set one or more symbols with
               the command, but they must be done in order. The query returns all four symbols.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNPRIMitive:SYMBOLS?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5066,14 +4881,13 @@ class ErrordetectorAlignprimitive(SCPICmdRead):
             - Using the ``.write()`` method will send the ``ERRORDetector:ALIGNPRIMitive:SYMBOLS``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:ALIGNPRIMitive:SYMBOLS
             - ERRORDetector:ALIGNPRIMitive:SYMBOLS?
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` is a quoted string representing one of the four align primitive symbols,
               such as 'K28.5'. You can set one or more of the symbols with a single command, but the
               symbols must be set in order.
@@ -5084,11 +4898,11 @@ class ErrordetectorAlignprimitive(SCPICmdRead):
 class ErrordetectorAligncharacterSymbol(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:ALIGNCHARacter:SYMBOL`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the symbolic align character value. Reception of the align
           character by the instrument aligns the receiver to the 10-bit character boundary.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNCHARacter:SYMBOL?``
           query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:ALIGNCHARacter:SYMBOL?``
@@ -5096,14 +4910,13 @@ class ErrordetectorAligncharacterSymbol(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ERRORDetector:ALIGNCHARacter:SYMBOL value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:ALIGNCHARacter:SYMBOL <QString>
         - ERRORDetector:ALIGNCHARacter:SYMBOL?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string representing a symbolic character, e.g., 'K28.5'.
     """
 
@@ -5113,61 +4926,58 @@ class ErrordetectorAligncharacterSymbol(SCPICmdWrite, SCPICmdRead):
 class ErrordetectorAligncharacterPlus(SCPICmdRead):
     """The ``ERRORDetector:ALIGNCHARacter:PLUS`` command.
 
-    **Description:**
+    Description:
         - This command queries the RD+ align character bit string value. Reception of the align
           character by the instrument aligns the receiver to the 10-bit character boundary.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNCHARacter:PLUS?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:ALIGNCHARacter:PLUS?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:ALIGNCHARacter:PLUS?
+        ```
     """
 
 
 class ErrordetectorAligncharacterMinus(SCPICmdRead):
     """The ``ERRORDetector:ALIGNCHARacter:MINus`` command.
 
-    **Description:**
+    Description:
         - This command queries the RD- align character bit string value. Reception of this character
           by the instrument causes the receiver to align to the 10-bit character boundary.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNCHARacter:MINus?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:ALIGNCHARacter:MINus?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:ALIGNCHARacter:MINus?
+        ```
     """
 
 
 class ErrordetectorAligncharacter(SCPICmdRead):
     """The ``ERRORDetector:ALIGNCHARacter`` command.
 
-    **Description:**
+    Description:
         - This command queries all of the align character values. Align characters must be defined
           for all test types, and those characters must appear in the signal test pattern. The Align
           character may be in symbolic or bit string form
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNCHARacter?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:ALIGNCHARacter?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:ALIGNCHARacter?
+        ```
 
     Properties:
         - ``.minus``: The ``ERRORDetector:ALIGNCHARacter:MINus`` command.
@@ -5185,23 +4995,22 @@ class ErrordetectorAligncharacter(SCPICmdRead):
     def minus(self) -> ErrordetectorAligncharacterMinus:
         """Return the ``ERRORDetector:ALIGNCHARacter:MINus`` command.
 
-        **Description:**
+        Description:
             - This command queries the RD- align character bit string value. Reception of this
               character by the instrument causes the receiver to align to the 10-bit character
               boundary.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNCHARacter:MINus?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:ALIGNCHARacter:MINus?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:ALIGNCHARacter:MINus?
+            ```
         """
         return self._minus
 
@@ -5209,22 +5018,21 @@ class ErrordetectorAligncharacter(SCPICmdRead):
     def plus(self) -> ErrordetectorAligncharacterPlus:
         """Return the ``ERRORDetector:ALIGNCHARacter:PLUS`` command.
 
-        **Description:**
+        Description:
             - This command queries the RD+ align character bit string value. Reception of the align
               character by the instrument aligns the receiver to the 10-bit character boundary.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNCHARacter:PLUS?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``ERRORDetector:ALIGNCHARacter:PLUS?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:ALIGNCHARacter:PLUS?
+            ```
         """
         return self._plus
 
@@ -5232,12 +5040,12 @@ class ErrordetectorAligncharacter(SCPICmdRead):
     def symbol(self) -> ErrordetectorAligncharacterSymbol:
         """Return the ``ERRORDetector:ALIGNCHARacter:SYMBOL`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the symbolic align character value. Reception of the
               align character by the instrument aligns the receiver to the 10-bit character
               boundary.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNCHARacter:SYMBOL?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5246,14 +5054,13 @@ class ErrordetectorAligncharacter(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ERRORDetector:ALIGNCHARacter:SYMBOL value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:ALIGNCHARacter:SYMBOL <QString>
             - ERRORDetector:ALIGNCHARacter:SYMBOL?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string representing a symbolic character, e.g., 'K28.5'.
         """
         return self._symbol
@@ -5262,23 +5069,22 @@ class ErrordetectorAligncharacter(SCPICmdRead):
 class ErrordetectorAlert(SCPICmdWrite, SCPICmdRead):
     """The ``ERRORDetector:ALERT`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the error detector alert.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector:ALERT?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector:ALERT?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ERRORDetector:ALERT value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRORDetector:ALERT {ON|OFF|<NR1>}
         - ERRORDetector:ALERT?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` turns on the error detector alert.
         - ``OFF`` turns off the error detector alert.
         - ``<NR1>`` = 0 disables the alert; any other value enables the alert.
@@ -5289,7 +5095,7 @@ class ErrordetectorAlert(SCPICmdWrite, SCPICmdRead):
 class Errordetector(SCPICmdRead):
     """The ``ERRORDetector`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRORDetector?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRORDetector?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -5364,24 +5170,23 @@ class Errordetector(SCPICmdRead):
     def alert(self) -> ErrordetectorAlert:
         """Return the ``ERRORDetector:ALERT`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the error detector alert.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:ALERT?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:ALERT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:ALERT value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:ALERT {ON|OFF|<NR1>}
             - ERRORDetector:ALERT?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` turns on the error detector alert.
             - ``OFF`` turns off the error detector alert.
             - ``<NR1>`` = 0 disables the alert; any other value enables the alert.
@@ -5392,21 +5197,20 @@ class Errordetector(SCPICmdRead):
     def aligncharacter(self) -> ErrordetectorAligncharacter:
         """Return the ``ERRORDetector:ALIGNCHARacter`` command.
 
-        **Description:**
+        Description:
             - This command queries all of the align character values. Align characters must be
               defined for all test types, and those characters must appear in the signal test
               pattern. The Align character may be in symbolic or bit string form
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNCHARacter?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:ALIGNCHARacter?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:ALIGNCHARacter?
+            ```
 
         Sub-properties:
             - ``.minus``: The ``ERRORDetector:ALIGNCHARacter:MINus`` command.
@@ -5419,21 +5223,20 @@ class Errordetector(SCPICmdRead):
     def alignprimitive(self) -> ErrordetectorAlignprimitive:
         """Return the ``ERRORDetector:ALIGNPRIMitive`` command.
 
-        **Description:**
+        Description:
             - This command queries all of the align primitive values, including its state
               (ON=1/OFF=0), the length four array of symbolic character values, and the RD+ and RD-
               .length four arrays of bit string values.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:ALIGNPRIMitive?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:ALIGNPRIMitive?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:ALIGNPRIMitive?
+            ```
 
         Sub-properties:
             - ``.minus``: The ``ERRORDetector:ALIGNPRIMitive:MINUS`` command.
@@ -5450,7 +5253,7 @@ class Errordetector(SCPICmdRead):
     def bit(self) -> ErrordetectorBit:
         """Return the ``ERRORDetector:BIT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BIT?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:BIT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5466,28 +5269,27 @@ class Errordetector(SCPICmdRead):
     def bitrate(self) -> ErrordetectorBitrate:
         """Return the ``ERRORDetector:BITRate`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries error detector bitrate enumeration for error detection.
               There are two bitrate enumerations for each standard: 1) The standard bitrate, for
               example RATE6000 (meaning 6.0Gb/s, for SATA Gen3); and 2) Custom. When Custom is
               selected the ``ERRORDetector:BITRATE:VALUE`` must also be set to the specific desired
               bitrate. For example, 6.1 Gb/s.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:BITRate?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:BITRate?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:BITRate value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:BITRate {RATEcustom:CUSTOM |RATE312000000:RATE312 |RATE1250000000:RATE1250 |RATE1500000000:RATE1500 |RATE2125000000:RATE2125 |RATE2500000000:RATE2500 |RATE3000000000:RATE3000 |RATE3125000000:RATE3125 |RATE4250000000:RATE4250 |RATE5000000000:RATE5000 |RATE6000000000:RATE6000 |RATE6250000000:RATE6250}DPO70000SX{RATE3200 | RATE3600 | RATE4000 | RATE4400 | RATE4800 | RATE5200 | RATE5600 | RATE6000 | RATE6400 | CUSTOM}
             - ERRORDetector:BITRate?
+            ```
 
-        **Info:**
+        Info:
             - ``RATE3200..to..RATE6400`` sets the error detector bit rate to the specified value.
               RATE3200 indicates a bitrate of 3.2 Gb/s, etc.
             - ``:ERRORDETECTOR:BITRATE:VALUE`` command.
@@ -5501,24 +5303,23 @@ class Errordetector(SCPICmdRead):
     def channel(self) -> ErrordetectorChannel:
         """Return the ``ERRORDetector:CHANnel`` command.
 
-        **Description:**
+        Description:
             - Sets or queries error detector channel selection.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:CHANnel?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:CHANnel?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:CHANnel value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:CHANnel {CH1 | CH2 | CH3 | CH4}
             - ERRORDetector:CHANnel?
+            ```
 
-        **Info:**
+        Info:
             - ``CHx`` is the error detector channel selection.
         """
         return self._channel
@@ -5527,7 +5328,7 @@ class Errordetector(SCPICmdRead):
     def duration(self) -> ErrordetectorDuration:
         """Return the ``ERRORDetector:DURATION`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:DURATION?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:DURATION?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -5543,24 +5344,23 @@ class Errordetector(SCPICmdRead):
     def errorlimit(self) -> ErrordetectorErrorlimit:
         """Return the ``ERRORDetector:ERRORLIMIT`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the error limit value to use when STOPWHEN is ERROR.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:ERRORLIMIT?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:ERRORLIMIT?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:ERRORLIMIT value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:ERRORLIMIT <NR1>
             - ERRORDetector:ERRORLIMIT?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the maximum number of errors.
         """
         return self._errorlimit
@@ -5569,7 +5369,7 @@ class Errordetector(SCPICmdRead):
     def file(self) -> ErrordetectorFile:
         """Return the ``ERRORDetector:FILE`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FILE?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:FILE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5584,25 +5384,24 @@ class Errordetector(SCPICmdRead):
     def fontsize(self) -> ErrordetectorFontsize:
         """Return the ``ERRORDetector:FONTSIze`` command.
 
-        **Description:**
+        Description:
             - Sets or queries error detector font size selection. Currently, the font size only
               applied the error detector UI control window.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FONTSIze?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:FONTSIze?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:FONTSIze value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FONTSIze {DEFAULT | LARGE | XLARGE}
             - ERRORDetector:FONTSIze?
+            ```
 
-        **Info:**
+        Info:
             - ``DEFAULT`` sets the font size to the default size.
             - ``LARGE`` sets the font size to large.
             - ``XLARGE`` sets the font size to extra large.
@@ -5613,19 +5412,18 @@ class Errordetector(SCPICmdRead):
     def frame(self) -> ErrordetectorFrame:
         """Return the ``ERRORDetector:FRAme`` command.
 
-        **Description:**
+        Description:
             - This command queries all frame error settings, status, and results.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:FRAme?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:FRAme?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:FRAme?
+            ```
 
         Sub-properties:
             - ``.eof``: The ``ERRORDetector:FRAme:EOF`` command.
@@ -5639,25 +5437,24 @@ class Errordetector(SCPICmdRead):
     def maxaligns(self) -> ErrordetectorMaxaligns:
         """Return the ``ERRORDetector:MAXALIGNS`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the maximum consecutive align primitives before a
               ``MAX_AP_FAIL`` error is reported.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:MAXALIGNS?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:MAXALIGNS?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:MAXALIGNS value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:MAXALIGNS <NR1>
             - ERRORDetector:MAXALIGNS?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is a integer. The limit values are 0 to 63 and the default is 8.
         """
         return self._maxaligns
@@ -5666,26 +5463,25 @@ class Errordetector(SCPICmdRead):
     def patternname(self) -> ErrordetectorPatternname:
         """Return the ``ERRORDetector:PATTERNNAME`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the pattern name stored in the setup file. Setting this
               name has no functional effect on the instrument, but it is a convenient reminder to
               users as to which setup is in effect.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:PATTERNNAME?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:PATTERNNAME?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:PATTERNNAME value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:PATTERNNAME <Qstring>
             - ERRORDetector:PATTERNNAME?
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` is a quoted string representing a pattern name.
         """
         return self._patternname
@@ -5694,7 +5490,7 @@ class Errordetector(SCPICmdRead):
     def preset(self) -> ErrordetectorPreset:
         """Return the ``ERRORDetector:PREset`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries error detector font preset selection. A number of preset
               setups are selected by this parameter to cover the more common cases. The preset names
               attempt to indicate the standard, signal pattern, and test type employed. The bit rate
@@ -5707,15 +5503,14 @@ class Errordetector(SCPICmdRead):
               SATA3 Compliance Pattern. ``USB3_SYMBOL`` preset expects the USB3 standard ``CP0_SKP``
               signal. You can set a PATTERNNAME for each setup.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``ERRORDetector:PREset value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:PREset {SATA1_CJTPAT_BIT | SATA2_CJTPAT_BIT | SATA3_CJTPAT_BIT | SATA3_FRAME | SATA3_CHAR | SATA3_HFTP_BIT | SATA3_LBP_BIT | SATA3_LFTP_BIT | SATA3_MFTP_BIT | USB3_SYMBOL | USB3_CHAR | PCIE1_COMP_BIT | PCIE2_COMP_BIT | ANY_CJTPAT_BIT | ANY_CJTPAT_CHAR | CUSTOM}DPO70000SX{CUSTOM_SETUP | PRBS7_BIT_ERROR | PRBS9_BIT_ERROR | PRBS11_BIT_ERROR | PRBS16_BIT_ERROR | PRBS23_BIT_ERROR}
+            ```
 
         Sub-properties:
             - ``.apply``: The ``ERRORDetector:PREset:APPLY`` command.
@@ -5726,7 +5521,7 @@ class Errordetector(SCPICmdRead):
     def saveimage(self) -> ErrordetectorSaveimage:
         """Return the ``ERRORDetector:SAVEIMAGE`` command.
 
-        **Description:**
+        Description:
             - Sets or queries error detector Save Image control. When set to ON, a screen shot will
               be made when the error detector detects an error (because detecting an error triggers
               the scope). The images are saved in the C:Users<yourName>
@@ -5737,19 +5532,18 @@ class Errordetector(SCPICmdRead):
               trigger PI). SaveImage is an alternate way of setting the Save on Trigger actions
               defined elsewhere in the PI.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SAVEIMAGE?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:SAVEIMAGE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:SAVEIMAGE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SAVEIMAGE {OFF | ON}
             - ERRORDetector:SAVEIMAGE?
+            ```
         """
         return self._saveimage
 
@@ -5757,7 +5551,7 @@ class Errordetector(SCPICmdRead):
     def savewfm(self) -> ErrordetectorSavewfm:
         """Return the ``ERRORDetector:SAVEWFM`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries error detector Save Waveform (WFM) control. When set to
               ON, a waveform object will be made when the error detector detects an error (because
               detecting an error triggers the instrument). The waveforms are saved in the
@@ -5768,21 +5562,20 @@ class Errordetector(SCPICmdRead):
               elsewhere in the trigger PI) as an attachedment. SaveImage is an alternate way of
               setting the Save on Trigger actions defined elsewhere in the PI.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SAVEWFM?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:SAVEWFM?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:SAVEWFM value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SAVEWFM {OFF | ON}
             - ERRORDetector:SAVEWFM?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` turns off the error detector save waveform feature.
             - ``ON`` turns on the error detector save waveform feature.
         """
@@ -5792,24 +5585,23 @@ class Errordetector(SCPICmdRead):
     def scrambled(self) -> ErrordetectorScrambled:
         """Return the ``ERRORDetector:SCRAMBLED`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the status of the error detection data scrambling option.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SCRAMBLED?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:SCRAMBLED?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:SCRAMBLED value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SCRAMBLED {ON | OFF}
             - ERRORDetector:SCRAMBLED?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the error detection data scrambling option. This is the default option.
             - ``OFF`` disables the error detection data scrambling option.
         """
@@ -5819,7 +5611,7 @@ class Errordetector(SCPICmdRead):
     def sendemail(self) -> ErrordetectorSendemail:
         """Return the ``ERRORDetector:SENDEMAIL`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries error detector Send Email control. When set to ON, a
               email will be sent to the recipient, defined elsewhere in the PI, when the error
               detector detects an error (because detecting an error triggers the instrument). The
@@ -5828,21 +5620,20 @@ class Errordetector(SCPICmdRead):
               items. Send Email is an alternate way of setting the E-mail on Trigger actions defined
               elsewhere in the PI.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SENDEMAIL?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:SENDEMAIL?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:SENDEMAIL value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SENDEMAIL {OFF | ON}
             - ERRORDetector:SENDEMAIL?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` disables the send email feature.
             - ``ON`` enables the send email feature.
         """
@@ -5852,23 +5643,22 @@ class Errordetector(SCPICmdRead):
     def signaltype(self) -> ErrordetectorSignaltype:
         """Return the ``ERRORDetector:SIGnaltype`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries error detector Signal Type control. Setting the signal
               type establishes the bit rate appropriate for the standard, as well as establishing
               the testing algorithm. Custom bit rates may be used as well. See the
               ``ERRORDetector:BITRATE`` and ``ERRORDetector:BITRATE:VALue`` commands.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``ERRORDetector:SIGnaltype value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SIGnaltype {SATAGEN<x>| USB3|PCIEGEN<x>|ANY8B10B|PRBS7|PRBS9}?DPO70000SX{CUSTOM | PRBS7 | PRBS9 | PRBS11 | PRBS16 |PRBS23}
+            ```
 
-        **Info:**
+        Info:
             - ``The DPO70000SX only supports PRBS7, PRBS9, PRBS11, PRBS16, PRBS23, and CUSTOM.``
         """  # noqa: E501
         return self._signaltype
@@ -5877,23 +5667,22 @@ class Errordetector(SCPICmdRead):
     def ssc(self) -> ErrordetectorSsc:
         """Return the ``ERRORDetector:SSC`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the status of the spread spectrum clock tracking option.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SSC?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:SSC?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:SSC value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SSC {ON|OFF}
             - ERRORDetector:SSC?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables spread spectrum clock tracking. For error detector, the spread spectrum
               clock tracking should always be turned on.
             - ``OFF`` disables spread spectrum clock tracking. For serial trigger, the spread
@@ -5905,24 +5694,23 @@ class Errordetector(SCPICmdRead):
     def standard(self) -> ErrordetectorStandard:
         """Return the ``ERRORDetector:STANdard`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the standard selection for error testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:STANdard?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:STANdard?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:STANdard value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:STANdard <LIST>
             - ERRORDetector:STANdard?
+            ```
 
-        **Info:**
+        Info:
             - ``<LIST>`` is the supported standard.
         """
         return self._standard
@@ -5931,25 +5719,24 @@ class Errordetector(SCPICmdRead):
     def state(self) -> ErrordetectorState:
         """Return the ``ERRORDetector:STATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the status of the error option. STATE must be ON to use
               the error detector feature.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:STATE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:STATE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:STATE {<NR1>| OFF | ON}?DPO70000SX{OFF | ON}
             - ERRORDetector:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the software error detector feature.
             - ``OFF`` disables the software error detector feature. This is the default.
             - ``<NR1>`` = 0 disables the error detector; any other value enables the error detector.
@@ -5960,7 +5747,7 @@ class Errordetector(SCPICmdRead):
     def status(self) -> ErrordetectorStatus:
         """Return the ``ERRORDetector:STATus`` command.
 
-        **Description:**
+        Description:
             - Queries only the 'most significant' or 'summary' status of the error detector. All of
               the status flags for each test type may be obtained from the
               ``ERRORdetector:<TESTTYPE>:TEST:STATUS`` commands. LOCK refers to the recovered clock.
@@ -5970,16 +5757,15 @@ class Errordetector(SCPICmdRead):
               detected the maximum consecutive Align (or SkipSets) Primitives as specified in the
               ERRORDetector: <TESTTYPE>MAXALIGNS command
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:STATus?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:STATus?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:STATus?
+            ```
         """
         return self._status
 
@@ -5987,26 +5773,25 @@ class Errordetector(SCPICmdRead):
     def stopwhen(self) -> ErrordetectorStopwhen:
         """Return the ``ERRORDetector:STOPWHEN`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the stopping condition. The test can be stopped when the
               count, time, or number of errors elapses. If the STOPWHEN value is MANUAL, the test
               runs until a TEST STOP command is received.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:STOPWHEN?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:STOPWHEN?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:STOPWHEN value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:STOPWHEN <MANUAL | COUNT | TIME | ERROR>DPO70000SX<MANUAL>
             - ERRORDetector:STOPWHEN?
+            ```
 
-        **Info:**
+        Info:
             - ``MANUAL`` indicates that the test must be stopped by issuing a TEST STOP command.
               This is the default.
             - ``COUNT`` stops the test when ``DURATION:COUNT`` comparisons are made. The comparisons
@@ -6020,19 +5805,18 @@ class Errordetector(SCPICmdRead):
     def symbol(self) -> ErrordetectorSymbol:
         """Return the ``ERRORDetector:SYMBOL`` command.
 
-        **Description:**
+        Description:
             - This command queries all symbol error settings, status, and results.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:SYMBOL?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:SYMBOL?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:SYMBOL?
+            ```
 
         Sub-properties:
             - ``.test``: The ``ERRORDetector:SYMBOL:TEST`` command.
@@ -6043,23 +5827,22 @@ class Errordetector(SCPICmdRead):
     def timeformat(self) -> ErrordetectorTimeformat:
         """Return the ``ERRORDetector:TIMEformat`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries error detector Elapsed Time Format as DDHHMMSS or
               Seconds.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:TIMEformat?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:TIMEformat?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:TIMEformat value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:TIMEformat {DDHHMMSS | SECONDS}
             - ERRORDetector:TIMEformat?
+            ```
         """
         return self._timeformat
 
@@ -6067,23 +5850,22 @@ class Errordetector(SCPICmdRead):
     def type(self) -> ErrordetectorType:
         """Return the ``ERRORDetector:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the error detector type.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector:TYPe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ERRORDetector:TYPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRORDetector:TYPe {BIT | FRAME | SYMBOL | CHARACTER | PRBS7 | PRBS9}
             - ERRORDetector:TYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``BIT`` sets the error detector type to bit.
             - ``FRAME`` sets the error detector type to frame.
             - ``SYMBOL`` sets the error detector type to symbol.

@@ -12,8 +12,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - lan.applysettings()
     - lan.autoconnect
     - lan.config.dns.address[N]
@@ -76,14 +74,14 @@ if TYPE_CHECKING:
 class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``lan.trigger[N]`` command tree.
 
-    **Info:**
+    Info:
         - ``N``, the LAN event number (1 to 8).
 
     Constants:
         - ``.EVENT_ID``: The event identifier used to route the LAN trigger to other subsystems
           (using stimulus properties).
 
-    Properties/methods:
+    Properties and methods:
         - ``.assert()``: The ``lan.trigger[N].assert()`` function.
         - ``.clear()``: The ``lan.trigger[N].clear()`` function.
         - ``.connect()``: The ``lan.trigger[N].connect()`` function.
@@ -112,19 +110,18 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def connected(self) -> str:
         """Access the ``lan.trigger[N].connected`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the LAN event connection state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.trigger[N].connected)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(lan.trigger[N].connected)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -144,23 +141,22 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def ipaddress(self) -> str:
         """Access the ``lan.trigger[N].ipaddress`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the address (in dotted-decimal format) of UDP or TCP
               listeners.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.trigger[N].ipaddress)`` query.
             - Setting this property to a value will send the ``lan.trigger[N].ipaddress = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.trigger[N].ipaddress = value
             - print(lan.trigger[N].ipaddress)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -180,23 +176,22 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def ipaddress(self, value: Union[str, float]) -> None:
         """Access the ``lan.trigger[N].ipaddress`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the address (in dotted-decimal format) of UDP or TCP
               listeners.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.trigger[N].ipaddress)`` query.
             - Setting this property to a value will send the ``lan.trigger[N].ipaddress = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.trigger[N].ipaddress = value
             - print(lan.trigger[N].ipaddress)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -219,23 +214,22 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def mode(self) -> str:
         """Access the ``lan.trigger[N].mode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the trigger operation and detection mode of the specified LAN
               event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.trigger[N].mode)`` query.
             - Setting this property to a value will send the ``lan.trigger[N].mode = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.trigger[N].mode = value
             - print(lan.trigger[N].mode)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, a number representing the LAN event number (1 to 8).
 
         Raises:
@@ -255,23 +249,22 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def mode(self, value: Union[str, float]) -> None:
         """Access the ``lan.trigger[N].mode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the trigger operation and detection mode of the specified LAN
               event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.trigger[N].mode)`` query.
             - Setting this property to a value will send the ``lan.trigger[N].mode = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.trigger[N].mode = value
             - print(lan.trigger[N].mode)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, a number representing the LAN event number (1 to 8).
 
         Raises:
@@ -294,19 +287,18 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def overrun(self) -> str:
         """Access the ``lan.trigger[N].overrun`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the overrun status of the LAN event detector.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.trigger[N].overrun)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(lan.trigger[N].overrun)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -326,22 +318,21 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def protocol(self) -> str:
         """Access the ``lan.trigger[N].protocol`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the LAN protocol to use for sending trigger messages.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.trigger[N].protocol)`` query.
             - Setting this property to a value will send the ``lan.trigger[N].protocol = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.trigger[N].protocol = value
             - print(lan.trigger[N].protocol)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -361,22 +352,21 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def protocol(self, value: Union[str, float]) -> None:
         """Access the ``lan.trigger[N].protocol`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the LAN protocol to use for sending trigger messages.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.trigger[N].protocol)`` query.
             - Setting this property to a value will send the ``lan.trigger[N].protocol = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.trigger[N].protocol = value
             - print(lan.trigger[N].protocol)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -399,22 +389,21 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def pseudostate(self) -> str:
         """Access the ``lan.trigger[N].pseudostate`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the simulated line state for the LAN trigger.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.trigger[N].pseudostate)`` query.
             - Setting this property to a value will send the ``lan.trigger[N].pseudostate = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.trigger[N].pseudostate = value
             - print(lan.trigger[N].pseudostate)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, a number representing the LAN event number (1 to 8).
 
         Raises:
@@ -434,22 +423,21 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def pseudostate(self, value: Union[str, float]) -> None:
         """Access the ``lan.trigger[N].pseudostate`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the simulated line state for the LAN trigger.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.trigger[N].pseudostate)`` query.
             - Setting this property to a value will send the ``lan.trigger[N].pseudostate = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.trigger[N].pseudostate = value
             - print(lan.trigger[N].pseudostate)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, a number representing the LAN event number (1 to 8).
 
         Raises:
@@ -472,22 +460,21 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def stimulus(self) -> str:
         """Access the ``lan.trigger[N].stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies events that cause this trigger to assert.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.trigger[N].stimulus)`` query.
             - Setting this property to a value will send the ``lan.trigger[N].stimulus = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.trigger[N].stimulus = value
             - print(lan.trigger[N].stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, a number specifying the trigger packet over the LAN for which to set or query
               the trigger source (1 to 8).
 
@@ -508,22 +495,21 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def stimulus(self, value: Union[str, float]) -> None:
         """Access the ``lan.trigger[N].stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies events that cause this trigger to assert.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.trigger[N].stimulus)`` query.
             - Setting this property to a value will send the ``lan.trigger[N].stimulus = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.trigger[N].stimulus = value
             - print(lan.trigger[N].stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, a number specifying the trigger packet over the LAN for which to set or query
               the trigger source (1 to 8).
 
@@ -546,17 +532,16 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def assert_(self) -> None:
         """Run the ``lan.trigger[N].assert()`` function.
 
-        **Description:**
+        Description:
             - This function simulates the occurrence of the trigger and generates the corresponding
               event ID.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.trigger[N].assert()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -573,16 +558,15 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``lan.trigger[N].clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the event detector for a LAN trigger.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.trigger[N].clear()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8) to clear.
 
         Raises:
@@ -599,16 +583,15 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def connect(self) -> None:
         """Run the ``lan.trigger[N].connect()`` function.
 
-        **Description:**
+        Description:
             - This function prepares the event generator for outgoing trigger events.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.trigger[N].connect()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -625,16 +608,15 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def disconnect(self) -> None:
         """Run the ``lan.trigger[N].disconnect()`` function.
 
-        **Description:**
+        Description:
             - This function disconnects the LAN trigger.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.trigger[N].disconnect()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Raises:
@@ -651,14 +633,13 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def wait(self, timeout: float) -> str:
         """Run the ``lan.trigger[N].wait()`` function.
 
-        **Description:**
+        Description:
             - This function waits for an input trigger.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.trigger[N].wait()
+            ```
 
         Args:
             timeout: Maximum amount of time in seconds to wait for the trigger event.
@@ -681,10 +662,10 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
 class LanStatusPort(BaseTSPCmd):
     """The ``lan.status.port`` command tree.
 
-    **Info:**
+    Info:
         - ``port``, the dead socket termination socket port number.
 
-    Properties/methods:
+    Properties and methods:
         - ``.dst``: The ``lan.status.port.dst`` attribute.
         - ``.rawsocket``: The ``lan.status.port.rawsocket`` attribute.
         - ``.telnet``: The ``lan.status.port.telnet`` attribute.
@@ -695,19 +676,18 @@ class LanStatusPort(BaseTSPCmd):
     def dst(self) -> str:
         """Access the ``lan.status.port.dst`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN dead socket termination port number.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.status.port.dst)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(lan.status.port.dst)
+            ```
 
-        **Info:**
+        Info:
             - ``port``, the dead socket termination socket port number.
 
         Raises:
@@ -727,19 +707,18 @@ class LanStatusPort(BaseTSPCmd):
     def rawsocket(self) -> str:
         """Access the ``lan.status.port.rawsocket`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN raw socket connection port number.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.status.port.rawsocket)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(lan.status.port.rawsocket)
+            ```
 
-        **Info:**
+        Info:
             - ``port``, the raw socket port number.
 
         Raises:
@@ -759,19 +738,18 @@ class LanStatusPort(BaseTSPCmd):
     def telnet(self) -> str:
         """Access the ``lan.status.port.telnet`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN Telnet connection port number.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.status.port.telnet)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(lan.status.port.telnet)
+            ```
 
-        **Info:**
+        Info:
             - ``port``, the telnet port number.
 
         Raises:
@@ -791,19 +769,18 @@ class LanStatusPort(BaseTSPCmd):
     def vxi11(self) -> str:
         """Access the ``lan.status.port.vxi11`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN VXI-11 connection port number.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.status.port.vxi11)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(lan.status.port.vxi11)
+            ```
 
-        **Info:**
+        Info:
             - ``port``, the lAN VXI-11 port number.
 
         Raises:
@@ -823,7 +800,7 @@ class LanStatusPort(BaseTSPCmd):
 class LanStatusDns(BaseTSPCmd):
     """The ``lan.status.dns`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.address``: The ``lan.status.dns.address[N]`` attribute.
         - ``.name``: The ``lan.status.dns.name`` attribute.
     """
@@ -840,20 +817,19 @@ class LanStatusDns(BaseTSPCmd):
     def address(self) -> Dict[int, Union[str, float]]:
         """Access the ``lan.status.dns.address[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the DNS server IP addresses.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the
               ``print(lan.status.dns.address[N])`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(lan.status.dns.address[N])
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the entry index (1, 2, or 3).
 
         Raises:
@@ -865,17 +841,16 @@ class LanStatusDns(BaseTSPCmd):
     def name(self) -> str:
         """Access the ``lan.status.dns.name`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the present DNS fully qualified host name.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.status.dns.name)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(lan.status.dns.name)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -894,7 +869,7 @@ class LanStatusDns(BaseTSPCmd):
 class LanStatus(BaseTSPCmd):
     """The ``lan.status`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.dns``: The ``lan.status.dns`` command tree.
         - ``.duplex``: The ``lan.status.duplex`` attribute.
         - ``.gateway``: The ``lan.status.gateway`` attribute.
@@ -914,7 +889,7 @@ class LanStatus(BaseTSPCmd):
     def dns(self) -> LanStatusDns:
         """Return the ``lan.status.dns`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.address``: The ``lan.status.dns.address[N]`` attribute.
             - ``.name``: The ``lan.status.dns.name`` attribute.
         """
@@ -924,17 +899,16 @@ class LanStatus(BaseTSPCmd):
     def duplex(self) -> str:
         """Access the ``lan.status.duplex`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the duplex mode presently in use by the LAN interface.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.status.duplex)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(lan.status.duplex)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -953,17 +927,16 @@ class LanStatus(BaseTSPCmd):
     def gateway(self) -> str:
         """Access the ``lan.status.gateway`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the gateway address presently in use by the LAN interface.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.status.gateway)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(lan.status.gateway)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -982,17 +955,16 @@ class LanStatus(BaseTSPCmd):
     def ipaddress(self) -> str:
         """Access the ``lan.status.ipaddress`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN IP address presently in use by the LAN interface.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.status.ipaddress)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(lan.status.ipaddress)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1011,17 +983,16 @@ class LanStatus(BaseTSPCmd):
     def macaddress(self) -> str:
         """Access the ``lan.status.macaddress`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN MAC address.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.status.macaddress)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(lan.status.macaddress)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1040,10 +1011,10 @@ class LanStatus(BaseTSPCmd):
     def port(self) -> LanStatusPort:
         """Return the ``lan.status.port`` command tree.
 
-        **Info:**
+        Info:
             - ``port``, the dead socket termination socket port number.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.dst``: The ``lan.status.port.dst`` attribute.
             - ``.rawsocket``: The ``lan.status.port.rawsocket`` attribute.
             - ``.telnet``: The ``lan.status.port.telnet`` attribute.
@@ -1055,17 +1026,16 @@ class LanStatus(BaseTSPCmd):
     def speed(self) -> str:
         """Access the ``lan.status.speed`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN speed.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.status.speed)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(lan.status.speed)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1084,20 +1054,19 @@ class LanStatus(BaseTSPCmd):
     def subnetmask(self) -> str:
         """Access the ``lan.status.subnetmask`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN subnet mask that is presently in use by the LAN
               interface.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.status.subnetmask)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(lan.status.subnetmask)
+            ```
 
-        **Info:**
+        Info:
             - ``mask``, a string specifying the subnet mask in dotted decimal notation.
 
         Raises:
@@ -1117,7 +1086,7 @@ class LanStatus(BaseTSPCmd):
 class LanConfigDns(BaseTSPCmd):
     """The ``lan.config.dns`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.address``: The ``lan.config.dns.address[N]`` attribute.
         - ``.domain``: The ``lan.config.dns.domain`` attribute.
         - ``.dynamic``: The ``lan.config.dns.dynamic`` attribute.
@@ -1138,23 +1107,22 @@ class LanConfigDns(BaseTSPCmd):
     def address(self) -> Dict[int, Union[str, float]]:
         """Access the ``lan.config.dns.address[N]`` attribute.
 
-        **Description:**
+        Description:
             - Configures DNS server IP addresses.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the
               ``print(lan.config.dns.address[N])`` query.
             - Setting an item from this property to a value will send the
               ``lan.config.dns.address[N] = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.dns.address[N] = value
             - print(lan.config.dns.address[N])
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the entry index (1 or 2).
 
         Raises:
@@ -1166,20 +1134,19 @@ class LanConfigDns(BaseTSPCmd):
     def domain(self) -> str:
         """Access the ``lan.config.dns.domain`` attribute.
 
-        **Description:**
+        Description:
             - Configures the dynamic DNS domain.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.dns.domain)`` query.
             - Setting this property to a value will send the ``lan.config.dns.domain = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.dns.domain = value
             - print(lan.config.dns.domain)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1198,20 +1165,19 @@ class LanConfigDns(BaseTSPCmd):
     def domain(self, value: Union[str, float]) -> None:
         """Access the ``lan.config.dns.domain`` attribute.
 
-        **Description:**
+        Description:
             - Configures the dynamic DNS domain.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.dns.domain)`` query.
             - Setting this property to a value will send the ``lan.config.dns.domain = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.dns.domain = value
             - print(lan.config.dns.domain)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1233,20 +1199,19 @@ class LanConfigDns(BaseTSPCmd):
     def dynamic(self) -> str:
         """Access the ``lan.config.dns.dynamic`` attribute.
 
-        **Description:**
+        Description:
             - Enables or disables the dynamic DNS registration.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.dns.dynamic)`` query.
             - Setting this property to a value will send the ``lan.config.dns.dynamic = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.dns.dynamic = value
             - print(lan.config.dns.dynamic)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1265,20 +1230,19 @@ class LanConfigDns(BaseTSPCmd):
     def dynamic(self, value: Union[str, float]) -> None:
         """Access the ``lan.config.dns.dynamic`` attribute.
 
-        **Description:**
+        Description:
             - Enables or disables the dynamic DNS registration.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.dns.dynamic)`` query.
             - Setting this property to a value will send the ``lan.config.dns.dynamic = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.dns.dynamic = value
             - print(lan.config.dns.dynamic)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1300,20 +1264,19 @@ class LanConfigDns(BaseTSPCmd):
     def hostname(self) -> str:
         """Access the ``lan.config.dns.hostname`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the dynamic DNS host name.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.dns.hostname)`` query.
             - Setting this property to a value will send the ``lan.config.dns.hostname = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.dns.hostname = value
             - print(lan.config.dns.hostname)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1332,20 +1295,19 @@ class LanConfigDns(BaseTSPCmd):
     def hostname(self, value: Union[str, float]) -> None:
         """Access the ``lan.config.dns.hostname`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the dynamic DNS host name.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.dns.hostname)`` query.
             - Setting this property to a value will send the ``lan.config.dns.hostname = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.dns.hostname = value
             - print(lan.config.dns.hostname)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1367,20 +1329,19 @@ class LanConfigDns(BaseTSPCmd):
     def verify(self) -> str:
         """Access the ``lan.config.dns.verify`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the DNS host name verification state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.dns.verify)`` query.
             - Setting this property to a value will send the ``lan.config.dns.verify = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.dns.verify = value
             - print(lan.config.dns.verify)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1399,20 +1360,19 @@ class LanConfigDns(BaseTSPCmd):
     def verify(self, value: Union[str, float]) -> None:
         """Access the ``lan.config.dns.verify`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the DNS host name verification state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.dns.verify)`` query.
             - Setting this property to a value will send the ``lan.config.dns.verify = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.dns.verify = value
             - print(lan.config.dns.verify)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1434,7 +1394,7 @@ class LanConfigDns(BaseTSPCmd):
 class LanConfig(BaseTSPCmd):
     """The ``lan.config`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.dns``: The ``lan.config.dns`` command tree.
         - ``.duplex``: The ``lan.config.duplex`` attribute.
         - ``.gateway``: The ``lan.config.gateway`` attribute.
@@ -1452,7 +1412,7 @@ class LanConfig(BaseTSPCmd):
     def dns(self) -> LanConfigDns:
         """Return the ``lan.config.dns`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.address``: The ``lan.config.dns.address[N]`` attribute.
             - ``.domain``: The ``lan.config.dns.domain`` attribute.
             - ``.dynamic``: The ``lan.config.dns.dynamic`` attribute.
@@ -1465,19 +1425,18 @@ class LanConfig(BaseTSPCmd):
     def duplex(self) -> str:
         """Access the ``lan.config.duplex`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the LAN duplex mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.duplex)`` query.
             - Setting this property to a value will send the ``lan.config.duplex = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.duplex = value
             - print(lan.config.duplex)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1496,19 +1455,18 @@ class LanConfig(BaseTSPCmd):
     def duplex(self, value: Union[str, float]) -> None:
         """Access the ``lan.config.duplex`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the LAN duplex mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.duplex)`` query.
             - Setting this property to a value will send the ``lan.config.duplex = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.duplex = value
             - print(lan.config.duplex)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1530,19 +1488,18 @@ class LanConfig(BaseTSPCmd):
     def gateway(self) -> str:
         """Access the ``lan.config.gateway`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN default gateway address.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.gateway)`` query.
             - Setting this property to a value will send the ``lan.config.gateway = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.gateway = value
             - print(lan.config.gateway)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1561,19 +1518,18 @@ class LanConfig(BaseTSPCmd):
     def gateway(self, value: Union[str, float]) -> None:
         """Access the ``lan.config.gateway`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN default gateway address.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.gateway)`` query.
             - Setting this property to a value will send the ``lan.config.gateway = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.gateway = value
             - print(lan.config.gateway)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1595,20 +1551,19 @@ class LanConfig(BaseTSPCmd):
     def ipaddress(self) -> str:
         """Access the ``lan.config.ipaddress`` attribute.
 
-        **Description:**
+        Description:
             - This command specifies the LAN IP address.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.ipaddress)`` query.
             - Setting this property to a value will send the ``lan.config.ipaddress = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.ipaddress = value
             - print(lan.config.ipaddress)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1627,20 +1582,19 @@ class LanConfig(BaseTSPCmd):
     def ipaddress(self, value: Union[str, float]) -> None:
         """Access the ``lan.config.ipaddress`` attribute.
 
-        **Description:**
+        Description:
             - This command specifies the LAN IP address.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.ipaddress)`` query.
             - Setting this property to a value will send the ``lan.config.ipaddress = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.ipaddress = value
             - print(lan.config.ipaddress)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1662,19 +1616,18 @@ class LanConfig(BaseTSPCmd):
     def method(self) -> str:
         """Access the ``lan.config.method`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN settings configuration method.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.method)`` query.
             - Setting this property to a value will send the ``lan.config.method = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.method = value
             - print(lan.config.method)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1693,19 +1646,18 @@ class LanConfig(BaseTSPCmd):
     def method(self, value: Union[str, float]) -> None:
         """Access the ``lan.config.method`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN settings configuration method.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.method)`` query.
             - Setting this property to a value will send the ``lan.config.method = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.method = value
             - print(lan.config.method)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1727,20 +1679,19 @@ class LanConfig(BaseTSPCmd):
     def speed(self) -> str:
         """Access the ``lan.config.speed`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN speed used when restarting in manual configuration
               mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.speed)`` query.
             - Setting this property to a value will send the ``lan.config.speed = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.speed = value
             - print(lan.config.speed)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1759,20 +1710,19 @@ class LanConfig(BaseTSPCmd):
     def speed(self, value: Union[str, float]) -> None:
         """Access the ``lan.config.speed`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN speed used when restarting in manual configuration
               mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.speed)`` query.
             - Setting this property to a value will send the ``lan.config.speed = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.speed = value
             - print(lan.config.speed)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1794,22 +1744,21 @@ class LanConfig(BaseTSPCmd):
     def subnetmask(self) -> str:
         """Access the ``lan.config.subnetmask`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN subnet mask.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.subnetmask)`` query.
             - Setting this property to a value will send the ``lan.config.subnetmask = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.subnetmask = value
             - print(lan.config.subnetmask)
+            ```
 
-        **Info:**
+        Info:
             - ``mask``, the string that specifies the LAN subnet mask value in dotted decimal
               notation.
 
@@ -1830,22 +1779,21 @@ class LanConfig(BaseTSPCmd):
     def subnetmask(self, value: Union[str, float]) -> None:
         """Access the ``lan.config.subnetmask`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN subnet mask.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.subnetmask)`` query.
             - Setting this property to a value will send the ``lan.config.subnetmask = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.subnetmask = value
             - print(lan.config.subnetmask)
+            ```
 
-        **Info:**
+        Info:
             - ``mask``, the string that specifies the LAN subnet mask value in dotted decimal
               notation.
 
@@ -1896,7 +1844,7 @@ class Lan(BaseTSPCmd):
           event to rising edge (positive state).
         - ``.UDP``: Use UDP protocol.
 
-    Properties/methods:
+    Properties and methods:
         - ``.applysettings()``: The ``lan.applysettings()`` function.
         - ``.autoconnect``: The ``lan.autoconnect`` attribute.
         - ``.config``: The ``lan.config`` command tree.
@@ -1957,19 +1905,18 @@ class Lan(BaseTSPCmd):
     def autoconnect(self) -> str:
         """Access the ``lan.autoconnect`` attribute.
 
-        **Description:**
+        Description:
             - This attribute is used to enable or disable link monitoring.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.autoconnect)`` query.
             - Setting this property to a value will send the ``lan.autoconnect = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.autoconnect = value
             - print(lan.autoconnect)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1988,19 +1935,18 @@ class Lan(BaseTSPCmd):
     def autoconnect(self, value: Union[str, float]) -> None:
         """Access the ``lan.autoconnect`` attribute.
 
-        **Description:**
+        Description:
             - This attribute is used to enable or disable link monitoring.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.autoconnect)`` query.
             - Setting this property to a value will send the ``lan.autoconnect = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.autoconnect = value
             - print(lan.autoconnect)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2022,7 +1968,7 @@ class Lan(BaseTSPCmd):
     def config(self) -> LanConfig:
         """Return the ``lan.config`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.dns``: The ``lan.config.dns`` command tree.
             - ``.duplex``: The ``lan.config.duplex`` attribute.
             - ``.gateway``: The ``lan.config.gateway`` attribute.
@@ -2037,21 +1983,20 @@ class Lan(BaseTSPCmd):
     def linktimeout(self) -> str:
         """Access the ``lan.linktimeout`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN link timeout period.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.linktimeout)`` query.
             - Setting this property to a value will send the ``lan.linktimeout = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.linktimeout = value
             - print(lan.linktimeout)
+            ```
 
-        **Info:**
+        Info:
             - ``timeout``, the LAN link monitor time-out period (in seconds).
 
         Raises:
@@ -2071,21 +2016,20 @@ class Lan(BaseTSPCmd):
     def linktimeout(self, value: Union[str, float]) -> None:
         """Access the ``lan.linktimeout`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN link timeout period.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.linktimeout)`` query.
             - Setting this property to a value will send the ``lan.linktimeout = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.linktimeout = value
             - print(lan.linktimeout)
+            ```
 
-        **Info:**
+        Info:
             - ``timeout``, the LAN link monitor time-out period (in seconds).
 
         Raises:
@@ -2108,21 +2052,20 @@ class Lan(BaseTSPCmd):
     def lxidomain(self) -> str:
         """Access the ``lan.lxidomain`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LXI domain.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.lxidomain)`` query.
             - Setting this property to a value will send the ``lan.lxidomain = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.lxidomain = value
             - print(lan.lxidomain)
+            ```
 
-        **Info:**
+        Info:
             - ``domain``, the LXI domain number (0 to 255).
 
         Raises:
@@ -2142,21 +2085,20 @@ class Lan(BaseTSPCmd):
     def lxidomain(self, value: Union[str, float]) -> None:
         """Access the ``lan.lxidomain`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LXI domain.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.lxidomain)`` query.
             - Setting this property to a value will send the ``lan.lxidomain = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.lxidomain = value
             - print(lan.lxidomain)
+            ```
 
-        **Info:**
+        Info:
             - ``domain``, the LXI domain number (0 to 255).
 
         Raises:
@@ -2179,19 +2121,18 @@ class Lan(BaseTSPCmd):
     def nagle(self) -> str:
         """Access the ``lan.nagle`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls the state of the LAN Nagle algorithm.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.nagle)`` query.
             - Setting this property to a value will send the ``lan.nagle = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.nagle = value
             - print(lan.nagle)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2210,19 +2151,18 @@ class Lan(BaseTSPCmd):
     def nagle(self, value: Union[str, float]) -> None:
         """Access the ``lan.nagle`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls the state of the LAN Nagle algorithm.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.nagle)`` query.
             - Setting this property to a value will send the ``lan.nagle = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.nagle = value
             - print(lan.nagle)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2244,7 +2184,7 @@ class Lan(BaseTSPCmd):
     def status(self) -> LanStatus:
         """Return the ``lan.status`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.dns``: The ``lan.status.dns`` command tree.
             - ``.duplex``: The ``lan.status.duplex`` attribute.
             - ``.gateway``: The ``lan.status.gateway`` attribute.
@@ -2260,19 +2200,18 @@ class Lan(BaseTSPCmd):
     def timedwait(self) -> str:
         """Access the ``lan.timedwait`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN timed-wait state interval.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.timedwait)`` query.
             - Setting this property to a value will send the ``lan.timedwait = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.timedwait = value
             - print(lan.timedwait)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2291,19 +2230,18 @@ class Lan(BaseTSPCmd):
     def timedwait(self, value: Union[str, float]) -> None:
         """Access the ``lan.timedwait`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the LAN timed-wait state interval.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.timedwait)`` query.
             - Setting this property to a value will send the ``lan.timedwait = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.timedwait = value
             - print(lan.timedwait)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2325,14 +2263,14 @@ class Lan(BaseTSPCmd):
     def trigger(self) -> Dict[int, LanTriggerItem]:
         """Return the ``lan.trigger[N]`` command tree.
 
-        **Info:**
+        Info:
             - ``N``, the LAN event number (1 to 8).
 
         Constants:
             - ``.EVENT_ID``: The event identifier used to route the LAN trigger to other subsystems
               (using stimulus properties).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.assert()``: The ``lan.trigger[N].assert()`` function.
             - ``.clear()``: The ``lan.trigger[N].clear()`` function.
             - ``.connect()``: The ``lan.trigger[N].connect()`` function.
@@ -2351,14 +2289,13 @@ class Lan(BaseTSPCmd):
     def applysettings(self) -> None:
         """Run the ``lan.applysettings()`` function.
 
-        **Description:**
+        Description:
             - This function re-initializes the LAN interface with new settings.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.applysettings()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2374,14 +2311,13 @@ class Lan(BaseTSPCmd):
     def reset(self) -> None:
         """Run the ``lan.reset()`` function.
 
-        **Description:**
+        Description:
             - This function resets the LAN interface.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.reset()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2397,14 +2333,13 @@ class Lan(BaseTSPCmd):
     def restoredefaults(self) -> None:
         """Run the ``lan.restoredefaults()`` function.
 
-        **Description:**
+        Description:
             - This function resets LAN settings to default values.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.restoredefaults()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.

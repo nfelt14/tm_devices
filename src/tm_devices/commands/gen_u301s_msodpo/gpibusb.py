@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - GPIBUsb:ID?
 """
 
@@ -25,27 +23,26 @@ if TYPE_CHECKING:
 class GpibusbId(SCPICmdRead):
     """The ``GPIBUsb:ID`` command.
 
-    **Description:**
+    Description:
         - Returns the identification string of the connected TEK-USB-488 adaptor option and firmware
           version. If a TEK-USB-488.2 option is not connected, the system returns 'Not detected'.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``GPIBUsb:ID?`` query.
         - Using the ``.verify(value)`` method will send the ``GPIBUsb:ID?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - GPIBUsb:ID?
+        ```
     """
 
 
 class Gpibusb(SCPICmdRead):
     """The ``GPIBUsb`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``GPIBUsb?`` query.
         - Using the ``.verify(value)`` method will send the ``GPIBUsb?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -62,20 +59,19 @@ class Gpibusb(SCPICmdRead):
     def id(self) -> GpibusbId:
         """Return the ``GPIBUsb:ID`` command.
 
-        **Description:**
+        Description:
             - Returns the identification string of the connected TEK-USB-488 adaptor option and
               firmware version. If a TEK-USB-488.2 option is not connected, the system returns 'Not
               detected'.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``GPIBUsb:ID?`` query.
             - Using the ``.verify(value)`` method will send the ``GPIBUsb:ID?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - GPIBUsb:ID?
+            ```
         """
         return self._id

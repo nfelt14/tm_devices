@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - EYEMASK:MASK<x>:COUNt:HITS?
     - EYEMASK:MASK<x>:COUNt:SEG<y>:HITS?
     - EYEMASK:MASK<x>:CREATor?
@@ -40,21 +38,20 @@ if TYPE_CHECKING:
 class EyemaskMaskItemTestStatus(SCPICmdRead):
     """The ``EYEMASK:MASK<x>:TESt:STATUS`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the mask hit test status.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:TESt:STATUS?`` query.
         - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:TESt:STATUS?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EYEMASK:MASK<x>:TESt:STATUS?
+        ```
 
-    **Info:**
+    Info:
         - ``MASK<x>`` is the number of the specified mask test (or mask test plot?).
     """
 
@@ -62,11 +59,11 @@ class EyemaskMaskItemTestStatus(SCPICmdRead):
 class EyemaskMaskItemTestSampleThreshold(SCPICmdWrite, SCPICmdRead):
     """The ``EYEMASK:MASK<x>:TESt:SAMple:THReshold`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the total number of hit violations that will cause a mask
           test failure.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:TESt:SAMple:THReshold?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -75,14 +72,13 @@ class EyemaskMaskItemTestSampleThreshold(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``EYEMASK:MASK<x>:TESt:SAMple:THReshold value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EYEMASK:MASK<x>:TESt:SAMple:THReshold <NR1>
         - EYEMASK:MASK<x>:TESt:SAMple:THReshold?
+        ```
 
-    **Info:**
+    Info:
         - ``MASK<x>`` is the number of the specified mask test (or mask test plot?).
         - ``<NR1>`` is a positive integer indicating the number of mask hits required to cause a
           fail condition for that mask test.
@@ -92,12 +88,12 @@ class EyemaskMaskItemTestSampleThreshold(SCPICmdWrite, SCPICmdRead):
 class EyemaskMaskItemTestSample(SCPICmdRead):
     """The ``EYEMASK:MASK<x>:TESt:SAMple`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:TESt:SAMple?`` query.
         - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:TESt:SAMple?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``MASK<x>`` is the number of the specified mask test (or mask test plot?).
 
     Properties:
@@ -114,11 +110,11 @@ class EyemaskMaskItemTestSample(SCPICmdRead):
     def threshold(self) -> EyemaskMaskItemTestSampleThreshold:
         """Return the ``EYEMASK:MASK<x>:TESt:SAMple:THReshold`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the total number of hit violations that will cause a mask
               test failure.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:TESt:SAMple:THReshold?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -127,14 +123,13 @@ class EyemaskMaskItemTestSample(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``EYEMASK:MASK<x>:TESt:SAMple:THReshold value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EYEMASK:MASK<x>:TESt:SAMple:THReshold <NR1>
             - EYEMASK:MASK<x>:TESt:SAMple:THReshold?
+            ```
 
-        **Info:**
+        Info:
             - ``MASK<x>`` is the number of the specified mask test (or mask test plot?).
             - ``<NR1>`` is a positive integer indicating the number of mask hits required to cause a
               fail condition for that mask test.
@@ -145,12 +140,12 @@ class EyemaskMaskItemTestSample(SCPICmdRead):
 class EyemaskMaskItemTest(SCPICmdRead):
     """The ``EYEMASK:MASK<x>:TESt`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:TESt?`` query.
         - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:TESt?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``MASK<x>`` is the number of the specified mask test (or mask test plot?).
 
     Properties:
@@ -167,12 +162,12 @@ class EyemaskMaskItemTest(SCPICmdRead):
     def sample(self) -> EyemaskMaskItemTestSample:
         """Return the ``EYEMASK:MASK<x>:TESt:SAMple`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:TESt:SAMple?`` query.
             - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:TESt:SAMple?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``MASK<x>`` is the number of the specified mask test (or mask test plot?).
 
         Sub-properties:
@@ -184,21 +179,20 @@ class EyemaskMaskItemTest(SCPICmdRead):
     def status(self) -> EyemaskMaskItemTestStatus:
         """Return the ``EYEMASK:MASK<x>:TESt:STATUS`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the mask hit test status.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:TESt:STATUS?`` query.
             - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:TESt:STATUS?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EYEMASK:MASK<x>:TESt:STATUS?
+            ```
 
-        **Info:**
+        Info:
             - ``MASK<x>`` is the number of the specified mask test (or mask test plot?).
         """
         return self._status
@@ -207,25 +201,24 @@ class EyemaskMaskItemTest(SCPICmdRead):
 class EyemaskMaskItemMaskfile(SCPICmdWrite, SCPICmdRead):
     """The ``EYEMASK:MASK<x>:MASKfile`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current mask definition file name for the specified mask
           test.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:MASKfile?`` query.
         - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:MASKfile?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EYEMASK:MASK<x>:MASKfile value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EYEMASK:MASK<x>:MASKfile <Qstring>
         - EYEMASK:MASK<x>:MASKfile?
+        ```
 
-    **Info:**
+    Info:
         - ``<x>`` is the number of the specified mask test (or mask test plot?).
         - ``<Qstring>`` is a quoted string that defines the file path that specifies the location of
           the mask file to use, in the format '[<path>]<filename.ext>'. Specifying a path is
@@ -237,29 +230,28 @@ class EyemaskMaskItemMaskfile(SCPICmdWrite, SCPICmdRead):
 class EyemaskMaskItemMaskoffsetHorizontalAutofit(SCPICmdRead):
     """The ``EYEMASK:MASK<x>:MASKOffset:HORizontal:AUTOfit`` command.
 
-    **Description:**
+    Description:
         - This command returns the mask offset value in the specified mask in seconds. The mask test
           number is specified by <x>
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``EYEMASK:MASK<x>:MASKOffset:HORizontal:AUTOfit?`` query.
         - Using the ``.verify(value)`` method will send the
           ``EYEMASK:MASK<x>:MASKOffset:HORizontal:AUTOfit?`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EYEMASK:MASK<x>:MASKOffset:HORizontal:AUTOfit?
+        ```
     """
 
 
 class EyemaskMaskItemMaskoffsetHorizontal(SCPICmdRead):
     """The ``EYEMASK:MASK<x>:MASKOffset:HORizontal`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:MASKOffset:HORizontal?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -280,22 +272,21 @@ class EyemaskMaskItemMaskoffsetHorizontal(SCPICmdRead):
     def autofit(self) -> EyemaskMaskItemMaskoffsetHorizontalAutofit:
         """Return the ``EYEMASK:MASK<x>:MASKOffset:HORizontal:AUTOfit`` command.
 
-        **Description:**
+        Description:
             - This command returns the mask offset value in the specified mask in seconds. The mask
               test number is specified by <x>
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``EYEMASK:MASK<x>:MASKOffset:HORizontal:AUTOfit?`` query.
             - Using the ``.verify(value)`` method will send the
               ``EYEMASK:MASK<x>:MASKOffset:HORizontal:AUTOfit?`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EYEMASK:MASK<x>:MASKOffset:HORizontal:AUTOfit?
+            ```
         """
         return self._autofit
 
@@ -303,7 +294,7 @@ class EyemaskMaskItemMaskoffsetHorizontal(SCPICmdRead):
 class EyemaskMaskItemMaskoffset(SCPICmdRead):
     """The ``EYEMASK:MASK<x>:MASKOffset`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:MASKOffset?`` query.
         - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:MASKOffset?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -322,7 +313,7 @@ class EyemaskMaskItemMaskoffset(SCPICmdRead):
     def horizontal(self) -> EyemaskMaskItemMaskoffsetHorizontal:
         """Return the ``EYEMASK:MASK<x>:MASKOffset:HORizontal`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:MASKOffset:HORizontal?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -338,24 +329,23 @@ class EyemaskMaskItemMaskoffset(SCPICmdRead):
 class EyemaskMaskItemEnabled(SCPICmdWrite, SCPICmdRead):
     """The ``EYEMASK:MASK<x>:ENAbled`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables eye mask testing in the specified plot.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:ENAbled?`` query.
         - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:ENAbled?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EYEMASK:MASK<x>:ENAbled value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EYEMASK:MASK<x>:ENAbled {ON|OFF}
         - EYEMASK:MASK<x>:ENAbled?
+        ```
 
-    **Info:**
+    Info:
         - ``MASK<x>`` is the number of the specified mask test (or mask test plot?).
     """
 
@@ -363,21 +353,20 @@ class EyemaskMaskItemEnabled(SCPICmdWrite, SCPICmdRead):
 class EyemaskMaskItemCreator(SCPICmdRead):
     """The ``EYEMASK:MASK<x>:CREATor`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the name of the eye diagram plot that created the mask.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:CREATor?`` query.
         - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:CREATor?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EYEMASK:MASK<x>:CREATor?
+        ```
 
-    **Info:**
+    Info:
         - ``MASK<x>`` is the number of the specified mask test (or mask test plot?).
     """
 
@@ -385,21 +374,20 @@ class EyemaskMaskItemCreator(SCPICmdRead):
 class EyemaskMaskItemCountSegItemHits(SCPICmdRead):
     """The ``EYEMASK:MASK<x>:COUNt:SEG<y>:HITS`` command.
 
-    **Description:**
+    Description:
         - This command returns the number of hit violations for the specified segment (area).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:COUNt:SEG<y>:HITS?`` query.
         - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:COUNt:SEG<y>:HITS?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EYEMASK:MASK<x>:COUNt:SEG<y>:HITS?
+        ```
 
-    **Info:**
+    Info:
         - ``MASK<x>`` is the number of the specified mask test (or mask test plot?).
         - ``SEG<y>`` is the number of the mask segment for which to return hit violations data.
     """
@@ -408,12 +396,12 @@ class EyemaskMaskItemCountSegItemHits(SCPICmdRead):
 class EyemaskMaskItemCountSegItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``EYEMASK:MASK<x>:COUNt:SEG<y>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:COUNt:SEG<y>?`` query.
         - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:COUNt:SEG<y>?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``MASK<x>`` is the number of the specified mask test (or mask test plot?).
         - ``SEG<y>`` is the number of the mask segment for which to return hit violations data.
 
@@ -429,23 +417,22 @@ class EyemaskMaskItemCountSegItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def hits(self) -> EyemaskMaskItemCountSegItemHits:
         """Return the ``EYEMASK:MASK<x>:COUNt:SEG<y>:HITS`` command.
 
-        **Description:**
+        Description:
             - This command returns the number of hit violations for the specified segment (area).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:COUNt:SEG<y>:HITS?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``EYEMASK:MASK<x>:COUNt:SEG<y>:HITS?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EYEMASK:MASK<x>:COUNt:SEG<y>:HITS?
+            ```
 
-        **Info:**
+        Info:
             - ``MASK<x>`` is the number of the specified mask test (or mask test plot?).
             - ``SEG<y>`` is the number of the mask segment for which to return hit violations data.
         """
@@ -455,22 +442,21 @@ class EyemaskMaskItemCountSegItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class EyemaskMaskItemCountHits(SCPICmdRead):
     """The ``EYEMASK:MASK<x>:COUNt:HITS`` command.
 
-    **Description:**
+    Description:
         - This command returns the total number of hit violations for all segments in the specified
           mask test.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:COUNt:HITS?`` query.
         - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:COUNt:HITS?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EYEMASK:MASK<x>:COUNt:HITS?
+        ```
 
-    **Info:**
+    Info:
         - ``MASK<x>`` is the number of the specified mask test in an eye diagram plot.
     """
 
@@ -478,12 +464,12 @@ class EyemaskMaskItemCountHits(SCPICmdRead):
 class EyemaskMaskItemCount(SCPICmdRead):
     """The ``EYEMASK:MASK<x>:COUNt`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:COUNt?`` query.
         - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:COUNt?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``MASK<x>`` is the number of the specified mask test in an eye diagram plot.
 
     Properties:
@@ -502,22 +488,21 @@ class EyemaskMaskItemCount(SCPICmdRead):
     def hits(self) -> EyemaskMaskItemCountHits:
         """Return the ``EYEMASK:MASK<x>:COUNt:HITS`` command.
 
-        **Description:**
+        Description:
             - This command returns the total number of hit violations for all segments in the
               specified mask test.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:COUNt:HITS?`` query.
             - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:COUNt:HITS?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EYEMASK:MASK<x>:COUNt:HITS?
+            ```
 
-        **Info:**
+        Info:
             - ``MASK<x>`` is the number of the specified mask test in an eye diagram plot.
         """
         return self._hits
@@ -526,12 +511,12 @@ class EyemaskMaskItemCount(SCPICmdRead):
     def seg(self) -> Dict[int, EyemaskMaskItemCountSegItem]:
         """Return the ``EYEMASK:MASK<x>:COUNt:SEG<y>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:COUNt:SEG<y>?`` query.
             - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:COUNt:SEG<y>?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``MASK<x>`` is the number of the specified mask test (or mask test plot?).
             - ``SEG<y>`` is the number of the mask segment for which to return hit violations data.
 
@@ -544,12 +529,12 @@ class EyemaskMaskItemCount(SCPICmdRead):
 class EyemaskMaskItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``EYEMASK:MASK<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``MASK<x>`` is the number of the specified mask test in an eye diagram plot.
 
     Properties:
@@ -574,12 +559,12 @@ class EyemaskMaskItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def count(self) -> EyemaskMaskItemCount:
         """Return the ``EYEMASK:MASK<x>:COUNt`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:COUNt?`` query.
             - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:COUNt?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``MASK<x>`` is the number of the specified mask test in an eye diagram plot.
 
         Sub-properties:
@@ -592,22 +577,21 @@ class EyemaskMaskItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def creator(self) -> EyemaskMaskItemCreator:
         """Return the ``EYEMASK:MASK<x>:CREATor`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the name of the eye diagram plot that created the
               mask.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:CREATor?`` query.
             - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:CREATor?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EYEMASK:MASK<x>:CREATor?
+            ```
 
-        **Info:**
+        Info:
             - ``MASK<x>`` is the number of the specified mask test (or mask test plot?).
         """
         return self._creator
@@ -616,24 +600,23 @@ class EyemaskMaskItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def enabled(self) -> EyemaskMaskItemEnabled:
         """Return the ``EYEMASK:MASK<x>:ENAbled`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables eye mask testing in the specified plot.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:ENAbled?`` query.
             - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:ENAbled?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EYEMASK:MASK<x>:ENAbled value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EYEMASK:MASK<x>:ENAbled {ON|OFF}
             - EYEMASK:MASK<x>:ENAbled?
+            ```
 
-        **Info:**
+        Info:
             - ``MASK<x>`` is the number of the specified mask test (or mask test plot?).
         """
         return self._enabled
@@ -642,7 +625,7 @@ class EyemaskMaskItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def maskoffset(self) -> EyemaskMaskItemMaskoffset:
         """Return the ``EYEMASK:MASK<x>:MASKOffset`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:MASKOffset?`` query.
             - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:MASKOffset?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -656,25 +639,24 @@ class EyemaskMaskItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def maskfile(self) -> EyemaskMaskItemMaskfile:
         """Return the ``EYEMASK:MASK<x>:MASKfile`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current mask definition file name for the specified
               mask test.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:MASKfile?`` query.
             - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:MASKfile?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EYEMASK:MASK<x>:MASKfile value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EYEMASK:MASK<x>:MASKfile <Qstring>
             - EYEMASK:MASK<x>:MASKfile?
+            ```
 
-        **Info:**
+        Info:
             - ``<x>`` is the number of the specified mask test (or mask test plot?).
             - ``<Qstring>`` is a quoted string that defines the file path that specifies the
               location of the mask file to use, in the format '[<path>]<filename.ext>'. Specifying a
@@ -687,12 +669,12 @@ class EyemaskMaskItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def test(self) -> EyemaskMaskItemTest:
         """Return the ``EYEMASK:MASK<x>:TESt`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>:TESt?`` query.
             - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>:TESt?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``MASK<x>`` is the number of the specified mask test (or mask test plot?).
 
         Sub-properties:
@@ -705,7 +687,7 @@ class EyemaskMaskItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class Eyemask(SCPICmdRead):
     """The ``EYEMASK`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EYEMASK?`` query.
         - Using the ``.verify(value)`` method will send the ``EYEMASK?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -724,12 +706,12 @@ class Eyemask(SCPICmdRead):
     def mask(self) -> Dict[int, EyemaskMaskItem]:
         """Return the ``EYEMASK:MASK<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EYEMASK:MASK<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``EYEMASK:MASK<x>?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``MASK<x>`` is the number of the specified mask test in an eye diagram plot.
 
         Sub-properties:

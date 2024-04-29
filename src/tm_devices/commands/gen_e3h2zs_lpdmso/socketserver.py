@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SOCKETServer:ENAble {0|1|OFF|ON}
     - SOCKETServer:ENAble?
     - SOCKETServer:PORT <NR1>
@@ -30,23 +28,22 @@ if TYPE_CHECKING:
 class SocketserverProtocol(SCPICmdWrite, SCPICmdRead):
     """The ``SOCKETServer:PROTOCol`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the protocol for the socket server.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOCKETServer:PROTOCol?`` query.
         - Using the ``.verify(value)`` method will send the ``SOCKETServer:PROTOCol?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOCKETServer:PROTOCol value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOCKETServer:PROTOCol {TERMinal|NONe}
         - SOCKETServer:PROTOCol?
+        ```
 
-    **Info:**
+    Info:
         - ``TERMinal`` specifies terminal protocol for the socket server. When set to TERMinal, a
           session startup message is sent to the socket and a command prompt is provided.
         - ``NONe`` disables the terminal features, allowing the server to be used for raw socket
@@ -57,23 +54,22 @@ class SocketserverProtocol(SCPICmdWrite, SCPICmdRead):
 class SocketserverPort(SCPICmdWrite, SCPICmdRead):
     """The ``SOCKETServer:PORT`` command.
 
-    **Description:**
+    Description:
         - This command sets the TCPIP port for the socket server connection.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOCKETServer:PORT?`` query.
         - Using the ``.verify(value)`` method will send the ``SOCKETServer:PORT?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOCKETServer:PORT value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOCKETServer:PORT <NR1>
         - SOCKETServer:PORT?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the TCPIP port for the socket server connection.
     """
 
@@ -81,25 +77,24 @@ class SocketserverPort(SCPICmdWrite, SCPICmdRead):
 class SocketserverEnable(SCPICmdWrite, SCPICmdRead):
     """The ``SOCKETServer:ENAble`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables the socket server which supports a telnet or other TCPIP
           socket connection to send commands and queries to the instrument. The default state is
           enabled.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOCKETServer:ENAble?`` query.
         - Using the ``.verify(value)`` method will send the ``SOCKETServer:ENAble?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOCKETServer:ENAble value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOCKETServer:ENAble {0|1|OFF|ON}
         - SOCKETServer:ENAble?
+        ```
 
-    **Info:**
+    Info:
         - ``1`` enables the socket server. If the state is 0 (disabled) and this command is sent to
           enable the socket server when the port is in use by another service, then the error event
           code 221 (Settings conflict) is posted to the event queue and the socket server remains
@@ -114,7 +109,7 @@ class SocketserverEnable(SCPICmdWrite, SCPICmdRead):
 class Socketserver(SCPICmdRead):
     """The ``SOCKETServer`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOCKETServer?`` query.
         - Using the ``.verify(value)`` method will send the ``SOCKETServer?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -137,26 +132,25 @@ class Socketserver(SCPICmdRead):
     def enable(self) -> SocketserverEnable:
         """Return the ``SOCKETServer:ENAble`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables the socket server which supports a telnet or other
               TCPIP socket connection to send commands and queries to the instrument. The default
               state is enabled.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOCKETServer:ENAble?`` query.
             - Using the ``.verify(value)`` method will send the ``SOCKETServer:ENAble?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOCKETServer:ENAble value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOCKETServer:ENAble {0|1|OFF|ON}
             - SOCKETServer:ENAble?
+            ```
 
-        **Info:**
+        Info:
             - ``1`` enables the socket server. If the state is 0 (disabled) and this command is sent
               to enable the socket server when the port is in use by another service, then the error
               event code 221 (Settings conflict) is posted to the event queue and the socket server
@@ -172,23 +166,22 @@ class Socketserver(SCPICmdRead):
     def port(self) -> SocketserverPort:
         """Return the ``SOCKETServer:PORT`` command.
 
-        **Description:**
+        Description:
             - This command sets the TCPIP port for the socket server connection.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOCKETServer:PORT?`` query.
             - Using the ``.verify(value)`` method will send the ``SOCKETServer:PORT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOCKETServer:PORT value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOCKETServer:PORT <NR1>
             - SOCKETServer:PORT?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the TCPIP port for the socket server connection.
         """
         return self._port
@@ -197,24 +190,23 @@ class Socketserver(SCPICmdRead):
     def protocol(self) -> SocketserverProtocol:
         """Return the ``SOCKETServer:PROTOCol`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the protocol for the socket server.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOCKETServer:PROTOCol?`` query.
             - Using the ``.verify(value)`` method will send the ``SOCKETServer:PROTOCol?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOCKETServer:PROTOCol value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOCKETServer:PROTOCol {TERMinal|NONe}
             - SOCKETServer:PROTOCol?
+            ```
 
-        **Info:**
+        Info:
             - ``TERMinal`` specifies terminal protocol for the socket server. When set to TERMinal,
               a session startup message is sent to the socket and a command prompt is provided.
             - ``NONe`` disables the terminal features, allowing the server to be used for raw socket

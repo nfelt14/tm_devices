@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - PCENable OFF | ON
     - PCENable?
 """
@@ -27,21 +25,20 @@ if TYPE_CHECKING:
 class Pcenable(SCPICmdWrite, SCPICmdRead):
     """The ``PCENable`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the enable state of the User Preference Probe compensation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PCENable?`` query.
         - Using the ``.verify(value)`` method will send the ``PCENable?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``PCENable value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PCENable OFF | ON
         - PCENable?
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "PCENable") -> None:

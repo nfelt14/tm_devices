@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - FILESystem
     - FILESystem:COPy {<source file path>,<destination file path>}
     - FILESystem:CWD {<new working directory path>}
@@ -37,21 +35,20 @@ if TYPE_CHECKING:
 class FilesystemWritefile(SCPICmdWrite):
     """The ``FILESystem:WRITEFile`` command.
 
-    **Description:**
+    Description:
         - Writes the specified block data to a file in the oscilloscope current working directory.
           If the specified file does not exist or is not readable, an appropriate error event is
           posted.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:WRITEFile value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:WRITEFile <file path>, <data>
+        ```
 
-    **Info:**
+    Info:
         - ``<file path>`` is the quoted string that defines the file name and path. If the path is
           within the current working directory, specify the file name only.
         - ``<data>`` can be either DEFINITE LENGTH encoding or INDEFINITE LENGTH ARBITRARY BLOCK
@@ -62,20 +59,19 @@ class FilesystemWritefile(SCPICmdWrite):
 class FilesystemRmdir(SCPICmdWrite):
     """The ``FILESystem:RMDir`` command.
 
-    **Description:**
+    Description:
         - Deletes a named directory. This command deletes the specified directory and all of its
           contents. The directory must not be a read-only directory.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:RMDir value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:RMDir <directory path>
+        ```
 
-    **Info:**
+    Info:
         - ``<directory path>`` is a quoted string that defines the directory name and path. If the
           file path is within the current working directory, you need only specify the file name.
     """
@@ -84,19 +80,18 @@ class FilesystemRmdir(SCPICmdWrite):
 class FilesystemRename(SCPICmdWrite):
     """The ``FILESystem:REName`` command.
 
-    **Description:**
+    Description:
         - Assigns a new name to an existing file.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:REName value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:REName <old file path>,<new file path>
+        ```
 
-    **Info:**
+    Info:
         - ``<old file path>`` is a quoted string that defines the file name and path. If the file
           path is within the current working directory, you need only specify the file name.
         - ``<new file path>`` is a quoted string that defines the file name and path. If the file
@@ -107,20 +102,19 @@ class FilesystemRename(SCPICmdWrite):
 class FilesystemReadfile(SCPICmdWrite):
     """The ``FILESystem:READFile`` command.
 
-    **Description:**
+    Description:
         - This command writes the contents of the specified file to the current interface. If the
           specified file does not exist or is not readable, an appropriate error event is posted.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:READFile value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:READFile <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string that defines the file name and path. If the file path is
           within the current working directory, you need only specify the file name.
     """
@@ -131,19 +125,18 @@ class FilesystemReadfile(SCPICmdWrite):
 class FilesystemMkdir(SCPICmdWrite):
     """The ``FILESystem:MKDir`` command.
 
-    **Description:**
+    Description:
         - Creates a new folder.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:MKDir value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:MKDir <directory path>
+        ```
 
-    **Info:**
+    Info:
         - ``<directory path>`` is a quoted string that specifies the directory to create.
     """
 
@@ -151,82 +144,78 @@ class FilesystemMkdir(SCPICmdWrite):
 class FilesystemFreespace(SCPICmdRead):
     """The ``FILESystem:FREESpace`` command.
 
-    **Description:**
+    Description:
         - Returns the number of bytes of free space on the current drive.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FILESystem:FREESpace?`` query.
         - Using the ``.verify(value)`` method will send the ``FILESystem:FREESpace?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:FREESpace?
+        ```
     """
 
 
 class FilesystemFormat(SCPICmdWriteNoArguments):
     """The ``FILESystem:FORMat`` command.
 
-    **Description:**
+    Description:
         - Formats a mass storage device. This command should be used with extreme caution as it
           causes all data on the specified mass storage device to be lost. Drive letters (e.g., E:)
           are case sensitive and must be upper case. For all other FILESYSTEM commands, drives
           letters are not case sensitive. Example: ``FILES:FORMAT`` 'E:/' Formats the USB flash
           drive installed in the oscilloscope's front panel USB port.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``FILESystem:FORMat`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:FORMat
+        ```
     """
 
 
 class FilesystemDir(SCPICmdRead):
     """The ``FILESystem:DIR`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns a comma separated list of quoted strings. Each string
           contains the name of a file or directory in the folder referred to by the
           ``FILESYSTEM:CWD`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FILESystem:DIR?`` query.
         - Using the ``.verify(value)`` method will send the ``FILESystem:DIR?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:DIR?
+        ```
     """
 
 
 class FilesystemDelete(SCPICmdWrite):
     r"""The ``FILESystem:DELEte`` command.
 
-    **Description:**
+    Description:
         - This command deletes a named file. If you specify a directory name, it will delete the
           directory and all of its contents, the same as the RMDir command. You can also specify the
           filename as \*.* to delete all of the files in the current or specified directory.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:DELEte value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:DELEte <file path>
+        ```
 
-    **Info:**
+    Info:
         - ``<file path>`` is a quoted string that defines the file name and path. If the file path
           is within the current working directory, you need only specify the file name.
         - ``*.*`` will delete all files and subdirectories within the current working directory.
@@ -236,7 +225,7 @@ class FilesystemDelete(SCPICmdWrite):
 class FilesystemCwd(SCPICmdWrite):
     """The ``FILESystem:CWD`` command.
 
-    **Description:**
+    Description:
         - This command specifies the current working directory (CWD) for FILESystem commands. The
           default working directory is 'E:/'. Anytime you use this command to change the directory,
           the directory that you specify is retained as the current working directory until you
@@ -248,16 +237,15 @@ class FilesystemCwd(SCPICmdWrite):
           example, 'E:/MyWaveform' Implied relative path names; for example 'newfile.txt' becomes
           'E:/TekScope/newfile.txt' if the current working directory is 'E:/TekScope'
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:CWD value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:CWD {<new working directory path>}
+        ```
 
-    **Info:**
+    Info:
         - ``<new working directory path>`` is a quoted string that defines the current working; a
           directory name can be up to 128 characters.
     """
@@ -266,21 +254,20 @@ class FilesystemCwd(SCPICmdWrite):
 class FilesystemCopy(SCPICmdWrite):
     """The ``FILESystem:COPy`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) copies a named file to a new file. The new file might be in a
           totally separate directory than the old file. You can only copy one file at a time using
           this command. Wild card characters are not allowed.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:COPy value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:COPy {<source file path>,<destination file path>}
+        ```
 
-    **Info:**
+    Info:
         - ``<source file path>`` is a quoted string that defines the file name and path. If the file
           path is within the current working directory, you need only specify the file name.
         - ``<destination file path>`` is a quoted string that defines the file name and path. If the
@@ -292,23 +279,22 @@ class FilesystemCopy(SCPICmdWrite):
 class Filesystem(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``FILESystem`` command.
 
-    **Description:**
+    Description:
         - Returns the directory listing of the current working directory and the number of bytes of
           free space available. This query is the same as the ``FILESYSTEM:DIR`` query and the
           ``FILESYSTEM:FREESPACE`` query.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FILESystem?`` query.
         - Using the ``.verify(value)`` method will send the ``FILESystem?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``FILESystem`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem
         - FILESystem?
+        ```
 
     Properties:
         - ``.copy``: The ``FILESystem:COPy`` command.
@@ -342,21 +328,20 @@ class Filesystem(SCPICmdWriteNoArguments, SCPICmdRead):
     def copy(self) -> FilesystemCopy:
         """Return the ``FILESystem:COPy`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) copies a named file to a new file. The new file might be
               in a totally separate directory than the old file. You can only copy one file at a
               time using this command. Wild card characters are not allowed.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:COPy value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:COPy {<source file path>,<destination file path>}
+            ```
 
-        **Info:**
+        Info:
             - ``<source file path>`` is a quoted string that defines the file name and path. If the
               file path is within the current working directory, you need only specify the file
               name.
@@ -370,7 +355,7 @@ class Filesystem(SCPICmdWriteNoArguments, SCPICmdRead):
     def cwd(self) -> FilesystemCwd:
         """Return the ``FILESystem:CWD`` command.
 
-        **Description:**
+        Description:
             - This command specifies the current working directory (CWD) for FILESystem commands.
               The default working directory is 'E:/'. Anytime you use this command to change the
               directory, the directory that you specify is retained as the current working directory
@@ -383,16 +368,15 @@ class Filesystem(SCPICmdWriteNoArguments, SCPICmdRead):
               names; for example 'newfile.txt' becomes 'E:/TekScope/newfile.txt' if the current
               working directory is 'E:/TekScope'
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:CWD value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:CWD {<new working directory path>}
+            ```
 
-        **Info:**
+        Info:
             - ``<new working directory path>`` is a quoted string that defines the current working;
               a directory name can be up to 128 characters.
         """
@@ -402,21 +386,20 @@ class Filesystem(SCPICmdWriteNoArguments, SCPICmdRead):
     def delete(self) -> FilesystemDelete:
         r"""Return the ``FILESystem:DELEte`` command.
 
-        **Description:**
+        Description:
             - This command deletes a named file. If you specify a directory name, it will delete the
               directory and all of its contents, the same as the RMDir command. You can also specify
               the filename as \*.* to delete all of the files in the current or specified directory.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:DELEte value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:DELEte <file path>
+            ```
 
-        **Info:**
+        Info:
             - ``<file path>`` is a quoted string that defines the file name and path. If the file
               path is within the current working directory, you need only specify the file name.
             - ``*.*`` will delete all files and subdirectories within the current working directory.
@@ -427,21 +410,20 @@ class Filesystem(SCPICmdWriteNoArguments, SCPICmdRead):
     def dir(self) -> FilesystemDir:
         """Return the ``FILESystem:DIR`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns a comma separated list of quoted strings. Each string
               contains the name of a file or directory in the folder referred to by the
               ``FILESYSTEM:CWD`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FILESystem:DIR?`` query.
             - Using the ``.verify(value)`` method will send the ``FILESystem:DIR?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:DIR?
+            ```
         """
         return self._dir
 
@@ -449,21 +431,20 @@ class Filesystem(SCPICmdWriteNoArguments, SCPICmdRead):
     def format(self) -> FilesystemFormat:
         """Return the ``FILESystem:FORMat`` command.
 
-        **Description:**
+        Description:
             - Formats a mass storage device. This command should be used with extreme caution as it
               causes all data on the specified mass storage device to be lost. Drive letters (e.g.,
               E:) are case sensitive and must be upper case. For all other FILESYSTEM commands,
               drives letters are not case sensitive. Example: ``FILES:FORMAT`` 'E:/' Formats the USB
               flash drive installed in the oscilloscope's front panel USB port.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``FILESystem:FORMat`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:FORMat
+            ```
         """
         return self._format
 
@@ -471,19 +452,18 @@ class Filesystem(SCPICmdWriteNoArguments, SCPICmdRead):
     def freespace(self) -> FilesystemFreespace:
         """Return the ``FILESystem:FREESpace`` command.
 
-        **Description:**
+        Description:
             - Returns the number of bytes of free space on the current drive.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FILESystem:FREESpace?`` query.
             - Using the ``.verify(value)`` method will send the ``FILESystem:FREESpace?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:FREESpace?
+            ```
         """
         return self._freespace
 
@@ -491,19 +471,18 @@ class Filesystem(SCPICmdWriteNoArguments, SCPICmdRead):
     def mkdir(self) -> FilesystemMkdir:
         """Return the ``FILESystem:MKDir`` command.
 
-        **Description:**
+        Description:
             - Creates a new folder.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:MKDir value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:MKDir <directory path>
+            ```
 
-        **Info:**
+        Info:
             - ``<directory path>`` is a quoted string that specifies the directory to create.
         """
         return self._mkdir
@@ -512,22 +491,21 @@ class Filesystem(SCPICmdWriteNoArguments, SCPICmdRead):
     def readfile(self) -> FilesystemReadfile:
         """Return the ``FILESystem:READFile`` command.
 
-        **Description:**
+        Description:
             - This command writes the contents of the specified file to the current interface. If
               the specified file does not exist or is not readable, an appropriate error event is
               posted.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:READFile value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:READFile <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string that defines the file name and path. If the file path
               is within the current working directory, you need only specify the file name.
         """
@@ -537,19 +515,18 @@ class Filesystem(SCPICmdWriteNoArguments, SCPICmdRead):
     def rename(self) -> FilesystemRename:
         """Return the ``FILESystem:REName`` command.
 
-        **Description:**
+        Description:
             - Assigns a new name to an existing file.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:REName value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:REName <old file path>,<new file path>
+            ```
 
-        **Info:**
+        Info:
             - ``<old file path>`` is a quoted string that defines the file name and path. If the
               file path is within the current working directory, you need only specify the file
               name.
@@ -563,20 +540,19 @@ class Filesystem(SCPICmdWriteNoArguments, SCPICmdRead):
     def rmdir(self) -> FilesystemRmdir:
         """Return the ``FILESystem:RMDir`` command.
 
-        **Description:**
+        Description:
             - Deletes a named directory. This command deletes the specified directory and all of its
               contents. The directory must not be a read-only directory.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:RMDir value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:RMDir <directory path>
+            ```
 
-        **Info:**
+        Info:
             - ``<directory path>`` is a quoted string that defines the directory name and path. If
               the file path is within the current working directory, you need only specify the file
               name.
@@ -587,22 +563,21 @@ class Filesystem(SCPICmdWriteNoArguments, SCPICmdRead):
     def writefile(self) -> FilesystemWritefile:
         """Return the ``FILESystem:WRITEFile`` command.
 
-        **Description:**
+        Description:
             - Writes the specified block data to a file in the oscilloscope current working
               directory. If the specified file does not exist or is not readable, an appropriate
               error event is posted.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:WRITEFile value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:WRITEFile <file path>, <data>
+            ```
 
-        **Info:**
+        Info:
             - ``<file path>`` is the quoted string that defines the file name and path. If the path
               is within the current working directory, specify the file name only.
             - ``<data>`` can be either DEFINITE LENGTH encoding or INDEFINITE LENGTH ARBITRARY BLOCK

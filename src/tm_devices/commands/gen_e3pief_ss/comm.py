@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - comm.gpib.enable
     - comm.lan.enable
     - comm.lan.rawsockets.enable
@@ -32,7 +30,7 @@ if TYPE_CHECKING:
 class CommLanWeb(BaseTSPCmd):
     """The ``comm.lan.web`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.enable``: The ``comm.lan.web.enable`` attribute.
     """
 
@@ -40,21 +38,20 @@ class CommLanWeb(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``comm.lan.web.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes whether or not communication using the web interface is
               enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(comm.lan.web.enable)`` query.
             - Setting this property to a value will send the ``comm.lan.web.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - comm.lan.web.enable = value
             - print(comm.lan.web.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -73,21 +70,20 @@ class CommLanWeb(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``comm.lan.web.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes whether or not communication using the web interface is
               enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(comm.lan.web.enable)`` query.
             - Setting this property to a value will send the ``comm.lan.web.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - comm.lan.web.enable = value
             - print(comm.lan.web.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -109,7 +105,7 @@ class CommLanWeb(BaseTSPCmd):
 class CommLanVxi11(BaseTSPCmd):
     """The ``comm.lan.vxi11`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.enable``: The ``comm.lan.vxi11.enable`` attribute.
     """
 
@@ -117,21 +113,20 @@ class CommLanVxi11(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``comm.lan.vxi11.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes whether or not communication using a VXI-11 connection is
               enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(comm.lan.vxi11.enable)`` query.
             - Setting this property to a value will send the ``comm.lan.vxi11.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - comm.lan.vxi11.enable = value
             - print(comm.lan.vxi11.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -150,21 +145,20 @@ class CommLanVxi11(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``comm.lan.vxi11.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes whether or not communication using a VXI-11 connection is
               enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(comm.lan.vxi11.enable)`` query.
             - Setting this property to a value will send the ``comm.lan.vxi11.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - comm.lan.vxi11.enable = value
             - print(comm.lan.vxi11.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -186,7 +180,7 @@ class CommLanVxi11(BaseTSPCmd):
 class CommLanTelnet(BaseTSPCmd):
     """The ``comm.lan.telnet`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.enable``: The ``comm.lan.telnet.enable`` attribute.
     """
 
@@ -194,20 +188,19 @@ class CommLanTelnet(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``comm.lan.telnet.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes whether or not communication using Telnet is enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(comm.lan.telnet.enable)`` query.
             - Setting this property to a value will send the ``comm.lan.telnet.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - comm.lan.telnet.enable = value
             - print(comm.lan.telnet.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -226,20 +219,19 @@ class CommLanTelnet(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``comm.lan.telnet.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes whether or not communication using Telnet is enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(comm.lan.telnet.enable)`` query.
             - Setting this property to a value will send the ``comm.lan.telnet.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - comm.lan.telnet.enable = value
             - print(comm.lan.telnet.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -261,7 +253,7 @@ class CommLanTelnet(BaseTSPCmd):
 class CommLanRawsockets(BaseTSPCmd):
     """The ``comm.lan.rawsockets`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.enable``: The ``comm.lan.rawsockets.enable`` attribute.
     """
 
@@ -269,20 +261,19 @@ class CommLanRawsockets(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``comm.lan.rawsockets.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes whether or not communication using raw socket is enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(comm.lan.rawsockets.enable)`` query.
             - Setting this property to a value will send the ``comm.lan.rawsockets.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - comm.lan.rawsockets.enable = value
             - print(comm.lan.rawsockets.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -301,20 +292,19 @@ class CommLanRawsockets(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``comm.lan.rawsockets.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes whether or not communication using raw socket is enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(comm.lan.rawsockets.enable)`` query.
             - Setting this property to a value will send the ``comm.lan.rawsockets.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - comm.lan.rawsockets.enable = value
             - print(comm.lan.rawsockets.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -336,7 +326,7 @@ class CommLanRawsockets(BaseTSPCmd):
 class CommLan(BaseTSPCmd):
     """The ``comm.lan`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.enable``: The ``comm.lan.enable`` attribute.
         - ``.rawsockets``: The ``comm.lan.rawsockets`` command tree.
         - ``.telnet``: The ``comm.lan.telnet`` command tree.
@@ -355,20 +345,19 @@ class CommLan(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``comm.lan.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls whether or not any communication using the LAN connection is
               enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(comm.lan.enable)`` query.
             - Setting this property to a value will send the ``comm.lan.enable = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - comm.lan.enable = value
             - print(comm.lan.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -387,20 +376,19 @@ class CommLan(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``comm.lan.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls whether or not any communication using the LAN connection is
               enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(comm.lan.enable)`` query.
             - Setting this property to a value will send the ``comm.lan.enable = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - comm.lan.enable = value
             - print(comm.lan.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -422,7 +410,7 @@ class CommLan(BaseTSPCmd):
     def rawsockets(self) -> CommLanRawsockets:
         """Return the ``comm.lan.rawsockets`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.enable``: The ``comm.lan.rawsockets.enable`` attribute.
         """
         return self._rawsockets
@@ -431,7 +419,7 @@ class CommLan(BaseTSPCmd):
     def telnet(self) -> CommLanTelnet:
         """Return the ``comm.lan.telnet`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.enable``: The ``comm.lan.telnet.enable`` attribute.
         """
         return self._telnet
@@ -440,7 +428,7 @@ class CommLan(BaseTSPCmd):
     def vxi11(self) -> CommLanVxi11:
         """Return the ``comm.lan.vxi11`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.enable``: The ``comm.lan.vxi11.enable`` attribute.
         """
         return self._vxi11
@@ -449,7 +437,7 @@ class CommLan(BaseTSPCmd):
     def web(self) -> CommLanWeb:
         """Return the ``comm.lan.web`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.enable``: The ``comm.lan.web.enable`` attribute.
         """
         return self._web
@@ -458,7 +446,7 @@ class CommLan(BaseTSPCmd):
 class CommGpib(BaseTSPCmd):
     """The ``comm.gpib`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.enable``: The ``comm.gpib.enable`` attribute.
     """
 
@@ -466,20 +454,19 @@ class CommGpib(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``comm.gpib.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes whether or not communication using the GPIB connection is
               enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(comm.gpib.enable)`` query.
             - Setting this property to a value will send the ``comm.gpib.enable = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - comm.gpib.enable = value
             - print(comm.gpib.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -498,20 +485,19 @@ class CommGpib(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``comm.gpib.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes whether or not communication using the GPIB connection is
               enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(comm.gpib.enable)`` query.
             - Setting this property to a value will send the ``comm.gpib.enable = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - comm.gpib.enable = value
             - print(comm.gpib.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -533,7 +519,7 @@ class CommGpib(BaseTSPCmd):
 class Comm(BaseTSPCmd):
     """The ``comm`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.gpib``: The ``comm.gpib`` command tree.
         - ``.lan``: The ``comm.lan`` command tree.
     """
@@ -547,7 +533,7 @@ class Comm(BaseTSPCmd):
     def gpib(self) -> CommGpib:
         """Return the ``comm.gpib`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.enable``: The ``comm.gpib.enable`` attribute.
         """
         return self._gpib
@@ -556,7 +542,7 @@ class Comm(BaseTSPCmd):
     def lan(self) -> CommLan:
         """Return the ``comm.lan`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.enable``: The ``comm.lan.enable`` attribute.
             - ``.rawsockets``: The ``comm.lan.rawsockets`` command tree.
             - ``.telnet``: The ``comm.lan.telnet`` command tree.

@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - status.clear()
     - status.condition
     - status.operation.condition
@@ -51,7 +49,7 @@ class StatusStandard(BaseTSPCmd):
         - ``.QYE``: B2. Set bit indicates that you attempted to read data from an empty Output
           Queue.
 
-    Properties/methods:
+    Properties and methods:
         - ``.enable``: The ``status.standard.enable`` attribute.
         - ``.event``: The ``status.standard.event`` attribute.
     """
@@ -67,21 +65,20 @@ class StatusStandard(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``status.standard.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute reads or sets the bits in the Status Enable register of the Standard
               Event Register.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(status.standard.enable)`` query.
             - Setting this property to a value will send the ``status.standard.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - status.standard.enable = value
             - print(status.standard.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -100,21 +97,20 @@ class StatusStandard(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``status.standard.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute reads or sets the bits in the Status Enable register of the Standard
               Event Register.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(status.standard.enable)`` query.
             - Setting this property to a value will send the ``status.standard.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - status.standard.enable = value
             - print(status.standard.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -136,18 +132,17 @@ class StatusStandard(BaseTSPCmd):
     def event(self) -> str:
         """Access the ``status.standard.event`` attribute.
 
-        **Description:**
+        Description:
             - This attribute returns the contents of the Standard Event Status Register set of the
               status model.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(status.standard.event)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(status.standard.event)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -166,7 +161,7 @@ class StatusStandard(BaseTSPCmd):
 class StatusQuestionable(BaseTSPCmd):
     """The ``status.questionable`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.condition``: The ``status.questionable.condition`` attribute.
         - ``.enable``: The ``status.questionable.enable`` attribute.
         - ``.event``: The ``status.questionable.event`` attribute.
@@ -178,17 +173,16 @@ class StatusQuestionable(BaseTSPCmd):
     def condition(self) -> str:
         """Access the ``status.questionable.condition`` attribute.
 
-        **Description:**
+        Description:
             - This attribute reads the Questionable Condition Register of the status model.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(status.questionable.condition)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(status.questionable.condition)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -207,21 +201,20 @@ class StatusQuestionable(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``status.questionable.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets or reads the contents of the questionable event enable register of
               the status model.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(status.questionable.enable)`` query.
             - Setting this property to a value will send the ``status.questionable.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - status.questionable.enable = value
             - print(status.questionable.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -240,21 +233,20 @@ class StatusQuestionable(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``status.questionable.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets or reads the contents of the questionable event enable register of
               the status model.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(status.questionable.enable)`` query.
             - Setting this property to a value will send the ``status.questionable.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - status.questionable.enable = value
             - print(status.questionable.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -276,17 +268,16 @@ class StatusQuestionable(BaseTSPCmd):
     def event(self) -> str:
         """Access the ``status.questionable.event`` attribute.
 
-        **Description:**
+        Description:
             - This attribute reads the Questionable Event Register.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(status.questionable.event)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(status.questionable.event)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -304,15 +295,14 @@ class StatusQuestionable(BaseTSPCmd):
     def getmap(self, bit_number: int) -> str:
         """Run the ``status.questionable.getmap()`` function.
 
-        **Description:**
+        Description:
             - This function requests the mapped set event and mapped clear event status for a bit in
               the Questionable Event Registers.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - status.questionable.getmap()
+            ```
 
         Args:
             bit_number: The bit number to check (0 to 14).
@@ -334,14 +324,13 @@ class StatusQuestionable(BaseTSPCmd):
     def setmap(self, bit_number: int, set_event: int, clear_event: Optional[int] = None) -> None:
         """Run the ``status.questionable.setmap()`` function.
 
-        **Description:**
+        Description:
             - This function maps events to bits in the questionable event registers.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - status.questionable.setmap()
+            ```
 
         Args:
             bit_number: The bit number that is mapped to an event (0 to 14).
@@ -374,7 +363,7 @@ class StatusQuestionable(BaseTSPCmd):
 class StatusOperation(BaseTSPCmd):
     """The ``status.operation`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.condition``: The ``status.operation.condition`` attribute.
         - ``.enable``: The ``status.operation.enable`` attribute.
         - ``.event``: The ``status.operation.event`` attribute.
@@ -386,17 +375,16 @@ class StatusOperation(BaseTSPCmd):
     def condition(self) -> str:
         """Access the ``status.operation.condition`` attribute.
 
-        **Description:**
+        Description:
             - This attribute reads the Operation Event Register of the status model.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(status.operation.condition)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(status.operation.condition)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -415,21 +403,20 @@ class StatusOperation(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``status.operation.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets or reads the contents of the Operation Event Enable Register of
               the status model.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(status.operation.enable)`` query.
             - Setting this property to a value will send the ``status.operation.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - status.operation.enable = value
             - print(status.operation.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -448,21 +435,20 @@ class StatusOperation(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``status.operation.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets or reads the contents of the Operation Event Enable Register of
               the status model.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(status.operation.enable)`` query.
             - Setting this property to a value will send the ``status.operation.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - status.operation.enable = value
             - print(status.operation.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -484,17 +470,16 @@ class StatusOperation(BaseTSPCmd):
     def event(self) -> str:
         """Access the ``status.operation.event`` attribute.
 
-        **Description:**
+        Description:
             - This attribute reads the Operation Event Register of the status model.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(status.operation.event)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(status.operation.event)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -512,15 +497,14 @@ class StatusOperation(BaseTSPCmd):
     def getmap(self, bit_number: int) -> str:
         """Run the ``status.operation.getmap()`` function.
 
-        **Description:**
+        Description:
             - This function requests the mapped set event and mapped clear event status for a bit in
               the Operation Event Registers.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - status.operation.getmap()
+            ```
 
         Args:
             bit_number: The bit number to check.
@@ -542,14 +526,13 @@ class StatusOperation(BaseTSPCmd):
     def setmap(self, bit_number: int, set_event: int, clear_event: Optional[int] = None) -> None:
         """Run the ``status.operation.setmap()`` function.
 
-        **Description:**
+        Description:
             - This function allows you to map events to bits in the Operation Event Register.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - status.operation.setmap()
+            ```
 
         Args:
             bit_number: The bit number that is mapped to an event (0 to 14).
@@ -593,7 +576,7 @@ class Status(BaseTSPCmd):
         - ``.OSB``: B7. Set summary bit indicates that an enabled operation event has occurred.
         - ``.QSB``: B3. Set summary bit indicates that an enabled questionable event has occurred.
 
-    Properties/methods:
+    Properties and methods:
         - ``.clear()``: The ``status.clear()`` function.
         - ``.condition``: The ``status.condition`` attribute.
         - ``.operation``: The ``status.operation`` command tree.
@@ -628,17 +611,16 @@ class Status(BaseTSPCmd):
     def condition(self) -> str:
         """Access the ``status.condition`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the status byte condition register.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(status.condition)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(status.condition)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -657,7 +639,7 @@ class Status(BaseTSPCmd):
     def operation(self) -> StatusOperation:
         """Return the ``status.operation`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.condition``: The ``status.operation.condition`` attribute.
             - ``.enable``: The ``status.operation.enable`` attribute.
             - ``.event``: The ``status.operation.event`` attribute.
@@ -670,7 +652,7 @@ class Status(BaseTSPCmd):
     def questionable(self) -> StatusQuestionable:
         """Return the ``status.questionable`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.condition``: The ``status.questionable.condition`` attribute.
             - ``.enable``: The ``status.questionable.enable`` attribute.
             - ``.event``: The ``status.questionable.event`` attribute.
@@ -683,20 +665,19 @@ class Status(BaseTSPCmd):
     def request_enable(self) -> str:
         """Access the ``status.request_enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the settings of the Service Request (SRQ) Enable Register.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(status.request_enable)`` query.
             - Setting this property to a value will send the ``status.request_enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - status.request_enable = value
             - print(status.request_enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -715,20 +696,19 @@ class Status(BaseTSPCmd):
     def request_enable(self, value: Union[str, float]) -> None:
         """Access the ``status.request_enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the settings of the Service Request (SRQ) Enable Register.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(status.request_enable)`` query.
             - Setting this property to a value will send the ``status.request_enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - status.request_enable = value
             - print(status.request_enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -760,7 +740,7 @@ class Status(BaseTSPCmd):
             - ``.QYE``: B2. Set bit indicates that you attempted to read data from an empty Output
               Queue.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.enable``: The ``status.standard.enable`` attribute.
             - ``.event``: The ``status.standard.event`` attribute.
         """
@@ -769,14 +749,13 @@ class Status(BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``status.clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears event registers.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - status.clear()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -792,14 +771,13 @@ class Status(BaseTSPCmd):
     def preset(self) -> None:
         """Run the ``status.preset()`` function.
 
-        **Description:**
+        Description:
             - This function resets all bits in the status model.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - status.preset()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.

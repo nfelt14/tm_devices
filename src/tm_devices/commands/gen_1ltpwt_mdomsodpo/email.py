@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - EMAIL:SETUp:FROMADDRess <QString>
     - EMAIL:SETUp:FROMADDRess?
     - EMAIL:SETUp:HOSTALIASNAMe <QString>
@@ -35,22 +33,21 @@ if TYPE_CHECKING:
 class EmailSetupSmtpserver(SCPICmdWrite, SCPICmdRead):
     """The ``EMAIL:SETUp:SMTPServer`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the email SMTP server DNS name for the common server setup information
           that is shared between the Act on Event commands and the Hardcopy Email commands.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMAIL:SETUp:SMTPServer?`` query.
         - Using the ``.verify(value)`` method will send the ``EMAIL:SETUp:SMTPServer?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMAIL:SETUp:SMTPServer value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMAIL:SETUp:SMTPServer <QString>
         - EMAIL:SETUp:SMTPServer?
+        ```
     """
 
     _WRAP_ARG_WITH_QUOTES = True
@@ -59,43 +56,41 @@ class EmailSetupSmtpserver(SCPICmdWrite, SCPICmdRead):
 class EmailSetupSmtpport(SCPICmdWrite, SCPICmdRead):
     """The ``EMAIL:SETUp:SMTPPort`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the email SMTP server port number for the common server setup information
           that is shared between the Act on Event commands and the Hardcopy Email commands. The
           default port number is 25.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMAIL:SETUp:SMTPPort?`` query.
         - Using the ``.verify(value)`` method will send the ``EMAIL:SETUp:SMTPPort?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMAIL:SETUp:SMTPPort value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMAIL:SETUp:SMTPPort <NR1>
         - EMAIL:SETUp:SMTPPort?
+        ```
     """
 
 
 class EmailSetupSmtppassword(SCPICmdWrite):
     """The ``EMAIL:SETUp:SMTPPASSWord`` command.
 
-    **Description:**
+    Description:
         - Sets the email SMTP server login password for the common server setup information that is
           shared between the Act on Event commands and the Hardcopy Email commands. For security
           reasons, no query form is provided.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``EMAIL:SETUp:SMTPPASSWord value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMAIL:SETUp:SMTPPASSWord <QString>
+        ```
     """
 
     _WRAP_ARG_WITH_QUOTES = True
@@ -104,22 +99,21 @@ class EmailSetupSmtppassword(SCPICmdWrite):
 class EmailSetupSmtplogin(SCPICmdWrite, SCPICmdRead):
     """The ``EMAIL:SETUp:SMTPLOGIn`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the email SMTP server login ID for the common server setup information
           that is shared between the Act on Event commands and the Hardcopy Email commands.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMAIL:SETUp:SMTPLOGIn?`` query.
         - Using the ``.verify(value)`` method will send the ``EMAIL:SETUp:SMTPLOGIn?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMAIL:SETUp:SMTPLOGIn value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMAIL:SETUp:SMTPLOGIn <QString>
         - EMAIL:SETUp:SMTPLOGIn?
+        ```
     """
 
     _WRAP_ARG_WITH_QUOTES = True
@@ -128,25 +122,24 @@ class EmailSetupSmtplogin(SCPICmdWrite, SCPICmdRead):
 class EmailSetupHostaliasname(SCPICmdWrite, SCPICmdRead):
     """The ``EMAIL:SETUp:HOSTALIASNAMe`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the email host alias name for the common server setup information that
           is shared between the Act on Event commands and the Hardcopy Email commands. If this is an
           empty string, the DNS name of the instrument is used. This string is included in the email
           message.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMAIL:SETUp:HOSTALIASNAMe?`` query.
         - Using the ``.verify(value)`` method will send the ``EMAIL:SETUp:HOSTALIASNAMe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMAIL:SETUp:HOSTALIASNAMe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMAIL:SETUp:HOSTALIASNAMe <QString>
         - EMAIL:SETUp:HOSTALIASNAMe?
+        ```
     """
 
     _WRAP_ARG_WITH_QUOTES = True
@@ -155,25 +148,24 @@ class EmailSetupHostaliasname(SCPICmdWrite, SCPICmdRead):
 class EmailSetupFromaddress(SCPICmdWrite, SCPICmdRead):
     """The ``EMAIL:SETUp:FROMADDRess`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the sender's email address for the common server setup information that
           is shared between the Act on Event commands and the Hardcopy Email commands. Note: to set
           the email recipient address for Act on Event commands, use
           ``ACTONEVENT:ACTION:EMAIL:SETUP:TOADDRESS``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMAIL:SETUp:FROMADDRess?`` query.
         - Using the ``.verify(value)`` method will send the ``EMAIL:SETUp:FROMADDRess?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMAIL:SETUp:FROMADDRess value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMAIL:SETUp:FROMADDRess <QString>
         - EMAIL:SETUp:FROMADDRess?
+        ```
     """
 
     _WRAP_ARG_WITH_QUOTES = True
@@ -182,7 +174,7 @@ class EmailSetupFromaddress(SCPICmdWrite, SCPICmdRead):
 class EmailSetup(SCPICmdRead):
     """The ``EMAIL:SETUp`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMAIL:SETUp?`` query.
         - Using the ``.verify(value)`` method will send the ``EMAIL:SETUp?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -209,25 +201,24 @@ class EmailSetup(SCPICmdRead):
     def fromaddress(self) -> EmailSetupFromaddress:
         """Return the ``EMAIL:SETUp:FROMADDRess`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the sender's email address for the common server setup information
               that is shared between the Act on Event commands and the Hardcopy Email commands.
               Note: to set the email recipient address for Act on Event commands, use
               ``ACTONEVENT:ACTION:EMAIL:SETUP:TOADDRESS``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMAIL:SETUp:FROMADDRess?`` query.
             - Using the ``.verify(value)`` method will send the ``EMAIL:SETUp:FROMADDRess?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMAIL:SETUp:FROMADDRess value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMAIL:SETUp:FROMADDRess <QString>
             - EMAIL:SETUp:FROMADDRess?
+            ```
         """
         return self._fromaddress
 
@@ -235,25 +226,24 @@ class EmailSetup(SCPICmdRead):
     def hostaliasname(self) -> EmailSetupHostaliasname:
         """Return the ``EMAIL:SETUp:HOSTALIASNAMe`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the email host alias name for the common server setup information
               that is shared between the Act on Event commands and the Hardcopy Email commands. If
               this is an empty string, the DNS name of the instrument is used. This string is
               included in the email message.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMAIL:SETUp:HOSTALIASNAMe?`` query.
             - Using the ``.verify(value)`` method will send the ``EMAIL:SETUp:HOSTALIASNAMe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMAIL:SETUp:HOSTALIASNAMe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMAIL:SETUp:HOSTALIASNAMe <QString>
             - EMAIL:SETUp:HOSTALIASNAMe?
+            ```
         """
         return self._hostaliasname
 
@@ -261,23 +251,22 @@ class EmailSetup(SCPICmdRead):
     def smtplogin(self) -> EmailSetupSmtplogin:
         """Return the ``EMAIL:SETUp:SMTPLOGIn`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the email SMTP server login ID for the common server setup information
               that is shared between the Act on Event commands and the Hardcopy Email commands.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMAIL:SETUp:SMTPLOGIn?`` query.
             - Using the ``.verify(value)`` method will send the ``EMAIL:SETUp:SMTPLOGIn?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMAIL:SETUp:SMTPLOGIn value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMAIL:SETUp:SMTPLOGIn <QString>
             - EMAIL:SETUp:SMTPLOGIn?
+            ```
         """
         return self._smtplogin
 
@@ -285,20 +274,19 @@ class EmailSetup(SCPICmdRead):
     def smtppassword(self) -> EmailSetupSmtppassword:
         """Return the ``EMAIL:SETUp:SMTPPASSWord`` command.
 
-        **Description:**
+        Description:
             - Sets the email SMTP server login password for the common server setup information that
               is shared between the Act on Event commands and the Hardcopy Email commands. For
               security reasons, no query form is provided.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``EMAIL:SETUp:SMTPPASSWord value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMAIL:SETUp:SMTPPASSWord <QString>
+            ```
         """
         return self._smtppassword
 
@@ -306,24 +294,23 @@ class EmailSetup(SCPICmdRead):
     def smtpport(self) -> EmailSetupSmtpport:
         """Return the ``EMAIL:SETUp:SMTPPort`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the email SMTP server port number for the common server setup
               information that is shared between the Act on Event commands and the Hardcopy Email
               commands. The default port number is 25.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMAIL:SETUp:SMTPPort?`` query.
             - Using the ``.verify(value)`` method will send the ``EMAIL:SETUp:SMTPPort?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMAIL:SETUp:SMTPPort value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMAIL:SETUp:SMTPPort <NR1>
             - EMAIL:SETUp:SMTPPort?
+            ```
         """
         return self._smtpport
 
@@ -331,23 +318,22 @@ class EmailSetup(SCPICmdRead):
     def smtpserver(self) -> EmailSetupSmtpserver:
         """Return the ``EMAIL:SETUp:SMTPServer`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the email SMTP server DNS name for the common server setup information
               that is shared between the Act on Event commands and the Hardcopy Email commands.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMAIL:SETUp:SMTPServer?`` query.
             - Using the ``.verify(value)`` method will send the ``EMAIL:SETUp:SMTPServer?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMAIL:SETUp:SMTPServer value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMAIL:SETUp:SMTPServer <QString>
             - EMAIL:SETUp:SMTPServer?
+            ```
         """
         return self._smtpserver
 
@@ -355,7 +341,7 @@ class EmailSetup(SCPICmdRead):
 class Email(SCPICmdRead):
     """The ``EMAIL`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMAIL?`` query.
         - Using the ``.verify(value)`` method will send the ``EMAIL?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -372,7 +358,7 @@ class Email(SCPICmdRead):
     def setup(self) -> EmailSetup:
         """Return the ``EMAIL:SETUp`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMAIL:SETUp?`` query.
             - Using the ``.verify(value)`` method will send the ``EMAIL:SETUp?`` query and raise an
               AssertionError if the returned value does not match ``value``.

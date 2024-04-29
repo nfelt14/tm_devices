@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - EVENt:IMMediate
     - EVENt:IMPedance <ohms>
     - EVENt:IMPedance?
@@ -33,24 +31,23 @@ if TYPE_CHECKING:
 class EventPolarity(SCPICmdWrite, SCPICmdRead):
     """The ``EVENt:POLarity`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the polarity of event signal. The Event Jump is the
           function to change the sequencing of the waveform by an event signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EVENt:POLarity?`` query.
         - Using the ``.verify(value)`` method will send the ``EVENt:POLarity?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EVENt:POLarity value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EVENt:POLarity {POSitive|NEGative}
         - EVENt:POLarity?
+        ```
 
-    **Info:**
+    Info:
         - ``POSitive`` indicates that event jump occurs when the instrument receives a positive
           pulse.
         - ``NEGative`` indicates that event jump occurs when the instrument receives a negative
@@ -61,23 +58,22 @@ class EventPolarity(SCPICmdWrite, SCPICmdRead):
 class EventLevel(SCPICmdWrite, SCPICmdRead):
     """The ``EVENt:LEVel`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the event level.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EVENt:LEVel?`` query.
         - Using the ``.verify(value)`` method will send the ``EVENt:LEVel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EVENt:LEVel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EVENt:LEVel <level>
         - EVENt:LEVel?
+        ```
 
-    **Info:**
+    Info:
         - ``<level>`` ::=<NR3>.
     """
 
@@ -85,24 +81,23 @@ class EventLevel(SCPICmdWrite, SCPICmdRead):
 class EventJtiming(SCPICmdWrite, SCPICmdRead):
     r"""The ``EVENt:JTIMing`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the jump timing. Refer to the User Online Help for
           more information on jump timing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EVENt:JTIMing?`` query.
         - Using the ``.verify(value)`` method will send the ``EVENt:JTIMing?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EVENt:JTIMing value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EVENt:JTIMing <jump_type>
         - EVENt:JTIMing?
+        ```
 
-    **Info:**
+    Info:
         - ``<jump_type>`` ::={SYNChronous\|ASYNchronous}.
         - ``SYNChronous`` indicates jump occurs immediately.
         - ``ASYNchronous`` indicates jump occurs after the signal generation is finished.
@@ -112,24 +107,23 @@ class EventJtiming(SCPICmdWrite, SCPICmdRead):
 class EventImpedance(SCPICmdWrite, SCPICmdRead):
     """The ``EVENt:IMPedance`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the impedance of the external event input. Valid
           values are 50 ohm or 1 kohm.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EVENt:IMPedance?`` query.
         - Using the ``.verify(value)`` method will send the ``EVENt:IMPedance?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EVENt:IMPedance value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EVENt:IMPedance <ohms>
         - EVENt:IMPedance?
+        ```
 
-    **Info:**
+    Info:
         - ``<ohms>`` ::=<NR3>.
     """
 
@@ -137,26 +131,25 @@ class EventImpedance(SCPICmdWrite, SCPICmdRead):
 class EventImmediate(SCPICmdWriteNoArguments):
     """The ``EVENt:IMMediate`` command.
 
-    **Description:**
+    Description:
         - This command generates a forced event. This is used to generate the event when the
           sequence is waiting for an event jump (See ``SEQUENCE:ELEMENTN:JTARGET:TYPE``). This is
           equivalent to pressing the Force Event button on the front panel of the instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``EVENt:IMMediate`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EVENt:IMMediate
+        ```
     """
 
 
 class Event(SCPICmdRead):
     """The ``EVENt`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EVENt?`` query.
         - Using the ``.verify(value)`` method will send the ``EVENt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -181,24 +174,23 @@ class Event(SCPICmdRead):
     def impedance(self) -> EventImpedance:
         """Return the ``EVENt:IMPedance`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the impedance of the external event input.
               Valid values are 50 ohm or 1 kohm.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EVENt:IMPedance?`` query.
             - Using the ``.verify(value)`` method will send the ``EVENt:IMPedance?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EVENt:IMPedance value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EVENt:IMPedance <ohms>
             - EVENt:IMPedance?
+            ```
 
-        **Info:**
+        Info:
             - ``<ohms>`` ::=<NR3>.
         """
         return self._impedance
@@ -207,24 +199,23 @@ class Event(SCPICmdRead):
     def jtiming(self) -> EventJtiming:
         r"""Return the ``EVENt:JTIMing`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the jump timing. Refer to the User Online Help
               for more information on jump timing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EVENt:JTIMing?`` query.
             - Using the ``.verify(value)`` method will send the ``EVENt:JTIMing?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EVENt:JTIMing value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EVENt:JTIMing <jump_type>
             - EVENt:JTIMing?
+            ```
 
-        **Info:**
+        Info:
             - ``<jump_type>`` ::={SYNChronous\|ASYNchronous}.
             - ``SYNChronous`` indicates jump occurs immediately.
             - ``ASYNchronous`` indicates jump occurs after the signal generation is finished.
@@ -235,23 +226,22 @@ class Event(SCPICmdRead):
     def level(self) -> EventLevel:
         """Return the ``EVENt:LEVel`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the event level.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EVENt:LEVel?`` query.
             - Using the ``.verify(value)`` method will send the ``EVENt:LEVel?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EVENt:LEVel value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EVENt:LEVel <level>
             - EVENt:LEVel?
+            ```
 
-        **Info:**
+        Info:
             - ``<level>`` ::=<NR3>.
         """
         return self._level
@@ -260,24 +250,23 @@ class Event(SCPICmdRead):
     def polarity(self) -> EventPolarity:
         """Return the ``EVENt:POLarity`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the polarity of event signal. The Event Jump is
               the function to change the sequencing of the waveform by an event signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EVENt:POLarity?`` query.
             - Using the ``.verify(value)`` method will send the ``EVENt:POLarity?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EVENt:POLarity value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EVENt:POLarity {POSitive|NEGative}
             - EVENt:POLarity?
+            ```
 
-        **Info:**
+        Info:
             - ``POSitive`` indicates that event jump occurs when the instrument receives a positive
               pulse.
             - ``NEGative`` indicates that event jump occurs when the instrument receives a negative
@@ -289,18 +278,17 @@ class Event(SCPICmdRead):
     def immediate(self) -> EventImmediate:
         """Return the ``EVENt:IMMediate`` command.
 
-        **Description:**
+        Description:
             - This command generates a forced event. This is used to generate the event when the
               sequence is waiting for an event jump (See ``SEQUENCE:ELEMENTN:JTARGET:TYPE``). This
               is equivalent to pressing the Force Event button on the front panel of the instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``EVENt:IMMediate`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EVENt:IMMediate
+            ```
         """
         return self._immediate

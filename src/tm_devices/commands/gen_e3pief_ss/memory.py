@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - memory.available()
     - memory.used()
 """
@@ -28,7 +26,7 @@ if TYPE_CHECKING:
 class Memory(BaseTSPCmd):
     """The ``memory`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.available()``: The ``memory.available()`` function.
         - ``.used()``: The ``memory.used()`` function.
     """
@@ -39,16 +37,15 @@ class Memory(BaseTSPCmd):
     def available(self) -> str:
         """Run the ``memory.available()`` function.
 
-        **Description:**
+        Description:
             - This function reads and returns the amount of memory that is available in the
               instrument overall for storing user scripts and channel patterns and for user-defined
               DMM configurations.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - memory.available()
+            ```
 
         Returns:
             The result of the function call.
@@ -67,15 +64,14 @@ class Memory(BaseTSPCmd):
     def used(self) -> str:
         """Run the ``memory.used()`` function.
 
-        **Description:**
+        Description:
             - This function reports the amount of memory used in the instrument overall and for user
               scripts, storing channel patterns, and storing user DMM configurations.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - memory.used()
+            ```
 
         Returns:
             The result of the function call.

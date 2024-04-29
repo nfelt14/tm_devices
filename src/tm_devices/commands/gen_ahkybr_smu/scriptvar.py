@@ -12,8 +12,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - scriptVar.autorun
     - scriptVar.list()
     - scriptVar.name
@@ -33,10 +31,10 @@ if TYPE_CHECKING:
 class Scriptvar(BaseTSPCmd):
     """The ``scriptVar`` command tree.
 
-    **Info:**
+    Info:
         - ``scriptVar``, the name of the variable that references the script.
 
-    Properties/methods:
+    Properties and methods:
         - ``.autorun``: The ``scriptVar.autorun`` attribute.
         - ``.list()``: The ``scriptVar.list()`` function.
         - ``.name``: The ``scriptVar.name`` attribute.
@@ -52,21 +50,20 @@ class Scriptvar(BaseTSPCmd):
     def autorun(self) -> str:
         """Access the ``scriptVar.autorun`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls the autorun state of a script.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scriptVar.autorun)`` query.
             - Setting this property to a value will send the ``scriptVar.autorun = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scriptVar.autorun = value
             - print(scriptVar.autorun)
+            ```
 
-        **Info:**
+        Info:
             - ``scriptVar``, the name of the variable that references the script.
 
         Raises:
@@ -86,21 +83,20 @@ class Scriptvar(BaseTSPCmd):
     def autorun(self, value: Union[str, float]) -> None:
         """Access the ``scriptVar.autorun`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls the autorun state of a script.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scriptVar.autorun)`` query.
             - Setting this property to a value will send the ``scriptVar.autorun = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scriptVar.autorun = value
             - print(scriptVar.autorun)
+            ```
 
-        **Info:**
+        Info:
             - ``scriptVar``, the name of the variable that references the script.
 
         Raises:
@@ -123,21 +119,20 @@ class Scriptvar(BaseTSPCmd):
     def name(self) -> str:
         """Access the ``scriptVar.name`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the name of a script in the runtime environment.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scriptVar.name)`` query.
             - Setting this property to a value will send the ``scriptVar.name = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scriptVar.name = value
             - print(scriptVar.name)
+            ```
 
-        **Info:**
+        Info:
             - ``scriptVar``, the name of the variable that references the script.
 
         Raises:
@@ -157,21 +152,20 @@ class Scriptvar(BaseTSPCmd):
     def name(self, value: Union[str, float]) -> None:
         """Access the ``scriptVar.name`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the name of a script in the runtime environment.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scriptVar.name)`` query.
             - Setting this property to a value will send the ``scriptVar.name = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scriptVar.name = value
             - print(scriptVar.name)
+            ```
 
-        **Info:**
+        Info:
             - ``scriptVar``, the name of the variable that references the script.
 
         Raises:
@@ -194,21 +188,20 @@ class Scriptvar(BaseTSPCmd):
     def source(self) -> str:
         """Access the ``scriptVar.source`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source code of a script.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scriptVar.source)`` query.
             - Setting this property to a value will send the ``scriptVar.source = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scriptVar.source = value
             - print(scriptVar.source)
+            ```
 
-        **Info:**
+        Info:
             - ``scriptVar``, the name of the variable that references the script that contains the
               source code.
 
@@ -229,21 +222,20 @@ class Scriptvar(BaseTSPCmd):
     def source(self, value: Union[str, float]) -> None:
         """Access the ``scriptVar.source`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source code of a script.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scriptVar.source)`` query.
             - Setting this property to a value will send the ``scriptVar.source = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scriptVar.source = value
             - print(scriptVar.source)
+            ```
 
-        **Info:**
+        Info:
             - ``scriptVar``, the name of the variable that references the script that contains the
               source code.
 
@@ -266,16 +258,15 @@ class Scriptvar(BaseTSPCmd):
     def list(self) -> None:
         """Run the ``scriptVar.list()`` function.
 
-        **Description:**
+        Description:
             - This function generates a script listing.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scriptVar.list()
+            ```
 
-        **Info:**
+        Info:
             - ``scriptVar``, the name of the variable that references the script.
 
         Raises:
@@ -292,16 +283,15 @@ class Scriptvar(BaseTSPCmd):
     def run(self) -> None:
         """Run the ``scriptVar.run()`` function.
 
-        **Description:**
+        Description:
             - This function runs a script.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scriptVar.run()
+            ```
 
-        **Info:**
+        Info:
             - ``scriptVar``, the name of the variable that references the script.
 
         Raises:
@@ -318,14 +308,13 @@ class Scriptvar(BaseTSPCmd):
     def save(self, filename: Optional[str] = None) -> None:
         """Run the ``scriptVar.save()`` function.
 
-        **Description:**
+        Description:
             - This function saves the script to nonvolatile memory or to a USB flash drive.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scriptVar.save()
+            ```
 
         Args:
             filename (optional): A string that contains the file name to use when saving the script

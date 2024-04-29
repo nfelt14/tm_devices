@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - USBTMC:PRODUCTID:DECimal?
     - USBTMC:PRODUCTID:HEXadecimal?
     - USBTMC:SERIALnumber?
@@ -30,49 +28,47 @@ if TYPE_CHECKING:
 class UsbtmcVendoridHexadecimal(SCPICmdRead):
     """The ``USBTMC:VENDORID:HEXadecimal`` command.
 
-    **Description:**
+    Description:
         - This query returns the vendor ID number as a hexadecimal value. The hexadecimal vendor ID
           for Tektronix instruments is 0x699. USBTMC stands for USB Test & Measurement Class, a
           protocol that allows GPIB-like communication with USB devices.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``USBTMC:VENDORID:HEXadecimal?`` query.
         - Using the ``.verify(value)`` method will send the ``USBTMC:VENDORID:HEXadecimal?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - USBTMC:VENDORID:HEXadecimal?
+        ```
     """
 
 
 class UsbtmcVendoridDecimal(SCPICmdRead):
     """The ``USBTMC:VENDORID:DECimal`` command.
 
-    **Description:**
+    Description:
         - This query returns the vendor ID number as a decimal. The decimal vendor ID for Tektronix
           instruments is 1689. USBTMC stands for USB Test & Measurement Class, a protocol that
           allows GPIB-like communication with USB devices.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``USBTMC:VENDORID:DECimal?`` query.
         - Using the ``.verify(value)`` method will send the ``USBTMC:VENDORID:DECimal?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - USBTMC:VENDORID:DECimal?
+        ```
     """
 
 
 class UsbtmcVendorid(SCPICmdRead):
     """The ``USBTMC:VENDORID`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``USBTMC:VENDORID?`` query.
         - Using the ``.verify(value)`` method will send the ``USBTMC:VENDORID?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -91,21 +87,20 @@ class UsbtmcVendorid(SCPICmdRead):
     def decimal(self) -> UsbtmcVendoridDecimal:
         """Return the ``USBTMC:VENDORID:DECimal`` command.
 
-        **Description:**
+        Description:
             - This query returns the vendor ID number as a decimal. The decimal vendor ID for
               Tektronix instruments is 1689. USBTMC stands for USB Test & Measurement Class, a
               protocol that allows GPIB-like communication with USB devices.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``USBTMC:VENDORID:DECimal?`` query.
             - Using the ``.verify(value)`` method will send the ``USBTMC:VENDORID:DECimal?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - USBTMC:VENDORID:DECimal?
+            ```
         """
         return self._decimal
 
@@ -113,21 +108,20 @@ class UsbtmcVendorid(SCPICmdRead):
     def hexadecimal(self) -> UsbtmcVendoridHexadecimal:
         """Return the ``USBTMC:VENDORID:HEXadecimal`` command.
 
-        **Description:**
+        Description:
             - This query returns the vendor ID number as a hexadecimal value. The hexadecimal vendor
               ID for Tektronix instruments is 0x699. USBTMC stands for USB Test & Measurement Class,
               a protocol that allows GPIB-like communication with USB devices.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``USBTMC:VENDORID:HEXadecimal?`` query.
             - Using the ``.verify(value)`` method will send the ``USBTMC:VENDORID:HEXadecimal?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - USBTMC:VENDORID:HEXadecimal?
+            ```
         """
         return self._hexadecimal
 
@@ -135,71 +129,68 @@ class UsbtmcVendorid(SCPICmdRead):
 class UsbtmcSerialnumber(SCPICmdRead):
     """The ``USBTMC:SERIALnumber`` command.
 
-    **Description:**
+    Description:
         - This query returns the serial number of the oscilloscope. USBTMC stands for USB Test &
           Measurement Class, a protocol that allows GPIB-like communication with USB devices.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``USBTMC:SERIALnumber?`` query.
         - Using the ``.verify(value)`` method will send the ``USBTMC:SERIALnumber?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - USBTMC:SERIALnumber?
+        ```
     """
 
 
 class UsbtmcProductidHexadecimal(SCPICmdRead):
     """The ``USBTMC:PRODUCTID:HEXadecimal`` command.
 
-    **Description:**
+    Description:
         - This query returns the product ID number as a hexadecimal value. The product ID numbers
           vary for each instrument family and model. USBTMC stands for USB Test & Measurement Class,
           a protocol that allows GPIB-like communication with USB devices. For product ID numbers,
           see the following table.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``USBTMC:PRODUCTID:HEXadecimal?`` query.
         - Using the ``.verify(value)`` method will send the ``USBTMC:PRODUCTID:HEXadecimal?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - USBTMC:PRODUCTID:HEXadecimal?
+        ```
     """
 
 
 class UsbtmcProductidDecimal(SCPICmdRead):
     """The ``USBTMC:PRODUCTID:DECimal`` command.
 
-    **Description:**
+    Description:
         - This query returns the product ID number as a decimal. The product ID numbers vary for
           each instrument family and model. USBTMC stands for USB Test & Measurement Class, a
           protocol that allows GPIB-like communication with USB devices. For product ID numbers, see
           the following table.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``USBTMC:PRODUCTID:DECimal?`` query.
         - Using the ``.verify(value)`` method will send the ``USBTMC:PRODUCTID:DECimal?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - USBTMC:PRODUCTID:DECimal?
+        ```
     """
 
 
 class UsbtmcProductid(SCPICmdRead):
     """The ``USBTMC:PRODUCTID`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``USBTMC:PRODUCTID?`` query.
         - Using the ``.verify(value)`` method will send the ``USBTMC:PRODUCTID?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -218,22 +209,21 @@ class UsbtmcProductid(SCPICmdRead):
     def decimal(self) -> UsbtmcProductidDecimal:
         """Return the ``USBTMC:PRODUCTID:DECimal`` command.
 
-        **Description:**
+        Description:
             - This query returns the product ID number as a decimal. The product ID numbers vary for
               each instrument family and model. USBTMC stands for USB Test & Measurement Class, a
               protocol that allows GPIB-like communication with USB devices. For product ID numbers,
               see the following table.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``USBTMC:PRODUCTID:DECimal?`` query.
             - Using the ``.verify(value)`` method will send the ``USBTMC:PRODUCTID:DECimal?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - USBTMC:PRODUCTID:DECimal?
+            ```
         """
         return self._decimal
 
@@ -241,22 +231,21 @@ class UsbtmcProductid(SCPICmdRead):
     def hexadecimal(self) -> UsbtmcProductidHexadecimal:
         """Return the ``USBTMC:PRODUCTID:HEXadecimal`` command.
 
-        **Description:**
+        Description:
             - This query returns the product ID number as a hexadecimal value. The product ID
               numbers vary for each instrument family and model. USBTMC stands for USB Test &
               Measurement Class, a protocol that allows GPIB-like communication with USB devices.
               For product ID numbers, see the following table.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``USBTMC:PRODUCTID:HEXadecimal?`` query.
             - Using the ``.verify(value)`` method will send the ``USBTMC:PRODUCTID:HEXadecimal?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - USBTMC:PRODUCTID:HEXadecimal?
+            ```
         """
         return self._hexadecimal
 
@@ -264,7 +253,7 @@ class UsbtmcProductid(SCPICmdRead):
 class Usbtmc(SCPICmdRead):
     """The ``USBTMC`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``USBTMC?`` query.
         - Using the ``.verify(value)`` method will send the ``USBTMC?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -285,7 +274,7 @@ class Usbtmc(SCPICmdRead):
     def productid(self) -> UsbtmcProductid:
         """Return the ``USBTMC:PRODUCTID`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``USBTMC:PRODUCTID?`` query.
             - Using the ``.verify(value)`` method will send the ``USBTMC:PRODUCTID?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -300,20 +289,19 @@ class Usbtmc(SCPICmdRead):
     def serialnumber(self) -> UsbtmcSerialnumber:
         """Return the ``USBTMC:SERIALnumber`` command.
 
-        **Description:**
+        Description:
             - This query returns the serial number of the oscilloscope. USBTMC stands for USB Test &
               Measurement Class, a protocol that allows GPIB-like communication with USB devices.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``USBTMC:SERIALnumber?`` query.
             - Using the ``.verify(value)`` method will send the ``USBTMC:SERIALnumber?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - USBTMC:SERIALnumber?
+            ```
         """
         return self._serialnumber
 
@@ -321,7 +309,7 @@ class Usbtmc(SCPICmdRead):
     def vendorid(self) -> UsbtmcVendorid:
         """Return the ``USBTMC:VENDORID`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``USBTMC:VENDORID?`` query.
             - Using the ``.verify(value)`` method will send the ``USBTMC:VENDORID?`` query and raise
               an AssertionError if the returned value does not match ``value``.

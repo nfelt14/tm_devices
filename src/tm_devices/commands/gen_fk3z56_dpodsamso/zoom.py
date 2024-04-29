@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - ZOOm {RESET|RESETLive}
     - ZOOm:GRAticule:SIZE {50|80|100}
     - ZOOm:GRAticule:SIZE?
@@ -119,23 +117,22 @@ if TYPE_CHECKING:
 class ZoomZoom1State(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:STATE`` command.
 
-    **Description:**
+    Description:
         - This command turns the specified zoom on or off. <x> can only be 1.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:STATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:STATE {ON|OFF|<NR1>}
         - ZOOm:ZOOM1:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` turns Zoom 1 on.
         - ``OFF`` turns Zoom 1 off.
         - ``<NR1>`` is an integer. 0 disables the specified zoom; any other value enables the
@@ -146,24 +143,23 @@ class ZoomZoom1State(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1Scrolllock(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:SCROLLLock`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries Scroll Lock for the specified zoom, where x is an integer
           from 1 to 4 representing the desired zoom window.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:SCROLLLock?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:SCROLLLock?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:SCROLLLock value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:SCROLLLock {ON|OFF|<NR1>}
         - ZOOm:ZOOM1:SCROLLLock?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` locks waveforms for the specified zoom window <x>.
         - ``OFF`` unlocks waveforms for the specified zoom window <x>.
         - ``<NR1>`` = 0 unlocks waveforms for the specified zoom window <x>; any other value locks
@@ -174,27 +170,26 @@ class ZoomZoom1Scrolllock(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1RefItemVerticalScale(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:REF<x>:VERTical:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the zoom vertical scale of the specified waveform for the
           specified zoom, where x is an integer from 1 to 4 representing the desired zoom window.
           The waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1,
           Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:REF<x>:VERTical:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:REF<x>:VERTical:SCAle?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``ZOOm:ZOOM1:REF<x>:VERTical:SCAle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:REF<x>:VERTical:SCAle <NR3>
         - ZOOm:ZOOM1:REF<x>:VERTical:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the amount of vertical expansion or compression, which operates on a 1-2-5
           sequence (for example, 1, 2, 5, 10, 20, 50, 100...). Based on the value that you entered,
           this command uses the nearest scale factor. Setting the vertical scale to 1 indicates
@@ -205,7 +200,7 @@ class ZoomZoom1RefItemVerticalScale(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1RefItemVerticalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:REF<x>:VERTical:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the vertical position of the specified waveform for the
           specified zoom, where x is an integer from 1 to 4 representing the desired zoom window.
           The setting of the ``ZOOm:1:SCROLLLOCk`` command determines the waveforms that are
@@ -213,7 +208,7 @@ class ZoomZoom1RefItemVerticalPosition(SCPICmdWrite, SCPICmdRead):
           is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1, Math2, Math3, Math4,
           Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:REF<x>:VERTical:POSition?``
           query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:REF<x>:VERTical:POSition?``
@@ -221,14 +216,13 @@ class ZoomZoom1RefItemVerticalPosition(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ZOOm:ZOOM1:REF<x>:VERTical:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:REF<x>:VERTical:POSition <NR3>
         - ZOOm:ZOOM1:REF<x>:VERTical:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the vertical position, expressed in divisions.
     """
 
@@ -236,7 +230,7 @@ class ZoomZoom1RefItemVerticalPosition(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1RefItemVertical(SCPICmdRead):
     """The ``ZOOm:ZOOM1:REF<x>:VERTical`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:REF<x>:VERTical?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:REF<x>:VERTical?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -255,7 +249,7 @@ class ZoomZoom1RefItemVertical(SCPICmdRead):
     def position(self) -> ZoomZoom1RefItemVerticalPosition:
         """Return the ``ZOOm:ZOOM1:REF<x>:VERTical:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the vertical position of the specified waveform for the
               specified zoom, where x is an integer from 1 to 4 representing the desired zoom
               window. The setting of the ``ZOOm:1:SCROLLLOCk`` command determines the waveforms that
@@ -263,7 +257,7 @@ class ZoomZoom1RefItemVertical(SCPICmdRead):
               affected is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1, Math2,
               Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:REF<x>:VERTical:POSition?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -272,14 +266,13 @@ class ZoomZoom1RefItemVertical(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ZOOm:ZOOM1:REF<x>:VERTical:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:REF<x>:VERTical:POSition <NR3>
             - ZOOm:ZOOM1:REF<x>:VERTical:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the vertical position, expressed in divisions.
         """
         return self._position
@@ -288,13 +281,13 @@ class ZoomZoom1RefItemVertical(SCPICmdRead):
     def scale(self) -> ZoomZoom1RefItemVerticalScale:
         """Return the ``ZOOm:ZOOM1:REF<x>:VERTical:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the zoom vertical scale of the specified waveform for the
               specified zoom, where x is an integer from 1 to 4 representing the desired zoom
               window. The waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3,
               CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:REF<x>:VERTical:SCAle?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -303,14 +296,13 @@ class ZoomZoom1RefItemVertical(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ZOOm:ZOOM1:REF<x>:VERTical:SCAle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:REF<x>:VERTical:SCAle <NR3>
             - ZOOm:ZOOM1:REF<x>:VERTical:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the amount of vertical expansion or compression, which operates on a
               1-2-5 sequence (for example, 1, 2, 5, 10, 20, 50, 100...). Based on the value that you
               entered, this command uses the nearest scale factor. Setting the vertical scale to 1
@@ -322,27 +314,26 @@ class ZoomZoom1RefItemVertical(SCPICmdRead):
 class ZoomZoom1RefItemHorizontalScale(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:REF<x>:HORizontal:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the zoom horizontal scale factor of the specified waveform
           for the specified zoom, where x is an integer from 1 to 4 representing the desired zoom
           window. The waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3,
           CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:REF<x>:HORizontal:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:REF<x>:HORizontal:SCAle?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``ZOOm:ZOOM1:REF<x>:HORizontal:SCAle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:REF<x>:HORizontal:SCAle <NR3>
         - ZOOm:ZOOM1:REF<x>:HORizontal:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the amount of expansion in the horizontal direction in 1-2-5 increments.
     """
 
@@ -350,14 +341,14 @@ class ZoomZoom1RefItemHorizontalScale(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1RefItemHorizontalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:REF<x>:HORizontal:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the horizontal position of the specified waveform for the
           specified zoom, where x is an integer from 1 to 4 representing the desired zoom window.
           The setting of the ``ZOOM:ZOOMX:SCROLLLOCK`` command determines the waveforms that are
           affected. The waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3,
           CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:REF<x>:HORizontal:POSition?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -366,14 +357,13 @@ class ZoomZoom1RefItemHorizontalPosition(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ZOOm:ZOOM1:REF<x>:HORizontal:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:REF<x>:HORizontal:POSition <NR3>
         - ZOOm:ZOOM1:REF<x>:HORizontal:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a value from 0 to 100.00 and is the percent of the waveform that is to the
           left of screen center, when the zoom factor is 1× or greater.
     """
@@ -382,7 +372,7 @@ class ZoomZoom1RefItemHorizontalPosition(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1RefItemHorizontal(SCPICmdRead):
     """The ``ZOOm:ZOOM1:REF<x>:HORizontal`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:REF<x>:HORizontal?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:REF<x>:HORizontal?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -401,14 +391,14 @@ class ZoomZoom1RefItemHorizontal(SCPICmdRead):
     def position(self) -> ZoomZoom1RefItemHorizontalPosition:
         """Return the ``ZOOm:ZOOM1:REF<x>:HORizontal:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the horizontal position of the specified waveform for the
               specified zoom, where x is an integer from 1 to 4 representing the desired zoom
               window. The setting of the ``ZOOM:ZOOMX:SCROLLLOCK`` command determines the waveforms
               that are affected. The waveform affected is determine by <wfm> which can vary from
               CH1, CH2, CH3, CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:REF<x>:HORizontal:POSition?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -417,14 +407,13 @@ class ZoomZoom1RefItemHorizontal(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ZOOm:ZOOM1:REF<x>:HORizontal:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:REF<x>:HORizontal:POSition <NR3>
             - ZOOm:ZOOM1:REF<x>:HORizontal:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a value from 0 to 100.00 and is the percent of the waveform that is to
               the left of screen center, when the zoom factor is 1× or greater.
         """
@@ -434,13 +423,13 @@ class ZoomZoom1RefItemHorizontal(SCPICmdRead):
     def scale(self) -> ZoomZoom1RefItemHorizontalScale:
         """Return the ``ZOOm:ZOOM1:REF<x>:HORizontal:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the zoom horizontal scale factor of the specified
               waveform for the specified zoom, where x is an integer from 1 to 4 representing the
               desired zoom window. The waveform affected is determine by <wfm> which can vary from
               CH1, CH2, CH3, CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:REF<x>:HORizontal:SCAle?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -449,14 +438,13 @@ class ZoomZoom1RefItemHorizontal(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ZOOm:ZOOM1:REF<x>:HORizontal:SCAle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:REF<x>:HORizontal:SCAle <NR3>
             - ZOOm:ZOOM1:REF<x>:HORizontal:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the amount of expansion in the horizontal direction in 1-2-5 increments.
         """
         return self._scale
@@ -465,27 +453,26 @@ class ZoomZoom1RefItemHorizontal(SCPICmdRead):
 class ZoomZoom1RefItemDisplay(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:REF<x>:DISplay`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the display of the specified waveform for the specified zoom,
           where x is an integer from 1 to 4 representing the desired zoom window. The waveform
           affected is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1, Math2,
           Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:REF<x>:DISplay?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:REF<x>:DISplay?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:REF<x>:DISplay value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:REF<x>:DISplay {<NR1>|OFF|ON}
         - ZOOm:ZOOM1:REF<x>:DISplay?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` A zero disables the specified zoom; any other value enables the specified zoom.
         - ``OFF`` disables the specified zoom.
         - ``ON`` displays the specified zoom.
@@ -495,7 +482,7 @@ class ZoomZoom1RefItemDisplay(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1RefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``ZOOm:ZOOM1:REF<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:REF<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:REF<x>?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -516,27 +503,26 @@ class ZoomZoom1RefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def display(self) -> ZoomZoom1RefItemDisplay:
         """Return the ``ZOOm:ZOOM1:REF<x>:DISplay`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the display of the specified waveform for the specified
               zoom, where x is an integer from 1 to 4 representing the desired zoom window. The
               waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1,
               Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:REF<x>:DISplay?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:REF<x>:DISplay?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:REF<x>:DISplay value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:REF<x>:DISplay {<NR1>|OFF|ON}
             - ZOOm:ZOOM1:REF<x>:DISplay?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` A zero disables the specified zoom; any other value enables the specified
               zoom.
             - ``OFF`` disables the specified zoom.
@@ -548,7 +534,7 @@ class ZoomZoom1RefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def horizontal(self) -> ZoomZoom1RefItemHorizontal:
         """Return the ``ZOOm:ZOOM1:REF<x>:HORizontal`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:REF<x>:HORizontal?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:REF<x>:HORizontal?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -563,7 +549,7 @@ class ZoomZoom1RefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def vertical(self) -> ZoomZoom1RefItemVertical:
         """Return the ``ZOOm:ZOOM1:REF<x>:VERTical`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:REF<x>:VERTical?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:REF<x>:VERTical?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -578,27 +564,26 @@ class ZoomZoom1RefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class ZoomZoom1MathItemVerticalScale(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:MATH<x>:VERTical:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the zoom vertical scale of the specified waveform for the
           specified zoom, where x is an integer from 1 to 4 representing the desired zoom window.
           The waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1,
           Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:MATH<x>:VERTical:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:MATH<x>:VERTical:SCAle?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``ZOOm:ZOOM1:MATH<x>:VERTical:SCAle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:MATH<x>:VERTical:SCAle <NR3>
         - ZOOm:ZOOM1:MATH<x>:VERTical:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the amount of vertical expansion or compression, which operates on a 1-2-5
           sequence (for example, 1, 2, 5, 10, 20, 50, 100...). Based on the value that you entered,
           this command uses the nearest scale factor. Setting the vertical scale to 1 indicates
@@ -609,7 +594,7 @@ class ZoomZoom1MathItemVerticalScale(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1MathItemVerticalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:MATH<x>:VERTical:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the vertical position of the specified waveform for the
           specified zoom, where x is an integer from 1 to 4 representing the desired zoom window.
           The setting of the ``ZOOm:1:SCROLLLOCk`` command determines the waveforms that are
@@ -617,7 +602,7 @@ class ZoomZoom1MathItemVerticalPosition(SCPICmdWrite, SCPICmdRead):
           is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1, Math2, Math3, Math4,
           Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:MATH<x>:VERTical:POSition?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -626,14 +611,13 @@ class ZoomZoom1MathItemVerticalPosition(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ZOOm:ZOOM1:MATH<x>:VERTical:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:MATH<x>:VERTical:POSition <NR3>
         - ZOOm:ZOOM1:MATH<x>:VERTical:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the vertical position, expressed in divisions.
     """
 
@@ -641,7 +625,7 @@ class ZoomZoom1MathItemVerticalPosition(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1MathItemVertical(SCPICmdRead):
     """The ``ZOOm:ZOOM1:MATH<x>:VERTical`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:MATH<x>:VERTical?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:MATH<x>:VERTical?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -660,7 +644,7 @@ class ZoomZoom1MathItemVertical(SCPICmdRead):
     def position(self) -> ZoomZoom1MathItemVerticalPosition:
         """Return the ``ZOOm:ZOOM1:MATH<x>:VERTical:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the vertical position of the specified waveform for the
               specified zoom, where x is an integer from 1 to 4 representing the desired zoom
               window. The setting of the ``ZOOm:1:SCROLLLOCk`` command determines the waveforms that
@@ -668,7 +652,7 @@ class ZoomZoom1MathItemVertical(SCPICmdRead):
               affected is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1, Math2,
               Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:MATH<x>:VERTical:POSition?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -677,14 +661,13 @@ class ZoomZoom1MathItemVertical(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ZOOm:ZOOM1:MATH<x>:VERTical:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:MATH<x>:VERTical:POSition <NR3>
             - ZOOm:ZOOM1:MATH<x>:VERTical:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the vertical position, expressed in divisions.
         """
         return self._position
@@ -693,13 +676,13 @@ class ZoomZoom1MathItemVertical(SCPICmdRead):
     def scale(self) -> ZoomZoom1MathItemVerticalScale:
         """Return the ``ZOOm:ZOOM1:MATH<x>:VERTical:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the zoom vertical scale of the specified waveform for the
               specified zoom, where x is an integer from 1 to 4 representing the desired zoom
               window. The waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3,
               CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:MATH<x>:VERTical:SCAle?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -708,14 +691,13 @@ class ZoomZoom1MathItemVertical(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ZOOm:ZOOM1:MATH<x>:VERTical:SCAle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:MATH<x>:VERTical:SCAle <NR3>
             - ZOOm:ZOOM1:MATH<x>:VERTical:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the amount of vertical expansion or compression, which operates on a
               1-2-5 sequence (for example, 1, 2, 5, 10, 20, 50, 100...). Based on the value that you
               entered, this command uses the nearest scale factor. Setting the vertical scale to 1
@@ -727,13 +709,13 @@ class ZoomZoom1MathItemVertical(SCPICmdRead):
 class ZoomZoom1MathItemHorizontalScale(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:MATH<x>:HORizontal:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the zoom horizontal scale factor of the specified waveform
           for the specified zoom, where x is an integer from 1 to 4 representing the desired zoom
           window. The waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3,
           CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:MATH<x>:HORizontal:SCAle?``
           query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:MATH<x>:HORizontal:SCAle?``
@@ -741,14 +723,13 @@ class ZoomZoom1MathItemHorizontalScale(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ZOOm:ZOOM1:MATH<x>:HORizontal:SCAle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:MATH<x>:HORizontal:SCAle <NR3>
         - ZOOm:ZOOM1:MATH<x>:HORizontal:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the amount of expansion in the horizontal direction in 1-2-5 increments.
     """
 
@@ -756,14 +737,14 @@ class ZoomZoom1MathItemHorizontalScale(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1MathItemHorizontalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:MATH<x>:HORizontal:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the horizontal position of the specified waveform for the
           specified zoom, where x is an integer from 1 to 4 representing the desired zoom window.
           The setting of the ``ZOOM:ZOOMX:SCROLLLOCK`` command determines the waveforms that are
           affected. The waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3,
           CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:MATH<x>:HORizontal:POSition?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -772,14 +753,13 @@ class ZoomZoom1MathItemHorizontalPosition(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ZOOm:ZOOM1:MATH<x>:HORizontal:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:MATH<x>:HORizontal:POSition <NR3>
         - ZOOm:ZOOM1:MATH<x>:HORizontal:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a value from 0 to 100.00 and is the percent of the waveform that is to the
           left of screen center, when the zoom factor is 1× or greater.
     """
@@ -788,7 +768,7 @@ class ZoomZoom1MathItemHorizontalPosition(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1MathItemHorizontal(SCPICmdRead):
     """The ``ZOOm:ZOOM1:MATH<x>:HORizontal`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:MATH<x>:HORizontal?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:MATH<x>:HORizontal?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -807,14 +787,14 @@ class ZoomZoom1MathItemHorizontal(SCPICmdRead):
     def position(self) -> ZoomZoom1MathItemHorizontalPosition:
         """Return the ``ZOOm:ZOOM1:MATH<x>:HORizontal:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the horizontal position of the specified waveform for the
               specified zoom, where x is an integer from 1 to 4 representing the desired zoom
               window. The setting of the ``ZOOM:ZOOMX:SCROLLLOCK`` command determines the waveforms
               that are affected. The waveform affected is determine by <wfm> which can vary from
               CH1, CH2, CH3, CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ZOOm:ZOOM1:MATH<x>:HORizontal:POSition?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -823,14 +803,13 @@ class ZoomZoom1MathItemHorizontal(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ZOOm:ZOOM1:MATH<x>:HORizontal:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:MATH<x>:HORizontal:POSition <NR3>
             - ZOOm:ZOOM1:MATH<x>:HORizontal:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a value from 0 to 100.00 and is the percent of the waveform that is to
               the left of screen center, when the zoom factor is 1× or greater.
         """
@@ -840,13 +819,13 @@ class ZoomZoom1MathItemHorizontal(SCPICmdRead):
     def scale(self) -> ZoomZoom1MathItemHorizontalScale:
         """Return the ``ZOOm:ZOOM1:MATH<x>:HORizontal:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the zoom horizontal scale factor of the specified
               waveform for the specified zoom, where x is an integer from 1 to 4 representing the
               desired zoom window. The waveform affected is determine by <wfm> which can vary from
               CH1, CH2, CH3, CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:MATH<x>:HORizontal:SCAle?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -855,14 +834,13 @@ class ZoomZoom1MathItemHorizontal(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ZOOm:ZOOM1:MATH<x>:HORizontal:SCAle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:MATH<x>:HORizontal:SCAle <NR3>
             - ZOOm:ZOOM1:MATH<x>:HORizontal:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the amount of expansion in the horizontal direction in 1-2-5 increments.
         """
         return self._scale
@@ -871,27 +849,26 @@ class ZoomZoom1MathItemHorizontal(SCPICmdRead):
 class ZoomZoom1MathItemDisplay(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:MATH<x>:DISplay`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the display of the specified waveform for the specified zoom,
           where x is an integer from 1 to 4 representing the desired zoom window. The waveform
           affected is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1, Math2,
           Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:MATH<x>:DISplay?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:MATH<x>:DISplay?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:MATH<x>:DISplay value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:MATH<x>:DISplay {<NR1>|OFF|ON}
         - ZOOm:ZOOM1:MATH<x>:DISplay?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` A zero disables the specified zoom; any other value enables the specified zoom.
         - ``OFF`` disables the specified zoom.
         - ``ON`` displays the specified zoom.
@@ -901,7 +878,7 @@ class ZoomZoom1MathItemDisplay(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1MathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``ZOOm:ZOOM1:MATH<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:MATH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:MATH<x>?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -922,27 +899,26 @@ class ZoomZoom1MathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def display(self) -> ZoomZoom1MathItemDisplay:
         """Return the ``ZOOm:ZOOM1:MATH<x>:DISplay`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the display of the specified waveform for the specified
               zoom, where x is an integer from 1 to 4 representing the desired zoom window. The
               waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1,
               Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:MATH<x>:DISplay?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:MATH<x>:DISplay?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:MATH<x>:DISplay value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:MATH<x>:DISplay {<NR1>|OFF|ON}
             - ZOOm:ZOOM1:MATH<x>:DISplay?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` A zero disables the specified zoom; any other value enables the specified
               zoom.
             - ``OFF`` disables the specified zoom.
@@ -954,7 +930,7 @@ class ZoomZoom1MathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def horizontal(self) -> ZoomZoom1MathItemHorizontal:
         """Return the ``ZOOm:ZOOM1:MATH<x>:HORizontal`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:MATH<x>:HORizontal?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:MATH<x>:HORizontal?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -969,7 +945,7 @@ class ZoomZoom1MathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def vertical(self) -> ZoomZoom1MathItemVertical:
         """Return the ``ZOOm:ZOOM1:MATH<x>:VERTical`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:MATH<x>:VERTical?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:MATH<x>:VERTical?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -984,28 +960,27 @@ class ZoomZoom1MathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class ZoomZoom1DchanDisplay(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:DCHAN:DISplay`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the display of the digital waveforms for the specified zoom,
           where x is an integer from 1 to 4 representing the desired zoom window. The digital
           waveforms affected vary from CH1, CH2, CH3, CH4, Math1, Math2, Math3, Math4, and D0
           through D15. When zoom is set on any one of the waveforms from D0 through D15, it would
           apply to all of the waveforms (D0 through D15).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:DCHAN:DISplay?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:DCHAN:DISplay?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:DCHAN:DISplay value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:DCHAN:DISplay {<NR1>|OFF|ON}
         - ZOOm:ZOOM1:DCHAN:DISplay?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the specified zoom; any other value enables the specified zoom.
         - ``OFF`` disables the specified zoom.
         - ``ON`` displays the specified zoom.
@@ -1015,7 +990,7 @@ class ZoomZoom1DchanDisplay(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1Dchan(SCPICmdRead):
     """The ``ZOOm:ZOOM1:DCHAN`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:DCHAN?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:DCHAN?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1032,28 +1007,27 @@ class ZoomZoom1Dchan(SCPICmdRead):
     def display(self) -> ZoomZoom1DchanDisplay:
         """Return the ``ZOOm:ZOOM1:DCHAN:DISplay`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the display of the digital waveforms for the specified
               zoom, where x is an integer from 1 to 4 representing the desired zoom window. The
               digital waveforms affected vary from CH1, CH2, CH3, CH4, Math1, Math2, Math3, Math4,
               and D0 through D15. When zoom is set on any one of the waveforms from D0 through D15,
               it would apply to all of the waveforms (D0 through D15).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:DCHAN:DISplay?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:DCHAN:DISplay?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:DCHAN:DISplay value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:DCHAN:DISplay {<NR1>|OFF|ON}
             - ZOOm:ZOOM1:DCHAN:DISplay?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the specified zoom; any other value enables the specified zoom.
             - ``OFF`` disables the specified zoom.
             - ``ON`` displays the specified zoom.
@@ -1064,27 +1038,26 @@ class ZoomZoom1Dchan(SCPICmdRead):
 class ZoomZoom1DigitalBitVerticalScale(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:D<x>:VERTical:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the zoom vertical scale of the specified waveform for the
           specified zoom, where x is an integer from 1 to 4 representing the desired zoom window.
           The waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1,
           Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:D<x>:VERTical:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:D<x>:VERTical:SCAle?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:D<x>:VERTical:SCAle value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:D<x>:VERTical:SCAle <NR3>
         - ZOOm:ZOOM1:D<x>:VERTical:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the amount of vertical expansion or compression, which operates on a 1-2-5
           sequence (for example, 1, 2, 5, 10, 20, 50, 100...). Based on the value that you entered,
           this command uses the nearest scale factor. Setting the vertical scale to 1 indicates
@@ -1095,7 +1068,7 @@ class ZoomZoom1DigitalBitVerticalScale(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1DigitalBitVerticalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:D<x>:VERTical:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the vertical position of the specified waveform for the
           specified zoom, where x is an integer from 1 to 4 representing the desired zoom window.
           The setting of the ``ZOOm:1:SCROLLLOCk`` command determines the waveforms that are
@@ -1103,21 +1076,20 @@ class ZoomZoom1DigitalBitVerticalPosition(SCPICmdWrite, SCPICmdRead):
           is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1, Math2, Math3, Math4,
           Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:D<x>:VERTical:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:D<x>:VERTical:POSition?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``ZOOm:ZOOM1:D<x>:VERTical:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:D<x>:VERTical:POSition <NR3>
         - ZOOm:ZOOM1:D<x>:VERTical:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the vertical position, expressed in divisions.
     """
 
@@ -1125,7 +1097,7 @@ class ZoomZoom1DigitalBitVerticalPosition(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1DigitalBitVertical(SCPICmdRead):
     """The ``ZOOm:ZOOM1:D<x>:VERTical`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:D<x>:VERTical?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:D<x>:VERTical?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1144,7 +1116,7 @@ class ZoomZoom1DigitalBitVertical(SCPICmdRead):
     def position(self) -> ZoomZoom1DigitalBitVerticalPosition:
         """Return the ``ZOOm:ZOOM1:D<x>:VERTical:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the vertical position of the specified waveform for the
               specified zoom, where x is an integer from 1 to 4 representing the desired zoom
               window. The setting of the ``ZOOm:1:SCROLLLOCk`` command determines the waveforms that
@@ -1152,7 +1124,7 @@ class ZoomZoom1DigitalBitVertical(SCPICmdRead):
               affected is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1, Math2,
               Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:D<x>:VERTical:POSition?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1161,14 +1133,13 @@ class ZoomZoom1DigitalBitVertical(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ZOOm:ZOOM1:D<x>:VERTical:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:D<x>:VERTical:POSition <NR3>
             - ZOOm:ZOOM1:D<x>:VERTical:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the vertical position, expressed in divisions.
         """
         return self._position
@@ -1177,27 +1148,26 @@ class ZoomZoom1DigitalBitVertical(SCPICmdRead):
     def scale(self) -> ZoomZoom1DigitalBitVerticalScale:
         """Return the ``ZOOm:ZOOM1:D<x>:VERTical:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the zoom vertical scale of the specified waveform for the
               specified zoom, where x is an integer from 1 to 4 representing the desired zoom
               window. The waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3,
               CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:D<x>:VERTical:SCAle?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:D<x>:VERTical:SCAle?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``ZOOm:ZOOM1:D<x>:VERTical:SCAle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:D<x>:VERTical:SCAle <NR3>
             - ZOOm:ZOOM1:D<x>:VERTical:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the amount of vertical expansion or compression, which operates on a
               1-2-5 sequence (for example, 1, 2, 5, 10, 20, 50, 100...). Based on the value that you
               entered, this command uses the nearest scale factor. Setting the vertical scale to 1
@@ -1209,27 +1179,26 @@ class ZoomZoom1DigitalBitVertical(SCPICmdRead):
 class ZoomZoom1DigitalBitHorizontalScale(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:D<x>:HORizontal:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the zoom horizontal scale factor of the specified waveform
           for the specified zoom, where x is an integer from 1 to 4 representing the desired zoom
           window. The waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3,
           CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:D<x>:HORizontal:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:D<x>:HORizontal:SCAle?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``ZOOm:ZOOM1:D<x>:HORizontal:SCAle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:D<x>:HORizontal:SCAle <NR3>
         - ZOOm:ZOOM1:D<x>:HORizontal:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the amount of expansion in the horizontal direction in 1-2-5 increments.
     """
 
@@ -1237,14 +1206,14 @@ class ZoomZoom1DigitalBitHorizontalScale(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1DigitalBitHorizontalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:D<x>:HORizontal:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the horizontal position of the specified waveform for the
           specified zoom, where x is an integer from 1 to 4 representing the desired zoom window.
           The setting of the ``ZOOM:ZOOMX:SCROLLLOCK`` command determines the waveforms that are
           affected. The waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3,
           CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:D<x>:HORizontal:POSition?``
           query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:D<x>:HORizontal:POSition?``
@@ -1252,14 +1221,13 @@ class ZoomZoom1DigitalBitHorizontalPosition(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ZOOm:ZOOM1:D<x>:HORizontal:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:D<x>:HORizontal:POSition <NR3>
         - ZOOm:ZOOM1:D<x>:HORizontal:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a value from 0 to 100.00 and is the percent of the waveform that is to the
           left of screen center, when the zoom factor is 1× or greater.
     """
@@ -1268,7 +1236,7 @@ class ZoomZoom1DigitalBitHorizontalPosition(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1DigitalBitHorizontal(SCPICmdRead):
     """The ``ZOOm:ZOOM1:D<x>:HORizontal`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:D<x>:HORizontal?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:D<x>:HORizontal?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -1289,14 +1257,14 @@ class ZoomZoom1DigitalBitHorizontal(SCPICmdRead):
     def position(self) -> ZoomZoom1DigitalBitHorizontalPosition:
         """Return the ``ZOOm:ZOOM1:D<x>:HORizontal:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the horizontal position of the specified waveform for the
               specified zoom, where x is an integer from 1 to 4 representing the desired zoom
               window. The setting of the ``ZOOM:ZOOMX:SCROLLLOCK`` command determines the waveforms
               that are affected. The waveform affected is determine by <wfm> which can vary from
               CH1, CH2, CH3, CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:D<x>:HORizontal:POSition?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1305,14 +1273,13 @@ class ZoomZoom1DigitalBitHorizontal(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ZOOm:ZOOM1:D<x>:HORizontal:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:D<x>:HORizontal:POSition <NR3>
             - ZOOm:ZOOM1:D<x>:HORizontal:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a value from 0 to 100.00 and is the percent of the waveform that is to
               the left of screen center, when the zoom factor is 1× or greater.
         """
@@ -1322,13 +1289,13 @@ class ZoomZoom1DigitalBitHorizontal(SCPICmdRead):
     def scale(self) -> ZoomZoom1DigitalBitHorizontalScale:
         """Return the ``ZOOm:ZOOM1:D<x>:HORizontal:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the zoom horizontal scale factor of the specified
               waveform for the specified zoom, where x is an integer from 1 to 4 representing the
               desired zoom window. The waveform affected is determine by <wfm> which can vary from
               CH1, CH2, CH3, CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:D<x>:HORizontal:SCAle?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1337,14 +1304,13 @@ class ZoomZoom1DigitalBitHorizontal(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ZOOm:ZOOM1:D<x>:HORizontal:SCAle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:D<x>:HORizontal:SCAle <NR3>
             - ZOOm:ZOOM1:D<x>:HORizontal:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the amount of expansion in the horizontal direction in 1-2-5 increments.
         """
         return self._scale
@@ -1353,27 +1319,26 @@ class ZoomZoom1DigitalBitHorizontal(SCPICmdRead):
 class ZoomZoom1DigitalBitDisplay(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:D<x>:DISplay`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the display of the specified waveform for the specified zoom,
           where x is an integer from 1 to 4 representing the desired zoom window. The waveform
           affected is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1, Math2,
           Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:D<x>:DISplay?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:D<x>:DISplay?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:D<x>:DISplay value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:D<x>:DISplay {<NR1>|OFF|ON}
         - ZOOm:ZOOM1:D<x>:DISplay?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` A zero disables the specified zoom; any other value enables the specified zoom.
         - ``OFF`` disables the specified zoom.
         - ``ON`` displays the specified zoom.
@@ -1383,7 +1348,7 @@ class ZoomZoom1DigitalBitDisplay(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1DigitalBit(ValidatedDigitalBit, SCPICmdRead):
     """The ``ZOOm:ZOOM1:D<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:D<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:D<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1404,27 +1369,26 @@ class ZoomZoom1DigitalBit(ValidatedDigitalBit, SCPICmdRead):
     def display(self) -> ZoomZoom1DigitalBitDisplay:
         """Return the ``ZOOm:ZOOM1:D<x>:DISplay`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the display of the specified waveform for the specified
               zoom, where x is an integer from 1 to 4 representing the desired zoom window. The
               waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1,
               Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:D<x>:DISplay?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:D<x>:DISplay?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:D<x>:DISplay value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:D<x>:DISplay {<NR1>|OFF|ON}
             - ZOOm:ZOOM1:D<x>:DISplay?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` A zero disables the specified zoom; any other value enables the specified
               zoom.
             - ``OFF`` disables the specified zoom.
@@ -1436,7 +1400,7 @@ class ZoomZoom1DigitalBit(ValidatedDigitalBit, SCPICmdRead):
     def horizontal(self) -> ZoomZoom1DigitalBitHorizontal:
         """Return the ``ZOOm:ZOOM1:D<x>:HORizontal`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:D<x>:HORizontal?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:D<x>:HORizontal?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -1451,7 +1415,7 @@ class ZoomZoom1DigitalBit(ValidatedDigitalBit, SCPICmdRead):
     def vertical(self) -> ZoomZoom1DigitalBitVertical:
         """Return the ``ZOOm:ZOOM1:D<x>:VERTical`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:D<x>:VERTical?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:D<x>:VERTical?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -1466,27 +1430,26 @@ class ZoomZoom1DigitalBit(ValidatedDigitalBit, SCPICmdRead):
 class ZoomZoom1ChannelVerticalScale(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:CH<x>:VERTical:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the zoom vertical scale of the specified waveform for the
           specified zoom, where x is an integer from 1 to 4 representing the desired zoom window.
           The waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1,
           Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:CH<x>:VERTical:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:CH<x>:VERTical:SCAle?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:CH<x>:VERTical:SCAle value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:CH<x>:VERTical:SCAle <NR3>
         - ZOOm:ZOOM1:CH<x>:VERTical:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the amount of vertical expansion or compression, which operates on a 1-2-5
           sequence (for example, 1, 2, 5, 10, 20, 50, 100...). Based on the value that you entered,
           this command uses the nearest scale factor. Setting the vertical scale to 1 indicates
@@ -1497,7 +1460,7 @@ class ZoomZoom1ChannelVerticalScale(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1ChannelVerticalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:CH<x>:VERTical:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the vertical position of the specified waveform for the
           specified zoom, where x is an integer from 1 to 4 representing the desired zoom window.
           The setting of the ``ZOOm:1:SCROLLLOCk`` command determines the waveforms that are
@@ -1505,21 +1468,20 @@ class ZoomZoom1ChannelVerticalPosition(SCPICmdWrite, SCPICmdRead):
           is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1, Math2, Math3, Math4,
           Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:CH<x>:VERTical:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:CH<x>:VERTical:POSition?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``ZOOm:ZOOM1:CH<x>:VERTical:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:CH<x>:VERTical:POSition <NR3>
         - ZOOm:ZOOM1:CH<x>:VERTical:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the vertical position, expressed in divisions.
     """
 
@@ -1527,7 +1489,7 @@ class ZoomZoom1ChannelVerticalPosition(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1ChannelVertical(SCPICmdRead):
     """The ``ZOOm:ZOOM1:CH<x>:VERTical`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:CH<x>:VERTical?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:CH<x>:VERTical?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1546,7 +1508,7 @@ class ZoomZoom1ChannelVertical(SCPICmdRead):
     def position(self) -> ZoomZoom1ChannelVerticalPosition:
         """Return the ``ZOOm:ZOOM1:CH<x>:VERTical:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the vertical position of the specified waveform for the
               specified zoom, where x is an integer from 1 to 4 representing the desired zoom
               window. The setting of the ``ZOOm:1:SCROLLLOCk`` command determines the waveforms that
@@ -1554,7 +1516,7 @@ class ZoomZoom1ChannelVertical(SCPICmdRead):
               affected is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1, Math2,
               Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:CH<x>:VERTical:POSition?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1563,14 +1525,13 @@ class ZoomZoom1ChannelVertical(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ZOOm:ZOOM1:CH<x>:VERTical:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:CH<x>:VERTical:POSition <NR3>
             - ZOOm:ZOOM1:CH<x>:VERTical:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the vertical position, expressed in divisions.
         """
         return self._position
@@ -1579,13 +1540,13 @@ class ZoomZoom1ChannelVertical(SCPICmdRead):
     def scale(self) -> ZoomZoom1ChannelVerticalScale:
         """Return the ``ZOOm:ZOOM1:CH<x>:VERTical:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the zoom vertical scale of the specified waveform for the
               specified zoom, where x is an integer from 1 to 4 representing the desired zoom
               window. The waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3,
               CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:CH<x>:VERTical:SCAle?``
               query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:CH<x>:VERTical:SCAle?``
@@ -1593,14 +1554,13 @@ class ZoomZoom1ChannelVertical(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ZOOm:ZOOM1:CH<x>:VERTical:SCAle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:CH<x>:VERTical:SCAle <NR3>
             - ZOOm:ZOOM1:CH<x>:VERTical:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the amount of vertical expansion or compression, which operates on a
               1-2-5 sequence (for example, 1, 2, 5, 10, 20, 50, 100...). Based on the value that you
               entered, this command uses the nearest scale factor. Setting the vertical scale to 1
@@ -1612,27 +1572,26 @@ class ZoomZoom1ChannelVertical(SCPICmdRead):
 class ZoomZoom1ChannelHorizontalScale(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:CH<x>:HORizontal:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the zoom horizontal scale factor of the specified waveform
           for the specified zoom, where x is an integer from 1 to 4 representing the desired zoom
           window. The waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3,
           CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:CH<x>:HORizontal:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:CH<x>:HORizontal:SCAle?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``ZOOm:ZOOM1:CH<x>:HORizontal:SCAle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:CH<x>:HORizontal:SCAle <NR3>
         - ZOOm:ZOOM1:CH<x>:HORizontal:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the amount of expansion in the horizontal direction in 1-2-5 increments.
     """
 
@@ -1640,14 +1599,14 @@ class ZoomZoom1ChannelHorizontalScale(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1ChannelHorizontalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:CH<x>:HORizontal:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the horizontal position of the specified waveform for the
           specified zoom, where x is an integer from 1 to 4 representing the desired zoom window.
           The setting of the ``ZOOM:ZOOMX:SCROLLLOCK`` command determines the waveforms that are
           affected. The waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3,
           CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:CH<x>:HORizontal:POSition?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1656,14 +1615,13 @@ class ZoomZoom1ChannelHorizontalPosition(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ZOOm:ZOOM1:CH<x>:HORizontal:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:CH<x>:HORizontal:POSition <NR3>
         - ZOOm:ZOOM1:CH<x>:HORizontal:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a value from 0 to 100.00 and is the percent of the waveform that is to the
           left of screen center, when the zoom factor is 1× or greater.
     """
@@ -1672,7 +1630,7 @@ class ZoomZoom1ChannelHorizontalPosition(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1ChannelHorizontal(SCPICmdRead):
     """The ``ZOOm:ZOOM1:CH<x>:HORizontal`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:CH<x>:HORizontal?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:CH<x>:HORizontal?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -1691,14 +1649,14 @@ class ZoomZoom1ChannelHorizontal(SCPICmdRead):
     def position(self) -> ZoomZoom1ChannelHorizontalPosition:
         """Return the ``ZOOm:ZOOM1:CH<x>:HORizontal:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the horizontal position of the specified waveform for the
               specified zoom, where x is an integer from 1 to 4 representing the desired zoom
               window. The setting of the ``ZOOM:ZOOMX:SCROLLLOCK`` command determines the waveforms
               that are affected. The waveform affected is determine by <wfm> which can vary from
               CH1, CH2, CH3, CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:CH<x>:HORizontal:POSition?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1707,14 +1665,13 @@ class ZoomZoom1ChannelHorizontal(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ZOOm:ZOOM1:CH<x>:HORizontal:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:CH<x>:HORizontal:POSition <NR3>
             - ZOOm:ZOOM1:CH<x>:HORizontal:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a value from 0 to 100.00 and is the percent of the waveform that is to
               the left of screen center, when the zoom factor is 1× or greater.
         """
@@ -1724,13 +1681,13 @@ class ZoomZoom1ChannelHorizontal(SCPICmdRead):
     def scale(self) -> ZoomZoom1ChannelHorizontalScale:
         """Return the ``ZOOm:ZOOM1:CH<x>:HORizontal:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the zoom horizontal scale factor of the specified
               waveform for the specified zoom, where x is an integer from 1 to 4 representing the
               desired zoom window. The waveform affected is determine by <wfm> which can vary from
               CH1, CH2, CH3, CH4, Math1, Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:CH<x>:HORizontal:SCAle?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1739,14 +1696,13 @@ class ZoomZoom1ChannelHorizontal(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ZOOm:ZOOM1:CH<x>:HORizontal:SCAle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:CH<x>:HORizontal:SCAle <NR3>
             - ZOOm:ZOOM1:CH<x>:HORizontal:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the amount of expansion in the horizontal direction in 1-2-5 increments.
         """
         return self._scale
@@ -1755,27 +1711,26 @@ class ZoomZoom1ChannelHorizontal(SCPICmdRead):
 class ZoomZoom1ChannelDisplay(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1:CH<x>:DISplay`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the display of the specified waveform for the specified zoom,
           where x is an integer from 1 to 4 representing the desired zoom window. The waveform
           affected is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1, Math2,
           Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:CH<x>:DISplay?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:CH<x>:DISplay?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:CH<x>:DISplay value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1:CH<x>:DISplay {<NR1>|OFF|ON}
         - ZOOm:ZOOM1:CH<x>:DISplay?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` A zero disables the specified zoom; any other value enables the specified zoom.
         - ``OFF`` disables the specified zoom.
         - ``ON`` displays the specified zoom.
@@ -1785,7 +1740,7 @@ class ZoomZoom1ChannelDisplay(SCPICmdWrite, SCPICmdRead):
 class ZoomZoom1Channel(ValidatedChannel, SCPICmdRead):
     """The ``ZOOm:ZOOM1:CH<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:CH<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1806,27 +1761,26 @@ class ZoomZoom1Channel(ValidatedChannel, SCPICmdRead):
     def display(self) -> ZoomZoom1ChannelDisplay:
         """Return the ``ZOOm:ZOOM1:CH<x>:DISplay`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the display of the specified waveform for the specified
               zoom, where x is an integer from 1 to 4 representing the desired zoom window. The
               waveform affected is determine by <wfm> which can vary from CH1, CH2, CH3, CH4, Math1,
               Math2, Math3, Math4, Ref1, Ref2, Ref3, or Ref4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:CH<x>:DISplay?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:CH<x>:DISplay?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:CH<x>:DISplay value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:CH<x>:DISplay {<NR1>|OFF|ON}
             - ZOOm:ZOOM1:CH<x>:DISplay?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` A zero disables the specified zoom; any other value enables the specified
               zoom.
             - ``OFF`` disables the specified zoom.
@@ -1838,7 +1792,7 @@ class ZoomZoom1Channel(ValidatedChannel, SCPICmdRead):
     def horizontal(self) -> ZoomZoom1ChannelHorizontal:
         """Return the ``ZOOm:ZOOM1:CH<x>:HORizontal`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:CH<x>:HORizontal?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:CH<x>:HORizontal?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -1853,7 +1807,7 @@ class ZoomZoom1Channel(ValidatedChannel, SCPICmdRead):
     def vertical(self) -> ZoomZoom1ChannelVertical:
         """Return the ``ZOOm:ZOOM1:CH<x>:VERTical`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:CH<x>:VERTical?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:CH<x>:VERTical?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -1868,26 +1822,25 @@ class ZoomZoom1Channel(ValidatedChannel, SCPICmdRead):
 class ZoomZoom1(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:ZOOM1`` command.
 
-    **Description:**
+    Description:
         - This command resets the zoom transforms to default values for all traces of the specified
           zoom, where x is an integer from 1 to 4 representing the desired zoom window. The
           ``ZOOM:REFX:VERTICAL:SCALE?`` query returns the current vertical and horizontal
           positioning and scaling of the display.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:ZOOM1?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1 value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:ZOOM1 {RESET|RESETLive}
         - ZOOm:ZOOM1?
+        ```
 
-    **Info:**
+    Info:
         - ``RESET`` resets the zoom transforms to default values for all traces of the specified
           zoom.
         - ``RESETLive`` resets the zoom transforms to default values for live traces of the
@@ -1925,7 +1878,7 @@ class ZoomZoom1(SCPICmdWrite, SCPICmdRead):
     def dchan(self) -> ZoomZoom1Dchan:
         """Return the ``ZOOm:ZOOM1:DCHAN`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:DCHAN?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:DCHAN?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1939,25 +1892,24 @@ class ZoomZoom1(SCPICmdWrite, SCPICmdRead):
     def scrolllock(self) -> ZoomZoom1Scrolllock:
         """Return the ``ZOOm:ZOOM1:SCROLLLock`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries Scroll Lock for the specified zoom, where x is an integer
               from 1 to 4 representing the desired zoom window.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:SCROLLLock?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:SCROLLLock?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:SCROLLLock value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:SCROLLLock {ON|OFF|<NR1>}
             - ZOOm:ZOOM1:SCROLLLock?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` locks waveforms for the specified zoom window <x>.
             - ``OFF`` unlocks waveforms for the specified zoom window <x>.
             - ``<NR1>`` = 0 unlocks waveforms for the specified zoom window <x>; any other value
@@ -1969,23 +1921,22 @@ class ZoomZoom1(SCPICmdWrite, SCPICmdRead):
     def state(self) -> ZoomZoom1State:
         """Return the ``ZOOm:ZOOM1:STATE`` command.
 
-        **Description:**
+        Description:
             - This command turns the specified zoom on or off. <x> can only be 1.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:STATE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1:STATE {ON|OFF|<NR1>}
             - ZOOm:ZOOM1:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` turns Zoom 1 on.
             - ``OFF`` turns Zoom 1 off.
             - ``<NR1>`` is an integer. 0 disables the specified zoom; any other value enables the
@@ -1997,7 +1948,7 @@ class ZoomZoom1(SCPICmdWrite, SCPICmdRead):
     def ch(self) -> Dict[int, ZoomZoom1Channel]:
         """Return the ``ZOOm:ZOOM1:CH<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:CH<x>?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -2013,7 +1964,7 @@ class ZoomZoom1(SCPICmdWrite, SCPICmdRead):
     def math(self) -> Dict[int, ZoomZoom1MathItem]:
         """Return the ``ZOOm:ZOOM1:MATH<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:MATH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:MATH<x>?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -2029,7 +1980,7 @@ class ZoomZoom1(SCPICmdWrite, SCPICmdRead):
     def ref(self) -> Dict[int, ZoomZoom1RefItem]:
         """Return the ``ZOOm:ZOOM1:REF<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:REF<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:REF<x>?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -2045,7 +1996,7 @@ class ZoomZoom1(SCPICmdWrite, SCPICmdRead):
     def d(self) -> Dict[int, ZoomZoom1DigitalBit]:
         """Return the ``ZOOm:ZOOM1:D<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1:D<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1:D<x>?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -2061,24 +2012,23 @@ class ZoomZoom1(SCPICmdWrite, SCPICmdRead):
 class ZoomVerticalScale(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:VERTical:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the zoom vertical scale factor around which the zoom waveform
           is displayed.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:VERTical:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:VERTical:SCAle?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:VERTical:SCAle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:VERTical:SCAle <NR3>
         - ZOOm:VERTical:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the amount of expansion in the vertical direction in 1-2-5 increments.
     """
 
@@ -2086,25 +2036,24 @@ class ZoomVerticalScale(SCPICmdWrite, SCPICmdRead):
 class ZoomVerticalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:VERTical:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the vertical position around which the zoom waveform is
           displayed. It is freely movable within the confines of the acquired waveform (0% to 100%)
           and measured from left to right of the acquired waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:VERTical:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:VERTical:POSition?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:VERTical:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:VERTical:POSition <NR3>
         - ZOOm:VERTical:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``NR3`` is a value from 0 to 100.00 and is the percent of the waveform that is to the left
           of screen center, when the zoom factor is 1× or greater.
     """
@@ -2113,7 +2062,7 @@ class ZoomVerticalPosition(SCPICmdWrite, SCPICmdRead):
 class ZoomVertical(SCPICmdRead):
     """The ``ZOOm:VERTical`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:VERTical?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:VERTical?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2132,26 +2081,25 @@ class ZoomVertical(SCPICmdRead):
     def position(self) -> ZoomVerticalPosition:
         """Return the ``ZOOm:VERTical:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the vertical position around which the zoom waveform is
               displayed. It is freely movable within the confines of the acquired waveform (0% to
               100%) and measured from left to right of the acquired waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:VERTical:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:VERTical:POSition?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:VERTical:POSition value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:VERTical:POSition <NR3>
             - ZOOm:VERTical:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``NR3`` is a value from 0 to 100.00 and is the percent of the waveform that is to the
               left of screen center, when the zoom factor is 1× or greater.
         """
@@ -2161,25 +2109,24 @@ class ZoomVertical(SCPICmdRead):
     def scale(self) -> ZoomVerticalScale:
         """Return the ``ZOOm:VERTical:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the zoom vertical scale factor around which the zoom
               waveform is displayed.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:VERTical:SCAle?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:VERTical:SCAle?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:VERTical:SCAle value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:VERTical:SCAle <NR3>
             - ZOOm:VERTical:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the amount of expansion in the vertical direction in 1-2-5 increments.
         """
         return self._scale
@@ -2188,23 +2135,22 @@ class ZoomVertical(SCPICmdRead):
 class ZoomState(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:STATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the specified zoom on or off.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:STATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:STATE {ON|OFF|<NR1>}
         - ZOOm:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` turns zoom on or off.
         - ``OFF`` turns zoom on or off.
         - ``<NR1>`` = 0 disables the zoom; any other value enables the zoom.
@@ -2214,23 +2160,22 @@ class ZoomState(SCPICmdWrite, SCPICmdRead):
 class ZoomScrollSpeed(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:SCROLL:SPEED`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the speed of automatic scrolling.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:SCROLL:SPEED?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:SCROLL:SPEED?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:SCROLL:SPEED value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:SCROLL:SPEED <NR1>
         - ZOOm:SCROLL:SPEED?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is a value from 1 to 10.
     """
 
@@ -2238,24 +2183,23 @@ class ZoomScrollSpeed(SCPICmdWrite, SCPICmdRead):
 class ZoomScrollLock(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:SCROLL:LOCk`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the state of Scroll Lock, which 'locks' zoomed waveforms
           under common control.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:SCROLL:LOCk?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:SCROLL:LOCk?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:SCROLL:LOCk value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:SCROLL:LOCk {ON|OFF|<NR1>}
         - ZOOm:SCROLL:LOCk?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables Scroll Lock.
         - ``OFF`` disables Scroll Lock.
         - ``<NR1>`` = 0 disables Scroll Lock for all zoom windows; any other value enables Scroll
@@ -2266,23 +2210,22 @@ class ZoomScrollLock(SCPICmdWrite, SCPICmdRead):
 class ZoomScrollDirection(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:SCROLL:DIREction`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the direction for automatic scrolling of zoomed waveforms.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:SCROLL:DIREction?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:SCROLL:DIREction?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:SCROLL:DIREction value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:SCROLL:DIREction {FWD|FFWD|REV| FREV|STOP}
         - ZOOm:SCROLL:DIREction?
+        ```
 
-    **Info:**
+    Info:
         - ``FWD`` starts AutoScroll. The Zoom Box moves from left to right.
         - ``FFWD`` starts AutoScroll. Increases the scrolling speed in the forward direction.
         - ``REV`` starts AutoScroll. The Zoom Box moves from right to left.
@@ -2294,7 +2237,7 @@ class ZoomScrollDirection(SCPICmdWrite, SCPICmdRead):
 class ZoomScroll(SCPICmdRead):
     """The ``ZOOm:SCROLL`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:SCROLL?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:SCROLL?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2315,25 +2258,24 @@ class ZoomScroll(SCPICmdRead):
     def direction(self) -> ZoomScrollDirection:
         """Return the ``ZOOm:SCROLL:DIREction`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the direction for automatic scrolling of zoomed
               waveforms.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:SCROLL:DIREction?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:SCROLL:DIREction?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:SCROLL:DIREction value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:SCROLL:DIREction {FWD|FFWD|REV| FREV|STOP}
             - ZOOm:SCROLL:DIREction?
+            ```
 
-        **Info:**
+        Info:
             - ``FWD`` starts AutoScroll. The Zoom Box moves from left to right.
             - ``FFWD`` starts AutoScroll. Increases the scrolling speed in the forward direction.
             - ``REV`` starts AutoScroll. The Zoom Box moves from right to left.
@@ -2346,24 +2288,23 @@ class ZoomScroll(SCPICmdRead):
     def lock(self) -> ZoomScrollLock:
         """Return the ``ZOOm:SCROLL:LOCk`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the state of Scroll Lock, which 'locks' zoomed waveforms
               under common control.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:SCROLL:LOCk?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:SCROLL:LOCk?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:SCROLL:LOCk value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:SCROLL:LOCk {ON|OFF|<NR1>}
             - ZOOm:SCROLL:LOCk?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables Scroll Lock.
             - ``OFF`` disables Scroll Lock.
             - ``<NR1>`` = 0 disables Scroll Lock for all zoom windows; any other value enables
@@ -2375,23 +2316,22 @@ class ZoomScroll(SCPICmdRead):
     def speed(self) -> ZoomScrollSpeed:
         """Return the ``ZOOm:SCROLL:SPEED`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the speed of automatic scrolling.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:SCROLL:SPEED?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:SCROLL:SPEED?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:SCROLL:SPEED value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:SCROLL:SPEED <NR1>
             - ZOOm:SCROLL:SPEED?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is a value from 1 to 10.
         """
         return self._speed
@@ -2400,24 +2340,23 @@ class ZoomScroll(SCPICmdRead):
 class ZoomRefItemVerticalScale(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:REF<x>:VERTical:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the zoom vertical scale of the specified reference waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:REF<x>:VERTical:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:REF<x>:VERTical:SCAle?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:REF<x>:VERTical:SCAle value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:REF<x>:VERTical:SCAle <NR3>
         - ZOOm:REF<x>:VERTical:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` sets the horizontal scale factor of the specified Reference 1 waveform to 10.
     """
 
@@ -2425,24 +2364,23 @@ class ZoomRefItemVerticalScale(SCPICmdWrite, SCPICmdRead):
 class ZoomRefItemVerticalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:REF<x>:VERTical:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the vertical position of the specified reference waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:REF<x>:VERTical:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:REF<x>:VERTical:POSition?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:REF<x>:VERTical:POSition value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:REF<x>:VERTical:POSition <NR3>
         - ZOOm:REF<x>:VERTical:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the vertical position, expressed in divisions.
     """
 
@@ -2450,7 +2388,7 @@ class ZoomRefItemVerticalPosition(SCPICmdWrite, SCPICmdRead):
 class ZoomRefItemVertical(SCPICmdRead):
     """The ``ZOOm:REF<x>:VERTical`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:REF<x>:VERTical?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:REF<x>:VERTical?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -2469,25 +2407,24 @@ class ZoomRefItemVertical(SCPICmdRead):
     def position(self) -> ZoomRefItemVerticalPosition:
         """Return the ``ZOOm:REF<x>:VERTical:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the vertical position of the specified reference
               waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:REF<x>:VERTical:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:REF<x>:VERTical:POSition?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``ZOOm:REF<x>:VERTical:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:REF<x>:VERTical:POSition <NR3>
             - ZOOm:REF<x>:VERTical:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the vertical position, expressed in divisions.
         """
         return self._position
@@ -2496,25 +2433,24 @@ class ZoomRefItemVertical(SCPICmdRead):
     def scale(self) -> ZoomRefItemVerticalScale:
         """Return the ``ZOOm:REF<x>:VERTical:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the zoom vertical scale of the specified reference
               waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:REF<x>:VERTical:SCAle?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:REF<x>:VERTical:SCAle?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:REF<x>:VERTical:SCAle value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:REF<x>:VERTical:SCAle <NR3>
             - ZOOm:REF<x>:VERTical:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` sets the horizontal scale factor of the specified Reference 1 waveform to
               10.
         """
@@ -2524,25 +2460,24 @@ class ZoomRefItemVertical(SCPICmdRead):
 class ZoomRefItemHorizontalScale(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:REF<x>:HORizontal:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the zoom horizontal scale factor of the specified reference
           waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:REF<x>:HORizontal:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:REF<x>:HORizontal:SCAle?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:REF<x>:HORizontal:SCAle value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:REF<x>:HORizontal:SCAle <NR3>
         - ZOOm:REF<x>:HORizontal:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the amount of expansion in the horizontal direction in 1-2-5 increments.
     """
 
@@ -2550,24 +2485,23 @@ class ZoomRefItemHorizontalScale(SCPICmdWrite, SCPICmdRead):
 class ZoomRefItemHorizontalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:REF<x>:HORizontal:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the horizontal position of the specified reference waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:REF<x>:HORizontal:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:REF<x>:HORizontal:POSition?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:REF<x>:HORizontal:POSition value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:REF<x>:HORizontal:POSition <NR3>
         - ZOOm:REF<x>:HORizontal:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a value from 0 to 100.00 and is the percent of the waveform that is to the
           left of screen center, when the zoom factor is 1× or greater.
     """
@@ -2576,7 +2510,7 @@ class ZoomRefItemHorizontalPosition(SCPICmdWrite, SCPICmdRead):
 class ZoomRefItemHorizontal(SCPICmdRead):
     """The ``ZOOm:REF<x>:HORizontal`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:REF<x>:HORizontal?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:REF<x>:HORizontal?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -2595,11 +2529,11 @@ class ZoomRefItemHorizontal(SCPICmdRead):
     def position(self) -> ZoomRefItemHorizontalPosition:
         """Return the ``ZOOm:REF<x>:HORizontal:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the horizontal position of the specified reference
               waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:REF<x>:HORizontal:POSition?``
               query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:REF<x>:HORizontal:POSition?``
@@ -2607,14 +2541,13 @@ class ZoomRefItemHorizontal(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ZOOm:REF<x>:HORizontal:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:REF<x>:HORizontal:POSition <NR3>
             - ZOOm:REF<x>:HORizontal:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a value from 0 to 100.00 and is the percent of the waveform that is to
               the left of screen center, when the zoom factor is 1× or greater.
         """
@@ -2624,25 +2557,24 @@ class ZoomRefItemHorizontal(SCPICmdRead):
     def scale(self) -> ZoomRefItemHorizontalScale:
         """Return the ``ZOOm:REF<x>:HORizontal:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the zoom horizontal scale factor of the specified
               reference waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:REF<x>:HORizontal:SCAle?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:REF<x>:HORizontal:SCAle?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``ZOOm:REF<x>:HORizontal:SCAle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:REF<x>:HORizontal:SCAle <NR3>
             - ZOOm:REF<x>:HORizontal:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the amount of expansion in the horizontal direction in 1-2-5 increments.
         """
         return self._scale
@@ -2651,7 +2583,7 @@ class ZoomRefItemHorizontal(SCPICmdRead):
 class ZoomRefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``ZOOm:REF<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:REF<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:REF<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2670,7 +2602,7 @@ class ZoomRefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def horizontal(self) -> ZoomRefItemHorizontal:
         """Return the ``ZOOm:REF<x>:HORizontal`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:REF<x>:HORizontal?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:REF<x>:HORizontal?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -2685,7 +2617,7 @@ class ZoomRefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def vertical(self) -> ZoomRefItemVertical:
         """Return the ``ZOOm:REF<x>:VERTical`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:REF<x>:VERTical?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:REF<x>:VERTical?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -2700,20 +2632,19 @@ class ZoomRefItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class ZoomMode(SCPICmdWrite):
     """The ``ZOOm:MODe`` command.
 
-    **Description:**
+    Description:
         - This command turns Zoom mode on or off. The Zoom query returns the current state of Zoom
           mode. This command is equivalent to pressing the ZOOM button located on the front panel.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``ZOOm:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:MODe {ON|OFF|<NR1>}
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` turns on Zoom mode.
         - ``OFF`` turns off Zoom mode.
         - ``<NR1>`` = 0 turns off Zoom mode; any other value turns on Zoom mode.
@@ -2723,24 +2654,23 @@ class ZoomMode(SCPICmdWrite):
 class ZoomMathItemVerticalScale(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:MATH<x>:VERTical:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the zoom vertical scale of the specified math waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:MATH<x>:VERTical:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:MATH<x>:VERTical:SCAle?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:MATH<x>:VERTical:SCAle value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:MATH<x>:VERTical:SCAle <NR3>
         - ZOOm:MATH<x>:VERTical:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` sets the horizontal scale factor of the specified Math 1 waveform to 10.
     """
 
@@ -2748,24 +2678,23 @@ class ZoomMathItemVerticalScale(SCPICmdWrite, SCPICmdRead):
 class ZoomMathItemVerticalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:MATH<x>:VERTical:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the vertical position of the specified math waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:MATH<x>:VERTical:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:MATH<x>:VERTical:POSition?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:MATH<x>:VERTical:POSition value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:MATH<x>:VERTical:POSition <NR3>
         - ZOOm:MATH<x>:VERTical:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the vertical position, expressed in divisions.
     """
 
@@ -2773,7 +2702,7 @@ class ZoomMathItemVerticalPosition(SCPICmdWrite, SCPICmdRead):
 class ZoomMathItemVertical(SCPICmdRead):
     """The ``ZOOm:MATH<x>:VERTical`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:MATH<x>:VERTical?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:MATH<x>:VERTical?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -2792,24 +2721,23 @@ class ZoomMathItemVertical(SCPICmdRead):
     def position(self) -> ZoomMathItemVerticalPosition:
         """Return the ``ZOOm:MATH<x>:VERTical:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the vertical position of the specified math waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:MATH<x>:VERTical:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:MATH<x>:VERTical:POSition?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``ZOOm:MATH<x>:VERTical:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:MATH<x>:VERTical:POSition <NR3>
             - ZOOm:MATH<x>:VERTical:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the vertical position, expressed in divisions.
         """
         return self._position
@@ -2818,24 +2746,23 @@ class ZoomMathItemVertical(SCPICmdRead):
     def scale(self) -> ZoomMathItemVerticalScale:
         """Return the ``ZOOm:MATH<x>:VERTical:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the zoom vertical scale of the specified math waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:MATH<x>:VERTical:SCAle?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:MATH<x>:VERTical:SCAle?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:MATH<x>:VERTical:SCAle value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:MATH<x>:VERTical:SCAle <NR3>
             - ZOOm:MATH<x>:VERTical:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` sets the horizontal scale factor of the specified Math 1 waveform to 10.
         """
         return self._scale
@@ -2844,25 +2771,24 @@ class ZoomMathItemVertical(SCPICmdRead):
 class ZoomMathItemHorizontalScale(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:MATH<x>:HORizontal:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the zoom horizontal scale factor of the specified math
           waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:MATH<x>:HORizontal:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:MATH<x>:HORizontal:SCAle?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:MATH<x>:HORizontal:SCAle value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:MATH<x>:HORizontal:SCAle <NR3>
         - ZOOm:MATH<x>:HORizontal:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the amount of expansion in the horizontal direction in 1-2-5 increments.
     """
 
@@ -2870,24 +2796,23 @@ class ZoomMathItemHorizontalScale(SCPICmdWrite, SCPICmdRead):
 class ZoomMathItemHorizontalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:MATH<x>:HORizontal:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the horizontal position of the specified math waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:MATH<x>:HORizontal:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:MATH<x>:HORizontal:POSition?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``ZOOm:MATH<x>:HORizontal:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:MATH<x>:HORizontal:POSition <NR3>
         - ZOOm:MATH<x>:HORizontal:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a value from 0 to 100.00 and is the percent of the waveform that is to the
           left of screen center, when the zoom factor is 1× or greater.
     """
@@ -2896,7 +2821,7 @@ class ZoomMathItemHorizontalPosition(SCPICmdWrite, SCPICmdRead):
 class ZoomMathItemHorizontal(SCPICmdRead):
     """The ``ZOOm:MATH<x>:HORizontal`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:MATH<x>:HORizontal?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:MATH<x>:HORizontal?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -2915,10 +2840,10 @@ class ZoomMathItemHorizontal(SCPICmdRead):
     def position(self) -> ZoomMathItemHorizontalPosition:
         """Return the ``ZOOm:MATH<x>:HORizontal:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the horizontal position of the specified math waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:MATH<x>:HORizontal:POSition?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2927,14 +2852,13 @@ class ZoomMathItemHorizontal(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ZOOm:MATH<x>:HORizontal:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:MATH<x>:HORizontal:POSition <NR3>
             - ZOOm:MATH<x>:HORizontal:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a value from 0 to 100.00 and is the percent of the waveform that is to
               the left of screen center, when the zoom factor is 1× or greater.
         """
@@ -2944,25 +2868,24 @@ class ZoomMathItemHorizontal(SCPICmdRead):
     def scale(self) -> ZoomMathItemHorizontalScale:
         """Return the ``ZOOm:MATH<x>:HORizontal:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the zoom horizontal scale factor of the specified math
               waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:MATH<x>:HORizontal:SCAle?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:MATH<x>:HORizontal:SCAle?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``ZOOm:MATH<x>:HORizontal:SCAle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:MATH<x>:HORizontal:SCAle <NR3>
             - ZOOm:MATH<x>:HORizontal:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the amount of expansion in the horizontal direction in 1-2-5 increments.
         """
         return self._scale
@@ -2971,7 +2894,7 @@ class ZoomMathItemHorizontal(SCPICmdRead):
 class ZoomMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``ZOOm:MATH<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:MATH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:MATH<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2990,7 +2913,7 @@ class ZoomMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def horizontal(self) -> ZoomMathItemHorizontal:
         """Return the ``ZOOm:MATH<x>:HORizontal`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:MATH<x>:HORizontal?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:MATH<x>:HORizontal?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -3005,7 +2928,7 @@ class ZoomMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def vertical(self) -> ZoomMathItemVertical:
         """Return the ``ZOOm:MATH<x>:VERTical`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:MATH<x>:VERTical?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:MATH<x>:VERTical?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -3020,24 +2943,23 @@ class ZoomMathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class ZoomHorizontalScale(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:HORizontal:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the zoom horizontal scale factor around which the zoom
           waveform is displayed.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:HORizontal:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:HORizontal:SCAle?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:HORizontal:SCAle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:HORizontal:SCAle <NR3>
         - ZOOm:HORizontal:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the amount of expansion in the horizontal direction in 1-2-5 increments.
     """
 
@@ -3045,26 +2967,25 @@ class ZoomHorizontalScale(SCPICmdWrite, SCPICmdRead):
 class ZoomHorizontalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:HORizontal:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the horizontal position around which the zoom waveform is
           displayed. It is freely movable within the confines of the acquired waveform (0% to 100%)
           and measured from left to right of the acquired waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:HORizontal:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:HORizontal:POSition?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:HORizontal:POSition value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:HORizontal:POSition <NR3>
         - ZOOm:HORizontal:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a value from 0 to 100.00 and is the percent of the waveform that is to the
           left of screen center, when the zoom factor is 1× or greater.
     """
@@ -3073,7 +2994,7 @@ class ZoomHorizontalPosition(SCPICmdWrite, SCPICmdRead):
 class ZoomHorizontal(SCPICmdRead):
     """The ``ZOOm:HORizontal`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:HORizontal?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:HORizontal?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -3092,26 +3013,25 @@ class ZoomHorizontal(SCPICmdRead):
     def position(self) -> ZoomHorizontalPosition:
         """Return the ``ZOOm:HORizontal:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the horizontal position around which the zoom waveform is
               displayed. It is freely movable within the confines of the acquired waveform (0% to
               100%) and measured from left to right of the acquired waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:HORizontal:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:HORizontal:POSition?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:HORizontal:POSition value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:HORizontal:POSition <NR3>
             - ZOOm:HORizontal:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a value from 0 to 100.00 and is the percent of the waveform that is to
               the left of screen center, when the zoom factor is 1× or greater.
         """
@@ -3121,25 +3041,24 @@ class ZoomHorizontal(SCPICmdRead):
     def scale(self) -> ZoomHorizontalScale:
         """Return the ``ZOOm:HORizontal:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the zoom horizontal scale factor around which the zoom
               waveform is displayed.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:HORizontal:SCAle?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:HORizontal:SCAle?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:HORizontal:SCAle value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:HORizontal:SCAle <NR3>
             - ZOOm:HORizontal:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the amount of expansion in the horizontal direction in 1-2-5 increments.
         """
         return self._scale
@@ -3148,24 +3067,23 @@ class ZoomHorizontal(SCPICmdRead):
 class ZoomGraticuleSplit(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:GRAticule:SPLit`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the sizes of the acquisition and zoom windows when Zoom is
           selected.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:GRAticule:SPLit?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:GRAticule:SPLit?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:GRAticule:SPLit value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:GRAticule:SPLit {FIFtyfifty|EIGHtytwenty|FuLl}
         - ZOOm:GRAticule:SPLit?
+        ```
 
-    **Info:**
+    Info:
         - ``FIFtyfifty`` argument sets half of the available display to the zoomed graticule and
           half of the available display to the acquisition graticule; this argument is the default
           value.
@@ -3178,23 +3096,22 @@ class ZoomGraticuleSplit(SCPICmdWrite, SCPICmdRead):
 class ZoomGraticuleSize(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm:GRAticule:SIZE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the size in percent, of the Zoom (lower) graticule.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:GRAticule:SIZE?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:GRAticule:SIZE?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm:GRAticule:SIZE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm:GRAticule:SIZE {50|80|100}
         - ZOOm:GRAticule:SIZE?
+        ```
 
-    **Info:**
+    Info:
         - ``50`` sets the size of the Zoom graticule to 50%.
         - ``80`` set the size of the Zoom graticule to 80%.
         - ``100`` sets the size of the Zoom graticule to 100%.
@@ -3204,7 +3121,7 @@ class ZoomGraticuleSize(SCPICmdWrite, SCPICmdRead):
 class ZoomGraticule(SCPICmdRead):
     """The ``ZOOm:GRAticule`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm:GRAticule?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm:GRAticule?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -3223,24 +3140,23 @@ class ZoomGraticule(SCPICmdRead):
     def size(self) -> ZoomGraticuleSize:
         """Return the ``ZOOm:GRAticule:SIZE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the size in percent, of the Zoom (lower) graticule.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:GRAticule:SIZE?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:GRAticule:SIZE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:GRAticule:SIZE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:GRAticule:SIZE {50|80|100}
             - ZOOm:GRAticule:SIZE?
+            ```
 
-        **Info:**
+        Info:
             - ``50`` sets the size of the Zoom graticule to 50%.
             - ``80`` set the size of the Zoom graticule to 80%.
             - ``100`` sets the size of the Zoom graticule to 100%.
@@ -3251,25 +3167,24 @@ class ZoomGraticule(SCPICmdRead):
     def split(self) -> ZoomGraticuleSplit:
         """Return the ``ZOOm:GRAticule:SPLit`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the sizes of the acquisition and zoom windows when Zoom
               is selected.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:GRAticule:SPLit?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:GRAticule:SPLit?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:GRAticule:SPLit value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:GRAticule:SPLit {FIFtyfifty|EIGHtytwenty|FuLl}
             - ZOOm:GRAticule:SPLit?
+            ```
 
-        **Info:**
+        Info:
             - ``FIFtyfifty`` argument sets half of the available display to the zoomed graticule and
               half of the available display to the acquisition graticule; this argument is the
               default value.
@@ -3284,25 +3199,24 @@ class ZoomGraticule(SCPICmdRead):
 class Zoom(SCPICmdWrite, SCPICmdRead):
     """The ``ZOOm`` command.
 
-    **Description:**
+    Description:
         - This command resets the zoom transforms to default values for all traces or live traces.
           The ``ZOOm`` query returns the current vertical and horizontal positioning and scaling of
           the display.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ZOOm?`` query.
         - Using the ``.verify(value)`` method will send the ``ZOOm?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ZOOm value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ZOOm {RESET|RESETLive}
         - ZOOm?
+        ```
 
-    **Info:**
+    Info:
         - ``RESET`` resets the zoom transforms to default values for all traces.
         - ``RESETLive`` resets the zoom transforms to default values for live traces.
 
@@ -3338,7 +3252,7 @@ class Zoom(SCPICmdWrite, SCPICmdRead):
     def graticule(self) -> ZoomGraticule:
         """Return the ``ZOOm:GRAticule`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:GRAticule?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:GRAticule?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -3353,7 +3267,7 @@ class Zoom(SCPICmdWrite, SCPICmdRead):
     def horizontal(self) -> ZoomHorizontal:
         """Return the ``ZOOm:HORizontal`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:HORizontal?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:HORizontal?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -3368,7 +3282,7 @@ class Zoom(SCPICmdWrite, SCPICmdRead):
     def math(self) -> Dict[int, ZoomMathItem]:
         """Return the ``ZOOm:MATH<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:MATH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:MATH<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3383,21 +3297,20 @@ class Zoom(SCPICmdWrite, SCPICmdRead):
     def mode(self) -> ZoomMode:
         """Return the ``ZOOm:MODe`` command.
 
-        **Description:**
+        Description:
             - This command turns Zoom mode on or off. The Zoom query returns the current state of
               Zoom mode. This command is equivalent to pressing the ZOOM button located on the front
               panel.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``ZOOm:MODe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:MODe {ON|OFF|<NR1>}
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` turns on Zoom mode.
             - ``OFF`` turns off Zoom mode.
             - ``<NR1>`` = 0 turns off Zoom mode; any other value turns on Zoom mode.
@@ -3408,7 +3321,7 @@ class Zoom(SCPICmdWrite, SCPICmdRead):
     def ref(self) -> Dict[int, ZoomRefItem]:
         """Return the ``ZOOm:REF<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:REF<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:REF<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3423,7 +3336,7 @@ class Zoom(SCPICmdWrite, SCPICmdRead):
     def scroll(self) -> ZoomScroll:
         """Return the ``ZOOm:SCROLL`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:SCROLL?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:SCROLL?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3439,23 +3352,22 @@ class Zoom(SCPICmdWrite, SCPICmdRead):
     def state(self) -> ZoomState:
         """Return the ``ZOOm:STATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the specified zoom on or off.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:STATE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:STATE {ON|OFF|<NR1>}
             - ZOOm:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` turns zoom on or off.
             - ``OFF`` turns zoom on or off.
             - ``<NR1>`` = 0 disables the zoom; any other value enables the zoom.
@@ -3466,7 +3378,7 @@ class Zoom(SCPICmdWrite, SCPICmdRead):
     def vertical(self) -> ZoomVertical:
         """Return the ``ZOOm:VERTical`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:VERTical?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:VERTical?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -3481,26 +3393,25 @@ class Zoom(SCPICmdWrite, SCPICmdRead):
     def zoom1(self) -> ZoomZoom1:
         """Return the ``ZOOm:ZOOM1`` command.
 
-        **Description:**
+        Description:
             - This command resets the zoom transforms to default values for all traces of the
               specified zoom, where x is an integer from 1 to 4 representing the desired zoom
               window. The ``ZOOM:REFX:VERTICAL:SCALE?`` query returns the current vertical and
               horizontal positioning and scaling of the display.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm:ZOOM1?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm:ZOOM1?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm:ZOOM1 value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm:ZOOM1 {RESET|RESETLive}
             - ZOOm:ZOOM1?
+            ```
 
-        **Info:**
+        Info:
             - ``RESET`` resets the zoom transforms to default values for all traces of the specified
               zoom.
             - ``RESETLive`` resets the zoom transforms to default values for live traces of the

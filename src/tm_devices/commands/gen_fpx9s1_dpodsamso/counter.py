@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - COUnter:RESULTs:AVGmean?
     - COUnter:RESULTs:DEViation?
     - COUnter:RESULTs:MAXimum?
@@ -32,148 +30,141 @@ if TYPE_CHECKING:
 class CounterResultsValue(SCPICmdRead):
     """The ``COUnter:RESULTs:VALue`` command.
 
-    **Description:**
+    Description:
         - Queries the measured value obtained from the Trigger Source Frequency or A-B Trigger Time
           Interval Applications. The measured quantity is value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:RESULTs:VALue?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:VALue?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:RESULTs:VALue?
+        ```
     """
 
 
 class CounterResultsNumber(SCPICmdRead):
     """The ``COUnter:RESULTs:NUMber`` command.
 
-    **Description:**
+    Description:
         - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger Time
           Interval Applications. The value is the number of acquisitions (NUMber) taken at the time
           the command was given.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:RESULTs:NUMber?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:NUMber?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:RESULTs:NUMber?
+        ```
     """
 
 
 class CounterResultsMinimum(SCPICmdRead):
     """The ``COUnter:RESULTs:MINimum`` command.
 
-    **Description:**
+    Description:
         - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger Time
           Interval Applications. The minimum is a statistical value accumulated over the number of
           acquisitions ('NUMber') taken at the time the command was given.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:RESULTs:MINimum?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:MINimum?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:RESULTs:MINimum?
+        ```
     """
 
 
 class CounterResultsMaximum(SCPICmdRead):
     """The ``COUnter:RESULTs:MAXimum`` command.
 
-    **Description:**
+    Description:
         - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger Time
           Interval Applications. The maximum is a statistical value accumulated over the number of
           acquisitions (NUMber) taken at the time the command was given.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:RESULTs:MAXimum?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:MAXimum?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:RESULTs:MAXimum?
+        ```
     """
 
 
 class CounterResultsDeviation(SCPICmdRead):
     """The ``COUnter:RESULTs:DEViation`` command.
 
-    **Description:**
+    Description:
         - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger Time
           Interval Applications. The Deviation is a statistical value accumulated over the number of
           acquisitions (NUMber) taken at the time the command was given.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:RESULTs:DEViation?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:DEViation?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:RESULTs:DEViation?
+        ```
     """
 
 
 class CounterResultsAvgmean(SCPICmdRead):
     """The ``COUnter:RESULTs:AVGmean`` command.
 
-    **Description:**
+    Description:
         - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger Time
           Interval Applications. The AVGmean is a statistical value accumulated over the number of
           acquisitions (NUMber) taken at the time the command was given.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:RESULTs:AVGmean?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:AVGmean?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:RESULTs:AVGmean?
+        ```
     """
 
 
 class CounterResults(SCPICmdRead):
     """The ``COUnter:RESULTs`` command.
 
-    **Description:**
+    Description:
         - Queries the measured and derived values obtained from the Trigger Source Frequency or A-B
           Trigger Time Interval Applications. The measured quantity is value. The minimum, maximum,
           AVGmean, and Deviation are statistical values accumulated over the number of acquisitions
           (NUMber) taken at the time the command is given. All results are returned with the single
           query ``COUnter:RESULTs?`` Individual results are returned by other queries
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:RESULTs?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:RESULTs?
+        ```
 
     Properties:
         - ``.avgmean``: The ``COUnter:RESULTs:AVGmean`` command.
@@ -197,21 +188,20 @@ class CounterResults(SCPICmdRead):
     def avgmean(self) -> CounterResultsAvgmean:
         """Return the ``COUnter:RESULTs:AVGmean`` command.
 
-        **Description:**
+        Description:
             - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger
               Time Interval Applications. The AVGmean is a statistical value accumulated over the
               number of acquisitions (NUMber) taken at the time the command was given.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:RESULTs:AVGmean?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:AVGmean?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:RESULTs:AVGmean?
+            ```
         """
         return self._avgmean
 
@@ -219,21 +209,20 @@ class CounterResults(SCPICmdRead):
     def deviation(self) -> CounterResultsDeviation:
         """Return the ``COUnter:RESULTs:DEViation`` command.
 
-        **Description:**
+        Description:
             - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger
               Time Interval Applications. The Deviation is a statistical value accumulated over the
               number of acquisitions (NUMber) taken at the time the command was given.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:RESULTs:DEViation?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:DEViation?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:RESULTs:DEViation?
+            ```
         """
         return self._deviation
 
@@ -241,21 +230,20 @@ class CounterResults(SCPICmdRead):
     def maximum(self) -> CounterResultsMaximum:
         """Return the ``COUnter:RESULTs:MAXimum`` command.
 
-        **Description:**
+        Description:
             - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger
               Time Interval Applications. The maximum is a statistical value accumulated over the
               number of acquisitions (NUMber) taken at the time the command was given.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:RESULTs:MAXimum?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:MAXimum?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:RESULTs:MAXimum?
+            ```
         """
         return self._maximum
 
@@ -263,21 +251,20 @@ class CounterResults(SCPICmdRead):
     def minimum(self) -> CounterResultsMinimum:
         """Return the ``COUnter:RESULTs:MINimum`` command.
 
-        **Description:**
+        Description:
             - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger
               Time Interval Applications. The minimum is a statistical value accumulated over the
               number of acquisitions ('NUMber') taken at the time the command was given.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:RESULTs:MINimum?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:MINimum?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:RESULTs:MINimum?
+            ```
         """
         return self._minimum
 
@@ -285,21 +272,20 @@ class CounterResults(SCPICmdRead):
     def number(self) -> CounterResultsNumber:
         """Return the ``COUnter:RESULTs:NUMber`` command.
 
-        **Description:**
+        Description:
             - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger
               Time Interval Applications. The value is the number of acquisitions (NUMber) taken at
               the time the command was given.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:RESULTs:NUMber?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:NUMber?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:RESULTs:NUMber?
+            ```
         """
         return self._number
 
@@ -307,20 +293,19 @@ class CounterResults(SCPICmdRead):
     def value(self) -> CounterResultsValue:
         """Return the ``COUnter:RESULTs:VALue`` command.
 
-        **Description:**
+        Description:
             - Queries the measured value obtained from the Trigger Source Frequency or A-B Trigger
               Time Interval Applications. The measured quantity is value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:RESULTs:VALue?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:VALue?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:RESULTs:VALue?
+            ```
         """
         return self._value
 
@@ -328,7 +313,7 @@ class CounterResults(SCPICmdRead):
 class Counter(SCPICmdRead):
     """The ``COUnter`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -345,7 +330,7 @@ class Counter(SCPICmdRead):
     def results(self) -> CounterResults:
         """Return the ``COUnter:RESULTs`` command.
 
-        **Description:**
+        Description:
             - Queries the measured and derived values obtained from the Trigger Source Frequency or
               A-B Trigger Time Interval Applications. The measured quantity is value. The minimum,
               maximum, AVGmean, and Deviation are statistical values accumulated over the number of
@@ -353,16 +338,15 @@ class Counter(SCPICmdRead):
               with the single query ``COUnter:RESULTs?`` Individual results are returned by other
               queries
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:RESULTs?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:RESULTs?
+            ```
 
         Sub-properties:
             - ``.avgmean``: The ``COUnter:RESULTs:AVGmean`` command.

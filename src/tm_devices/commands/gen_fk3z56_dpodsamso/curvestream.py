@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CURVEStream {<Block>|<asc curve>}
     - CURVEStream?
 """
@@ -27,7 +25,7 @@ if TYPE_CHECKING:
 class Curvestream(SCPICmdWrite, SCPICmdRead):
     """The ``CURVEStream`` command.
 
-    **Description:**
+    Description:
         - This query continuously transfers waveform data from the instrument as it is acquired.
           This command puts the instrument into a talk-only mode, allowing the controller to receive
           waveform records as fast as (and as soon as) they are acquired. Use the ``DATA:SOURCE``
@@ -47,18 +45,17 @@ class Curvestream(SCPICmdWrite, SCPICmdRead):
           reading the data off the bus fast enough, the trigger rate is slowed to allow each
           waveform to be sent sequentially.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURVEStream?`` query.
         - Using the ``.verify(value)`` method will send the ``CURVEStream?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CURVEStream value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURVEStream {<Block>|<asc curve>}
         - CURVEStream?
+        ```
     """
 
     def __init__(

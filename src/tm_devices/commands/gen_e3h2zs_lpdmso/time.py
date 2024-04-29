@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - TIMe <QString>
     - TIMe:ZONe <QString>
     - TIMe:ZONe:UTCDELTa <NR3>
@@ -30,24 +28,23 @@ if TYPE_CHECKING:
 class TimeZoneUtcdelta(SCPICmdWrite, SCPICmdRead):
     """The ``TIMe:ZONe:UTCDELTa`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the time zone using the difference between the desired time
           zone and UTC.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TIMe:ZONe:UTCDELTa?`` query.
         - Using the ``.verify(value)`` method will send the ``TIMe:ZONe:UTCDELTa?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TIMe:ZONe:UTCDELTa value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TIMe:ZONe:UTCDELTa <NR3>
         - TIMe:ZONe:UTCDELTa?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the specified number of hours difference between the desired time zone and
           UTC which is equivalent to GMT. The deltas supported are: -12.00, -11.00, -10.00, -9.30,
           -9.00, -8.30, -8.00, -7.00, -6.00, -5.00, -4.00, -3.30, -3.00, -2.00, -1.00, 0.0, 1.00,
@@ -59,23 +56,22 @@ class TimeZoneUtcdelta(SCPICmdWrite, SCPICmdRead):
 class TimeZone(SCPICmdWrite, SCPICmdRead):
     """The ``TIMe:ZONe`` command.
 
-    **Description:**
+    Description:
         - This command sets the time zone to the one specified.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TIMe:ZONe?`` query.
         - Using the ``.verify(value)`` method will send the ``TIMe:ZONe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TIMe:ZONe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TIMe:ZONe <QString>
         - TIMe:ZONe?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string representing the desired time zone.
 
     Properties:
@@ -92,24 +88,23 @@ class TimeZone(SCPICmdWrite, SCPICmdRead):
     def utcdelta(self) -> TimeZoneUtcdelta:
         """Return the ``TIMe:ZONe:UTCDELTa`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the time zone using the difference between the desired
               time zone and UTC.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TIMe:ZONe:UTCDELTa?`` query.
             - Using the ``.verify(value)`` method will send the ``TIMe:ZONe:UTCDELTa?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TIMe:ZONe:UTCDELTa value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TIMe:ZONe:UTCDELTa <NR3>
             - TIMe:ZONe:UTCDELTa?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the specified number of hours difference between the desired time zone
               and UTC which is equivalent to GMT. The deltas supported are: -12.00, -11.00, -10.00,
               -9.30, -9.00, -8.30, -8.00, -7.00, -6.00, -5.00, -4.00, -3.30, -3.00, -2.00, -1.00,
@@ -122,25 +117,24 @@ class TimeZone(SCPICmdWrite, SCPICmdRead):
 class Time(SCPICmdWrite, SCPICmdRead):
     """The ``TIMe`` command.
 
-    **Description:**
+    Description:
         - This command sets the time in the form ``hh:mm:ss`` where hh refers to a two-digit hour
           number, mm refers to a two-digit minute number from 01 to 60, and ss refers to a two-digit
           second number from 01 to 60.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TIMe?`` query.
         - Using the ``.verify(value)`` method will send the ``TIMe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TIMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TIMe <QString>
         - TIMe?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string representing the desired time.
 
     Properties:
@@ -157,23 +151,22 @@ class Time(SCPICmdWrite, SCPICmdRead):
     def zone(self) -> TimeZone:
         """Return the ``TIMe:ZONe`` command.
 
-        **Description:**
+        Description:
             - This command sets the time zone to the one specified.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TIMe:ZONe?`` query.
             - Using the ``.verify(value)`` method will send the ``TIMe:ZONe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TIMe:ZONe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TIMe:ZONe <QString>
             - TIMe:ZONe?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string representing the desired time zone.
 
         Sub-properties:

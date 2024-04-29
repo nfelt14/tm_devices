@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - DATE <QString>
     - DATE?
 """
@@ -28,23 +26,22 @@ if TYPE_CHECKING:
 class Date(SCPICmdWrite, SCPICmdRead):
     """The ``DATE`` command.
 
-    **Description:**
+    Description:
         - This command specifies the date the oscilloscope displays.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DATE?`` query.
         - Using the ``.verify(value)`` method will send the ``DATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DATE <QString>
         - DATE?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a date in the form 'yyyy-mm-dd' where yyyy refers to a four-digit year
           number, mm refers to a two-digit month number from 01 to 12, and dd refers to a two-digit
           day number in the month.

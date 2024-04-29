@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - MARK {NEXT|PREVious}
     - MARK:CREATE {CH<x>|MATH|B<x>|REF<x>|COLUMN|DIGItal}
     - MARK:DELEte {CH<x>|MATH|B<x>|REF<x>|COLUMN|DIGItal}
@@ -38,45 +36,43 @@ if TYPE_CHECKING:
 class MarkTotal(SCPICmdRead):
     """The ``MARK:TOTal`` command.
 
-    **Description:**
+    Description:
         - Returns how many marks are currently in use. There can be a total of 1,024 marks returned.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARK:TOTal?`` query.
         - Using the ``.verify(value)`` method will send the ``MARK:TOTal?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARK:TOTal?
+        ```
     """
 
 
 class MarkSelectedZoomPosition(SCPICmdRead):
     """The ``MARK:SELected:ZOOm:POSition`` command.
 
-    **Description:**
+    Description:
         - Returns the position of the selected mark, 0 to 100% of the zoom overview window.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARK:SELected:ZOOm:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``MARK:SELected:ZOOm:POSition?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARK:SELected:ZOOm:POSition?
+        ```
     """
 
 
 class MarkSelectedZoom(SCPICmdRead):
     """The ``MARK:SELected:ZOOm`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARK:SELected:ZOOm?`` query.
         - Using the ``.verify(value)`` method will send the ``MARK:SELected:ZOOm?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -93,19 +89,18 @@ class MarkSelectedZoom(SCPICmdRead):
     def position(self) -> MarkSelectedZoomPosition:
         """Return the ``MARK:SELected:ZOOm:POSition`` command.
 
-        **Description:**
+        Description:
             - Returns the position of the selected mark, 0 to 100% of the zoom overview window.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARK:SELected:ZOOm:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``MARK:SELected:ZOOm:POSition?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARK:SELected:ZOOm:POSition?
+            ```
         """
         return self._position
 
@@ -113,135 +108,128 @@ class MarkSelectedZoom(SCPICmdRead):
 class MarkSelectedState(SCPICmdRead):
     """The ``MARK:SELected:STATe`` command.
 
-    **Description:**
+    Description:
         - Returns the on or off state of the selected mark. The selected mark is at or near the
           center of the screen. If you press the front-panel Set/Clear button, this mark will
           disappear.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARK:SELected:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``MARK:SELected:STATe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARK:SELected:STATe?
+        ```
     """
 
 
 class MarkSelectedStart(SCPICmdRead):
     """The ``MARK:SELected:STARt`` command.
 
-    **Description:**
+    Description:
         - Returns the starting point of the selected mark, 0 to 100% of the waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARK:SELected:STARt?`` query.
         - Using the ``.verify(value)`` method will send the ``MARK:SELected:STARt?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARK:SELected:STARt?
+        ```
     """
 
 
 class MarkSelectedSource(SCPICmdRead):
     """The ``MARK:SELected:SOURCE`` command.
 
-    **Description:**
+    Description:
         - Returns the source waveform for the selected mark.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARK:SELected:SOURCE?`` query.
         - Using the ``.verify(value)`` method will send the ``MARK:SELected:SOURCE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARK:SELected:SOURCE?
+        ```
     """
 
 
 class MarkSelectedOwner(SCPICmdRead):
     """The ``MARK:SELected:OWNer`` command.
 
-    **Description:**
+    Description:
         - Returns the owner of the selected mark.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARK:SELected:OWNer?`` query.
         - Using the ``.verify(value)`` method will send the ``MARK:SELected:OWNer?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARK:SELected:OWNer?
+        ```
     """
 
 
 class MarkSelectedMarksincolumn(SCPICmdRead):
     """The ``MARK:SELected:MARKSINCOLumn`` command.
 
-    **Description:**
+    Description:
         - Returns the number of marks in the current zoom pixel column.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARK:SELected:MARKSINCOLumn?`` query.
         - Using the ``.verify(value)`` method will send the ``MARK:SELected:MARKSINCOLumn?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARK:SELected:MARKSINCOLumn?
+        ```
     """
 
 
 class MarkSelectedFocus(SCPICmdRead):
     """The ``MARK:SELected:FOCUS`` command.
 
-    **Description:**
+    Description:
         - Returns the focus of the selected mark, 0 to 100% of the waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARK:SELected:FOCUS?`` query.
         - Using the ``.verify(value)`` method will send the ``MARK:SELected:FOCUS?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARK:SELected:FOCUS?
+        ```
     """
 
 
 class MarkSelectedEnd(SCPICmdRead):
     """The ``MARK:SELected:END`` command.
 
-    **Description:**
+    Description:
         - Returns the end of the selected mark, 0 to 100% of the waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARK:SELected:END?`` query.
         - Using the ``.verify(value)`` method will send the ``MARK:SELected:END?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARK:SELected:END?
+        ```
     """
 
 
@@ -249,7 +237,7 @@ class MarkSelectedEnd(SCPICmdRead):
 class MarkSelected(SCPICmdRead):
     """The ``MARK:SELected`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARK:SELected?`` query.
         - Using the ``.verify(value)`` method will send the ``MARK:SELected?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -280,19 +268,18 @@ class MarkSelected(SCPICmdRead):
     def end(self) -> MarkSelectedEnd:
         """Return the ``MARK:SELected:END`` command.
 
-        **Description:**
+        Description:
             - Returns the end of the selected mark, 0 to 100% of the waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARK:SELected:END?`` query.
             - Using the ``.verify(value)`` method will send the ``MARK:SELected:END?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARK:SELected:END?
+            ```
         """
         return self._end
 
@@ -300,19 +287,18 @@ class MarkSelected(SCPICmdRead):
     def focus(self) -> MarkSelectedFocus:
         """Return the ``MARK:SELected:FOCUS`` command.
 
-        **Description:**
+        Description:
             - Returns the focus of the selected mark, 0 to 100% of the waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARK:SELected:FOCUS?`` query.
             - Using the ``.verify(value)`` method will send the ``MARK:SELected:FOCUS?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARK:SELected:FOCUS?
+            ```
         """
         return self._focus
 
@@ -320,19 +306,18 @@ class MarkSelected(SCPICmdRead):
     def marksincolumn(self) -> MarkSelectedMarksincolumn:
         """Return the ``MARK:SELected:MARKSINCOLumn`` command.
 
-        **Description:**
+        Description:
             - Returns the number of marks in the current zoom pixel column.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARK:SELected:MARKSINCOLumn?`` query.
             - Using the ``.verify(value)`` method will send the ``MARK:SELected:MARKSINCOLumn?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARK:SELected:MARKSINCOLumn?
+            ```
         """
         return self._marksincolumn
 
@@ -340,19 +325,18 @@ class MarkSelected(SCPICmdRead):
     def owner(self) -> MarkSelectedOwner:
         """Return the ``MARK:SELected:OWNer`` command.
 
-        **Description:**
+        Description:
             - Returns the owner of the selected mark.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARK:SELected:OWNer?`` query.
             - Using the ``.verify(value)`` method will send the ``MARK:SELected:OWNer?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARK:SELected:OWNer?
+            ```
         """
         return self._owner
 
@@ -360,19 +344,18 @@ class MarkSelected(SCPICmdRead):
     def source(self) -> MarkSelectedSource:
         """Return the ``MARK:SELected:SOURCE`` command.
 
-        **Description:**
+        Description:
             - Returns the source waveform for the selected mark.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARK:SELected:SOURCE?`` query.
             - Using the ``.verify(value)`` method will send the ``MARK:SELected:SOURCE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARK:SELected:SOURCE?
+            ```
         """
         return self._source
 
@@ -380,19 +363,18 @@ class MarkSelected(SCPICmdRead):
     def start(self) -> MarkSelectedStart:
         """Return the ``MARK:SELected:STARt`` command.
 
-        **Description:**
+        Description:
             - Returns the starting point of the selected mark, 0 to 100% of the waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARK:SELected:STARt?`` query.
             - Using the ``.verify(value)`` method will send the ``MARK:SELected:STARt?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARK:SELected:STARt?
+            ```
         """
         return self._start
 
@@ -400,21 +382,20 @@ class MarkSelected(SCPICmdRead):
     def state(self) -> MarkSelectedState:
         """Return the ``MARK:SELected:STATe`` command.
 
-        **Description:**
+        Description:
             - Returns the on or off state of the selected mark. The selected mark is at or near the
               center of the screen. If you press the front-panel Set/Clear button, this mark will
               disappear.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARK:SELected:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``MARK:SELected:STATe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARK:SELected:STATe?
+            ```
         """
         return self._state
 
@@ -422,7 +403,7 @@ class MarkSelected(SCPICmdRead):
     def zoom(self) -> MarkSelectedZoom:
         """Return the ``MARK:SELected:ZOOm`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARK:SELected:ZOOm?`` query.
             - Using the ``.verify(value)`` method will send the ``MARK:SELected:ZOOm?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -436,40 +417,38 @@ class MarkSelected(SCPICmdRead):
 class MarkFree(SCPICmdRead):
     """The ``MARK:FREE`` command.
 
-    **Description:**
+    Description:
         - Returns how many marks are available for use. There can be a total of 1,024 marks
           returned.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARK:FREE?`` query.
         - Using the ``.verify(value)`` method will send the ``MARK:FREE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARK:FREE?
+        ```
     """
 
 
 class MarkDelete(SCPICmdWrite):
     """The ``MARK:DELEte`` command.
 
-    **Description:**
+    Description:
         - Deletes a mark on a particular waveform, all waveforms in a column, the selected mark, or
           all marks.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MARK:DELEte value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARK:DELEte {CH<x>|MATH|B<x>|REF<x>|COLUMN|DIGItal}
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` deletes the mark on a channel waveform, where <x> is the channel number.
         - ``MATH`` deletes the mark on the math waveform.
         - ``B<x>`` deletes the mark on a bus waveform, where <x> is the bus number.
@@ -483,19 +462,18 @@ class MarkDelete(SCPICmdWrite):
 class MarkCreate(SCPICmdWrite):
     """The ``MARK:CREATE`` command.
 
-    **Description:**
+    Description:
         - Creates a mark on a specified waveform or all waveforms in a column.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MARK:CREATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARK:CREATE {CH<x>|MATH|B<x>|REF<x>|COLUMN|DIGItal}
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` creates the mark on a channel waveform, where <x> is the channel number.
         - ``MATH`` creates the mark on the math waveform.
         - ``B<x>`` creates the mark on a bus waveform, where <x> is the bus number.
@@ -510,24 +488,23 @@ class MarkCreate(SCPICmdWrite):
 class Mark(SCPICmdWrite, SCPICmdRead):
     """The ``MARK`` command.
 
-    **Description:**
+    Description:
         - Moves to the next or previous reference mark on the waveform. Returns the current mark
           position.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARK?`` query.
         - Using the ``.verify(value)`` method will send the ``MARK?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MARK value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARK {NEXT|PREVious}
         - MARK?
+        ```
 
-    **Info:**
+    Info:
         - ``NEXT`` moves to the next reference mark on the right.
         - ``PREVious`` moves to the next reference mark on the left.
 
@@ -551,19 +528,18 @@ class Mark(SCPICmdWrite, SCPICmdRead):
     def create(self) -> MarkCreate:
         """Return the ``MARK:CREATE`` command.
 
-        **Description:**
+        Description:
             - Creates a mark on a specified waveform or all waveforms in a column.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MARK:CREATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARK:CREATE {CH<x>|MATH|B<x>|REF<x>|COLUMN|DIGItal}
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` creates the mark on a channel waveform, where <x> is the channel number.
             - ``MATH`` creates the mark on the math waveform.
             - ``B<x>`` creates the mark on a bus waveform, where <x> is the bus number.
@@ -579,20 +555,19 @@ class Mark(SCPICmdWrite, SCPICmdRead):
     def delete(self) -> MarkDelete:
         """Return the ``MARK:DELEte`` command.
 
-        **Description:**
+        Description:
             - Deletes a mark on a particular waveform, all waveforms in a column, the selected mark,
               or all marks.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MARK:DELEte value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARK:DELEte {CH<x>|MATH|B<x>|REF<x>|COLUMN|DIGItal}
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` deletes the mark on a channel waveform, where <x> is the channel number.
             - ``MATH`` deletes the mark on the math waveform.
             - ``B<x>`` deletes the mark on a bus waveform, where <x> is the bus number.
@@ -607,20 +582,19 @@ class Mark(SCPICmdWrite, SCPICmdRead):
     def free(self) -> MarkFree:
         """Return the ``MARK:FREE`` command.
 
-        **Description:**
+        Description:
             - Returns how many marks are available for use. There can be a total of 1,024 marks
               returned.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARK:FREE?`` query.
             - Using the ``.verify(value)`` method will send the ``MARK:FREE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARK:FREE?
+            ```
         """
         return self._free
 
@@ -628,7 +602,7 @@ class Mark(SCPICmdWrite, SCPICmdRead):
     def selected(self) -> MarkSelected:
         """Return the ``MARK:SELected`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARK:SELected?`` query.
             - Using the ``.verify(value)`` method will send the ``MARK:SELected?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -649,19 +623,18 @@ class Mark(SCPICmdWrite, SCPICmdRead):
     def total(self) -> MarkTotal:
         """Return the ``MARK:TOTal`` command.
 
-        **Description:**
+        Description:
             - Returns how many marks are currently in use. There can be a total of 1,024 marks
               returned.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARK:TOTal?`` query.
             - Using the ``.verify(value)`` method will send the ``MARK:TOTal?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARK:TOTal?
+            ```
         """
         return self._total

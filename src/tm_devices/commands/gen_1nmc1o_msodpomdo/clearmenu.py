@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CLEARMenu
 """
 
@@ -25,18 +23,17 @@ if TYPE_CHECKING:
 class Clearmenu(SCPICmdWriteNoArguments):
     """The ``CLEARMenu`` command.
 
-    **Description:**
+    Description:
         - Clears the current menu from the display. This command is equivalent to pressing the front
           panel Menu off.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``CLEARMenu`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CLEARMenu
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "CLEARMenu") -> None:

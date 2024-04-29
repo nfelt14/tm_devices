@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - DISplay:CLOCk {<NR1>|ON|OFF}
     - DISplay:CLOCk?
     - DISplay:COLOr:MATHCOLOr {DEFAULT|INHERIT}
@@ -44,12 +42,14 @@ Commands and Queries:
     - DISplay:COLOr:REFCOLOr {DEFAULT|INHERIT}
     - DISplay:COLOr:REFCOLOr?
     - DISplay:COLOr?
-    - DISplay:DATa? (BMP| JPEG| PNG | TIFF)[,(FULLSCREEN | GRAticule | FULLNOmenu)[,(COLOr | INKSaver | BLACKANDWhite )]]
+    - DISplay:DATa? (BMP| JPEG| PNG | TIFF)[,(FULLSCREEN | GRAticule | FULLNOmenu)[,(COLOr |
+      INKSaver | BLACKANDWhite )]]
     - DISplay:DESKew {<NR1>|OFF|ON|AUTO}
     - DISplay:DESKew?
     - DISplay:DIGital:HEIght {SMAll|LARge|MEDium|XSMAll}
     - DISplay:DIGital:HEIght?
-    - DISplay:DPOJETPlot? (PLOT1 | PLOT2 | PLOT3 | PLOT4 | SUMMARY)[,(JPEG | JPG | TIF | TIFF | BMP | EMF | PNG)]
+    - DISplay:DPOJETPlot? (PLOT1 | PLOT2 | PLOT3 | PLOT4 | SUMMARY)[,(JPEG | JPG | TIF | TIFF | BMP
+      | EMF | PNG)]
     - DISplay:FILTer {LINEAr|SINX}
     - DISplay:FILTer?
     - DISplay:FORMat {YT|XY|XYZ}
@@ -106,7 +106,7 @@ Commands and Queries:
     - DISplay:WAVEform {<NR1>|OFF|ON}
     - DISplay:WAVEform?
     - DISplay?
-"""  # noqa: E501
+"""
 
 from typing import Dict, Optional, TYPE_CHECKING
 
@@ -127,25 +127,24 @@ if TYPE_CHECKING:
 class DisplayWaveform(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:WAVEform`` command.
 
-    **Description:**
+    Description:
         - This command globally enables or disables the waveform display. When disabled, the
           waveform is still acquired and held in memory, but it is not drawn to the screen.
           Disabling the waveform display may improve processing speed.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:WAVEform?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:WAVEform?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:WAVEform value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:WAVEform {<NR1>|OFF|ON}
         - DISplay:WAVEform?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` enables or disables the waveform display. 0 disables the waveform display; any
           other value enables the waveform display.
         - ``ON`` enables the waveform display.
@@ -156,24 +155,23 @@ class DisplayWaveform(SCPICmdWrite, SCPICmdRead):
 class DisplayVarpersist(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:VARpersist`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries display persistence decay time, which is the approximate
           decay time for a freshly struck persistence sample.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:VARpersist?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:VARpersist?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:VARpersist value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:VARpersist <NR3>
         - DISplay:VARpersist?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` indicates the persistence decay time and ranges from 0.5 to 100.
     """
 
@@ -181,24 +179,23 @@ class DisplayVarpersist(SCPICmdWrite, SCPICmdRead):
 class DisplayTrigt(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:TRIGT`` command.
 
-    **Description:**
+    Description:
         - This command controls or queries the display of the trigger T. The trigger T shows where
           the trigger occurred on the waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:TRIGT?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:TRIGT?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:TRIGT value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:TRIGT {<NR1>|OFF|ON}
         - DISplay:TRIGT?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the trigger T; any other value displays the trigger T.
         - ``OFF`` removes the trigger indicator T from the display.
         - ``ON`` displays a T at the trigger point.
@@ -208,7 +205,7 @@ class DisplayTrigt(SCPICmdWrite, SCPICmdRead):
 class DisplayTrigbar(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:TRIGBar`` command.
 
-    **Description:**
+    Description:
         - This command controls or queries the display of the trigger-level indicator bars.
           Indicator bars show where the trigger voltage level is set. The instrument will only
           display the bar if the associated trigger source is also displayed. If both a main and a
@@ -217,20 +214,19 @@ class DisplayTrigbar(SCPICmdWrite, SCPICmdRead):
           threshold and one will show the lower threshold. This command is equivalent to selecting
           Display Setup from the Display menu and then choosing the Objects tab.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:TRIGBar?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:TRIGBar?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:TRIGBar value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:TRIGBar {OFF|SHORt|LONG}
         - DISplay:TRIGBar?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` removes the trigger indicator bar from the display.
         - ``SHORt`` displays, as the indicator, a short arrow at the right side of the graticule for
           each displayed trigger signal.
@@ -242,25 +238,24 @@ class DisplayTrigbar(SCPICmdWrite, SCPICmdRead):
 class DisplayStyle(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:STYle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries how the data is displayed for normal and FastAcq modes. This
           command is equivalent to selecting Display Style from the Display menu and choosing a
           style.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:STYle?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:STYle?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:STYle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:STYle {DOTs|INTENSIFied|VECtors}
         - DISplay:STYle?
+        ```
 
-    **Info:**
+    Info:
         - ``DOTs`` displays individual data points. New points immediately replace old ones.
         - ``INTENSIFied`` causes the display to show interpolated samples with dark spaces (Only the
           'real' samples are displayed).
@@ -271,27 +266,26 @@ class DisplayStyle(SCPICmdWrite, SCPICmdRead):
 class DisplayShowremote(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:SHOWREmote`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the state of the remote display feature and is equivalent to
           selecting Display Remote from the Display menu. The query form of this command returns ON
           (1) or OFF (0). This feature allows you to view waveforms and other graticule data on a
           remote display using remote control software like VNC (Virtual Network Computing) or
           Symantec pcAnywhere.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:SHOWREmote?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:SHOWREmote?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:SHOWREmote value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:SHOWREmote {<NR1>|ON|OFF}
         - DISplay:SHOWREmote?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables remote display of waveform and other graticule data; any other
           value enables remote display of waveform and other graticule data.
         - ``ON`` enables the remote display of waveform and other graticule data.
@@ -302,20 +296,19 @@ class DisplayShowremote(SCPICmdWrite, SCPICmdRead):
 class DisplayScreentextState(SCPICmdWrite):
     """The ``DISplay:SCREENTExt:STATE`` command.
 
-    **Description:**
+    Description:
         - This command controls the display of screen text.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``DISplay:SCREENTExt:STATE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:SCREENTExt:STATE {<NR1>|ON|OFF}
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables screen text; any other value enables screen text.
         - ``ON`` turns on the display of screen text.
         - ``OFF`` turns off the display of screen text.
@@ -325,21 +318,20 @@ class DisplayScreentextState(SCPICmdWrite):
 class DisplayScreentextLabelItemYpos(SCPICmdWrite):
     """The ``DISplay:SCREENTExt:LABel<x>:YPOS`` command.
 
-    **Description:**
+    Description:
         - This command sets the vertical position of a given label. The label is specified by x. The
           value of x can range from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``DISplay:SCREENTExt:LABel<x>:YPOS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:SCREENTExt:LABel<x>:YPOS <NR1>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` sets the vertical position of the screen text label. The value can range from 0
           to 385.
     """
@@ -348,21 +340,20 @@ class DisplayScreentextLabelItemYpos(SCPICmdWrite):
 class DisplayScreentextLabelItemXpos(SCPICmdWrite):
     """The ``DISplay:SCREENTExt:LABel<x>:XPOS`` command.
 
-    **Description:**
+    Description:
         - This command sets the horizontal position of a given screen text label. The label is
           specified by x. The value of x can range from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``DISplay:SCREENTExt:LABel<x>:XPOS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:SCREENTExt:LABel<x>:XPOS <NR1>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` sets the horizontal position of the screen text label. The value can range from
           0 to 500.
     """
@@ -371,25 +362,24 @@ class DisplayScreentextLabelItemXpos(SCPICmdWrite):
 class DisplayScreentextLabelItemState(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:SCREENTExt:LABel<x>:STATE`` command.
 
-    **Description:**
+    Description:
         - This command sets the state to be displayed for a given label. <x> is the label number, 1
           through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:SCREENTExt:LABel<x>:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:SCREENTExt:LABel<x>:STATE?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``DISplay:SCREENTExt:LABel<x>:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:SCREENTExt:LABel<x>:STATE {<NR1>|OFF|ON}
         - DISplay:SCREENTExt:LABel<x>:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` = the screen text does not display.
         - ``ON`` = the screen text displays.
     """
@@ -398,25 +388,24 @@ class DisplayScreentextLabelItemState(SCPICmdWrite, SCPICmdRead):
 class DisplayScreentextLabelItemName(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:SCREENTExt:LABel<x>:NAMe`` command.
 
-    **Description:**
+    Description:
         - This command sets the text to be displayed for a given label. The label is specified by
           <x>. The value of <x> can range from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:SCREENTExt:LABel<x>:NAMe?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:SCREENTExt:LABel<x>:NAMe?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``DISplay:SCREENTExt:LABel<x>:NAMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:SCREENTExt:LABel<x>:NAMe <QString>
         - DISplay:SCREENTExt:LABel<x>:NAMe?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` argument is the text to be displayed for a given label.
     """
 
@@ -426,11 +415,11 @@ class DisplayScreentextLabelItemName(SCPICmdWrite, SCPICmdRead):
 class DisplayScreentextLabelItemFontstyle(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:SCREENTExt:LABel<x>:FONTSTyle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the screen text label font style. <x> is the label number, 1
           through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:SCREENTExt:LABel<x>:FONTSTyle?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -439,14 +428,13 @@ class DisplayScreentextLabelItemFontstyle(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``DISplay:SCREENTExt:LABel<x>:FONTSTyle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:SCREENTExt:LABel<x>:FONTSTyle <QString>
         - DISplay:SCREENTExt:LABel<x>:FONTSTyle?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` argument is the font style to be displayed for a given label.
     """
 
@@ -456,11 +444,11 @@ class DisplayScreentextLabelItemFontstyle(SCPICmdWrite, SCPICmdRead):
 class DisplayScreentextLabelItemFontsize(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:SCREENTExt:LABel<x>:FONTSIze`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the screen text label font size. <x> is the label number
           which ranges from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:SCREENTExt:LABel<x>:FONTSIze?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -469,14 +457,13 @@ class DisplayScreentextLabelItemFontsize(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``DISplay:SCREENTExt:LABel<x>:FONTSIze value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:SCREENTExt:LABel<x>:FONTSIze <NR1>
         - DISplay:SCREENTExt:LABel<x>:FONTSIze?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the font size to be displayed for a given label.
     """
 
@@ -484,11 +471,11 @@ class DisplayScreentextLabelItemFontsize(SCPICmdWrite, SCPICmdRead):
 class DisplayScreentextLabelItemFontname(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:SCREENTExt:LABel<x>:FONTNAme`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the screen text label font name. <x> is the label number
           which ranges from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:SCREENTExt:LABel<x>:FONTNAme?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -497,14 +484,13 @@ class DisplayScreentextLabelItemFontname(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``DISplay:SCREENTExt:LABel<x>:FONTNAme value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:SCREENTExt:LABel<x>:FONTNAme <QString>
         - DISplay:SCREENTExt:LABel<x>:FONTNAme?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` argument is the font name to be displayed for a given label.
     """
 
@@ -514,11 +500,11 @@ class DisplayScreentextLabelItemFontname(SCPICmdWrite, SCPICmdRead):
 class DisplayScreentextLabelItemFonteffect(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:SCREENTExt:LABel<x>:FONTEFfect`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the screen text label font effect. <x> is the label number, 1
           through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:SCREENTExt:LABel<x>:FONTEFfect?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -527,14 +513,13 @@ class DisplayScreentextLabelItemFonteffect(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``DISplay:SCREENTExt:LABel<x>:FONTEFfect value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:SCREENTExt:LABel<x>:FONTEFfect {NONe|CAPS|SHADow|EMBOss|ENGRave}
         - DISplay:SCREENTExt:LABel<x>:FONTEFfect?
+        ```
 
-    **Info:**
+    Info:
         - ``NONe`` sets the screen text label font effect to none.
         - ``CAPS`` sets the screen text label font effect to capital.
         - ``SHADow`` sets the screen text label font effect to shadow.
@@ -546,11 +531,11 @@ class DisplayScreentextLabelItemFonteffect(SCPICmdWrite, SCPICmdRead):
 class DisplayScreentextLabelItemFontcolor(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:SCREENTExt:LABel<x>:FONTCOlor`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the screen text label font color. <x> is the label number, 1
           through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:SCREENTExt:LABel<x>:FONTCOlor?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -559,14 +544,13 @@ class DisplayScreentextLabelItemFontcolor(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``DISplay:SCREENTExt:LABel<x>:FONTCOlor value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:SCREENTExt:LABel<x>:FONTCOlor <QString>
         - DISplay:SCREENTExt:LABel<x>:FONTCOlor?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` argument is the font color to be displayed for a given label.
     """
 
@@ -577,20 +561,19 @@ class DisplayScreentextLabelItemFontcolor(SCPICmdWrite, SCPICmdRead):
 class DisplayScreentextLabelItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``DISplay:SCREENTExt:LABel<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the screen text setting for a given label. Specifically,
           it provides the name, horizontal position (XPOS), and vertical position (YPOS).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:SCREENTExt:LABel<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:SCREENTExt:LABel<x>?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:SCREENTExt:LABel<x>?
+        ```
 
     Properties:
         - ``.fontcolor``: The ``DISplay:SCREENTExt:LABel<x>:FONTCOlor`` command.
@@ -626,11 +609,11 @@ class DisplayScreentextLabelItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def fontcolor(self) -> DisplayScreentextLabelItemFontcolor:
         """Return the ``DISplay:SCREENTExt:LABel<x>:FONTCOlor`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the screen text label font color. <x> is the label
               number, 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:SCREENTExt:LABel<x>:FONTCOlor?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -639,14 +622,13 @@ class DisplayScreentextLabelItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:SCREENTExt:LABel<x>:FONTCOlor value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:SCREENTExt:LABel<x>:FONTCOlor <QString>
             - DISplay:SCREENTExt:LABel<x>:FONTCOlor?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` argument is the font color to be displayed for a given label.
         """
         return self._fontcolor
@@ -655,11 +637,11 @@ class DisplayScreentextLabelItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def fonteffect(self) -> DisplayScreentextLabelItemFonteffect:
         """Return the ``DISplay:SCREENTExt:LABel<x>:FONTEFfect`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the screen text label font effect. <x> is the label
               number, 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``DISplay:SCREENTExt:LABel<x>:FONTEFfect?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -668,14 +650,13 @@ class DisplayScreentextLabelItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:SCREENTExt:LABel<x>:FONTEFfect value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:SCREENTExt:LABel<x>:FONTEFfect {NONe|CAPS|SHADow|EMBOss|ENGRave}
             - DISplay:SCREENTExt:LABel<x>:FONTEFfect?
+            ```
 
-        **Info:**
+        Info:
             - ``NONe`` sets the screen text label font effect to none.
             - ``CAPS`` sets the screen text label font effect to capital.
             - ``SHADow`` sets the screen text label font effect to shadow.
@@ -688,11 +669,11 @@ class DisplayScreentextLabelItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def fontname(self) -> DisplayScreentextLabelItemFontname:
         """Return the ``DISplay:SCREENTExt:LABel<x>:FONTNAme`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the screen text label font name. <x> is the label number
               which ranges from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:SCREENTExt:LABel<x>:FONTNAme?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -701,14 +682,13 @@ class DisplayScreentextLabelItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:SCREENTExt:LABel<x>:FONTNAme value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:SCREENTExt:LABel<x>:FONTNAme <QString>
             - DISplay:SCREENTExt:LABel<x>:FONTNAme?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` argument is the font name to be displayed for a given label.
         """
         return self._fontname
@@ -717,11 +697,11 @@ class DisplayScreentextLabelItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def fontsize(self) -> DisplayScreentextLabelItemFontsize:
         """Return the ``DISplay:SCREENTExt:LABel<x>:FONTSIze`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the screen text label font size. <x> is the label number
               which ranges from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:SCREENTExt:LABel<x>:FONTSIze?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -730,14 +710,13 @@ class DisplayScreentextLabelItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:SCREENTExt:LABel<x>:FONTSIze value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:SCREENTExt:LABel<x>:FONTSIze <NR1>
             - DISplay:SCREENTExt:LABel<x>:FONTSIze?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the font size to be displayed for a given label.
         """
         return self._fontsize
@@ -746,11 +725,11 @@ class DisplayScreentextLabelItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def fontstyle(self) -> DisplayScreentextLabelItemFontstyle:
         """Return the ``DISplay:SCREENTExt:LABel<x>:FONTSTyle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the screen text label font style. <x> is the label
               number, 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:SCREENTExt:LABel<x>:FONTSTyle?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -759,14 +738,13 @@ class DisplayScreentextLabelItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:SCREENTExt:LABel<x>:FONTSTyle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:SCREENTExt:LABel<x>:FONTSTyle <QString>
             - DISplay:SCREENTExt:LABel<x>:FONTSTyle?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` argument is the font style to be displayed for a given label.
         """
         return self._fontstyle
@@ -775,11 +753,11 @@ class DisplayScreentextLabelItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def name(self) -> DisplayScreentextLabelItemName:
         """Return the ``DISplay:SCREENTExt:LABel<x>:NAMe`` command.
 
-        **Description:**
+        Description:
             - This command sets the text to be displayed for a given label. The label is specified
               by <x>. The value of <x> can range from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:SCREENTExt:LABel<x>:NAMe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -788,14 +766,13 @@ class DisplayScreentextLabelItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:SCREENTExt:LABel<x>:NAMe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:SCREENTExt:LABel<x>:NAMe <QString>
             - DISplay:SCREENTExt:LABel<x>:NAMe?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` argument is the text to be displayed for a given label.
         """
         return self._name
@@ -804,11 +781,11 @@ class DisplayScreentextLabelItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def state(self) -> DisplayScreentextLabelItemState:
         """Return the ``DISplay:SCREENTExt:LABel<x>:STATE`` command.
 
-        **Description:**
+        Description:
             - This command sets the state to be displayed for a given label. <x> is the label
               number, 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:SCREENTExt:LABel<x>:STATE?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -817,14 +794,13 @@ class DisplayScreentextLabelItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:SCREENTExt:LABel<x>:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:SCREENTExt:LABel<x>:STATE {<NR1>|OFF|ON}
             - DISplay:SCREENTExt:LABel<x>:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` = the screen text does not display.
             - ``ON`` = the screen text displays.
         """
@@ -834,21 +810,20 @@ class DisplayScreentextLabelItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def xpos(self) -> DisplayScreentextLabelItemXpos:
         """Return the ``DISplay:SCREENTExt:LABel<x>:XPOS`` command.
 
-        **Description:**
+        Description:
             - This command sets the horizontal position of a given screen text label. The label is
               specified by x. The value of x can range from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``DISplay:SCREENTExt:LABel<x>:XPOS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:SCREENTExt:LABel<x>:XPOS <NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` sets the horizontal position of the screen text label. The value can range
               from 0 to 500.
         """
@@ -858,21 +833,20 @@ class DisplayScreentextLabelItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def ypos(self) -> DisplayScreentextLabelItemYpos:
         """Return the ``DISplay:SCREENTExt:LABel<x>:YPOS`` command.
 
-        **Description:**
+        Description:
             - This command sets the vertical position of a given label. The label is specified by x.
               The value of x can range from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``DISplay:SCREENTExt:LABel<x>:YPOS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:SCREENTExt:LABel<x>:YPOS <NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` sets the vertical position of the screen text label. The value can range
               from 0 to 385.
         """
@@ -882,19 +856,18 @@ class DisplayScreentextLabelItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class DisplayScreentext(SCPICmdRead):
     """The ``DISplay:SCREENTExt`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns all screen text settings.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:SCREENTExt?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:SCREENTExt?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:SCREENTExt?
+        ```
 
     Properties:
         - ``.label``: The ``DISplay:SCREENTExt:LABel<x>`` command.
@@ -912,21 +885,20 @@ class DisplayScreentext(SCPICmdRead):
     def label(self) -> Dict[int, DisplayScreentextLabelItem]:
         """Return the ``DISplay:SCREENTExt:LABel<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the screen text setting for a given label.
               Specifically, it provides the name, horizontal position (XPOS), and vertical position
               (YPOS).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:SCREENTExt:LABel<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:SCREENTExt:LABel<x>?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:SCREENTExt:LABel<x>?
+            ```
 
         Sub-properties:
             - ``.fontcolor``: The ``DISplay:SCREENTExt:LABel<x>:FONTCOlor`` command.
@@ -945,20 +917,19 @@ class DisplayScreentext(SCPICmdRead):
     def state(self) -> DisplayScreentextState:
         """Return the ``DISplay:SCREENTExt:STATE`` command.
 
-        **Description:**
+        Description:
             - This command controls the display of screen text.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``DISplay:SCREENTExt:STATE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:SCREENTExt:STATE {<NR1>|ON|OFF}
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables screen text; any other value enables screen text.
             - ``ON`` turns on the display of screen text.
             - ``OFF`` turns off the display of screen text.
@@ -969,42 +940,40 @@ class DisplayScreentext(SCPICmdRead):
 class DisplayPersistenceReset(SCPICmdWriteNoArguments):
     """The ``DISplay:PERSistence:RESET`` command.
 
-    **Description:**
+    Description:
         - This command controls the clearing of persistence data that has been built up over time.
           Persistence is valid for wave views only.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``DISplay:PERSistence:RESET`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:PERSistence:RESET
+        ```
     """
 
 
 class DisplayPersistence(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:PERSistence`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the persistence aspect of the display. This affects the
           display only and is equivalent to selecting Display Persistence from the Display menu.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:PERSistence?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:PERSistence?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:PERSistence value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:PERSistence {OFF|INFPersist|VARpersist}
         - DISplay:PERSistence?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` disables the persistence aspect of the display.
         - ``INFPersist`` sets a display mode where any pixels, once touched by samples, remain set
           until cleared by a mode change.
@@ -1022,18 +991,17 @@ class DisplayPersistence(SCPICmdWrite, SCPICmdRead):
     def reset(self) -> DisplayPersistenceReset:
         """Return the ``DISplay:PERSistence:RESET`` command.
 
-        **Description:**
+        Description:
             - This command controls the clearing of persistence data that has been built up over
               time. Persistence is valid for wave views only.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``DISplay:PERSistence:RESET`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:PERSistence:RESET
+            ```
         """
         return self._reset
 
@@ -1041,10 +1009,10 @@ class DisplayPersistence(SCPICmdWrite, SCPICmdRead):
 class DisplayIntensityWaveformRecordview(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:INTENSITy:WAVEform:RECORDView`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the saturation level for record view waveforms.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:INTENSITy:WAVEform:RECORDView?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1053,14 +1021,13 @@ class DisplayIntensityWaveformRecordview(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``DISplay:INTENSITy:WAVEform:RECORDView value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:INTENSITy:WAVEform:RECORDView <NR2>
         - DISplay:INTENSITy:WAVEform:RECORDView?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR2>`` is the waveform saturation and ranges from 10 to 100 percent.
     """
 
@@ -1068,10 +1035,10 @@ class DisplayIntensityWaveformRecordview(SCPICmdWrite, SCPICmdRead):
 class DisplayIntensityWaveformImageview(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:INTENSITy:WAVEform:IMAGEView`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the saturation level for image view waveforms.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:INTENSITy:WAVEform:IMAGEView?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1080,14 +1047,13 @@ class DisplayIntensityWaveformImageview(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``DISplay:INTENSITy:WAVEform:IMAGEView value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:INTENSITy:WAVEform:IMAGEView <NR2>
         - DISplay:INTENSITy:WAVEform:IMAGEView?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR2>`` is the waveform saturation and ranges from 10 to 100 percent.
     """
 
@@ -1095,7 +1061,7 @@ class DisplayIntensityWaveformImageview(SCPICmdWrite, SCPICmdRead):
 class DisplayIntensityWaveform(SCPICmdRead):
     """The ``DISplay:INTENSITy:WAVEform`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:INTENSITy:WAVEform?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy:WAVEform?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -1116,10 +1082,10 @@ class DisplayIntensityWaveform(SCPICmdRead):
     def imageview(self) -> DisplayIntensityWaveformImageview:
         """Return the ``DISplay:INTENSITy:WAVEform:IMAGEView`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the saturation level for image view waveforms.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:INTENSITy:WAVEform:IMAGEView?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1128,14 +1094,13 @@ class DisplayIntensityWaveform(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:INTENSITy:WAVEform:IMAGEView value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:INTENSITy:WAVEform:IMAGEView <NR2>
             - DISplay:INTENSITy:WAVEform:IMAGEView?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR2>`` is the waveform saturation and ranges from 10 to 100 percent.
         """
         return self._imageview
@@ -1144,10 +1109,10 @@ class DisplayIntensityWaveform(SCPICmdRead):
     def recordview(self) -> DisplayIntensityWaveformRecordview:
         """Return the ``DISplay:INTENSITy:WAVEform:RECORDView`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the saturation level for record view waveforms.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:INTENSITy:WAVEform:RECORDView?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1156,14 +1121,13 @@ class DisplayIntensityWaveform(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:INTENSITy:WAVEform:RECORDView value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:INTENSITy:WAVEform:RECORDView <NR2>
             - DISplay:INTENSITy:WAVEform:RECORDView?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR2>`` is the waveform saturation and ranges from 10 to 100 percent.
         """
         return self._recordview
@@ -1172,7 +1136,7 @@ class DisplayIntensityWaveform(SCPICmdRead):
 class DisplayIntensityScreensaverdelay(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:INTENSITy:SCREENSAVERDELAY`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the timeout of the screen saver features of the display
           system. When enabled (after the specified screen saver delay seconds of control activity
           and when the screen saver feature is enabled) the instrument activates the screen saver
@@ -1182,21 +1146,20 @@ class DisplayIntensityScreensaverdelay(SCPICmdWrite, SCPICmdRead):
           Objects from the Display menu and entering a time in the Delay field of the LCD Backlight
           Timeout control.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:INTENSITy:SCREENSAVERDELAY?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy:SCREENSAVERDELAY?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``DISplay:INTENSITy:SCREENSAVERDELAY value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:INTENSITy:SCREENSAVERDELAY {<NR1>}
         - DISplay:INTENSITy:SCREENSAVERDELAY?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` sets the screen saver timeout, which ranges from 30 through 28800 seconds.
     """
 
@@ -1204,7 +1167,7 @@ class DisplayIntensityScreensaverdelay(SCPICmdWrite, SCPICmdRead):
 class DisplayIntensityScreensaver(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:INTENSITy:SCREENSAVER`` command.
 
-    **Description:**
+    Description:
         - This command sets and queries the screen saver features of the MS Windows operating
           system. When enabled, a delay timer (set in seconds by the
           ``DISPLAY:INTENSITY:SCREENSAVERDELAY`` command) begins counting down. When this screen
@@ -1213,21 +1176,20 @@ class DisplayIntensityScreensaver(SCPICmdWrite, SCPICmdRead):
           keyboard) or touch screen activity resets the delay timer and restores normal instrument
           display. This command is equivalent to selecting LCD Save Enabled from the Display menu.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:INTENSITy:SCREENSAVER?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy:SCREENSAVER?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:INTENSITy:SCREENSAVER value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:INTENSITy:SCREENSAVER {OFF|ON|<NR1>}
         - DISplay:INTENSITy:SCREENSAVER?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` disables the screen saver feature.
         - ``ON`` enables the screen saver feature after the specified screen saver delay seconds of
           control activity have passed.
@@ -1239,7 +1201,7 @@ class DisplayIntensityScreensaver(SCPICmdWrite, SCPICmdRead):
 class DisplayIntensityCustompct(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:INTENSITy:CUSTOMPct`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the waveform intensity which allows you to adjust the
           brightness and contrast of the waveforms. Higher intensity values are used so that the
           less frequent waveform parts such as glitches standout more. Waveform intensity applies to
@@ -1248,21 +1210,20 @@ class DisplayIntensityCustompct(SCPICmdWrite, SCPICmdRead):
           control allows the intensity to be changed from 10 to 100. The default value is 75. At
           intensity value 100, all waveform points are displayed at full intensity.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:INTENSITy:CUSTOMPct?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy:CUSTOMPct?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:INTENSITy:CUSTOMPct value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:INTENSITy:CUSTOMPct <NRF>
         - DISplay:INTENSITy:CUSTOMPct?
+        ```
 
-    **Info:**
+    Info:
         - ``<NRF>`` is the custom percent intensity which ranges from 5 to 100.
     """
 
@@ -1270,24 +1231,23 @@ class DisplayIntensityCustompct(SCPICmdWrite, SCPICmdRead):
 class DisplayIntensityBacklight(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:INTENSITy:BACKLight`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the display backlight intensity setting.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:INTENSITy:BACKLight?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy:BACKLight?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:INTENSITy:BACKLight value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:INTENSITy:BACKLight {LOW|MEDium|HIGH}
         - DISplay:INTENSITy:BACKLight?
+        ```
 
-    **Info:**
+    Info:
         - ``LOW`` selects a low brightness level.
         - ``MEDium`` selects a moderate brightness level.
         - ``HIGH`` selects a full brightness level.
@@ -1297,26 +1257,25 @@ class DisplayIntensityBacklight(SCPICmdWrite, SCPICmdRead):
 class DisplayIntensityAutobright(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:INTENSITy:AUTOBright`` command.
 
-    **Description:**
+    Description:
         - This command enables automatic, ongoing adjustment of the intensity to display images. The
           query form returns a 1 (ON) or a 0 (OFF). This command is equivalent to selecting Display
           Setup from the Display menu and choosing the Appearance tab.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:INTENSITy:AUTOBright?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy:AUTOBright?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:INTENSITy:AUTOBright value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:INTENSITy:AUTOBright {OFF|ON|<NR1>}
         - DISplay:INTENSITy:AUTOBright?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` argument allows the system to use the manually set waveform intensity value
           against an absolute scale. The display simulates the appearance of signals on an analog
           instrument. Waveforms that trigger more frequently appear brighter than waveforms that
@@ -1331,19 +1290,18 @@ class DisplayIntensityAutobright(SCPICmdWrite, SCPICmdRead):
 class DisplayIntensity(SCPICmdRead):
     """The ``DISplay:INTENSITy`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the waveform saturation level and screen saver settings.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:INTENSITy?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:INTENSITy?
+        ```
 
     Properties:
         - ``.autobright``: The ``DISplay:INTENSITy:AUTOBright`` command.
@@ -1369,26 +1327,25 @@ class DisplayIntensity(SCPICmdRead):
     def autobright(self) -> DisplayIntensityAutobright:
         """Return the ``DISplay:INTENSITy:AUTOBright`` command.
 
-        **Description:**
+        Description:
             - This command enables automatic, ongoing adjustment of the intensity to display images.
               The query form returns a 1 (ON) or a 0 (OFF). This command is equivalent to selecting
               Display Setup from the Display menu and choosing the Appearance tab.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:INTENSITy:AUTOBright?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy:AUTOBright?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``DISplay:INTENSITy:AUTOBright value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:INTENSITy:AUTOBright {OFF|ON|<NR1>}
             - DISplay:INTENSITy:AUTOBright?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` argument allows the system to use the manually set waveform intensity value
               against an absolute scale. The display simulates the appearance of signals on an
               analog instrument. Waveforms that trigger more frequently appear brighter than
@@ -1404,24 +1361,23 @@ class DisplayIntensity(SCPICmdRead):
     def backlight(self) -> DisplayIntensityBacklight:
         """Return the ``DISplay:INTENSITy:BACKLight`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the display backlight intensity setting.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:INTENSITy:BACKLight?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy:BACKLight?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:INTENSITy:BACKLight value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:INTENSITy:BACKLight {LOW|MEDium|HIGH}
             - DISplay:INTENSITy:BACKLight?
+            ```
 
-        **Info:**
+        Info:
             - ``LOW`` selects a low brightness level.
             - ``MEDium`` selects a moderate brightness level.
             - ``HIGH`` selects a full brightness level.
@@ -1432,7 +1388,7 @@ class DisplayIntensity(SCPICmdRead):
     def custompct(self) -> DisplayIntensityCustompct:
         """Return the ``DISplay:INTENSITy:CUSTOMPct`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the waveform intensity which allows you to adjust the
               brightness and contrast of the waveforms. Higher intensity values are used so that the
               less frequent waveform parts such as glitches standout more. Waveform intensity
@@ -1442,21 +1398,20 @@ class DisplayIntensity(SCPICmdRead):
               default value is 75. At intensity value 100, all waveform points are displayed at full
               intensity.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:INTENSITy:CUSTOMPct?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy:CUSTOMPct?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:INTENSITy:CUSTOMPct value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:INTENSITy:CUSTOMPct <NRF>
             - DISplay:INTENSITy:CUSTOMPct?
+            ```
 
-        **Info:**
+        Info:
             - ``<NRF>`` is the custom percent intensity which ranges from 5 to 100.
         """
         return self._custompct
@@ -1465,7 +1420,7 @@ class DisplayIntensity(SCPICmdRead):
     def screensaver(self) -> DisplayIntensityScreensaver:
         """Return the ``DISplay:INTENSITy:SCREENSAVER`` command.
 
-        **Description:**
+        Description:
             - This command sets and queries the screen saver features of the MS Windows operating
               system. When enabled, a delay timer (set in seconds by the
               ``DISPLAY:INTENSITY:SCREENSAVERDELAY`` command) begins counting down. When this screen
@@ -1475,21 +1430,20 @@ class DisplayIntensity(SCPICmdRead):
               normal instrument display. This command is equivalent to selecting LCD Save Enabled
               from the Display menu.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:INTENSITy:SCREENSAVER?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy:SCREENSAVER?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``DISplay:INTENSITy:SCREENSAVER value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:INTENSITy:SCREENSAVER {OFF|ON|<NR1>}
             - DISplay:INTENSITy:SCREENSAVER?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` disables the screen saver feature.
             - ``ON`` enables the screen saver feature after the specified screen saver delay seconds
               of control activity have passed.
@@ -1502,7 +1456,7 @@ class DisplayIntensity(SCPICmdRead):
     def screensaverdelay(self) -> DisplayIntensityScreensaverdelay:
         """Return the ``DISplay:INTENSITy:SCREENSAVERDELAY`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the timeout of the screen saver features of the display
               system. When enabled (after the specified screen saver delay seconds of control
               activity and when the screen saver feature is enabled) the instrument activates the
@@ -1512,7 +1466,7 @@ class DisplayIntensity(SCPICmdRead):
               equivalent to selecting Objects from the Display menu and entering a time in the Delay
               field of the LCD Backlight Timeout control.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:INTENSITy:SCREENSAVERDELAY?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1521,14 +1475,13 @@ class DisplayIntensity(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:INTENSITy:SCREENSAVERDELAY value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:INTENSITy:SCREENSAVERDELAY {<NR1>}
             - DISplay:INTENSITy:SCREENSAVERDELAY?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` sets the screen saver timeout, which ranges from 30 through 28800 seconds.
         """
         return self._screensaverdelay
@@ -1537,7 +1490,7 @@ class DisplayIntensity(SCPICmdRead):
     def waveform(self) -> DisplayIntensityWaveform:
         """Return the ``DISplay:INTENSITy:WAVEform`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:INTENSITy:WAVEform?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy:WAVEform?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -1552,24 +1505,23 @@ class DisplayIntensity(SCPICmdRead):
 class DisplayGraticule(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:GRAticule`` command.
 
-    **Description:**
+    Description:
         - This command selects or queries the type of graticule that is displayed. This command is
           equivalent to selecting Graticule Style from the Display menu.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:GRAticule?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:GRAticule?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:GRAticule value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:GRAticule {CROSSHair|FRAme|FULl|GRId|IRE|NTSC|MV|PAL}
         - DISplay:GRAticule?
+        ```
 
-    **Info:**
+    Info:
         - ``CROSSHair`` specifies a frame and cross hairs.
         - ``FRAme`` specifies a frame only.
         - ``FULl`` specifies a frame, a grid and cross hairs.
@@ -1589,24 +1541,23 @@ class DisplayGraticule(SCPICmdWrite, SCPICmdRead):
 class DisplayFormat(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:FORMat`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the display format. This command is equivalent to selecting
           Format from the Display menu.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:FORMat?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:FORMat?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:FORMat value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:FORMat {YT|XY|XYZ}
         - DISplay:FORMat?
+        ```
 
-    **Info:**
+    Info:
         - ``YT`` sets the display to a voltage versus time format and is the default mode.
         - ``XY`` argument displays one waveform against another. The source pairs that make up an XY
           trace are predefined and are listed in the following table. Selecting one source causes
@@ -1622,26 +1573,25 @@ class DisplayFormat(SCPICmdWrite, SCPICmdRead):
 class DisplayFilter(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:FILTer`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the type of interpolation to use for the display. Filtering
           only applies to normal-mode acquisition. The ``DISplay:FILTer`` command also provides
           selection for acquisition interpolation type. This command is equivalent to selecting
           Waveform Interpolation from the Display menu.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:FILTer?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:FILTer?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:FILTer value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:FILTer {LINEAr|SINX}
         - DISplay:FILTer?
+        ```
 
-    **Info:**
+    Info:
         - ``LINEAr`` specifies linear interpolation, where acquired points are connected with
           straight lines.
         - ``SINX`` specifies sin(x)/x interpolation, where acquired points are fit to a curve.
@@ -1651,45 +1601,43 @@ class DisplayFilter(SCPICmdWrite, SCPICmdRead):
 class DisplayDpojetplot(SCPICmdReadWithArguments):
     """The ``DISplay:DPOJETPlot`` command.
 
-    **Description:**
+    Description:
         - This command queries which DPOJET plot is selected and the screen capture file format.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``DISplay:DPOJETPlot? argument``
           query.
         - Using the ``.verify(argument, value)`` method will send the
           ``DISplay:DPOJETPlot? argument`` query and raise an AssertionError if the returned value
           does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:DPOJETPlot? (PLOT1 | PLOT2 | PLOT3 | PLOT4 | SUMMARY)[,(JPEG | JPG | TIF | TIFF | BMP | EMF | PNG)]
+        ```
     """  # noqa: E501
 
 
 class DisplayDigitalHeight(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:DIGital:HEIght`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the height of the digital input waveform and the label
           associated with the channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:DIGital:HEIght?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:DIGital:HEIght?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:DIGital:HEIght value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:DIGital:HEIght {SMAll|LARge|MEDium|XSMAll}
         - DISplay:DIGital:HEIght?
+        ```
 
-    **Info:**
+    Info:
         - ``SMAll`` specifies the height of the digital input waveform and the label associated with
           the channel to small.
         - ``LARge`` specifies the height of the digital input waveform and the label associated with
@@ -1704,7 +1652,7 @@ class DisplayDigitalHeight(SCPICmdWrite, SCPICmdRead):
 class DisplayDigital(SCPICmdRead):
     """The ``DISplay:DIGital`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:DIGital?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:DIGital?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1721,25 +1669,24 @@ class DisplayDigital(SCPICmdRead):
     def height(self) -> DisplayDigitalHeight:
         """Return the ``DISplay:DIGital:HEIght`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the height of the digital input waveform and the label
               associated with the channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:DIGital:HEIght?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:DIGital:HEIght?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:DIGital:HEIght value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:DIGital:HEIght {SMAll|LARge|MEDium|XSMAll}
             - DISplay:DIGital:HEIght?
+            ```
 
-        **Info:**
+        Info:
             - ``SMAll`` specifies the height of the digital input waveform and the label associated
               with the channel to small.
             - ``LARge`` specifies the height of the digital input waveform and the label associated
@@ -1755,23 +1702,22 @@ class DisplayDigital(SCPICmdRead):
 class DisplayDeskew(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:DESKew`` command.
 
-    **Description:**
+    Description:
         - This command controls or queries the state of the Display Only button.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:DESKew?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:DESKew?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:DESKew value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:DESKew {<NR1>|OFF|ON|AUTO}
         - DISplay:DESKew?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` sets deskew for the acquisition waveform.
         - ``ON`` sets deskew to deskew the display only.
         - ``<NR1>`` = 0 will deskew the acquisition waveform; any other value will deskew the
@@ -1783,7 +1729,7 @@ class DisplayDeskew(SCPICmdWrite, SCPICmdRead):
 class DisplayData(SCPICmdReadWithArguments):
     """The ``DISplay:DATa`` command.
 
-    **Description:**
+    Description:
         - The query returns the screen shot from the oscilloscope in block data format, as defined
           in the IEEE 488.2 standard. The first argument is the file format and is required. The
           second option is the screen view. The third option is the palate. If no options are
@@ -1791,42 +1737,40 @@ class DisplayData(SCPICmdReadWithArguments):
           second option, the first option must be specified. For example, if you want the screen
           capture to be INKSaver, you must specify a screen view. BMP,GRA,INKS.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``DISplay:DATa? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the ``DISplay:DATa? argument``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:DATa? (BMP| JPEG| PNG | TIFF)[,(FULLSCREEN | GRAticule | FULLNOmenu)[,(COLOr | INKSaver | BLACKANDWhite )]]
+        ```
     """  # noqa: E501
 
 
 class DisplayColorRefcolor(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:COLOr:REFCOLOr`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the color to be used for reference traces, either in the
           standard palette's nominal REF color or according to the color of the source waveform.
           This command is equivalent to selecting Display Setup from the Display menu and then
           choosing the Colors tab.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:COLOr:REFCOLOr?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:COLOr:REFCOLOr?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:COLOr:REFCOLOr value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:COLOr:REFCOLOr {DEFAULT|INHERIT}
         - DISplay:COLOr:REFCOLOr?
+        ```
 
-    **Info:**
+    Info:
         - ``DEFAULT`` assigns color reference traces to the nominal palette reference color, which
           is off-white.
         - ``INHERIT`` assigns color reference traces to the source waveform color.
@@ -1836,12 +1780,12 @@ class DisplayColorRefcolor(SCPICmdWrite, SCPICmdRead):
 class DisplayColorPaletteUserWaveform(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:COLOr:PALEtte:USEr:WAVEform`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the user palette waveform colors. It assigns the
           hue-lightness-saturation (HLS) triplet to be used for the specified waveform for the user
           palette.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr:WAVEform?``
           query.
         - Using the ``.verify(value)`` method will send the ``DISplay:COLOr:PALEtte:USEr:WAVEform?``
@@ -1849,14 +1793,13 @@ class DisplayColorPaletteUserWaveform(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``DISplay:COLOr:PALEtte:USEr:WAVEform value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:COLOr:PALEtte:USEr:WAVEform {HLS|SPECTral|TEMPErature}
         - DISplay:COLOr:PALEtte:USEr:WAVEform?
+        ```
 
-    **Info:**
+    Info:
         - ``HLS`` sets the color of user waveforms to the hue, lightness, and saturation specified
           by the ``DISPLAY:COLOR:PALETTE:USER:WAVEFORM`` commands.
         - ``SPECTral`` sets the color of user waveforms to spectral.
@@ -1867,27 +1810,26 @@ class DisplayColorPaletteUserWaveform(SCPICmdWrite, SCPICmdRead):
 class DisplayColorPaletteUserRefItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:COLOr:PALEtte:USEr:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the user palette reference colors assigned to the reference
           waveforms. It assigns the hue-lightness-saturation (HLS) triplet to be used for the
           specified reference waveform color for the user palette. The reference waveform is
           specified by x. The value of x can range from 1 through 4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr:REF<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:COLOr:PALEtte:USEr:REF<x>?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``DISplay:COLOr:PALEtte:USEr:REF<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:COLOr:PALEtte:USEr:REF<x> <NR1>,<NR1>,<NR1>
         - DISplay:COLOr:PALEtte:USEr:REF<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` Hue. Range of 0 to 360.
         - ``<NR1>`` Lightness. Range of 0 to 100.
         - ``<NR1>`` Saturation. Range of 0 to 100.
@@ -1897,27 +1839,26 @@ class DisplayColorPaletteUserRefItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SC
 class DisplayColorPaletteUserMathItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:COLOr:PALEtte:USEr:MATH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the user palette math colors. It assigns the
           hue-lightness-saturation (HLS) triplet to be used for the specified math waveform for the
           user palette. The math waveform is specified by x. The value of x can range from 1 through
           4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr:MATH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:COLOr:PALEtte:USEr:MATH<x>?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``DISplay:COLOr:PALEtte:USEr:MATH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:COLOr:PALEtte:USEr:MATH<x> <NR1>,<NR1>,<NR1>
         - DISplay:COLOr:PALEtte:USEr:MATH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` Hue. Range of 0 to 360.
         - ``<NR1>`` Lightness. Range of 0 to 100.
         - ``<NR1>`` Saturation. Range of 0 to 100.
@@ -1927,12 +1868,12 @@ class DisplayColorPaletteUserMathItem(ValidatedDynamicNumberCmd, SCPICmdWrite, S
 class DisplayColorPaletteUserMaskhighlight(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:COLOr:PALEtte:USEr:MASKHighlight`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the user palette mask hits color. It assigns the
           hue-lightness-saturation (HLS) triplet to be used for the mask highlight (mask hits) color
           for the user palette.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr:MASKHighlight?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1941,14 +1882,13 @@ class DisplayColorPaletteUserMaskhighlight(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``DISplay:COLOr:PALEtte:USEr:MASKHighlight value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:COLOr:PALEtte:USEr:MASKHighlight <NR1>,<NR1>,<NR1>
         - DISplay:COLOr:PALEtte:USEr:MASKHighlight?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` Hue. Range of 0 to 360.
         - ``<NR1>`` Lightness. Range of 0 to 100.
         - ``<NR1>`` Saturation. Range of 0 to 100.
@@ -1958,25 +1898,24 @@ class DisplayColorPaletteUserMaskhighlight(SCPICmdWrite, SCPICmdRead):
 class DisplayColorPaletteUserMask(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:COLOr:PALEtte:USEr:MASK`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the user palette mask color. It assigns the
           hue-lightness-saturation (HLS) color for the mask color for the user palette.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr:MASK?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:COLOr:PALEtte:USEr:MASK?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:COLOr:PALEtte:USEr:MASK value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:COLOr:PALEtte:USEr:MASK <NR1>,<NR1>,<NR1>
         - DISplay:COLOr:PALEtte:USEr:MASK?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` Hue. Range of 0 to 360.
         - ``<NR1>`` Lightness. Range of 0 to 100.
         - ``<NR1>`` Saturation. Range of 0 to 100.
@@ -1986,12 +1925,12 @@ class DisplayColorPaletteUserMask(SCPICmdWrite, SCPICmdRead):
 class DisplayColorPaletteUserHistogram(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:COLOr:PALEtte:USEr:HIStogram`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the user palette histogram color. It assigns the
           hue-saturation-lightness (HLS) triplet to be used for the histogram color for the user
           palette.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr:HIStogram?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2000,14 +1939,13 @@ class DisplayColorPaletteUserHistogram(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``DISplay:COLOr:PALEtte:USEr:HIStogram value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:COLOr:PALEtte:USEr:HIStogram <NR1>,<NR1>,<NR1>
         - DISplay:COLOr:PALEtte:USEr:HIStogram?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` Hue. Range of 0 to 360.
         - ``<NR1>`` Lightness. Range of 0 to 100.
         - ``<NR1>`` Saturation. Range of 0 to 100.
@@ -2017,11 +1955,11 @@ class DisplayColorPaletteUserHistogram(SCPICmdWrite, SCPICmdRead):
 class DisplayColorPaletteUserGraticule(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:COLOr:PALEtte:USEr:GRAticule`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the user palette graticule color. It assigns the
           hue-lightness-saturation triplet to be used for the graticule color for the user palette.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr:GRAticule?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2030,14 +1968,13 @@ class DisplayColorPaletteUserGraticule(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``DISplay:COLOr:PALEtte:USEr:GRAticule value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:COLOr:PALEtte:USEr:GRAticule <NR1>,<NR1>,<NR1>
         - DISplay:COLOr:PALEtte:USEr:GRAticule?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` Hue. Range of 0 to 360.
         - ``<NR1>`` Lightness. Range of 0 to 100.
         - ``<NR1>`` Saturation. Range of 0 to 100.
@@ -2047,26 +1984,25 @@ class DisplayColorPaletteUserGraticule(SCPICmdWrite, SCPICmdRead):
 class DisplayColorPaletteUserChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:COLOr:PALEtte:USEr:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the hue-lightness-saturation (HLS) triplet to be used for the
           specified channel color for the user palette. The channel is specified by x. The value of
           x can range from 1 through 4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:COLOr:PALEtte:USEr:CH<x>?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``DISplay:COLOr:PALEtte:USEr:CH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:COLOr:PALEtte:USEr:CH<x> <NR1>,<NR1>,<NR1>
         - DISplay:COLOr:PALEtte:USEr:CH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` Hue. Range of 0 to 360.
         - ``<NR1>`` Lightness. Range of 0 to 100.
         - ``<NR1>`` Saturation. Range of 0 to 100.
@@ -2076,27 +2012,26 @@ class DisplayColorPaletteUserChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead
 class DisplayColorPaletteUserCaret(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:COLOr:PALEtte:USEr:CARet`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the caret color for the user palette. It assigns the HUE,
           light, Saturation (HLS) triplet used for the caret color. The caret is the solid, inverted
           delta positioned on the top graticule line, which indicates the trigger position within
           the waveform record.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr:CARet?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:COLOr:PALEtte:USEr:CARet?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``DISplay:COLOr:PALEtte:USEr:CARet value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:COLOr:PALEtte:USEr:CARet <NR1>,<NR1>,<NR1>
         - DISplay:COLOr:PALEtte:USEr:CARet?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` Hue. Range of 0 to 360.
         - ``<NR1>`` Lightness. Range of 0 to 100.
         - ``<NR1>`` Saturation. Range of 0 to 100.
@@ -2107,26 +2042,25 @@ class DisplayColorPaletteUserCaret(SCPICmdWrite, SCPICmdRead):
 class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:COLOr:PALEtte:USEr`` command.
 
-    **Description:**
+    Description:
         - This command queries the color palette for group settings. It outputs settings from the
           DISPlay CARET, CH<x>, GRATICULE, HISTOGRAM, MASK, MASKHIGHLIGHT, MATH<x>, and REF<x>
           commands.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:COLOr:PALEtte:USEr?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:COLOr:PALEtte:USEr value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:COLOr:PALEtte:USEr RESET
         - DISplay:COLOr:PALEtte:USEr?
+        ```
 
-    **Info:**
+    Info:
         - ``RESET`` sets all user palettes to their default values.
 
     Properties:
@@ -2165,13 +2099,13 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
     def caret(self) -> DisplayColorPaletteUserCaret:
         """Return the ``DISplay:COLOr:PALEtte:USEr:CARet`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the caret color for the user palette. It assigns the HUE,
               light, Saturation (HLS) triplet used for the caret color. The caret is the solid,
               inverted delta positioned on the top graticule line, which indicates the trigger
               position within the waveform record.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr:CARet?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2180,14 +2114,13 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:COLOr:PALEtte:USEr:CARet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:COLOr:PALEtte:USEr:CARet <NR1>,<NR1>,<NR1>
             - DISplay:COLOr:PALEtte:USEr:CARet?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` Hue. Range of 0 to 360.
             - ``<NR1>`` Lightness. Range of 0 to 100.
             - ``<NR1>`` Saturation. Range of 0 to 100.
@@ -2198,12 +2131,12 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
     def ch(self) -> Dict[int, DisplayColorPaletteUserChannel]:
         """Return the ``DISplay:COLOr:PALEtte:USEr:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the hue-lightness-saturation (HLS) triplet to be used for
               the specified channel color for the user palette. The channel is specified by x. The
               value of x can range from 1 through 4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr:CH<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2212,14 +2145,13 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:COLOr:PALEtte:USEr:CH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:COLOr:PALEtte:USEr:CH<x> <NR1>,<NR1>,<NR1>
             - DISplay:COLOr:PALEtte:USEr:CH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` Hue. Range of 0 to 360.
             - ``<NR1>`` Lightness. Range of 0 to 100.
             - ``<NR1>`` Saturation. Range of 0 to 100.
@@ -2230,12 +2162,12 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
     def graticule(self) -> DisplayColorPaletteUserGraticule:
         """Return the ``DISplay:COLOr:PALEtte:USEr:GRAticule`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the user palette graticule color. It assigns the
               hue-lightness-saturation triplet to be used for the graticule color for the user
               palette.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr:GRAticule?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2244,14 +2176,13 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:COLOr:PALEtte:USEr:GRAticule value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:COLOr:PALEtte:USEr:GRAticule <NR1>,<NR1>,<NR1>
             - DISplay:COLOr:PALEtte:USEr:GRAticule?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` Hue. Range of 0 to 360.
             - ``<NR1>`` Lightness. Range of 0 to 100.
             - ``<NR1>`` Saturation. Range of 0 to 100.
@@ -2262,12 +2193,12 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
     def histogram(self) -> DisplayColorPaletteUserHistogram:
         """Return the ``DISplay:COLOr:PALEtte:USEr:HIStogram`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the user palette histogram color. It assigns the
               hue-saturation-lightness (HLS) triplet to be used for the histogram color for the user
               palette.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr:HIStogram?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2276,14 +2207,13 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:COLOr:PALEtte:USEr:HIStogram value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:COLOr:PALEtte:USEr:HIStogram <NR1>,<NR1>,<NR1>
             - DISplay:COLOr:PALEtte:USEr:HIStogram?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` Hue. Range of 0 to 360.
             - ``<NR1>`` Lightness. Range of 0 to 100.
             - ``<NR1>`` Saturation. Range of 0 to 100.
@@ -2294,11 +2224,11 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
     def mask(self) -> DisplayColorPaletteUserMask:
         """Return the ``DISplay:COLOr:PALEtte:USEr:MASK`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the user palette mask color. It assigns the
               hue-lightness-saturation (HLS) color for the mask color for the user palette.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr:MASK?``
               query.
             - Using the ``.verify(value)`` method will send the ``DISplay:COLOr:PALEtte:USEr:MASK?``
@@ -2306,14 +2236,13 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:COLOr:PALEtte:USEr:MASK value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:COLOr:PALEtte:USEr:MASK <NR1>,<NR1>,<NR1>
             - DISplay:COLOr:PALEtte:USEr:MASK?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` Hue. Range of 0 to 360.
             - ``<NR1>`` Lightness. Range of 0 to 100.
             - ``<NR1>`` Saturation. Range of 0 to 100.
@@ -2324,12 +2253,12 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
     def maskhighlight(self) -> DisplayColorPaletteUserMaskhighlight:
         """Return the ``DISplay:COLOr:PALEtte:USEr:MASKHighlight`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the user palette mask hits color. It assigns the
               hue-lightness-saturation (HLS) triplet to be used for the mask highlight (mask hits)
               color for the user palette.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``DISplay:COLOr:PALEtte:USEr:MASKHighlight?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2338,14 +2267,13 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:COLOr:PALEtte:USEr:MASKHighlight value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:COLOr:PALEtte:USEr:MASKHighlight <NR1>,<NR1>,<NR1>
             - DISplay:COLOr:PALEtte:USEr:MASKHighlight?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` Hue. Range of 0 to 360.
             - ``<NR1>`` Lightness. Range of 0 to 100.
             - ``<NR1>`` Saturation. Range of 0 to 100.
@@ -2356,13 +2284,13 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
     def math(self) -> Dict[int, DisplayColorPaletteUserMathItem]:
         """Return the ``DISplay:COLOr:PALEtte:USEr:MATH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the user palette math colors. It assigns the
               hue-lightness-saturation (HLS) triplet to be used for the specified math waveform for
               the user palette. The math waveform is specified by x. The value of x can range from 1
               through 4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr:MATH<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2371,14 +2299,13 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:COLOr:PALEtte:USEr:MATH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:COLOr:PALEtte:USEr:MATH<x> <NR1>,<NR1>,<NR1>
             - DISplay:COLOr:PALEtte:USEr:MATH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` Hue. Range of 0 to 360.
             - ``<NR1>`` Lightness. Range of 0 to 100.
             - ``<NR1>`` Saturation. Range of 0 to 100.
@@ -2389,13 +2316,13 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
     def ref(self) -> Dict[int, DisplayColorPaletteUserRefItem]:
         """Return the ``DISplay:COLOr:PALEtte:USEr:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the user palette reference colors assigned to the
               reference waveforms. It assigns the hue-lightness-saturation (HLS) triplet to be used
               for the specified reference waveform color for the user palette. The reference
               waveform is specified by x. The value of x can range from 1 through 4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr:REF<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2404,14 +2331,13 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:COLOr:PALEtte:USEr:REF<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:COLOr:PALEtte:USEr:REF<x> <NR1>,<NR1>,<NR1>
             - DISplay:COLOr:PALEtte:USEr:REF<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` Hue. Range of 0 to 360.
             - ``<NR1>`` Lightness. Range of 0 to 100.
             - ``<NR1>`` Saturation. Range of 0 to 100.
@@ -2422,12 +2348,12 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
     def waveform(self) -> DisplayColorPaletteUserWaveform:
         """Return the ``DISplay:COLOr:PALEtte:USEr:WAVEform`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the user palette waveform colors. It assigns the
               hue-lightness-saturation (HLS) triplet to be used for the specified waveform for the
               user palette.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr:WAVEform?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2436,14 +2362,13 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:COLOr:PALEtte:USEr:WAVEform value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:COLOr:PALEtte:USEr:WAVEform {HLS|SPECTral|TEMPErature}
             - DISplay:COLOr:PALEtte:USEr:WAVEform?
+            ```
 
-        **Info:**
+        Info:
             - ``HLS`` sets the color of user waveforms to the hue, lightness, and saturation
               specified by the ``DISPLAY:COLOR:PALETTE:USER:WAVEFORM`` commands.
             - ``SPECTral`` sets the color of user waveforms to spectral.
@@ -2455,25 +2380,24 @@ class DisplayColorPaletteUser(SCPICmdWrite, SCPICmdRead):
 class DisplayColorPaletteRecordview(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:COLOr:PALEtte:RECORDView`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the color palette for all record view (non image view)
           waveforms.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:RECORDView?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:COLOr:PALEtte:RECORDView?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``DISplay:COLOr:PALEtte:RECORDView value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:COLOr:PALEtte:RECORDView {NORMal|MONOGREEN|MONOGRAY|TEMPErature|SPECTral|USEr}
         - DISplay:COLOr:PALEtte:RECORDView?
+        ```
 
-    **Info:**
+    Info:
         - ``NORMal`` colors traces according to their channel. This is the default color palette.
         - ``MONOGREEN`` colors traces green, emulating a traditional instrument color palette.
         - ``MONOGRAY`` colors traces gray, emulating a monochrome instrument.
@@ -2490,24 +2414,23 @@ class DisplayColorPaletteRecordview(SCPICmdWrite, SCPICmdRead):
 class DisplayColorPaletteImageview(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:COLOr:PALEtte:IMAGEView`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the color palette for all image view (DPO and WfmDB) traces.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:IMAGEView?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:COLOr:PALEtte:IMAGEView?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:COLOr:PALEtte:IMAGEView value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:COLOr:PALEtte:IMAGEView {NORMal|MONOGREEN|MONOGRAY|TEMPErature|SPECTral|USEr}
         - DISplay:COLOr:PALEtte:IMAGEView?
+        ```
 
-    **Info:**
+    Info:
         - ``NORMal`` colors traces according to their channel. This is the default color palette.
         - ``MONOGREEN`` colors traces green, emulating a traditional instrument color palette.
         - ``MONOGRAY`` colors traces gray, emulating a monochrome instrument.
@@ -2520,7 +2443,7 @@ class DisplayColorPaletteImageview(SCPICmdWrite, SCPICmdRead):
 class DisplayColorPalette(SCPICmdRead):
     """The ``DISplay:COLOr:PALEtte`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:COLOr:PALEtte?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -2541,11 +2464,11 @@ class DisplayColorPalette(SCPICmdRead):
     def imageview(self) -> DisplayColorPaletteImageview:
         """Return the ``DISplay:COLOr:PALEtte:IMAGEView`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the color palette for all image view (DPO and WfmDB)
               traces.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:IMAGEView?``
               query.
             - Using the ``.verify(value)`` method will send the ``DISplay:COLOr:PALEtte:IMAGEView?``
@@ -2553,14 +2476,13 @@ class DisplayColorPalette(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:COLOr:PALEtte:IMAGEView value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:COLOr:PALEtte:IMAGEView {NORMal|MONOGREEN|MONOGRAY|TEMPErature|SPECTral|USEr}
             - DISplay:COLOr:PALEtte:IMAGEView?
+            ```
 
-        **Info:**
+        Info:
             - ``NORMal`` colors traces according to their channel. This is the default color
               palette.
             - ``MONOGREEN`` colors traces green, emulating a traditional instrument color palette.
@@ -2575,11 +2497,11 @@ class DisplayColorPalette(SCPICmdRead):
     def recordview(self) -> DisplayColorPaletteRecordview:
         """Return the ``DISplay:COLOr:PALEtte:RECORDView`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the color palette for all record view (non image view)
               waveforms.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:RECORDView?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2588,14 +2510,13 @@ class DisplayColorPalette(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DISplay:COLOr:PALEtte:RECORDView value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:COLOr:PALEtte:RECORDView {NORMal|MONOGREEN|MONOGRAY|TEMPErature|SPECTral|USEr}
             - DISplay:COLOr:PALEtte:RECORDView?
+            ```
 
-        **Info:**
+        Info:
             - ``NORMal`` colors traces according to their channel. This is the default color
               palette.
             - ``MONOGREEN`` colors traces green, emulating a traditional instrument color palette.
@@ -2615,26 +2536,25 @@ class DisplayColorPalette(SCPICmdRead):
     def user(self) -> DisplayColorPaletteUser:
         """Return the ``DISplay:COLOr:PALEtte:USEr`` command.
 
-        **Description:**
+        Description:
             - This command queries the color palette for group settings. It outputs settings from
               the DISPlay CARET, CH<x>, GRATICULE, HISTOGRAM, MASK, MASKHIGHLIGHT, MATH<x>, and
               REF<x> commands.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte:USEr?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:COLOr:PALEtte:USEr?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:COLOr:PALEtte:USEr value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:COLOr:PALEtte:USEr RESET
             - DISplay:COLOr:PALEtte:USEr?
+            ```
 
-        **Info:**
+        Info:
             - ``RESET`` sets all user palettes to their default values.
 
         Sub-properties:
@@ -2654,27 +2574,26 @@ class DisplayColorPalette(SCPICmdRead):
 class DisplayColorMathcolor(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:COLOr:MATHCOLOr`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the color to be used for math traces, either in the standard
           palette's nominal Math color, or according to the color of the source waveform. This
           command is equivalent to selecting Display Setup from the Display menu and then choosing
           the Colors tab.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:COLOr:MATHCOLOr?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:COLOr:MATHCOLOr?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:COLOr:MATHCOLOr value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:COLOr:MATHCOLOr {DEFAULT|INHERIT}
         - DISplay:COLOr:MATHCOLOr?
+        ```
 
-    **Info:**
+    Info:
         - ``DEFAULT`` sets color math traces in nominal palette math color, which is red.
         - ``INHERIT`` sets color math traces in the source waveform color. Math waveforms are drawn
           in the same color as their primary source waveform.
@@ -2684,20 +2603,19 @@ class DisplayColorMathcolor(SCPICmdWrite, SCPICmdRead):
 class DisplayColor(SCPICmdRead):
     """The ``DISplay:COLOr`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the settings from the PALETTE, MATHCOLOR and REFCOLOR
           commands. This is equivalent to selecting Colors from the Display menu.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:COLOr?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:COLOr?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:COLOr?
+        ```
 
     Properties:
         - ``.mathcolor``: The ``DISplay:COLOr:MATHCOLOr`` command.
@@ -2715,27 +2633,26 @@ class DisplayColor(SCPICmdRead):
     def mathcolor(self) -> DisplayColorMathcolor:
         """Return the ``DISplay:COLOr:MATHCOLOr`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the color to be used for math traces, either in the
               standard palette's nominal Math color, or according to the color of the source
               waveform. This command is equivalent to selecting Display Setup from the Display menu
               and then choosing the Colors tab.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:COLOr:MATHCOLOr?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:COLOr:MATHCOLOr?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:COLOr:MATHCOLOr value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:COLOr:MATHCOLOr {DEFAULT|INHERIT}
             - DISplay:COLOr:MATHCOLOr?
+            ```
 
-        **Info:**
+        Info:
             - ``DEFAULT`` sets color math traces in nominal palette math color, which is red.
             - ``INHERIT`` sets color math traces in the source waveform color. Math waveforms are
               drawn in the same color as their primary source waveform.
@@ -2746,7 +2663,7 @@ class DisplayColor(SCPICmdRead):
     def palette(self) -> DisplayColorPalette:
         """Return the ``DISplay:COLOr:PALEtte`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:COLOr:PALEtte?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:COLOr:PALEtte?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -2762,27 +2679,26 @@ class DisplayColor(SCPICmdRead):
     def refcolor(self) -> DisplayColorRefcolor:
         """Return the ``DISplay:COLOr:REFCOLOr`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the color to be used for reference traces, either in the
               standard palette's nominal REF color or according to the color of the source waveform.
               This command is equivalent to selecting Display Setup from the Display menu and then
               choosing the Colors tab.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:COLOr:REFCOLOr?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:COLOr:REFCOLOr?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:COLOr:REFCOLOr value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:COLOr:REFCOLOr {DEFAULT|INHERIT}
             - DISplay:COLOr:REFCOLOr?
+            ```
 
-        **Info:**
+        Info:
             - ``DEFAULT`` assigns color reference traces to the nominal palette reference color,
               which is off-white.
             - ``INHERIT`` assigns color reference traces to the source waveform color.
@@ -2793,25 +2709,24 @@ class DisplayColor(SCPICmdRead):
 class DisplayClock(SCPICmdWrite, SCPICmdRead):
     """The ``DISplay:CLOCk`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the display of the date and time. This is equivalent to
           selecting Display Date & Time from the Display menu. The query form of this command
           returns an ON (1) or an OFF (0).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay:CLOCk?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay:CLOCk?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISplay:CLOCk value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay:CLOCk {<NR1>|ON|OFF}
         - DISplay:CLOCk?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables display of date and time; any other value enables display of date
           and time.
         - ``ON`` enables display of date and time.
@@ -2823,19 +2738,18 @@ class DisplayClock(SCPICmdWrite, SCPICmdRead):
 class Display(SCPICmdRead):
     """The ``DISplay`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the current Display settings.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISplay?`` query.
         - Using the ``.verify(value)`` method will send the ``DISplay?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISplay?
+        ```
 
     Properties:
         - ``.clock``: The ``DISplay:CLOCk`` command.
@@ -2883,25 +2797,24 @@ class Display(SCPICmdRead):
     def clock(self) -> DisplayClock:
         """Return the ``DISplay:CLOCk`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the display of the date and time. This is equivalent to
               selecting Display Date & Time from the Display menu. The query form of this command
               returns an ON (1) or an OFF (0).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:CLOCk?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:CLOCk?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:CLOCk value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:CLOCk {<NR1>|ON|OFF}
             - DISplay:CLOCk?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables display of date and time; any other value enables display of
               date and time.
             - ``ON`` enables display of date and time.
@@ -2913,20 +2826,19 @@ class Display(SCPICmdRead):
     def color(self) -> DisplayColor:
         """Return the ``DISplay:COLOr`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the settings from the PALETTE, MATHCOLOR and REFCOLOR
               commands. This is equivalent to selecting Colors from the Display menu.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:COLOr?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:COLOr?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:COLOr?
+            ```
 
         Sub-properties:
             - ``.mathcolor``: The ``DISplay:COLOr:MATHCOLOr`` command.
@@ -2939,7 +2851,7 @@ class Display(SCPICmdRead):
     def data(self) -> DisplayData:
         """Return the ``DISplay:DATa`` command.
 
-        **Description:**
+        Description:
             - The query returns the screen shot from the oscilloscope in block data format, as
               defined in the IEEE 488.2 standard. The first argument is the file format and is
               required. The second option is the screen view. The third option is the palate. If no
@@ -2947,16 +2859,15 @@ class Display(SCPICmdRead):
               specify the second option, the first option must be specified. For example, if you
               want the screen capture to be INKSaver, you must specify a screen view. BMP,GRA,INKS.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``DISplay:DATa? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the ``DISplay:DATa? argument``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:DATa? (BMP| JPEG| PNG | TIFF)[,(FULLSCREEN | GRAticule | FULLNOmenu)[,(COLOr | INKSaver | BLACKANDWhite )]]
+            ```
         """  # noqa: E501
         return self._data
 
@@ -2964,23 +2875,22 @@ class Display(SCPICmdRead):
     def deskew(self) -> DisplayDeskew:
         """Return the ``DISplay:DESKew`` command.
 
-        **Description:**
+        Description:
             - This command controls or queries the state of the Display Only button.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:DESKew?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:DESKew?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:DESKew value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:DESKew {<NR1>|OFF|ON|AUTO}
             - DISplay:DESKew?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` sets deskew for the acquisition waveform.
             - ``ON`` sets deskew to deskew the display only.
             - ``<NR1>`` = 0 will deskew the acquisition waveform; any other value will deskew the
@@ -2993,7 +2903,7 @@ class Display(SCPICmdRead):
     def digital(self) -> DisplayDigital:
         """Return the ``DISplay:DIGital`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:DIGital?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:DIGital?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -3007,21 +2917,20 @@ class Display(SCPICmdRead):
     def dpojetplot(self) -> DisplayDpojetplot:
         """Return the ``DISplay:DPOJETPlot`` command.
 
-        **Description:**
+        Description:
             - This command queries which DPOJET plot is selected and the screen capture file format.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``DISplay:DPOJETPlot? argument``
               query.
             - Using the ``.verify(argument, value)`` method will send the
               ``DISplay:DPOJETPlot? argument`` query and raise an AssertionError if the returned
               value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:DPOJETPlot? (PLOT1 | PLOT2 | PLOT3 | PLOT4 | SUMMARY)[,(JPEG | JPG | TIF | TIFF | BMP | EMF | PNG)]
+            ```
         """  # noqa: E501
         return self._dpojetplot
 
@@ -3029,26 +2938,25 @@ class Display(SCPICmdRead):
     def filter(self) -> DisplayFilter:
         """Return the ``DISplay:FILTer`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the type of interpolation to use for the display.
               Filtering only applies to normal-mode acquisition. The ``DISplay:FILTer`` command also
               provides selection for acquisition interpolation type. This command is equivalent to
               selecting Waveform Interpolation from the Display menu.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:FILTer?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:FILTer?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:FILTer value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:FILTer {LINEAr|SINX}
             - DISplay:FILTer?
+            ```
 
-        **Info:**
+        Info:
             - ``LINEAr`` specifies linear interpolation, where acquired points are connected with
               straight lines.
             - ``SINX`` specifies sin(x)/x interpolation, where acquired points are fit to a curve.
@@ -3059,24 +2967,23 @@ class Display(SCPICmdRead):
     def format(self) -> DisplayFormat:
         """Return the ``DISplay:FORMat`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the display format. This command is equivalent to
               selecting Format from the Display menu.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:FORMat?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:FORMat?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:FORMat value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:FORMat {YT|XY|XYZ}
             - DISplay:FORMat?
+            ```
 
-        **Info:**
+        Info:
             - ``YT`` sets the display to a voltage versus time format and is the default mode.
             - ``XY`` argument displays one waveform against another. The source pairs that make up
               an XY trace are predefined and are listed in the following table. Selecting one source
@@ -3093,24 +3000,23 @@ class Display(SCPICmdRead):
     def graticule(self) -> DisplayGraticule:
         """Return the ``DISplay:GRAticule`` command.
 
-        **Description:**
+        Description:
             - This command selects or queries the type of graticule that is displayed. This command
               is equivalent to selecting Graticule Style from the Display menu.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:GRAticule?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:GRAticule?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:GRAticule value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:GRAticule {CROSSHair|FRAme|FULl|GRId|IRE|NTSC|MV|PAL}
             - DISplay:GRAticule?
+            ```
 
-        **Info:**
+        Info:
             - ``CROSSHair`` specifies a frame and cross hairs.
             - ``FRAme`` specifies a frame only.
             - ``FULl`` specifies a frame, a grid and cross hairs.
@@ -3131,20 +3037,19 @@ class Display(SCPICmdRead):
     def intensity(self) -> DisplayIntensity:
         """Return the ``DISplay:INTENSITy`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the waveform saturation level and screen saver
               settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:INTENSITy?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:INTENSITy?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:INTENSITy?
+            ```
 
         Sub-properties:
             - ``.autobright``: The ``DISplay:INTENSITy:AUTOBright`` command.
@@ -3160,25 +3065,24 @@ class Display(SCPICmdRead):
     def persistence(self) -> DisplayPersistence:
         """Return the ``DISplay:PERSistence`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the persistence aspect of the display. This affects the
               display only and is equivalent to selecting Display Persistence from the Display menu.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:PERSistence?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:PERSistence?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:PERSistence value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:PERSistence {OFF|INFPersist|VARpersist}
             - DISplay:PERSistence?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` disables the persistence aspect of the display.
             - ``INFPersist`` sets a display mode where any pixels, once touched by samples, remain
               set until cleared by a mode change.
@@ -3193,19 +3097,18 @@ class Display(SCPICmdRead):
     def screentext(self) -> DisplayScreentext:
         """Return the ``DISplay:SCREENTExt`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns all screen text settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:SCREENTExt?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:SCREENTExt?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:SCREENTExt?
+            ```
 
         Sub-properties:
             - ``.label``: The ``DISplay:SCREENTExt:LABel<x>`` command.
@@ -3217,27 +3120,26 @@ class Display(SCPICmdRead):
     def showremote(self) -> DisplayShowremote:
         """Return the ``DISplay:SHOWREmote`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the state of the remote display feature and is equivalent
               to selecting Display Remote from the Display menu. The query form of this command
               returns ON (1) or OFF (0). This feature allows you to view waveforms and other
               graticule data on a remote display using remote control software like VNC (Virtual
               Network Computing) or Symantec pcAnywhere.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:SHOWREmote?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:SHOWREmote?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:SHOWREmote value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:SHOWREmote {<NR1>|ON|OFF}
             - DISplay:SHOWREmote?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables remote display of waveform and other graticule data; any other
               value enables remote display of waveform and other graticule data.
             - ``ON`` enables the remote display of waveform and other graticule data.
@@ -3249,25 +3151,24 @@ class Display(SCPICmdRead):
     def style(self) -> DisplayStyle:
         """Return the ``DISplay:STYle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries how the data is displayed for normal and FastAcq modes.
               This command is equivalent to selecting Display Style from the Display menu and
               choosing a style.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:STYle?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:STYle?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:STYle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:STYle {DOTs|INTENSIFied|VECtors}
             - DISplay:STYle?
+            ```
 
-        **Info:**
+        Info:
             - ``DOTs`` displays individual data points. New points immediately replace old ones.
             - ``INTENSIFied`` causes the display to show interpolated samples with dark spaces (Only
               the 'real' samples are displayed).
@@ -3279,7 +3180,7 @@ class Display(SCPICmdRead):
     def trigbar(self) -> DisplayTrigbar:
         """Return the ``DISplay:TRIGBar`` command.
 
-        **Description:**
+        Description:
             - This command controls or queries the display of the trigger-level indicator bars.
               Indicator bars show where the trigger voltage level is set. The instrument will only
               display the bar if the associated trigger source is also displayed. If both a main and
@@ -3288,20 +3189,19 @@ class Display(SCPICmdRead):
               the upper threshold and one will show the lower threshold. This command is equivalent
               to selecting Display Setup from the Display menu and then choosing the Objects tab.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:TRIGBar?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:TRIGBar?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:TRIGBar value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:TRIGBar {OFF|SHORt|LONG}
             - DISplay:TRIGBar?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` removes the trigger indicator bar from the display.
             - ``SHORt`` displays, as the indicator, a short arrow at the right side of the graticule
               for each displayed trigger signal.
@@ -3314,24 +3214,23 @@ class Display(SCPICmdRead):
     def trigt(self) -> DisplayTrigt:
         """Return the ``DISplay:TRIGT`` command.
 
-        **Description:**
+        Description:
             - This command controls or queries the display of the trigger T. The trigger T shows
               where the trigger occurred on the waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:TRIGT?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:TRIGT?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:TRIGT value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:TRIGT {<NR1>|OFF|ON}
             - DISplay:TRIGT?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the trigger T; any other value displays the trigger T.
             - ``OFF`` removes the trigger indicator T from the display.
             - ``ON`` displays a T at the trigger point.
@@ -3342,24 +3241,23 @@ class Display(SCPICmdRead):
     def varpersist(self) -> DisplayVarpersist:
         """Return the ``DISplay:VARpersist`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries display persistence decay time, which is the approximate
               decay time for a freshly struck persistence sample.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:VARpersist?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:VARpersist?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:VARpersist value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:VARpersist <NR3>
             - DISplay:VARpersist?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` indicates the persistence decay time and ranges from 0.5 to 100.
         """
         return self._varpersist
@@ -3368,25 +3266,24 @@ class Display(SCPICmdRead):
     def waveform(self) -> DisplayWaveform:
         """Return the ``DISplay:WAVEform`` command.
 
-        **Description:**
+        Description:
             - This command globally enables or disables the waveform display. When disabled, the
               waveform is still acquired and held in memory, but it is not drawn to the screen.
               Disabling the waveform display may improve processing speed.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay:WAVEform?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay:WAVEform?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISplay:WAVEform value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay:WAVEform {<NR1>|OFF|ON}
             - DISplay:WAVEform?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` enables or disables the waveform display. 0 disables the waveform display;
               any other value enables the waveform display.
             - ``ON`` enables the waveform display.

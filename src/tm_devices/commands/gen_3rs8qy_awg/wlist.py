@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - WLISt:LAST?
     - WLISt:LIST?
     - WLISt:NAME? <Index>
@@ -32,7 +30,8 @@ Commands and Queries:
     - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal {CLOCk|PRBS|FILE|SAVictim}
     - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:FILE <filepath>
     - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:FILE?
-    - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:PRBS {PRBS7|PRBS9|PRBS15|PRBS16|PRBS20|PRBS21|PRBS23|PRBS29|PRBS31}
+    - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:PRBS
+      {PRBS7|PRBS9|PRBS15|PRBS16|PRBS20|PRBS21|PRBS23|PRBS29|PRBS31}
     - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:PRBS?
     - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal?
     - WLISt:SPARameter:CASCading:DEEMbed {0|1|OFF|ON}
@@ -67,7 +66,8 @@ Commands and Queries:
     - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal {CLOCk|PRBS|FILE|SAVictim}
     - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:FILE <filepath>
     - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:FILE?
-    - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:PRBS {PRBS7|PRBS9|PRBS15|PRBS16|PRBS20|PRBS21|PRBS23|PRBS29|PRBS31}
+    - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:PRBS
+      {PRBS7|PRBS9|PRBS15|PRBS16|PRBS20|PRBS21|PRBS23|PRBS29|PRBS31}
     - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:PRBS?
     - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal?
     - WLISt:SPARameter:NCAScading:DEEMbed {0|1|OFF|ON}
@@ -101,8 +101,10 @@ Commands and Queries:
     - WLISt:WAVeform:ACFile:SKEW?
     - WLISt:WAVeform:AMPLitude <wfm_name>,<amplitude>? <wfm_name>
     - WLISt:WAVeform:AOFFset <wfm_name>,<offset_factor>
-    - WLISt:WAVeform:DATA:I <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
-    - WLISt:WAVeform:DATA:Q <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
+    - WLISt:WAVeform:DATA:I <wfm_name>[,<StartIndex>[,<Size>]],<block_data>?
+      <wfm_name>[,<StartIndex>[,<Size>]]
+    - WLISt:WAVeform:DATA:Q <wfm_name>[,<StartIndex>[,<Size>]],<block_data>?
+      <wfm_name>[,<StartIndex>[,<Size>]]
     - WLISt:WAVeform:DELete {<wfm_name>|ALL}
     - WLISt:WAVeform:FREQuency <wfm_name>,<frequency>
     - WLISt:WAVeform:FREQuency?
@@ -111,7 +113,8 @@ Commands and Queries:
     - WLISt:WAVeform:LENGth? <wfm_name>
     - WLISt:WAVeform:LMAXimum?
     - WLISt:WAVeform:LMINimum?
-    - WLISt:WAVeform:MARKer:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
+    - WLISt:WAVeform:MARKer:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>?
+      <wfm_name>[,<StartIndex>[,<Size>]]
     - WLISt:WAVeform:MIQ <I_wfm_name>,<Q_wfm_name>
     - WLISt:WAVeform:NEW <wfm_name>,<Size>[,<format>[,<is_saveable>]]
     - WLISt:WAVeform:NORMalize <wfm_name>,{FSCale|ZREFerence}
@@ -127,7 +130,7 @@ Commands and Queries:
     - WLISt:WAVeform:SRATe <wfm_name>,<sample_rate>? <wfm_name>
     - WLISt:WAVeform:TSTamp? <wfm_name>
     - WLISt:WAVeform:TYPE? <wfm_name>
-"""  # noqa: E501
+"""
 
 from typing import Dict, Optional, TYPE_CHECKING
 
@@ -146,23 +149,22 @@ if TYPE_CHECKING:
 class WlistWaveformType(SCPICmdReadWithArguments):
     """The ``WLISt:WAVeform:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command returns the type of the waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``WLISt:WAVeform:TYPE? argument``
           query.
         - Using the ``.verify(argument, value)`` method will send the
           ``WLISt:WAVeform:TYPE? argument`` query and raise an AssertionError if the returned value
           does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:TYPE? <wfm_name>
+        ```
 
-    **Info:**
+    Info:
         - ``<wfm_name>`` ::= <string>.
     """
 
@@ -170,159 +172,151 @@ class WlistWaveformType(SCPICmdReadWithArguments):
 class WlistWaveformTstamp(SCPICmdReadWithArguments):
     """The ``WLISt:WAVeform:TSTamp`` command.
 
-    **Description:**
+    Description:
         - This command returns the timestamp of the specified waveform in the waveform list.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``WLISt:WAVeform:TSTamp? argument``
           query.
         - Using the ``.verify(argument, value)`` method will send the
           ``WLISt:WAVeform:TSTamp? argument`` query and raise an AssertionError if the returned
           value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:TSTamp? <wfm_name>
+        ```
     """
 
 
 class WlistWaveformSrate(SCPICmdWrite):
     """The ``WLISt:WAVeform:SRATe`` command.
 
-    **Description:**
+    Description:
         - The command sets or returns the Recommended Sampling Rate of the specified waveform in the
           waveform list
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:SRATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:SRATe <wfm_name>,<sample_rate>? <wfm_name>
+        ```
     """
 
 
 class WlistWaveformShift(SCPICmdWrite):
     """The ``WLISt:WAVeform:SHIFt`` command.
 
-    **Description:**
+    Description:
         - This command shifts the phase of a waveform in the waveform list.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:SHIFt value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:SHIFt <wfm_name>,<phase>
+        ```
     """
 
 
 class WlistWaveformSformat(SCPICmdWrite):
     """The ``WLISt:WAVeform:SFORmat`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the signal format of the specified waveform in the waveform
           list.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:SFORmat value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:SFORmat <wfm_name>,{REAL|I|Q}? <wfm_name>
+        ```
     """
 
 
 class WlistWaveformSdcorrection(SCPICmdWrite):
     """The ``WLISt:WAVeform:SDCorrection`` command.
 
-    **Description:**
+    Description:
         - This command applies the Sin(x)/x distortion correction to the specified waveform in the
           waveform list. Optionally, you can define the end frequency of the Sin(x)/x distortion
           correction. The specified waveform must be in the waveform list of the current setup.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:SDCorrection value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:SDCorrection <wfm_name>[,<end_frequency>]
+        ```
     """
 
 
 class WlistWaveformScale(SCPICmdWrite):
     """The ``WLISt:WAVeform:SCALe`` command.
 
-    **Description:**
+    Description:
         - This command rescales the amplitude of the specified waveform by the specified
           multiplication factor.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:SCALe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:SCALe <wfm_name>,<multiplier_factor>
+        ```
     """
 
 
 class WlistWaveformRotatePoints(SCPICmdWrite):
     """The ``WLISt:WAVeform:ROTate:POINts`` command.
 
-    **Description:**
+    Description:
         - This command rotates the specified waveform by the specified number of points. Rotating
           the waveform takes the end of the waveform (defined by samples) and moves it to the front
           of the waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:ROTate:POINts value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:ROTate:POINts <wfm_name>,<points>
+        ```
     """
 
 
 class WlistWaveformRotateDegrees(SCPICmdWrite):
     """The ``WLISt:WAVeform:ROTate:DEGRees`` command.
 
-    **Description:**
+    Description:
         - This command rotates the specified waveform by the specified number of degrees. Rotating
           the waveform takes the end of the waveform (defined by degrees) and moves it to the front
           of the waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:ROTate:DEGRees value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:ROTate:DEGRees <wfm_name>,<phase>
+        ```
     """
 
 
 class WlistWaveformRotate(SCPICmdRead):
     """The ``WLISt:WAVeform:ROTate`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:WAVeform:ROTate?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:ROTate?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -341,20 +335,19 @@ class WlistWaveformRotate(SCPICmdRead):
     def points(self) -> WlistWaveformRotatePoints:
         """Return the ``WLISt:WAVeform:ROTate:POINts`` command.
 
-        **Description:**
+        Description:
             - This command rotates the specified waveform by the specified number of points.
               Rotating the waveform takes the end of the waveform (defined by samples) and moves it
               to the front of the waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``WLISt:WAVeform:ROTate:POINts value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:ROTate:POINts <wfm_name>,<points>
+            ```
         """
         return self._points
 
@@ -362,20 +355,19 @@ class WlistWaveformRotate(SCPICmdRead):
     def degrees(self) -> WlistWaveformRotateDegrees:
         """Return the ``WLISt:WAVeform:ROTate:DEGRees`` command.
 
-        **Description:**
+        Description:
             - This command rotates the specified waveform by the specified number of degrees.
               Rotating the waveform takes the end of the waveform (defined by degrees) and moves it
               to the front of the waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``WLISt:WAVeform:ROTate:DEGRees value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:ROTate:DEGRees <wfm_name>,<phase>
+            ```
         """
         return self._degrees
 
@@ -383,134 +375,127 @@ class WlistWaveformRotate(SCPICmdRead):
 class WlistWaveformReverse(SCPICmdWrite):
     """The ``WLISt:WAVeform:REVerse`` command.
 
-    **Description:**
+    Description:
         - This command reverses the order of the named waveform (in the waveform list).
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:REVerse value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:REVerse <wfm_name>
+        ```
     """
 
 
 class WlistWaveformResample(SCPICmdWrite):
     """The ``WLISt:WAVeform:RESample`` command.
 
-    **Description:**
+    Description:
         - This command resamples the number of points in a waveform in the waveform list.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:RESample value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:RESample <wfm_name>,<size>
+        ```
     """
 
 
 class WlistWaveformOffset(SCPICmdWrite):
     """The ``WLISt:WAVeform:OFFSet`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Recommended Offset of the specified waveform in the
           waveform list.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:OFFSet value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:OFFSet <wfm_name>,<offset>? <wfm_name>
+        ```
     """
 
 
 class WlistWaveformNormalize(SCPICmdWrite):
     """The ``WLISt:WAVeform:NORMalize`` command.
 
-    **Description:**
+    Description:
         - This command normalizes a waveform in the waveform list.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:NORMalize value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:NORMalize <wfm_name>,{FSCale|ZREFerence}
+        ```
     """
 
 
 class WlistWaveformNew(SCPICmdWrite):
     """The ``WLISt:WAVeform:NEW`` command.
 
-    **Description:**
+    Description:
         - This command creates a new empty waveform in the waveform list of the current setup.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:NEW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:NEW <wfm_name>,<Size>[,<format>[,<is_saveable>]]
+        ```
     """
 
 
 class WlistWaveformMiq(SCPICmdWrite):
     """The ``WLISt:WAVeform:MIQ`` command.
 
-    **Description:**
+    Description:
         - This command creates an IQ waveform from two real waveforms. The name is derived from the
           I waveform name.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:MIQ value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:MIQ <I_wfm_name>,<Q_wfm_name>
+        ```
     """
 
 
 class WlistWaveformMarkerData(SCPICmdWrite):
     """The ``WLISt:WAVeform:MARKer:DATA`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the waveform marker data. This command has a limit of
           999,999,999 bytes of data. If this limit is insufficient, consider the following
           alternatives: Send a more efficient file format using ``MMEM:DATA``. Use Ethernet (ftp,
           http, or file sharing) to transfer the file.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:MARKer:DATA value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:MARKer:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
+        ```
     """  # noqa: E501
 
 
 class WlistWaveformMarker(SCPICmdRead):
     """The ``WLISt:WAVeform:MARKer`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:WAVeform:MARKer?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:MARKer?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -527,21 +512,20 @@ class WlistWaveformMarker(SCPICmdRead):
     def data(self) -> WlistWaveformMarkerData:
         """Return the ``WLISt:WAVeform:MARKer:DATA`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the waveform marker data. This command has a limit of
               999,999,999 bytes of data. If this limit is insufficient, consider the following
               alternatives: Send a more efficient file format using ``MMEM:DATA``. Use Ethernet
               (ftp, http, or file sharing) to transfer the file.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:MARKer:DATA value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:MARKer:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
+            ```
         """  # noqa: E501
         return self._data
 
@@ -549,147 +533,140 @@ class WlistWaveformMarker(SCPICmdRead):
 class WlistWaveformLminimum(SCPICmdRead):
     """The ``WLISt:WAVeform:LMINimum`` command.
 
-    **Description:**
+    Description:
         - This command returns the minimum number of waveform sample points required for a valid
           waveform. The number of required sample points is dependent on the instrument model.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:WAVeform:LMINimum?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:LMINimum?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:LMINimum?
+        ```
     """
 
 
 class WlistWaveformLmaximum(SCPICmdRead):
     """The ``WLISt:WAVeform:LMAXimum`` command.
 
-    **Description:**
+    Description:
         - This command returns the maximum number of waveform sample points allowed.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:WAVeform:LMAXimum?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:LMAXimum?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:LMAXimum?
+        ```
     """
 
 
 class WlistWaveformLength(SCPICmdReadWithArguments):
     """The ``WLISt:WAVeform:LENGth`` command.
 
-    **Description:**
+    Description:
         - This command returns the size of the specified waveform in the waveform list. The returned
           value represents data points (not bytes).
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``WLISt:WAVeform:LENGth? argument``
           query.
         - Using the ``.verify(argument, value)`` method will send the
           ``WLISt:WAVeform:LENGth? argument`` query and raise an AssertionError if the returned
           value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:LENGth? <wfm_name>
+        ```
     """
 
 
 class WlistWaveformInvert(SCPICmdWrite):
     """The ``WLISt:WAVeform:INVert`` command.
 
-    **Description:**
+    Description:
         - This command inverts the named waveform (in the waveform list) and preserves the offset.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:INVert value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:INVert <wfm_name>
+        ```
     """
 
 
 class WlistWaveformGranularity(SCPICmdRead):
     """The ``WLISt:WAVeform:GRANularity`` command.
 
-    **Description:**
+    Description:
         - This command returns the granularity of sample points required for the waveform to be
           valid. The number of sample points of a single channel instrument must be divisible by 2.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:WAVeform:GRANularity?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:GRANularity?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:GRANularity?
+        ```
     """
 
 
 class WlistWaveformFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:WAVeform:FREQuency`` command.
 
-    **Description:**
+    Description:
         - The command sets or returns the Recommended Center Frequency of the named IQ waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:WAVeform:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:FREQuency?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:FREQuency value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:FREQuency <wfm_name>,<frequency>
         - WLISt:WAVeform:FREQuency?
+        ```
     """
 
 
 class WlistWaveformDelete(SCPICmdWrite):
     """The ``WLISt:WAVeform:DELete`` command.
 
-    **Description:**
+    Description:
         - This command deletes a single waveform from the waveform list or all waveforms. If the
           deleted waveform is currently loaded into waveform memory, it is unloaded. If the RUN
           state of the AWG is ON, the state is turned OFF. If the channel is on, it will be switched
           off.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:DELete value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:DELete {<wfm_name>|ALL}
+        ```
     """
 
 
 class WlistWaveformDataQ(SCPICmdWrite):
     """The ``WLISt:WAVeform:DATA:Q`` command.
 
-    **Description:**
+    Description:
         - This command transfers analog waveform data from the external controller into the
           specified waveform or from a waveform to the external control program. This command writes
           the data to Q. The waveform must be of the Signal Format type IQ. To write to I data, use
@@ -703,21 +680,20 @@ class WlistWaveformDataQ(SCPICmdWrite):
           querying) to append data in multiple commands/queries. To set marker data, use the command
           ``WLIST:WAVEFORM:MARKER:DATA``.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:DATA:Q value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:DATA:Q <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
+        ```
     """  # noqa: E501
 
 
 class WlistWaveformDataI(SCPICmdWrite):
     """The ``WLISt:WAVeform:DATA:I`` command.
 
-    **Description:**
+    Description:
         - This command transfers analog waveform data from the external controller into the
           specified waveform or from a waveform to the external control program. If the waveform is
           of the Signal Format type IQ this command writes the data to I. To write to Q data, use
@@ -727,21 +703,20 @@ class WlistWaveformDataI(SCPICmdWrite):
           user make use of the starting index (and size for querying) to append data in multiple
           commands/queries. To set marker data, use the command ``WLIST:WAVEFORM:MARKER:DATA``.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:DATA:I value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:DATA:I <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
+        ```
     """  # noqa: E501
 
 
 class WlistWaveformData(SCPICmdRead):
     """The ``WLISt:WAVeform:DATA`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:WAVeform:DATA?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:DATA?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -760,7 +735,7 @@ class WlistWaveformData(SCPICmdRead):
     def q(self) -> WlistWaveformDataQ:
         """Return the ``WLISt:WAVeform:DATA:Q`` command.
 
-        **Description:**
+        Description:
             - This command transfers analog waveform data from the external controller into the
               specified waveform or from a waveform to the external control program. This command
               writes the data to Q. The waveform must be of the Signal Format type IQ. To write to I
@@ -774,15 +749,14 @@ class WlistWaveformData(SCPICmdRead):
               the starting index (and size for querying) to append data in multiple
               commands/queries. To set marker data, use the command ``WLIST:WAVEFORM:MARKER:DATA``.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:DATA:Q value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:DATA:Q <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
+            ```
         """  # noqa: E501
         return self._q
 
@@ -790,7 +764,7 @@ class WlistWaveformData(SCPICmdRead):
     def i(self) -> WlistWaveformDataI:
         """Return the ``WLISt:WAVeform:DATA:I`` command.
 
-        **Description:**
+        Description:
             - This command transfers analog waveform data from the external controller into the
               specified waveform or from a waveform to the external control program. If the waveform
               is of the Signal Format type IQ this command writes the data to I. To write to Q data,
@@ -801,15 +775,14 @@ class WlistWaveformData(SCPICmdRead):
               multiple commands/queries. To set marker data, use the command
               ``WLIST:WAVEFORM:MARKER:DATA``.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:DATA:I value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:DATA:I <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
+            ```
         """  # noqa: E501
         return self._i
 
@@ -817,93 +790,89 @@ class WlistWaveformData(SCPICmdRead):
 class WlistWaveformAoffset(SCPICmdWrite):
     """The ``WLISt:WAVeform:AOFFset`` command.
 
-    **Description:**
+    Description:
         - This command adds a normalized offset factor to the specified waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:AOFFset value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:AOFFset <wfm_name>,<offset_factor>
+        ```
     """
 
 
 class WlistWaveformAmplitude(SCPICmdWrite):
     """The ``WLISt:WAVeform:AMPLitude`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Recommended Amplitude (peak-to-peak) of the specified
           waveform in the waveform list.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:AMPLitude value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:AMPLitude <wfm_name>,<amplitude>? <wfm_name>
+        ```
     """
 
 
 class WlistWaveformAcfileSkew(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:WAVeform:ACFile:SKEW`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns whether the measured Skew will be applied during application
           of a precompensation file (correction coefficients file).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:WAVeform:ACFile:SKEW?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:ACFile:SKEW?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:ACFile:SKEW value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:ACFile:SKEW {0|1|OFF|ON}
         - WLISt:WAVeform:ACFile:SKEW?
+        ```
     """
 
 
 class WlistWaveformAcfileRsinc(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:WAVeform:ACFile:RSINc`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns whether or not corrections for Sin(x)/x distortions will be
           removed during application of a correction file.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:WAVeform:ACFile:RSINc?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:ACFile:RSINc?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:ACFile:RSINc value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:ACFile:RSINc {0|1|OFF|ON}
         - WLISt:WAVeform:ACFile:RSINc?
+        ```
     """
 
 
 class WlistWaveformAcfileGaussianBandwidth(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:WAVeform:ACFile:GAUSsian:BANDwidth`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the bandwidth of the gaussian filter that is to be applied
           during application of a precompensation file (correction coefficients file).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:WAVeform:ACFile:GAUSsian:BANDwidth?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -912,35 +881,33 @@ class WlistWaveformAcfileGaussianBandwidth(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``WLISt:WAVeform:ACFile:GAUSsian:BANDwidth value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:ACFile:GAUSsian:BANDwidth <bandwidth>
         - WLISt:WAVeform:ACFile:GAUSsian:BANDwidth?
+        ```
     """
 
 
 class WlistWaveformAcfileGaussian(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:WAVeform:ACFile:GAUSsian`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns whether a gaussian filter will be applied during the
           application of a precompensation file (correction coefficients file).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:WAVeform:ACFile:GAUSsian?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:ACFile:GAUSsian?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:ACFile:GAUSsian value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:ACFile:GAUSsian {0|1|OFF|ON}
         - WLISt:WAVeform:ACFile:GAUSsian?
+        ```
 
     Properties:
         - ``.bandwidth``: The ``WLISt:WAVeform:ACFile:GAUSsian:BANDwidth`` command.
@@ -956,11 +923,11 @@ class WlistWaveformAcfileGaussian(SCPICmdWrite, SCPICmdRead):
     def bandwidth(self) -> WlistWaveformAcfileGaussianBandwidth:
         """Return the ``WLISt:WAVeform:ACFile:GAUSsian:BANDwidth`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the bandwidth of the gaussian filter that is to be
               applied during application of a precompensation file (correction coefficients file).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:WAVeform:ACFile:GAUSsian:BANDwidth?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -969,12 +936,11 @@ class WlistWaveformAcfileGaussian(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:WAVeform:ACFile:GAUSsian:BANDwidth value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:ACFile:GAUSsian:BANDwidth <bandwidth>
             - WLISt:WAVeform:ACFile:GAUSsian:BANDwidth?
+            ```
         """
         return self._bandwidth
 
@@ -982,20 +948,19 @@ class WlistWaveformAcfileGaussian(SCPICmdWrite, SCPICmdRead):
 class WlistWaveformAcfile(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:WAVeform:ACFile`` command.
 
-    **Description:**
+    Description:
         - This command applies user supplied correction coefficients from an external
           (precompensation) file to the specified waveform (or waveforms) in the waveform list. If
           the waveform is IQ (complex), you can add individual corrections files to the I and Q
           components of the complex waveform by using the optional syntax component.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:ACFile value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:ACFile <file_path>,<wfm_name>[,<Q_file_path>]
+        ```
 
     Properties:
         - ``.gaussian``: The ``WLISt:WAVeform:ACFile:GAUSsian`` command.
@@ -1013,23 +978,22 @@ class WlistWaveformAcfile(SCPICmdWrite, SCPICmdRead):
     def gaussian(self) -> WlistWaveformAcfileGaussian:
         """Return the ``WLISt:WAVeform:ACFile:GAUSsian`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns whether a gaussian filter will be applied during the
               application of a precompensation file (correction coefficients file).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:WAVeform:ACFile:GAUSsian?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:ACFile:GAUSsian?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``WLISt:WAVeform:ACFile:GAUSsian value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:ACFile:GAUSsian {0|1|OFF|ON}
             - WLISt:WAVeform:ACFile:GAUSsian?
+            ```
 
         Sub-properties:
             - ``.bandwidth``: The ``WLISt:WAVeform:ACFile:GAUSsian:BANDwidth`` command.
@@ -1040,23 +1004,22 @@ class WlistWaveformAcfile(SCPICmdWrite, SCPICmdRead):
     def rsinc(self) -> WlistWaveformAcfileRsinc:
         """Return the ``WLISt:WAVeform:ACFile:RSINc`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns whether or not corrections for Sin(x)/x distortions will
               be removed during application of a correction file.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:WAVeform:ACFile:RSINc?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:ACFile:RSINc?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:ACFile:RSINc value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:ACFile:RSINc {0|1|OFF|ON}
             - WLISt:WAVeform:ACFile:RSINc?
+            ```
         """
         return self._rsinc
 
@@ -1064,23 +1027,22 @@ class WlistWaveformAcfile(SCPICmdWrite, SCPICmdRead):
     def skew(self) -> WlistWaveformAcfileSkew:
         """Return the ``WLISt:WAVeform:ACFile:SKEW`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns whether the measured Skew will be applied during
               application of a precompensation file (correction coefficients file).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:WAVeform:ACFile:SKEW?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:ACFile:SKEW?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:ACFile:SKEW value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:ACFile:SKEW {0|1|OFF|ON}
             - WLISt:WAVeform:ACFile:SKEW?
+            ```
         """
         return self._skew
 
@@ -1089,7 +1051,7 @@ class WlistWaveformAcfile(SCPICmdWrite, SCPICmdRead):
 class WlistWaveform(SCPICmdRead):
     """The ``WLISt:WAVeform`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:WAVeform?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1156,21 +1118,20 @@ class WlistWaveform(SCPICmdRead):
     def acfile(self) -> WlistWaveformAcfile:
         """Return the ``WLISt:WAVeform:ACFile`` command.
 
-        **Description:**
+        Description:
             - This command applies user supplied correction coefficients from an external
               (precompensation) file to the specified waveform (or waveforms) in the waveform list.
               If the waveform is IQ (complex), you can add individual corrections files to the I and
               Q components of the complex waveform by using the optional syntax component.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:ACFile value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:ACFile <file_path>,<wfm_name>[,<Q_file_path>]
+            ```
 
         Sub-properties:
             - ``.gaussian``: The ``WLISt:WAVeform:ACFile:GAUSsian`` command.
@@ -1183,19 +1144,18 @@ class WlistWaveform(SCPICmdRead):
     def amplitude(self) -> WlistWaveformAmplitude:
         """Return the ``WLISt:WAVeform:AMPLitude`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Recommended Amplitude (peak-to-peak) of the specified
               waveform in the waveform list.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:AMPLitude value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:AMPLitude <wfm_name>,<amplitude>? <wfm_name>
+            ```
         """
         return self._amplitude
 
@@ -1203,18 +1163,17 @@ class WlistWaveform(SCPICmdRead):
     def aoffset(self) -> WlistWaveformAoffset:
         """Return the ``WLISt:WAVeform:AOFFset`` command.
 
-        **Description:**
+        Description:
             - This command adds a normalized offset factor to the specified waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:AOFFset value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:AOFFset <wfm_name>,<offset_factor>
+            ```
         """
         return self._aoffset
 
@@ -1222,7 +1181,7 @@ class WlistWaveform(SCPICmdRead):
     def data(self) -> WlistWaveformData:
         """Return the ``WLISt:WAVeform:DATA`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:WAVeform:DATA?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:DATA?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1237,21 +1196,20 @@ class WlistWaveform(SCPICmdRead):
     def delete(self) -> WlistWaveformDelete:
         """Return the ``WLISt:WAVeform:DELete`` command.
 
-        **Description:**
+        Description:
             - This command deletes a single waveform from the waveform list or all waveforms. If the
               deleted waveform is currently loaded into waveform memory, it is unloaded. If the RUN
               state of the AWG is ON, the state is turned OFF. If the channel is on, it will be
               switched off.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:DELete value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:DELete {<wfm_name>|ALL}
+            ```
         """
         return self._delete
 
@@ -1259,22 +1217,21 @@ class WlistWaveform(SCPICmdRead):
     def frequency(self) -> WlistWaveformFrequency:
         """Return the ``WLISt:WAVeform:FREQuency`` command.
 
-        **Description:**
+        Description:
             - The command sets or returns the Recommended Center Frequency of the named IQ waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:WAVeform:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:FREQuency?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:FREQuency value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:FREQuency <wfm_name>,<frequency>
             - WLISt:WAVeform:FREQuency?
+            ```
         """
         return self._frequency
 
@@ -1282,21 +1239,20 @@ class WlistWaveform(SCPICmdRead):
     def granularity(self) -> WlistWaveformGranularity:
         """Return the ``WLISt:WAVeform:GRANularity`` command.
 
-        **Description:**
+        Description:
             - This command returns the granularity of sample points required for the waveform to be
               valid. The number of sample points of a single channel instrument must be divisible by
               2.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:WAVeform:GRANularity?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:GRANularity?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:GRANularity?
+            ```
         """
         return self._granularity
 
@@ -1304,19 +1260,18 @@ class WlistWaveform(SCPICmdRead):
     def invert(self) -> WlistWaveformInvert:
         """Return the ``WLISt:WAVeform:INVert`` command.
 
-        **Description:**
+        Description:
             - This command inverts the named waveform (in the waveform list) and preserves the
               offset.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:INVert value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:INVert <wfm_name>
+            ```
         """
         return self._invert
 
@@ -1324,22 +1279,21 @@ class WlistWaveform(SCPICmdRead):
     def length(self) -> WlistWaveformLength:
         """Return the ``WLISt:WAVeform:LENGth`` command.
 
-        **Description:**
+        Description:
             - This command returns the size of the specified waveform in the waveform list. The
               returned value represents data points (not bytes).
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``WLISt:WAVeform:LENGth? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``WLISt:WAVeform:LENGth? argument`` query and raise an AssertionError if the returned
               value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:LENGth? <wfm_name>
+            ```
         """
         return self._length
 
@@ -1347,19 +1301,18 @@ class WlistWaveform(SCPICmdRead):
     def lmaximum(self) -> WlistWaveformLmaximum:
         """Return the ``WLISt:WAVeform:LMAXimum`` command.
 
-        **Description:**
+        Description:
             - This command returns the maximum number of waveform sample points allowed.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:WAVeform:LMAXimum?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:LMAXimum?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:LMAXimum?
+            ```
         """
         return self._lmaximum
 
@@ -1367,20 +1320,19 @@ class WlistWaveform(SCPICmdRead):
     def lminimum(self) -> WlistWaveformLminimum:
         """Return the ``WLISt:WAVeform:LMINimum`` command.
 
-        **Description:**
+        Description:
             - This command returns the minimum number of waveform sample points required for a valid
               waveform. The number of required sample points is dependent on the instrument model.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:WAVeform:LMINimum?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:LMINimum?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:LMINimum?
+            ```
         """
         return self._lminimum
 
@@ -1388,7 +1340,7 @@ class WlistWaveform(SCPICmdRead):
     def marker(self) -> WlistWaveformMarker:
         """Return the ``WLISt:WAVeform:MARKer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:WAVeform:MARKer?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:MARKer?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1402,18 +1354,17 @@ class WlistWaveform(SCPICmdRead):
     def miq(self) -> WlistWaveformMiq:
         """Return the ``WLISt:WAVeform:MIQ`` command.
 
-        **Description:**
+        Description:
             - This command creates an IQ waveform from two real waveforms. The name is derived from
               the I waveform name.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:MIQ value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:MIQ <I_wfm_name>,<Q_wfm_name>
+            ```
         """
         return self._miq
 
@@ -1421,17 +1372,16 @@ class WlistWaveform(SCPICmdRead):
     def new(self) -> WlistWaveformNew:
         """Return the ``WLISt:WAVeform:NEW`` command.
 
-        **Description:**
+        Description:
             - This command creates a new empty waveform in the waveform list of the current setup.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:NEW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:NEW <wfm_name>,<Size>[,<format>[,<is_saveable>]]
+            ```
         """
         return self._new
 
@@ -1439,18 +1389,17 @@ class WlistWaveform(SCPICmdRead):
     def normalize(self) -> WlistWaveformNormalize:
         """Return the ``WLISt:WAVeform:NORMalize`` command.
 
-        **Description:**
+        Description:
             - This command normalizes a waveform in the waveform list.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:NORMalize value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:NORMalize <wfm_name>,{FSCale|ZREFerence}
+            ```
         """
         return self._normalize
 
@@ -1458,19 +1407,18 @@ class WlistWaveform(SCPICmdRead):
     def offset(self) -> WlistWaveformOffset:
         """Return the ``WLISt:WAVeform:OFFSet`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Recommended Offset of the specified waveform in the
               waveform list.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:OFFSet value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:OFFSet <wfm_name>,<offset>? <wfm_name>
+            ```
         """
         return self._offset
 
@@ -1478,18 +1426,17 @@ class WlistWaveform(SCPICmdRead):
     def resample(self) -> WlistWaveformResample:
         """Return the ``WLISt:WAVeform:RESample`` command.
 
-        **Description:**
+        Description:
             - This command resamples the number of points in a waveform in the waveform list.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:RESample value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:RESample <wfm_name>,<size>
+            ```
         """
         return self._resample
 
@@ -1497,18 +1444,17 @@ class WlistWaveform(SCPICmdRead):
     def reverse(self) -> WlistWaveformReverse:
         """Return the ``WLISt:WAVeform:REVerse`` command.
 
-        **Description:**
+        Description:
             - This command reverses the order of the named waveform (in the waveform list).
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:REVerse value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:REVerse <wfm_name>
+            ```
         """
         return self._reverse
 
@@ -1516,7 +1462,7 @@ class WlistWaveform(SCPICmdRead):
     def rotate(self) -> WlistWaveformRotate:
         """Return the ``WLISt:WAVeform:ROTate`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:WAVeform:ROTate?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:ROTate?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1531,19 +1477,18 @@ class WlistWaveform(SCPICmdRead):
     def scale(self) -> WlistWaveformScale:
         """Return the ``WLISt:WAVeform:SCALe`` command.
 
-        **Description:**
+        Description:
             - This command rescales the amplitude of the specified waveform by the specified
               multiplication factor.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:SCALe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:SCALe <wfm_name>,<multiplier_factor>
+            ```
         """
         return self._scale
 
@@ -1551,21 +1496,20 @@ class WlistWaveform(SCPICmdRead):
     def sdcorrection(self) -> WlistWaveformSdcorrection:
         """Return the ``WLISt:WAVeform:SDCorrection`` command.
 
-        **Description:**
+        Description:
             - This command applies the Sin(x)/x distortion correction to the specified waveform in
               the waveform list. Optionally, you can define the end frequency of the Sin(x)/x
               distortion correction. The specified waveform must be in the waveform list of the
               current setup.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:SDCorrection value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:SDCorrection <wfm_name>[,<end_frequency>]
+            ```
         """
         return self._sdcorrection
 
@@ -1573,19 +1517,18 @@ class WlistWaveform(SCPICmdRead):
     def sformat(self) -> WlistWaveformSformat:
         """Return the ``WLISt:WAVeform:SFORmat`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the signal format of the specified waveform in the
               waveform list.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:SFORmat value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:SFORmat <wfm_name>,{REAL|I|Q}? <wfm_name>
+            ```
         """
         return self._sformat
 
@@ -1593,18 +1536,17 @@ class WlistWaveform(SCPICmdRead):
     def shift(self) -> WlistWaveformShift:
         """Return the ``WLISt:WAVeform:SHIFt`` command.
 
-        **Description:**
+        Description:
             - This command shifts the phase of a waveform in the waveform list.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:SHIFt value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:SHIFt <wfm_name>,<phase>
+            ```
         """
         return self._shift
 
@@ -1612,19 +1554,18 @@ class WlistWaveform(SCPICmdRead):
     def srate(self) -> WlistWaveformSrate:
         """Return the ``WLISt:WAVeform:SRATe`` command.
 
-        **Description:**
+        Description:
             - The command sets or returns the Recommended Sampling Rate of the specified waveform in
               the waveform list
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:SRATe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:SRATe <wfm_name>,<sample_rate>? <wfm_name>
+            ```
         """
         return self._srate
 
@@ -1632,21 +1573,20 @@ class WlistWaveform(SCPICmdRead):
     def tstamp(self) -> WlistWaveformTstamp:
         """Return the ``WLISt:WAVeform:TSTamp`` command.
 
-        **Description:**
+        Description:
             - This command returns the timestamp of the specified waveform in the waveform list.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``WLISt:WAVeform:TSTamp? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``WLISt:WAVeform:TSTamp? argument`` query and raise an AssertionError if the returned
               value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:TSTamp? <wfm_name>
+            ```
         """
         return self._tstamp
 
@@ -1654,23 +1594,22 @@ class WlistWaveform(SCPICmdRead):
     def type(self) -> WlistWaveformType:
         """Return the ``WLISt:WAVeform:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command returns the type of the waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``WLISt:WAVeform:TYPE? argument``
               query.
             - Using the ``.verify(argument, value)`` method will send the
               ``WLISt:WAVeform:TYPE? argument`` query and raise an AssertionError if the returned
               value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:TYPE? <wfm_name>
+            ```
 
-        **Info:**
+        Info:
             - ``<wfm_name>`` ::= <string>.
         """
         return self._type
@@ -1679,99 +1618,95 @@ class WlistWaveform(SCPICmdRead):
 class WlistSparameterSformat(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:SFORmat`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the currently used signal format for setting the S-Parameter
           values.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:SFORmat?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:SFORmat?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``WLISt:SPARameter:SFORmat value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:SFORmat {REAL|I|Q|IQ}
         - WLISt:SPARameter:SFORmat?
+        ```
     """
 
 
 class WlistSparameterNcascadingType(SCPICmdWrite):
     """The ``WLISt:SPARameter:NCAScading:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the S-Parameter number of ports, in Non-Cascading mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:NCAScading:TYPE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:NCAScading:TYPE {1|2|4|6|8|12}
+        ```
     """
 
 
 class WlistSparameterNcascadingTxItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:NCAScading:TX[n]`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the S-Parameter port assignment of the channel's specified
           transmission port number (Tx-Port) in Non-Cascading mode and Single-Ended Signalling
           Scheme (where applicable).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading:TX[n]?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:NCAScading:TX[n]?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:NCAScading:TX[n] value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:NCAScading:TX[n] <port number>
         - WLISt:SPARameter:NCAScading:TX[n]?
+        ```
     """
 
 
 class WlistSparameterNcascadingStype(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:NCAScading:STYPe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns S-Parameter signal type (victim or aggressor), in
           Non-Cascading mode. The number of ports must be either 8 or 12.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading:STYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:NCAScading:STYPe?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:NCAScading:STYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:NCAScading:STYPe {VICTim|AGGRessor|BOTH}
         - WLISt:SPARameter:NCAScading:STYPe?
+        ```
     """
 
 
 class WlistSparameterNcascadingSscheme(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:NCAScading:SSCHeme`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the S-Parameter Signalling Scheme, in Non-Cascading mode.
           Signalling Scheme is only available when the Number of Ports is set to 4, 8, or 12.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading:SSCHeme?``
           query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:NCAScading:SSCHeme?``
@@ -1779,137 +1714,131 @@ class WlistSparameterNcascadingSscheme(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:NCAScading:SSCHeme value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:NCAScading:SSCHeme {SENDed|DIFFerential}
         - WLISt:SPARameter:NCAScading:SSCHeme?
+        ```
     """
 
 
 class WlistSparameterNcascadingRxItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:NCAScading:RX[n]`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the S-Parameter port assignment of the channel's specified
           receiver port number (Rx-Port) in Non-Cascading mode and Single-Ended Signalling Scheme
           (where applicable).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading:RX[n]?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:NCAScading:RX[n]?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:NCAScading:RX[n] value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:NCAScading:RX[n] <port number>
         - WLISt:SPARameter:NCAScading:RX[n]?
+        ```
     """
 
 
 class WlistSparameterNcascadingLayout(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:NCAScading:LAYout`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the 4 port S-Parameter Matrix Configuration, in Non-Cascading
           mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading:LAYout?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:NCAScading:LAYout?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:NCAScading:LAYout value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:NCAScading:LAYout {TYPical|ALTernate}
         - WLISt:SPARameter:NCAScading:LAYout?
+        ```
     """
 
 
 class WlistSparameterNcascadingFile(SCPICmdWrite):
     """The ``WLISt:SPARameter:NCAScading:FILE`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the filepath and file name of the S-Parameter file, in
           Non-Cascading mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:NCAScading:FILE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:NCAScading:FILE <filepath>
+        ```
     """
 
 
 class WlistSparameterNcascadingDtxItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:NCAScading:DTX[n]`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the S-Parameter port assignment of the channel's specified
           transmission port number (Tx-Port) in Non-Cascading mode and Differential Signalling
           Scheme (where applicable).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading:DTX[n]?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:NCAScading:DTX[n]?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:NCAScading:DTX[n] value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:NCAScading:DTX[n] <port number>
         - WLISt:SPARameter:NCAScading:DTX[n]?
+        ```
     """
 
 
 class WlistSparameterNcascadingDrxItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:NCAScading:DRX[n]`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the S-Parameter port assignment of the channel's specified
           receiver port number (Rx-Port) in Non-Cascading mode and Differential Signalling Scheme
           (where applicable).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading:DRX[n]?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:NCAScading:DRX[n]?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:NCAScading:DRX[n] value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:NCAScading:DRX[n] <port number>
         - WLISt:SPARameter:NCAScading:DRX[n]?
+        ```
     """
 
 
 class WlistSparameterNcascadingDeembed(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:NCAScading:DEEMbed`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns whether the Non-Cascading S-Parameters is to de-embed
           (invert) the S-Parameters, in Non-Cascading mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading:DEEMbed?``
           query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:NCAScading:DEEMbed?``
@@ -1917,23 +1846,22 @@ class WlistSparameterNcascadingDeembed(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:NCAScading:DEEMbed value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:NCAScading:DEEMbed {0|1|OFF|ON}
         - WLISt:SPARameter:NCAScading:DEEMbed?
+        ```
     """
 
 
 class WlistSparameterNcascadingAggressorItemSignalPrbs(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:PRBS`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the specified Aggressor's PRBS signal type, in Non-Cascading
           mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:PRBS?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1942,23 +1870,22 @@ class WlistSparameterNcascadingAggressorItemSignalPrbs(SCPICmdWrite, SCPICmdRead
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:PRBS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:PRBS {PRBS7|PRBS9|PRBS15|PRBS16|PRBS20|PRBS21|PRBS23|PRBS29|PRBS31}
         - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:PRBS?
+        ```
     """  # noqa: E501
 
 
 class WlistSparameterNcascadingAggressorItemSignalFile(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:FILE`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the filepath to the aggressor file for the specified
           Aggressor, in Non-Cascading mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:FILE?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1967,22 +1894,21 @@ class WlistSparameterNcascadingAggressorItemSignalFile(SCPICmdWrite, SCPICmdRead
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:FILE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:FILE <filepath>
         - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:FILE?
+        ```
     """
 
 
 class WlistSparameterNcascadingAggressorItemSignal(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns specified Aggressor's signal type, in Non-Cascading mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1991,12 +1917,11 @@ class WlistSparameterNcascadingAggressorItemSignal(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal {CLOCk|PRBS|FILE|SAVictim}
         - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal?
+        ```
 
     Properties:
         - ``.file``: The ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:FILE`` command.
@@ -2016,11 +1941,11 @@ class WlistSparameterNcascadingAggressorItemSignal(SCPICmdWrite, SCPICmdRead):
     def file(self) -> WlistSparameterNcascadingAggressorItemSignalFile:
         """Return the ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:FILE`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the filepath to the aggressor file for the specified
               Aggressor, in Non-Cascading mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:FILE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2029,12 +1954,11 @@ class WlistSparameterNcascadingAggressorItemSignal(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:FILE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:FILE <filepath>
             - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:FILE?
+            ```
         """
         return self._file
 
@@ -2042,11 +1966,11 @@ class WlistSparameterNcascadingAggressorItemSignal(SCPICmdWrite, SCPICmdRead):
     def prbs(self) -> WlistSparameterNcascadingAggressorItemSignalPrbs:
         """Return the ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:PRBS`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the specified Aggressor's PRBS signal type, in
               Non-Cascading mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:PRBS?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2055,12 +1979,11 @@ class WlistSparameterNcascadingAggressorItemSignal(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:PRBS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:PRBS {PRBS7|PRBS9|PRBS15|PRBS16|PRBS20|PRBS21|PRBS23|PRBS29|PRBS31}
             - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:PRBS?
+            ```
         """  # noqa: E501
         return self._prbs
 
@@ -2068,10 +1991,10 @@ class WlistSparameterNcascadingAggressorItemSignal(SCPICmdWrite, SCPICmdRead):
 class WlistSparameterNcascadingAggressorItemDrate(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:NCAScading:AGGRessor[n]:DRATe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the specified Aggressor's data rate, in Non-Cascading mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``WLISt:SPARameter:NCAScading:AGGRessor[n]:DRATe?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2080,23 +2003,22 @@ class WlistSparameterNcascadingAggressorItemDrate(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:NCAScading:AGGRessor[n]:DRATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:NCAScading:AGGRessor[n]:DRATe <data_rate>
         - WLISt:SPARameter:NCAScading:AGGRessor[n]:DRATe?
+        ```
     """
 
 
 class WlistSparameterNcascadingAggressorItemCtalk(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:NCAScading:AGGRessor[n]:CTALk`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the specified Aggressor's crosstalk type, in Non-Cascading
           mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``WLISt:SPARameter:NCAScading:AGGRessor[n]:CTALk?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2105,22 +2027,21 @@ class WlistSparameterNcascadingAggressorItemCtalk(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:NCAScading:AGGRessor[n]:CTALk value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:NCAScading:AGGRessor[n]:CTALk {NEXT|FEXT|BOTH}
         - WLISt:SPARameter:NCAScading:AGGRessor[n]:CTALk?
+        ```
     """
 
 
 class WlistSparameterNcascadingAggressorItemAmplitude(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:NCAScading:AGGRessor[n]:AMPLitude`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the specified Aggressor's amplitude, in Non-Cascading mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``WLISt:SPARameter:NCAScading:AGGRessor[n]:AMPLitude?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2129,19 +2050,18 @@ class WlistSparameterNcascadingAggressorItemAmplitude(SCPICmdWrite, SCPICmdRead)
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:NCAScading:AGGRessor[n]:AMPLitude value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:NCAScading:AGGRessor[n]:AMPLitude <amplitude>
         - WLISt:SPARameter:NCAScading:AGGRessor[n]:AMPLitude?
+        ```
     """
 
 
 class WlistSparameterNcascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``WLISt:SPARameter:NCAScading:AGGRessor[n]`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading:AGGRessor[n]?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2174,11 +2094,11 @@ class WlistSparameterNcascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdR
     def amplitude(self) -> WlistSparameterNcascadingAggressorItemAmplitude:
         """Return the ``WLISt:SPARameter:NCAScading:AGGRessor[n]:AMPLitude`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the specified Aggressor's amplitude, in Non-Cascading
               mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:NCAScading:AGGRessor[n]:AMPLitude?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2187,12 +2107,11 @@ class WlistSparameterNcascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdR
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:NCAScading:AGGRessor[n]:AMPLitude value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:NCAScading:AGGRessor[n]:AMPLitude <amplitude>
             - WLISt:SPARameter:NCAScading:AGGRessor[n]:AMPLitude?
+            ```
         """
         return self._amplitude
 
@@ -2200,11 +2119,11 @@ class WlistSparameterNcascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdR
     def ctalk(self) -> WlistSparameterNcascadingAggressorItemCtalk:
         """Return the ``WLISt:SPARameter:NCAScading:AGGRessor[n]:CTALk`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the specified Aggressor's crosstalk type, in
               Non-Cascading mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:NCAScading:AGGRessor[n]:CTALk?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2213,12 +2132,11 @@ class WlistSparameterNcascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdR
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:NCAScading:AGGRessor[n]:CTALk value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:NCAScading:AGGRessor[n]:CTALk {NEXT|FEXT|BOTH}
             - WLISt:SPARameter:NCAScading:AGGRessor[n]:CTALk?
+            ```
         """
         return self._ctalk
 
@@ -2226,11 +2144,11 @@ class WlistSparameterNcascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdR
     def drate(self) -> WlistSparameterNcascadingAggressorItemDrate:
         """Return the ``WLISt:SPARameter:NCAScading:AGGRessor[n]:DRATe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the specified Aggressor's data rate, in Non-Cascading
               mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:NCAScading:AGGRessor[n]:DRATe?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2239,12 +2157,11 @@ class WlistSparameterNcascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdR
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:NCAScading:AGGRessor[n]:DRATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:NCAScading:AGGRessor[n]:DRATe <data_rate>
             - WLISt:SPARameter:NCAScading:AGGRessor[n]:DRATe?
+            ```
         """
         return self._drate
 
@@ -2252,10 +2169,10 @@ class WlistSparameterNcascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdR
     def signal(self) -> WlistSparameterNcascadingAggressorItemSignal:
         """Return the ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns specified Aggressor's signal type, in Non-Cascading mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2264,12 +2181,11 @@ class WlistSparameterNcascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdR
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal {CLOCk|PRBS|FILE|SAVictim}
             - WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal?
+            ```
 
         Sub-properties:
             - ``.file``: The ``WLISt:SPARameter:NCAScading:AGGRessor[n]:SIGNal:FILE`` command.
@@ -2281,12 +2197,12 @@ class WlistSparameterNcascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdR
 class WlistSparameterNcascadingAggressor2Enable(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:NCAScading:AGGRessor2:ENABle`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the aggressor 2 signal type state (enabled or disabled) in
           Non-Cascading mode. Aggressor2 signals are available when the number of ports is set to
           12.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``WLISt:SPARameter:NCAScading:AGGRessor2:ENABle?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2295,19 +2211,18 @@ class WlistSparameterNcascadingAggressor2Enable(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:NCAScading:AGGRessor2:ENABle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:NCAScading:AGGRessor2:ENABle {0|1|ON|OFF}
         - WLISt:SPARameter:NCAScading:AGGRessor2:ENABle?
+        ```
     """
 
 
 class WlistSparameterNcascadingAggressor2(SCPICmdRead):
     """The ``WLISt:SPARameter:NCAScading:AGGRessor2`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading:AGGRessor2?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2328,12 +2243,12 @@ class WlistSparameterNcascadingAggressor2(SCPICmdRead):
     def enable(self) -> WlistSparameterNcascadingAggressor2Enable:
         """Return the ``WLISt:SPARameter:NCAScading:AGGRessor2:ENABle`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the aggressor 2 signal type state (enabled or disabled)
               in Non-Cascading mode. Aggressor2 signals are available when the number of ports is
               set to 12.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:NCAScading:AGGRessor2:ENABle?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2342,12 +2257,11 @@ class WlistSparameterNcascadingAggressor2(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:NCAScading:AGGRessor2:ENABle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:NCAScading:AGGRessor2:ENABle {0|1|ON|OFF}
             - WLISt:SPARameter:NCAScading:AGGRessor2:ENABle?
+            ```
         """
         return self._enable
 
@@ -2356,7 +2270,7 @@ class WlistSparameterNcascadingAggressor2(SCPICmdRead):
 class WlistSparameterNcascading(SCPICmdRead):
     """The ``WLISt:SPARameter:NCAScading`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:NCAScading?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -2411,7 +2325,7 @@ class WlistSparameterNcascading(SCPICmdRead):
     def aggressor2(self) -> WlistSparameterNcascadingAggressor2:
         """Return the ``WLISt:SPARameter:NCAScading:AGGRessor2`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:NCAScading:AGGRessor2?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2427,7 +2341,7 @@ class WlistSparameterNcascading(SCPICmdRead):
     def aggressor(self) -> Dict[int, WlistSparameterNcascadingAggressorItem]:
         """Return the ``WLISt:SPARameter:NCAScading:AGGRessor[n]`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:NCAScading:AGGRessor[n]?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2446,11 +2360,11 @@ class WlistSparameterNcascading(SCPICmdRead):
     def deembed(self) -> WlistSparameterNcascadingDeembed:
         """Return the ``WLISt:SPARameter:NCAScading:DEEMbed`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns whether the Non-Cascading S-Parameters is to de-embed
               (invert) the S-Parameters, in Non-Cascading mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading:DEEMbed?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2459,12 +2373,11 @@ class WlistSparameterNcascading(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:NCAScading:DEEMbed value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:NCAScading:DEEMbed {0|1|OFF|ON}
             - WLISt:SPARameter:NCAScading:DEEMbed?
+            ```
         """
         return self._deembed
 
@@ -2472,12 +2385,12 @@ class WlistSparameterNcascading(SCPICmdRead):
     def drx(self) -> Dict[int, WlistSparameterNcascadingDrxItem]:
         """Return the ``WLISt:SPARameter:NCAScading:DRX[n]`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the S-Parameter port assignment of the channel's
               specified receiver port number (Rx-Port) in Non-Cascading mode and Differential
               Signalling Scheme (where applicable).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading:DRX[n]?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2486,12 +2399,11 @@ class WlistSparameterNcascading(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:NCAScading:DRX[n] value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:NCAScading:DRX[n] <port number>
             - WLISt:SPARameter:NCAScading:DRX[n]?
+            ```
         """
         return self._drx
 
@@ -2499,12 +2411,12 @@ class WlistSparameterNcascading(SCPICmdRead):
     def dtx(self) -> Dict[int, WlistSparameterNcascadingDtxItem]:
         """Return the ``WLISt:SPARameter:NCAScading:DTX[n]`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the S-Parameter port assignment of the channel's
               specified transmission port number (Tx-Port) in Non-Cascading mode and Differential
               Signalling Scheme (where applicable).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading:DTX[n]?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2513,12 +2425,11 @@ class WlistSparameterNcascading(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:NCAScading:DTX[n] value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:NCAScading:DTX[n] <port number>
             - WLISt:SPARameter:NCAScading:DTX[n]?
+            ```
         """
         return self._dtx
 
@@ -2526,19 +2437,18 @@ class WlistSparameterNcascading(SCPICmdRead):
     def file(self) -> WlistSparameterNcascadingFile:
         """Return the ``WLISt:SPARameter:NCAScading:FILE`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the filepath and file name of the S-Parameter file, in
               Non-Cascading mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:NCAScading:FILE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:NCAScading:FILE <filepath>
+            ```
         """
         return self._file
 
@@ -2546,11 +2456,11 @@ class WlistSparameterNcascading(SCPICmdRead):
     def layout(self) -> WlistSparameterNcascadingLayout:
         """Return the ``WLISt:SPARameter:NCAScading:LAYout`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the 4 port S-Parameter Matrix Configuration, in
               Non-Cascading mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading:LAYout?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2559,12 +2469,11 @@ class WlistSparameterNcascading(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:NCAScading:LAYout value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:NCAScading:LAYout {TYPical|ALTernate}
             - WLISt:SPARameter:NCAScading:LAYout?
+            ```
         """
         return self._layout
 
@@ -2572,12 +2481,12 @@ class WlistSparameterNcascading(SCPICmdRead):
     def rx(self) -> Dict[int, WlistSparameterNcascadingRxItem]:
         """Return the ``WLISt:SPARameter:NCAScading:RX[n]`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the S-Parameter port assignment of the channel's
               specified receiver port number (Rx-Port) in Non-Cascading mode and Single-Ended
               Signalling Scheme (where applicable).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading:RX[n]?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2586,12 +2495,11 @@ class WlistSparameterNcascading(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:NCAScading:RX[n] value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:NCAScading:RX[n] <port number>
             - WLISt:SPARameter:NCAScading:RX[n]?
+            ```
         """
         return self._rx
 
@@ -2599,11 +2507,11 @@ class WlistSparameterNcascading(SCPICmdRead):
     def sscheme(self) -> WlistSparameterNcascadingSscheme:
         """Return the ``WLISt:SPARameter:NCAScading:SSCHeme`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the S-Parameter Signalling Scheme, in Non-Cascading mode.
               Signalling Scheme is only available when the Number of Ports is set to 4, 8, or 12.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading:SSCHeme?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2612,12 +2520,11 @@ class WlistSparameterNcascading(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:NCAScading:SSCHeme value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:NCAScading:SSCHeme {SENDed|DIFFerential}
             - WLISt:SPARameter:NCAScading:SSCHeme?
+            ```
         """
         return self._sscheme
 
@@ -2625,11 +2532,11 @@ class WlistSparameterNcascading(SCPICmdRead):
     def stype(self) -> WlistSparameterNcascadingStype:
         """Return the ``WLISt:SPARameter:NCAScading:STYPe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns S-Parameter signal type (victim or aggressor), in
               Non-Cascading mode. The number of ports must be either 8 or 12.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading:STYPe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2638,12 +2545,11 @@ class WlistSparameterNcascading(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:NCAScading:STYPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:NCAScading:STYPe {VICTim|AGGRessor|BOTH}
             - WLISt:SPARameter:NCAScading:STYPe?
+            ```
         """
         return self._stype
 
@@ -2651,12 +2557,12 @@ class WlistSparameterNcascading(SCPICmdRead):
     def tx(self) -> Dict[int, WlistSparameterNcascadingTxItem]:
         """Return the ``WLISt:SPARameter:NCAScading:TX[n]`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the S-Parameter port assignment of the channel's
               specified transmission port number (Tx-Port) in Non-Cascading mode and Single-Ended
               Signalling Scheme (where applicable).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading:TX[n]?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2665,12 +2571,11 @@ class WlistSparameterNcascading(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:NCAScading:TX[n] value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:NCAScading:TX[n] <port number>
             - WLISt:SPARameter:NCAScading:TX[n]?
+            ```
         """
         return self._tx
 
@@ -2678,18 +2583,17 @@ class WlistSparameterNcascading(SCPICmdRead):
     def type(self) -> WlistSparameterNcascadingType:
         """Return the ``WLISt:SPARameter:NCAScading:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the S-Parameter number of ports, in Non-Cascading mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:NCAScading:TYPE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:NCAScading:TYPE {1|2|4|6|8|12}
+            ```
         """
         return self._type
 
@@ -2697,23 +2601,22 @@ class WlistSparameterNcascading(SCPICmdRead):
 class WlistSparameterMode(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:MODE`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the S-Parameter mode (Cascading or Non-Cascading).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:MODE?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:MODE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``WLISt:SPARameter:MODE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:MODE {CASC|NCAS}
         - WLISt:SPARameter:MODE?
+        ```
 
-    **Info:**
+    Info:
         - ``CASCading`` sets the S-Parameter mode to cascading. allowing you to cascade up to six
           S-parameter files and apply the characteristics on the waveform.
         - ``NCASCading`` sets the S-Parameter mode to non-cascading, allowing you to apply
@@ -2724,57 +2627,55 @@ class WlistSparameterMode(SCPICmdWrite, SCPICmdRead):
 class WlistSparameterCascadingType(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:CASCading:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the S-Parameter number of ports, in Cascading mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:CASCading:TYPE?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:CASCading:TYPE?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``WLISt:SPARameter:CASCading:TYPE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:CASCading:TYPE {1|2|4|6|8|12}
         - WLISt:SPARameter:CASCading:TYPE?
+        ```
     """
 
 
 class WlistSparameterCascadingStype(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:CASCading:STYPe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns S-Parameter signal type (victim or aggressor), in Cascading
           mode. The number of ports must be either 8 or 12.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:CASCading:STYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:CASCading:STYPe?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:CASCading:STYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:CASCading:STYPe {VICTim|AGGRessor|BOTH}
         - WLISt:SPARameter:CASCading:STYPe?
+        ```
     """
 
 
 class WlistSparameterCascadingStageItemTxItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:CASCading:STAGe[m]:TX[n]`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the S-Parameter port assignment of the specified Stage and
           the channel's specified transmission port number (Tx-Port) in Cascading mode and
           Single-Ended Signalling Scheme (where applicable).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:CASCading:STAGe[m]:TX[n]?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2783,23 +2684,22 @@ class WlistSparameterCascadingStageItemTxItem(ValidatedDynamicNumberCmd, SCPICmd
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:CASCading:STAGe[m]:TX[n] value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:CASCading:STAGe[m]:TX[n] <port number>
         - WLISt:SPARameter:CASCading:STAGe[m]:TX[n]?
+        ```
     """
 
 
 class WlistSparameterCascadingStageItemSscheme(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:CASCading:STAGe[m]:SSCHeme`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the S-Parameter Signalling Scheme, in Cascading mode.
           Signalling Scheme is only available when the Number of Ports is set to 4, 8, or 12.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``WLISt:SPARameter:CASCading:STAGe[m]:SSCHeme?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2808,24 +2708,23 @@ class WlistSparameterCascadingStageItemSscheme(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:CASCading:STAGe[m]:SSCHeme value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:CASCading:STAGe[m]:SSCHeme {SENDed|DIFFerential}
         - WLISt:SPARameter:CASCading:STAGe[m]:SSCHeme?
+        ```
     """
 
 
 class WlistSparameterCascadingStageItemRxItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:CASCading:STAGe[m]:RX[n]`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the S-Parameter port assignment of the specified Stage and
           the channel's specified receiver port number (Rx-Port) in Cascading mode and Single-Ended
           Signalling Scheme (where applicable).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:CASCading:STAGe[m]:RX[n]?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2834,42 +2733,40 @@ class WlistSparameterCascadingStageItemRxItem(ValidatedDynamicNumberCmd, SCPICmd
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:CASCading:STAGe[m]:RX[n] value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:CASCading:STAGe[m]:RX[n] <port number>
         - WLISt:SPARameter:CASCading:STAGe[m]:RX[n]?
+        ```
     """
 
 
 class WlistSparameterCascadingStageItemFile(SCPICmdWrite):
     """The ``WLISt:SPARameter:CASCading:STAGe[m]:FILE`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Filepath for the specified S-Parameters Cascading Stage,
           in Cascading mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:CASCading:STAGe[m]:FILE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:CASCading:STAGe[m]:FILE <filepath>
+        ```
     """
 
 
 class WlistSparameterCascadingStageItemEnable(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:CASCading:STAGe[m]:ENABle`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the state of the specified Cascaded S-Parameter stage
           (enabled or disabled).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``WLISt:SPARameter:CASCading:STAGe[m]:ENABle?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2878,12 +2775,11 @@ class WlistSparameterCascadingStageItemEnable(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:CASCading:STAGe[m]:ENABle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:CASCading:STAGe[m]:ENABle {0|1|OFF|ON}
         - WLISt:SPARameter:CASCading:STAGe[m]:ENABle?
+        ```
     """
 
 
@@ -2892,12 +2788,12 @@ class WlistSparameterCascadingStageItemDtxItem(
 ):
     """The ``WLISt:SPARameter:CASCading:STAGe[m]:DTX[n]`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the S-Parameter port assignment of the specified Stage and
           the channel's specified transmission port number (Tx-Port) in Cascading mode and
           Differential Signalling Scheme (where applicable).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``WLISt:SPARameter:CASCading:STAGe[m]:DTX[n]?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2906,12 +2802,11 @@ class WlistSparameterCascadingStageItemDtxItem(
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:CASCading:STAGe[m]:DTX[n] value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:CASCading:STAGe[m]:DTX[n] <port number>
         - WLISt:SPARameter:CASCading:STAGe[m]:DTX[n]?
+        ```
     """
 
 
@@ -2920,12 +2815,12 @@ class WlistSparameterCascadingStageItemDrxItem(
 ):
     """The ``WLISt:SPARameter:CASCading:STAGe[m]:DRX[n]`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the S-Parameter port assignment of the specified Stage and
           the channel's specified receiver port number (Rx-Port) in Cascading mode and Differential
           Signalling Scheme (where applicable).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``WLISt:SPARameter:CASCading:STAGe[m]:DRX[n]?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2934,19 +2829,18 @@ class WlistSparameterCascadingStageItemDrxItem(
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:CASCading:STAGe[m]:DRX[n] value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:CASCading:STAGe[m]:DRX[n] <port_number>
         - WLISt:SPARameter:CASCading:STAGe[m]:DRX[n]?
+        ```
     """
 
 
 class WlistSparameterCascadingStageItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``WLISt:SPARameter:CASCading:STAGe[m]`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:CASCading:STAGe[m]?``
           query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:CASCading:STAGe[m]?``
@@ -2994,12 +2888,12 @@ class WlistSparameterCascadingStageItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def drx(self) -> Dict[int, WlistSparameterCascadingStageItemDrxItem]:
         """Return the ``WLISt:SPARameter:CASCading:STAGe[m]:DRX[n]`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the S-Parameter port assignment of the specified Stage
               and the channel's specified receiver port number (Rx-Port) in Cascading mode and
               Differential Signalling Scheme (where applicable).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:CASCading:STAGe[m]:DRX[n]?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3008,12 +2902,11 @@ class WlistSparameterCascadingStageItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:CASCading:STAGe[m]:DRX[n] value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:CASCading:STAGe[m]:DRX[n] <port_number>
             - WLISt:SPARameter:CASCading:STAGe[m]:DRX[n]?
+            ```
         """
         return self._drx
 
@@ -3021,12 +2914,12 @@ class WlistSparameterCascadingStageItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def dtx(self) -> Dict[int, WlistSparameterCascadingStageItemDtxItem]:
         """Return the ``WLISt:SPARameter:CASCading:STAGe[m]:DTX[n]`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the S-Parameter port assignment of the specified Stage
               and the channel's specified transmission port number (Tx-Port) in Cascading mode and
               Differential Signalling Scheme (where applicable).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:CASCading:STAGe[m]:DTX[n]?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3035,12 +2928,11 @@ class WlistSparameterCascadingStageItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:CASCading:STAGe[m]:DTX[n] value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:CASCading:STAGe[m]:DTX[n] <port number>
             - WLISt:SPARameter:CASCading:STAGe[m]:DTX[n]?
+            ```
         """
         return self._dtx
 
@@ -3048,11 +2940,11 @@ class WlistSparameterCascadingStageItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def enable(self) -> WlistSparameterCascadingStageItemEnable:
         """Return the ``WLISt:SPARameter:CASCading:STAGe[m]:ENABle`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the state of the specified Cascaded S-Parameter stage
               (enabled or disabled).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:CASCading:STAGe[m]:ENABle?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3061,12 +2953,11 @@ class WlistSparameterCascadingStageItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:CASCading:STAGe[m]:ENABle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:CASCading:STAGe[m]:ENABle {0|1|OFF|ON}
             - WLISt:SPARameter:CASCading:STAGe[m]:ENABle?
+            ```
         """
         return self._enable
 
@@ -3074,19 +2965,18 @@ class WlistSparameterCascadingStageItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def file(self) -> WlistSparameterCascadingStageItemFile:
         """Return the ``WLISt:SPARameter:CASCading:STAGe[m]:FILE`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Filepath for the specified S-Parameters Cascading
               Stage, in Cascading mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:CASCading:STAGe[m]:FILE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:CASCading:STAGe[m]:FILE <filepath>
+            ```
         """
         return self._file
 
@@ -3094,12 +2984,12 @@ class WlistSparameterCascadingStageItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def rx(self) -> Dict[int, WlistSparameterCascadingStageItemRxItem]:
         """Return the ``WLISt:SPARameter:CASCading:STAGe[m]:RX[n]`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the S-Parameter port assignment of the specified Stage
               and the channel's specified receiver port number (Rx-Port) in Cascading mode and
               Single-Ended Signalling Scheme (where applicable).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:CASCading:STAGe[m]:RX[n]?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3108,12 +2998,11 @@ class WlistSparameterCascadingStageItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:CASCading:STAGe[m]:RX[n] value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:CASCading:STAGe[m]:RX[n] <port number>
             - WLISt:SPARameter:CASCading:STAGe[m]:RX[n]?
+            ```
         """
         return self._rx
 
@@ -3121,11 +3010,11 @@ class WlistSparameterCascadingStageItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def sscheme(self) -> WlistSparameterCascadingStageItemSscheme:
         """Return the ``WLISt:SPARameter:CASCading:STAGe[m]:SSCHeme`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the S-Parameter Signalling Scheme, in Cascading mode.
               Signalling Scheme is only available when the Number of Ports is set to 4, 8, or 12.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:CASCading:STAGe[m]:SSCHeme?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3134,12 +3023,11 @@ class WlistSparameterCascadingStageItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:CASCading:STAGe[m]:SSCHeme value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:CASCading:STAGe[m]:SSCHeme {SENDed|DIFFerential}
             - WLISt:SPARameter:CASCading:STAGe[m]:SSCHeme?
+            ```
         """
         return self._sscheme
 
@@ -3147,12 +3035,12 @@ class WlistSparameterCascadingStageItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def tx(self) -> Dict[int, WlistSparameterCascadingStageItemTxItem]:
         """Return the ``WLISt:SPARameter:CASCading:STAGe[m]:TX[n]`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the S-Parameter port assignment of the specified Stage
               and the channel's specified transmission port number (Tx-Port) in Cascading mode and
               Single-Ended Signalling Scheme (where applicable).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:CASCading:STAGe[m]:TX[n]?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3161,12 +3049,11 @@ class WlistSparameterCascadingStageItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:CASCading:STAGe[m]:TX[n] value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:CASCading:STAGe[m]:TX[n] <port number>
             - WLISt:SPARameter:CASCading:STAGe[m]:TX[n]?
+            ```
         """
         return self._tx
 
@@ -3174,34 +3061,33 @@ class WlistSparameterCascadingStageItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class WlistSparameterCascadingDeembed(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:CASCading:DEEMbed`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns whether the Cascading S-Parameters is to de-embed (invert)
           the S-Parameters, in Cascading mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:CASCading:DEEMbed?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:CASCading:DEEMbed?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:CASCading:DEEMbed value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:CASCading:DEEMbed {0|1|OFF|ON}
         - WLISt:SPARameter:CASCading:DEEMbed?
+        ```
     """
 
 
 class WlistSparameterCascadingAggressorItemSignalPrbs(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:PRBS`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the specified Aggressor's PRBS signal type, in Cascading
           mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:PRBS?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3210,23 +3096,22 @@ class WlistSparameterCascadingAggressorItemSignalPrbs(SCPICmdWrite, SCPICmdRead)
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:PRBS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:PRBS {PRBS7|PRBS9|PRBS15|PRBS16|PRBS20|PRBS21|PRBS23|PRBS29|PRBS31}
         - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:PRBS?
+        ```
     """  # noqa: E501
 
 
 class WlistSparameterCascadingAggressorItemSignalFile(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:FILE`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the filepath to the aggressor file for the specified
           Aggressor, in Cascading mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:FILE?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3235,22 +3120,21 @@ class WlistSparameterCascadingAggressorItemSignalFile(SCPICmdWrite, SCPICmdRead)
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:FILE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:FILE <filepath>
         - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:FILE?
+        ```
     """
 
 
 class WlistSparameterCascadingAggressorItemSignal(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns specified Aggressor's signal type, in Cascading mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3259,12 +3143,11 @@ class WlistSparameterCascadingAggressorItemSignal(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal {CLOCk|PRBS|FILE|SAVictim}
         - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal?
+        ```
 
     Properties:
         - ``.file``: The ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:FILE`` command.
@@ -3284,11 +3167,11 @@ class WlistSparameterCascadingAggressorItemSignal(SCPICmdWrite, SCPICmdRead):
     def file(self) -> WlistSparameterCascadingAggressorItemSignalFile:
         """Return the ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:FILE`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the filepath to the aggressor file for the specified
               Aggressor, in Cascading mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:FILE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3297,12 +3180,11 @@ class WlistSparameterCascadingAggressorItemSignal(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:FILE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:FILE <filepath>
             - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:FILE?
+            ```
         """
         return self._file
 
@@ -3310,11 +3192,11 @@ class WlistSparameterCascadingAggressorItemSignal(SCPICmdWrite, SCPICmdRead):
     def prbs(self) -> WlistSparameterCascadingAggressorItemSignalPrbs:
         """Return the ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:PRBS`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the specified Aggressor's PRBS signal type, in Cascading
               mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:PRBS?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3323,12 +3205,11 @@ class WlistSparameterCascadingAggressorItemSignal(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:PRBS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:PRBS {PRBS7|PRBS9|PRBS15|PRBS16|PRBS20|PRBS21|PRBS23|PRBS29|PRBS31}
             - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:PRBS?
+            ```
         """  # noqa: E501
         return self._prbs
 
@@ -3336,10 +3217,10 @@ class WlistSparameterCascadingAggressorItemSignal(SCPICmdWrite, SCPICmdRead):
 class WlistSparameterCascadingAggressorItemDrate(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:CASCading:AGGRessor[n]:DRATe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the specified Aggressor's data rate, in Cascading mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``WLISt:SPARameter:CASCading:AGGRessor[n]:DRATe?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3348,22 +3229,21 @@ class WlistSparameterCascadingAggressorItemDrate(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:CASCading:AGGRessor[n]:DRATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:CASCading:AGGRessor[n]:DRATe <data_rate>
         - WLISt:SPARameter:CASCading:AGGRessor[n]:DRATe?
+        ```
     """
 
 
 class WlistSparameterCascadingAggressorItemCtalk(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:CASCading:AGGRessor[n]:CTALk`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the specified Aggressor's crosstalk type, in Cascading mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``WLISt:SPARameter:CASCading:AGGRessor[n]:CTALk?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3372,22 +3252,21 @@ class WlistSparameterCascadingAggressorItemCtalk(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:CASCading:AGGRessor[n]:CTALk value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:CASCading:AGGRessor[n]:CTALk {NEXT|FEXT|BOTH}
         - WLISt:SPARameter:CASCading:AGGRessor[n]:CTALk?
+        ```
     """
 
 
 class WlistSparameterCascadingAggressorItemAmplitude(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:CASCading:AGGRessor[n]:AMPLitude`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the specified Aggressor's amplitude, in Cascading mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``WLISt:SPARameter:CASCading:AGGRessor[n]:AMPLitude?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3396,19 +3275,18 @@ class WlistSparameterCascadingAggressorItemAmplitude(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:CASCading:AGGRessor[n]:AMPLitude value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:CASCading:AGGRessor[n]:AMPLitude <amplitude>
         - WLISt:SPARameter:CASCading:AGGRessor[n]:AMPLitude?
+        ```
     """
 
 
 class WlistSparameterCascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``WLISt:SPARameter:CASCading:AGGRessor[n]`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:CASCading:AGGRessor[n]?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3441,10 +3319,10 @@ class WlistSparameterCascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdRe
     def amplitude(self) -> WlistSparameterCascadingAggressorItemAmplitude:
         """Return the ``WLISt:SPARameter:CASCading:AGGRessor[n]:AMPLitude`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the specified Aggressor's amplitude, in Cascading mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:CASCading:AGGRessor[n]:AMPLitude?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3453,12 +3331,11 @@ class WlistSparameterCascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdRe
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:CASCading:AGGRessor[n]:AMPLitude value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:CASCading:AGGRessor[n]:AMPLitude <amplitude>
             - WLISt:SPARameter:CASCading:AGGRessor[n]:AMPLitude?
+            ```
         """
         return self._amplitude
 
@@ -3466,11 +3343,11 @@ class WlistSparameterCascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdRe
     def ctalk(self) -> WlistSparameterCascadingAggressorItemCtalk:
         """Return the ``WLISt:SPARameter:CASCading:AGGRessor[n]:CTALk`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the specified Aggressor's crosstalk type, in Cascading
               mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:CASCading:AGGRessor[n]:CTALk?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3479,12 +3356,11 @@ class WlistSparameterCascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdRe
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:CASCading:AGGRessor[n]:CTALk value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:CASCading:AGGRessor[n]:CTALk {NEXT|FEXT|BOTH}
             - WLISt:SPARameter:CASCading:AGGRessor[n]:CTALk?
+            ```
         """
         return self._ctalk
 
@@ -3492,10 +3368,10 @@ class WlistSparameterCascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdRe
     def drate(self) -> WlistSparameterCascadingAggressorItemDrate:
         """Return the ``WLISt:SPARameter:CASCading:AGGRessor[n]:DRATe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the specified Aggressor's data rate, in Cascading mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:CASCading:AGGRessor[n]:DRATe?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3504,12 +3380,11 @@ class WlistSparameterCascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdRe
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:CASCading:AGGRessor[n]:DRATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:CASCading:AGGRessor[n]:DRATe <data_rate>
             - WLISt:SPARameter:CASCading:AGGRessor[n]:DRATe?
+            ```
         """
         return self._drate
 
@@ -3517,10 +3392,10 @@ class WlistSparameterCascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdRe
     def signal(self) -> WlistSparameterCascadingAggressorItemSignal:
         """Return the ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns specified Aggressor's signal type, in Cascading mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3529,12 +3404,11 @@ class WlistSparameterCascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdRe
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal {CLOCk|PRBS|FILE|SAVictim}
             - WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal?
+            ```
 
         Sub-properties:
             - ``.file``: The ``WLISt:SPARameter:CASCading:AGGRessor[n]:SIGNal:FILE`` command.
@@ -3546,12 +3420,12 @@ class WlistSparameterCascadingAggressorItem(ValidatedDynamicNumberCmd, SCPICmdRe
 class WlistSparameterCascadingAggressor2Enable(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:CASCading:AGGRessor2:ENABle`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns whether the aggressor 2 signal type state (enabled or
           disabled) in Cascading mode. Aggressor2 signals are available when the number of ports is
           set to 12.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``WLISt:SPARameter:CASCading:AGGRessor2:ENABle?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3560,19 +3434,18 @@ class WlistSparameterCascadingAggressor2Enable(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``WLISt:SPARameter:CASCading:AGGRessor2:ENABle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:CASCading:AGGRessor2:ENABle {0|1|ON|OFF}
         - WLISt:SPARameter:CASCading:AGGRessor2:ENABle?
+        ```
     """
 
 
 class WlistSparameterCascadingAggressor2(SCPICmdRead):
     """The ``WLISt:SPARameter:CASCading:AGGRessor2`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:CASCading:AGGRessor2?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3593,12 +3466,12 @@ class WlistSparameterCascadingAggressor2(SCPICmdRead):
     def enable(self) -> WlistSparameterCascadingAggressor2Enable:
         """Return the ``WLISt:SPARameter:CASCading:AGGRessor2:ENABle`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns whether the aggressor 2 signal type state (enabled or
               disabled) in Cascading mode. Aggressor2 signals are available when the number of ports
               is set to 12.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:CASCading:AGGRessor2:ENABle?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3607,12 +3480,11 @@ class WlistSparameterCascadingAggressor2(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:CASCading:AGGRessor2:ENABle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:CASCading:AGGRessor2:ENABle {0|1|ON|OFF}
             - WLISt:SPARameter:CASCading:AGGRessor2:ENABle?
+            ```
         """
         return self._enable
 
@@ -3620,7 +3492,7 @@ class WlistSparameterCascadingAggressor2(SCPICmdRead):
 class WlistSparameterCascading(SCPICmdRead):
     """The ``WLISt:SPARameter:CASCading`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:CASCading?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:CASCading?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -3657,7 +3529,7 @@ class WlistSparameterCascading(SCPICmdRead):
     def aggressor2(self) -> WlistSparameterCascadingAggressor2:
         """Return the ``WLISt:SPARameter:CASCading:AGGRessor2`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:CASCading:AGGRessor2?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3673,7 +3545,7 @@ class WlistSparameterCascading(SCPICmdRead):
     def aggressor(self) -> Dict[int, WlistSparameterCascadingAggressorItem]:
         """Return the ``WLISt:SPARameter:CASCading:AGGRessor[n]`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``WLISt:SPARameter:CASCading:AGGRessor[n]?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3692,11 +3564,11 @@ class WlistSparameterCascading(SCPICmdRead):
     def deembed(self) -> WlistSparameterCascadingDeembed:
         """Return the ``WLISt:SPARameter:CASCading:DEEMbed`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns whether the Cascading S-Parameters is to de-embed
               (invert) the S-Parameters, in Cascading mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:CASCading:DEEMbed?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3705,12 +3577,11 @@ class WlistSparameterCascading(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:CASCading:DEEMbed value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:CASCading:DEEMbed {0|1|OFF|ON}
             - WLISt:SPARameter:CASCading:DEEMbed?
+            ```
         """
         return self._deembed
 
@@ -3718,7 +3589,7 @@ class WlistSparameterCascading(SCPICmdRead):
     def stage(self) -> Dict[int, WlistSparameterCascadingStageItem]:
         """Return the ``WLISt:SPARameter:CASCading:STAGe[m]`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:CASCading:STAGe[m]?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3740,11 +3611,11 @@ class WlistSparameterCascading(SCPICmdRead):
     def stype(self) -> WlistSparameterCascadingStype:
         """Return the ``WLISt:SPARameter:CASCading:STYPe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns S-Parameter signal type (victim or aggressor), in
               Cascading mode. The number of ports must be either 8 or 12.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:CASCading:STYPe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3753,12 +3624,11 @@ class WlistSparameterCascading(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:CASCading:STYPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:CASCading:STYPe {VICTim|AGGRessor|BOTH}
             - WLISt:SPARameter:CASCading:STYPe?
+            ```
         """
         return self._stype
 
@@ -3766,10 +3636,10 @@ class WlistSparameterCascading(SCPICmdRead):
     def type(self) -> WlistSparameterCascadingType:
         """Return the ``WLISt:SPARameter:CASCading:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the S-Parameter number of ports, in Cascading mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:CASCading:TYPE?``
               query.
             - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:CASCading:TYPE?``
@@ -3777,12 +3647,11 @@ class WlistSparameterCascading(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:CASCading:TYPE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:CASCading:TYPE {1|2|4|6|8|12}
             - WLISt:SPARameter:CASCading:TYPE?
+            ```
         """
         return self._type
 
@@ -3790,47 +3659,45 @@ class WlistSparameterCascading(SCPICmdRead):
 class WlistSparameterBandwidthAuto(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:BANDwidth:AUTO`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the S-Parameter automatic bandwidth calculation setting. The
           bandwidth is defined at the point where the signal rolls off to -60 dB. If this results in
           a bandwidth greater than the instrument supports, the bandwidth is set to ½ of the
           waveform's sample rate (i.e. Nyquist Frequency).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:BANDwidth:AUTO?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:BANDwidth:AUTO?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``WLISt:SPARameter:BANDwidth:AUTO value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:BANDwidth:AUTO {0|1|OFF|ON}
         - WLISt:SPARameter:BANDwidth:AUTO?
+        ```
     """
 
 
 class WlistSparameterBandwidth(SCPICmdWrite, SCPICmdRead):
     """The ``WLISt:SPARameter:BANDwidth`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the S-Parameter bandwidth when setting manually.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter:BANDwidth?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:BANDwidth?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``WLISt:SPARameter:BANDwidth value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:BANDwidth {FULL|<bandwidth>}
         - WLISt:SPARameter:BANDwidth?
+        ```
 
     Properties:
         - ``.auto``: The ``WLISt:SPARameter:BANDwidth:AUTO`` command.
@@ -3844,13 +3711,13 @@ class WlistSparameterBandwidth(SCPICmdWrite, SCPICmdRead):
     def auto(self) -> WlistSparameterBandwidthAuto:
         """Return the ``WLISt:SPARameter:BANDwidth:AUTO`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the S-Parameter automatic bandwidth calculation setting.
               The bandwidth is defined at the point where the signal rolls off to -60 dB. If this
               results in a bandwidth greater than the instrument supports, the bandwidth is set to ½
               of the waveform's sample rate (i.e. Nyquist Frequency).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:BANDwidth:AUTO?``
               query.
             - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:BANDwidth:AUTO?``
@@ -3858,12 +3725,11 @@ class WlistSparameterBandwidth(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``WLISt:SPARameter:BANDwidth:AUTO value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:BANDwidth:AUTO {0|1|OFF|ON}
             - WLISt:SPARameter:BANDwidth:AUTO?
+            ```
         """
         return self._auto
 
@@ -3871,25 +3737,24 @@ class WlistSparameterBandwidth(SCPICmdWrite, SCPICmdRead):
 class WlistSparameterApply(SCPICmdWrite):
     """The ``WLISt:SPARameter:APPLy`` command.
 
-    **Description:**
+    Description:
         - This command applies S-Parameters to a waveform that exists in the waveform list of the
           current setup.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:SPARameter:APPLy value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SPARameter:APPLy <file_path>
+        ```
     """
 
 
 class WlistSparameter(SCPICmdRead):
     """The ``WLISt:SPARameter`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SPARameter?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -3916,19 +3781,18 @@ class WlistSparameter(SCPICmdRead):
     def apply(self) -> WlistSparameterApply:
         """Return the ``WLISt:SPARameter:APPLy`` command.
 
-        **Description:**
+        Description:
             - This command applies S-Parameters to a waveform that exists in the waveform list of
               the current setup.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:SPARameter:APPLy value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:APPLy <file_path>
+            ```
         """
         return self._apply
 
@@ -3936,22 +3800,21 @@ class WlistSparameter(SCPICmdRead):
     def bandwidth(self) -> WlistSparameterBandwidth:
         """Return the ``WLISt:SPARameter:BANDwidth`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the S-Parameter bandwidth when setting manually.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:BANDwidth?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:BANDwidth?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``WLISt:SPARameter:BANDwidth value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:BANDwidth {FULL|<bandwidth>}
             - WLISt:SPARameter:BANDwidth?
+            ```
 
         Sub-properties:
             - ``.auto``: The ``WLISt:SPARameter:BANDwidth:AUTO`` command.
@@ -3962,7 +3825,7 @@ class WlistSparameter(SCPICmdRead):
     def cascading(self) -> WlistSparameterCascading:
         """Return the ``WLISt:SPARameter:CASCading`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:CASCading?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:CASCading?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -3981,24 +3844,23 @@ class WlistSparameter(SCPICmdRead):
     def mode(self) -> WlistSparameterMode:
         """Return the ``WLISt:SPARameter:MODE`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the S-Parameter mode (Cascading or Non-Cascading).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:MODE?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:MODE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``WLISt:SPARameter:MODE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:MODE {CASC|NCAS}
             - WLISt:SPARameter:MODE?
+            ```
 
-        **Info:**
+        Info:
             - ``CASCading`` sets the S-Parameter mode to cascading. allowing you to cascade up to
               six S-parameter files and apply the characteristics on the waveform.
             - ``NCASCading`` sets the S-Parameter mode to non-cascading, allowing you to apply
@@ -4010,7 +3872,7 @@ class WlistSparameter(SCPICmdRead):
     def ncascading(self) -> WlistSparameterNcascading:
         """Return the ``WLISt:SPARameter:NCAScading`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:NCAScading?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:NCAScading?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -4035,23 +3897,22 @@ class WlistSparameter(SCPICmdRead):
     def sformat(self) -> WlistSparameterSformat:
         """Return the ``WLISt:SPARameter:SFORmat`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the currently used signal format for setting the
               S-Parameter values.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter:SFORmat?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter:SFORmat?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``WLISt:SPARameter:SFORmat value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SPARameter:SFORmat {REAL|I|Q|IQ}
             - WLISt:SPARameter:SFORmat?
+            ```
         """
         return self._sformat
 
@@ -4059,84 +3920,80 @@ class WlistSparameter(SCPICmdRead):
 class WlistSize(SCPICmdRead):
     """The ``WLISt:SIZE`` command.
 
-    **Description:**
+    Description:
         - This command returns the number of waveforms in the waveform list.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SIZE?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SIZE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SIZE?
+        ```
     """
 
 
 class WlistName(SCPICmdReadWithArguments):
     """The ``WLISt:NAME`` command.
 
-    **Description:**
+    Description:
         - This command returns the waveform name from the waveform list at the position specified by
           the index value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``WLISt:NAME? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the ``WLISt:NAME? argument`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:NAME? <Index>
+        ```
     """
 
 
 class WlistList(SCPICmdRead):
     """The ``WLISt:LIST`` command.
 
-    **Description:**
+    Description:
         - This command returns a list of all waveform names in the waveform list.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:LIST?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:LIST?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:LIST?
+        ```
     """
 
 
 class WlistLast(SCPICmdRead):
     """The ``WLISt:LAST`` command.
 
-    **Description:**
+    Description:
         - This command returns the name of the most recently added waveform in the waveform list.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:LAST?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:LAST?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:LAST?
+        ```
     """
 
 
 class Wlist(SCPICmdRead):
     """The ``WLISt`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -4163,20 +4020,19 @@ class Wlist(SCPICmdRead):
     def last(self) -> WlistLast:
         """Return the ``WLISt:LAST`` command.
 
-        **Description:**
+        Description:
             - This command returns the name of the most recently added waveform in the waveform
               list.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:LAST?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:LAST?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:LAST?
+            ```
         """
         return self._last
 
@@ -4184,19 +4040,18 @@ class Wlist(SCPICmdRead):
     def list(self) -> WlistList:
         """Return the ``WLISt:LIST`` command.
 
-        **Description:**
+        Description:
             - This command returns a list of all waveform names in the waveform list.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:LIST?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:LIST?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:LIST?
+            ```
         """
         return self._list
 
@@ -4204,20 +4059,19 @@ class Wlist(SCPICmdRead):
     def name(self) -> WlistName:
         """Return the ``WLISt:NAME`` command.
 
-        **Description:**
+        Description:
             - This command returns the waveform name from the waveform list at the position
               specified by the index value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``WLISt:NAME? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the ``WLISt:NAME? argument``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:NAME? <Index>
+            ```
         """
         return self._name
 
@@ -4225,19 +4079,18 @@ class Wlist(SCPICmdRead):
     def size(self) -> WlistSize:
         """Return the ``WLISt:SIZE`` command.
 
-        **Description:**
+        Description:
             - This command returns the number of waveforms in the waveform list.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SIZE?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:SIZE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SIZE?
+            ```
         """
         return self._size
 
@@ -4245,7 +4098,7 @@ class Wlist(SCPICmdRead):
     def sparameter(self) -> WlistSparameter:
         """Return the ``WLISt:SPARameter`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SPARameter?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:SPARameter?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -4264,7 +4117,7 @@ class Wlist(SCPICmdRead):
     def waveform(self) -> WlistWaveform:
         """Return the ``WLISt:WAVeform`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:WAVeform?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform?`` query and raise
               an AssertionError if the returned value does not match ``value``.

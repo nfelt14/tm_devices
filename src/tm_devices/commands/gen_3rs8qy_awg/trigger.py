@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - TRIGger:IMMediate {ATRigger|BTRigger}
     - TRIGger:IMPedance <impedance>[,<input_trigger>]? [<input_trigger>]
     - TRIGger:INTerval <NR3>
@@ -35,24 +33,23 @@ if TYPE_CHECKING:
 class TriggerWvalue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:WVALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the channel's output state when in the Waiting-for-trigger
           mode. This value is applied to all channels and markers.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:WVALue?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:WVALue?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:WVALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:WVALue {FIRSt}
         - TRIGger:WVALue?
+        ```
 
-    **Info:**
+    Info:
         - ``FIRSt`` specifies the first value of the waveform as the output level.
         - ``*RST`` sets this to ZERO.
     """
@@ -61,23 +58,22 @@ class TriggerWvalue(SCPICmdWrite, SCPICmdRead):
 class TriggerSource(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the trigger source.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:SOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:SOURce?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:SOURce {EXTernal|INTernal}
         - TRIGger:SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``EXTernal`` selects external trigger as the trigger source.INTernal select internal
           interval timing as the trigger source.
         - ``*RST`` sets this to EXT.
@@ -87,20 +83,19 @@ class TriggerSource(SCPICmdWrite, SCPICmdRead):
 class TriggerSlope(SCPICmdWrite):
     r"""The ``TRIGger:SLOPe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the polarity of the external trigger slope. Use this command
           to set the polarity in modes other than gated mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``TRIGger:SLOPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:SLOPe {POSitive|NEGative}[,<input_trigger>]? [<input_trigger>]
+        ```
 
-    **Info:**
+    Info:
         - ``POSitive`` specifies a trigger on the rising edge of the external trigger signal.
           NEGative specifies a trigger on the falling edge of the external trigger
           signal.``<input_trigger>`` ::= {ATRigger\|BTRigger}, defaults to ATR if not specified.
@@ -111,20 +106,19 @@ class TriggerSlope(SCPICmdWrite):
 class TriggerMode(SCPICmdWrite):
     """The ``TRIGger:MODE`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the trigger timing used when an external trigger source is
           being used.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``TRIGger:MODE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:MODE {SYNChronous|ASYNchronous}[,<input_trigger>]? <input_trigger>
+        ```
 
-    **Info:**
+    Info:
         - ``SYNChronous`` : Synchronous triggering. This is the recommended trigger type when using
           the Sync Clock Out to synchronize with external devices. ASYNchronous: Asynchronous
           triggering. This is the fastest triggering type.
@@ -135,19 +129,18 @@ class TriggerMode(SCPICmdWrite):
 class TriggerLevel(SCPICmdWrite):
     """The ``TRIGger:LEVel`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the external trigger input level (threshold).
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``TRIGger:LEVel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:LEVel <NRf>[,ATRigger|BTRigger]? [ATRigger|BTRigger]
+        ```
 
-    **Info:**
+    Info:
         - ``ATRigger`` selects trigger input A. BTRigger selects trigger input B. Defaults to ATR if
           not specified.
         - ``*RST`` sets this to 1.4 V.
@@ -157,41 +150,39 @@ class TriggerLevel(SCPICmdWrite):
 class TriggerInterval(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:INTerval`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the internal trigger interval.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:INTerval?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:INTerval?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:INTerval value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:INTerval <NR3>
         - TRIGger:INTerval?
+        ```
     """
 
 
 class TriggerImpedance(SCPICmdWrite):
     """The ``TRIGger:IMPedance`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the external trigger impedance. It applies only to the
           external trigger.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``TRIGger:IMPedance value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:IMPedance <impedance>[,<input_trigger>]? [<input_trigger>]
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 50.
     """
 
@@ -199,18 +190,17 @@ class TriggerImpedance(SCPICmdWrite):
 class TriggerImmediate(SCPICmdWrite):
     """The ``TRIGger:IMMediate`` command.
 
-    **Description:**
+    Description:
         - This command generates a trigger A or B event. If a trigger is not specified, the command
           is then equivalent to the TRG command.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``TRIGger:IMMediate value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:IMMediate {ATRigger|BTRigger}
+        ```
     """
 
 
@@ -218,7 +208,7 @@ class TriggerImmediate(SCPICmdWrite):
 class Trigger(SCPICmdRead):
     """The ``TRIGger`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -249,20 +239,19 @@ class Trigger(SCPICmdRead):
     def impedance(self) -> TriggerImpedance:
         """Return the ``TRIGger:IMPedance`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the external trigger impedance. It applies only to the
               external trigger.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``TRIGger:IMPedance value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:IMPedance <impedance>[,<input_trigger>]? [<input_trigger>]
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 50.
         """
         return self._impedance
@@ -271,21 +260,20 @@ class Trigger(SCPICmdRead):
     def interval(self) -> TriggerInterval:
         """Return the ``TRIGger:INTerval`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the internal trigger interval.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:INTerval?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:INTerval?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:INTerval value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:INTerval <NR3>
             - TRIGger:INTerval?
+            ```
         """
         return self._interval
 
@@ -293,19 +281,18 @@ class Trigger(SCPICmdRead):
     def level(self) -> TriggerLevel:
         """Return the ``TRIGger:LEVel`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the external trigger input level (threshold).
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``TRIGger:LEVel value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:LEVel <NRf>[,ATRigger|BTRigger]? [ATRigger|BTRigger]
+            ```
 
-        **Info:**
+        Info:
             - ``ATRigger`` selects trigger input A. BTRigger selects trigger input B. Defaults to
               ATR if not specified.
             - ``*RST`` sets this to 1.4 V.
@@ -316,20 +303,19 @@ class Trigger(SCPICmdRead):
     def mode(self) -> TriggerMode:
         """Return the ``TRIGger:MODE`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the trigger timing used when an external trigger source
               is being used.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``TRIGger:MODE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:MODE {SYNChronous|ASYNchronous}[,<input_trigger>]? <input_trigger>
+            ```
 
-        **Info:**
+        Info:
             - ``SYNChronous`` : Synchronous triggering. This is the recommended trigger type when
               using the Sync Clock Out to synchronize with external devices. ASYNchronous:
               Asynchronous triggering. This is the fastest triggering type.
@@ -341,20 +327,19 @@ class Trigger(SCPICmdRead):
     def slope(self) -> TriggerSlope:
         r"""Return the ``TRIGger:SLOPe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the polarity of the external trigger slope. Use this
               command to set the polarity in modes other than gated mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``TRIGger:SLOPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:SLOPe {POSitive|NEGative}[,<input_trigger>]? [<input_trigger>]
+            ```
 
-        **Info:**
+        Info:
             - ``POSitive`` specifies a trigger on the rising edge of the external trigger signal.
               NEGative specifies a trigger on the falling edge of the external trigger
               signal.``<input_trigger>`` ::= {ATRigger\|BTRigger}, defaults to ATR if not specified.
@@ -366,23 +351,22 @@ class Trigger(SCPICmdRead):
     def source(self) -> TriggerSource:
         """Return the ``TRIGger:SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the trigger source.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:SOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:SOURce?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:SOURce {EXTernal|INTernal}
             - TRIGger:SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``EXTernal`` selects external trigger as the trigger source.INTernal select internal
               interval timing as the trigger source.
             - ``*RST`` sets this to EXT.
@@ -393,24 +377,23 @@ class Trigger(SCPICmdRead):
     def wvalue(self) -> TriggerWvalue:
         """Return the ``TRIGger:WVALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the channel's output state when in the
               Waiting-for-trigger mode. This value is applied to all channels and markers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:WVALue?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:WVALue?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:WVALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:WVALue {FIRSt}
             - TRIGger:WVALue?
+            ```
 
-        **Info:**
+        Info:
             - ``FIRSt`` specifies the first value of the waveform as the output level.
             - ``*RST`` sets this to ZERO.
         """
@@ -420,17 +403,16 @@ class Trigger(SCPICmdRead):
     def immediate(self) -> TriggerImmediate:
         """Return the ``TRIGger:IMMediate`` command.
 
-        **Description:**
+        Description:
             - This command generates a trigger A or B event. If a trigger is not specified, the
               command is then equivalent to the TRG command.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``TRIGger:IMMediate value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:IMMediate {ATRigger|BTRigger}
+            ```
         """
         return self._immediate

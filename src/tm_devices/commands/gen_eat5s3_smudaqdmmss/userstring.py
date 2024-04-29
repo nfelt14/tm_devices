@@ -12,8 +12,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - userstring.add()
     - userstring.delete()
     - userstring.get()
@@ -30,7 +28,7 @@ if TYPE_CHECKING:
 class Userstring(BaseTSPCmd):
     """The ``userstring`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.add()``: The ``userstring.add()`` function.
         - ``.delete()``: The ``userstring.delete()`` function.
         - ``.get()``: The ``userstring.get()`` function.
@@ -44,14 +42,13 @@ class Userstring(BaseTSPCmd):
     def add(self, name: str, value: str) -> None:
         """Run the ``userstring.add()`` function.
 
-        **Description:**
+        Description:
             - This function adds a user-defined string to nonvolatile memory.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - userstring.add()
+            ```
 
         Args:
             name: The name of the string; the key of the key-value pair.
@@ -71,14 +68,13 @@ class Userstring(BaseTSPCmd):
     def delete(self, name: str) -> None:
         """Run the ``userstring.delete()`` function.
 
-        **Description:**
+        Description:
             - This function deletes a user-defined string from nonvolatile memory.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - userstring.delete()
+            ```
 
         Args:
             name: The name (key) of the key-value pair of the user-defined string to delete.
@@ -97,14 +93,13 @@ class Userstring(BaseTSPCmd):
     def get(self, name: str) -> str:
         """Run the ``userstring.get()`` function.
 
-        **Description:**
+        Description:
             - This function retrieves a user-defined string from nonvolatile memory.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - userstring.get()
+            ```
 
         Args:
             name: The name (key) of the user-defined string.

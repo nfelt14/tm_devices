@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - USBDevice:CONFigure {DISabled|USBTmc}
     - USBDevice:CONFigure?
 """
@@ -26,27 +24,26 @@ if TYPE_CHECKING:
 class UsbdeviceConfigure(SCPICmdWrite, SCPICmdRead):
     """The ``USBDevice:CONFigure`` command.
 
-    **Description:**
+    Description:
         - This command may be used to configure the rear USB port to be off or enabled as a USBTMC
           device. Users should be cautious using this command via the USBTMC interface as a change
           to the configuration of this interface from a USBTMC device will cause USBTMC
           communication to cease. It is intended to be used via the Ethernet interface to control
           the USB device interface.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``USBDevice:CONFigure?`` query.
         - Using the ``.verify(value)`` method will send the ``USBDevice:CONFigure?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``USBDevice:CONFigure value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - USBDevice:CONFigure {DISabled|USBTmc}
         - USBDevice:CONFigure?
+        ```
 
-    **Info:**
+    Info:
         - ``DISabled`` will disable the rear USB port.
         - ``USBTmc`` enables the rear USB port.
     """
@@ -55,7 +52,7 @@ class UsbdeviceConfigure(SCPICmdWrite, SCPICmdRead):
 class Usbdevice(SCPICmdRead):
     """The ``USBDevice`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``USBDevice?`` query.
         - Using the ``.verify(value)`` method will send the ``USBDevice?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -72,28 +69,27 @@ class Usbdevice(SCPICmdRead):
     def configure(self) -> UsbdeviceConfigure:
         """Return the ``USBDevice:CONFigure`` command.
 
-        **Description:**
+        Description:
             - This command may be used to configure the rear USB port to be off or enabled as a
               USBTMC device. Users should be cautious using this command via the USBTMC interface as
               a change to the configuration of this interface from a USBTMC device will cause USBTMC
               communication to cease. It is intended to be used via the Ethernet interface to
               control the USB device interface.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``USBDevice:CONFigure?`` query.
             - Using the ``.verify(value)`` method will send the ``USBDevice:CONFigure?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``USBDevice:CONFigure value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - USBDevice:CONFigure {DISabled|USBTmc}
             - USBDevice:CONFigure?
+            ```
 
-        **Info:**
+        Info:
             - ``DISabled`` will disable the rear USB port.
             - ``USBTmc`` enables the rear USB port.
         """

@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - PEAKSTABle:ADDNew <QString>
     - PEAKSTABle:DELete <QString>
     - PEAKSTABle:LIST?
@@ -34,24 +32,23 @@ if TYPE_CHECKING:
 class PeakstableTableItemFresolution(SCPICmdWrite, SCPICmdRead):
     """The ``PEAKSTABle:TABle<x>:FRESolution`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the Frequency Resolution state for peak markers table.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PEAKSTABle:TABle<x>:FRESolution?`` query.
         - Using the ``.verify(value)`` method will send the ``PEAKSTABle:TABle<x>:FRESolution?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``PEAKSTABle:TABle<x>:FRESolution value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PEAKSTABle:TABle<x>:FRESolution {AUTO|PRECISE}
         - PEAKSTABle:TABle<x>:FRESolution?
+        ```
 
-    **Info:**
+    Info:
         - ``AUTO`` shows the frequency with the same precision as shown in the Spectrum View
           display.
         - ``PRECISE`` shows the frequency down to single Hz resolution.
@@ -61,7 +58,7 @@ class PeakstableTableItemFresolution(SCPICmdWrite, SCPICmdRead):
 class PeakstableTableItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``PEAKSTABle:TABle<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PEAKSTABle:TABle<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``PEAKSTABle:TABle<x>?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -80,10 +77,10 @@ class PeakstableTableItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def fresolution(self) -> PeakstableTableItemFresolution:
         """Return the ``PEAKSTABle:TABle<x>:FRESolution`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Frequency Resolution state for peak markers table.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PEAKSTABle:TABle<x>:FRESolution?``
               query.
             - Using the ``.verify(value)`` method will send the ``PEAKSTABle:TABle<x>:FRESolution?``
@@ -91,14 +88,13 @@ class PeakstableTableItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``PEAKSTABle:TABle<x>:FRESolution value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PEAKSTABle:TABle<x>:FRESolution {AUTO|PRECISE}
             - PEAKSTABle:TABle<x>:FRESolution?
+            ```
 
-        **Info:**
+        Info:
             - ``AUTO`` shows the frequency with the same precision as shown in the Spectrum View
               display.
             - ``PRECISE`` shows the frequency down to single Hz resolution.
@@ -109,38 +105,36 @@ class PeakstableTableItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class PeakstableList(SCPICmdRead):
     """The ``PEAKSTABle:LIST`` command.
 
-    **Description:**
+    Description:
         - This command deletes the specified peak markers table.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PEAKSTABle:LIST?`` query.
         - Using the ``.verify(value)`` method will send the ``PEAKSTABle:LIST?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PEAKSTABle:LIST?
+        ```
     """
 
 
 class PeakstableDelete(SCPICmdWrite):
     """The ``PEAKSTABle:DELete`` command.
 
-    **Description:**
+    Description:
         - This command deletes the specified peak markers table.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``PEAKSTABle:DELete value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PEAKSTABle:DELete <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string that is the name of the peak markers table to delete. The
           argument is of the form 'TABLE<NR1>', where <NR1> ≥ 1.
     """
@@ -151,19 +145,18 @@ class PeakstableDelete(SCPICmdWrite):
 class PeakstableAddnew(SCPICmdWrite):
     """The ``PEAKSTABle:ADDNew`` command.
 
-    **Description:**
+    Description:
         - This command adds the specified peak markers table.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``PEAKSTABle:ADDNew value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PEAKSTABle:ADDNew <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string that is the name of the new peak markers table. The
           argument is of the form 'TABLE<NR1>', where <NR1> ≥ 1.
     """
@@ -174,7 +167,7 @@ class PeakstableAddnew(SCPICmdWrite):
 class Peakstable(SCPICmdRead):
     """The ``PEAKSTABle`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PEAKSTABle?`` query.
         - Using the ``.verify(value)`` method will send the ``PEAKSTABle?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -199,19 +192,18 @@ class Peakstable(SCPICmdRead):
     def addnew(self) -> PeakstableAddnew:
         """Return the ``PEAKSTABle:ADDNew`` command.
 
-        **Description:**
+        Description:
             - This command adds the specified peak markers table.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``PEAKSTABle:ADDNew value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PEAKSTABle:ADDNew <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string that is the name of the new peak markers table. The
               argument is of the form 'TABLE<NR1>', where <NR1> ≥ 1.
         """
@@ -221,19 +213,18 @@ class Peakstable(SCPICmdRead):
     def delete(self) -> PeakstableDelete:
         """Return the ``PEAKSTABle:DELete`` command.
 
-        **Description:**
+        Description:
             - This command deletes the specified peak markers table.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``PEAKSTABle:DELete value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PEAKSTABle:DELete <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string that is the name of the peak markers table to delete.
               The argument is of the form 'TABLE<NR1>', where <NR1> ≥ 1.
         """
@@ -243,19 +234,18 @@ class Peakstable(SCPICmdRead):
     def list(self) -> PeakstableList:
         """Return the ``PEAKSTABle:LIST`` command.
 
-        **Description:**
+        Description:
             - This command deletes the specified peak markers table.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PEAKSTABle:LIST?`` query.
             - Using the ``.verify(value)`` method will send the ``PEAKSTABle:LIST?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PEAKSTABle:LIST?
+            ```
         """
         return self._list
 
@@ -263,7 +253,7 @@ class Peakstable(SCPICmdRead):
     def table(self) -> Dict[int, PeakstableTableItem]:
         """Return the ``PEAKSTABle:TABle<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PEAKSTABle:TABle<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``PEAKSTABle:TABle<x>?`` query and
               raise an AssertionError if the returned value does not match ``value``.

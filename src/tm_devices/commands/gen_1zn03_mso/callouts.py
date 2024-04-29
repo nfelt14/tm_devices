@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CALLOUTS:ADDNew <QString>
     - CALLOUTS:CALLOUT<x>:BOOKMark:SOURCE {CH<x>}
     - CALLOUTS:CALLOUT<x>:BOOKMark:SOURCE?
@@ -55,19 +53,18 @@ if TYPE_CHECKING:
 class CalloutsDelete(SCPICmdWrite):
     """The ``CALLOUTS:DELete`` command.
 
-    **Description:**
+    Description:
         - This command deletes the specified callout. A Note is the default callout type.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CALLOUTS:DELete value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALLOUTS:DELete <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the callout. The argument is of the form 'CALLOUT<NR1>', where
           <NR1> is a number value ≥ 1.
     """
@@ -78,24 +75,23 @@ class CalloutsDelete(SCPICmdWrite):
 class CalloutsCalloutItemType(SCPICmdWrite, SCPICmdRead):
     """The ``CALLOUTS:CALLOUT<x>:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries type of the callout.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:TYPE?`` query.
         - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:TYPE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CALLOUTS:CALLOUT<x>:TYPE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALLOUTS:CALLOUT<x>:TYPE {NOTE|ARROW|RECTANGLE|BOOKMARK}
         - CALLOUTS:CALLOUT<x>:TYPE?
+        ```
 
-    **Info:**
+    Info:
         - ``NOTE`` specifies callout type as note.
         - ``ARROW`` specifies callout type as arrow.
         - ``RECTANGLE`` specifies callout type as rectangle.
@@ -106,24 +102,23 @@ class CalloutsCalloutItemType(SCPICmdWrite, SCPICmdRead):
 class CalloutsCalloutItemText(SCPICmdWrite, SCPICmdRead):
     """The ``CALLOUTS:CALLOUT<x>:TEXT`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the callout text.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:TEXT?`` query.
         - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:TEXT?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CALLOUTS:CALLOUT<x>:TEXT value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALLOUTS:CALLOUT<x>:TEXT <QString>
         - CALLOUTS:CALLOUT<x>:TEXT?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the callout text.
     """
 
@@ -133,24 +128,23 @@ class CalloutsCalloutItemText(SCPICmdWrite, SCPICmdRead):
 class CalloutsCalloutItemFontUnderline(SCPICmdWrite, SCPICmdRead):
     """The ``CALLOUTS:CALLOUT<x>:FONT:UNDERLine`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the underline state of the callout text.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:UNDERLine?`` query.
         - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:UNDERLine?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``CALLOUTS:CALLOUT<x>:FONT:UNDERLine value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALLOUTS:CALLOUT<x>:FONT:UNDERLine {1|0}
         - CALLOUTS:CALLOUT<x>:FONT:UNDERLine?
+        ```
 
-    **Info:**
+    Info:
         - ``1`` underlines the callout text.
         - ``0`` does not underline the callout text.
     """
@@ -159,24 +153,23 @@ class CalloutsCalloutItemFontUnderline(SCPICmdWrite, SCPICmdRead):
 class CalloutsCalloutItemFontType(SCPICmdWrite, SCPICmdRead):
     """The ``CALLOUTS:CALLOUT<x>:FONT:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries type of the callout.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:TYPE?`` query.
         - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:TYPE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:TYPE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALLOUTS:CALLOUT<x>:FONT:TYPE <QString>
         - CALLOUTS:CALLOUT<x>:FONT:TYPE?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the type of font for the callout text. The available font types
           include: DejaVu Sans, DejaVu Sans Mono, DejaVu Serif, Frutiger LT Std, Monospace, Sans
           Serif, Serif, Ubuntu, Ubuntu Condensed, and Ubuntu Mono.
@@ -188,24 +181,23 @@ class CalloutsCalloutItemFontType(SCPICmdWrite, SCPICmdRead):
 class CalloutsCalloutItemFontSize(SCPICmdWrite, SCPICmdRead):
     """The ``CALLOUTS:CALLOUT<x>:FONT:SIZE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the font size of the callout text.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:SIZE?`` query.
         - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:SIZE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:SIZE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALLOUTS:CALLOUT<x>:FONT:SIZE <NR1>
         - CALLOUTS:CALLOUT<x>:FONT:SIZE?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the font size in points.
     """
 
@@ -213,24 +205,23 @@ class CalloutsCalloutItemFontSize(SCPICmdWrite, SCPICmdRead):
 class CalloutsCalloutItemFontItalic(SCPICmdWrite, SCPICmdRead):
     """The ``CALLOUTS:CALLOUT<x>:FONT:ITALIC`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the italic state of the callout text.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:ITALIC?`` query.
         - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:ITALIC?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:ITALIC value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALLOUTS:CALLOUT<x>:FONT:ITALIC {1|0}
         - CALLOUTS:CALLOUT<x>:FONT:ITALIC?
+        ```
 
-    **Info:**
+    Info:
         - ``1`` specifies the callout font style as italic.
         - ``0`` does not specify the font style as italic.
     """
@@ -239,24 +230,23 @@ class CalloutsCalloutItemFontItalic(SCPICmdWrite, SCPICmdRead):
 class CalloutsCalloutItemFontBold(SCPICmdWrite, SCPICmdRead):
     """The ``CALLOUTS:CALLOUT<x>:FONT:BOLD`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the bold state of the callout text.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:BOLD?`` query.
         - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:BOLD?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:BOLD value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALLOUTS:CALLOUT<x>:FONT:BOLD {1|0}
         - CALLOUTS:CALLOUT<x>:FONT:BOLD?
+        ```
 
-    **Info:**
+    Info:
         - ``1`` specifies the callout font weight as bold.
         - ``0`` specifies the callout font weight as normal.
     """
@@ -265,7 +255,7 @@ class CalloutsCalloutItemFontBold(SCPICmdWrite, SCPICmdRead):
 class CalloutsCalloutItemFont(SCPICmdRead):
     """The ``CALLOUTS:CALLOUT<x>:FONT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:FONT?`` query.
         - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:FONT?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -290,24 +280,23 @@ class CalloutsCalloutItemFont(SCPICmdRead):
     def bold(self) -> CalloutsCalloutItemFontBold:
         """Return the ``CALLOUTS:CALLOUT<x>:FONT:BOLD`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the bold state of the callout text.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:BOLD?`` query.
             - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:BOLD?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``CALLOUTS:CALLOUT<x>:FONT:BOLD value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALLOUTS:CALLOUT<x>:FONT:BOLD {1|0}
             - CALLOUTS:CALLOUT<x>:FONT:BOLD?
+            ```
 
-        **Info:**
+        Info:
             - ``1`` specifies the callout font weight as bold.
             - ``0`` specifies the callout font weight as normal.
         """
@@ -317,10 +306,10 @@ class CalloutsCalloutItemFont(SCPICmdRead):
     def italic(self) -> CalloutsCalloutItemFontItalic:
         """Return the ``CALLOUTS:CALLOUT<x>:FONT:ITALIC`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the italic state of the callout text.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:ITALIC?``
               query.
             - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:ITALIC?``
@@ -328,14 +317,13 @@ class CalloutsCalloutItemFont(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``CALLOUTS:CALLOUT<x>:FONT:ITALIC value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALLOUTS:CALLOUT<x>:FONT:ITALIC {1|0}
             - CALLOUTS:CALLOUT<x>:FONT:ITALIC?
+            ```
 
-        **Info:**
+        Info:
             - ``1`` specifies the callout font style as italic.
             - ``0`` does not specify the font style as italic.
         """
@@ -345,24 +333,23 @@ class CalloutsCalloutItemFont(SCPICmdRead):
     def size(self) -> CalloutsCalloutItemFontSize:
         """Return the ``CALLOUTS:CALLOUT<x>:FONT:SIZE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the font size of the callout text.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:SIZE?`` query.
             - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:SIZE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``CALLOUTS:CALLOUT<x>:FONT:SIZE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALLOUTS:CALLOUT<x>:FONT:SIZE <NR1>
             - CALLOUTS:CALLOUT<x>:FONT:SIZE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the font size in points.
         """
         return self._size
@@ -371,24 +358,23 @@ class CalloutsCalloutItemFont(SCPICmdRead):
     def type(self) -> CalloutsCalloutItemFontType:
         """Return the ``CALLOUTS:CALLOUT<x>:FONT:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries type of the callout.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:TYPE?`` query.
             - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:TYPE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``CALLOUTS:CALLOUT<x>:FONT:TYPE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALLOUTS:CALLOUT<x>:FONT:TYPE <QString>
             - CALLOUTS:CALLOUT<x>:FONT:TYPE?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the type of font for the callout text. The available font
               types include: DejaVu Sans, DejaVu Sans Mono, DejaVu Serif, Frutiger LT Std,
               Monospace, Sans Serif, Serif, Ubuntu, Ubuntu Condensed, and Ubuntu Mono.
@@ -399,10 +385,10 @@ class CalloutsCalloutItemFont(SCPICmdRead):
     def underline(self) -> CalloutsCalloutItemFontUnderline:
         """Return the ``CALLOUTS:CALLOUT<x>:FONT:UNDERLine`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the underline state of the callout text.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:FONT:UNDERLine?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -411,14 +397,13 @@ class CalloutsCalloutItemFont(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``CALLOUTS:CALLOUT<x>:FONT:UNDERLine value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALLOUTS:CALLOUT<x>:FONT:UNDERLine {1|0}
             - CALLOUTS:CALLOUT<x>:FONT:UNDERLine?
+            ```
 
-        **Info:**
+        Info:
             - ``1`` underlines the callout text.
             - ``0`` does not underline the callout text.
         """
@@ -428,10 +413,10 @@ class CalloutsCalloutItemFont(SCPICmdRead):
 class CalloutsCalloutItemDisplaypositionY(SCPICmdWrite, SCPICmdRead):
     """The ``CALLOUTS:CALLOUT<x>:DISPLAYPOSition:Y`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries vertical display position of the callout text.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:DISPLAYPOSition:Y?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -440,14 +425,13 @@ class CalloutsCalloutItemDisplaypositionY(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``CALLOUTS:CALLOUT<x>:DISPLAYPOSition:Y value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALLOUTS:CALLOUT<x>:DISPLAYPOSition:Y <NR1>
         - CALLOUTS:CALLOUT<x>:DISPLAYPOSition:Y?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the callout vertical display position.
     """
 
@@ -455,10 +439,10 @@ class CalloutsCalloutItemDisplaypositionY(SCPICmdWrite, SCPICmdRead):
 class CalloutsCalloutItemDisplaypositionX(SCPICmdWrite, SCPICmdRead):
     """The ``CALLOUTS:CALLOUT<x>:DISPLAYPOSition:X`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries horizontal display position of the callout text.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:DISPLAYPOSition:X?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -467,14 +451,13 @@ class CalloutsCalloutItemDisplaypositionX(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``CALLOUTS:CALLOUT<x>:DISPLAYPOSition:X value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALLOUTS:CALLOUT<x>:DISPLAYPOSition:X <NR1>
         - CALLOUTS:CALLOUT<x>:DISPLAYPOSition:X?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the callout horizontal display position.
     """
 
@@ -482,7 +465,7 @@ class CalloutsCalloutItemDisplaypositionX(SCPICmdWrite, SCPICmdRead):
 class CalloutsCalloutItemDisplayposition(SCPICmdRead):
     """The ``CALLOUTS:CALLOUT<x>:DISPLAYPOSition`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:DISPLAYPOSition?``
           query.
         - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:DISPLAYPOSition?``
@@ -502,10 +485,10 @@ class CalloutsCalloutItemDisplayposition(SCPICmdRead):
     def x(self) -> CalloutsCalloutItemDisplaypositionX:
         """Return the ``CALLOUTS:CALLOUT<x>:DISPLAYPOSition:X`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries horizontal display position of the callout text.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:DISPLAYPOSition:X?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -514,14 +497,13 @@ class CalloutsCalloutItemDisplayposition(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``CALLOUTS:CALLOUT<x>:DISPLAYPOSition:X value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALLOUTS:CALLOUT<x>:DISPLAYPOSition:X <NR1>
             - CALLOUTS:CALLOUT<x>:DISPLAYPOSition:X?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the callout horizontal display position.
         """
         return self._x
@@ -530,10 +512,10 @@ class CalloutsCalloutItemDisplayposition(SCPICmdRead):
     def y(self) -> CalloutsCalloutItemDisplaypositionY:
         """Return the ``CALLOUTS:CALLOUT<x>:DISPLAYPOSition:Y`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries vertical display position of the callout text.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:DISPLAYPOSition:Y?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -542,14 +524,13 @@ class CalloutsCalloutItemDisplayposition(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``CALLOUTS:CALLOUT<x>:DISPLAYPOSition:Y value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALLOUTS:CALLOUT<x>:DISPLAYPOSition:Y <NR1>
             - CALLOUTS:CALLOUT<x>:DISPLAYPOSition:Y?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the callout vertical display position.
         """
         return self._y
@@ -558,24 +539,23 @@ class CalloutsCalloutItemDisplayposition(SCPICmdRead):
 class CalloutsCalloutItemColor(SCPICmdWrite, SCPICmdRead):
     """The ``CALLOUTS:CALLOUT<x>:COLOR`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the text color of the callout.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:COLOR?`` query.
         - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:COLOR?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CALLOUTS:CALLOUT<x>:COLOR value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALLOUTS:CALLOUT<x>:COLOR <QString>
         - CALLOUTS:CALLOUT<x>:COLOR?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the callout text color using hexadecimal color values.
     """
 
@@ -585,24 +565,23 @@ class CalloutsCalloutItemColor(SCPICmdWrite, SCPICmdRead):
 class CalloutsCalloutItemBookmarkXpos(SCPICmdWrite, SCPICmdRead):
     """The ``CALLOUTS:CALLOUT<x>:BOOKMark:XPOS`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the X-Position of the Bookmark callout type.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:BOOKMark:XPOS?`` query.
         - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:BOOKMark:XPOS?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``CALLOUTS:CALLOUT<x>:BOOKMark:XPOS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALLOUTS:CALLOUT<x>:BOOKMark:XPOS <NR1>
         - CALLOUTS:CALLOUT<x>:BOOKMark:XPOS?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the location of the bookmark linked to the source waveform in X-axis.
     """
 
@@ -610,10 +589,10 @@ class CalloutsCalloutItemBookmarkXpos(SCPICmdWrite, SCPICmdRead):
 class CalloutsCalloutItemBookmarkSource(SCPICmdWrite, SCPICmdRead):
     """The ``CALLOUTS:CALLOUT<x>:BOOKMark:SOURCE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the source of the Bookmark callout type.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:BOOKMark:SOURCE?``
           query.
         - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:BOOKMark:SOURCE?``
@@ -621,14 +600,13 @@ class CalloutsCalloutItemBookmarkSource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``CALLOUTS:CALLOUT<x>:BOOKMark:SOURCE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALLOUTS:CALLOUT<x>:BOOKMark:SOURCE {CH<x>}
         - CALLOUTS:CALLOUT<x>:BOOKMark:SOURCE?
+        ```
 
-    **Info:**
+    Info:
         - ``CH1`` specifies the bookmark callout source as Ch1.
         - ``CH2`` specifies the bookmark callout source as Ch2.
         - ``CH3`` specifies the bookmark callout source as Ch3.
@@ -639,7 +617,7 @@ class CalloutsCalloutItemBookmarkSource(SCPICmdWrite, SCPICmdRead):
 class CalloutsCalloutItemBookmark(SCPICmdRead):
     """The ``CALLOUTS:CALLOUT<x>:BOOKMark`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:BOOKMark?`` query.
         - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:BOOKMark?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -658,10 +636,10 @@ class CalloutsCalloutItemBookmark(SCPICmdRead):
     def source(self) -> CalloutsCalloutItemBookmarkSource:
         """Return the ``CALLOUTS:CALLOUT<x>:BOOKMark:SOURCE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the source of the Bookmark callout type.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:BOOKMark:SOURCE?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -670,14 +648,13 @@ class CalloutsCalloutItemBookmark(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``CALLOUTS:CALLOUT<x>:BOOKMark:SOURCE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALLOUTS:CALLOUT<x>:BOOKMark:SOURCE {CH<x>}
             - CALLOUTS:CALLOUT<x>:BOOKMark:SOURCE?
+            ```
 
-        **Info:**
+        Info:
             - ``CH1`` specifies the bookmark callout source as Ch1.
             - ``CH2`` specifies the bookmark callout source as Ch2.
             - ``CH3`` specifies the bookmark callout source as Ch3.
@@ -689,10 +666,10 @@ class CalloutsCalloutItemBookmark(SCPICmdRead):
     def xpos(self) -> CalloutsCalloutItemBookmarkXpos:
         """Return the ``CALLOUTS:CALLOUT<x>:BOOKMark:XPOS`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the X-Position of the Bookmark callout type.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:BOOKMark:XPOS?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -701,14 +678,13 @@ class CalloutsCalloutItemBookmark(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``CALLOUTS:CALLOUT<x>:BOOKMark:XPOS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALLOUTS:CALLOUT<x>:BOOKMark:XPOS <NR1>
             - CALLOUTS:CALLOUT<x>:BOOKMark:XPOS?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the location of the bookmark linked to the source waveform in
               X-axis.
         """
@@ -718,7 +694,7 @@ class CalloutsCalloutItemBookmark(SCPICmdRead):
 class CalloutsCalloutItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``CALLOUTS:CALLOUT<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -747,7 +723,7 @@ class CalloutsCalloutItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def bookmark(self) -> CalloutsCalloutItemBookmark:
         """Return the ``CALLOUTS:CALLOUT<x>:BOOKMark`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:BOOKMark?`` query.
             - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:BOOKMark?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -762,24 +738,23 @@ class CalloutsCalloutItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def color(self) -> CalloutsCalloutItemColor:
         """Return the ``CALLOUTS:CALLOUT<x>:COLOR`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the text color of the callout.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:COLOR?`` query.
             - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:COLOR?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CALLOUTS:CALLOUT<x>:COLOR value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALLOUTS:CALLOUT<x>:COLOR <QString>
             - CALLOUTS:CALLOUT<x>:COLOR?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the callout text color using hexadecimal color values.
         """
         return self._color
@@ -788,7 +763,7 @@ class CalloutsCalloutItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def displayposition(self) -> CalloutsCalloutItemDisplayposition:
         """Return the ``CALLOUTS:CALLOUT<x>:DISPLAYPOSition`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:DISPLAYPOSition?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -805,7 +780,7 @@ class CalloutsCalloutItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def font(self) -> CalloutsCalloutItemFont:
         """Return the ``CALLOUTS:CALLOUT<x>:FONT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:FONT?`` query.
             - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:FONT?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -823,24 +798,23 @@ class CalloutsCalloutItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def text(self) -> CalloutsCalloutItemText:
         """Return the ``CALLOUTS:CALLOUT<x>:TEXT`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the callout text.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:TEXT?`` query.
             - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:TEXT?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CALLOUTS:CALLOUT<x>:TEXT value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALLOUTS:CALLOUT<x>:TEXT <QString>
             - CALLOUTS:CALLOUT<x>:TEXT?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the callout text.
         """
         return self._text
@@ -849,24 +823,23 @@ class CalloutsCalloutItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def type(self) -> CalloutsCalloutItemType:
         """Return the ``CALLOUTS:CALLOUT<x>:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries type of the callout.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>:TYPE?`` query.
             - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>:TYPE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CALLOUTS:CALLOUT<x>:TYPE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALLOUTS:CALLOUT<x>:TYPE {NOTE|ARROW|RECTANGLE|BOOKMARK}
             - CALLOUTS:CALLOUT<x>:TYPE?
+            ```
 
-        **Info:**
+        Info:
             - ``NOTE`` specifies callout type as note.
             - ``ARROW`` specifies callout type as arrow.
             - ``RECTANGLE`` specifies callout type as rectangle.
@@ -878,19 +851,18 @@ class CalloutsCalloutItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class CalloutsAddnew(SCPICmdWrite):
     """The ``CALLOUTS:ADDNew`` command.
 
-    **Description:**
+    Description:
         - This command adds the specified callout. A Note is the default callout type.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CALLOUTS:ADDNew value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALLOUTS:ADDNew <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the callout. The argument is of the form 'CALLOUT<NR1>', where
           <NR1> is a number value ≥ 1.
     """
@@ -901,7 +873,7 @@ class CalloutsAddnew(SCPICmdWrite):
 class Callouts(SCPICmdRead):
     """The ``CALLOUTS`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALLOUTS?`` query.
         - Using the ``.verify(value)`` method will send the ``CALLOUTS?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -924,19 +896,18 @@ class Callouts(SCPICmdRead):
     def addnew(self) -> CalloutsAddnew:
         """Return the ``CALLOUTS:ADDNew`` command.
 
-        **Description:**
+        Description:
             - This command adds the specified callout. A Note is the default callout type.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CALLOUTS:ADDNew value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALLOUTS:ADDNew <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the callout. The argument is of the form 'CALLOUT<NR1>', where
               <NR1> is a number value ≥ 1.
         """
@@ -946,7 +917,7 @@ class Callouts(SCPICmdRead):
     def callout(self) -> Dict[int, CalloutsCalloutItem]:
         """Return the ``CALLOUTS:CALLOUT<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALLOUTS:CALLOUT<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``CALLOUTS:CALLOUT<x>?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -965,19 +936,18 @@ class Callouts(SCPICmdRead):
     def delete(self) -> CalloutsDelete:
         """Return the ``CALLOUTS:DELete`` command.
 
-        **Description:**
+        Description:
             - This command deletes the specified callout. A Note is the default callout type.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CALLOUTS:DELete value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALLOUTS:DELete <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the callout. The argument is of the form 'CALLOUT<NR1>', where
               <NR1> is a number value ≥ 1.
         """

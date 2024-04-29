@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - STATus:OPERation:CONDition?
     - STATus:OPERation:ENABle <NR1>
     - STATus:OPERation:ENABle?
@@ -41,116 +39,111 @@ if TYPE_CHECKING:
 class StatusQuestionablePtransition(SCPICmdWrite, SCPICmdRead):
     """The ``STATus:QUEStionable:PTRansition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the positive transition filter value of the Questionable
           Transition Register (QTR). Refer to the Status and event reporting system section for
           additional information.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``STATus:QUEStionable:PTRansition?`` query.
         - Using the ``.verify(value)`` method will send the ``STATus:QUEStionable:PTRansition?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``STATus:QUEStionable:PTRansition value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - STATus:QUEStionable:PTRansition <bit_value>
         - STATus:QUEStionable:PTRansition?
+        ```
     """
 
 
 class StatusQuestionableNtransition(SCPICmdWrite, SCPICmdRead):
     """The ``STATus:QUEStionable:NTRansition`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the negative transition filter value of the Questionable
           Transition Register (QTR). Refer to the Status and event reporting system section for
           additional information.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``STATus:QUEStionable:NTRansition?`` query.
         - Using the ``.verify(value)`` method will send the ``STATus:QUEStionable:NTRansition?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``STATus:QUEStionable:NTRansition value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - STATus:QUEStionable:NTRansition <bit_value>
         - STATus:QUEStionable:NTRansition?
+        ```
     """
 
 
 class StatusQuestionableEvent(SCPICmdRead):
     """The ``STATus:QUEStionable:EVENt`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the value in the Questionable Event Register and clears
           the Questionable Event Register.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``STATus:QUEStionable:EVENt?`` query.
         - Using the ``.verify(value)`` method will send the ``STATus:QUEStionable:EVENt?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - STATus:QUEStionable:EVENt?
+        ```
     """
 
 
 class StatusQuestionableEnable(SCPICmdWrite, SCPICmdRead):
     """The ``STATus:QUEStionable:ENABle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the mask for the Questionable Enable Register.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``STATus:QUEStionable:ENABle?`` query.
         - Using the ``.verify(value)`` method will send the ``STATus:QUEStionable:ENABle?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``STATus:QUEStionable:ENABle value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - STATus:QUEStionable:ENABle <bit_value>
         - STATus:QUEStionable:ENABle?
+        ```
     """
 
 
 class StatusQuestionableCondition(SCPICmdRead):
     """The ``STATus:QUEStionable:CONDition`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the contents of the Questionable Condition Register.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``STATus:QUEStionable:CONDition?`` query.
         - Using the ``.verify(value)`` method will send the ``STATus:QUEStionable:CONDition?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - STATus:QUEStionable:CONDition?
+        ```
     """
 
 
 class StatusQuestionable(SCPICmdRead):
     """The ``STATus:QUEStionable`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``STATus:QUEStionable?`` query.
         - Using the ``.verify(value)`` method will send the ``STATus:QUEStionable?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -175,19 +168,18 @@ class StatusQuestionable(SCPICmdRead):
     def condition(self) -> StatusQuestionableCondition:
         """Return the ``STATus:QUEStionable:CONDition`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the contents of the Questionable Condition Register.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``STATus:QUEStionable:CONDition?`` query.
             - Using the ``.verify(value)`` method will send the ``STATus:QUEStionable:CONDition?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - STATus:QUEStionable:CONDition?
+            ```
         """
         return self._condition
 
@@ -195,22 +187,21 @@ class StatusQuestionable(SCPICmdRead):
     def enable(self) -> StatusQuestionableEnable:
         """Return the ``STATus:QUEStionable:ENABle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the mask for the Questionable Enable Register.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``STATus:QUEStionable:ENABle?`` query.
             - Using the ``.verify(value)`` method will send the ``STATus:QUEStionable:ENABle?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``STATus:QUEStionable:ENABle value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - STATus:QUEStionable:ENABle <bit_value>
             - STATus:QUEStionable:ENABle?
+            ```
         """
         return self._enable
 
@@ -218,12 +209,12 @@ class StatusQuestionable(SCPICmdRead):
     def ntransition(self) -> StatusQuestionableNtransition:
         """Return the ``STATus:QUEStionable:NTRansition`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the negative transition filter value of the Questionable
               Transition Register (QTR). Refer to the Status and event reporting system section for
               additional information.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``STATus:QUEStionable:NTRansition?``
               query.
             - Using the ``.verify(value)`` method will send the ``STATus:QUEStionable:NTRansition?``
@@ -231,12 +222,11 @@ class StatusQuestionable(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``STATus:QUEStionable:NTRansition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - STATus:QUEStionable:NTRansition <bit_value>
             - STATus:QUEStionable:NTRansition?
+            ```
         """
         return self._ntransition
 
@@ -244,12 +234,12 @@ class StatusQuestionable(SCPICmdRead):
     def ptransition(self) -> StatusQuestionablePtransition:
         """Return the ``STATus:QUEStionable:PTRansition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the positive transition filter value of the Questionable
               Transition Register (QTR). Refer to the Status and event reporting system section for
               additional information.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``STATus:QUEStionable:PTRansition?``
               query.
             - Using the ``.verify(value)`` method will send the ``STATus:QUEStionable:PTRansition?``
@@ -257,12 +247,11 @@ class StatusQuestionable(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``STATus:QUEStionable:PTRansition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - STATus:QUEStionable:PTRansition <bit_value>
             - STATus:QUEStionable:PTRansition?
+            ```
         """
         return self._ptransition
 
@@ -270,20 +259,19 @@ class StatusQuestionable(SCPICmdRead):
     def event(self) -> StatusQuestionableEvent:
         """Return the ``STATus:QUEStionable:EVENt`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the value in the Questionable Event Register and
               clears the Questionable Event Register.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``STATus:QUEStionable:EVENt?`` query.
             - Using the ``.verify(value)`` method will send the ``STATus:QUEStionable:EVENt?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - STATus:QUEStionable:EVENt?
+            ```
         """
         return self._event
 
@@ -291,131 +279,125 @@ class StatusQuestionable(SCPICmdRead):
 class StatusPreset(SCPICmdWriteNoArguments):
     """The ``STATus:PRESet`` command.
 
-    **Description:**
+    Description:
         - This command presets the SCPI status registers (OENR and QENR).
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``STATus:PRESet`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - STATus:PRESet
+        ```
     """
 
 
 class StatusOperationPtransition(SCPICmdWrite, SCPICmdRead):
     """The ``STATus:OPERation:PTRansition`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the positive transition filter value of the Operation
           Transition Register (OTR).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``STATus:OPERation:PTRansition?`` query.
         - Using the ``.verify(value)`` method will send the ``STATus:OPERation:PTRansition?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``STATus:OPERation:PTRansition value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - STATus:OPERation:PTRansition <bit_value>
         - STATus:OPERation:PTRansition?
+        ```
     """
 
 
 class StatusOperationNtransition(SCPICmdWrite, SCPICmdRead):
     """The ``STATus:OPERation:NTRansition`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the negative transition filter value of the Operation
           Transition Register (OTR).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``STATus:OPERation:NTRansition?`` query.
         - Using the ``.verify(value)`` method will send the ``STATus:OPERation:NTRansition?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``STATus:OPERation:NTRansition value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - STATus:OPERation:NTRansition <bit_value>
         - STATus:OPERation:NTRansition?
+        ```
     """
 
 
 class StatusOperationEvent(SCPICmdRead):
     """The ``STATus:OPERation:EVENt`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the value in the Operation Event Register and clears the
           Operation Event Register.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``STATus:OPERation:EVENt?`` query.
         - Using the ``.verify(value)`` method will send the ``STATus:OPERation:EVENt?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - STATus:OPERation:EVENt?
+        ```
     """
 
 
 class StatusOperationEnable(SCPICmdWrite, SCPICmdRead):
     """The ``STATus:OPERation:ENABle`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the mask for the Operation Enable Register.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``STATus:OPERation:ENABle?`` query.
         - Using the ``.verify(value)`` method will send the ``STATus:OPERation:ENABle?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``STATus:OPERation:ENABle value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - STATus:OPERation:ENABle <NR1>
         - STATus:OPERation:ENABle?
+        ```
     """
 
 
 class StatusOperationCondition(SCPICmdRead):
     """The ``STATus:OPERation:CONDition`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the contents of the Operation Condition Register.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``STATus:OPERation:CONDition?`` query.
         - Using the ``.verify(value)`` method will send the ``STATus:OPERation:CONDition?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - STATus:OPERation:CONDition?
+        ```
     """
 
 
 class StatusOperation(SCPICmdRead):
     """The ``STATus:OPERation`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``STATus:OPERation?`` query.
         - Using the ``.verify(value)`` method will send the ``STATus:OPERation?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -440,19 +422,18 @@ class StatusOperation(SCPICmdRead):
     def condition(self) -> StatusOperationCondition:
         """Return the ``STATus:OPERation:CONDition`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the contents of the Operation Condition Register.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``STATus:OPERation:CONDition?`` query.
             - Using the ``.verify(value)`` method will send the ``STATus:OPERation:CONDition?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - STATus:OPERation:CONDition?
+            ```
         """
         return self._condition
 
@@ -460,22 +441,21 @@ class StatusOperation(SCPICmdRead):
     def enable(self) -> StatusOperationEnable:
         """Return the ``STATus:OPERation:ENABle`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the mask for the Operation Enable Register.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``STATus:OPERation:ENABle?`` query.
             - Using the ``.verify(value)`` method will send the ``STATus:OPERation:ENABle?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``STATus:OPERation:ENABle value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - STATus:OPERation:ENABle <NR1>
             - STATus:OPERation:ENABle?
+            ```
         """
         return self._enable
 
@@ -483,23 +463,22 @@ class StatusOperation(SCPICmdRead):
     def ntransition(self) -> StatusOperationNtransition:
         """Return the ``STATus:OPERation:NTRansition`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the negative transition filter value of the Operation
               Transition Register (OTR).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``STATus:OPERation:NTRansition?`` query.
             - Using the ``.verify(value)`` method will send the ``STATus:OPERation:NTRansition?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``STATus:OPERation:NTRansition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - STATus:OPERation:NTRansition <bit_value>
             - STATus:OPERation:NTRansition?
+            ```
         """
         return self._ntransition
 
@@ -507,23 +486,22 @@ class StatusOperation(SCPICmdRead):
     def ptransition(self) -> StatusOperationPtransition:
         """Return the ``STATus:OPERation:PTRansition`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the positive transition filter value of the Operation
               Transition Register (OTR).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``STATus:OPERation:PTRansition?`` query.
             - Using the ``.verify(value)`` method will send the ``STATus:OPERation:PTRansition?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``STATus:OPERation:PTRansition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - STATus:OPERation:PTRansition <bit_value>
             - STATus:OPERation:PTRansition?
+            ```
         """
         return self._ptransition
 
@@ -531,20 +509,19 @@ class StatusOperation(SCPICmdRead):
     def event(self) -> StatusOperationEvent:
         """Return the ``STATus:OPERation:EVENt`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the value in the Operation Event Register and clears
               the Operation Event Register.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``STATus:OPERation:EVENt?`` query.
             - Using the ``.verify(value)`` method will send the ``STATus:OPERation:EVENt?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - STATus:OPERation:EVENt?
+            ```
         """
         return self._event
 
@@ -552,7 +529,7 @@ class StatusOperation(SCPICmdRead):
 class Status(SCPICmdRead):
     """The ``STATus`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``STATus?`` query.
         - Using the ``.verify(value)`` method will send the ``STATus?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -573,7 +550,7 @@ class Status(SCPICmdRead):
     def operation(self) -> StatusOperation:
         """Return the ``STATus:OPERation`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``STATus:OPERation?`` query.
             - Using the ``.verify(value)`` method will send the ``STATus:OPERation?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -591,17 +568,16 @@ class Status(SCPICmdRead):
     def preset(self) -> StatusPreset:
         """Return the ``STATus:PRESet`` command.
 
-        **Description:**
+        Description:
             - This command presets the SCPI status registers (OENR and QENR).
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``STATus:PRESet`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - STATus:PRESet
+            ```
         """
         return self._preset
 
@@ -609,7 +585,7 @@ class Status(SCPICmdRead):
     def questionable(self) -> StatusQuestionable:
         """Return the ``STATus:QUEStionable`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``STATus:QUEStionable?`` query.
             - Using the ``.verify(value)`` method will send the ``STATus:QUEStionable?`` query and
               raise an AssertionError if the returned value does not match ``value``.

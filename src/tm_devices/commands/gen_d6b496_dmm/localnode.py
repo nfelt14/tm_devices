@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - localnode.access
     - localnode.gettime()
     - localnode.internaltemp
@@ -49,7 +47,7 @@ class Localnode(BaseTSPCmd):
         - ``.DISABLE``: Do not generate prompts in response to command messages.
         - ``.ENABLE``: Generate prompts in response to command messages.
 
-    Properties/methods:
+    Properties and methods:
         - ``.access``: The ``localnode.access`` attribute.
         - ``.gettime()``: The ``localnode.gettime()`` function.
         - ``.internaltemp``: The ``localnode.internaltemp`` attribute.
@@ -84,20 +82,19 @@ class Localnode(BaseTSPCmd):
     def access(self) -> str:
         """Access the ``localnode.access`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the type of access users have to the instrument through
               different interfaces.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(localnode.access)`` query.
             - Setting this property to a value will send the ``localnode.access = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - localnode.access = value
             - print(localnode.access)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -116,20 +113,19 @@ class Localnode(BaseTSPCmd):
     def access(self, value: Union[str, float]) -> None:
         """Access the ``localnode.access`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the type of access users have to the instrument through
               different interfaces.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(localnode.access)`` query.
             - Setting this property to a value will send the ``localnode.access = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - localnode.access = value
             - print(localnode.access)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -151,17 +147,16 @@ class Localnode(BaseTSPCmd):
     def internaltemp(self) -> str:
         """Access the ``localnode.internaltemp`` attribute.
 
-        **Description:**
+        Description:
             - This attribute returns the internal temperature of the instrument.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(localnode.internaltemp)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(localnode.internaltemp)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -180,18 +175,17 @@ class Localnode(BaseTSPCmd):
     def linefreq(self) -> str:
         """Access the ``localnode.linefreq`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the power line frequency setting that is used for NPLC
               calculations.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(localnode.linefreq)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(localnode.linefreq)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -210,17 +204,16 @@ class Localnode(BaseTSPCmd):
     def model(self) -> str:
         """Access the ``localnode.model`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the model number.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(localnode.model)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(localnode.model)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -239,17 +232,16 @@ class Localnode(BaseTSPCmd):
     def password(self) -> str:
         """Access the ``localnode.password`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the instrument password.
 
-        **Usage:**
+        Usage:
             - Setting this property to a value will send the ``localnode.password = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - localnode.password = value
+            ```
 
         Raises:
             AttributeError: Indicates that this attribute is write-only.
@@ -263,17 +255,16 @@ class Localnode(BaseTSPCmd):
     def password(self, value: Union[str, float]) -> None:
         """Access the ``localnode.password`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the instrument password.
 
-        **Usage:**
+        Usage:
             - Setting this property to a value will send the ``localnode.password = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - localnode.password = value
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -290,20 +281,19 @@ class Localnode(BaseTSPCmd):
     def prompts(self) -> str:
         """Access the ``localnode.prompts`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the instrument generates prompts in response to command
               messages.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(localnode.prompts)`` query.
             - Setting this property to a value will send the ``localnode.prompts = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - localnode.prompts = value
             - print(localnode.prompts)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -322,20 +312,19 @@ class Localnode(BaseTSPCmd):
     def prompts(self, value: Union[str, float]) -> None:
         """Access the ``localnode.prompts`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the instrument generates prompts in response to command
               messages.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(localnode.prompts)`` query.
             - Setting this property to a value will send the ``localnode.prompts = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - localnode.prompts = value
             - print(localnode.prompts)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -357,21 +346,20 @@ class Localnode(BaseTSPCmd):
     def prompts4882(self) -> str:
         """Access the ``localnode.prompts4882`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables and disables the generation of prompts for IEEE Std 488.2
               common commands.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(localnode.prompts4882)`` query.
             - Setting this property to a value will send the ``localnode.prompts4882 = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - localnode.prompts4882 = value
             - print(localnode.prompts4882)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -390,21 +378,20 @@ class Localnode(BaseTSPCmd):
     def prompts4882(self, value: Union[str, float]) -> None:
         """Access the ``localnode.prompts4882`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables and disables the generation of prompts for IEEE Std 488.2
               common commands.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(localnode.prompts4882)`` query.
             - Setting this property to a value will send the ``localnode.prompts4882 = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - localnode.prompts4882 = value
             - print(localnode.prompts4882)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -426,17 +413,16 @@ class Localnode(BaseTSPCmd):
     def serialno(self) -> str:
         """Access the ``localnode.serialno`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the serial number of the instrument.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(localnode.serialno)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(localnode.serialno)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -455,21 +441,20 @@ class Localnode(BaseTSPCmd):
     def showevents(self) -> str:
         """Access the ``localnode.showevents`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets whether or not the instrument automatically outputs generated
               events to the remote interface.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(localnode.showevents)`` query.
             - Setting this property to a value will send the ``localnode.showevents = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - localnode.showevents = value
             - print(localnode.showevents)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -488,21 +473,20 @@ class Localnode(BaseTSPCmd):
     def showevents(self, value: Union[str, float]) -> None:
         """Access the ``localnode.showevents`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets whether or not the instrument automatically outputs generated
               events to the remote interface.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(localnode.showevents)`` query.
             - Setting this property to a value will send the ``localnode.showevents = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - localnode.showevents = value
             - print(localnode.showevents)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -524,17 +508,16 @@ class Localnode(BaseTSPCmd):
     def version(self) -> str:
         """Access the ``localnode.version`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the firmware version of the instrument.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(localnode.version)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(localnode.version)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -552,14 +535,13 @@ class Localnode(BaseTSPCmd):
     def gettime(self) -> None:
         """Run the ``localnode.gettime()`` function.
 
-        **Description:**
+        Description:
             - This function retrieves the instrument date and time.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - localnode.gettime()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -583,14 +565,13 @@ class Localnode(BaseTSPCmd):
     ) -> None:
         """Run the ``localnode.settime()`` function.
 
-        **Description:**
+        Description:
             - This function sets the date and time of the instrument.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - localnode.settime()
+            ```
 
         Args:
             year (optional): Year; must be more than 1970.

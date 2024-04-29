@@ -12,8 +12,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - fs.chdir()
     - fs.cwd()
     - fs.is_dir()
@@ -34,7 +32,7 @@ if TYPE_CHECKING:
 class Fs(BaseTSPCmd):
     """The ``fs`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.chdir()``: The ``fs.chdir()`` function.
         - ``.cwd()``: The ``fs.cwd()`` function.
         - ``.is_dir()``: The ``fs.is_dir()`` function.
@@ -50,14 +48,13 @@ class Fs(BaseTSPCmd):
     def chdir(self, path: str) -> str:
         """Run the ``fs.chdir()`` function.
 
-        **Description:**
+        Description:
             - This function sets the current working directory.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - fs.chdir()
+            ```
 
         Args:
             path: A string indicating the new working directory path.
@@ -79,14 +76,13 @@ class Fs(BaseTSPCmd):
     def cwd(self) -> str:
         """Run the ``fs.cwd()`` function.
 
-        **Description:**
+        Description:
             - This function returns the absolute path of the current working directory.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - fs.cwd()
+            ```
 
         Returns:
             The result of the function call.
@@ -105,14 +101,13 @@ class Fs(BaseTSPCmd):
     def is_dir(self, path: str) -> str:
         """Run the ``fs.is_dir()`` function.
 
-        **Description:**
+        Description:
             - This function tests whether or not the specified path refers to a directory.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - fs.is_dir()
+            ```
 
         Args:
             path: The path of the file system entry to test.
@@ -134,14 +129,13 @@ class Fs(BaseTSPCmd):
     def is_file(self, path: str) -> str:
         """Run the ``fs.is_file()`` function.
 
-        **Description:**
+        Description:
             - Tests whether the specified path refers to a file (as opposed to a directory).
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - fs.is_file()
+            ```
 
         Args:
             path: The path of the file system entry to test.
@@ -163,14 +157,13 @@ class Fs(BaseTSPCmd):
     def mkdir(self, new_path: str) -> str:
         """Run the ``fs.mkdir()`` function.
 
-        **Description:**
+        Description:
             - This function creates a directory at the specified path.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - fs.mkdir()
+            ```
 
         Args:
             new_path: Location (path) of where to create the new directory.
@@ -192,14 +185,13 @@ class Fs(BaseTSPCmd):
     def readdir(self, path: str) -> str:
         """Run the ``fs.readdir()`` function.
 
-        **Description:**
+        Description:
             - This function returns a list of the file system entries in the directory.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - fs.readdir()
+            ```
 
         Args:
             path: The directory path.
@@ -221,14 +213,13 @@ class Fs(BaseTSPCmd):
     def rmdir(self, path: str) -> None:
         """Run the ``fs.rmdir()`` function.
 
-        **Description:**
+        Description:
             - This function removes a directory from the file system.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - fs.rmdir()
+            ```
 
         Args:
             path: The path of the directory to remove.

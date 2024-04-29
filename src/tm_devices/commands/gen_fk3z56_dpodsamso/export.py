@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - EXPort STARt
     - EXPort:FILEName <file path>
     - EXPort:FILEName?
@@ -37,23 +35,22 @@ if TYPE_CHECKING:
 class ExportView(SCPICmdWrite, SCPICmdRead):
     """The ``EXPort:VIEW`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the area of the screen to be exported.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EXPort:VIEW?`` query.
         - Using the ``.verify(value)`` method will send the ``EXPort:VIEW?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EXPort:VIEW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EXPort:VIEW {FULLSCREEN|GRAticule|FULLNOmenu}
         - EXPort:VIEW?
+        ```
 
-    **Info:**
+    Info:
         - ``FULLSCREEN`` displays both the graticule and menu areas of the screen.
         - ``GRAticule`` displays only the graticule area of the screen.
         - ``FULLNOmenu`` displays the full screen but hides any menus or toolbars.
@@ -63,23 +60,22 @@ class ExportView(SCPICmdWrite, SCPICmdRead):
 class ExportReadouts(SCPICmdWrite, SCPICmdRead):
     """The ``EXPort:READOuts`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the area on the screen where the readout appear for export.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EXPort:READOuts?`` query.
         - Using the ``.verify(value)`` method will send the ``EXPort:READOuts?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EXPort:READOuts value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EXPort:READOuts {OFFGRAticule|ONGRAticule}
         - EXPort:READOuts?
+        ```
 
-    **Info:**
+    Info:
         - ``OFFGRATICULE`` places the readouts off the graticule area.
         - ``ONGRATICULE`` places the readouts on the graticule area for export.
     """
@@ -88,23 +84,22 @@ class ExportReadouts(SCPICmdWrite, SCPICmdRead):
 class ExportPalette(SCPICmdWrite, SCPICmdRead):
     """The ``EXPort:PALEtte`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the export color palette.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EXPort:PALEtte?`` query.
         - Using the ``.verify(value)`` method will send the ``EXPort:PALEtte?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EXPort:PALEtte value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EXPort:PALEtte {COLOr|INKSaver|BLACKANDWhite}
         - EXPort:PALEtte?
+        ```
 
-    **Info:**
+    Info:
         - ``COLOr`` Hard copy output is color.
         - ``INKSaver`` Hard copy output saves ink.
         - ``BLACKANDwhite`` Hard copy output is black and white.
@@ -114,23 +109,22 @@ class ExportPalette(SCPICmdWrite, SCPICmdRead):
 class ExportFormat(SCPICmdWrite, SCPICmdRead):
     """The ``EXPort:FORMat`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the image format for exporting waveforms to a file.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EXPort:FORMat?`` query.
         - Using the ``.verify(value)`` method will send the ``EXPort:FORMat?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EXPort:FORMat value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EXPort:FORMat {BMP|JPEG|PCX|PNG|TIFF}
         - EXPort:FORMat?
+        ```
 
-    **Info:**
+    Info:
         - ``BMP`` specifies BMP image format.
         - ``JPEG`` specifies JPEG image format.
         - ``PCX`` specifies PCX image format.
@@ -142,24 +136,23 @@ class ExportFormat(SCPICmdWrite, SCPICmdRead):
 class ExportFilename(SCPICmdWrite, SCPICmdRead):
     """The ``EXPort:FILEName`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the file/path that will be sent export data on the next
           EXPORT command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EXPort:FILEName?`` query.
         - Using the ``.verify(value)`` method will send the ``EXPort:FILEName?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EXPort:FILEName value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EXPort:FILEName <file path>
         - EXPort:FILEName?
+        ```
 
-    **Info:**
+    Info:
         - ``<file path>`` specifies that the hard copy is sent to the named file. <file path> is a
           quoted string that defines the file name and path. Input the file path using the form
           ``<drive>:<dir>``/<filename>.<drive> and one or more <dir>s are optional. The file path
@@ -172,24 +165,23 @@ class ExportFilename(SCPICmdWrite, SCPICmdRead):
 class Export(SCPICmdWrite, SCPICmdRead):
     """The ``EXPort`` command.
 
-    **Description:**
+    Description:
         - This command sends a copy of the waveform to the file path specified by
           ``EXPORT:FILENAME``. The ``EXPort`` query returns image format and file information.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EXPort?`` query.
         - Using the ``.verify(value)`` method will send the ``EXPort?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EXPort value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EXPort STARt
         - EXPort?
+        ```
 
-    **Info:**
+    Info:
         - ``STARt`` initiates the export.
 
     Properties:
@@ -212,24 +204,23 @@ class Export(SCPICmdWrite, SCPICmdRead):
     def filename(self) -> ExportFilename:
         """Return the ``EXPort:FILEName`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the file/path that will be sent export data on the next
               EXPORT command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EXPort:FILEName?`` query.
             - Using the ``.verify(value)`` method will send the ``EXPort:FILEName?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EXPort:FILEName value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EXPort:FILEName <file path>
             - EXPort:FILEName?
+            ```
 
-        **Info:**
+        Info:
             - ``<file path>`` specifies that the hard copy is sent to the named file. <file path> is
               a quoted string that defines the file name and path. Input the file path using the
               form ``<drive>:<dir>``/<filename>.<drive> and one or more <dir>s are optional. The
@@ -243,23 +234,22 @@ class Export(SCPICmdWrite, SCPICmdRead):
     def format(self) -> ExportFormat:
         """Return the ``EXPort:FORMat`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the image format for exporting waveforms to a file.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EXPort:FORMat?`` query.
             - Using the ``.verify(value)`` method will send the ``EXPort:FORMat?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EXPort:FORMat value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EXPort:FORMat {BMP|JPEG|PCX|PNG|TIFF}
             - EXPort:FORMat?
+            ```
 
-        **Info:**
+        Info:
             - ``BMP`` specifies BMP image format.
             - ``JPEG`` specifies JPEG image format.
             - ``PCX`` specifies PCX image format.
@@ -272,23 +262,22 @@ class Export(SCPICmdWrite, SCPICmdRead):
     def palette(self) -> ExportPalette:
         """Return the ``EXPort:PALEtte`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the export color palette.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EXPort:PALEtte?`` query.
             - Using the ``.verify(value)`` method will send the ``EXPort:PALEtte?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EXPort:PALEtte value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EXPort:PALEtte {COLOr|INKSaver|BLACKANDWhite}
             - EXPort:PALEtte?
+            ```
 
-        **Info:**
+        Info:
             - ``COLOr`` Hard copy output is color.
             - ``INKSaver`` Hard copy output saves ink.
             - ``BLACKANDwhite`` Hard copy output is black and white.
@@ -299,24 +288,23 @@ class Export(SCPICmdWrite, SCPICmdRead):
     def readouts(self) -> ExportReadouts:
         """Return the ``EXPort:READOuts`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the area on the screen where the readout appear for
               export.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EXPort:READOuts?`` query.
             - Using the ``.verify(value)`` method will send the ``EXPort:READOuts?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EXPort:READOuts value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EXPort:READOuts {OFFGRAticule|ONGRAticule}
             - EXPort:READOuts?
+            ```
 
-        **Info:**
+        Info:
             - ``OFFGRATICULE`` places the readouts off the graticule area.
             - ``ONGRATICULE`` places the readouts on the graticule area for export.
         """
@@ -326,23 +314,22 @@ class Export(SCPICmdWrite, SCPICmdRead):
     def view(self) -> ExportView:
         """Return the ``EXPort:VIEW`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the area of the screen to be exported.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EXPort:VIEW?`` query.
             - Using the ``.verify(value)`` method will send the ``EXPort:VIEW?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EXPort:VIEW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EXPort:VIEW {FULLSCREEN|GRAticule|FULLNOmenu}
             - EXPort:VIEW?
+            ```
 
-        **Info:**
+        Info:
             - ``FULLSCREEN`` displays both the graticule and menu areas of the screen.
             - ``GRAticule`` displays only the graticule area of the screen.
             - ``FULLNOmenu`` displays the full screen but hides any menus or toolbars.

@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - UNLock ALL
 """
 
@@ -27,21 +25,20 @@ if TYPE_CHECKING:
 class Unlock(SCPICmdWrite):
     """The ``UNLock`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) unlocks the front panel controls only. To unlock the front
           panel controls and the touch screen use the LOCk NONe command. The command
           ``TOUCHSCReen:STATE ON`` enables the touch screen only.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``UNLock value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - UNLock ALL
+        ```
 
-    **Info:**
+    Info:
         - ``ALL`` specifies that all front panel buttons and knobs are unlocked.
     """
 

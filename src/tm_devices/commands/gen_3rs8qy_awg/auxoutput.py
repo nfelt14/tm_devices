@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - AUXoutput[n]:SOURce {AFLag|BFLag|CFLag|DFLag|TIMer}
     - AUXoutput[n]:SOURce:CMAPping <channel>
     - AUXoutput[n]:SOURce:CMAPping?
@@ -28,44 +26,42 @@ if TYPE_CHECKING:
 class AuxoutputItemSourceCmapping(SCPICmdWrite, SCPICmdRead):
     """The ``AUXoutput[n]:SOURce:CMAPping`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Auxiliary Output channel mapping.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXoutput[n]:SOURce:CMAPping?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXoutput[n]:SOURce:CMAPping?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXoutput[n]:SOURce:CMAPping value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXoutput[n]:SOURce:CMAPping <channel>
         - AUXoutput[n]:SOURce:CMAPping?
+        ```
     """
 
 
 class AuxoutputItemSource(SCPICmdWrite, SCPICmdRead):
     """The ``AUXoutput[n]:SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the signal source for the specified Auxiliary Output
           connector.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXoutput[n]:SOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXoutput[n]:SOURce?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXoutput[n]:SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXoutput[n]:SOURce {AFLag|BFLag|CFLag|DFLag|TIMer}
         - AUXoutput[n]:SOURce?
+        ```
 
     Properties:
         - ``.cmapping``: The ``AUXoutput[n]:SOURce:CMAPping`` command.
@@ -79,22 +75,21 @@ class AuxoutputItemSource(SCPICmdWrite, SCPICmdRead):
     def cmapping(self) -> AuxoutputItemSourceCmapping:
         """Return the ``AUXoutput[n]:SOURce:CMAPping`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Auxiliary Output channel mapping.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXoutput[n]:SOURce:CMAPping?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXoutput[n]:SOURce:CMAPping?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``AUXoutput[n]:SOURce:CMAPping value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXoutput[n]:SOURce:CMAPping <channel>
             - AUXoutput[n]:SOURce:CMAPping?
+            ```
         """
         return self._cmapping
 
@@ -102,7 +97,7 @@ class AuxoutputItemSource(SCPICmdWrite, SCPICmdRead):
 class AuxoutputItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``AUXoutput[n]`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXoutput[n]?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXoutput[n]?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -121,23 +116,22 @@ class AuxoutputItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def source(self) -> AuxoutputItemSource:
         """Return the ``AUXoutput[n]:SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the signal source for the specified Auxiliary Output
               connector.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXoutput[n]:SOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXoutput[n]:SOURce?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXoutput[n]:SOURce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXoutput[n]:SOURce {AFLag|BFLag|CFLag|DFLag|TIMer}
             - AUXoutput[n]:SOURce?
+            ```
 
         Sub-properties:
             - ``.cmapping``: The ``AUXoutput[n]:SOURce:CMAPping`` command.

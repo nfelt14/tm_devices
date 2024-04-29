@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - ERRlog {CLEar}
     - ERRlog:FIRst?
     - ERRlog:NEXt?
@@ -28,76 +26,72 @@ if TYPE_CHECKING:
 class ErrlogNumentries(SCPICmdRead):
     """The ``ERRlog:NUMENTries`` command.
 
-    **Description:**
+    Description:
         - Returns the specified number of entries in the error log.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRlog:NUMENTries?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRlog:NUMENTries?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRlog:NUMENTries?
+        ```
     """
 
 
 class ErrlogNext(SCPICmdRead):
     """The ``ERRlog:NEXt`` command.
 
-    **Description:**
+    Description:
         - Returns the next entry in the error log (auto-incrementing).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRlog:NEXt?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRlog:NEXt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRlog:NEXt?
+        ```
     """
 
 
 class ErrlogFirst(SCPICmdRead):
     """The ``ERRlog:FIRst`` command.
 
-    **Description:**
+    Description:
         - Returns the first entry in the Error Log.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ERRlog:FIRst?`` query.
         - Using the ``.verify(value)`` method will send the ``ERRlog:FIRst?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRlog:FIRst?
+        ```
     """
 
 
 class Errlog(SCPICmdWrite, SCPICmdRead):
     """The ``ERRlog`` command.
 
-    **Description:**
+    Description:
         - Clears the oscilloscope error log.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``ERRlog value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ERRlog {CLEar}
+        ```
 
-    **Info:**
+    Info:
         - ``CLear``
 
     Properties:
@@ -116,19 +110,18 @@ class Errlog(SCPICmdWrite, SCPICmdRead):
     def first(self) -> ErrlogFirst:
         """Return the ``ERRlog:FIRst`` command.
 
-        **Description:**
+        Description:
             - Returns the first entry in the Error Log.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRlog:FIRst?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRlog:FIRst?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRlog:FIRst?
+            ```
         """
         return self._first
 
@@ -136,19 +129,18 @@ class Errlog(SCPICmdWrite, SCPICmdRead):
     def next(self) -> ErrlogNext:
         """Return the ``ERRlog:NEXt`` command.
 
-        **Description:**
+        Description:
             - Returns the next entry in the error log (auto-incrementing).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRlog:NEXt?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRlog:NEXt?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRlog:NEXt?
+            ```
         """
         return self._next
 
@@ -156,18 +148,17 @@ class Errlog(SCPICmdWrite, SCPICmdRead):
     def numentries(self) -> ErrlogNumentries:
         """Return the ``ERRlog:NUMENTries`` command.
 
-        **Description:**
+        Description:
             - Returns the specified number of entries in the error log.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRlog:NUMENTries?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRlog:NUMENTries?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRlog:NUMENTries?
+            ```
         """
         return self._numentries

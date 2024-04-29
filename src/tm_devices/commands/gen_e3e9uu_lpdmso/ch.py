@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CH<x>:BANdwidth {<NR3>|FULl}
     - CH<x>:BANdwidth:FILTer:OPTIMIZation {STEPRESPONSE|FLATNESS}
     - CH<x>:BANdwidth:FILTer:OPTIMIZation?
@@ -144,24 +142,23 @@ if TYPE_CHECKING:
 class ChannelDallLabelName(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>_DALL:LABel:NAMe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the label of the specified digital group. The channel is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_DALL:LABel:NAMe?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_DALL:LABel:NAMe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>_DALL:LABel:NAMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>_DALL:LABel:NAMe <QString>
         - CH<x>_DALL:LABel:NAMe?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<QString>`` is the name of the group.
     """
@@ -172,25 +169,24 @@ class ChannelDallLabelName(SCPICmdWrite, SCPICmdRead):
 class ChannelDallLabelFontUnderline(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>_DALL:LABel:FONT:UNDERline`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the underline state of the specified digital group. The
           channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_DALL:LABel:FONT:UNDERline?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_DALL:LABel:FONT:UNDERline?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>_DALL:LABel:FONT:UNDERline value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>_DALL:LABel:FONT:UNDERline {ON|OFF|<NR1>}
         - CH<x>_DALL:LABel:FONT:UNDERline?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``OFF`` argument turns off underline font.
         - ``ON`` argument turns on underline font.
@@ -201,25 +197,24 @@ class ChannelDallLabelFontUnderline(SCPICmdWrite, SCPICmdRead):
 class ChannelDallLabelFontType(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>_DALL:LABel:FONT:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the font type of the specified digital group, such as Arial
           or Times New Roman. The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_DALL:LABel:FONT:TYPE?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_DALL:LABel:FONT:TYPE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>_DALL:LABel:FONT:TYPE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>_DALL:LABel:FONT:TYPE <QString>
         - CH<x>_DALL:LABel:FONT:TYPE?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<QString>`` is the font type.
     """
@@ -230,25 +225,24 @@ class ChannelDallLabelFontType(SCPICmdWrite, SCPICmdRead):
 class ChannelDallLabelFontSize(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>_DALL:LABel:FONT:SIZE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the font size of the specified digital group. The channel is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_DALL:LABel:FONT:SIZE?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_DALL:LABel:FONT:SIZE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>_DALL:LABel:FONT:SIZE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>_DALL:LABel:FONT:SIZE <NR1>
         - CH<x>_DALL:LABel:FONT:SIZE?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR1>`` is the font size.
     """
@@ -257,25 +251,24 @@ class ChannelDallLabelFontSize(SCPICmdWrite, SCPICmdRead):
 class ChannelDallLabelFontItalic(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>_DALL:LABel:FONT:ITALic`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the italic state of the specified digital group. The channel
           is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_DALL:LABel:FONT:ITALic?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_DALL:LABel:FONT:ITALic?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>_DALL:LABel:FONT:ITALic value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>_DALL:LABel:FONT:ITALic {ON|OFF|<NR1>}
         - CH<x>_DALL:LABel:FONT:ITALic?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``OFF`` argument turns off italic font.
         - ``ON`` argument turns on italic font.
@@ -286,25 +279,24 @@ class ChannelDallLabelFontItalic(SCPICmdWrite, SCPICmdRead):
 class ChannelDallLabelFontBold(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>_DALL:LABel:FONT:BOLD`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the bold state of the specified digital group. The channel is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_DALL:LABel:FONT:BOLD?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_DALL:LABel:FONT:BOLD?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>_DALL:LABel:FONT:BOLD value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>_DALL:LABel:FONT:BOLD {ON|OFF|<NR1>}
         - CH<x>_DALL:LABel:FONT:BOLD?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``OFF`` argument turns off bold font.
         - ``ON`` argument turns on bold font.
@@ -315,12 +307,12 @@ class ChannelDallLabelFontBold(SCPICmdWrite, SCPICmdRead):
 class ChannelDallLabelFont(SCPICmdRead):
     """The ``CH<x>_DALL:LABel:FONT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_DALL:LABel:FONT?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_DALL:LABel:FONT?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
 
     Properties:
@@ -343,25 +335,24 @@ class ChannelDallLabelFont(SCPICmdRead):
     def bold(self) -> ChannelDallLabelFontBold:
         """Return the ``CH<x>_DALL:LABel:FONT:BOLD`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the bold state of the specified digital group. The
               channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_DALL:LABel:FONT:BOLD?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_DALL:LABel:FONT:BOLD?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>_DALL:LABel:FONT:BOLD value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>_DALL:LABel:FONT:BOLD {ON|OFF|<NR1>}
             - CH<x>_DALL:LABel:FONT:BOLD?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``OFF`` argument turns off bold font.
             - ``ON`` argument turns on bold font.
@@ -373,25 +364,24 @@ class ChannelDallLabelFont(SCPICmdRead):
     def italic(self) -> ChannelDallLabelFontItalic:
         """Return the ``CH<x>_DALL:LABel:FONT:ITALic`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the italic state of the specified digital group. The
               channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_DALL:LABel:FONT:ITALic?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_DALL:LABel:FONT:ITALic?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``CH<x>_DALL:LABel:FONT:ITALic value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>_DALL:LABel:FONT:ITALic {ON|OFF|<NR1>}
             - CH<x>_DALL:LABel:FONT:ITALic?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``OFF`` argument turns off italic font.
             - ``ON`` argument turns on italic font.
@@ -403,25 +393,24 @@ class ChannelDallLabelFont(SCPICmdRead):
     def size(self) -> ChannelDallLabelFontSize:
         """Return the ``CH<x>_DALL:LABel:FONT:SIZE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the font size of the specified digital group. The channel
               is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_DALL:LABel:FONT:SIZE?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_DALL:LABel:FONT:SIZE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>_DALL:LABel:FONT:SIZE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>_DALL:LABel:FONT:SIZE <NR1>
             - CH<x>_DALL:LABel:FONT:SIZE?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR1>`` is the font size.
         """
@@ -431,25 +420,24 @@ class ChannelDallLabelFont(SCPICmdRead):
     def type(self) -> ChannelDallLabelFontType:
         """Return the ``CH<x>_DALL:LABel:FONT:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the font type of the specified digital group, such as
               Arial or Times New Roman. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_DALL:LABel:FONT:TYPE?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_DALL:LABel:FONT:TYPE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>_DALL:LABel:FONT:TYPE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>_DALL:LABel:FONT:TYPE <QString>
             - CH<x>_DALL:LABel:FONT:TYPE?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<QString>`` is the font type.
         """
@@ -459,11 +447,11 @@ class ChannelDallLabelFont(SCPICmdRead):
     def underline(self) -> ChannelDallLabelFontUnderline:
         """Return the ``CH<x>_DALL:LABel:FONT:UNDERline`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the underline state of the specified digital group. The
               channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_DALL:LABel:FONT:UNDERline?``
               query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_DALL:LABel:FONT:UNDERline?``
@@ -471,14 +459,13 @@ class ChannelDallLabelFont(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``CH<x>_DALL:LABel:FONT:UNDERline value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>_DALL:LABel:FONT:UNDERline {ON|OFF|<NR1>}
             - CH<x>_DALL:LABel:FONT:UNDERline?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``OFF`` argument turns off underline font.
             - ``ON`` argument turns on underline font.
@@ -490,24 +477,23 @@ class ChannelDallLabelFont(SCPICmdRead):
 class ChannelDallLabelColor(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>_DALL:LABel:COLor`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the color of the specified digital group label. The channel
           is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_DALL:LABel:COLor?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_DALL:LABel:COLor?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>_DALL:LABel:COLor value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>_DALL:LABel:COLor <QString>
         - CH<x>_DALL:LABel:COLor?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<QString>`` is the color of the digital group label. To return the color to the default
           color, send an empty string as in this example: ``:CH5_DALL:LABEL:COLOR`` ''.
@@ -519,12 +505,12 @@ class ChannelDallLabelColor(SCPICmdWrite, SCPICmdRead):
 class ChannelDallLabel(SCPICmdRead):
     """The ``CH<x>_DALL:LABel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_DALL:LABel?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_DALL:LABel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
 
     Properties:
@@ -543,25 +529,24 @@ class ChannelDallLabel(SCPICmdRead):
     def color(self) -> ChannelDallLabelColor:
         """Return the ``CH<x>_DALL:LABel:COLor`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the color of the specified digital group label. The
               channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_DALL:LABel:COLor?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_DALL:LABel:COLor?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>_DALL:LABel:COLor value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>_DALL:LABel:COLor <QString>
             - CH<x>_DALL:LABel:COLor?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<QString>`` is the color of the digital group label. To return the color to the
               default color, send an empty string as in this example: ``:CH5_DALL:LABEL:COLOR`` ''.
@@ -572,12 +557,12 @@ class ChannelDallLabel(SCPICmdRead):
     def font(self) -> ChannelDallLabelFont:
         """Return the ``CH<x>_DALL:LABel:FONT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_DALL:LABel:FONT?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_DALL:LABel:FONT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
 
         Sub-properties:
@@ -593,25 +578,24 @@ class ChannelDallLabel(SCPICmdRead):
     def name(self) -> ChannelDallLabelName:
         """Return the ``CH<x>_DALL:LABel:NAMe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the label of the specified digital group. The channel is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_DALL:LABel:NAMe?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_DALL:LABel:NAMe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>_DALL:LABel:NAMe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>_DALL:LABel:NAMe <QString>
             - CH<x>_DALL:LABel:NAMe?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<QString>`` is the name of the group.
         """
@@ -621,12 +605,12 @@ class ChannelDallLabel(SCPICmdRead):
 class ChannelDall(SCPICmdRead):
     """The ``CH<x>_DALL`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_DALL?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_DALL?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
 
     Properties:
@@ -641,12 +625,12 @@ class ChannelDall(SCPICmdRead):
     def label(self) -> ChannelDallLabel:
         """Return the ``CH<x>_DALL:LABel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_DALL:LABel?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_DALL:LABel?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
 
         Sub-properties:
@@ -660,23 +644,22 @@ class ChannelDall(SCPICmdRead):
 class ChannelDigitalBitLabelName(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>_D<x>:LABel:NAMe`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the label of the specified digital bit. The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_D<x>:LABel:NAMe?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>:LABel:NAMe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>_D<x>:LABel:NAMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>_D<x>:LABel:NAMe <QString>
         - CH<x>_D<x>:LABel:NAMe?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<QString>`` is the label.
     """
@@ -687,25 +670,24 @@ class ChannelDigitalBitLabelName(SCPICmdWrite, SCPICmdRead):
 class ChannelDigitalBitLabelFontUnderline(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>_D<x>:LABel:FONT:UNDERline`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the underline state of the label of the specified digital
           bit. The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_D<x>:LABel:FONT:UNDERline?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>:LABel:FONT:UNDERline?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>_D<x>:LABel:FONT:UNDERline value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>_D<x>:LABel:FONT:UNDERline {ON|OFF|<NR1>}
         - CH<x>_D<x>:LABel:FONT:UNDERline?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``OFF`` argument turns off underline font.
         - ``ON`` argument turns on underline font.
@@ -716,25 +698,24 @@ class ChannelDigitalBitLabelFontUnderline(SCPICmdWrite, SCPICmdRead):
 class ChannelDigitalBitLabelFontType(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>_D<x>:LABel:FONT:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the font type of the label of the specified digital bit, such
           as Arial or Times New Roman. The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_D<x>:LABel:FONT:TYPE?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>:LABel:FONT:TYPE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>_D<x>:LABel:FONT:TYPE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>_D<x>:LABel:FONT:TYPE <QString>
         - CH<x>_D<x>:LABel:FONT:TYPE?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<QString>`` is the font type of the label.
     """
@@ -745,25 +726,24 @@ class ChannelDigitalBitLabelFontType(SCPICmdWrite, SCPICmdRead):
 class ChannelDigitalBitLabelFontSize(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>_D<x>:LABel:FONT:SIZE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the font size of the label of the specified digital bit. The
           channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_D<x>:LABel:FONT:SIZE?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>:LABel:FONT:SIZE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>_D<x>:LABel:FONT:SIZE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>_D<x>:LABel:FONT:SIZE <NR1>
         - CH<x>_D<x>:LABel:FONT:SIZE?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR1>`` is the font size.
     """
@@ -772,25 +752,24 @@ class ChannelDigitalBitLabelFontSize(SCPICmdWrite, SCPICmdRead):
 class ChannelDigitalBitLabelFontItalic(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>_D<x>:LABel:FONT:ITALic`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the italic state of the label of the specified digital bit.
           The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_D<x>:LABel:FONT:ITALic?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>:LABel:FONT:ITALic?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>_D<x>:LABel:FONT:ITALic value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>_D<x>:LABel:FONT:ITALic {ON|OFF|<NR1>}
         - CH<x>_D<x>:LABel:FONT:ITALic?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``OFF`` argument turns off italic font.
         - ``ON`` argument turns on italic font.
@@ -801,25 +780,24 @@ class ChannelDigitalBitLabelFontItalic(SCPICmdWrite, SCPICmdRead):
 class ChannelDigitalBitLabelFontBold(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>_D<x>:LABel:FONT:BOLD`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the bold state of the label of the specified digital bit. The
           channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_D<x>:LABel:FONT:BOLD?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>:LABel:FONT:BOLD?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>_D<x>:LABel:FONT:BOLD value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>_D<x>:LABel:FONT:BOLD {ON|OFF|<NR1>}
         - CH<x>_D<x>:LABel:FONT:BOLD?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``OFF`` argument turns off bold font.
         - ``ON`` argument turns on bold font.
@@ -830,12 +808,12 @@ class ChannelDigitalBitLabelFontBold(SCPICmdWrite, SCPICmdRead):
 class ChannelDigitalBitLabelFont(SCPICmdRead):
     """The ``CH<x>_D<x>:LABel:FONT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_D<x>:LABel:FONT?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>:LABel:FONT?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
 
     Properties:
@@ -860,25 +838,24 @@ class ChannelDigitalBitLabelFont(SCPICmdRead):
     def bold(self) -> ChannelDigitalBitLabelFontBold:
         """Return the ``CH<x>_D<x>:LABel:FONT:BOLD`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the bold state of the label of the specified digital bit.
               The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_D<x>:LABel:FONT:BOLD?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>:LABel:FONT:BOLD?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>_D<x>:LABel:FONT:BOLD value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>_D<x>:LABel:FONT:BOLD {ON|OFF|<NR1>}
             - CH<x>_D<x>:LABel:FONT:BOLD?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``OFF`` argument turns off bold font.
             - ``ON`` argument turns on bold font.
@@ -890,25 +867,24 @@ class ChannelDigitalBitLabelFont(SCPICmdRead):
     def italic(self) -> ChannelDigitalBitLabelFontItalic:
         """Return the ``CH<x>_D<x>:LABel:FONT:ITALic`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the italic state of the label of the specified digital
               bit. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_D<x>:LABel:FONT:ITALic?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>:LABel:FONT:ITALic?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``CH<x>_D<x>:LABel:FONT:ITALic value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>_D<x>:LABel:FONT:ITALic {ON|OFF|<NR1>}
             - CH<x>_D<x>:LABel:FONT:ITALic?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``OFF`` argument turns off italic font.
             - ``ON`` argument turns on italic font.
@@ -920,25 +896,24 @@ class ChannelDigitalBitLabelFont(SCPICmdRead):
     def size(self) -> ChannelDigitalBitLabelFontSize:
         """Return the ``CH<x>_D<x>:LABel:FONT:SIZE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the font size of the label of the specified digital bit.
               The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_D<x>:LABel:FONT:SIZE?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>:LABel:FONT:SIZE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>_D<x>:LABel:FONT:SIZE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>_D<x>:LABel:FONT:SIZE <NR1>
             - CH<x>_D<x>:LABel:FONT:SIZE?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR1>`` is the font size.
         """
@@ -948,25 +923,24 @@ class ChannelDigitalBitLabelFont(SCPICmdRead):
     def type(self) -> ChannelDigitalBitLabelFontType:
         """Return the ``CH<x>_D<x>:LABel:FONT:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the font type of the label of the specified digital bit,
               such as Arial or Times New Roman. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_D<x>:LABel:FONT:TYPE?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>:LABel:FONT:TYPE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>_D<x>:LABel:FONT:TYPE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>_D<x>:LABel:FONT:TYPE <QString>
             - CH<x>_D<x>:LABel:FONT:TYPE?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<QString>`` is the font type of the label.
         """
@@ -976,11 +950,11 @@ class ChannelDigitalBitLabelFont(SCPICmdRead):
     def underline(self) -> ChannelDigitalBitLabelFontUnderline:
         """Return the ``CH<x>_D<x>:LABel:FONT:UNDERline`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the underline state of the label of the specified digital
               bit. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_D<x>:LABel:FONT:UNDERline?``
               query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>:LABel:FONT:UNDERline?``
@@ -988,14 +962,13 @@ class ChannelDigitalBitLabelFont(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``CH<x>_D<x>:LABel:FONT:UNDERline value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>_D<x>:LABel:FONT:UNDERline {ON|OFF|<NR1>}
             - CH<x>_D<x>:LABel:FONT:UNDERline?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``OFF`` argument turns off underline font.
             - ``ON`` argument turns on underline font.
@@ -1007,24 +980,23 @@ class ChannelDigitalBitLabelFont(SCPICmdRead):
 class ChannelDigitalBitLabelColor(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>_D<x>:LABel:COLor`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the color of the label of the specified digital bit. The
           channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_D<x>:LABel:COLor?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>:LABel:COLor?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>_D<x>:LABel:COLor value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>_D<x>:LABel:COLor <QString>
         - CH<x>_D<x>:LABel:COLor?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<QString>`` is the label color. To return the color to the default color, send an empty
           string as in this example: ``:CH5_D1:LABEL:COLOR`` ''.
@@ -1036,12 +1008,12 @@ class ChannelDigitalBitLabelColor(SCPICmdWrite, SCPICmdRead):
 class ChannelDigitalBitLabel(SCPICmdRead):
     """The ``CH<x>_D<x>:LABel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_D<x>:LABel?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>:LABel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
 
     Properties:
@@ -1060,25 +1032,24 @@ class ChannelDigitalBitLabel(SCPICmdRead):
     def color(self) -> ChannelDigitalBitLabelColor:
         """Return the ``CH<x>_D<x>:LABel:COLor`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the color of the label of the specified digital bit. The
               channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_D<x>:LABel:COLor?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>:LABel:COLor?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>_D<x>:LABel:COLor value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>_D<x>:LABel:COLor <QString>
             - CH<x>_D<x>:LABel:COLor?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<QString>`` is the label color. To return the color to the default color, send an
               empty string as in this example: ``:CH5_D1:LABEL:COLOR`` ''.
@@ -1089,12 +1060,12 @@ class ChannelDigitalBitLabel(SCPICmdRead):
     def font(self) -> ChannelDigitalBitLabelFont:
         """Return the ``CH<x>_D<x>:LABel:FONT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_D<x>:LABel:FONT?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>:LABel:FONT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
 
         Sub-properties:
@@ -1110,24 +1081,23 @@ class ChannelDigitalBitLabel(SCPICmdRead):
     def name(self) -> ChannelDigitalBitLabelName:
         """Return the ``CH<x>_D<x>:LABel:NAMe`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the label of the specified digital bit. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_D<x>:LABel:NAMe?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>:LABel:NAMe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>_D<x>:LABel:NAMe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>_D<x>:LABel:NAMe <QString>
             - CH<x>_D<x>:LABel:NAMe?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<QString>`` is the label.
         """
@@ -1137,12 +1107,12 @@ class ChannelDigitalBitLabel(SCPICmdRead):
 class ChannelDigitalBit(ValidatedDigitalBit, SCPICmdRead):
     """The ``CH<x>_D<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>_D<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
 
     Properties:
@@ -1157,12 +1127,12 @@ class ChannelDigitalBit(ValidatedDigitalBit, SCPICmdRead):
     def label(self) -> ChannelDigitalBitLabel:
         """Return the ``CH<x>_D<x>:LABel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_D<x>:LABel?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>:LABel?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
 
         Sub-properties:
@@ -1176,24 +1146,23 @@ class ChannelDigitalBit(ValidatedDigitalBit, SCPICmdRead):
 class ChannelVtermBias(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:VTERm:BIAS`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the termination bias voltage for the specified channel (if control is
           available).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:VTERm:BIAS?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:VTERm:BIAS?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:VTERm:BIAS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:VTERm:BIAS <NR3>
         - CH<x>:VTERm:BIAS?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR3>`` is the termination voltage.
     """
@@ -1202,12 +1171,12 @@ class ChannelVtermBias(SCPICmdWrite, SCPICmdRead):
 class ChannelVterm(SCPICmdRead):
     """The ``CH<x>:VTERm`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:VTERm?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:VTERm?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
 
     Properties:
@@ -1222,24 +1191,23 @@ class ChannelVterm(SCPICmdRead):
     def bias(self) -> ChannelVtermBias:
         """Return the ``CH<x>:VTERm:BIAS`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the termination bias voltage for the specified channel (if control is
               available).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:VTERm:BIAS?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:VTERm:BIAS?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:VTERm:BIAS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:VTERm:BIAS <NR3>
             - CH<x>:VTERm:BIAS?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR3>`` is the termination voltage.
         """
@@ -1249,24 +1217,23 @@ class ChannelVterm(SCPICmdRead):
 class ChannelTermination(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:TERmination`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the vertical termination for the specified analog channel.
           The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:TERmination?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:TERmination?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:TERmination value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:TERmination <NR3>
         - CH<x>:TERmination?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR3>`` specifies the channel input resistance, which can be specified as 50 Ω or
           1,000,000 Ω.
@@ -1276,22 +1243,21 @@ class ChannelTermination(SCPICmdWrite, SCPICmdRead):
 class ChannelSvStopfrequency(SCPICmdRead):
     """The ``CH<x>:SV:STOPFrequency`` command.
 
-    **Description:**
+    Description:
         - This command queries the stop frequency of the specified spectrum trace channel in the
           Spectrum View window
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:SV:STOPFrequency?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:SV:STOPFrequency?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:SV:STOPFrequency?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the spectrum trace channel source.
     """
 
@@ -1299,24 +1265,23 @@ class ChannelSvStopfrequency(SCPICmdRead):
 class ChannelSvState(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:SV:STATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the on/off setting of data acquisition for the specified
           spectrum trace channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:SV:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:SV:STATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:SV:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:SV:STATE {ON|OFF}
         - CH<x>:SV:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the spectrum trace channel source.
         - ``ON`` enables spectrum data acquisition for the specified spectrum trace channel source.
         - ``OFF`` disables spectrum data acquisition for the specified spectrum trace channel
@@ -1327,22 +1292,21 @@ class ChannelSvState(SCPICmdWrite, SCPICmdRead):
 class ChannelSvStartfrequency(SCPICmdRead):
     """The ``CH<x>:SV:STARTFrequency`` command.
 
-    **Description:**
+    Description:
         - This command queries the start frequency of the specified spectrum trace channel in the
           Spectrum View window
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:SV:STARTFrequency?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:SV:STARTFrequency?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:SV:STARTFrequency?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the spectrum trace channel source.
     """
 
@@ -1350,22 +1314,21 @@ class ChannelSvStartfrequency(SCPICmdRead):
 class ChannelSvSpanbelowdc(SCPICmdRead):
     """The ``CH<x>:SV:SPANBELowdc`` command.
 
-    **Description:**
+    Description:
         - This command queries whether the start frequency for the specified spectrum trace channel
           is below 0 Hz.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:SV:SPANBELowdc?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:SV:SPANBELowdc?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:SV:SPANBELowdc?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the spectrum trace channel source.
     """
 
@@ -1373,22 +1336,21 @@ class ChannelSvSpanbelowdc(SCPICmdRead):
 class ChannelSvSpanabovebw(SCPICmdRead):
     """The ``CH<x>:SV:SPANABovebw`` command.
 
-    **Description:**
+    Description:
         - This command queries whether the stop frequency for the specified spectrum trace channel
           is above the scope input bandwidth.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:SV:SPANABovebw?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:SV:SPANABovebw?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:SV:SPANABovebw?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the spectrum trace channel source.
     """
 
@@ -1396,24 +1358,23 @@ class ChannelSvSpanabovebw(SCPICmdRead):
 class ChannelSvPosition(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:SV:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the Spectrum Time setting of the specified spectrum trace
           channel in the Spectrum View.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:SV:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:SV:POSition?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:SV:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:SV:POSition <NR3>
         - CH<x>:SV:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the spectrum trace channel source.
         - ``<NR3>`` specifies the spectrum time location, as a percentage of the record length. The
           range of values is 0.0% to 100%.
@@ -1423,25 +1384,24 @@ class ChannelSvPosition(SCPICmdWrite, SCPICmdRead):
 class ChannelSvCenterfrequency(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:SV:CENTERFrequency`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the center frequency of the specified spectrum trace channel
           for Spectrum View.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:SV:CENTERFrequency?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:SV:CENTERFrequency?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:SV:CENTERFrequency value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:SV:CENTERFrequency <NR3>
         - CH<x>:SV:CENTERFrequency?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the spectrum trace channel source.
         - ``<NR3>`` specifies the spectrum trace center frequency for the specified channel, in
           hertz. The range of values is 0.0 to the maximum licensed bandwidth of the instrument.
@@ -1451,12 +1411,12 @@ class ChannelSvCenterfrequency(SCPICmdWrite, SCPICmdRead):
 class ChannelSv(SCPICmdRead):
     """The ``CH<x>:SV`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:SV?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:SV?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the spectrum trace channel source.
 
     Properties:
@@ -1485,25 +1445,24 @@ class ChannelSv(SCPICmdRead):
     def centerfrequency(self) -> ChannelSvCenterfrequency:
         """Return the ``CH<x>:SV:CENTERFrequency`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the center frequency of the specified spectrum trace
               channel for Spectrum View.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:SV:CENTERFrequency?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:SV:CENTERFrequency?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:SV:CENTERFrequency value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:SV:CENTERFrequency <NR3>
             - CH<x>:SV:CENTERFrequency?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the spectrum trace channel source.
             - ``<NR3>`` specifies the spectrum trace center frequency for the specified channel, in
               hertz. The range of values is 0.0 to the maximum licensed bandwidth of the instrument.
@@ -1514,24 +1473,23 @@ class ChannelSv(SCPICmdRead):
     def position(self) -> ChannelSvPosition:
         """Return the ``CH<x>:SV:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Spectrum Time setting of the specified spectrum trace
               channel in the Spectrum View.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:SV:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:SV:POSition?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:SV:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:SV:POSition <NR3>
             - CH<x>:SV:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the spectrum trace channel source.
             - ``<NR3>`` specifies the spectrum time location, as a percentage of the record length.
               The range of values is 0.0% to 100%.
@@ -1542,22 +1500,21 @@ class ChannelSv(SCPICmdRead):
     def spanabovebw(self) -> ChannelSvSpanabovebw:
         """Return the ``CH<x>:SV:SPANABovebw`` command.
 
-        **Description:**
+        Description:
             - This command queries whether the stop frequency for the specified spectrum trace
               channel is above the scope input bandwidth.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:SV:SPANABovebw?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:SV:SPANABovebw?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:SV:SPANABovebw?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the spectrum trace channel source.
         """
         return self._spanabovebw
@@ -1566,22 +1523,21 @@ class ChannelSv(SCPICmdRead):
     def spanbelowdc(self) -> ChannelSvSpanbelowdc:
         """Return the ``CH<x>:SV:SPANBELowdc`` command.
 
-        **Description:**
+        Description:
             - This command queries whether the start frequency for the specified spectrum trace
               channel is below 0 Hz.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:SV:SPANBELowdc?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:SV:SPANBELowdc?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:SV:SPANBELowdc?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the spectrum trace channel source.
         """
         return self._spanbelowdc
@@ -1590,22 +1546,21 @@ class ChannelSv(SCPICmdRead):
     def startfrequency(self) -> ChannelSvStartfrequency:
         """Return the ``CH<x>:SV:STARTFrequency`` command.
 
-        **Description:**
+        Description:
             - This command queries the start frequency of the specified spectrum trace channel in
               the Spectrum View window
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:SV:STARTFrequency?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:SV:STARTFrequency?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:SV:STARTFrequency?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the spectrum trace channel source.
         """
         return self._startfrequency
@@ -1614,24 +1569,23 @@ class ChannelSv(SCPICmdRead):
     def state(self) -> ChannelSvState:
         """Return the ``CH<x>:SV:STATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the on/off setting of data acquisition for the specified
               spectrum trace channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:SV:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:SV:STATE?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:SV:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:SV:STATE {ON|OFF}
             - CH<x>:SV:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the spectrum trace channel source.
             - ``ON`` enables spectrum data acquisition for the specified spectrum trace channel
               source.
@@ -1644,22 +1598,21 @@ class ChannelSv(SCPICmdRead):
     def stopfrequency(self) -> ChannelSvStopfrequency:
         """Return the ``CH<x>:SV:STOPFrequency`` command.
 
-        **Description:**
+        Description:
             - This command queries the stop frequency of the specified spectrum trace channel in the
               Spectrum View window
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:SV:STOPFrequency?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:SV:STOPFrequency?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:SV:STOPFrequency?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the spectrum trace channel source.
         """
         return self._stopfrequency
@@ -1668,20 +1621,19 @@ class ChannelSv(SCPICmdRead):
 class ChannelScale(SCPICmdWrite):
     """The ``CH<x>:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the vertical scale for the specified analog channel. The
           channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CH<x>:SCAle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:SCAle <NR3>
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR3>`` is the vertical scale for the specified analog channel.
     """
@@ -1690,23 +1642,22 @@ class ChannelScale(SCPICmdWrite):
 class ChannelScaleratio(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:SCALERATio`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the scale ratio for the specified analog channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:SCALERATio?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:SCALERATio?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:SCALERATio value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:SCALERATio <NR2>
         - CH<x>:SCALERATio?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR2>`` is the scale ratio for the specified analog channel.
     """
@@ -1715,65 +1666,62 @@ class ChannelScaleratio(SCPICmdWrite, SCPICmdRead):
 class ChannelProbeUnits(SCPICmdRead):
     """The ``CH<x>:PRObe:UNIts`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns a string describing the units of measure for the probe
           attached to the specified channel. The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PRObe:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:UNIts?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:UNIts?
+        ```
     """
 
 
 class ChannelProbeStatus(SCPICmdRead):
     """The ``CH<x>:PRObe:STATus`` command.
 
-    **Description:**
+    Description:
         - Queries the probe unsigned integer error value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PRObe:STATus?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:STATus?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:STATus?
+        ```
     """
 
 
 class ChannelProbeSet(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:PRObe:SET`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries aspects of probe accessory user interfaces, for example probe
           attenuation factors or probe audible over range. The available arguments for this command
           will vary depending on the accessory you attach to the instrument. The channel is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PRObe:SET?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:SET?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:PRObe:SET value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:SET <QString>
         - CH<x>:PRObe:SET?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<QString>`` is a quoted string representing a settable aspect of the attached accessory.
     """
@@ -1784,38 +1732,36 @@ class ChannelProbeSet(SCPICmdWrite, SCPICmdRead):
 class ChannelProbeSelfcalState(SCPICmdReadWithArguments):
     """The ``CH<x>:PRObe:SELFCal:State`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the self-calibration state. The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``CH<x>:PRObe:SELFCal:State? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``CH<x>:PRObe:SELFCal:State? argument`` query and raise an AssertionError if the returned
           value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:SELFCal:State? EXECUTE
+        ```
     """
 
 
 class ChannelProbeSelfcal(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:PRObe:SELFCal`` command.
 
-    **Description:**
+    Description:
         - This command initiates self-calibration on the probe. The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CH<x>:PRObe:SELFCal value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:SELFCal EXECUTE
+        ```
 
     Properties:
         - ``.state``: The ``CH<x>:PRObe:SELFCal:State`` command.
@@ -1829,22 +1775,21 @@ class ChannelProbeSelfcal(SCPICmdWrite, SCPICmdRead):
     def state(self) -> ChannelProbeSelfcalState:
         """Return the ``CH<x>:PRObe:SELFCal:State`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the self-calibration state. The channel is specified
               by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``CH<x>:PRObe:SELFCal:State? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``CH<x>:PRObe:SELFCal:State? argument`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:SELFCal:State? EXECUTE
+            ```
         """
         return self._state
 
@@ -1852,45 +1797,43 @@ class ChannelProbeSelfcal(SCPICmdWrite, SCPICmdRead):
 class ChannelProbeResistance(SCPICmdRead):
     """The ``CH<x>:PRObe:RESistance`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the resistance of the probe that is attached to the
           specified channel. The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PRObe:RESistance?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:RESistance?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:RESistance?
+        ```
     """
 
 
 class ChannelProbeInputmodeDoffset(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:PRObe:INPUTMode:DOFFSet`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the differential offset value of the probe that is attached to the
           specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PRObe:INPUTMode:DOFFSet?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:INPUTMode:DOFFSet?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:PRObe:INPUTMode:DOFFSet value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:INPUTMode:DOFFSet <NR3>
         - CH<x>:PRObe:INPUTMode:DOFFSet?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR3>`` sets the D (differential) mode offset value, in vertical units (V or A).
     """
@@ -1899,25 +1842,24 @@ class ChannelProbeInputmodeDoffset(SCPICmdWrite, SCPICmdRead):
 class ChannelProbeInputmodeCoffset(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:PRObe:INPUTMode:COFFSet`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the common mode offset value of the probe that is attached to the
           specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PRObe:INPUTMode:COFFSet?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:INPUTMode:COFFSet?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:PRObe:INPUTMode:COFFSet value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:INPUTMode:COFFSet <NR3>
         - CH<x>:PRObe:INPUTMode:COFFSet?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR3>`` sets the C (common) mode offset value, in vertical units (V or A).
     """
@@ -1926,25 +1868,24 @@ class ChannelProbeInputmodeCoffset(SCPICmdWrite, SCPICmdRead):
 class ChannelProbeInputmodeBoffset(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:PRObe:INPUTMode:BOFFSet`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the B mode offset control of the probe that is attached to the specified
           channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PRObe:INPUTMode:BOFFSet?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:INPUTMode:BOFFSet?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:PRObe:INPUTMode:BOFFSet value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:INPUTMode:BOFFSet <NR3>
         - CH<x>:PRObe:INPUTMode:BOFFSet?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR3>`` sets the B mode offset value, in vertical units (V or A).
     """
@@ -1953,25 +1894,24 @@ class ChannelProbeInputmodeBoffset(SCPICmdWrite, SCPICmdRead):
 class ChannelProbeInputmodeAoffset(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:PRObe:INPUTMode:AOFFSet`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the A mode offset control of the probe that is attached to the specified
           channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PRObe:INPUTMode:AOFFSet?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:INPUTMode:AOFFSet?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:PRObe:INPUTMode:AOFFSet value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:INPUTMode:AOFFSet <NR3>
         - CH<x>:PRObe:INPUTMode:AOFFSet?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR3>`` sets the A mode offset value, in vertical units (V or A).
     """
@@ -1980,23 +1920,22 @@ class ChannelProbeInputmodeAoffset(SCPICmdWrite, SCPICmdRead):
 class ChannelProbeInputmode(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:PRObe:INPUTMode`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the input mode of the probe that is attached to the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PRObe:INPUTMode?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:INPUTMode?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:PRObe:INPUTMode value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:INPUTMode {A|B|COMMONMODE|DIFFERENTIAL}
         - CH<x>:PRObe:INPUTMode?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``A`` sets the probe to send single-ended A signals to the instrument.
         - ``B`` sets the probe to send single-ended B signals to the instrument.
@@ -2021,25 +1960,24 @@ class ChannelProbeInputmode(SCPICmdWrite, SCPICmdRead):
     def aoffset(self) -> ChannelProbeInputmodeAoffset:
         """Return the ``CH<x>:PRObe:INPUTMode:AOFFSet`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the A mode offset control of the probe that is attached to the
               specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PRObe:INPUTMode:AOFFSet?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:INPUTMode:AOFFSet?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``CH<x>:PRObe:INPUTMode:AOFFSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:INPUTMode:AOFFSet <NR3>
             - CH<x>:PRObe:INPUTMode:AOFFSet?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR3>`` sets the A mode offset value, in vertical units (V or A).
         """
@@ -2049,25 +1987,24 @@ class ChannelProbeInputmode(SCPICmdWrite, SCPICmdRead):
     def boffset(self) -> ChannelProbeInputmodeBoffset:
         """Return the ``CH<x>:PRObe:INPUTMode:BOFFSet`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the B mode offset control of the probe that is attached to the
               specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PRObe:INPUTMode:BOFFSet?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:INPUTMode:BOFFSet?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``CH<x>:PRObe:INPUTMode:BOFFSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:INPUTMode:BOFFSet <NR3>
             - CH<x>:PRObe:INPUTMode:BOFFSet?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR3>`` sets the B mode offset value, in vertical units (V or A).
         """
@@ -2077,25 +2014,24 @@ class ChannelProbeInputmode(SCPICmdWrite, SCPICmdRead):
     def coffset(self) -> ChannelProbeInputmodeCoffset:
         """Return the ``CH<x>:PRObe:INPUTMode:COFFSet`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the common mode offset value of the probe that is attached to the
               specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PRObe:INPUTMode:COFFSet?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:INPUTMode:COFFSet?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``CH<x>:PRObe:INPUTMode:COFFSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:INPUTMode:COFFSet <NR3>
             - CH<x>:PRObe:INPUTMode:COFFSet?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR3>`` sets the C (common) mode offset value, in vertical units (V or A).
         """
@@ -2105,25 +2041,24 @@ class ChannelProbeInputmode(SCPICmdWrite, SCPICmdRead):
     def doffset(self) -> ChannelProbeInputmodeDoffset:
         """Return the ``CH<x>:PRObe:INPUTMode:DOFFSet`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the differential offset value of the probe that is attached to the
               specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PRObe:INPUTMode:DOFFSet?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:INPUTMode:DOFFSet?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``CH<x>:PRObe:INPUTMode:DOFFSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:INPUTMode:DOFFSet <NR3>
             - CH<x>:PRObe:INPUTMode:DOFFSet?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR3>`` sets the D (differential) mode offset value, in vertical units (V or A).
         """
@@ -2133,60 +2068,57 @@ class ChannelProbeInputmode(SCPICmdWrite, SCPICmdRead):
 class ChannelProbeIdType(SCPICmdRead):
     """The ``CH<x>:PRObe:ID:TYPe`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the type of probe that is attached to the specified
           channel. The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PRObe:ID:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:ID:TYPe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:ID:TYPe?
+        ```
     """
 
 
 class ChannelProbeIdSernumber(SCPICmdRead):
     """The ``CH<x>:PRObe:ID:SERnumber`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the serial number of the probe that is attached to the
           specified channel. The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PRObe:ID:SERnumber?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:ID:SERnumber?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:ID:SERnumber?
+        ```
     """
 
 
 class ChannelProbeId(SCPICmdRead):
     """The ``CH<x>:PRObe:ID`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the type and serial number of the probe that is attached
           to the specified channel. The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PRObe:ID?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:ID?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:ID?
+        ```
 
     Properties:
         - ``.sernumber``: The ``CH<x>:PRObe:ID:SERnumber`` command.
@@ -2202,20 +2134,19 @@ class ChannelProbeId(SCPICmdRead):
     def sernumber(self) -> ChannelProbeIdSernumber:
         """Return the ``CH<x>:PRObe:ID:SERnumber`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the serial number of the probe that is attached to the
               specified channel. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PRObe:ID:SERnumber?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:ID:SERnumber?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:ID:SERnumber?
+            ```
         """
         return self._sernumber
 
@@ -2223,20 +2154,19 @@ class ChannelProbeId(SCPICmdRead):
     def type(self) -> ChannelProbeIdType:
         """Return the ``CH<x>:PRObe:ID:TYPe`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the type of probe that is attached to the specified
               channel. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PRObe:ID:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:ID:TYPe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:ID:TYPe?
+            ```
         """
         return self._type
 
@@ -2244,48 +2174,46 @@ class ChannelProbeId(SCPICmdRead):
 class ChannelProbeGain(SCPICmdRead):
     """The ``CH<x>:PRObe:GAIN`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the gain factor of the probe that is attached to the
           specified channel. The channel is specified by x. The gain of a probe is the output
           divided by the input transfer ratio. For example, a common 10x probe has a gain of 0.1.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PRObe:GAIN?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:GAIN?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:GAIN?
+        ```
     """
 
 
 class ChannelProbeForcedrange(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:PRObe:FORCEDRange`` command.
 
-    **Description:**
+    Description:
         - This command sets the attached TekVPI probe to the specified range, or it queries the
           range of the probe attached to the specified channel. If the <NR3> argument does not match
           one of the available ranges, the closest range will be selected. The channel is specified
           by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PRObe:FORCEDRange?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:FORCEDRange?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:PRObe:FORCEDRange value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:FORCEDRange <NR3>
         - CH<x>:PRObe:FORCEDRange?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR3>`` specifies the probe dynamic range.
     """
@@ -2294,40 +2222,38 @@ class ChannelProbeForcedrange(SCPICmdWrite, SCPICmdRead):
 class ChannelProbeDegaussState(SCPICmdRead):
     """The ``CH<x>:PRObe:DEGAUSS:STATE`` command.
 
-    **Description:**
+    Description:
         - This command queries whether the probe attached to the specified channel requires a
           degauss operation. The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PRObe:DEGAUSS:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:DEGAUSS:STATE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:DEGAUSS:STATE?
+        ```
     """
 
 
 class ChannelProbeDegauss(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:PRObe:DEGAUSS`` command.
 
-    **Description:**
+    Description:
         - This command starts a degauss cycle of the TekVPI probe attached to the specified channel.
           The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CH<x>:PRObe:DEGAUSS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:DEGAUSS EXECute
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``EXECute`` starts the degauss cycle.
 
@@ -2343,20 +2269,19 @@ class ChannelProbeDegauss(SCPICmdWrite, SCPICmdRead):
     def state(self) -> ChannelProbeDegaussState:
         """Return the ``CH<x>:PRObe:DEGAUSS:STATE`` command.
 
-        **Description:**
+        Description:
             - This command queries whether the probe attached to the specified channel requires a
               degauss operation. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PRObe:DEGAUSS:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:DEGAUSS:STATE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:DEGAUSS:STATE?
+            ```
         """
         return self._state
 
@@ -2364,39 +2289,37 @@ class ChannelProbeDegauss(SCPICmdWrite, SCPICmdRead):
 class ChannelProbeCompensate(SCPICmdWriteNoArguments):
     """The ``CH<x>:PRObe:COMPensate`` command.
 
-    **Description:**
+    Description:
         - This command starts the probe compensation procedure for passive probes. The channel is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``CH<x>:PRObe:COMPensate`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:COMPensate
+        ```
     """
 
 
 class ChannelProbeAutozero(SCPICmdWrite):
     """The ``CH<x>:PRObe:AUTOZero`` command.
 
-    **Description:**
+    Description:
         - This command executes the attached probe's Auto Zero function, for probes that support
           this feature. See your probe documentation for more details. The channel is specified by
           x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CH<x>:PRObe:AUTOZero value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe:AUTOZero EXECute
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``EXECute`` sets the probe attached to the specified channel to autozero.
     """
@@ -2406,20 +2329,19 @@ class ChannelProbeAutozero(SCPICmdWrite):
 class ChannelProbe(SCPICmdRead):
     """The ``CH<x>:PRObe`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns all information concerning the probe that is attached to
           the specified channel. The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PRObe?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PRObe?
+        ```
 
     Properties:
         - ``.autozero``: The ``CH<x>:PRObe:AUTOZero`` command.
@@ -2455,22 +2377,21 @@ class ChannelProbe(SCPICmdRead):
     def autozero(self) -> ChannelProbeAutozero:
         """Return the ``CH<x>:PRObe:AUTOZero`` command.
 
-        **Description:**
+        Description:
             - This command executes the attached probe's Auto Zero function, for probes that support
               this feature. See your probe documentation for more details. The channel is specified
               by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CH<x>:PRObe:AUTOZero value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:AUTOZero EXECute
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``EXECute`` sets the probe attached to the specified channel to autozero.
         """
@@ -2480,18 +2401,17 @@ class ChannelProbe(SCPICmdRead):
     def compensate(self) -> ChannelProbeCompensate:
         """Return the ``CH<x>:PRObe:COMPensate`` command.
 
-        **Description:**
+        Description:
             - This command starts the probe compensation procedure for passive probes. The channel
               is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``CH<x>:PRObe:COMPensate`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:COMPensate
+            ```
         """
         return self._compensate
 
@@ -2499,21 +2419,20 @@ class ChannelProbe(SCPICmdRead):
     def degauss(self) -> ChannelProbeDegauss:
         """Return the ``CH<x>:PRObe:DEGAUSS`` command.
 
-        **Description:**
+        Description:
             - This command starts a degauss cycle of the TekVPI probe attached to the specified
               channel. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CH<x>:PRObe:DEGAUSS value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:DEGAUSS EXECute
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``EXECute`` starts the degauss cycle.
 
@@ -2526,27 +2445,26 @@ class ChannelProbe(SCPICmdRead):
     def forcedrange(self) -> ChannelProbeForcedrange:
         """Return the ``CH<x>:PRObe:FORCEDRange`` command.
 
-        **Description:**
+        Description:
             - This command sets the attached TekVPI probe to the specified range, or it queries the
               range of the probe attached to the specified channel. If the <NR3> argument does not
               match one of the available ranges, the closest range will be selected. The channel is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PRObe:FORCEDRange?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:FORCEDRange?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:PRObe:FORCEDRange value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:FORCEDRange <NR3>
             - CH<x>:PRObe:FORCEDRange?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR3>`` specifies the probe dynamic range.
         """
@@ -2556,22 +2474,21 @@ class ChannelProbe(SCPICmdRead):
     def gain(self) -> ChannelProbeGain:
         """Return the ``CH<x>:PRObe:GAIN`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the gain factor of the probe that is attached to the
               specified channel. The channel is specified by x. The gain of a probe is the output
               divided by the input transfer ratio. For example, a common 10x probe has a gain of
               0.1.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PRObe:GAIN?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:GAIN?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:GAIN?
+            ```
         """
         return self._gain
 
@@ -2579,20 +2496,19 @@ class ChannelProbe(SCPICmdRead):
     def id(self) -> ChannelProbeId:
         """Return the ``CH<x>:PRObe:ID`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the type and serial number of the probe that is
               attached to the specified channel. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PRObe:ID?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:ID?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:ID?
+            ```
 
         Sub-properties:
             - ``.sernumber``: The ``CH<x>:PRObe:ID:SERnumber`` command.
@@ -2604,24 +2520,23 @@ class ChannelProbe(SCPICmdRead):
     def inputmode(self) -> ChannelProbeInputmode:
         """Return the ``CH<x>:PRObe:INPUTMode`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the input mode of the probe that is attached to the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PRObe:INPUTMode?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:INPUTMode?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:PRObe:INPUTMode value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:INPUTMode {A|B|COMMONMODE|DIFFERENTIAL}
             - CH<x>:PRObe:INPUTMode?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``A`` sets the probe to send single-ended A signals to the instrument.
             - ``B`` sets the probe to send single-ended B signals to the instrument.
@@ -2640,20 +2555,19 @@ class ChannelProbe(SCPICmdRead):
     def resistance(self) -> ChannelProbeResistance:
         """Return the ``CH<x>:PRObe:RESistance`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the resistance of the probe that is attached to the
               specified channel. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PRObe:RESistance?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:RESistance?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:RESistance?
+            ```
         """
         return self._resistance
 
@@ -2661,18 +2575,17 @@ class ChannelProbe(SCPICmdRead):
     def selfcal(self) -> ChannelProbeSelfcal:
         """Return the ``CH<x>:PRObe:SELFCal`` command.
 
-        **Description:**
+        Description:
             - This command initiates self-calibration on the probe. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CH<x>:PRObe:SELFCal value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:SELFCal EXECUTE
+            ```
 
         Sub-properties:
             - ``.state``: The ``CH<x>:PRObe:SELFCal:State`` command.
@@ -2683,26 +2596,25 @@ class ChannelProbe(SCPICmdRead):
     def set_(self) -> ChannelProbeSet:
         """Return the ``CH<x>:PRObe:SET`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries aspects of probe accessory user interfaces, for example
               probe attenuation factors or probe audible over range. The available arguments for
               this command will vary depending on the accessory you attach to the instrument. The
               channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PRObe:SET?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:SET?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:PRObe:SET value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:SET <QString>
             - CH<x>:PRObe:SET?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<QString>`` is a quoted string representing a settable aspect of the attached
               accessory.
@@ -2713,19 +2625,18 @@ class ChannelProbe(SCPICmdRead):
     def status(self) -> ChannelProbeStatus:
         """Return the ``CH<x>:PRObe:STATus`` command.
 
-        **Description:**
+        Description:
             - Queries the probe unsigned integer error value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PRObe:STATus?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:STATus?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:STATus?
+            ```
         """
         return self._status
 
@@ -2733,20 +2644,19 @@ class ChannelProbe(SCPICmdRead):
     def units(self) -> ChannelProbeUnits:
         """Return the ``CH<x>:PRObe:UNIts`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns a string describing the units of measure for the probe
               attached to the specified channel. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PRObe:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe:UNIts?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe:UNIts?
+            ```
         """
         return self._units
 
@@ -2754,41 +2664,39 @@ class ChannelProbe(SCPICmdRead):
 class ChannelProbetype(SCPICmdRead):
     """The ``CH<x>:PROBETYPE`` command.
 
-    **Description:**
+    Description:
         - This command returns the probe type connected to the specified channel. The channel is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PROBETYPE?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PROBETYPE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PROBETYPE?
+        ```
     """
 
 
 class ChannelProbefuncExtunitsState(SCPICmdWrite):
     """The ``CH<x>:PROBEFunc:EXTUnits:STATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the custom units enable state for the specified channel. The
           channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CH<x>:PROBEFunc:EXTUnits:STATE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PROBEFunc:EXTUnits:STATE {ON|OFF|<NR1>}
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``OFF`` argument turns off external units.
         - ``ON`` argument turns on external units.
@@ -2799,26 +2707,25 @@ class ChannelProbefuncExtunitsState(SCPICmdWrite):
 class ChannelProbefuncExtunits(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:PROBEFunc:EXTUnits`` command.
 
-    **Description:**
+    Description:
         - This command sets the unit of measurement for the external attenuator of the specified
           channel. The channel is specified by x. The alternate units are used if they are enabled.
           Use the ``CHX:PROBEFUNC:EXTUNITS:STATE`` command to enable or disable the alternate units.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PROBEFunc:EXTUnits?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PROBEFunc:EXTUnits?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:PROBEFunc:EXTUnits value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PROBEFunc:EXTUnits <QString>
         - CH<x>:PROBEFunc:EXTUnits?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<QString>`` indicates the attenuation unit of measurement for the specified channel.
 
@@ -2836,21 +2743,20 @@ class ChannelProbefuncExtunits(SCPICmdWrite, SCPICmdRead):
     def state(self) -> ChannelProbefuncExtunitsState:
         """Return the ``CH<x>:PROBEFunc:EXTUnits:STATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the custom units enable state for the specified channel.
               The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``CH<x>:PROBEFunc:EXTUnits:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PROBEFunc:EXTUnits:STATE {ON|OFF|<NR1>}
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``OFF`` argument turns off external units.
             - ``ON`` argument turns on external units.
@@ -2862,27 +2768,26 @@ class ChannelProbefuncExtunits(SCPICmdWrite, SCPICmdRead):
 class ChannelProbefuncExtdbatten(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:PROBEFunc:EXTDBatten`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input-output ratio (expressed in decibel units) of
           external attenuation or gain between the signal and the instrument input channels. The
           channel is specified by x. The query form of this command returns the user-specified
           attenuation in decibels.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PROBEFunc:EXTDBatten?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PROBEFunc:EXTDBatten?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:PROBEFunc:EXTDBatten value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PROBEFunc:EXTDBatten <NR3>
         - CH<x>:PROBEFunc:EXTDBatten?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR3>`` is the attenuation value, which is specified in the range from -200.00 dB to
           200.00 dB.
@@ -2892,26 +2797,25 @@ class ChannelProbefuncExtdbatten(SCPICmdWrite, SCPICmdRead):
 class ChannelProbefuncExtatten(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:PROBEFunc:EXTAtten`` command.
 
-    **Description:**
+    Description:
         - This command is used to specify the attenuation value as a multiplier to the given scale
           factor on the specified channel. The channel is specified by x. The query form of this
           command returns the user-specified attenuation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PROBEFunc:EXTAtten?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PROBEFunc:EXTAtten?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:PROBEFunc:EXTAtten value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PROBEFunc:EXTAtten <NR3>
         - CH<x>:PROBEFunc:EXTAtten?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR3>`` is the attenuation value, which is specified as a multiplier in the range from
           1.00E-10 to 1.00E+10.
@@ -2921,12 +2825,12 @@ class ChannelProbefuncExtatten(SCPICmdWrite, SCPICmdRead):
 class ChannelProbefunc(SCPICmdRead):
     """The ``CH<x>:PROBEFunc`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PROBEFunc?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PROBEFunc?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
 
     Properties:
@@ -2945,26 +2849,25 @@ class ChannelProbefunc(SCPICmdRead):
     def extatten(self) -> ChannelProbefuncExtatten:
         """Return the ``CH<x>:PROBEFunc:EXTAtten`` command.
 
-        **Description:**
+        Description:
             - This command is used to specify the attenuation value as a multiplier to the given
               scale factor on the specified channel. The channel is specified by x. The query form
               of this command returns the user-specified attenuation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PROBEFunc:EXTAtten?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PROBEFunc:EXTAtten?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:PROBEFunc:EXTAtten value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PROBEFunc:EXTAtten <NR3>
             - CH<x>:PROBEFunc:EXTAtten?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR3>`` is the attenuation value, which is specified as a multiplier in the range
               from 1.00E-10 to 1.00E+10.
@@ -2975,27 +2878,26 @@ class ChannelProbefunc(SCPICmdRead):
     def extdbatten(self) -> ChannelProbefuncExtdbatten:
         """Return the ``CH<x>:PROBEFunc:EXTDBatten`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input-output ratio (expressed in decibel units) of
               external attenuation or gain between the signal and the instrument input channels. The
               channel is specified by x. The query form of this command returns the user-specified
               attenuation in decibels.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PROBEFunc:EXTDBatten?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PROBEFunc:EXTDBatten?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:PROBEFunc:EXTDBatten value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PROBEFunc:EXTDBatten <NR3>
             - CH<x>:PROBEFunc:EXTDBatten?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR3>`` is the attenuation value, which is specified in the range from -200.00 dB to
               200.00 dB.
@@ -3006,27 +2908,26 @@ class ChannelProbefunc(SCPICmdRead):
     def extunits(self) -> ChannelProbefuncExtunits:
         """Return the ``CH<x>:PROBEFunc:EXTUnits`` command.
 
-        **Description:**
+        Description:
             - This command sets the unit of measurement for the external attenuator of the specified
               channel. The channel is specified by x. The alternate units are used if they are
               enabled. Use the ``CHX:PROBEFUNC:EXTUNITS:STATE`` command to enable or disable the
               alternate units.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PROBEFunc:EXTUnits?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PROBEFunc:EXTUnits?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:PROBEFunc:EXTUnits value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PROBEFunc:EXTUnits <QString>
             - CH<x>:PROBEFunc:EXTUnits?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<QString>`` indicates the attenuation unit of measurement for the specified channel.
 
@@ -3039,44 +2940,42 @@ class ChannelProbefunc(SCPICmdRead):
 class ChannelProbecal(SCPICmdRead):
     """The ``CH<x>:PROBECal`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the probe calibration state for the specified channel. The
           channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PROBECal?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PROBECal?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PROBECal?
+        ```
     """
 
 
 class ChannelProbecontrol(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:PROBECOntrol`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries multirange probe range-control policy preference of the probe
           that is attached to CH<x>. The channel number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:PROBECOntrol?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:PROBECOntrol?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:PROBECOntrol value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:PROBECOntrol {AUTO|MANual}
         - CH<x>:PROBECOntrol?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``AUTO`` sets the values. The probe range is automatically calculated.
         - ``MANual`` allows you to select various valid values for the probe connected to a
@@ -3087,19 +2986,18 @@ class ChannelProbecontrol(SCPICmdWrite, SCPICmdRead):
 class ChannelPosition(SCPICmdWrite):
     """The ``CH<x>:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the vertical position for the specified analog channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CH<x>:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:POSition <NR1>
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR1>`` is the vertical position for the specified analog channel.
     """
@@ -3108,23 +3006,22 @@ class ChannelPosition(SCPICmdWrite):
 class ChannelOffset(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:OFFSet`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the vertical offset for the specified analog channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:OFFSet?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:OFFSet?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:OFFSet value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:OFFSet <NR3>
         - CH<x>:OFFSet?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR3>`` is the offset value for the specified channel.
     """
@@ -3133,24 +3030,23 @@ class ChannelOffset(SCPICmdWrite, SCPICmdRead):
 class ChannelLabelYpos(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:LABel:YPOS`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the Y-position of the specified channel label. The channel is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:LABel:YPOS?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:LABel:YPOS?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:LABel:YPOS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:LABel:YPOS <NR3>
         - CH<x>:LABel:YPOS?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR3>`` is the location (in pixels) where the waveform label for the selected channel is
           displayed, relative to the baseline of the waveform. Positive values are above the
@@ -3161,24 +3057,23 @@ class ChannelLabelYpos(SCPICmdWrite, SCPICmdRead):
 class ChannelLabelXpos(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:LABel:XPOS`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the X-position of the specified channel label. The channel is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:LABel:XPOS?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:LABel:XPOS?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:LABel:XPOS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:LABel:XPOS <NR3>
         - CH<x>:LABel:XPOS?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR3>`` is the location (in pixels) where the waveform label for the selected channel is
           displayed, relative to the left edge of the screen.
@@ -3188,24 +3083,23 @@ class ChannelLabelXpos(SCPICmdWrite, SCPICmdRead):
 class ChannelLabelName(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:LABel:NAMe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the label attached to the displayed waveform for the
           specified channel. The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:LABel:NAMe?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:LABel:NAMe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:LABel:NAMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:LABel:NAMe <QString>
         - CH<x>:LABel:NAMe?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<QString>`` is an alphanumeric character string, ranging from 1 through 32 characters in
           length.
@@ -3217,21 +3111,20 @@ class ChannelLabelName(SCPICmdWrite, SCPICmdRead):
 class ChannelLabelFontUnderline(SCPICmdWrite):
     """The ``CH<x>:LABel:FONT:UNDERline`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the underline state of the specified channel label. The
           channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CH<x>:LABel:FONT:UNDERline value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:LABel:FONT:UNDERline {ON|OFF|<NR1>}
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``OFF`` argument turns off underlined font.
         - ``ON`` argument turns on underlined font.
@@ -3242,20 +3135,19 @@ class ChannelLabelFontUnderline(SCPICmdWrite):
 class ChannelLabelFontType(SCPICmdWrite):
     """The ``CH<x>:LABel:FONT:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the font type of the specified channel label, such as Arial
           or Times New Roman. The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CH<x>:LABel:FONT:TYPE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:LABel:FONT:TYPE <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<QString>`` is the specified font type.
     """
@@ -3266,20 +3158,19 @@ class ChannelLabelFontType(SCPICmdWrite):
 class ChannelLabelFontSize(SCPICmdWrite):
     """The ``CH<x>:LABel:FONT:SIZE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the font size of the specified channel label. The channel is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CH<x>:LABel:FONT:SIZE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:LABel:FONT:SIZE <NR1>
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR1>`` is the font size.
     """
@@ -3288,21 +3179,20 @@ class ChannelLabelFontSize(SCPICmdWrite):
 class ChannelLabelFontItalic(SCPICmdWrite):
     """The ``CH<x>:LABel:FONT:ITALic`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the italic state of the specified channel label. The channel
           is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CH<x>:LABel:FONT:ITALic value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:LABel:FONT:ITALic {ON|OFF|<NR1>}
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``OFF`` argument turns off italic font.
         - ``ON`` argument turns on italic font.
@@ -3313,20 +3203,19 @@ class ChannelLabelFontItalic(SCPICmdWrite):
 class ChannelLabelFontBold(SCPICmdWrite):
     """The ``CH<x>:LABel:FONT:BOLD`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the bold state of the specified channel label. The channel is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CH<x>:LABel:FONT:BOLD value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:LABel:FONT:BOLD {ON|OFF|<NR1>}
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``OFF`` argument turns off bold font.
         - ``ON`` argument turns on bold font.
@@ -3337,12 +3226,12 @@ class ChannelLabelFontBold(SCPICmdWrite):
 class ChannelLabelFont(SCPICmdRead):
     """The ``CH<x>:LABel:FONT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:LABel:FONT?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:LABel:FONT?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
 
     Properties:
@@ -3365,21 +3254,20 @@ class ChannelLabelFont(SCPICmdRead):
     def bold(self) -> ChannelLabelFontBold:
         """Return the ``CH<x>:LABel:FONT:BOLD`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the bold state of the specified channel label. The
               channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CH<x>:LABel:FONT:BOLD value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:LABel:FONT:BOLD {ON|OFF|<NR1>}
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``OFF`` argument turns off bold font.
             - ``ON`` argument turns on bold font.
@@ -3391,21 +3279,20 @@ class ChannelLabelFont(SCPICmdRead):
     def italic(self) -> ChannelLabelFontItalic:
         """Return the ``CH<x>:LABel:FONT:ITALic`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the italic state of the specified channel label. The
               channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CH<x>:LABel:FONT:ITALic value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:LABel:FONT:ITALic {ON|OFF|<NR1>}
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``OFF`` argument turns off italic font.
             - ``ON`` argument turns on italic font.
@@ -3417,21 +3304,20 @@ class ChannelLabelFont(SCPICmdRead):
     def size(self) -> ChannelLabelFontSize:
         """Return the ``CH<x>:LABel:FONT:SIZE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the font size of the specified channel label. The channel
               is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CH<x>:LABel:FONT:SIZE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:LABel:FONT:SIZE <NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR1>`` is the font size.
         """
@@ -3441,21 +3327,20 @@ class ChannelLabelFont(SCPICmdRead):
     def type(self) -> ChannelLabelFontType:
         """Return the ``CH<x>:LABel:FONT:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the font type of the specified channel label, such as
               Arial or Times New Roman. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CH<x>:LABel:FONT:TYPE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:LABel:FONT:TYPE <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<QString>`` is the specified font type.
         """
@@ -3465,21 +3350,20 @@ class ChannelLabelFont(SCPICmdRead):
     def underline(self) -> ChannelLabelFontUnderline:
         """Return the ``CH<x>:LABel:FONT:UNDERline`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the underline state of the specified channel label. The
               channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CH<x>:LABel:FONT:UNDERline value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:LABel:FONT:UNDERline {ON|OFF|<NR1>}
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``OFF`` argument turns off underlined font.
             - ``ON`` argument turns on underlined font.
@@ -3491,20 +3375,19 @@ class ChannelLabelFont(SCPICmdRead):
 class ChannelLabelColor(SCPICmdWrite):
     """The ``CH<x>:LABel:COLor`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the color of the specified channel label. The channel is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CH<x>:LABel:COLor value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:LABel:COLor <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<QString>`` is the label color. To return the color to the default color, send an empty
           string as in this example: ``CH5:LABEL:COLOR`` ''.
@@ -3516,12 +3399,12 @@ class ChannelLabelColor(SCPICmdWrite):
 class ChannelLabel(SCPICmdRead):
     """The ``CH<x>:LABel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:LABel?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:LABel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
 
     Properties:
@@ -3544,20 +3427,19 @@ class ChannelLabel(SCPICmdRead):
     def color(self) -> ChannelLabelColor:
         """Return the ``CH<x>:LABel:COLor`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the color of the specified channel label. The channel is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CH<x>:LABel:COLor value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:LABel:COLor <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<QString>`` is the label color. To return the color to the default color, send an
               empty string as in this example: ``CH5:LABEL:COLOR`` ''.
@@ -3568,12 +3450,12 @@ class ChannelLabel(SCPICmdRead):
     def font(self) -> ChannelLabelFont:
         """Return the ``CH<x>:LABel:FONT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:LABel:FONT?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:LABel:FONT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
 
         Sub-properties:
@@ -3589,24 +3471,23 @@ class ChannelLabel(SCPICmdRead):
     def name(self) -> ChannelLabelName:
         """Return the ``CH<x>:LABel:NAMe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the label attached to the displayed waveform for the
               specified channel. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:LABel:NAMe?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:LABel:NAMe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:LABel:NAMe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:LABel:NAMe <QString>
             - CH<x>:LABel:NAMe?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<QString>`` is an alphanumeric character string, ranging from 1 through 32
               characters in length.
@@ -3617,24 +3498,23 @@ class ChannelLabel(SCPICmdRead):
     def xpos(self) -> ChannelLabelXpos:
         """Return the ``CH<x>:LABel:XPOS`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the X-position of the specified channel label. The
               channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:LABel:XPOS?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:LABel:XPOS?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:LABel:XPOS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:LABel:XPOS <NR3>
             - CH<x>:LABel:XPOS?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR3>`` is the location (in pixels) where the waveform label for the selected
               channel is displayed, relative to the left edge of the screen.
@@ -3645,24 +3525,23 @@ class ChannelLabel(SCPICmdRead):
     def ypos(self) -> ChannelLabelYpos:
         """Return the ``CH<x>:LABel:YPOS`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Y-position of the specified channel label. The
               channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:LABel:YPOS?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:LABel:YPOS?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:LABel:YPOS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:LABel:YPOS <NR3>
             - CH<x>:LABel:YPOS?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR3>`` is the location (in pixels) where the waveform label for the selected
               channel is displayed, relative to the baseline of the waveform. Positive values are
@@ -3674,24 +3553,23 @@ class ChannelLabel(SCPICmdRead):
 class ChannelInvert(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:INVert`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries invert state of the specified channel. The channel is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:INVert?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:INVert?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:INVert value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:INVert {ON|OFF|<NR1>}
         - CH<x>:INVert?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` turns off the channel invert.
         - ``ON`` turns on the channel invert.
         - ``<NR1>`` 0 turns off the channel invert; any other value turns on the channel invert.
@@ -3701,22 +3579,21 @@ class ChannelInvert(SCPICmdWrite, SCPICmdRead):
 class ChannelDitherrange(SCPICmdWrite):
     """The ``CH<x>:DITHERrange`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the amount of dithering for the specified analog channel. The
           channel is specified by x. The amount of dithering is a percentage of full scale (10 times
           volts/division). Note: Setting this value to 0.0 for any unused channels may slightly
           improve performance.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CH<x>:DITHERrange value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:DITHERrange <NR3>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the amount of dithering as a percentage of full scale. Must be between 0.0
           and 100.0 and 0.0 disables dithering.
     """
@@ -3725,24 +3602,23 @@ class ChannelDitherrange(SCPICmdWrite):
 class ChannelDeskew(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:DESKew`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the horizontal deskew time for the specified channel. The
           channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:DESKew?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:DESKew?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:DESKew value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:DESKew <NR3>
         - CH<x>:DESKew?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR3>`` is the deskew time for this channel, ranging from -125 ns to +125 ns with a
           resolution of 40 ps. Out-of-range values are clipped.
@@ -3752,24 +3628,23 @@ class ChannelDeskew(SCPICmdWrite, SCPICmdRead):
 class ChannelCoupling(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:COUPling`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input coupling setting for the specified analog channel.
           The channel is specified by x. The available arguments depend on the attached accessories.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:COUPling?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:COUPling?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:COUPling value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:COUPling {AC|DC|DCREJect}
         - CH<x>:COUPling?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``AC`` sets the specified channel to AC coupling.
         - ``DC`` sets the specified channel to DC coupling.
@@ -3780,30 +3655,29 @@ class ChannelCoupling(SCPICmdWrite, SCPICmdRead):
 class ChannelClipping(SCPICmdRead):
     """The ``CH<x>:CLIPping`` command.
 
-    **Description:**
+    Description:
         - Queries whether the specified channel's input signal is clipping (exceeding) the channel
           A/D converter range. The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:CLIPping?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:CLIPping?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:CLIPping?
+        ```
     """
 
 
 class ChannelBandwidthFilterOptimization(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:BANdwidth:FILTer:OPTIMIZation`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the channel filter shape. The channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:BANdwidth:FILTer:OPTIMIZation?``
           query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:BANdwidth:FILTer:OPTIMIZation?``
@@ -3811,14 +3685,13 @@ class ChannelBandwidthFilterOptimization(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``CH<x>:BANdwidth:FILTer:OPTIMIZation value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:BANdwidth:FILTer:OPTIMIZation {STEPRESPONSE|FLATNESS}
         - CH<x>:BANdwidth:FILTer:OPTIMIZation?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``STEPRESPONSE`` sets a Bessel-Thompson filter that minimizes overshoot with a gradual
           rollof.
@@ -3831,12 +3704,12 @@ class ChannelBandwidthFilterOptimization(SCPICmdWrite, SCPICmdRead):
 class ChannelBandwidthFilter(SCPICmdRead):
     """The ``CH<x>:BANdwidth:FILTer`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:BANdwidth:FILTer?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:BANdwidth:FILTer?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
 
     Properties:
@@ -3853,10 +3726,10 @@ class ChannelBandwidthFilter(SCPICmdRead):
     def optimization(self) -> ChannelBandwidthFilterOptimization:
         """Return the ``CH<x>:BANdwidth:FILTer:OPTIMIZation`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the channel filter shape. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:BANdwidth:FILTer:OPTIMIZation?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3865,14 +3738,13 @@ class ChannelBandwidthFilter(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``CH<x>:BANdwidth:FILTer:OPTIMIZation value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:BANdwidth:FILTer:OPTIMIZation {STEPRESPONSE|FLATNESS}
             - CH<x>:BANdwidth:FILTer:OPTIMIZation?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``STEPRESPONSE`` sets a Bessel-Thompson filter that minimizes overshoot with a gradual
               rollof.
@@ -3886,26 +3758,25 @@ class ChannelBandwidthFilter(SCPICmdRead):
 class ChannelBandwidth(SCPICmdWrite, SCPICmdRead):
     """The ``CH<x>:BANdwidth`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the selectable low-pass bandwidth limit filter of the
           specified channel. The channel is specified by x. The query form of this command always
           returns the approximate realized bandwidth of the channel. Available arguments depend upon
           the instrument and the attached accessories.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>:BANdwidth?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>:BANdwidth?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CH<x>:BANdwidth value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>:BANdwidth {<NR3>|FULl}
         - CH<x>:BANdwidth?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is the channel number.
         - ``<NR3>`` is the desired bandwidth. The instrument rounds this value to an available
           bandwidth using geometric rounding and then uses this value to set the upper bandwidth.
@@ -3924,12 +3795,12 @@ class ChannelBandwidth(SCPICmdWrite, SCPICmdRead):
     def filter(self) -> ChannelBandwidthFilter:
         """Return the ``CH<x>:BANdwidth:FILTer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:BANdwidth:FILTer?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:BANdwidth:FILTer?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
 
         Sub-properties:
@@ -3942,20 +3813,19 @@ class ChannelBandwidth(SCPICmdWrite, SCPICmdRead):
 class Channel(ValidatedChannel, SCPICmdRead):
     """The ``CH<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the vertical parameters for the specified channel. The
           channel is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``CH<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CH<x>?
+        ```
 
     Properties:
         - ``.bandwidth``: The ``CH<x>:BANdwidth`` command.
@@ -4011,26 +3881,25 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def bandwidth(self) -> ChannelBandwidth:
         """Return the ``CH<x>:BANdwidth`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the selectable low-pass bandwidth limit filter of the
               specified channel. The channel is specified by x. The query form of this command
               always returns the approximate realized bandwidth of the channel. Available arguments
               depend upon the instrument and the attached accessories.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:BANdwidth?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:BANdwidth?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:BANdwidth value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:BANdwidth {<NR3>|FULl}
             - CH<x>:BANdwidth?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR3>`` is the desired bandwidth. The instrument rounds this value to an available
               bandwidth using geometric rounding and then uses this value to set the upper
@@ -4047,20 +3916,19 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def clipping(self) -> ChannelClipping:
         """Return the ``CH<x>:CLIPping`` command.
 
-        **Description:**
+        Description:
             - Queries whether the specified channel's input signal is clipping (exceeding) the
               channel A/D converter range. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:CLIPping?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:CLIPping?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:CLIPping?
+            ```
         """
         return self._clipping
 
@@ -4068,25 +3936,24 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def coupling(self) -> ChannelCoupling:
         """Return the ``CH<x>:COUPling`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input coupling setting for the specified analog
               channel. The channel is specified by x. The available arguments depend on the attached
               accessories.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:COUPling?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:COUPling?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:COUPling value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:COUPling {AC|DC|DCREJect}
             - CH<x>:COUPling?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``AC`` sets the specified channel to AC coupling.
             - ``DC`` sets the specified channel to DC coupling.
@@ -4099,24 +3966,23 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def deskew(self) -> ChannelDeskew:
         """Return the ``CH<x>:DESKew`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the horizontal deskew time for the specified channel. The
               channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:DESKew?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:DESKew?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:DESKew value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:DESKew <NR3>
             - CH<x>:DESKew?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR3>`` is the deskew time for this channel, ranging from -125 ns to +125 ns with a
               resolution of 40 ps. Out-of-range values are clipped.
@@ -4127,22 +3993,21 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def ditherrange(self) -> ChannelDitherrange:
         """Return the ``CH<x>:DITHERrange`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the amount of dithering for the specified analog channel.
               The channel is specified by x. The amount of dithering is a percentage of full scale
               (10 times volts/division). Note: Setting this value to 0.0 for any unused channels may
               slightly improve performance.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CH<x>:DITHERrange value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:DITHERrange <NR3>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the amount of dithering as a percentage of full scale. Must be between
               0.0 and 100.0 and 0.0 disables dithering.
         """
@@ -4152,24 +4017,23 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def invert(self) -> ChannelInvert:
         """Return the ``CH<x>:INVert`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries invert state of the specified channel. The channel is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:INVert?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:INVert?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:INVert value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:INVert {ON|OFF|<NR1>}
             - CH<x>:INVert?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` turns off the channel invert.
             - ``ON`` turns on the channel invert.
             - ``<NR1>`` 0 turns off the channel invert; any other value turns on the channel invert.
@@ -4180,12 +4044,12 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def label(self) -> ChannelLabel:
         """Return the ``CH<x>:LABel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:LABel?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:LABel?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
 
         Sub-properties:
@@ -4201,23 +4065,22 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def offset(self) -> ChannelOffset:
         """Return the ``CH<x>:OFFSet`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the vertical offset for the specified analog channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:OFFSet?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:OFFSet?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:OFFSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:OFFSet <NR3>
             - CH<x>:OFFSet?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR3>`` is the offset value for the specified channel.
         """
@@ -4227,19 +4090,18 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def position(self) -> ChannelPosition:
         """Return the ``CH<x>:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the vertical position for the specified analog channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CH<x>:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:POSition <NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR1>`` is the vertical position for the specified analog channel.
         """
@@ -4249,24 +4111,23 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def probecontrol(self) -> ChannelProbecontrol:
         """Return the ``CH<x>:PROBECOntrol`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries multirange probe range-control policy preference of the
               probe that is attached to CH<x>. The channel number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PROBECOntrol?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PROBECOntrol?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:PROBECOntrol value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PROBECOntrol {AUTO|MANual}
             - CH<x>:PROBECOntrol?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``AUTO`` sets the values. The probe range is automatically calculated.
             - ``MANual`` allows you to select various valid values for the probe connected to a
@@ -4278,20 +4139,19 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def probecal(self) -> ChannelProbecal:
         """Return the ``CH<x>:PROBECal`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the probe calibration state for the specified channel.
               The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PROBECal?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PROBECal?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PROBECal?
+            ```
         """
         return self._probecal
 
@@ -4299,12 +4159,12 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def probefunc(self) -> ChannelProbefunc:
         """Return the ``CH<x>:PROBEFunc`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PROBEFunc?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PROBEFunc?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
 
         Sub-properties:
@@ -4318,20 +4178,19 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def probetype(self) -> ChannelProbetype:
         """Return the ``CH<x>:PROBETYPE`` command.
 
-        **Description:**
+        Description:
             - This command returns the probe type connected to the specified channel. The channel is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PROBETYPE?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PROBETYPE?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PROBETYPE?
+            ```
         """
         return self._probetype
 
@@ -4339,20 +4198,19 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def probe(self) -> ChannelProbe:
         """Return the ``CH<x>:PRObe`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns all information concerning the probe that is attached
               to the specified channel. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:PRObe?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:PRObe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:PRObe?
+            ```
 
         Sub-properties:
             - ``.autozero``: The ``CH<x>:PRObe:AUTOZero`` command.
@@ -4374,23 +4232,22 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def scaleratio(self) -> ChannelScaleratio:
         """Return the ``CH<x>:SCALERATio`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the scale ratio for the specified analog channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:SCALERATio?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:SCALERATio?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:SCALERATio value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:SCALERATio <NR2>
             - CH<x>:SCALERATio?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR2>`` is the scale ratio for the specified analog channel.
         """
@@ -4400,20 +4257,19 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def scale(self) -> ChannelScale:
         """Return the ``CH<x>:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the vertical scale for the specified analog channel. The
               channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CH<x>:SCAle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:SCAle <NR3>
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR3>`` is the vertical scale for the specified analog channel.
         """
@@ -4423,12 +4279,12 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def sv(self) -> ChannelSv:
         """Return the ``CH<x>:SV`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:SV?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:SV?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the spectrum trace channel source.
 
         Sub-properties:
@@ -4446,24 +4302,23 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def termination(self) -> ChannelTermination:
         """Return the ``CH<x>:TERmination`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the vertical termination for the specified analog
               channel. The channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:TERmination?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:TERmination?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CH<x>:TERmination value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>:TERmination <NR3>
             - CH<x>:TERmination?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
             - ``<NR3>`` specifies the channel input resistance, which can be specified as 50 Ω or
               1,000,000 Ω.
@@ -4474,12 +4329,12 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def vterm(self) -> ChannelVterm:
         """Return the ``CH<x>:VTERm`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>:VTERm?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>:VTERm?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
 
         Sub-properties:
@@ -4491,12 +4346,12 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def d(self) -> Dict[int, ChannelDigitalBit]:
         """Return the ``CH<x>_D<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_D<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_D<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
 
         Sub-properties:
@@ -4508,12 +4363,12 @@ class Channel(ValidatedChannel, SCPICmdRead):
     def dall(self) -> ChannelDall:
         """Return the ``CH<x>_DALL`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>_DALL?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>_DALL?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` is the channel number.
 
         Sub-properties:

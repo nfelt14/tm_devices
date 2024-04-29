@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - FILESystem:COPy {<source_file_path>,<destination_file_path>}
     - FILESystem:CWD {<new_working_directory_path>}
     - FILESystem:CWD?
@@ -44,21 +42,20 @@ if TYPE_CHECKING:
 class FilesystemWritefile(SCPICmdWrite):
     """The ``FILESystem:WRITEFile`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) writes the specified block data to the specified file on the
           instruments file system. If the destination file cannot be written, an error event is
           posted.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:WRITEFile value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:WRITEFile <file_path>,<data>
+        ```
 
-    **Info:**
+    Info:
         - ``<file_path>`` is a quoted string that defines the file name and path. If the file path
           is within the current working directory, you need only specify the file name.
         - ``<data>`` is the specified block data to be written.
@@ -68,21 +65,20 @@ class FilesystemWritefile(SCPICmdWrite):
 class FilesystemUnmountTekdrive(SCPICmdWrite):
     """The ``FILESystem:UNMOUNT:TEKDrive`` command.
 
-    **Description:**
+    Description:
         - This command unmounts the TekDrive specified by the quoted string argument and the drive
           name is case insensitive.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:UNMOUNT:TEKDrive value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:UNMOUNT:TEKDrive <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the TekDrive to unmount.
     """
 
@@ -92,20 +88,19 @@ class FilesystemUnmountTekdrive(SCPICmdWrite):
 class FilesystemUnmountDrive(SCPICmdWrite):
     """The ``FILESystem:UNMOUNT:DRIve`` command.
 
-    **Description:**
+    Description:
         - This command unmounts the USB drive specified by the quoted string argument.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:UNMOUNT:DRIve value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:UNMOUNT:DRIve <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string that specifies which USB drive to unmount. String is a
           case insensitive single letter followed by a colon.
     """
@@ -116,7 +111,7 @@ class FilesystemUnmountDrive(SCPICmdWrite):
 class FilesystemUnmount(SCPICmdRead):
     """The ``FILESystem:UNMOUNT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FILESystem:UNMOUNT?`` query.
         - Using the ``.verify(value)`` method will send the ``FILESystem:UNMOUNT?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -135,20 +130,19 @@ class FilesystemUnmount(SCPICmdRead):
     def drive(self) -> FilesystemUnmountDrive:
         """Return the ``FILESystem:UNMOUNT:DRIve`` command.
 
-        **Description:**
+        Description:
             - This command unmounts the USB drive specified by the quoted string argument.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:UNMOUNT:DRIve value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:UNMOUNT:DRIve <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string that specifies which USB drive to unmount. String is
               a case insensitive single letter followed by a colon.
         """
@@ -158,21 +152,20 @@ class FilesystemUnmount(SCPICmdRead):
     def tekdrive(self) -> FilesystemUnmountTekdrive:
         """Return the ``FILESystem:UNMOUNT:TEKDrive`` command.
 
-        **Description:**
+        Description:
             - This command unmounts the TekDrive specified by the quoted string argument and the
               drive name is case insensitive.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:UNMOUNT:TEKDrive value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:UNMOUNT:TEKDrive <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the TekDrive to unmount.
         """
         return self._tekdrive
@@ -181,62 +174,59 @@ class FilesystemUnmount(SCPICmdRead):
 class FilesystemTekdriveCodeStatus(SCPICmdRead):
     """The ``FILESystem:TEKDrive:CODE:STATus`` command.
 
-    **Description:**
+    Description:
         - This command returns status of short code.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FILESystem:TEKDrive:CODE:STATus?`` query.
         - Using the ``.verify(value)`` method will send the ``FILESystem:TEKDrive:CODE:STATus?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:TEKDrive:CODE:STATus?
+        ```
     """
 
 
 class FilesystemTekdriveCodeExpirytime(SCPICmdRead):
     """The ``FILESystem:TEKDrive:CODE:EXPirytime`` command.
 
-    **Description:**
+    Description:
         - This command returns expiry time of short code. It is the absolute time that the expiry
           command returns. For example, if ``2:11`` pm is the time the user initiated the TekDrive
           mounting, then the expiry query returns + 5 minutes (``2:16`` pm).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FILESystem:TEKDrive:CODE:EXPirytime?``
           query.
         - Using the ``.verify(value)`` method will send the ``FILESystem:TEKDrive:CODE:EXPirytime?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:TEKDrive:CODE:EXPirytime?
+        ```
     """
 
 
 class FilesystemTekdriveCode(SCPICmdRead):
     """The ``FILESystem:TEKDrive:CODE`` command.
 
-    **Description:**
+    Description:
         - This command returns short code in string format. This code must be entered (or pasted) at
           http://drive.tekcloud.com/activate. After the code is entered click the Activate button to
           complete the mounting of the TekDrive.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FILESystem:TEKDrive:CODE?`` query.
         - Using the ``.verify(value)`` method will send the ``FILESystem:TEKDrive:CODE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:TEKDrive:CODE?
+        ```
 
     Properties:
         - ``.expirytime``: The ``FILESystem:TEKDrive:CODE:EXPirytime`` command.
@@ -254,23 +244,22 @@ class FilesystemTekdriveCode(SCPICmdRead):
     def expirytime(self) -> FilesystemTekdriveCodeExpirytime:
         """Return the ``FILESystem:TEKDrive:CODE:EXPirytime`` command.
 
-        **Description:**
+        Description:
             - This command returns expiry time of short code. It is the absolute time that the
               expiry command returns. For example, if ``2:11`` pm is the time the user initiated the
               TekDrive mounting, then the expiry query returns + 5 minutes (``2:16`` pm).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FILESystem:TEKDrive:CODE:EXPirytime?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``FILESystem:TEKDrive:CODE:EXPirytime?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:TEKDrive:CODE:EXPirytime?
+            ```
         """
         return self._expirytime
 
@@ -278,20 +267,19 @@ class FilesystemTekdriveCode(SCPICmdRead):
     def status(self) -> FilesystemTekdriveCodeStatus:
         """Return the ``FILESystem:TEKDrive:CODE:STATus`` command.
 
-        **Description:**
+        Description:
             - This command returns status of short code.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FILESystem:TEKDrive:CODE:STATus?``
               query.
             - Using the ``.verify(value)`` method will send the ``FILESystem:TEKDrive:CODE:STATus?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:TEKDrive:CODE:STATus?
+            ```
         """
         return self._status
 
@@ -299,7 +287,7 @@ class FilesystemTekdriveCode(SCPICmdRead):
 class FilesystemTekdrive(SCPICmdRead):
     """The ``FILESystem:TEKDrive`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FILESystem:TEKDrive?`` query.
         - Using the ``.verify(value)`` method will send the ``FILESystem:TEKDrive?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -316,21 +304,20 @@ class FilesystemTekdrive(SCPICmdRead):
     def code(self) -> FilesystemTekdriveCode:
         """Return the ``FILESystem:TEKDrive:CODE`` command.
 
-        **Description:**
+        Description:
             - This command returns short code in string format. This code must be entered (or
               pasted) at http://drive.tekcloud.com/activate. After the code is entered click the
               Activate button to complete the mounting of the TekDrive.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FILESystem:TEKDrive:CODE?`` query.
             - Using the ``.verify(value)`` method will send the ``FILESystem:TEKDrive:CODE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:TEKDrive:CODE?
+            ```
 
         Sub-properties:
             - ``.expirytime``: The ``FILESystem:TEKDrive:CODE:EXPirytime`` command.
@@ -342,19 +329,18 @@ class FilesystemTekdrive(SCPICmdRead):
 class FilesystemRmdir(SCPICmdWrite):
     """The ``FILESystem:RMDir`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) deletes a named directory. The directory must be empty.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:RMDir value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:RMDir <directory_path>
+        ```
 
-    **Info:**
+    Info:
         - ``<directory_path>`` is a quoted string that defines the folder name and path. If the
           folder path is within the current working directory, you need only specify the folder
           name.
@@ -364,19 +350,18 @@ class FilesystemRmdir(SCPICmdWrite):
 class FilesystemRename(SCPICmdWrite):
     """The ``FILESystem:REName`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) assigns a new name to an existing file or folder.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:REName value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:REName <old_file_path>,<new_file_path>
+        ```
 
-    **Info:**
+    Info:
         - ``<old_file_path>`` is a quoted string that defines the file or folder name and path. If
           the path is within the current working directory, you need only specify the file or folder
           name.
@@ -389,20 +374,19 @@ class FilesystemRename(SCPICmdWrite):
 class FilesystemReadfile(SCPICmdWrite):
     """The ``FILESystem:READFile`` command.
 
-    **Description:**
+    Description:
         - This command writes the contents of the specified file to the current interface. If the
           specified file does not exist or is not readable, an appropriate error event is posted.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:READFile value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:READFile <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string that defines the file name and path. If the file path is
           within the current working directory, you need only specify the file name.
     """
@@ -413,7 +397,7 @@ class FilesystemReadfile(SCPICmdWrite):
 class FilesystemMountTekdrive(SCPICmdWrite):
     """The ``FILESystem:MOUNT:TEKDrive`` command.
 
-    **Description:**
+    Description:
         - This command mounts the TekDrive specified by the quoted string arguments. The argument
           must contain the drive name, AutoDisconnectMode, RestrictToCurrentIP, and
           AutoDisconnectTime. The drive name is the TekDrive name to be mounted. It is case
@@ -428,17 +412,16 @@ class FilesystemMountTekdrive(SCPICmdWrite):
           maximum is 744 hours. The query form of this command returns whether or not the specified
           TekDrive is mounted.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:MOUNT:TEKDrive value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:MOUNT:TEKDrive <QString>? <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` provides the information needed to mount the TekDrive and must have the
           drive name, AutoDisconnectMode, RestrictToCurrentIP, and AutoDisconnectTime.
     """
@@ -447,7 +430,7 @@ class FilesystemMountTekdrive(SCPICmdWrite):
 class FilesystemMountDrive(SCPICmdWrite):
     """The ``FILESystem:MOUNT:DRIVE`` command.
 
-    **Description:**
+    Description:
         - The command form mounts a network drive specified by the quoted string argument. The
           quoted string argument is a semicolon separated list of the following fields: Drive name -
           The drive name to be mounted. It is a case insensitive single letter followed by a colon.
@@ -461,21 +444,20 @@ class FilesystemMountDrive(SCPICmdWrite):
           indicate that the drive name (quoted string) is currently mounted or not. A return of 1
           indicates the drive is mounted. A return of 0 indicated the drive is not mounted.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:MOUNT:DRIVE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:MOUNT:DRIVE <QString>? <QString>
+        ```
     """
 
 
 class FilesystemMount(SCPICmdRead):
     """The ``FILESystem:MOUNT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FILESystem:MOUNT?`` query.
         - Using the ``.verify(value)`` method will send the ``FILESystem:MOUNT?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -494,7 +476,7 @@ class FilesystemMount(SCPICmdRead):
     def drive(self) -> FilesystemMountDrive:
         """Return the ``FILESystem:MOUNT:DRIVE`` command.
 
-        **Description:**
+        Description:
             - The command form mounts a network drive specified by the quoted string argument. The
               quoted string argument is a semicolon separated list of the following fields: Drive
               name - The drive name to be mounted. It is a case insensitive single letter followed
@@ -509,15 +491,14 @@ class FilesystemMount(SCPICmdRead):
               string) is currently mounted or not. A return of 1 indicates the drive is mounted. A
               return of 0 indicated the drive is not mounted.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:MOUNT:DRIVE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:MOUNT:DRIVE <QString>? <QString>
+            ```
         """
         return self._drive
 
@@ -525,7 +506,7 @@ class FilesystemMount(SCPICmdRead):
     def tekdrive(self) -> FilesystemMountTekdrive:
         """Return the ``FILESystem:MOUNT:TEKDrive`` command.
 
-        **Description:**
+        Description:
             - This command mounts the TekDrive specified by the quoted string arguments. The
               argument must contain the drive name, AutoDisconnectMode, RestrictToCurrentIP, and
               AutoDisconnectTime. The drive name is the TekDrive name to be mounted. It is case
@@ -540,17 +521,16 @@ class FilesystemMount(SCPICmdRead):
               is in hours. The minimum is 0.25 hours and the maximum is 744 hours. The query form of
               this command returns whether or not the specified TekDrive is mounted.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:MOUNT:TEKDrive value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:MOUNT:TEKDrive <QString>? <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` provides the information needed to mount the TekDrive and must have the
               drive name, AutoDisconnectMode, RestrictToCurrentIP, and AutoDisconnectTime.
         """
@@ -560,19 +540,18 @@ class FilesystemMount(SCPICmdRead):
 class FilesystemMkdir(SCPICmdWrite):
     """The ``FILESystem:MKDir`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) creates a new directory.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:MKDir value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:MKDir <directory_path>
+        ```
 
-    **Info:**
+    Info:
         - ``<directory_path>`` is a quoted string that specifies the directory to create.
     """
 
@@ -580,84 +559,80 @@ class FilesystemMkdir(SCPICmdWrite):
 class FilesystemLdir(SCPICmdRead):
     """The ``FILESystem:LDIR`` command.
 
-    **Description:**
+    Description:
         - Returns a comma separated list of every file, file size, type, modification date and time,
           and directory in the folder referred to by the ``FILESYSTEM:CWD`` command. This is
           different than the ``:DIR`` query in that it provides a long output format with the file
           size, type, and modification date/time. Each entry is a semicolon separated list: < file
           name>;<type>;<size in bytes>;<date>;<time>
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FILESystem:LDIR?`` query.
         - Using the ``.verify(value)`` method will send the ``FILESystem:LDIR?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:LDIR?
+        ```
     """
 
 
 class FilesystemHomedir(SCPICmdRead):
     """The ``FILESystem:HOMEDir`` command.
 
-    **Description:**
+    Description:
         - This query returns the current user's home directory.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FILESystem:HOMEDir?`` query.
         - Using the ``.verify(value)`` method will send the ``FILESystem:HOMEDir?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:HOMEDir?
+        ```
     """
 
 
 class FilesystemDir(SCPICmdRead):
     """The ``FILESystem:DIR`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns a comma separated list of quoted strings. Each string
           contains the name of a file or directory in the folder referred to by the
           ``FILESYSTEM:CWD`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FILESystem:DIR?`` query.
         - Using the ``.verify(value)`` method will send the ``FILESystem:DIR?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:DIR?
+        ```
     """
 
 
 class FilesystemDelete(SCPICmdWrite):
     """The ``FILESystem:DELEte`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) deletes a named file or directory from a mass storage device.
           Once removed, the data in that file or directory can no longer be accessed. If the
           specified file is a directory, it must be empty before it can be deleted.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:DELEte value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:DELEte <file_path>
+        ```
 
-    **Info:**
+    Info:
         - ``<file_path>`` is a quoted string that defines the file name and path. If the file path
           is within the current working directory, you need only specify the file name.
     """
@@ -666,25 +641,24 @@ class FilesystemDelete(SCPICmdWrite):
 class FilesystemCwd(SCPICmdWrite, SCPICmdRead):
     """The ``FILESystem:CWD`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current working directory. CWD is short for Current
           Working Directory. It changes the directory (folder) that the other FILESystem commands
           operate on.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FILESystem:CWD?`` query.
         - Using the ``.verify(value)`` method will send the ``FILESystem:CWD?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``FILESystem:CWD value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:CWD {<new_working_directory_path>}
         - FILESystem:CWD?
+        ```
 
-    **Info:**
+    Info:
         - ``<new_working_directory_path>`` is a quoted string that defines the current working; a
           directory name can be up to 128 characters.
     """
@@ -693,21 +667,20 @@ class FilesystemCwd(SCPICmdWrite, SCPICmdRead):
 class FilesystemCopy(SCPICmdWrite):
     """The ``FILESystem:COPy`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) copies a named file to a new file. The new file might be in a
           totally separate directory than the old file. You can only copy one file at a time using
           this command. Wild card characters are not allowed.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FILESystem:COPy value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem:COPy {<source_file_path>,<destination_file_path>}
+        ```
 
-    **Info:**
+    Info:
         - ``<source_file_path>`` is a quoted string that defines the file name and path or
           directory. If the file path is within the current working directory, you need only specify
           the file name.
@@ -720,20 +693,19 @@ class FilesystemCopy(SCPICmdWrite):
 class Filesystem(SCPICmdRead):
     """The ``FILESystem`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the directory listing of the current working directory.
           This query is the same as the ``FILESystem:DIR?`` query.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FILESystem?`` query.
         - Using the ``.verify(value)`` method will send the ``FILESystem?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILESystem?
+        ```
 
     Properties:
         - ``.copy``: The ``FILESystem:COPy`` command.
@@ -773,21 +745,20 @@ class Filesystem(SCPICmdRead):
     def copy(self) -> FilesystemCopy:
         """Return the ``FILESystem:COPy`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) copies a named file to a new file. The new file might be
               in a totally separate directory than the old file. You can only copy one file at a
               time using this command. Wild card characters are not allowed.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:COPy value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:COPy {<source_file_path>,<destination_file_path>}
+            ```
 
-        **Info:**
+        Info:
             - ``<source_file_path>`` is a quoted string that defines the file name and path or
               directory. If the file path is within the current working directory, you need only
               specify the file name.
@@ -801,25 +772,24 @@ class Filesystem(SCPICmdRead):
     def cwd(self) -> FilesystemCwd:
         """Return the ``FILESystem:CWD`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current working directory. CWD is short for Current
               Working Directory. It changes the directory (folder) that the other FILESystem
               commands operate on.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FILESystem:CWD?`` query.
             - Using the ``.verify(value)`` method will send the ``FILESystem:CWD?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``FILESystem:CWD value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:CWD {<new_working_directory_path>}
             - FILESystem:CWD?
+            ```
 
-        **Info:**
+        Info:
             - ``<new_working_directory_path>`` is a quoted string that defines the current working;
               a directory name can be up to 128 characters.
         """
@@ -829,21 +799,20 @@ class Filesystem(SCPICmdRead):
     def delete(self) -> FilesystemDelete:
         """Return the ``FILESystem:DELEte`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) deletes a named file or directory from a mass storage
               device. Once removed, the data in that file or directory can no longer be accessed. If
               the specified file is a directory, it must be empty before it can be deleted.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:DELEte value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:DELEte <file_path>
+            ```
 
-        **Info:**
+        Info:
             - ``<file_path>`` is a quoted string that defines the file name and path. If the file
               path is within the current working directory, you need only specify the file name.
         """
@@ -853,21 +822,20 @@ class Filesystem(SCPICmdRead):
     def dir(self) -> FilesystemDir:
         """Return the ``FILESystem:DIR`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns a comma separated list of quoted strings. Each string
               contains the name of a file or directory in the folder referred to by the
               ``FILESYSTEM:CWD`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FILESystem:DIR?`` query.
             - Using the ``.verify(value)`` method will send the ``FILESystem:DIR?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:DIR?
+            ```
         """
         return self._dir
 
@@ -875,19 +843,18 @@ class Filesystem(SCPICmdRead):
     def homedir(self) -> FilesystemHomedir:
         """Return the ``FILESystem:HOMEDir`` command.
 
-        **Description:**
+        Description:
             - This query returns the current user's home directory.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FILESystem:HOMEDir?`` query.
             - Using the ``.verify(value)`` method will send the ``FILESystem:HOMEDir?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:HOMEDir?
+            ```
         """
         return self._homedir
 
@@ -895,23 +862,22 @@ class Filesystem(SCPICmdRead):
     def ldir(self) -> FilesystemLdir:
         """Return the ``FILESystem:LDIR`` command.
 
-        **Description:**
+        Description:
             - Returns a comma separated list of every file, file size, type, modification date and
               time, and directory in the folder referred to by the ``FILESYSTEM:CWD`` command. This
               is different than the ``:DIR`` query in that it provides a long output format with the
               file size, type, and modification date/time. Each entry is a semicolon separated list:
               < file name>;<type>;<size in bytes>;<date>;<time>
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FILESystem:LDIR?`` query.
             - Using the ``.verify(value)`` method will send the ``FILESystem:LDIR?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:LDIR?
+            ```
         """
         return self._ldir
 
@@ -919,19 +885,18 @@ class Filesystem(SCPICmdRead):
     def mkdir(self) -> FilesystemMkdir:
         """Return the ``FILESystem:MKDir`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) creates a new directory.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:MKDir value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:MKDir <directory_path>
+            ```
 
-        **Info:**
+        Info:
             - ``<directory_path>`` is a quoted string that specifies the directory to create.
         """
         return self._mkdir
@@ -940,7 +905,7 @@ class Filesystem(SCPICmdRead):
     def mount(self) -> FilesystemMount:
         """Return the ``FILESystem:MOUNT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FILESystem:MOUNT?`` query.
             - Using the ``.verify(value)`` method will send the ``FILESystem:MOUNT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -955,22 +920,21 @@ class Filesystem(SCPICmdRead):
     def readfile(self) -> FilesystemReadfile:
         """Return the ``FILESystem:READFile`` command.
 
-        **Description:**
+        Description:
             - This command writes the contents of the specified file to the current interface. If
               the specified file does not exist or is not readable, an appropriate error event is
               posted.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:READFile value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:READFile <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string that defines the file name and path. If the file path
               is within the current working directory, you need only specify the file name.
         """
@@ -980,19 +944,18 @@ class Filesystem(SCPICmdRead):
     def rename(self) -> FilesystemRename:
         """Return the ``FILESystem:REName`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) assigns a new name to an existing file or folder.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:REName value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:REName <old_file_path>,<new_file_path>
+            ```
 
-        **Info:**
+        Info:
             - ``<old_file_path>`` is a quoted string that defines the file or folder name and path.
               If the path is within the current working directory, you need only specify the file or
               folder name.
@@ -1006,19 +969,18 @@ class Filesystem(SCPICmdRead):
     def rmdir(self) -> FilesystemRmdir:
         """Return the ``FILESystem:RMDir`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) deletes a named directory. The directory must be empty.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:RMDir value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:RMDir <directory_path>
+            ```
 
-        **Info:**
+        Info:
             - ``<directory_path>`` is a quoted string that defines the folder name and path. If the
               folder path is within the current working directory, you need only specify the folder
               name.
@@ -1029,7 +991,7 @@ class Filesystem(SCPICmdRead):
     def tekdrive(self) -> FilesystemTekdrive:
         """Return the ``FILESystem:TEKDrive`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FILESystem:TEKDrive?`` query.
             - Using the ``.verify(value)`` method will send the ``FILESystem:TEKDrive?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1043,7 +1005,7 @@ class Filesystem(SCPICmdRead):
     def unmount(self) -> FilesystemUnmount:
         """Return the ``FILESystem:UNMOUNT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FILESystem:UNMOUNT?`` query.
             - Using the ``.verify(value)`` method will send the ``FILESystem:UNMOUNT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1058,22 +1020,21 @@ class Filesystem(SCPICmdRead):
     def writefile(self) -> FilesystemWritefile:
         """Return the ``FILESystem:WRITEFile`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) writes the specified block data to the specified file on
               the instruments file system. If the destination file cannot be written, an error event
               is posted.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FILESystem:WRITEFile value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem:WRITEFile <file_path>,<data>
+            ```
 
-        **Info:**
+        Info:
             - ``<file_path>`` is a quoted string that defines the file name and path. If the file
               path is within the current working directory, you need only specify the file name.
             - ``<data>`` is the specified block data to be written.

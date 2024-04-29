@@ -842,19 +842,18 @@ class MDO3KCommands:
     def acquire(self) -> Acquire:
         """Return the ``ACQuire`` command.
 
-        **Description:**
+        Description:
             - Queries the current acquisition state.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACQuire?`` query.
             - Using the ``.verify(value)`` method will send the ``ACQuire?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACQuire?
+            ```
 
         Sub-properties:
             - ``.fastacq``: The ``ACQuire:FASTAcq`` command.
@@ -873,7 +872,7 @@ class MDO3KCommands:
     def actonevent(self) -> Actonevent:
         """Return the ``ACTONEVent`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -890,7 +889,7 @@ class MDO3KCommands:
     def afg(self) -> Afg:
         """Return the ``AFG`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -918,7 +917,7 @@ class MDO3KCommands:
     def alias(self) -> Alias:
         """Return the ``ALIas`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ALIas?`` query.
             - Using the ``.verify(value)`` method will send the ``ALIas?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -935,22 +934,21 @@ class MDO3KCommands:
     def allev(self) -> Allev:
         """Return the ``ALLEv`` command.
 
-        **Description:**
+        Description:
             - This query-only command prompts the instrument to return all events and their messages
               (delimited by commas), and removes the returned events from the Event Queue. Use the
               ``*ESR?`` query to enable the events to be returned. This command is similar to
               repeatedly sending ``*EVMsg?`` queries to the instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ALLEv?`` query.
             - Using the ``.verify(value)`` method will send the ``ALLEv?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ALLEv?
+            ```
         """
         return self._allev
 
@@ -958,7 +956,7 @@ class MDO3KCommands:
     def application(self) -> Application:
         """Return the ``APPLication`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``APPLication?`` query.
             - Using the ``.verify(value)`` method will send the ``APPLication?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -973,20 +971,19 @@ class MDO3KCommands:
     def autoset(self) -> Autoset:
         """Return the ``AUTOSet`` command.
 
-        **Description:**
+        Description:
             - Sets the vertical, horizontal, and trigger controls of the oscilloscope to
               automatically acquire and display the selected waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``AUTOSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUTOSet {EXECute|UNDo}
+            ```
 
-        **Info:**
+        Info:
             - ``EXECute`` autosets the displayed waveform.
             - ``UNDo`` restores the oscilloscope settings to those present prior to the autoset
               execution.
@@ -1000,19 +997,18 @@ class MDO3KCommands:
     def auxin(self) -> Auxin:
         """Return the ``AUXin`` command.
 
-        **Description:**
+        Description:
             - Returns all Aux Input connector parameters.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXin?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXin?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXin?
+            ```
 
         Sub-properties:
             - ``.probe``: The ``AUXin:PRObe`` command.
@@ -1023,7 +1019,7 @@ class MDO3KCommands:
     def auxout(self) -> Auxout:
         """Return the ``AUXOut`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXOut?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXOut?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1037,19 +1033,18 @@ class MDO3KCommands:
     def bus(self) -> Bus:
         """Return the ``BUS`` command.
 
-        **Description:**
+        Description:
             - Returns the parameters for each serial (if installed) and parallel bus.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BUS?`` query.
             - Using the ``.verify(value)`` method will send the ``BUS?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BUS?
+            ```
 
         Sub-properties:
             - ``.b``: The ``BUS:B<x>`` command tree.
@@ -1063,20 +1058,19 @@ class MDO3KCommands:
     def busy(self) -> Busy:
         """Return the ``BUSY`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the status of the instrument. This command allows you
               to synchronize the operation of the instrument with your application program.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BUSY?`` query.
             - Using the ``.verify(value)`` method will send the ``BUSY?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BUSY?
+            ```
         """
         return self._busy
 
@@ -1084,20 +1078,19 @@ class MDO3KCommands:
     def cal(self) -> Cal:
         """Return the ``*CAL`` command.
 
-        **Description:**
+        Description:
             - This query-only command starts signal path calibration (SPC) and returns the status
               upon completion.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*CAL?`` query.
             - Using the ``.verify(value)`` method will send the ``*CAL?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *CAL?
+            ```
         """
         return self._cal
 
@@ -1105,7 +1098,7 @@ class MDO3KCommands:
     def calibrate(self) -> Calibrate:
         """Return the ``CALibrate`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibrate?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibrate?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1124,20 +1117,19 @@ class MDO3KCommands:
     def ch(self) -> Dict[int, Channel]:
         """Return the ``CH<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the vertical parameters for the specified channel. The
               channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>?
+            ```
 
         Sub-properties:
             - ``.ampsviavolts``: The ``CH<x>:AMPSVIAVOLTs`` command tree.
@@ -1161,18 +1153,17 @@ class MDO3KCommands:
     def clearmenu(self) -> Clearmenu:
         """Return the ``CLEARMenu`` command.
 
-        **Description:**
+        Description:
             - Clears the current menu from the display. This command is equivalent to pressing the
               front panel Menu off.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``CLEARMenu`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLEARMenu
+            ```
         """
         return self._clearmenu
 
@@ -1180,7 +1171,7 @@ class MDO3KCommands:
     def cls(self) -> Cls:
         """Return the ``*CLS`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) clears the following: Event Queue Standard Event Status
               Register Status Byte Register (except the MAV bit) If the ``*CLS`` command immediately
               follows an <EOI>, the Output Queue and MAV bit (Status Byte Register bit 4) are also
@@ -1190,14 +1181,13 @@ class MDO3KCommands:
               by an ``*OPC``. This will happen if a single sequence acquisition operation is still
               being processed when the ``*CLS`` command is executed.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*CLS`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *CLS
+            ```
         """
         return self._cls
 
@@ -1205,7 +1195,7 @@ class MDO3KCommands:
     def configuration(self) -> Configuration:
         """Return the ``CONFIGuration`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CONFIGuration?`` query.
             - Using the ``.verify(value)`` method will send the ``CONFIGuration?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -1234,19 +1224,18 @@ class MDO3KCommands:
     def cursor(self) -> Cursor:
         """Return the ``CURSor`` command.
 
-        **Description:**
+        Description:
             - Returns all of the current cursor settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor?
+            ```
 
         Sub-properties:
             - ``.ddt``: The ``CURSor:DDT`` command.
@@ -1263,7 +1252,7 @@ class MDO3KCommands:
     def curve(self) -> Curve:
         """Return the ``CURVe`` command.
 
-        **Description:**
+        Description:
             - The ``CURVe`` command transfers the waveform data points the oscilloscope's internal
               reference memory location (REF1-4), which is specified by the to ``DATa:DESTination``
               command. The ``CURVe?`` query transfers data the oscilloscope; the source waveform is
@@ -1284,20 +1273,19 @@ class MDO3KCommands:
               immediately follows this binary block header. The Waveform Transfer command group text
               contains more comprehensive information.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURVe?`` query.
             - Using the ``.verify(value)`` method will send the ``CURVe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CURVe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURVe {<Block>|<asc curve>}
             - CURVe?
+            ```
 
-        **Info:**
+        Info:
             - ``<Block>`` is the waveform data in binary format. The waveform is formatted as
               follows.
             - ``<asc curve>`` is the waveform data in ASCII format. The format for ASCII data is
@@ -1310,18 +1298,17 @@ class MDO3KCommands:
     def d(self) -> Dict[int, DigitalBit]:
         """Return the ``D<x>`` command.
 
-        **Description:**
+        Description:
             - This command specifies parameters for digital channel <x>, where x is the channel
               number.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``D<x>`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - D<x>
+            ```
 
         Sub-properties:
             - ``.label``: The ``D<x>:LABel`` command.
@@ -1334,24 +1321,23 @@ class MDO3KCommands:
     def data(self) -> Data:
         """Return the ``DATa`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the format and location of the waveform data that is
               transferred with the CURVE command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DATa?`` query.
             - Using the ``.verify(value)`` method will send the ``DATa?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DATa value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DATa {INIT|SNAp}
             - DATa?
+            ```
 
-        **Info:**
+        Info:
             - ``INIT`` initializes the waveform data parameters to their factory defaults except for
               ``DATa:STOP``, which isset to the current acquisition record length.
             - ``SNAp`` Sets ``DATa:STARt`` and ``DATa:STOP`` to match the current waveform cursor
@@ -1373,23 +1359,22 @@ class MDO3KCommands:
     def date(self) -> Date:
         """Return the ``DATE`` command.
 
-        **Description:**
+        Description:
             - This command specifies the date the oscilloscope displays.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DATE?`` query.
             - Using the ``.verify(value)`` method will send the ``DATE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DATE <QString>
             - DATE?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a date in the form 'yyyy-mm-dd' where yyyy refers to a four-digit
               year number, mm refers to a two-digit month number from 01 to 12, and dd refers to a
               two-digit day number in the month.
@@ -1400,25 +1385,24 @@ class MDO3KCommands:
     def ddt(self) -> Ddt:
         """Return the ``*DDT`` command.
 
-        **Description:**
+        Description:
             - This command allows you to specify a command or a list of commands that are executed
               when the instrument receives a TRG command. Define Device Trigger ( ``*DDT`` ) is a
               special alias that the ``*TRG`` command uses.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*DDT?`` query.
             - Using the ``.verify(value)`` method will send the ``*DDT?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*DDT value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *DDT {<Block>|<QString>}
             - *DDT?
+            ```
 
-        **Info:**
+        Info:
             - ``<Block>`` is a complete sequence of program messages. The messages can contain only
               valid commands that must be separated by semicolons and must follow all rules for
               concatenating commands. The sequence must be less than or equal to 80 characters. The
@@ -1433,26 +1417,25 @@ class MDO3KCommands:
     def dese(self) -> Dese:
         """Return the ``DESE`` command.
 
-        **Description:**
+        Description:
             - This command sets and queries the bits in the Device Event Status Enable Register
               (DESER). The DESER is the mask that determines whether events are reported to the
               Standard Event Status Register (SESR), and entered into the Event Queue. For a more
               detailed discussion of the use of these registers, see Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DESE?`` query.
             - Using the ``.verify(value)`` method will send the ``DESE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DESE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DESE <NR1>
             - DESE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` The binary bits of the DESER are set according to this value, which ranges
               from 1 through 255. For example, ``DESE 209`` sets the DESER to the binary value
               11010001 (that is, the most significant bit in the register is set to 1, the next most
@@ -1464,21 +1447,20 @@ class MDO3KCommands:
     def deskew(self) -> Deskew:
         """Return the ``DESkew`` command.
 
-        **Description:**
+        Description:
             - Causes the deskew values for all channels to be set to the recommended values.
               Equivalent to pressing the 'Set all deskews to recommended values' button in the
               application UI.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``DESkew value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DESkew {SETALLtorec}
+            ```
 
-        **Info:**
+        Info:
             - ``<SETALLtorec>`` sets the deskew for all channels to the recommended values.
 
         Sub-properties:
@@ -1490,7 +1472,7 @@ class MDO3KCommands:
     def diag(self) -> Diag:
         """Return the ``DIAg`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAg?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAg?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1508,19 +1490,18 @@ class MDO3KCommands:
     def display(self) -> Display:
         """Return the ``DISplay`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the current Display settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay?
+            ```
 
         Sub-properties:
             - ``.clock``: The ``DISplay:CLOCk`` command.
@@ -1539,17 +1520,16 @@ class MDO3KCommands:
     def dvm(self) -> Dvm:
         """Return the ``DVM`` command.
 
-        **Description:**
+        Description:
             - Resets the Digital Voltmeter measurements and history.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``DVM value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DVM {RESET}
+            ```
 
         Sub-properties:
             - ``.autorange``: The ``DVM:AUTORange`` command.
@@ -1564,7 +1544,7 @@ class MDO3KCommands:
     def email(self) -> Email:
         """Return the ``EMAIL`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMAIL?`` query.
             - Using the ``.verify(value)`` method will send the ``EMAIL?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1578,19 +1558,18 @@ class MDO3KCommands:
     def errlog(self) -> Errlog:
         """Return the ``ERRlog`` command.
 
-        **Description:**
+        Description:
             - Clears the oscilloscope error log.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``ERRlog value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ERRlog {CLEar}
+            ```
 
-        **Info:**
+        Info:
             - ``CLear``
 
         Sub-properties:
@@ -1604,25 +1583,24 @@ class MDO3KCommands:
     def ese(self) -> Ese:
         """Return the ``*ESE`` command.
 
-        **Description:**
+        Description:
             - This command sets and queries the bits in the Event Status Enable Register (ESER). The
               ESER prevents events from being reported to the Status Byte Register (STB). For a more
               detailed discussion of the use of these registers, see Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*ESE?`` query.
             - Using the ``.verify(value)`` method will send the ``*ESE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*ESE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *ESE <NR1>
             - *ESE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the binary bits of the ESER according to this value, which ranges
               from 0 through 255.
         """
@@ -1632,21 +1610,20 @@ class MDO3KCommands:
     def esr(self) -> Esr:
         """Return the ``*ESR`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the contents of the Standard Event Status Register
               (SESR). ``*ESR?`` also clears the SESR (since reading the SESR clears it). For a more
               detailed discussion of the use of these registers, see Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*ESR?`` query.
             - Using the ``.verify(value)`` method will send the ``*ESR?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *ESR?
+            ```
         """
         return self._esr
 
@@ -1654,7 +1631,7 @@ class MDO3KCommands:
     def ethernet(self) -> Ethernet:
         """Return the ``ETHERnet`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1680,21 +1657,20 @@ class MDO3KCommands:
     def event(self) -> Event:
         """Return the ``EVENT`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns an event code from the Event Queue that provides
               information about the results of the last ESR read. ``EVENT?`` also removes the
               returned value from the Event Queue.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EVENT?`` query.
             - Using the ``.verify(value)`` method will send the ``EVENT?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EVENT?
+            ```
         """
         return self._event
 
@@ -1702,21 +1678,20 @@ class MDO3KCommands:
     def evmsg(self) -> Evmsg:
         """Return the ``EVMsg`` command.
 
-        **Description:**
+        Description:
             - This query-only command removes a single event code from the Event Queue that is
               associated with the results of the last ESR read and returns the event code with an
               explanatory message. For more information, see Event Handling.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EVMsg?`` query.
             - Using the ``.verify(value)`` method will send the ``EVMsg?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EVMsg?
+            ```
         """
         return self._evmsg
 
@@ -1724,21 +1699,20 @@ class MDO3KCommands:
     def evqty(self) -> Evqty:
         """Return the ``EVQty`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the number of events that are enabled in the queue.
               This is useful when using the ALLEV query, since it lets you know exactly how many
               events will be returned.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EVQty?`` query.
             - Using the ``.verify(value)`` method will send the ``EVQty?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EVQty?
+            ```
         """
         return self._evqty
 
@@ -1746,7 +1720,7 @@ class MDO3KCommands:
     def factory(self) -> Factory:
         """Return the ``FACtory`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) resets the instrument to its factory default settings.
               This command is equivalent to pressing the DEFAULT SETUP button located on the
               instrument front panel or selecting Default Setup from the File menu. This command
@@ -1756,14 +1730,13 @@ class MDO3KCommands:
               (Device Event Status Enable Register) ``*PSC 1`` (Power-on Status Clear Flag) Deletes
               all defined aliases. Enables command headers (``:HEADer 1``).
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``FACtory`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FACtory
+            ```
         """
         return self._factory
 
@@ -1771,20 +1744,19 @@ class MDO3KCommands:
     def filesystem(self) -> Filesystem:
         """Return the ``FILESystem`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the directory listing of the current working
               directory. This query is the same as the ``FILESystem:DIR?`` query.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FILESystem?`` query.
             - Using the ``.verify(value)`` method will send the ``FILESystem?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem?
+            ```
 
         Sub-properties:
             - ``.copy``: The ``FILESystem:COPy`` command.
@@ -1808,7 +1780,7 @@ class MDO3KCommands:
     def fpanel(self) -> Fpanel:
         """Return the ``FPAnel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FPAnel?`` query.
             - Using the ``.verify(value)`` method will send the ``FPAnel?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1824,7 +1796,7 @@ class MDO3KCommands:
     def gpibusb(self) -> Gpibusb:
         """Return the ``GPIBUsb`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``GPIBUsb?`` query.
             - Using the ``.verify(value)`` method will send the ``GPIBUsb?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1839,20 +1811,19 @@ class MDO3KCommands:
     def hardcopy(self) -> Hardcopy:
         """Return the ``HARDCopy`` command.
 
-        **Description:**
+        Description:
             - Sends a hard copy of the screen display to the currently active printer using the
               current palette and layout settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``HARDCopy value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HARDCopy {STARt}
+            ```
 
-        **Info:**
+        Info:
             - ``STARt`` sends a block of data representing the current screen image to the requested
               port. The data sent is in the image format specified by the ``SAVE:IMAGE:FILEFORMAT``
               command and the compression level is controlled by the selected format (BMP and TIFF
@@ -1872,24 +1843,23 @@ class MDO3KCommands:
     def header(self) -> Header:
         """Return the ``HEADer`` command.
 
-        **Description:**
+        Description:
             - This command specifies the Response Header Enable State that causes the oscilloscope
               to either include or omit headers on query responses.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HEADer?`` query.
             - Using the ``.verify(value)`` method will send the ``HEADer?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HEADer value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HEADer {OFF|ON|<NR1>}
             - HEADer?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` sets the Response Header Enable State to false. This causes the oscilloscope
               to omit headers on query responses, so that only the argument is returned.
             - ``ON`` sets the Response Header Enable State to true. This causes the oscilloscope to
@@ -1904,21 +1874,20 @@ class MDO3KCommands:
     def histogram(self) -> Histogram:
         """Return the ``HIStogram`` command.
 
-        **Description:**
+        Description:
             - This query-only query returns all histogram parameters; it queries the state of all
               histogram parameters that the user can set. This command is equivalent to selecting
               Waveform Histograms from the Measure menu.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HIStogram?`` query.
             - Using the ``.verify(value)`` method will send the ``HIStogram?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HIStogram?
+            ```
 
         Sub-properties:
             - ``.box``: The ``HIStogram:BOX`` command.
@@ -1937,19 +1906,18 @@ class MDO3KCommands:
     def horizontal(self) -> Horizontal:
         """Return the ``HORizontal`` command.
 
-        **Description:**
+        Description:
             - Queries the current horizontal settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal?
+            ```
 
         Sub-properties:
             - ``.delay``: The ``HORizontal:DELay`` command tree.
@@ -1966,21 +1934,20 @@ class MDO3KCommands:
     def id(self) -> Id:
         """Return the ``ID`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns identifying information about the instrument and
               related firmware similar to that returned by the ``*IDN?`` IEEE488.2 common query but
               does not include the instrument serial number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ID?`` query.
             - Using the ``.verify(value)`` method will send the ``ID?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ID?
+            ```
         """
         return self._id
 
@@ -1988,19 +1955,18 @@ class MDO3KCommands:
     def idn(self) -> Idn:
         """Return the ``*IDN`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the instrument identification code.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*IDN?`` query.
             - Using the ``.verify(value)`` method will send the ``*IDN?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *IDN?
+            ```
         """
         return self._idn
 
@@ -2008,23 +1974,22 @@ class MDO3KCommands:
     def language(self) -> Language:
         """Return the ``LANGuage`` command.
 
-        **Description:**
+        Description:
             - This command specifies the user interface display language. This command only affects
               the oscilloscope displayed language. Remote commands and their responses are always in
               English.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LANGuage?`` query.
             - Using the ``.verify(value)`` method will send the ``LANGuage?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LANGuage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LANGuage {ENGLish|FRENch|GERMan|ITALian|SPANish|PORTUguese|JAPAnese|KOREan|RUSSian|SIMPlifiedchinese|TRADitionalchinese}
             - LANGuage?
+            ```
         """  # noqa: E501
         return self._language
 
@@ -2032,7 +1997,7 @@ class MDO3KCommands:
     def lock(self) -> Lock:
         """Return the ``LOCk`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables the touch screen and all front panel buttons and
               knobs. There is no front panel equivalent. When the front panel is locked, the front
               panel commands will not work and will not generate error events. You can work around a
@@ -2040,20 +2005,19 @@ class MDO3KCommands:
               of the front-panel commands. For example, to set the trigger level to 50%, you could
               use ``TRIGger:A SETLevel``. To force a trigger, you could use TRIGger FORCe.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LOCk?`` query.
             - Using the ``.verify(value)`` method will send the ``LOCk?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LOCk value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LOCk {ALL|NONe}
             - LOCk?
+            ```
 
-        **Info:**
+        Info:
             - ``ALL`` disables all front panel controls and the touch screen.
             - ``NONe`` enables all front panel controls and the touch screen. The UNLock ALL command
               only unlocks the front panel controls.
@@ -2067,22 +2031,21 @@ class MDO3KCommands:
     def lrn(self) -> Lrn:
         """Return the ``*LRN`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the commands that list the instrument settings,
               allowing you to record or 'learn' the current instrument settings. You can use these
               commands to return the instrument to the state it was in when you made the ``*LRN?``
               query. This command is identical to the SET command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*LRN?`` query.
             - Using the ``.verify(value)`` method will send the ``*LRN?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *LRN?
+            ```
         """
         return self._lrn
 
@@ -2090,24 +2053,23 @@ class MDO3KCommands:
     def mark(self) -> Mark:
         """Return the ``MARK`` command.
 
-        **Description:**
+        Description:
             - Moves to the next or previous reference mark on the waveform. Returns the current mark
               position.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARK?`` query.
             - Using the ``.verify(value)`` method will send the ``MARK?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MARK value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARK {NEXT|PREVious}
             - MARK?
+            ```
 
-        **Info:**
+        Info:
             - ``NEXT`` moves to the next reference mark on the right.
             - ``PREVious`` moves to the next reference mark on the left.
 
@@ -2126,7 +2088,7 @@ class MDO3KCommands:
     def marker(self) -> Marker:
         """Return the ``MARKER`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2144,7 +2106,7 @@ class MDO3KCommands:
     def mask(self) -> Mask:
         """Return the ``MASK`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MASK?`` query.
             - Using the ``.verify(value)`` method will send the ``MASK?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2169,20 +2131,19 @@ class MDO3KCommands:
     def math1(self) -> Math1:
         """Return the ``MATH1`` command.
 
-        **Description:**
+        Description:
             - Returns the definition of the math waveform. The returned data depends on the setting
               of the ``MATH1:TYPE`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH1?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH1?
+            ```
 
         Sub-properties:
             - ``.autoscale``: The ``MATH1:AUTOSCale`` command.
@@ -2199,19 +2160,18 @@ class MDO3KCommands:
     def mathvar(self) -> Mathvar:
         """Return the ``MATHVAR`` command.
 
-        **Description:**
+        Description:
             - Queries both numerical values you can use within math expressions.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATHVAR?`` query.
             - Using the ``.verify(value)`` method will send the ``MATHVAR?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATHVAR?
+            ```
 
         Sub-properties:
             - ``.var``: The ``MATHVAR:VAR<x>`` command.
@@ -2222,19 +2182,18 @@ class MDO3KCommands:
     def measurement(self) -> Measurement:
         """Return the ``MEASUrement`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns all measurement parameters.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement?
+            ```
 
         Sub-properties:
             - ``.clearsnapshot``: The ``MEASUrement:CLEARSNapshot`` command.
@@ -2253,21 +2212,20 @@ class MDO3KCommands:
     def message(self) -> Message:
         """Return the ``MESSage`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries message box (screen annotation) parameters.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MESSage?`` query.
             - Using the ``.verify(value)`` method will send the ``MESSage?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write()`` method will send the ``MESSage`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MESSage
             - MESSage?
+            ```
 
         Sub-properties:
             - ``.box``: The ``MESSage:BOX`` command.
@@ -2281,21 +2239,20 @@ class MDO3KCommands:
     def newpass(self) -> Newpass:
         """Return the ``NEWpass`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) changes the password that enables access to password
               protected data. The PASSWord command must be successfully executed before using this
               command or an execution error will be generated.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``NEWpass value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - NEWpass <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the new password, which can contain up to 10 characters.
         """
         return self._newpass
@@ -2304,7 +2261,7 @@ class MDO3KCommands:
     def opc(self) -> Opc:
         """Return the ``*OPC`` command.
 
-        **Description:**
+        Description:
             - This command generates the operation complete message in the Standard Event Status
               Register (SESR) when all pending commands that generate an OPC message are complete.
               The ``*OPC?`` query places the ASCII character '1' into the output queue when all such
@@ -2315,18 +2272,17 @@ class MDO3KCommands:
               information, see Synchronization Methods. Refer to the Oscilloscope operations that
               can generate OPC table for a list of commands that generate an OPC message.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*OPC?`` query.
             - Using the ``.verify(value)`` method will send the ``*OPC?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write()`` method will send the ``*OPC`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *OPC
             - *OPC?
+            ```
         """
         return self._opc
 
@@ -2334,23 +2290,22 @@ class MDO3KCommands:
     def opt(self) -> Opt:
         """Return the ``*OPT`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns a comma separated list of installed options as an
               arbitrary ASCII string (no quotes) of the form:
               ``<optionCode>:<optionDescription>``,``<optionCode>:<optionDescription>``... The last
               section of each entry (the text following the last hyphen) indicates the license type.
               If no options are found, NONE is returned.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*OPT?`` query.
             - Using the ``.verify(value)`` method will send the ``*OPT?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *OPT?
+            ```
         """
         return self._opt
 
@@ -2358,7 +2313,7 @@ class MDO3KCommands:
     def password(self) -> Password:
         """Return the ``PASSWord`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) enables the ``*PUD`` and NEWpass set commands. Sending
               ``PASSWord`` without any arguments disables these same commands. Once the password is
               successfully entered, the ``*PUD`` and NEWpass commands are enabled until the
@@ -2367,16 +2322,15 @@ class MDO3KCommands:
               first enter the valid password with the ``PASSWord`` command and then change to your
               new password with the NEWpass command. Remember that the password is case sensitive.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``PASSWord value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PASSWord <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the password, which can contain up to 10 characters. The factory
               default password is 'XYZZY' and is always valid.
         """
@@ -2386,20 +2340,19 @@ class MDO3KCommands:
     def pause(self) -> Pause:
         """Return the ``PAUSe`` command.
 
-        **Description:**
+        Description:
             - This command causes the interface to pause the specified number of seconds before
               processing any other commands.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``PAUSe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PAUSe <NR3>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the specified number of seconds the interface is to pause before
               processing any other commands. The pause time is specified as a floating point value
               in seconds and must be > 0.0 and ≥1800.0.
@@ -2410,7 +2363,7 @@ class MDO3KCommands:
     def pictbridge(self) -> Pictbridge:
         """Return the ``PICTBridge`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PICTBridge?`` query.
             - Using the ``.verify(value)`` method will send the ``PICTBridge?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2430,7 +2383,7 @@ class MDO3KCommands:
     def power(self) -> Power:
         """Return the ``POWer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2458,27 +2411,26 @@ class MDO3KCommands:
     def psc(self) -> Psc:
         """Return the ``*PSC`` command.
 
-        **Description:**
+        Description:
             - This command specifies the power-on status flag that controls the automatic power-on
               handling of the DESER, SRER, and ESER registers. When ``*PSC`` is true, the DESER
               register is set to 255 and the SRER and ESER registers are set to 0 at power-on. When
               ``*PSC`` is false, the current values in the DESER, SRER, and ESER registers are
               preserved in nonvolatile memory when power is shut off and are restored at power-on.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*PSC?`` query.
             - Using the ``.verify(value)`` method will send the ``*PSC?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*PSC value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *PSC {OFF|ON|NR1>}
             - *PSC?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` sets the power-on status clear flag to false.
             - ``ON`` sets the power-on status clear flag to true.
             - ``<NR1>`` = 0 sets the power-on status clear flag to false. This disables the power-on
@@ -2492,25 +2444,24 @@ class MDO3KCommands:
     def pud(self) -> Pud:
         """Return the ``*PUD`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries a string of Protected User Data. This data is protected
               by the PASSWord command. You can modify it only by first entering the correct
               password. This password is not necessary to query the data.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*PUD?`` query.
             - Using the ``.verify(value)`` method will send the ``*PUD?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*PUD value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *PUD {<Block>|<QString>}
             - *PUD?
+            ```
 
-        **Info:**
+        Info:
             - ``<Block>`` is a block containing up to 100 characters.
             - ``<QString>`` is a string containing up to 100 characters.
         """
@@ -2520,20 +2471,19 @@ class MDO3KCommands:
     def rcl(self) -> Rcl:
         """Return the ``*RCL`` command.
 
-        **Description:**
+        Description:
             - This command restores the state of the oscilloscope from a copy of the settings stored
               in memory (The settings are stored using the ``*SAV`` command).
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``*RCL value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *RCL <NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is a value in the range from 1 to 10, which specifies a saved setup storage
               location.
         """
@@ -2543,18 +2493,17 @@ class MDO3KCommands:
     def reboot(self) -> Reboot:
         """Return the ``REBOOT`` command.
 
-        **Description:**
+        Description:
             - Reboots the system after a short delay, emulating the front panel power button push.
               The system will power back on after a 5 second delay.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``REBOOT`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - REBOOT
+            ```
         """
         return self._reboot
 
@@ -2562,7 +2511,7 @@ class MDO3KCommands:
     def recall(self) -> Recall:
         """Return the ``RECAll`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RECAll?`` query.
             - Using the ``.verify(value)`` method will send the ``RECAll?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2578,19 +2527,18 @@ class MDO3KCommands:
     def ref(self) -> Dict[int, RefItem]:
         """Return the ``REF<x>`` command.
 
-        **Description:**
+        Description:
             - This query returns data for the reference waveform specified by <x>.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``REF<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``REF<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - REF<x>?
+            ```
 
         Sub-properties:
             - ``.date``: The ``REF<x>:DATE`` command.
@@ -2605,21 +2553,20 @@ class MDO3KCommands:
     def rem(self) -> Rem:
         """Return the ``REM`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) embeds a comment within programs as a means of internally
               documenting the programs. This is how to embed comments in a .set file. The instrument
               ignores these embedded comment lines.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``REM value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - REM <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a string that can contain a maximum of 80 characters.
         """
         return self._rem
@@ -2628,7 +2575,7 @@ class MDO3KCommands:
     def rf(self) -> Rf:
         """Return the ``RF`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF?`` query.
             - Using the ``.verify(value)`` method will send the ``RF?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2665,7 +2612,7 @@ class MDO3KCommands:
     def rosc(self) -> Rosc:
         """Return the ``ROSc`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ROSc?`` query.
             - Using the ``.verify(value)`` method will send the ``ROSc?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2680,7 +2627,7 @@ class MDO3KCommands:
     def rst(self) -> Rst:
         """Return the ``*RST`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) resets the instrument to the factory default settings.
               This command does the following: Recalls the default instrument setup. Clears the
               current ``*DDT`` command. Disables aliases (``:ALIAS:STATE 0``). Disables the user
@@ -2705,14 +2652,13 @@ class MDO3KCommands:
               with the WFMOutpre commands. ``*RST`` only resets the programmable interface settings,
               it does not change the user interface settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*RST`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *RST
+            ```
         """
         return self._rst
 
@@ -2720,20 +2666,19 @@ class MDO3KCommands:
     def sav(self) -> Sav:
         """Return the ``*SAV`` command.
 
-        **Description:**
+        Description:
             - Stores the state of the oscilloscope to a specified memory location. You can use the
               ``*RCL`` command to restore the oscilloscope to this saved state at a later time.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``*SAV value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *SAV <NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies a location in which to save the state of the oscilloscope.
               Location values range from 1 through 10. Using an out-of-range location value causes
               an execution error. Any settings that have been stored previously at this location
@@ -2745,7 +2690,7 @@ class MDO3KCommands:
     def save(self) -> Save:
         """Return the ``SAVe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2764,19 +2709,18 @@ class MDO3KCommands:
     def search(self) -> Search:
         """Return the ``SEARCH`` command.
 
-        **Description:**
+        Description:
             - Returns all search-related settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH?`` query.
             - Using the ``.verify(value)`` method will send the ``SEARCH?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH?
+            ```
 
         Sub-properties:
             - ``.search``: The ``SEARCH:SEARCH<x>`` command tree.
@@ -2787,19 +2731,18 @@ class MDO3KCommands:
     def select(self) -> Select:
         """Return the ``SELect`` command.
 
-        **Description:**
+        Description:
             - Queries which waveforms are displayed.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SELect?`` query.
             - Using the ``.verify(value)`` method will send the ``SELect?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SELect?
+            ```
 
         Sub-properties:
             - ``.ch``: The ``SELect:CH<x>`` command.
@@ -2825,7 +2768,7 @@ class MDO3KCommands:
     def set_(self) -> Set:
         """Return the ``SET`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the commands that list the instrument settings, except
               for configuration information for the calibration values. You can use these commands
               to return the instrument to the state it was in when you made the ``SET?`` query. The
@@ -2835,16 +2778,15 @@ class MDO3KCommands:
               whether the returned headers should be abbreviated or full-length. This command is
               identical to the LRN command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SET?`` query.
             - Using the ``.verify(value)`` method will send the ``SET?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SET?
+            ```
         """
         return self._set
 
@@ -2852,7 +2794,7 @@ class MDO3KCommands:
     def setup(self) -> Dict[int, SetupItem]:
         """Return the ``SETUP<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SETUP<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``SETUP<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2868,7 +2810,7 @@ class MDO3KCommands:
     def socketserver(self) -> Socketserver:
         """Return the ``SOCKETServer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOCKETServer?`` query.
             - Using the ``.verify(value)`` method will send the ``SOCKETServer?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2884,24 +2826,23 @@ class MDO3KCommands:
     def sre(self) -> Sre:
         """Return the ``*SRE`` command.
 
-        **Description:**
+        Description:
             - The ``*SRE`` (Service Request Enable) command sets and queries the bits in the Service
               Request Enable Register. For more information, refer to Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*SRE?`` query.
             - Using the ``.verify(value)`` method will send the ``*SRE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*SRE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *SRE <NR1>
             - *SRE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is a value in the range from 0 through 255. The binary bits of the SRER are
               set according to this value. Using an out-of-range value causes an execution error.
               The power-on default for SRER is 0 if ``*PSC`` is 1. If ``*PSC`` is 0, the SRER
@@ -2913,21 +2854,20 @@ class MDO3KCommands:
     def stb(self) -> Stb:
         """Return the ``*STB`` command.
 
-        **Description:**
+        Description:
             - The ``*STB?`` (Read Status Byte) query returns the contents of the Status Byte
               Register (SBR) using the Master Summary Status (MSS) bit. For more information, refer
               to Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*STB?`` query.
             - Using the ``.verify(value)`` method will send the ``*STB?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *STB?
+            ```
         """
         return self._stb
 
@@ -2935,20 +2875,19 @@ class MDO3KCommands:
     def teksecure(self) -> Teksecure:
         """Return the ``TEKSecure`` command.
 
-        **Description:**
+        Description:
             - This command initializes, for the current user, both waveform and setup memories,
               overwriting any previously stored data. Equivalent to invoking Teksecure from the
               Utility menu. This is a time-consuming operation (3 to 5 minutes) and the instrument
               is inoperable until the TekSecure operation is complete.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``TEKSecure`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TEKSecure
+            ```
         """
         return self._teksecure
 
@@ -2956,25 +2895,24 @@ class MDO3KCommands:
     def time(self) -> Time:
         """Return the ``TIMe`` command.
 
-        **Description:**
+        Description:
             - This command sets the time in the form ``hh:mm:ss`` where hh refers to a two-digit
               hour number, mm refers to a two-digit minute number from 01 to 60, and ss refers to a
               two-digit second number from 01 to 60.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TIMe?`` query.
             - Using the ``.verify(value)`` method will send the ``TIMe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TIMe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TIMe <QString>
             - TIMe?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string representing the desired time.
         """
         return self._time
@@ -2983,20 +2921,19 @@ class MDO3KCommands:
     def totaluptime(self) -> Totaluptime:
         """Return the ``TOTaluptime`` command.
 
-        **Description:**
+        Description:
             - Total number of hours the instrument has been turned on since the NV memory was last
               programmed, usually during the initial manufacturing process.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TOTaluptime?`` query.
             - Using the ``.verify(value)`` method will send the ``TOTaluptime?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TOTaluptime?
+            ```
         """
         return self._totaluptime
 
@@ -3004,17 +2941,16 @@ class MDO3KCommands:
     def trg(self) -> Trg:
         """Return the ``*TRG`` command.
 
-        **Description:**
+        Description:
             - Performs a group execute trigger on commands defined by ``*DDT``.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*TRG`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *TRG
+            ```
         """
         return self._trg
 
@@ -3022,24 +2958,23 @@ class MDO3KCommands:
     def trigger(self) -> Trigger:
         """Return the ``TRIGger`` command.
 
-        **Description:**
+        Description:
             - This command forces a trigger event to occur. The query returns the current trigger
               parameters for the instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger FORCe
             - TRIGger?
+            ```
 
-        **Info:**
+        Info:
             - ``FORCe`` creates a trigger event. If ``TRIGger:STATE`` is set to READy, the
               acquisition will complete. Otherwise, this command will be ignored. This is equivalent
               to pressing the Force button on the front panel.
@@ -3057,19 +2992,18 @@ class MDO3KCommands:
     def tst(self) -> Tst:
         """Return the ``*TST`` command.
 
-        **Description:**
+        Description:
             - Tests (self-test) the interface and returns a 0.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*TST?`` query.
             - Using the ``.verify(value)`` method will send the ``*TST?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *TST?
+            ```
         """
         return self._tst
 
@@ -3077,21 +3011,20 @@ class MDO3KCommands:
     def unlock(self) -> Unlock:
         """Return the ``UNLock`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) unlocks the front panel controls only. To unlock the
               front panel controls and the touch screen use the LOCk NONe command. The command
               ``TOUCHSCReen:STATE ON`` enables the touch screen only.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``UNLock value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - UNLock ALL
+            ```
 
-        **Info:**
+        Info:
             - ``ALL`` specifies that all front panel buttons and knobs are unlocked.
         """
         return self._unlock
@@ -3100,7 +3033,7 @@ class MDO3KCommands:
     def usbdevice(self) -> Usbdevice:
         """Return the ``USBDevice`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``USBDevice?`` query.
             - Using the ``.verify(value)`` method will send the ``USBDevice?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3114,20 +3047,19 @@ class MDO3KCommands:
     def usbtmc(self) -> Usbtmc:
         """Return the ``USBTMC`` command.
 
-        **Description:**
+        Description:
             - Returns the ``USBTMC`` information used by the USB hosts to determine the instrument
               interfaces.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``USBTMC?`` query.
             - Using the ``.verify(value)`` method will send the ``USBTMC?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - USBTMC?
+            ```
 
         Sub-properties:
             - ``.productid``: The ``USBTMC:PRODUCTID`` command tree.
@@ -3140,20 +3072,19 @@ class MDO3KCommands:
     def verbose(self) -> Verbose:
         """Return the ``VERBose`` command.
 
-        **Description:**
+        Description:
             - This command specifies the Verbose state that controls the length of keywords on query
               responses. Keywords can be both headers and arguments.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``VERBose value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VERBose {OFF|ON|<NR1>}
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` sets the Verbose state to false, which returns minimum-length keywords for
               applicable setting queries.
             - ``ON`` sets the Verbose state to true, which returns full-length keywords for
@@ -3167,7 +3098,7 @@ class MDO3KCommands:
     def vidpic(self) -> Vidpic:
         """Return the ``VIDPic`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VIDPic?`` query.
             - Using the ``.verify(value)`` method will send the ``VIDPic?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3188,20 +3119,19 @@ class MDO3KCommands:
     def wai(self) -> Wai:
         """Return the ``*WAI`` command.
 
-        **Description:**
+        Description:
             - The ``*WAI`` (Wait) command (no query form) prevents the instrument from executing
               further commands or queries until all pending commands that generate an OPC message
               are complete. This command allows you to synchronize the operation of the instrument
               with your application program. For more information, refer to Synchronization Methods.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*WAI`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *WAI
+            ```
         """
         return self._wai
 
@@ -3209,21 +3139,20 @@ class MDO3KCommands:
     def wavfrm(self) -> Wavfrm:
         """Return the ``WAVFrm`` command.
 
-        **Description:**
+        Description:
             - This query-only command provides the Tektronix standard waveform query which returns
               the waveform preamble followed by the waveform data for the source specified by
               ``:DATa:SOUrce`` using the ``:DATa`` settings for encoding, width, and so forth.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WAVFrm?`` query.
             - Using the ``.verify(value)`` method will send the ``WAVFrm?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WAVFrm?
+            ```
         """
         return self._wavfrm
 
@@ -3231,20 +3160,19 @@ class MDO3KCommands:
     def wfminpre(self) -> Wfminpre:
         """Return the ``WFMInpre`` command.
 
-        **Description:**
+        Description:
             - Returns the waveform formatting and scaling specifications to be applied to the next
               incoming CURVe command data.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMInpre?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMInpre?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMInpre?
+            ```
 
         Sub-properties:
             - ``.bit_nr``: The ``WFMInpre:BIT_Nr`` command.
@@ -3274,23 +3202,22 @@ class MDO3KCommands:
     def wfmoutpre(self) -> Wfmoutpre:
         """Return the ``WFMOutpre`` command.
 
-        **Description:**
+        Description:
             - This query-only command queries the waveform formatting data for the waveform
               specified by the ``DATA:SOURCE`` command. The preamble components are considered to be
               of two types; formatting and interpretation. The formatting components are: ENCdg,
               ``BN_Fmt``, ``BYT_Or``, ``BYT_Nr``, ``BIT_Nr``. The interpretation components are
               derived from the ``DATa:SOUrce`` specified waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre?
+            ```
 
         Sub-properties:
             - ``.bit_nr``: The ``WFMOutpre:BIT_Nr`` command.
@@ -3322,19 +3249,18 @@ class MDO3KCommands:
     def zoom(self) -> Zoom:
         """Return the ``ZOOm`` command.
 
-        **Description:**
+        Description:
             - Returns the current vertical and horizontal positioning and scaling of the display.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm?
+            ```
 
         Sub-properties:
             - ``.zoom1``: The ``ZOOm:ZOOM1`` command.

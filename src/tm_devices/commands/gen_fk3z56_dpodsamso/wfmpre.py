@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - WFMPre:NR_FR?
 """
 
@@ -26,27 +24,26 @@ if TYPE_CHECKING:
 class WfmpreNrFr(SCPICmdRead):
     """The ``WFMPre:NR_FR`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the number of frames for the waveform transmitted in
           response to a CURVE? query.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMPre:NR_FR?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMPre:NR_FR?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMPre:NR_FR?
+        ```
     """
 
 
 class Wfmpre(SCPICmdRead):
     """The ``WFMPre`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMPre?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMPre?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -63,19 +60,18 @@ class Wfmpre(SCPICmdRead):
     def nr_fr(self) -> WfmpreNrFr:
         """Return the ``WFMPre:NR_FR`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the number of frames for the waveform transmitted in
               response to a CURVE? query.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMPre:NR_FR?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMPre:NR_FR?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMPre:NR_FR?
+            ```
         """
         return self._nr_fr

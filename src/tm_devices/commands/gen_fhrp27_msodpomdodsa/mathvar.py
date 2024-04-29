@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - MATHVAR:VAR<x> <NR3>
     - MATHVAR:VAR<x>?
     - MATHVAR?
@@ -34,7 +32,7 @@ if TYPE_CHECKING:
 class MathvarVarItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     r"""The ``MATHVAR:VAR<x>`` command.
 
-    **Description:**
+    Description:
         - This command specifies one of two different numerical values you can use within math
           expressions. These values can range from -10.0e-18 to 1.0e+15; the default values are 0.0.
           <x> specifies the location, 1 or 2, in which you can store values. Stored math variables
@@ -42,20 +40,19 @@ class MathvarVarItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
           command defines MATH1 as the product of Channel 1 and math variable 1: ``MATH1:DEFINE``
           'CH1 \* VAR1'.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATHVAR:VAR<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``MATHVAR:VAR<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATHVAR:VAR<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATHVAR:VAR<x> <NR3>
         - MATHVAR:VAR<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the numerical value to be stored in
           location x <1 through 2>.
     """
@@ -64,19 +61,18 @@ class MathvarVarItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
 class Mathvar(SCPICmdRead):
     """The ``MATHVAR`` command.
 
-    **Description:**
+    Description:
         - Queries both numerical values you can use within math expressions.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATHVAR?`` query.
         - Using the ``.verify(value)`` method will send the ``MATHVAR?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATHVAR?
+        ```
 
     Properties:
         - ``.var``: The ``MATHVAR:VAR<x>`` command.
@@ -92,7 +88,7 @@ class Mathvar(SCPICmdRead):
     def var(self) -> Dict[int, MathvarVarItem]:
         r"""Return the ``MATHVAR:VAR<x>`` command.
 
-        **Description:**
+        Description:
             - This command specifies one of two different numerical values you can use within math
               expressions. These values can range from -10.0e-18 to 1.0e+15; the default values are
               0.0. <x> specifies the location, 1 or 2, in which you can store values. Stored math
@@ -100,20 +96,19 @@ class Mathvar(SCPICmdRead):
               following command defines MATH1 as the product of Channel 1 and math variable 1:
               ``MATH1:DEFINE`` 'CH1 \* VAR1'.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATHVAR:VAR<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``MATHVAR:VAR<x>?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATHVAR:VAR<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATHVAR:VAR<x> <NR3>
             - MATHVAR:VAR<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the numerical value to be stored
               in location x <1 through 2>.
         """

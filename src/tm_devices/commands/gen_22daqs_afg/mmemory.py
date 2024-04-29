@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - MMEMory:CATalog?
     - MMEMory:CDIRectory [<directory_name>]
     - MMEMory:CDIRectory?
@@ -34,47 +32,45 @@ if TYPE_CHECKING:
 class MmemoryStoreTrace(SCPICmdWrite):
     """The ``MMEMory:STORe:TRACe`` command.
 
-    **Description:**
+    Description:
         - This command copies a waveform data file in the Edit Memory to a file in the mass storage
           system. If the file in the mass storage is locked, this command causes an error. You
           cannot create a new file if the directory is locked.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:STORe:TRACe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:STORe:TRACe EMEMory[1]|EMEMory2,<file_name>
+        ```
     """
 
 
 class MmemoryStoreState(SCPICmdWrite):
     """The ``MMEMory:STORe:STATe`` command.
 
-    **Description:**
+    Description:
         - This command copies a setup file in the setup memory to a specified file in the mass
           storage system. If the specified file in the mass storage system is locked, this command
           causes an error. You cannot create a new file if the directory is locked. If the setup
           memory is deleted, this command causes an error. The ``<file_name>`` argument is a quoted
           string that defines the file name and path.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:STORe:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:STORe:STATe {0|1|2|3|4},<file_name>
+        ```
     """
 
 
 class MmemoryStore(SCPICmdRead):
     """The ``MMEMory:STORe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:STORe?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:STORe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -93,22 +89,21 @@ class MmemoryStore(SCPICmdRead):
     def state(self) -> MmemoryStoreState:
         """Return the ``MMEMory:STORe:STATe`` command.
 
-        **Description:**
+        Description:
             - This command copies a setup file in the setup memory to a specified file in the mass
               storage system. If the specified file in the mass storage system is locked, this
               command causes an error. You cannot create a new file if the directory is locked. If
               the setup memory is deleted, this command causes an error. The ``<file_name>``
               argument is a quoted string that defines the file name and path.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:STORe:STATe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:STORe:STATe {0|1|2|3|4},<file_name>
+            ```
         """
         return self._state
 
@@ -116,20 +111,19 @@ class MmemoryStore(SCPICmdRead):
     def trace(self) -> MmemoryStoreTrace:
         """Return the ``MMEMory:STORe:TRACe`` command.
 
-        **Description:**
+        Description:
             - This command copies a waveform data file in the Edit Memory to a file in the mass
               storage system. If the file in the mass storage is locked, this command causes an
               error. You cannot create a new file if the directory is locked.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:STORe:TRACe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:STORe:TRACe EMEMory[1]|EMEMory2,<file_name>
+            ```
         """
         return self._trace
 
@@ -137,43 +131,41 @@ class MmemoryStore(SCPICmdRead):
 class MmemoryMdirectory(SCPICmdWrite):
     """The ``MMEMory:MDIRectory`` command.
 
-    **Description:**
+    Description:
         - This command creates a directory in the mass storage system. If the specified directory is
           locked in the mass storage system, this command causes an error.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:MDIRectory value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:MDIRectory <directory_name>
+        ```
     """
 
 
 class MmemoryLockState(SCPICmdWrite):
     """The ``MMEMory:LOCK:STATe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether to lock a file or directory in the mass storage
           system. If you lock a file or directory, you cannot overwrite or delete it.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:LOCK:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:LOCK:STATe <file_name>,{ON|OFF|<NR1>}<file_name>?
+        ```
     """
 
 
 class MmemoryLock(SCPICmdRead):
     """The ``MMEMory:LOCK`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:LOCK?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:LOCK?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -190,18 +182,17 @@ class MmemoryLock(SCPICmdRead):
     def state(self) -> MmemoryLockState:
         """Return the ``MMEMory:LOCK:STATe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether to lock a file or directory in the mass storage
               system. If you lock a file or directory, you cannot overwrite or delete it.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:LOCK:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:LOCK:STATe <file_name>,{ON|OFF|<NR1>}<file_name>?
+            ```
         """
         return self._state
 
@@ -209,45 +200,43 @@ class MmemoryLock(SCPICmdRead):
 class MmemoryLoadTrace(SCPICmdWrite):
     """The ``MMEMory:LOAD:TRACe`` command.
 
-    **Description:**
+    Description:
         - This command copies a waveform data file in the mass storage system to Edit Memory. If the
           file format is different, this command causes an error.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:LOAD:TRACe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:LOAD:TRACe EMEMory|EMEMory[1]|EMEMory2,<file_name>
+        ```
     """
 
 
 class MmemoryLoadState(SCPICmdWrite):
     """The ``MMEMory:LOAD:STATe`` command.
 
-    **Description:**
+    Description:
         - This command copies a setup file in the mass storage system to an internal setup memory.
           If a specified internal setup memory is locked, this command causes an error. When you
           power off the instrument, the setups are automatically overwritten in the setup memory 0
           (last setup memory).
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:LOAD:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:LOAD:STATe {0|1|2|3|4},<file_name>
+        ```
     """
 
 
 class MmemoryLoad(SCPICmdRead):
     """The ``MMEMory:LOAD`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:LOAD?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:LOAD?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -266,20 +255,19 @@ class MmemoryLoad(SCPICmdRead):
     def state(self) -> MmemoryLoadState:
         """Return the ``MMEMory:LOAD:STATe`` command.
 
-        **Description:**
+        Description:
             - This command copies a setup file in the mass storage system to an internal setup
               memory. If a specified internal setup memory is locked, this command causes an error.
               When you power off the instrument, the setups are automatically overwritten in the
               setup memory 0 (last setup memory).
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:LOAD:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:LOAD:STATe {0|1|2|3|4},<file_name>
+            ```
         """
         return self._state
 
@@ -287,18 +275,17 @@ class MmemoryLoad(SCPICmdRead):
     def trace(self) -> MmemoryLoadTrace:
         """Return the ``MMEMory:LOAD:TRACe`` command.
 
-        **Description:**
+        Description:
             - This command copies a waveform data file in the mass storage system to Edit Memory. If
               the file format is different, this command causes an error.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:LOAD:TRACe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:LOAD:TRACe EMEMory|EMEMory[1]|EMEMory2,<file_name>
+            ```
         """
         return self._trace
 
@@ -306,66 +293,63 @@ class MmemoryLoad(SCPICmdRead):
 class MmemoryDelete(SCPICmdWrite):
     """The ``MMEMory:DELete`` command.
 
-    **Description:**
+    Description:
         - This command deletes a file or directory from the mass storage system. If a specified file
           in the mass storage is not allowed to overwrite or delete, this command causes an error.
           You can delete a directory if it is empty.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:DELete value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:DELete <file_name>
+        ```
     """
 
 
 class MmemoryCdirectory(SCPICmdWrite, SCPICmdRead):
     """The ``MMEMory:CDIRectory`` command.
 
-    **Description:**
+    Description:
         - This command changes the current working directory in the mass storage system.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:CDIRectory?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:CDIRectory?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MMEMory:CDIRectory value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:CDIRectory [<directory_name>]
         - MMEMory:CDIRectory?
+        ```
     """
 
 
 class MmemoryCatalog(SCPICmdRead):
     """The ``MMEMory:CATalog`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the current state of the mass storage system (USB memory).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:CATalog?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:CATalog?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:CATalog?
+        ```
     """
 
 
 class Mmemory(SCPICmdRead):
     """The ``MMEMory`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -394,20 +378,19 @@ class Mmemory(SCPICmdRead):
     def catalog(self) -> MmemoryCatalog:
         """Return the ``MMEMory:CATalog`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the current state of the mass storage system (USB
               memory).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:CATalog?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory:CATalog?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:CATalog?
+            ```
         """
         return self._catalog
 
@@ -415,21 +398,20 @@ class Mmemory(SCPICmdRead):
     def cdirectory(self) -> MmemoryCdirectory:
         """Return the ``MMEMory:CDIRectory`` command.
 
-        **Description:**
+        Description:
             - This command changes the current working directory in the mass storage system.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:CDIRectory?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory:CDIRectory?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MMEMory:CDIRectory value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:CDIRectory [<directory_name>]
             - MMEMory:CDIRectory?
+            ```
         """
         return self._cdirectory
 
@@ -437,19 +419,18 @@ class Mmemory(SCPICmdRead):
     def delete(self) -> MmemoryDelete:
         """Return the ``MMEMory:DELete`` command.
 
-        **Description:**
+        Description:
             - This command deletes a file or directory from the mass storage system. If a specified
               file in the mass storage is not allowed to overwrite or delete, this command causes an
               error. You can delete a directory if it is empty.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:DELete value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:DELete <file_name>
+            ```
         """
         return self._delete
 
@@ -457,7 +438,7 @@ class Mmemory(SCPICmdRead):
     def load(self) -> MmemoryLoad:
         """Return the ``MMEMory:LOAD`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:LOAD?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory:LOAD?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -472,7 +453,7 @@ class Mmemory(SCPICmdRead):
     def lock(self) -> MmemoryLock:
         """Return the ``MMEMory:LOCK`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:LOCK?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory:LOCK?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -486,18 +467,17 @@ class Mmemory(SCPICmdRead):
     def mdirectory(self) -> MmemoryMdirectory:
         """Return the ``MMEMory:MDIRectory`` command.
 
-        **Description:**
+        Description:
             - This command creates a directory in the mass storage system. If the specified
               directory is locked in the mass storage system, this command causes an error.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:MDIRectory value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:MDIRectory <directory_name>
+            ```
         """
         return self._mdirectory
 
@@ -505,7 +485,7 @@ class Mmemory(SCPICmdRead):
     def store(self) -> MmemoryStore:
         """Return the ``MMEMory:STORe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:STORe?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory:STORe?`` query and raise
               an AssertionError if the returned value does not match ``value``.

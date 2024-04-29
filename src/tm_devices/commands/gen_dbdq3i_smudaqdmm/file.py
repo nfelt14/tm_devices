@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - file.close()
     - file.flush()
     - file.mkdir()
@@ -45,7 +43,7 @@ class File(BaseTSPCmd):
           string if no number was found; returns nil if the current file position is at the end of
           file.
 
-    Properties/methods:
+    Properties and methods:
         - ``.close()``: The ``file.close()`` function.
         - ``.flush()``: The ``file.flush()`` function.
         - ``.mkdir()``: The ``file.mkdir()`` function.
@@ -74,14 +72,13 @@ class File(BaseTSPCmd):
     def close(self, file_number: int) -> None:
         """Run the ``file.close()`` function.
 
-        **Description:**
+        Description:
             - This function closes a file on the USB flash drive.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - file.close()
+            ```
 
         Args:
             file_number: The file number returned from the file.open() function to close.
@@ -100,14 +97,13 @@ class File(BaseTSPCmd):
     def flush(self, file_number: int) -> None:
         """Run the ``file.flush()`` function.
 
-        **Description:**
+        Description:
             - This function writes buffering data to a file on the USB flash drive.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - file.flush()
+            ```
 
         Args:
             file_number: The file number returned from the file.open() function to flush.
@@ -126,14 +122,13 @@ class File(BaseTSPCmd):
     def mkdir(self, path: str) -> None:
         """Run the ``file.mkdir()`` function.
 
-        **Description:**
+        Description:
             - This function creates a directory at the specified path on the USB flash drive.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - file.mkdir()
+            ```
 
         Args:
             path: A string that contains the path of the directory.
@@ -152,14 +147,13 @@ class File(BaseTSPCmd):
     def open(self, file_name: str, access_type: str) -> str:
         """Run the ``file.open()`` function.
 
-        **Description:**
+        Description:
             - This function opens a file on the USB flash drive for later reference.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - file.open()
+            ```
 
         Args:
             file_name: A string that contains the file name to open, including the full path of
@@ -183,14 +177,13 @@ class File(BaseTSPCmd):
     def read(self, file_number: int, read_action: str) -> str:
         """Run the ``file.read()`` function.
 
-        **Description:**
+        Description:
             - This function reads data from a file on the USB flash drive.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - file.read()
+            ```
 
         Args:
             file_number: The file number returned from the file.open() function to read.
@@ -213,14 +206,13 @@ class File(BaseTSPCmd):
     def usbdriveexists(self) -> str:
         """Run the ``file.usbdriveexists()`` function.
 
-        **Description:**
+        Description:
             - This function detects if a USB flash drive is inserted into the front-panel USB port.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - file.usbdriveexists()
+            ```
 
         Returns:
             The result of the function call.
@@ -239,14 +231,13 @@ class File(BaseTSPCmd):
     def write(self, file_number: int, string: str) -> None:
         """Run the ``file.write()`` function.
 
-        **Description:**
+        Description:
             - This function writes data to a file on the USB flash drive.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - file.write()
+            ```
 
         Args:
             file_number: The file number returned from the file.open() function to write.

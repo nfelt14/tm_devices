@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - ABORt [{ATRigger|BTRigger}]
 """
 
@@ -25,19 +23,18 @@ if TYPE_CHECKING:
 class Abort(SCPICmdWrite):
     """The ``ABORt`` command.
 
-    **Description:**
+    Description:
         - This command stops waveform playout when the Run Mode is set to Gated. This is equivalent
           to releasing the Force Trig button on the front panel when the instrument is in gated
           mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``ABORt value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ABORt [{ATRigger|BTRigger}]
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "ABORt") -> None:

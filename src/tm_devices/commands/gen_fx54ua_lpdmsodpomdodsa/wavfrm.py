@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - WAVFrm?
 """
 
@@ -27,21 +25,20 @@ if TYPE_CHECKING:
 class Wavfrm(SCPICmdRead):
     """The ``WAVFrm`` command.
 
-    **Description:**
+    Description:
         - This query-only command provides the Tektronix standard waveform query which returns the
           waveform preamble followed by the waveform data for the source specified by
           ``:DATa:SOUrce`` using the ``:DATa`` settings for encoding, width, and so forth.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WAVFrm?`` query.
         - Using the ``.verify(value)`` method will send the ``WAVFrm?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WAVFrm?
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "WAVFrm") -> None:

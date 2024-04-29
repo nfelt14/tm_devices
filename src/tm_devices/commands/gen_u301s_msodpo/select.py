@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SELect {ON|OFF}
     - SELect:BUS<x> {<NR1>|OFF|ON}
     - SELect:BUS<x>?
@@ -44,25 +42,24 @@ if TYPE_CHECKING:
 class SelectRefItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``SELect:REF<x>`` command.
 
-    **Description:**
+    Description:
         - Turns on and off the display of the reference waveform <x>. The <x > variable represents
           the reference channel number, which can be 1-4. The query returns whether the channel is
           on or off.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SELect:REF<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``SELect:REF<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SELect:REF<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SELect:REF<x> {ON|OFF|<NR1>}
         - SELect:REF<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` turns on the display of the specified waveform. This waveform also becomes the
           selected waveform.
         - ``OFF`` turns off the display of the specified waveform.
@@ -74,24 +71,23 @@ class SelectRefItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
 class SelectMath1(SCPICmdWrite, SCPICmdRead):
     """The ``SELect:MATH1`` command.
 
-    **Description:**
+    Description:
         - Turns on and off the display of the math waveform. The query returns whether the math
           waveform is on or off but does not indicate whether it is the selected waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SELect:MATH1?`` query.
         - Using the ``.verify(value)`` method will send the ``SELect:MATH1?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SELect:MATH1 value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SELect:MATH1 {ON|OFF|<NR1>}
         - SELect:MATH1?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` turns on the display of the specified waveform. This waveform also becomes the
           selected waveform.
         - ``OFF`` turns off the display of the specified waveform.
@@ -103,25 +99,24 @@ class SelectMath1(SCPICmdWrite, SCPICmdRead):
 class SelectDigitalBit(ValidatedDigitalBit, SCPICmdWrite, SCPICmdRead):
     """The ``SELect:D<x>`` command.
 
-    **Description:**
+    Description:
         - Turns on the display of the digital channel <x> and resets the acquisition. <x > is the
           channel number, which can be 0-15. The query returns whether the channel is on or off but
           does not indicate whether it is the selected waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SELect:D<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``SELect:D<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SELect:D<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SELect:D<x> {<NR1>|OFF|ON}
         - SELect:D<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` turns on the display of the specified waveform. This waveform also becomes the
           selected waveform.
         - ``OFF`` turns off the display of the specified waveform.
@@ -133,26 +128,25 @@ class SelectDigitalBit(ValidatedDigitalBit, SCPICmdWrite, SCPICmdRead):
 class SelectControl(SCPICmdWrite, SCPICmdRead):
     """The ``SELect:CONTROl`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the waveform that is the recipient of future channel-related commands, for
           example, the cursor commands. The command form also performs the equivalent of a
           ``SELECT:CHX ON`` command, as well as the Math, Reference, and Bus variations of that
           command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SELect:CONTROl?`` query.
         - Using the ``.verify(value)`` method will send the ``SELect:CONTROl?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SELect:CONTROl value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SELect:CONTROl {CH<x>|MATH|BUS<x>}
         - SELect:CONTROl?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies a channel waveform as the waveform affected by the front-panel
           controls. <x> is the channel number.
         - ``MATH`` specifies the math waveform as the waveform that is affected by the front-panel
@@ -165,25 +159,24 @@ class SelectControl(SCPICmdWrite, SCPICmdRead):
 class SelectChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
     """The ``SELect:CH<x>`` command.
 
-    **Description:**
+    Description:
         - Turns the display of the channel <x> waveform on or off, where <x > is the channel number.
           This command also resets the acquisition. The query returns whether the channel is on or
           off but does not indicate whether it is the selected waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SELect:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``SELect:CH<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SELect:CH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SELect:CH<x> {ON|OFF|<NR1>}
         - SELect:CH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` turns on the display of the specified waveform. This waveform also becomes the
           selected waveform.
         - ``OFF`` turns off the display of the specified waveform.
@@ -195,42 +188,40 @@ class SelectChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
 class SelectBusItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``SELect:BUS<x>`` command.
 
-    **Description:**
+    Description:
         - This command turns on and off the display of the waveform for <x>, where x is the bus
           number. The query returns whether the channel is on or off but does not indicate whether
           it is the selected waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SELect:BUS<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``SELect:BUS<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SELect:BUS<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SELect:BUS<x> {<NR1>|OFF|ON}
         - SELect:BUS<x>?
+        ```
     """
 
 
 class Select(SCPICmdWrite, SCPICmdRead):
     """The ``SELect`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the selected waveform display (controlled by the front-panel) on or off.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SELect value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SELect {ON|OFF}
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` turns the selected waveform display on.
         - ``OFF`` turns the selected waveform display off.
 
@@ -264,23 +255,22 @@ class Select(SCPICmdWrite, SCPICmdRead):
     def bus(self) -> Dict[int, SelectBusItem]:
         """Return the ``SELect:BUS<x>`` command.
 
-        **Description:**
+        Description:
             - This command turns on and off the display of the waveform for <x>, where x is the bus
               number. The query returns whether the channel is on or off but does not indicate
               whether it is the selected waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SELect:BUS<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``SELect:BUS<x>?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SELect:BUS<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SELect:BUS<x> {<NR1>|OFF|ON}
             - SELect:BUS<x>?
+            ```
         """
         return self._bus
 
@@ -288,25 +278,24 @@ class Select(SCPICmdWrite, SCPICmdRead):
     def ch(self) -> Dict[int, SelectChannel]:
         """Return the ``SELect:CH<x>`` command.
 
-        **Description:**
+        Description:
             - Turns the display of the channel <x> waveform on or off, where <x > is the channel
               number. This command also resets the acquisition. The query returns whether the
               channel is on or off but does not indicate whether it is the selected waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SELect:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``SELect:CH<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SELect:CH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SELect:CH<x> {ON|OFF|<NR1>}
             - SELect:CH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` turns on the display of the specified waveform. This waveform also becomes the
               selected waveform.
             - ``OFF`` turns off the display of the specified waveform.
@@ -319,26 +308,25 @@ class Select(SCPICmdWrite, SCPICmdRead):
     def control(self) -> SelectControl:
         """Return the ``SELect:CONTROl`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the waveform that is the recipient of future channel-related commands,
               for example, the cursor commands. The command form also performs the equivalent of a
               ``SELECT:CHX ON`` command, as well as the Math, Reference, and Bus variations of that
               command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SELect:CONTROl?`` query.
             - Using the ``.verify(value)`` method will send the ``SELect:CONTROl?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SELect:CONTROl value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SELect:CONTROl {CH<x>|MATH|BUS<x>}
             - SELect:CONTROl?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies a channel waveform as the waveform affected by the front-panel
               controls. <x> is the channel number.
             - ``MATH`` specifies the math waveform as the waveform that is affected by the
@@ -352,25 +340,24 @@ class Select(SCPICmdWrite, SCPICmdRead):
     def d(self) -> Dict[int, SelectDigitalBit]:
         """Return the ``SELect:D<x>`` command.
 
-        **Description:**
+        Description:
             - Turns on the display of the digital channel <x> and resets the acquisition. <x > is
               the channel number, which can be 0-15. The query returns whether the channel is on or
               off but does not indicate whether it is the selected waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SELect:D<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``SELect:D<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SELect:D<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SELect:D<x> {<NR1>|OFF|ON}
             - SELect:D<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` turns on the display of the specified waveform. This waveform also becomes the
               selected waveform.
             - ``OFF`` turns off the display of the specified waveform.
@@ -383,24 +370,23 @@ class Select(SCPICmdWrite, SCPICmdRead):
     def math1(self) -> SelectMath1:
         """Return the ``SELect:MATH1`` command.
 
-        **Description:**
+        Description:
             - Turns on and off the display of the math waveform. The query returns whether the math
               waveform is on or off but does not indicate whether it is the selected waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SELect:MATH1?`` query.
             - Using the ``.verify(value)`` method will send the ``SELect:MATH1?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SELect:MATH1 value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SELect:MATH1 {ON|OFF|<NR1>}
             - SELect:MATH1?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` turns on the display of the specified waveform. This waveform also becomes the
               selected waveform.
             - ``OFF`` turns off the display of the specified waveform.
@@ -413,25 +399,24 @@ class Select(SCPICmdWrite, SCPICmdRead):
     def ref(self) -> Dict[int, SelectRefItem]:
         """Return the ``SELect:REF<x>`` command.
 
-        **Description:**
+        Description:
             - Turns on and off the display of the reference waveform <x>. The <x > variable
               represents the reference channel number, which can be 1-4. The query returns whether
               the channel is on or off.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SELect:REF<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``SELect:REF<x>?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SELect:REF<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SELect:REF<x> {ON|OFF|<NR1>}
             - SELect:REF<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` turns on the display of the specified waveform. This waveform also becomes the
               selected waveform.
             - ``OFF`` turns off the display of the specified waveform.

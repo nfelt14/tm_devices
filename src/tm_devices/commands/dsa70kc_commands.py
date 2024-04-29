@@ -1018,7 +1018,7 @@ class DSA70KCCommands:
     def acquire(self) -> Acquire:
         """Return the ``ACQuire`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACQuire?`` query.
             - Using the ``.verify(value)`` method will send the ``ACQuire?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1044,24 +1044,23 @@ class DSA70KCCommands:
     def alias(self) -> Alias:
         """Return the ``ALIas`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the state of alias functionality, and it is identical to
               the ``ALIAS:STATE`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ALIas?`` query.
             - Using the ``.verify(value)`` method will send the ``ALIas?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ALIas value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ALIas {OFF|ON|<NR1>}
             - ALIas?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` turns Alias expansion off.
             - ``ON`` turns Alias expansion on. When a defined alias is received, the specified
               command sequence is substituted for the alias and executed.
@@ -1079,22 +1078,21 @@ class DSA70KCCommands:
     def allev(self) -> Allev:
         """Return the ``ALLEv`` command.
 
-        **Description:**
+        Description:
             - This query-only command prompts the instrument to return all events and their messages
               (delimited by commas), and removes the returned events from the Event Queue. Use the
               ``*ESR?`` query to enable the events to be returned. This command is similar to
               repeatedly sending ``*EVMsg?`` queries to the instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ALLEv?`` query.
             - Using the ``.verify(value)`` method will send the ``ALLEv?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ALLEv?
+            ```
         """
         return self._allev
 
@@ -1102,7 +1100,7 @@ class DSA70KCCommands:
     def allocate(self) -> Allocate:
         """Return the ``ALLOcate`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ALLOcate?`` query.
             - Using the ``.verify(value)`` method will send the ``ALLOcate?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1116,7 +1114,7 @@ class DSA70KCCommands:
     def application(self) -> Application:
         """Return the ``APPLication`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``APPLication?`` query.
             - Using the ``.verify(value)`` method will send the ``APPLication?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1131,7 +1129,7 @@ class DSA70KCCommands:
     def autoset(self) -> Autoset:
         """Return the ``AUTOSet`` command.
 
-        **Description:**
+        Description:
             - This command (no query format) sets the vertical, horizontal, and trigger controls of
               the instrument to automatically acquire and display the selected waveform. (To autoset
               a video waveform, the video trigger must be set to video standard, not custom. Video
@@ -1139,16 +1137,15 @@ class DSA70KCCommands:
               AUTOSET button. For a detailed description of autoset functionality, see Autoset in
               the index of the online help for your instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``AUTOSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUTOSet {EXECute|UNDo|VFields|VIDeo|VLines}
+            ```
 
-        **Info:**
+        Info:
             - ``EXECute`` runs the autoset routine; this is equivalent to pressing the front panel
               AUTOSET button. If the display is set to a PAL, MV, or IRE graticule, this argument
               forces the graticule display to full mode (frame, grid, and cross hair).
@@ -1167,7 +1164,7 @@ class DSA70KCCommands:
     def auxin(self) -> Auxin:
         """Return the ``AUXIn`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1186,21 +1183,20 @@ class DSA70KCCommands:
     def auxout(self) -> Auxout:
         """Return the ``AUXout`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the auxiliary output setup and is equivalent to
               selecting External Signals. From the Utilities menu, and then viewing the current
               settings for the AUX OUT Configuration.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXout?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXout?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXout?
+            ```
 
         Sub-properties:
             - ``.edge``: The ``AUXout:EDGE`` command.
@@ -1212,18 +1208,17 @@ class DSA70KCCommands:
     def bell(self) -> Bell:
         """Return the ``BELl`` command.
 
-        **Description:**
+        Description:
             - This command was previously used to beep an audio indicator and is provided for
               backward compatibility.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``BELl`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BELl
+            ```
         """
         return self._bell
 
@@ -1231,7 +1226,7 @@ class DSA70KCCommands:
     def bus(self) -> Bus:
         """Return the ``BUS`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BUS?`` query.
             - Using the ``.verify(value)`` method will send the ``BUS?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1249,20 +1244,19 @@ class DSA70KCCommands:
     def busy(self) -> Busy:
         """Return the ``BUSY`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the status of the instrument. This command allows you
               to synchronize the operation of the instrument with your application program.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BUSY?`` query.
             - Using the ``.verify(value)`` method will send the ``BUSY?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BUSY?
+            ```
         """
         return self._busy
 
@@ -1270,20 +1264,19 @@ class DSA70KCCommands:
     def cal(self) -> Cal:
         """Return the ``*CAL`` command.
 
-        **Description:**
+        Description:
             - This query-only command starts signal path calibration (SPC) and returns the status
               upon completion.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*CAL?`` query.
             - Using the ``.verify(value)`` method will send the ``*CAL?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *CAL?
+            ```
         """
         return self._cal
 
@@ -1291,19 +1284,18 @@ class DSA70KCCommands:
     def calibrate(self) -> Calibrate:
         """Return the ``CALibrate`` command.
 
-        **Description:**
+        Description:
             - This query returns the status of signal path calibration.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibrate?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibrate?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibrate?
+            ```
 
         Sub-properties:
             - ``.calprobe``: The ``CALibrate:CALProbe`` command tree.
@@ -1317,20 +1309,19 @@ class DSA70KCCommands:
     def ch(self) -> Dict[int, Channel]:
         """Return the ``CH<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the vertical parameters for the specified channel. The
               channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>?
+            ```
 
         Sub-properties:
             - ``.atiactive``: The ``CH<x>:ATIACTive`` command.
@@ -1362,17 +1353,16 @@ class DSA70KCCommands:
     def clear(self) -> Clear:
         """Return the ``CLEAR`` command.
 
-        **Description:**
+        Description:
             - This command clears acquisitions, measurements, and waveforms.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CLEAR value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLEAR {ALL}
+            ```
         """
         return self._clear
 
@@ -1380,7 +1370,7 @@ class DSA70KCCommands:
     def cls(self) -> Cls:
         """Return the ``*CLS`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) clears the following: Event Queue Standard Event Status
               Register Status Byte Register (except the MAV bit) If the ``*CLS`` command immediately
               follows an <EOI>, the Output Queue and MAV bit (Status Byte Register bit 4) are also
@@ -1390,14 +1380,13 @@ class DSA70KCCommands:
               by an ``*OPC``. This will happen if a single sequence acquisition operation is still
               being processed when the ``*CLS`` command is executed.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*CLS`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *CLS
+            ```
         """
         return self._cls
 
@@ -1405,7 +1394,7 @@ class DSA70KCCommands:
     def cmdbatch(self) -> Cmdbatch:
         """Return the ``CMDBatch`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the state of command batching. By batching commands,
               database transactions can be optimized, increasing command throughput. Also, batching
               allows for ALL commands in an individual batch to be order independent and accomplish
@@ -1413,20 +1402,19 @@ class DSA70KCCommands:
               will be saved across power cycles, but will not be saved and recalled as part of a
               setup. In a setup scenario, the factory initial value is enabled.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CMDBatch?`` query.
             - Using the ``.verify(value)`` method will send the ``CMDBatch?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CMDBatch value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CMDBatch {<NR1>OFF|ON}
             - CMDBatch?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 turns command batching off; any other value turns command batching on.
             - ``OFF`` turns command batching off.
             - ``ON`` turns command batching on.
@@ -1437,7 +1425,7 @@ class DSA70KCCommands:
     def counter(self) -> Counter:
         """Return the ``COUnter`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1451,7 +1439,7 @@ class DSA70KCCommands:
     def cq(self) -> Dict[int, CqItem]:
         """Return the ``CQ<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CQ<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``CQ<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1465,19 +1453,18 @@ class DSA70KCCommands:
     def cursor(self) -> Cursor:
         """Return the ``CURSor`` command.
 
-        **Description:**
+        Description:
             - Returns all of the current cursor settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor?
+            ```
 
         Sub-properties:
             - ``.function``: The ``CURSor:FUNCtion`` command.
@@ -1497,7 +1484,7 @@ class DSA70KCCommands:
     def curve(self) -> Curve:
         """Return the ``CURVe`` command.
 
-        **Description:**
+        Description:
             - The ``CURVe`` command transfers the waveform data points the oscilloscope's internal
               reference memory location (REF1-4), which is specified by the to ``DATa:DESTination``
               command. The ``CURVe?`` query transfers data the oscilloscope; the source waveform is
@@ -1518,20 +1505,19 @@ class DSA70KCCommands:
               immediately follows this binary block header. The Waveform Transfer command group text
               contains more comprehensive information.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURVe?`` query.
             - Using the ``.verify(value)`` method will send the ``CURVe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CURVe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURVe {<Block>|<asc curve>}
             - CURVe?
+            ```
 
-        **Info:**
+        Info:
             - ``<Block>`` is the waveform data in binary format. The waveform is formatted as
               follows.
             - ``<asc curve>`` is the waveform data in ASCII format. The format for ASCII data is
@@ -1544,7 +1530,7 @@ class DSA70KCCommands:
     def curvenext(self) -> Curvenext:
         """Return the ``CURVENext`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns unique waveform data from the instrument. This query
               performs just like CURVE?, except multiple uses guarantee that the waveform returned
               is always a new acquisition since the previous CURVENEXT. Note that if the instrument
@@ -1552,16 +1538,15 @@ class DSA70KCCommands:
               configure the controller for long timeout thresholds. Data will not be transferred
               until a new waveform is acquired since the previous ``:CURVENext?`` response.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURVENext?`` query.
             - Using the ``.verify(value)`` method will send the ``CURVENext?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURVENext?
+            ```
         """
         return self._curvenext
 
@@ -1569,7 +1554,7 @@ class DSA70KCCommands:
     def curvestream(self) -> Curvestream:
         """Return the ``CURVEStream`` command.
 
-        **Description:**
+        Description:
             - This query continuously transfers waveform data from the instrument as it is acquired.
               This command puts the instrument into a talk-only mode, allowing the controller to
               receive waveform records as fast as (and as soon as) they are acquired. Use the
@@ -1590,18 +1575,17 @@ class DSA70KCCommands:
               not reading the data off the bus fast enough, the trigger rate is slowed to allow each
               waveform to be sent sequentially.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURVEStream?`` query.
             - Using the ``.verify(value)`` method will send the ``CURVEStream?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CURVEStream value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURVEStream {<Block>|<asc curve>}
             - CURVEStream?
+            ```
         """
         return self._curvestream
 
@@ -1609,7 +1593,7 @@ class DSA70KCCommands:
     def custom(self) -> Custom:
         """Return the ``CUSTOM`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CUSTOM?`` query.
             - Using the ``.verify(value)`` method will send the ``CUSTOM?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1624,7 +1608,7 @@ class DSA70KCCommands:
     def d(self) -> Dict[int, DigitalBit]:
         """Return the ``D<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``D<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``D<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1641,24 +1625,23 @@ class DSA70KCCommands:
     def data(self) -> Data:
         """Return the ``DATa`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the format and location of the waveform data that is
               transferred with the CURVE command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DATa?`` query.
             - Using the ``.verify(value)`` method will send the ``DATa?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DATa value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DATa {INIT|SNAp}
             - DATa?
+            ```
 
-        **Info:**
+        Info:
             - ``INIT`` initializes the waveform data parameters to their factory defaults except for
               ``DATa:STOP``, which isset to the current acquisition record length.
             - ``SNAp`` Sets ``DATa:STARt`` and ``DATa:STOP`` to match the current waveform cursor
@@ -1682,23 +1665,22 @@ class DSA70KCCommands:
     def date(self) -> Date:
         """Return the ``DATE`` command.
 
-        **Description:**
+        Description:
             - This command specifies the date the oscilloscope displays.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DATE?`` query.
             - Using the ``.verify(value)`` method will send the ``DATE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DATE <QString>
             - DATE?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a date in the form 'yyyy-mm-dd' where yyyy refers to a four-digit
               year number, mm refers to a two-digit month number from 01 to 12, and dd refers to a
               two-digit day number in the month.
@@ -1709,25 +1691,24 @@ class DSA70KCCommands:
     def ddt(self) -> Ddt:
         """Return the ``*DDT`` command.
 
-        **Description:**
+        Description:
             - This command allows you to specify a command or a list of commands that are executed
               when the instrument receives a TRG command. Define Device Trigger ( ``*DDT`` ) is a
               special alias that the ``*TRG`` command uses.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*DDT?`` query.
             - Using the ``.verify(value)`` method will send the ``*DDT?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*DDT value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *DDT {<Block>|<QString>}
             - *DDT?
+            ```
 
-        **Info:**
+        Info:
             - ``<Block>`` is a complete sequence of program messages. The messages can contain only
               valid commands that must be separated by semicolons and must follow all rules for
               concatenating commands. The sequence must be less than or equal to 80 characters. The
@@ -1742,7 +1723,7 @@ class DSA70KCCommands:
     def delete(self) -> Delete:
         """Return the ``DELEte`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DELEte?`` query.
             - Using the ``.verify(value)`` method will send the ``DELEte?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1757,26 +1738,25 @@ class DSA70KCCommands:
     def dese(self) -> Dese:
         """Return the ``DESE`` command.
 
-        **Description:**
+        Description:
             - This command sets and queries the bits in the Device Event Status Enable Register
               (DESER). The DESER is the mask that determines whether events are reported to the
               Standard Event Status Register (SESR), and entered into the Event Queue. For a more
               detailed discussion of the use of these registers, see Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DESE?`` query.
             - Using the ``.verify(value)`` method will send the ``DESE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DESE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DESE <NR1>
             - DESE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` The binary bits of the DESER are set according to this value, which ranges
               from 1 through 255. For example, ``DESE 209`` sets the DESER to the binary value
               11010001 (that is, the most significant bit in the register is set to 1, the next most
@@ -1788,7 +1768,7 @@ class DSA70KCCommands:
     def diag(self) -> Diag:
         """Return the ``DIAg`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAg?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAg?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1813,19 +1793,18 @@ class DSA70KCCommands:
     def display(self) -> Display:
         """Return the ``DISplay`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the current Display settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay?
+            ```
 
         Sub-properties:
             - ``.clock``: The ``DISplay:CLOCk`` command.
@@ -1853,7 +1832,7 @@ class DSA70KCCommands:
     def dpojet(self) -> Dpojet:
         """Return the ``DPOJET`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DPOJET?`` query.
             - Using the ``.verify(value)`` method will send the ``DPOJET?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1917,20 +1896,19 @@ class DSA70KCCommands:
     def email(self) -> Email:
         """Return the ``EMail`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) sends a test e-mail message or sets the current e-mail
               sent count to zero.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``EMail value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail {TESt|RESET}
+            ```
 
-        **Info:**
+        Info:
             - ``TESt`` argument sends a test e-mail message.
             - ``RESET`` argument sets the e-mail sent count to zero.
 
@@ -1961,7 +1939,7 @@ class DSA70KCCommands:
     def errordetector(self) -> Errordetector:
         """Return the ``ERRORDetector`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ERRORDetector?`` query.
             - Using the ``.verify(value)`` method will send the ``ERRORDetector?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -2003,25 +1981,24 @@ class DSA70KCCommands:
     def ese(self) -> Ese:
         """Return the ``*ESE`` command.
 
-        **Description:**
+        Description:
             - This command sets and queries the bits in the Event Status Enable Register (ESER). The
               ESER prevents events from being reported to the Status Byte Register (STB). For a more
               detailed discussion of the use of these registers, see Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*ESE?`` query.
             - Using the ``.verify(value)`` method will send the ``*ESE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*ESE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *ESE <NR1>
             - *ESE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the binary bits of the ESER according to this value, which ranges
               from 0 through 255.
         """
@@ -2031,21 +2008,20 @@ class DSA70KCCommands:
     def esr(self) -> Esr:
         """Return the ``*ESR`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the contents of the Standard Event Status Register
               (SESR). ``*ESR?`` also clears the SESR (since reading the SESR clears it). For a more
               detailed discussion of the use of these registers, see Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*ESR?`` query.
             - Using the ``.verify(value)`` method will send the ``*ESR?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *ESR?
+            ```
         """
         return self._esr
 
@@ -2053,21 +2029,20 @@ class DSA70KCCommands:
     def event(self) -> Event:
         """Return the ``EVENT`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns an event code from the Event Queue that provides
               information about the results of the last ESR read. ``EVENT?`` also removes the
               returned value from the Event Queue.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EVENT?`` query.
             - Using the ``.verify(value)`` method will send the ``EVENT?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EVENT?
+            ```
         """
         return self._event
 
@@ -2075,21 +2050,20 @@ class DSA70KCCommands:
     def evmsg(self) -> Evmsg:
         """Return the ``EVMsg`` command.
 
-        **Description:**
+        Description:
             - This query-only command removes a single event code from the Event Queue that is
               associated with the results of the last ESR read and returns the event code with an
               explanatory message. For more information, see Event Handling.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EVMsg?`` query.
             - Using the ``.verify(value)`` method will send the ``EVMsg?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EVMsg?
+            ```
         """
         return self._evmsg
 
@@ -2097,21 +2071,20 @@ class DSA70KCCommands:
     def evqty(self) -> Evqty:
         """Return the ``EVQty`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the number of events that are enabled in the queue.
               This is useful when using the ALLEV query, since it lets you know exactly how many
               events will be returned.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EVQty?`` query.
             - Using the ``.verify(value)`` method will send the ``EVQty?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EVQty?
+            ```
         """
         return self._evqty
 
@@ -2119,24 +2092,23 @@ class DSA70KCCommands:
     def export(self) -> Export:
         """Return the ``EXPort`` command.
 
-        **Description:**
+        Description:
             - This command sends a copy of the waveform to the file path specified by
               ``EXPORT:FILENAME``. The ``EXPort`` query returns image format and file information.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EXPort?`` query.
             - Using the ``.verify(value)`` method will send the ``EXPort?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EXPort value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EXPort STARt
             - EXPort?
+            ```
 
-        **Info:**
+        Info:
             - ``STARt`` initiates the export.
 
         Sub-properties:
@@ -2152,7 +2124,7 @@ class DSA70KCCommands:
     def factory(self) -> Factory:
         """Return the ``FACtory`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) resets the instrument to its factory default settings.
               This command is equivalent to pressing the DEFAULT SETUP button located on the
               instrument front panel or selecting Default Setup from the File menu. This command
@@ -2162,14 +2134,13 @@ class DSA70KCCommands:
               (Device Event Status Enable Register) ``*PSC 1`` (Power-on Status Clear Flag) Deletes
               all defined aliases. Enables command headers (``:HEADer 1``).
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``FACtory`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FACtory
+            ```
         """
         return self._factory
 
@@ -2177,20 +2148,19 @@ class DSA70KCCommands:
     def fastacq(self) -> Fastacq:
         """Return the ``FASTAcq`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the state of Fast Acquisitions. This command is
               equivalent to pressing the FASTACQ button on the front panel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FASTAcq?`` query.
             - Using the ``.verify(value)`` method will send the ``FASTAcq?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FASTAcq?
+            ```
 
         Sub-properties:
             - ``.hiacqrate``: The ``FASTAcq:HIACQRATE`` command.
@@ -2202,20 +2172,19 @@ class DSA70KCCommands:
     def filesystem(self) -> Filesystem:
         """Return the ``FILESystem`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the directory listing of the current working
               directory. This query is the same as the ``FILESystem:DIR?`` query.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FILESystem?`` query.
             - Using the ``.verify(value)`` method will send the ``FILESystem?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem?
+            ```
 
         Sub-properties:
             - ``.copy``: The ``FILESystem:COPy`` command.
@@ -2235,7 +2204,7 @@ class DSA70KCCommands:
     def gpibusb(self) -> Gpibusb:
         """Return the ``GPIBUsb`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``GPIBUsb?`` query.
             - Using the ``.verify(value)`` method will send the ``GPIBUsb?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2251,7 +2220,7 @@ class DSA70KCCommands:
     def hardcopy(self) -> Hardcopy:
         """Return the ``HARDCopy`` command.
 
-        **Description:**
+        Description:
             - This command sends a copy of the screen display to the port specified by
               ``HARDCopy:PORT``. This command is equivalent to pressing the PRINT button on the
               front panel. When printing to a file, the file format can be BMP, JPG, PNG, PCX or
@@ -2260,20 +2229,19 @@ class DSA70KCCommands:
               ``*RST`` command sent to the instrument. The ``HARDCopy`` query returns the port and
               file path.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HARDCopy?`` query.
             - Using the ``.verify(value)`` method will send the ``HARDCopy?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HARDCopy value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HARDCopy STARt
             - HARDCopy?
+            ```
 
-        **Info:**
+        Info:
             - ``STARt`` initiates a screen copy to a file or the default system printer, as
               specified by the ``:HARDCopy:PORT`` selection. The default system printer is set
               within the Windows operating system. If you need information about how to set the
@@ -2293,24 +2261,23 @@ class DSA70KCCommands:
     def hdr(self) -> Hdr:
         """Return the ``HDR`` command.
 
-        **Description:**
+        Description:
             - This command is identical to the HEADer query and is included for backward
               compatibility purposes.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HDR?`` query.
             - Using the ``.verify(value)`` method will send the ``HDR?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HDR value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HDR {<NR1>|OFF|ON}
             - HDR?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 sets the Response Header Enable State to false; any other value sets
               this state to true, which causes the instrument to send headers on query responses.
             - ``OFF`` sets the Response Header Enable State to false. This causes the instrument to
@@ -2325,26 +2292,25 @@ class DSA70KCCommands:
     def header(self) -> Header:
         """Return the ``HEADer`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Response Header Enable State that causes the
               instrument to either include or omit headers on query responses. Whether the long or
               short form of header keywords and enumerations are returned is dependent upon the
               state of ``:VERBose``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HEADer?`` query.
             - Using the ``.verify(value)`` method will send the ``HEADer?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HEADer value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HEADer {<NR1>|OFF|ON}
             - HEADer?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 sets the Response Header Enable State to false; any other value sets
               this state to true.
             - ``OFF`` sets the Response Header Enable State to false. This causes the instrument to
@@ -2359,21 +2325,20 @@ class DSA70KCCommands:
     def histogram(self) -> Histogram:
         """Return the ``HIStogram`` command.
 
-        **Description:**
+        Description:
             - This query-only query returns all histogram parameters; it queries the state of all
               histogram parameters that the user can set. This command is equivalent to selecting
               Waveform Histograms from the Measure menu.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HIStogram?`` query.
             - Using the ``.verify(value)`` method will send the ``HIStogram?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HIStogram?
+            ```
 
         Sub-properties:
             - ``.box``: The ``HIStogram:BOX`` command.
@@ -2393,19 +2358,18 @@ class DSA70KCCommands:
     def horizontal(self) -> Horizontal:
         """Return the ``HORizontal`` command.
 
-        **Description:**
+        Description:
             - Queries the current horizontal settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal?
+            ```
 
         Sub-properties:
             - ``.acqduration``: The ``HORizontal:ACQDURATION`` command.
@@ -2425,21 +2389,20 @@ class DSA70KCCommands:
     def id(self) -> Id:
         """Return the ``ID`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns identifying information about the instrument and
               related firmware similar to that returned by the ``*IDN?`` IEEE488.2 common query but
               does not include the instrument serial number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ID?`` query.
             - Using the ``.verify(value)`` method will send the ``ID?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ID?
+            ```
         """
         return self._id
 
@@ -2447,19 +2410,18 @@ class DSA70KCCommands:
     def idn(self) -> Idn:
         """Return the ``*IDN`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the instrument identification code.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*IDN?`` query.
             - Using the ``.verify(value)`` method will send the ``*IDN?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *IDN?
+            ```
         """
         return self._idn
 
@@ -2467,19 +2429,18 @@ class DSA70KCCommands:
     def limit(self) -> Limit:
         """Return the ``LIMit`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns all settings for the Limit commands.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit?
+            ```
 
         Sub-properties:
             - ``.beep``: The ``LIMit:BEEP`` command.
@@ -2502,7 +2463,7 @@ class DSA70KCCommands:
     def linktraining(self) -> Linktraining:
         """Return the ``LINKTRaining`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LINKTRaining?`` query.
             - Using the ``.verify(value)`` method will send the ``LINKTRaining?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2522,7 +2483,7 @@ class DSA70KCCommands:
     def lock(self) -> Lock:
         """Return the ``LOCk`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables the touch screen and all front panel buttons and
               knobs. There is no front panel equivalent. When the front panel is locked, the front
               panel commands will not work and will not generate error events. You can work around a
@@ -2530,20 +2491,19 @@ class DSA70KCCommands:
               of the front-panel commands. For example, to set the trigger level to 50%, you could
               use ``TRIGger:A SETLevel``. To force a trigger, you could use TRIGger FORCe.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LOCk?`` query.
             - Using the ``.verify(value)`` method will send the ``LOCk?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LOCk value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LOCk {ALL|NONe}
             - LOCk?
+            ```
 
-        **Info:**
+        Info:
             - ``ALL`` disables all front panel controls and the touch screen.
             - ``NONe`` enables all front panel controls and the touch screen. The UNLock ALL command
               only unlocks the front panel controls.
@@ -2557,22 +2517,21 @@ class DSA70KCCommands:
     def lrn(self) -> Lrn:
         """Return the ``*LRN`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the commands that list the instrument settings,
               allowing you to record or 'learn' the current instrument settings. You can use these
               commands to return the instrument to the state it was in when you made the ``*LRN?``
               query. This command is identical to the SET command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*LRN?`` query.
             - Using the ``.verify(value)`` method will send the ``*LRN?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *LRN?
+            ```
         """
         return self._lrn
 
@@ -2580,24 +2539,23 @@ class DSA70KCCommands:
     def mark(self) -> Mark:
         """Return the ``MARK`` command.
 
-        **Description:**
+        Description:
             - Moves to the next or previous reference mark on the waveform. Returns the current mark
               position.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARK?`` query.
             - Using the ``.verify(value)`` method will send the ``MARK?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MARK value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARK {NEXT|PREVious}
             - MARK?
+            ```
 
-        **Info:**
+        Info:
             - ``NEXT`` moves to the next reference mark on the right.
             - ``PREVious`` moves to the next reference mark on the left.
 
@@ -2614,19 +2572,18 @@ class DSA70KCCommands:
     def mask(self) -> Mask:
         """Return the ``MASK`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the states of all settable mask parameters.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MASK?`` query.
             - Using the ``.verify(value)`` method will send the ``MASK?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MASK?
+            ```
 
         Sub-properties:
             - ``.autoadjust``: The ``MASK:AUTOAdjust`` command.
@@ -2654,20 +2611,19 @@ class DSA70KCCommands:
     def math(self) -> Dict[int, MathItem]:
         """Return the ``MATH<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the definition for the math waveform specified by <x>,
               which ranges from 1 through 4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>?
+            ```
 
         Sub-properties:
             - ``.define``: The ``MATH<x>:DEFine`` command.
@@ -2685,7 +2641,7 @@ class DSA70KCCommands:
     def matharbflt(self) -> Dict[int, MatharbfltItem]:
         """Return the ``MATHArbflt<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATHArbflt<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``MATHArbflt<x>?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -2700,19 +2656,18 @@ class DSA70KCCommands:
     def mathvar(self) -> Mathvar:
         """Return the ``MATHVAR`` command.
 
-        **Description:**
+        Description:
             - Queries both numerical values you can use within math expressions.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATHVAR?`` query.
             - Using the ``.verify(value)`` method will send the ``MATHVAR?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATHVAR?
+            ```
 
         Sub-properties:
             - ``.var``: The ``MATHVAR:VAR<x>`` command.
@@ -2723,7 +2678,7 @@ class DSA70KCCommands:
     def mch(self) -> Dict[int, MchItem]:
         """Return the ``MCH<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MCH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``MCH<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2738,19 +2693,18 @@ class DSA70KCCommands:
     def measurement(self) -> Measurement:
         """Return the ``MEASUrement`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns all measurement parameters.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement?
+            ```
 
         Sub-properties:
             - ``.annotation``: The ``MEASUrement:ANNOTation`` command tree.
@@ -2770,7 +2724,7 @@ class DSA70KCCommands:
     def multiscope(self) -> Multiscope:
         """Return the ``MULTiscope`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MULTiscope?`` query.
             - Using the ``.verify(value)`` method will send the ``MULTiscope?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2787,21 +2741,20 @@ class DSA70KCCommands:
     def newpass(self) -> Newpass:
         """Return the ``NEWpass`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) changes the password that enables access to password
               protected data. The PASSWord command must be successfully executed before using this
               command or an execution error will be generated.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``NEWpass value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - NEWpass <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the new password, which can contain up to 10 characters.
         """
         return self._newpass
@@ -2810,7 +2763,7 @@ class DSA70KCCommands:
     def opc(self) -> Opc:
         """Return the ``*OPC`` command.
 
-        **Description:**
+        Description:
             - This command generates the operation complete message in the Standard Event Status
               Register (SESR) when all pending commands that generate an OPC message are complete.
               The ``*OPC?`` query places the ASCII character '1' into the output queue when all such
@@ -2821,18 +2774,17 @@ class DSA70KCCommands:
               information, see Synchronization Methods. Refer to the Oscilloscope operations that
               can generate OPC table for a list of commands that generate an OPC message.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*OPC?`` query.
             - Using the ``.verify(value)`` method will send the ``*OPC?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write()`` method will send the ``*OPC`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *OPC
             - *OPC?
+            ```
         """
         return self._opc
 
@@ -2840,7 +2792,7 @@ class DSA70KCCommands:
     def opcextended(self) -> Opcextended:
         """Return the ``OPCEXtended`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the behavior of OPC commands and queries. When enabled,
               operations referenced in the ``*OPC`` command description notify when their overlapped
               functionality has completed. When disabled, the operations notify as they have in the
@@ -2873,20 +2825,19 @@ class DSA70KCCommands:
               ``*RST``;``*WAI``;``:ACQUIRE:NUMACQ?`` Acq state after single sequence
               ``:ACQUIRE:STOPAFTER SEQUENCE``;STATE 1;``*WAI``;``:ACQUIRE:STATE?``
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OPCEXtended?`` query.
             - Using the ``.verify(value)`` method will send the ``OPCEXtended?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``OPCEXtended value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - OPCEXtended {<NR1>|OFF|ON}
             - OPCEXtended?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` turns on extended OPC behavior.
             - ``OFF`` turns off extended OPC behavior.
             - ``<NR1>`` = 0 turns off extended OPC behavior; any other value turns on extended OPC
@@ -2898,23 +2849,22 @@ class DSA70KCCommands:
     def opt(self) -> Opt:
         """Return the ``*OPT`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns a comma separated list of installed options as an
               arbitrary ASCII string (no quotes) of the form:
               ``<optionCode>:<optionDescription>``,``<optionCode>:<optionDescription>``... The last
               section of each entry (the text following the last hyphen) indicates the license type.
               If no options are found, NONE is returned.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*OPT?`` query.
             - Using the ``.verify(value)`` method will send the ``*OPT?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *OPT?
+            ```
         """
         return self._opt
 
@@ -2922,7 +2872,7 @@ class DSA70KCCommands:
     def password(self) -> Password:
         """Return the ``PASSWord`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) enables the ``*PUD`` and NEWpass set commands. Sending
               ``PASSWord`` without any arguments disables these same commands. Once the password is
               successfully entered, the ``*PUD`` and NEWpass commands are enabled until the
@@ -2931,16 +2881,15 @@ class DSA70KCCommands:
               first enter the valid password with the ``PASSWord`` command and then change to your
               new password with the NEWpass command. Remember that the password is case sensitive.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``PASSWord value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PASSWord <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the password, which can contain up to 10 characters. The factory
               default password is 'XYZZY' and is always valid.
         """
@@ -2950,21 +2899,20 @@ class DSA70KCCommands:
     def pcenable(self) -> Pcenable:
         """Return the ``PCENable`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the enable state of the User Preference Probe compensation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PCENable?`` query.
             - Using the ``.verify(value)`` method will send the ``PCENable?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``PCENable value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PCENable OFF | ON
             - PCENable?
+            ```
         """
         return self._pcenable
 
@@ -2972,27 +2920,26 @@ class DSA70KCCommands:
     def psc(self) -> Psc:
         """Return the ``*PSC`` command.
 
-        **Description:**
+        Description:
             - This command sets and queries the power-on status flag that controls the automatic
               power-on handling of the DESER, SRER, and ESER registers. When ``*PSC`` is true, the
               DESER register is set to 255 and the SRER and ESER registers are set to 0 at power-on.
               When ``*PSC`` is false, the current values in the DESER, SRER, and ESER registers are
               preserved in nonvolatile memory when power is shut off and are restored at power-on.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*PSC?`` query.
             - Using the ``.verify(value)`` method will send the ``*PSC?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*PSC value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *PSC {<NR1>|OFF|ON}
             - *PSC?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 sets the power-on status clear flag to false, disables the power-on
               clear and allows the instrument to possibly assert SRQ after power-on; any other value
               sets the power-on status clear flag to true, enabling the power-on status clear and
@@ -3008,25 +2955,24 @@ class DSA70KCCommands:
     def pud(self) -> Pud:
         """Return the ``*PUD`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries a string of Protected User Data. This data is protected
               by the PASSWord command. You can modify it only by first entering the correct
               password. This password is not necessary to query the data.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*PUD?`` query.
             - Using the ``.verify(value)`` method will send the ``*PUD?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*PUD value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *PUD {<Block>|<QString>}
             - *PUD?
+            ```
 
-        **Info:**
+        Info:
             - ``<Block>`` is a block containing up to 100 characters.
             - ``<QString>`` is a string containing up to 100 characters.
         """
@@ -3036,20 +2982,19 @@ class DSA70KCCommands:
     def rcl(self) -> Rcl:
         """Return the ``*RCL`` command.
 
-        **Description:**
+        Description:
             - This command restores the state of the oscilloscope from a copy of the settings stored
               in memory (The settings are stored using the ``*SAV`` command).
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``*RCL value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *RCL <NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is a value in the range from 1 to 10, which specifies a saved setup storage
               location.
         """
@@ -3059,7 +3004,7 @@ class DSA70KCCommands:
     def recall(self) -> Recall:
         """Return the ``RECAll`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RECAll?`` query.
             - Using the ``.verify(value)`` method will send the ``RECAll?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3075,7 +3020,7 @@ class DSA70KCCommands:
     def ref(self) -> Dict[int, RefItem]:
         """Return the ``REF<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``REF<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``REF<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3092,21 +3037,20 @@ class DSA70KCCommands:
     def rem(self) -> Rem:
         """Return the ``REM`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) embeds a comment within programs as a means of internally
               documenting the programs. This is how to embed comments in a .set file. The instrument
               ignores these embedded comment lines.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``REM value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - REM <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a string that can contain a maximum of 80 characters.
         """
         return self._rem
@@ -3115,7 +3059,7 @@ class DSA70KCCommands:
     def rosc(self) -> Rosc:
         """Return the ``ROSc`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ROSc?`` query.
             - Using the ``.verify(value)`` method will send the ``ROSc?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3132,7 +3076,7 @@ class DSA70KCCommands:
     def rst(self) -> Rst:
         """Return the ``*RST`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) resets the instrument to the factory default settings.
               This command does the following: Recalls the default instrument setup. Clears the
               current ``*DDT`` command. Disables aliases (``:ALIAS:STATE 0``). Disables the user
@@ -3157,14 +3101,13 @@ class DSA70KCCommands:
               with the WFMOutpre commands. ``*RST`` only resets the programmable interface settings,
               it does not change the user interface settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*RST`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *RST
+            ```
         """
         return self._rst
 
@@ -3172,20 +3115,19 @@ class DSA70KCCommands:
     def sav(self) -> Sav:
         """Return the ``*SAV`` command.
 
-        **Description:**
+        Description:
             - Stores the state of the oscilloscope to a specified memory location. You can use the
               ``*RCL`` command to restore the oscilloscope to this saved state at a later time.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``*SAV value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *SAV <NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies a location in which to save the state of the oscilloscope.
               Location values range from 1 through 10. Using an out-of-range location value causes
               an execution error. Any settings that have been stored previously at this location
@@ -3197,7 +3139,7 @@ class DSA70KCCommands:
     def save(self) -> Save:
         """Return the ``SAVe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3215,21 +3157,20 @@ class DSA70KCCommands:
     def saveon(self) -> Saveon:
         """Return the ``SAVEON`` command.
 
-        **Description:**
+        Description:
             - Sets the auto-increment file count to 0. Once the number of saved files has reached
               the limit that you set (using the ``SAVEON:NUMevents`` command), no files will be
               saved until you reset the count.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVEON value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEON {RESET}
+            ```
 
-        **Info:**
+        Info:
             - ``RESET`` sets the file count to 0.
 
         Sub-properties:
@@ -3250,23 +3191,22 @@ class DSA70KCCommands:
     def sds(self) -> Sds:
         """Return the ``*SDS`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) changes the specified setup to reference the factory
               setup instead of the specific user setup slot. The content of the setup slot is
               unchanged, but the data will no longer be accessible to you. This command is
               equivalent to selecting Delete from the File menu, and then choosing the specified
               setup.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``*SDS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *SDS <NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies a user setup location to delete. Setup storage location values
               range from 1 through 10; using an out-of-range value causes an error.
         """
@@ -3276,7 +3216,7 @@ class DSA70KCCommands:
     def search(self) -> Search:
         """Return the ``SEARCH`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH?`` query.
             - Using the ``.verify(value)`` method will send the ``SEARCH?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3292,19 +3232,18 @@ class DSA70KCCommands:
     def select(self) -> Select:
         """Return the ``SELect`` command.
 
-        **Description:**
+        Description:
             - Queries which waveforms are displayed.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SELect?`` query.
             - Using the ``.verify(value)`` method will send the ``SELect?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SELect?
+            ```
 
         Sub-properties:
             - ``.b``: The ``SELect:B<x>`` command.
@@ -3322,7 +3261,7 @@ class DSA70KCCommands:
     def set_(self) -> Set:
         """Return the ``SET`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the commands that list the instrument settings, except
               for configuration information for the calibration values. You can use these commands
               to return the instrument to the state it was in when you made the ``SET?`` query. The
@@ -3332,16 +3271,15 @@ class DSA70KCCommands:
               whether the returned headers should be abbreviated or full-length. This command is
               identical to the LRN command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SET?`` query.
             - Using the ``.verify(value)`` method will send the ``SET?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SET?
+            ```
         """
         return self._set
 
@@ -3349,7 +3287,7 @@ class DSA70KCCommands:
     def setup(self) -> Setup:
         """Return the ``SETUp`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SETUp?`` query.
             - Using the ``.verify(value)`` method will send the ``SETUp?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3363,24 +3301,23 @@ class DSA70KCCommands:
     def sre(self) -> Sre:
         """Return the ``*SRE`` command.
 
-        **Description:**
+        Description:
             - The ``*SRE`` (Service Request Enable) command sets and queries the bits in the Service
               Request Enable Register. For more information, refer to Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*SRE?`` query.
             - Using the ``.verify(value)`` method will send the ``*SRE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*SRE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *SRE <NR1>
             - *SRE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is a value in the range from 0 through 255. The binary bits of the SRER are
               set according to this value. Using an out-of-range value causes an execution error.
               The power-on default for SRER is 0 if ``*PSC`` is 1. If ``*PSC`` is 0, the SRER
@@ -3392,21 +3329,20 @@ class DSA70KCCommands:
     def stb(self) -> Stb:
         """Return the ``*STB`` command.
 
-        **Description:**
+        Description:
             - The ``*STB?`` (Read Status Byte) query returns the contents of the Status Byte
               Register (SBR) using the Master Summary Status (MSS) bit. For more information, refer
               to Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*STB?`` query.
             - Using the ``.verify(value)`` method will send the ``*STB?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *STB?
+            ```
         """
         return self._stb
 
@@ -3414,7 +3350,7 @@ class DSA70KCCommands:
     def system(self) -> System:
         """Return the ``SYSTem`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3428,7 +3364,7 @@ class DSA70KCCommands:
     def teklink(self) -> Teklink:
         """Return the ``TEKLink`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TEKLink?`` query.
             - Using the ``.verify(value)`` method will send the ``TEKLink?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3443,20 +3379,19 @@ class DSA70KCCommands:
     def teksecure(self) -> Teksecure:
         """Return the ``TEKSecure`` command.
 
-        **Description:**
+        Description:
             - This command initializes, for the current user, both waveform and setup memories,
               overwriting any previously stored data. Equivalent to invoking Teksecure from the
               Utility menu. This is a time-consuming operation (3 to 5 minutes) and the instrument
               is inoperable until the TekSecure operation is complete.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``TEKSecure`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TEKSecure
+            ```
         """
         return self._teksecure
 
@@ -3464,26 +3399,25 @@ class DSA70KCCommands:
     def test(self) -> Test:
         """Return the ``TEST`` command.
 
-        **Description:**
+        Description:
             - This command provides the ability to select and execute an item at any level of the
               test hierarchy (Test, Area or Subsystem). The query returns the last command sent.
               This command is equivalent to selecting Instrument Diagnostics from the Utilities
               menu, choosing a test and then pressing Run.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TEST?`` query.
             - Using the ``.verify(value)`` method will send the ``TEST?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TEST value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TEST <QString>
             - TEST?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` sets the test ID, which ranges from 0 through 3 characters. If no test
               ID is specified, all available diagnostics are executed.
 
@@ -3497,25 +3431,24 @@ class DSA70KCCommands:
     def time(self) -> Time:
         """Return the ``TIME`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the time that the instrument displays. This command is
               equivalent to selecting Set Time & Date from the Utilities menu and then setting the
               fields in the Time group box.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TIME?`` query.
             - Using the ``.verify(value)`` method will send the ``TIME?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TIME value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TIME <QString>
             - TIME?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a time in the form '``hh:mm:ss``' where hh refers to a two-digit hour
               number, mm refers to a two-digit minute number from 01 to 60, and ss refers to a
               two-digit second number from 01 to 60.
@@ -3526,17 +3459,16 @@ class DSA70KCCommands:
     def trg(self) -> Trg:
         """Return the ``*TRG`` command.
 
-        **Description:**
+        Description:
             - Performs a group execute trigger on commands defined by ``*DDT``.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*TRG`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *TRG
+            ```
         """
         return self._trg
 
@@ -3544,7 +3476,7 @@ class DSA70KCCommands:
     def trig(self) -> Trig:
         """Return the ``TRIG`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIG?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIG?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3558,24 +3490,23 @@ class DSA70KCCommands:
     def trigger(self) -> Trigger:
         """Return the ``TRIGger`` command.
 
-        **Description:**
+        Description:
             - This command forces a trigger event to occur. The query returns the current trigger
               parameters for the instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger FORCe
             - TRIGger?
+            ```
 
-        **Info:**
+        Info:
             - ``FORCe`` creates a trigger event. If ``TRIGger:STATE`` is set to READy, the
               acquisition will complete. Otherwise, this command will be ignored. This is equivalent
               to pressing the Force button on the front panel.
@@ -3600,19 +3531,18 @@ class DSA70KCCommands:
     def tst(self) -> Tst:
         """Return the ``*TST`` command.
 
-        **Description:**
+        Description:
             - Tests (self-test) the interface and returns a 0.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*TST?`` query.
             - Using the ``.verify(value)`` method will send the ``*TST?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *TST?
+            ```
         """
         return self._tst
 
@@ -3620,21 +3550,20 @@ class DSA70KCCommands:
     def unlock(self) -> Unlock:
         """Return the ``UNLock`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) unlocks the front panel controls only. To unlock the
               front panel controls and the touch screen use the LOCk NONe command. The command
               ``TOUCHSCReen:STATE ON`` enables the touch screen only.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``UNLock value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - UNLock ALL
+            ```
 
-        **Info:**
+        Info:
             - ``ALL`` specifies that all front panel buttons and knobs are unlocked.
         """
         return self._unlock
@@ -3643,7 +3572,7 @@ class DSA70KCCommands:
     def usbtmc(self) -> Usbtmc:
         """Return the ``USBTMC`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``USBTMC?`` query.
             - Using the ``.verify(value)`` method will send the ``USBTMC?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3659,20 +3588,19 @@ class DSA70KCCommands:
     def verbose(self) -> Verbose:
         """Return the ``VERBose`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Verbose state that controls the length of keywords on
               query responses. Keywords can be both headers and arguments.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``VERBose value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VERBose {<NR1>|OFF|ON}
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables Verbose, any other value enables Verbose.
             - ``OFF`` sets the Verbose state to false, which returns minimum-length keywords for
               applicable setting queries.
@@ -3685,19 +3613,18 @@ class DSA70KCCommands:
     def visual(self) -> Visual:
         """Return the ``VISual`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the settings for each visual trigger area.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VISual?
+            ```
 
         Sub-properties:
             - ``.area``: The ``VISual:AREA<x>`` command.
@@ -3713,20 +3640,19 @@ class DSA70KCCommands:
     def wai(self) -> Wai:
         """Return the ``*WAI`` command.
 
-        **Description:**
+        Description:
             - The ``*WAI`` (Wait) command (no query form) prevents the instrument from executing
               further commands or queries until all pending commands that generate an OPC message
               are complete. This command allows you to synchronize the operation of the instrument
               with your application program. For more information, refer to Synchronization Methods.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*WAI`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *WAI
+            ```
         """
         return self._wai
 
@@ -3734,21 +3660,20 @@ class DSA70KCCommands:
     def wavfrm(self) -> Wavfrm:
         """Return the ``WAVFrm`` command.
 
-        **Description:**
+        Description:
             - This query-only command provides the Tektronix standard waveform query which returns
               the waveform preamble followed by the waveform data for the source specified by
               ``:DATa:SOUrce`` using the ``:DATa`` settings for encoding, width, and so forth.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WAVFrm?`` query.
             - Using the ``.verify(value)`` method will send the ``WAVFrm?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WAVFrm?
+            ```
         """
         return self._wavfrm
 
@@ -3756,23 +3681,22 @@ class DSA70KCCommands:
     def wavfrmstream(self) -> Wavfrmstream:
         """Return the ``WAVFRMStream`` command.
 
-        **Description:**
+        Description:
             - This query only command returns WFMQUTPRE? and CURVESTREAM? data for the waveforms
               specified by the DATASOURCE command. This command is similar to sending both
               WFMOUTPRE? and CURVESTREAM?, with the additional provision that each CURVESTREAM
               response to WAVFRMS? has a WFMOUTPRE response prepended to it. This helps guarantee a
               continuous synchronized preamble and curve.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WAVFRMStream?`` query.
             - Using the ``.verify(value)`` method will send the ``WAVFRMStream?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WAVFRMStream?
+            ```
         """
         return self._wavfrmstream
 
@@ -3780,20 +3704,19 @@ class DSA70KCCommands:
     def wfminpre(self) -> Wfminpre:
         """Return the ``WFMInpre`` command.
 
-        **Description:**
+        Description:
             - Returns the waveform formatting and scaling specifications to be applied to the next
               incoming CURVe command data.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMInpre?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMInpre?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMInpre?
+            ```
 
         Sub-properties:
             - ``.bit_nr``: The ``WFMInpre:BIT_Nr`` command.
@@ -3820,23 +3743,22 @@ class DSA70KCCommands:
     def wfmoutpre(self) -> Wfmoutpre:
         """Return the ``WFMOutpre`` command.
 
-        **Description:**
+        Description:
             - This query-only command queries the waveform formatting data for the waveform
               specified by the ``DATA:SOURCE`` command. The preamble components are considered to be
               of two types; formatting and interpretation. The formatting components are: ENCdg,
               ``BN_Fmt``, ``BYT_Or``, ``BYT_Nr``, ``BIT_Nr``. The interpretation components are
               derived from the ``DATa:SOUrce`` specified waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre?
+            ```
 
         Sub-properties:
             - ``.bit_nr``: The ``WFMOutpre:BIT_Nr`` command.
@@ -3864,7 +3786,7 @@ class DSA70KCCommands:
     def wfmpre(self) -> Wfmpre:
         """Return the ``WFMPre`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMPre?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMPre?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3878,25 +3800,24 @@ class DSA70KCCommands:
     def zoom(self) -> Zoom:
         """Return the ``ZOOm`` command.
 
-        **Description:**
+        Description:
             - This command resets the zoom transforms to default values for all traces or live
               traces. The ``ZOOm`` query returns the current vertical and horizontal positioning and
               scaling of the display.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ZOOm?`` query.
             - Using the ``.verify(value)`` method will send the ``ZOOm?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ZOOm value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ZOOm {RESET|RESETLive}
             - ZOOm?
+            ```
 
-        **Info:**
+        Info:
             - ``RESET`` resets the zoom transforms to default values for all traces.
             - ``RESETLive`` resets the zoom transforms to default values for live traces.
 

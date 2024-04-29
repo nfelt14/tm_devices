@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - VIDPic:AUTOContrast {0|1|OFF|ON}
     - VIDPic:AUTOContrast:UPDATERate <NR1>
     - VIDPic:AUTOContrast:UPDATERate?
@@ -54,23 +52,22 @@ if TYPE_CHECKING:
 class VidpicStandard(SCPICmdWrite, SCPICmdRead):
     """The ``VIDPic:STANdard`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) which video picture standard to use (either NTSC or PAL).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VIDPic:STANdard?`` query.
         - Using the ``.verify(value)`` method will send the ``VIDPic:STANdard?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VIDPic:STANdard value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VIDPic:STANdard {NTSC|PAL}
         - VIDPic:STANdard?
+        ```
 
-    **Info:**
+    Info:
         - ``NTSC`` sets the video picture standard to NTSC (National Television Systems Committee).
         - ``PAL`` sets the video picture standard to PAL (Phase Alternation Line).
     """
@@ -79,23 +76,22 @@ class VidpicStandard(SCPICmdWrite, SCPICmdRead):
 class VidpicSource(SCPICmdWrite, SCPICmdRead):
     """The ``VIDPic:SOUrce`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the channel to use for the video picture source waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VIDPic:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``VIDPic:SOUrce?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VIDPic:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VIDPic:SOUrce {CH<x>}
         - VIDPic:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specify which channel to use for the video picture source waveform. x has a
           minimum of 1 and a maximum of 4.
     """
@@ -104,70 +100,67 @@ class VidpicSource(SCPICmdWrite, SCPICmdRead):
 class VidpicLocationY(SCPICmdWrite, SCPICmdRead):
     """The ``VIDPic:LOCation:Y`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the video picture Y origin location, in rows.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VIDPic:LOCation:Y?`` query.
         - Using the ``.verify(value)`` method will send the ``VIDPic:LOCation:Y?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VIDPic:LOCation:Y value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VIDPic:LOCation:Y <NR1>
         - VIDPic:LOCation:Y?
+        ```
     """
 
 
 class VidpicLocationX(SCPICmdWrite, SCPICmdRead):
     """The ``VIDPic:LOCation:X`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the video picture X origin location, in columns.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VIDPic:LOCation:X?`` query.
         - Using the ``.verify(value)`` method will send the ``VIDPic:LOCation:X?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VIDPic:LOCation:X value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VIDPic:LOCation:X <NR1>
         - VIDPic:LOCation:X?
+        ```
     """
 
 
 class VidpicLocationWidth(SCPICmdWrite, SCPICmdRead):
     """The ``VIDPic:LOCation:WIDth`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the video picture width, in columns.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VIDPic:LOCation:WIDth?`` query.
         - Using the ``.verify(value)`` method will send the ``VIDPic:LOCation:WIDth?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VIDPic:LOCation:WIDth value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VIDPic:LOCation:WIDth <NR1>
         - VIDPic:LOCation:WIDth?
+        ```
     """
 
 
 class VidpicLocationStartPixel(SCPICmdWrite, SCPICmdRead):
     """The ``VIDPic:LOCation:STARt:PIXel`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the video picture starting pixel in each line The range for this value
           varies with the instrument screen geometry. Each video line is an analog signal of
           nominally 63.5us duration (10.9us blanking + 52.6us active video) that can be sampled from
@@ -175,48 +168,46 @@ class VidpicLocationStartPixel(SCPICmdWrite, SCPICmdRead):
           start pixel is the starting sample in each line; it is limited to a single line at the
           current sample rate, i.e. ranges between -10.9 to 52.6 and -1090 to +5260.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VIDPic:LOCation:STARt:PIXel?`` query.
         - Using the ``.verify(value)`` method will send the ``VIDPic:LOCation:STARt:PIXel?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VIDPic:LOCation:STARt:PIXel value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VIDPic:LOCation:STARt:PIXel <NR1>
         - VIDPic:LOCation:STARt:PIXel?
+        ```
     """
 
 
 class VidpicLocationStartLine(SCPICmdWrite, SCPICmdRead):
     """The ``VIDPic:LOCation:STARt:LINE`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the video picture starting line number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VIDPic:LOCation:STARt:LINE?`` query.
         - Using the ``.verify(value)`` method will send the ``VIDPic:LOCation:STARt:LINE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VIDPic:LOCation:STARt:LINE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VIDPic:LOCation:STARt:LINE <NR1>
         - VIDPic:LOCation:STARt:LINE?
+        ```
     """
 
 
 class VidpicLocationStart(SCPICmdRead):
     """The ``VIDPic:LOCation:STARt`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VIDPic:LOCation:STARt?`` query.
         - Using the ``.verify(value)`` method will send the ``VIDPic:LOCation:STARt?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -235,22 +226,21 @@ class VidpicLocationStart(SCPICmdRead):
     def line(self) -> VidpicLocationStartLine:
         """Return the ``VIDPic:LOCation:STARt:LINE`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the video picture starting line number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VIDPic:LOCation:STARt:LINE?`` query.
             - Using the ``.verify(value)`` method will send the ``VIDPic:LOCation:STARt:LINE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VIDPic:LOCation:STARt:LINE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VIDPic:LOCation:STARt:LINE <NR1>
             - VIDPic:LOCation:STARt:LINE?
+            ```
         """
         return self._line
 
@@ -258,7 +248,7 @@ class VidpicLocationStart(SCPICmdRead):
     def pixel(self) -> VidpicLocationStartPixel:
         """Return the ``VIDPic:LOCation:STARt:PIXel`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the video picture starting pixel in each line The range for this
               value varies with the instrument screen geometry. Each video line is an analog signal
               of nominally 63.5us duration (10.9us blanking + 52.6us active video) that can be
@@ -267,19 +257,18 @@ class VidpicLocationStart(SCPICmdRead):
               single line at the current sample rate, i.e. ranges between -10.9 to 52.6 and -1090 to
               +5260.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VIDPic:LOCation:STARt:PIXel?`` query.
             - Using the ``.verify(value)`` method will send the ``VIDPic:LOCation:STARt:PIXel?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VIDPic:LOCation:STARt:PIXel value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VIDPic:LOCation:STARt:PIXel <NR1>
             - VIDPic:LOCation:STARt:PIXel?
+            ```
         """
         return self._pixel
 
@@ -287,50 +276,48 @@ class VidpicLocationStart(SCPICmdRead):
 class VidpicLocationOffset(SCPICmdWrite, SCPICmdRead):
     """The ``VIDPic:LOCation:OFFSet`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the video picture line-to-line offset. This is the amount of additional
           delay time to add between lines of the video picture.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VIDPic:LOCation:OFFSet?`` query.
         - Using the ``.verify(value)`` method will send the ``VIDPic:LOCation:OFFSet?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VIDPic:LOCation:OFFSet value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VIDPic:LOCation:OFFSet <NR3>
         - VIDPic:LOCation:OFFSet?
+        ```
     """
 
 
 class VidpicLocationHeight(SCPICmdWrite, SCPICmdRead):
     """The ``VIDPic:LOCation:HEIght`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the video picture height, in rows.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VIDPic:LOCation:HEIght?`` query.
         - Using the ``.verify(value)`` method will send the ``VIDPic:LOCation:HEIght?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VIDPic:LOCation:HEIght value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VIDPic:LOCation:HEIght <NR1>
         - VIDPic:LOCation:HEIght?
+        ```
     """
 
 
 class VidpicLocation(SCPICmdRead):
     """The ``VIDPic:LOCation`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VIDPic:LOCation?`` query.
         - Using the ``.verify(value)`` method will send the ``VIDPic:LOCation?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -357,22 +344,21 @@ class VidpicLocation(SCPICmdRead):
     def height(self) -> VidpicLocationHeight:
         """Return the ``VIDPic:LOCation:HEIght`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the video picture height, in rows.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VIDPic:LOCation:HEIght?`` query.
             - Using the ``.verify(value)`` method will send the ``VIDPic:LOCation:HEIght?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VIDPic:LOCation:HEIght value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VIDPic:LOCation:HEIght <NR1>
             - VIDPic:LOCation:HEIght?
+            ```
         """
         return self._height
 
@@ -380,23 +366,22 @@ class VidpicLocation(SCPICmdRead):
     def offset(self) -> VidpicLocationOffset:
         """Return the ``VIDPic:LOCation:OFFSet`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the video picture line-to-line offset. This is the amount of
               additional delay time to add between lines of the video picture.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VIDPic:LOCation:OFFSet?`` query.
             - Using the ``.verify(value)`` method will send the ``VIDPic:LOCation:OFFSet?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VIDPic:LOCation:OFFSet value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VIDPic:LOCation:OFFSet <NR3>
             - VIDPic:LOCation:OFFSet?
+            ```
         """
         return self._offset
 
@@ -404,7 +389,7 @@ class VidpicLocation(SCPICmdRead):
     def start(self) -> VidpicLocationStart:
         """Return the ``VIDPic:LOCation:STARt`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VIDPic:LOCation:STARt?`` query.
             - Using the ``.verify(value)`` method will send the ``VIDPic:LOCation:STARt?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -419,22 +404,21 @@ class VidpicLocation(SCPICmdRead):
     def width(self) -> VidpicLocationWidth:
         """Return the ``VIDPic:LOCation:WIDth`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the video picture width, in columns.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VIDPic:LOCation:WIDth?`` query.
             - Using the ``.verify(value)`` method will send the ``VIDPic:LOCation:WIDth?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VIDPic:LOCation:WIDth value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VIDPic:LOCation:WIDth <NR1>
             - VIDPic:LOCation:WIDth?
+            ```
         """
         return self._width
 
@@ -442,21 +426,20 @@ class VidpicLocation(SCPICmdRead):
     def x(self) -> VidpicLocationX:
         """Return the ``VIDPic:LOCation:X`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the video picture X origin location, in columns.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VIDPic:LOCation:X?`` query.
             - Using the ``.verify(value)`` method will send the ``VIDPic:LOCation:X?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VIDPic:LOCation:X value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VIDPic:LOCation:X <NR1>
             - VIDPic:LOCation:X?
+            ```
         """
         return self._x
 
@@ -464,21 +447,20 @@ class VidpicLocation(SCPICmdRead):
     def y(self) -> VidpicLocationY:
         """Return the ``VIDPic:LOCation:Y`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the video picture Y origin location, in rows.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VIDPic:LOCation:Y?`` query.
             - Using the ``.verify(value)`` method will send the ``VIDPic:LOCation:Y?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VIDPic:LOCation:Y value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VIDPic:LOCation:Y <NR1>
             - VIDPic:LOCation:Y?
+            ```
         """
         return self._y
 
@@ -486,25 +468,24 @@ class VidpicLocation(SCPICmdRead):
 class VidpicFrametype(SCPICmdWrite, SCPICmdRead):
     """The ``VIDPic:FRAMETYPe`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the video picture frame type (ODD, EVEN or INTERLAced). Interlaced
           frames combine successive odd and even frames by displaying alternating lines from each.
           The resulting image has twice as many rows, which changes its aspect ratio.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VIDPic:FRAMETYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``VIDPic:FRAMETYPe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VIDPic:FRAMETYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VIDPic:FRAMETYPe {ODD|EVEN|INTERLAced}
         - VIDPic:FRAMETYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``ODD`` sets the frame type to Odd.
         - ``EVEN`` sets the frame type to Even.
         - ``INTERLAced`` sets the frame type to Interlaced.
@@ -514,23 +495,22 @@ class VidpicFrametype(SCPICmdWrite, SCPICmdRead):
 class VidpicDisplay(SCPICmdWrite, SCPICmdRead):
     """The ``VIDPic:DISplay`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the video picture display state.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VIDPic:DISplay?`` query.
         - Using the ``.verify(value)`` method will send the ``VIDPic:DISplay?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VIDPic:DISplay value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VIDPic:DISplay {0|1|OFF|ON}
         - VIDPic:DISplay?
+        ```
 
-    **Info:**
+    Info:
         - ``1`` or ON turns on the video picture display feature.
         - ``0`` or OFF turns it off.
     """
@@ -539,89 +519,85 @@ class VidpicDisplay(SCPICmdWrite, SCPICmdRead):
 class VidpicContrast(SCPICmdWrite, SCPICmdRead):
     """The ``VIDPic:CONTRast`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the video picture contrast level as an integer percentage.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VIDPic:CONTRast?`` query.
         - Using the ``.verify(value)`` method will send the ``VIDPic:CONTRast?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VIDPic:CONTRast value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VIDPic:CONTRast <NR1>
         - VIDPic:CONTRast?
+        ```
     """
 
 
 class VidpicBrightness(SCPICmdWrite, SCPICmdRead):
     """The ``VIDPic:BRIGHTNess`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the video picture brightness level as an integer percentage.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VIDPic:BRIGHTNess?`` query.
         - Using the ``.verify(value)`` method will send the ``VIDPic:BRIGHTNess?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VIDPic:BRIGHTNess value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VIDPic:BRIGHTNess <NR1>
         - VIDPic:BRIGHTNess?
+        ```
     """
 
 
 class VidpicAutocontrastUpdaterate(SCPICmdWrite, SCPICmdRead):
     """The ``VIDPic:AUTOContrast:UPDATERate`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the number of frames between automatic contrast updates.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VIDPic:AUTOContrast:UPDATERate?`` query.
         - Using the ``.verify(value)`` method will send the ``VIDPic:AUTOContrast:UPDATERate?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VIDPic:AUTOContrast:UPDATERate value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VIDPic:AUTOContrast:UPDATERate <NR1>
         - VIDPic:AUTOContrast:UPDATERate?
+        ```
     """
 
 
 class VidpicAutocontrast(SCPICmdWrite, SCPICmdRead):
     """The ``VIDPic:AUTOContrast`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the video picture automatic contrast state. Automatic contrast uses
           histogram equalization to optimize the use of brightness levels; each brightness level
           occupies approximately the same area in the image.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VIDPic:AUTOContrast?`` query.
         - Using the ``.verify(value)`` method will send the ``VIDPic:AUTOContrast?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``VIDPic:AUTOContrast value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VIDPic:AUTOContrast {0|1|OFF|ON}
         - VIDPic:AUTOContrast?
+        ```
 
-    **Info:**
+    Info:
         - ``1`` or ON turns on the auto contrast state for the video picture feature.
         - ``0`` or OFF turns it off.
 
@@ -637,22 +613,21 @@ class VidpicAutocontrast(SCPICmdWrite, SCPICmdRead):
     def updaterate(self) -> VidpicAutocontrastUpdaterate:
         """Return the ``VIDPic:AUTOContrast:UPDATERate`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the number of frames between automatic contrast updates.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VIDPic:AUTOContrast:UPDATERate?`` query.
             - Using the ``.verify(value)`` method will send the ``VIDPic:AUTOContrast:UPDATERate?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``VIDPic:AUTOContrast:UPDATERate value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VIDPic:AUTOContrast:UPDATERate <NR1>
             - VIDPic:AUTOContrast:UPDATERate?
+            ```
         """
         return self._updaterate
 
@@ -661,7 +636,7 @@ class VidpicAutocontrast(SCPICmdWrite, SCPICmdRead):
 class Vidpic(SCPICmdRead):
     """The ``VIDPic`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``VIDPic?`` query.
         - Using the ``.verify(value)`` method will send the ``VIDPic?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -692,26 +667,25 @@ class Vidpic(SCPICmdRead):
     def autocontrast(self) -> VidpicAutocontrast:
         """Return the ``VIDPic:AUTOContrast`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the video picture automatic contrast state. Automatic contrast uses
               histogram equalization to optimize the use of brightness levels; each brightness level
               occupies approximately the same area in the image.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VIDPic:AUTOContrast?`` query.
             - Using the ``.verify(value)`` method will send the ``VIDPic:AUTOContrast?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VIDPic:AUTOContrast value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VIDPic:AUTOContrast {0|1|OFF|ON}
             - VIDPic:AUTOContrast?
+            ```
 
-        **Info:**
+        Info:
             - ``1`` or ON turns on the auto contrast state for the video picture feature.
             - ``0`` or OFF turns it off.
 
@@ -724,21 +698,20 @@ class Vidpic(SCPICmdRead):
     def brightness(self) -> VidpicBrightness:
         """Return the ``VIDPic:BRIGHTNess`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the video picture brightness level as an integer percentage.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VIDPic:BRIGHTNess?`` query.
             - Using the ``.verify(value)`` method will send the ``VIDPic:BRIGHTNess?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VIDPic:BRIGHTNess value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VIDPic:BRIGHTNess <NR1>
             - VIDPic:BRIGHTNess?
+            ```
         """
         return self._brightness
 
@@ -746,21 +719,20 @@ class Vidpic(SCPICmdRead):
     def contrast(self) -> VidpicContrast:
         """Return the ``VIDPic:CONTRast`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the video picture contrast level as an integer percentage.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VIDPic:CONTRast?`` query.
             - Using the ``.verify(value)`` method will send the ``VIDPic:CONTRast?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VIDPic:CONTRast value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VIDPic:CONTRast <NR1>
             - VIDPic:CONTRast?
+            ```
         """
         return self._contrast
 
@@ -768,23 +740,22 @@ class Vidpic(SCPICmdRead):
     def display(self) -> VidpicDisplay:
         """Return the ``VIDPic:DISplay`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the video picture display state.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VIDPic:DISplay?`` query.
             - Using the ``.verify(value)`` method will send the ``VIDPic:DISplay?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VIDPic:DISplay value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VIDPic:DISplay {0|1|OFF|ON}
             - VIDPic:DISplay?
+            ```
 
-        **Info:**
+        Info:
             - ``1`` or ON turns on the video picture display feature.
             - ``0`` or OFF turns it off.
         """
@@ -794,25 +765,24 @@ class Vidpic(SCPICmdRead):
     def frametype(self) -> VidpicFrametype:
         """Return the ``VIDPic:FRAMETYPe`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the video picture frame type (ODD, EVEN or INTERLAced). Interlaced
               frames combine successive odd and even frames by displaying alternating lines from
               each. The resulting image has twice as many rows, which changes its aspect ratio.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VIDPic:FRAMETYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``VIDPic:FRAMETYPe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VIDPic:FRAMETYPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VIDPic:FRAMETYPe {ODD|EVEN|INTERLAced}
             - VIDPic:FRAMETYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``ODD`` sets the frame type to Odd.
             - ``EVEN`` sets the frame type to Even.
             - ``INTERLAced`` sets the frame type to Interlaced.
@@ -823,7 +793,7 @@ class Vidpic(SCPICmdRead):
     def location(self) -> VidpicLocation:
         """Return the ``VIDPic:LOCation`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VIDPic:LOCation?`` query.
             - Using the ``.verify(value)`` method will send the ``VIDPic:LOCation?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -842,23 +812,22 @@ class Vidpic(SCPICmdRead):
     def source(self) -> VidpicSource:
         """Return the ``VIDPic:SOUrce`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the channel to use for the video picture source waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VIDPic:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``VIDPic:SOUrce?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VIDPic:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VIDPic:SOUrce {CH<x>}
             - VIDPic:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specify which channel to use for the video picture source waveform. x has a
               minimum of 1 and a maximum of 4.
         """
@@ -868,23 +837,22 @@ class Vidpic(SCPICmdRead):
     def standard(self) -> VidpicStandard:
         """Return the ``VIDPic:STANdard`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) which video picture standard to use (either NTSC or PAL).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VIDPic:STANdard?`` query.
             - Using the ``.verify(value)`` method will send the ``VIDPic:STANdard?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``VIDPic:STANdard value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VIDPic:STANdard {NTSC|PAL}
             - VIDPic:STANdard?
+            ```
 
-        **Info:**
+        Info:
             - ``NTSC`` sets the video picture standard to NTSC (National Television Systems
               Committee).
             - ``PAL`` sets the video picture standard to PAL (Phase Alternation Line).

@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - COUnter <REFerence|CLEAR|RESet>
     - COUnter:DURation <nr1>
     - COUnter:DURation?
@@ -57,26 +55,25 @@ if TYPE_CHECKING:
 class CounterView(SCPICmdWrite, SCPICmdRead):
     """The ``COUnter:VIEW`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the View of the Counter Trigger Source Frequency Application Data. When
           the ``COUnter:TYPe`` is FREQuency, the data may be viewed as Frequency (Hz) or Time
           (seconds). This command does not apply to the A-B Time Interval Application
           (``COUnter:TYPE TIME``). DPO70000SX Series only. This command is optional.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:VIEW?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:VIEW?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``COUnter:VIEW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:VIEW <FREQuency|PERiod>
         - COUnter:VIEW?
+        ```
 
-    **Info:**
+    Info:
         - ``FREQuency`` displays the count in Hertz.
         - ``PERiod`` displays the count in seconds.
     """
@@ -85,27 +82,26 @@ class CounterView(SCPICmdWrite, SCPICmdRead):
 class CounterUpdate(SCPICmdWrite, SCPICmdRead):
     """The ``COUnter:UPDate`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the parameter that controls the schedule for updating the Log Table of the
           Trigger Source Frequency or A-B Trigger Time Interval Application Data. The schedule for
           logging the data may be set to occur automatically, after a given time interval has
           elapsed, or after a given number of acquisitions have occurred. The default is AUTO.
           DPO70000SX Series only. This command is optional.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:UPDate?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:UPDate?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``COUnter:UPDate value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:UPDate <AUTO|TIME|NUMBER>
         - COUnter:UPDate?
+        ```
 
-    **Info:**
+    Info:
         - ``AUTO`` sets the data logging to automatic.
         - ``TIME`` sets the data logging to occur after a given time interval has elapsed.
         - ``NUMBER`` sets the data logging to occur after a given number of acquisitions have
@@ -116,7 +112,7 @@ class CounterUpdate(SCPICmdWrite, SCPICmdRead):
 class CounterType(SCPICmdWrite, SCPICmdRead):
     """The ``COUnter:TYPe`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the Counter Application type as Trigger Source Frequency or A-B Trigger
           Time Interval. The Trigger Source Frequency Application is commonly referred to as
           Frequency Counting, and measures the frequency of the trigger source over a large number
@@ -124,20 +120,19 @@ class CounterType(SCPICmdWrite, SCPICmdRead):
           measures the A-Event to B-Event in an A->B Sequence Trigger, over a single A->B Trigger
           Sequence. DPO70000SX Series only. This command is optional.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:TYPe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``COUnter:TYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:TYPe <TIME|FREQuency>
         - COUnter:TYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``TIME`` sets the application type to frequency.
         - ``FREQuency`` sets the application type to time interval. The default value is Frequency.
     """
@@ -146,7 +141,7 @@ class CounterType(SCPICmdWrite, SCPICmdRead):
 class CounterState(SCPICmdWrite, SCPICmdRead):
     """The ``COUnter:STAte`` command.
 
-    **Description:**
+    Description:
         - Enables the Trigger Source Frequency or A-B Trigger Time Interval application, depending
           on the value of the ``COUnter:TYPe`` parameter. This command sets or queries the Counter
           State enumerated value (OFF/ON) used to enable/disable the display of frequency or time
@@ -184,20 +179,19 @@ class CounterState(SCPICmdWrite, SCPICmdRead):
           before, but in this case the units relate to Time (seconds). DPO70000SX Series only. This
           command is optional.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:STAte?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:STAte?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``COUnter:STAte value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:STAte {<NR1>|OFF|ON}
         - COUnter:STAte?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` , if 0 disables the counter function, if 1 enables the counter function.
         - ``OFF`` disables the counter function. The default value is OFF.
         - ``ON`` enables the counter function.
@@ -207,27 +201,26 @@ class CounterState(SCPICmdWrite, SCPICmdRead):
 class CounterShowmeasurement(SCPICmdWrite, SCPICmdRead):
     """The ``COUnter:SHOWMeasurement`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the parameter that controls the display of the Trigger Source Frequency or
           A-B Trigger Time Interval Application Data. The display of the data in the graticule area
           may be turned OFF or back ON as desired. A possible reason for turning it OFF is when the
           Log Table is enabled to record the data. DPO70000SX Series only. This command is optional.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:SHOWMeasurement?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:SHOWMeasurement?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``COUnter:SHOWMeasurement value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:SHOWMeasurement <OFF|ON>
         - COUnter:SHOWMeasurement?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` disables the display of the frequency or time interval data.
         - ``ON`` enables the display of the frequency or time interval data. The default is ON.
     """
@@ -236,26 +229,25 @@ class CounterShowmeasurement(SCPICmdWrite, SCPICmdRead):
 class CounterShowlog(SCPICmdWrite, SCPICmdRead):
     """The ``COUnter:SHOWLog`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the parameter that controls the display of the Trigger Source Frequency or
           A-B Trigger Time Interval Application Data. The display of the data in the graticule area
           may be turned OFF or back ON as desired. A possible reason for turning it OFF is when the
           Log Table is enabled to record the data. DPO70000SX Series only. This command is optional.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:SHOWLog?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:SHOWLog?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``COUnter:SHOWLog value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:SHOWLog <OFF|ON>
         - COUnter:SHOWLog?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` disables the display of the frequency or time interval data.
         - ``ON`` enables the display of the frequency or time interval data. The default is ON.
     """
@@ -264,148 +256,141 @@ class CounterShowlog(SCPICmdWrite, SCPICmdRead):
 class CounterResultsValue(SCPICmdRead):
     """The ``COUnter:RESULTs:VALue`` command.
 
-    **Description:**
+    Description:
         - Queries the measured value obtained from the Trigger Source Frequency or A-B Trigger Time
           Interval Applications. The measured quantity is value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:RESULTs:VALue?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:VALue?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:RESULTs:VALue?
+        ```
     """
 
 
 class CounterResultsNumber(SCPICmdRead):
     """The ``COUnter:RESULTs:NUMber`` command.
 
-    **Description:**
+    Description:
         - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger Time
           Interval Applications. The value is the number of acquisitions (NUMber) taken at the time
           the command was given.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:RESULTs:NUMber?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:NUMber?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:RESULTs:NUMber?
+        ```
     """
 
 
 class CounterResultsMinimum(SCPICmdRead):
     """The ``COUnter:RESULTs:MINimum`` command.
 
-    **Description:**
+    Description:
         - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger Time
           Interval Applications. The minimum is a statistical value accumulated over the number of
           acquisitions ('NUMber') taken at the time the command was given.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:RESULTs:MINimum?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:MINimum?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:RESULTs:MINimum?
+        ```
     """
 
 
 class CounterResultsMaximum(SCPICmdRead):
     """The ``COUnter:RESULTs:MAXimum`` command.
 
-    **Description:**
+    Description:
         - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger Time
           Interval Applications. The maximum is a statistical value accumulated over the number of
           acquisitions (NUMber) taken at the time the command was given.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:RESULTs:MAXimum?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:MAXimum?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:RESULTs:MAXimum?
+        ```
     """
 
 
 class CounterResultsDeviation(SCPICmdRead):
     """The ``COUnter:RESULTs:DEViation`` command.
 
-    **Description:**
+    Description:
         - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger Time
           Interval Applications. The Deviation is a statistical value accumulated over the number of
           acquisitions (NUMber) taken at the time the command was given.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:RESULTs:DEViation?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:DEViation?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:RESULTs:DEViation?
+        ```
     """
 
 
 class CounterResultsAvgmean(SCPICmdRead):
     """The ``COUnter:RESULTs:AVGmean`` command.
 
-    **Description:**
+    Description:
         - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger Time
           Interval Applications. The AVGmean is a statistical value accumulated over the number of
           acquisitions (NUMber) taken at the time the command was given.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:RESULTs:AVGmean?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:AVGmean?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:RESULTs:AVGmean?
+        ```
     """
 
 
 class CounterResults(SCPICmdRead):
     """The ``COUnter:RESULTs`` command.
 
-    **Description:**
+    Description:
         - Queries the measured and derived values obtained from the Trigger Source Frequency or A-B
           Trigger Time Interval Applications. The measured quantity is value. The minimum, maximum,
           AVGmean, and Deviation are statistical values accumulated over the number of acquisitions
           (NUMber) taken at the time the command is given. All results are returned with the single
           query ``COUnter:RESULTs?`` Individual results are returned by other queries
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:RESULTs?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:RESULTs?
+        ```
 
     Properties:
         - ``.avgmean``: The ``COUnter:RESULTs:AVGmean`` command.
@@ -429,21 +414,20 @@ class CounterResults(SCPICmdRead):
     def avgmean(self) -> CounterResultsAvgmean:
         """Return the ``COUnter:RESULTs:AVGmean`` command.
 
-        **Description:**
+        Description:
             - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger
               Time Interval Applications. The AVGmean is a statistical value accumulated over the
               number of acquisitions (NUMber) taken at the time the command was given.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:RESULTs:AVGmean?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:AVGmean?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:RESULTs:AVGmean?
+            ```
         """
         return self._avgmean
 
@@ -451,21 +435,20 @@ class CounterResults(SCPICmdRead):
     def deviation(self) -> CounterResultsDeviation:
         """Return the ``COUnter:RESULTs:DEViation`` command.
 
-        **Description:**
+        Description:
             - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger
               Time Interval Applications. The Deviation is a statistical value accumulated over the
               number of acquisitions (NUMber) taken at the time the command was given.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:RESULTs:DEViation?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:DEViation?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:RESULTs:DEViation?
+            ```
         """
         return self._deviation
 
@@ -473,21 +456,20 @@ class CounterResults(SCPICmdRead):
     def maximum(self) -> CounterResultsMaximum:
         """Return the ``COUnter:RESULTs:MAXimum`` command.
 
-        **Description:**
+        Description:
             - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger
               Time Interval Applications. The maximum is a statistical value accumulated over the
               number of acquisitions (NUMber) taken at the time the command was given.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:RESULTs:MAXimum?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:MAXimum?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:RESULTs:MAXimum?
+            ```
         """
         return self._maximum
 
@@ -495,21 +477,20 @@ class CounterResults(SCPICmdRead):
     def minimum(self) -> CounterResultsMinimum:
         """Return the ``COUnter:RESULTs:MINimum`` command.
 
-        **Description:**
+        Description:
             - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger
               Time Interval Applications. The minimum is a statistical value accumulated over the
               number of acquisitions ('NUMber') taken at the time the command was given.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:RESULTs:MINimum?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:MINimum?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:RESULTs:MINimum?
+            ```
         """
         return self._minimum
 
@@ -517,21 +498,20 @@ class CounterResults(SCPICmdRead):
     def number(self) -> CounterResultsNumber:
         """Return the ``COUnter:RESULTs:NUMber`` command.
 
-        **Description:**
+        Description:
             - Queries the derived value obtained from the Trigger Source Frequency or A-B Trigger
               Time Interval Applications. The value is the number of acquisitions (NUMber) taken at
               the time the command was given.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:RESULTs:NUMber?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:NUMber?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:RESULTs:NUMber?
+            ```
         """
         return self._number
 
@@ -539,20 +519,19 @@ class CounterResults(SCPICmdRead):
     def value(self) -> CounterResultsValue:
         """Return the ``COUnter:RESULTs:VALue`` command.
 
-        **Description:**
+        Description:
             - Queries the measured value obtained from the Trigger Source Frequency or A-B Trigger
               Time Interval Applications. The measured quantity is value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:RESULTs:VALue?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs:VALue?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:RESULTs:VALue?
+            ```
         """
         return self._value
 
@@ -560,7 +539,7 @@ class CounterResults(SCPICmdRead):
 class CounterReference(SCPICmdWrite, SCPICmdRead):
     """The ``COUnter:REFerence`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the Reference (offset) value for the Trigger Source Frequency or A-B
           Trigger Time Interval applications. When the time or frequency is measured the offset is
           subtracted from the measured value before the value is displayed, used to calculate
@@ -572,20 +551,19 @@ class CounterReference(SCPICmdWrite, SCPICmdRead):
           semicolon here), and then queried to determine its value. DPO70000SX Series only. This
           command is optional.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:REFerence?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:REFerence?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``COUnter:REFerence value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:REFerence <nr3>
         - COUnter:REFerence?
+        ```
 
-    **Info:**
+    Info:
         - ``<nr3>`` is the Reference (offset) value for the Trigger Source Frequency or A-B Trigger
           Time Interval applications.
     """
@@ -594,25 +572,24 @@ class CounterReference(SCPICmdWrite, SCPICmdRead):
 class CounterPrescaler(SCPICmdWrite, SCPICmdRead):
     """The ``COUnter:PREscaler`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the parameter that enables/disables the Prescaler circuits that are needed
           when the signal frequency is greater than 4 GHz. The Default is OFF. DPO70000SX Series
           only. This command is optional.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:PREscaler?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:PREscaler?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``COUnter:PREscaler value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:PREscaler <OFF|ON>
         - COUnter:PREscaler?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` disables use of the prescaler.
         - ``ON`` enables use of the prescaler.
     """
@@ -621,25 +598,24 @@ class CounterPrescaler(SCPICmdWrite, SCPICmdRead):
 class CounterLogtable(SCPICmdWrite, SCPICmdRead):
     """The ``COUnter:LOGTable`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the parameter that enables/disables the Log Table of the Trigger Source
           Frequency or A-B Trigger Time Interval Application Data. When disabled, no log is kept.
           DPO70000SX Series only. This command is optional.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:LOGTable?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:LOGTable?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``COUnter:LOGTable value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:LOGTable <OFF|ON>
         - COUnter:LOGTable?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` disables use of the log table.
         - ``ON`` enables use of the log table. The default is ON.
     """
@@ -648,27 +624,26 @@ class CounterLogtable(SCPICmdWrite, SCPICmdRead):
 class CounterLognumber(SCPICmdWrite, SCPICmdRead):
     """The ``COUnter:LOGNumber`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the parameter that controls the schedule for updating the Log Table of the
           Trigger Source Frequency or A-B Trigger Time Interval Application Data when the
           ``COUnter:UPDate`` is NUMBER. The number of acquisitions between log updates is set to the
           number specified in the argument of this command. DPO70000SX Series only. This command is
           optional.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:LOGNumber?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:LOGNumber?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``COUnter:LOGNumber value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:LOGNumber <nr1>
         - COUnter:LOGNumber?
+        ```
 
-    **Info:**
+    Info:
         - ``<nr1>`` is he number of acquisitions between log updates. The default is 100
           acquisitions.
     """
@@ -677,20 +652,19 @@ class CounterLognumber(SCPICmdWrite, SCPICmdRead):
 class CounterLogaction(SCPICmdWrite):
     """The ``COUnter:LOGAction`` command.
 
-    **Description:**
+    Description:
         - This command clears all data from the Log Table of the Trigger Source Frequency or A-B
           Trigger Time Interval Application. DPO70000SX Series only. This command is optional.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``COUnter:LOGAction value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:LOGAction <CLEAR>
+        ```
 
-    **Info:**
+    Info:
         - ``CLEAR`` empties the log table.
     """
 
@@ -698,7 +672,7 @@ class CounterLogaction(SCPICmdWrite):
 class CounterGain(SCPICmdWrite, SCPICmdRead):
     """The ``COUnter:GAIn`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the Gain (scale) value for the Trigger Source Frequency or A-B Trigger
           Time Interval applications. When the time or frequency is measured, it is multiplied by
           the Gain before the value is displayed, used to calculate statistics, or logged in the
@@ -707,20 +681,19 @@ class CounterGain(SCPICmdWrite, SCPICmdRead):
           scale). The default gain is 1.0. The gain may never be 0.0. DPO70000SX Series only. This
           command is optional.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:GAIn?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:GAIn?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``COUnter:GAIn value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:GAIn <nr2>
         - COUnter:GAIn?
+        ```
 
-    **Info:**
+    Info:
         - ``<nr2>`` is the Gain (scale) value for the Trigger Source Frequency or A-B Trigger Time
           Interval applications.
     """
@@ -729,27 +702,26 @@ class CounterGain(SCPICmdWrite, SCPICmdRead):
 class CounterDuration(SCPICmdWrite, SCPICmdRead):
     """The ``COUnter:DURation`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the parameter that controls the schedule for updating the Log Table of the
           Trigger Source Frequency or A-B Trigger Time Interval Application Data when the
           ``COUnter:UPDate`` is TIME. The time interval between log updates is set to the number of
           seconds specified in the argument of this command. DPO70000SX Series only. This command is
           optional.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``COUnter:DURation?`` query.
         - Using the ``.verify(value)`` method will send the ``COUnter:DURation?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``COUnter:DURation value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter:DURation <nr1>
         - COUnter:DURation?
+        ```
 
-    **Info:**
+    Info:
         - ``<nr1>`` is the time interval, in seconds, between log updates. The default is 60
           seconds.
     """
@@ -759,7 +731,7 @@ class CounterDuration(SCPICmdWrite, SCPICmdRead):
 class Counter(SCPICmdWrite, SCPICmdRead):
     """The ``COUnter`` command.
 
-    **Description:**
+    Description:
         - This command is used for three separate purposes. DPO70000SX Series only. This command is
           optional. First, the ``COUnter REFerence`` command takes the reference to be the last
           measured value when the command is received. After that, the displayed values are deltas
@@ -773,16 +745,15 @@ class Counter(SCPICmdWrite, SCPICmdRead):
           of about 1/3 second, to both maximize the number of digits in the measured result, and
           keep the acquisition rate lively.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``COUnter value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - COUnter <REFerence|CLEAR|RESet>
+        ```
 
-    **Info:**
+    Info:
         - ``REFerence`` takes the reference to be the last measured value when the command is
           received. After that, the displayed values are deltas from the reference value.
         - ``CLEAR`` zeroes both the measured and derived statistical values, and zeroes the number
@@ -829,27 +800,26 @@ class Counter(SCPICmdWrite, SCPICmdRead):
     def duration(self) -> CounterDuration:
         """Return the ``COUnter:DURation`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the parameter that controls the schedule for updating the Log Table of
               the Trigger Source Frequency or A-B Trigger Time Interval Application Data when the
               ``COUnter:UPDate`` is TIME. The time interval between log updates is set to the number
               of seconds specified in the argument of this command. DPO70000SX Series only. This
               command is optional.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:DURation?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:DURation?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``COUnter:DURation value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:DURation <nr1>
             - COUnter:DURation?
+            ```
 
-        **Info:**
+        Info:
             - ``<nr1>`` is the time interval, in seconds, between log updates. The default is 60
               seconds.
         """
@@ -859,7 +829,7 @@ class Counter(SCPICmdWrite, SCPICmdRead):
     def gain(self) -> CounterGain:
         """Return the ``COUnter:GAIn`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the Gain (scale) value for the Trigger Source Frequency or A-B Trigger
               Time Interval applications. When the time or frequency is measured, it is multiplied
               by the Gain before the value is displayed, used to calculate statistics, or logged in
@@ -868,20 +838,19 @@ class Counter(SCPICmdWrite, SCPICmdRead):
               scale). The default gain is 1.0. The gain may never be 0.0. DPO70000SX Series only.
               This command is optional.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:GAIn?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:GAIn?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``COUnter:GAIn value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:GAIn <nr2>
             - COUnter:GAIn?
+            ```
 
-        **Info:**
+        Info:
             - ``<nr2>`` is the Gain (scale) value for the Trigger Source Frequency or A-B Trigger
               Time Interval applications.
         """
@@ -891,20 +860,19 @@ class Counter(SCPICmdWrite, SCPICmdRead):
     def logaction(self) -> CounterLogaction:
         """Return the ``COUnter:LOGAction`` command.
 
-        **Description:**
+        Description:
             - This command clears all data from the Log Table of the Trigger Source Frequency or A-B
               Trigger Time Interval Application. DPO70000SX Series only. This command is optional.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``COUnter:LOGAction value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:LOGAction <CLEAR>
+            ```
 
-        **Info:**
+        Info:
             - ``CLEAR`` empties the log table.
         """
         return self._logaction
@@ -913,27 +881,26 @@ class Counter(SCPICmdWrite, SCPICmdRead):
     def lognumber(self) -> CounterLognumber:
         """Return the ``COUnter:LOGNumber`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the parameter that controls the schedule for updating the Log Table of
               the Trigger Source Frequency or A-B Trigger Time Interval Application Data when the
               ``COUnter:UPDate`` is NUMBER. The number of acquisitions between log updates is set to
               the number specified in the argument of this command. DPO70000SX Series only. This
               command is optional.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:LOGNumber?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:LOGNumber?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``COUnter:LOGNumber value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:LOGNumber <nr1>
             - COUnter:LOGNumber?
+            ```
 
-        **Info:**
+        Info:
             - ``<nr1>`` is he number of acquisitions between log updates. The default is 100
               acquisitions.
         """
@@ -943,25 +910,24 @@ class Counter(SCPICmdWrite, SCPICmdRead):
     def logtable(self) -> CounterLogtable:
         """Return the ``COUnter:LOGTable`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the parameter that enables/disables the Log Table of the Trigger
               Source Frequency or A-B Trigger Time Interval Application Data. When disabled, no log
               is kept. DPO70000SX Series only. This command is optional.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:LOGTable?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:LOGTable?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``COUnter:LOGTable value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:LOGTable <OFF|ON>
             - COUnter:LOGTable?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` disables use of the log table.
             - ``ON`` enables use of the log table. The default is ON.
         """
@@ -971,25 +937,24 @@ class Counter(SCPICmdWrite, SCPICmdRead):
     def prescaler(self) -> CounterPrescaler:
         """Return the ``COUnter:PREscaler`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the parameter that enables/disables the Prescaler circuits that are
               needed when the signal frequency is greater than 4 GHz. The Default is OFF. DPO70000SX
               Series only. This command is optional.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:PREscaler?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:PREscaler?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``COUnter:PREscaler value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:PREscaler <OFF|ON>
             - COUnter:PREscaler?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` disables use of the prescaler.
             - ``ON`` enables use of the prescaler.
         """
@@ -999,7 +964,7 @@ class Counter(SCPICmdWrite, SCPICmdRead):
     def reference(self) -> CounterReference:
         """Return the ``COUnter:REFerence`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the Reference (offset) value for the Trigger Source Frequency or A-B
               Trigger Time Interval applications. When the time or frequency is measured the offset
               is subtracted from the measured value before the value is displayed, used to calculate
@@ -1011,20 +976,19 @@ class Counter(SCPICmdWrite, SCPICmdRead):
               no semicolon here), and then queried to determine its value. DPO70000SX Series only.
               This command is optional.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:REFerence?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:REFerence?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``COUnter:REFerence value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:REFerence <nr3>
             - COUnter:REFerence?
+            ```
 
-        **Info:**
+        Info:
             - ``<nr3>`` is the Reference (offset) value for the Trigger Source Frequency or A-B
               Trigger Time Interval applications.
         """
@@ -1034,7 +998,7 @@ class Counter(SCPICmdWrite, SCPICmdRead):
     def results(self) -> CounterResults:
         """Return the ``COUnter:RESULTs`` command.
 
-        **Description:**
+        Description:
             - Queries the measured and derived values obtained from the Trigger Source Frequency or
               A-B Trigger Time Interval Applications. The measured quantity is value. The minimum,
               maximum, AVGmean, and Deviation are statistical values accumulated over the number of
@@ -1042,16 +1006,15 @@ class Counter(SCPICmdWrite, SCPICmdRead):
               with the single query ``COUnter:RESULTs?`` Individual results are returned by other
               queries
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:RESULTs?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:RESULTs?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:RESULTs?
+            ```
 
         Sub-properties:
             - ``.avgmean``: The ``COUnter:RESULTs:AVGmean`` command.
@@ -1067,27 +1030,26 @@ class Counter(SCPICmdWrite, SCPICmdRead):
     def showlog(self) -> CounterShowlog:
         """Return the ``COUnter:SHOWLog`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the parameter that controls the display of the Trigger Source
               Frequency or A-B Trigger Time Interval Application Data. The display of the data in
               the graticule area may be turned OFF or back ON as desired. A possible reason for
               turning it OFF is when the Log Table is enabled to record the data. DPO70000SX Series
               only. This command is optional.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:SHOWLog?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:SHOWLog?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``COUnter:SHOWLog value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:SHOWLog <OFF|ON>
             - COUnter:SHOWLog?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` disables the display of the frequency or time interval data.
             - ``ON`` enables the display of the frequency or time interval data. The default is ON.
         """
@@ -1097,28 +1059,27 @@ class Counter(SCPICmdWrite, SCPICmdRead):
     def showmeasurement(self) -> CounterShowmeasurement:
         """Return the ``COUnter:SHOWMeasurement`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the parameter that controls the display of the Trigger Source
               Frequency or A-B Trigger Time Interval Application Data. The display of the data in
               the graticule area may be turned OFF or back ON as desired. A possible reason for
               turning it OFF is when the Log Table is enabled to record the data. DPO70000SX Series
               only. This command is optional.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:SHOWMeasurement?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:SHOWMeasurement?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``COUnter:SHOWMeasurement value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:SHOWMeasurement <OFF|ON>
             - COUnter:SHOWMeasurement?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` disables the display of the frequency or time interval data.
             - ``ON`` enables the display of the frequency or time interval data. The default is ON.
         """
@@ -1128,7 +1089,7 @@ class Counter(SCPICmdWrite, SCPICmdRead):
     def state(self) -> CounterState:
         """Return the ``COUnter:STAte`` command.
 
-        **Description:**
+        Description:
             - Enables the Trigger Source Frequency or A-B Trigger Time Interval application,
               depending on the value of the ``COUnter:TYPe`` parameter. This command sets or queries
               the Counter State enumerated value (OFF/ON) used to enable/disable the display of
@@ -1168,20 +1129,19 @@ class Counter(SCPICmdWrite, SCPICmdRead):
               before, but in this case the units relate to Time (seconds). DPO70000SX Series only.
               This command is optional.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:STAte?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:STAte?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``COUnter:STAte value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:STAte {<NR1>|OFF|ON}
             - COUnter:STAte?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` , if 0 disables the counter function, if 1 enables the counter function.
             - ``OFF`` disables the counter function. The default value is OFF.
             - ``ON`` enables the counter function.
@@ -1192,7 +1152,7 @@ class Counter(SCPICmdWrite, SCPICmdRead):
     def type(self) -> CounterType:
         """Return the ``COUnter:TYPe`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the Counter Application type as Trigger Source Frequency or A-B
               Trigger Time Interval. The Trigger Source Frequency Application is commonly referred
               to as Frequency Counting, and measures the frequency of the trigger source over a
@@ -1200,20 +1160,19 @@ class Counter(SCPICmdWrite, SCPICmdRead):
               Application measures the A-Event to B-Event in an A->B Sequence Trigger, over a single
               A->B Trigger Sequence. DPO70000SX Series only. This command is optional.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:TYPe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``COUnter:TYPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:TYPe <TIME|FREQuency>
             - COUnter:TYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``TIME`` sets the application type to frequency.
             - ``FREQuency`` sets the application type to time interval. The default value is
               Frequency.
@@ -1224,27 +1183,26 @@ class Counter(SCPICmdWrite, SCPICmdRead):
     def update(self) -> CounterUpdate:
         """Return the ``COUnter:UPDate`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the parameter that controls the schedule for updating the Log Table of
               the Trigger Source Frequency or A-B Trigger Time Interval Application Data. The
               schedule for logging the data may be set to occur automatically, after a given time
               interval has elapsed, or after a given number of acquisitions have occurred. The
               default is AUTO. DPO70000SX Series only. This command is optional.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:UPDate?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:UPDate?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``COUnter:UPDate value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:UPDate <AUTO|TIME|NUMBER>
             - COUnter:UPDate?
+            ```
 
-        **Info:**
+        Info:
             - ``AUTO`` sets the data logging to automatic.
             - ``TIME`` sets the data logging to occur after a given time interval has elapsed.
             - ``NUMBER`` sets the data logging to occur after a given number of acquisitions have
@@ -1256,26 +1214,25 @@ class Counter(SCPICmdWrite, SCPICmdRead):
     def view(self) -> CounterView:
         """Return the ``COUnter:VIEW`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the View of the Counter Trigger Source Frequency Application Data.
               When the ``COUnter:TYPe`` is FREQuency, the data may be viewed as Frequency (Hz) or
               Time (seconds). This command does not apply to the A-B Time Interval Application
               (``COUnter:TYPE TIME``). DPO70000SX Series only. This command is optional.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``COUnter:VIEW?`` query.
             - Using the ``.verify(value)`` method will send the ``COUnter:VIEW?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``COUnter:VIEW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - COUnter:VIEW <FREQuency|PERiod>
             - COUnter:VIEW?
+            ```
 
-        **Info:**
+        Info:
             - ``FREQuency`` displays the count in Hertz.
             - ``PERiod`` displays the count in seconds.
         """

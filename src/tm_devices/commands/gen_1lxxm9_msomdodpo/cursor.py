@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CURSor:DDT?
     - CURSor:FUNCtion {SCREEN|WAVEform|OFF}
     - CURSor:FUNCtion?
@@ -74,30 +72,29 @@ if TYPE_CHECKING:
 class CursorXyRectangularYUnits(SCPICmdRead):
     """The ``CURSor:XY:RECTangular:Y:UNIts`` command.
 
-    **Description:**
+    Description:
         - Returns the cursor Y rectangular units.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:RECTangular:Y:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:RECTangular:Y:UNIts?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:RECTangular:Y:UNIts?
+        ```
     """
 
 
 class CursorXyRectangularYPositionItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``CURSor:XY:RECTangular:Y:POSITION<x>`` command.
 
-    **Description:**
+    Description:
         - This command specifies the Y rectangular coordinate for cursor 1 or cursor 2. The cursor
           is specified by x and can be either 1 or 2.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:RECTangular:Y:POSITION<x>?``
           query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:RECTangular:Y:POSITION<x>?``
@@ -105,14 +102,13 @@ class CursorXyRectangularYPositionItem(ValidatedDynamicNumberCmd, SCPICmdWrite, 
         - Using the ``.write(value)`` method will send the
           ``CURSor:XY:RECTangular:Y:POSITION<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:RECTangular:Y:POSITION<x> <NR3>
         - CURSor:XY:RECTangular:Y:POSITION<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the coordinate in volts.
     """
 
@@ -120,26 +116,25 @@ class CursorXyRectangularYPositionItem(ValidatedDynamicNumberCmd, SCPICmdWrite, 
 class CursorXyRectangularYDelta(SCPICmdRead):
     """The ``CURSor:XY:RECTangular:Y:DELta`` command.
 
-    **Description:**
+    Description:
         - Returns The cursor Y delta value in rectangular coordinates.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:RECTangular:Y:DELta?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:RECTangular:Y:DELta?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:RECTangular:Y:DELta?
+        ```
     """
 
 
 class CursorXyRectangularY(SCPICmdRead):
     """The ``CURSor:XY:RECTangular:Y`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:RECTangular:Y?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:RECTangular:Y?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -162,19 +157,18 @@ class CursorXyRectangularY(SCPICmdRead):
     def delta(self) -> CursorXyRectangularYDelta:
         """Return the ``CURSor:XY:RECTangular:Y:DELta`` command.
 
-        **Description:**
+        Description:
             - Returns The cursor Y delta value in rectangular coordinates.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:RECTangular:Y:DELta?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:RECTangular:Y:DELta?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:RECTangular:Y:DELta?
+            ```
         """
         return self._delta
 
@@ -182,11 +176,11 @@ class CursorXyRectangularY(SCPICmdRead):
     def position(self) -> Dict[int, CursorXyRectangularYPositionItem]:
         """Return the ``CURSor:XY:RECTangular:Y:POSITION<x>`` command.
 
-        **Description:**
+        Description:
             - This command specifies the Y rectangular coordinate for cursor 1 or cursor 2. The
               cursor is specified by x and can be either 1 or 2.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:RECTangular:Y:POSITION<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -195,14 +189,13 @@ class CursorXyRectangularY(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``CURSor:XY:RECTangular:Y:POSITION<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:RECTangular:Y:POSITION<x> <NR3>
             - CURSor:XY:RECTangular:Y:POSITION<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the coordinate in volts.
         """
         return self._position
@@ -211,19 +204,18 @@ class CursorXyRectangularY(SCPICmdRead):
     def units(self) -> CursorXyRectangularYUnits:
         """Return the ``CURSor:XY:RECTangular:Y:UNIts`` command.
 
-        **Description:**
+        Description:
             - Returns the cursor Y rectangular units.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:RECTangular:Y:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:RECTangular:Y:UNIts?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:RECTangular:Y:UNIts?
+            ```
         """
         return self._units
 
@@ -231,30 +223,29 @@ class CursorXyRectangularY(SCPICmdRead):
 class CursorXyRectangularXUnits(SCPICmdRead):
     """The ``CURSor:XY:RECTangular:X:UNIts`` command.
 
-    **Description:**
+    Description:
         - Returns the cursor X rectangular units.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:RECTangular:X:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:RECTangular:X:UNIts?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:RECTangular:X:UNIts?
+        ```
     """
 
 
 class CursorXyRectangularXPositionItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``CURSor:XY:RECTangular:X:POSITION<x>`` command.
 
-    **Description:**
+    Description:
         - This command specifies the X rectangular coordinate for cursor 1 or cursor 2. The cursor
           is specified by x and can be either 1 or 2.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:RECTangular:X:POSITION<x>?``
           query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:RECTangular:X:POSITION<x>?``
@@ -262,14 +253,13 @@ class CursorXyRectangularXPositionItem(ValidatedDynamicNumberCmd, SCPICmdWrite, 
         - Using the ``.write(value)`` method will send the
           ``CURSor:XY:RECTangular:X:POSITION<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:RECTangular:X:POSITION<x> <NR3>
         - CURSor:XY:RECTangular:X:POSITION<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the coordinate in volts.
     """
 
@@ -277,26 +267,25 @@ class CursorXyRectangularXPositionItem(ValidatedDynamicNumberCmd, SCPICmdWrite, 
 class CursorXyRectangularXDelta(SCPICmdRead):
     """The ``CURSor:XY:RECTangular:X:DELta`` command.
 
-    **Description:**
+    Description:
         - Returns the cursor X delta value in rectangular coordinates.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:RECTangular:X:DELta?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:RECTangular:X:DELta?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:RECTangular:X:DELta?
+        ```
     """
 
 
 class CursorXyRectangularX(SCPICmdRead):
     """The ``CURSor:XY:RECTangular:X`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:RECTangular:X?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:RECTangular:X?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -319,19 +308,18 @@ class CursorXyRectangularX(SCPICmdRead):
     def delta(self) -> CursorXyRectangularXDelta:
         """Return the ``CURSor:XY:RECTangular:X:DELta`` command.
 
-        **Description:**
+        Description:
             - Returns the cursor X delta value in rectangular coordinates.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:RECTangular:X:DELta?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:RECTangular:X:DELta?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:RECTangular:X:DELta?
+            ```
         """
         return self._delta
 
@@ -339,11 +327,11 @@ class CursorXyRectangularX(SCPICmdRead):
     def position(self) -> Dict[int, CursorXyRectangularXPositionItem]:
         """Return the ``CURSor:XY:RECTangular:X:POSITION<x>`` command.
 
-        **Description:**
+        Description:
             - This command specifies the X rectangular coordinate for cursor 1 or cursor 2. The
               cursor is specified by x and can be either 1 or 2.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:RECTangular:X:POSITION<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -352,14 +340,13 @@ class CursorXyRectangularX(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``CURSor:XY:RECTangular:X:POSITION<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:RECTangular:X:POSITION<x> <NR3>
             - CURSor:XY:RECTangular:X:POSITION<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the coordinate in volts.
         """
         return self._position
@@ -368,19 +355,18 @@ class CursorXyRectangularX(SCPICmdRead):
     def units(self) -> CursorXyRectangularXUnits:
         """Return the ``CURSor:XY:RECTangular:X:UNIts`` command.
 
-        **Description:**
+        Description:
             - Returns the cursor X rectangular units.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:RECTangular:X:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:RECTangular:X:UNIts?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:RECTangular:X:UNIts?
+            ```
         """
         return self._units
 
@@ -388,7 +374,7 @@ class CursorXyRectangularX(SCPICmdRead):
 class CursorXyRectangular(SCPICmdRead):
     """The ``CURSor:XY:RECTangular`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:RECTangular?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:RECTangular?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -407,7 +393,7 @@ class CursorXyRectangular(SCPICmdRead):
     def x(self) -> CursorXyRectangularX:
         """Return the ``CURSor:XY:RECTangular:X`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:RECTangular:X?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:RECTangular:X?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -423,7 +409,7 @@ class CursorXyRectangular(SCPICmdRead):
     def y(self) -> CursorXyRectangularY:
         """Return the ``CURSor:XY:RECTangular:Y`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:RECTangular:Y?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:RECTangular:Y?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -439,23 +425,22 @@ class CursorXyRectangular(SCPICmdRead):
 class CursorXyReadout(SCPICmdWrite, SCPICmdRead):
     """The ``CURSor:XY:READOUT`` command.
 
-    **Description:**
+    Description:
         - This command specifies the XY cursor readout selection.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:READOUT?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:READOUT?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CURSor:XY:READOUT value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:READOUT {RECTangular|POLARCord|PRODuct|RATio}
         - CURSor:XY:READOUT?
+        ```
 
-    **Info:**
+    Info:
         - ``RECTangular`` specifies the XY readout as rectangular coordinates.
         - ``POLARCord`` specifies the XY readout as polar coordinates.
         - ``PRODuct`` specifies the XY readout in X``*Y`` format.
@@ -466,66 +451,63 @@ class CursorXyReadout(SCPICmdWrite, SCPICmdRead):
 class CursorXyRatioUnits(SCPICmdRead):
     """The ``CURSor:XY:RATIO:UNIts`` command.
 
-    **Description:**
+    Description:
         - Returns the cursor X and cursor Y units for the ratio measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:RATIO:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:RATIO:UNIts?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:RATIO:UNIts?
+        ```
     """
 
 
 class CursorXyRatioPositionItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``CURSor:XY:RATIO:POSITION<x>`` command.
 
-    **Description:**
+    Description:
         - Returns the X (horizontal) or Y (vertical) position for the specified cursor, which can be
           1 (X) or 2 (Y). The ratio is calculated as Position 1 = (Y1/X1); Position 2 = (Y2/X2).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:RATIO:POSITION<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:RATIO:POSITION<x>?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:RATIO:POSITION<x>?
+        ```
     """
 
 
 class CursorXyRatioDelta(SCPICmdRead):
     """The ``CURSor:XY:RATIO:DELta`` command.
 
-    **Description:**
+    Description:
         - Returns the ratio of the difference between the cursors X position and cursor Y position
           (ΔY¸ ΔX). The ratio is calculated as (Y2 - Y1) / (X2 - X1).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:RATIO:DELta?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:RATIO:DELta?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:RATIO:DELta?
+        ```
     """
 
 
 class CursorXyRatio(SCPICmdRead):
     """The ``CURSor:XY:RATIO`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:RATIO?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:RATIO?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -548,20 +530,19 @@ class CursorXyRatio(SCPICmdRead):
     def delta(self) -> CursorXyRatioDelta:
         """Return the ``CURSor:XY:RATIO:DELta`` command.
 
-        **Description:**
+        Description:
             - Returns the ratio of the difference between the cursors X position and cursor Y
               position (ΔY¸ ΔX). The ratio is calculated as (Y2 - Y1) / (X2 - X1).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:RATIO:DELta?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:RATIO:DELta?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:RATIO:DELta?
+            ```
         """
         return self._delta
 
@@ -569,21 +550,20 @@ class CursorXyRatio(SCPICmdRead):
     def position(self) -> Dict[int, CursorXyRatioPositionItem]:
         """Return the ``CURSor:XY:RATIO:POSITION<x>`` command.
 
-        **Description:**
+        Description:
             - Returns the X (horizontal) or Y (vertical) position for the specified cursor, which
               can be 1 (X) or 2 (Y). The ratio is calculated as Position 1 = (Y1/X1); Position 2 =
               (Y2/X2).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:RATIO:POSITION<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:RATIO:POSITION<x>?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:RATIO:POSITION<x>?
+            ```
         """
         return self._position
 
@@ -591,19 +571,18 @@ class CursorXyRatio(SCPICmdRead):
     def units(self) -> CursorXyRatioUnits:
         """Return the ``CURSor:XY:RATIO:UNIts`` command.
 
-        **Description:**
+        Description:
             - Returns the cursor X and cursor Y units for the ratio measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:RATIO:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:RATIO:UNIts?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:RATIO:UNIts?
+            ```
         """
         return self._units
 
@@ -611,67 +590,64 @@ class CursorXyRatio(SCPICmdRead):
 class CursorXyProductUnits(SCPICmdRead):
     """The ``CURSor:XY:PRODUCT:UNIts`` command.
 
-    **Description:**
+    Description:
         - Returns the XY cursor product units.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:PRODUCT:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:PRODUCT:UNIts?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:PRODUCT:UNIts?
+        ```
     """
 
 
 class CursorXyProductPositionItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``CURSor:XY:PRODUCT:POSITION<x>`` command.
 
-    **Description:**
+    Description:
         - Returns the position of the X or Y cursor used to calculate the X × Y cursor measurement,
           Position 1 = (X1 × Y1); Position 2 = (X2 × Y2). The cursor is specified by x, which can be
           1 or 2.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:PRODUCT:POSITION<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:PRODUCT:POSITION<x>?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:PRODUCT:POSITION<x>?
+        ```
     """
 
 
 class CursorXyProductDelta(SCPICmdRead):
     """The ``CURSor:XY:PRODUCT:DELta`` command.
 
-    **Description:**
+    Description:
         - Returns the difference between the cursors X position and cursor Y position. The ΔX × ΔY
           value is calculated as (X2 - X1) × (Y2 - Y1).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:PRODUCT:DELta?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:PRODUCT:DELta?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:PRODUCT:DELta?
+        ```
     """
 
 
 class CursorXyProduct(SCPICmdRead):
     """The ``CURSor:XY:PRODUCT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:PRODUCT?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:PRODUCT?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -694,20 +670,19 @@ class CursorXyProduct(SCPICmdRead):
     def delta(self) -> CursorXyProductDelta:
         """Return the ``CURSor:XY:PRODUCT:DELta`` command.
 
-        **Description:**
+        Description:
             - Returns the difference between the cursors X position and cursor Y position. The ΔX ×
               ΔY value is calculated as (X2 - X1) × (Y2 - Y1).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:PRODUCT:DELta?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:PRODUCT:DELta?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:PRODUCT:DELta?
+            ```
         """
         return self._delta
 
@@ -715,21 +690,20 @@ class CursorXyProduct(SCPICmdRead):
     def position(self) -> Dict[int, CursorXyProductPositionItem]:
         """Return the ``CURSor:XY:PRODUCT:POSITION<x>`` command.
 
-        **Description:**
+        Description:
             - Returns the position of the X or Y cursor used to calculate the X × Y cursor
               measurement, Position 1 = (X1 × Y1); Position 2 = (X2 × Y2). The cursor is specified
               by x, which can be 1 or 2.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:PRODUCT:POSITION<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:PRODUCT:POSITION<x>?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:PRODUCT:POSITION<x>?
+            ```
         """
         return self._position
 
@@ -737,19 +711,18 @@ class CursorXyProduct(SCPICmdRead):
     def units(self) -> CursorXyProductUnits:
         """Return the ``CURSor:XY:PRODUCT:UNIts`` command.
 
-        **Description:**
+        Description:
             - Returns the XY cursor product units.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:PRODUCT:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:PRODUCT:UNIts?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:PRODUCT:UNIts?
+            ```
         """
         return self._units
 
@@ -757,64 +730,61 @@ class CursorXyProduct(SCPICmdRead):
 class CursorXyPolarThetaUnits(SCPICmdRead):
     """The ``CURSor:XY:POLar:THETA:UNIts`` command.
 
-    **Description:**
+    Description:
         - Returns the cursor coordinate units.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:POLar:THETA:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:POLar:THETA:UNIts?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:POLar:THETA:UNIts?
+        ```
     """
 
 
 class CursorXyPolarThetaPositionItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``CURSor:XY:POLar:THETA:POSITION<x>`` command.
 
-    **Description:**
+    Description:
         - Returns the cursor X or cursor Y polar coordinate, where x is either 1 or 2.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:POLar:THETA:POSITION<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:POLar:THETA:POSITION<x>?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:POLar:THETA:POSITION<x>?
+        ```
     """
 
 
 class CursorXyPolarThetaDelta(SCPICmdRead):
     """The ``CURSor:XY:POLar:THETA:DELta`` command.
 
-    **Description:**
+    Description:
         - Returns the XY cursor polar angle delta.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:POLar:THETA:DELta?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:POLar:THETA:DELta?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:POLar:THETA:DELta?
+        ```
     """
 
 
 class CursorXyPolarTheta(SCPICmdRead):
     """The ``CURSor:XY:POLar:THETA`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:POLar:THETA?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:POLar:THETA?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -837,19 +807,18 @@ class CursorXyPolarTheta(SCPICmdRead):
     def delta(self) -> CursorXyPolarThetaDelta:
         """Return the ``CURSor:XY:POLar:THETA:DELta`` command.
 
-        **Description:**
+        Description:
             - Returns the XY cursor polar angle delta.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:POLar:THETA:DELta?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:POLar:THETA:DELta?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:POLar:THETA:DELta?
+            ```
         """
         return self._delta
 
@@ -857,21 +826,20 @@ class CursorXyPolarTheta(SCPICmdRead):
     def position(self) -> Dict[int, CursorXyPolarThetaPositionItem]:
         """Return the ``CURSor:XY:POLar:THETA:POSITION<x>`` command.
 
-        **Description:**
+        Description:
             - Returns the cursor X or cursor Y polar coordinate, where x is either 1 or 2.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:POLar:THETA:POSITION<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``CURSor:XY:POLar:THETA:POSITION<x>?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:POLar:THETA:POSITION<x>?
+            ```
         """
         return self._position
 
@@ -879,19 +847,18 @@ class CursorXyPolarTheta(SCPICmdRead):
     def units(self) -> CursorXyPolarThetaUnits:
         """Return the ``CURSor:XY:POLar:THETA:UNIts`` command.
 
-        **Description:**
+        Description:
             - Returns the cursor coordinate units.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:POLar:THETA:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:POLar:THETA:UNIts?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:POLar:THETA:UNIts?
+            ```
         """
         return self._units
 
@@ -899,65 +866,62 @@ class CursorXyPolarTheta(SCPICmdRead):
 class CursorXyPolarRadiusUnits(SCPICmdRead):
     """The ``CURSor:XY:POLar:RADIUS:UNIts`` command.
 
-    **Description:**
+    Description:
         - Returns the polar radius units.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:POLar:RADIUS:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:POLar:RADIUS:UNIts?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:POLar:RADIUS:UNIts?
+        ```
     """
 
 
 class CursorXyPolarRadiusPositionItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``CURSor:XY:POLar:RADIUS:POSITION<x>`` command.
 
-    **Description:**
+    Description:
         - Returns the polar radius for the specified cursor, where x can be either 1 or 2.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:POLar:RADIUS:POSITION<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:POLar:RADIUS:POSITION<x>?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:POLar:RADIUS:POSITION<x>?
+        ```
     """
 
 
 class CursorXyPolarRadiusDelta(SCPICmdRead):
     """The ``CURSor:XY:POLar:RADIUS:DELta`` command.
 
-    **Description:**
+    Description:
         - Returns the difference between the cursors X radius and the cursor Y radius (ΔY¸ ΔX). The
           ratio is calculated as (cursor 2 Y - cursor 1 Y) ÷ (cursor 2 X - cursor 1 X).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:POLar:RADIUS:DELta?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:POLar:RADIUS:DELta?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:XY:POLar:RADIUS:DELta?
+        ```
     """
 
 
 class CursorXyPolarRadius(SCPICmdRead):
     """The ``CURSor:XY:POLar:RADIUS`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:POLar:RADIUS?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:POLar:RADIUS?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -980,20 +944,19 @@ class CursorXyPolarRadius(SCPICmdRead):
     def delta(self) -> CursorXyPolarRadiusDelta:
         """Return the ``CURSor:XY:POLar:RADIUS:DELta`` command.
 
-        **Description:**
+        Description:
             - Returns the difference between the cursors X radius and the cursor Y radius (ΔY¸ ΔX).
               The ratio is calculated as (cursor 2 Y - cursor 1 Y) ÷ (cursor 2 X - cursor 1 X).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:POLar:RADIUS:DELta?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:POLar:RADIUS:DELta?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:POLar:RADIUS:DELta?
+            ```
         """
         return self._delta
 
@@ -1001,21 +964,20 @@ class CursorXyPolarRadius(SCPICmdRead):
     def position(self) -> Dict[int, CursorXyPolarRadiusPositionItem]:
         """Return the ``CURSor:XY:POLar:RADIUS:POSITION<x>`` command.
 
-        **Description:**
+        Description:
             - Returns the polar radius for the specified cursor, where x can be either 1 or 2.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:POLar:RADIUS:POSITION<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``CURSor:XY:POLar:RADIUS:POSITION<x>?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:POLar:RADIUS:POSITION<x>?
+            ```
         """
         return self._position
 
@@ -1023,19 +985,18 @@ class CursorXyPolarRadius(SCPICmdRead):
     def units(self) -> CursorXyPolarRadiusUnits:
         """Return the ``CURSor:XY:POLar:RADIUS:UNIts`` command.
 
-        **Description:**
+        Description:
             - Returns the polar radius units.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:POLar:RADIUS:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:POLar:RADIUS:UNIts?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:POLar:RADIUS:UNIts?
+            ```
         """
         return self._units
 
@@ -1043,7 +1004,7 @@ class CursorXyPolarRadius(SCPICmdRead):
 class CursorXyPolar(SCPICmdRead):
     """The ``CURSor:XY:POLar`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY:POLar?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY:POLar?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1062,7 +1023,7 @@ class CursorXyPolar(SCPICmdRead):
     def radius(self) -> CursorXyPolarRadius:
         """Return the ``CURSor:XY:POLar:RADIUS`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:POLar:RADIUS?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:POLar:RADIUS?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -1078,7 +1039,7 @@ class CursorXyPolar(SCPICmdRead):
     def theta(self) -> CursorXyPolarTheta:
         """Return the ``CURSor:XY:POLar:THETA`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:POLar:THETA?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:POLar:THETA?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1094,7 +1055,7 @@ class CursorXyPolar(SCPICmdRead):
 class CursorXy(SCPICmdRead):
     """The ``CURSor:XY`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:XY?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:XY?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1119,7 +1080,7 @@ class CursorXy(SCPICmdRead):
     def polar(self) -> CursorXyPolar:
         """Return the ``CURSor:XY:POLar`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:POLar?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:POLar?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -1134,7 +1095,7 @@ class CursorXy(SCPICmdRead):
     def product(self) -> CursorXyProduct:
         """Return the ``CURSor:XY:PRODUCT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:PRODUCT?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:PRODUCT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1150,7 +1111,7 @@ class CursorXy(SCPICmdRead):
     def ratio(self) -> CursorXyRatio:
         """Return the ``CURSor:XY:RATIO`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:RATIO?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:RATIO?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -1166,23 +1127,22 @@ class CursorXy(SCPICmdRead):
     def readout(self) -> CursorXyReadout:
         """Return the ``CURSor:XY:READOUT`` command.
 
-        **Description:**
+        Description:
             - This command specifies the XY cursor readout selection.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:READOUT?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:READOUT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CURSor:XY:READOUT value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:XY:READOUT {RECTangular|POLARCord|PRODuct|RATio}
             - CURSor:XY:READOUT?
+            ```
 
-        **Info:**
+        Info:
             - ``RECTangular`` specifies the XY readout as rectangular coordinates.
             - ``POLARCord`` specifies the XY readout as polar coordinates.
             - ``PRODuct`` specifies the XY readout in X``*Y`` format.
@@ -1194,7 +1154,7 @@ class CursorXy(SCPICmdRead):
     def rectangular(self) -> CursorXyRectangular:
         """Return the ``CURSor:XY:RECTangular`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY:RECTangular?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY:RECTangular?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1209,38 +1169,36 @@ class CursorXy(SCPICmdRead):
 class CursorVbarsVdelta(SCPICmdRead):
     """The ``CURSor:VBArs:VDELTa`` command.
 
-    **Description:**
+    Description:
         - Returns the vertical difference between the two vertical bar cursor ticks.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:VBArs:VDELTa?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:VBArs:VDELTa?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:VBArs:VDELTa?
+        ```
     """
 
 
 class CursorVbarsUse(SCPICmdWrite):
     """The ``CURSor:VBArs:USE`` command.
 
-    **Description:**
+    Description:
         - Sets the vertical bar cursor measurement scale.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CURSor:VBArs:USE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:VBArs:USE {CURrent|HALFgrat|FIVEdivs}
+        ```
 
-    **Info:**
+    Info:
         - ``CURrent`` sets the V Bar measurement scale so that 0% is the current position of the
           left-most V Bar cursor and 100% is the current position of the right-most V Bar cursor.
         - ``HALFgrat`` resets the ratio range to the default positions on the screen, half of the
@@ -1253,23 +1211,22 @@ class CursorVbarsUse(SCPICmdWrite):
 class CursorVbarsUnits(SCPICmdWrite, SCPICmdRead):
     """The ``CURSor:VBArs:UNIts`` command.
 
-    **Description:**
+    Description:
         - This command specifies the units for the vertical bar cursors.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:VBArs:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:VBArs:UNIts?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CURSor:VBArs:UNIts value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:VBArs:UNIts {SEConds|HERtz|DEGrees|PERcent}
         - CURSor:VBArs:UNIts?
+        ```
 
-    **Info:**
+    Info:
         - ``SEConds`` sets the units of the vertical bar cursors for the time domain (seconds).
         - ``HERtz`` sets the units of the vertical bar cursors for the frequency domain (hertz).
         - ``DEGrees`` sets the units to degrees for measuring phase.
@@ -1280,27 +1237,26 @@ class CursorVbarsUnits(SCPICmdWrite, SCPICmdRead):
 class CursorVbarsPositionItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``CURSor:VBArs:POSITION<x>`` command.
 
-    **Description:**
+    Description:
         - This command specifies the horizontal position for the specified vertical bar cursor. The
           cursor is specified by <x>, which can be 1 or 2. Values are with respect to trigger
           position or the zero reference point for the designated waveform (if horizontal units are
           not set to time). Use the ``CURSOR:VBARS:UNITS`` command to specify units.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:VBArs:POSITION<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:VBArs:POSITION<x>?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CURSor:VBArs:POSITION<x> value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:VBArs:POSITION<x> <NR3>
         - CURSor:VBArs:POSITION<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the cursor position.
     """
 
@@ -1308,21 +1264,20 @@ class CursorVbarsPositionItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRe
 class CursorVbarsHposItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``CURSor:VBArs:HPOS<x>`` command.
 
-    **Description:**
+    Description:
         - Returns the vertical value of the specified vertical bar ticks for cursor <x>.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:VBArs:HPOS<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:VBArs:HPOS<x>?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:VBArs:HPOS<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<x>`` specifies the cursor. Valid values are 1 and 2.
     """
 
@@ -1330,42 +1285,40 @@ class CursorVbarsHposItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class CursorVbarsDelta(SCPICmdRead):
     """The ``CURSor:VBArs:DELTa`` command.
 
-    **Description:**
+    Description:
         - Returns the horizontal difference between the two vertical bar cursors. The units are
           specified by the ``CURSor:VBArs:UNIts`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:VBArs:DELTa?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:VBArs:DELTa?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:VBArs:DELTa?
+        ```
     """
 
 
 class CursorVbarsAlternateItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``CURSor:VBArs:ALTERNATE<x>`` command.
 
-    **Description:**
+    Description:
         - Returns the alternate readout for the waveform (Vbar) cursors specified by <x>. This
           alternate readout is in effect when the selected waveform is a bus or digital channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:VBArs:ALTERNATE<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:VBArs:ALTERNATE<x>?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:VBArs:ALTERNATE<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``X = 1`` specifies vertical bar cursor1.
         - ``X = 2`` specifies vertical bar cursor2.
     """
@@ -1374,19 +1327,18 @@ class CursorVbarsAlternateItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class CursorVbars(SCPICmdRead):
     """The ``CURSor:VBArs`` command.
 
-    **Description:**
+    Description:
         - Returns the current settings for the vertical bar cursors.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:VBArs?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:VBArs?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:VBArs?
+        ```
 
     Properties:
         - ``.alternate``: The ``CURSor:VBArs:ALTERNATE<x>`` command.
@@ -1418,22 +1370,21 @@ class CursorVbars(SCPICmdRead):
     def alternate(self) -> Dict[int, CursorVbarsAlternateItem]:
         """Return the ``CURSor:VBArs:ALTERNATE<x>`` command.
 
-        **Description:**
+        Description:
             - Returns the alternate readout for the waveform (Vbar) cursors specified by <x>. This
               alternate readout is in effect when the selected waveform is a bus or digital channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:VBArs:ALTERNATE<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:VBArs:ALTERNATE<x>?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:VBArs:ALTERNATE<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``X = 1`` specifies vertical bar cursor1.
             - ``X = 2`` specifies vertical bar cursor2.
         """
@@ -1443,20 +1394,19 @@ class CursorVbars(SCPICmdRead):
     def delta(self) -> CursorVbarsDelta:
         """Return the ``CURSor:VBArs:DELTa`` command.
 
-        **Description:**
+        Description:
             - Returns the horizontal difference between the two vertical bar cursors. The units are
               specified by the ``CURSor:VBArs:UNIts`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:VBArs:DELTa?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:VBArs:DELTa?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:VBArs:DELTa?
+            ```
         """
         return self._delta
 
@@ -1464,21 +1414,20 @@ class CursorVbars(SCPICmdRead):
     def hpos(self) -> Dict[int, CursorVbarsHposItem]:
         """Return the ``CURSor:VBArs:HPOS<x>`` command.
 
-        **Description:**
+        Description:
             - Returns the vertical value of the specified vertical bar ticks for cursor <x>.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:VBArs:HPOS<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:VBArs:HPOS<x>?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:VBArs:HPOS<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<x>`` specifies the cursor. Valid values are 1 and 2.
         """
         return self._hpos
@@ -1487,28 +1436,27 @@ class CursorVbars(SCPICmdRead):
     def position(self) -> Dict[int, CursorVbarsPositionItem]:
         """Return the ``CURSor:VBArs:POSITION<x>`` command.
 
-        **Description:**
+        Description:
             - This command specifies the horizontal position for the specified vertical bar cursor.
               The cursor is specified by <x>, which can be 1 or 2. Values are with respect to
               trigger position or the zero reference point for the designated waveform (if
               horizontal units are not set to time). Use the ``CURSOR:VBARS:UNITS`` command to
               specify units.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:VBArs:POSITION<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:VBArs:POSITION<x>?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CURSor:VBArs:POSITION<x> value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:VBArs:POSITION<x> <NR3>
             - CURSor:VBArs:POSITION<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the cursor position.
         """
         return self._position
@@ -1517,23 +1465,22 @@ class CursorVbars(SCPICmdRead):
     def units(self) -> CursorVbarsUnits:
         """Return the ``CURSor:VBArs:UNIts`` command.
 
-        **Description:**
+        Description:
             - This command specifies the units for the vertical bar cursors.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:VBArs:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:VBArs:UNIts?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CURSor:VBArs:UNIts value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:VBArs:UNIts {SEConds|HERtz|DEGrees|PERcent}
             - CURSor:VBArs:UNIts?
+            ```
 
-        **Info:**
+        Info:
             - ``SEConds`` sets the units of the vertical bar cursors for the time domain (seconds).
             - ``HERtz`` sets the units of the vertical bar cursors for the frequency domain (hertz).
             - ``DEGrees`` sets the units to degrees for measuring phase.
@@ -1545,19 +1492,18 @@ class CursorVbars(SCPICmdRead):
     def use(self) -> CursorVbarsUse:
         """Return the ``CURSor:VBArs:USE`` command.
 
-        **Description:**
+        Description:
             - Sets the vertical bar cursor measurement scale.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CURSor:VBArs:USE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:VBArs:USE {CURrent|HALFgrat|FIVEdivs}
+            ```
 
-        **Info:**
+        Info:
             - ``CURrent`` sets the V Bar measurement scale so that 0% is the current position of the
               left-most V Bar cursor and 100% is the current position of the right-most V Bar
               cursor.
@@ -1573,19 +1519,18 @@ class CursorVbars(SCPICmdRead):
     def vdelta(self) -> CursorVbarsVdelta:
         """Return the ``CURSor:VBArs:VDELTa`` command.
 
-        **Description:**
+        Description:
             - Returns the vertical difference between the two vertical bar cursor ticks.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:VBArs:VDELTa?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:VBArs:VDELTa?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:VBArs:VDELTa?
+            ```
         """
         return self._vdelta
 
@@ -1593,24 +1538,23 @@ class CursorVbars(SCPICmdRead):
 class CursorMode(SCPICmdWrite, SCPICmdRead):
     """The ``CURSor:MODe`` command.
 
-    **Description:**
+    Description:
         - This command specifies whether the two cursors move linked together in unison or
           separately. This command is equivalent to setting Linked to On or Off in the Cursor menu.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:MODe?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:MODe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CURSor:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:MODe {TRACk|INDependent}
         - CURSor:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``TRACk`` ties the navigational functionality of the two cursors together. For cursor 1
           adjustments, this ties the movement of the two cursors together; however, cursor 2
           continues to move independently of cursor 1. This mode only applies when the
@@ -1622,20 +1566,19 @@ class CursorMode(SCPICmdWrite, SCPICmdRead):
 class CursorHbarsUse(SCPICmdWrite):
     """The ``CURSor:HBArs:USE`` command.
 
-    **Description:**
+    Description:
         - This command specifies the horizontal bar cursor measurement scale. This command is only
           applicable when the ratio cursors are turned on.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CURSor:HBArs:USE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:HBArs:USE {CURrent|HALFgrat}
+        ```
 
-    **Info:**
+    Info:
         - ``CURrent`` sets the H Bar measurement scale so that 0% is the current position of the
           lowest H Bar cursor and 100% is the current position of the highest H Bar cursor.
         - ``HALFgrat`` sets H Bar measurement scale so that half the screen major divisions is 100%,
@@ -1647,23 +1590,22 @@ class CursorHbarsUse(SCPICmdWrite):
 class CursorHbarsUnits(SCPICmdWrite, SCPICmdRead):
     """The ``CURSor:HBArs:UNIts`` command.
 
-    **Description:**
+    Description:
         - This command specifies the units for the horizontal bar cursors.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:HBArs:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:HBArs:UNIts?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CURSor:HBArs:UNIts value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:HBArs:UNIts {BASE|PERcent}
         - CURSor:HBArs:UNIts?
+        ```
 
-    **Info:**
+    Info:
         - ``BASE`` selects the vertical units for the selected waveform.
         - ``PERcent`` selects ratio cursors.
     """
@@ -1672,26 +1614,25 @@ class CursorHbarsUnits(SCPICmdWrite, SCPICmdRead):
 class CursorHbarsPositionItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``CURSor:HBArs:POSITION<x>`` command.
 
-    **Description:**
+    Description:
         - This command specifies the horizontal bar cursor position relative to ground, which is
           expressed in vertical units (usually volts). The cursor is specified by x, which can be 1
           or 2.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:HBArs:POSITION<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:HBArs:POSITION<x>?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CURSor:HBArs:POSITION<x> value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:HBArs:POSITION<x> <NR3>
         - CURSor:HBArs:POSITION<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the cursor position relative to
           ground.
     """
@@ -1700,38 +1641,36 @@ class CursorHbarsPositionItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRe
 class CursorHbarsDelta(SCPICmdRead):
     """The ``CURSor:HBArs:DELTa`` command.
 
-    **Description:**
+    Description:
         - Returns the vertical difference between the two horizontal bar cursors.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:HBArs:DELTa?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:HBArs:DELTa?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:HBArs:DELTa?
+        ```
     """
 
 
 class CursorHbars(SCPICmdRead):
     """The ``CURSor:HBArs`` command.
 
-    **Description:**
+    Description:
         - Returns the current settings for the horizontal bar cursors.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:HBArs?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:HBArs?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:HBArs?
+        ```
 
     Properties:
         - ``.delta``: The ``CURSor:HBArs:DELTa`` command.
@@ -1753,19 +1692,18 @@ class CursorHbars(SCPICmdRead):
     def delta(self) -> CursorHbarsDelta:
         """Return the ``CURSor:HBArs:DELTa`` command.
 
-        **Description:**
+        Description:
             - Returns the vertical difference between the two horizontal bar cursors.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:HBArs:DELTa?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:HBArs:DELTa?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:HBArs:DELTa?
+            ```
         """
         return self._delta
 
@@ -1773,26 +1711,25 @@ class CursorHbars(SCPICmdRead):
     def position(self) -> Dict[int, CursorHbarsPositionItem]:
         """Return the ``CURSor:HBArs:POSITION<x>`` command.
 
-        **Description:**
+        Description:
             - This command specifies the horizontal bar cursor position relative to ground, which is
               expressed in vertical units (usually volts). The cursor is specified by x, which can
               be 1 or 2.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:HBArs:POSITION<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:HBArs:POSITION<x>?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CURSor:HBArs:POSITION<x> value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:HBArs:POSITION<x> <NR3>
             - CURSor:HBArs:POSITION<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the cursor position relative to
               ground.
         """
@@ -1802,23 +1739,22 @@ class CursorHbars(SCPICmdRead):
     def units(self) -> CursorHbarsUnits:
         """Return the ``CURSor:HBArs:UNIts`` command.
 
-        **Description:**
+        Description:
             - This command specifies the units for the horizontal bar cursors.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:HBArs:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:HBArs:UNIts?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CURSor:HBArs:UNIts value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:HBArs:UNIts {BASE|PERcent}
             - CURSor:HBArs:UNIts?
+            ```
 
-        **Info:**
+        Info:
             - ``BASE`` selects the vertical units for the selected waveform.
             - ``PERcent`` selects ratio cursors.
         """
@@ -1828,20 +1764,19 @@ class CursorHbars(SCPICmdRead):
     def use(self) -> CursorHbarsUse:
         """Return the ``CURSor:HBArs:USE`` command.
 
-        **Description:**
+        Description:
             - This command specifies the horizontal bar cursor measurement scale. This command is
               only applicable when the ratio cursors are turned on.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CURSor:HBArs:USE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:HBArs:USE {CURrent|HALFgrat}
+            ```
 
-        **Info:**
+        Info:
             - ``CURrent`` sets the H Bar measurement scale so that 0% is the current position of the
               lowest H Bar cursor and 100% is the current position of the highest H Bar cursor.
             - ``HALFgrat`` sets H Bar measurement scale so that half the screen major divisions is
@@ -1854,24 +1789,23 @@ class CursorHbars(SCPICmdRead):
 class CursorFunction(SCPICmdWrite, SCPICmdRead):
     """The ``CURSor:FUNCtion`` command.
 
-    **Description:**
+    Description:
         - This command selects the cursor mode. In Waveform mode, the cursors are attached to the
           selected waveform; in Screen mode, cursors are attached to the display area .
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:FUNCtion?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:FUNCtion?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CURSor:FUNCtion value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:FUNCtion {SCREEN|WAVEform|OFF}
         - CURSor:FUNCtion?
+        ```
 
-    **Info:**
+    Info:
         - ``SCREEN`` specifies to display both horizontal and vertical bar cursors, which measure
           the selected waveform in horizontal and vertical units. Use these cursors to measure
           anywhere in the waveform display area.
@@ -1886,38 +1820,36 @@ class CursorFunction(SCPICmdWrite, SCPICmdRead):
 class CursorDdt(SCPICmdRead):
     """The ``CURSor:DDT`` command.
 
-    **Description:**
+    Description:
         - Returns the cursor deltaY/deltaT (dY/dT) readout.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor:DDT?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor:DDT?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor:DDT?
+        ```
     """
 
 
 class Cursor(SCPICmdRead):
     """The ``CURSor`` command.
 
-    **Description:**
+    Description:
         - Returns all of the current cursor settings.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURSor?`` query.
         - Using the ``.verify(value)`` method will send the ``CURSor?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURSor?
+        ```
 
     Properties:
         - ``.ddt``: The ``CURSor:DDT`` command.
@@ -1941,19 +1873,18 @@ class Cursor(SCPICmdRead):
     def ddt(self) -> CursorDdt:
         """Return the ``CURSor:DDT`` command.
 
-        **Description:**
+        Description:
             - Returns the cursor deltaY/deltaT (dY/dT) readout.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:DDT?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:DDT?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:DDT?
+            ```
         """
         return self._ddt
 
@@ -1961,24 +1892,23 @@ class Cursor(SCPICmdRead):
     def function(self) -> CursorFunction:
         """Return the ``CURSor:FUNCtion`` command.
 
-        **Description:**
+        Description:
             - This command selects the cursor mode. In Waveform mode, the cursors are attached to
               the selected waveform; in Screen mode, cursors are attached to the display area .
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:FUNCtion?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:FUNCtion?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CURSor:FUNCtion value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:FUNCtion {SCREEN|WAVEform|OFF}
             - CURSor:FUNCtion?
+            ```
 
-        **Info:**
+        Info:
             - ``SCREEN`` specifies to display both horizontal and vertical bar cursors, which
               measure the selected waveform in horizontal and vertical units. Use these cursors to
               measure anywhere in the waveform display area.
@@ -1994,19 +1924,18 @@ class Cursor(SCPICmdRead):
     def hbars(self) -> CursorHbars:
         """Return the ``CURSor:HBArs`` command.
 
-        **Description:**
+        Description:
             - Returns the current settings for the horizontal bar cursors.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:HBArs?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:HBArs?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:HBArs?
+            ```
 
         Sub-properties:
             - ``.delta``: The ``CURSor:HBArs:DELTa`` command.
@@ -2020,25 +1949,24 @@ class Cursor(SCPICmdRead):
     def mode(self) -> CursorMode:
         """Return the ``CURSor:MODe`` command.
 
-        **Description:**
+        Description:
             - This command specifies whether the two cursors move linked together in unison or
               separately. This command is equivalent to setting Linked to On or Off in the Cursor
               menu.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:MODe?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:MODe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CURSor:MODe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:MODe {TRACk|INDependent}
             - CURSor:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``TRACk`` ties the navigational functionality of the two cursors together. For cursor
               1 adjustments, this ties the movement of the two cursors together; however, cursor 2
               continues to move independently of cursor 1. This mode only applies when the
@@ -2051,19 +1979,18 @@ class Cursor(SCPICmdRead):
     def vbars(self) -> CursorVbars:
         """Return the ``CURSor:VBArs`` command.
 
-        **Description:**
+        Description:
             - Returns the current settings for the vertical bar cursors.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:VBArs?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:VBArs?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURSor:VBArs?
+            ```
 
         Sub-properties:
             - ``.alternate``: The ``CURSor:VBArs:ALTERNATE<x>`` command.
@@ -2080,7 +2007,7 @@ class Cursor(SCPICmdRead):
     def xy(self) -> CursorXy:
         """Return the ``CURSor:XY`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURSor:XY?`` query.
             - Using the ``.verify(value)`` method will send the ``CURSor:XY?`` query and raise an
               AssertionError if the returned value does not match ``value``.

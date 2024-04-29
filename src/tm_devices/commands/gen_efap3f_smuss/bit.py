@@ -12,8 +12,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - bit.bitand()
     - bit.bitor()
     - bit.bitxor()
@@ -37,7 +35,7 @@ if TYPE_CHECKING:
 class Bit(BaseTSPCmd):
     """The ``bit`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.bitand()``: The ``bit.bitand()`` function.
         - ``.bitor()``: The ``bit.bitor()`` function.
         - ``.bitxor()``: The ``bit.bitxor()`` function.
@@ -56,14 +54,13 @@ class Bit(BaseTSPCmd):
     def bitand(self, value1: str, value2: str) -> str:
         """Run the ``bit.bitand()`` function.
 
-        **Description:**
+        Description:
             - This function performs a bitwise logical AND operation on two numbers.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bit.bitand()
+            ```
 
         Args:
             value1: Operand for the logical AND operation.
@@ -86,14 +83,13 @@ class Bit(BaseTSPCmd):
     def bitor(self, value1: str, value2: str) -> str:
         """Run the ``bit.bitor()`` function.
 
-        **Description:**
+        Description:
             - This function performs a bitwise logical OR operation on two numbers.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bit.bitor()
+            ```
 
         Args:
             value1: Operand for the logical OR operation.
@@ -116,14 +112,13 @@ class Bit(BaseTSPCmd):
     def bitxor(self, value1: str, value2: str) -> str:
         """Run the ``bit.bitxor()`` function.
 
-        **Description:**
+        Description:
             - This function performs a bitwise logical XOR (exclusive OR) operation on two numbers.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bit.bitxor()
+            ```
 
         Args:
             value1: Operand for the logical XOR operation.
@@ -146,14 +141,13 @@ class Bit(BaseTSPCmd):
     def clear(self, value: str, index: int) -> str:
         """Run the ``bit.clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears a bit at a specified index position.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bit.clear()
+            ```
 
         Args:
             value: Specified number.
@@ -176,14 +170,13 @@ class Bit(BaseTSPCmd):
     def get(self, value: str, index: int) -> str:
         """Run the ``bit.get()`` function.
 
-        **Description:**
+        Description:
             - This function retrieves the weighted value of a bit at a specified index position.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bit.get()
+            ```
 
         Args:
             value: Specified number.
@@ -206,15 +199,14 @@ class Bit(BaseTSPCmd):
     def getfield(self, value: str, index: int, width: int) -> str:
         """Run the ``bit.getfield()`` function.
 
-        **Description:**
+        Description:
             - This function returns a field of bits from the value starting at the specified index
               position.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bit.getfield()
+            ```
 
         Args:
             value: Specified number.
@@ -238,14 +230,13 @@ class Bit(BaseTSPCmd):
     def set_(self, value: str, index: int) -> str:
         """Run the ``bit.set()`` function.
 
-        **Description:**
+        Description:
             - This function sets a bit at the specified index position.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bit.set()
+            ```
 
         Args:
             value: Specified number.
@@ -268,14 +259,13 @@ class Bit(BaseTSPCmd):
     def setfield(self, value: str, index: int, width: int, field_value: str) -> str:
         """Run the ``bit.setfield()`` function.
 
-        **Description:**
+        Description:
             - This function overwrites a bit field at a specified index position.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bit.setfield()
+            ```
 
         Args:
             value: Specified number.
@@ -300,15 +290,14 @@ class Bit(BaseTSPCmd):
     def test(self, value: str, index: int) -> str:
         """Run the ``bit.test()`` function.
 
-        **Description:**
+        Description:
             - This function returns the Boolean value (true or false) of a bit at the specified
               index position.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bit.test()
+            ```
 
         Args:
             value: Specified number.
@@ -331,14 +320,13 @@ class Bit(BaseTSPCmd):
     def toggle(self, value: str, index: int) -> str:
         """Run the ``bit.toggle()`` function.
 
-        **Description:**
+        Description:
             - This function toggles the value of a bit at a specified index position.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bit.toggle()
+            ```
 
         Args:
             value: Specified number.

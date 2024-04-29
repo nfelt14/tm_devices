@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SOURce:FREQuency <frequency>
     - SOURce:FREQuency?
     - SOURce:RCCouple {0|1|ON|OFF}
@@ -72,32 +70,31 @@ if TYPE_CHECKING:
 class SourceItemWaveform(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce[n]:WAVeform`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the name of the waveform assigned to the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:WAVeform?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:WAVeform?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce[n]:WAVeform value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:WAVeform <wfm_name>
         - SOURce[n]:WAVeform?
+        ```
     """
 
 
 class SourceItemVoltageLevelImmediateOffset(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce[n]:VOLTage:LEVel:IMMediate:OFFSet`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the offset for the waveform associated with the specified
           channel. This command is only valid when the output path is set to DC Amplified.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:VOLTage:LEVel:IMMediate:OFFSet?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -106,23 +103,22 @@ class SourceItemVoltageLevelImmediateOffset(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SOURce[n]:VOLTage:LEVel:IMMediate:OFFSet value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:VOLTage:LEVel:IMMediate:OFFSet <NRf>
         - SOURce[n]:VOLTage:LEVel:IMMediate:OFFSet?
+        ```
     """
 
 
 class SourceItemVoltageLevelImmediateLow(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce[n]:VOLTage:LEVel:IMMediate:LOW`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the low voltage level for the waveform associated with a
           channel. This command is only valid when the output path is set to Direct.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:VOLTage:LEVel:IMMediate:LOW?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -131,14 +127,13 @@ class SourceItemVoltageLevelImmediateLow(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SOURce[n]:VOLTage:LEVel:IMMediate:LOW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:VOLTage:LEVel:IMMediate:LOW <NRf>
         - SOURce[n]:VOLTage:LEVel:IMMediate:LOW?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to -250 mV.
     """
 
@@ -146,11 +141,11 @@ class SourceItemVoltageLevelImmediateLow(SCPICmdWrite, SCPICmdRead):
 class SourceItemVoltageLevelImmediateHigh(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce[n]:VOLTage:LEVel:IMMediate:HIGH`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the high voltage level for the waveform associated with the
           specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:VOLTage:LEVel:IMMediate:HIGH?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -159,14 +154,13 @@ class SourceItemVoltageLevelImmediateHigh(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SOURce[n]:VOLTage:LEVel:IMMediate:HIGH value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:VOLTage:LEVel:IMMediate:HIGH <NRf>
         - SOURce[n]:VOLTage:LEVel:IMMediate:HIGH?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 250 mV.
     """
 
@@ -174,10 +168,10 @@ class SourceItemVoltageLevelImmediateHigh(SCPICmdWrite, SCPICmdRead):
 class SourceItemVoltageLevelImmediateAmplitude(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce[n]:VOLTage:LEVel:IMMediate:AMPLitude`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the amplitude for the waveform associated with a channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SOURce[n]:VOLTage:LEVel:IMMediate:AMPLitude?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -186,19 +180,18 @@ class SourceItemVoltageLevelImmediateAmplitude(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SOURce[n]:VOLTage:LEVel:IMMediate:AMPLitude value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:VOLTage:LEVel:IMMediate:AMPLitude <NR3>
         - SOURce[n]:VOLTage:LEVel:IMMediate:AMPLitude?
+        ```
     """
 
 
 class SourceItemVoltageLevelImmediate(SCPICmdRead):
     """The ``SOURce[n]:VOLTage:LEVel:IMMediate`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:VOLTage:LEVel:IMMediate?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:VOLTage:LEVel:IMMediate?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -223,11 +216,11 @@ class SourceItemVoltageLevelImmediate(SCPICmdRead):
     def high(self) -> SourceItemVoltageLevelImmediateHigh:
         """Return the ``SOURce[n]:VOLTage:LEVel:IMMediate:HIGH`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the high voltage level for the waveform associated with
               the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SOURce[n]:VOLTage:LEVel:IMMediate:HIGH?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -236,14 +229,13 @@ class SourceItemVoltageLevelImmediate(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce[n]:VOLTage:LEVel:IMMediate:HIGH value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:VOLTage:LEVel:IMMediate:HIGH <NRf>
             - SOURce[n]:VOLTage:LEVel:IMMediate:HIGH?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 250 mV.
         """
         return self._high
@@ -252,11 +244,11 @@ class SourceItemVoltageLevelImmediate(SCPICmdRead):
     def low(self) -> SourceItemVoltageLevelImmediateLow:
         """Return the ``SOURce[n]:VOLTage:LEVel:IMMediate:LOW`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the low voltage level for the waveform associated with a
               channel. This command is only valid when the output path is set to Direct.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:VOLTage:LEVel:IMMediate:LOW?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -265,14 +257,13 @@ class SourceItemVoltageLevelImmediate(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce[n]:VOLTage:LEVel:IMMediate:LOW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:VOLTage:LEVel:IMMediate:LOW <NRf>
             - SOURce[n]:VOLTage:LEVel:IMMediate:LOW?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to -250 mV.
         """
         return self._low
@@ -281,11 +272,11 @@ class SourceItemVoltageLevelImmediate(SCPICmdRead):
     def offset(self) -> SourceItemVoltageLevelImmediateOffset:
         """Return the ``SOURce[n]:VOLTage:LEVel:IMMediate:OFFSet`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the offset for the waveform associated with the specified
               channel. This command is only valid when the output path is set to DC Amplified.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SOURce[n]:VOLTage:LEVel:IMMediate:OFFSet?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -294,12 +285,11 @@ class SourceItemVoltageLevelImmediate(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce[n]:VOLTage:LEVel:IMMediate:OFFSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:VOLTage:LEVel:IMMediate:OFFSet <NRf>
             - SOURce[n]:VOLTage:LEVel:IMMediate:OFFSet?
+            ```
         """
         return self._offset
 
@@ -307,10 +297,10 @@ class SourceItemVoltageLevelImmediate(SCPICmdRead):
     def amplitude(self) -> SourceItemVoltageLevelImmediateAmplitude:
         """Return the ``SOURce[n]:VOLTage:LEVel:IMMediate:AMPLitude`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the amplitude for the waveform associated with a channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SOURce[n]:VOLTage:LEVel:IMMediate:AMPLitude?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -319,12 +309,11 @@ class SourceItemVoltageLevelImmediate(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce[n]:VOLTage:LEVel:IMMediate:AMPLitude value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:VOLTage:LEVel:IMMediate:AMPLitude <NR3>
             - SOURce[n]:VOLTage:LEVel:IMMediate:AMPLitude?
+            ```
         """
         return self._amplitude
 
@@ -332,7 +321,7 @@ class SourceItemVoltageLevelImmediate(SCPICmdRead):
 class SourceItemVoltageLevel(SCPICmdRead):
     """The ``SOURce[n]:VOLTage:LEVel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:VOLTage:LEVel?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:VOLTage:LEVel?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -349,7 +338,7 @@ class SourceItemVoltageLevel(SCPICmdRead):
     def immediate(self) -> SourceItemVoltageLevelImmediate:
         """Return the ``SOURce[n]:VOLTage:LEVel:IMMediate`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:VOLTage:LEVel:IMMediate?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -368,7 +357,7 @@ class SourceItemVoltageLevel(SCPICmdRead):
 class SourceItemVoltage(SCPICmdRead):
     """The ``SOURce[n]:VOLTage`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:VOLTage?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:VOLTage?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -385,7 +374,7 @@ class SourceItemVoltage(SCPICmdRead):
     def level(self) -> SourceItemVoltageLevel:
         """Return the ``SOURce[n]:VOLTage:LEVel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:VOLTage:LEVel?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:VOLTage:LEVel?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -399,23 +388,22 @@ class SourceItemVoltage(SCPICmdRead):
 class SourceItemTinput(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce[n]:TINPut`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the trigger input source of the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:TINPut?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:TINPut?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce[n]:TINPut value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:TINPut {ITRigger|ATRigger|BTRigger}
         - SOURce[n]:TINPut?
+        ```
 
-    **Info:**
+    Info:
         - ``ITRigger`` selects the internal trigger signal as the trigger source. (The A and B Force
           Trigger buttons are not active.) ATRigger selects trigger input A. BTRigger selects
           trigger input B. [n] determines the channel number. If omitted, interpreted as 1.
@@ -426,24 +414,23 @@ class SourceItemTinput(SCPICmdWrite, SCPICmdRead):
 class SourceItemSkew(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce[n]:SKEW`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the skew (relative timing of the analog output) for the
           waveform associated with the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:SKEW?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:SKEW?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce[n]:SKEW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:SKEW <skew>
         - SOURce[n]:SKEW?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 0.
     """
 
@@ -451,43 +438,41 @@ class SourceItemSkew(SCPICmdWrite, SCPICmdRead):
 class SourceItemScstep(SCPICmdRead):
     """The ``SOURce[n]:SCSTep`` command.
 
-    **Description:**
+    Description:
         - This command allows you to read the current step of the sequence while the system is
           running.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:SCSTep?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:SCSTep?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:SCSTep?
+        ```
     """
 
 
 class SourceItemRmode(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce[n]:RMODe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the run mode of the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:RMODe?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:RMODe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce[n]:RMODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:RMODe {CONTinuous|TRIGgered|TCONtinuous}
         - SOURce[n]:RMODe?
+        ```
 
-    **Info:**
+    Info:
         - ``CONTinuous`` sets the Run Mode to Continuous (not waiting for trigger). TRIGgered sets
           the Run Mode to Triggered, waiting for a trigger event. One waveform play out cycle
           completes, then play out stops, waiting for the next trigger event. TCONtinuous sets the
@@ -501,13 +486,13 @@ class SourceItemRmode(SCPICmdWrite, SCPICmdRead):
 class SourceItemPowerLevelImmediateAmplitude(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce[n]:POWer:LEVel:IMMediate:AMPLitude`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the amplitude for the waveform associated with the specified
           channel in units of dBm for the filtered path. This command is only valid when the output
           path is set to AC. Option AC is required. If Option AC is not installed, sending the
           command causes an error message.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:POWer:LEVel:IMMediate:AMPLitude?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -516,19 +501,18 @@ class SourceItemPowerLevelImmediateAmplitude(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SOURce[n]:POWer:LEVel:IMMediate:AMPLitude value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:POWer:LEVel:IMMediate:AMPLitude <NRf>
         - SOURce[n]:POWer:LEVel:IMMediate:AMPLitude?
+        ```
     """
 
 
 class SourceItemPowerLevelImmediate(SCPICmdRead):
     """The ``SOURce[n]:POWer:LEVel:IMMediate`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:POWer:LEVel:IMMediate?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:POWer:LEVel:IMMediate?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -547,13 +531,13 @@ class SourceItemPowerLevelImmediate(SCPICmdRead):
     def amplitude(self) -> SourceItemPowerLevelImmediateAmplitude:
         """Return the ``SOURce[n]:POWer:LEVel:IMMediate:AMPLitude`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the amplitude for the waveform associated with the
               specified channel in units of dBm for the filtered path. This command is only valid
               when the output path is set to AC. Option AC is required. If Option AC is not
               installed, sending the command causes an error message.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SOURce[n]:POWer:LEVel:IMMediate:AMPLitude?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -562,12 +546,11 @@ class SourceItemPowerLevelImmediate(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce[n]:POWer:LEVel:IMMediate:AMPLitude value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:POWer:LEVel:IMMediate:AMPLitude <NRf>
             - SOURce[n]:POWer:LEVel:IMMediate:AMPLitude?
+            ```
         """
         return self._amplitude
 
@@ -575,7 +558,7 @@ class SourceItemPowerLevelImmediate(SCPICmdRead):
 class SourceItemPowerLevel(SCPICmdRead):
     """The ``SOURce[n]:POWer:LEVel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:POWer:LEVel?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:POWer:LEVel?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -592,7 +575,7 @@ class SourceItemPowerLevel(SCPICmdRead):
     def immediate(self) -> SourceItemPowerLevelImmediate:
         """Return the ``SOURce[n]:POWer:LEVel:IMMediate`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:POWer:LEVel:IMMediate?``
               query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:POWer:LEVel:IMMediate?``
@@ -607,7 +590,7 @@ class SourceItemPowerLevel(SCPICmdRead):
 class SourceItemPower(SCPICmdRead):
     """The ``SOURce[n]:POWer`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:POWer?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:POWer?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -624,7 +607,7 @@ class SourceItemPower(SCPICmdRead):
     def level(self) -> SourceItemPowerLevel:
         """Return the ``SOURce[n]:POWer:LEVel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:POWer:LEVel?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:POWer:LEVel?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -638,11 +621,11 @@ class SourceItemPower(SCPICmdRead):
 class SourceItemMarkerItemVoltageLevelImmediateOffset(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:OFFSet`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the offset voltage of the selected marker of the selected
           channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:OFFSet?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -651,14 +634,13 @@ class SourceItemMarkerItemVoltageLevelImmediateOffset(SCPICmdWrite, SCPICmdRead)
         - Using the ``.write(value)`` method will send the
           ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:OFFSet value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:OFFSet <NR3>
         - SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:OFFSet?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 500 mV.
     """
 
@@ -666,11 +648,11 @@ class SourceItemMarkerItemVoltageLevelImmediateOffset(SCPICmdWrite, SCPICmdRead)
 class SourceItemMarkerItemVoltageLevelImmediateLow(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:LOW`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the marker low voltage level of the specified marker of the
           specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:LOW?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -679,14 +661,13 @@ class SourceItemMarkerItemVoltageLevelImmediateLow(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:LOW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:LOW <NRf>
         - SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:LOW?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 0 V.
     """
 
@@ -694,11 +675,11 @@ class SourceItemMarkerItemVoltageLevelImmediateLow(SCPICmdWrite, SCPICmdRead):
 class SourceItemMarkerItemVoltageLevelImmediateHigh(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:HIGH`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the marker high voltage level of the specified marker of the
           specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:HIGH?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -707,14 +688,13 @@ class SourceItemMarkerItemVoltageLevelImmediateHigh(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:HIGH value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:HIGH <NRf>
         - SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:HIGH?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets all markers to 1 V.
     """
 
@@ -722,11 +702,11 @@ class SourceItemMarkerItemVoltageLevelImmediateHigh(SCPICmdWrite, SCPICmdRead):
 class SourceItemMarkerItemVoltageLevelImmediateAmplitude(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:AMPLitude`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the marker voltage amplitude of the specified marker of the
           specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:AMPLitude?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -735,14 +715,13 @@ class SourceItemMarkerItemVoltageLevelImmediateAmplitude(SCPICmdWrite, SCPICmdRe
         - Using the ``.write(value)`` method will send the
           ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:AMPLitude value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:AMPLitude <NRf>
         - SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:AMPLitude?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 1 V for all markers.
     """
 
@@ -750,7 +729,7 @@ class SourceItemMarkerItemVoltageLevelImmediateAmplitude(SCPICmdWrite, SCPICmdRe
 class SourceItemMarkerItemVoltageLevelImmediate(SCPICmdRead):
     """The ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -781,11 +760,11 @@ class SourceItemMarkerItemVoltageLevelImmediate(SCPICmdRead):
     def high(self) -> SourceItemMarkerItemVoltageLevelImmediateHigh:
         """Return the ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:HIGH`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the marker high voltage level of the specified marker of
               the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:HIGH?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -794,14 +773,13 @@ class SourceItemMarkerItemVoltageLevelImmediate(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:HIGH value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:HIGH <NRf>
             - SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:HIGH?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets all markers to 1 V.
         """
         return self._high
@@ -810,11 +788,11 @@ class SourceItemMarkerItemVoltageLevelImmediate(SCPICmdRead):
     def low(self) -> SourceItemMarkerItemVoltageLevelImmediateLow:
         """Return the ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:LOW`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the marker low voltage level of the specified marker of
               the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:LOW?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -823,14 +801,13 @@ class SourceItemMarkerItemVoltageLevelImmediate(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:LOW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:LOW <NRf>
             - SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:LOW?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 0 V.
         """
         return self._low
@@ -839,11 +816,11 @@ class SourceItemMarkerItemVoltageLevelImmediate(SCPICmdRead):
     def offset(self) -> SourceItemMarkerItemVoltageLevelImmediateOffset:
         """Return the ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:OFFSet`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the offset voltage of the selected marker of the selected
               channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:OFFSet?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -852,14 +829,13 @@ class SourceItemMarkerItemVoltageLevelImmediate(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:OFFSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:OFFSet <NR3>
             - SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:OFFSet?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 500 mV.
         """
         return self._offset
@@ -868,11 +844,11 @@ class SourceItemMarkerItemVoltageLevelImmediate(SCPICmdRead):
     def amplitude(self) -> SourceItemMarkerItemVoltageLevelImmediateAmplitude:
         """Return the ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:AMPLitude`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the marker voltage amplitude of the specified marker of
               the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:AMPLitude?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -881,14 +857,13 @@ class SourceItemMarkerItemVoltageLevelImmediate(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:AMPLitude value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:AMPLitude <NRf>
             - SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate:AMPLitude?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 1 V for all markers.
         """
         return self._amplitude
@@ -897,7 +872,7 @@ class SourceItemMarkerItemVoltageLevelImmediate(SCPICmdRead):
 class SourceItemMarkerItemVoltageLevel(SCPICmdRead):
     """The ``SOURce[n]:MARKer[m]:VOLTage:LEVel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:MARKer[m]:VOLTage:LEVel?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:MARKer[m]:VOLTage:LEVel?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -916,7 +891,7 @@ class SourceItemMarkerItemVoltageLevel(SCPICmdRead):
     def immediate(self) -> SourceItemMarkerItemVoltageLevelImmediate:
         """Return the ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SOURce[n]:MARKer[m]:VOLTage:LEVel:IMMediate?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -935,7 +910,7 @@ class SourceItemMarkerItemVoltageLevel(SCPICmdRead):
 class SourceItemMarkerItemVoltage(SCPICmdRead):
     """The ``SOURce[n]:MARKer[m]:VOLTage`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:MARKer[m]:VOLTage?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:MARKer[m]:VOLTage?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -952,7 +927,7 @@ class SourceItemMarkerItemVoltage(SCPICmdRead):
     def level(self) -> SourceItemMarkerItemVoltageLevel:
         """Return the ``SOURce[n]:MARKer[m]:VOLTage:LEVel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:MARKer[m]:VOLTage:LEVel?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -968,25 +943,24 @@ class SourceItemMarkerItemVoltage(SCPICmdRead):
 class SourceItemMarkerItemDelay(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce[n]:MARKer[m]:DELay`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the delay for the specified marker of the specified channel.
           Marker delay is independent for each channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:MARKer[m]:DELay?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:MARKer[m]:DELay?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce[n]:MARKer[m]:DELay value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:MARKer[m]:DELay <NR3>
         - SOURce[n]:MARKer[m]:DELay?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets all channel marker delays to 0.
     """
 
@@ -994,7 +968,7 @@ class SourceItemMarkerItemDelay(SCPICmdWrite, SCPICmdRead):
 class SourceItemMarkerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``SOURce[n]:MARKer[m]`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:MARKer[m]?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:MARKer[m]?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -1013,25 +987,24 @@ class SourceItemMarkerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def delay(self) -> SourceItemMarkerItemDelay:
         """Return the ``SOURce[n]:MARKer[m]:DELay`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the delay for the specified marker of the specified
               channel. Marker delay is independent for each channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:MARKer[m]:DELay?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:MARKer[m]:DELay?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce[n]:MARKer[m]:DELay value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:MARKer[m]:DELay <NR3>
             - SOURce[n]:MARKer[m]:DELay?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets all channel marker delays to 0.
         """
         return self._delay
@@ -1040,7 +1013,7 @@ class SourceItemMarkerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def voltage(self) -> SourceItemMarkerItemVoltage:
         """Return the ``SOURce[n]:MARKer[m]:VOLTage`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:MARKer[m]:VOLTage?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:MARKer[m]:VOLTage?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -1054,27 +1027,26 @@ class SourceItemMarkerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class SourceItemJumpPatternForce(SCPICmdWrite):
     """The ``SOURce[n]:JUMP:PATTern:FORCe`` command.
 
-    **Description:**
+    Description:
         - This command generates an event, forcing the sequencer to the step specified by the
           pattern in the pattern jump table. If the sequence is playing on both channels, the force
           jump is applied to both channels simultaneously.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SOURce[n]:JUMP:PATTern:FORCe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:JUMP:PATTern:FORCe <pattern>
+        ```
     """
 
 
 class SourceItemJumpPattern(SCPICmdRead):
     """The ``SOURce[n]:JUMP:PATTern`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:JUMP:PATTern?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:JUMP:PATTern?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1091,20 +1063,19 @@ class SourceItemJumpPattern(SCPICmdRead):
     def force(self) -> SourceItemJumpPatternForce:
         """Return the ``SOURce[n]:JUMP:PATTern:FORCe`` command.
 
-        **Description:**
+        Description:
             - This command generates an event, forcing the sequencer to the step specified by the
               pattern in the pattern jump table. If the sequence is playing on both channels, the
               force jump is applied to both channels simultaneously.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``SOURce[n]:JUMP:PATTern:FORCe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:JUMP:PATTern:FORCe <pattern>
+            ```
         """
         return self._force
 
@@ -1112,25 +1083,24 @@ class SourceItemJumpPattern(SCPICmdRead):
 class SourceItemJumpForce(SCPICmdWrite):
     """The ``SOURce[n]:JUMP:FORCe`` command.
 
-    **Description:**
+    Description:
         - This command forces the sequencer to jump to a specific sequence step for the specified
           channel. A force jump does not require a trigger event to execute the jump.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SOURce[n]:JUMP:FORCe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:JUMP:FORCe {FIRSt|CURRent|LAST|END|<NR1>}
+        ```
     """
 
 
 class SourceItemJump(SCPICmdRead):
     """The ``SOURce[n]:JUMP`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:JUMP?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:JUMP?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1149,19 +1119,18 @@ class SourceItemJump(SCPICmdRead):
     def force(self) -> SourceItemJumpForce:
         """Return the ``SOURce[n]:JUMP:FORCe`` command.
 
-        **Description:**
+        Description:
             - This command forces the sequencer to jump to a specific sequence step for the
               specified channel. A force jump does not require a trigger event to execute the jump.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SOURce[n]:JUMP:FORCe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:JUMP:FORCe {FIRSt|CURRent|LAST|END|<NR1>}
+            ```
         """
         return self._force
 
@@ -1169,7 +1138,7 @@ class SourceItemJump(SCPICmdRead):
     def pattern(self) -> SourceItemJumpPattern:
         """Return the ``SOURce[n]:JUMP:PATTern`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:JUMP:PATTern?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:JUMP:PATTern?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -1183,24 +1152,23 @@ class SourceItemJump(SCPICmdRead):
 class SourceItemDacResolution(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce[n]:DAC:RESolution`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the DAC resolution.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:DAC:RESolution?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:DAC:RESolution?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce[n]:DAC:RESolution value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:DAC:RESolution {8|9|10}
         - SOURce[n]:DAC:RESolution?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 10.
     """
 
@@ -1208,7 +1176,7 @@ class SourceItemDacResolution(SCPICmdWrite, SCPICmdRead):
 class SourceItemDac(SCPICmdRead):
     """The ``SOURce[n]:DAC`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:DAC?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:DAC?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1225,24 +1193,23 @@ class SourceItemDac(SCPICmdRead):
     def resolution(self) -> SourceItemDacResolution:
         """Return the ``SOURce[n]:DAC:RESolution`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the DAC resolution.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:DAC:RESolution?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:DAC:RESolution?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce[n]:DAC:RESolution value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:DAC:RESolution {8|9|10}
             - SOURce[n]:DAC:RESolution?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 10.
         """
         return self._resolution
@@ -1251,75 +1218,71 @@ class SourceItemDac(SCPICmdRead):
 class SourceItemCassetWaveform(SCPICmdWrite):
     """The ``SOURce[n]:CASSet:WAVeform`` command.
 
-    **Description:**
+    Description:
         - This command assigns a waveform (from the waveform list) to the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SOURce[n]:CASSet:WAVeform value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:CASSet:WAVeform <wfm_name>[, <component_type>]
+        ```
     """
 
 
 class SourceItemCassetType(SCPICmdRead):
     """The ``SOURce[n]:CASSet:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command returns the type of the asset (waveform or sequence) assigned to a channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:CASSet:TYPE?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:CASSet:TYPE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:CASSet:TYPE?
+        ```
     """
 
 
 class SourceItemCassetSequence(SCPICmdWrite):
     """The ``SOURce[n]:CASSet:SEQuence`` command.
 
-    **Description:**
+    Description:
         - This command assigns a track of a sequence (from the sequence list) to the specified
           channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SOURce[n]:CASSet:SEQuence value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:CASSet:SEQuence <sequence_name>, <track_number>[,<component_type>]
+        ```
     """
 
 
 class SourceItemCasset(SCPICmdRead):
     """The ``SOURce[n]:CASSet`` command.
 
-    **Description:**
+    Description:
         - This command returns the asset (waveform or sequence) assigned to the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]:CASSet?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]:CASSet?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce[n]:CASSet?
+        ```
 
     Properties:
         - ``.sequence``: The ``SOURce[n]:CASSet:SEQuence`` command.
@@ -1337,19 +1300,18 @@ class SourceItemCasset(SCPICmdRead):
     def sequence(self) -> SourceItemCassetSequence:
         """Return the ``SOURce[n]:CASSet:SEQuence`` command.
 
-        **Description:**
+        Description:
             - This command assigns a track of a sequence (from the sequence list) to the specified
               channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SOURce[n]:CASSet:SEQuence value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:CASSet:SEQuence <sequence_name>, <track_number>[,<component_type>]
+            ```
         """
         return self._sequence
 
@@ -1357,20 +1319,19 @@ class SourceItemCasset(SCPICmdRead):
     def type(self) -> SourceItemCassetType:
         """Return the ``SOURce[n]:CASSet:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command returns the type of the asset (waveform or sequence) assigned to a
               channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:CASSet:TYPE?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:CASSet:TYPE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:CASSet:TYPE?
+            ```
         """
         return self._type
 
@@ -1378,18 +1339,17 @@ class SourceItemCasset(SCPICmdRead):
     def waveform(self) -> SourceItemCassetWaveform:
         """Return the ``SOURce[n]:CASSet:WAVeform`` command.
 
-        **Description:**
+        Description:
             - This command assigns a waveform (from the waveform list) to the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SOURce[n]:CASSet:WAVeform value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:CASSet:WAVeform <wfm_name>[, <component_type>]
+            ```
         """
         return self._waveform
 
@@ -1398,7 +1358,7 @@ class SourceItemCasset(SCPICmdRead):
 class SourceItem(ValidatedChannel, SCPICmdRead):
     """The ``SOURce[n]`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce[n]?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce[n]?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1437,20 +1397,19 @@ class SourceItem(ValidatedChannel, SCPICmdRead):
     def casset(self) -> SourceItemCasset:
         """Return the ``SOURce[n]:CASSet`` command.
 
-        **Description:**
+        Description:
             - This command returns the asset (waveform or sequence) assigned to the specified
               channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:CASSet?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:CASSet?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:CASSet?
+            ```
 
         Sub-properties:
             - ``.sequence``: The ``SOURce[n]:CASSet:SEQuence`` command.
@@ -1463,7 +1422,7 @@ class SourceItem(ValidatedChannel, SCPICmdRead):
     def dac(self) -> SourceItemDac:
         """Return the ``SOURce[n]:DAC`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:DAC?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:DAC?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -1477,7 +1436,7 @@ class SourceItem(ValidatedChannel, SCPICmdRead):
     def marker(self) -> Dict[int, SourceItemMarkerItem]:
         """Return the ``SOURce[n]:MARKer[m]`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:MARKer[m]?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:MARKer[m]?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1492,7 +1451,7 @@ class SourceItem(ValidatedChannel, SCPICmdRead):
     def power(self) -> SourceItemPower:
         """Return the ``SOURce[n]:POWer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:POWer?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:POWer?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -1506,23 +1465,22 @@ class SourceItem(ValidatedChannel, SCPICmdRead):
     def rmode(self) -> SourceItemRmode:
         """Return the ``SOURce[n]:RMODe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the run mode of the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:RMODe?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:RMODe?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce[n]:RMODe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:RMODe {CONTinuous|TRIGgered|TCONtinuous}
             - SOURce[n]:RMODe?
+            ```
 
-        **Info:**
+        Info:
             - ``CONTinuous`` sets the Run Mode to Continuous (not waiting for trigger). TRIGgered
               sets the Run Mode to Triggered, waiting for a trigger event. One waveform play out
               cycle completes, then play out stops, waiting for the next trigger event. TCONtinuous
@@ -1537,20 +1495,19 @@ class SourceItem(ValidatedChannel, SCPICmdRead):
     def scstep(self) -> SourceItemScstep:
         """Return the ``SOURce[n]:SCSTep`` command.
 
-        **Description:**
+        Description:
             - This command allows you to read the current step of the sequence while the system is
               running.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:SCSTep?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:SCSTep?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:SCSTep?
+            ```
         """
         return self._scstep
 
@@ -1558,24 +1515,23 @@ class SourceItem(ValidatedChannel, SCPICmdRead):
     def skew(self) -> SourceItemSkew:
         """Return the ``SOURce[n]:SKEW`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the skew (relative timing of the analog output) for the
               waveform associated with the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:SKEW?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:SKEW?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce[n]:SKEW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:SKEW <skew>
             - SOURce[n]:SKEW?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 0.
         """
         return self._skew
@@ -1584,23 +1540,22 @@ class SourceItem(ValidatedChannel, SCPICmdRead):
     def tinput(self) -> SourceItemTinput:
         """Return the ``SOURce[n]:TINPut`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the trigger input source of the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:TINPut?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:TINPut?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce[n]:TINPut value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:TINPut {ITRigger|ATRigger|BTRigger}
             - SOURce[n]:TINPut?
+            ```
 
-        **Info:**
+        Info:
             - ``ITRigger`` selects the internal trigger signal as the trigger source. (The A and B
               Force Trigger buttons are not active.) ATRigger selects trigger input A. BTRigger
               selects trigger input B. [n] determines the channel number. If omitted, interpreted as
@@ -1613,7 +1568,7 @@ class SourceItem(ValidatedChannel, SCPICmdRead):
     def voltage(self) -> SourceItemVoltage:
         """Return the ``SOURce[n]:VOLTage`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:VOLTage?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:VOLTage?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1627,22 +1582,21 @@ class SourceItem(ValidatedChannel, SCPICmdRead):
     def waveform(self) -> SourceItemWaveform:
         """Return the ``SOURce[n]:WAVeform`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the name of the waveform assigned to the specified
               channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:WAVeform?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:WAVeform?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce[n]:WAVeform value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce[n]:WAVeform <wfm_name>
             - SOURce[n]:WAVeform?
+            ```
         """
         return self._waveform
 
@@ -1650,7 +1604,7 @@ class SourceItem(ValidatedChannel, SCPICmdRead):
     def jump(self) -> SourceItemJump:
         """Return the ``SOURce[n]:JUMP`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]:JUMP?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]:JUMP?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -1665,30 +1619,29 @@ class SourceItem(ValidatedChannel, SCPICmdRead):
 class SourceRoscillatorMultiplier(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce:ROSCillator:MULTiplier`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the multiplier of the external reference signal when the
           external reference is variable.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce:ROSCillator:MULTiplier?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce:ROSCillator:MULTiplier?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce:ROSCillator:MULTiplier value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce:ROSCillator:MULTiplier <NR1>
         - SOURce:ROSCillator:MULTiplier?
+        ```
     """
 
 
 class SourceRoscillator(SCPICmdRead):
     """The ``SOURce:ROSCillator`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce:ROSCillator?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce:ROSCillator?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -1705,23 +1658,22 @@ class SourceRoscillator(SCPICmdRead):
     def multiplier(self) -> SourceRoscillatorMultiplier:
         """Return the ``SOURce:ROSCillator:MULTiplier`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the multiplier of the external reference signal when the
               external reference is variable.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce:ROSCillator:MULTiplier?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce:ROSCillator:MULTiplier?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SOURce:ROSCillator:MULTiplier value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce:ROSCillator:MULTiplier <NR1>
             - SOURce:ROSCillator:MULTiplier?
+            ```
         """
         return self._multiplier
 
@@ -1729,23 +1681,22 @@ class SourceRoscillator(SCPICmdRead):
 class SourceRccouple(SCPICmdWrite):
     """The ``SOURce:RCCouple`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Coupled state (enabled or disabled) of the Run Mode
           control of a multi-channel instrument. The Run controls consist of the Run Mode and
           Trigger Input. The set form of the command forces all channels to match channel 1. After
           the initial coupling of the settings, changes made to the Run Mode of any channel affects
           all channels.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SOURce:RCCouple value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce:RCCouple {0|1|ON|OFF}
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 0.
     """
 
@@ -1753,24 +1704,23 @@ class SourceRccouple(SCPICmdWrite):
 class SourceFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the clock sample rate of the AWG. [``:CW``] and [``:FIXed``]
           are optional to provide legacy support but provide no added functionality.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce:FREQuency?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce:FREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce:FREQuency <frequency>
         - SOURce:FREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets the frequency to 25 GHz.
     """
 
@@ -1778,7 +1728,7 @@ class SourceFrequency(SCPICmdWrite, SCPICmdRead):
 class Source(SCPICmdRead):
     """The ``SOURce`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1799,25 +1749,24 @@ class Source(SCPICmdRead):
     def frequency(self) -> SourceFrequency:
         """Return the ``SOURce:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the clock sample rate of the AWG. [``:CW``] and
               [``:FIXed``] are optional to provide legacy support but provide no added
               functionality.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce:FREQuency?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce:FREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce:FREQuency <frequency>
             - SOURce:FREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets the frequency to 25 GHz.
         """
         return self._frequency
@@ -1826,23 +1775,22 @@ class Source(SCPICmdRead):
     def rccouple(self) -> SourceRccouple:
         """Return the ``SOURce:RCCouple`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Coupled state (enabled or disabled) of the Run Mode
               control of a multi-channel instrument. The Run controls consist of the Run Mode and
               Trigger Input. The set form of the command forces all channels to match channel 1.
               After the initial coupling of the settings, changes made to the Run Mode of any
               channel affects all channels.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SOURce:RCCouple value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce:RCCouple {0|1|ON|OFF}
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 0.
         """
         return self._rccouple
@@ -1851,7 +1799,7 @@ class Source(SCPICmdRead):
     def roscillator(self) -> SourceRoscillator:
         """Return the ``SOURce:ROSCillator`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce:ROSCillator?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce:ROSCillator?`` query and
               raise an AssertionError if the returned value does not match ``value``.

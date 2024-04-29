@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - AUTOSet {EXECute|UNDo}
     - AUTOSet:ENAble {OFF|ON}
     - AUTOSet:ENAble?
@@ -27,23 +25,22 @@ if TYPE_CHECKING:
 class AutosetEnable(SCPICmdWrite, SCPICmdRead):
     """The ``AUTOSet:ENAble`` command.
 
-    **Description:**
+    Description:
         - Enables or disables the autoset.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUTOSet:ENAble?`` query.
         - Using the ``.verify(value)`` method will send the ``AUTOSet:ENAble?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUTOSet:ENAble value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUTOSet:ENAble {OFF|ON}
         - AUTOSet:ENAble?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the autoset feature.
         - ``OFF`` disables the autoset feature.
     """
@@ -52,20 +49,19 @@ class AutosetEnable(SCPICmdWrite, SCPICmdRead):
 class Autoset(SCPICmdWrite, SCPICmdRead):
     """The ``AUTOSet`` command.
 
-    **Description:**
+    Description:
         - Sets the vertical, horizontal, and trigger controls of the oscilloscope to automatically
           acquire and display the selected waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``AUTOSet value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUTOSet {EXECute|UNDo}
+        ```
 
-    **Info:**
+    Info:
         - ``EXECute`` autosets the displayed waveform.
         - ``UNDo`` restores the oscilloscope settings to those present prior to the autoset
           execution.
@@ -82,23 +78,22 @@ class Autoset(SCPICmdWrite, SCPICmdRead):
     def enable(self) -> AutosetEnable:
         """Return the ``AUTOSet:ENAble`` command.
 
-        **Description:**
+        Description:
             - Enables or disables the autoset.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUTOSet:ENAble?`` query.
             - Using the ``.verify(value)`` method will send the ``AUTOSet:ENAble?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUTOSet:ENAble value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUTOSet:ENAble {OFF|ON}
             - AUTOSet:ENAble?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the autoset feature.
             - ``OFF`` disables the autoset feature.
         """

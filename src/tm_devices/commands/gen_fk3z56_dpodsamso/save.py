@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SAVe:EVENTtable:BUS<x> <string>
     - SAVe:MARKS <string>
     - SAVe:MASK <QString>
@@ -20,11 +18,12 @@ Commands and Queries:
     - SAVe:WAVEform [<wfm>,REF<x>]| [<wfm>,<QString>] | [ALL,[QString]]| [DIGITALALL,<QString>]
     - SAVe:WAVEform:DATa:STARt {<NR1>}
     - SAVe:WAVEform:DATa:STOP {<NR1>}
-    - SAVe:WAVEform:FILEFormat {INTERNal|MATHCad|MATLab|SPREADSHEETCsv| SPREADSHEETTxt|TIMEStamp|AUTO}
+    - SAVe:WAVEform:FILEFormat {INTERNal|MATHCad|MATLab|SPREADSHEETCsv|
+      SPREADSHEETTxt|TIMEStamp|AUTO}
     - SAVe:WAVEform:FILEFormat?
     - SAVe:WAVEform:FORCESAMEFilesize {<NR1>|OFF|ON}
     - SAVe:WAVEform:FORCESAMEFilesize?
-"""  # noqa: E501
+"""
 
 from typing import Dict, Optional, TYPE_CHECKING
 
@@ -42,24 +41,23 @@ if TYPE_CHECKING:
 class SaveWaveformForcesamefilesize(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:WAVEform:FORCESAMEFilesize`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the save waveform force same file size.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:WAVEform:FORCESAMEFilesize?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:WAVEform:FORCESAMEFilesize?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVe:WAVEform:FORCESAMEFilesize value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:WAVEform:FORCESAMEFilesize {<NR1>|OFF|ON}
         - SAVe:WAVEform:FORCESAMEFilesize?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the function; any other value enables it.
         - ``OFF`` disables the function.
         - ``ON`` enables the function.
@@ -69,7 +67,7 @@ class SaveWaveformForcesamefilesize(SCPICmdWrite, SCPICmdRead):
 class SaveWaveformFileformat(SCPICmdWrite, SCPICmdRead):
     r"""The ``SAVe:WAVEform:FILEFormat`` command.
 
-    **Description:**
+    Description:
         - This command specifies or returns the file format for saved waveforms. Waveform header and
           timing information is included in the resulting file of non-internal formats. The
           instrument saves DPO waveforms as a 1000 x 502 matrix, with the first row corresponding to
@@ -80,21 +78,20 @@ class SaveWaveformFileformat(SCPICmdWrite, SCPICmdRead):
           selecting Save As from the File menu, clicking the Waveform button, and selecting the
           desired waveform file format.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:WAVEform:FILEFormat?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:WAVEform:FILEFormat?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVe:WAVEform:FILEFormat value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:WAVEform:FILEFormat {INTERNal|MATHCad|MATLab|SPREADSHEETCsv| SPREADSHEETTxt|TIMEStamp|AUTO}
         - SAVe:WAVEform:FILEFormat?
+        ```
 
-    **Info:**
+    Info:
         - ``INTERNal`` specifies that waveforms are saved in an internal format, using a .wfm file
           name extension. These files can be recalled as reference waveforms. When this argument is
           specified, the settings specified via the ``SAVe:WAVEform:DATa:STARt`` and
@@ -132,20 +129,19 @@ class SaveWaveformFileformat(SCPICmdWrite, SCPICmdRead):
 class SaveWaveformDataStop(SCPICmdWrite):
     """The ``SAVe:WAVEform:DATa:STOP`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the save waveform ending waveform data sample.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:WAVEform:DATa:STOP value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:WAVEform:DATa:STOP {<NR1>}
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the ending waveform sample used by the ``SAVe:WAVEform`` command. This
           works for Spreadsheet CSV, Spreadsheet TXT, Mathcad, and Matlab file formats.
     """
@@ -154,20 +150,19 @@ class SaveWaveformDataStop(SCPICmdWrite):
 class SaveWaveformDataStart(SCPICmdWrite):
     """The ``SAVe:WAVEform:DATa:STARt`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the save waveform starting waveform data sample.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:WAVEform:DATa:STARt value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:WAVEform:DATa:STARt {<NR1>}
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the starting waveform sample used by the ``SAVe:WAVEform`` command.
           This works for Spreadsheet CSV, Spreadsheet TXT, Mathcad, and Matlab file formats.
     """
@@ -176,7 +171,7 @@ class SaveWaveformDataStart(SCPICmdWrite):
 class SaveWaveformData(SCPICmdRead):
     """The ``SAVe:WAVEform:DATa`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:WAVEform:DATa?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:WAVEform:DATa?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -195,20 +190,19 @@ class SaveWaveformData(SCPICmdRead):
     def start(self) -> SaveWaveformDataStart:
         """Return the ``SAVe:WAVEform:DATa:STARt`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the save waveform starting waveform data sample.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:WAVEform:DATa:STARt value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:WAVEform:DATa:STARt {<NR1>}
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the starting waveform sample used by the ``SAVe:WAVEform``
               command. This works for Spreadsheet CSV, Spreadsheet TXT, Mathcad, and Matlab file
               formats.
@@ -219,20 +213,19 @@ class SaveWaveformData(SCPICmdRead):
     def stop(self) -> SaveWaveformDataStop:
         """Return the ``SAVe:WAVEform:DATa:STOP`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the save waveform ending waveform data sample.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:WAVEform:DATa:STOP value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:WAVEform:DATa:STOP {<NR1>}
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the ending waveform sample used by the ``SAVe:WAVEform`` command.
               This works for Spreadsheet CSV, Spreadsheet TXT, Mathcad, and Matlab file formats.
         """
@@ -242,20 +235,19 @@ class SaveWaveformData(SCPICmdRead):
 class SaveWaveform(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:WAVEform`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) saves a waveform to one of four reference memory locations or
           a file.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:WAVEform value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:WAVEform [<wfm>,REF<x>]| [<wfm>,<QString>] | [ALL,[QString]]| [DIGITALALL,<QString>]
+        ```
 
-    **Info:**
+    Info:
         - ``<wfm>,REF<x>`` saves the specified waveform to the specified reference memory location.
         - ``<wfm>,<QString>`` saves the specified waveform to the file specified.
         - ``ALL,[QString>]`` saves all displayed waveforms, excluding digital waveforms, to
@@ -281,7 +273,7 @@ class SaveWaveform(SCPICmdWrite, SCPICmdRead):
     def data(self) -> SaveWaveformData:
         """Return the ``SAVe:WAVEform:DATa`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:WAVEform:DATa?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:WAVEform:DATa?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -296,7 +288,7 @@ class SaveWaveform(SCPICmdWrite, SCPICmdRead):
     def fileformat(self) -> SaveWaveformFileformat:
         r"""Return the ``SAVe:WAVEform:FILEFormat`` command.
 
-        **Description:**
+        Description:
             - This command specifies or returns the file format for saved waveforms. Waveform header
               and timing information is included in the resulting file of non-internal formats. The
               instrument saves DPO waveforms as a 1000 x 502 matrix, with the first row
@@ -307,21 +299,20 @@ class SaveWaveform(SCPICmdWrite, SCPICmdRead):
               output value. This command is equivalent to selecting Save As from the File menu,
               clicking the Waveform button, and selecting the desired waveform file format.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:WAVEform:FILEFormat?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:WAVEform:FILEFormat?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVe:WAVEform:FILEFormat value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:WAVEform:FILEFormat {INTERNal|MATHCad|MATLab|SPREADSHEETCsv| SPREADSHEETTxt|TIMEStamp|AUTO}
             - SAVe:WAVEform:FILEFormat?
+            ```
 
-        **Info:**
+        Info:
             - ``INTERNal`` specifies that waveforms are saved in an internal format, using a .wfm
               file name extension. These files can be recalled as reference waveforms. When this
               argument is specified, the settings specified via the ``SAVe:WAVEform:DATa:STARt`` and
@@ -362,10 +353,10 @@ class SaveWaveform(SCPICmdWrite, SCPICmdRead):
     def forcesamefilesize(self) -> SaveWaveformForcesamefilesize:
         """Return the ``SAVe:WAVEform:FORCESAMEFilesize`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the save waveform force same file size.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:WAVEform:FORCESAMEFilesize?``
               query.
             - Using the ``.verify(value)`` method will send the ``SAVe:WAVEform:FORCESAMEFilesize?``
@@ -373,14 +364,13 @@ class SaveWaveform(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SAVe:WAVEform:FORCESAMEFilesize value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:WAVEform:FORCESAMEFilesize {<NR1>|OFF|ON}
             - SAVe:WAVEform:FORCESAMEFilesize?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the function; any other value enables it.
             - ``OFF`` disables the function.
             - ``ON`` enables the function.
@@ -391,20 +381,19 @@ class SaveWaveform(SCPICmdWrite, SCPICmdRead):
 class SaveSetup(SCPICmdWrite):
     """The ``SAVe:SETUp`` command.
 
-    **Description:**
+    Description:
         - Stores the state of the oscilloscope to a specified memory location. You can later use the
           ``*RCL`` command to restore the oscilloscope to this saved state.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:SETUp value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:SETUp {<file path>|<NR1>}
+        ```
 
-    **Info:**
+    Info:
         - ``<file path>`` is the target location for storing the setup file. <file path> is a quoted
           string that defines the file name and path. Input the file path using the form
           ``<drive>:<dir>``/<filename>. <extension> and one or <dir>s are optional. If you do not
@@ -421,22 +410,21 @@ class SaveSetup(SCPICmdWrite):
 class SaveMask(SCPICmdWrite):
     """The ``SAVe:MASK`` command.
 
-    **Description:**
+    Description:
         - This command saves the current mask definition to the file specified with a quoted string,
           into the current working directory. You can recall the mask from the file by using the
           command ``RECALL:MASK A`` series of examples showing how to use mask commands for typical
           tasks is included in an appendix.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:MASK value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:MASK <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``QString`` is a quoted string that is the name of the mask definition being saved to the
           current working directory.
     """
@@ -447,43 +435,41 @@ class SaveMask(SCPICmdWrite):
 class SaveMarks(SCPICmdWrite):
     """The ``SAVe:MARKS`` command.
 
-    **Description:**
+    Description:
         - This command saves the user search marks in CSV format, to the file that you specify by
           <string>.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:MARKS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:MARKS <string>
+        ```
     """
 
 
 class SaveEventtableBusItem(ValidatedDynamicNumberCmd, SCPICmdWrite):
     """The ``SAVe:EVENTtable:BUS<x>`` command.
 
-    **Description:**
+    Description:
         - Saves the event table contents of the specified bus in CSV format, to the file that you
           specify by <string>.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:EVENTtable:BUS<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:EVENTtable:BUS<x> <string>
+        ```
     """
 
 
 class SaveEventtable(SCPICmdRead):
     """The ``SAVe:EVENTtable`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:EVENTtable?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:EVENTtable?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -502,19 +488,18 @@ class SaveEventtable(SCPICmdRead):
     def bus(self) -> Dict[int, SaveEventtableBusItem]:
         """Return the ``SAVe:EVENTtable:BUS<x>`` command.
 
-        **Description:**
+        Description:
             - Saves the event table contents of the specified bus in CSV format, to the file that
               you specify by <string>.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:EVENTtable:BUS<x> value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:EVENTtable:BUS<x> <string>
+            ```
         """
         return self._bus
 
@@ -522,7 +507,7 @@ class SaveEventtable(SCPICmdRead):
 class Save(SCPICmdRead):
     """The ``SAVe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -547,7 +532,7 @@ class Save(SCPICmdRead):
     def eventtable(self) -> SaveEventtable:
         """Return the ``SAVe:EVENTtable`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:EVENTtable?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:EVENTtable?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -561,18 +546,17 @@ class Save(SCPICmdRead):
     def marks(self) -> SaveMarks:
         """Return the ``SAVe:MARKS`` command.
 
-        **Description:**
+        Description:
             - This command saves the user search marks in CSV format, to the file that you specify
               by <string>.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:MARKS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:MARKS <string>
+            ```
         """
         return self._marks
 
@@ -580,22 +564,21 @@ class Save(SCPICmdRead):
     def mask(self) -> SaveMask:
         """Return the ``SAVe:MASK`` command.
 
-        **Description:**
+        Description:
             - This command saves the current mask definition to the file specified with a quoted
               string, into the current working directory. You can recall the mask from the file by
               using the command ``RECALL:MASK A`` series of examples showing how to use mask
               commands for typical tasks is included in an appendix.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:MASK value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:MASK <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``QString`` is a quoted string that is the name of the mask definition being saved to
               the current working directory.
         """
@@ -605,20 +588,19 @@ class Save(SCPICmdRead):
     def setup(self) -> SaveSetup:
         """Return the ``SAVe:SETUp`` command.
 
-        **Description:**
+        Description:
             - Stores the state of the oscilloscope to a specified memory location. You can later use
               the ``*RCL`` command to restore the oscilloscope to this saved state.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:SETUp value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:SETUp {<file path>|<NR1>}
+            ```
 
-        **Info:**
+        Info:
             - ``<file path>`` is the target location for storing the setup file. <file path> is a
               quoted string that defines the file name and path. Input the file path using the form
               ``<drive>:<dir>``/<filename>. <extension> and one or <dir>s are optional. If you do
@@ -637,20 +619,19 @@ class Save(SCPICmdRead):
     def waveform(self) -> SaveWaveform:
         """Return the ``SAVe:WAVEform`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) saves a waveform to one of four reference memory
               locations or a file.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:WAVEform value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:WAVEform [<wfm>,REF<x>]| [<wfm>,<QString>] | [ALL,[QString]]| [DIGITALALL,<QString>]
+            ```
 
-        **Info:**
+        Info:
             - ``<wfm>,REF<x>`` saves the specified waveform to the specified reference memory
               location.
             - ``<wfm>,<QString>`` saves the specified waveform to the file specified.

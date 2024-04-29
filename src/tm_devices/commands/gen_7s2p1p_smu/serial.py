@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - serial.baud
     - serial.databits
     - serial.parity
@@ -29,7 +27,7 @@ if TYPE_CHECKING:
 class Serial(BaseTSPCmd):
     """The ``serial`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.baud``: The ``serial.baud`` attribute.
         - ``.databits``: The ``serial.databits`` attribute.
         - ``.parity``: The ``serial.parity`` attribute.
@@ -42,19 +40,18 @@ class Serial(BaseTSPCmd):
     def baud(self) -> str:
         """Access the ``serial.baud`` attribute.
 
-        **Description:**
+        Description:
             - This attribute configures the baud rate for the RS-232 port.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(serial.baud)`` query.
             - Setting this property to a value will send the ``serial.baud = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - serial.baud = value
             - print(serial.baud)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -73,19 +70,18 @@ class Serial(BaseTSPCmd):
     def baud(self, value: Union[str, float]) -> None:
         """Access the ``serial.baud`` attribute.
 
-        **Description:**
+        Description:
             - This attribute configures the baud rate for the RS-232 port.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(serial.baud)`` query.
             - Setting this property to a value will send the ``serial.baud = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - serial.baud = value
             - print(serial.baud)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -107,21 +103,20 @@ class Serial(BaseTSPCmd):
     def databits(self) -> str:
         """Access the ``serial.databits`` attribute.
 
-        **Description:**
+        Description:
             - This attribute configures character width (data bits) for the RS-232 port.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(serial.databits)`` query.
             - Setting this property to a value will send the ``serial.databits = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - serial.databits = value
             - print(serial.databits)
+            ```
 
-        **Info:**
+        Info:
             - ``bits``, the an integer representing the character width (7 or 8).
 
         Raises:
@@ -141,21 +136,20 @@ class Serial(BaseTSPCmd):
     def databits(self, value: Union[str, float]) -> None:
         """Access the ``serial.databits`` attribute.
 
-        **Description:**
+        Description:
             - This attribute configures character width (data bits) for the RS-232 port.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(serial.databits)`` query.
             - Setting this property to a value will send the ``serial.databits = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - serial.databits = value
             - print(serial.databits)
+            ```
 
-        **Info:**
+        Info:
             - ``bits``, the an integer representing the character width (7 or 8).
 
         Raises:
@@ -178,19 +172,18 @@ class Serial(BaseTSPCmd):
     def parity(self) -> str:
         """Access the ``serial.parity`` attribute.
 
-        **Description:**
+        Description:
             - This attribute configures parity for the RS-232 port.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(serial.parity)`` query.
             - Setting this property to a value will send the ``serial.parity = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - serial.parity = value
             - print(serial.parity)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -209,19 +202,18 @@ class Serial(BaseTSPCmd):
     def parity(self, value: Union[str, float]) -> None:
         """Access the ``serial.parity`` attribute.
 
-        **Description:**
+        Description:
             - This attribute configures parity for the RS-232 port.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(serial.parity)`` query.
             - Setting this property to a value will send the ``serial.parity = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - serial.parity = value
             - print(serial.parity)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.

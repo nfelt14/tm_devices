@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - DATa {INIT|SNAp}
     - DATa:COMPosition {COMPOSITE_YT|COMPOSITE_ENV|SINGULAR_YT}
     - DATa:COMPosition:AVAILable?
@@ -43,25 +41,24 @@ if TYPE_CHECKING:
 class DataWidth(SCPICmdWrite, SCPICmdRead):
     """The ``DATa:WIDth`` command.
 
-    **Description:**
+    Description:
         - This command specifies the width, in bytes per point, for waveform data transferred from
           the instrument via the CURVe? query. (This command is synonymous with
           ``WFMOutpre:BYT_Nr``.)
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DATa:WIDth?`` query.
         - Using the ``.verify(value)`` method will send the ``DATa:WIDth?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DATa:WIDth value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DATa:WIDth <NR1>
         - DATa:WIDth?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is an integer that indicates the number of bytes per point for the outgoing
           waveform data when queried using the CURVe? command.
     """
@@ -70,7 +67,7 @@ class DataWidth(SCPICmdWrite, SCPICmdRead):
 class DataStop(SCPICmdWrite, SCPICmdRead):
     """The ``DATa:STOP`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the last data point that will be transferred when using the
           CURVE? query. When using the CURVE command, ``DATa:STOP`` is ignored. This command allows
           for the transfer of partial waveforms to the controller. If <NR1> is greater than the
@@ -86,20 +83,19 @@ class DataStop(SCPICmdWrite, SCPICmdRead):
           increases in record length if the distance from ``DATa:STARt`` to ``DATa:STOP`` stays
           smaller than the increased record length.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DATa:STOP?`` query.
         - Using the ``.verify(value)`` method will send the ``DATa:STOP?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DATa:STOP value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DATa:STOP <NR1>
         - DATa:STOP?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the last data point that will be transferred, which ranges from 1 to the
           record length.
     """
@@ -108,7 +104,7 @@ class DataStop(SCPICmdWrite, SCPICmdRead):
 class DataStart(SCPICmdWrite, SCPICmdRead):
     """The ``DATa:STARt`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the starting data point for waveform transfer. This command
           allows for the transfer of partial waveforms to and from the instrument. Data will be
           transferred from <NR1> to ``DATa:STOP`` or the record length, whichever is less. If <NR1>
@@ -116,20 +112,19 @@ class DataStart(SCPICmdWrite, SCPICmdRead):
           ``DATa:STARt`` and ``DATa:STOP`` are order independent. When ``DATa:STOP`` is greater than
           ``DATa:STARt``, the values will be swapped internally for the CURVE? query.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DATa:STARt?`` query.
         - Using the ``.verify(value)`` method will send the ``DATa:STARt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DATa:STARt value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DATa:STARt <NR1>
         - DATa:STARt?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the first data point that will be transferred, which ranges from 1 to the
           record length.
     """
@@ -138,24 +133,23 @@ class DataStart(SCPICmdWrite, SCPICmdRead):
 class DataSource(SCPICmdWrite, SCPICmdRead):
     """The ``DATa:SOUrce`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the location of the waveform data transferred from the oscilloscope by the
           CURVE? query.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DATa:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``DATa:SOUrce?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DATa:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DATa:SOUrce {CH<x>|MATH|REF<x>|D<x>}
         - DATa:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies which analog channel data will be transferred from the oscilloscope to
           the controller, channels 1 through 4. x has a minimum of 1 and a maximum of 4.
         - ``MATH`` specifies that the Math waveform data will be transferred from the oscilloscope
@@ -173,24 +167,23 @@ class DataSource(SCPICmdWrite, SCPICmdRead):
 class DataResolution(SCPICmdWrite, SCPICmdRead):
     """The ``DATa:RESOlution`` command.
 
-    **Description:**
+    Description:
         - Sets or returns whether the CURVE? query returns full resolution records (acquired data)
           or reduced resolution records (filtered/displayed data).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DATa:RESOlution?`` query.
         - Using the ``.verify(value)`` method will send the ``DATa:RESOlution?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DATa:RESOlution value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DATa:RESOlution {FULL|REDUced}
         - DATa:RESOlution?
+        ```
 
-    **Info:**
+    Info:
         - ``FULL`` sets the instrument to return the full undecimated record acquired by the
           instrument. The full resolution records are not subject to the effects of FilterVu. Full
           resolution record lengths are 100,000, 125,000, 1,000,000 or 1,250,000 points.
@@ -204,26 +197,25 @@ class DataResolution(SCPICmdWrite, SCPICmdRead):
 class DataEncdg(SCPICmdWrite, SCPICmdRead):
     """The ``DATa:ENCdg`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the format of outgoing waveform data. This command is equivalent to
           setting ``WFMOUTPRE:ENCDG``, ``WFMOUTPRE:BN_FMT``, ``andWFMINPRE:FILTERFREQ``. Setting the
           ``DATa:ENGdg`` value causes the corresponding WFMOutpre values to be updated and
           conversely.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DATa:ENCdg?`` query.
         - Using the ``.verify(value)`` method will send the ``DATa:ENCdg?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DATa:ENCdg value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DATa:ENCdg {ASCIi|FAStest|RIBinary|RPBinary|SRIbinary|SRPbinary}
         - DATa:ENCdg?
+        ```
 
-    **Info:**
+    Info:
         - ``ASCIi`` specifies the ASCII representation for waveform data points. If ASCII is the
           value, then ``:BN_Fmt`` and ``:BYT_Or`` are ignored.
         - ``FAStest`` specifies that the data be sent in the fastest possible manner consistent with
@@ -245,24 +237,23 @@ class DataEncdg(SCPICmdWrite, SCPICmdRead):
 class DataDestination(SCPICmdWrite, SCPICmdRead):
     """The ``DATa:DESTination`` command.
 
-    **Description:**
+    Description:
         - This command specifies the reference memory location (REF1-4) for storing waveform data
           transferred into the oscilloscope using the CURVE command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DATa:DESTination?`` query.
         - Using the ``.verify(value)`` method will send the ``DATa:DESTination?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DATa:DESTination value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DATa:DESTination REF<x>
         - DATa:DESTination?
+        ```
 
-    **Info:**
+    Info:
         - ``REF<x>`` is the reference location where the waveform will be stored.
     """
 
@@ -270,43 +261,41 @@ class DataDestination(SCPICmdWrite, SCPICmdRead):
 class DataCompositionAvailable(SCPICmdRead):
     """The ``DATa:COMPosition:AVAILable`` command.
 
-    **Description:**
+    Description:
         - Lists the waveform data types that are available for return from the instrument under the
           current instrument settings.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DATa:COMPosition:AVAILable?`` query.
         - Using the ``.verify(value)`` method will send the ``DATa:COMPosition:AVAILable?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DATa:COMPosition:AVAILable?
+        ```
     """
 
 
 class DataComposition(SCPICmdWrite, SCPICmdRead):
     """The ``DATa:COMPosition`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the type of data that the CURVE? query returns.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DATa:COMPosition?`` query.
         - Using the ``.verify(value)`` method will send the ``DATa:COMPosition?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DATa:COMPosition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DATa:COMPosition {COMPOSITE_YT|COMPOSITE_ENV|SINGULAR_YT}
         - DATa:COMPosition?
+        ```
 
-    **Info:**
+    Info:
         - ``COMPOSITE_YT`` is of native width 8-bits and is written as 8-bit data in ISF files and
           REF waveforms. The data can be queried as 1- or 2-byte data in CURVE? queries by setting
           the data width to 1 or 2.
@@ -329,20 +318,19 @@ class DataComposition(SCPICmdWrite, SCPICmdRead):
     def available(self) -> DataCompositionAvailable:
         """Return the ``DATa:COMPosition:AVAILable`` command.
 
-        **Description:**
+        Description:
             - Lists the waveform data types that are available for return from the instrument under
               the current instrument settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DATa:COMPosition:AVAILable?`` query.
             - Using the ``.verify(value)`` method will send the ``DATa:COMPosition:AVAILable?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DATa:COMPosition:AVAILable?
+            ```
         """
         return self._available
 
@@ -351,24 +339,23 @@ class DataComposition(SCPICmdWrite, SCPICmdRead):
 class Data(SCPICmdWrite, SCPICmdRead):
     """The ``DATa`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the format and location of the waveform data that is
           transferred with the CURVE command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DATa?`` query.
         - Using the ``.verify(value)`` method will send the ``DATa?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DATa value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DATa {INIT|SNAp}
         - DATa?
+        ```
 
-    **Info:**
+    Info:
         - ``INIT`` initializes the waveform data parameters to their factory defaults except for
           ``DATa:STOP``, which isset to the current acquisition record length.
         - ``SNAp`` Sets ``DATa:STARt`` and ``DATa:STOP`` to match the current waveform cursor
@@ -402,23 +389,22 @@ class Data(SCPICmdWrite, SCPICmdRead):
     def composition(self) -> DataComposition:
         """Return the ``DATa:COMPosition`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the type of data that the CURVE? query returns.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DATa:COMPosition?`` query.
             - Using the ``.verify(value)`` method will send the ``DATa:COMPosition?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DATa:COMPosition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DATa:COMPosition {COMPOSITE_YT|COMPOSITE_ENV|SINGULAR_YT}
             - DATa:COMPosition?
+            ```
 
-        **Info:**
+        Info:
             - ``COMPOSITE_YT`` is of native width 8-bits and is written as 8-bit data in ISF files
               and REF waveforms. The data can be queried as 1- or 2-byte data in CURVE? queries by
               setting the data width to 1 or 2.
@@ -438,24 +424,23 @@ class Data(SCPICmdWrite, SCPICmdRead):
     def destination(self) -> DataDestination:
         """Return the ``DATa:DESTination`` command.
 
-        **Description:**
+        Description:
             - This command specifies the reference memory location (REF1-4) for storing waveform
               data transferred into the oscilloscope using the CURVE command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DATa:DESTination?`` query.
             - Using the ``.verify(value)`` method will send the ``DATa:DESTination?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DATa:DESTination value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DATa:DESTination REF<x>
             - DATa:DESTination?
+            ```
 
-        **Info:**
+        Info:
             - ``REF<x>`` is the reference location where the waveform will be stored.
         """
         return self._destination
@@ -464,26 +449,25 @@ class Data(SCPICmdWrite, SCPICmdRead):
     def encdg(self) -> DataEncdg:
         """Return the ``DATa:ENCdg`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the format of outgoing waveform data. This command is equivalent to
               setting ``WFMOUTPRE:ENCDG``, ``WFMOUTPRE:BN_FMT``, ``andWFMINPRE:FILTERFREQ``. Setting
               the ``DATa:ENGdg`` value causes the corresponding WFMOutpre values to be updated and
               conversely.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DATa:ENCdg?`` query.
             - Using the ``.verify(value)`` method will send the ``DATa:ENCdg?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DATa:ENCdg value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DATa:ENCdg {ASCIi|FAStest|RIBinary|RPBinary|SRIbinary|SRPbinary}
             - DATa:ENCdg?
+            ```
 
-        **Info:**
+        Info:
             - ``ASCIi`` specifies the ASCII representation for waveform data points. If ASCII is the
               value, then ``:BN_Fmt`` and ``:BYT_Or`` are ignored.
             - ``FAStest`` specifies that the data be sent in the fastest possible manner consistent
@@ -506,24 +490,23 @@ class Data(SCPICmdWrite, SCPICmdRead):
     def resolution(self) -> DataResolution:
         """Return the ``DATa:RESOlution`` command.
 
-        **Description:**
+        Description:
             - Sets or returns whether the CURVE? query returns full resolution records (acquired
               data) or reduced resolution records (filtered/displayed data).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DATa:RESOlution?`` query.
             - Using the ``.verify(value)`` method will send the ``DATa:RESOlution?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DATa:RESOlution value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DATa:RESOlution {FULL|REDUced}
             - DATa:RESOlution?
+            ```
 
-        **Info:**
+        Info:
             - ``FULL`` sets the instrument to return the full undecimated record acquired by the
               instrument. The full resolution records are not subject to the effects of FilterVu.
               Full resolution record lengths are 100,000, 125,000, 1,000,000 or 1,250,000 points.
@@ -538,24 +521,23 @@ class Data(SCPICmdWrite, SCPICmdRead):
     def source(self) -> DataSource:
         """Return the ``DATa:SOUrce`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the location of the waveform data transferred from the oscilloscope by
               the CURVE? query.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DATa:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``DATa:SOUrce?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DATa:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DATa:SOUrce {CH<x>|MATH|REF<x>|D<x>}
             - DATa:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies which analog channel data will be transferred from the
               oscilloscope to the controller, channels 1 through 4. x has a minimum of 1 and a
               maximum of 4.
@@ -575,7 +557,7 @@ class Data(SCPICmdWrite, SCPICmdRead):
     def start(self) -> DataStart:
         """Return the ``DATa:STARt`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the starting data point for waveform transfer. This
               command allows for the transfer of partial waveforms to and from the instrument. Data
               will be transferred from <NR1> to ``DATa:STOP`` or the record length, whichever is
@@ -584,20 +566,19 @@ class Data(SCPICmdWrite, SCPICmdRead):
               ``DATa:STOP`` is greater than ``DATa:STARt``, the values will be swapped internally
               for the CURVE? query.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DATa:STARt?`` query.
             - Using the ``.verify(value)`` method will send the ``DATa:STARt?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DATa:STARt value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DATa:STARt <NR1>
             - DATa:STARt?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the first data point that will be transferred, which ranges from 1 to the
               record length.
         """
@@ -607,7 +588,7 @@ class Data(SCPICmdWrite, SCPICmdRead):
     def stop(self) -> DataStop:
         """Return the ``DATa:STOP`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the last data point that will be transferred when using
               the CURVE? query. When using the CURVE command, ``DATa:STOP`` is ignored. This command
               allows for the transfer of partial waveforms to the controller. If <NR1> is greater
@@ -624,20 +605,19 @@ class Data(SCPICmdWrite, SCPICmdRead):
               distance from ``DATa:STARt`` to ``DATa:STOP`` stays smaller than the increased record
               length.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DATa:STOP?`` query.
             - Using the ``.verify(value)`` method will send the ``DATa:STOP?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DATa:STOP value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DATa:STOP <NR1>
             - DATa:STOP?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the last data point that will be transferred, which ranges from 1 to the
               record length.
         """
@@ -647,25 +627,24 @@ class Data(SCPICmdWrite, SCPICmdRead):
     def width(self) -> DataWidth:
         """Return the ``DATa:WIDth`` command.
 
-        **Description:**
+        Description:
             - This command specifies the width, in bytes per point, for waveform data transferred
               from the instrument via the CURVe? query. (This command is synonymous with
               ``WFMOutpre:BYT_Nr``.)
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DATa:WIDth?`` query.
             - Using the ``.verify(value)`` method will send the ``DATa:WIDth?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DATa:WIDth value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DATa:WIDth <NR1>
             - DATa:WIDth?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is an integer that indicates the number of bytes per point for the outgoing
               waveform data when queried using the CURVe? command.
         """

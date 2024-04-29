@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - HEADer {OFF|ON|<NR1>}
     - HEADer?
 """
@@ -26,24 +24,23 @@ if TYPE_CHECKING:
 class Header(SCPICmdWrite, SCPICmdRead):
     """The ``HEADer`` command.
 
-    **Description:**
+    Description:
         - This command specifies the Response Header Enable State that causes the oscilloscope to
           either include or omit headers on query responses.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HEADer?`` query.
         - Using the ``.verify(value)`` method will send the ``HEADer?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HEADer value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HEADer {OFF|ON|<NR1>}
         - HEADer?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` sets the Response Header Enable State to false. This causes the oscilloscope to
           omit headers on query responses, so that only the argument is returned.
         - ``ON`` sets the Response Header Enable State to true. This causes the oscilloscope to

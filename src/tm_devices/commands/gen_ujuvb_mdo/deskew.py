@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - DESkew {SETALLtorec}
     - DESkew:DISplay {OFF|ON|0|1}
     - DESkew:DISplay?
@@ -27,23 +25,22 @@ if TYPE_CHECKING:
 class DeskewDisplay(SCPICmdWrite, SCPICmdRead):
     """The ``DESkew:DISplay`` command.
 
-    **Description:**
+    Description:
         - This command specifies the state of the deskew table display.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DESkew:DISplay?`` query.
         - Using the ``.verify(value)`` method will send the ``DESkew:DISplay?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DESkew:DISplay value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DESkew:DISplay {OFF|ON|0|1}
         - DESkew:DISplay?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` or 0 turns off the deskew table display.
         - ``ON`` or 1 turns on the deskew table display.
     """
@@ -52,20 +49,19 @@ class DeskewDisplay(SCPICmdWrite, SCPICmdRead):
 class Deskew(SCPICmdWrite, SCPICmdRead):
     """The ``DESkew`` command.
 
-    **Description:**
+    Description:
         - Causes the deskew values for all channels to be set to the recommended values. Equivalent
           to pressing the 'Set all deskews to recommended values' button in the application UI.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``DESkew value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DESkew {SETALLtorec}
+        ```
 
-    **Info:**
+    Info:
         - ``<SETALLtorec>`` sets the deskew for all channels to the recommended values.
 
     Properties:
@@ -80,23 +76,22 @@ class Deskew(SCPICmdWrite, SCPICmdRead):
     def display(self) -> DeskewDisplay:
         """Return the ``DESkew:DISplay`` command.
 
-        **Description:**
+        Description:
             - This command specifies the state of the deskew table display.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DESkew:DISplay?`` query.
             - Using the ``.verify(value)`` method will send the ``DESkew:DISplay?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DESkew:DISplay value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DESkew:DISplay {OFF|ON|0|1}
             - DESkew:DISplay?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` or 0 turns off the deskew table display.
             - ``ON`` or 1 turns on the deskew table display.
         """

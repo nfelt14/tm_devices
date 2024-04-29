@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - script.delete()
     - script.load()
 """
@@ -28,7 +26,7 @@ if TYPE_CHECKING:
 class Script(BaseTSPCmd):
     """The ``script`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.delete()``: The ``script.delete()`` function.
         - ``.load()``: The ``script.load()`` function.
     """
@@ -39,14 +37,13 @@ class Script(BaseTSPCmd):
     def delete(self, script_name: str) -> None:
         """Run the ``script.delete()`` function.
 
-        **Description:**
+        Description:
             - This function deletes a script from the runtime memory and nonvolatile memory.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - script.delete()
+            ```
 
         Args:
             script_name: A string that represents the name of the script.
@@ -65,14 +62,13 @@ class Script(BaseTSPCmd):
     def load(self, file: str) -> str:
         """Run the ``script.load()`` function.
 
-        **Description:**
+        Description:
             - This function creates a script from a specified file.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - script.load()
+            ```
 
         Args:
             file: A string that contains the path and file name of the script file to load; if

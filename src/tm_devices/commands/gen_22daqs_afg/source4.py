@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SOURce4:POWer:LEVel:IMMediate:AMPLitude {<percent>|MINimum|MAXimum}
     - SOURce4:POWer:LEVel:IMMediate:AMPLitude?
 """
@@ -26,14 +24,14 @@ if TYPE_CHECKING:
 class Source4PowerLevelImmediateAmplitude(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce4:POWer:LEVel:IMMediate:AMPLitude`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the internal noise level which applies to the output signal
           for the specified channel. The noise level represents the percent against current
           amplitude level. The setting range is 0 to 50%. This command is available when Run Mode is
           set to Continuous, Burst, or Sweep. You can set or query whether to add the internal noise
           to the output signal using the [SOURce[1|2]]``:COMBine:FEED`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce4:POWer:LEVel:IMMediate:AMPLitude?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -42,19 +40,18 @@ class Source4PowerLevelImmediateAmplitude(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SOURce4:POWer:LEVel:IMMediate:AMPLitude value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce4:POWer:LEVel:IMMediate:AMPLitude {<percent>|MINimum|MAXimum}
         - SOURce4:POWer:LEVel:IMMediate:AMPLitude?
+        ```
     """
 
 
 class Source4PowerLevelImmediate(SCPICmdRead):
     """The ``SOURce4:POWer:LEVel:IMMediate`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce4:POWer:LEVel:IMMediate?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce4:POWer:LEVel:IMMediate?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -73,7 +70,7 @@ class Source4PowerLevelImmediate(SCPICmdRead):
     def amplitude(self) -> Source4PowerLevelImmediateAmplitude:
         """Return the ``SOURce4:POWer:LEVel:IMMediate:AMPLitude`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the internal noise level which applies to the output
               signal for the specified channel. The noise level represents the percent against
               current amplitude level. The setting range is 0 to 50%. This command is available when
@@ -81,7 +78,7 @@ class Source4PowerLevelImmediate(SCPICmdRead):
               the internal noise to the output signal using the [SOURce[1|2]]``:COMBine:FEED``
               command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SOURce4:POWer:LEVel:IMMediate:AMPLitude?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -90,12 +87,11 @@ class Source4PowerLevelImmediate(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce4:POWer:LEVel:IMMediate:AMPLitude value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce4:POWer:LEVel:IMMediate:AMPLitude {<percent>|MINimum|MAXimum}
             - SOURce4:POWer:LEVel:IMMediate:AMPLitude?
+            ```
         """
         return self._amplitude
 
@@ -103,7 +99,7 @@ class Source4PowerLevelImmediate(SCPICmdRead):
 class Source4PowerLevel(SCPICmdRead):
     """The ``SOURce4:POWer:LEVel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce4:POWer:LEVel?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce4:POWer:LEVel?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -120,7 +116,7 @@ class Source4PowerLevel(SCPICmdRead):
     def immediate(self) -> Source4PowerLevelImmediate:
         """Return the ``SOURce4:POWer:LEVel:IMMediate`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce4:POWer:LEVel:IMMediate?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce4:POWer:LEVel:IMMediate?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -134,7 +130,7 @@ class Source4PowerLevel(SCPICmdRead):
 class Source4Power(SCPICmdRead):
     """The ``SOURce4:POWer`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce4:POWer?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce4:POWer?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -151,7 +147,7 @@ class Source4Power(SCPICmdRead):
     def level(self) -> Source4PowerLevel:
         """Return the ``SOURce4:POWer:LEVel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce4:POWer:LEVel?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce4:POWer:LEVel?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -165,7 +161,7 @@ class Source4Power(SCPICmdRead):
 class Source4(SCPICmdRead):
     """The ``SOURce4`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce4?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce4?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -182,7 +178,7 @@ class Source4(SCPICmdRead):
     def power(self) -> Source4Power:
         """Return the ``SOURce4:POWer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce4:POWer?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce4:POWer?`` query and raise
               an AssertionError if the returned value does not match ``value``.

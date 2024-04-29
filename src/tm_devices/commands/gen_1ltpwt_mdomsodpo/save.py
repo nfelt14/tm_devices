@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SAVe:ASSIgn:FOLder?
     - SAVe:ASSIgn:TYPe {IMAGe|WAVEform|SETUp}
     - SAVe:ASSIgn:TYPe?
@@ -50,24 +48,23 @@ if TYPE_CHECKING:
 class SaveWaveformGating(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:WAVEform:GATIng`` command.
 
-    **Description:**
+    Description:
         - Specifies whether save waveform operations should save the entire waveform (NONe) or a
           specified portion of the waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:WAVEform:GATIng?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:WAVEform:GATIng?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVe:WAVEform:GATIng value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:WAVEform:GATIng {NONe|CURSors|SCREEN}
         - SAVe:WAVEform:GATIng?
+        ```
 
-    **Info:**
+    Info:
         - ``CURSors`` turns on cursors and the gates are the waveform record points at the cursor
           positions.
         - ``NONe`` saves the entire waveform.
@@ -80,26 +77,25 @@ class SaveWaveformGating(SCPICmdWrite, SCPICmdRead):
 class SaveWaveformFileformatRfBbIq(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:WAVEform:FILEFormat:RF_BB_IQ`` command.
 
-    **Description:**
+    Description:
         - This command specifies the file format for saving the RF baseband I & Q data. The default
           format is TIQ. See the description of the ``SAVE:WAVEFORM`` command for detailed
           information about these formats.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:WAVEform:FILEFormat:RF_BB_IQ?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:WAVEform:FILEFormat:RF_BB_IQ?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``SAVe:WAVEform:FILEFormat:RF_BB_IQ value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:WAVEform:FILEFormat:RF_BB_IQ {TIQ|MATLAB}
         - SAVe:WAVEform:FILEFormat:RF_BB_IQ?
+        ```
 
-    **Info:**
+    Info:
         - ``TIQ`` specifies to use the TIQ file format for saving the RF baseband I & Q data.
         - ``MATLAB`` specifies to use the MATLAB file format for saving the RF baseband I & Q data.
     """
@@ -108,26 +104,25 @@ class SaveWaveformFileformatRfBbIq(SCPICmdWrite, SCPICmdRead):
 class SaveWaveformFileformat(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:WAVEform:FILEFormat`` command.
 
-    **Description:**
+    Description:
         - This command specifies the file format to be used when saving waveforms - either an
           internal format, .ISF, or an external comma-delimited spreadsheet format, .CSV, that
           includes waveform header and timing information.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:WAVEform:FILEFormat?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:WAVEform:FILEFormat?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVe:WAVEform:FILEFormat value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:WAVEform:FILEFormat {INTERNal|SPREADSheet}
         - SAVe:WAVEform:FILEFormat?
+        ```
 
-    **Info:**
+    Info:
         - ``INTERNal`` specifies to save waveforms using an internal format. The file name should be
           specified with .ISF filename extension. These files can be recalled as reference
           waveforms.
@@ -148,12 +143,12 @@ class SaveWaveformFileformat(SCPICmdWrite, SCPICmdRead):
     def rf_bb_iq(self) -> SaveWaveformFileformatRfBbIq:
         """Return the ``SAVe:WAVEform:FILEFormat:RF_BB_IQ`` command.
 
-        **Description:**
+        Description:
             - This command specifies the file format for saving the RF baseband I & Q data. The
               default format is TIQ. See the description of the ``SAVE:WAVEFORM`` command for
               detailed information about these formats.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:WAVEform:FILEFormat:RF_BB_IQ?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -162,14 +157,13 @@ class SaveWaveformFileformat(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SAVe:WAVEform:FILEFormat:RF_BB_IQ value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:WAVEform:FILEFormat:RF_BB_IQ {TIQ|MATLAB}
             - SAVe:WAVEform:FILEFormat:RF_BB_IQ?
+            ```
 
-        **Info:**
+        Info:
             - ``TIQ`` specifies to use the TIQ file format for saving the RF baseband I & Q data.
             - ``MATLAB`` specifies to use the MATLAB file format for saving the RF baseband I & Q
               data.
@@ -180,20 +174,19 @@ class SaveWaveformFileformat(SCPICmdWrite, SCPICmdRead):
 class SaveWaveform(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:WAVEform`` command.
 
-    **Description:**
+    Description:
         - This command saves the specified waveform to the specified destination reference memory,
           or saves the specified waveform(s) to the specified destination file.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:WAVEform value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:WAVEform <Source>,<Destination>
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` - x has a minimum of 1 and a maximum of 4.
         - ``D<x>`` - x has a minimum of 0 and a maximum of 15.
         - ``EMEM`` (instruments with the arbitrary waveform feature) - EMEM is the arbitrary
@@ -227,26 +220,25 @@ class SaveWaveform(SCPICmdWrite, SCPICmdRead):
     def fileformat(self) -> SaveWaveformFileformat:
         """Return the ``SAVe:WAVEform:FILEFormat`` command.
 
-        **Description:**
+        Description:
             - This command specifies the file format to be used when saving waveforms - either an
               internal format, .ISF, or an external comma-delimited spreadsheet format, .CSV, that
               includes waveform header and timing information.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:WAVEform:FILEFormat?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:WAVEform:FILEFormat?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVe:WAVEform:FILEFormat value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:WAVEform:FILEFormat {INTERNal|SPREADSheet}
             - SAVe:WAVEform:FILEFormat?
+            ```
 
-        **Info:**
+        Info:
             - ``INTERNal`` specifies to save waveforms using an internal format. The file name
               should be specified with .ISF filename extension. These files can be recalled as
               reference waveforms.
@@ -264,25 +256,24 @@ class SaveWaveform(SCPICmdWrite, SCPICmdRead):
     def gating(self) -> SaveWaveformGating:
         """Return the ``SAVe:WAVEform:GATIng`` command.
 
-        **Description:**
+        Description:
             - Specifies whether save waveform operations should save the entire waveform (NONe) or a
               specified portion of the waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:WAVEform:GATIng?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:WAVEform:GATIng?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVe:WAVEform:GATIng value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:WAVEform:GATIng {NONe|CURSors|SCREEN}
             - SAVe:WAVEform:GATIng?
+            ```
 
-        **Info:**
+        Info:
             - ``CURSors`` turns on cursors and the gates are the waveform record points at the
               cursor positions.
             - ``NONe`` saves the entire waveform.
@@ -296,20 +287,19 @@ class SaveWaveform(SCPICmdWrite, SCPICmdRead):
 class SaveSetup(SCPICmdWrite):
     """The ``SAVe:SETUp`` command.
 
-    **Description:**
+    Description:
         - Stores the state of the oscilloscope to a specified memory location. You can later use the
           ``*RCL`` command to restore the oscilloscope to this saved state.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:SETUp value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:SETUp {<file path>|<NR1>}
+        ```
 
-    **Info:**
+    Info:
         - ``<file path>`` is the target location for storing the setup file. <file path> is a quoted
           string that defines the file name and path. Input the file path using the form
           ``<drive>:<dir>``/<filename>. <extension> and one or <dir>s are optional. If you do not
@@ -326,22 +316,21 @@ class SaveSetup(SCPICmdWrite):
 class SaveMask(SCPICmdWrite):
     """The ``SAVe:MASK`` command.
 
-    **Description:**
+    Description:
         - This command saves the current mask definition to the file specified with a quoted string,
           into the current working directory. You can recall the mask from the file by using the
           command ``RECALL:MASK A`` series of examples showing how to use mask commands for typical
           tasks is included in an appendix.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:MASK value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:MASK <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``QString`` is a quoted string that is the name of the mask definition being saved to the
           current working directory.
     """
@@ -352,23 +341,22 @@ class SaveMask(SCPICmdWrite):
 class SaveImageLayout(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:IMAGe:LAYout`` command.
 
-    **Description:**
+    Description:
         - This command specifies the layout to use for saved screen images.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:IMAGe:LAYout?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:IMAGe:LAYout?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVe:IMAGe:LAYout value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:IMAGe:LAYout {LANdscape|PORTRait}
         - SAVe:IMAGe:LAYout?
+        ```
 
-    **Info:**
+    Info:
         - ``LANdscape`` specifies that screen images are saved in landscape format.
         - ``PORTRait`` specifies that screen images are saved in portrait format.
     """
@@ -377,25 +365,24 @@ class SaveImageLayout(SCPICmdWrite, SCPICmdRead):
 class SaveImageInksaver(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:IMAGe:INKSaver`` command.
 
-    **Description:**
+    Description:
         - This command specifies the current ink saver setting for the ``SAVE:IMAGE`` command. If
           set to 'ON' or '1', images will be generated using the ink saver palette. If set to 'OFF'
           or '0', images will be generated using the standard palette.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:IMAGe:INKSaver?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:IMAGe:INKSaver?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVe:IMAGe:INKSaver value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:IMAGe:INKSaver {OFF|ON|0|1}
         - SAVe:IMAGe:INKSaver?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` or 0 generates images from the Inksaver palette.
         - ``ON`` or 1 generates images using the Standard palette.
     """
@@ -404,23 +391,22 @@ class SaveImageInksaver(SCPICmdWrite, SCPICmdRead):
 class SaveImageFileformat(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:IMAGe:FILEFormat`` command.
 
-    **Description:**
+    Description:
         - This command specifies the file format to use for saving screen images.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:IMAGe:FILEFormat?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:IMAGe:FILEFormat?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVe:IMAGe:FILEFormat value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:IMAGe:FILEFormat {PNG|BMP|TIFf}
         - SAVe:IMAGe:FILEFormat?
+        ```
 
-    **Info:**
+    Info:
         - ``PNG`` saves the file in Portable Network Graphics format.
         - ``BMP`` saves the file in Microsoft Windows bitmap format.
         - ``TIFf`` saves the file in Tagged Image File Format.
@@ -430,22 +416,21 @@ class SaveImageFileformat(SCPICmdWrite, SCPICmdRead):
 class SaveImage(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:IMAGe`` command.
 
-    **Description:**
+    Description:
         - Saves a capture of the screen image to the specified file. Supported image formats are
           PNG, Windows Bitmap, and TIFF. The file format is specified by the
           ``SAVE:IMAGE:FILEFORMAT`` command. The ``SAVE:IMAGE:INKSAVER`` command determines whether
           the data is saved in InkSaver mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:IMAGe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:IMAGe <file path>
+        ```
 
-    **Info:**
+    Info:
         - ``<file path>`` is a filename, including path, where the image will be saved. If you do
           not specify a directory, the oscilloscope will store the file in the current working
           directory. File name extensions are not required but are highly recommended.
@@ -466,24 +451,23 @@ class SaveImage(SCPICmdWrite, SCPICmdRead):
     def fileformat(self) -> SaveImageFileformat:
         """Return the ``SAVe:IMAGe:FILEFormat`` command.
 
-        **Description:**
+        Description:
             - This command specifies the file format to use for saving screen images.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:IMAGe:FILEFormat?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:IMAGe:FILEFormat?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVe:IMAGe:FILEFormat value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:IMAGe:FILEFormat {PNG|BMP|TIFf}
             - SAVe:IMAGe:FILEFormat?
+            ```
 
-        **Info:**
+        Info:
             - ``PNG`` saves the file in Portable Network Graphics format.
             - ``BMP`` saves the file in Microsoft Windows bitmap format.
             - ``TIFf`` saves the file in Tagged Image File Format.
@@ -494,26 +478,25 @@ class SaveImage(SCPICmdWrite, SCPICmdRead):
     def inksaver(self) -> SaveImageInksaver:
         """Return the ``SAVe:IMAGe:INKSaver`` command.
 
-        **Description:**
+        Description:
             - This command specifies the current ink saver setting for the ``SAVE:IMAGE`` command.
               If set to 'ON' or '1', images will be generated using the ink saver palette. If set to
               'OFF' or '0', images will be generated using the standard palette.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:IMAGe:INKSaver?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:IMAGe:INKSaver?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVe:IMAGe:INKSaver value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:IMAGe:INKSaver {OFF|ON|0|1}
             - SAVe:IMAGe:INKSaver?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` or 0 generates images from the Inksaver palette.
             - ``ON`` or 1 generates images using the Standard palette.
         """
@@ -523,23 +506,22 @@ class SaveImage(SCPICmdWrite, SCPICmdRead):
     def layout(self) -> SaveImageLayout:
         """Return the ``SAVe:IMAGe:LAYout`` command.
 
-        **Description:**
+        Description:
             - This command specifies the layout to use for saved screen images.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:IMAGe:LAYout?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:IMAGe:LAYout?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVe:IMAGe:LAYout value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:IMAGe:LAYout {LANdscape|PORTRait}
             - SAVe:IMAGe:LAYout?
+            ```
 
-        **Info:**
+        Info:
             - ``LANdscape`` specifies that screen images are saved in landscape format.
             - ``PORTRait`` specifies that screen images are saved in portrait format.
         """
@@ -549,20 +531,19 @@ class SaveImage(SCPICmdWrite, SCPICmdRead):
 class SaveEventtableBusItem(ValidatedDynamicNumberCmd, SCPICmdWrite):
     """The ``SAVe:EVENTtable:BUS<x>`` command.
 
-    **Description:**
+    Description:
         - Saves the data from bus<x> to a specified file and location; where x is the bus number
           (1-2).
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:EVENTtable:BUS<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:EVENTtable:BUS<x> <file path>
+        ```
 
-    **Info:**
+    Info:
         - ``<file path>`` is a quoted string that defines the file name and path location where the
           event table will be stored.
     """
@@ -571,20 +552,19 @@ class SaveEventtableBusItem(ValidatedDynamicNumberCmd, SCPICmdWrite):
 class SaveEventtableBItem(ValidatedDynamicNumberCmd, SCPICmdWrite):
     """The ``SAVe:EVENTtable:B<x>`` command.
 
-    **Description:**
+    Description:
         - Saves the data from bus<x> to a specified file and location; where x is the bus number
           (1-2).
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:EVENTtable:B<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:EVENTtable:B<x> <file path>
+        ```
 
-    **Info:**
+    Info:
         - ``<file path>`` is a quoted string that defines the file name and path location where the
           event table will be stored.
     """
@@ -593,7 +573,7 @@ class SaveEventtableBItem(ValidatedDynamicNumberCmd, SCPICmdWrite):
 class SaveEventtable(SCPICmdRead):
     """The ``SAVe:EVENTtable`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:EVENTtable?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:EVENTtable?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -616,21 +596,20 @@ class SaveEventtable(SCPICmdRead):
     def bus(self) -> Dict[int, SaveEventtableBusItem]:
         """Return the ``SAVe:EVENTtable:BUS<x>`` command.
 
-        **Description:**
+        Description:
             - Saves the data from bus<x> to a specified file and location; where x is the bus number
               (1-2).
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:EVENTtable:BUS<x> value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:EVENTtable:BUS<x> <file path>
+            ```
 
-        **Info:**
+        Info:
             - ``<file path>`` is a quoted string that defines the file name and path location where
               the event table will be stored.
         """
@@ -640,21 +619,20 @@ class SaveEventtable(SCPICmdRead):
     def b(self) -> Dict[int, SaveEventtableBItem]:
         """Return the ``SAVe:EVENTtable:B<x>`` command.
 
-        **Description:**
+        Description:
             - Saves the data from bus<x> to a specified file and location; where x is the bus number
               (1-2).
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:EVENTtable:B<x> value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:EVENTtable:B<x> <file path>
+            ```
 
-        **Info:**
+        Info:
             - ``<file path>`` is a quoted string that defines the file name and path location where
               the event table will be stored.
         """
@@ -664,24 +642,23 @@ class SaveEventtable(SCPICmdRead):
 class SaveAssignType(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:ASSIgn:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command specifies the assignment of the data to be saved when the front-panel Save
           button is pressed.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:ASSIgn:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:ASSIgn:TYPe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVe:ASSIgn:TYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:ASSIgn:TYPe {IMAGe|WAVEform|SETUp}
         - SAVe:ASSIgn:TYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``IMAGe`` assigns the Save button to save screen images.
         - ``WAVEform`` assigns the Save button to save waveforms.
         - ``SETUp`` assigns the Save button to save setups.
@@ -691,27 +668,26 @@ class SaveAssignType(SCPICmdWrite, SCPICmdRead):
 class SaveAssignFolder(SCPICmdRead):
     """The ``SAVe:ASSIgn:FOLder`` command.
 
-    **Description:**
+    Description:
         - Returns the file name that the next front-panel Save button operation will save the
           requested save type data to.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:ASSIgn:FOLder?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:ASSIgn:FOLder?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:ASSIgn:FOLder?
+        ```
     """
 
 
 class SaveAssign(SCPICmdRead):
     """The ``SAVe:ASSIgn`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:ASSIgn?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:ASSIgn?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -730,20 +706,19 @@ class SaveAssign(SCPICmdRead):
     def folder(self) -> SaveAssignFolder:
         """Return the ``SAVe:ASSIgn:FOLder`` command.
 
-        **Description:**
+        Description:
             - Returns the file name that the next front-panel Save button operation will save the
               requested save type data to.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:ASSIgn:FOLder?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:ASSIgn:FOLder?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:ASSIgn:FOLder?
+            ```
         """
         return self._folder
 
@@ -751,24 +726,23 @@ class SaveAssign(SCPICmdRead):
     def type(self) -> SaveAssignType:
         """Return the ``SAVe:ASSIgn:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command specifies the assignment of the data to be saved when the front-panel
               Save button is pressed.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:ASSIgn:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:ASSIgn:TYPe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVe:ASSIgn:TYPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:ASSIgn:TYPe {IMAGe|WAVEform|SETUp}
             - SAVe:ASSIgn:TYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``IMAGe`` assigns the Save button to save screen images.
             - ``WAVEform`` assigns the Save button to save waveforms.
             - ``SETUp`` assigns the Save button to save setups.
@@ -779,7 +753,7 @@ class SaveAssign(SCPICmdRead):
 class Save(SCPICmdRead):
     """The ``SAVe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -806,7 +780,7 @@ class Save(SCPICmdRead):
     def assign(self) -> SaveAssign:
         """Return the ``SAVe:ASSIgn`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:ASSIgn?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:ASSIgn?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -821,7 +795,7 @@ class Save(SCPICmdRead):
     def eventtable(self) -> SaveEventtable:
         """Return the ``SAVe:EVENTtable`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:EVENTtable?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:EVENTtable?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -836,22 +810,21 @@ class Save(SCPICmdRead):
     def image(self) -> SaveImage:
         """Return the ``SAVe:IMAGe`` command.
 
-        **Description:**
+        Description:
             - Saves a capture of the screen image to the specified file. Supported image formats are
               PNG, Windows Bitmap, and TIFF. The file format is specified by the
               ``SAVE:IMAGE:FILEFORMAT`` command. The ``SAVE:IMAGE:INKSAVER`` command determines
               whether the data is saved in InkSaver mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:IMAGe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:IMAGe <file path>
+            ```
 
-        **Info:**
+        Info:
             - ``<file path>`` is a filename, including path, where the image will be saved. If you
               do not specify a directory, the oscilloscope will store the file in the current
               working directory. File name extensions are not required but are highly recommended.
@@ -867,22 +840,21 @@ class Save(SCPICmdRead):
     def mask(self) -> SaveMask:
         """Return the ``SAVe:MASK`` command.
 
-        **Description:**
+        Description:
             - This command saves the current mask definition to the file specified with a quoted
               string, into the current working directory. You can recall the mask from the file by
               using the command ``RECALL:MASK A`` series of examples showing how to use mask
               commands for typical tasks is included in an appendix.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:MASK value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:MASK <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``QString`` is a quoted string that is the name of the mask definition being saved to
               the current working directory.
         """
@@ -892,20 +864,19 @@ class Save(SCPICmdRead):
     def setup(self) -> SaveSetup:
         """Return the ``SAVe:SETUp`` command.
 
-        **Description:**
+        Description:
             - Stores the state of the oscilloscope to a specified memory location. You can later use
               the ``*RCL`` command to restore the oscilloscope to this saved state.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:SETUp value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:SETUp {<file path>|<NR1>}
+            ```
 
-        **Info:**
+        Info:
             - ``<file path>`` is the target location for storing the setup file. <file path> is a
               quoted string that defines the file name and path. Input the file path using the form
               ``<drive>:<dir>``/<filename>. <extension> and one or <dir>s are optional. If you do
@@ -924,20 +895,19 @@ class Save(SCPICmdRead):
     def waveform(self) -> SaveWaveform:
         """Return the ``SAVe:WAVEform`` command.
 
-        **Description:**
+        Description:
             - This command saves the specified waveform to the specified destination reference
               memory, or saves the specified waveform(s) to the specified destination file.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:WAVEform value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:WAVEform <Source>,<Destination>
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` - x has a minimum of 1 and a maximum of 4.
             - ``D<x>`` - x has a minimum of 0 and a maximum of 15.
             - ``EMEM`` (instruments with the arbitrary waveform feature) - EMEM is the arbitrary

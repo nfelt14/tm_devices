@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - ptp.domain
     - ptp.ds.info
     - ptp.enable
@@ -33,22 +31,21 @@ if TYPE_CHECKING:
 class PtpDs(BaseTSPCmd):
     """The ``ptp.ds`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.info``: The ``ptp.ds.info`` function.
     """
 
     def info(self) -> str:
         """Run the ``ptp.ds.info`` function.
 
-        **Description:**
+        Description:
             - This function is a read-only string that returns the settings of the different data
               sets (DS) associated with the IEEE-1588 2008 specification.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - ptp.ds.info
+            ```
 
         Returns:
             The result of the function call.
@@ -68,7 +65,7 @@ class PtpDs(BaseTSPCmd):
 class Ptp(BaseTSPCmd):
     """The ``ptp`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.domain``: The ``ptp.domain`` attribute.
         - ``.ds``: The ``ptp.ds`` command tree.
         - ``.enable``: The ``ptp.enable`` attribute.
@@ -86,19 +83,18 @@ class Ptp(BaseTSPCmd):
     def domain(self) -> str:
         """Access the ``ptp.domain`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes the IEEE Std 1588-2008 precision time protocol (PTP) domain.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(ptp.domain)`` query.
             - Setting this property to a value will send the ``ptp.domain = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - ptp.domain = value
             - print(ptp.domain)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -117,19 +113,18 @@ class Ptp(BaseTSPCmd):
     def domain(self, value: Union[str, float]) -> None:
         """Access the ``ptp.domain`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes the IEEE Std 1588-2008 precision time protocol (PTP) domain.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(ptp.domain)`` query.
             - Setting this property to a value will send the ``ptp.domain = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - ptp.domain = value
             - print(ptp.domain)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -151,7 +146,7 @@ class Ptp(BaseTSPCmd):
     def ds(self) -> PtpDs:
         """Return the ``ptp.ds`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.info``: The ``ptp.ds.info`` function.
         """
         return self._ds
@@ -160,20 +155,19 @@ class Ptp(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``ptp.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the precision time protocol (PTP) described in
               IEEE-1588 on the Series 3700A.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(ptp.enable)`` query.
             - Setting this property to a value will send the ``ptp.enable = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - ptp.enable = value
             - print(ptp.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -192,20 +186,19 @@ class Ptp(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``ptp.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the precision time protocol (PTP) described in
               IEEE-1588 on the Series 3700A.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(ptp.enable)`` query.
             - Setting this property to a value will send the ``ptp.enable = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - ptp.enable = value
             - print(ptp.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -227,20 +220,19 @@ class Ptp(BaseTSPCmd):
     def portstate(self) -> str:
         """Access the ``ptp.portstate`` attribute.
 
-        **Description:**
+        Description:
             - This attribute is a read-only value that indicates the state of the IEEE-1588
               precision time protocol (PTP).
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(ptp.portstate)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(ptp.portstate)
+            ```
 
-        **Info:**
+        Info:
             - ``state``, the ptp.INITIALIZING (0)
               ptp.FAULTY (1)
               ptp.DISABLE (2)
@@ -269,20 +261,19 @@ class Ptp(BaseTSPCmd):
     def slavepreferred(self) -> str:
         """Access the ``ptp.slavepreferred`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes whether you prefer to have the instrument be a subordinate
               clock or not.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(ptp.slavepreferred)`` query.
             - Setting this property to a value will send the ``ptp.slavepreferred = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - ptp.slavepreferred = value
             - print(ptp.slavepreferred)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -301,20 +292,19 @@ class Ptp(BaseTSPCmd):
     def slavepreferred(self, value: Union[str, float]) -> None:
         """Access the ``ptp.slavepreferred`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes whether you prefer to have the instrument be a subordinate
               clock or not.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(ptp.slavepreferred)`` query.
             - Setting this property to a value will send the ``ptp.slavepreferred = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - ptp.slavepreferred = value
             - print(ptp.slavepreferred)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -336,19 +326,18 @@ class Ptp(BaseTSPCmd):
     def utcoffset(self) -> str:
         """Access the ``ptp.utcoffset`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes the offset, in seconds, between UTC and PTP.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(ptp.utcoffset)`` query.
             - Setting this property to a value will send the ``ptp.utcoffset = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - ptp.utcoffset = value
             - print(ptp.utcoffset)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -367,19 +356,18 @@ class Ptp(BaseTSPCmd):
     def utcoffset(self, value: Union[str, float]) -> None:
         """Access the ``ptp.utcoffset`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes the offset, in seconds, between UTC and PTP.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(ptp.utcoffset)`` query.
             - Setting this property to a value will send the ``ptp.utcoffset = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - ptp.utcoffset = value
             - print(ptp.utcoffset)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -400,15 +388,14 @@ class Ptp(BaseTSPCmd):
     def time(self) -> str:
         """Run the ``ptp.time()`` function.
 
-        **Description:**
+        Description:
             - This function is a read-only string that returns the PTP time in seconds and
               fractional seconds.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - ptp.time()
+            ```
 
         Returns:
             The result of the function call.

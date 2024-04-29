@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - DISPlay:BRIGHtness {|MINimum|MAXimum}?[MINimum|MAXimum]
     - DISPlay:CONTrast {<contrast>|MINimum|MAXimum}
     - DISPlay:CONTrast?
@@ -33,49 +31,47 @@ if TYPE_CHECKING:
 class DisplayWindowTextData(SCPICmdWrite, SCPICmdRead):
     """The ``DISPlay:WINDow:TEXT:DATA`` command.
 
-    **Description:**
+    Description:
         - The DISPlay[``:WINDow``]``:TEXT``[``:DATA``] command displays a text message on the
           instrument screen. The DISPlay[``:WINDow``]``:TEXT``[``:DATA``]? query returns the text
           string currently displayed on the instrument screen. The displayable characters are ASCII
           codes 32 through 126, and the instrument can display approximately 64 characters.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISPlay:WINDow:TEXT:DATA?`` query.
         - Using the ``.verify(value)`` method will send the ``DISPlay:WINDow:TEXT:DATA?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISPlay:WINDow:TEXT:DATA value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISPlay:WINDow:TEXT:DATA <string>
         - DISPlay:WINDow:TEXT:DATA?
+        ```
     """
 
 
 class DisplayWindowTextClear(SCPICmdWriteNoArguments):
     """The ``DISPlay:WINDow:TEXT:CLEar`` command.
 
-    **Description:**
+    Description:
         - This command clears the text message from the display screen.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``DISPlay:WINDow:TEXT:CLEar`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISPlay:WINDow:TEXT:CLEar
+        ```
     """
 
 
 class DisplayWindowText(SCPICmdRead):
     """The ``DISPlay:WINDow:TEXT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISPlay:WINDow:TEXT?`` query.
         - Using the ``.verify(value)`` method will send the ``DISPlay:WINDow:TEXT?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -94,17 +90,16 @@ class DisplayWindowText(SCPICmdRead):
     def clear(self) -> DisplayWindowTextClear:
         """Return the ``DISPlay:WINDow:TEXT:CLEar`` command.
 
-        **Description:**
+        Description:
             - This command clears the text message from the display screen.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``DISPlay:WINDow:TEXT:CLEar`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISPlay:WINDow:TEXT:CLEar
+            ```
         """
         return self._clear
 
@@ -112,26 +107,25 @@ class DisplayWindowText(SCPICmdRead):
     def data(self) -> DisplayWindowTextData:
         """Return the ``DISPlay:WINDow:TEXT:DATA`` command.
 
-        **Description:**
+        Description:
             - The DISPlay[``:WINDow``]``:TEXT``[``:DATA``] command displays a text message on the
               instrument screen. The DISPlay[``:WINDow``]``:TEXT``[``:DATA``]? query returns the
               text string currently displayed on the instrument screen. The displayable characters
               are ASCII codes 32 through 126, and the instrument can display approximately 64
               characters.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISPlay:WINDow:TEXT:DATA?`` query.
             - Using the ``.verify(value)`` method will send the ``DISPlay:WINDow:TEXT:DATA?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISPlay:WINDow:TEXT:DATA value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISPlay:WINDow:TEXT:DATA <string>
             - DISPlay:WINDow:TEXT:DATA?
+            ```
         """
         return self._data
 
@@ -139,7 +133,7 @@ class DisplayWindowText(SCPICmdRead):
 class DisplayWindow(SCPICmdRead):
     """The ``DISPlay:WINDow`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISPlay:WINDow?`` query.
         - Using the ``.verify(value)`` method will send the ``DISPlay:WINDow?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -156,7 +150,7 @@ class DisplayWindow(SCPICmdRead):
     def text(self) -> DisplayWindowText:
         """Return the ``DISPlay:WINDow:TEXT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISPlay:WINDow:TEXT?`` query.
             - Using the ``.verify(value)`` method will send the ``DISPlay:WINDow:TEXT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -171,49 +165,47 @@ class DisplayWindow(SCPICmdRead):
 class DisplaySaverState(SCPICmdWrite, SCPICmdRead):
     """The ``DISPlay:SAVer:STATe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the screen saver setting of the LCD display. When enabled,
           the screen saver function starts automatically if no operations are applied to the
           instrument front panel for five minutes.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISPlay:SAVer:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``DISPlay:SAVer:STATe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISPlay:SAVer:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISPlay:SAVer:STATe {ON|OFF|<NR1>}
         - DISPlay:SAVer:STATe?
+        ```
     """
 
 
 class DisplaySaverImmediate(SCPICmdWriteNoArguments):
     """The ``DISPlay:SAVer:IMMediate`` command.
 
-    **Description:**
+    Description:
         - This command sets the screen saver state to ON, regardless of the
           ``DISPlay:SAVer``[``:STATe``]? command setting. The screen saver is enabled immediately
           (without waiting for five minutes).
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``DISPlay:SAVer:IMMediate`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISPlay:SAVer:IMMediate
+        ```
     """
 
 
 class DisplaySaver(SCPICmdRead):
     """The ``DISPlay:SAVer`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISPlay:SAVer?`` query.
         - Using the ``.verify(value)`` method will send the ``DISPlay:SAVer?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -232,19 +224,18 @@ class DisplaySaver(SCPICmdRead):
     def immediate(self) -> DisplaySaverImmediate:
         """Return the ``DISPlay:SAVer:IMMediate`` command.
 
-        **Description:**
+        Description:
             - This command sets the screen saver state to ON, regardless of the
               ``DISPlay:SAVer``[``:STATe``]? command setting. The screen saver is enabled
               immediately (without waiting for five minutes).
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``DISPlay:SAVer:IMMediate`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISPlay:SAVer:IMMediate
+            ```
         """
         return self._immediate
 
@@ -252,24 +243,23 @@ class DisplaySaver(SCPICmdRead):
     def state(self) -> DisplaySaverState:
         """Return the ``DISPlay:SAVer:STATe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the screen saver setting of the LCD display. When
               enabled, the screen saver function starts automatically if no operations are applied
               to the instrument front panel for five minutes.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISPlay:SAVer:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``DISPlay:SAVer:STATe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISPlay:SAVer:STATe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISPlay:SAVer:STATe {ON|OFF|<NR1>}
             - DISPlay:SAVer:STATe?
+            ```
         """
         return self._state
 
@@ -277,45 +267,43 @@ class DisplaySaver(SCPICmdRead):
 class DisplayContrast(SCPICmdWrite, SCPICmdRead):
     """The ``DISPlay:CONTrast`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the contrast of the LCD display.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISPlay:CONTrast?`` query.
         - Using the ``.verify(value)`` method will send the ``DISPlay:CONTrast?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DISPlay:CONTrast value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISPlay:CONTrast {<contrast>|MINimum|MAXimum}
         - DISPlay:CONTrast?
+        ```
     """
 
 
 class DisplayBrightness(SCPICmdWrite):
     """The ``DISPlay:BRIGHtness`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the brightness of the LCD display.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``DISPlay:BRIGHtness value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DISPlay:BRIGHtness {|MINimum|MAXimum}?[MINimum|MAXimum]
+        ```
     """
 
 
 class Display(SCPICmdRead):
     """The ``DISPlay`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DISPlay?`` query.
         - Using the ``.verify(value)`` method will send the ``DISPlay?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -338,17 +326,16 @@ class Display(SCPICmdRead):
     def brightness(self) -> DisplayBrightness:
         """Return the ``DISPlay:BRIGHtness`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the brightness of the LCD display.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``DISPlay:BRIGHtness value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISPlay:BRIGHtness {|MINimum|MAXimum}?[MINimum|MAXimum]
+            ```
         """
         return self._brightness
 
@@ -356,21 +343,20 @@ class Display(SCPICmdRead):
     def contrast(self) -> DisplayContrast:
         """Return the ``DISPlay:CONTrast`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the contrast of the LCD display.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISPlay:CONTrast?`` query.
             - Using the ``.verify(value)`` method will send the ``DISPlay:CONTrast?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DISPlay:CONTrast value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISPlay:CONTrast {<contrast>|MINimum|MAXimum}
             - DISPlay:CONTrast?
+            ```
         """
         return self._contrast
 
@@ -378,7 +364,7 @@ class Display(SCPICmdRead):
     def saver(self) -> DisplaySaver:
         """Return the ``DISPlay:SAVer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISPlay:SAVer?`` query.
             - Using the ``.verify(value)`` method will send the ``DISPlay:SAVer?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -393,7 +379,7 @@ class Display(SCPICmdRead):
     def window(self) -> DisplayWindow:
         """Return the ``DISPlay:WINDow`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISPlay:WINDow?`` query.
             - Using the ``.verify(value)`` method will send the ``DISPlay:WINDow?`` query and raise
               an AssertionError if the returned value does not match ``value``.

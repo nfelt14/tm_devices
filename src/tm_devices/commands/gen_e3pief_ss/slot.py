@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - slot[slot].banks.matrix
     - slot[slot].columns.matrix
     - slot[slot].commonsideohms
@@ -44,10 +42,10 @@ if TYPE_CHECKING:
 class SlotItemThermal(BaseTSPCmd):
     """The ``slot[slot].thermal`` command tree.
 
-    **Info:**
+    Info:
         - ``slot``, the slot number (1 to 6).
 
-    Properties/methods:
+    Properties and methods:
         - ``.state``: The ``slot[slot].thermal.state`` attribute.
     """
 
@@ -55,19 +53,18 @@ class SlotItemThermal(BaseTSPCmd):
     def state(self) -> str:
         """Access the ``slot[slot].thermal.state`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates the thermal state of the card in the specified slot.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].thermal.state)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[slot].thermal.state)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot number (1 to 6).
 
         Raises:
@@ -87,10 +84,10 @@ class SlotItemThermal(BaseTSPCmd):
 class SlotItemRows(BaseTSPCmd):
     """The ``slot[slot].rows`` command tree.
 
-    **Info:**
+    Info:
         - ``slot``, the slot number (1 to 6).
 
-    Properties/methods:
+    Properties and methods:
         - ``.matrix``: The ``slot[slot].rows.matrix`` attribute.
     """
 
@@ -98,20 +95,19 @@ class SlotItemRows(BaseTSPCmd):
     def matrix(self) -> str:
         """Access the ``slot[slot].rows.matrix`` attribute.
 
-        **Description:**
+        Description:
             - This attribute returns the number of rows in the matrix on the card in the specified
               slot.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].rows.matrix)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[slot].rows.matrix)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot number (1 to 6).
 
         Raises:
@@ -131,10 +127,10 @@ class SlotItemRows(BaseTSPCmd):
 class SlotItemPoles(BaseTSPCmd):
     """The ``slot[slot].poles`` command tree.
 
-    **Info:**
+    Info:
         - ``slot``, the slot number (1 to 6).
 
-    Properties/methods:
+    Properties and methods:
         - ``.four``: The ``slot[slot].poles.four`` attribute.
         - ``.one``: The ``slot[slot].poles.one`` attribute.
         - ``.two``: The ``slot[slot].poles.two`` attribute.
@@ -144,20 +140,19 @@ class SlotItemPoles(BaseTSPCmd):
     def four(self) -> str:
         """Access the ``slot[slot].poles.four`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if a four-pole setting is supported for the channels on the
               card.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].poles.four)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[slot].poles.four)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot number (1 to 6).
 
         Raises:
@@ -177,20 +172,19 @@ class SlotItemPoles(BaseTSPCmd):
     def one(self) -> str:
         """Access the ``slot[slot].poles.one`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if a one-pole setting is supported for the channels on the
               specified card.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].poles.one)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[slot].poles.one)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot number  (1 to 6).
 
         Raises:
@@ -210,20 +204,19 @@ class SlotItemPoles(BaseTSPCmd):
     def two(self) -> str:
         """Access the ``slot[slot].poles.two`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if a two-pole setting is supported for the channels on the
               card.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].poles.two)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[slot].poles.two)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot number (1 to 6).
 
         Raises:
@@ -243,10 +236,10 @@ class SlotItemPoles(BaseTSPCmd):
 class SlotItemInterlock(BaseTSPCmd):
     """The ``slot[slot].interlock`` command tree.
 
-    **Info:**
+    Info:
         - ``slot``, the slot (1 to 6) containing the card to which the interlock state is applied.
 
-    Properties/methods:
+    Properties and methods:
         - ``.override``: The ``slot[slot].interlock.override`` attribute.
         - ``.state``: The ``slot[slot].interlock.state`` attribute.
     """
@@ -255,22 +248,21 @@ class SlotItemInterlock(BaseTSPCmd):
     def override(self) -> str:
         """Access the ``slot[slot].interlock.override`` attribute.
 
-        **Description:**
+        Description:
             - This attribute suppresses or permits interlock errors to be generated.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].interlock.override)`` query.
             - Setting this property to a value will send the
               ``slot[slot].interlock.override = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - slot[slot].interlock.override = value
             - print(slot[slot].interlock.override)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot (1 to 6) containing the card to which the interlock state is
               applied.
 
@@ -291,22 +283,21 @@ class SlotItemInterlock(BaseTSPCmd):
     def override(self, value: Union[str, float]) -> None:
         """Access the ``slot[slot].interlock.override`` attribute.
 
-        **Description:**
+        Description:
             - This attribute suppresses or permits interlock errors to be generated.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].interlock.override)`` query.
             - Setting this property to a value will send the
               ``slot[slot].interlock.override = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - slot[slot].interlock.override = value
             - print(slot[slot].interlock.override)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot (1 to 6) containing the card to which the interlock state is
               applied.
 
@@ -330,19 +321,18 @@ class SlotItemInterlock(BaseTSPCmd):
     def state(self) -> str:
         """Access the ``slot[slot].interlock.state`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates the interlock state of a card.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].interlock.state)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[slot].interlock.state)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot (1 to 6) containing the card to which the interlock state is
               applied.
 
@@ -363,10 +353,10 @@ class SlotItemInterlock(BaseTSPCmd):
 class SlotItemColumns(BaseTSPCmd):
     """The ``slot[slot].columns`` command tree.
 
-    **Info:**
+    Info:
         - ``slot``, the slot number (1 to 6).
 
-    Properties/methods:
+    Properties and methods:
         - ``.matrix``: The ``slot[slot].columns.matrix`` attribute.
     """
 
@@ -374,20 +364,19 @@ class SlotItemColumns(BaseTSPCmd):
     def matrix(self) -> str:
         """Access the ``slot[slot].columns.matrix`` attribute.
 
-        **Description:**
+        Description:
             - This attribute returns the number of columns in the matrix for the card in the
               specified slot.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].columns.matrix)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[slot].columns.matrix)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot number (1 to 6).
 
         Raises:
@@ -407,10 +396,10 @@ class SlotItemColumns(BaseTSPCmd):
 class SlotItemBanks(BaseTSPCmd):
     """The ``slot[slot].banks`` command tree.
 
-    **Info:**
+    Info:
         - ``slot``, the slot number.
 
-    Properties/methods:
+    Properties and methods:
         - ``.matrix``: The ``slot[slot].banks.matrix`` attribute.
     """
 
@@ -418,19 +407,18 @@ class SlotItemBanks(BaseTSPCmd):
     def matrix(self) -> str:
         """Access the ``slot[slot].banks.matrix`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes the number of banks in the matrix for a card.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].banks.matrix)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[slot].banks.matrix)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot number.
 
         Raises:
@@ -450,10 +438,10 @@ class SlotItemBanks(BaseTSPCmd):
 class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``slot[slot]`` command tree.
 
-    **Info:**
+    Info:
         - ``slot``, the slot number.
 
-    Properties/methods:
+    Properties and methods:
         - ``.banks``: The ``slot[slot].banks`` command tree.
         - ``.columns``: The ``slot[slot].columns`` command tree.
         - ``.commonsideohms``: The ``slot[slot].commonsideohms`` attribute.
@@ -486,10 +474,10 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def banks(self) -> SlotItemBanks:
         """Return the ``slot[slot].banks`` command tree.
 
-        **Info:**
+        Info:
             - ``slot``, the slot number.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.matrix``: The ``slot[slot].banks.matrix`` attribute.
         """
         return self._banks
@@ -498,10 +486,10 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def columns(self) -> SlotItemColumns:
         """Return the ``slot[slot].columns`` command tree.
 
-        **Info:**
+        Info:
             - ``slot``, the slot number (1 to 6).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.matrix``: The ``slot[slot].columns.matrix`` attribute.
         """
         return self._columns
@@ -510,20 +498,19 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def commonsideohms(self) -> str:
         """Access the ``slot[slot].commonsideohms`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates whether a card in the specified slot supports commonside
               channels for 4-wire resistance measurements.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].commonsideohms)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[slot].commonsideohms)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot number (1 to 6).
 
         Raises:
@@ -543,20 +530,19 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def digio(self) -> str:
         """Access the ``slot[slot].digio`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates whether or not a card in the specified slot supports digital
               input and output channels.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].digio)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[slot].digio)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot number (1 to 6).
 
         Raises:
@@ -576,19 +562,18 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def idn(self) -> str:
         """Access the ``slot[slot].idn`` attribute.
 
-        **Description:**
+        Description:
             - This attribute returns a string that contains information about the plug-in card.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].idn)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[slot].idn)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot number(1 to 6).
 
         Raises:
@@ -608,11 +593,11 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def interlock(self) -> SlotItemInterlock:
         """Return the ``slot[slot].interlock`` command tree.
 
-        **Info:**
+        Info:
             - ``slot``, the slot (1 to 6) containing the card to which the interlock state is
               applied.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.override``: The ``slot[slot].interlock.override`` attribute.
             - ``.state``: The ``slot[slot].interlock.state`` attribute.
         """
@@ -622,19 +607,18 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def isolated(self) -> str:
         """Access the ``slot[slot].isolated`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if the card in the specified slot supports isolated channels.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].isolated)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[slot].isolated)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot number (1 to 6).
 
         Raises:
@@ -654,19 +638,18 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def matrix(self) -> str:
         """Access the ``slot[slot].matrix`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if the card in the specified slot supports matrix channels.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].matrix)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[slot].matrix)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot number (1 to 6).
 
         Raises:
@@ -686,20 +669,19 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def maxvoltage(self) -> str:
         """Access the ``slot[slot].maxvoltage`` attribute.
 
-        **Description:**
+        Description:
             - This attribute returns the maximum voltage of all channels on a plug-in card in the
               specified slot.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].maxvoltage)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[slot].maxvoltage)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot number (1 to 6).
 
         Raises:
@@ -719,20 +701,19 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def multiplexer(self) -> str:
         """Access the ``slot[slot].multiplexer`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if the card in the specified slot supports multiplexer
               channels.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].multiplexer)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[slot].multiplexer)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot number (1 to 6).
 
         Raises:
@@ -752,10 +733,10 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def poles(self) -> SlotItemPoles:
         """Return the ``slot[slot].poles`` command tree.
 
-        **Info:**
+        Info:
             - ``slot``, the slot number (1 to 6).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.four``: The ``slot[slot].poles.four`` attribute.
             - ``.one``: The ``slot[slot].poles.one`` attribute.
             - ``.two``: The ``slot[slot].poles.two`` attribute.
@@ -766,22 +747,21 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def pseudocard(self) -> str:
         """Access the ``slot[slot].pseudocard`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies a pseudocard to implement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].pseudocard)`` query.
             - Setting this property to a value will send the ``slot[slot].pseudocard = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - slot[slot].pseudocard = value
             - print(slot[slot].pseudocard)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot number (1 to 6).
 
         Raises:
@@ -801,22 +781,21 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def pseudocard(self, value: Union[str, float]) -> None:
         """Access the ``slot[slot].pseudocard`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies a pseudocard to implement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].pseudocard)`` query.
             - Setting this property to a value will send the ``slot[slot].pseudocard = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - slot[slot].pseudocard = value
             - print(slot[slot].pseudocard)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot number (1 to 6).
 
         Raises:
@@ -839,10 +818,10 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def rows(self) -> SlotItemRows:
         """Return the ``slot[slot].rows`` command tree.
 
-        **Info:**
+        Info:
             - ``slot``, the slot number (1 to 6).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.matrix``: The ``slot[slot].rows.matrix`` attribute.
         """
         return self._rows
@@ -851,20 +830,19 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def tempsensor(self) -> str:
         """Access the ``slot[slot].tempsensor`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if the module in the specified slot supports temperature
               sensor channels.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[slot].tempsensor)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[slot].tempsensor)
+            ```
 
-        **Info:**
+        Info:
             - ``slot``, the slot number (1 to 6).
 
         Raises:
@@ -884,10 +862,10 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def thermal(self) -> SlotItemThermal:
         """Return the ``slot[slot].thermal`` command tree.
 
-        **Info:**
+        Info:
             - ``slot``, the slot number (1 to 6).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.state``: The ``slot[slot].thermal.state`` attribute.
         """
         return self._thermal

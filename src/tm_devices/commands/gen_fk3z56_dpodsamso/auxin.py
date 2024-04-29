@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - AUXIn:BANdwidth <NR3>
     - AUXIn:BANdwidth?
     - AUXIn:COUPling <NR3>
@@ -43,7 +41,16 @@ Commands and Queries:
     - AUXIn:PRObe:INPUTMode:DMOFFSet <NR3>
     - AUXIn:PRObe:INPUTMode:DMOFFSet?
     - AUXIn:PRObe:INPUTMode?
-    - AUXIn:PRObe:RANge {ATTEN1X|ATTEN1_25X|ATTEN1_5X|ATTEN1_75X|ATTEN2X|ATTEN2_5X| ATTEN3X|ATTEN3_5X|ATTEN4X|ATTEN4_5X|ATTEN5X|ATTEN5_5X| ATTEN6X|ATTEN6_5X|ATTEN7X|ATTEN7_5X|ATTEN8X|ATTEN8_5X| ATTEN9X|ATTEN9_5X|ATTEN10X|ATTEN12_5X|ATTEN15X|ATTEN17_5X| ATTEN20X|ATTEN25X|ATTEN30X|ATTEN35X|ATTEN40X|ATTEN45X| ATTEN50X|ATTEN55X|ATTEN60X|ATTEN65X|ATTEN70X|ATTEN75X| ATTEN80X|ATTEN85X|ATTEN90X|ATTEN95X|ATTEN100X|ATTEN125X| ATTEN150X|ATTEN175X|ATTEN200X|ATTEN250X|ATTEN300X| ATTEN350X|ATTEN400X|ATTEN450X|ATTEN500X|ATTEN550X| ATTEN600X|ATTEN650X|ATTEN700X|ATTEN750X|ATTEN800X| ATTEN850X|ATTEN900X|ATTEN950X|ATTEN1000X}
+    - AUXIn:PRObe:RANge {ATTEN1X|ATTEN1_25X|ATTEN1_5X|ATTEN1_75X|ATTEN2X|ATTEN2_5X|
+      ATTEN3X|ATTEN3_5X|ATTEN4X|ATTEN4_5X|ATTEN5X|ATTEN5_5X|
+      ATTEN6X|ATTEN6_5X|ATTEN7X|ATTEN7_5X|ATTEN8X|ATTEN8_5X|
+      ATTEN9X|ATTEN9_5X|ATTEN10X|ATTEN12_5X|ATTEN15X|ATTEN17_5X|
+      ATTEN20X|ATTEN25X|ATTEN30X|ATTEN35X|ATTEN40X|ATTEN45X|
+      ATTEN50X|ATTEN55X|ATTEN60X|ATTEN65X|ATTEN70X|ATTEN75X|
+      ATTEN80X|ATTEN85X|ATTEN90X|ATTEN95X|ATTEN100X|ATTEN125X|
+      ATTEN150X|ATTEN175X|ATTEN200X|ATTEN250X|ATTEN300X|
+      ATTEN350X|ATTEN400X|ATTEN450X|ATTEN500X|ATTEN550X|
+      ATTEN600X|ATTEN650X|ATTEN700X|ATTEN750X|ATTEN800X| ATTEN850X|ATTEN900X|ATTEN950X|ATTEN1000X}
     - AUXIn:PRObe:RANge?
     - AUXIn:PRObe:RESistance?
     - AUXIn:PRObe:SET <QString>
@@ -57,7 +64,7 @@ Commands and Queries:
     - AUXIn:VTERm:DUAL:A?
     - AUXIn:VTERm:DUAL:B <NR3>
     - AUXIn:VTERm:DUAL:B?
-"""  # noqa: E501
+"""
 
 from typing import Optional, TYPE_CHECKING
 
@@ -70,24 +77,23 @@ if TYPE_CHECKING:
 class AuxinVtermDualB(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:VTERm:DUAL:B`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the termination voltage for probes with dual inputs that
           support settable termination voltage.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:VTERm:DUAL:B?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:VTERm:DUAL:B?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXIn:VTERm:DUAL:B value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:VTERm:DUAL:B <NR3>
         - AUXIn:VTERm:DUAL:B?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the termination voltage.
     """
 
@@ -95,24 +101,23 @@ class AuxinVtermDualB(SCPICmdWrite, SCPICmdRead):
 class AuxinVtermDualA(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:VTERm:DUAL:A`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the termination voltage for probes with dual inputs that
           support settable termination voltage.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:VTERm:DUAL:A?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:VTERm:DUAL:A?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXIn:VTERm:DUAL:A value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:VTERm:DUAL:A <NR3>
         - AUXIn:VTERm:DUAL:A?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the termination voltage.
     """
 
@@ -120,7 +125,7 @@ class AuxinVtermDualA(SCPICmdWrite, SCPICmdRead):
 class AuxinVtermDual(SCPICmdRead):
     """The ``AUXIn:VTERm:DUAL`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:VTERm:DUAL?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:VTERm:DUAL?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -139,24 +144,23 @@ class AuxinVtermDual(SCPICmdRead):
     def a(self) -> AuxinVtermDualA:
         """Return the ``AUXIn:VTERm:DUAL:A`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the termination voltage for probes with dual inputs that
               support settable termination voltage.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:VTERm:DUAL:A?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:VTERm:DUAL:A?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXIn:VTERm:DUAL:A value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:VTERm:DUAL:A <NR3>
             - AUXIn:VTERm:DUAL:A?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the termination voltage.
         """
         return self._a
@@ -165,24 +169,23 @@ class AuxinVtermDual(SCPICmdRead):
     def b(self) -> AuxinVtermDualB:
         """Return the ``AUXIn:VTERm:DUAL:B`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the termination voltage for probes with dual inputs that
               support settable termination voltage.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:VTERm:DUAL:B?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:VTERm:DUAL:B?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXIn:VTERm:DUAL:B value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:VTERm:DUAL:B <NR3>
             - AUXIn:VTERm:DUAL:B?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the termination voltage.
         """
         return self._b
@@ -191,7 +194,7 @@ class AuxinVtermDual(SCPICmdRead):
 class AuxinVterm(SCPICmdRead):
     """The ``AUXIn:VTERm`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:VTERm?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:VTERm?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -208,7 +211,7 @@ class AuxinVterm(SCPICmdRead):
     def dual(self) -> AuxinVtermDual:
         """Return the ``AUXIn:VTERm:DUAL`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:VTERm:DUAL?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:VTERm:DUAL?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -223,43 +226,41 @@ class AuxinVterm(SCPICmdRead):
 class AuxinProbeUnits(SCPICmdRead):
     """The ``AUXIn:PRObe:UNIts`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns a string describing the units of measure for the probe
           attached to the AUX In input.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PRObe:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:UNIts?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PRObe:UNIts?
+        ```
     """
 
 
 class AuxinProbeTiptype(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:PRObe:TIPtype`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the type of probe tip being used.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PRObe:TIPtype?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:TIPtype?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:TIPtype value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PRObe:TIPtype {HBWStraightflex|OTHer}
         - AUXIn:PRObe:TIPtype?
+        ```
 
-    **Info:**
+    Info:
         - ``HBWStraightflex`` lets the instrument know you are using a high bandwidth straight-flex
           probe tip.
         - ``OTHer`` lets the instrument know you are not using a high bandwidth straight-flex probe
@@ -270,25 +271,24 @@ class AuxinProbeTiptype(SCPICmdWrite, SCPICmdRead):
 class AuxinProbeSignal(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:PRObe:SIGnal`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries aspects of probe accessory user interfaces. The available
           arguments for this command will vary depending on the accessory you attach to the
           instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PRObe:SIGnal?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:SIGnal?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:SIGnal value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PRObe:SIGnal {PASS|BYPass}
         - AUXIn:PRObe:SIGnal?
+        ```
 
-    **Info:**
+    Info:
         - ``PASS`` opens a relay passing your signal to the instrument.
         - ``BYPass`` closes a relay preventing your signal from reaching the instrument. During
           probe degauss, the signal should be bypassed.
@@ -298,7 +298,7 @@ class AuxinProbeSignal(SCPICmdWrite, SCPICmdRead):
 class AuxinProbeSet(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:PRObe:SET`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries aspects of probe accessory user interfaces, for example probe
           attenuation factors. The available arguments for this command will vary depending on the
           accessory you attach to the instrument auxiliary trigger input. For the P7260 probe, you
@@ -309,20 +309,19 @@ class AuxinProbeSet(SCPICmdWrite, SCPICmdRead):
           remove the probe. Also, the instrument does not store the selection in the save/recall
           setup operation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PRObe:SET?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:SET?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:SET value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PRObe:SET <QString>
         - AUXIn:PRObe:SET?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string representing a settable aspect of the attached accessory.
         - ``ATTENUATION 5X`` sets the P7260 probe to ±0.75 V dynamic range with 6 GHz bandwidth and
           5X attenuation.
@@ -339,67 +338,64 @@ class AuxinProbeSet(SCPICmdWrite, SCPICmdRead):
 class AuxinProbeResistance(SCPICmdRead):
     """The ``AUXIn:PRObe:RESistance`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the resistance factor of the probe that is attached to the
           AUX In input.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PRObe:RESistance?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:RESistance?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PRObe:RESistance?
+        ```
     """
 
 
 class AuxinProbeRange(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:PRObe:RANge`` command.
 
-    **Description:**
+    Description:
         - This command controls or queries the set attenuation range of the probe on the AUX In
           input.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PRObe:RANge?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:RANge?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:RANge value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PRObe:RANge {ATTEN1X|ATTEN1_25X|ATTEN1_5X|ATTEN1_75X|ATTEN2X|ATTEN2_5X| ATTEN3X|ATTEN3_5X|ATTEN4X|ATTEN4_5X|ATTEN5X|ATTEN5_5X| ATTEN6X|ATTEN6_5X|ATTEN7X|ATTEN7_5X|ATTEN8X|ATTEN8_5X| ATTEN9X|ATTEN9_5X|ATTEN10X|ATTEN12_5X|ATTEN15X|ATTEN17_5X| ATTEN20X|ATTEN25X|ATTEN30X|ATTEN35X|ATTEN40X|ATTEN45X| ATTEN50X|ATTEN55X|ATTEN60X|ATTEN65X|ATTEN70X|ATTEN75X| ATTEN80X|ATTEN85X|ATTEN90X|ATTEN95X|ATTEN100X|ATTEN125X| ATTEN150X|ATTEN175X|ATTEN200X|ATTEN250X|ATTEN300X| ATTEN350X|ATTEN400X|ATTEN450X|ATTEN500X|ATTEN550X| ATTEN600X|ATTEN650X|ATTEN700X|ATTEN750X|ATTEN800X| ATTEN850X|ATTEN900X|ATTEN950X|ATTEN1000X}
         - AUXIn:PRObe:RANge?
+        ```
     """  # noqa: E501
 
 
 class AuxinProbeInputmodeDmoffset(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:PRObe:INPUTMode:DMOFFSet`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the requested differential mode offset control of the probe
           that is attached to the AUX In input.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PRObe:INPUTMode:DMOFFSet?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:INPUTMode:DMOFFSet?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:INPUTMode:DMOFFSet value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PRObe:INPUTMode:DMOFFSet <NR3>
         - AUXIn:PRObe:INPUTMode:DMOFFSet?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the differential mode offset control.
     """
 
@@ -407,25 +403,24 @@ class AuxinProbeInputmodeDmoffset(SCPICmdWrite, SCPICmdRead):
 class AuxinProbeInputmodeCmoffset(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:PRObe:INPUTMode:CMOFFSet`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the requested common mode offset control of the probe that is
           attached to the AUX In input.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PRObe:INPUTMode:CMOFFSet?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:INPUTMode:CMOFFSet?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:INPUTMode:CMOFFSet value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PRObe:INPUTMode:CMOFFSet <NR3>
         - AUXIn:PRObe:INPUTMode:CMOFFSet?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the common mode offset control.
     """
 
@@ -433,25 +428,24 @@ class AuxinProbeInputmodeCmoffset(SCPICmdWrite, SCPICmdRead):
 class AuxinProbeInputmodeBoffset(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:PRObe:INPUTMode:BOFFSet`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the requested B mode offset control of the probe that is
           attached to the AUX In input.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PRObe:INPUTMode:BOFFSet?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:INPUTMode:BOFFSet?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:INPUTMode:BOFFSet value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PRObe:INPUTMode:BOFFSet <NR3>
         - AUXIn:PRObe:INPUTMode:BOFFSet?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the B mode offset control.
     """
 
@@ -459,25 +453,24 @@ class AuxinProbeInputmodeBoffset(SCPICmdWrite, SCPICmdRead):
 class AuxinProbeInputmodeAoffset(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:PRObe:INPUTMode:AOFFSet`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the requested A mode offset control of the probe that is
           attached to the AUX In input.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PRObe:INPUTMode:AOFFSet?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:INPUTMode:AOFFSet?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:INPUTMode:AOFFSet value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PRObe:INPUTMode:AOFFSet <NR3>
         - AUXIn:PRObe:INPUTMode:AOFFSet?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the A mode offset control.
     """
 
@@ -485,23 +478,22 @@ class AuxinProbeInputmodeAoffset(SCPICmdWrite, SCPICmdRead):
 class AuxinProbeInputmode(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:PRObe:INPUTMode`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries one of the probe's four input modes on the AUX In input.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PRObe:INPUTMode?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:INPUTMode?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:INPUTMode value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PRObe:INPUTMode {COMmonmode|DEFault|DIFFerential|A|B}
         - AUXIn:PRObe:INPUTMode?
+        ```
 
-    **Info:**
+    Info:
         - ``COMmonmode`` sets the probe to route common-mode signals to the host.
         - ``DEFault`` sets the probe to the default mode.
         - ``DIFFerential`` sets the probe to route differential signals to the host.
@@ -526,25 +518,24 @@ class AuxinProbeInputmode(SCPICmdWrite, SCPICmdRead):
     def aoffset(self) -> AuxinProbeInputmodeAoffset:
         """Return the ``AUXIn:PRObe:INPUTMode:AOFFSet`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the requested A mode offset control of the probe that is
               attached to the AUX In input.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PRObe:INPUTMode:AOFFSet?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:INPUTMode:AOFFSet?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``AUXIn:PRObe:INPUTMode:AOFFSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PRObe:INPUTMode:AOFFSet <NR3>
             - AUXIn:PRObe:INPUTMode:AOFFSet?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the A mode offset control.
         """
         return self._aoffset
@@ -553,25 +544,24 @@ class AuxinProbeInputmode(SCPICmdWrite, SCPICmdRead):
     def boffset(self) -> AuxinProbeInputmodeBoffset:
         """Return the ``AUXIn:PRObe:INPUTMode:BOFFSet`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the requested B mode offset control of the probe that is
               attached to the AUX In input.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PRObe:INPUTMode:BOFFSet?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:INPUTMode:BOFFSet?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``AUXIn:PRObe:INPUTMode:BOFFSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PRObe:INPUTMode:BOFFSet <NR3>
             - AUXIn:PRObe:INPUTMode:BOFFSet?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the B mode offset control.
         """
         return self._boffset
@@ -580,25 +570,24 @@ class AuxinProbeInputmode(SCPICmdWrite, SCPICmdRead):
     def cmoffset(self) -> AuxinProbeInputmodeCmoffset:
         """Return the ``AUXIn:PRObe:INPUTMode:CMOFFSet`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the requested common mode offset control of the probe
               that is attached to the AUX In input.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PRObe:INPUTMode:CMOFFSet?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:INPUTMode:CMOFFSet?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``AUXIn:PRObe:INPUTMode:CMOFFSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PRObe:INPUTMode:CMOFFSet <NR3>
             - AUXIn:PRObe:INPUTMode:CMOFFSet?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the common mode offset control.
         """
         return self._cmoffset
@@ -607,25 +596,24 @@ class AuxinProbeInputmode(SCPICmdWrite, SCPICmdRead):
     def dmoffset(self) -> AuxinProbeInputmodeDmoffset:
         """Return the ``AUXIn:PRObe:INPUTMode:DMOFFSet`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the requested differential mode offset control of the
               probe that is attached to the AUX In input.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PRObe:INPUTMode:DMOFFSet?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:INPUTMode:DMOFFSet?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``AUXIn:PRObe:INPUTMode:DMOFFSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PRObe:INPUTMode:DMOFFSet <NR3>
             - AUXIn:PRObe:INPUTMode:DMOFFSet?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the differential mode offset control.
         """
         return self._dmoffset
@@ -634,45 +622,43 @@ class AuxinProbeInputmode(SCPICmdWrite, SCPICmdRead):
 class AuxinProbeIdType(SCPICmdRead):
     """The ``AUXIn:PRObe:ID:TYPe`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the probe type.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PRObe:ID:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:ID:TYPe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PRObe:ID:TYPe?
+        ```
     """
 
 
 class AuxinProbeIdSernumber(SCPICmdRead):
     """The ``AUXIn:PRObe:ID:SERnumber`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the probe serial number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PRObe:ID:SERnumber?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:ID:SERnumber?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PRObe:ID:SERnumber?
+        ```
     """
 
 
 class AuxinProbeId(SCPICmdRead):
     """The ``AUXIn:PRObe:ID`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PRObe:ID?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:ID?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -691,19 +677,18 @@ class AuxinProbeId(SCPICmdRead):
     def sernumber(self) -> AuxinProbeIdSernumber:
         """Return the ``AUXIn:PRObe:ID:SERnumber`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the probe serial number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PRObe:ID:SERnumber?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:ID:SERnumber?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PRObe:ID:SERnumber?
+            ```
         """
         return self._sernumber
 
@@ -711,19 +696,18 @@ class AuxinProbeId(SCPICmdRead):
     def type(self) -> AuxinProbeIdType:
         """Return the ``AUXIn:PRObe:ID:TYPe`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the probe type.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PRObe:ID:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:ID:TYPe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PRObe:ID:TYPe?
+            ```
         """
         return self._type
 
@@ -731,46 +715,44 @@ class AuxinProbeId(SCPICmdRead):
 class AuxinProbeGain(SCPICmdRead):
     """The ``AUXIn:PRObe:GAIN`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the gain factor of the probe that is attached to the AUX
           In input. The 'gain' of a probe is the output divided by the input transfer ratio. For
           example, a common 10x probe has a gain of 0.1.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PRObe:GAIN?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:GAIN?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PRObe:GAIN?
+        ```
     """
 
 
 class AuxinProbeForcedrange(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:PRObe:FORCEDRange`` command.
 
-    **Description:**
+    Description:
         - This command sets the probe attached to the AUX In input to the specified range, or the
           command queries the probe range.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PRObe:FORCEDRange?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:FORCEDRange?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:FORCEDRange value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PRObe:FORCEDRange <NR3>
         - AUXIn:PRObe:FORCEDRange?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the probe range.
     """
 
@@ -778,39 +760,37 @@ class AuxinProbeForcedrange(SCPICmdWrite, SCPICmdRead):
 class AuxinProbeDegaussState(SCPICmdRead):
     """The ``AUXIn:PRObe:DEGAUSS:STATE`` command.
 
-    **Description:**
+    Description:
         - This command queries whether the probe attached to the AUX In input is degaussed.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PRObe:DEGAUSS:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:DEGAUSS:STATE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PRObe:DEGAUSS:STATE?
+        ```
     """
 
 
 class AuxinProbeDegauss(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:PRObe:DEGAUSS`` command.
 
-    **Description:**
+    Description:
         - This command starts a degauss cycle of the probe attached to the AUX In input. The degauss
           cycle will change with an appropriate probe attached.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:DEGAUSS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PRObe:DEGAUSS EXECute
+        ```
 
-    **Info:**
+    Info:
         - ``EXECute`` starts a probe degauss cycle.
 
     Properties:
@@ -825,19 +805,18 @@ class AuxinProbeDegauss(SCPICmdWrite, SCPICmdRead):
     def state(self) -> AuxinProbeDegaussState:
         """Return the ``AUXIn:PRObe:DEGAUSS:STATE`` command.
 
-        **Description:**
+        Description:
             - This command queries whether the probe attached to the AUX In input is degaussed.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PRObe:DEGAUSS:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:DEGAUSS:STATE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PRObe:DEGAUSS:STATE?
+            ```
         """
         return self._state
 
@@ -845,19 +824,18 @@ class AuxinProbeDegauss(SCPICmdWrite, SCPICmdRead):
 class AuxinProbeAutozero(SCPICmdWrite):
     """The ``AUXIn:PRObe:AUTOZero`` command.
 
-    **Description:**
+    Description:
         - The command sets the probe attached to the AUX In input to autozero.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:AUTOZero value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PRObe:AUTOZero EXECute
+        ```
 
-    **Info:**
+    Info:
         - ``EXECute`` sets the probe to autozero.
     """
 
@@ -866,7 +844,7 @@ class AuxinProbeAutozero(SCPICmdWrite):
 class AuxinProbe(SCPICmdRead):
     """The ``AUXIn:PRObe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PRObe?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -905,20 +883,19 @@ class AuxinProbe(SCPICmdRead):
     def autozero(self) -> AuxinProbeAutozero:
         """Return the ``AUXIn:PRObe:AUTOZero`` command.
 
-        **Description:**
+        Description:
             - The command sets the probe attached to the AUX In input to autozero.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:AUTOZero value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PRObe:AUTOZero EXECute
+            ```
 
-        **Info:**
+        Info:
             - ``EXECute`` sets the probe to autozero.
         """
         return self._autozero
@@ -927,21 +904,20 @@ class AuxinProbe(SCPICmdRead):
     def degauss(self) -> AuxinProbeDegauss:
         """Return the ``AUXIn:PRObe:DEGAUSS`` command.
 
-        **Description:**
+        Description:
             - This command starts a degauss cycle of the probe attached to the AUX In input. The
               degauss cycle will change with an appropriate probe attached.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:DEGAUSS value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PRObe:DEGAUSS EXECute
+            ```
 
-        **Info:**
+        Info:
             - ``EXECute`` starts a probe degauss cycle.
 
         Sub-properties:
@@ -953,25 +929,24 @@ class AuxinProbe(SCPICmdRead):
     def forcedrange(self) -> AuxinProbeForcedrange:
         """Return the ``AUXIn:PRObe:FORCEDRange`` command.
 
-        **Description:**
+        Description:
             - This command sets the probe attached to the AUX In input to the specified range, or
               the command queries the probe range.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PRObe:FORCEDRange?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:FORCEDRange?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:FORCEDRange value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PRObe:FORCEDRange <NR3>
             - AUXIn:PRObe:FORCEDRange?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the probe range.
         """
         return self._forcedrange
@@ -980,21 +955,20 @@ class AuxinProbe(SCPICmdRead):
     def gain(self) -> AuxinProbeGain:
         """Return the ``AUXIn:PRObe:GAIN`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the gain factor of the probe that is attached to the
               AUX In input. The 'gain' of a probe is the output divided by the input transfer ratio.
               For example, a common 10x probe has a gain of 0.1.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PRObe:GAIN?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:GAIN?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PRObe:GAIN?
+            ```
         """
         return self._gain
 
@@ -1002,7 +976,7 @@ class AuxinProbe(SCPICmdRead):
     def id(self) -> AuxinProbeId:
         """Return the ``AUXIn:PRObe:ID`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PRObe:ID?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:ID?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -1017,24 +991,23 @@ class AuxinProbe(SCPICmdRead):
     def inputmode(self) -> AuxinProbeInputmode:
         """Return the ``AUXIn:PRObe:INPUTMode`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries one of the probe's four input modes on the AUX In input.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PRObe:INPUTMode?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:INPUTMode?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:INPUTMode value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PRObe:INPUTMode {COMmonmode|DEFault|DIFFerential|A|B}
             - AUXIn:PRObe:INPUTMode?
+            ```
 
-        **Info:**
+        Info:
             - ``COMmonmode`` sets the probe to route common-mode signals to the host.
             - ``DEFault`` sets the probe to the default mode.
             - ``DIFFerential`` sets the probe to route differential signals to the host.
@@ -1053,22 +1026,21 @@ class AuxinProbe(SCPICmdRead):
     def range(self) -> AuxinProbeRange:
         """Return the ``AUXIn:PRObe:RANge`` command.
 
-        **Description:**
+        Description:
             - This command controls or queries the set attenuation range of the probe on the AUX In
               input.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PRObe:RANge?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:RANge?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:RANge value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PRObe:RANge {ATTEN1X|ATTEN1_25X|ATTEN1_5X|ATTEN1_75X|ATTEN2X|ATTEN2_5X| ATTEN3X|ATTEN3_5X|ATTEN4X|ATTEN4_5X|ATTEN5X|ATTEN5_5X| ATTEN6X|ATTEN6_5X|ATTEN7X|ATTEN7_5X|ATTEN8X|ATTEN8_5X| ATTEN9X|ATTEN9_5X|ATTEN10X|ATTEN12_5X|ATTEN15X|ATTEN17_5X| ATTEN20X|ATTEN25X|ATTEN30X|ATTEN35X|ATTEN40X|ATTEN45X| ATTEN50X|ATTEN55X|ATTEN60X|ATTEN65X|ATTEN70X|ATTEN75X| ATTEN80X|ATTEN85X|ATTEN90X|ATTEN95X|ATTEN100X|ATTEN125X| ATTEN150X|ATTEN175X|ATTEN200X|ATTEN250X|ATTEN300X| ATTEN350X|ATTEN400X|ATTEN450X|ATTEN500X|ATTEN550X| ATTEN600X|ATTEN650X|ATTEN700X|ATTEN750X|ATTEN800X| ATTEN850X|ATTEN900X|ATTEN950X|ATTEN1000X}
             - AUXIn:PRObe:RANge?
+            ```
         """  # noqa: E501
         return self._range
 
@@ -1076,20 +1048,19 @@ class AuxinProbe(SCPICmdRead):
     def resistance(self) -> AuxinProbeResistance:
         """Return the ``AUXIn:PRObe:RESistance`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the resistance factor of the probe that is attached to
               the AUX In input.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PRObe:RESistance?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:RESistance?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PRObe:RESistance?
+            ```
         """
         return self._resistance
 
@@ -1097,7 +1068,7 @@ class AuxinProbe(SCPICmdRead):
     def set_(self) -> AuxinProbeSet:
         """Return the ``AUXIn:PRObe:SET`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries aspects of probe accessory user interfaces, for example
               probe attenuation factors. The available arguments for this command will vary
               depending on the accessory you attach to the instrument auxiliary trigger input. For
@@ -1108,20 +1079,19 @@ class AuxinProbe(SCPICmdRead):
               you reboot the instrument or remove the probe. Also, the instrument does not store the
               selection in the save/recall setup operation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PRObe:SET?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:SET?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:SET value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PRObe:SET <QString>
             - AUXIn:PRObe:SET?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string representing a settable aspect of the attached
               accessory.
             - ``ATTENUATION 5X`` sets the P7260 probe to ±0.75 V dynamic range with 6 GHz bandwidth
@@ -1140,25 +1110,24 @@ class AuxinProbe(SCPICmdRead):
     def signal(self) -> AuxinProbeSignal:
         """Return the ``AUXIn:PRObe:SIGnal`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries aspects of probe accessory user interfaces. The available
               arguments for this command will vary depending on the accessory you attach to the
               instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PRObe:SIGnal?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:SIGnal?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:SIGnal value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PRObe:SIGnal {PASS|BYPass}
             - AUXIn:PRObe:SIGnal?
+            ```
 
-        **Info:**
+        Info:
             - ``PASS`` opens a relay passing your signal to the instrument.
             - ``BYPass`` closes a relay preventing your signal from reaching the instrument. During
               probe degauss, the signal should be bypassed.
@@ -1169,24 +1138,23 @@ class AuxinProbe(SCPICmdRead):
     def tiptype(self) -> AuxinProbeTiptype:
         """Return the ``AUXIn:PRObe:TIPtype`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the type of probe tip being used.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PRObe:TIPtype?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:TIPtype?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXIn:PRObe:TIPtype value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PRObe:TIPtype {HBWStraightflex|OTHer}
             - AUXIn:PRObe:TIPtype?
+            ```
 
-        **Info:**
+        Info:
             - ``HBWStraightflex`` lets the instrument know you are using a high bandwidth
               straight-flex probe tip.
             - ``OTHer`` lets the instrument know you are not using a high bandwidth straight-flex
@@ -1198,20 +1166,19 @@ class AuxinProbe(SCPICmdRead):
     def units(self) -> AuxinProbeUnits:
         """Return the ``AUXIn:PRObe:UNIts`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns a string describing the units of measure for the probe
               attached to the AUX In input.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PRObe:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe:UNIts?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PRObe:UNIts?
+            ```
         """
         return self._units
 
@@ -1219,7 +1186,7 @@ class AuxinProbe(SCPICmdRead):
 class AuxinProbefuncExtunits(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:PROBEFunc:EXTUnits`` command.
 
-    **Description:**
+    Description:
         - This command sets the unit of measurement for the external attenuator of the AUX In input.
           There is also a corresponding query that returns the user-specified unit of measurement
           for the external attenuator. Unless these units are set to the factory default string
@@ -1227,21 +1194,20 @@ class AuxinProbefuncExtunits(SCPICmdWrite, SCPICmdRead):
           assumed that the probe connected to the input is of the correct type to receive the output
           of the user's external transducer or network.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PROBEFunc:EXTUnits?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PROBEFunc:EXTUnits?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXIn:PROBEFunc:EXTUnits value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PROBEFunc:EXTUnits <QString>
         - AUXIn:PROBEFunc:EXTUnits?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` can contain a string of up to eight characters to indicate the attenuation
           unit of measurement for the AUX In input. However, most instrument attenuators only
           display the first two characters.
@@ -1253,28 +1219,27 @@ class AuxinProbefuncExtunits(SCPICmdWrite, SCPICmdRead):
 class AuxinProbefuncExtdbatten(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:PROBEFunc:EXTDBatten`` command.
 
-    **Description:**
+    Description:
         - This command sets the input-output ratio (expressed in decibel units) of external
           attenuation or gain between the signal and the instrument AUX In input. The query form of
           this command returns the user-specified attenuation in decibels: 1X = 0 dB, 10X = 20 dB,
           100X = 40 dB, and similar things. This command is equivalent to selecting Attenuation from
           the Vertical menu, and then either viewing or setting Ext Att(dB).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PROBEFunc:EXTDBatten?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PROBEFunc:EXTDBatten?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXIn:PROBEFunc:EXTDBatten value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PROBEFunc:EXTDBatten <NR3>
         - AUXIn:PROBEFunc:EXTDBatten?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the attenuation value, which is specified in the range from -200.00 dB to
           200.00 dB.
     """
@@ -1283,7 +1248,7 @@ class AuxinProbefuncExtdbatten(SCPICmdWrite, SCPICmdRead):
 class AuxinProbefuncExtatten(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:PROBEFunc:EXTAtten`` command.
 
-    **Description:**
+    Description:
         - This command sets the input-output ratio, of external attenuation or gain, between the
           signal and the AUX In input. The query form of this command returns the user-specified
           attenuation. Note that this command deals with an attenuation factor, not a gain factor,
@@ -1294,21 +1259,20 @@ class AuxinProbefuncExtatten(SCPICmdWrite, SCPICmdRead):
           20.00E+0 ``AUXIN:PROBE?`` 1.0E+0 This command is equivalent to selecting Attenuation from
           the Vertical menu, and then either viewing or setting Ext Atten.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PROBEFunc:EXTAtten?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PROBEFunc:EXTAtten?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXIn:PROBEFunc:EXTAtten value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:PROBEFunc:EXTAtten <NR3>
         - AUXIn:PROBEFunc:EXTAtten?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the attenuation value, which is specified as a multiplier in the range from
           1.00E-10 to 1.00E+10.
     """
@@ -1317,7 +1281,7 @@ class AuxinProbefuncExtatten(SCPICmdWrite, SCPICmdRead):
 class AuxinProbefunc(SCPICmdRead):
     """The ``AUXIn:PROBEFunc`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:PROBEFunc?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:PROBEFunc?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1338,7 +1302,7 @@ class AuxinProbefunc(SCPICmdRead):
     def extatten(self) -> AuxinProbefuncExtatten:
         """Return the ``AUXIn:PROBEFunc:EXTAtten`` command.
 
-        **Description:**
+        Description:
             - This command sets the input-output ratio, of external attenuation or gain, between the
               signal and the AUX In input. The query form of this command returns the user-specified
               attenuation. Note that this command deals with an attenuation factor, not a gain
@@ -1350,21 +1314,20 @@ class AuxinProbefunc(SCPICmdRead):
               selecting Attenuation from the Vertical menu, and then either viewing or setting Ext
               Atten.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PROBEFunc:EXTAtten?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PROBEFunc:EXTAtten?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXIn:PROBEFunc:EXTAtten value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PROBEFunc:EXTAtten <NR3>
             - AUXIn:PROBEFunc:EXTAtten?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the attenuation value, which is specified as a multiplier in the range
               from 1.00E-10 to 1.00E+10.
         """
@@ -1374,28 +1337,27 @@ class AuxinProbefunc(SCPICmdRead):
     def extdbatten(self) -> AuxinProbefuncExtdbatten:
         """Return the ``AUXIn:PROBEFunc:EXTDBatten`` command.
 
-        **Description:**
+        Description:
             - This command sets the input-output ratio (expressed in decibel units) of external
               attenuation or gain between the signal and the instrument AUX In input. The query form
               of this command returns the user-specified attenuation in decibels: 1X = 0 dB, 10X =
               20 dB, 100X = 40 dB, and similar things. This command is equivalent to selecting
               Attenuation from the Vertical menu, and then either viewing or setting Ext Att(dB).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PROBEFunc:EXTDBatten?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PROBEFunc:EXTDBatten?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXIn:PROBEFunc:EXTDBatten value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PROBEFunc:EXTDBatten <NR3>
             - AUXIn:PROBEFunc:EXTDBatten?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the attenuation value, which is specified in the range from -200.00 dB to
               200.00 dB.
         """
@@ -1405,7 +1367,7 @@ class AuxinProbefunc(SCPICmdRead):
     def extunits(self) -> AuxinProbefuncExtunits:
         """Return the ``AUXIn:PROBEFunc:EXTUnits`` command.
 
-        **Description:**
+        Description:
             - This command sets the unit of measurement for the external attenuator of the AUX In
               input. There is also a corresponding query that returns the user-specified unit of
               measurement for the external attenuator. Unless these units are set to the factory
@@ -1413,21 +1375,20 @@ class AuxinProbefunc(SCPICmdRead):
               the input. It is assumed that the probe connected to the input is of the correct type
               to receive the output of the user's external transducer or network.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PROBEFunc:EXTUnits?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PROBEFunc:EXTUnits?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXIn:PROBEFunc:EXTUnits value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:PROBEFunc:EXTUnits <QString>
             - AUXIn:PROBEFunc:EXTUnits?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` can contain a string of up to eight characters to indicate the
               attenuation unit of measurement for the AUX In input. However, most instrument
               attenuators only display the first two characters.
@@ -1438,7 +1399,7 @@ class AuxinProbefunc(SCPICmdRead):
 class AuxinOffset(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:OFFSet`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the vertical offset for the AUX In input. This command is
           equivalent to selecting Offset from the Vertical menu. This command offsets the vertical
           acquisition window (moves the level at the vertical center of the acquisition window) for
@@ -1453,20 +1414,19 @@ class AuxinOffset(SCPICmdWrite, SCPICmdRead):
           moves to the nearest screen limit and changes from a right-pointing arrow ( →) to an arrow
           pointing in the appropriate off-screen direction.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:OFFSet?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:OFFSet?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXIn:OFFSet value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:OFFSet <NR3>
         - AUXIn:OFFSet?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the offset value for the specified channel.
     """
 
@@ -1474,25 +1434,24 @@ class AuxinOffset(SCPICmdWrite, SCPICmdRead):
 class AuxinCoupling(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:COUPling`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input attenuator coupling setting for the AUX In input.
           The coupling will change with an appropriate probe attached. This command is equivalent to
           selecting Coupling from the Vertical menu.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:COUPling?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:COUPling?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXIn:COUPling value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:COUPling <NR3>
         - AUXIn:COUPling?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is one of the supported input attenuator couplings on the attached probe.
     """
 
@@ -1500,26 +1459,25 @@ class AuxinCoupling(SCPICmdWrite, SCPICmdRead):
 class AuxinBandwidth(SCPICmdWrite, SCPICmdRead):
     """The ``AUXIn:BANdwidth`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the selectable low-pass bandwidth limit filter of the AUX In
           input. The bandwidth will change with an appropriate probe attached. This is equivalent to
           selecting Bandwidth from the Vertical menu. The query form of this command always returns
           the maximum bandwidth of the AUX In input.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn:BANdwidth?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn:BANdwidth?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXIn:BANdwidth value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXIn:BANdwidth <NR3>
         - AUXIn:BANdwidth?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is one of the supported bandwidths on the attached probe.
     """
 
@@ -1527,7 +1485,7 @@ class AuxinBandwidth(SCPICmdWrite, SCPICmdRead):
 class Auxin(SCPICmdRead):
     """The ``AUXIn`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXIn?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXIn?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1554,26 +1512,25 @@ class Auxin(SCPICmdRead):
     def bandwidth(self) -> AuxinBandwidth:
         """Return the ``AUXIn:BANdwidth`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the selectable low-pass bandwidth limit filter of the AUX
               In input. The bandwidth will change with an appropriate probe attached. This is
               equivalent to selecting Bandwidth from the Vertical menu. The query form of this
               command always returns the maximum bandwidth of the AUX In input.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:BANdwidth?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:BANdwidth?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXIn:BANdwidth value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:BANdwidth <NR3>
             - AUXIn:BANdwidth?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is one of the supported bandwidths on the attached probe.
         """
         return self._bandwidth
@@ -1582,25 +1539,24 @@ class Auxin(SCPICmdRead):
     def coupling(self) -> AuxinCoupling:
         """Return the ``AUXIn:COUPling`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input attenuator coupling setting for the AUX In
               input. The coupling will change with an appropriate probe attached. This command is
               equivalent to selecting Coupling from the Vertical menu.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:COUPling?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:COUPling?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXIn:COUPling value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:COUPling <NR3>
             - AUXIn:COUPling?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is one of the supported input attenuator couplings on the attached probe.
         """
         return self._coupling
@@ -1609,7 +1565,7 @@ class Auxin(SCPICmdRead):
     def offset(self) -> AuxinOffset:
         """Return the ``AUXIn:OFFSet`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the vertical offset for the AUX In input. This command is
               equivalent to selecting Offset from the Vertical menu. This command offsets the
               vertical acquisition window (moves the level at the vertical center of the acquisition
@@ -1625,20 +1581,19 @@ class Auxin(SCPICmdRead):
               limit and changes from a right-pointing arrow ( →) to an arrow pointing in the
               appropriate off-screen direction.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:OFFSet?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:OFFSet?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXIn:OFFSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXIn:OFFSet <NR3>
             - AUXIn:OFFSet?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the offset value for the specified channel.
         """
         return self._offset
@@ -1647,7 +1602,7 @@ class Auxin(SCPICmdRead):
     def probefunc(self) -> AuxinProbefunc:
         """Return the ``AUXIn:PROBEFunc`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PROBEFunc?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PROBEFunc?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -1663,7 +1618,7 @@ class Auxin(SCPICmdRead):
     def probe(self) -> AuxinProbe:
         """Return the ``AUXIn:PRObe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:PRObe?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:PRObe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1688,7 +1643,7 @@ class Auxin(SCPICmdRead):
     def vterm(self) -> AuxinVterm:
         """Return the ``AUXIn:VTERm`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXIn:VTERm?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXIn:VTERm?`` query and raise an
               AssertionError if the returned value does not match ``value``.

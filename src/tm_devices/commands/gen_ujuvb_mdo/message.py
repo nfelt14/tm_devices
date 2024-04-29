@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - MESSage
     - MESSage:BOX <X1>,<Y1>[,<X2>,<Y2>]
     - MESSage:BOX?
@@ -46,23 +44,22 @@ if TYPE_CHECKING:
 class MessageState(SCPICmdWrite, SCPICmdRead):
     """The ``MESSage:STATE`` command.
 
-    **Description:**
+    Description:
         - Controls the display of the message box.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MESSage:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``MESSage:STATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MESSage:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MESSage:STATE {OFF|ON|<NR1>}
         - MESSage:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF or <NR1> = 0`` removes the message window from the screen.
         - ``ON or <NR1> ≠ 0`` displays the message window and its contents on the screen.
     """
@@ -71,26 +68,25 @@ class MessageState(SCPICmdWrite, SCPICmdRead):
 class MessageShow(SCPICmdWrite, SCPICmdRead):
     """The ``MESSage:SHOW`` command.
 
-    **Description:**
+    Description:
         - This command specifies the contents of the message box. ``MESSage:SHOW`` <Qstring> defines
           the content of the message box. Change in string length causes automatic resize of the
           message box to fit the text. The box may be resized using the ``MESSAGE:BOX`` command. The
           ``MESSAGE:STATE`` command is used to turn on and off the message box display.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MESSage:SHOW?`` query.
         - Using the ``.verify(value)`` method will send the ``MESSage:SHOW?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MESSage:SHOW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MESSage:SHOW <QString>
         - MESSage:SHOW?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the message and can include any of the characters shown in the Character
           Set.
     """
@@ -101,24 +97,23 @@ class MessageShow(SCPICmdWrite, SCPICmdRead):
 class MessageMessage1ItemState(SCPICmdWrite, SCPICmdRead):
     """The ``MESSage:MESSAGE1<x>:STATE`` command.
 
-    **Description:**
+    Description:
         - Controls the display of the message box.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MESSage:MESSAGE1<x>:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``MESSage:MESSAGE1<x>:STATE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MESSage:MESSAGE1<x>:STATE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MESSage:MESSAGE1<x>:STATE {<NR1>|OFF|ON}
         - MESSage:MESSAGE1<x>:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF or <NR1> = 0`` removes the message window from the screen.
         - ``ON or <NR1> ≠ 0`` displays the message window and its contents on the screen.
     """
@@ -127,28 +122,27 @@ class MessageMessage1ItemState(SCPICmdWrite, SCPICmdRead):
 class MessageMessage1ItemShow(SCPICmdWrite, SCPICmdRead):
     """The ``MESSage:MESSAGE1<x>:SHOW`` command.
 
-    **Description:**
+    Description:
         - This command specifies the contents of the message box. ``MESSage:MESSAGE1<x>:SHOW``
           <Qstring> defines the content of the message box. Change in string length causes automatic
           resize of the message box to fit the text. The box may be resized using the
           ``MESSAGE:MESSAGE1X:BOX`` command. The ``MESSAGE:MESSAGE1X:STATE`` command is used to turn
           on and off the message box display.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MESSage:MESSAGE1<x>:SHOW?`` query.
         - Using the ``.verify(value)`` method will send the ``MESSage:MESSAGE1<x>:SHOW?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MESSage:MESSAGE1<x>:SHOW value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MESSage:MESSAGE1<x>:SHOW <Qstring>
         - MESSage:MESSAGE1<x>:SHOW?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the message and can include any of the characters shown in the Character
           Set.
     """
@@ -157,24 +151,23 @@ class MessageMessage1ItemShow(SCPICmdWrite, SCPICmdRead):
 class MessageMessage1ItemClear(SCPICmdWriteNoArguments):
     """The ``MESSage:MESSAGE1<x>:CLEAR`` command.
 
-    **Description:**
+    Description:
         - Clears the contents of the message box.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``MESSage:MESSAGE1<x>:CLEAR`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MESSage:MESSAGE1<x>:CLEAR
+        ```
     """
 
 
 class MessageMessage1ItemBox(SCPICmdWrite, SCPICmdRead):
     """The ``MESSage:MESSAGE1<x>:BOX`` command.
 
-    **Description:**
+    Description:
         - This command specifies the coordinates of the message box. This command does not display
           the message unless ``MESSage:MESSAGE1<x>:STATE`` is on. X1 and Y1 are the screen
           coordinates of the top left corner of the message box. X2 and Y2 are the screen
@@ -188,21 +181,20 @@ class MessageMessage1ItemBox(SCPICmdWrite, SCPICmdRead):
           push or pull of the X2 or Y2 coordinate to fit the text. The X2, Y2 coordinates are
           optional.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MESSage:MESSAGE1<x>:BOX?`` query.
         - Using the ``.verify(value)`` method will send the ``MESSage:MESSAGE1<x>:BOX?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MESSage:MESSAGE1<x>:BOX value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MESSage:MESSAGE1<x>:BOX <X1>,<Y1>[,<X2>,<Y2>]
         - MESSage:MESSAGE1<x>:BOX?
+        ```
 
-    **Info:**
+    Info:
         - ``<X1>`` and <X2> = 0 to 1919, and are pixel positions along the horizontal axis. <X1>
           defines the left and <X2> defines the right side of the window.
         - ``<Y1>`` and <Y2> = 1 to 1077, and are pixel positions along the vertical axis. <Y1>
@@ -216,7 +208,7 @@ class MessageMessage1ItemBox(SCPICmdWrite, SCPICmdRead):
 class MessageMessage1Item(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``MESSage:MESSAGE1<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MESSage:MESSAGE1<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``MESSage:MESSAGE1<x>?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -239,7 +231,7 @@ class MessageMessage1Item(ValidatedDynamicNumberCmd, SCPICmdRead):
     def box(self) -> MessageMessage1ItemBox:
         """Return the ``MESSage:MESSAGE1<x>:BOX`` command.
 
-        **Description:**
+        Description:
             - This command specifies the coordinates of the message box. This command does not
               display the message unless ``MESSage:MESSAGE1<x>:STATE`` is on. X1 and Y1 are the
               screen coordinates of the top left corner of the message box. X2 and Y2 are the screen
@@ -253,21 +245,20 @@ class MessageMessage1Item(ValidatedDynamicNumberCmd, SCPICmdRead):
               coordinate causes automatic push or pull of the X2 or Y2 coordinate to fit the text.
               The X2, Y2 coordinates are optional.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MESSage:MESSAGE1<x>:BOX?`` query.
             - Using the ``.verify(value)`` method will send the ``MESSage:MESSAGE1<x>:BOX?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MESSage:MESSAGE1<x>:BOX value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MESSage:MESSAGE1<x>:BOX <X1>,<Y1>[,<X2>,<Y2>]
             - MESSage:MESSAGE1<x>:BOX?
+            ```
 
-        **Info:**
+        Info:
             - ``<X1>`` and <X2> = 0 to 1919, and are pixel positions along the horizontal axis. <X1>
               defines the left and <X2> defines the right side of the window.
             - ``<Y1>`` and <Y2> = 1 to 1077, and are pixel positions along the vertical axis. <Y1>
@@ -283,17 +274,16 @@ class MessageMessage1Item(ValidatedDynamicNumberCmd, SCPICmdRead):
     def clear(self) -> MessageMessage1ItemClear:
         """Return the ``MESSage:MESSAGE1<x>:CLEAR`` command.
 
-        **Description:**
+        Description:
             - Clears the contents of the message box.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``MESSage:MESSAGE1<x>:CLEAR`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MESSage:MESSAGE1<x>:CLEAR
+            ```
         """
         return self._clear
 
@@ -301,28 +291,27 @@ class MessageMessage1Item(ValidatedDynamicNumberCmd, SCPICmdRead):
     def show(self) -> MessageMessage1ItemShow:
         """Return the ``MESSage:MESSAGE1<x>:SHOW`` command.
 
-        **Description:**
+        Description:
             - This command specifies the contents of the message box. ``MESSage:MESSAGE1<x>:SHOW``
               <Qstring> defines the content of the message box. Change in string length causes
               automatic resize of the message box to fit the text. The box may be resized using the
               ``MESSAGE:MESSAGE1X:BOX`` command. The ``MESSAGE:MESSAGE1X:STATE`` command is used to
               turn on and off the message box display.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MESSage:MESSAGE1<x>:SHOW?`` query.
             - Using the ``.verify(value)`` method will send the ``MESSage:MESSAGE1<x>:SHOW?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MESSage:MESSAGE1<x>:SHOW value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MESSage:MESSAGE1<x>:SHOW <Qstring>
             - MESSage:MESSAGE1<x>:SHOW?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the message and can include any of the characters shown in the
               Character Set.
         """
@@ -332,24 +321,23 @@ class MessageMessage1Item(ValidatedDynamicNumberCmd, SCPICmdRead):
     def state(self) -> MessageMessage1ItemState:
         """Return the ``MESSage:MESSAGE1<x>:STATE`` command.
 
-        **Description:**
+        Description:
             - Controls the display of the message box.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MESSage:MESSAGE1<x>:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``MESSage:MESSAGE1<x>:STATE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MESSage:MESSAGE1<x>:STATE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MESSage:MESSAGE1<x>:STATE {<NR1>|OFF|ON}
             - MESSage:MESSAGE1<x>:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF or <NR1> = 0`` removes the message window from the screen.
             - ``ON or <NR1> ≠ 0`` displays the message window and its contents on the screen.
         """
@@ -359,24 +347,23 @@ class MessageMessage1Item(ValidatedDynamicNumberCmd, SCPICmdRead):
 class MessageClear(SCPICmdWriteNoArguments):
     """The ``MESSage:CLEAR`` command.
 
-    **Description:**
+    Description:
         - Clears the contents of the message box.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``MESSage:CLEAR`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MESSage:CLEAR
+        ```
     """
 
 
 class MessageBox(SCPICmdWrite, SCPICmdRead):
     """The ``MESSage:BOX`` command.
 
-    **Description:**
+    Description:
         - This command specifies the co-ordinates of the message box. This command does not display
           the message unless ``MESSage:STATE`` is on. X1 and Y1 are the screen coordinates of the
           top left corner of the message box. X2 and Y2 are the screen coordinates of the bottom
@@ -386,20 +373,19 @@ class MessageBox(SCPICmdWrite, SCPICmdRead):
           changing the text using the ``MESSAGE:SHOW`` command. Message box settings and data are
           saved and restored in saved setups.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MESSage:BOX?`` query.
         - Using the ``.verify(value)`` method will send the ``MESSage:BOX?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MESSage:BOX value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MESSage:BOX <X1>,<Y1>[,<X2>,<Y2>]
         - MESSage:BOX?
+        ```
 
-    **Info:**
+    Info:
         - ``<X1>`` and <X2> = 0 to 1023, and are pixel positions along the horizontal axis. <X1>
           defines the left and <X2> defines the right side of the window.
         - ``<Y1>`` and <Y2> = 0 to 767, and are pixel positions along the vertical axis. <Y1>
@@ -413,21 +399,20 @@ class MessageBox(SCPICmdWrite, SCPICmdRead):
 class Message(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``MESSage`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries message box (screen annotation) parameters.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MESSage?`` query.
         - Using the ``.verify(value)`` method will send the ``MESSage?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``MESSage`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MESSage
         - MESSage?
+        ```
 
     Properties:
         - ``.box``: The ``MESSage:BOX`` command.
@@ -451,7 +436,7 @@ class Message(SCPICmdWriteNoArguments, SCPICmdRead):
     def box(self) -> MessageBox:
         """Return the ``MESSage:BOX`` command.
 
-        **Description:**
+        Description:
             - This command specifies the co-ordinates of the message box. This command does not
               display the message unless ``MESSage:STATE`` is on. X1 and Y1 are the screen
               coordinates of the top left corner of the message box. X2 and Y2 are the screen
@@ -462,20 +447,19 @@ class Message(SCPICmdWriteNoArguments, SCPICmdRead):
               ``MESSAGE:SHOW`` command. Message box settings and data are saved and restored in
               saved setups.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MESSage:BOX?`` query.
             - Using the ``.verify(value)`` method will send the ``MESSage:BOX?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MESSage:BOX value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MESSage:BOX <X1>,<Y1>[,<X2>,<Y2>]
             - MESSage:BOX?
+            ```
 
-        **Info:**
+        Info:
             - ``<X1>`` and <X2> = 0 to 1023, and are pixel positions along the horizontal axis. <X1>
               defines the left and <X2> defines the right side of the window.
             - ``<Y1>`` and <Y2> = 0 to 767, and are pixel positions along the vertical axis. <Y1>
@@ -491,17 +475,16 @@ class Message(SCPICmdWriteNoArguments, SCPICmdRead):
     def clear(self) -> MessageClear:
         """Return the ``MESSage:CLEAR`` command.
 
-        **Description:**
+        Description:
             - Clears the contents of the message box.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``MESSage:CLEAR`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MESSage:CLEAR
+            ```
         """
         return self._clear
 
@@ -509,7 +492,7 @@ class Message(SCPICmdWriteNoArguments, SCPICmdRead):
     def message1(self) -> Dict[int, MessageMessage1Item]:
         """Return the ``MESSage:MESSAGE1<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MESSage:MESSAGE1<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``MESSage:MESSAGE1<x>?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -526,27 +509,26 @@ class Message(SCPICmdWriteNoArguments, SCPICmdRead):
     def show(self) -> MessageShow:
         """Return the ``MESSage:SHOW`` command.
 
-        **Description:**
+        Description:
             - This command specifies the contents of the message box. ``MESSage:SHOW`` <Qstring>
               defines the content of the message box. Change in string length causes automatic
               resize of the message box to fit the text. The box may be resized using the
               ``MESSAGE:BOX`` command. The ``MESSAGE:STATE`` command is used to turn on and off the
               message box display.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MESSage:SHOW?`` query.
             - Using the ``.verify(value)`` method will send the ``MESSage:SHOW?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MESSage:SHOW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MESSage:SHOW <QString>
             - MESSage:SHOW?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the message and can include any of the characters shown in the
               Character Set.
         """
@@ -556,23 +538,22 @@ class Message(SCPICmdWriteNoArguments, SCPICmdRead):
     def state(self) -> MessageState:
         """Return the ``MESSage:STATE`` command.
 
-        **Description:**
+        Description:
             - Controls the display of the message box.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MESSage:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``MESSage:STATE?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MESSage:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MESSage:STATE {OFF|ON|<NR1>}
             - MESSage:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF or <NR1> = 0`` removes the message window from the screen.
             - ``ON or <NR1> ≠ 0`` displays the message window and its contents on the screen.
         """

@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CURVEStream?
 """
 
@@ -25,7 +23,7 @@ if TYPE_CHECKING:
 class Curvestream(SCPICmdRead):
     """The ``CURVEStream`` command.
 
-    **Description:**
+    Description:
         - This query-only command continuously transfers waveform data from the instrument as it is
           acquired. This command puts the instrument into a streaming data mode, allowing the
           controller to receive waveform records as fast as they are acquired. Use the
@@ -46,16 +44,15 @@ class Curvestream(SCPICmdRead):
           controller is not reading the data off the bus fast enough, the trigger rate is slowed to
           allow each waveform to be sent sequentially.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CURVEStream?`` query.
         - Using the ``.verify(value)`` method will send the ``CURVEStream?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CURVEStream?
+        ```
     """
 
     def __init__(

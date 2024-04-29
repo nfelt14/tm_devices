@@ -12,8 +12,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - *CAL?
 """
 
@@ -28,20 +26,19 @@ if TYPE_CHECKING:
 class Cal(SCPICmdRead):
     """The ``*CAL`` command.
 
-    **Description:**
+    Description:
         - This query-only command starts signal path calibration (SPC) and returns the status upon
           completion.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``*CAL?`` query.
         - Using the ``.verify(value)`` method will send the ``*CAL?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - *CAL?
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "*CAL") -> None:

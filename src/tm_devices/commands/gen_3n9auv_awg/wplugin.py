@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - WPLugin:ACTive <plugin_name>
     - WPLugin:PLUGins?
 """
@@ -26,44 +24,42 @@ if TYPE_CHECKING:
 class WpluginPlugins(SCPICmdRead):
     """The ``WPLugin:PLUGins`` command.
 
-    **Description:**
+    Description:
         - This command returns all the available waveform creation plug-ins installed. The response
           returns a comma separated string with all the plug-in names.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WPLugin:PLUGins?`` query.
         - Using the ``.verify(value)`` method will send the ``WPLugin:PLUGins?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WPLugin:PLUGins?
+        ```
     """
 
 
 class WpluginActive(SCPICmdWrite):
     """The ``WPLugin:ACTive`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the active waveform creation plug-in.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WPLugin:ACTive value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WPLugin:ACTive <plugin_name>
+        ```
     """
 
 
 class Wplugin(SCPICmdRead):
     """The ``WPLugin`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WPLugin?`` query.
         - Using the ``.verify(value)`` method will send the ``WPLugin?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -82,17 +78,16 @@ class Wplugin(SCPICmdRead):
     def active(self) -> WpluginActive:
         """Return the ``WPLugin:ACTive`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the active waveform creation plug-in.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WPLugin:ACTive value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WPLugin:ACTive <plugin_name>
+            ```
         """
         return self._active
 
@@ -100,19 +95,18 @@ class Wplugin(SCPICmdRead):
     def plugins(self) -> WpluginPlugins:
         """Return the ``WPLugin:PLUGins`` command.
 
-        **Description:**
+        Description:
             - This command returns all the available waveform creation plug-ins installed. The
               response returns a comma separated string with all the plug-in names.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WPLugin:PLUGins?`` query.
             - Using the ``.verify(value)`` method will send the ``WPLugin:PLUGins?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WPLugin:PLUGins?
+            ```
         """
         return self._plugins

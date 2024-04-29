@@ -100,7 +100,6 @@ coverage-conditional-plugin = ">=0.9.0"
 docformatter = {extras = ["tomli"], version = "1.7.5"}  # Update this by running scripts/update_development_dependencies.py
 flask = ">=2.2.2"
 graphviz = ">=0.20.1"
-griffe-typingdoc = ">=0.2.5"
 http-server-mock = ">=1.7"
 linkchecker = ">=10.0.0"
 matplotlib = [
@@ -132,6 +131,7 @@ pyroma = ">=4.2"
 pytest = ">=7.1.2"
 pytest-cov = ">=3.0.0"
 pytest-depends = "^1.0.1"
+pytest-env = ">=1.1.3"
 pytest-github-report = ">=0.0.1"
 pytest-html = ">=4.0"
 pytest-order = ">=1.0.1"
@@ -285,6 +285,9 @@ markers = [
   'slow'
 ]
 xfail_strict = true
+
+[tool.pytest_env]
+pytest_report_title = {skip_if_set = true, value = "Test Results"}
 
 [tool.rstcheck]
 ignore_directives = [

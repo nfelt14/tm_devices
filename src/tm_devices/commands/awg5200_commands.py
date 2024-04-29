@@ -164,19 +164,18 @@ class AWG5200Commands:
     def abort(self) -> Abort:
         """Return the ``ABORt`` command.
 
-        **Description:**
+        Description:
             - This command stops waveform playout when the Run Mode is set to Gated. This is
               equivalent to releasing the Force Trig button on the front panel when the instrument
               is in gated mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``ABORt value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ABORt [{ATRigger|BTRigger}]
+            ```
         """
         return self._abort
 
@@ -184,7 +183,7 @@ class AWG5200Commands:
     def active(self) -> Active:
         """Return the ``ACTive`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTive?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTive?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -198,7 +197,7 @@ class AWG5200Commands:
     def auxoutput(self) -> Dict[int, AuxoutputItem]:
         """Return the ``AUXoutput[n]`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXoutput[n]?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXoutput[n]?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -212,7 +211,7 @@ class AWG5200Commands:
     def awgcontrol(self) -> Awgcontrol:
         """Return the ``AWGControl`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AWGControl?`` query.
             - Using the ``.verify(value)`` method will send the ``AWGControl?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -237,7 +236,7 @@ class AWG5200Commands:
     def bwaveform(self) -> Bwaveform:
         """Return the ``BWAVeform`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BWAVeform?`` query.
             - Using the ``.verify(value)`` method will send the ``BWAVeform?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -263,20 +262,19 @@ class AWG5200Commands:
     def cal(self) -> Cal:
         """Return the ``*CAL`` command.
 
-        **Description:**
+        Description:
             - This query-only command starts signal path calibration (SPC) and returns the status
               upon completion.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*CAL?`` query.
             - Using the ``.verify(value)`` method will send the ``*CAL?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *CAL?
+            ```
         """
         return self._cal
 
@@ -284,7 +282,7 @@ class AWG5200Commands:
     def calibration(self) -> Calibration:
         """Return the ``CALibration`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibration?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibration?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -307,7 +305,7 @@ class AWG5200Commands:
     def clock(self) -> Clock:
         """Return the ``CLOCk`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -328,7 +326,7 @@ class AWG5200Commands:
     def cls(self) -> Cls:
         """Return the ``*CLS`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) clears the following: Event Queue Standard Event Status
               Register Status Byte Register (except the MAV bit) If the ``*CLS`` command immediately
               follows an <EOI>, the Output Queue and MAV bit (Status Byte Register bit 4) are also
@@ -338,14 +336,13 @@ class AWG5200Commands:
               by an ``*OPC``. This will happen if a single sequence acquisition operation is still
               being processed when the ``*CLS`` command is executed.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*CLS`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *CLS
+            ```
         """
         return self._cls
 
@@ -353,7 +350,7 @@ class AWG5200Commands:
     def cplayback(self) -> Cplayback:
         """Return the ``CPLayback`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CPLayback?`` query.
             - Using the ``.verify(value)`` method will send the ``CPLayback?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -369,7 +366,7 @@ class AWG5200Commands:
     def diagnostic(self) -> Diagnostic:
         """Return the ``DIAGnostic`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAGnostic?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAGnostic?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -396,7 +393,7 @@ class AWG5200Commands:
     def display(self) -> Display:
         """Return the ``DISPlay`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISPlay?`` query.
             - Using the ``.verify(value)`` method will send the ``DISPlay?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -410,25 +407,24 @@ class AWG5200Commands:
     def ese(self) -> Ese:
         """Return the ``*ESE`` command.
 
-        **Description:**
+        Description:
             - This command sets and queries the bits in the Event Status Enable Register (ESER). The
               ESER prevents events from being reported to the Status Byte Register (STB). For a more
               detailed discussion of the use of these registers, see Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*ESE?`` query.
             - Using the ``.verify(value)`` method will send the ``*ESE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*ESE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *ESE <NR1>
             - *ESE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the binary bits of the ESER according to this value, which ranges
               from 0 through 255.
         """
@@ -438,21 +434,20 @@ class AWG5200Commands:
     def esr(self) -> Esr:
         """Return the ``*ESR`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the contents of the Standard Event Status Register
               (SESR). ``*ESR?`` also clears the SESR (since reading the SESR clears it). For a more
               detailed discussion of the use of these registers, see Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*ESR?`` query.
             - Using the ``.verify(value)`` method will send the ``*ESR?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *ESR?
+            ```
         """
         return self._esr
 
@@ -460,7 +455,7 @@ class AWG5200Commands:
     def fgen(self) -> Fgen:
         """Return the ``FGEN`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FGEN?`` query.
             - Using the ``.verify(value)`` method will send the ``FGEN?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -474,19 +469,18 @@ class AWG5200Commands:
     def idn(self) -> Idn:
         """Return the ``*IDN`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the instrument identification code.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*IDN?`` query.
             - Using the ``.verify(value)`` method will send the ``*IDN?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *IDN?
+            ```
         """
         return self._idn
 
@@ -494,7 +488,7 @@ class AWG5200Commands:
     def instrument(self) -> Instrument:
         """Return the ``INSTrument`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``INSTrument?`` query.
             - Using the ``.verify(value)`` method will send the ``INSTrument?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -509,7 +503,7 @@ class AWG5200Commands:
     def mmemory(self) -> Mmemory:
         """Return the ``MMEMory`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -531,7 +525,7 @@ class AWG5200Commands:
     def opc(self) -> Opc:
         """Return the ``*OPC`` command.
 
-        **Description:**
+        Description:
             - This command generates the operation complete message in the Standard Event Status
               Register (SESR) when all pending commands that generate an OPC message are complete.
               The ``*OPC?`` query places the ASCII character '1' into the output queue when all such
@@ -542,18 +536,17 @@ class AWG5200Commands:
               information, see Synchronization Methods. Refer to the Oscilloscope operations that
               can generate OPC table for a list of commands that generate an OPC message.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*OPC?`` query.
             - Using the ``.verify(value)`` method will send the ``*OPC?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write()`` method will send the ``*OPC`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *OPC
             - *OPC?
+            ```
         """
         return self._opc
 
@@ -561,23 +554,22 @@ class AWG5200Commands:
     def opt(self) -> Opt:
         """Return the ``*OPT`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns a comma separated list of installed options as an
               arbitrary ASCII string (no quotes) of the form:
               ``<optionCode>:<optionDescription>``,``<optionCode>:<optionDescription>``... The last
               section of each entry (the text following the last hyphen) indicates the license type.
               If no options are found, NONE is returned.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*OPT?`` query.
             - Using the ``.verify(value)`` method will send the ``*OPT?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *OPT?
+            ```
         """
         return self._opt
 
@@ -585,7 +577,7 @@ class AWG5200Commands:
     def output(self) -> Output:
         """Return the ``OUTPut`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -599,7 +591,7 @@ class AWG5200Commands:
     def outputx(self) -> Dict[int, OutputItem]:
         """Return the ``OUTPut[n]`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut[n]?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut[n]?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -616,7 +608,7 @@ class AWG5200Commands:
     def rst(self) -> Rst:
         """Return the ``*RST`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) resets the instrument to the factory default settings.
               This command does the following: Recalls the default instrument setup. Clears the
               current ``*DDT`` command. Disables aliases (``:ALIAS:STATE 0``). Disables the user
@@ -641,14 +633,13 @@ class AWG5200Commands:
               with the WFMOutpre commands. ``*RST`` only resets the programmable interface settings,
               it does not change the user interface settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*RST`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *RST
+            ```
         """
         return self._rst
 
@@ -656,7 +647,7 @@ class AWG5200Commands:
     def slist(self) -> Slist:
         """Return the ``SLISt`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SLISt?`` query.
             - Using the ``.verify(value)`` method will send the ``SLISt?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -672,7 +663,7 @@ class AWG5200Commands:
     def source(self) -> Source:
         """Return the ``SOURce`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -689,7 +680,7 @@ class AWG5200Commands:
     def sourcex(self) -> Dict[int, SourceItem]:
         """Return the ``SOURce[n]`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce[n]?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce[n]?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -716,24 +707,23 @@ class AWG5200Commands:
     def sre(self) -> Sre:
         """Return the ``*SRE`` command.
 
-        **Description:**
+        Description:
             - The ``*SRE`` (Service Request Enable) command sets and queries the bits in the Service
               Request Enable Register. For more information, refer to Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*SRE?`` query.
             - Using the ``.verify(value)`` method will send the ``*SRE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*SRE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *SRE <NR1>
             - *SRE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is a value in the range from 0 through 255. The binary bits of the SRER are
               set according to this value. Using an out-of-range value causes an execution error.
               The power-on default for SRER is 0 if ``*PSC`` is 1. If ``*PSC`` is 0, the SRER
@@ -745,7 +735,7 @@ class AWG5200Commands:
     def status(self) -> Status:
         """Return the ``STATus`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``STATus?`` query.
             - Using the ``.verify(value)`` method will send the ``STATus?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -761,21 +751,20 @@ class AWG5200Commands:
     def stb(self) -> Stb:
         """Return the ``*STB`` command.
 
-        **Description:**
+        Description:
             - The ``*STB?`` (Read Status Byte) query returns the contents of the Status Byte
               Register (SBR) using the Master Summary Status (MSS) bit. For more information, refer
               to Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*STB?`` query.
             - Using the ``.verify(value)`` method will send the ``*STB?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *STB?
+            ```
         """
         return self._stb
 
@@ -783,7 +772,7 @@ class AWG5200Commands:
     def synchronize(self) -> Synchronize:
         """Return the ``SYNChronize`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYNChronize?`` query.
             - Using the ``.verify(value)`` method will send the ``SYNChronize?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -798,7 +787,7 @@ class AWG5200Commands:
     def system(self) -> System:
         """Return the ``SYSTem`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -815,17 +804,16 @@ class AWG5200Commands:
     def trg(self) -> Trg:
         """Return the ``*TRG`` command.
 
-        **Description:**
+        Description:
             - Performs a group execute trigger on commands defined by ``*DDT``.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*TRG`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *TRG
+            ```
         """
         return self._trg
 
@@ -833,7 +821,7 @@ class AWG5200Commands:
     def trigger(self) -> Trigger:
         """Return the ``TRIGger`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -854,19 +842,18 @@ class AWG5200Commands:
     def tst(self) -> Tst:
         """Return the ``*TST`` command.
 
-        **Description:**
+        Description:
             - Tests (self-test) the interface and returns a 0.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*TST?`` query.
             - Using the ``.verify(value)`` method will send the ``*TST?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *TST?
+            ```
         """
         return self._tst
 
@@ -874,20 +861,19 @@ class AWG5200Commands:
     def wai(self) -> Wai:
         """Return the ``*WAI`` command.
 
-        **Description:**
+        Description:
             - The ``*WAI`` (Wait) command (no query form) prevents the instrument from executing
               further commands or queries until all pending commands that generate an OPC message
               are complete. This command allows you to synchronize the operation of the instrument
               with your application program. For more information, refer to Synchronization Methods.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*WAI`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *WAI
+            ```
         """
         return self._wai
 
@@ -895,7 +881,7 @@ class AWG5200Commands:
     def wlist(self) -> Wlist:
         """Return the ``WLISt`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -914,7 +900,7 @@ class AWG5200Commands:
     def wplugin(self) -> Wplugin:
         """Return the ``WPLugin`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WPLugin?`` query.
             - Using the ``.verify(value)`` method will send the ``WPLugin?`` query and raise an
               AssertionError if the returned value does not match ``value``.

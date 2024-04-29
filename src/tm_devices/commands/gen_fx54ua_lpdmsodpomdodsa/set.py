@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SET?
 """
 
@@ -27,7 +25,7 @@ if TYPE_CHECKING:
 class Set(SCPICmdRead):
     """The ``SET`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the commands that list the instrument settings, except for
           configuration information for the calibration values. You can use these commands to return
           the instrument to the state it was in when you made the ``SET?`` query. The ``SET?`` query
@@ -36,16 +34,15 @@ class Set(SCPICmdRead):
           string. The VERBOSE command can still be used to specify whether the returned headers
           should be abbreviated or full-length. This command is identical to the LRN command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SET?`` query.
         - Using the ``.verify(value)`` method will send the ``SET?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SET?
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "SET") -> None:

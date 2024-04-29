@@ -621,7 +621,7 @@ class SMU2601BPulseCommands:
     This provides access to all the commands for the SMU2601B-Pulse device. See the documentation of
     each property for more usage information.
 
-    Properties/methods:
+    Properties and methods:
         - ``.beeper``: The ``beeper`` command tree.
         - ``.buffer_var``: The ``bufferVar`` command tree.
         - ``.dataqueue``: The ``dataqueue`` command tree.
@@ -678,11 +678,11 @@ class SMU2601BPulseCommands:
     def buffer_var(self) -> Dict[str, Buffervar]:
         """Return the ``bufferVar`` command tree.
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
               or a dedicated reading buffer.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.capacity``: The ``bufferVar.capacity`` attribute.
             - ``.statuses``: The ``bufferVar.statuses[N]`` attribute.
         """
@@ -735,7 +735,7 @@ class SMU2601BPulseCommands:
               output trigger generator operate on the specified trigger line to detect rising-edge
               triggers as input and assert a TTL-low pulse for output.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.trigger``: The ``digio.trigger[N]`` command tree.
         """
         return self._digio
@@ -816,7 +816,7 @@ class SMU2601BPulseCommands:
             - ``.WHEEL_LEFT``: Represents turning the Navigation wheel left.
             - ``.WHEEL_RIGHT``: Represents turning the Navigation wheel right.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.getlastkey()``: The ``display.getlastkey()`` function.
             - ``.screen``: The ``display.screen`` attribute.
             - ``.sendkey()``: The ``display.sendkey()`` function.
@@ -830,7 +830,7 @@ class SMU2601BPulseCommands:
     def errorqueue(self) -> Errorqueue:
         """Return the ``errorqueue`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.next()``: The ``errorqueue.next()`` function.
         """
         return self._errorqueue
@@ -886,7 +886,7 @@ class SMU2601BPulseCommands:
     def gpib(self) -> Gpib:
         """Return the ``gpib`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.address``: The ``gpib.address`` attribute.
         """
         return self._gpib
@@ -924,7 +924,7 @@ class SMU2601BPulseCommands:
               LAN event to rising edge (positive state).
             - ``.UDP``: Use UDP protocol.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.config``: The ``lan.config`` command tree.
             - ``.trigger``: The ``lan.trigger[N]`` command tree.
         """
@@ -941,7 +941,7 @@ class SMU2601BPulseCommands:
             - ``.PASSWORD_NONE``: Disable passwords everywhere.
             - ``.PASSWORD_WEB``: Use passwords on the web interface only.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.model``: The ``localnode.model`` attribute.
         """
         return self._localnode
@@ -950,7 +950,7 @@ class SMU2601BPulseCommands:
     def serial(self) -> Serial:
         """Return the ``serial`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.baud``: The ``serial.baud`` attribute.
             - ``.databits``: The ``serial.databits`` attribute.
             - ``.parity``: The ``serial.parity`` attribute.
@@ -1030,7 +1030,7 @@ class SMU2601BPulseCommands:
             - ``.SOURCE_IDLE``: Sets the source level to the programmed (idle) level at the end of
               the pulse.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.abort()``: The ``smuX.abort()`` function.
             - ``.buffer``: The ``smuX.buffer`` command tree.
             - ``.cal``: The ``smuX.cal`` command tree.
@@ -1089,7 +1089,7 @@ class SMU2601BPulseCommands:
             - ``.SYSTEM_SUMMARY_BIT``: B1. Set summary bit indicates that an enabled system event
               has occurred.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.measurement``: The ``status.measurement`` command tree.
             - ``.operation``: The ``status.operation`` command tree.
             - ``.questionable``: The ``status.questionable`` command tree.
@@ -1112,7 +1112,7 @@ class SMU2601BPulseCommands:
             - ``.EVENT_ID``: Selects the event that causes a trigger to be asserted on the digital
               output line as a \*TRG command received on the remote interface.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.blender``: The ``trigger.blender[N]`` command tree.
             - ``.generator``: The ``trigger.generator[N]`` command tree.
             - ``.timer``: The ``trigger.timer[N]`` command tree.
@@ -1146,7 +1146,7 @@ class SMU2601BPulseCommands:
             - ``.TRIG_SYNCHRONOUSM``: Detects rising-edge triggers as an input. Asserts a TTL-low
               pulse for output.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.trigger``: The ``tsplink.trigger[N]`` command tree.
         """  # noqa: E501
         return self._tsplink
@@ -1194,7 +1194,7 @@ class SMU2601BPulseMixin:
         This provides access to all the commands for the SMU2601B-Pulse device. See the
         documentation of each sub-property for more usage information.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.beeper``: The ``beeper`` command tree.
             - ``.buffer_var``: The ``bufferVar`` command tree.
             - ``.dataqueue``: The ``dataqueue`` command tree.

@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - DCH<x>_D<x>:LABel:COLor <QString>
     - DCH<x>_D<x>:LABel:COLor?
     - DCH<x>_D<x>:LABel:FONT:BOLD {<NR1>|OFF|ON}
@@ -46,24 +44,23 @@ if TYPE_CHECKING:
 class DchItemDigitalBitThreshold(SCPICmdWrite, SCPICmdRead):
     """The ``DCH<x>_D<x>:THReshold`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the threshold level in volts for the specified digital
           channel. If the source channel doesn't exist, a hardware missing error event is set.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DCH<x>_D<x>:THReshold?`` query.
         - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:THReshold?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DCH<x>_D<x>:THReshold value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DCH<x>_D<x>:THReshold <NR3>
         - DCH<x>_D<x>:THReshold?
+        ```
 
-    **Info:**
+    Info:
         - ``DCH<x>`` specifies the digital channel. The supported value is 1.
         - ``D<x>`` specifies the digital bits. The supported values are 0 to 15. 0 to 7 have common
           a threshold and 8 to 15 have a common threshold.
@@ -75,23 +72,22 @@ class DchItemDigitalBitThreshold(SCPICmdWrite, SCPICmdRead):
 class DchItemDigitalBitLabelName(SCPICmdWrite, SCPICmdRead):
     """The ``DCH<x>_D<x>:LABel:NAMe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the label of the specified digital bit.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DCH<x>_D<x>:LABel:NAMe?`` query.
         - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:LABel:NAMe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DCH<x>_D<x>:LABel:NAMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DCH<x>_D<x>:LABel:NAMe <QString>
         - DCH<x>_D<x>:LABel:NAMe?
+        ```
 
-    **Info:**
+    Info:
         - ``DCH<x>`` specifies the digital channel. The supported value is 1.
         - ``D<x>`` specifies the digital bits. specifies the digital bits. The supported values are
           0 to 15 or DALL (all digital bits).
@@ -104,25 +100,24 @@ class DchItemDigitalBitLabelName(SCPICmdWrite, SCPICmdRead):
 class DchItemDigitalBitLabelFontUnderline(SCPICmdWrite, SCPICmdRead):
     """The ``DCH<x>_D<x>:LABel:FONT:UNDERline`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the underline state of the label of the specified digital
           bit.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DCH<x>_D<x>:LABel:FONT:UNDERline?`` query.
         - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:LABel:FONT:UNDERline?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``DCH<x>_D<x>:LABel:FONT:UNDERline value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DCH<x>_D<x>:LABel:FONT:UNDERline {<NR1>|OFF|ON}
         - DCH<x>_D<x>:LABel:FONT:UNDERline?
+        ```
 
-    **Info:**
+    Info:
         - ``DCH<x>`` specifies the digital channel. The supported value is 1.
         - ``D<x>`` specifies the digital bits. The supported values are 0 to 15.
         - ``<NR1>`` = 0 turns off underline font; any other value turns on italic font.
@@ -134,25 +129,24 @@ class DchItemDigitalBitLabelFontUnderline(SCPICmdWrite, SCPICmdRead):
 class DchItemDigitalBitLabelFontType(SCPICmdWrite, SCPICmdRead):
     """The ``DCH<x>_D<x>:LABel:FONT:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the font type of the label of the specified digital bit, such
           as Arial or Times New Roman.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DCH<x>_D<x>:LABel:FONT:TYPE?`` query.
         - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:LABel:FONT:TYPE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DCH<x>_D<x>:LABel:FONT:TYPE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DCH<x>_D<x>:LABel:FONT:TYPE <QString>
         - DCH<x>_D<x>:LABel:FONT:TYPE?
+        ```
 
-    **Info:**
+    Info:
         - ``DCH<x>`` specifies the digital channel. The supported value is 1.
         - ``D<x>`` specifies the digital bits. The supported values are 0 to 15.
         - ``<QString>`` is the font type of the label.
@@ -164,24 +158,23 @@ class DchItemDigitalBitLabelFontType(SCPICmdWrite, SCPICmdRead):
 class DchItemDigitalBitLabelFontSize(SCPICmdWrite, SCPICmdRead):
     """The ``DCH<x>_D<x>:LABel:FONT:SIZE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the font size of the label of the specified digital bit.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DCH<x>_D<x>:LABel:FONT:SIZE?`` query.
         - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:LABel:FONT:SIZE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DCH<x>_D<x>:LABel:FONT:SIZE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DCH<x>_D<x>:LABel:FONT:SIZE <NR1>
         - DCH<x>_D<x>:LABel:FONT:SIZE?
+        ```
 
-    **Info:**
+    Info:
         - ``DCH<x>`` specifies the digital channel. The supported value is 1.
         - ``D<x>`` specifies the digital bits. The supported values are 0 to 15.
         - ``<NR1>`` specifies the font size in points.
@@ -191,24 +184,23 @@ class DchItemDigitalBitLabelFontSize(SCPICmdWrite, SCPICmdRead):
 class DchItemDigitalBitLabelFontItalic(SCPICmdWrite, SCPICmdRead):
     """The ``DCH<x>_D<x>:LABel:FONT:ITALic`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the italic state of the label of the specified digital bit.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DCH<x>_D<x>:LABel:FONT:ITALic?`` query.
         - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:LABel:FONT:ITALic?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DCH<x>_D<x>:LABel:FONT:ITALic value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DCH<x>_D<x>:LABel:FONT:ITALic {<NR1>|OFF|ON}
         - DCH<x>_D<x>:LABel:FONT:ITALic?
+        ```
 
-    **Info:**
+    Info:
         - ``DCH<x>`` specifies the digital channel. The supported value is 1.
         - ``D<x>`` specifies the digital bits. The supported values are 0 to 15.
         - ``<NR1>`` = 0 turns off italic font; any other value turns on italic font.
@@ -220,24 +212,23 @@ class DchItemDigitalBitLabelFontItalic(SCPICmdWrite, SCPICmdRead):
 class DchItemDigitalBitLabelFontBold(SCPICmdWrite, SCPICmdRead):
     """The ``DCH<x>_D<x>:LABel:FONT:BOLD`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the bold state of the label of the specified digital bit.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DCH<x>_D<x>:LABel:FONT:BOLD?`` query.
         - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:LABel:FONT:BOLD?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DCH<x>_D<x>:LABel:FONT:BOLD value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DCH<x>_D<x>:LABel:FONT:BOLD {<NR1>|OFF|ON}
         - DCH<x>_D<x>:LABel:FONT:BOLD?
+        ```
 
-    **Info:**
+    Info:
         - ``DCH<x>`` specifies the digital channel. The supported value is 1.
         - ``D<x>`` specifies the digital bits. The supported values are 0 to 15.
         - ``<NR1>`` = 0 turns off bold font; any other value turns on bold font.
@@ -249,12 +240,12 @@ class DchItemDigitalBitLabelFontBold(SCPICmdWrite, SCPICmdRead):
 class DchItemDigitalBitLabelFont(SCPICmdRead):
     """The ``DCH<x>_D<x>:LABel:FONT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DCH<x>_D<x>:LABel:FONT?`` query.
         - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:LABel:FONT?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``DCH<x>`` specifies the digital channel. The supported value is 1.
         - ``D<x>`` specifies the digital bits. The supported values are 0 to 15.
 
@@ -280,24 +271,23 @@ class DchItemDigitalBitLabelFont(SCPICmdRead):
     def bold(self) -> DchItemDigitalBitLabelFontBold:
         """Return the ``DCH<x>_D<x>:LABel:FONT:BOLD`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the bold state of the label of the specified digital bit.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DCH<x>_D<x>:LABel:FONT:BOLD?`` query.
             - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:LABel:FONT:BOLD?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DCH<x>_D<x>:LABel:FONT:BOLD value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DCH<x>_D<x>:LABel:FONT:BOLD {<NR1>|OFF|ON}
             - DCH<x>_D<x>:LABel:FONT:BOLD?
+            ```
 
-        **Info:**
+        Info:
             - ``DCH<x>`` specifies the digital channel. The supported value is 1.
             - ``D<x>`` specifies the digital bits. The supported values are 0 to 15.
             - ``<NR1>`` = 0 turns off bold font; any other value turns on bold font.
@@ -310,25 +300,24 @@ class DchItemDigitalBitLabelFont(SCPICmdRead):
     def italic(self) -> DchItemDigitalBitLabelFontItalic:
         """Return the ``DCH<x>_D<x>:LABel:FONT:ITALic`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the italic state of the label of the specified digital
               bit.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DCH<x>_D<x>:LABel:FONT:ITALic?`` query.
             - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:LABel:FONT:ITALic?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``DCH<x>_D<x>:LABel:FONT:ITALic value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DCH<x>_D<x>:LABel:FONT:ITALic {<NR1>|OFF|ON}
             - DCH<x>_D<x>:LABel:FONT:ITALic?
+            ```
 
-        **Info:**
+        Info:
             - ``DCH<x>`` specifies the digital channel. The supported value is 1.
             - ``D<x>`` specifies the digital bits. The supported values are 0 to 15.
             - ``<NR1>`` = 0 turns off italic font; any other value turns on italic font.
@@ -341,24 +330,23 @@ class DchItemDigitalBitLabelFont(SCPICmdRead):
     def size(self) -> DchItemDigitalBitLabelFontSize:
         """Return the ``DCH<x>_D<x>:LABel:FONT:SIZE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the font size of the label of the specified digital bit.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DCH<x>_D<x>:LABel:FONT:SIZE?`` query.
             - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:LABel:FONT:SIZE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DCH<x>_D<x>:LABel:FONT:SIZE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DCH<x>_D<x>:LABel:FONT:SIZE <NR1>
             - DCH<x>_D<x>:LABel:FONT:SIZE?
+            ```
 
-        **Info:**
+        Info:
             - ``DCH<x>`` specifies the digital channel. The supported value is 1.
             - ``D<x>`` specifies the digital bits. The supported values are 0 to 15.
             - ``<NR1>`` specifies the font size in points.
@@ -369,25 +357,24 @@ class DchItemDigitalBitLabelFont(SCPICmdRead):
     def type(self) -> DchItemDigitalBitLabelFontType:
         """Return the ``DCH<x>_D<x>:LABel:FONT:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the font type of the label of the specified digital bit,
               such as Arial or Times New Roman.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DCH<x>_D<x>:LABel:FONT:TYPE?`` query.
             - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:LABel:FONT:TYPE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DCH<x>_D<x>:LABel:FONT:TYPE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DCH<x>_D<x>:LABel:FONT:TYPE <QString>
             - DCH<x>_D<x>:LABel:FONT:TYPE?
+            ```
 
-        **Info:**
+        Info:
             - ``DCH<x>`` specifies the digital channel. The supported value is 1.
             - ``D<x>`` specifies the digital bits. The supported values are 0 to 15.
             - ``<QString>`` is the font type of the label.
@@ -398,11 +385,11 @@ class DchItemDigitalBitLabelFont(SCPICmdRead):
     def underline(self) -> DchItemDigitalBitLabelFontUnderline:
         """Return the ``DCH<x>_D<x>:LABel:FONT:UNDERline`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the underline state of the label of the specified digital
               bit.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DCH<x>_D<x>:LABel:FONT:UNDERline?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -411,14 +398,13 @@ class DchItemDigitalBitLabelFont(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``DCH<x>_D<x>:LABel:FONT:UNDERline value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DCH<x>_D<x>:LABel:FONT:UNDERline {<NR1>|OFF|ON}
             - DCH<x>_D<x>:LABel:FONT:UNDERline?
+            ```
 
-        **Info:**
+        Info:
             - ``DCH<x>`` specifies the digital channel. The supported value is 1.
             - ``D<x>`` specifies the digital bits. The supported values are 0 to 15.
             - ``<NR1>`` = 0 turns off underline font; any other value turns on italic font.
@@ -431,24 +417,23 @@ class DchItemDigitalBitLabelFont(SCPICmdRead):
 class DchItemDigitalBitLabelColor(SCPICmdWrite, SCPICmdRead):
     """The ``DCH<x>_D<x>:LABel:COLor`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the color of the label of the specified digital bit.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DCH<x>_D<x>:LABel:COLor?`` query.
         - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:LABel:COLor?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DCH<x>_D<x>:LABel:COLor value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DCH<x>_D<x>:LABel:COLor <QString>
         - DCH<x>_D<x>:LABel:COLor?
+        ```
 
-    **Info:**
+    Info:
         - ``DCH<x>`` specifies the digital channel. The supported value is 1.
         - ``D<x>`` specifies the digital bits. The supported values are 0 to 15.
         - ``<QString>`` is the label color. To return the color to the default color, send an empty
@@ -461,12 +446,12 @@ class DchItemDigitalBitLabelColor(SCPICmdWrite, SCPICmdRead):
 class DchItemDigitalBitLabel(SCPICmdRead):
     """The ``DCH<x>_D<x>:LABel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DCH<x>_D<x>:LABel?`` query.
         - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:LABel?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``DCH<x>`` specifies the digital channel. The supported value is 1.
         - ``D<x>`` specifies the digital bits. The supported values are 0 to 15.
 
@@ -486,24 +471,23 @@ class DchItemDigitalBitLabel(SCPICmdRead):
     def color(self) -> DchItemDigitalBitLabelColor:
         """Return the ``DCH<x>_D<x>:LABel:COLor`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the color of the label of the specified digital bit.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DCH<x>_D<x>:LABel:COLor?`` query.
             - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:LABel:COLor?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DCH<x>_D<x>:LABel:COLor value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DCH<x>_D<x>:LABel:COLor <QString>
             - DCH<x>_D<x>:LABel:COLor?
+            ```
 
-        **Info:**
+        Info:
             - ``DCH<x>`` specifies the digital channel. The supported value is 1.
             - ``D<x>`` specifies the digital bits. The supported values are 0 to 15.
             - ``<QString>`` is the label color. To return the color to the default color, send an
@@ -515,12 +499,12 @@ class DchItemDigitalBitLabel(SCPICmdRead):
     def font(self) -> DchItemDigitalBitLabelFont:
         """Return the ``DCH<x>_D<x>:LABel:FONT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DCH<x>_D<x>:LABel:FONT?`` query.
             - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:LABel:FONT?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``DCH<x>`` specifies the digital channel. The supported value is 1.
             - ``D<x>`` specifies the digital bits. The supported values are 0 to 15.
 
@@ -537,24 +521,23 @@ class DchItemDigitalBitLabel(SCPICmdRead):
     def name(self) -> DchItemDigitalBitLabelName:
         """Return the ``DCH<x>_D<x>:LABel:NAMe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the label of the specified digital bit.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DCH<x>_D<x>:LABel:NAMe?`` query.
             - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:LABel:NAMe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DCH<x>_D<x>:LABel:NAMe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DCH<x>_D<x>:LABel:NAMe <QString>
             - DCH<x>_D<x>:LABel:NAMe?
+            ```
 
-        **Info:**
+        Info:
             - ``DCH<x>`` specifies the digital channel. The supported value is 1.
             - ``D<x>`` specifies the digital bits. specifies the digital bits. The supported values
               are 0 to 15 or DALL (all digital bits).
@@ -566,12 +549,12 @@ class DchItemDigitalBitLabel(SCPICmdRead):
 class DchItemDigitalBit(ValidatedDigitalBit, SCPICmdRead):
     """The ``DCH<x>_D<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DCH<x>_D<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``DCH<x>`` specifies the digital channel. The supported value is 1.
         - ``D<x>`` specifies the digital bits. The supported values are 0 to 15.
 
@@ -589,12 +572,12 @@ class DchItemDigitalBit(ValidatedDigitalBit, SCPICmdRead):
     def label(self) -> DchItemDigitalBitLabel:
         """Return the ``DCH<x>_D<x>:LABel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DCH<x>_D<x>:LABel?`` query.
             - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:LABel?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``DCH<x>`` specifies the digital channel. The supported value is 1.
             - ``D<x>`` specifies the digital bits. The supported values are 0 to 15.
 
@@ -609,25 +592,24 @@ class DchItemDigitalBit(ValidatedDigitalBit, SCPICmdRead):
     def threshold(self) -> DchItemDigitalBitThreshold:
         """Return the ``DCH<x>_D<x>:THReshold`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the threshold level in volts for the specified digital
               channel. If the source channel doesn't exist, a hardware missing error event is set.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DCH<x>_D<x>:THReshold?`` query.
             - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>:THReshold?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DCH<x>_D<x>:THReshold value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DCH<x>_D<x>:THReshold <NR3>
             - DCH<x>_D<x>:THReshold?
+            ```
 
-        **Info:**
+        Info:
             - ``DCH<x>`` specifies the digital channel. The supported value is 1.
             - ``D<x>`` specifies the digital bits. The supported values are 0 to 15. 0 to 7 have
               common a threshold and 8 to 15 have a common threshold.
@@ -640,12 +622,12 @@ class DchItemDigitalBit(ValidatedDigitalBit, SCPICmdRead):
 class DchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``DCH<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DCH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``DCH<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``DCH<x>`` specifies the digital channel. The supported value is 1.
 
     Properties:
@@ -662,12 +644,12 @@ class DchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def d(self) -> Dict[int, DchItemDigitalBit]:
         """Return the ``DCH<x>_D<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DCH<x>_D<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``DCH<x>_D<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``DCH<x>`` specifies the digital channel. The supported value is 1.
             - ``D<x>`` specifies the digital bits. The supported values are 0 to 15.
 

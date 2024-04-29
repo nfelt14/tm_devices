@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - FILTERVu:FREQuency <NR3>
     - FILTERVu:FREQuency:AVAILable?
     - FILTERVu:FREQuency?
@@ -27,45 +25,43 @@ if TYPE_CHECKING:
 class FiltervuFrequencyAvailable(SCPICmdRead):
     """The ``FILTERVu:FREQuency:AVAILable`` command.
 
-    **Description:**
+    Description:
         - Returns a comma separated list of filter frequencies available based on the current
           instrument settings. The source waveform (as specified by the ``DATA:SOURCE``) must be
           turned on for this query to generate a response.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FILTERVu:FREQuency:AVAILable?`` query.
         - Using the ``.verify(value)`` method will send the ``FILTERVu:FREQuency:AVAILable?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILTERVu:FREQuency:AVAILable?
+        ```
     """
 
 
 class FiltervuFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``FILTERVu:FREQuency`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the FilterVu frequency to the closest value supported with the current
           acquisition settings.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FILTERVu:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``FILTERVu:FREQuency?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``FILTERVu:FREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FILTERVu:FREQuency <NR3>
         - FILTERVu:FREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the integer format for the current FilterVu frequency setting.
 
     Properties:
@@ -80,21 +76,20 @@ class FiltervuFrequency(SCPICmdWrite, SCPICmdRead):
     def available(self) -> FiltervuFrequencyAvailable:
         """Return the ``FILTERVu:FREQuency:AVAILable`` command.
 
-        **Description:**
+        Description:
             - Returns a comma separated list of filter frequencies available based on the current
               instrument settings. The source waveform (as specified by the ``DATA:SOURCE``) must be
               turned on for this query to generate a response.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FILTERVu:FREQuency:AVAILable?`` query.
             - Using the ``.verify(value)`` method will send the ``FILTERVu:FREQuency:AVAILable?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILTERVu:FREQuency:AVAILable?
+            ```
         """
         return self._available
 
@@ -102,7 +97,7 @@ class FiltervuFrequency(SCPICmdWrite, SCPICmdRead):
 class Filtervu(SCPICmdRead):
     """The ``FILTERVu`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FILTERVu?`` query.
         - Using the ``.verify(value)`` method will send the ``FILTERVu?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -119,24 +114,23 @@ class Filtervu(SCPICmdRead):
     def frequency(self) -> FiltervuFrequency:
         """Return the ``FILTERVu:FREQuency`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the FilterVu frequency to the closest value supported with the current
               acquisition settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FILTERVu:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``FILTERVu:FREQuency?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``FILTERVu:FREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILTERVu:FREQuency <NR3>
             - FILTERVu:FREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the integer format for the current FilterVu frequency setting.
 
         Sub-properties:

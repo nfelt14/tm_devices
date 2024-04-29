@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - LIC:UNINSTALL? <QString>
 """
 
@@ -25,24 +23,23 @@ if TYPE_CHECKING:
 class LicUninstall(SCPICmdReadWithArguments):
     """The ``LIC:UNINSTALL`` command.
 
-    **Description:**
+    Description:
         - Returns the exit license indicated for the user to return to their TekAMS account. Active
           licenses can be specified by their nomenclature. TransactionIDs can be used to specify an
           active license or a previously uninstalled license. In either case, the exit-license is
           returned as block-data.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``LIC:UNINSTALL? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the ``LIC:UNINSTALL? argument``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIC:UNINSTALL? <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the nomenclature of an active license or a TransactionIDs to specify an
           active license or a previously uninstalled license.
     """
@@ -51,7 +48,7 @@ class LicUninstall(SCPICmdReadWithArguments):
 class Lic(SCPICmdRead):
     """The ``LIC`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIC?`` query.
         - Using the ``.verify(value)`` method will send the ``LIC?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -68,25 +65,24 @@ class Lic(SCPICmdRead):
     def uninstall(self) -> LicUninstall:
         """Return the ``LIC:UNINSTALL`` command.
 
-        **Description:**
+        Description:
             - Returns the exit license indicated for the user to return to their TekAMS account.
               Active licenses can be specified by their nomenclature. TransactionIDs can be used to
               specify an active license or a previously uninstalled license. In either case, the
               exit-license is returned as block-data.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``LIC:UNINSTALL? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``LIC:UNINSTALL? argument`` query and raise an AssertionError if the returned value
               does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIC:UNINSTALL? <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the nomenclature of an active license or a TransactionIDs to specify
               an active license or a previously uninstalled license.
         """

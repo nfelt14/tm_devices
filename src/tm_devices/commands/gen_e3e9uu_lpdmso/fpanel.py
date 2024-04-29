@@ -10,11 +10,12 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
-    - FPAnel:PRESS {AUTOset| BUS| CH<x>| CLEAR| CURsor| DEFaultsetup| FASTAcq| FORCetrig| GPKNOB1| GPKNOB2| HIGHRES| HORZPOS| HORZScale| MATh| NEXt| PREv| REF| RUNSTop| SETTO50| SINGleseq| TOUCHSCReen| TRIGMode| TRIGSlope| USER| VERTPOS| VERTSCALE| ZOOM}
-    - FPAnel:TURN {GPKNOB<x>|HORZPOS|HORZScale|PANKNOB| TRIGLevel|VERTPOS|VERTSCALE|ZOOM} [,<NR1>]
-"""  # noqa: E501
+    - FPAnel:PRESS {AUTOset| BUS| CH<x>| CLEAR| CURsor| DEFaultsetup| FASTAcq| FORCetrig| GPKNOB1|
+      GPKNOB2| HIGHRES| HORZPOS| HORZScale| MATh| NEXt| PREv| REF| RUNSTop| SETTO50| SINGleseq|
+      TOUCHSCReen| TRIGMode| TRIGSlope| USER| VERTPOS| VERTSCALE| ZOOM}
+    - FPAnel:TURN {GPKNOB<x>|HORZPOS|HORZScale|PANKNOB| TRIGLevel|VERTPOS|VERTSCALE|ZOOM}
+      [,<NR1>]
+"""
 
 from typing import Optional, TYPE_CHECKING
 
@@ -27,21 +28,20 @@ if TYPE_CHECKING:
 class FpanelTurn(SCPICmdWrite):
     """The ``FPAnel:TURN`` command.
 
-    **Description:**
+    Description:
         - This command is used to emulate a knob turn. The optional NR1 specifies the number of
           clicks where negative values indicate counter clockwise. If not specified, the default of
           1 click is used indicating the knob is turned clockwise 1 click.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FPAnel:TURN value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FPAnel:TURN {GPKNOB<x>|HORZPOS|HORZScale|PANKNOB| TRIGLevel|VERTPOS|VERTSCALE|ZOOM} [,<NR1>]
+        ```
 
-    **Info:**
+    Info:
         - ``GPKNOB1`` emulates a Multipurpose A knob turn.
         - ``GPKNOB2`` emulates a Multipurpose B knob turn.
         - ``HORZPOS`` emulates a Horizontal knob turn.
@@ -58,20 +58,19 @@ class FpanelTurn(SCPICmdWrite):
 class FpanelPress(SCPICmdWrite):
     """The ``FPAnel:PRESS`` command.
 
-    **Description:**
+    Description:
         - This command is used to emulate a button press. When used with knob enumerations, this
           command pushes the knob. Use the ``FPANEL:TURN`` command to emulate knob turns.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FPAnel:PRESS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FPAnel:PRESS {AUTOset| BUS| CH<x>| CLEAR| CURsor| DEFaultsetup| FASTAcq| FORCetrig| GPKNOB1| GPKNOB2| HIGHRES| HORZPOS| HORZScale| MATh| NEXt| PREv| REF| RUNSTop| SETTO50| SINGleseq| TOUCHSCReen| TRIGMode| TRIGSlope| USER| VERTPOS| VERTSCALE| ZOOM}
+        ```
 
-    **Info:**
+    Info:
         - ``AUTOset`` emulates a Autoset button press.
         - ``BUS`` emulates a Bus button press.
         - ``CH<x>`` emulates a Channel button press. The channel number is specified by x.
@@ -105,7 +104,7 @@ class FpanelPress(SCPICmdWrite):
 class Fpanel(SCPICmdRead):
     """The ``FPAnel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FPAnel?`` query.
         - Using the ``.verify(value)`` method will send the ``FPAnel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -124,20 +123,19 @@ class Fpanel(SCPICmdRead):
     def press(self) -> FpanelPress:
         """Return the ``FPAnel:PRESS`` command.
 
-        **Description:**
+        Description:
             - This command is used to emulate a button press. When used with knob enumerations, this
               command pushes the knob. Use the ``FPANEL:TURN`` command to emulate knob turns.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FPAnel:PRESS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FPAnel:PRESS {AUTOset| BUS| CH<x>| CLEAR| CURsor| DEFaultsetup| FASTAcq| FORCetrig| GPKNOB1| GPKNOB2| HIGHRES| HORZPOS| HORZScale| MATh| NEXt| PREv| REF| RUNSTop| SETTO50| SINGleseq| TOUCHSCReen| TRIGMode| TRIGSlope| USER| VERTPOS| VERTSCALE| ZOOM}
+            ```
 
-        **Info:**
+        Info:
             - ``AUTOset`` emulates a Autoset button press.
             - ``BUS`` emulates a Bus button press.
             - ``CH<x>`` emulates a Channel button press. The channel number is specified by x.
@@ -172,21 +170,20 @@ class Fpanel(SCPICmdRead):
     def turn(self) -> FpanelTurn:
         """Return the ``FPAnel:TURN`` command.
 
-        **Description:**
+        Description:
             - This command is used to emulate a knob turn. The optional NR1 specifies the number of
               clicks where negative values indicate counter clockwise. If not specified, the default
               of 1 click is used indicating the knob is turned clockwise 1 click.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FPAnel:TURN value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FPAnel:TURN {GPKNOB<x>|HORZPOS|HORZScale|PANKNOB| TRIGLevel|VERTPOS|VERTSCALE|ZOOM} [,<NR1>]
+            ```
 
-        **Info:**
+        Info:
             - ``GPKNOB1`` emulates a Multipurpose A knob turn.
             - ``GPKNOB2`` emulates a Multipurpose B knob turn.
             - ``HORZPOS`` emulates a Horizontal knob turn.

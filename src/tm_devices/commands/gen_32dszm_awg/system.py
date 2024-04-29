@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SYSTem:DATE <year>,<month>,<day>
     - SYSTem:DATE?
     - SYSTem:ERRor:NEXT?
@@ -32,65 +30,62 @@ if TYPE_CHECKING:
 class SystemVersion(SCPICmdRead):
     """The ``SYSTem:VERSion`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the conformed SCPI version of the instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem:VERSion?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem:VERSion?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYSTem:VERSion?
+        ```
     """
 
 
 class SystemTime(SCPICmdWrite, SCPICmdRead):
     """The ``SYSTem:TIME`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the system time (hours, minutes and seconds). This command is
           equivalent to the time setting through the Windows Control Panel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem:TIME?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem:TIME?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SYSTem:TIME value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYSTem:TIME <hour>,<minute>,<second>
         - SYSTem:TIME?
+        ```
     """
 
 
 class SystemKlock(SCPICmdWrite, SCPICmdRead):
     """The ``SYSTem:KLOCk`` command.
 
-    **Description:**
+    Description:
         - This command locks or unlocks the keyboard and front panel of the arbitrary waveform
           generator.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem:KLOCk?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem:KLOCk?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SYSTem:KLOCk value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYSTem:KLOCk <state>
         - SYSTem:KLOCk?
+        ```
 
-    **Info:**
+    Info:
         - ``<state>`` ::=<Boolean>.
         - ``0`` indicates False. The front panel and keyboard are unlocked.
         - ``1`` indicates True. The front panel and keyboard are locked.
@@ -100,26 +95,25 @@ class SystemKlock(SCPICmdWrite, SCPICmdRead):
 class SystemErrorNext(SCPICmdRead):
     """The ``SYSTem:ERRor:NEXT`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the contents of the Error/Event queue.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem:ERRor:NEXT?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor:NEXT?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYSTem:ERRor:NEXT?
+        ```
     """
 
 
 class SystemErrorCmd(SCPICmdRead):
     """The ``SYSTem:ERRor`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem:ERRor?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -136,19 +130,18 @@ class SystemErrorCmd(SCPICmdRead):
     def next(self) -> SystemErrorNext:
         """Return the ``SYSTem:ERRor:NEXT`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the contents of the Error/Event queue.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem:ERRor:NEXT?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor:NEXT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYSTem:ERRor:NEXT?
+            ```
         """
         return self._next
 
@@ -156,24 +149,23 @@ class SystemErrorCmd(SCPICmdRead):
 class SystemDate(SCPICmdWrite, SCPICmdRead):
     """The ``SYSTem:DATE`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the system date. When the values are nonintegers,
           they are rounded off to nearest integral values.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem:DATE?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem:DATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SYSTem:DATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYSTem:DATE <year>,<month>,<day>
         - SYSTem:DATE?
+        ```
 
-    **Info:**
+    Info:
         - ``<year>`` ::=<NRf> (Four digit number).
         - ``<month>`` ::=<NRf> from 1 to 12.
         - ``<day>`` ::=<NRf> from 1 to 31.
@@ -183,7 +175,7 @@ class SystemDate(SCPICmdWrite, SCPICmdRead):
 class System(SCPICmdRead):
     """The ``SYSTem`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -208,24 +200,23 @@ class System(SCPICmdRead):
     def date(self) -> SystemDate:
         """Return the ``SYSTem:DATE`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the system date. When the values are
               nonintegers, they are rounded off to nearest integral values.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem:DATE?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem:DATE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SYSTem:DATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYSTem:DATE <year>,<month>,<day>
             - SYSTem:DATE?
+            ```
 
-        **Info:**
+        Info:
             - ``<year>`` ::=<NRf> (Four digit number).
             - ``<month>`` ::=<NRf> from 1 to 12.
             - ``<day>`` ::=<NRf> from 1 to 31.
@@ -236,7 +227,7 @@ class System(SCPICmdRead):
     def error(self) -> SystemError:
         """Return the ``SYSTem:ERRor`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem:ERRor?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem:ERRor?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -250,24 +241,23 @@ class System(SCPICmdRead):
     def klock(self) -> SystemKlock:
         """Return the ``SYSTem:KLOCk`` command.
 
-        **Description:**
+        Description:
             - This command locks or unlocks the keyboard and front panel of the arbitrary waveform
               generator.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem:KLOCk?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem:KLOCk?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SYSTem:KLOCk value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYSTem:KLOCk <state>
             - SYSTem:KLOCk?
+            ```
 
-        **Info:**
+        Info:
             - ``<state>`` ::=<Boolean>.
             - ``0`` indicates False. The front panel and keyboard are unlocked.
             - ``1`` indicates True. The front panel and keyboard are locked.
@@ -278,22 +268,21 @@ class System(SCPICmdRead):
     def time(self) -> SystemTime:
         """Return the ``SYSTem:TIME`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the system time (hours, minutes and seconds). This
               command is equivalent to the time setting through the Windows Control Panel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem:TIME?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem:TIME?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SYSTem:TIME value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYSTem:TIME <hour>,<minute>,<second>
             - SYSTem:TIME?
+            ```
         """
         return self._time
 
@@ -301,18 +290,17 @@ class System(SCPICmdRead):
     def version(self) -> SystemVersion:
         """Return the ``SYSTem:VERSion`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the conformed SCPI version of the instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem:VERSion?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem:VERSion?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYSTem:VERSion?
+            ```
         """
         return self._version

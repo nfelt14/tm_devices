@@ -12,8 +12,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - bufferVar.appendmode
     - bufferVar.basetimestamp
     - bufferVar.cachemode
@@ -49,11 +47,11 @@ if TYPE_CHECKING:
 class Buffervar(BaseTSPCmd):
     """The ``bufferVar`` command tree.
 
-    **Info:**
+    Info:
         - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer or a
           dedicated reading buffer.
 
-    Properties/methods:
+    Properties and methods:
         - ``.appendmode``: The ``bufferVar.appendmode`` attribute.
         - ``.basetimestamp``: The ``bufferVar.basetimestamp`` attribute.
         - ``.cachemode``: The ``bufferVar.cachemode`` attribute.
@@ -129,22 +127,21 @@ class Buffervar(BaseTSPCmd):
     def appendmode(self) -> str:
         """Access the ``bufferVar.appendmode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the state of the append mode of the reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.appendmode)`` query.
             - Setting this property to a value will send the ``bufferVar.appendmode = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.appendmode = value
             - print(bufferVar.appendmode)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
               or a dedicated reading buffer.
 
@@ -165,22 +162,21 @@ class Buffervar(BaseTSPCmd):
     def appendmode(self, value: Union[str, float]) -> None:
         """Access the ``bufferVar.appendmode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the state of the append mode of the reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.appendmode)`` query.
             - Setting this property to a value will send the ``bufferVar.appendmode = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.appendmode = value
             - print(bufferVar.appendmode)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
               or a dedicated reading buffer.
 
@@ -204,20 +200,19 @@ class Buffervar(BaseTSPCmd):
     def basetimestamp(self) -> str:
         """Access the ``bufferVar.basetimestamp`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the timestamp that indicates when the first reading was stored
               in the buffer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.basetimestamp)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.basetimestamp)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated buffer
               (user-defined), or a dedicated reading buffer (such as smua.nvbuffer1).
 
@@ -238,22 +233,21 @@ class Buffervar(BaseTSPCmd):
     def cachemode(self) -> str:
         """Access the ``bufferVar.cachemode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the reading buffer cache (on or off).
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.cachemode)`` query.
             - Setting this property to a value will send the ``bufferVar.cachemode = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.cachemode = value
             - print(bufferVar.cachemode)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
               or a dedicated reading buffer.
 
@@ -274,22 +268,21 @@ class Buffervar(BaseTSPCmd):
     def cachemode(self, value: Union[str, float]) -> None:
         """Access the ``bufferVar.cachemode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the reading buffer cache (on or off).
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.cachemode)`` query.
             - Setting this property to a value will send the ``bufferVar.cachemode = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.cachemode = value
             - print(bufferVar.cachemode)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
               or a dedicated reading buffer.
 
@@ -313,19 +306,18 @@ class Buffervar(BaseTSPCmd):
     def capacity(self) -> str:
         """Access the ``bufferVar.capacity`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of readings a buffer can store.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.capacity)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.capacity)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
               or a dedicated reading buffer.
 
@@ -346,23 +338,22 @@ class Buffervar(BaseTSPCmd):
     def collectsourcevalues(self) -> str:
         """Access the ``bufferVar.collectsourcevalues`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets whether or not source values are stored with the readings in the
               buffer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.collectsourcevalues)`` query.
             - Setting this property to a value will send the
               ``bufferVar.collectsourcevalues = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.collectsourcevalues = value
             - print(bufferVar.collectsourcevalues)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated buffer
               (user-defined), or a dedicated reading buffer (such as smua.nvbuffer1).
 
@@ -383,23 +374,22 @@ class Buffervar(BaseTSPCmd):
     def collectsourcevalues(self, value: Union[str, float]) -> None:
         """Access the ``bufferVar.collectsourcevalues`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets whether or not source values are stored with the readings in the
               buffer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.collectsourcevalues)`` query.
             - Setting this property to a value will send the
               ``bufferVar.collectsourcevalues = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.collectsourcevalues = value
             - print(bufferVar.collectsourcevalues)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated buffer
               (user-defined), or a dedicated reading buffer (such as smua.nvbuffer1).
 
@@ -423,23 +413,22 @@ class Buffervar(BaseTSPCmd):
     def collecttimestamps(self) -> str:
         """Access the ``bufferVar.collecttimestamps`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets whether or not timestamp values are stored with the readings in
               the buffer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.collecttimestamps)`` query.
             - Setting this property to a value will send the ``bufferVar.collecttimestamps = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.collecttimestamps = value
             - print(bufferVar.collecttimestamps)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
               or a dedicated reading buffer.
 
@@ -460,23 +449,22 @@ class Buffervar(BaseTSPCmd):
     def collecttimestamps(self, value: Union[str, float]) -> None:
         """Access the ``bufferVar.collecttimestamps`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets whether or not timestamp values are stored with the readings in
               the buffer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.collecttimestamps)`` query.
             - Setting this property to a value will send the ``bufferVar.collecttimestamps = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.collecttimestamps = value
             - print(bufferVar.collecttimestamps)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
               or a dedicated reading buffer.
 
@@ -500,22 +488,21 @@ class Buffervar(BaseTSPCmd):
     def fillcount(self) -> str:
         """Access the ``bufferVar.fillcount`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the reading buffer fill count.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.fillcount)`` query.
             - Setting this property to a value will send the ``bufferVar.fillcount = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.fillcount = value
             - print(bufferVar.fillcount)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated buffer
               (user-defined), or a dedicated reading buffer (such as smua.nvbuffer1).
 
@@ -536,22 +523,21 @@ class Buffervar(BaseTSPCmd):
     def fillcount(self, value: Union[str, float]) -> None:
         """Access the ``bufferVar.fillcount`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the reading buffer fill count.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.fillcount)`` query.
             - Setting this property to a value will send the ``bufferVar.fillcount = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.fillcount = value
             - print(bufferVar.fillcount)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated buffer
               (user-defined), or a dedicated reading buffer (such as smua.nvbuffer1).
 
@@ -575,21 +561,20 @@ class Buffervar(BaseTSPCmd):
     def fillmode(self) -> str:
         """Access the ``bufferVar.fillmode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the reading buffer fill mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.fillmode)`` query.
             - Setting this property to a value will send the ``bufferVar.fillmode = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.fillmode = value
             - print(bufferVar.fillmode)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated buffer
               (user-defined), or a dedicated reading buffer (such as smua.nvbuffer1).
 
@@ -610,21 +595,20 @@ class Buffervar(BaseTSPCmd):
     def fillmode(self, value: Union[str, float]) -> None:
         """Access the ``bufferVar.fillmode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the reading buffer fill mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.fillmode)`` query.
             - Setting this property to a value will send the ``bufferVar.fillmode = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.fillmode = value
             - print(bufferVar.fillmode)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated buffer
               (user-defined), or a dedicated reading buffer (such as smua.nvbuffer1).
 
@@ -648,21 +632,20 @@ class Buffervar(BaseTSPCmd):
     def measurefunctions(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.measurefunctions[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the measurement function that was used to acquire a reading
               stored in a specified reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the
               ``print(bufferVar.measurefunctions[N])`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.measurefunctions[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated buffer
               (user-defined), or a dedicated reading buffer (such as smua.nvbuffer1).
             - ``N``, the reading number (1 to bufferVar.n).
@@ -676,21 +659,20 @@ class Buffervar(BaseTSPCmd):
     def measureranges(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.measureranges[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the measurement range values that were used for readings
               stored in a specified buffer.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the
               ``print(bufferVar.measureranges[N])`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.measureranges[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated buffer
               (user-defined), or a dedicated reading buffer (such as smua.nvbuffer1).
             - ``N``, the reading number (1 to bufferVar.n).
@@ -704,19 +686,18 @@ class Buffervar(BaseTSPCmd):
     def n(self) -> str:
         """Access the ``bufferVar.n`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the number of readings in the buffer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.n)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.n)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
               or a dedicated reading buffer.
 
@@ -737,20 +718,19 @@ class Buffervar(BaseTSPCmd):
     def readings(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.readings[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the readings stored in a specified reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the ``print(bufferVar.readings[N])``
               query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.readings[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
               or a dedicated reading buffer.
             - ``N``, the reading number N; can be any value from 1 to the number of readings in the
@@ -765,21 +745,20 @@ class Buffervar(BaseTSPCmd):
     def sourcefunctions(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.sourcefunctions[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source function that was being used when the readings were
               stored in a specified reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the
               ``print(bufferVar.sourcefunctions[N])`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.sourcefunctions[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated buffer
               (user-defined), or a dedicated reading buffer (such as smua.nvbuffer1).
             - ``N``, the reading number (1 to bufferVar.n).
@@ -793,21 +772,20 @@ class Buffervar(BaseTSPCmd):
     def sourceoutputstates(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.sourceoutputstates[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates the state of the source output for readings that are stored
               in a specified buffer.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the
               ``print(bufferVar.sourceoutputstates[N])`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.sourceoutputstates[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated buffer
               (user-defined), or a dedicated reading buffer (such as smua.nvbuffer1).
             - ``N``, the reading number (1 to bufferVar.n).
@@ -821,21 +799,20 @@ class Buffervar(BaseTSPCmd):
     def sourceranges(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.sourceranges[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source range that was used for readings stored in a
               specified reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the
               ``print(bufferVar.sourceranges[N])`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.sourceranges[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated buffer
               (user-defined), or a dedicated reading buffer (such as smua.nvbuffer1).
             - ``N``, the reading number (1 to bufferVar.n).
@@ -849,21 +826,20 @@ class Buffervar(BaseTSPCmd):
     def sourcevalues(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.sourcevalues[N]`` attribute.
 
-        **Description:**
+        Description:
             - When enabled by the bufferVar.collectsourcevalues attribute, this attribute contains
               the source levels being output when readings in the reading buffer were acquired.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the
               ``print(bufferVar.sourcevalues[N])`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.sourcevalues[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated buffer
               (user-defined) or a dedicated reading buffer (such as smua.nvbuffer1).
             - ``N``, the reading number (1 to bufferVar.n).
@@ -877,20 +853,19 @@ class Buffervar(BaseTSPCmd):
     def statuses(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.statuses[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the status values of readings in the reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the ``print(bufferVar.statuses[N])``
               query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.statuses[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
               or a dedicated reading buffer.
             - ``N``, the reading number N; can be any value from 1 to the number of readings in the
@@ -905,22 +880,21 @@ class Buffervar(BaseTSPCmd):
     def timestampresolution(self) -> str:
         """Access the ``bufferVar.timestampresolution`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the resolution of the timestamp.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.timestampresolution)`` query.
             - Setting this property to a value will send the
               ``bufferVar.timestampresolution = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.timestampresolution = value
             - print(bufferVar.timestampresolution)
+            ```
 
-        **Info:**
+        Info:
             - ``resolution``, the timestamp resolution in seconds (minimum 1 µs; rounded to an even
               power of 2 µs).
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
@@ -943,22 +917,21 @@ class Buffervar(BaseTSPCmd):
     def timestampresolution(self, value: Union[str, float]) -> None:
         """Access the ``bufferVar.timestampresolution`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the resolution of the timestamp.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.timestampresolution)`` query.
             - Setting this property to a value will send the
               ``bufferVar.timestampresolution = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.timestampresolution = value
             - print(bufferVar.timestampresolution)
+            ```
 
-        **Info:**
+        Info:
             - ``resolution``, the timestamp resolution in seconds (minimum 1 µs; rounded to an even
               power of 2 µs).
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
@@ -984,21 +957,20 @@ class Buffervar(BaseTSPCmd):
     def timestamps(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.timestamps[N]`` attribute.
 
-        **Description:**
+        Description:
             - When enabled by the bufferVar.collecttimestamps attribute, this attribute contains the
               timestamp when each reading saved in the specified reading buffer occurred.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the ``print(bufferVar.timestamps[N])``
               query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.timestamps[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
               or a dedicated reading buffer.
             - ``N``, the reading number (1 to bufferVar.n).
@@ -1011,16 +983,15 @@ class Buffervar(BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``bufferVar.clear()`` function.
 
-        **Description:**
+        Description:
             - This function empties the buffer.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.clear()
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
               or a dedicated reading buffer.
 
@@ -1038,16 +1009,15 @@ class Buffervar(BaseTSPCmd):
     def clearcache(self) -> None:
         """Run the ``bufferVar.clearcache()`` function.
 
-        **Description:**
+        Description:
             - This function clears the cache.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.clearcache()
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
               or a dedicated reading buffer.
 

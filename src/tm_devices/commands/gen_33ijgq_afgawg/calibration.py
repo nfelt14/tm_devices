@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CALibration:ALL
     - CALibration:ALL?
 """
@@ -26,30 +24,29 @@ if TYPE_CHECKING:
 class CalibrationAll(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``CALibration:ALL`` command.
 
-    **Description:**
+    Description:
         - The CALibration[``:ALL``] command performs an internal calibration. The
           CALibration[``:ALL``]? command performs an internal calibration and returns 0 (Pass) or a
           calibration error code.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibration:ALL?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibration:ALL?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``CALibration:ALL`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibration:ALL
         - CALibration:ALL?
+        ```
     """
 
 
 class Calibration(SCPICmdRead):
     """The ``CALibration`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibration?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibration?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -68,22 +65,21 @@ class Calibration(SCPICmdRead):
     def all(self) -> CalibrationAll:
         """Return the ``CALibration:ALL`` command.
 
-        **Description:**
+        Description:
             - The CALibration[``:ALL``] command performs an internal calibration. The
               CALibration[``:ALL``]? command performs an internal calibration and returns 0 (Pass)
               or a calibration error code.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibration:ALL?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibration:ALL?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write()`` method will send the ``CALibration:ALL`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibration:ALL
             - CALibration:ALL?
+            ```
         """
         return self._all

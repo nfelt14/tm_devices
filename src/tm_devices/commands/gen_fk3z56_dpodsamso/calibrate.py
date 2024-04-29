@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CALibrate:CALProbe:CH<x>?
     - CALibrate:INTERNal
     - CALibrate:INTERNal:STARt
@@ -38,26 +36,25 @@ if TYPE_CHECKING:
 class CalibrateResultsSpc(SCPICmdRead):
     """The ``CALibrate:RESults:SPC`` command.
 
-    **Description:**
+    Description:
         - Returns the status of the SPC operation. This query does not initiate a SPC.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibrate:RESults:SPC?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibrate:RESults:SPC?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibrate:RESults:SPC?
+        ```
     """
 
 
 class CalibrateResults(SCPICmdRead):
     """The ``CALibrate:RESults`` command.
 
-    **Description:**
+    Description:
         - Returns the status of internal and factory calibrations, without performing any
           calibration operations. The results returned do not include the calibration status of
           attached probes. The query is intended to support GO/NoGO testing of the oscilloscope
@@ -66,16 +63,15 @@ class CalibrateResults(SCPICmdRead):
           (particularly when the oscilloscope inputs are connected into a test system with coaxial
           cables).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibrate:RESults?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibrate:RESults?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibrate:RESults?
+        ```
 
     Properties:
         - ``.spc``: The ``CALibrate:RESults:SPC`` command.
@@ -89,19 +85,18 @@ class CalibrateResults(SCPICmdRead):
     def spc(self) -> CalibrateResultsSpc:
         """Return the ``CALibrate:RESults:SPC`` command.
 
-        **Description:**
+        Description:
             - Returns the status of the SPC operation. This query does not initiate a SPC.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibrate:RESults:SPC?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibrate:RESults:SPC?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibrate:RESults:SPC?
+            ```
         """
         return self._spc
 
@@ -109,27 +104,26 @@ class CalibrateResults(SCPICmdRead):
 class CalibrateProbestateChannel(ValidatedChannel, SCPICmdRead):
     """The ``CALibrate:PRObestate:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the probe calibration status for the probe of the selected
           channel, 1 through 4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibrate:PRObestate:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibrate:PRObestate:CH<x>?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibrate:PRObestate:CH<x>?
+        ```
     """
 
 
 class CalibrateProbestate(SCPICmdRead):
     """The ``CALibrate:PRObestate`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibrate:PRObestate?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibrate:PRObestate?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -148,20 +142,19 @@ class CalibrateProbestate(SCPICmdRead):
     def ch(self) -> Dict[int, CalibrateProbestateChannel]:
         """Return the ``CALibrate:PRObestate:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the probe calibration status for the probe of the
               selected channel, 1 through 4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibrate:PRObestate:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibrate:PRObestate:CH<x>?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibrate:PRObestate:CH<x>?
+            ```
         """
         return self._ch
 
@@ -169,58 +162,55 @@ class CalibrateProbestate(SCPICmdRead):
 class CalibrateInternalStatus(SCPICmdRead):
     """The ``CALibrate:INTERNal:STATus`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the current status of the signal path calibration.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibrate:INTERNal:STATus?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibrate:INTERNal:STATus?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibrate:INTERNal:STATus?
+        ```
     """
 
 
 class CalibrateInternalStart(SCPICmdWriteNoArguments):
     """The ``CALibrate:INTERNal:STARt`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) starts the signal path calibration (SPC) of the analog
           channels. This command is the same as the ``CALIBRATE:INTERNAL`` command. You can use the
           ``CALIBRATE:INTERNAL:STATUS`` query to return the current status of the signal path
           calibration of the instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``CALibrate:INTERNal:STARt`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibrate:INTERNal:STARt
+        ```
     """
 
 
 class CalibrateInternal(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``CALibrate:INTERNal`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) starts the signal path calibration (SPC) of the instrument.
           You can use the ``CALIBRATE:INTERNAL:STATUS`` query to return the current status of the
           signal path calibration of the instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``CALibrate:INTERNal`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibrate:INTERNal
+        ```
 
     Properties:
         - ``.start``: The ``CALibrate:INTERNal:STARt`` command.
@@ -236,20 +226,19 @@ class CalibrateInternal(SCPICmdWriteNoArguments, SCPICmdRead):
     def start(self) -> CalibrateInternalStart:
         """Return the ``CALibrate:INTERNal:STARt`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) starts the signal path calibration (SPC) of the analog
               channels. This command is the same as the ``CALIBRATE:INTERNAL`` command. You can use
               the ``CALIBRATE:INTERNAL:STATUS`` query to return the current status of the signal
               path calibration of the instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``CALibrate:INTERNal:STARt`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibrate:INTERNal:STARt
+            ```
         """
         return self._start
 
@@ -257,19 +246,18 @@ class CalibrateInternal(SCPICmdWriteNoArguments, SCPICmdRead):
     def status(self) -> CalibrateInternalStatus:
         """Return the ``CALibrate:INTERNal:STATus`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the current status of the signal path calibration.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibrate:INTERNal:STATus?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibrate:INTERNal:STATus?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibrate:INTERNal:STATus?
+            ```
         """
         return self._status
 
@@ -277,29 +265,28 @@ class CalibrateInternal(SCPICmdWriteNoArguments, SCPICmdRead):
 class CalibrateCalprobeChannel(ValidatedChannel, SCPICmdRead):
     """The ``CALibrate:CALProbe:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command instructs the instrument to perform a probe calibration for the
           selected channel and returns the calibration status. The Channel <x> range is 1 through 4.
           This command is equivalent to selecting Probe Cal from the Vertical menu. You must warm up
           the instrument for at least 20 minutes before running this command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibrate:CALProbe:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibrate:CALProbe:CH<x>?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibrate:CALProbe:CH<x>?
+        ```
     """
 
 
 class CalibrateCalprobe(SCPICmdRead):
     """The ``CALibrate:CALProbe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibrate:CALProbe?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibrate:CALProbe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -318,22 +305,21 @@ class CalibrateCalprobe(SCPICmdRead):
     def ch(self) -> Dict[int, CalibrateCalprobeChannel]:
         """Return the ``CALibrate:CALProbe:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command instructs the instrument to perform a probe calibration for
               the selected channel and returns the calibration status. The Channel <x> range is 1
               through 4. This command is equivalent to selecting Probe Cal from the Vertical menu.
               You must warm up the instrument for at least 20 minutes before running this command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibrate:CALProbe:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibrate:CALProbe:CH<x>?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibrate:CALProbe:CH<x>?
+            ```
         """
         return self._ch
 
@@ -341,19 +327,18 @@ class CalibrateCalprobe(SCPICmdRead):
 class Calibrate(SCPICmdRead):
     """The ``CALibrate`` command.
 
-    **Description:**
+    Description:
         - This query returns the status of signal path calibration.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CALibrate?`` query.
         - Using the ``.verify(value)`` method will send the ``CALibrate?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CALibrate?
+        ```
 
     Properties:
         - ``.calprobe``: The ``CALibrate:CALProbe`` command tree.
@@ -373,7 +358,7 @@ class Calibrate(SCPICmdRead):
     def calprobe(self) -> CalibrateCalprobe:
         """Return the ``CALibrate:CALProbe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibrate:CALProbe?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibrate:CALProbe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -387,19 +372,18 @@ class Calibrate(SCPICmdRead):
     def internal(self) -> CalibrateInternal:
         """Return the ``CALibrate:INTERNal`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) starts the signal path calibration (SPC) of the
               instrument. You can use the ``CALIBRATE:INTERNAL:STATUS`` query to return the current
               status of the signal path calibration of the instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``CALibrate:INTERNal`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibrate:INTERNal
+            ```
 
         Sub-properties:
             - ``.start``: The ``CALibrate:INTERNal:STARt`` command.
@@ -411,7 +395,7 @@ class Calibrate(SCPICmdRead):
     def probestate(self) -> CalibrateProbestate:
         """Return the ``CALibrate:PRObestate`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibrate:PRObestate?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibrate:PRObestate?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -425,7 +409,7 @@ class Calibrate(SCPICmdRead):
     def results(self) -> CalibrateResults:
         """Return the ``CALibrate:RESults`` command.
 
-        **Description:**
+        Description:
             - Returns the status of internal and factory calibrations, without performing any
               calibration operations. The results returned do not include the calibration status of
               attached probes. The query is intended to support GO/NoGO testing of the oscilloscope
@@ -434,16 +418,15 @@ class Calibrate(SCPICmdRead):
               probes (particularly when the oscilloscope inputs are connected into a test system
               with coaxial cables).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibrate:RESults?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibrate:RESults?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibrate:RESults?
+            ```
 
         Sub-properties:
             - ``.spc``: The ``CALibrate:RESults:SPC`` command.

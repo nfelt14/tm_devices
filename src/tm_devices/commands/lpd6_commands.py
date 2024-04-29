@@ -1470,19 +1470,18 @@ class LPD6Commands:
     def acquire(self) -> Acquire:
         """Return the ``ACQuire`` command.
 
-        **Description:**
+        Description:
             - Queries the current acquisition state.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACQuire?`` query.
             - Using the ``.verify(value)`` method will send the ``ACQuire?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACQuire?
+            ```
 
         Sub-properties:
             - ``.fastaverage``: The ``ACQuire:FASTAVerage`` command tree.
@@ -1502,7 +1501,7 @@ class LPD6Commands:
     def actonevent(self) -> Actonevent:
         """Return the ``ACTONEVent`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1524,7 +1523,7 @@ class LPD6Commands:
     def afg(self) -> Afg:
         """Return the ``AFG`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AFG?`` query.
             - Using the ``.verify(value)`` method will send the ``AFG?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1551,24 +1550,23 @@ class LPD6Commands:
     def alias(self) -> Alias:
         """Return the ``ALIas`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the state of alias functionality, and it is identical to
               the ``ALIAS:STATE`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ALIas?`` query.
             - Using the ``.verify(value)`` method will send the ``ALIas?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ALIas value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ALIas {OFF|ON|<NR1>}
             - ALIas?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` turns Alias expansion off.
             - ``ON`` turns Alias expansion on. When a defined alias is received, the specified
               command sequence is substituted for the alias and executed.
@@ -1586,22 +1584,21 @@ class LPD6Commands:
     def allev(self) -> Allev:
         """Return the ``ALLEv`` command.
 
-        **Description:**
+        Description:
             - This query-only command prompts the instrument to return all events and their messages
               (delimited by commas), and removes the returned events from the Event Queue. Use the
               ``*ESR?`` query to enable the events to be returned. This command is similar to
               repeatedly sending ``*EVMsg?`` queries to the instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ALLEv?`` query.
             - Using the ``.verify(value)`` method will send the ``ALLEv?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ALLEv?
+            ```
         """
         return self._allev
 
@@ -1609,7 +1606,7 @@ class LPD6Commands:
     def application(self) -> Application:
         """Return the ``APPLication`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``APPLication?`` query.
             - Using the ``.verify(value)`` method will send the ``APPLication?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1623,24 +1620,23 @@ class LPD6Commands:
     def autosavepitimeout(self) -> Autosavepitimeout:
         """Return the ``AUTOSAVEPITIMEOUT`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the idle time from the programmable interface before
               auto-save occurs.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUTOSAVEPITIMEOUT?`` query.
             - Using the ``.verify(value)`` method will send the ``AUTOSAVEPITIMEOUT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUTOSAVEPITIMEOUT value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUTOSAVEPITIMEOUT <NR1>
             - AUTOSAVEPITIMEOUT?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>``
         """
         return self._autosavepitimeout
@@ -1649,24 +1645,23 @@ class LPD6Commands:
     def autosaveuitimeout(self) -> Autosaveuitimeout:
         """Return the ``AUTOSAVEUITIMEOUT`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the idle time from the user interface before auto-save
               occurs.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUTOSAVEUITIMEOUT?`` query.
             - Using the ``.verify(value)`` method will send the ``AUTOSAVEUITIMEOUT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUTOSAVEUITIMEOUT value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUTOSAVEUITIMEOUT <NR1>
             - AUTOSAVEUITIMEOUT?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>``
         """
         return self._autosaveuitimeout
@@ -1675,20 +1670,19 @@ class LPD6Commands:
     def autoset(self) -> Autoset:
         """Return the ``AUTOSet`` command.
 
-        **Description:**
+        Description:
             - This command (no query format) sets the vertical, horizontal, and trigger controls of
               the instrument to automatically acquire and display the selected waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``AUTOSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUTOSet EXECute
+            ```
 
-        **Info:**
+        Info:
             - ``EXECute`` autosets the displayed waveform; this is equivalent to pressing the front
               panel Autoset button.
 
@@ -1705,7 +1699,7 @@ class LPD6Commands:
     def auxout(self) -> Auxout:
         """Return the ``AUXout`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXout?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXout?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1720,7 +1714,7 @@ class LPD6Commands:
     def bus(self) -> Bus:
         """Return the ``BUS`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BUS?`` query.
             - Using the ``.verify(value)`` method will send the ``BUS?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1737,7 +1731,7 @@ class LPD6Commands:
     def bustable(self) -> Bustable:
         """Return the ``BUSTABle`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BUSTABle?`` query.
             - Using the ``.verify(value)`` method will send the ``BUSTABle?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1753,20 +1747,19 @@ class LPD6Commands:
     def busy(self) -> Busy:
         """Return the ``BUSY`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the status of the instrument. This command allows you
               to synchronize the operation of the instrument with your application program.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BUSY?`` query.
             - Using the ``.verify(value)`` method will send the ``BUSY?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BUSY?
+            ```
         """
         return self._busy
 
@@ -1774,20 +1767,19 @@ class LPD6Commands:
     def cal(self) -> Cal:
         """Return the ``*CAL`` command.
 
-        **Description:**
+        Description:
             - This query-only command starts signal path calibration (SPC) and returns the status
               upon completion.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*CAL?`` query.
             - Using the ``.verify(value)`` method will send the ``*CAL?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *CAL?
+            ```
         """
         return self._cal
 
@@ -1795,19 +1787,18 @@ class LPD6Commands:
     def calibrate(self) -> Calibrate:
         """Return the ``CALibrate`` command.
 
-        **Description:**
+        Description:
             - This query returns the status of signal path calibration.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALibrate?`` query.
             - Using the ``.verify(value)`` method will send the ``CALibrate?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CALibrate?
+            ```
 
         Sub-properties:
             - ``.internal``: The ``CALibrate:INTERNal`` command.
@@ -1819,7 +1810,7 @@ class LPD6Commands:
     def callouts(self) -> Callouts:
         """Return the ``CALLOUTS`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CALLOUTS?`` query.
             - Using the ``.verify(value)`` method will send the ``CALLOUTS?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1834,20 +1825,19 @@ class LPD6Commands:
     def ch(self) -> Dict[int, Channel]:
         """Return the ``CH<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the vertical parameters for the specified channel. The
               channel is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``CH<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CH<x>?
+            ```
 
         Sub-properties:
             - ``.bandwidth``: The ``CH<x>:BANdwidth`` command.
@@ -1878,17 +1868,16 @@ class LPD6Commands:
     def clear(self) -> Clear:
         """Return the ``CLEAR`` command.
 
-        **Description:**
+        Description:
             - This command  clears acquisitions, measurements, and waveforms.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``CLEAR`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLEAR
+            ```
         """
         return self._clear
 
@@ -1896,7 +1885,7 @@ class LPD6Commands:
     def cls(self) -> Cls:
         """Return the ``*CLS`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) clears the following: Event Queue Standard Event Status
               Register Status Byte Register (except the MAV bit) If the ``*CLS`` command immediately
               follows an <EOI>, the Output Queue and MAV bit (Status Byte Register bit 4) are also
@@ -1906,14 +1895,13 @@ class LPD6Commands:
               by an ``*OPC``. This will happen if a single sequence acquisition operation is still
               being processed when the ``*CLS`` command is executed.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*CLS`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *CLS
+            ```
         """
         return self._cls
 
@@ -1921,7 +1909,7 @@ class LPD6Commands:
     def configuration(self) -> Configuration:
         """Return the ``CONFIGuration`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CONFIGuration?`` query.
             - Using the ``.verify(value)`` method will send the ``CONFIGuration?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -1935,7 +1923,7 @@ class LPD6Commands:
     def connected(self) -> Connected:
         """Return the ``CONNected`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CONNected?`` query.
             - Using the ``.verify(value)`` method will send the ``CONNected?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1951,7 +1939,7 @@ class LPD6Commands:
     def curve(self) -> Curve:
         """Return the ``CURVe`` command.
 
-        **Description:**
+        Description:
             - This command transfers waveform data from the instrument. Each waveform that is
               transferred has an associated waveform preamble that contains information such as data
               format and scale. The ``CURVe?`` query transfers data from the instrument. The data
@@ -1989,16 +1977,15 @@ class LPD6Commands:
               group2) are turned on then 500 rows will be returned for each channel. To calculate
               the number of rows, you can use- (number of bytes from curve header/``BYT_NR``)/1000.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURVe?`` query.
             - Using the ``.verify(value)`` method will send the ``CURVe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURVe?
+            ```
         """
         return self._curve
 
@@ -2006,7 +1993,7 @@ class LPD6Commands:
     def curvestream(self) -> Curvestream:
         """Return the ``CURVEStream`` command.
 
-        **Description:**
+        Description:
             - This query-only command continuously transfers waveform data from the instrument as it
               is acquired. This command puts the instrument into a streaming data mode, allowing the
               controller to receive waveform records as fast as they are acquired. Use the
@@ -2028,16 +2015,15 @@ class LPD6Commands:
               bus fast enough, the trigger rate is slowed to allow each waveform to be sent
               sequentially.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CURVEStream?`` query.
             - Using the ``.verify(value)`` method will send the ``CURVEStream?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CURVEStream?
+            ```
         """
         return self._curvestream
 
@@ -2045,7 +2031,7 @@ class LPD6Commands:
     def customtable(self) -> Customtable:
         """Return the ``CUSTOMTABle`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CUSTOMTABle?`` query.
             - Using the ``.verify(value)`` method will send the ``CUSTOMTABle?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2061,24 +2047,23 @@ class LPD6Commands:
     def data(self) -> Data:
         """Return the ``DATa`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the format and location of the waveform data that is
               transferred with the CURVE command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DATa?`` query.
             - Using the ``.verify(value)`` method will send the ``DATa?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DATa value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DATa {INIT|SNAp}
             - DATa?
+            ```
 
-        **Info:**
+        Info:
             - ``INIT`` initializes the waveform data parameters to their factory defaults except for
               ``DATa:STOP``, which isset to the current acquisition record length.
             - ``SNAp`` Sets ``DATa:STARt`` and ``DATa:STOP`` to match the current waveform cursor
@@ -2103,19 +2088,18 @@ class LPD6Commands:
     def date(self) -> Date:
         """Return the ``DATE`` command.
 
-        **Description:**
+        Description:
             - This command queries the date that the instrument displays.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DATE?`` query.
             - Using the ``.verify(value)`` method will send the ``DATE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DATE?
+            ```
         """
         return self._date
 
@@ -2123,25 +2107,24 @@ class LPD6Commands:
     def ddt(self) -> Ddt:
         """Return the ``*DDT`` command.
 
-        **Description:**
+        Description:
             - This command allows you to specify a command or a list of commands that are executed
               when the instrument receives a TRG command. Define Device Trigger ( ``*DDT`` ) is a
               special alias that the ``*TRG`` command uses.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*DDT?`` query.
             - Using the ``.verify(value)`` method will send the ``*DDT?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*DDT value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *DDT {<Block>|<QString>}
             - *DDT?
+            ```
 
-        **Info:**
+        Info:
             - ``<Block>`` is a complete sequence of program messages. The messages can contain only
               valid commands that must be separated by semicolons and must follow all rules for
               concatenating commands. The sequence must be less than or equal to 80 characters. The
@@ -2156,26 +2139,25 @@ class LPD6Commands:
     def dese(self) -> Dese:
         """Return the ``DESE`` command.
 
-        **Description:**
+        Description:
             - This command sets and queries the bits in the Device Event Status Enable Register
               (DESER). The DESER is the mask that determines whether events are reported to the
               Standard Event Status Register (SESR), and entered into the Event Queue. For a more
               detailed discussion of the use of these registers, see Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DESE?`` query.
             - Using the ``.verify(value)`` method will send the ``DESE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DESE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DESE <NR1>
             - DESE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` The binary bits of the DESER are set according to this value, which ranges
               from 1 through 255. For example, ``DESE 209`` sets the DESER to the binary value
               11010001 (that is, the most significant bit in the register is set to 1, the next most
@@ -2187,7 +2169,7 @@ class LPD6Commands:
     def diag(self) -> Diag:
         """Return the ``DIAg`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAg?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAg?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2205,12 +2187,12 @@ class LPD6Commands:
     def diggrp(self) -> Dict[int, DiggrpItem]:
         """Return the ``DIGGRP<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIGGRP<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``DIGGRP<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``DIGGRP<x>`` is the channel number.
 
         Sub-properties:
@@ -2222,19 +2204,18 @@ class LPD6Commands:
     def display(self) -> Display:
         """Return the ``DISplay`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the current Display settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DISplay?`` query.
             - Using the ``.verify(value)`` method will send the ``DISplay?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DISplay?
+            ```
 
         Sub-properties:
             - ``.colors``: The ``DISplay:COLors`` command.
@@ -2260,19 +2241,18 @@ class LPD6Commands:
     def dvm(self) -> Dvm:
         """Return the ``DVM`` command.
 
-        **Description:**
+        Description:
             - Resets the Digital Voltmeter measurements and history.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``DVM value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DVM RESET
+            ```
 
-        **Info:**
+        Info:
             - ``RESET`` specifies resetting ``DVM`` measurements and history.
 
         Sub-properties:
@@ -2288,25 +2268,24 @@ class LPD6Commands:
     def ese(self) -> Ese:
         """Return the ``*ESE`` command.
 
-        **Description:**
+        Description:
             - This command sets and queries the bits in the Event Status Enable Register (ESER). The
               ESER prevents events from being reported to the Status Byte Register (STB). For a more
               detailed discussion of the use of these registers, see Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*ESE?`` query.
             - Using the ``.verify(value)`` method will send the ``*ESE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*ESE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *ESE <NR1>
             - *ESE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the binary bits of the ESER according to this value, which ranges
               from 0 through 255.
         """
@@ -2316,21 +2295,20 @@ class LPD6Commands:
     def esr(self) -> Esr:
         """Return the ``*ESR`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the contents of the Standard Event Status Register
               (SESR). ``*ESR?`` also clears the SESR (since reading the SESR clears it). For a more
               detailed discussion of the use of these registers, see Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*ESR?`` query.
             - Using the ``.verify(value)`` method will send the ``*ESR?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *ESR?
+            ```
         """
         return self._esr
 
@@ -2338,7 +2316,7 @@ class LPD6Commands:
     def ethernet(self) -> Ethernet:
         """Return the ``ETHERnet`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ETHERnet?`` query.
             - Using the ``.verify(value)`` method will send the ``ETHERnet?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2362,21 +2340,20 @@ class LPD6Commands:
     def event(self) -> Event:
         """Return the ``EVENT`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns an event code from the Event Queue that provides
               information about the results of the last ESR read. ``EVENT?`` also removes the
               returned value from the Event Queue.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EVENT?`` query.
             - Using the ``.verify(value)`` method will send the ``EVENT?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EVENT?
+            ```
         """
         return self._event
 
@@ -2384,21 +2361,20 @@ class LPD6Commands:
     def evmsg(self) -> Evmsg:
         """Return the ``EVMsg`` command.
 
-        **Description:**
+        Description:
             - This query-only command removes a single event code from the Event Queue that is
               associated with the results of the last ESR read and returns the event code with an
               explanatory message. For more information, see Event Handling.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EVMsg?`` query.
             - Using the ``.verify(value)`` method will send the ``EVMsg?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EVMsg?
+            ```
         """
         return self._evmsg
 
@@ -2406,21 +2382,20 @@ class LPD6Commands:
     def evqty(self) -> Evqty:
         """Return the ``EVQty`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the number of events that are enabled in the queue.
               This is useful when using the ALLEV query, since it lets you know exactly how many
               events will be returned.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EVQty?`` query.
             - Using the ``.verify(value)`` method will send the ``EVQty?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EVQty?
+            ```
         """
         return self._evqty
 
@@ -2428,7 +2403,7 @@ class LPD6Commands:
     def eyemask(self) -> Eyemask:
         """Return the ``EYEMASK`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EYEMASK?`` query.
             - Using the ``.verify(value)`` method will send the ``EYEMASK?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2442,7 +2417,7 @@ class LPD6Commands:
     def factory(self) -> Factory:
         """Return the ``FACtory`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) resets the instrument to its factory default settings.
               This command is equivalent to pressing the DEFAULT SETUP button located on the
               instrument front panel or selecting Default Setup from the File menu. This command
@@ -2452,14 +2427,13 @@ class LPD6Commands:
               (Device Event Status Enable Register) ``*PSC 1`` (Power-on Status Clear Flag) Deletes
               all defined aliases. Enables command headers (``:HEADer 1``).
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``FACtory`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FACtory
+            ```
         """
         return self._factory
 
@@ -2467,20 +2441,19 @@ class LPD6Commands:
     def filesystem(self) -> Filesystem:
         """Return the ``FILESystem`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the directory listing of the current working
               directory. This query is the same as the ``FILESystem:DIR?`` query.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FILESystem?`` query.
             - Using the ``.verify(value)`` method will send the ``FILESystem?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FILESystem?
+            ```
 
         Sub-properties:
             - ``.copy``: The ``FILESystem:COPy`` command.
@@ -2504,7 +2477,7 @@ class LPD6Commands:
     def fpanel(self) -> Fpanel:
         """Return the ``FPAnel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FPAnel?`` query.
             - Using the ``.verify(value)`` method will send the ``FPAnel?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2519,26 +2492,25 @@ class LPD6Commands:
     def header(self) -> Header:
         """Return the ``HEADer`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Response Header Enable State that causes the
               instrument to either include or omit headers on query responses. Whether the long or
               short form of header keywords and enumerations are returned is dependent upon the
               state of ``:VERBose``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HEADer?`` query.
             - Using the ``.verify(value)`` method will send the ``HEADer?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HEADer value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HEADer {<NR1>|OFF|ON}
             - HEADer?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 sets the Response Header Enable State to false; any other value sets
               this state to true.
             - ``OFF`` sets the Response Header Enable State to false. This causes the instrument to
@@ -2553,7 +2525,7 @@ class LPD6Commands:
     def histogram(self) -> Histogram:
         """Return the ``HISTogram`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HISTogram?`` query.
             - Using the ``.verify(value)`` method will send the ``HISTogram?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2571,19 +2543,18 @@ class LPD6Commands:
     def horizontal(self) -> Horizontal:
         """Return the ``HORizontal`` command.
 
-        **Description:**
+        Description:
             - Queries the current horizontal settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal?
+            ```
 
         Sub-properties:
             - ``.acqduration``: The ``HORizontal:ACQDURATION`` command.
@@ -2606,21 +2577,20 @@ class LPD6Commands:
     def id(self) -> Id:
         """Return the ``ID`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns identifying information about the instrument and
               related firmware similar to that returned by the ``*IDN?`` IEEE488.2 common query but
               does not include the instrument serial number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ID?`` query.
             - Using the ``.verify(value)`` method will send the ``ID?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ID?
+            ```
         """
         return self._id
 
@@ -2628,19 +2598,18 @@ class LPD6Commands:
     def idn(self) -> Idn:
         """Return the ``*IDN`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the instrument identification code.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*IDN?`` query.
             - Using the ``.verify(value)`` method will send the ``*IDN?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *IDN?
+            ```
         """
         return self._idn
 
@@ -2648,19 +2617,18 @@ class LPD6Commands:
     def license(self) -> License:
         """Return the ``LICense`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns all license parameters.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LICense?`` query.
             - Using the ``.verify(value)`` method will send the ``LICense?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LICense?
+            ```
 
         Sub-properties:
             - ``.appid``: The ``LICense:APPID`` command.
@@ -2680,7 +2648,7 @@ class LPD6Commands:
     def lock(self) -> Lock:
         """Return the ``LOCk`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables the touch screen and all front panel buttons and
               knobs. There is no front panel equivalent. When the front panel is locked, the front
               panel commands will not work and will not generate error events. You can work around a
@@ -2688,20 +2656,19 @@ class LPD6Commands:
               of the front-panel commands. For example, to set the trigger level to 50%, you could
               use ``TRIGger:A SETLevel``. To force a trigger, you could use TRIGger FORCe.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LOCk?`` query.
             - Using the ``.verify(value)`` method will send the ``LOCk?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LOCk value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LOCk {ALL|NONe}
             - LOCk?
+            ```
 
-        **Info:**
+        Info:
             - ``ALL`` disables all front panel controls and the touch screen.
             - ``NONe`` enables all front panel controls and the touch screen. The UNLock ALL command
               only unlocks the front panel controls.
@@ -2715,22 +2682,21 @@ class LPD6Commands:
     def lrn(self) -> Lrn:
         """Return the ``*LRN`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the commands that list the instrument settings,
               allowing you to record or 'learn' the current instrument settings. You can use these
               commands to return the instrument to the state it was in when you made the ``*LRN?``
               query. This command is identical to the SET command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*LRN?`` query.
             - Using the ``.verify(value)`` method will send the ``*LRN?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *LRN?
+            ```
         """
         return self._lrn
 
@@ -2738,7 +2704,7 @@ class LPD6Commands:
     def mainwindow(self) -> Mainwindow:
         """Return the ``MAINWindow`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MAINWindow?`` query.
             - Using the ``.verify(value)`` method will send the ``MAINWindow?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2754,7 +2720,7 @@ class LPD6Commands:
     def mask(self) -> Mask:
         """Return the ``MASK`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MASK?`` query.
             - Using the ``.verify(value)`` method will send the ``MASK?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2770,7 +2736,7 @@ class LPD6Commands:
     def math(self) -> Math:
         """Return the ``MATH`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2787,7 +2753,7 @@ class LPD6Commands:
     def matharbflt(self) -> Dict[int, MatharbfltItem]:
         """Return the ``MATHArbflt<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATHArbflt<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``MATHArbflt<x>?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -2801,7 +2767,7 @@ class LPD6Commands:
     def meastable(self) -> Meastable:
         """Return the ``MEASTABle`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASTABle?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASTABle?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2816,19 +2782,18 @@ class LPD6Commands:
     def measurement(self) -> Measurement:
         """Return the ``MEASUrement`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns all measurement parameters.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement?
+            ```
 
         Sub-properties:
             - ``.addmeas``: The ``MEASUrement:ADDMEAS`` command.
@@ -2869,21 +2834,20 @@ class LPD6Commands:
     def newpass(self) -> Newpass:
         """Return the ``NEWpass`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) changes the password that enables access to password
               protected data. The PASSWord command must be successfully executed before using this
               command or an execution error will be generated.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``NEWpass value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - NEWpass <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the new password, which can contain up to 10 characters.
         """
         return self._newpass
@@ -2892,7 +2856,7 @@ class LPD6Commands:
     def opc(self) -> Opc:
         """Return the ``*OPC`` command.
 
-        **Description:**
+        Description:
             - This command generates the operation complete message in the Standard Event Status
               Register (SESR) when all pending commands that generate an OPC message are complete.
               The ``*OPC?`` query places the ASCII character '1' into the output queue when all such
@@ -2903,18 +2867,17 @@ class LPD6Commands:
               information, see Synchronization Methods. Refer to the Oscilloscope operations that
               can generate OPC table for a list of commands that generate an OPC message.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*OPC?`` query.
             - Using the ``.verify(value)`` method will send the ``*OPC?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write()`` method will send the ``*OPC`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *OPC
             - *OPC?
+            ```
         """
         return self._opc
 
@@ -2922,23 +2885,22 @@ class LPD6Commands:
     def opt(self) -> Opt:
         """Return the ``*OPT`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns a comma separated list of installed options as an
               arbitrary ASCII string (no quotes) of the form:
               ``<optionCode>:<optionDescription>``,``<optionCode>:<optionDescription>``... The last
               section of each entry (the text following the last hyphen) indicates the license type.
               If no options are found, NONE is returned.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*OPT?`` query.
             - Using the ``.verify(value)`` method will send the ``*OPT?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *OPT?
+            ```
         """
         return self._opt
 
@@ -2946,7 +2908,7 @@ class LPD6Commands:
     def password(self) -> Password:
         """Return the ``PASSWord`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) enables the ``*PUD`` and NEWpass set commands. Sending
               ``PASSWord`` without any arguments disables these same commands. Once the password is
               successfully entered, the ``*PUD`` and NEWpass commands are enabled until the
@@ -2955,16 +2917,15 @@ class LPD6Commands:
               first enter the valid password with the ``PASSWord`` command and then change to your
               new password with the NEWpass command. Remember that the password is case sensitive.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``PASSWord value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PASSWord <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the password, which can contain up to 10 characters. The factory
               default password is 'XYZZY' and is always valid.
         """
@@ -2974,20 +2935,19 @@ class LPD6Commands:
     def pause(self) -> Pause:
         """Return the ``PAUSe`` command.
 
-        **Description:**
+        Description:
             - This command causes the interface to pause the specified number of seconds before
               processing any other commands.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``PAUSe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PAUSe <NR3>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the specified number of seconds the interface is to pause before
               processing any other commands. The pause time is specified as a floating point value
               in seconds and must be > 0.0 and ≥1800.0.
@@ -2998,7 +2958,7 @@ class LPD6Commands:
     def peakstable(self) -> Peakstable:
         """Return the ``PEAKSTABle`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PEAKSTABle?`` query.
             - Using the ``.verify(value)`` method will send the ``PEAKSTABle?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3015,7 +2975,7 @@ class LPD6Commands:
     def pilogger(self) -> Pilogger:
         """Return the ``PILOGger`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PILOGger?`` query.
             - Using the ``.verify(value)`` method will send the ``PILOGger?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3030,7 +2990,7 @@ class LPD6Commands:
     def plot(self) -> Plot:
         """Return the ``PLOT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PLOT?`` query.
             - Using the ``.verify(value)`` method will send the ``PLOT?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3047,7 +3007,7 @@ class LPD6Commands:
     def power(self) -> Power:
         """Return the ``POWer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3063,27 +3023,26 @@ class LPD6Commands:
     def psc(self) -> Psc:
         """Return the ``*PSC`` command.
 
-        **Description:**
+        Description:
             - This command sets and queries the power-on status flag that controls the automatic
               power-on handling of the DESER, SRER, and ESER registers. When ``*PSC`` is true, the
               DESER register is set to 255 and the SRER and ESER registers are set to 0 at power-on.
               When ``*PSC`` is false, the current values in the DESER, SRER, and ESER registers are
               preserved in nonvolatile memory when power is shut off and are restored at power-on.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*PSC?`` query.
             - Using the ``.verify(value)`` method will send the ``*PSC?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*PSC value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *PSC {<NR1>|OFF|ON}
             - *PSC?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 sets the power-on status clear flag to false, disables the power-on
               clear and allows the instrument to possibly assert SRQ after power-on; any other value
               sets the power-on status clear flag to true, enabling the power-on status clear and
@@ -3099,25 +3058,24 @@ class LPD6Commands:
     def pud(self) -> Pud:
         """Return the ``*PUD`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries a string of Protected User Data. This data is protected
               by the PASSWord command. You can modify it only by first entering the correct
               password. This password is not necessary to query the data.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*PUD?`` query.
             - Using the ``.verify(value)`` method will send the ``*PUD?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*PUD value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *PUD {<Block>|<QString>}
             - *PUD?
+            ```
 
-        **Info:**
+        Info:
             - ``<Block>`` is a block containing up to 100 characters.
             - ``<QString>`` is a string containing up to 100 characters.
         """
@@ -3127,7 +3085,7 @@ class LPD6Commands:
     def recall(self) -> Recall:
         """Return the ``RECAll`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RECAll?`` query.
             - Using the ``.verify(value)`` method will send the ``RECAll?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3144,7 +3102,7 @@ class LPD6Commands:
     def ref(self) -> Ref:
         """Return the ``REF`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``REF?`` query.
             - Using the ``.verify(value)`` method will send the ``REF?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3161,7 +3119,7 @@ class LPD6Commands:
     def refx(self) -> Dict[int, RefItem]:
         """Return the ``REF<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``REF<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``REF<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3176,21 +3134,20 @@ class LPD6Commands:
     def rem(self) -> Rem:
         """Return the ``REM`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) embeds a comment within programs as a means of internally
               documenting the programs. This is how to embed comments in a .set file. The instrument
               ignores these embedded comment lines.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``REM value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - REM <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a string that can contain a maximum of 80 characters.
         """
         return self._rem
@@ -3199,7 +3156,7 @@ class LPD6Commands:
     def rosc(self) -> Rosc:
         """Return the ``ROSc`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ROSc?`` query.
             - Using the ``.verify(value)`` method will send the ``ROSc?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3214,7 +3171,7 @@ class LPD6Commands:
     def rst(self) -> Rst:
         """Return the ``*RST`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) resets the instrument to the factory default settings.
               This command does the following: Recalls the default instrument setup. Clears the
               current ``*DDT`` command. Disables aliases (``:ALIAS:STATE 0``). Disables the user
@@ -3239,14 +3196,13 @@ class LPD6Commands:
               with the WFMOutpre commands. ``*RST`` only resets the programmable interface settings,
               it does not change the user interface settings.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*RST`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *RST
+            ```
         """
         return self._rst
 
@@ -3254,7 +3210,7 @@ class LPD6Commands:
     def save(self) -> Save:
         """Return the ``SAVe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3275,7 +3231,7 @@ class LPD6Commands:
     def saveon(self) -> Saveon:
         """Return the ``SAVEON`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEON?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEON?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3292,7 +3248,7 @@ class LPD6Commands:
     def saveonevent(self) -> Saveonevent:
         """Return the ``SAVEONEVent`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEONEVent?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEONEVent?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3309,7 +3265,7 @@ class LPD6Commands:
     def search(self) -> Search:
         """Return the ``SEARCH`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH?`` query.
             - Using the ``.verify(value)`` method will send the ``SEARCH?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3328,7 +3284,7 @@ class LPD6Commands:
     def searchtable(self) -> Searchtable:
         """Return the ``SEARCHTABle`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCHTABle?`` query.
             - Using the ``.verify(value)`` method will send the ``SEARCHTABle?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3344,7 +3300,7 @@ class LPD6Commands:
     def select(self) -> Select:
         """Return the ``SELect`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SELect?`` query.
             - Using the ``.verify(value)`` method will send the ``SELect?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3358,7 +3314,7 @@ class LPD6Commands:
     def set_(self) -> Set:
         """Return the ``SET`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the commands that list the instrument settings, except
               for configuration information for the calibration values. You can use these commands
               to return the instrument to the state it was in when you made the ``SET?`` query. The
@@ -3368,16 +3324,15 @@ class LPD6Commands:
               whether the returned headers should be abbreviated or full-length. This command is
               identical to the LRN command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SET?`` query.
             - Using the ``.verify(value)`` method will send the ``SET?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SET?
+            ```
         """
         return self._set
 
@@ -3385,7 +3340,7 @@ class LPD6Commands:
     def socketserver(self) -> Socketserver:
         """Return the ``SOCKETServer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOCKETServer?`` query.
             - Using the ``.verify(value)`` method will send the ``SOCKETServer?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3401,24 +3356,23 @@ class LPD6Commands:
     def sre(self) -> Sre:
         """Return the ``*SRE`` command.
 
-        **Description:**
+        Description:
             - The ``*SRE`` (Service Request Enable) command sets and queries the bits in the Service
               Request Enable Register. For more information, refer to Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*SRE?`` query.
             - Using the ``.verify(value)`` method will send the ``*SRE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``*SRE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *SRE <NR1>
             - *SRE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is a value in the range from 0 through 255. The binary bits of the SRER are
               set according to this value. Using an out-of-range value causes an execution error.
               The power-on default for SRER is 0 if ``*PSC`` is 1. If ``*PSC`` is 0, the SRER
@@ -3430,21 +3384,20 @@ class LPD6Commands:
     def stb(self) -> Stb:
         """Return the ``*STB`` command.
 
-        **Description:**
+        Description:
             - The ``*STB?`` (Read Status Byte) query returns the contents of the Status Byte
               Register (SBR) using the Master Summary Status (MSS) bit. For more information, refer
               to Registers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*STB?`` query.
             - Using the ``.verify(value)`` method will send the ``*STB?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *STB?
+            ```
         """
         return self._stb
 
@@ -3452,7 +3405,7 @@ class LPD6Commands:
     def sv(self) -> Sv:
         """Return the ``SV`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SV?`` query.
             - Using the ``.verify(value)`` method will send the ``SV?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3476,20 +3429,19 @@ class LPD6Commands:
     def teksecure(self) -> Teksecure:
         """Return the ``TEKSecure`` command.
 
-        **Description:**
+        Description:
             - This command initializes, for the current user, both waveform and setup memories,
               overwriting any previously stored data. Equivalent to invoking Teksecure from the
               Utility menu. This is a time-consuming operation (3 to 5 minutes) and the instrument
               is inoperable until the TekSecure operation is complete.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``TEKSecure`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TEKSecure
+            ```
         """
         return self._teksecure
 
@@ -3497,25 +3449,24 @@ class LPD6Commands:
     def time(self) -> Time:
         """Return the ``TIMe`` command.
 
-        **Description:**
+        Description:
             - This command sets the time in the form ``hh:mm:ss`` where hh refers to a two-digit
               hour number, mm refers to a two-digit minute number from 01 to 60, and ss refers to a
               two-digit second number from 01 to 60.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TIMe?`` query.
             - Using the ``.verify(value)`` method will send the ``TIMe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TIMe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TIMe <QString>
             - TIMe?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string representing the desired time.
 
         Sub-properties:
@@ -3527,20 +3478,19 @@ class LPD6Commands:
     def totaluptime(self) -> Totaluptime:
         """Return the ``TOTaluptime`` command.
 
-        **Description:**
+        Description:
             - Total number of hours the instrument has been turned on since the NV memory was last
               programmed, usually during the initial manufacturing process.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TOTaluptime?`` query.
             - Using the ``.verify(value)`` method will send the ``TOTaluptime?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TOTaluptime?
+            ```
         """
         return self._totaluptime
 
@@ -3548,7 +3498,7 @@ class LPD6Commands:
     def touchscreen(self) -> Touchscreen:
         """Return the ``TOUCHSCReen`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TOUCHSCReen?`` query.
             - Using the ``.verify(value)`` method will send the ``TOUCHSCReen?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3563,17 +3513,16 @@ class LPD6Commands:
     def trg(self) -> Trg:
         """Return the ``*TRG`` command.
 
-        **Description:**
+        Description:
             - Performs a group execute trigger on commands defined by ``*DDT``.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*TRG`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *TRG
+            ```
         """
         return self._trg
 
@@ -3581,24 +3530,23 @@ class LPD6Commands:
     def trigger(self) -> Trigger:
         """Return the ``TRIGger`` command.
 
-        **Description:**
+        Description:
             - This command forces a trigger event to occur. The query returns the current trigger
               parameters for the instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger FORCe
             - TRIGger?
+            ```
 
-        **Info:**
+        Info:
             - ``FORCe`` creates a trigger event. If ``TRIGger:STATE`` is set to READy, the
               acquisition will complete. Otherwise, this command will be ignored. This is equivalent
               to pressing the Force button on the front panel.
@@ -3617,19 +3565,18 @@ class LPD6Commands:
     def tst(self) -> Tst:
         """Return the ``*TST`` command.
 
-        **Description:**
+        Description:
             - Tests (self-test) the interface and returns a 0.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``*TST?`` query.
             - Using the ``.verify(value)`` method will send the ``*TST?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *TST?
+            ```
         """
         return self._tst
 
@@ -3637,7 +3584,7 @@ class LPD6Commands:
     def tstamptable(self) -> Tstamptable:
         """Return the ``TSTamptable`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TSTamptable?`` query.
             - Using the ``.verify(value)`` method will send the ``TSTamptable?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3653,18 +3600,17 @@ class LPD6Commands:
     def undo(self) -> Undo:
         """Return the ``UNDO`` command.
 
-        **Description:**
+        Description:
             - Reverts the instrument settings to a state before the previous command or user
               interface action.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``UNDO`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - UNDO
+            ```
         """
         return self._undo
 
@@ -3672,21 +3618,20 @@ class LPD6Commands:
     def unlock(self) -> Unlock:
         """Return the ``UNLock`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) unlocks the front panel controls only. To unlock the
               front panel controls and the touch screen use the LOCk NONe command. The command
               ``TOUCHSCReen:STATE ON`` enables the touch screen only.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``UNLock value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - UNLock ALL
+            ```
 
-        **Info:**
+        Info:
             - ``ALL`` specifies that all front panel buttons and knobs are unlocked.
         """
         return self._unlock
@@ -3695,7 +3640,7 @@ class LPD6Commands:
     def usbdevice(self) -> Usbdevice:
         """Return the ``USBDevice`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``USBDevice?`` query.
             - Using the ``.verify(value)`` method will send the ``USBDevice?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3709,20 +3654,19 @@ class LPD6Commands:
     def verbose(self) -> Verbose:
         """Return the ``VERBose`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Verbose state that controls the length of keywords on
               query responses. Keywords can be both headers and arguments.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``VERBose value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - VERBose {<NR1>|OFF|ON}
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables Verbose, any other value enables Verbose.
             - ``OFF`` sets the Verbose state to false, which returns minimum-length keywords for
               applicable setting queries.
@@ -3735,7 +3679,7 @@ class LPD6Commands:
     def vertical(self) -> Vertical:
         """Return the ``VERTical`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VERTical?`` query.
             - Using the ``.verify(value)`` method will send the ``VERTical?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3749,7 +3693,7 @@ class LPD6Commands:
     def visual(self) -> Visual:
         """Return the ``VISual`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``VISual?`` query.
             - Using the ``.verify(value)`` method will send the ``VISual?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -3769,20 +3713,19 @@ class LPD6Commands:
     def wai(self) -> Wai:
         """Return the ``*WAI`` command.
 
-        **Description:**
+        Description:
             - The ``*WAI`` (Wait) command (no query form) prevents the instrument from executing
               further commands or queries until all pending commands that generate an OPC message
               are complete. This command allows you to synchronize the operation of the instrument
               with your application program. For more information, refer to Synchronization Methods.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``*WAI`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - *WAI
+            ```
         """
         return self._wai
 
@@ -3790,21 +3733,20 @@ class LPD6Commands:
     def wavfrm(self) -> Wavfrm:
         """Return the ``WAVFrm`` command.
 
-        **Description:**
+        Description:
             - This query-only command provides the Tektronix standard waveform query which returns
               the waveform preamble followed by the waveform data for the source specified by
               ``:DATa:SOUrce`` using the ``:DATa`` settings for encoding, width, and so forth.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WAVFrm?`` query.
             - Using the ``.verify(value)`` method will send the ``WAVFrm?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WAVFrm?
+            ```
         """
         return self._wavfrm
 
@@ -3812,23 +3754,22 @@ class LPD6Commands:
     def wfmoutpre(self) -> Wfmoutpre:
         """Return the ``WFMOutpre`` command.
 
-        **Description:**
+        Description:
             - This query-only command queries the waveform formatting data for the waveform
               specified by the ``DATA:SOURCE`` command. The preamble components are considered to be
               of two types; formatting and interpretation. The formatting components are: ENCdg,
               ``BN_Fmt``, ``BYT_Or``, ``BYT_Nr``, ``BIT_Nr``. The interpretation components are
               derived from the ``DATa:SOUrce`` specified waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre?
+            ```
 
         Sub-properties:
             - ``.asc_fmt``: The ``WFMOutpre:ASC_Fmt`` command.

@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - MATH<x>:DEFine <QString>
     - MATH<x>:DEFine?
     - MATH<x>:FILTer:MODe {CENTered|SHIFted}
@@ -51,7 +49,8 @@ Commands and Queries:
     - MATH<x>:SPECTral:SUPPress?
     - MATH<x>:SPECTral:UNWRap {ON|OFF|<NR1>}
     - MATH<x>:SPECTral:UNWRap?
-    - MATH<x>:SPECTral:WINdow {RECTANGular|HAMMing|HANNing|KAISERBessel|BLACKMANHarris|FLATTOP2|GAUSSian|TEKEXPonential}
+    - MATH<x>:SPECTral:WINdow
+      {RECTANGular|HAMMing|HANNing|KAISERBessel|BLACKMANHarris|FLATTOP2|GAUSSian|TEKEXPonential}
     - MATH<x>:SPECTral:WINdow?
     - MATH<x>:SPECTral?
     - MATH<x>:THRESHold <NR3>
@@ -65,7 +64,7 @@ Commands and Queries:
     - MATH<x>:VERTical:SCAle <NR3>
     - MATH<x>:VERTical:SCAle?
     - MATH<x>?
-"""  # noqa: E501
+"""
 
 from typing import Optional, TYPE_CHECKING
 
@@ -78,7 +77,7 @@ if TYPE_CHECKING:
 class MathItemVerticalScale(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:VERTical:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the vertical scale of the specified math waveform. The Math
           waveform is specified by x, which ranges from 1 through 4. This command is equivalent to
           selecting Position/Scale from the Math menu and then entering a Vert Scale value or
@@ -97,20 +96,19 @@ class MathItemVerticalScale(SCPICmdWrite, SCPICmdRead):
           during this time. You should insert an appropriate pause in your program after defining
           and enabling a math waveform before changing its position or scale.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:VERTical:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:VERTical:SCAle?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:VERTical:SCAle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:VERTical:SCAle <NR3>
         - MATH<x>:VERTical:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the scale in volts, amps or watts per division. The range is from 100.0E-36
           through 100.0E+36.
     """
@@ -119,7 +117,7 @@ class MathItemVerticalScale(SCPICmdWrite, SCPICmdRead):
 class MathItemVerticalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:VERTical:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the vertical position of the specified Math waveform. The
           Math waveform is specified by x, which ranges from 1 through 4. The position value is
           usually applied to the signal before it is digitized. The highest three units/div scale
@@ -146,21 +144,20 @@ class MathItemVerticalPosition(SCPICmdWrite, SCPICmdRead):
           received during this time. You should insert an appropriate pause in your program after
           defining and enabling a math waveform before changing its position or scale.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:VERTical:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:VERTical:POSition?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:VERTical:POSition value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:VERTical:POSition <NR3>
         - MATH<x>:VERTical:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the desired position control in divisions from the center graticule.
     """
 
@@ -168,24 +165,23 @@ class MathItemVerticalPosition(SCPICmdWrite, SCPICmdRead):
 class MathItemVerticalAutoscale(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:VERTical:AUTOSCale`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries auto-scaling of the specified math waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:VERTical:AUTOSCale?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:VERTical:AUTOSCale?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:VERTical:AUTOSCale value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:VERTical:AUTOSCale {<NR1>|OFF|ON}
         - MATH<x>:VERTical:AUTOSCale?
+        ```
 
-    **Info:**
+    Info:
         - ``ON, 1`` - enables auto-scaling of new math waveforms. (This is the default).
         - ``OFF, 2`` - math waveforms will not be scaled after activation, and will use the current
           ``:MATH<x>:VERTical:SCAle`` and ``:MATH<x>:VERTical:POSition`` values.
@@ -195,7 +191,7 @@ class MathItemVerticalAutoscale(SCPICmdWrite, SCPICmdRead):
 class MathItemVertical(SCPICmdRead):
     """The ``MATH<x>:VERTical`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:VERTical?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:VERTical?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -216,24 +212,23 @@ class MathItemVertical(SCPICmdRead):
     def autoscale(self) -> MathItemVerticalAutoscale:
         """Return the ``MATH<x>:VERTical:AUTOSCale`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries auto-scaling of the specified math waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:VERTical:AUTOSCale?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:VERTical:AUTOSCale?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:VERTical:AUTOSCale value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:VERTical:AUTOSCale {<NR1>|OFF|ON}
             - MATH<x>:VERTical:AUTOSCale?
+            ```
 
-        **Info:**
+        Info:
             - ``ON, 1`` - enables auto-scaling of new math waveforms. (This is the default).
             - ``OFF, 2`` - math waveforms will not be scaled after activation, and will use the
               current ``:MATH<x>:VERTical:SCAle`` and ``:MATH<x>:VERTical:POSition`` values.
@@ -244,7 +239,7 @@ class MathItemVertical(SCPICmdRead):
     def position(self) -> MathItemVerticalPosition:
         """Return the ``MATH<x>:VERTical:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the vertical position of the specified Math waveform. The
               Math waveform is specified by x, which ranges from 1 through 4. The position value is
               usually applied to the signal before it is digitized. The highest three units/div
@@ -273,21 +268,20 @@ class MathItemVertical(SCPICmdRead):
               program after defining and enabling a math waveform before changing its position or
               scale.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:VERTical:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:VERTical:POSition?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:VERTical:POSition value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:VERTical:POSition <NR3>
             - MATH<x>:VERTical:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the desired position control in divisions from the center graticule.
         """
         return self._position
@@ -296,7 +290,7 @@ class MathItemVertical(SCPICmdRead):
     def scale(self) -> MathItemVerticalScale:
         """Return the ``MATH<x>:VERTical:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the vertical scale of the specified math waveform. The
               Math waveform is specified by x, which ranges from 1 through 4. This command is
               equivalent to selecting Position/Scale from the Math menu and then entering a Vert
@@ -316,21 +310,20 @@ class MathItemVertical(SCPICmdRead):
               during this time. You should insert an appropriate pause in your program after
               defining and enabling a math waveform before changing its position or scale.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:VERTical:SCAle?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:VERTical:SCAle?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:VERTical:SCAle value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:VERTical:SCAle <NR3>
             - MATH<x>:VERTical:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the scale in volts, amps or watts per division. The range is from
               100.0E-36 through 100.0E+36.
         """
@@ -340,25 +333,24 @@ class MathItemVertical(SCPICmdRead):
 class MathItemUnitstring(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:UNITString`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the string to use for units for the math waveform specified
           by x, which can be 1 through 4. This command will override the default unit string with
           the one that you specify.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:UNITString?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:UNITString?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:UNITString value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:UNITString <QString>
         - MATH<x>:UNITString?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` quoted string argument is the units to be used for the specified math
           waveform.
     """
@@ -369,24 +361,23 @@ class MathItemUnitstring(SCPICmdWrite, SCPICmdRead):
 class MathItemThreshold(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:THRESHold`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the threshold for the math waveform specified by x, which can
           be 1 through 4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:THRESHold?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:THRESHold?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:THRESHold value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:THRESHold <NR3>
         - MATH<x>:THRESHold?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the math threshold in volts.
     """
 
@@ -394,7 +385,7 @@ class MathItemThreshold(SCPICmdWrite, SCPICmdRead):
 class MathItemSpectralWindow(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:SPECTral:WINdow`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the window function used to multiply the spectral analyzer
           input data for the specified math waveform. The Math waveform is specified by x, which
           ranges from 1 through 4. A spectral window determines what the filter shape of the
@@ -407,21 +398,20 @@ class MathItemSpectralWindow(SCPICmdWrite, SCPICmdRead):
           information about spectral windows, see Selecting a Spectral Window in the online help for
           this instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:WINdow?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:WINdow?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:WINdow value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:SPECTral:WINdow {RECTANGular|HAMMing|HANNing|KAISERBessel|BLACKMANHarris|FLATTOP2|GAUSSian|TEKEXPonential}
         - MATH<x>:SPECTral:WINdow?
+        ```
 
-    **Info:**
+    Info:
         - ``RECTANGular`` window function is equivalent to multiplying all gate data by one.
         - ``HAMMing`` window function is based on a cosine series.
         - ``HANNing`` window function is based on a cosine series.
@@ -439,28 +429,27 @@ class MathItemSpectralWindow(SCPICmdWrite, SCPICmdRead):
 class MathItemSpectralUnwrap(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:SPECTral:UNWRap`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns whether phase unwrap of the spectral analyzer output data is
           enabled for the specified math waveform. The Math waveform is specified by x, which ranges
           from 1 through 4. This command is equal to selecting Spectral Setup from the Math menu,
           choosing the Phase tab and then clicking the Unwrap button. This command affects only
           Spectral Phase waveforms.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:UNWRap?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:UNWRap?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:UNWRap value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:SPECTral:UNWRap {ON|OFF|<NR1>}
         - MATH<x>:SPECTral:UNWRap?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables phase unwrap.
         - ``OFF`` disables phase wrap.
         - ``<NR1>`` = 0 disables phase wrap; any other value enables phase wrap.
@@ -470,28 +459,27 @@ class MathItemSpectralUnwrap(SCPICmdWrite, SCPICmdRead):
 class MathItemSpectralSuppress(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:SPECTral:SUPPress`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the phase suppression threshold for the specified math
           waveform. The Math waveform is specified by x, which ranges from 1 through 4. This command
           is equal to selecting Spectral Setup from the Math menu, choosing the Phase tab and then
           entering a value in the Suppression Threshold box. This command affects only Spectral
           Phase waveforms.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:SUPPress?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:SUPPress?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:SUPPress value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:SPECTral:SUPPress <NR3>
         - MATH<x>:SPECTral:SUPPress?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the magnitude level that data with magnitude values below this value are
           displayed as zero phase.
     """
@@ -500,27 +488,26 @@ class MathItemSpectralSuppress(SCPICmdWrite, SCPICmdRead):
 class MathItemSpectralSpan(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:SPECTral:SPAN`` command.
 
-    **Description:**
+    Description:
         - This command sets the ceiling of the frequency span to a value that is closest to the
           specified value. The query form of this command returns the current span value for
           specified math waveform. The Math waveform is specified by x, which ranges from 1 through
           4. This command is equal to selecting Spectral Setup from the Math menu and then entering
           a value in the Freq Span box.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:SPAN?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:SPAN?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:SPAN value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:SPECTral:SPAN {<NR3>|FULl}
         - MATH<x>:SPECTral:SPAN?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the frequency span of the output data vector from the spectral
           analyzer.
         - ``FULL`` sets the top of the span to 1/2 the sample rate and sets the center frequency to
@@ -531,26 +518,25 @@ class MathItemSpectralSpan(SCPICmdWrite, SCPICmdRead):
 class MathItemSpectralResbw(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:SPECTral:RESBw`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the resolution bandwidth of the spectral analyzer for the
           specified math waveform. The Math waveform is specified by x, which ranges from 1 through
           4. This command is equivalent to selecting Spectral Setup from the Math menu and then
           entering a value in the Res BW box.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:RESBw?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:RESBw?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:RESBw value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:SPECTral:RESBw <NR3>
         - MATH<x>:SPECTral:RESBw?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the desired resolution bandwidth value. Units are represented in Hertz.
     """
 
@@ -558,28 +544,27 @@ class MathItemSpectralResbw(SCPICmdWrite, SCPICmdRead):
 class MathItemSpectralReflevel(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:SPECTral:REFLevel`` command.
 
-    **Description:**
+    Description:
         - This command specifies the vertical position of the specified spectral math waveform on
           the display screen. The numerical value represents the position at the top of the display
           graticule. The Math waveform is specified by x, which ranges from 1 through 4. This
           command is equal to selecting Spectral Setup from the Math menu, choosing the Mag tab and
           then entering a value in the Reference Level box.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:REFLevel?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:REFLevel?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:REFLevel value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:SPECTral:REFLevel <NR3>
         - MATH<x>:SPECTral:REFLevel?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the value that represents the top of the display screen graticule. The range
           depends on the units and both the ``MATH<x>:VERTical:SCAle`` and
           ``MATH<x>:VERTical:POSition`` settings.
@@ -589,7 +574,7 @@ class MathItemSpectralReflevel(SCPICmdWrite, SCPICmdRead):
 class MathItemSpectralRefleveloffset(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:SPECTral:REFLEVELOffset`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the spectral level offset used for calculating the dB value
           for the specified math waveform. The Math waveform is specified by x, which ranges from 1
           through 4. Changing the reference level offset causes the spectral waveform to move
@@ -597,21 +582,20 @@ class MathItemSpectralRefleveloffset(SCPICmdWrite, SCPICmdRead):
           from the Math menu, choosing the Mag tab and then entering a value in the Reference Level
           Offset box.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:REFLEVELOffset?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:REFLEVELOffset?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:REFLEVELOffset value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:SPECTral:REFLEVELOffset {DBM|<NR3>}
         - MATH<x>:SPECTral:REFLEVELOffset?
+        ```
 
-    **Info:**
+    Info:
         - ``DBM`` specifies the reference level used for calculation to be equivalent to 1 mW into
           50 Ω (Zero dB will occur at this level).
         - ``<NR3>`` specifies the reference level used for calculation of the decibel value when the
@@ -622,26 +606,25 @@ class MathItemSpectralRefleveloffset(SCPICmdWrite, SCPICmdRead):
 class MathItemSpectralPhase(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:SPECTral:PHASE`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the units of a SpectralPhase function in the specified math
           definition string. The Math waveform is specified by x, which ranges from 1 through 4.
           This command is equal to selecting Spectral Phase from the Math menu, selecting the
           Advanced button, selecting the Vert Axis tab, and then clicking the desired Scale button.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:PHASE?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:PHASE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:PHASE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:SPECTral:PHASE {DEGrees|RADians|GROUPDelay}
         - MATH<x>:SPECTral:PHASE?
+        ```
 
-    **Info:**
+    Info:
         - ``DEGREES`` sets the SpectralPhase units to degrees.
         - ``RADIANS`` sets the SpectralPhase units to radians.
         - ``GROUPDELAY`` sets the SpectralPhase units to groupdelay, which computes the derivative
@@ -652,27 +635,26 @@ class MathItemSpectralPhase(SCPICmdWrite, SCPICmdRead):
 class MathItemSpectralMag(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:SPECTral:MAG`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the units of the SpectralMag function in the specified math
           definition string. The Math waveform is specified by x, which ranges from 1 through 4.
           This command is equivalent to selecting Spectral Mag from the Math menu and then entering
           the units that you want in the Scale box, or selecting Basic from the Math menu and then
           clicking the desired Scale button.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:MAG?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:MAG?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:MAG value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:SPECTral:MAG {LINEAr|DB|DBM}
         - MATH<x>:SPECTral:MAG?
+        ```
 
-    **Info:**
+    Info:
         - ``LINEAR`` sets the SpectralMag units to linear.
         - ``DB`` sets the SpectralMag units to decibels.
         - ``DBM`` sets the SpectralMag units to decibels. It also sets the Ref Level Offset to a
@@ -683,7 +665,7 @@ class MathItemSpectralMag(SCPICmdWrite, SCPICmdRead):
 class MathItemSpectralLock(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:SPECTral:LOCk`` command.
 
-    **Description:**
+    Description:
         - This command locks menus for two or more math waveforms together as a group. The query
           form of this command returns an ON (1) or OFF (0), indicating whether spectral locking is
           turned on. This command is equal to selecting Spectral Setup from the Math menu, choosing
@@ -694,20 +676,19 @@ class MathItemSpectralLock(SCPICmdWrite, SCPICmdRead):
           Off On Math1 and Math2 locked, Math3 and Math4 locked On Off Math1, Math2, and Math3
           locked On Math1, Math2, Math3, and Math4 locked
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:LOCk?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:LOCk?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:LOCk value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:SPECTral:LOCk {ON|OFF|<NR1>}
         - MATH<x>:SPECTral:LOCk?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` turns on the parameter lock for the specified math waveform.
         - ``OFF`` turns off the parameter lock for the specified math waveform.
         - ``<NR1>`` = 0 disables the parameter lock for the specified math waveform; any other value
@@ -718,27 +699,26 @@ class MathItemSpectralLock(SCPICmdWrite, SCPICmdRead):
 class MathItemSpectralGatewidth(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:SPECTral:GATEWIDTH`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the gate width input in seconds, to the spectral analyzer for
           the specified math waveform. The math waveform is specified by x, which ranges from 1
           through 4. This command is equivalent to selecting Spectral Setup from the Math menu and
           entering a duration value in the Gate Dur box.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:GATEWIDTH?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:GATEWIDTH?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:GATEWIDTH value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:SPECTral:GATEWIDTH <NR3>
         - MATH<x>:SPECTral:GATEWIDTH?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the time across the 10-division screen in seconds.
     """
 
@@ -746,27 +726,26 @@ class MathItemSpectralGatewidth(SCPICmdWrite, SCPICmdRead):
 class MathItemSpectralGatepos(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:SPECTral:GATEPOS`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the position of the center of the gate, which is used as the
           data input to the spectral analyzer for the specified math waveform. The math waveform is
           specified by x, which ranges from 1 through 4. This command is equivalent to selecting
           Spectral Setup from the Math menu and then entering a Gate Pos value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:GATEPOS?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:GATEPOS?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:GATEPOS value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:SPECTral:GATEPOS <NR3>
         - MATH<x>:SPECTral:GATEPOS?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the gate position. Units are represented in seconds, with respect to trigger
           position.
     """
@@ -775,27 +754,26 @@ class MathItemSpectralGatepos(SCPICmdWrite, SCPICmdRead):
 class MathItemSpectralCenter(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:SPECTral:CENTER`` command.
 
-    **Description:**
+    Description:
         - This command specifies or returns the center frequency of the spectral analyzer output
           data span for the specified math waveform. The Math waveform is specified by x, which
           ranges from 1 through 4. This command is equivalent to selecting Spectral Setup from the
           Math menu and then entering a Center Freq value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:CENTER?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:CENTER?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:CENTER value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:SPECTral:CENTER <NR3>
         - MATH<x>:SPECTral:CENTER?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the desired frequency of the spectral analyzer output data span in hertz.
     """
 
@@ -804,22 +782,21 @@ class MathItemSpectralCenter(SCPICmdWrite, SCPICmdRead):
 class MathItemSpectral(SCPICmdRead):
     """The ``MATH<x>:SPECTral`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the current spectral setups for the specified math
           waveform. The Math waveform is specified by x, which ranges from 1 through 4. This command
           is equivalent to selecting Spectral Setup from the Math menu and viewing the current
           spectral setup values.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:SPECTral?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:SPECTral?
+        ```
 
     Properties:
         - ``.center``: The ``MATH<x>:SPECTral:CENTER`` command.
@@ -859,27 +836,26 @@ class MathItemSpectral(SCPICmdRead):
     def center(self) -> MathItemSpectralCenter:
         """Return the ``MATH<x>:SPECTral:CENTER`` command.
 
-        **Description:**
+        Description:
             - This command specifies or returns the center frequency of the spectral analyzer output
               data span for the specified math waveform. The Math waveform is specified by x, which
               ranges from 1 through 4. This command is equivalent to selecting Spectral Setup from
               the Math menu and then entering a Center Freq value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:CENTER?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:CENTER?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:CENTER value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:SPECTral:CENTER <NR3>
             - MATH<x>:SPECTral:CENTER?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the desired frequency of the spectral analyzer output data span in hertz.
         """
         return self._center
@@ -888,27 +864,26 @@ class MathItemSpectral(SCPICmdRead):
     def gatepos(self) -> MathItemSpectralGatepos:
         """Return the ``MATH<x>:SPECTral:GATEPOS`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the position of the center of the gate, which is used as
               the data input to the spectral analyzer for the specified math waveform. The math
               waveform is specified by x, which ranges from 1 through 4. This command is equivalent
               to selecting Spectral Setup from the Math menu and then entering a Gate Pos value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:GATEPOS?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:GATEPOS?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:GATEPOS value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:SPECTral:GATEPOS <NR3>
             - MATH<x>:SPECTral:GATEPOS?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the gate position. Units are represented in seconds, with respect to
               trigger position.
         """
@@ -918,27 +893,26 @@ class MathItemSpectral(SCPICmdRead):
     def gatewidth(self) -> MathItemSpectralGatewidth:
         """Return the ``MATH<x>:SPECTral:GATEWIDTH`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the gate width input in seconds, to the spectral analyzer
               for the specified math waveform. The math waveform is specified by x, which ranges
               from 1 through 4. This command is equivalent to selecting Spectral Setup from the Math
               menu and entering a duration value in the Gate Dur box.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:GATEWIDTH?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:GATEWIDTH?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:GATEWIDTH value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:SPECTral:GATEWIDTH <NR3>
             - MATH<x>:SPECTral:GATEWIDTH?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the time across the 10-division screen in seconds.
         """
         return self._gatewidth
@@ -947,7 +921,7 @@ class MathItemSpectral(SCPICmdRead):
     def lock(self) -> MathItemSpectralLock:
         """Return the ``MATH<x>:SPECTral:LOCk`` command.
 
-        **Description:**
+        Description:
             - This command locks menus for two or more math waveforms together as a group. The query
               form of this command returns an ON (1) or OFF (0), indicating whether spectral locking
               is turned on. This command is equal to selecting Spectral Setup from the Math menu,
@@ -958,21 +932,20 @@ class MathItemSpectral(SCPICmdRead):
               Math1 and Math2 locked On Off On Math1 and Math2 locked, Math3 and Math4 locked On Off
               Math1, Math2, and Math3 locked On Math1, Math2, Math3, and Math4 locked
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:LOCk?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:LOCk?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:LOCk value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:SPECTral:LOCk {ON|OFF|<NR1>}
             - MATH<x>:SPECTral:LOCk?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` turns on the parameter lock for the specified math waveform.
             - ``OFF`` turns off the parameter lock for the specified math waveform.
             - ``<NR1>`` = 0 disables the parameter lock for the specified math waveform; any other
@@ -984,28 +957,27 @@ class MathItemSpectral(SCPICmdRead):
     def mag(self) -> MathItemSpectralMag:
         """Return the ``MATH<x>:SPECTral:MAG`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the units of the SpectralMag function in the specified
               math definition string. The Math waveform is specified by x, which ranges from 1
               through 4. This command is equivalent to selecting Spectral Mag from the Math menu and
               then entering the units that you want in the Scale box, or selecting Basic from the
               Math menu and then clicking the desired Scale button.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:MAG?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:MAG?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:MAG value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:SPECTral:MAG {LINEAr|DB|DBM}
             - MATH<x>:SPECTral:MAG?
+            ```
 
-        **Info:**
+        Info:
             - ``LINEAR`` sets the SpectralMag units to linear.
             - ``DB`` sets the SpectralMag units to decibels.
             - ``DBM`` sets the SpectralMag units to decibels. It also sets the Ref Level Offset to a
@@ -1017,28 +989,27 @@ class MathItemSpectral(SCPICmdRead):
     def phase(self) -> MathItemSpectralPhase:
         """Return the ``MATH<x>:SPECTral:PHASE`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the units of a SpectralPhase function in the specified
               math definition string. The Math waveform is specified by x, which ranges from 1
               through 4. This command is equal to selecting Spectral Phase from the Math menu,
               selecting the Advanced button, selecting the Vert Axis tab, and then clicking the
               desired Scale button.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:PHASE?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:PHASE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:PHASE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:SPECTral:PHASE {DEGrees|RADians|GROUPDelay}
             - MATH<x>:SPECTral:PHASE?
+            ```
 
-        **Info:**
+        Info:
             - ``DEGREES`` sets the SpectralPhase units to degrees.
             - ``RADIANS`` sets the SpectralPhase units to radians.
             - ``GROUPDELAY`` sets the SpectralPhase units to groupdelay, which computes the
@@ -1050,7 +1021,7 @@ class MathItemSpectral(SCPICmdRead):
     def refleveloffset(self) -> MathItemSpectralRefleveloffset:
         """Return the ``MATH<x>:SPECTral:REFLEVELOffset`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the spectral level offset used for calculating the dB
               value for the specified math waveform. The Math waveform is specified by x, which
               ranges from 1 through 4. Changing the reference level offset causes the spectral
@@ -1058,7 +1029,7 @@ class MathItemSpectral(SCPICmdRead):
               selecting Spectral Setup from the Math menu, choosing the Mag tab and then entering a
               value in the Reference Level Offset box.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:REFLEVELOffset?``
               query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:REFLEVELOffset?``
@@ -1066,14 +1037,13 @@ class MathItemSpectral(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH<x>:SPECTral:REFLEVELOffset value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:SPECTral:REFLEVELOffset {DBM|<NR3>}
             - MATH<x>:SPECTral:REFLEVELOffset?
+            ```
 
-        **Info:**
+        Info:
             - ``DBM`` specifies the reference level used for calculation to be equivalent to 1 mW
               into 50 Ω (Zero dB will occur at this level).
             - ``<NR3>`` specifies the reference level used for calculation of the decibel value when
@@ -1085,28 +1055,27 @@ class MathItemSpectral(SCPICmdRead):
     def reflevel(self) -> MathItemSpectralReflevel:
         """Return the ``MATH<x>:SPECTral:REFLevel`` command.
 
-        **Description:**
+        Description:
             - This command specifies the vertical position of the specified spectral math waveform
               on the display screen. The numerical value represents the position at the top of the
               display graticule. The Math waveform is specified by x, which ranges from 1 through 4.
               This command is equal to selecting Spectral Setup from the Math menu, choosing the Mag
               tab and then entering a value in the Reference Level box.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:REFLevel?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:REFLevel?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:REFLevel value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:SPECTral:REFLevel <NR3>
             - MATH<x>:SPECTral:REFLevel?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the value that represents the top of the display screen graticule. The
               range depends on the units and both the ``MATH<x>:VERTical:SCAle`` and
               ``MATH<x>:VERTical:POSition`` settings.
@@ -1117,27 +1086,26 @@ class MathItemSpectral(SCPICmdRead):
     def resbw(self) -> MathItemSpectralResbw:
         """Return the ``MATH<x>:SPECTral:RESBw`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the resolution bandwidth of the spectral analyzer for the
               specified math waveform. The Math waveform is specified by x, which ranges from 1
               through 4. This command is equivalent to selecting Spectral Setup from the Math menu
               and then entering a value in the Res BW box.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:RESBw?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:RESBw?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:RESBw value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:SPECTral:RESBw <NR3>
             - MATH<x>:SPECTral:RESBw?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the desired resolution bandwidth value. Units are represented in Hertz.
         """
         return self._resbw
@@ -1146,28 +1114,27 @@ class MathItemSpectral(SCPICmdRead):
     def span(self) -> MathItemSpectralSpan:
         """Return the ``MATH<x>:SPECTral:SPAN`` command.
 
-        **Description:**
+        Description:
             - This command sets the ceiling of the frequency span to a value that is closest to the
               specified value. The query form of this command returns the current span value for
               specified math waveform. The Math waveform is specified by x, which ranges from 1
               through 4. This command is equal to selecting Spectral Setup from the Math menu and
               then entering a value in the Freq Span box.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:SPAN?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:SPAN?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:SPAN value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:SPECTral:SPAN {<NR3>|FULl}
             - MATH<x>:SPECTral:SPAN?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the frequency span of the output data vector from the spectral
               analyzer.
             - ``FULL`` sets the top of the span to 1/2 the sample rate and sets the center frequency
@@ -1179,28 +1146,27 @@ class MathItemSpectral(SCPICmdRead):
     def suppress(self) -> MathItemSpectralSuppress:
         """Return the ``MATH<x>:SPECTral:SUPPress`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the phase suppression threshold for the specified math
               waveform. The Math waveform is specified by x, which ranges from 1 through 4. This
               command is equal to selecting Spectral Setup from the Math menu, choosing the Phase
               tab and then entering a value in the Suppression Threshold box. This command affects
               only Spectral Phase waveforms.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:SUPPress?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:SUPPress?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:SUPPress value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:SPECTral:SUPPress <NR3>
             - MATH<x>:SPECTral:SUPPress?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the magnitude level that data with magnitude values below this value are
               displayed as zero phase.
         """
@@ -1210,28 +1176,27 @@ class MathItemSpectral(SCPICmdRead):
     def unwrap(self) -> MathItemSpectralUnwrap:
         """Return the ``MATH<x>:SPECTral:UNWRap`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns whether phase unwrap of the spectral analyzer output data
               is enabled for the specified math waveform. The Math waveform is specified by x, which
               ranges from 1 through 4. This command is equal to selecting Spectral Setup from the
               Math menu, choosing the Phase tab and then clicking the Unwrap button. This command
               affects only Spectral Phase waveforms.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:UNWRap?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:UNWRap?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:UNWRap value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:SPECTral:UNWRap {ON|OFF|<NR1>}
             - MATH<x>:SPECTral:UNWRap?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables phase unwrap.
             - ``OFF`` disables phase wrap.
             - ``<NR1>`` = 0 disables phase wrap; any other value enables phase wrap.
@@ -1242,7 +1207,7 @@ class MathItemSpectral(SCPICmdRead):
     def window(self) -> MathItemSpectralWindow:
         """Return the ``MATH<x>:SPECTral:WINdow`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the window function used to multiply the spectral
               analyzer input data for the specified math waveform. The Math waveform is specified by
               x, which ranges from 1 through 4. A spectral window determines what the filter shape
@@ -1255,21 +1220,20 @@ class MathItemSpectral(SCPICmdRead):
               frequencies (resolution bandwidth). For additional information about spectral windows,
               see Selecting a Spectral Window in the online help for this instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:SPECTral:WINdow?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral:WINdow?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:SPECTral:WINdow value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:SPECTral:WINdow {RECTANGular|HAMMing|HANNing|KAISERBessel|BLACKMANHarris|FLATTOP2|GAUSSian|TEKEXPonential}
             - MATH<x>:SPECTral:WINdow?
+            ```
 
-        **Info:**
+        Info:
             - ``RECTANGular`` window function is equivalent to multiplying all gate data by one.
             - ``HAMMing`` window function is based on a cosine series.
             - ``HANNing`` window function is based on a cosine series.
@@ -1288,7 +1252,7 @@ class MathItemSpectral(SCPICmdRead):
 class MathItemNumavg(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:NUMAVg`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the acquisition number at which the averaging algorithm will
           begin exponential averaging. Prior to that acquisition number, the algorithm uses stable
           averaging. This has no effect unless the AVG() function is used in the specified math
@@ -1297,20 +1261,19 @@ class MathItemNumavg(SCPICmdWrite, SCPICmdRead):
           selecting Set Math Averages from the Math menu and then entering an averaging value for
           the math waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:NUMAVg?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:NUMAVg?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:NUMAVg value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:NUMAVg <NR1>
         - MATH<x>:NUMAVg?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the number of acquisitions over which exponential averaging is
           performed.
     """
@@ -1319,26 +1282,25 @@ class MathItemNumavg(SCPICmdWrite, SCPICmdRead):
 class MathItemLabelYpos(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:LABel:YPOS`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the Y screen offset at which the label attached to a math
           waveform is displayed, relative to the waveform handle. The Math waveform is specified by
           x, which ranges from 1 through 4. This command is equivalent to selecting Math Label from
           the Math menu and entering a value in the Y Position box.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:LABel:YPOS?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:LABel:YPOS?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:LABel:YPOS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:LABel:YPOS <NR1>
         - MATH<x>:LABel:YPOS?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the location (in divisions) where the label for the selected math waveform is
           displayed, relative to the waveform handle. Arguments should rang from 10 to -10.
     """
@@ -1347,26 +1309,25 @@ class MathItemLabelYpos(SCPICmdWrite, SCPICmdRead):
 class MathItemLabelXpos(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:LABel:XPOS`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the X screen offset at which the label attached to a math
           waveform is displayed, relative to the left edge of the screen. Channels are specified by
           x, which ranges from 1 through 4. This command is equivalent to selecting Math Label from
           the Math menu and entering a value in the X Position box.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:LABel:XPOS?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:LABel:XPOS?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:LABel:XPOS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:LABel:XPOS <NR1>
         - MATH<x>:LABel:XPOS?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the location (in divisions) where the label for the selected math waveform is
           displayed, relative to the left edge of the screen. Arguments should be integers ranging
           from 0 to 10.
@@ -1376,26 +1337,25 @@ class MathItemLabelXpos(SCPICmdWrite, SCPICmdRead):
 class MathItemLabelName(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:LABel:NAMe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the label string, which is used for annotating the math
           waveform on the screen. The math waveform to which the label is attached is specified by
           x, which ranges in value from 1 through 4. This command is equivalent to selecting Math
           Setup from the Math menu and entering a label in the Label box.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:LABel:NAMe?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:LABel:NAMe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:LABel:NAMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:LABel:NAMe <QString>
         - MATH<x>:LABel:NAMe?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the label to annotate the math waveform.
     """
 
@@ -1405,7 +1365,7 @@ class MathItemLabelName(SCPICmdWrite, SCPICmdRead):
 class MathItemLabel(SCPICmdRead):
     """The ``MATH<x>:LABel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:LABel?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:LABel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1426,26 +1386,25 @@ class MathItemLabel(SCPICmdRead):
     def name(self) -> MathItemLabelName:
         """Return the ``MATH<x>:LABel:NAMe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the label string, which is used for annotating the math
               waveform on the screen. The math waveform to which the label is attached is specified
               by x, which ranges in value from 1 through 4. This command is equivalent to selecting
               Math Setup from the Math menu and entering a label in the Label box.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:LABel:NAMe?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:LABel:NAMe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:LABel:NAMe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:LABel:NAMe <QString>
             - MATH<x>:LABel:NAMe?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the label to annotate the math waveform.
         """
         return self._name
@@ -1454,26 +1413,25 @@ class MathItemLabel(SCPICmdRead):
     def xpos(self) -> MathItemLabelXpos:
         """Return the ``MATH<x>:LABel:XPOS`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the X screen offset at which the label attached to a math
               waveform is displayed, relative to the left edge of the screen. Channels are specified
               by x, which ranges from 1 through 4. This command is equivalent to selecting Math
               Label from the Math menu and entering a value in the X Position box.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:LABel:XPOS?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:LABel:XPOS?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:LABel:XPOS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:LABel:XPOS <NR1>
             - MATH<x>:LABel:XPOS?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the location (in divisions) where the label for the selected math
               waveform is displayed, relative to the left edge of the screen. Arguments should be
               integers ranging from 0 to 10.
@@ -1484,26 +1442,25 @@ class MathItemLabel(SCPICmdRead):
     def ypos(self) -> MathItemLabelYpos:
         """Return the ``MATH<x>:LABel:YPOS`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Y screen offset at which the label attached to a math
               waveform is displayed, relative to the waveform handle. The Math waveform is specified
               by x, which ranges from 1 through 4. This command is equivalent to selecting Math
               Label from the Math menu and entering a value in the Y Position box.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:LABel:YPOS?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:LABel:YPOS?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:LABel:YPOS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:LABel:YPOS <NR1>
             - MATH<x>:LABel:YPOS?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the location (in divisions) where the label for the selected math
               waveform is displayed, relative to the waveform handle. Arguments should rang from 10
               to -10.
@@ -1514,24 +1471,23 @@ class MathItemLabel(SCPICmdRead):
 class MathItemFilterRisetime(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:FILTer:RISetime`` command.
 
-    **Description:**
+    Description:
         - This command or query sets or returns the filter rise time parameter.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:FILTer:RISetime?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:FILTer:RISetime?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:FILTer:RISetime value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:FILTer:RISetime <NR3>
         - MATH<x>:FILTer:RISetime?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` sets how the filter affects a signal. The bandwidth of the filter is
           approximately 0.35 / (filter rise time). For a square wave input, the measurement system
           rise time of Math(x) = filter (chx) is very close to the filter rise time of Math(x).
@@ -1541,23 +1497,22 @@ class MathItemFilterRisetime(SCPICmdWrite, SCPICmdRead):
 class MathItemFilterMode(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:FILTer:MODe`` command.
 
-    **Description:**
+    Description:
         - This command or query sets or returns the filter rise time parameter.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:FILTer:MODe?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:FILTer:MODe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:FILTer:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:FILTer:MODe {CENTered|SHIFted}
         - MATH<x>:FILTer:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``CENTERED`` sets the value at any point to the average of that point in the source
           waveform and N points on either side of that point.
         - ``SHIFTED`` sets the value at any point to the average of that point in the source
@@ -1570,7 +1525,7 @@ class MathItemFilterMode(SCPICmdWrite, SCPICmdRead):
 class MathItemFilter(SCPICmdRead):
     """The ``MATH<x>:FILTer`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:FILTer?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:FILTer?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1589,24 +1544,23 @@ class MathItemFilter(SCPICmdRead):
     def mode(self) -> MathItemFilterMode:
         """Return the ``MATH<x>:FILTer:MODe`` command.
 
-        **Description:**
+        Description:
             - This command or query sets or returns the filter rise time parameter.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:FILTer:MODe?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:FILTer:MODe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:FILTer:MODe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:FILTer:MODe {CENTered|SHIFted}
             - MATH<x>:FILTer:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``CENTERED`` sets the value at any point to the average of that point in the source
               waveform and N points on either side of that point.
             - ``SHIFTED`` sets the value at any point to the average of that point in the source
@@ -1620,24 +1574,23 @@ class MathItemFilter(SCPICmdRead):
     def risetime(self) -> MathItemFilterRisetime:
         """Return the ``MATH<x>:FILTer:RISetime`` command.
 
-        **Description:**
+        Description:
             - This command or query sets or returns the filter rise time parameter.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:FILTer:RISetime?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:FILTer:RISetime?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:FILTer:RISetime value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:FILTer:RISetime <NR3>
             - MATH<x>:FILTer:RISetime?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` sets how the filter affects a signal. The bandwidth of the filter is
               approximately 0.35 / (filter rise time). For a square wave input, the measurement
               system rise time of Math(x) = filter (chx) is very close to the filter rise time of
@@ -1649,7 +1602,7 @@ class MathItemFilter(SCPICmdRead):
 class MathItemDefine(SCPICmdWrite, SCPICmdRead):
     """The ``MATH<x>:DEFine`` command.
 
-    **Description:**
+    Description:
         - This command allows you to define new waveforms using mathematical expressions. Sending
           this command is equivalent to selecting Math Setup from the Math menu, selecting a math
           waveform (Math 1 through Math 4), and then entering a math expression in the Math<x> box.
@@ -1666,20 +1619,19 @@ class MathItemDefine(SCPICmdWrite, SCPICmdRead):
           expressions, see Creating and Using Math Waveforms in the user online help for this
           instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>:DEFine?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>:DEFine?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH<x>:DEFine value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>:DEFine <QString>
         - MATH<x>:DEFine?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` quoted string argument is the mathematical expression that defines the
           waveform.
     """
@@ -1691,20 +1643,19 @@ class MathItemDefine(SCPICmdWrite, SCPICmdRead):
 class MathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``MATH<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the definition for the math waveform specified by <x>,
           which ranges from 1 through 4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH<x>?
+        ```
 
     Properties:
         - ``.define``: The ``MATH<x>:DEFine`` command.
@@ -1732,7 +1683,7 @@ class MathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def define(self) -> MathItemDefine:
         """Return the ``MATH<x>:DEFine`` command.
 
-        **Description:**
+        Description:
             - This command allows you to define new waveforms using mathematical expressions.
               Sending this command is equivalent to selecting Math Setup from the Math menu,
               selecting a math waveform (Math 1 through Math 4), and then entering a math expression
@@ -1749,20 +1700,19 @@ class MathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
               waveform. For more information about constructing mathematical expressions, see
               Creating and Using Math Waveforms in the user online help for this instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:DEFine?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:DEFine?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:DEFine value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:DEFine <QString>
             - MATH<x>:DEFine?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` quoted string argument is the mathematical expression that defines the
               waveform.
         """
@@ -1772,7 +1722,7 @@ class MathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def filter(self) -> MathItemFilter:
         """Return the ``MATH<x>:FILTer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:FILTer?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:FILTer?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -1787,7 +1737,7 @@ class MathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def label(self) -> MathItemLabel:
         """Return the ``MATH<x>:LABel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:LABel?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:LABel?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -1803,7 +1753,7 @@ class MathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def numavg(self) -> MathItemNumavg:
         """Return the ``MATH<x>:NUMAVg`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the acquisition number at which the averaging algorithm
               will begin exponential averaging. Prior to that acquisition number, the algorithm uses
               stable averaging. This has no effect unless the AVG() function is used in the
@@ -1812,20 +1762,19 @@ class MathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
               command is equivalent to selecting Set Math Averages from the Math menu and then
               entering an averaging value for the math waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:NUMAVg?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:NUMAVg?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:NUMAVg value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:NUMAVg <NR1>
             - MATH<x>:NUMAVg?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the number of acquisitions over which exponential averaging is
               performed.
         """
@@ -1835,22 +1784,21 @@ class MathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def spectral(self) -> MathItemSpectral:
         """Return the ``MATH<x>:SPECTral`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the current spectral setups for the specified math
               waveform. The Math waveform is specified by x, which ranges from 1 through 4. This
               command is equivalent to selecting Spectral Setup from the Math menu and viewing the
               current spectral setup values.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:SPECTral?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:SPECTral?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:SPECTral?
+            ```
 
         Sub-properties:
             - ``.center``: The ``MATH<x>:SPECTral:CENTER`` command.
@@ -1873,24 +1821,23 @@ class MathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def threshold(self) -> MathItemThreshold:
         """Return the ``MATH<x>:THRESHold`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the threshold for the math waveform specified by x, which
               can be 1 through 4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:THRESHold?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:THRESHold?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:THRESHold value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:THRESHold <NR3>
             - MATH<x>:THRESHold?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the math threshold in volts.
         """
         return self._threshold
@@ -1899,25 +1846,24 @@ class MathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def unitstring(self) -> MathItemUnitstring:
         """Return the ``MATH<x>:UNITString`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the string to use for units for the math waveform
               specified by x, which can be 1 through 4. This command will override the default unit
               string with the one that you specify.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:UNITString?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:UNITString?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH<x>:UNITString value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH<x>:UNITString <QString>
             - MATH<x>:UNITString?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` quoted string argument is the units to be used for the specified math
               waveform.
         """
@@ -1927,7 +1873,7 @@ class MathItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def vertical(self) -> MathItemVertical:
         """Return the ``MATH<x>:VERTical`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH<x>:VERTical?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH<x>:VERTical?`` query and
               raise an AssertionError if the returned value does not match ``value``.

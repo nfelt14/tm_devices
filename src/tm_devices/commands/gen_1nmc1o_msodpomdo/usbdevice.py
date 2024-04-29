@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - USBDevice:CONFigure {DISabled|IMAge|USBTmc}
     - USBDevice:CONFigure?
 """
@@ -26,23 +24,22 @@ if TYPE_CHECKING:
 class UsbdeviceConfigure(SCPICmdWrite, SCPICmdRead):
     """The ``USBDevice:CONFigure`` command.
 
-    **Description:**
+    Description:
         - Enables or disables the rear USB port for use with Pictbridge printers.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``USBDevice:CONFigure?`` query.
         - Using the ``.verify(value)`` method will send the ``USBDevice:CONFigure?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``USBDevice:CONFigure value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - USBDevice:CONFigure {DISabled|IMAge|USBTmc}
         - USBDevice:CONFigure?
+        ```
 
-    **Info:**
+    Info:
         - ``DISabled`` disables the rear USB port.
         - ``IMAge`` enables the rear USB port as an SIC device.
         - ``USBTmc`` enables the rear USB port as a USBTMC device.
@@ -52,7 +49,7 @@ class UsbdeviceConfigure(SCPICmdWrite, SCPICmdRead):
 class Usbdevice(SCPICmdRead):
     """The ``USBDevice`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``USBDevice?`` query.
         - Using the ``.verify(value)`` method will send the ``USBDevice?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -69,24 +66,23 @@ class Usbdevice(SCPICmdRead):
     def configure(self) -> UsbdeviceConfigure:
         """Return the ``USBDevice:CONFigure`` command.
 
-        **Description:**
+        Description:
             - Enables or disables the rear USB port for use with Pictbridge printers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``USBDevice:CONFigure?`` query.
             - Using the ``.verify(value)`` method will send the ``USBDevice:CONFigure?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``USBDevice:CONFigure value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - USBDevice:CONFigure {DISabled|IMAge|USBTmc}
             - USBDevice:CONFigure?
+            ```
 
-        **Info:**
+        Info:
             - ``DISabled`` disables the rear USB port.
             - ``IMAge`` enables the rear USB port as an SIC device.
             - ``USBTmc`` enables the rear USB port as a USBTMC device.

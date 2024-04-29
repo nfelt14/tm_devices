@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - INSTrument:COUPle:SOURce {NONE|ALL|PAIR}
     - INSTrument:COUPle:SOURce?
     - INSTrument:MODE {AWG|FGEN}
@@ -28,24 +26,23 @@ if TYPE_CHECKING:
 class InstrumentMode(SCPICmdWrite, SCPICmdRead):
     """The ``INSTrument:MODE`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the AWG mode, either the AWG mode or the Function generator
           mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``INSTrument:MODE?`` query.
         - Using the ``.verify(value)`` method will send the ``INSTrument:MODE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``INSTrument:MODE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - INSTrument:MODE {AWG|FGEN}
         - INSTrument:MODE?
+        ```
 
-    **Info:**
+    Info:
         - ``AWG`` sets the instrument to the Arbitrary Waveform Generator mode. FGEN sets the
           instrument to the Function generator mode.
         - ``*RST`` sets this to AWG.
@@ -55,27 +52,26 @@ class InstrumentMode(SCPICmdWrite, SCPICmdRead):
 class InstrumentCoupleSource(SCPICmdWrite, SCPICmdRead):
     """The ``INSTrument:COUPle:SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the coupled state of the channel's Analog and Marker output
           controls. Coupling links the following channel and marker settings together. Channel
           Amplitude Marker Voltage High DDR Channel Output Mode Marker Voltage Low DAC Mode Channel
           Offset Analog Stop and Wait states Channel Resolution Marker Stop and Wait states DC Bias
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``INSTrument:COUPle:SOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``INSTrument:COUPle:SOURce?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``INSTrument:COUPle:SOURce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - INSTrument:COUPle:SOURce {NONE|ALL|PAIR}
         - INSTrument:COUPle:SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to NONE.
     """
 
@@ -83,7 +79,7 @@ class InstrumentCoupleSource(SCPICmdWrite, SCPICmdRead):
 class InstrumentCouple(SCPICmdRead):
     """The ``INSTrument:COUPle`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``INSTrument:COUPle?`` query.
         - Using the ``.verify(value)`` method will send the ``INSTrument:COUPle?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -100,28 +96,27 @@ class InstrumentCouple(SCPICmdRead):
     def source(self) -> InstrumentCoupleSource:
         """Return the ``INSTrument:COUPle:SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the coupled state of the channel's Analog and Marker
               output controls. Coupling links the following channel and marker settings together.
               Channel Amplitude Marker Voltage High DDR Channel Output Mode Marker Voltage Low DAC
               Mode Channel Offset Analog Stop and Wait states Channel Resolution Marker Stop and
               Wait states DC Bias
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``INSTrument:COUPle:SOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``INSTrument:COUPle:SOURce?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``INSTrument:COUPle:SOURce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - INSTrument:COUPle:SOURce {NONE|ALL|PAIR}
             - INSTrument:COUPle:SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to NONE.
         """
         return self._source
@@ -130,7 +125,7 @@ class InstrumentCouple(SCPICmdRead):
 class Instrument(SCPICmdRead):
     """The ``INSTrument`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``INSTrument?`` query.
         - Using the ``.verify(value)`` method will send the ``INSTrument?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -149,7 +144,7 @@ class Instrument(SCPICmdRead):
     def couple(self) -> InstrumentCouple:
         """Return the ``INSTrument:COUPle`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``INSTrument:COUPle?`` query.
             - Using the ``.verify(value)`` method will send the ``INSTrument:COUPle?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -163,24 +158,23 @@ class Instrument(SCPICmdRead):
     def mode(self) -> InstrumentMode:
         """Return the ``INSTrument:MODE`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the AWG mode, either the AWG mode or the Function
               generator mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``INSTrument:MODE?`` query.
             - Using the ``.verify(value)`` method will send the ``INSTrument:MODE?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``INSTrument:MODE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - INSTrument:MODE {AWG|FGEN}
             - INSTrument:MODE?
+            ```
 
-        **Info:**
+        Info:
             - ``AWG`` sets the instrument to the Arbitrary Waveform Generator mode. FGEN sets the
               instrument to the Function generator mode.
             - ``*RST`` sets this to AWG.

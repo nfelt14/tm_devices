@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - BATTery:ACPOWer?
     - BATTery:SLOT<1,2>:CHARGE?
     - BATTery:SLOT<1,2>:INSTalled?
@@ -30,102 +28,97 @@ if TYPE_CHECKING:
 class BatterySlotItemTimetofull(SCPICmdRead):
     """The ``BATTery:SLOT<1,2>:TIMETOFULL`` command.
 
-    **Description:**
+    Description:
         - This command queries the time to full of the battery.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``BATTery:SLOT<1,2>:TIMETOFULL?`` query.
         - Using the ``.verify(value)`` method will send the ``BATTery:SLOT<1,2>:TIMETOFULL?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BATTery:SLOT<1,2>:TIMETOFULL?
+        ```
     """
 
 
 class BatterySlotItemTimetoempty(SCPICmdRead):
     """The ``BATTery:SLOT<1,2>:TIMETOEMPty`` command.
 
-    **Description:**
+    Description:
         - This command queries the time to empty of the battery.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``BATTery:SLOT<1,2>:TIMETOEMPty?`` query.
         - Using the ``.verify(value)`` method will send the ``BATTery:SLOT<1,2>:TIMETOEMPty?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BATTery:SLOT<1,2>:TIMETOEMPty?
+        ```
     """
 
 
 class BatterySlotItemSerialnumber(SCPICmdRead):
     """The ``BATTery:SLOT<1,2>:SERIALnumber`` command.
 
-    **Description:**
+    Description:
         - This command queries the serial number of the battery.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``BATTery:SLOT<1,2>:SERIALnumber?`` query.
         - Using the ``.verify(value)`` method will send the ``BATTery:SLOT<1,2>:SERIALnumber?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BATTery:SLOT<1,2>:SERIALnumber?
+        ```
     """
 
 
 class BatterySlotItemInstalled(SCPICmdRead):
     """The ``BATTery:SLOT<1,2>:INSTalled`` command.
 
-    **Description:**
+    Description:
         - This command queries if a battery is installed.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``BATTery:SLOT<1,2>:INSTalled?`` query.
         - Using the ``.verify(value)`` method will send the ``BATTery:SLOT<1,2>:INSTalled?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BATTery:SLOT<1,2>:INSTalled?
+        ```
     """
 
 
 class BatterySlotItemCharge(SCPICmdRead):
     """The ``BATTery:SLOT<1,2>:CHARGE`` command.
 
-    **Description:**
+    Description:
         - This command queries the current charge of the battery.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``BATTery:SLOT<1,2>:CHARGE?`` query.
         - Using the ``.verify(value)`` method will send the ``BATTery:SLOT<1,2>:CHARGE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BATTery:SLOT<1,2>:CHARGE?
+        ```
     """
 
 
 class BatterySlotItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``BATTery:SLOT<1,2>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``BATTery:SLOT<1,2>?`` query.
         - Using the ``.verify(value)`` method will send the ``BATTery:SLOT<1,2>?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -150,19 +143,18 @@ class BatterySlotItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def charge(self) -> BatterySlotItemCharge:
         """Return the ``BATTery:SLOT<1,2>:CHARGE`` command.
 
-        **Description:**
+        Description:
             - This command queries the current charge of the battery.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BATTery:SLOT<1,2>:CHARGE?`` query.
             - Using the ``.verify(value)`` method will send the ``BATTery:SLOT<1,2>:CHARGE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BATTery:SLOT<1,2>:CHARGE?
+            ```
         """
         return self._charge
 
@@ -170,19 +162,18 @@ class BatterySlotItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def installed(self) -> BatterySlotItemInstalled:
         """Return the ``BATTery:SLOT<1,2>:INSTalled`` command.
 
-        **Description:**
+        Description:
             - This command queries if a battery is installed.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BATTery:SLOT<1,2>:INSTalled?`` query.
             - Using the ``.verify(value)`` method will send the ``BATTery:SLOT<1,2>:INSTalled?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BATTery:SLOT<1,2>:INSTalled?
+            ```
         """
         return self._installed
 
@@ -190,19 +181,18 @@ class BatterySlotItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def serialnumber(self) -> BatterySlotItemSerialnumber:
         """Return the ``BATTery:SLOT<1,2>:SERIALnumber`` command.
 
-        **Description:**
+        Description:
             - This command queries the serial number of the battery.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BATTery:SLOT<1,2>:SERIALnumber?`` query.
             - Using the ``.verify(value)`` method will send the ``BATTery:SLOT<1,2>:SERIALnumber?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BATTery:SLOT<1,2>:SERIALnumber?
+            ```
         """
         return self._serialnumber
 
@@ -210,19 +200,18 @@ class BatterySlotItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def timetoempty(self) -> BatterySlotItemTimetoempty:
         """Return the ``BATTery:SLOT<1,2>:TIMETOEMPty`` command.
 
-        **Description:**
+        Description:
             - This command queries the time to empty of the battery.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BATTery:SLOT<1,2>:TIMETOEMPty?`` query.
             - Using the ``.verify(value)`` method will send the ``BATTery:SLOT<1,2>:TIMETOEMPty?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BATTery:SLOT<1,2>:TIMETOEMPty?
+            ```
         """
         return self._timetoempty
 
@@ -230,19 +219,18 @@ class BatterySlotItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def timetofull(self) -> BatterySlotItemTimetofull:
         """Return the ``BATTery:SLOT<1,2>:TIMETOFULL`` command.
 
-        **Description:**
+        Description:
             - This command queries the time to full of the battery.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BATTery:SLOT<1,2>:TIMETOFULL?`` query.
             - Using the ``.verify(value)`` method will send the ``BATTery:SLOT<1,2>:TIMETOFULL?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BATTery:SLOT<1,2>:TIMETOFULL?
+            ```
         """
         return self._timetofull
 
@@ -250,26 +238,25 @@ class BatterySlotItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class BatteryAcpower(SCPICmdRead):
     """The ``BATTery:ACPOWer`` command.
 
-    **Description:**
+    Description:
         - This command queries the state of AC power being plugged in.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``BATTery:ACPOWer?`` query.
         - Using the ``.verify(value)`` method will send the ``BATTery:ACPOWer?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BATTery:ACPOWer?
+        ```
     """
 
 
 class Battery(SCPICmdRead):
     """The ``BATTery`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``BATTery?`` query.
         - Using the ``.verify(value)`` method will send the ``BATTery?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -290,19 +277,18 @@ class Battery(SCPICmdRead):
     def acpower(self) -> BatteryAcpower:
         """Return the ``BATTery:ACPOWer`` command.
 
-        **Description:**
+        Description:
             - This command queries the state of AC power being plugged in.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BATTery:ACPOWer?`` query.
             - Using the ``.verify(value)`` method will send the ``BATTery:ACPOWer?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BATTery:ACPOWer?
+            ```
         """
         return self._acpower
 
@@ -310,7 +296,7 @@ class Battery(SCPICmdRead):
     def slot(self) -> Dict[int, BatterySlotItem]:
         """Return the ``BATTery:SLOT<1,2>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BATTery:SLOT<1,2>?`` query.
             - Using the ``.verify(value)`` method will send the ``BATTery:SLOT<1,2>?`` query and
               raise an AssertionError if the returned value does not match ``value``.

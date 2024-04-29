@@ -10,11 +10,10 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
-    - FPAnel:PRESS {AUTOset| BUS| CH1<x>| CLEAR| DEFaultsetup| FORCetrig| GPKNOB1| GPKNOB2| HORZPOS| MATh| REF| RUNSTop| SETTO50| SINGleseq| TOUCHSCReen| TRIGMode| USER| VERTPOS| VERTSCALE}
+    - FPAnel:PRESS {AUTOset| BUS| CH1<x>| CLEAR| DEFaultsetup| FORCetrig| GPKNOB1| GPKNOB2| HORZPOS|
+      MATh| REF| RUNSTop| SETTO50| SINGleseq| TOUCHSCReen| TRIGMode| USER| VERTPOS| VERTSCALE}
     - FPAnel:TURN {GPKNOB1| GPKNOB2| HORZPOS| HORZScale| TRIGLevel| VERTPOS| VERTSCALE} [,<NR1>]
-"""  # noqa: E501
+"""
 
 from typing import Optional, TYPE_CHECKING
 
@@ -27,21 +26,20 @@ if TYPE_CHECKING:
 class FpanelTurn(SCPICmdWrite):
     """The ``FPAnel:TURN`` command.
 
-    **Description:**
+    Description:
         - This command is used to emulate a knob turn. The optional NR1 specifies the number of
           clicks where negative values indicate counter clockwise. If not specified, the default of
           1 click is used indicating the knob is turned clockwise 1 click.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FPAnel:TURN value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FPAnel:TURN {GPKNOB1| GPKNOB2| HORZPOS| HORZScale| TRIGLevel| VERTPOS| VERTSCALE} [,<NR1>]
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the number of clicks to turn the knob.
     """
 
@@ -49,20 +47,19 @@ class FpanelTurn(SCPICmdWrite):
 class FpanelPress(SCPICmdWrite):
     """The ``FPAnel:PRESS`` command.
 
-    **Description:**
+    Description:
         - This command is used to emulate a button press. When used with knob enumerations, this
           command pushes the knob. Use the ``FPANEL:TURN`` command to emulate knob turns.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FPAnel:PRESS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FPAnel:PRESS {AUTOset| BUS| CH1<x>| CLEAR| DEFaultsetup| FORCetrig| GPKNOB1| GPKNOB2| HORZPOS| MATh| REF| RUNSTop| SETTO50| SINGleseq| TOUCHSCReen| TRIGMode| USER| VERTPOS| VERTSCALE}
+        ```
 
-    **Info:**
+    Info:
         - ``AUTOset`` Arguments are the following instrument buttons.
         - ``BUS`` Arguments are the following instrument buttons.
         - ``CH1<x>`` Arguments are the following instrument buttons.
@@ -88,7 +85,7 @@ class FpanelPress(SCPICmdWrite):
 class Fpanel(SCPICmdRead):
     """The ``FPAnel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FPAnel?`` query.
         - Using the ``.verify(value)`` method will send the ``FPAnel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -107,20 +104,19 @@ class Fpanel(SCPICmdRead):
     def press(self) -> FpanelPress:
         """Return the ``FPAnel:PRESS`` command.
 
-        **Description:**
+        Description:
             - This command is used to emulate a button press. When used with knob enumerations, this
               command pushes the knob. Use the ``FPANEL:TURN`` command to emulate knob turns.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FPAnel:PRESS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FPAnel:PRESS {AUTOset| BUS| CH1<x>| CLEAR| DEFaultsetup| FORCetrig| GPKNOB1| GPKNOB2| HORZPOS| MATh| REF| RUNSTop| SETTO50| SINGleseq| TOUCHSCReen| TRIGMode| USER| VERTPOS| VERTSCALE}
+            ```
 
-        **Info:**
+        Info:
             - ``AUTOset`` Arguments are the following instrument buttons.
             - ``BUS`` Arguments are the following instrument buttons.
             - ``CH1<x>`` Arguments are the following instrument buttons.
@@ -147,21 +143,20 @@ class Fpanel(SCPICmdRead):
     def turn(self) -> FpanelTurn:
         """Return the ``FPAnel:TURN`` command.
 
-        **Description:**
+        Description:
             - This command is used to emulate a knob turn. The optional NR1 specifies the number of
               clicks where negative values indicate counter clockwise. If not specified, the default
               of 1 click is used indicating the knob is turned clockwise 1 click.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FPAnel:TURN value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FPAnel:TURN {GPKNOB1| GPKNOB2| HORZPOS| HORZScale| TRIGLevel| VERTPOS| VERTSCALE} [,<NR1>]
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the number of clicks to turn the knob.
         """  # noqa: E501
         return self._turn

@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - display.getlastkey()
     - display.screen
     - display.sendkey()
@@ -51,7 +49,7 @@ class DisplayTrigger(BaseTSPCmd):
 class DisplaySmuxItemMeasure(BaseTSPCmd):
     """The ``display.smuX.measure`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.func``: The ``display.smuX.measure.func`` attribute.
     """
 
@@ -59,20 +57,19 @@ class DisplaySmuxItemMeasure(BaseTSPCmd):
     def func(self) -> str:
         """Access the ``display.smuX.measure.func`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the type of measurement that is being displayed.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.smuX.measure.func)`` query.
             - Setting this property to a value will send the ``display.smuX.measure.func = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.smuX.measure.func = value
             - print(display.smuX.measure.func)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -91,20 +88,19 @@ class DisplaySmuxItemMeasure(BaseTSPCmd):
     def func(self, value: Union[str, float]) -> None:
         """Access the ``display.smuX.measure.func`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the type of measurement that is being displayed.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.smuX.measure.func)`` query.
             - Setting this property to a value will send the ``display.smuX.measure.func = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.smuX.measure.func = value
             - print(display.smuX.measure.func)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -126,7 +122,7 @@ class DisplaySmuxItemMeasure(BaseTSPCmd):
 class DisplaySmuxItemLimit(BaseTSPCmd):
     """The ``display.smuX.limit`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.func``: The ``display.smuX.limit.func`` attribute.
     """
 
@@ -134,20 +130,19 @@ class DisplaySmuxItemLimit(BaseTSPCmd):
     def func(self) -> str:
         """Access the ``display.smuX.limit.func`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the type of limit value setting displayed for the SMU.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.smuX.limit.func)`` query.
             - Setting this property to a value will send the ``display.smuX.limit.func = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.smuX.limit.func = value
             - print(display.smuX.limit.func)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -166,20 +161,19 @@ class DisplaySmuxItemLimit(BaseTSPCmd):
     def func(self, value: Union[str, float]) -> None:
         """Access the ``display.smuX.limit.func`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the type of limit value setting displayed for the SMU.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.smuX.limit.func)`` query.
             - Setting this property to a value will send the ``display.smuX.limit.func = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.smuX.limit.func = value
             - print(display.smuX.limit.func)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -201,7 +195,7 @@ class DisplaySmuxItemLimit(BaseTSPCmd):
 class DisplaySmuxItem(ValidatedChannel, BaseTSPCmd):
     """The ``display.smuX`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.digits``: The ``display.smuX.digits`` attribute.
         - ``.limit``: The ``display.smuX.limit`` command tree.
         - ``.measure``: The ``display.smuX.measure`` command tree.
@@ -216,20 +210,19 @@ class DisplaySmuxItem(ValidatedChannel, BaseTSPCmd):
     def digits(self) -> str:
         """Access the ``display.smuX.digits`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the front-panel display resolution of the selected measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.smuX.digits)`` query.
             - Setting this property to a value will send the ``display.smuX.digits = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.smuX.digits = value
             - print(display.smuX.digits)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -248,20 +241,19 @@ class DisplaySmuxItem(ValidatedChannel, BaseTSPCmd):
     def digits(self, value: Union[str, float]) -> None:
         """Access the ``display.smuX.digits`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the front-panel display resolution of the selected measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.smuX.digits)`` query.
             - Setting this property to a value will send the ``display.smuX.digits = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.smuX.digits = value
             - print(display.smuX.digits)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -283,7 +275,7 @@ class DisplaySmuxItem(ValidatedChannel, BaseTSPCmd):
     def limit(self) -> DisplaySmuxItemLimit:
         """Return the ``display.smuX.limit`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.func``: The ``display.smuX.limit.func`` attribute.
         """
         return self._limit
@@ -292,7 +284,7 @@ class DisplaySmuxItem(ValidatedChannel, BaseTSPCmd):
     def measure(self) -> DisplaySmuxItemMeasure:
         """Return the ``display.smuX.measure`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.func``: The ``display.smuX.measure.func`` attribute.
         """
         return self._measure
@@ -373,7 +365,7 @@ class Display(BaseTSPCmd):
         - ``.WHEEL_LEFT``: Represents turning the Navigation wheel left.
         - ``.WHEEL_RIGHT``: Represents turning the Navigation wheel right.
 
-    Properties/methods:
+    Properties and methods:
         - ``.getlastkey()``: The ``display.getlastkey()`` function.
         - ``.screen``: The ``display.screen`` attribute.
         - ``.sendkey()``: The ``display.sendkey()`` function.
@@ -525,19 +517,18 @@ For two-channel products, this is the SRC key for Channel A."""
     def screen(self) -> str:
         """Access the ``display.screen`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the selected display screen.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.screen)`` query.
             - Setting this property to a value will send the ``display.screen = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.screen = value
             - print(display.screen)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -556,19 +547,18 @@ For two-channel products, this is the SRC key for Channel A."""
     def screen(self, value: Union[str, float]) -> None:
         """Access the ``display.screen`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the selected display screen.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(display.screen)`` query.
             - Setting this property to a value will send the ``display.screen = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.screen = value
             - print(display.screen)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -590,7 +580,7 @@ For two-channel products, this is the SRC key for Channel A."""
     def smu(self) -> Dict[str, DisplaySmuxItem]:
         """Return the ``display.smuX`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.digits``: The ``display.smuX.digits`` attribute.
             - ``.limit``: The ``display.smuX.limit`` command tree.
             - ``.measure``: The ``display.smuX.measure`` command tree.
@@ -610,14 +600,13 @@ For two-channel products, this is the SRC key for Channel A."""
     def getlastkey(self) -> str:
         """Run the ``display.getlastkey()`` function.
 
-        **Description:**
+        Description:
             - This function retrieves the key code for the last pressed key.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.getlastkey()
+            ```
 
         Returns:
             The result of the function call.
@@ -636,14 +625,13 @@ For two-channel products, this is the SRC key for Channel A."""
     def sendkey(self, key_code: str) -> None:
         """Run the ``display.sendkey()`` function.
 
-        **Description:**
+        Description:
             - This function sends a code that simulates the action of a front-panel control.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.sendkey()
+            ```
 
         Args:
             key_code: A parameter that specifies the key press to simulate; see Details for more
@@ -663,14 +651,13 @@ For two-channel products, this is the SRC key for Channel A."""
     def waitkey(self) -> str:
         """Run the ``display.waitkey()`` function.
 
-        **Description:**
+        Description:
             - This function captures the key code value for the next front-panel action.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - display.waitkey()
+            ```
 
         Returns:
             The result of the function call.

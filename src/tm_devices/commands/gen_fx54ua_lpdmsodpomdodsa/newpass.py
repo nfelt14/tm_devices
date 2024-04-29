@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - NEWpass <QString>
 """
 
@@ -27,21 +25,20 @@ if TYPE_CHECKING:
 class Newpass(SCPICmdWrite):
     """The ``NEWpass`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) changes the password that enables access to password
           protected data. The PASSWord command must be successfully executed before using this
           command or an execution error will be generated.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``NEWpass value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - NEWpass <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the new password, which can contain up to 10 characters.
     """
 

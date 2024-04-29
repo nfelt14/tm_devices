@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - BUSY?
 """
 
@@ -27,20 +25,19 @@ if TYPE_CHECKING:
 class Busy(SCPICmdRead):
     """The ``BUSY`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the status of the instrument. This command allows you to
           synchronize the operation of the instrument with your application program.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``BUSY?`` query.
         - Using the ``.verify(value)`` method will send the ``BUSY?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BUSY?
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "BUSY") -> None:

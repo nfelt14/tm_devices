@@ -69,7 +69,7 @@ class Tsplink(BaseTSPCmd):
         - ``.TRIG_SYNCHRONOUSM``: Detects rising-edge triggers as an input. Asserts a TTL-low pulse
           for output.
 
-    Properties/methods:
+    Properties and methods:
         - ``.trigger``: The ``tsplink.trigger[N]`` command tree.
     """  # noqa: E501
 

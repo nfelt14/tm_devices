@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CHANNELMAPping?
 """
 
@@ -25,20 +23,19 @@ if TYPE_CHECKING:
 class Channelmapping(SCPICmdRead):
     """The ``CHANNELMAPping`` command.
 
-    **Description:**
+    Description:
         - This query returns a list of all channel mappings (such as, CH1.B2,CH2.A2,CH3.C2,CH4.D2).
           DPO70000SX Series only.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CHANNELMAPping?`` query.
         - Using the ``.verify(value)`` method will send the ``CHANNELMAPping?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CHANNELMAPping?
+        ```
     """
 
     def __init__(

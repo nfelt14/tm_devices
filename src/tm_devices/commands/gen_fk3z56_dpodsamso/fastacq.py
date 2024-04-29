@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - FASTAcq:HIACQRATE {<NR1>|OFF|ON}
     - FASTAcq:HIACQRATE?
     - FASTAcq:STATE {<NR1>|ON|OFF}
@@ -30,24 +28,23 @@ if TYPE_CHECKING:
 class FastacqState(SCPICmdWrite, SCPICmdRead):
     """The ``FASTAcq:STATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the state of Fast Acquisitions. This command is equivalent to
           the FASTACQ button on the front panel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FASTAcq:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``FASTAcq:STATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``FASTAcq:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FASTAcq:STATE {<NR1>|ON|OFF}
         - FASTAcq:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables Fast Acquisitions mode; any other value enables Fast Acquisitions
           mode.
         - ``ON`` enables Fast Acquisitions mode.
@@ -58,24 +55,23 @@ class FastacqState(SCPICmdWrite, SCPICmdRead):
 class FastacqHiacqrate(SCPICmdWrite, SCPICmdRead):
     """The ``FASTAcq:HIACQRATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the state of FastAcq optimization for capturing signal
           details with a higher sample rate.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FASTAcq:HIACQRATE?`` query.
         - Using the ``.verify(value)`` method will send the ``FASTAcq:HIACQRATE?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``FASTAcq:HIACQRATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FASTAcq:HIACQRATE {<NR1>|OFF|ON}
         - FASTAcq:HIACQRATE?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 sets FastAcq optimization for capturing signal details with a higher sample
           rate; any other value sets FastAcq optimization for capturing rare events with more
           acquisitions.
@@ -87,20 +83,19 @@ class FastacqHiacqrate(SCPICmdWrite, SCPICmdRead):
 class Fastacq(SCPICmdRead):
     """The ``FASTAcq`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the state of Fast Acquisitions. This command is equivalent
           to pressing the FASTACQ button on the front panel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FASTAcq?`` query.
         - Using the ``.verify(value)`` method will send the ``FASTAcq?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FASTAcq?
+        ```
 
     Properties:
         - ``.hiacqrate``: The ``FASTAcq:HIACQRATE`` command.
@@ -116,24 +111,23 @@ class Fastacq(SCPICmdRead):
     def hiacqrate(self) -> FastacqHiacqrate:
         """Return the ``FASTAcq:HIACQRATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the state of FastAcq optimization for capturing signal
               details with a higher sample rate.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FASTAcq:HIACQRATE?`` query.
             - Using the ``.verify(value)`` method will send the ``FASTAcq:HIACQRATE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``FASTAcq:HIACQRATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FASTAcq:HIACQRATE {<NR1>|OFF|ON}
             - FASTAcq:HIACQRATE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 sets FastAcq optimization for capturing signal details with a higher
               sample rate; any other value sets FastAcq optimization for capturing rare events with
               more acquisitions.
@@ -147,24 +141,23 @@ class Fastacq(SCPICmdRead):
     def state(self) -> FastacqState:
         """Return the ``FASTAcq:STATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the state of Fast Acquisitions. This command is
               equivalent to the FASTACQ button on the front panel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FASTAcq:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``FASTAcq:STATE?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``FASTAcq:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FASTAcq:STATE {<NR1>|ON|OFF}
             - FASTAcq:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables Fast Acquisitions mode; any other value enables Fast
               Acquisitions mode.
             - ``ON`` enables Fast Acquisitions mode.

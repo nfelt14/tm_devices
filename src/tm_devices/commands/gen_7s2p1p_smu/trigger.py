@@ -87,7 +87,7 @@ class Trigger(BaseTSPCmd):
         - ``.EVENT_ID``: Selects the event that causes a trigger to be asserted on the digital
           output line as a \*TRG command received on the remote interface.
 
-    Properties/methods:
+    Properties and methods:
         - ``.blender``: The ``trigger.blender[N]`` command tree.
         - ``.generator``: The ``trigger.generator[N]`` command tree.
         - ``.timer``: The ``trigger.timer[N]`` command tree.

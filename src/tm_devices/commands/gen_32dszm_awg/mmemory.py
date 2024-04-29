@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - MMEMory:CATalog? [<msus>]
     - MMEMory:CDIRectory [<directory_name>]
     - MMEMory:CDIRectory?
@@ -48,48 +46,46 @@ if TYPE_CHECKING:
 class MmemoryMsis(SCPICmdWrite, SCPICmdRead):
     """The ``MMEMory:MSIS`` command.
 
-    **Description:**
+    Description:
         - This command selects or returns a mass storage device used by all MMEMory commands. <msus>
           specifies a drive using a drive letter. The drive letter can represent hard disk drives,
           network drives, external DVD/CD-RW drives, or USB memory.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:MSIS?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:MSIS?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MMEMory:MSIS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:MSIS [<msus>]
         - MMEMory:MSIS?
+        ```
     """
 
 
 class MmemoryMdirectory(SCPICmdWrite):
     """The ``MMEMory:MDIRectory`` command.
 
-    **Description:**
+    Description:
         - This command creates a directory in the mass storage system. If the specified directory is
           locked in the mass storage system, this command causes an error.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:MDIRectory value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:MDIRectory <directory_name>
+        ```
     """
 
 
 class MmemoryImportParameterResamplingState(SCPICmdWrite, SCPICmdRead):
     """The ``MMEMory:IMPort:PARameter:RESampling:STATe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the resampling state for waveform import. This command is
           effective only when the following conditions are met: Waveform data to be imported must
           have sampling rate information. ``MMEMORY:IMPORT:PARAMETER:FREQUENCY:UPDATE:STATE``
@@ -98,7 +94,7 @@ class MmemoryImportParameterResamplingState(SCPICmdWrite, SCPICmdRead):
           waveform data. The query form of this command returns the resampling state of the
           instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:IMPort:PARameter:RESampling:STATe?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -107,14 +103,13 @@ class MmemoryImportParameterResamplingState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MMEMory:IMPort:PARameter:RESampling:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:IMPort:PARameter:RESampling:STATe <state>
         - MMEMory:IMPort:PARameter:RESampling:STATe?
+        ```
 
-    **Info:**
+    Info:
         - ``<state>`` ::=<Boolean>.
     """
 
@@ -122,11 +117,11 @@ class MmemoryImportParameterResamplingState(SCPICmdWrite, SCPICmdRead):
 class MmemoryImportParameterResamplingFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``MMEMory:IMPort:PARameter:RESampling:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the sampling rate parameter for resampling. The specified
           sampling rate is applied to imported waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``MMEMory:IMPort:PARameter:RESampling:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -135,14 +130,13 @@ class MmemoryImportParameterResamplingFrequency(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MMEMory:IMPort:PARameter:RESampling:FREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:IMPort:PARameter:RESampling:FREQuency <NR3>
         - MMEMory:IMPort:PARameter:RESampling:FREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>``
     """
 
@@ -150,7 +144,7 @@ class MmemoryImportParameterResamplingFrequency(SCPICmdWrite, SCPICmdRead):
 class MmemoryImportParameterResampling(SCPICmdRead):
     """The ``MMEMory:IMPort:PARameter:RESampling`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:IMPort:PARameter:RESampling?``
           query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:IMPort:PARameter:RESampling?``
@@ -172,11 +166,11 @@ class MmemoryImportParameterResampling(SCPICmdRead):
     def frequency(self) -> MmemoryImportParameterResamplingFrequency:
         """Return the ``MMEMory:IMPort:PARameter:RESampling:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the sampling rate parameter for resampling. The specified
               sampling rate is applied to imported waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MMEMory:IMPort:PARameter:RESampling:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -185,14 +179,13 @@ class MmemoryImportParameterResampling(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MMEMory:IMPort:PARameter:RESampling:FREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:IMPort:PARameter:RESampling:FREQuency <NR3>
             - MMEMory:IMPort:PARameter:RESampling:FREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>``
         """
         return self._frequency
@@ -201,7 +194,7 @@ class MmemoryImportParameterResampling(SCPICmdRead):
     def state(self) -> MmemoryImportParameterResamplingState:
         """Return the ``MMEMory:IMPort:PARameter:RESampling:STATe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the resampling state for waveform import. This command is
               effective only when the following conditions are met: Waveform data to be imported
               must have sampling rate information.
@@ -210,7 +203,7 @@ class MmemoryImportParameterResampling(SCPICmdRead):
               on, resampling is automatically invoked when importing waveform data. The query form
               of this command returns the resampling state of the instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MMEMory:IMPort:PARameter:RESampling:STATe?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -219,14 +212,13 @@ class MmemoryImportParameterResampling(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MMEMory:IMPort:PARameter:RESampling:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:IMPort:PARameter:RESampling:STATe <state>
             - MMEMory:IMPort:PARameter:RESampling:STATe?
+            ```
 
-        **Info:**
+        Info:
             - ``<state>`` ::=<Boolean>.
         """
         return self._state
@@ -235,28 +227,27 @@ class MmemoryImportParameterResampling(SCPICmdRead):
 class MmemoryImportParameterNormalize(SCPICmdWrite, SCPICmdRead):
     """The ``MMEMory:IMPort:PARameter:NORMalize`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries if the imported data is normalized during text data import
           operation. The imported waveform data is normalized based on the option set in this
           command. When ZREFerence is selected, the offset is preserved during normalization
           operation. If FSCale is selected, offset is lost and full scale of the DAC is used for
           normalization. NONE will not normalize the data.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:IMPort:PARameter:NORMalize?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:IMPort:PARameter:NORMalize?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MMEMory:IMPort:PARameter:NORMalize value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:IMPort:PARameter:NORMalize {NONE|FSCale|ZREFerence}
         - MMEMory:IMPort:PARameter:NORMalize?
+        ```
 
-    **Info:**
+    Info:
         - ``<Normalization_type>``
         - ``NONE`` indicates that the imported data is not normalized.
         - ``FSCale`` indicates that the imported data is normalized with full DAC range.
@@ -267,13 +258,13 @@ class MmemoryImportParameterNormalize(SCPICmdWrite, SCPICmdRead):
 class MmemoryImportParameterLevelUpdateType(SCPICmdWrite, SCPICmdRead):
     r"""The ``MMEMory:IMPort:PARameter:LEVel:UPDate:TYPE`` command.
 
-    **Description:**
+    Description:
         - This commands sets or queries the data to be imported. It also sets or queries which
           data's amplitude and offset values are selected for update during RSA file import. This
           command is effective only when ``MMEMORY:IMPORT:PARAMETER:LEVEL:UPDATE:STATE`` is set to
           True and IQT or TIQ is selected as the <Type> for the ``MMEMORY:IMPORT`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``MMEMory:IMPort:PARameter:LEVel:UPDate:TYPE?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -282,14 +273,13 @@ class MmemoryImportParameterLevelUpdateType(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MMEMory:IMPort:PARameter:LEVel:UPDate:TYPE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:IMPort:PARameter:LEVel:UPDate:TYPE <Type>
         - MMEMory:IMPort:PARameter:LEVel:UPDate:TYPE?
+        ```
 
-    **Info:**
+    Info:
         - ``<Type>`` ::={IDATa\|QDATa}.
         - ``IDATa`` indicates that the instrument imports I data.
         - ``QDATa`` indicates that the instrument imports Q data.
@@ -299,12 +289,12 @@ class MmemoryImportParameterLevelUpdateType(SCPICmdWrite, SCPICmdRead):
 class MmemoryImportParameterLevelUpdateState(SCPICmdWrite, SCPICmdRead):
     """The ``MMEMory:IMPort:PARameter:LEVel:UPDate:STATe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the LEVel parameter which determines whether amplitude and
           offsets are modified during waveform import. If this value is set, the instrument
           amplitude and offset are automatically updated during waveform import.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``MMEMory:IMPort:PARameter:LEVel:UPDate:STATe?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -313,14 +303,13 @@ class MmemoryImportParameterLevelUpdateState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MMEMory:IMPort:PARameter:LEVel:UPDate:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:IMPort:PARameter:LEVel:UPDate:STATe <state>
         - MMEMory:IMPort:PARameter:LEVel:UPDate:STATe?
+        ```
 
-    **Info:**
+    Info:
         - ``<state>`` ::=<Boolean>.
         - ``0`` indicates OFF.
         - ``1`` indicates ON.
@@ -330,11 +319,11 @@ class MmemoryImportParameterLevelUpdateState(SCPICmdWrite, SCPICmdRead):
 class MmemoryImportParameterLevelUpdateChannel(SCPICmdWrite, SCPICmdRead):
     """The ``MMEMory:IMPort:PARameter:LEVel:UPDate:CHANnel`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the channel for which the amplitude and offset values will be
           updated during import.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``MMEMory:IMPort:PARameter:LEVel:UPDate:CHANnel?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -343,14 +332,13 @@ class MmemoryImportParameterLevelUpdateChannel(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MMEMory:IMPort:PARameter:LEVel:UPDate:CHANnel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:IMPort:PARameter:LEVel:UPDate:CHANnel <NR1>
         - MMEMory:IMPort:PARameter:LEVel:UPDate:CHANnel?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>``
     """
 
@@ -358,7 +346,7 @@ class MmemoryImportParameterLevelUpdateChannel(SCPICmdWrite, SCPICmdRead):
 class MmemoryImportParameterLevelUpdate(SCPICmdRead):
     """The ``MMEMory:IMPort:PARameter:LEVel:UPDate`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:IMPort:PARameter:LEVel:UPDate?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -383,11 +371,11 @@ class MmemoryImportParameterLevelUpdate(SCPICmdRead):
     def channel(self) -> MmemoryImportParameterLevelUpdateChannel:
         """Return the ``MMEMory:IMPort:PARameter:LEVel:UPDate:CHANnel`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the channel for which the amplitude and offset values
               will be updated during import.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MMEMory:IMPort:PARameter:LEVel:UPDate:CHANnel?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -396,14 +384,13 @@ class MmemoryImportParameterLevelUpdate(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MMEMory:IMPort:PARameter:LEVel:UPDate:CHANnel value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:IMPort:PARameter:LEVel:UPDate:CHANnel <NR1>
             - MMEMory:IMPort:PARameter:LEVel:UPDate:CHANnel?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>``
         """
         return self._channel
@@ -412,14 +399,14 @@ class MmemoryImportParameterLevelUpdate(SCPICmdRead):
     def type(self) -> MmemoryImportParameterLevelUpdateType:
         r"""Return the ``MMEMory:IMPort:PARameter:LEVel:UPDate:TYPE`` command.
 
-        **Description:**
+        Description:
             - This commands sets or queries the data to be imported. It also sets or queries which
               data's amplitude and offset values are selected for update during RSA file import.
               This command is effective only when ``MMEMORY:IMPORT:PARAMETER:LEVEL:UPDATE:STATE`` is
               set to True and IQT or TIQ is selected as the <Type> for the ``MMEMORY:IMPORT``
               command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MMEMory:IMPort:PARameter:LEVel:UPDate:TYPE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -428,14 +415,13 @@ class MmemoryImportParameterLevelUpdate(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MMEMory:IMPort:PARameter:LEVel:UPDate:TYPE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:IMPort:PARameter:LEVel:UPDate:TYPE <Type>
             - MMEMory:IMPort:PARameter:LEVel:UPDate:TYPE?
+            ```
 
-        **Info:**
+        Info:
             - ``<Type>`` ::={IDATa\|QDATa}.
             - ``IDATa`` indicates that the instrument imports I data.
             - ``QDATa`` indicates that the instrument imports Q data.
@@ -446,12 +432,12 @@ class MmemoryImportParameterLevelUpdate(SCPICmdRead):
     def state(self) -> MmemoryImportParameterLevelUpdateState:
         """Return the ``MMEMory:IMPort:PARameter:LEVel:UPDate:STATe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the LEVel parameter which determines whether amplitude
               and offsets are modified during waveform import. If this value is set, the instrument
               amplitude and offset are automatically updated during waveform import.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MMEMory:IMPort:PARameter:LEVel:UPDate:STATe?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -460,14 +446,13 @@ class MmemoryImportParameterLevelUpdate(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MMEMory:IMPort:PARameter:LEVel:UPDate:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:IMPort:PARameter:LEVel:UPDate:STATe <state>
             - MMEMory:IMPort:PARameter:LEVel:UPDate:STATe?
+            ```
 
-        **Info:**
+        Info:
             - ``<state>`` ::=<Boolean>.
             - ``0`` indicates OFF.
             - ``1`` indicates ON.
@@ -478,7 +463,7 @@ class MmemoryImportParameterLevelUpdate(SCPICmdRead):
 class MmemoryImportParameterLevel(SCPICmdRead):
     """The ``MMEMory:IMPort:PARameter:LEVel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:IMPort:PARameter:LEVel?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:IMPort:PARameter:LEVel?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -495,7 +480,7 @@ class MmemoryImportParameterLevel(SCPICmdRead):
     def update(self) -> MmemoryImportParameterLevelUpdate:
         """Return the ``MMEMory:IMPort:PARameter:LEVel:UPDate`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:IMPort:PARameter:LEVel:UPDate?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -513,12 +498,12 @@ class MmemoryImportParameterLevel(SCPICmdRead):
 class MmemoryImportParameterFrequencyUpdateState(SCPICmdWrite, SCPICmdRead):
     """The ``MMEMory:IMPort:PARameter:FREQuency:UPDate:STATe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the FREQuency parameter which determines whether frequency is
           modified during waveform import. If this value is set, the sampling rate is automatically
           updated during waveform import.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``MMEMory:IMPort:PARameter:FREQuency:UPDate:STATe?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -527,14 +512,13 @@ class MmemoryImportParameterFrequencyUpdateState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MMEMory:IMPort:PARameter:FREQuency:UPDate:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:IMPort:PARameter:FREQuency:UPDate:STATe <state>
         - MMEMory:IMPort:PARameter:FREQuency:UPDate:STATe?
+        ```
 
-    **Info:**
+    Info:
         - ``<state>`` ::=<Boolean>.
         - ``0`` indicates OFF.
         - ``1`` indicates ON.
@@ -544,7 +528,7 @@ class MmemoryImportParameterFrequencyUpdateState(SCPICmdWrite, SCPICmdRead):
 class MmemoryImportParameterFrequencyUpdate(SCPICmdRead):
     """The ``MMEMory:IMPort:PARameter:FREQuency:UPDate`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:IMPort:PARameter:FREQuency:UPDate?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -565,12 +549,12 @@ class MmemoryImportParameterFrequencyUpdate(SCPICmdRead):
     def state(self) -> MmemoryImportParameterFrequencyUpdateState:
         """Return the ``MMEMory:IMPort:PARameter:FREQuency:UPDate:STATe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the FREQuency parameter which determines whether
               frequency is modified during waveform import. If this value is set, the sampling rate
               is automatically updated during waveform import.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MMEMory:IMPort:PARameter:FREQuency:UPDate:STATe?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -579,14 +563,13 @@ class MmemoryImportParameterFrequencyUpdate(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MMEMory:IMPort:PARameter:FREQuency:UPDate:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:IMPort:PARameter:FREQuency:UPDate:STATe <state>
             - MMEMory:IMPort:PARameter:FREQuency:UPDate:STATe?
+            ```
 
-        **Info:**
+        Info:
             - ``<state>`` ::=<Boolean>.
             - ``0`` indicates OFF.
             - ``1`` indicates ON.
@@ -597,7 +580,7 @@ class MmemoryImportParameterFrequencyUpdate(SCPICmdRead):
 class MmemoryImportParameterFrequency(SCPICmdRead):
     """The ``MMEMory:IMPort:PARameter:FREQuency`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:IMPort:PARameter:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:IMPort:PARameter:FREQuency?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -614,7 +597,7 @@ class MmemoryImportParameterFrequency(SCPICmdRead):
     def update(self) -> MmemoryImportParameterFrequencyUpdate:
         """Return the ``MMEMory:IMPort:PARameter:FREQuency:UPDate`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MMEMory:IMPort:PARameter:FREQuency:UPDate?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -630,7 +613,7 @@ class MmemoryImportParameterFrequency(SCPICmdRead):
 class MmemoryImportParameter(SCPICmdRead):
     """The ``MMEMory:IMPort:PARameter`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:IMPort:PARameter?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:IMPort:PARameter?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -655,7 +638,7 @@ class MmemoryImportParameter(SCPICmdRead):
     def frequency(self) -> MmemoryImportParameterFrequency:
         """Return the ``MMEMory:IMPort:PARameter:FREQuency`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:IMPort:PARameter:FREQuency?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -671,7 +654,7 @@ class MmemoryImportParameter(SCPICmdRead):
     def level(self) -> MmemoryImportParameterLevel:
         """Return the ``MMEMory:IMPort:PARameter:LEVel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:IMPort:PARameter:LEVel?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory:IMPort:PARameter:LEVel?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -685,14 +668,14 @@ class MmemoryImportParameter(SCPICmdRead):
     def normalize(self) -> MmemoryImportParameterNormalize:
         """Return the ``MMEMory:IMPort:PARameter:NORMalize`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries if the imported data is normalized during text data
               import operation. The imported waveform data is normalized based on the option set in
               this command. When ZREFerence is selected, the offset is preserved during
               normalization operation. If FSCale is selected, offset is lost and full scale of the
               DAC is used for normalization. NONE will not normalize the data.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:IMPort:PARameter:NORMalize?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -701,14 +684,13 @@ class MmemoryImportParameter(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MMEMory:IMPort:PARameter:NORMalize value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:IMPort:PARameter:NORMalize {NONE|FSCale|ZREFerence}
             - MMEMory:IMPort:PARameter:NORMalize?
+            ```
 
-        **Info:**
+        Info:
             - ``<Normalization_type>``
             - ``NONE`` indicates that the imported data is not normalized.
             - ``FSCale`` indicates that the imported data is normalized with full DAC range.
@@ -720,7 +702,7 @@ class MmemoryImportParameter(SCPICmdRead):
     def resampling(self) -> MmemoryImportParameterResampling:
         """Return the ``MMEMory:IMPort:PARameter:RESampling`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:IMPort:PARameter:RESampling?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -737,7 +719,7 @@ class MmemoryImportParameter(SCPICmdRead):
 class MmemoryImport(SCPICmdWrite, SCPICmdRead):
     r"""The ``MMEMory:IMPort`` command.
 
-    **Description:**
+    Description:
         - This command imports a file into the arbitrary waveform generator's setup as a waveform.
           The supported file formats are: ISF - TDS3000 and DPO4000 waveform format TDS -
           TDS5000/TDS6000/TDS7000, DPO7000/DPO70000/DSA70000 Series waveform TXT - Text file with
@@ -747,16 +729,15 @@ class MmemoryImport(SCPICmdWrite, SCPICmdRead):
           waveform file format IQT - RSA3000 Series waveform file format TIQ - RSA6000 Series
           waveform file format
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:IMPort value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:IMPort <wfm_name>,<filename>,<type>
+        ```
 
-    **Info:**
+    Info:
         - ``<wfm_name>,<filename>,<type>``
         - ``<wfm_name>`` ::=<string>.
         - ``<filename>`` ::=<string>.
@@ -774,7 +755,7 @@ class MmemoryImport(SCPICmdWrite, SCPICmdRead):
     def parameter(self) -> MmemoryImportParameter:
         """Return the ``MMEMory:IMPort:PARameter`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:IMPort:PARameter?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory:IMPort:PARameter?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -791,22 +772,21 @@ class MmemoryImport(SCPICmdWrite, SCPICmdRead):
 class MmemoryExport(SCPICmdWrite):
     r"""The ``MMEMory:EXPort`` command.
 
-    **Description:**
+    Description:
         - This command exports a waveform file from the arbitrary waveform generator setup. The
           supported file formats are: TXT - Text file with analog data TXT8 - Text file with 8-bit
           DAC resolution TXT10 - Text file with 10-bit DAC resolution TXT14 - Text file with 14-bit
           DAC resolution (AWG5000 Series only) WFM - AWG400/AWG500/AWG600/AWG700 Series waveform
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:EXPort value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:EXPort <wfm_name>,<filename>,<type>
+        ```
 
-    **Info:**
+    Info:
         - ``<wfm_name>,<filename>,<type>``
         - ``<wfm_name>`` ::=<string>.
         - ``<filename>`` ::=<string>.
@@ -817,25 +797,24 @@ class MmemoryExport(SCPICmdWrite):
 class MmemoryDelete(SCPICmdWrite):
     """The ``MMEMory:DELete`` command.
 
-    **Description:**
+    Description:
         - This command deletes a file or directory from the AWG's hard disk. When used on a
           directory, this command succeeds only if the directory is empty.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:DELete value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:DELete <file_name>[,<msus>]
+        ```
     """
 
 
 class MmemoryData(SCPICmdWrite):
     """The ``MMEMory:DATA`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns block data to/from the file in the current mass
           storage device. This command has a limit of 650,000,000 bytes of data. If this limit is
           insufficient, consider the following alternatives: Use a more efficient file encoding (WFM
@@ -843,16 +822,15 @@ class MmemoryData(SCPICmdWrite):
           (``WLIST:WAVEFORM:DATA``, FREQ, VOLT, and so on). Use Ethernet (ftp, http, or file
           sharing) to transfer the file.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MMEMory:DATA value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:DATA <file_name>,<block_data>? <file_name>
+        ```
 
-    **Info:**
+    Info:
         - ``<file_name>`` , ``<block_data>``.
     """
 
@@ -860,40 +838,38 @@ class MmemoryData(SCPICmdWrite):
 class MmemoryCdirectory(SCPICmdWrite, SCPICmdRead):
     """The ``MMEMory:CDIRectory`` command.
 
-    **Description:**
+    Description:
         - This command changes the current working directory in the mass storage system.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory:CDIRectory?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory:CDIRectory?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MMEMory:CDIRectory value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:CDIRectory [<directory_name>]
         - MMEMory:CDIRectory?
+        ```
     """
 
 
 class MmemoryCatalog(SCPICmdReadWithArguments):
     """The ``MMEMory:CATalog`` command.
 
-    **Description:**
+    Description:
         - This command returns the current contents and state of the mass storage media.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``MMEMory:CATalog? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the ``MMEMory:CATalog? argument``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MMEMory:CATalog? [<msus>]
+        ```
     """
 
 
@@ -901,7 +877,7 @@ class MmemoryCatalog(SCPICmdReadWithArguments):
 class Mmemory(SCPICmdRead):
     """The ``MMEMory`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MMEMory?`` query.
         - Using the ``.verify(value)`` method will send the ``MMEMory?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -932,21 +908,20 @@ class Mmemory(SCPICmdRead):
     def catalog(self) -> MmemoryCatalog:
         """Return the ``MMEMory:CATalog`` command.
 
-        **Description:**
+        Description:
             - This command returns the current contents and state of the mass storage media.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``MMEMory:CATalog? argument``
               query.
             - Using the ``.verify(argument, value)`` method will send the
               ``MMEMory:CATalog? argument`` query and raise an AssertionError if the returned value
               does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:CATalog? [<msus>]
+            ```
         """
         return self._catalog
 
@@ -954,21 +929,20 @@ class Mmemory(SCPICmdRead):
     def cdirectory(self) -> MmemoryCdirectory:
         """Return the ``MMEMory:CDIRectory`` command.
 
-        **Description:**
+        Description:
             - This command changes the current working directory in the mass storage system.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:CDIRectory?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory:CDIRectory?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MMEMory:CDIRectory value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:CDIRectory [<directory_name>]
             - MMEMory:CDIRectory?
+            ```
         """
         return self._cdirectory
 
@@ -976,7 +950,7 @@ class Mmemory(SCPICmdRead):
     def data(self) -> MmemoryData:
         """Return the ``MMEMory:DATA`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns block data to/from the file in the current mass
               storage device. This command has a limit of 650,000,000 bytes of data. If this limit
               is insufficient, consider the following alternatives: Use a more efficient file
@@ -984,16 +958,15 @@ class Mmemory(SCPICmdRead):
               (``WLIST:WAVEFORM:DATA``, FREQ, VOLT, and so on). Use Ethernet (ftp, http, or file
               sharing) to transfer the file.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:DATA value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:DATA <file_name>,<block_data>? <file_name>
+            ```
 
-        **Info:**
+        Info:
             - ``<file_name>`` , ``<block_data>``.
         """
         return self._data
@@ -1002,18 +975,17 @@ class Mmemory(SCPICmdRead):
     def delete(self) -> MmemoryDelete:
         """Return the ``MMEMory:DELete`` command.
 
-        **Description:**
+        Description:
             - This command deletes a file or directory from the AWG's hard disk. When used on a
               directory, this command succeeds only if the directory is empty.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:DELete value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:DELete <file_name>[,<msus>]
+            ```
         """
         return self._delete
 
@@ -1021,23 +993,22 @@ class Mmemory(SCPICmdRead):
     def export(self) -> MmemoryExport:
         r"""Return the ``MMEMory:EXPort`` command.
 
-        **Description:**
+        Description:
             - This command exports a waveform file from the arbitrary waveform generator setup. The
               supported file formats are: TXT - Text file with analog data TXT8 - Text file with
               8-bit DAC resolution TXT10 - Text file with 10-bit DAC resolution TXT14 - Text file
               with 14-bit DAC resolution (AWG5000 Series only) WFM - AWG400/AWG500/AWG600/AWG700
               Series waveform
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:EXPort value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:EXPort <wfm_name>,<filename>,<type>
+            ```
 
-        **Info:**
+        Info:
             - ``<wfm_name>,<filename>,<type>``
             - ``<wfm_name>`` ::=<string>.
             - ``<filename>`` ::=<string>.
@@ -1049,7 +1020,7 @@ class Mmemory(SCPICmdRead):
     def import_(self) -> MmemoryImport:
         r"""Return the ``MMEMory:IMPort`` command.
 
-        **Description:**
+        Description:
             - This command imports a file into the arbitrary waveform generator's setup as a
               waveform. The supported file formats are: ISF - TDS3000 and DPO4000 waveform format
               TDS - TDS5000/TDS6000/TDS7000, DPO7000/DPO70000/DSA70000 Series waveform TXT - Text
@@ -1059,16 +1030,15 @@ class Mmemory(SCPICmdRead):
               pattern file TFW - AFG3000 Series waveform file format IQT - RSA3000 Series waveform
               file format TIQ - RSA6000 Series waveform file format
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:IMPort value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:IMPort <wfm_name>,<filename>,<type>
+            ```
 
-        **Info:**
+        Info:
             - ``<wfm_name>,<filename>,<type>``
             - ``<wfm_name>`` ::=<string>.
             - ``<filename>`` ::=<string>.
@@ -1083,18 +1053,17 @@ class Mmemory(SCPICmdRead):
     def mdirectory(self) -> MmemoryMdirectory:
         """Return the ``MMEMory:MDIRectory`` command.
 
-        **Description:**
+        Description:
             - This command creates a directory in the mass storage system. If the specified
               directory is locked in the mass storage system, this command causes an error.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MMEMory:MDIRectory value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:MDIRectory <directory_name>
+            ```
         """
         return self._mdirectory
 
@@ -1102,22 +1071,21 @@ class Mmemory(SCPICmdRead):
     def msis(self) -> MmemoryMsis:
         """Return the ``MMEMory:MSIS`` command.
 
-        **Description:**
+        Description:
             - This command selects or returns a mass storage device used by all MMEMory commands.
               <msus> specifies a drive using a drive letter. The drive letter can represent hard
               disk drives, network drives, external DVD/CD-RW drives, or USB memory.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MMEMory:MSIS?`` query.
             - Using the ``.verify(value)`` method will send the ``MMEMory:MSIS?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MMEMory:MSIS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MMEMory:MSIS [<msus>]
             - MMEMory:MSIS?
+            ```
         """
         return self._msis

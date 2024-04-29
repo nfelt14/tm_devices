@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SYNChronize:ADJust:STARt
     - SYNChronize:CONFigure <port_configuration>
     - SYNChronize:CONFigure?
@@ -33,100 +31,95 @@ if TYPE_CHECKING:
 class SynchronizeType(SCPICmdRead):
     """The ``SYNChronize:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command returns the instrument type (master or slave) in the synchronized system.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYNChronize:TYPE?`` query.
         - Using the ``.verify(value)`` method will send the ``SYNChronize:TYPE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYNChronize:TYPE?
+        ```
     """
 
 
 class SynchronizeEnable(SCPICmdWrite, SCPICmdRead):
     """The ``SYNChronize:ENABle`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables synchronization in the instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYNChronize:ENABle?`` query.
         - Using the ``.verify(value)`` method will send the ``SYNChronize:ENABle?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SYNChronize:ENABle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYNChronize:ENABle {OFF|ON|0|1}
         - SYNChronize:ENABle?
+        ```
     """
 
 
 class SynchronizeDeskewState(SCPICmdRead):
     """The ``SYNChronize:DESKew:STATe`` command.
 
-    **Description:**
+    Description:
         - This command returns the state of the system deskew condition.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYNChronize:DESKew:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``SYNChronize:DESKew:STATe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYNChronize:DESKew:STATe?
+        ```
     """
 
 
 class SynchronizeDeskewStart(SCPICmdWriteNoArguments):
     """The ``SYNChronize:DESKew:STARt`` command.
 
-    **Description:**
+    Description:
         - This command only performs a system deskew calibration.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``SYNChronize:DESKew:STARt`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYNChronize:DESKew:STARt
+        ```
     """
 
 
 class SynchronizeDeskewAbort(SCPICmdWriteNoArguments):
     """The ``SYNChronize:DESKew:ABORt`` command.
 
-    **Description:**
+    Description:
         - This command cancels a system deskew calibration.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``SYNChronize:DESKew:ABORt`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYNChronize:DESKew:ABORt
+        ```
     """
 
 
 class SynchronizeDeskew(SCPICmdRead):
     """The ``SYNChronize:DESKew`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYNChronize:DESKew?`` query.
         - Using the ``.verify(value)`` method will send the ``SYNChronize:DESKew?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -147,17 +140,16 @@ class SynchronizeDeskew(SCPICmdRead):
     def abort(self) -> SynchronizeDeskewAbort:
         """Return the ``SYNChronize:DESKew:ABORt`` command.
 
-        **Description:**
+        Description:
             - This command cancels a system deskew calibration.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``SYNChronize:DESKew:ABORt`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYNChronize:DESKew:ABORt
+            ```
         """
         return self._abort
 
@@ -165,19 +157,18 @@ class SynchronizeDeskew(SCPICmdRead):
     def state(self) -> SynchronizeDeskewState:
         """Return the ``SYNChronize:DESKew:STATe`` command.
 
-        **Description:**
+        Description:
             - This command returns the state of the system deskew condition.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYNChronize:DESKew:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``SYNChronize:DESKew:STATe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYNChronize:DESKew:STATe?
+            ```
         """
         return self._state
 
@@ -185,17 +176,16 @@ class SynchronizeDeskew(SCPICmdRead):
     def start(self) -> SynchronizeDeskewStart:
         """Return the ``SYNChronize:DESKew:STARt`` command.
 
-        **Description:**
+        Description:
             - This command only performs a system deskew calibration.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``SYNChronize:DESKew:STARt`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYNChronize:DESKew:STARt
+            ```
         """
         return self._start
 
@@ -203,47 +193,45 @@ class SynchronizeDeskew(SCPICmdRead):
 class SynchronizeConfigure(SCPICmdWrite, SCPICmdRead):
     """The ``SYNChronize:CONFigure`` command.
 
-    **Description:**
+    Description:
         - This command configures the ports in a synchronized system and forces an initialization
           within the selected configuration.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYNChronize:CONFigure?`` query.
         - Using the ``.verify(value)`` method will send the ``SYNChronize:CONFigure?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SYNChronize:CONFigure value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYNChronize:CONFigure <port_configuration>
         - SYNChronize:CONFigure?
+        ```
     """
 
 
 class SynchronizeAdjustStart(SCPICmdWriteNoArguments):
     """The ``SYNChronize:ADJust:STARt`` command.
 
-    **Description:**
+    Description:
         - This command only performs a system sample rate calibration on the synchronized system.
           This command may take up to 3 minutes to complete.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``SYNChronize:ADJust:STARt`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYNChronize:ADJust:STARt
+        ```
     """
 
 
 class SynchronizeAdjust(SCPICmdRead):
     """The ``SYNChronize:ADJust`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYNChronize:ADJust?`` query.
         - Using the ``.verify(value)`` method will send the ``SYNChronize:ADJust?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -260,18 +248,17 @@ class SynchronizeAdjust(SCPICmdRead):
     def start(self) -> SynchronizeAdjustStart:
         """Return the ``SYNChronize:ADJust:STARt`` command.
 
-        **Description:**
+        Description:
             - This command only performs a system sample rate calibration on the synchronized
               system. This command may take up to 3 minutes to complete.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``SYNChronize:ADJust:STARt`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYNChronize:ADJust:STARt
+            ```
         """
         return self._start
 
@@ -279,7 +266,7 @@ class SynchronizeAdjust(SCPICmdRead):
 class Synchronize(SCPICmdRead):
     """The ``SYNChronize`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYNChronize?`` query.
         - Using the ``.verify(value)`` method will send the ``SYNChronize?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -306,7 +293,7 @@ class Synchronize(SCPICmdRead):
     def adjust(self) -> SynchronizeAdjust:
         """Return the ``SYNChronize:ADJust`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYNChronize:ADJust?`` query.
             - Using the ``.verify(value)`` method will send the ``SYNChronize:ADJust?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -320,23 +307,22 @@ class Synchronize(SCPICmdRead):
     def configure(self) -> SynchronizeConfigure:
         """Return the ``SYNChronize:CONFigure`` command.
 
-        **Description:**
+        Description:
             - This command configures the ports in a synchronized system and forces an
               initialization within the selected configuration.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYNChronize:CONFigure?`` query.
             - Using the ``.verify(value)`` method will send the ``SYNChronize:CONFigure?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SYNChronize:CONFigure value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYNChronize:CONFigure <port_configuration>
             - SYNChronize:CONFigure?
+            ```
         """
         return self._configure
 
@@ -344,7 +330,7 @@ class Synchronize(SCPICmdRead):
     def deskew(self) -> SynchronizeDeskew:
         """Return the ``SYNChronize:DESKew`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYNChronize:DESKew?`` query.
             - Using the ``.verify(value)`` method will send the ``SYNChronize:DESKew?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -360,21 +346,20 @@ class Synchronize(SCPICmdRead):
     def enable(self) -> SynchronizeEnable:
         """Return the ``SYNChronize:ENABle`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables synchronization in the instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYNChronize:ENABle?`` query.
             - Using the ``.verify(value)`` method will send the ``SYNChronize:ENABle?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SYNChronize:ENABle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYNChronize:ENABle {OFF|ON|0|1}
             - SYNChronize:ENABle?
+            ```
         """
         return self._enable
 
@@ -382,18 +367,17 @@ class Synchronize(SCPICmdRead):
     def type(self) -> SynchronizeType:
         """Return the ``SYNChronize:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command returns the instrument type (master or slave) in the synchronized system.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYNChronize:TYPE?`` query.
             - Using the ``.verify(value)`` method will send the ``SYNChronize:TYPE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYNChronize:TYPE?
+            ```
         """
         return self._type

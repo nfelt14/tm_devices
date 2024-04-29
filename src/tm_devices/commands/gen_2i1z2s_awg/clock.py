@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CLOCk:ECLock:DIVider <NR1>
     - CLOCk:ECLock:DIVider?
     - CLOCk:ECLock:FREQuency <NR3>
@@ -52,25 +50,24 @@ if TYPE_CHECKING:
 class ClockSrate(SCPICmdWrite, SCPICmdRead):
     r"""The ``CLOCk:SRATe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the sample rate for the clock. When ``CLOCk:SOURce`` is set
           to EXTernal, the maximum sample rate is: 4 \* External Clock In frequency (AWG70001)2 \*
           External Clock In frequency (AWG70002)
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:SRATe?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:SRATe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CLOCk:SRATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CLOCk:SRATe <NRf>
         - CLOCk:SRATe?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to the maximum value.
     """
 
@@ -78,23 +75,22 @@ class ClockSrate(SCPICmdWrite, SCPICmdRead):
 class ClockSoutState(SCPICmdWrite, SCPICmdRead):
     """The ``CLOCk:SOUT:STATe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the state of the Sync Clock Out output.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:SOUT:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:SOUT:STATe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CLOCk:SOUT:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CLOCk:SOUT:STATe {0|1|OFF|ON}
         - CLOCk:SOUT:STATe?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 0.
     """
 
@@ -102,7 +98,7 @@ class ClockSoutState(SCPICmdWrite, SCPICmdRead):
 class ClockSout(SCPICmdRead):
     """The ``CLOCk:SOUT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:SOUT?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:SOUT?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -119,23 +115,22 @@ class ClockSout(SCPICmdRead):
     def state(self) -> ClockSoutState:
         """Return the ``CLOCk:SOUT:STATe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the state of the Sync Clock Out output.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:SOUT:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:SOUT:STATe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CLOCk:SOUT:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLOCk:SOUT:STATe {0|1|OFF|ON}
             - CLOCk:SOUT:STATe?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 0.
         """
         return self._state
@@ -144,23 +139,22 @@ class ClockSout(SCPICmdRead):
 class ClockSource(SCPICmdWrite, SCPICmdRead):
     """The ``CLOCk:SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the source of the clock.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:SOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:SOURce?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CLOCk:SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CLOCk:SOURce {INTernal|EFIXed|EVARiable|EXTernal}
         - CLOCk:SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to INT.
     """
 
@@ -168,26 +162,25 @@ class ClockSource(SCPICmdWrite, SCPICmdRead):
 class ClockPhaseAdjustTime(SCPICmdWrite, SCPICmdRead):
     """The ``CLOCk:PHASe:ADJust:TIMe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the phase adjustment, in units of time, to synchronize
           multiple AWGs when using an external trigger. Setting the phase adjusts the phase of all
           signal outputs relative to the system clock.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:PHASe:ADJust:TIMe?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:PHASe:ADJust:TIMe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CLOCk:PHASe:ADJust:TIMe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CLOCk:PHASe:ADJust:TIMe <NRf>
         - CLOCk:PHASe:ADJust:TIMe?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 0 ps.
     """
 
@@ -195,26 +188,25 @@ class ClockPhaseAdjustTime(SCPICmdWrite, SCPICmdRead):
 class ClockPhaseAdjustDegrees(SCPICmdWrite, SCPICmdRead):
     """The ``CLOCk:PHASe:ADJust:DEGRees`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the phase adjustment, in units of degrees, to synchronize
           multiple AWGs when using an external trigger. Setting the phase adjusts the phase of all
           signal outputs relative to the system clock.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:PHASe:ADJust:DEGRees?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:PHASe:ADJust:DEGRees?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CLOCk:PHASe:ADJust:DEGRees value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CLOCk:PHASe:ADJust:DEGRees <NR1>
         - CLOCk:PHASe:ADJust:DEGRees?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 0.
     """
 
@@ -222,7 +214,7 @@ class ClockPhaseAdjustDegrees(SCPICmdWrite, SCPICmdRead):
 class ClockPhaseAdjust(SCPICmdRead):
     """The ``CLOCk:PHASe:ADJust`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:PHASe:ADJust?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:PHASe:ADJust?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -241,26 +233,25 @@ class ClockPhaseAdjust(SCPICmdRead):
     def degrees(self) -> ClockPhaseAdjustDegrees:
         """Return the ``CLOCk:PHASe:ADJust:DEGRees`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the phase adjustment, in units of degrees, to synchronize
               multiple AWGs when using an external trigger. Setting the phase adjusts the phase of
               all signal outputs relative to the system clock.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:PHASe:ADJust:DEGRees?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:PHASe:ADJust:DEGRees?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CLOCk:PHASe:ADJust:DEGRees value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLOCk:PHASe:ADJust:DEGRees <NR1>
             - CLOCk:PHASe:ADJust:DEGRees?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 0.
         """
         return self._degrees
@@ -269,26 +260,25 @@ class ClockPhaseAdjust(SCPICmdRead):
     def time(self) -> ClockPhaseAdjustTime:
         """Return the ``CLOCk:PHASe:ADJust:TIMe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the phase adjustment, in units of time, to synchronize
               multiple AWGs when using an external trigger. Setting the phase adjusts the phase of
               all signal outputs relative to the system clock.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:PHASe:ADJust:TIMe?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:PHASe:ADJust:TIMe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CLOCk:PHASe:ADJust:TIMe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLOCk:PHASe:ADJust:TIMe <NRf>
             - CLOCk:PHASe:ADJust:TIMe?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 0 ps.
         """
         return self._time
@@ -297,7 +287,7 @@ class ClockPhaseAdjust(SCPICmdRead):
 class ClockPhase(SCPICmdRead):
     """The ``CLOCk:PHASe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:PHASe?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:PHASe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -314,7 +304,7 @@ class ClockPhase(SCPICmdRead):
     def adjust(self) -> ClockPhaseAdjust:
         """Return the ``CLOCk:PHASe:ADJust`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:PHASe:ADJust?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:PHASe:ADJust?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -329,25 +319,24 @@ class ClockPhase(SCPICmdRead):
 class ClockOutputState(SCPICmdWrite, SCPICmdRead):
     """The ``CLOCk:OUTPut:STATe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the state of the output clock (enabled or disabled). Enabling
           Clock Out provides a high speed clock (that is related to sample rate) to drive other
           devices or to measure.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:OUTPut:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:OUTPut:STATe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CLOCk:OUTPut:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CLOCk:OUTPut:STATe {0|1|OFF|ON}
         - CLOCk:OUTPut:STATe?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 0.
     """
 
@@ -355,26 +344,25 @@ class ClockOutputState(SCPICmdWrite, SCPICmdRead):
 class ClockOutputFrequency(SCPICmdRead):
     """The ``CLOCk:OUTPut:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command returns the frequency of the output clock on the Clock Out connector.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:OUTPut:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:OUTPut:FREQuency?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CLOCk:OUTPut:FREQuency?
+        ```
     """
 
 
 class ClockOutput(SCPICmdRead):
     """The ``CLOCk:OUTPut`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:OUTPut?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:OUTPut?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -393,19 +381,18 @@ class ClockOutput(SCPICmdRead):
     def frequency(self) -> ClockOutputFrequency:
         """Return the ``CLOCk:OUTPut:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command returns the frequency of the output clock on the Clock Out connector.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:OUTPut:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:OUTPut:FREQuency?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLOCk:OUTPut:FREQuency?
+            ```
         """
         return self._frequency
 
@@ -413,25 +400,24 @@ class ClockOutput(SCPICmdRead):
     def state(self) -> ClockOutputState:
         """Return the ``CLOCk:OUTPut:STATe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the state of the output clock (enabled or disabled).
               Enabling Clock Out provides a high speed clock (that is related to sample rate) to
               drive other devices or to measure.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:OUTPut:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:OUTPut:STATe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CLOCk:OUTPut:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLOCk:OUTPut:STATe {0|1|OFF|ON}
             - CLOCk:OUTPut:STATe?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 0.
         """
         return self._state
@@ -440,21 +426,20 @@ class ClockOutput(SCPICmdRead):
 class ClockJitter(SCPICmdWrite):
     """The ``CLOCk:JITTer`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the state (enabled or disabled) to apply or not apply jitter
           reduction to the internal system clock or the clock signal applied to the Reference In
           connector.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CLOCk:JITTer value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CLOCk:JITTer {0|1|OFF|ON}
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 0.
     """
 
@@ -462,25 +447,24 @@ class ClockJitter(SCPICmdWrite):
 class ClockEreferenceMultiplier(SCPICmdWrite, SCPICmdRead):
     """The ``CLOCk:EREFerence:MULTiplier`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the multiplier rate of the variable external reference
           signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:EREFerence:MULTiplier?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:EREFerence:MULTiplier?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CLOCk:EREFerence:MULTiplier value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CLOCk:EREFerence:MULTiplier <NR1>
         - CLOCk:EREFerence:MULTiplier?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 1.
     """
 
@@ -488,7 +472,7 @@ class ClockEreferenceMultiplier(SCPICmdWrite, SCPICmdRead):
 class ClockEreferenceFrequencyDetect(SCPICmdWriteNoArguments):
     """The ``CLOCk:EREFerence:FREQuency:DETect`` command.
 
-    **Description:**
+    Description:
         - This command detects the frequency of the signal applied to the Reference In connector and
           adjusts the system to use the signal. The frequency is detected once each time the command
           executes. An error message is generated if no frequency is detected, is out of range, or
@@ -496,39 +480,37 @@ class ClockEreferenceFrequencyDetect(SCPICmdWriteNoArguments):
           Errors are not returned. They are added to the system error queue which can be accessed
           with ``SYSTEM:ERROR:NEXT``.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``CLOCk:EREFerence:FREQuency:DETect`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CLOCk:EREFerence:FREQuency:DETect
+        ```
     """
 
 
 class ClockEreferenceFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``CLOCk:EREFerence:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the expected frequency of the signal applied to the Reference
           In connector.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:EREFerence:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:EREFerence:FREQuency?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CLOCk:EREFerence:FREQuency value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CLOCk:EREFerence:FREQuency <NRf>
         - CLOCk:EREFerence:FREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 35 MHz.
 
     Properties:
@@ -543,7 +525,7 @@ class ClockEreferenceFrequency(SCPICmdWrite, SCPICmdRead):
     def detect(self) -> ClockEreferenceFrequencyDetect:
         """Return the ``CLOCk:EREFerence:FREQuency:DETect`` command.
 
-        **Description:**
+        Description:
             - This command detects the frequency of the signal applied to the Reference In connector
               and adjusts the system to use the signal. The frequency is detected once each time the
               command executes. An error message is generated if no frequency is detected, is out of
@@ -551,15 +533,14 @@ class ClockEreferenceFrequency(SCPICmdWrite, SCPICmdRead):
               external. Errors are not returned. They are added to the system error queue which can
               be accessed with ``SYSTEM:ERROR:NEXT``.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``CLOCk:EREFerence:FREQuency:DETect``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLOCk:EREFerence:FREQuency:DETect
+            ```
         """
         return self._detect
 
@@ -567,25 +548,24 @@ class ClockEreferenceFrequency(SCPICmdWrite, SCPICmdRead):
 class ClockEreferenceDivider(SCPICmdWrite, SCPICmdRead):
     """The ``CLOCk:EREFerence:DIVider`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the divider rate of the external reference signal when the
           external reference is variable.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:EREFerence:DIVider?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:EREFerence:DIVider?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CLOCk:EREFerence:DIVider value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CLOCk:EREFerence:DIVider <NR1>
         - CLOCk:EREFerence:DIVider?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 1.
     """
 
@@ -593,7 +573,7 @@ class ClockEreferenceDivider(SCPICmdWrite, SCPICmdRead):
 class ClockEreference(SCPICmdRead):
     """The ``CLOCk:EREFerence`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:EREFerence?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:EREFerence?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -614,25 +594,24 @@ class ClockEreference(SCPICmdRead):
     def divider(self) -> ClockEreferenceDivider:
         """Return the ``CLOCk:EREFerence:DIVider`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the divider rate of the external reference signal when
               the external reference is variable.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:EREFerence:DIVider?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:EREFerence:DIVider?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CLOCk:EREFerence:DIVider value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLOCk:EREFerence:DIVider <NR1>
             - CLOCk:EREFerence:DIVider?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 1.
         """
         return self._divider
@@ -641,25 +620,24 @@ class ClockEreference(SCPICmdRead):
     def frequency(self) -> ClockEreferenceFrequency:
         """Return the ``CLOCk:EREFerence:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the expected frequency of the signal applied to the
               Reference In connector.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:EREFerence:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:EREFerence:FREQuency?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CLOCk:EREFerence:FREQuency value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLOCk:EREFerence:FREQuency <NRf>
             - CLOCk:EREFerence:FREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 35 MHz.
 
         Sub-properties:
@@ -671,25 +649,24 @@ class ClockEreference(SCPICmdRead):
     def multiplier(self) -> ClockEreferenceMultiplier:
         """Return the ``CLOCk:EREFerence:MULTiplier`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the multiplier rate of the variable external reference
               signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:EREFerence:MULTiplier?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:EREFerence:MULTiplier?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CLOCk:EREFerence:MULTiplier value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLOCk:EREFerence:MULTiplier <NR1>
             - CLOCk:EREFerence:MULTiplier?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 1.
         """
         return self._multiplier
@@ -698,24 +675,23 @@ class ClockEreference(SCPICmdRead):
 class ClockEclockMultiplier(SCPICmdWrite, SCPICmdRead):
     """The ``CLOCk:ECLock:MULTiplier`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the multiplier rate of the external clock.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:ECLock:MULTiplier?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:ECLock:MULTiplier?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CLOCk:ECLock:MULTiplier value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CLOCk:ECLock:MULTiplier <NR1>
         - CLOCk:ECLock:MULTiplier?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 1.
     """
 
@@ -723,42 +699,40 @@ class ClockEclockMultiplier(SCPICmdWrite, SCPICmdRead):
 class ClockEclockFrequencyDetect(SCPICmdWriteNoArguments):
     """The ``CLOCk:ECLock:FREQuency:DETect`` command.
 
-    **Description:**
+    Description:
         - This command detects the frequency of the signal applied to the Clock In connector and
           adjusts the system to use the signal. The frequency is detected once each time the command
           executes. An error message is generated if no frequency is detected or is out of range.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``CLOCk:ECLock:FREQuency:DETect`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CLOCk:ECLock:FREQuency:DETect
+        ```
     """
 
 
 class ClockEclockFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``CLOCk:ECLock:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the expected frequency being provided by the external clock.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:ECLock:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:ECLock:FREQuency?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CLOCk:ECLock:FREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CLOCk:ECLock:FREQuency <NR3>
         - CLOCk:ECLock:FREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 6.25 GHz.
 
     Properties:
@@ -773,20 +747,19 @@ class ClockEclockFrequency(SCPICmdWrite, SCPICmdRead):
     def detect(self) -> ClockEclockFrequencyDetect:
         """Return the ``CLOCk:ECLock:FREQuency:DETect`` command.
 
-        **Description:**
+        Description:
             - This command detects the frequency of the signal applied to the Clock In connector and
               adjusts the system to use the signal. The frequency is detected once each time the
               command executes. An error message is generated if no frequency is detected or is out
               of range.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``CLOCk:ECLock:FREQuency:DETect`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLOCk:ECLock:FREQuency:DETect
+            ```
         """
         return self._detect
 
@@ -794,23 +767,22 @@ class ClockEclockFrequency(SCPICmdWrite, SCPICmdRead):
 class ClockEclockDivider(SCPICmdWrite, SCPICmdRead):
     """The ``CLOCk:ECLock:DIVider`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the divider rate for the external clock.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:ECLock:DIVider?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:ECLock:DIVider?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CLOCk:ECLock:DIVider value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CLOCk:ECLock:DIVider <NR1>
         - CLOCk:ECLock:DIVider?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 1.
     """
 
@@ -818,7 +790,7 @@ class ClockEclockDivider(SCPICmdWrite, SCPICmdRead):
 class ClockEclock(SCPICmdRead):
     """The ``CLOCk:ECLock`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk:ECLock?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk:ECLock?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -839,24 +811,23 @@ class ClockEclock(SCPICmdRead):
     def divider(self) -> ClockEclockDivider:
         """Return the ``CLOCk:ECLock:DIVider`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the divider rate for the external clock.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:ECLock:DIVider?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:ECLock:DIVider?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CLOCk:ECLock:DIVider value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLOCk:ECLock:DIVider <NR1>
             - CLOCk:ECLock:DIVider?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 1.
         """
         return self._divider
@@ -865,25 +836,24 @@ class ClockEclock(SCPICmdRead):
     def frequency(self) -> ClockEclockFrequency:
         """Return the ``CLOCk:ECLock:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the expected frequency being provided by the external
               clock.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:ECLock:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:ECLock:FREQuency?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CLOCk:ECLock:FREQuency value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLOCk:ECLock:FREQuency <NR3>
             - CLOCk:ECLock:FREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 6.25 GHz.
 
         Sub-properties:
@@ -895,24 +865,23 @@ class ClockEclock(SCPICmdRead):
     def multiplier(self) -> ClockEclockMultiplier:
         """Return the ``CLOCk:ECLock:MULTiplier`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the multiplier rate of the external clock.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:ECLock:MULTiplier?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:ECLock:MULTiplier?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CLOCk:ECLock:MULTiplier value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLOCk:ECLock:MULTiplier <NR1>
             - CLOCk:ECLock:MULTiplier?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 1.
         """
         return self._multiplier
@@ -922,7 +891,7 @@ class ClockEclock(SCPICmdRead):
 class Clock(SCPICmdRead):
     """The ``CLOCk`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CLOCk?`` query.
         - Using the ``.verify(value)`` method will send the ``CLOCk?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -953,7 +922,7 @@ class Clock(SCPICmdRead):
     def eclock(self) -> ClockEclock:
         """Return the ``CLOCk:ECLock`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:ECLock?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:ECLock?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -969,7 +938,7 @@ class Clock(SCPICmdRead):
     def ereference(self) -> ClockEreference:
         """Return the ``CLOCk:EREFerence`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:EREFerence?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:EREFerence?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -985,21 +954,20 @@ class Clock(SCPICmdRead):
     def jitter(self) -> ClockJitter:
         """Return the ``CLOCk:JITTer`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the state (enabled or disabled) to apply or not apply
               jitter reduction to the internal system clock or the clock signal applied to the
               Reference In connector.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CLOCk:JITTer value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLOCk:JITTer {0|1|OFF|ON}
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 0.
         """
         return self._jitter
@@ -1008,7 +976,7 @@ class Clock(SCPICmdRead):
     def output(self) -> ClockOutput:
         """Return the ``CLOCk:OUTPut`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:OUTPut?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:OUTPut?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1023,7 +991,7 @@ class Clock(SCPICmdRead):
     def phase(self) -> ClockPhase:
         """Return the ``CLOCk:PHASe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:PHASe?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:PHASe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1037,23 +1005,22 @@ class Clock(SCPICmdRead):
     def source(self) -> ClockSource:
         """Return the ``CLOCk:SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the source of the clock.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:SOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:SOURce?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CLOCk:SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLOCk:SOURce {INTernal|EFIXed|EVARiable|EXTernal}
             - CLOCk:SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to INT.
         """
         return self._source
@@ -1062,7 +1029,7 @@ class Clock(SCPICmdRead):
     def sout(self) -> ClockSout:
         """Return the ``CLOCk:SOUT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:SOUT?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:SOUT?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -1076,25 +1043,24 @@ class Clock(SCPICmdRead):
     def srate(self) -> ClockSrate:
         r"""Return the ``CLOCk:SRATe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the sample rate for the clock. When ``CLOCk:SOURce`` is
               set to EXTernal, the maximum sample rate is: 4 \* External Clock In frequency
               (AWG70001)2 \* External Clock In frequency (AWG70002)
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CLOCk:SRATe?`` query.
             - Using the ``.verify(value)`` method will send the ``CLOCk:SRATe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CLOCk:SRATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CLOCk:SRATe <NRf>
             - CLOCk:SRATe?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to the maximum value.
         """
         return self._srate

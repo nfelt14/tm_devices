@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - channel.close()
     - channel.getclose()
     - channel.getcommonside()
@@ -54,7 +52,7 @@ if TYPE_CHECKING:
 class ChannelMultiple(BaseTSPCmd):
     """The ``channel.multiple`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.close()``: The ``channel.multiple.close()`` function.
         - ``.open()``: The ``channel.multiple.open()`` function.
     """
@@ -62,14 +60,13 @@ class ChannelMultiple(BaseTSPCmd):
     def close(self, channel_list: str) -> None:
         """Run the ``channel.multiple.close()`` function.
 
-        **Description:**
+        Description:
             - This function closes the listed channels without affecting any other channels.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.multiple.close()
+            ```
 
         Args:
             channel_list: The list of channels to close.
@@ -88,14 +85,13 @@ class ChannelMultiple(BaseTSPCmd):
     def open(self, channel_list: str) -> None:
         """Run the ``channel.multiple.open()`` function.
 
-        **Description:**
+        Description:
             - This function opens the channels in the channel list without affecting any others.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.multiple.open()
+            ```
 
         Args:
             channel_list: A list of the channels to open.
@@ -150,7 +146,7 @@ class Channel(BaseTSPCmd):
         - ``.TYPE_SWITCH``: Switch channel.
         - ``.TYPE_TOTALIZER``: Totalizer channel.
 
-    Properties/methods:
+    Properties and methods:
         - ``.close()``: The ``channel.close()`` function.
         - ``.getclose()``: The ``channel.getclose()`` function.
         - ``.getcommonside()``: The ``channel.getcommonside()`` function.
@@ -243,7 +239,7 @@ class Channel(BaseTSPCmd):
     def multiple(self) -> ChannelMultiple:
         """Return the ``channel.multiple`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.close()``: The ``channel.multiple.close()`` function.
             - ``.open()``: The ``channel.multiple.open()`` function.
         """
@@ -252,15 +248,14 @@ class Channel(BaseTSPCmd):
     def close(self, channel_list: str) -> None:
         """Run the ``channel.close()`` function.
 
-        **Description:**
+        Description:
             - This function closes the channels and channel pairs that are specified by the channel
               list parameter.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.close()
+            ```
 
         Args:
             channel_list: A string that lists the channels and channel pairs to close.
@@ -279,14 +274,13 @@ class Channel(BaseTSPCmd):
     def getclose(self, channel_list: Optional[str] = None) -> str:
         """Run the ``channel.getclose()`` function.
 
-        **Description:**
+        Description:
             - This function queries for the closed channels indicated by the channel list parameter.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.getclose()
+            ```
 
         Args:
             channel_list (optional): A string that lists the channels to be queried (including
@@ -315,14 +309,13 @@ class Channel(BaseTSPCmd):
     def getcommonside(self, slot: str) -> str:
         """Run the ``channel.getcommonside()`` function.
 
-        **Description:**
+        Description:
             - This function lists the commonside setting for the specified slot.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.getcommonside()
+            ```
 
         Args:
             slot: A string that lists the slot number; can be allslots, slot1, or slot2.
@@ -344,15 +337,14 @@ class Channel(BaseTSPCmd):
     def getcount(self, channel_list: str) -> str:
         """Run the ``channel.getcount()`` function.
 
-        **Description:**
+        Description:
             - This function returns the number of times the relays have been closed for the
               specified channels.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.getcount()
+            ```
 
         Args:
             channel_list: A string listing the items to query, which can include.
@@ -374,15 +366,14 @@ class Channel(BaseTSPCmd):
     def getcountinterval(self) -> str:
         """Run the ``channel.getcountinterval()`` function.
 
-        **Description:**
+        Description:
             - This function returns the interval that is presently set for storage of channel relay
               closure counts.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.getcountinterval()
+            ```
 
         Returns:
             The result of the function call.
@@ -401,14 +392,13 @@ class Channel(BaseTSPCmd):
     def getdelay(self, channel_list: str) -> str:
         """Run the ``channel.getdelay()`` function.
 
-        **Description:**
+        Description:
             - This function queries for the additional delay time for the specified channels.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.getdelay()
+            ```
 
         Args:
             channel_list: A string listing the channels to query for their delay times; slot1,
@@ -431,14 +421,13 @@ class Channel(BaseTSPCmd):
     def getdmm(self, channel_list: str, setting: str) -> str:
         """Run the ``channel.getdmm()`` function.
 
-        **Description:**
+        Description:
             - This function returns the setting for a channel DMM attribute.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.getdmm()
+            ```
 
         Args:
             channel_list: List of channels to get from the DMM.
@@ -461,14 +450,13 @@ class Channel(BaseTSPCmd):
     def getlabel(self, channel_number: str) -> str:
         """Run the ``channel.getlabel()`` function.
 
-        **Description:**
+        Description:
             - This function returns the label associated with the specified channel.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.getlabel()
+            ```
 
         Args:
             channel_number: A string that lists the channel to query for the associated label.
@@ -490,14 +478,13 @@ class Channel(BaseTSPCmd):
     def getmatch(self, channel_list: str) -> str:
         """Run the ``channel.getmatch()`` function.
 
-        **Description:**
+        Description:
             - This function gets the match value on a channel.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.getmatch()
+            ```
 
         Args:
             channel_list: String specifying digital I/O or totalizer channels to query, using normal
@@ -520,14 +507,13 @@ class Channel(BaseTSPCmd):
     def getmatchtype(self, channel_list: str) -> str:
         """Run the ``channel.getmatchtype()`` function.
 
-        **Description:**
+        Description:
             - This function returns the match type for digital I/O and totalizer channels.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.getmatchtype()
+            ```
 
         Args:
             channel_list: String specifying the digital I/O or totalizer channels to query, using
@@ -550,14 +536,13 @@ class Channel(BaseTSPCmd):
     def getmode(self, channel_list: str) -> str:
         """Run the ``channel.getmode()`` function.
 
-        **Description:**
+        Description:
             - This function returns the present mode of digital and totalizer channels.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.getmode()
+            ```
 
         Args:
             channel_list: String that specifies the channels to query, using normal channel list
@@ -580,14 +565,13 @@ class Channel(BaseTSPCmd):
     def getstate(self, channel_list: Optional[str] = None) -> str:
         """Run the ``channel.getstate()`` function.
 
-        **Description:**
+        Description:
             - This function returns the state indicators of the channels in the instrument.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.getstate()
+            ```
 
         Args:
             channel_list (optional): String specifying the channels to query; use normal channel
@@ -615,14 +599,13 @@ class Channel(BaseTSPCmd):
     def gettype(self, channel_list: str) -> str:
         """Run the ``channel.gettype()`` function.
 
-        **Description:**
+        Description:
             - This function returns the type associated with a channel.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.gettype()
+            ```
 
         Args:
             channel_list: String specifying the channels to query, using normal channelList syntax.
@@ -644,14 +627,13 @@ class Channel(BaseTSPCmd):
     def getwidth(self, channel_number: int) -> str:
         """Run the ``channel.getwidth()`` function.
 
-        **Description:**
+        Description:
             - This function gets the width used by the channel.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.getwidth()
+            ```
 
         Args:
             channel_number: The first channel number of the channels to be combined.
@@ -673,14 +655,13 @@ class Channel(BaseTSPCmd):
     def open(self, channel_list: str) -> None:
         """Run the ``channel.open()`` function.
 
-        **Description:**
+        Description:
             - This command opens the specified channels and channel pairs.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.open()
+            ```
 
         Args:
             channel_list: String listing the channels to open; allslots, slot1, and slot2 available,
@@ -701,14 +682,13 @@ class Channel(BaseTSPCmd):
     def read(self, channel_list: str, reading_buffer: Optional[str] = None) -> str:
         """Run the ``channel.read()`` function.
 
-        **Description:**
+        Description:
             - This function reads a value from a totalizer, DAC, or digital I/O channel.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.read()
+            ```
 
         Args:
             channel_list: String that specifies a list of channels, using channel list notation.
@@ -739,14 +719,13 @@ class Channel(BaseTSPCmd):
     def setcommonside(self, slot: str, state: str) -> None:
         """Run the ``channel.setcommonside()`` function.
 
-        **Description:**
+        Description:
             - This function sets up the specified slot to have a common side path.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.setcommonside()
+            ```
 
         Args:
             slot: A string that lists the slot number; can be allslots, slot1, or slot2.
@@ -766,15 +745,14 @@ class Channel(BaseTSPCmd):
     def setcountinterval(self, interval: str) -> None:
         """Run the ``channel.setcountinterval()`` function.
 
-        **Description:**
+        Description:
             - This function determines how often the instrument stores the channel relay closure
               count.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.setcountinterval()
+            ```
 
         Args:
             interval: The count update interval.
@@ -793,14 +771,13 @@ class Channel(BaseTSPCmd):
     def setdelay(self, channel_list: str, delay: float) -> None:
         """Run the ``channel.setdelay()`` function.
 
-        **Description:**
+        Description:
             - This function sets additional delay time for specified channels.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.setdelay()
+            ```
 
         Args:
             channel_list: A string listing the channels for which to add delay time.
@@ -820,14 +797,13 @@ class Channel(BaseTSPCmd):
     def setdmm(self, channel_list: str, setting: str, value: str) -> None:
         """Run the ``channel.setdmm()`` function.
 
-        **Description:**
+        Description:
             - This function configures the DMM for a channel or group of channels.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.setdmm()
+            ```
 
         Args:
             channel_list: List of channels for which to set the DMM.
@@ -849,14 +825,13 @@ class Channel(BaseTSPCmd):
     def setlabel(self, channel_number: str, labelname: str) -> None:
         """Run the ``channel.setlabel()`` function.
 
-        **Description:**
+        Description:
             - This function sets the label associated with a channel.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.setlabel()
+            ```
 
         Args:
             channel_number: A string that lists the channel for which to set the label.
@@ -877,14 +852,13 @@ class Channel(BaseTSPCmd):
     def setmatch(self, channel_list: str, match_value: str, mask: Optional[str] = None) -> None:
         """Run the ``channel.setmatch()`` function.
 
-        **Description:**
+        Description:
             - This function sets the match value on a digital input or totalizer channel.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.setmatch()
+            ```
 
         Args:
             channel_list: String that specifies the channels to query, using normal channel list
@@ -915,14 +889,13 @@ class Channel(BaseTSPCmd):
     def setmatchtype(self, channel_list: str, type_: str) -> None:
         """Run the ``channel.setmatchtype()`` function.
 
-        **Description:**
+        Description:
             - This function sets the match type on a digital I/O or totalizer channel.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.setmatchtype()
+            ```
 
         Args:
             channel_list: String specifying the channels to set, using normal channel list syntax.
@@ -942,14 +915,13 @@ class Channel(BaseTSPCmd):
     def setmode(self, channel_list: str, mode: str) -> None:
         """Run the ``channel.setmode()`` function.
 
-        **Description:**
+        Description:
             - This function sets the mode of operation of a channel.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.setmode()
+            ```
 
         Args:
             channel_list: String specifying the channels to set, using normal channel list syntax.
@@ -969,14 +941,13 @@ class Channel(BaseTSPCmd):
     def setwidth(self, channel_number: int, width: int) -> None:
         """Run the ``channel.setwidth()`` function.
 
-        **Description:**
+        Description:
             - This function allows you to control multiple digital I/O channels as one channel.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.setwidth()
+            ```
 
         Args:
             channel_number: The first channel number of the channels to be combined.
@@ -996,14 +967,13 @@ class Channel(BaseTSPCmd):
     def write(self, channel_list: str, value: str) -> None:
         """Run the ``channel.write()`` function.
 
-        **Description:**
+        Description:
             - This function writes a value to a channel.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - channel.write()
+            ```
 
         Args:
             channel_list: The channels to set, using standard channel naming.

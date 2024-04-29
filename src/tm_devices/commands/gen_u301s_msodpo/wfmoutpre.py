@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - WFMOutpre:BIT_Nr <NR1>
     - WFMOutpre:BIT_Nr?
     - WFMOutpre:BN_Fmt {RI|RP}
@@ -52,7 +50,7 @@ if TYPE_CHECKING:
 class WfmoutpreYzero(SCPICmdRead):
     """The ``WFMOutpre:YZEro`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the combined vertical position and offset for the source
           waveform specified by ``DATA:SOURCE``. This represents a departure from previous
           instruments where the ``:YZEro`` value represented the vertical position in vertical units
@@ -60,66 +58,63 @@ class WfmoutpreYzero(SCPICmdRead):
           instrument family, the value of ``:YOFf`` is always 0.0. An error is reported if the
           ``DATA:SOURCE`` waveform does not exist.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:YZEro?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:YZEro?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:YZEro?
+        ```
     """
 
 
 class WfmoutpreYunit(SCPICmdRead):
     """The ``WFMOutpre:YUNit`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the vertical units for the waveform specified by the
           ``DATA:SOURCE`` command. An error is reported if the ``DATa:SOUrce`` waveform does not
           exist.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:YUNit?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:YUNit?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:YUNit?
+        ```
     """
 
 
 class WfmoutpreYoff(SCPICmdRead):
     """The ``WFMOutpre:YOFf`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the vertical offset of the source specified by
           ``DATA:SOURCE``. For this instrument family, the value returned is always 0.0 as the
           offset is combined with the ``:YZEro`` value. An error is reported if the ``DATA:SOURCE``
           waveform does not exist.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:YOFf?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:YOFf?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:YOFf?
+        ```
     """
 
 
 class WfmoutpreYmult(SCPICmdRead):
     """The ``WFMOutpre:YMUlt`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the vertical scale factor per digitizing level in units
           specified by ``WFMOutpre:YUNit`` for the waveform specified by the ``DATA:SOURCE``
           command. For those formats in which ``WFMOUTPRE:BYT_NR`` is important (all non-floating
@@ -127,149 +122,142 @@ class WfmoutpreYmult(SCPICmdRead):
           ``BYT_NR`` into consideration. An error is reported if the ``DATa:SOUrce`` waveform does
           not exist.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:YMUlt?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:YMUlt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:YMUlt?
+        ```
     """
 
 
 class WfmoutpreXzero(SCPICmdRead):
     """The ``WFMOutpre:XZEro`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the sub-sample time between the trigger sample (designated
           by ``PT_OFF``) and the occurrence of the actual trigger for the waveform specified by the
           ``DATA:SOURCE`` command. This value is in units of ``WFMOutpre:XUNit``. An error is
           reported if the ``DATa:SOUrce`` waveform does not exist.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:XZEro?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:XZEro?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:XZEro?
+        ```
     """
 
 
 class WfmoutpreXunit(SCPICmdRead):
     """The ``WFMOutpre:XUNit`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the horizontal units for the waveform specified by the
           ``DATA:SOURCE`` command. An error is reported if the ``DATa:SOUrce`` waveform does not
           exist.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:XUNit?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:XUNit?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:XUNit?
+        ```
     """
 
 
 class WfmoutpreXincr(SCPICmdRead):
     """The ``WFMOutpre:XINcr`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the horizontal point spacing in units of
           ``WFMOutpre:XUNit`` for the waveform specified by the ``DATA:SOURCE`` command. This value
           corresponds to the sampling interval. An error is reported if the ``DATa:SOUrce`` waveform
           does not exist.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:XINcr?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:XINcr?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:XINcr?
+        ```
     """
 
 
 class WfmoutpreWfid(SCPICmdRead):
     """The ``WFMOutpre:WFId`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns a string describing several aspects of the acquisition
           parameters for the waveform specified by the ``DATA:SOURCE`` command. An error is reported
           if the ``DATa:SOUrce`` waveform does not exist.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:WFId?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:WFId?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:WFId?
+        ```
     """
 
 
 class WfmoutpreRecordlength(SCPICmdRead):
     """The ``WFMOutpre:RECOrdlength`` command.
 
-    **Description:**
+    Description:
         - Returns the record length for the source waveform as specified by the ``DATA:SOURCE``
           command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:RECOrdlength?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:RECOrdlength?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:RECOrdlength?
+        ```
     """
 
 
 class WfmoutprePtOff(SCPICmdRead):
     """The ``WFMOutpre:PT_Off`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the trigger point relative to ``DATA:START`` for the
           waveform specified by the ``DATA:SOURCE`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:PT_Off?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:PT_Off?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:PT_Off?
+        ```
     """
 
 
 class WfmoutprePtOrder(SCPICmdRead):
     """The ``WFMOutpre:PT_ORder`` command.
 
-    **Description:**
+    Description:
         - This query-only command specifies whether the source waveform is Fast Acquisition. A Fast
           Acquisition waveform is stored as a 500 (vertical) by 1000 (horizontal) point bitmap. Each
           point represents display intensity for that screen location. Only CURVe? query functions
@@ -283,126 +271,120 @@ class WfmoutprePtOrder(SCPICmdRead):
           vertical point). Note that waveform points are transmitted in the following order: top to
           bottom, then left to right.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:PT_ORder?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:PT_ORder?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:PT_ORder?
+        ```
     """
 
 
 class WfmoutprePtFmt(SCPICmdRead):
     """The ``WFMOutpre:PT_Fmt`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the point format for the waveform specified by the
           ``DATA:SOURCE`` command. The format specifies a set of equations describing how the scale
           factors in the preamble are used to give meaning to the CURVE data points. An error is
           reported if the ``DATa:SOUrce`` waveform does not exist.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:PT_Fmt?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:PT_Fmt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:PT_Fmt?
+        ```
     """
 
 
 class WfmoutpreNrPt(SCPICmdRead):
     """The ``WFMOutpre:NR_Pt`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the number of points for the ``DATA:SOURCE`` waveform that
           will be transmitted in response to a CURVE? query.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:NR_Pt?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:NR_Pt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:NR_Pt?
+        ```
     """
 
 
 class WfmoutpreFractional(SCPICmdRead):
     """The ``WFMOutpre:FRACTional`` command.
 
-    **Description:**
+    Description:
         - The set form of this command is ignored. The query form always returns a 0, if the
           waveform specified by ``DATA:SOUrce`` is on or displayed. If the waveform is not
           displayed, the query form generates an error and returns event code 2244. This command is
           for compatibility with other Tektronix oscilloscopes.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:FRACTional?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:FRACTional?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:FRACTional?
+        ```
     """
 
 
 class WfmoutpreFilterfreq(SCPICmdRead):
     """The ``WFMOutpre:FILTERFreq`` command.
 
-    **Description:**
+    Description:
         - Returns the FilterVu low pass filter frequency applied to the LRL waveform record of the
           source waveform specified by ``DATA:SOURCE``. If the ``DATA:RESOLUTION`` is set to FULL,
           then this is the filter frequency applied to the full resolution (LRL) waveform. If the
           ``DATA:RESOLUTION`` is set to REDUced, then this is the filter frequency applied to the
           reduced resolution (thumbnail) waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:FILTERFreq?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:FILTERFreq?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:FILTERFreq?
+        ```
     """
 
 
 class WfmoutpreEncdg(SCPICmdWrite, SCPICmdRead):
     """The ``WFMOutpre:ENCdg`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the type of encoding for outgoing waveforms.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:ENCdg?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:ENCdg?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``WFMOutpre:ENCdg value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:ENCdg {ASCii|BINary}
         - WFMOutpre:ENCdg?
+        ```
 
-    **Info:**
+    Info:
         - ``ASCii`` specifies that the outgoing data is to be in ASCII format. Waveforms internally
           stored as integers will be sent as <NR1> numbers, while those stored as floating point
           will be sent as <NR3> numbers.
@@ -415,23 +397,22 @@ class WfmoutpreEncdg(SCPICmdWrite, SCPICmdRead):
 class WfmoutpreComposition(SCPICmdWrite, SCPICmdRead):
     """The ``WFMOutpre:COMPosition`` command.
 
-    **Description:**
+    Description:
         - Controls or indicates the type of data used by the CURVE? query.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:COMPosition?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:COMPosition?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``WFMOutpre:COMPosition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:COMPosition {COMPOSITE_YT|COMPOSITE_ENV|SINGULAR_YT}
         - WFMOutpre:COMPosition?
+        ```
 
-    **Info:**
+    Info:
         - ``COMPOSITE_YT`` uses the sample part of the composite waveform.
         - ``COMPOSITE_ENV`` uses the peak-detect part of the composite waveform.
         - ``SINGULAR_YT`` uses the sample part of the singular waveform.
@@ -441,25 +422,24 @@ class WfmoutpreComposition(SCPICmdWrite, SCPICmdRead):
 class WfmoutpreBytOr(SCPICmdWrite, SCPICmdRead):
     """The ``WFMOutpre:BYT_Or`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries which byte of binary waveform data is transmitted first,
           during a waveform data transfer, when data points require more than one byte. This
           specification only has meaning when ``WFMOUTPRE:ENCDG`` is set to BIN.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:BYT_Or?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:BYT_Or?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``WFMOutpre:BYT_Or value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:BYT_Or {LSB|MSB}
         - WFMOutpre:BYT_Or?
+        ```
 
-    **Info:**
+    Info:
         - ``LSB`` specifies that the least significant byte will be transmitted first.
         - ``MSB`` specifies that the most significant byte will be transmitted first.
     """
@@ -468,26 +448,25 @@ class WfmoutpreBytOr(SCPICmdWrite, SCPICmdRead):
 class WfmoutpreBytNr(SCPICmdWrite, SCPICmdRead):
     """The ``WFMOutpre:BYT_Nr`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary field data width (bytes per point) for the
           waveform specified by the ``DATA:SOURCE`` command. Note that values will be constrained
           according to the underlying waveform data. This specification is only meaningful when
           ``WFMOUTPRE:ENCDG`` is set to BIN, and ``WFMOUTPRE:BN_FMT`` is set to either RI or RP.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:BYT_Nr?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:BYT_Nr?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``WFMOutpre:BYT_Nr value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:BYT_Nr <NR1>
         - WFMOutpre:BYT_Nr?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the number of bytes per data point and can be 1, 2 or 8. A value of 1 or 2
           bytes per waveform point indicates channel data; 8 bytes per waveform point indicate pixel
           map (fast acquisition) data.
@@ -497,25 +476,24 @@ class WfmoutpreBytNr(SCPICmdWrite, SCPICmdRead):
 class WfmoutpreBnFmt(SCPICmdWrite, SCPICmdRead):
     """The ``WFMOutpre:BN_Fmt`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the format of binary data for outgoing waveforms specified by the
           ``DATA:SOURCE`` command. Changing the value of ``WFMOUTPRE:BN_FMT`` also changes the value
           of ``DATA:ENCDG``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:BN_Fmt?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:BN_Fmt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``WFMOutpre:BN_Fmt value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:BN_Fmt {RI|RP}
         - WFMOutpre:BN_Fmt?
+        ```
 
-    **Info:**
+    Info:
         - ``RI`` specifies signed integer data point representation.
         - ``RP`` specifies positive integer data point representation.
     """
@@ -524,27 +502,26 @@ class WfmoutpreBnFmt(SCPICmdWrite, SCPICmdRead):
 class WfmoutpreBitNr(SCPICmdWrite, SCPICmdRead):
     """The ``WFMOutpre:BIT_Nr`` command.
 
-    **Description:**
+    Description:
         - This command sets and queries the number of bits per waveform point that outgoing
           waveforms contain, as specified by the ``DATA:SOURCE`` command. Note that values will be
           constrained according to the underlying waveform data. This specification is only
           meaningful when ``WFMOUTPRE:ENCDG`` is set to BIN and ``WFMOUTPRE:BN_FMT`` is set to
           either RI or RP.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre:BIT_Nr?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre:BIT_Nr?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``WFMOutpre:BIT_Nr value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre:BIT_Nr <NR1>
         - WFMOutpre:BIT_Nr?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` number of bits per data point can be 8 or 16.
     """
 
@@ -553,23 +530,22 @@ class WfmoutpreBitNr(SCPICmdWrite, SCPICmdRead):
 class Wfmoutpre(SCPICmdRead):
     """The ``WFMOutpre`` command.
 
-    **Description:**
+    Description:
         - This query-only command queries the waveform formatting data for the waveform specified by
           the ``DATA:SOURCE`` command. The preamble components are considered to be of two types;
           formatting and interpretation. The formatting components are: ENCdg, ``BN_Fmt``,
           ``BYT_Or``, ``BYT_Nr``, ``BIT_Nr``. The interpretation components are derived from the
           ``DATa:SOUrce`` specified waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WFMOutpre?`` query.
         - Using the ``.verify(value)`` method will send the ``WFMOutpre?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WFMOutpre?
+        ```
 
     Properties:
         - ``.bit_nr``: The ``WFMOutpre:BIT_Nr`` command.
@@ -623,27 +599,26 @@ class Wfmoutpre(SCPICmdRead):
     def bit_nr(self) -> WfmoutpreBitNr:
         """Return the ``WFMOutpre:BIT_Nr`` command.
 
-        **Description:**
+        Description:
             - This command sets and queries the number of bits per waveform point that outgoing
               waveforms contain, as specified by the ``DATA:SOURCE`` command. Note that values will
               be constrained according to the underlying waveform data. This specification is only
               meaningful when ``WFMOUTPRE:ENCDG`` is set to BIN and ``WFMOUTPRE:BN_FMT`` is set to
               either RI or RP.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:BIT_Nr?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:BIT_Nr?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``WFMOutpre:BIT_Nr value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:BIT_Nr <NR1>
             - WFMOutpre:BIT_Nr?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` number of bits per data point can be 8 or 16.
         """
         return self._bit_nr
@@ -652,25 +627,24 @@ class Wfmoutpre(SCPICmdRead):
     def bn_fmt(self) -> WfmoutpreBnFmt:
         """Return the ``WFMOutpre:BN_Fmt`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the format of binary data for outgoing waveforms specified by the
               ``DATA:SOURCE`` command. Changing the value of ``WFMOUTPRE:BN_FMT`` also changes the
               value of ``DATA:ENCDG``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:BN_Fmt?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:BN_Fmt?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``WFMOutpre:BN_Fmt value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:BN_Fmt {RI|RP}
             - WFMOutpre:BN_Fmt?
+            ```
 
-        **Info:**
+        Info:
             - ``RI`` specifies signed integer data point representation.
             - ``RP`` specifies positive integer data point representation.
         """
@@ -680,27 +654,26 @@ class Wfmoutpre(SCPICmdRead):
     def byt_nr(self) -> WfmoutpreBytNr:
         """Return the ``WFMOutpre:BYT_Nr`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary field data width (bytes per point) for the
               waveform specified by the ``DATA:SOURCE`` command. Note that values will be
               constrained according to the underlying waveform data. This specification is only
               meaningful when ``WFMOUTPRE:ENCDG`` is set to BIN, and ``WFMOUTPRE:BN_FMT`` is set to
               either RI or RP.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:BYT_Nr?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:BYT_Nr?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``WFMOutpre:BYT_Nr value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:BYT_Nr <NR1>
             - WFMOutpre:BYT_Nr?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the number of bytes per data point and can be 1, 2 or 8. A value of 1 or
               2 bytes per waveform point indicates channel data; 8 bytes per waveform point indicate
               pixel map (fast acquisition) data.
@@ -711,25 +684,24 @@ class Wfmoutpre(SCPICmdRead):
     def byt_or(self) -> WfmoutpreBytOr:
         """Return the ``WFMOutpre:BYT_Or`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries which byte of binary waveform data is transmitted first,
               during a waveform data transfer, when data points require more than one byte. This
               specification only has meaning when ``WFMOUTPRE:ENCDG`` is set to BIN.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:BYT_Or?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:BYT_Or?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``WFMOutpre:BYT_Or value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:BYT_Or {LSB|MSB}
             - WFMOutpre:BYT_Or?
+            ```
 
-        **Info:**
+        Info:
             - ``LSB`` specifies that the least significant byte will be transmitted first.
             - ``MSB`` specifies that the most significant byte will be transmitted first.
         """
@@ -739,24 +711,23 @@ class Wfmoutpre(SCPICmdRead):
     def composition(self) -> WfmoutpreComposition:
         """Return the ``WFMOutpre:COMPosition`` command.
 
-        **Description:**
+        Description:
             - Controls or indicates the type of data used by the CURVE? query.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:COMPosition?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:COMPosition?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``WFMOutpre:COMPosition value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:COMPosition {COMPOSITE_YT|COMPOSITE_ENV|SINGULAR_YT}
             - WFMOutpre:COMPosition?
+            ```
 
-        **Info:**
+        Info:
             - ``COMPOSITE_YT`` uses the sample part of the composite waveform.
             - ``COMPOSITE_ENV`` uses the peak-detect part of the composite waveform.
             - ``SINGULAR_YT`` uses the sample part of the singular waveform.
@@ -767,23 +738,22 @@ class Wfmoutpre(SCPICmdRead):
     def encdg(self) -> WfmoutpreEncdg:
         """Return the ``WFMOutpre:ENCdg`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the type of encoding for outgoing waveforms.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:ENCdg?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:ENCdg?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``WFMOutpre:ENCdg value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:ENCdg {ASCii|BINary}
             - WFMOutpre:ENCdg?
+            ```
 
-        **Info:**
+        Info:
             - ``ASCii`` specifies that the outgoing data is to be in ASCII format. Waveforms
               internally stored as integers will be sent as <NR1> numbers, while those stored as
               floating point will be sent as <NR3> numbers.
@@ -797,23 +767,22 @@ class Wfmoutpre(SCPICmdRead):
     def filterfreq(self) -> WfmoutpreFilterfreq:
         """Return the ``WFMOutpre:FILTERFreq`` command.
 
-        **Description:**
+        Description:
             - Returns the FilterVu low pass filter frequency applied to the LRL waveform record of
               the source waveform specified by ``DATA:SOURCE``. If the ``DATA:RESOLUTION`` is set to
               FULL, then this is the filter frequency applied to the full resolution (LRL) waveform.
               If the ``DATA:RESOLUTION`` is set to REDUced, then this is the filter frequency
               applied to the reduced resolution (thumbnail) waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:FILTERFreq?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:FILTERFreq?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:FILTERFreq?
+            ```
         """
         return self._filterfreq
 
@@ -821,22 +790,21 @@ class Wfmoutpre(SCPICmdRead):
     def fractional(self) -> WfmoutpreFractional:
         """Return the ``WFMOutpre:FRACTional`` command.
 
-        **Description:**
+        Description:
             - The set form of this command is ignored. The query form always returns a 0, if the
               waveform specified by ``DATA:SOUrce`` is on or displayed. If the waveform is not
               displayed, the query form generates an error and returns event code 2244. This command
               is for compatibility with other Tektronix oscilloscopes.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:FRACTional?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:FRACTional?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:FRACTional?
+            ```
         """
         return self._fractional
 
@@ -844,20 +812,19 @@ class Wfmoutpre(SCPICmdRead):
     def nr_pt(self) -> WfmoutpreNrPt:
         """Return the ``WFMOutpre:NR_Pt`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the number of points for the ``DATA:SOURCE`` waveform
               that will be transmitted in response to a CURVE? query.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:NR_Pt?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:NR_Pt?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:NR_Pt?
+            ```
         """
         return self._nr_pt
 
@@ -865,22 +832,21 @@ class Wfmoutpre(SCPICmdRead):
     def pt_fmt(self) -> WfmoutprePtFmt:
         """Return the ``WFMOutpre:PT_Fmt`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the point format for the waveform specified by the
               ``DATA:SOURCE`` command. The format specifies a set of equations describing how the
               scale factors in the preamble are used to give meaning to the CURVE data points. An
               error is reported if the ``DATa:SOUrce`` waveform does not exist.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:PT_Fmt?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:PT_Fmt?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:PT_Fmt?
+            ```
         """
         return self._pt_fmt
 
@@ -888,7 +854,7 @@ class Wfmoutpre(SCPICmdRead):
     def pt_order(self) -> WfmoutprePtOrder:
         """Return the ``WFMOutpre:PT_ORder`` command.
 
-        **Description:**
+        Description:
             - This query-only command specifies whether the source waveform is Fast Acquisition. A
               Fast Acquisition waveform is stored as a 500 (vertical) by 1000 (horizontal) point
               bitmap. Each point represents display intensity for that screen location. Only CURVe?
@@ -903,16 +869,15 @@ class Wfmoutpre(SCPICmdRead):
               point). Note that waveform points are transmitted in the following order: top to
               bottom, then left to right.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:PT_ORder?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:PT_ORder?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:PT_ORder?
+            ```
         """
         return self._pt_order
 
@@ -920,20 +885,19 @@ class Wfmoutpre(SCPICmdRead):
     def pt_off(self) -> WfmoutprePtOff:
         """Return the ``WFMOutpre:PT_Off`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the trigger point relative to ``DATA:START`` for the
               waveform specified by the ``DATA:SOURCE`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:PT_Off?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:PT_Off?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:PT_Off?
+            ```
         """
         return self._pt_off
 
@@ -941,20 +905,19 @@ class Wfmoutpre(SCPICmdRead):
     def recordlength(self) -> WfmoutpreRecordlength:
         """Return the ``WFMOutpre:RECOrdlength`` command.
 
-        **Description:**
+        Description:
             - Returns the record length for the source waveform as specified by the ``DATA:SOURCE``
               command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:RECOrdlength?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:RECOrdlength?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:RECOrdlength?
+            ```
         """
         return self._recordlength
 
@@ -962,21 +925,20 @@ class Wfmoutpre(SCPICmdRead):
     def wfid(self) -> WfmoutpreWfid:
         """Return the ``WFMOutpre:WFId`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns a string describing several aspects of the acquisition
               parameters for the waveform specified by the ``DATA:SOURCE`` command. An error is
               reported if the ``DATa:SOUrce`` waveform does not exist.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:WFId?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:WFId?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:WFId?
+            ```
         """
         return self._wfid
 
@@ -984,22 +946,21 @@ class Wfmoutpre(SCPICmdRead):
     def xincr(self) -> WfmoutpreXincr:
         """Return the ``WFMOutpre:XINcr`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the horizontal point spacing in units of
               ``WFMOutpre:XUNit`` for the waveform specified by the ``DATA:SOURCE`` command. This
               value corresponds to the sampling interval. An error is reported if the
               ``DATa:SOUrce`` waveform does not exist.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:XINcr?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:XINcr?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:XINcr?
+            ```
         """
         return self._xincr
 
@@ -1007,21 +968,20 @@ class Wfmoutpre(SCPICmdRead):
     def xunit(self) -> WfmoutpreXunit:
         """Return the ``WFMOutpre:XUNit`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the horizontal units for the waveform specified by the
               ``DATA:SOURCE`` command. An error is reported if the ``DATa:SOUrce`` waveform does not
               exist.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:XUNit?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:XUNit?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:XUNit?
+            ```
         """
         return self._xunit
 
@@ -1029,23 +989,22 @@ class Wfmoutpre(SCPICmdRead):
     def xzero(self) -> WfmoutpreXzero:
         """Return the ``WFMOutpre:XZEro`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the sub-sample time between the trigger sample
               (designated by ``PT_OFF``) and the occurrence of the actual trigger for the waveform
               specified by the ``DATA:SOURCE`` command. This value is in units of
               ``WFMOutpre:XUNit``. An error is reported if the ``DATa:SOUrce`` waveform does not
               exist.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:XZEro?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:XZEro?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:XZEro?
+            ```
         """
         return self._xzero
 
@@ -1053,7 +1012,7 @@ class Wfmoutpre(SCPICmdRead):
     def ymult(self) -> WfmoutpreYmult:
         """Return the ``WFMOutpre:YMUlt`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the vertical scale factor per digitizing level in
               units specified by ``WFMOutpre:YUNit`` for the waveform specified by the
               ``DATA:SOURCE`` command. For those formats in which ``WFMOUTPRE:BYT_NR`` is important
@@ -1061,16 +1020,15 @@ class Wfmoutpre(SCPICmdRead):
               binary point implied by ``BYT_NR`` into consideration. An error is reported if the
               ``DATa:SOUrce`` waveform does not exist.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:YMUlt?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:YMUlt?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:YMUlt?
+            ```
         """
         return self._ymult
 
@@ -1078,22 +1036,21 @@ class Wfmoutpre(SCPICmdRead):
     def yoff(self) -> WfmoutpreYoff:
         """Return the ``WFMOutpre:YOFf`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the vertical offset of the source specified by
               ``DATA:SOURCE``. For this instrument family, the value returned is always 0.0 as the
               offset is combined with the ``:YZEro`` value. An error is reported if the
               ``DATA:SOURCE`` waveform does not exist.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:YOFf?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:YOFf?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:YOFf?
+            ```
         """
         return self._yoff
 
@@ -1101,21 +1058,20 @@ class Wfmoutpre(SCPICmdRead):
     def yunit(self) -> WfmoutpreYunit:
         """Return the ``WFMOutpre:YUNit`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the vertical units for the waveform specified by the
               ``DATA:SOURCE`` command. An error is reported if the ``DATa:SOUrce`` waveform does not
               exist.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:YUNit?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:YUNit?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:YUNit?
+            ```
         """
         return self._yunit
 
@@ -1123,7 +1079,7 @@ class Wfmoutpre(SCPICmdRead):
     def yzero(self) -> WfmoutpreYzero:
         """Return the ``WFMOutpre:YZEro`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the combined vertical position and offset for the
               source waveform specified by ``DATA:SOURCE``. This represents a departure from
               previous instruments where the ``:YZEro`` value represented the vertical position in
@@ -1131,15 +1087,14 @@ class Wfmoutpre(SCPICmdRead):
               levels. For this instrument family, the value of ``:YOFf`` is always 0.0. An error is
               reported if the ``DATA:SOURCE`` waveform does not exist.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WFMOutpre:YZEro?`` query.
             - Using the ``.verify(value)`` method will send the ``WFMOutpre:YZEro?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WFMOutpre:YZEro?
+            ```
         """
         return self._yzero

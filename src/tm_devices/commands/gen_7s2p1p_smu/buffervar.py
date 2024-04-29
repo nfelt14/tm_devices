@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - bufferVar.capacity
     - bufferVar.statuses[N]
 """
@@ -28,11 +26,11 @@ if TYPE_CHECKING:
 class Buffervar(BaseTSPCmd):
     """The ``bufferVar`` command tree.
 
-    **Info:**
+    Info:
         - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer or a
           dedicated reading buffer.
 
-    Properties/methods:
+    Properties and methods:
         - ``.capacity``: The ``bufferVar.capacity`` attribute.
         - ``.statuses``: The ``bufferVar.statuses[N]`` attribute.
     """
@@ -49,19 +47,18 @@ class Buffervar(BaseTSPCmd):
     def capacity(self) -> str:
         """Access the ``bufferVar.capacity`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of readings a buffer can store.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.capacity)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.capacity)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
               or a dedicated reading buffer.
 
@@ -82,20 +79,19 @@ class Buffervar(BaseTSPCmd):
     def statuses(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.statuses[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the status values of readings in the reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the ``print(bufferVar.statuses[N])``
               query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.statuses[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer; can be a dynamically allocated user-defined buffer
               or a dedicated reading buffer.
             - ``N``, the reading number N; can be any value from 1 to the number of readings in the

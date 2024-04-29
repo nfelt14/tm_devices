@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - FACtory
 """
 
@@ -27,7 +25,7 @@ if TYPE_CHECKING:
 class Factory(SCPICmdWriteNoArguments):
     """The ``FACtory`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) resets the instrument to its factory default settings. This
           command is equivalent to pressing the DEFAULT SETUP button located on the instrument front
           panel or selecting Default Setup from the File menu. This command Performs the following
@@ -37,14 +35,13 @@ class Factory(SCPICmdWriteNoArguments):
           Register) ``*PSC 1`` (Power-on Status Clear Flag) Deletes all defined aliases. Enables
           command headers (``:HEADer 1``).
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``FACtory`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FACtory
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "FACtory") -> None:

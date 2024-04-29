@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - EMail {TESt|RESET}
     - EMail:ATTempts <NR1>
     - EMail:ATTempts?
@@ -61,26 +59,25 @@ if TYPE_CHECKING:
 class EmailWaveform(SCPICmdWrite, SCPICmdRead):
     """The ``EMail:WAVEform`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether waveform data is included in e-mail. The waveforms to
           be included, the start and stop points (and, or, frames for Fast Frame mode), and the data
           formats are specified by the DATA and WFMOUTPRE commands within the Waveform Transfer
           Command group.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMail:WAVEform?`` query.
         - Using the ``.verify(value)`` method will send the ``EMail:WAVEform?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMail:WAVEform value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:WAVEform {<NR1>|ON|OFF}
         - EMail:WAVEform?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the inclusion of waveform data in the e-mail; any other value
           enables including waveform data in the e-mail.
         - ``ON`` enables the inclusion of waveform data in e-mail.
@@ -91,24 +88,23 @@ class EmailWaveform(SCPICmdWrite, SCPICmdRead):
 class EmailTrigger(SCPICmdWrite, SCPICmdRead):
     """The ``EMail:TRIGger`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether e-mail is sent when a trigger occurs. The e-mail is
           sent after the acquisition is complete.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMail:TRIGger?`` query.
         - Using the ``.verify(value)`` method will send the ``EMail:TRIGger?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMail:TRIGger value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:TRIGger {<NR1>|ON|OFF}
         - EMail:TRIGger?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables sending e-mail when a trigger occurs; any other value enables
           sending e-mail when a trigger occurs.
         - ``ON`` argument enables sending e-mail when a trigger occurs.
@@ -119,23 +115,22 @@ class EmailTrigger(SCPICmdWrite, SCPICmdRead):
 class EmailTo(SCPICmdWrite, SCPICmdRead):
     """The ``EMail:TO`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the address of the recipient(s) of an e-mail.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMail:TO?`` query.
         - Using the ``.verify(value)`` method will send the ``EMail:TO?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMail:TO value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:TO <QString>
         - EMail:TO?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` argument is the e-mail address of the recipient (or recipients). Multiple
           addresses are separated with semicolons (;). For example,
           'johndoe@tek.com;billsmith@tek.com' specifies that both johndoe and billsmith at tek.com
@@ -149,25 +144,24 @@ class EmailTo(SCPICmdWrite, SCPICmdRead):
 class EmailTimeout(SCPICmdWrite, SCPICmdRead):
     """The ``EMail:TIMEOut`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the global timeout in seconds. The default is 30 seconds. You
           use this timeout for socket connections and might need to change it from the default on
           some networks.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMail:TIMEOut?`` query.
         - Using the ``.verify(value)`` method will send the ``EMail:TIMEOut?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMail:TIMEOut value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:TIMEOut <NR1>
         - EMail:TIMEOut?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` argument is the global timeout in seconds. The value for NR1 can be 0 through
           500.
     """
@@ -176,42 +170,40 @@ class EmailTimeout(SCPICmdWrite, SCPICmdRead):
 class EmailStatus(SCPICmdRead):
     """The ``EMail:STATUS`` command.
 
-    **Description:**
+    Description:
         - This query only command returns the status of the last e-mail you attempted to send.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMail:STATUS?`` query.
         - Using the ``.verify(value)`` method will send the ``EMail:STATUS?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:STATUS?
+        ```
     """
 
 
 class EmailSmtpserver(SCPICmdWrite, SCPICmdRead):
     """The ``EMail:SMTPServer`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the address of the SMTP mail server.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMail:SMTPServer?`` query.
         - Using the ``.verify(value)`` method will send the ``EMail:SMTPServer?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMail:SMTPServer value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:SMTPServer <QString>
         - EMail:SMTPServer?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` argument is the address of the SMTP mail server that will handle the mail
           service request. For example, 'smtp.tek.com'.
     """
@@ -222,24 +214,23 @@ class EmailSmtpserver(SCPICmdWrite, SCPICmdRead):
 class EmailSmtpport(SCPICmdWrite, SCPICmdRead):
     """The ``EMail:SMTPPort`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the SMTP port number that the e-mail server uses if other
           than the default of 25.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMail:SMTPPort?`` query.
         - Using the ``.verify(value)`` method will send the ``EMail:SMTPPort?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMail:SMTPPort value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:SMTPPort {<NR1>}
         - EMail:SMTPPort?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` can be 1 through 65535. This number specifies the TCPIP port number.
     """
 
@@ -247,24 +238,23 @@ class EmailSmtpport(SCPICmdWrite, SCPICmdRead):
 class EmailNumemails(SCPICmdWrite, SCPICmdRead):
     """The ``EMail:NUMEMails`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of e-mails you can send when Email on Event is
           armed, from 1 to 50. This limit is to restrict e-mail floods.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMail:NUMEMails?`` query.
         - Using the ``.verify(value)`` method will send the ``EMail:NUMEMails?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMail:NUMEMails value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:NUMEMails {<NR1>}
         - EMail:NUMEMails?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` can be 1 through 50. This is the number of e-mails you can send before the
           number of sent e-mails must be reset with the EMail RESet command.
     """
@@ -273,25 +263,24 @@ class EmailNumemails(SCPICmdWrite, SCPICmdRead):
 class EmailMeasurement(SCPICmdWrite, SCPICmdRead):
     """The ``EMail:MEASUrement`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether measurement data is included as an attachment to
           e-mail. You must specify the saved measurement selection and the measurement format using
           the Email on Event setup menu. There are no remote commands for this purpose.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMail:MEASUrement?`` query.
         - Using the ``.verify(value)`` method will send the ``EMail:MEASUrement?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMail:MEASUrement value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:MEASUrement {<NR1>|ON|OFF}
         - EMail:MEASUrement?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the inclusion of measurement data in the e-mail; any other value
           enables including measurement data in the e-mail.
         - ``ON`` enables the inclusion of measurement data in e-mail.
@@ -302,24 +291,23 @@ class EmailMeasurement(SCPICmdWrite, SCPICmdRead):
 class EmailMaxsize(SCPICmdWrite, SCPICmdRead):
     """The ``EMail:MAXSize`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the maximum size (in megabytes) of e-mail that can be sent to
           the SMTP server.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMail:MAXSize?`` query.
         - Using the ``.verify(value)`` method will send the ``EMail:MAXSize?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMail:MAXSize value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:MAXSize {<NR1>}
         - EMail:MAXSize?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` can be 0 through 2000 (megabytes). This is the maximum size of each e-mail that
           can be sent to the SMTP server.
     """
@@ -328,23 +316,22 @@ class EmailMaxsize(SCPICmdWrite, SCPICmdRead):
 class EmailMask(SCPICmdWrite, SCPICmdRead):
     """The ``EMail:MASK`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether e-mail is sent when a mask test failure occurs.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMail:MASK?`` query.
         - Using the ``.verify(value)`` method will send the ``EMail:MASK?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMail:MASK value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:MASK {<NR1>|ON|OFF}
         - EMail:MASK?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables sending e-mail when a mask test failure occurs; any other value
           enables sending e-mail when a mask test failure occurs.
         - ``ON`` argument enables sending e-mail when a mask test failure occurs.
@@ -355,24 +342,23 @@ class EmailMask(SCPICmdWrite, SCPICmdRead):
 class EmailLimit(SCPICmdWrite, SCPICmdRead):
     """The ``EMail:LIMit`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether e-mail is sent when a limit test failure occurs. This
           command is the same as the ``LIMit:EMail`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMail:LIMit?`` query.
         - Using the ``.verify(value)`` method will send the ``EMail:LIMit?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMail:LIMit value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:LIMit {ON|OFF|<NR1>}
         - EMail:LIMit?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` argument enables sending e-mail when a limit test failure occurs.
         - ``OFF`` disables sending e-mail when a limit test failure occurs.
         - ``<NR1>`` = 0 disables sending e-mail when a limit test failure occurs; any other value
@@ -383,25 +369,24 @@ class EmailLimit(SCPICmdWrite, SCPICmdRead):
 class EmailImage(SCPICmdWrite, SCPICmdRead):
     """The ``EMail:IMAGe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether a screen image is included in e-mail. If this command
           is set to ON, the format and content of the screen image included is specified using the
           EXPort commands within the Hard Copy Command group.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMail:IMAGe?`` query.
         - Using the ``.verify(value)`` method will send the ``EMail:IMAGe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMail:IMAGe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:IMAGe {<NR1>|ON|OFF|}
         - EMail:IMAGe?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the inclusion of a screen image in e-mail; any other value enables
           the inclusion of a screen image in e-mail.
         - ``ON`` argument enables the inclusion of a screen image in e-mail.
@@ -412,24 +397,23 @@ class EmailImage(SCPICmdWrite, SCPICmdRead):
 class EmailHostwanted(SCPICmdWrite, SCPICmdRead):
     """The ``EMail:HOSTwanted`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the host name that will be used when e-mail is sent to the
           SMTP e-mail server if the DPO host name will not work.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMail:HOSTwanted?`` query.
         - Using the ``.verify(value)`` method will send the ``EMail:HOSTwanted?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMail:HOSTwanted value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:HOSTwanted {<QString>}
         - EMail:HOSTwanted?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` argument is a string that specifies the host name to be used with the SMTP
           e-mail server if the default DPO host name will not work.
     """
@@ -438,24 +422,23 @@ class EmailHostwanted(SCPICmdWrite, SCPICmdRead):
 class EmailFrom(SCPICmdWrite, SCPICmdRead):
     """The ``EMail:FROm`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the From line in the e-mail. The default for the From line is
           the instrument model and serial number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMail:FROm?`` query.
         - Using the ``.verify(value)`` method will send the ``EMail:FROm?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMail:FROm value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:FROm {<QString>}
         - EMail:FROm?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` argument is a string that is placed in the From line of the e-mail. An
           example is 'johnz'.
     """
@@ -464,40 +447,38 @@ class EmailFrom(SCPICmdWrite, SCPICmdRead):
 class EmailCount(SCPICmdRead):
     """The ``EMail:COUNt`` command.
 
-    **Description:**
+    Description:
         - This query only command returns the number of e-mails that have been sent since Email on
           Event was armed. The range of values returned can be from 0 to 50.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMail:COUNt?`` query.
         - Using the ``.verify(value)`` method will send the ``EMail:COUNt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:COUNt?
+        ```
     """
 
 
 class EmailAuthpassword(SCPICmdWrite):
     """The ``EMail:AUTHPassword`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) sets the password that will be used if the SMTP e-mail server
           requires one for authentication.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``EMail:AUTHPassword value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:AUTHPassword {<QString>}
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` argument is a string that specifies the password to be used with the SMTP
           e-mail server.
     """
@@ -506,24 +487,23 @@ class EmailAuthpassword(SCPICmdWrite):
 class EmailAuthlogin(SCPICmdWrite, SCPICmdRead):
     """The ``EMail:AUTHLogin`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the login name that will be used if the SMTP e-mail server
           requires one for authentication.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMail:AUTHLogin?`` query.
         - Using the ``.verify(value)`` method will send the ``EMail:AUTHLogin?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMail:AUTHLogin value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:AUTHLogin {<QString>}
         - EMail:AUTHLogin?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` argument is a string that specifies the login name to be used with the SMTP
           e-mail server.
     """
@@ -532,24 +512,23 @@ class EmailAuthlogin(SCPICmdWrite, SCPICmdRead):
 class EmailAttempts(SCPICmdWrite, SCPICmdRead):
     """The ``EMail:ATTempts`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of times that an attempt will be made to send
           e-mail to the SMTP e-mail server. The default is 1.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EMail:ATTempts?`` query.
         - Using the ``.verify(value)`` method will send the ``EMail:ATTempts?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``EMail:ATTempts value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail:ATTempts <NR1>
         - EMail:ATTempts?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` can be 1 through 20. This number is the specified number of attempts that will
           be made to send e-mail to the SMTP server.
     """
@@ -559,20 +538,19 @@ class EmailAttempts(SCPICmdWrite, SCPICmdRead):
 class Email(SCPICmdWrite, SCPICmdRead):
     """The ``EMail`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) sends a test e-mail message or sets the current e-mail sent
           count to zero.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``EMail value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EMail {TESt|RESET}
+        ```
 
-    **Info:**
+    Info:
         - ``TESt`` argument sends a test e-mail message.
         - ``RESET`` argument sets the e-mail sent count to zero.
 
@@ -624,24 +602,23 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def attempts(self) -> EmailAttempts:
         """Return the ``EMail:ATTempts`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of times that an attempt will be made to send
               e-mail to the SMTP e-mail server. The default is 1.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMail:ATTempts?`` query.
             - Using the ``.verify(value)`` method will send the ``EMail:ATTempts?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMail:ATTempts value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:ATTempts <NR1>
             - EMail:ATTempts?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` can be 1 through 20. This number is the specified number of attempts that
               will be made to send e-mail to the SMTP server.
         """
@@ -651,24 +628,23 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def authlogin(self) -> EmailAuthlogin:
         """Return the ``EMail:AUTHLogin`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the login name that will be used if the SMTP e-mail
               server requires one for authentication.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMail:AUTHLogin?`` query.
             - Using the ``.verify(value)`` method will send the ``EMail:AUTHLogin?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMail:AUTHLogin value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:AUTHLogin {<QString>}
             - EMail:AUTHLogin?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` argument is a string that specifies the login name to be used with the
               SMTP e-mail server.
         """
@@ -678,20 +654,19 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def authpassword(self) -> EmailAuthpassword:
         """Return the ``EMail:AUTHPassword`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) sets the password that will be used if the SMTP e-mail
               server requires one for authentication.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``EMail:AUTHPassword value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:AUTHPassword {<QString>}
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` argument is a string that specifies the password to be used with the
               SMTP e-mail server.
         """
@@ -701,20 +676,19 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def count(self) -> EmailCount:
         """Return the ``EMail:COUNt`` command.
 
-        **Description:**
+        Description:
             - This query only command returns the number of e-mails that have been sent since Email
               on Event was armed. The range of values returned can be from 0 to 50.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMail:COUNt?`` query.
             - Using the ``.verify(value)`` method will send the ``EMail:COUNt?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:COUNt?
+            ```
         """
         return self._count
 
@@ -722,24 +696,23 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def from_(self) -> EmailFrom:
         """Return the ``EMail:FROm`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the From line in the e-mail. The default for the From
               line is the instrument model and serial number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMail:FROm?`` query.
             - Using the ``.verify(value)`` method will send the ``EMail:FROm?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMail:FROm value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:FROm {<QString>}
             - EMail:FROm?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` argument is a string that is placed in the From line of the e-mail. An
               example is 'johnz'.
         """
@@ -749,24 +722,23 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def hostwanted(self) -> EmailHostwanted:
         """Return the ``EMail:HOSTwanted`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the host name that will be used when e-mail is sent to
               the SMTP e-mail server if the DPO host name will not work.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMail:HOSTwanted?`` query.
             - Using the ``.verify(value)`` method will send the ``EMail:HOSTwanted?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMail:HOSTwanted value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:HOSTwanted {<QString>}
             - EMail:HOSTwanted?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` argument is a string that specifies the host name to be used with the
               SMTP e-mail server if the default DPO host name will not work.
         """
@@ -776,25 +748,24 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def image(self) -> EmailImage:
         """Return the ``EMail:IMAGe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether a screen image is included in e-mail. If this
               command is set to ON, the format and content of the screen image included is specified
               using the EXPort commands within the Hard Copy Command group.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMail:IMAGe?`` query.
             - Using the ``.verify(value)`` method will send the ``EMail:IMAGe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMail:IMAGe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:IMAGe {<NR1>|ON|OFF|}
             - EMail:IMAGe?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the inclusion of a screen image in e-mail; any other value
               enables the inclusion of a screen image in e-mail.
             - ``ON`` argument enables the inclusion of a screen image in e-mail.
@@ -806,24 +777,23 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def limit(self) -> EmailLimit:
         """Return the ``EMail:LIMit`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether e-mail is sent when a limit test failure occurs.
               This command is the same as the ``LIMit:EMail`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMail:LIMit?`` query.
             - Using the ``.verify(value)`` method will send the ``EMail:LIMit?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMail:LIMit value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:LIMit {ON|OFF|<NR1>}
             - EMail:LIMit?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` argument enables sending e-mail when a limit test failure occurs.
             - ``OFF`` disables sending e-mail when a limit test failure occurs.
             - ``<NR1>`` = 0 disables sending e-mail when a limit test failure occurs; any other
@@ -835,23 +805,22 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def mask(self) -> EmailMask:
         """Return the ``EMail:MASK`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether e-mail is sent when a mask test failure occurs.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMail:MASK?`` query.
             - Using the ``.verify(value)`` method will send the ``EMail:MASK?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMail:MASK value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:MASK {<NR1>|ON|OFF}
             - EMail:MASK?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables sending e-mail when a mask test failure occurs; any other value
               enables sending e-mail when a mask test failure occurs.
             - ``ON`` argument enables sending e-mail when a mask test failure occurs.
@@ -863,24 +832,23 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def maxsize(self) -> EmailMaxsize:
         """Return the ``EMail:MAXSize`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the maximum size (in megabytes) of e-mail that can be
               sent to the SMTP server.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMail:MAXSize?`` query.
             - Using the ``.verify(value)`` method will send the ``EMail:MAXSize?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMail:MAXSize value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:MAXSize {<NR1>}
             - EMail:MAXSize?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` can be 0 through 2000 (megabytes). This is the maximum size of each e-mail
               that can be sent to the SMTP server.
         """
@@ -890,25 +858,24 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def measurement(self) -> EmailMeasurement:
         """Return the ``EMail:MEASUrement`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether measurement data is included as an attachment to
               e-mail. You must specify the saved measurement selection and the measurement format
               using the Email on Event setup menu. There are no remote commands for this purpose.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMail:MEASUrement?`` query.
             - Using the ``.verify(value)`` method will send the ``EMail:MEASUrement?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMail:MEASUrement value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:MEASUrement {<NR1>|ON|OFF}
             - EMail:MEASUrement?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the inclusion of measurement data in the e-mail; any other
               value enables including measurement data in the e-mail.
             - ``ON`` enables the inclusion of measurement data in e-mail.
@@ -920,24 +887,23 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def numemails(self) -> EmailNumemails:
         """Return the ``EMail:NUMEMails`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of e-mails you can send when Email on Event is
               armed, from 1 to 50. This limit is to restrict e-mail floods.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMail:NUMEMails?`` query.
             - Using the ``.verify(value)`` method will send the ``EMail:NUMEMails?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMail:NUMEMails value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:NUMEMails {<NR1>}
             - EMail:NUMEMails?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` can be 1 through 50. This is the number of e-mails you can send before the
               number of sent e-mails must be reset with the EMail RESet command.
         """
@@ -947,24 +913,23 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def smtpport(self) -> EmailSmtpport:
         """Return the ``EMail:SMTPPort`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the SMTP port number that the e-mail server uses if other
               than the default of 25.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMail:SMTPPort?`` query.
             - Using the ``.verify(value)`` method will send the ``EMail:SMTPPort?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMail:SMTPPort value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:SMTPPort {<NR1>}
             - EMail:SMTPPort?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` can be 1 through 65535. This number specifies the TCPIP port number.
         """
         return self._smtpport
@@ -973,23 +938,22 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def smtpserver(self) -> EmailSmtpserver:
         """Return the ``EMail:SMTPServer`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the address of the SMTP mail server.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMail:SMTPServer?`` query.
             - Using the ``.verify(value)`` method will send the ``EMail:SMTPServer?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMail:SMTPServer value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:SMTPServer <QString>
             - EMail:SMTPServer?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` argument is the address of the SMTP mail server that will handle the
               mail service request. For example, 'smtp.tek.com'.
         """
@@ -999,19 +963,18 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def status(self) -> EmailStatus:
         """Return the ``EMail:STATUS`` command.
 
-        **Description:**
+        Description:
             - This query only command returns the status of the last e-mail you attempted to send.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMail:STATUS?`` query.
             - Using the ``.verify(value)`` method will send the ``EMail:STATUS?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:STATUS?
+            ```
         """
         return self._status
 
@@ -1019,25 +982,24 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def timeout(self) -> EmailTimeout:
         """Return the ``EMail:TIMEOut`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the global timeout in seconds. The default is 30 seconds.
               You use this timeout for socket connections and might need to change it from the
               default on some networks.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMail:TIMEOut?`` query.
             - Using the ``.verify(value)`` method will send the ``EMail:TIMEOut?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMail:TIMEOut value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:TIMEOut <NR1>
             - EMail:TIMEOut?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` argument is the global timeout in seconds. The value for NR1 can be 0
               through 500.
         """
@@ -1047,23 +1009,22 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def to(self) -> EmailTo:
         """Return the ``EMail:TO`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the address of the recipient(s) of an e-mail.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMail:TO?`` query.
             - Using the ``.verify(value)`` method will send the ``EMail:TO?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMail:TO value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:TO <QString>
             - EMail:TO?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` argument is the e-mail address of the recipient (or recipients).
               Multiple addresses are separated with semicolons (;). For example,
               'johndoe@tek.com;billsmith@tek.com' specifies that both johndoe and billsmith at
@@ -1076,24 +1037,23 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def trigger(self) -> EmailTrigger:
         """Return the ``EMail:TRIGger`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether e-mail is sent when a trigger occurs. The e-mail
               is sent after the acquisition is complete.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMail:TRIGger?`` query.
             - Using the ``.verify(value)`` method will send the ``EMail:TRIGger?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMail:TRIGger value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:TRIGger {<NR1>|ON|OFF}
             - EMail:TRIGger?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables sending e-mail when a trigger occurs; any other value enables
               sending e-mail when a trigger occurs.
             - ``ON`` argument enables sending e-mail when a trigger occurs.
@@ -1105,26 +1065,25 @@ class Email(SCPICmdWrite, SCPICmdRead):
     def waveform(self) -> EmailWaveform:
         """Return the ``EMail:WAVEform`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether waveform data is included in e-mail. The
               waveforms to be included, the start and stop points (and, or, frames for Fast Frame
               mode), and the data formats are specified by the DATA and WFMOUTPRE commands within
               the Waveform Transfer Command group.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``EMail:WAVEform?`` query.
             - Using the ``.verify(value)`` method will send the ``EMail:WAVEform?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``EMail:WAVEform value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - EMail:WAVEform {<NR1>|ON|OFF}
             - EMail:WAVEform?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the inclusion of waveform data in the e-mail; any other value
               enables including waveform data in the e-mail.
             - ``ON`` enables the inclusion of waveform data in e-mail.

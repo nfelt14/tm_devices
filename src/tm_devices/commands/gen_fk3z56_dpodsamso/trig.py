@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - TRIG:A:PLOCK:STANDARD {<STANDARD>}
     - TRIG:A:PLOCK:STANDARD?
 """
@@ -27,23 +25,22 @@ if TYPE_CHECKING:
 class TrigAPlockStandard(SCPICmdWrite, SCPICmdRead):
     """The ``TRIG:A:PLOCK:STANDARD`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the communication standard used by the pattern lock trigger.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIG:A:PLOCK:STANDARD?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIG:A:PLOCK:STANDARD?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIG:A:PLOCK:STANDARD value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIG:A:PLOCK:STANDARD {<STANDARD>}
         - TRIG:A:PLOCK:STANDARD?
+        ```
 
-    **Info:**
+    Info:
         - ``STANDARD`` communication standard used by the pattern lock trigger. See
           ``TRIGGER:A:COMMUNICATION:STANDARD`` for a list of standards.
     """
@@ -52,7 +49,7 @@ class TrigAPlockStandard(SCPICmdWrite, SCPICmdRead):
 class TrigAPlock(SCPICmdRead):
     """The ``TRIG:A:PLOCK`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIG:A:PLOCK?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIG:A:PLOCK?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -69,25 +66,24 @@ class TrigAPlock(SCPICmdRead):
     def standard(self) -> TrigAPlockStandard:
         """Return the ``TRIG:A:PLOCK:STANDARD`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the communication standard used by the pattern lock
               trigger.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIG:A:PLOCK:STANDARD?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIG:A:PLOCK:STANDARD?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIG:A:PLOCK:STANDARD value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIG:A:PLOCK:STANDARD {<STANDARD>}
             - TRIG:A:PLOCK:STANDARD?
+            ```
 
-        **Info:**
+        Info:
             - ``STANDARD`` communication standard used by the pattern lock trigger. See
               ``TRIGGER:A:COMMUNICATION:STANDARD`` for a list of standards.
         """
@@ -97,7 +93,7 @@ class TrigAPlock(SCPICmdRead):
 class TrigA(SCPICmdRead):
     """The ``TRIG:A`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIG:A?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIG:A?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -114,7 +110,7 @@ class TrigA(SCPICmdRead):
     def plock(self) -> TrigAPlock:
         """Return the ``TRIG:A:PLOCK`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIG:A:PLOCK?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIG:A:PLOCK?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -128,7 +124,7 @@ class TrigA(SCPICmdRead):
 class Trig(SCPICmdRead):
     """The ``TRIG`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIG?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIG?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -145,7 +141,7 @@ class Trig(SCPICmdRead):
     def a(self) -> TrigA:
         """Return the ``TRIG:A`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIG:A?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIG:A?`` query and raise an
               AssertionError if the returned value does not match ``value``.

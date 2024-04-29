@@ -10,14 +10,14 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - DIAGnostic:DATA?
     - DIAGnostic:IMMediate
     - DIAGnostic:IMMediate?
-    - DIAGnostic:SELect {ALL|FPANel|AREGister|DTIMing|A1Memory|A2Memory|A3Memory|A4Memory|CREGister|CPLock|O1Register|O1ALevel|O1MLevel|O2Register|O2ALevel|O2MLevel}
+    - DIAGnostic:SELect
+      {ALL|FPANel|AREGister|DTIMing|A1Memory|A2Memory|A3Memory|A4Memory|CREGister|CPLock|O1Register|
+      O1ALevel|O1MLevel|O2Register|O2ALevel|O2MLevel}
     - DIAGnostic:SELect?
-"""  # noqa: E501
+"""
 
 from typing import Optional, TYPE_CHECKING
 
@@ -30,7 +30,7 @@ if TYPE_CHECKING:
 class DiagnosticSelect(SCPICmdWrite, SCPICmdRead):
     """The ``DIAGnostic:SELect`` command.
 
-    **Description:**
+    Description:
         - This command selects the self-test routines. The query form of this command returns the
           selected test routine. The following selections are available: ALL FPANel - Front panel
           read/write access test DTIMing - Data timing measurement (for AWG5000 series only)
@@ -42,72 +42,69 @@ class DiagnosticSelect(SCPICmdWrite, SCPICmdRead):
           - Output2 register read back O2ALevel - Output2 analog level O2MLevel - Output2 marker
           level (for AWG7000 series only)
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAGnostic:SELect?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAGnostic:SELect?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DIAGnostic:SELect value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAGnostic:SELect {ALL|FPANel|AREGister|DTIMing|A1Memory|A2Memory|A3Memory|A4Memory|CREGister|CPLock|O1Register|O1ALevel|O1MLevel|O2Register|O2ALevel|O2MLevel}
         - DIAGnostic:SELect?
+        ```
     """  # noqa: E501
 
 
 class DiagnosticImmediate(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``DIAGnostic:IMMediate`` command.
 
-    **Description:**
+    Description:
         - This command executes all of the NORMal diagnostic tests. The query form of this command
           executes all of the NORMal diagnostics and returns the results in the form of numeric of
           values of 0 for no errors or -330 for one or more tests failed. This changes the active
           mode to DIAGnostic, if necessary, and returns back to the original active mode when done.
           This makes a single pass of all of the NORMal diagnostics.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAGnostic:IMMediate?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAGnostic:IMMediate?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``DIAGnostic:IMMediate`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAGnostic:IMMediate
         - DIAGnostic:IMMediate?
+        ```
     """
 
 
 class DiagnosticData(SCPICmdRead):
     """The ``DIAGnostic:DATA`` command.
 
-    **Description:**
+    Description:
         - This command returns the results of last executed tests for the NORMal diagnostic type in
           the form of a numeric value of 0 for no errors or -330 for one or more tests failed.
           Additional error details can be found by using the subsystem, area, and test queries such
           as ``DIAGnostic:RESult?`` <subsystem>[,<area>[,<test>]].
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAGnostic:DATA?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAGnostic:DATA?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAGnostic:DATA?
+        ```
     """
 
 
 class Diagnostic(SCPICmdRead):
     """The ``DIAGnostic`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAGnostic?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAGnostic?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -128,22 +125,21 @@ class Diagnostic(SCPICmdRead):
     def data(self) -> DiagnosticData:
         """Return the ``DIAGnostic:DATA`` command.
 
-        **Description:**
+        Description:
             - This command returns the results of last executed tests for the NORMal diagnostic type
               in the form of a numeric value of 0 for no errors or -330 for one or more tests
               failed. Additional error details can be found by using the subsystem, area, and test
               queries such as ``DIAGnostic:RESult?`` <subsystem>[,<area>[,<test>]].
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAGnostic:DATA?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAGnostic:DATA?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAGnostic:DATA?
+            ```
         """
         return self._data
 
@@ -151,7 +147,7 @@ class Diagnostic(SCPICmdRead):
     def select(self) -> DiagnosticSelect:
         """Return the ``DIAGnostic:SELect`` command.
 
-        **Description:**
+        Description:
             - This command selects the self-test routines. The query form of this command returns
               the selected test routine. The following selections are available: ALL FPANel - Front
               panel read/write access test DTIMing - Data timing measurement (for AWG5000 series
@@ -163,18 +159,17 @@ class Diagnostic(SCPICmdRead):
               only) O2Register - Output2 register read back O2ALevel - Output2 analog level O2MLevel
               - Output2 marker level (for AWG7000 series only)
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAGnostic:SELect?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAGnostic:SELect?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DIAGnostic:SELect value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAGnostic:SELect {ALL|FPANel|AREGister|DTIMing|A1Memory|A2Memory|A3Memory|A4Memory|CREGister|CPLock|O1Register|O1ALevel|O1MLevel|O2Register|O2ALevel|O2MLevel}
             - DIAGnostic:SELect?
+            ```
         """  # noqa: E501
         return self._select
 
@@ -182,24 +177,23 @@ class Diagnostic(SCPICmdRead):
     def immediate(self) -> DiagnosticImmediate:
         """Return the ``DIAGnostic:IMMediate`` command.
 
-        **Description:**
+        Description:
             - This command executes all of the NORMal diagnostic tests. The query form of this
               command executes all of the NORMal diagnostics and returns the results in the form of
               numeric of values of 0 for no errors or -330 for one or more tests failed. This
               changes the active mode to DIAGnostic, if necessary, and returns back to the original
               active mode when done. This makes a single pass of all of the NORMal diagnostics.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAGnostic:IMMediate?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAGnostic:IMMediate?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write()`` method will send the ``DIAGnostic:IMMediate`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAGnostic:IMMediate
             - DIAGnostic:IMMediate?
+            ```
         """
         return self._immediate

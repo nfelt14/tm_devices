@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - EVENT?
 """
 
@@ -27,21 +25,20 @@ if TYPE_CHECKING:
 class Event(SCPICmdRead):
     """The ``EVENT`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns an event code from the Event Queue that provides
           information about the results of the last ESR read. ``EVENT?`` also removes the returned
           value from the Event Queue.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``EVENT?`` query.
         - Using the ``.verify(value)`` method will send the ``EVENT?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - EVENT?
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "EVENT") -> None:

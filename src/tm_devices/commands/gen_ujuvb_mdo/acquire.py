@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - ACQuire:FASTAcq
     - ACQuire:FASTAcq:PALEtte {NORMal|TEMPErature|SPECTral|INVERTed}
     - ACQuire:FASTAcq:PALEtte?
@@ -47,25 +45,24 @@ if TYPE_CHECKING:
 class AcquireStopafter(SCPICmdWrite, SCPICmdRead):
     """The ``ACQuire:STOPAfter`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the instrument continually acquires acquisitions or
           acquires a single sequence. Pressing SINGLE on the front panel button is equivalent to
           sending these commands: ``ACQUIRE:STOPAFTER SEQUENCE`` and ``ACQUIRE:STATE 1``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACQuire:STOPAfter?`` query.
         - Using the ``.verify(value)`` method will send the ``ACQuire:STOPAfter?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACQuire:STOPAfter value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACQuire:STOPAfter {RUNSTop|SEQuence}
         - ACQuire:STOPAfter?
+        ```
 
-    **Info:**
+    Info:
         - ``RUNSTop`` specifies that the instrument will continually acquire data, if
           ``ACQuire:STATE`` is turned on.
         - ``SEQuence`` specifies that the next acquisition will be a single-sequence acquisition.
@@ -75,7 +72,7 @@ class AcquireStopafter(SCPICmdWrite, SCPICmdRead):
 class AcquireState(SCPICmdWrite, SCPICmdRead):
     """The ``ACQuire:STATE`` command.
 
-    **Description:**
+    Description:
         - Starts or stops acquisitions. When state is set to ON or RUN, a new acquisition will be
           started. If the last acquisition was a single acquisition sequence, a new single sequence
           acquisition will be started. If the last acquisition was continuous, a new continuous
@@ -85,20 +82,19 @@ class AcquireState(SCPICmdWrite, SCPICmdRead):
           of acquisitions. If the RUN argument is issued while in continuous mode, acquisition
           continues.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACQuire:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ACQuire:STATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACQuire:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACQuire:STATE {OFF|ON|RUN|STOP|<NR1>}
         - ACQuire:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` stops acquisitions.
         - ``STOP`` stops acquisitions.
         - ``ON`` starts acquisitions.
@@ -110,25 +106,24 @@ class AcquireState(SCPICmdWrite, SCPICmdRead):
 class AcquireSequenceNumsequence(SCPICmdWrite, SCPICmdRead):
     """The ``ACQuire:SEQuence:NUMSEQuence`` command.
 
-    **Description:**
+    Description:
         - In single sequence acquisition mode, specify the number of acquisitions or measurements
           that comprise the sequence. The default is 1.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACQuire:SEQuence:NUMSEQuence?`` query.
         - Using the ``.verify(value)`` method will send the ``ACQuire:SEQuence:NUMSEQuence?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACQuire:SEQuence:NUMSEQuence value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACQuire:SEQuence:NUMSEQuence <NR1>
         - ACQuire:SEQuence:NUMSEQuence?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the number of acquisitions or measurements that comprise the sequence.
     """
 
@@ -136,27 +131,26 @@ class AcquireSequenceNumsequence(SCPICmdWrite, SCPICmdRead):
 class AcquireSequenceCurrent(SCPICmdRead):
     """The ``ACQuire:SEQuence:CURrent`` command.
 
-    **Description:**
+    Description:
         - In single sequence acquisition mode, this query returns the number of acquisitions or
           measurements in the sequence completed so far.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACQuire:SEQuence:CURrent?`` query.
         - Using the ``.verify(value)`` method will send the ``ACQuire:SEQuence:CURrent?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACQuire:SEQuence:CURrent?
+        ```
     """
 
 
 class AcquireSequence(SCPICmdRead):
     """The ``ACQuire:SEQuence`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACQuire:SEQuence?`` query.
         - Using the ``.verify(value)`` method will send the ``ACQuire:SEQuence?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -175,20 +169,19 @@ class AcquireSequence(SCPICmdRead):
     def current(self) -> AcquireSequenceCurrent:
         """Return the ``ACQuire:SEQuence:CURrent`` command.
 
-        **Description:**
+        Description:
             - In single sequence acquisition mode, this query returns the number of acquisitions or
               measurements in the sequence completed so far.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACQuire:SEQuence:CURrent?`` query.
             - Using the ``.verify(value)`` method will send the ``ACQuire:SEQuence:CURrent?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACQuire:SEQuence:CURrent?
+            ```
         """
         return self._current
 
@@ -196,25 +189,24 @@ class AcquireSequence(SCPICmdRead):
     def numsequence(self) -> AcquireSequenceNumsequence:
         """Return the ``ACQuire:SEQuence:NUMSEQuence`` command.
 
-        **Description:**
+        Description:
             - In single sequence acquisition mode, specify the number of acquisitions or
               measurements that comprise the sequence. The default is 1.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACQuire:SEQuence:NUMSEQuence?`` query.
             - Using the ``.verify(value)`` method will send the ``ACQuire:SEQuence:NUMSEQuence?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``ACQuire:SEQuence:NUMSEQuence value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACQuire:SEQuence:NUMSEQuence <NR1>
             - ACQuire:SEQuence:NUMSEQuence?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the number of acquisitions or measurements that comprise the sequence.
         """
         return self._numsequence
@@ -223,26 +215,25 @@ class AcquireSequence(SCPICmdRead):
 class AcquireNumenv(SCPICmdWrite, SCPICmdRead):
     """The ``ACQuire:NUMEnv`` command.
 
-    **Description:**
+    Description:
         - This command controls the number of envelopes (when acquisition mode has been set to
           ENVelope using ``ACQUIRE:MODE``). The number of envelopes can be set from 1 to 2000 in
           increments of 1, or to INFInite. Setting the value to a number greater than 2000 sets the
           number of envelopes to INFInite.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACQuire:NUMEnv?`` query.
         - Using the ``.verify(value)`` method will send the ``ACQuire:NUMEnv?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACQuire:NUMEnv value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACQuire:NUMEnv {<NR1>|INFInite}
         - ACQuire:NUMEnv?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is an integer that specifies the number of envelopes to use when the acquisition
           mode has been set to ENVelope.
         - ``INFInite`` specifies to use an infinite number of envelopes.
@@ -252,24 +243,23 @@ class AcquireNumenv(SCPICmdWrite, SCPICmdRead):
 class AcquireNumavg(SCPICmdWrite, SCPICmdRead):
     """The ``ACQuire:NUMAVg`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of waveform acquisitions that make up an averaged
           waveform. Ranges from 2 to 10240.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACQuire:NUMAVg?`` query.
         - Using the ``.verify(value)`` method will send the ``ACQuire:NUMAVg?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACQuire:NUMAVg value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACQuire:NUMAVg <NR1>
         - ACQuire:NUMAVg?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the number of waveform acquisitions to average.
     """
 
@@ -277,43 +267,41 @@ class AcquireNumavg(SCPICmdWrite, SCPICmdRead):
 class AcquireNumacq(SCPICmdRead):
     """The ``ACQuire:NUMACq`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the number of waveform acquisitions that have occurred
           since the last time acquisitions were stopped.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACQuire:NUMACq?`` query.
         - Using the ``.verify(value)`` method will send the ``ACQuire:NUMACq?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACQuire:NUMACq?
+        ```
     """
 
 
 class AcquireMode(SCPICmdWrite, SCPICmdRead):
     """The ``ACQuire:MODe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the selected acquisition mode of the instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACQuire:MODe?`` query.
         - Using the ``.verify(value)`` method will send the ``ACQuire:MODe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACQuire:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACQuire:MODe {SAMple|PEAKdetect|HIRes|AVErage|ENVelope}
         - ACQuire:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``SAMple`` specifies that the displayed data point value is the first sampled value that
           is taken during the acquisition interval. The CURVE query, depending on sample rate, will
           result in either 8 bit or 16 bit data. In case of 8 bit data, the precision is also 8 bit.
@@ -340,43 +328,41 @@ class AcquireMode(SCPICmdWrite, SCPICmdRead):
 class AcquireMaxsamplerate(SCPICmdRead):
     """The ``ACQuire:MAXSamplerate`` command.
 
-    **Description:**
+    Description:
         - This query returns the maximum real-time sample rate.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACQuire:MAXSamplerate?`` query.
         - Using the ``.verify(value)`` method will send the ``ACQuire:MAXSamplerate?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACQuire:MAXSamplerate?
+        ```
     """
 
 
 class AcquireMagnivu(SCPICmdWrite, SCPICmdRead):
     """The ``ACQuire:MAGnivu`` command.
 
-    **Description:**
+    Description:
         - Turns on the MagniVu feature, which provides up to 32 times signal detail for fast viewing
           of short events. This feature is not recommended for slow data formats such as RS-232.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACQuire:MAGnivu?`` query.
         - Using the ``.verify(value)`` method will send the ``ACQuire:MAGnivu?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACQuire:MAGnivu value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACQuire:MAGnivu {<NR1>|OFF|ON}
         - ACQuire:MAGnivu?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1> = 0`` disables the MagniVu feature; any other value turns this feature on.
         - ``ON`` enables the MagniVu feature.
         - ``OFF`` disables the MagniVu feature.
@@ -386,23 +372,22 @@ class AcquireMagnivu(SCPICmdWrite, SCPICmdRead):
 class AcquireFastacqState(SCPICmdWrite, SCPICmdRead):
     """The ``ACQuire:FASTAcq:STATE`` command.
 
-    **Description:**
+    Description:
         - Turns fast acquisition mode on or off, or queries the state of the mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACQuire:FASTAcq:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ACQuire:FASTAcq:STATE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACQuire:FASTAcq:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACQuire:FASTAcq:STATE {0|1|OFF|ON}
         - ACQuire:FASTAcq:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``1`` or ON turns on fast acquisition mode.
         - ``0`` or OFF turns it off.
     """
@@ -411,24 +396,23 @@ class AcquireFastacqState(SCPICmdWrite, SCPICmdRead):
 class AcquireFastacqPalette(SCPICmdWrite, SCPICmdRead):
     """The ``ACQuire:FASTAcq:PALEtte`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) which palette to use for fast acquisition mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACQuire:FASTAcq:PALEtte?`` query.
         - Using the ``.verify(value)`` method will send the ``ACQuire:FASTAcq:PALEtte?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACQuire:FASTAcq:PALEtte value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACQuire:FASTAcq:PALEtte {NORMal|TEMPErature|SPECTral|INVERTed}
         - ACQuire:FASTAcq:PALEtte?
+        ```
 
-    **Info:**
+    Info:
         - ``NORMal`` - Normal displays hues and lightness levels for best overall viewing. The color
           of each channel waveform matches the color of the corresponding front-panel vertical knob.
         - ``TEMPErature`` - Temperature Grading displays areas of the waveform with the highest
@@ -444,18 +428,17 @@ class AcquireFastacqPalette(SCPICmdWrite, SCPICmdRead):
 class AcquireFastacq(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``ACQuire:FASTAcq`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the FastAcq feature. This feature provides a high-speed waveform capture
           rate to help capture signal anomalies.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``ACQuire:FASTAcq`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACQuire:FASTAcq
+        ```
 
     Properties:
         - ``.palette``: The ``ACQuire:FASTAcq:PALEtte`` command.
@@ -471,24 +454,23 @@ class AcquireFastacq(SCPICmdWriteNoArguments, SCPICmdRead):
     def palette(self) -> AcquireFastacqPalette:
         """Return the ``ACQuire:FASTAcq:PALEtte`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) which palette to use for fast acquisition mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACQuire:FASTAcq:PALEtte?`` query.
             - Using the ``.verify(value)`` method will send the ``ACQuire:FASTAcq:PALEtte?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ACQuire:FASTAcq:PALEtte value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACQuire:FASTAcq:PALEtte {NORMal|TEMPErature|SPECTral|INVERTed}
             - ACQuire:FASTAcq:PALEtte?
+            ```
 
-        **Info:**
+        Info:
             - ``NORMal`` - Normal displays hues and lightness levels for best overall viewing. The
               color of each channel waveform matches the color of the corresponding front-panel
               vertical knob.
@@ -507,24 +489,23 @@ class AcquireFastacq(SCPICmdWriteNoArguments, SCPICmdRead):
     def state(self) -> AcquireFastacqState:
         """Return the ``ACQuire:FASTAcq:STATE`` command.
 
-        **Description:**
+        Description:
             - Turns fast acquisition mode on or off, or queries the state of the mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACQuire:FASTAcq:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``ACQuire:FASTAcq:STATE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ACQuire:FASTAcq:STATE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACQuire:FASTAcq:STATE {0|1|OFF|ON}
             - ACQuire:FASTAcq:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``1`` or ON turns on fast acquisition mode.
             - ``0`` or OFF turns it off.
         """
@@ -535,19 +516,18 @@ class AcquireFastacq(SCPICmdWriteNoArguments, SCPICmdRead):
 class Acquire(SCPICmdRead):
     """The ``ACQuire`` command.
 
-    **Description:**
+    Description:
         - Queries the current acquisition state.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACQuire?`` query.
         - Using the ``.verify(value)`` method will send the ``ACQuire?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACQuire?
+        ```
 
     Properties:
         - ``.fastacq``: The ``ACQuire:FASTAcq`` command.
@@ -579,18 +559,17 @@ class Acquire(SCPICmdRead):
     def fastacq(self) -> AcquireFastacq:
         """Return the ``ACQuire:FASTAcq`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the FastAcq feature. This feature provides a high-speed waveform
               capture rate to help capture signal anomalies.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``ACQuire:FASTAcq`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACQuire:FASTAcq
+            ```
 
         Sub-properties:
             - ``.palette``: The ``ACQuire:FASTAcq:PALEtte`` command.
@@ -602,25 +581,24 @@ class Acquire(SCPICmdRead):
     def magnivu(self) -> AcquireMagnivu:
         """Return the ``ACQuire:MAGnivu`` command.
 
-        **Description:**
+        Description:
             - Turns on the MagniVu feature, which provides up to 32 times signal detail for fast
               viewing of short events. This feature is not recommended for slow data formats such as
               RS-232.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACQuire:MAGnivu?`` query.
             - Using the ``.verify(value)`` method will send the ``ACQuire:MAGnivu?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ACQuire:MAGnivu value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACQuire:MAGnivu {<NR1>|OFF|ON}
             - ACQuire:MAGnivu?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1> = 0`` disables the MagniVu feature; any other value turns this feature on.
             - ``ON`` enables the MagniVu feature.
             - ``OFF`` disables the MagniVu feature.
@@ -631,19 +609,18 @@ class Acquire(SCPICmdRead):
     def maxsamplerate(self) -> AcquireMaxsamplerate:
         """Return the ``ACQuire:MAXSamplerate`` command.
 
-        **Description:**
+        Description:
             - This query returns the maximum real-time sample rate.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACQuire:MAXSamplerate?`` query.
             - Using the ``.verify(value)`` method will send the ``ACQuire:MAXSamplerate?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACQuire:MAXSamplerate?
+            ```
         """
         return self._maxsamplerate
 
@@ -651,23 +628,22 @@ class Acquire(SCPICmdRead):
     def mode(self) -> AcquireMode:
         """Return the ``ACQuire:MODe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the selected acquisition mode of the instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACQuire:MODe?`` query.
             - Using the ``.verify(value)`` method will send the ``ACQuire:MODe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ACQuire:MODe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACQuire:MODe {SAMple|PEAKdetect|HIRes|AVErage|ENVelope}
             - ACQuire:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``SAMple`` specifies that the displayed data point value is the first sampled value
               that is taken during the acquisition interval. The CURVE query, depending on sample
               rate, will result in either 8 bit or 16 bit data. In case of 8 bit data, the precision
@@ -697,20 +673,19 @@ class Acquire(SCPICmdRead):
     def numacq(self) -> AcquireNumacq:
         """Return the ``ACQuire:NUMACq`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the number of waveform acquisitions that have occurred
               since the last time acquisitions were stopped.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACQuire:NUMACq?`` query.
             - Using the ``.verify(value)`` method will send the ``ACQuire:NUMACq?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACQuire:NUMACq?
+            ```
         """
         return self._numacq
 
@@ -718,24 +693,23 @@ class Acquire(SCPICmdRead):
     def numavg(self) -> AcquireNumavg:
         """Return the ``ACQuire:NUMAVg`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of waveform acquisitions that make up an
               averaged waveform. Ranges from 2 to 10240.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACQuire:NUMAVg?`` query.
             - Using the ``.verify(value)`` method will send the ``ACQuire:NUMAVg?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ACQuire:NUMAVg value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACQuire:NUMAVg <NR1>
             - ACQuire:NUMAVg?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the number of waveform acquisitions to average.
         """
         return self._numavg
@@ -744,26 +718,25 @@ class Acquire(SCPICmdRead):
     def numenv(self) -> AcquireNumenv:
         """Return the ``ACQuire:NUMEnv`` command.
 
-        **Description:**
+        Description:
             - This command controls the number of envelopes (when acquisition mode has been set to
               ENVelope using ``ACQUIRE:MODE``). The number of envelopes can be set from 1 to 2000 in
               increments of 1, or to INFInite. Setting the value to a number greater than 2000 sets
               the number of envelopes to INFInite.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACQuire:NUMEnv?`` query.
             - Using the ``.verify(value)`` method will send the ``ACQuire:NUMEnv?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ACQuire:NUMEnv value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACQuire:NUMEnv {<NR1>|INFInite}
             - ACQuire:NUMEnv?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is an integer that specifies the number of envelopes to use when the
               acquisition mode has been set to ENVelope.
             - ``INFInite`` specifies to use an infinite number of envelopes.
@@ -774,7 +747,7 @@ class Acquire(SCPICmdRead):
     def sequence(self) -> AcquireSequence:
         """Return the ``ACQuire:SEQuence`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACQuire:SEQuence?`` query.
             - Using the ``.verify(value)`` method will send the ``ACQuire:SEQuence?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -789,7 +762,7 @@ class Acquire(SCPICmdRead):
     def state(self) -> AcquireState:
         """Return the ``ACQuire:STATE`` command.
 
-        **Description:**
+        Description:
             - Starts or stops acquisitions. When state is set to ON or RUN, a new acquisition will
               be started. If the last acquisition was a single acquisition sequence, a new single
               sequence acquisition will be started. If the last acquisition was continuous, a new
@@ -799,20 +772,19 @@ class Acquire(SCPICmdRead):
               resets the number of acquisitions. If the RUN argument is issued while in continuous
               mode, acquisition continues.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACQuire:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``ACQuire:STATE?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ACQuire:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACQuire:STATE {OFF|ON|RUN|STOP|<NR1>}
             - ACQuire:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` stops acquisitions.
             - ``STOP`` stops acquisitions.
             - ``ON`` starts acquisitions.
@@ -825,25 +797,24 @@ class Acquire(SCPICmdRead):
     def stopafter(self) -> AcquireStopafter:
         """Return the ``ACQuire:STOPAfter`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the instrument continually acquires acquisitions
               or acquires a single sequence. Pressing SINGLE on the front panel button is equivalent
               to sending these commands: ``ACQUIRE:STOPAFTER SEQUENCE`` and ``ACQUIRE:STATE 1``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACQuire:STOPAfter?`` query.
             - Using the ``.verify(value)`` method will send the ``ACQuire:STOPAfter?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ACQuire:STOPAfter value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACQuire:STOPAfter {RUNSTop|SEQuence}
             - ACQuire:STOPAfter?
+            ```
 
-        **Info:**
+        Info:
             - ``RUNSTop`` specifies that the instrument will continually acquire data, if
               ``ACQuire:STATE`` is turned on.
             - ``SEQuence`` specifies that the next acquisition will be a single-sequence

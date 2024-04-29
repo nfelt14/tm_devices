@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - AFGControl:CSCopy {CH1|CH2},{CH1|CH2}
 """
 
@@ -25,25 +23,24 @@ if TYPE_CHECKING:
 class AfgcontrolCscopy(SCPICmdWrite):
     """The ``AFGControl:CSCopy`` command.
 
-    **Description:**
+    Description:
         - This command copies setup parameters for one channel to another channel. If your arbitrary
           function generator is a single-channel model, this command is not supported.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``AFGControl:CSCopy value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AFGControl:CSCopy {CH1|CH2},{CH1|CH2}
+        ```
     """
 
 
 class Afgcontrol(SCPICmdRead):
     """The ``AFGControl`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AFGControl?`` query.
         - Using the ``.verify(value)`` method will send the ``AFGControl?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -60,17 +57,16 @@ class Afgcontrol(SCPICmdRead):
     def cscopy(self) -> AfgcontrolCscopy:
         """Return the ``AFGControl:CSCopy`` command.
 
-        **Description:**
+        Description:
             - This command copies setup parameters for one channel to another channel. If your
               arbitrary function generator is a single-channel model, this command is not supported.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``AFGControl:CSCopy value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AFGControl:CSCopy {CH1|CH2},{CH1|CH2}
+            ```
         """
         return self._cscopy

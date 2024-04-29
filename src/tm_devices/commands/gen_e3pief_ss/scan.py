@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - scan.abort()
     - scan.add()
     - scan.addimagestep()
@@ -56,7 +54,7 @@ if TYPE_CHECKING:
 class ScanTriggerSequence(BaseTSPCmd):
     """The ``scan.trigger.sequence`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.clear()``: The ``scan.trigger.sequence.clear()`` function.
         - ``.set()``: The ``scan.trigger.sequence.set()`` function.
         - ``.stimulus``: The ``scan.trigger.sequence.stimulus`` attribute.
@@ -66,20 +64,19 @@ class ScanTriggerSequence(BaseTSPCmd):
     def stimulus(self) -> str:
         """Access the ``scan.trigger.sequence.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the trigger stimulus for the sequence event detector.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scan.trigger.sequence.stimulus)`` query.
             - Setting this property to a value will send the
               ``scan.trigger.sequence.stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.trigger.sequence.stimulus = value
             - print(scan.trigger.sequence.stimulus)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -98,20 +95,19 @@ class ScanTriggerSequence(BaseTSPCmd):
     def stimulus(self, value: Union[str, float]) -> None:
         """Access the ``scan.trigger.sequence.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the trigger stimulus for the sequence event detector.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scan.trigger.sequence.stimulus)`` query.
             - Setting this property to a value will send the
               ``scan.trigger.sequence.stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.trigger.sequence.stimulus = value
             - print(scan.trigger.sequence.stimulus)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -132,14 +128,13 @@ class ScanTriggerSequence(BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``scan.trigger.sequence.clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the sequence event detector.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.trigger.sequence.clear()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -155,14 +150,13 @@ class ScanTriggerSequence(BaseTSPCmd):
     def set_(self) -> None:
         """Run the ``scan.trigger.sequence.set()`` function.
 
-        **Description:**
+        Description:
             - This function sets the sequence even detector to the detected state.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.trigger.sequence.set()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -179,7 +173,7 @@ class ScanTriggerSequence(BaseTSPCmd):
 class ScanTriggerMeasure(BaseTSPCmd):
     """The ``scan.trigger.measure`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.clear()``: The ``scan.trigger.measure.clear()`` function.
         - ``.set()``: The ``scan.trigger.measure.set()`` function.
         - ``.stimulus``: The ``scan.trigger.measure.stimulus`` attribute.
@@ -189,20 +183,19 @@ class ScanTriggerMeasure(BaseTSPCmd):
     def stimulus(self) -> str:
         """Access the ``scan.trigger.measure.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the trigger stimulus of the event detector trigger.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scan.trigger.measure.stimulus)`` query.
             - Setting this property to a value will send the
               ``scan.trigger.measure.stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.trigger.measure.stimulus = value
             - print(scan.trigger.measure.stimulus)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -221,20 +214,19 @@ class ScanTriggerMeasure(BaseTSPCmd):
     def stimulus(self, value: Union[str, float]) -> None:
         """Access the ``scan.trigger.measure.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the trigger stimulus of the event detector trigger.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scan.trigger.measure.stimulus)`` query.
             - Setting this property to a value will send the
               ``scan.trigger.measure.stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.trigger.measure.stimulus = value
             - print(scan.trigger.measure.stimulus)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -255,14 +247,13 @@ class ScanTriggerMeasure(BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``scan.trigger.measure.clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the measure event detector.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.trigger.measure.clear()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -278,14 +269,13 @@ class ScanTriggerMeasure(BaseTSPCmd):
     def set_(self) -> None:
         """Run the ``scan.trigger.measure.set()`` function.
 
-        **Description:**
+        Description:
             - This function sets the measurement event detector to the detected state.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.trigger.measure.set()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -302,7 +292,7 @@ class ScanTriggerMeasure(BaseTSPCmd):
 class ScanTriggerChannel(BaseTSPCmd):
     """The ``scan.trigger.channel`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.clear()``: The ``scan.trigger.channel.clear()`` function.
         - ``.set()``: The ``scan.trigger.channel.set()`` function.
         - ``.stimulus``: The ``scan.trigger.channel.stimulus`` attribute.
@@ -312,20 +302,19 @@ class ScanTriggerChannel(BaseTSPCmd):
     def stimulus(self) -> str:
         """Access the ``scan.trigger.channel.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines which trigger events cause the channel actions to occur.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scan.trigger.channel.stimulus)`` query.
             - Setting this property to a value will send the
               ``scan.trigger.channel.stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.trigger.channel.stimulus = value
             - print(scan.trigger.channel.stimulus)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -344,20 +333,19 @@ class ScanTriggerChannel(BaseTSPCmd):
     def stimulus(self, value: Union[str, float]) -> None:
         """Access the ``scan.trigger.channel.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines which trigger events cause the channel actions to occur.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scan.trigger.channel.stimulus)`` query.
             - Setting this property to a value will send the
               ``scan.trigger.channel.stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.trigger.channel.stimulus = value
             - print(scan.trigger.channel.stimulus)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -378,14 +366,13 @@ class ScanTriggerChannel(BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``scan.trigger.channel.clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the channel event detector.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.trigger.channel.clear()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -401,14 +388,13 @@ class ScanTriggerChannel(BaseTSPCmd):
     def set_(self) -> None:
         """Run the ``scan.trigger.channel.set()`` function.
 
-        **Description:**
+        Description:
             - This function sets the channel event detector to the detected state.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.trigger.channel.set()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -425,7 +411,7 @@ class ScanTriggerChannel(BaseTSPCmd):
 class ScanTriggerArm(BaseTSPCmd):
     """The ``scan.trigger.arm`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.clear()``: The ``scan.trigger.arm.clear()`` function.
         - ``.set()``: The ``scan.trigger.arm.set()`` function.
         - ``.stimulus``: The ``scan.trigger.arm.stimulus`` attribute.
@@ -435,20 +421,19 @@ class ScanTriggerArm(BaseTSPCmd):
     def stimulus(self) -> str:
         """Access the ``scan.trigger.arm.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines which event starts the scan.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scan.trigger.arm.stimulus)`` query.
             - Setting this property to a value will send the ``scan.trigger.arm.stimulus = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.trigger.arm.stimulus = value
             - print(scan.trigger.arm.stimulus)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -467,20 +452,19 @@ class ScanTriggerArm(BaseTSPCmd):
     def stimulus(self, value: Union[str, float]) -> None:
         """Access the ``scan.trigger.arm.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines which event starts the scan.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scan.trigger.arm.stimulus)`` query.
             - Setting this property to a value will send the ``scan.trigger.arm.stimulus = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.trigger.arm.stimulus = value
             - print(scan.trigger.arm.stimulus)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -501,14 +485,13 @@ class ScanTriggerArm(BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``scan.trigger.arm.clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the arm event detector.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.trigger.arm.clear()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -524,14 +507,13 @@ class ScanTriggerArm(BaseTSPCmd):
     def set_(self) -> None:
         """Run the ``scan.trigger.arm.set()`` function.
 
-        **Description:**
+        Description:
             - This function sets the arm event detector to the detected state.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.trigger.arm.set()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -548,7 +530,7 @@ class ScanTriggerArm(BaseTSPCmd):
 class ScanTrigger(BaseTSPCmd):
     """The ``scan.trigger`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.arm``: The ``scan.trigger.arm`` command tree.
         - ``.channel``: The ``scan.trigger.channel`` command tree.
         - ``.clear()``: The ``scan.trigger.clear()`` function.
@@ -567,7 +549,7 @@ class ScanTrigger(BaseTSPCmd):
     def arm(self) -> ScanTriggerArm:
         """Return the ``scan.trigger.arm`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``scan.trigger.arm.clear()`` function.
             - ``.set()``: The ``scan.trigger.arm.set()`` function.
             - ``.stimulus``: The ``scan.trigger.arm.stimulus`` attribute.
@@ -578,7 +560,7 @@ class ScanTrigger(BaseTSPCmd):
     def channel(self) -> ScanTriggerChannel:
         """Return the ``scan.trigger.channel`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``scan.trigger.channel.clear()`` function.
             - ``.set()``: The ``scan.trigger.channel.set()`` function.
             - ``.stimulus``: The ``scan.trigger.channel.stimulus`` attribute.
@@ -589,7 +571,7 @@ class ScanTrigger(BaseTSPCmd):
     def measure(self) -> ScanTriggerMeasure:
         """Return the ``scan.trigger.measure`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``scan.trigger.measure.clear()`` function.
             - ``.set()``: The ``scan.trigger.measure.set()`` function.
             - ``.stimulus``: The ``scan.trigger.measure.stimulus`` attribute.
@@ -600,7 +582,7 @@ class ScanTrigger(BaseTSPCmd):
     def sequence(self) -> ScanTriggerSequence:
         """Return the ``scan.trigger.sequence`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``scan.trigger.sequence.clear()`` function.
             - ``.set()``: The ``scan.trigger.sequence.set()`` function.
             - ``.stimulus``: The ``scan.trigger.sequence.stimulus`` attribute.
@@ -610,14 +592,13 @@ class ScanTrigger(BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``scan.trigger.clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the trigger model.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.trigger.clear()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -634,7 +615,7 @@ class ScanTrigger(BaseTSPCmd):
 class Scan(BaseTSPCmd):
     """The ``scan`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.abort()``: The ``scan.abort()`` function.
         - ``.add()``: The ``scan.add()`` function.
         - ``.addimagestep()``: The ``scan.addimagestep()`` function.
@@ -663,20 +644,19 @@ class Scan(BaseTSPCmd):
     def bypass(self) -> str:
         """Access the ``scan.bypass`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates whether the first channel of the scan waits for the channel
               stimulus event to be satisfied before closing.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scan.bypass)`` query.
             - Setting this property to a value will send the ``scan.bypass = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.bypass = value
             - print(scan.bypass)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -695,20 +675,19 @@ class Scan(BaseTSPCmd):
     def bypass(self, value: Union[str, float]) -> None:
         """Access the ``scan.bypass`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates whether the first channel of the scan waits for the channel
               stimulus event to be satisfied before closing.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scan.bypass)`` query.
             - Setting this property to a value will send the ``scan.bypass = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.bypass = value
             - print(scan.bypass)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -730,22 +709,21 @@ class Scan(BaseTSPCmd):
     def measurecount(self) -> str:
         """Access the ``scan.measurecount`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of iterations performed when a scanning measurement is
               requested.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scan.measurecount)`` query.
             - Setting this property to a value will send the ``scan.measurecount = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.measurecount = value
             - print(scan.measurecount)
+            ```
 
-        **Info:**
+        Info:
             - ``count``, the count value being used or read; valid range is 1 to 450000.
 
         Raises:
@@ -765,22 +743,21 @@ class Scan(BaseTSPCmd):
     def measurecount(self, value: Union[str, float]) -> None:
         """Access the ``scan.measurecount`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of iterations performed when a scanning measurement is
               requested.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scan.measurecount)`` query.
             - Setting this property to a value will send the ``scan.measurecount = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.measurecount = value
             - print(scan.measurecount)
+            ```
 
-        **Info:**
+        Info:
             - ``count``, the count value being used or read; valid range is 1 to 450000.
 
         Raises:
@@ -803,19 +780,18 @@ class Scan(BaseTSPCmd):
     def mode(self) -> str:
         """Access the ``scan.mode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the relay action when the scan starts.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scan.mode)`` query.
             - Setting this property to a value will send the ``scan.mode = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.mode = value
             - print(scan.mode)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -834,19 +810,18 @@ class Scan(BaseTSPCmd):
     def mode(self, value: Union[str, float]) -> None:
         """Access the ``scan.mode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the relay action when the scan starts.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scan.mode)`` query.
             - Setting this property to a value will send the ``scan.mode = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.mode = value
             - print(scan.mode)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -868,19 +843,18 @@ class Scan(BaseTSPCmd):
     def scancount(self) -> str:
         """Access the ``scan.scancount`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of times the scan is repeated.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scan.scancount)`` query.
             - Setting this property to a value will send the ``scan.scancount = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.scancount = value
             - print(scan.scancount)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -899,19 +873,18 @@ class Scan(BaseTSPCmd):
     def scancount(self, value: Union[str, float]) -> None:
         """Access the ``scan.scancount`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of times the scan is repeated.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scan.scancount)`` query.
             - Setting this property to a value will send the ``scan.scancount = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.scancount = value
             - print(scan.scancount)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -933,17 +906,16 @@ class Scan(BaseTSPCmd):
     def stepcount(self) -> str:
         """Access the ``scan.stepcount`` attribute.
 
-        **Description:**
+        Description:
             - This attribute returns the number of steps in the present scan.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(scan.stepcount)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(scan.stepcount)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -962,7 +934,7 @@ class Scan(BaseTSPCmd):
     def trigger(self) -> ScanTrigger:
         """Return the ``scan.trigger`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.arm``: The ``scan.trigger.arm`` command tree.
             - ``.channel``: The ``scan.trigger.channel`` command tree.
             - ``.clear()``: The ``scan.trigger.clear()`` function.
@@ -974,14 +946,13 @@ class Scan(BaseTSPCmd):
     def abort(self) -> None:
         """Run the ``scan.abort()`` function.
 
-        **Description:**
+        Description:
             - This function aborts a running background scan.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.abort()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -997,14 +968,13 @@ class Scan(BaseTSPCmd):
     def add(self, channel_list: str, width: Optional[str] = None) -> None:
         """Run the ``scan.add()`` function.
 
-        **Description:**
+        Description:
             - This function adds channels to the scan list.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.add()
+            ```
 
         Args:
             channel_list: String specifying channels to add using normal channel list syntax.
@@ -1033,14 +1003,13 @@ class Scan(BaseTSPCmd):
     def addimagestep(self, channel_list: str, dmm_config: Optional[str] = None) -> None:
         """Run the ``scan.addimagestep()`` function.
 
-        **Description:**
+        Description:
             - This function allows you to include multiple channels in a single scan step.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.addimagestep()
+            ```
 
         Args:
             channel_list: String specifying a list of channels.
@@ -1068,14 +1037,13 @@ class Scan(BaseTSPCmd):
     def addwrite(self, channel_list: str, write_value: str, width: Optional[str] = None) -> None:
         """Run the ``scan.addwrite()`` function.
 
-        **Description:**
+        Description:
             - This function writes a specified value to a channel at the added step in the scan.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.addwrite()
+            ```
 
         Args:
             channel_list: String specifying channels to add using normal channel list syntax.
@@ -1106,14 +1074,13 @@ class Scan(BaseTSPCmd):
     def background(self, buffer_var: Optional[str] = None) -> str:
         """Run the ``scan.background()`` function.
 
-        **Description:**
+        Description:
             - This function starts a scan and runs the scan in the background.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.background()
+            ```
 
         Args:
             buffer_var (optional): The reading buffer used during scanning to store the readings; if
@@ -1137,15 +1104,14 @@ class Scan(BaseTSPCmd):
     def create(self, channel_list: str, dmm_config: Optional[str] = None) -> None:
         """Run the ``scan.create()`` function.
 
-        **Description:**
+        Description:
             - This function deletes the existing scan list and creates a new list of channels and
               channel patterns to scan.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.create()
+            ```
 
         Args:
             channel_list: String specifying channels to add.
@@ -1173,15 +1139,14 @@ class Scan(BaseTSPCmd):
     def execute(self, buffer_var: Optional[str] = None) -> str:
         """Run the ``scan.execute()`` function.
 
-        **Description:**
+        Description:
             - This function starts the scan immediately in the foreground with a configured scan
               list.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.execute()
+            ```
 
         Args:
             buffer_var (optional): A reading buffer used during scanning to store the readings; if a
@@ -1205,14 +1170,13 @@ class Scan(BaseTSPCmd):
     def list(self) -> str:
         """Run the ``scan.list()`` function.
 
-        **Description:**
+        Description:
             - This function queries the active scan list.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.list()
+            ```
 
         Returns:
             The result of the function call.
@@ -1231,15 +1195,14 @@ class Scan(BaseTSPCmd):
     def nobufferbackground(self) -> str:
         """Run the ``scan.nobufferbackground()`` function.
 
-        **Description:**
+        Description:
             - This function starts a scan in background mode and specifies that no reading buffer is
               used during scanning.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.nobufferbackground()
+            ```
 
         Returns:
             The result of the function call.
@@ -1258,15 +1221,14 @@ class Scan(BaseTSPCmd):
     def nobufferexecute(self) -> None:
         """Run the ``scan.nobufferexecute()`` function.
 
-        **Description:**
+        Description:
             - This function starts a scan immediately and specifies that no reading buffer is used
               during scanning.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.nobufferexecute()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1282,15 +1244,14 @@ class Scan(BaseTSPCmd):
     def reset(self) -> None:
         """Run the ``scan.reset()`` function.
 
-        **Description:**
+        Description:
             - This function resets the trigger model and scan list settings to their factory default
               settings.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.reset()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1306,14 +1267,13 @@ class Scan(BaseTSPCmd):
     def state(self) -> str:
         """Run the ``scan.state()`` function.
 
-        **Description:**
+        Description:
             - This function provides the present state of a running background scan.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - scan.state()
+            ```
 
         Returns:
             The result of the function call.

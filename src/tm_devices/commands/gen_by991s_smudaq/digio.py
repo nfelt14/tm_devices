@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - digio.line[N].mode
     - digio.line[N].reset()
     - digio.line[N].state
@@ -36,10 +34,10 @@ if TYPE_CHECKING:
 class DigioLineItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``digio.line[N]`` command tree.
 
-    **Info:**
+    Info:
         - ``N``, the digital I/O line: 1 to 6.
 
-    Properties/methods:
+    Properties and methods:
         - ``.mode``: The ``digio.line[N].mode`` attribute.
         - ``.reset()``: The ``digio.line[N].reset()`` function.
         - ``.state``: The ``digio.line[N].state`` attribute.
@@ -49,22 +47,21 @@ class DigioLineItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def mode(self) -> str:
         """Access the ``digio.line[N].mode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the mode of the digital I/O line to be a digital line, trigger
               line, or synchronous line and sets the line to be input, output, or open-drain.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(digio.line[N].mode)`` query.
             - Setting this property to a value will send the ``digio.line[N].mode = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - digio.line[N].mode = value
             - print(digio.line[N].mode)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the digital I/O line: 1 to 6.
 
         Raises:
@@ -84,22 +81,21 @@ class DigioLineItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def mode(self, value: Union[str, float]) -> None:
         """Access the ``digio.line[N].mode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the mode of the digital I/O line to be a digital line, trigger
               line, or synchronous line and sets the line to be input, output, or open-drain.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(digio.line[N].mode)`` query.
             - Setting this property to a value will send the ``digio.line[N].mode = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - digio.line[N].mode = value
             - print(digio.line[N].mode)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the digital I/O line: 1 to 6.
 
         Raises:
@@ -122,23 +118,22 @@ class DigioLineItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def state(self) -> str:
         """Access the ``digio.line[N].state`` attribute.
 
-        **Description:**
+        Description:
             - This function sets a digital I/O line high or low when the line is set for digital
               control and returns the state on the digital I/O lines.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(digio.line[N].state)`` query.
             - Setting this property to a value will send the ``digio.line[N].state = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - digio.line[N].state = value
             - print(digio.line[N].state)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the digital I/O line: 1 to 6.
 
         Raises:
@@ -158,23 +153,22 @@ class DigioLineItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def state(self, value: Union[str, float]) -> None:
         """Access the ``digio.line[N].state`` attribute.
 
-        **Description:**
+        Description:
             - This function sets a digital I/O line high or low when the line is set for digital
               control and returns the state on the digital I/O lines.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(digio.line[N].state)`` query.
             - Setting this property to a value will send the ``digio.line[N].state = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - digio.line[N].state = value
             - print(digio.line[N].state)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the digital I/O line: 1 to 6.
 
         Raises:
@@ -196,16 +190,15 @@ class DigioLineItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def reset(self) -> None:
         """Run the ``digio.line[N].reset()`` function.
 
-        **Description:**
+        Description:
             - This function resets digital I/O line values to their factory defaults.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - digio.line[N].reset()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the digital I/O line: 1 to 6.
 
         Raises:
@@ -235,7 +228,7 @@ class Digio(BaseTSPCmd):
         - ``.STATE_HIGH``: Set the line high.
         - ``.STATE_LOW``: Set the line low.
 
-    Properties/methods:
+    Properties and methods:
         - ``.line``: The ``digio.line[N]`` command tree.
         - ``.readport()``: The ``digio.readport()`` function.
         - ``.writeport()``: The ``digio.writeport()`` function.
@@ -272,10 +265,10 @@ class Digio(BaseTSPCmd):
     def line(self) -> Dict[int, DigioLineItem]:
         """Return the ``digio.line[N]`` command tree.
 
-        **Info:**
+        Info:
             - ``N``, the digital I/O line: 1 to 6.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.mode``: The ``digio.line[N].mode`` attribute.
             - ``.reset()``: The ``digio.line[N].reset()`` function.
             - ``.state``: The ``digio.line[N].state`` attribute.
@@ -285,14 +278,13 @@ class Digio(BaseTSPCmd):
     def readport(self) -> str:
         """Run the ``digio.readport()`` function.
 
-        **Description:**
+        Description:
             - This function reads the digital I/O port.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - digio.readport()
+            ```
 
         Returns:
             The result of the function call.
@@ -311,14 +303,13 @@ class Digio(BaseTSPCmd):
     def writeport(self, data: int) -> None:
         """Run the ``digio.writeport()`` function.
 
-        **Description:**
+        Description:
             - This function writes to all digital I/O lines.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - digio.writeport()
+            ```
 
         Args:
             data: The value to write to the port (0 to 63).

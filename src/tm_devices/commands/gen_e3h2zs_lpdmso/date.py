@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - DATE?
 """
 
@@ -25,19 +23,18 @@ if TYPE_CHECKING:
 class Date(SCPICmdRead):
     """The ``DATE`` command.
 
-    **Description:**
+    Description:
         - This command queries the date that the instrument displays.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DATE?`` query.
         - Using the ``.verify(value)`` method will send the ``DATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DATE?
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "DATE") -> None:

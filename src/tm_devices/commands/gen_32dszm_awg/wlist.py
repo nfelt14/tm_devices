@@ -10,21 +10,21 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - WLISt:NAME? <Index>
     - WLISt:SIZE?
-    - WLISt:WAVeform:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
+    - WLISt:WAVeform:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>?
+      <wfm_name>[,<StartIndex>[,<Size>]]
     - WLISt:WAVeform:DELete {<wfm_name>|ALL}
     - WLISt:WAVeform:LENGth? <wfm_name>
-    - WLISt:WAVeform:MARKer:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
+    - WLISt:WAVeform:MARKer:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>?
+      <wfm_name>[,<StartIndex>[,<Size>]]
     - WLISt:WAVeform:NEW <wfm_name>,<Size>,<Type>
     - WLISt:WAVeform:NORMalize <wfm_name>,<Type>
     - WLISt:WAVeform:PREDefined? <wfm_name>
     - WLISt:WAVeform:RESAmple <wfm_name>,<Size>
     - WLISt:WAVeform:TSTamp? <wfm_name>
     - WLISt:WAVeform:TYPE? <wfm_name>
-"""  # noqa: E501
+"""
 
 from typing import Optional, TYPE_CHECKING
 
@@ -37,23 +37,22 @@ if TYPE_CHECKING:
 class WlistWaveformType(SCPICmdReadWithArguments):
     """The ``WLISt:WAVeform:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command returns the type of the waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``WLISt:WAVeform:TYPE? argument``
           query.
         - Using the ``.verify(argument, value)`` method will send the
           ``WLISt:WAVeform:TYPE? argument`` query and raise an AssertionError if the returned value
           does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:TYPE? <wfm_name>
+        ```
 
-    **Info:**
+    Info:
         - ``<wfm_name>`` ::= <string>.
     """
 
@@ -61,62 +60,59 @@ class WlistWaveformType(SCPICmdReadWithArguments):
 class WlistWaveformTstamp(SCPICmdReadWithArguments):
     """The ``WLISt:WAVeform:TSTamp`` command.
 
-    **Description:**
+    Description:
         - This command returns the timestamp of the specified waveform in the waveform list.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``WLISt:WAVeform:TSTamp? argument``
           query.
         - Using the ``.verify(argument, value)`` method will send the
           ``WLISt:WAVeform:TSTamp? argument`` query and raise an AssertionError if the returned
           value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:TSTamp? <wfm_name>
+        ```
     """
 
 
 class WlistWaveformResample(SCPICmdWrite):
     """The ``WLISt:WAVeform:RESAmple`` command.
 
-    **Description:**
+    Description:
         - This command resamples a waveform that exists in the waveform list of the current setup.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:RESAmple value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:RESAmple <wfm_name>,<Size>
+        ```
     """
 
 
 class WlistWaveformPredefined(SCPICmdReadWithArguments):
     """The ``WLISt:WAVeform:PREDefined`` command.
 
-    **Description:**
+    Description:
         - This query returns true or false based on whether the waveform is predefined.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``WLISt:WAVeform:PREDefined? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``WLISt:WAVeform:PREDefined? argument`` query and raise an AssertionError if the returned
           value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:PREDefined? <wfm_name>
+        ```
 
-    **Info:**
+    Info:
         - ``<wfm_name>`` ::=<string>.
     """
 
@@ -124,20 +120,19 @@ class WlistWaveformPredefined(SCPICmdReadWithArguments):
 class WlistWaveformNormalize(SCPICmdWrite):
     r"""The ``WLISt:WAVeform:NORMalize`` command.
 
-    **Description:**
+    Description:
         - This command normalizes a waveform that exists in the waveform list of the current setup.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:NORMalize value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:NORMalize <wfm_name>,<Type>
+        ```
 
-    **Info:**
+    Info:
         - ``<wfm_name>`` ::=<string>.
         - ``<Type>`` ::={FSCale\|ZREFerence}.
     """
@@ -146,19 +141,18 @@ class WlistWaveformNormalize(SCPICmdWrite):
 class WlistWaveformNew(SCPICmdWrite):
     r"""The ``WLISt:WAVeform:NEW`` command.
 
-    **Description:**
+    Description:
         - This command creates a new empty waveform in the waveform list of current setup.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:NEW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:NEW <wfm_name>,<Size>,<Type>
+        ```
 
-    **Info:**
+    Info:
         - ``<wfm_name>`` ::=<string>.
         - ``<Size>`` ::=<NR1>.
         - ``<Type>`` ::={REAL\|INTeger}.
@@ -168,28 +162,27 @@ class WlistWaveformNew(SCPICmdWrite):
 class WlistWaveformMarkerData(SCPICmdWrite):
     """The ``WLISt:WAVeform:MARKer:DATA`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the waveform marker data. This command has a limit of
           999,999,999 bytes of data. If this limit is insufficient, consider the following
           alternatives: Send a more efficient file format using ``MMEM:DATA``. Use Ethernet (ftp,
           http, or file sharing) to transfer the file.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:MARKer:DATA value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:MARKer:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
+        ```
     """  # noqa: E501
 
 
 class WlistWaveformMarker(SCPICmdRead):
     """The ``WLISt:WAVeform:MARKer`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:WAVeform:MARKer?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:MARKer?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -206,21 +199,20 @@ class WlistWaveformMarker(SCPICmdRead):
     def data(self) -> WlistWaveformMarkerData:
         """Return the ``WLISt:WAVeform:MARKer:DATA`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the waveform marker data. This command has a limit of
               999,999,999 bytes of data. If this limit is insufficient, consider the following
               alternatives: Send a more efficient file format using ``MMEM:DATA``. Use Ethernet
               (ftp, http, or file sharing) to transfer the file.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:MARKer:DATA value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:MARKer:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
+            ```
         """  # noqa: E501
         return self._data
 
@@ -228,49 +220,47 @@ class WlistWaveformMarker(SCPICmdRead):
 class WlistWaveformLength(SCPICmdReadWithArguments):
     """The ``WLISt:WAVeform:LENGth`` command.
 
-    **Description:**
+    Description:
         - This command returns the size of the specified waveform in the waveform list. The returned
           value represents data points (not bytes).
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``WLISt:WAVeform:LENGth? argument``
           query.
         - Using the ``.verify(argument, value)`` method will send the
           ``WLISt:WAVeform:LENGth? argument`` query and raise an AssertionError if the returned
           value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:LENGth? <wfm_name>
+        ```
     """
 
 
 class WlistWaveformDelete(SCPICmdWrite):
     """The ``WLISt:WAVeform:DELete`` command.
 
-    **Description:**
+    Description:
         - This command deletes a single waveform from the waveform list or all waveforms. If the
           deleted waveform is currently loaded into waveform memory, it is unloaded. If the RUN
           state of the AWG is ON, the state is turned OFF. If the channel is on, it will be switched
           off.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:DELete value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:DELete {<wfm_name>|ALL}
+        ```
     """
 
 
 class WlistWaveformData(SCPICmdWrite):
     """The ``WLISt:WAVeform:DATA`` command.
 
-    **Description:**
+    Description:
         - This command transfers waveform data from the external controller into the waveform list
           or from the waveform list to the external control program. This command has a limit of
           650,000,000 bytes of data. If this limit is insufficient, consider the following
@@ -280,16 +270,15 @@ class WlistWaveformData(SCPICmdWrite):
           Help, AWG Reference > Waveform General Information section for the detailed format
           specification.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:DATA value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:WAVeform:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
+        ```
 
-    **Info:**
+    Info:
         - ``StartIndex, Size,<block_data>``
         - ``<wfm_name>`` ::=<string>.
         - ``<StartIndex>`` ::=<NR1>.
@@ -302,7 +291,7 @@ class WlistWaveformData(SCPICmdWrite):
 class WlistWaveform(SCPICmdRead):
     """The ``WLISt:WAVeform`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:WAVeform?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -337,7 +326,7 @@ class WlistWaveform(SCPICmdRead):
     def data(self) -> WlistWaveformData:
         """Return the ``WLISt:WAVeform:DATA`` command.
 
-        **Description:**
+        Description:
             - This command transfers waveform data from the external controller into the waveform
               list or from the waveform list to the external control program. This command has a
               limit of 650,000,000 bytes of data. If this limit is insufficient, consider the
@@ -347,17 +336,16 @@ class WlistWaveform(SCPICmdRead):
               the User Online Help, AWG Reference > Waveform General Information section for the
               detailed format specification.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:DATA value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:DATA <wfm_name>[,<StartIndex>[,<Size>]],<block_data>? <wfm_name>[,<StartIndex>[,<Size>]]
+            ```
 
-        **Info:**
+        Info:
             - ``StartIndex, Size,<block_data>``
             - ``<wfm_name>`` ::=<string>.
             - ``<StartIndex>`` ::=<NR1>.
@@ -370,21 +358,20 @@ class WlistWaveform(SCPICmdRead):
     def delete(self) -> WlistWaveformDelete:
         """Return the ``WLISt:WAVeform:DELete`` command.
 
-        **Description:**
+        Description:
             - This command deletes a single waveform from the waveform list or all waveforms. If the
               deleted waveform is currently loaded into waveform memory, it is unloaded. If the RUN
               state of the AWG is ON, the state is turned OFF. If the channel is on, it will be
               switched off.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:DELete value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:DELete {<wfm_name>|ALL}
+            ```
         """
         return self._delete
 
@@ -392,22 +379,21 @@ class WlistWaveform(SCPICmdRead):
     def length(self) -> WlistWaveformLength:
         """Return the ``WLISt:WAVeform:LENGth`` command.
 
-        **Description:**
+        Description:
             - This command returns the size of the specified waveform in the waveform list. The
               returned value represents data points (not bytes).
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``WLISt:WAVeform:LENGth? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``WLISt:WAVeform:LENGth? argument`` query and raise an AssertionError if the returned
               value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:LENGth? <wfm_name>
+            ```
         """
         return self._length
 
@@ -415,7 +401,7 @@ class WlistWaveform(SCPICmdRead):
     def marker(self) -> WlistWaveformMarker:
         """Return the ``WLISt:WAVeform:MARKer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:WAVeform:MARKer?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform:MARKer?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -429,19 +415,18 @@ class WlistWaveform(SCPICmdRead):
     def new(self) -> WlistWaveformNew:
         r"""Return the ``WLISt:WAVeform:NEW`` command.
 
-        **Description:**
+        Description:
             - This command creates a new empty waveform in the waveform list of current setup.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:NEW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:NEW <wfm_name>,<Size>,<Type>
+            ```
 
-        **Info:**
+        Info:
             - ``<wfm_name>`` ::=<string>.
             - ``<Size>`` ::=<NR1>.
             - ``<Type>`` ::={REAL\|INTeger}.
@@ -452,21 +437,20 @@ class WlistWaveform(SCPICmdRead):
     def normalize(self) -> WlistWaveformNormalize:
         r"""Return the ``WLISt:WAVeform:NORMalize`` command.
 
-        **Description:**
+        Description:
             - This command normalizes a waveform that exists in the waveform list of the current
               setup.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:NORMalize value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:NORMalize <wfm_name>,<Type>
+            ```
 
-        **Info:**
+        Info:
             - ``<wfm_name>`` ::=<string>.
             - ``<Type>`` ::={FSCale\|ZREFerence}.
         """
@@ -476,23 +460,22 @@ class WlistWaveform(SCPICmdRead):
     def predefined(self) -> WlistWaveformPredefined:
         """Return the ``WLISt:WAVeform:PREDefined`` command.
 
-        **Description:**
+        Description:
             - This query returns true or false based on whether the waveform is predefined.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``WLISt:WAVeform:PREDefined? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``WLISt:WAVeform:PREDefined? argument`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:PREDefined? <wfm_name>
+            ```
 
-        **Info:**
+        Info:
             - ``<wfm_name>`` ::=<string>.
         """
         return self._predefined
@@ -501,19 +484,18 @@ class WlistWaveform(SCPICmdRead):
     def resample(self) -> WlistWaveformResample:
         """Return the ``WLISt:WAVeform:RESAmple`` command.
 
-        **Description:**
+        Description:
             - This command resamples a waveform that exists in the waveform list of the current
               setup.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``WLISt:WAVeform:RESAmple value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:RESAmple <wfm_name>,<Size>
+            ```
         """
         return self._resample
 
@@ -521,21 +503,20 @@ class WlistWaveform(SCPICmdRead):
     def tstamp(self) -> WlistWaveformTstamp:
         """Return the ``WLISt:WAVeform:TSTamp`` command.
 
-        **Description:**
+        Description:
             - This command returns the timestamp of the specified waveform in the waveform list.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``WLISt:WAVeform:TSTamp? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``WLISt:WAVeform:TSTamp? argument`` query and raise an AssertionError if the returned
               value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:TSTamp? <wfm_name>
+            ```
         """
         return self._tstamp
 
@@ -543,23 +524,22 @@ class WlistWaveform(SCPICmdRead):
     def type(self) -> WlistWaveformType:
         """Return the ``WLISt:WAVeform:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command returns the type of the waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``WLISt:WAVeform:TYPE? argument``
               query.
             - Using the ``.verify(argument, value)`` method will send the
               ``WLISt:WAVeform:TYPE? argument`` query and raise an AssertionError if the returned
               value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:WAVeform:TYPE? <wfm_name>
+            ```
 
-        **Info:**
+        Info:
             - ``<wfm_name>`` ::= <string>.
         """
         return self._type
@@ -568,46 +548,44 @@ class WlistWaveform(SCPICmdRead):
 class WlistSize(SCPICmdRead):
     """The ``WLISt:SIZE`` command.
 
-    **Description:**
+    Description:
         - This command returns the number of waveforms in the waveform list.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt:SIZE?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt:SIZE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:SIZE?
+        ```
     """
 
 
 class WlistName(SCPICmdReadWithArguments):
     """The ``WLISt:NAME`` command.
 
-    **Description:**
+    Description:
         - This command returns the waveform name from the waveform list at the position specified by
           the index value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``WLISt:NAME? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the ``WLISt:NAME? argument`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WLISt:NAME? <Index>
+        ```
     """
 
 
 class Wlist(SCPICmdRead):
     """The ``WLISt`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WLISt?`` query.
         - Using the ``.verify(value)`` method will send the ``WLISt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -628,20 +606,19 @@ class Wlist(SCPICmdRead):
     def name(self) -> WlistName:
         """Return the ``WLISt:NAME`` command.
 
-        **Description:**
+        Description:
             - This command returns the waveform name from the waveform list at the position
               specified by the index value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``WLISt:NAME? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the ``WLISt:NAME? argument``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:NAME? <Index>
+            ```
         """
         return self._name
 
@@ -649,19 +626,18 @@ class Wlist(SCPICmdRead):
     def size(self) -> WlistSize:
         """Return the ``WLISt:SIZE`` command.
 
-        **Description:**
+        Description:
             - This command returns the number of waveforms in the waveform list.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:SIZE?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:SIZE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - WLISt:SIZE?
+            ```
         """
         return self._size
 
@@ -669,7 +645,7 @@ class Wlist(SCPICmdRead):
     def waveform(self) -> WlistWaveform:
         """Return the ``WLISt:WAVeform`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``WLISt:WAVeform?`` query.
             - Using the ``.verify(value)`` method will send the ``WLISt:WAVeform?`` query and raise
               an AssertionError if the returned value does not match ``value``.

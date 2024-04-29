@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - IDNMultiscope:A?
     - IDNMultiscope:B?
     - IDNMultiscope:C?
@@ -29,105 +27,100 @@ if TYPE_CHECKING:
 class IdnmultiscopeDigitalBit(SCPICmdRead):
     """The ``IDNMultiscope:D`` command.
 
-    **Description:**
+    Description:
         - This query returns the ``*IDN?`` response for Extension 3. If the query is not run on the
           master instrument, data returned indicates that the instrument is running as a StandAlone
           Master. DPO70000SX Series only.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``IDNMultiscope:D?`` query.
         - Using the ``.verify(value)`` method will send the ``IDNMultiscope:D?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - IDNMultiscope:D?
+        ```
     """
 
 
 class IdnmultiscopeC(SCPICmdRead):
     """The ``IDNMultiscope:C`` command.
 
-    **Description:**
+    Description:
         - This query returns the ``*IDN?`` response for Extension 2. If the query is not run on the
           master instrument, data returned indicates that the instrument is running as a StandAlone
           Master. DPO70000SX Series only.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``IDNMultiscope:C?`` query.
         - Using the ``.verify(value)`` method will send the ``IDNMultiscope:C?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - IDNMultiscope:C?
+        ```
     """
 
 
 class IdnmultiscopeB(SCPICmdRead):
     """The ``IDNMultiscope:B`` command.
 
-    **Description:**
+    Description:
         - This query returns the ``*IDN?`` response for Extension 1. If the query is not run on the
           master instrument, data returned indicates that the instrument is running as a StandAlone
           Master. DPO70000SX Series only.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``IDNMultiscope:B?`` query.
         - Using the ``.verify(value)`` method will send the ``IDNMultiscope:B?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - IDNMultiscope:B?
+        ```
     """
 
 
 class IdnmultiscopeA(SCPICmdRead):
     """The ``IDNMultiscope:A`` command.
 
-    **Description:**
+    Description:
         - This query returns the ``*IDN?`` response for the Master instrument. If the query is not
           run on the master instrument, data returned indicates that the instrument is running as a
           StandAlone Master. DPO70000SX Series only.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``IDNMultiscope:A?`` query.
         - Using the ``.verify(value)`` method will send the ``IDNMultiscope:A?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - IDNMultiscope:A?
+        ```
     """
 
 
 class Idnmultiscope(SCPICmdRead):
     """The ``IDNMultiscope`` command.
 
-    **Description:**
+    Description:
         - This query returns instrument data on all MultiScope instruments. If the query is not run
           on the master instrument, data returned indicates that the instrument is running as a
           StandAlone Master. DPO70000SX Series only.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``IDNMultiscope?`` query.
         - Using the ``.verify(value)`` method will send the ``IDNMultiscope?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - IDNMultiscope?
+        ```
 
     Properties:
         - ``.a``: The ``IDNMultiscope:A`` command.
@@ -149,21 +142,20 @@ class Idnmultiscope(SCPICmdRead):
     def a(self) -> IdnmultiscopeA:
         """Return the ``IDNMultiscope:A`` command.
 
-        **Description:**
+        Description:
             - This query returns the ``*IDN?`` response for the Master instrument. If the query is
               not run on the master instrument, data returned indicates that the instrument is
               running as a StandAlone Master. DPO70000SX Series only.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``IDNMultiscope:A?`` query.
             - Using the ``.verify(value)`` method will send the ``IDNMultiscope:A?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - IDNMultiscope:A?
+            ```
         """
         return self._a
 
@@ -171,21 +163,20 @@ class Idnmultiscope(SCPICmdRead):
     def b(self) -> IdnmultiscopeB:
         """Return the ``IDNMultiscope:B`` command.
 
-        **Description:**
+        Description:
             - This query returns the ``*IDN?`` response for Extension 1. If the query is not run on
               the master instrument, data returned indicates that the instrument is running as a
               StandAlone Master. DPO70000SX Series only.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``IDNMultiscope:B?`` query.
             - Using the ``.verify(value)`` method will send the ``IDNMultiscope:B?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - IDNMultiscope:B?
+            ```
         """
         return self._b
 
@@ -193,21 +184,20 @@ class Idnmultiscope(SCPICmdRead):
     def c(self) -> IdnmultiscopeC:
         """Return the ``IDNMultiscope:C`` command.
 
-        **Description:**
+        Description:
             - This query returns the ``*IDN?`` response for Extension 2. If the query is not run on
               the master instrument, data returned indicates that the instrument is running as a
               StandAlone Master. DPO70000SX Series only.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``IDNMultiscope:C?`` query.
             - Using the ``.verify(value)`` method will send the ``IDNMultiscope:C?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - IDNMultiscope:C?
+            ```
         """
         return self._c
 
@@ -215,20 +205,19 @@ class Idnmultiscope(SCPICmdRead):
     def d(self) -> IdnmultiscopeDigitalBit:
         """Return the ``IDNMultiscope:D`` command.
 
-        **Description:**
+        Description:
             - This query returns the ``*IDN?`` response for Extension 3. If the query is not run on
               the master instrument, data returned indicates that the instrument is running as a
               StandAlone Master. DPO70000SX Series only.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``IDNMultiscope:D?`` query.
             - Using the ``.verify(value)`` method will send the ``IDNMultiscope:D?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - IDNMultiscope:D?
+            ```
         """
         return self._d

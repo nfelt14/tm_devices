@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - AUXOut:SOUrce {ATRIGger|MAIn|REFOut|EVENT|AFG}
     - AUXOut:SOUrce?
 """
@@ -26,23 +24,22 @@ if TYPE_CHECKING:
 class AuxoutSource(SCPICmdWrite, SCPICmdRead):
     """The ``AUXOut:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets (or queries) the source for the Auxiliary Output port.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXOut:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXOut:SOUrce?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``AUXOut:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUXOut:SOUrce {ATRIGger|MAIn|REFOut|EVENT|AFG}
         - AUXOut:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``ATRIGger`` is the default signal output of the auxiliary out port. MAIn is synonymous
           with ATRIGger.
         - ``REFOut`` specifies the reference oscillator output as the source for the auxiliary
@@ -57,7 +54,7 @@ class AuxoutSource(SCPICmdWrite, SCPICmdRead):
 class Auxout(SCPICmdRead):
     """The ``AUXOut`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``AUXOut?`` query.
         - Using the ``.verify(value)`` method will send the ``AUXOut?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -74,23 +71,22 @@ class Auxout(SCPICmdRead):
     def source(self) -> AuxoutSource:
         """Return the ``AUXOut:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets (or queries) the source for the Auxiliary Output port.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``AUXOut:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``AUXOut:SOUrce?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``AUXOut:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUXOut:SOUrce {ATRIGger|MAIn|REFOut|EVENT|AFG}
             - AUXOut:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``ATRIGger`` is the default signal output of the auxiliary out port. MAIn is
               synonymous with ATRIGger.
             - ``REFOut`` specifies the reference oscillator output as the source for the auxiliary

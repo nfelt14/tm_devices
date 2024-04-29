@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - bufferVar.capacity
     - bufferVar.channels[N]
     - bufferVar.clear()
@@ -48,11 +46,11 @@ if TYPE_CHECKING:
 class Buffervar(BaseTSPCmd):
     """The ``bufferVar`` command tree.
 
-    **Info:**
+    Info:
         - ``bufferVar``, the name of the reading buffer, which may be a default buffer (defbuffer1
           or defbuffer2) or a user-defined buffer.
 
-    Properties/methods:
+    Properties and methods:
         - ``.capacity``: The ``bufferVar.capacity`` attribute.
         - ``.channels``: The ``bufferVar.channels[N]`` attribute.
         - ``.clear()``: The ``bufferVar.clear()`` function.
@@ -148,21 +146,20 @@ class Buffervar(BaseTSPCmd):
     def capacity(self) -> str:
         """Access the ``bufferVar.capacity`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of readings a buffer can store.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.capacity)`` query.
             - Setting this property to a value will send the ``bufferVar.capacity = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.capacity = value
             - print(bufferVar.capacity)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
 
@@ -183,21 +180,20 @@ class Buffervar(BaseTSPCmd):
     def capacity(self, value: Union[str, float]) -> None:
         """Access the ``bufferVar.capacity`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of readings a buffer can store.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.capacity)`` query.
             - Setting this property to a value will send the ``bufferVar.capacity = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.capacity = value
             - print(bufferVar.capacity)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
 
@@ -221,21 +217,20 @@ class Buffervar(BaseTSPCmd):
     def channels(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.channels[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the channels that produced the readings that are stored in the
               reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the ``print(bufferVar.channels[N])``
               query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.channels[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
             - ``N``, the reading number N; can be any value from 1 to the number of readings in the
@@ -250,21 +245,20 @@ class Buffervar(BaseTSPCmd):
     def dates(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.dates[N]`` attribute.
 
-        **Description:**
+        Description:
             - When enabled by the bufferVar.collecttimestamps attribute, this attribute contains the
               dates (month, day, and year) of readings stored in the reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the ``print(bufferVar.dates[N])``
               query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.dates[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer.
             - ``N``, the reading number (1 to bufferVar.n).
 
@@ -277,19 +271,18 @@ class Buffervar(BaseTSPCmd):
     def endindex(self) -> str:
         """Access the ``bufferVar.endindex`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates the last index in a reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.endindex)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.endindex)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
 
@@ -310,21 +303,20 @@ class Buffervar(BaseTSPCmd):
     def extraformattedvalues(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.extraformattedvalues[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the measurement and the unit of measure of the additional
               values in a reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the
               ``print(bufferVar.extraformattedvalues[N])`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.extraformattedvalues[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
             - ``N``, the reading number N; can be any value from 1 to the number of readings in the
@@ -339,20 +331,19 @@ class Buffervar(BaseTSPCmd):
     def extravalues(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.extravalues[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the additional values in a reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the ``print(bufferVar.extravalues[N])``
               query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.extravalues[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
             - ``N``, the reading number N; can be any value from 1 to the number of readings in the
@@ -367,20 +358,19 @@ class Buffervar(BaseTSPCmd):
     def extravalueunits(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.extravalueunits[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the units of the additional values in a reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the
               ``print(bufferVar.extravalueunits[N])`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.extravalueunits[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
             - ``N``, the reading number N; can be any value from 1 to the number of readings in the
@@ -395,22 +385,21 @@ class Buffervar(BaseTSPCmd):
     def fillmode(self) -> str:
         """Access the ``bufferVar.fillmode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if a reading buffer is filled continuously or is filled once
               and stops.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.fillmode)`` query.
             - Setting this property to a value will send the ``bufferVar.fillmode = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.fillmode = value
             - print(bufferVar.fillmode)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
 
@@ -431,22 +420,21 @@ class Buffervar(BaseTSPCmd):
     def fillmode(self, value: Union[str, float]) -> None:
         """Access the ``bufferVar.fillmode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if a reading buffer is filled continuously or is filled once
               and stops.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.fillmode)`` query.
             - Setting this property to a value will send the ``bufferVar.fillmode = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.fillmode = value
             - print(bufferVar.fillmode)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
 
@@ -470,20 +458,19 @@ class Buffervar(BaseTSPCmd):
     def formattedreadings(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.formattedreadings[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the stored readings shown as numbers with units and prefixes.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the
               ``print(bufferVar.formattedreadings[N])`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.formattedreadings[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
             - ``N``, the reading number N; can be any value from 1 to the number of readings in the
@@ -498,21 +485,20 @@ class Buffervar(BaseTSPCmd):
     def fractionalseconds(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.fractionalseconds[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the fractional second portion of the timestamp of each reading
               in the reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the
               ``print(bufferVar.fractionalseconds[N])`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.fractionalseconds[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer.
             - ``N``, the reading number N; can be any value from 1 to the number of readings in the
               buffer; use the bufferVar.n command to determine the number of readings in the buffer.
@@ -526,22 +512,21 @@ class Buffervar(BaseTSPCmd):
     def logstate(self) -> str:
         """Access the ``bufferVar.logstate`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if information events are logged when the specified reading
               buffer is at 0% or 100% filled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.logstate)`` query.
             - Setting this property to a value will send the ``bufferVar.logstate = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.logstate = value
             - print(bufferVar.logstate)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
 
@@ -562,22 +547,21 @@ class Buffervar(BaseTSPCmd):
     def logstate(self, value: Union[str, float]) -> None:
         """Access the ``bufferVar.logstate`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if information events are logged when the specified reading
               buffer is at 0% or 100% filled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.logstate)`` query.
             - Setting this property to a value will send the ``bufferVar.logstate = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.logstate = value
             - print(bufferVar.logstate)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
 
@@ -601,19 +585,18 @@ class Buffervar(BaseTSPCmd):
     def n(self) -> str:
         """Access the ``bufferVar.n`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the number of readings in the specified reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.n)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.n)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
 
@@ -634,20 +617,19 @@ class Buffervar(BaseTSPCmd):
     def readings(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.readings[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the readings stored in a specified reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the ``print(bufferVar.readings[N])``
               query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.readings[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
             - ``N``, the reading number N; can be any value from 1 to the number of readings in the
@@ -662,21 +644,20 @@ class Buffervar(BaseTSPCmd):
     def relativetimestamps(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.relativetimestamps[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the timestamps, in seconds, when each reading occurred,
               relative to the timestamp of the first entry in the reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the
               ``print(bufferVar.relativetimestamps[N])`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.relativetimestamps[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer.
             - ``N``, the reading number (1 to bufferVar.n).
 
@@ -689,20 +670,19 @@ class Buffervar(BaseTSPCmd):
     def seconds(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.seconds[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the timestamp of a reading in seconds, in UTC format.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the ``print(bufferVar.seconds[N])``
               query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.seconds[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer.
             - ``N``, the reading number N; can be any value from 1 to the number of readings in the
               buffer; use the bufferVar.n command to determine the number of readings in the buffer.
@@ -716,19 +696,18 @@ class Buffervar(BaseTSPCmd):
     def startindex(self) -> str:
         """Access the ``bufferVar.startindex`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates the starting index in a reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.startindex)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.startindex)
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
 
@@ -749,20 +728,19 @@ class Buffervar(BaseTSPCmd):
     def statuses(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.statuses[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the status values of readings in the reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the ``print(bufferVar.statuses[N])``
               query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.statuses[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
             - ``N``, the reading number N; can be any value from 1 to the number of readings in the
@@ -777,21 +755,20 @@ class Buffervar(BaseTSPCmd):
     def times(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.times[N]`` attribute.
 
-        **Description:**
+        Description:
             - When enabled by the bufferVar.collecttimestamps attribute, this attribute contains the
               time of the readings (in hours, minutes, and seconds format) in the reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the ``print(bufferVar.times[N])``
               query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.times[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer.
             - ``N``, the reading number N; can be any value from 1 to the number of readings in the
               buffer; use the bufferVar.n command to determine the number of readings in the buffer.
@@ -805,21 +782,20 @@ class Buffervar(BaseTSPCmd):
     def timestamps(self) -> Dict[int, Union[str, float]]:
         """Access the ``bufferVar.timestamps[N]`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the timestamp when each reading saved in the specified reading
               buffer occurred.
 
-        **Usage:**
+        Usage:
             - Accessing an item from this property will send the ``print(bufferVar.timestamps[N])``
               query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.timestamps[N])
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
             - ``N``, the reading number N; can be any value from 1 to the number of readings in the
@@ -834,18 +810,17 @@ class Buffervar(BaseTSPCmd):
     def units(self) -> str:
         """Access the ``bufferVar.units`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the unit of measure that is stored with readings in the
               reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(bufferVar.units)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(bufferVar.units)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -863,16 +838,15 @@ class Buffervar(BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``bufferVar.clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears all readings and statistics from the specified buffer.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - bufferVar.clear()
+            ```
 
-        **Info:**
+        Info:
             - ``bufferVar``, the name of the reading buffer, which may be a default buffer
               (defbuffer1 or defbuffer2) or a user-defined buffer.
 

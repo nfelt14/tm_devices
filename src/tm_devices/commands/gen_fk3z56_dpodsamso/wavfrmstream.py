@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - WAVFRMStream?
 """
 
@@ -26,23 +24,22 @@ if TYPE_CHECKING:
 class Wavfrmstream(SCPICmdRead):
     """The ``WAVFRMStream`` command.
 
-    **Description:**
+    Description:
         - This query only command returns WFMQUTPRE? and CURVESTREAM? data for the waveforms
           specified by the DATASOURCE command. This command is similar to sending both WFMOUTPRE?
           and CURVESTREAM?, with the additional provision that each CURVESTREAM response to WAVFRMS?
           has a WFMOUTPRE response prepended to it. This helps guarantee a continuous synchronized
           preamble and curve.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``WAVFRMStream?`` query.
         - Using the ``.verify(value)`` method will send the ``WAVFRMStream?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - WAVFRMStream?
+        ```
     """
 
     def __init__(

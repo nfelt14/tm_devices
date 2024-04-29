@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - dmm.digitize.analogtrigger.edge.level
     - dmm.digitize.analogtrigger.edge.slope
     - dmm.digitize.analogtrigger.highfreqreject
@@ -115,7 +113,7 @@ if TYPE_CHECKING:
 class DmmTriggerMeasure(BaseTSPCmd):
     """The ``dmm.trigger.measure`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.stimulus``: The ``dmm.trigger.measure.stimulus`` attribute.
     """
 
@@ -123,21 +121,20 @@ class DmmTriggerMeasure(BaseTSPCmd):
     def stimulus(self) -> str:
         """Access the ``dmm.trigger.measure.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the instrument to make a measurement the next time it detects the
               specified trigger event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.trigger.measure.stimulus)`` query.
             - Setting this property to a value will send the
               ``dmm.trigger.measure.stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.trigger.measure.stimulus = value
             - print(dmm.trigger.measure.stimulus)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -156,21 +153,20 @@ class DmmTriggerMeasure(BaseTSPCmd):
     def stimulus(self, value: Union[str, float]) -> None:
         """Access the ``dmm.trigger.measure.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the instrument to make a measurement the next time it detects the
               specified trigger event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.trigger.measure.stimulus)`` query.
             - Setting this property to a value will send the
               ``dmm.trigger.measure.stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.trigger.measure.stimulus = value
             - print(dmm.trigger.measure.stimulus)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -192,7 +188,7 @@ class DmmTriggerMeasure(BaseTSPCmd):
 class DmmTriggerDigitize(BaseTSPCmd):
     """The ``dmm.trigger.digitize`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.stimulus``: The ``dmm.trigger.digitize.stimulus`` attribute.
     """
 
@@ -200,21 +196,20 @@ class DmmTriggerDigitize(BaseTSPCmd):
     def stimulus(self) -> str:
         """Access the ``dmm.trigger.digitize.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the instrument to digitize a measurement the next time it detects
               the specified trigger event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.trigger.digitize.stimulus)`` query.
             - Setting this property to a value will send the
               ``dmm.trigger.digitize.stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.trigger.digitize.stimulus = value
             - print(dmm.trigger.digitize.stimulus)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -233,21 +228,20 @@ class DmmTriggerDigitize(BaseTSPCmd):
     def stimulus(self, value: Union[str, float]) -> None:
         """Access the ``dmm.trigger.digitize.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the instrument to digitize a measurement the next time it detects
               the specified trigger event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.trigger.digitize.stimulus)`` query.
             - Setting this property to a value will send the
               ``dmm.trigger.digitize.stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.trigger.digitize.stimulus = value
             - print(dmm.trigger.digitize.stimulus)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -269,7 +263,7 @@ class DmmTriggerDigitize(BaseTSPCmd):
 class DmmTrigger(BaseTSPCmd):
     """The ``dmm.trigger`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.digitize``: The ``dmm.trigger.digitize`` command tree.
         - ``.measure``: The ``dmm.trigger.measure`` command tree.
     """
@@ -283,7 +277,7 @@ class DmmTrigger(BaseTSPCmd):
     def digitize(self) -> DmmTriggerDigitize:
         """Return the ``dmm.trigger.digitize`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.stimulus``: The ``dmm.trigger.digitize.stimulus`` attribute.
         """
         return self._digitize
@@ -292,7 +286,7 @@ class DmmTrigger(BaseTSPCmd):
     def measure(self) -> DmmTriggerMeasure:
         """Return the ``dmm.trigger.measure`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.stimulus``: The ``dmm.trigger.measure.stimulus`` attribute.
         """
         return self._measure
@@ -301,7 +295,7 @@ class DmmTrigger(BaseTSPCmd):
 class DmmMeasureThreshold(BaseTSPCmd):
     """The ``dmm.measure.threshold`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.autorange``: The ``dmm.measure.threshold.autorange`` attribute.
         - ``.level``: The ``dmm.measure.threshold.level`` attribute.
         - ``.range``: The ``dmm.measure.threshold.range`` attribute.
@@ -311,21 +305,20 @@ class DmmMeasureThreshold(BaseTSPCmd):
     def autorange(self) -> str:
         """Access the ``dmm.measure.threshold.autorange`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the threshold range is set manually or automatically.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.threshold.autorange)``
               query.
             - Setting this property to a value will send the
               ``dmm.measure.threshold.autorange = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.threshold.autorange = value
             - print(dmm.measure.threshold.autorange)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -344,21 +337,20 @@ class DmmMeasureThreshold(BaseTSPCmd):
     def autorange(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.threshold.autorange`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the threshold range is set manually or automatically.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.threshold.autorange)``
               query.
             - Setting this property to a value will send the
               ``dmm.measure.threshold.autorange = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.threshold.autorange = value
             - print(dmm.measure.threshold.autorange)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -380,21 +372,20 @@ class DmmMeasureThreshold(BaseTSPCmd):
     def level(self) -> str:
         """Access the ``dmm.measure.threshold.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines the signal level where the instrument makes frequency or
               period measurements.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.threshold.level)`` query.
             - Setting this property to a value will send the ``dmm.measure.threshold.level = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.threshold.level = value
             - print(dmm.measure.threshold.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -413,21 +404,20 @@ class DmmMeasureThreshold(BaseTSPCmd):
     def level(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.threshold.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines the signal level where the instrument makes frequency or
               period measurements.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.threshold.level)`` query.
             - Setting this property to a value will send the ``dmm.measure.threshold.level = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.threshold.level = value
             - print(dmm.measure.threshold.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -449,20 +439,19 @@ class DmmMeasureThreshold(BaseTSPCmd):
     def range(self) -> str:
         """Access the ``dmm.measure.threshold.range`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates the expected input level of the voltage signal.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.threshold.range)`` query.
             - Setting this property to a value will send the ``dmm.measure.threshold.range = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.threshold.range = value
             - print(dmm.measure.threshold.range)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -481,20 +470,19 @@ class DmmMeasureThreshold(BaseTSPCmd):
     def range(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.threshold.range`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates the expected input level of the voltage signal.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.threshold.range)`` query.
             - Setting this property to a value will send the ``dmm.measure.threshold.range = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.threshold.range = value
             - print(dmm.measure.threshold.range)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -516,7 +504,7 @@ class DmmMeasureThreshold(BaseTSPCmd):
 class DmmMeasureSense(BaseTSPCmd):
     """The ``dmm.measure.sense`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.autorange``: The ``dmm.measure.sense.autorange`` attribute.
         - ``.range``: The ``dmm.measure.sense.range`` attribute.
     """
@@ -525,20 +513,19 @@ class DmmMeasureSense(BaseTSPCmd):
     def autorange(self) -> str:
         """Access the ``dmm.measure.sense.autorange`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the sense range is set manually or automatically.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.sense.autorange)`` query.
             - Setting this property to a value will send the ``dmm.measure.sense.autorange = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.sense.autorange = value
             - print(dmm.measure.sense.autorange)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -557,20 +544,19 @@ class DmmMeasureSense(BaseTSPCmd):
     def autorange(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.sense.autorange`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the sense range is set manually or automatically.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.sense.autorange)`` query.
             - Setting this property to a value will send the ``dmm.measure.sense.autorange = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.sense.autorange = value
             - print(dmm.measure.sense.autorange)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -592,20 +578,19 @@ class DmmMeasureSense(BaseTSPCmd):
     def range(self) -> str:
         """Access the ``dmm.measure.sense.range`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines the positive full-scale range for the sense measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.sense.range)`` query.
             - Setting this property to a value will send the ``dmm.measure.sense.range = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.sense.range = value
             - print(dmm.measure.sense.range)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -624,20 +609,19 @@ class DmmMeasureSense(BaseTSPCmd):
     def range(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.sense.range`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines the positive full-scale range for the sense measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.sense.range)`` query.
             - Setting this property to a value will send the ``dmm.measure.sense.range = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.sense.range = value
             - print(dmm.measure.sense.range)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -659,7 +643,7 @@ class DmmMeasureSense(BaseTSPCmd):
 class DmmMeasureRel(BaseTSPCmd):
     """The ``dmm.measure.rel`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.enable``: The ``dmm.measure.rel.enable`` attribute.
         - ``.level``: The ``dmm.measure.rel.level`` attribute.
         - ``.method``: The ``dmm.measure.rel.method`` attribute.
@@ -669,21 +653,20 @@ class DmmMeasureRel(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``dmm.measure.rel.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the application of a relative offset value to the
               measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.rel.enable)`` query.
             - Setting this property to a value will send the ``dmm.measure.rel.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.rel.enable = value
             - print(dmm.measure.rel.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -702,21 +685,20 @@ class DmmMeasureRel(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.rel.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the application of a relative offset value to the
               measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.rel.enable)`` query.
             - Setting this property to a value will send the ``dmm.measure.rel.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.rel.enable = value
             - print(dmm.measure.rel.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -738,20 +720,19 @@ class DmmMeasureRel(BaseTSPCmd):
     def level(self) -> str:
         """Access the ``dmm.measure.rel.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the relative offset value.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.rel.level)`` query.
             - Setting this property to a value will send the ``dmm.measure.rel.level = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.rel.level = value
             - print(dmm.measure.rel.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -770,20 +751,19 @@ class DmmMeasureRel(BaseTSPCmd):
     def level(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.rel.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the relative offset value.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.rel.level)`` query.
             - Setting this property to a value will send the ``dmm.measure.rel.level = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.rel.level = value
             - print(dmm.measure.rel.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -805,21 +785,20 @@ class DmmMeasureRel(BaseTSPCmd):
     def method(self) -> str:
         """Access the ``dmm.measure.rel.method`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if relative offset is applied to the measurements before
               calculating the DC voltage ratio value.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.rel.method)`` query.
             - Setting this property to a value will send the ``dmm.measure.rel.method = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.rel.method = value
             - print(dmm.measure.rel.method)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -838,21 +817,20 @@ class DmmMeasureRel(BaseTSPCmd):
     def method(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.rel.method`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if relative offset is applied to the measurements before
               calculating the DC voltage ratio value.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.rel.method)`` query.
             - Setting this property to a value will send the ``dmm.measure.rel.method = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.rel.method = value
             - print(dmm.measure.rel.method)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -874,7 +852,7 @@ class DmmMeasureRel(BaseTSPCmd):
 class DmmMeasureOffsetcompensation(BaseTSPCmd):
     """The ``dmm.measure.offsetcompensation`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.enable``: The ``dmm.measure.offsetcompensation.enable`` attribute.
     """
 
@@ -882,21 +860,20 @@ class DmmMeasureOffsetcompensation(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``dmm.measure.offsetcompensation.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if offset compensation is used.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.offsetcompensation.enable)``
               query.
             - Setting this property to a value will send the
               ``dmm.measure.offsetcompensation.enable = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.offsetcompensation.enable = value
             - print(dmm.measure.offsetcompensation.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -915,21 +892,20 @@ class DmmMeasureOffsetcompensation(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.offsetcompensation.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if offset compensation is used.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.offsetcompensation.enable)``
               query.
             - Setting this property to a value will send the
               ``dmm.measure.offsetcompensation.enable = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.offsetcompensation.enable = value
             - print(dmm.measure.offsetcompensation.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -951,7 +927,7 @@ class DmmMeasureOffsetcompensation(BaseTSPCmd):
 class DmmMeasureMathMxb(BaseTSPCmd):
     """The ``dmm.measure.math.mxb`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.bfactor``: The ``dmm.measure.math.mxb.bfactor`` attribute.
         - ``.mfactor``: The ``dmm.measure.math.mxb.mfactor`` attribute.
     """
@@ -960,20 +936,19 @@ class DmmMeasureMathMxb(BaseTSPCmd):
     def bfactor(self) -> str:
         """Access the ``dmm.measure.math.mxb.bfactor`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the offset, b, for the y = mx + b operation.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.math.mxb.bfactor)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.math.mxb.bfactor = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.math.mxb.bfactor = value
             - print(dmm.measure.math.mxb.bfactor)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -992,20 +967,19 @@ class DmmMeasureMathMxb(BaseTSPCmd):
     def bfactor(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.math.mxb.bfactor`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the offset, b, for the y = mx + b operation.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.math.mxb.bfactor)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.math.mxb.bfactor = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.math.mxb.bfactor = value
             - print(dmm.measure.math.mxb.bfactor)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1027,20 +1001,19 @@ class DmmMeasureMathMxb(BaseTSPCmd):
     def mfactor(self) -> str:
         """Access the ``dmm.measure.math.mxb.mfactor`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the scale factor, m, for the y = mx + b math operation.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.math.mxb.mfactor)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.math.mxb.mfactor = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.math.mxb.mfactor = value
             - print(dmm.measure.math.mxb.mfactor)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1059,20 +1032,19 @@ class DmmMeasureMathMxb(BaseTSPCmd):
     def mfactor(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.math.mxb.mfactor`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the scale factor, m, for the y = mx + b math operation.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.math.mxb.mfactor)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.math.mxb.mfactor = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.math.mxb.mfactor = value
             - print(dmm.measure.math.mxb.mfactor)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1094,7 +1066,7 @@ class DmmMeasureMathMxb(BaseTSPCmd):
 class DmmMeasureMath(BaseTSPCmd):
     """The ``dmm.measure.math`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.enable``: The ``dmm.measure.math.enable`` attribute.
         - ``.format``: The ``dmm.measure.math.format`` attribute.
         - ``.mxb``: The ``dmm.measure.math.mxb`` command tree.
@@ -1109,21 +1081,20 @@ class DmmMeasureMath(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``dmm.measure.math.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables math operations on measurements for the selected
               measurement function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.math.enable)`` query.
             - Setting this property to a value will send the ``dmm.measure.math.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.math.enable = value
             - print(dmm.measure.math.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1142,21 +1113,20 @@ class DmmMeasureMath(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.math.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables math operations on measurements for the selected
               measurement function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.math.enable)`` query.
             - Setting this property to a value will send the ``dmm.measure.math.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.math.enable = value
             - print(dmm.measure.math.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1178,21 +1148,20 @@ class DmmMeasureMath(BaseTSPCmd):
     def format(self) -> str:
         """Access the ``dmm.measure.math.format`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies which math operation is performed on measurements when math
               operations are enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.math.format)`` query.
             - Setting this property to a value will send the ``dmm.measure.math.format = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.math.format = value
             - print(dmm.measure.math.format)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1211,21 +1180,20 @@ class DmmMeasureMath(BaseTSPCmd):
     def format(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.math.format`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies which math operation is performed on measurements when math
               operations are enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.math.format)`` query.
             - Setting this property to a value will send the ``dmm.measure.math.format = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.math.format = value
             - print(dmm.measure.math.format)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1247,7 +1215,7 @@ class DmmMeasureMath(BaseTSPCmd):
     def mxb(self) -> DmmMeasureMathMxb:
         """Return the ``dmm.measure.math.mxb`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.bfactor``: The ``dmm.measure.math.mxb.bfactor`` attribute.
             - ``.mfactor``: The ``dmm.measure.math.mxb.mfactor`` attribute.
         """
@@ -1257,21 +1225,20 @@ class DmmMeasureMath(BaseTSPCmd):
     def percent(self) -> str:
         """Access the ``dmm.measure.math.percent`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the reference constant that is used when math operations are
               set to percent.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.math.percent)`` query.
             - Setting this property to a value will send the ``dmm.measure.math.percent = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.math.percent = value
             - print(dmm.measure.math.percent)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1290,21 +1257,20 @@ class DmmMeasureMath(BaseTSPCmd):
     def percent(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.math.percent`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the reference constant that is used when math operations are
               set to percent.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.math.percent)`` query.
             - Setting this property to a value will send the ``dmm.measure.math.percent = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.math.percent = value
             - print(dmm.measure.math.percent)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1326,7 +1292,7 @@ class DmmMeasureMath(BaseTSPCmd):
 class DmmMeasureLimitItemLow(BaseTSPCmd):
     """The ``dmm.measure.limit[r].low`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.value``: The ``dmm.measure.limit[r].low.value`` attribute.
     """
 
@@ -1334,20 +1300,19 @@ class DmmMeasureLimitItemLow(BaseTSPCmd):
     def value(self) -> str:
         """Access the ``dmm.measure.limit[r].low.value`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the lower limit for a limit test. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.limit[r].low.value)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.limit[r].low.value = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.limit[r].low.value = value
             - print(dmm.measure.limit[r].low.value)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1366,20 +1331,19 @@ class DmmMeasureLimitItemLow(BaseTSPCmd):
     def value(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.limit[r].low.value`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the lower limit for a limit test. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.limit[r].low.value)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.limit[r].low.value = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.limit[r].low.value = value
             - print(dmm.measure.limit[r].low.value)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1401,7 +1365,7 @@ class DmmMeasureLimitItemLow(BaseTSPCmd):
 class DmmMeasureLimitItemHigh(BaseTSPCmd):
     """The ``dmm.measure.limit[r].high`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.value``: The ``dmm.measure.limit[r].high.value`` attribute.
     """
 
@@ -1409,21 +1373,20 @@ class DmmMeasureLimitItemHigh(BaseTSPCmd):
     def value(self) -> str:
         """Access the ``dmm.measure.limit[r].high.value`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the upper limit for a limit test. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.limit[r].high.value)``
               query.
             - Setting this property to a value will send the
               ``dmm.measure.limit[r].high.value = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.limit[r].high.value = value
             - print(dmm.measure.limit[r].high.value)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1442,21 +1405,20 @@ class DmmMeasureLimitItemHigh(BaseTSPCmd):
     def value(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.limit[r].high.value`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the upper limit for a limit test. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.limit[r].high.value)``
               query.
             - Setting this property to a value will send the
               ``dmm.measure.limit[r].high.value = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.limit[r].high.value = value
             - print(dmm.measure.limit[r].high.value)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1478,7 +1440,7 @@ class DmmMeasureLimitItemHigh(BaseTSPCmd):
 class DmmMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``dmm.measure.limit[r]`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.autoclear``: The ``dmm.measure.limit[r].autoclear`` attribute.
         - ``.enable``: The ``dmm.measure.limit[r].enable`` attribute.
         - ``.fail``: The ``dmm.measure.limit[r].fail`` attribute.
@@ -1495,21 +1457,20 @@ class DmmMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def autoclear(self) -> str:
         """Access the ``dmm.measure.limit[r].autoclear`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if the test result for limit Y should be cleared
               automatically or not. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.limit[r].autoclear)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.limit[r].autoclear = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.limit[r].autoclear = value
             - print(dmm.measure.limit[r].autoclear)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1528,21 +1489,20 @@ class DmmMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def autoclear(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.limit[r].autoclear`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if the test result for limit Y should be cleared
               automatically or not. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.limit[r].autoclear)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.limit[r].autoclear = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.limit[r].autoclear = value
             - print(dmm.measure.limit[r].autoclear)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1564,21 +1524,20 @@ class DmmMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``dmm.measure.limit[r].enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables a limit test on the measurement from the selected
               measure function. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.limit[r].enable)`` query.
             - Setting this property to a value will send the ``dmm.measure.limit[r].enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.limit[r].enable = value
             - print(dmm.measure.limit[r].enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1597,21 +1556,20 @@ class DmmMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.limit[r].enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables a limit test on the measurement from the selected
               measure function. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.limit[r].enable)`` query.
             - Setting this property to a value will send the ``dmm.measure.limit[r].enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.limit[r].enable = value
             - print(dmm.measure.limit[r].enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1633,17 +1591,16 @@ class DmmMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def fail(self) -> str:
         """Access the ``dmm.measure.limit[r].fail`` attribute.
 
-        **Description:**
+        Description:
             - This attribute queries the results of a limit test. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.limit[r].fail)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(dmm.measure.limit[r].fail)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1662,7 +1619,7 @@ class DmmMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def high(self) -> DmmMeasureLimitItemHigh:
         """Return the ``dmm.measure.limit[r].high`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.value``: The ``dmm.measure.limit[r].high.value`` attribute.
         """
         return self._high
@@ -1671,7 +1628,7 @@ class DmmMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def low(self) -> DmmMeasureLimitItemLow:
         """Return the ``dmm.measure.limit[r].low`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.value``: The ``dmm.measure.limit[r].low.value`` attribute.
         """
         return self._low
@@ -1680,7 +1637,7 @@ class DmmMeasureLimitItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
 class DmmMeasureFilter(BaseTSPCmd):
     """The ``dmm.measure.filter`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.count``: The ``dmm.measure.filter.count`` attribute.
         - ``.enable``: The ``dmm.measure.filter.enable`` attribute.
         - ``.type``: The ``dmm.measure.filter.type`` attribute.
@@ -1691,21 +1648,20 @@ class DmmMeasureFilter(BaseTSPCmd):
     def count(self) -> str:
         """Access the ``dmm.measure.filter.count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of measurements that are averaged when filtering is
               enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.filter.count)`` query.
             - Setting this property to a value will send the ``dmm.measure.filter.count = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.filter.count = value
             - print(dmm.measure.filter.count)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1724,21 +1680,20 @@ class DmmMeasureFilter(BaseTSPCmd):
     def count(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.filter.count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of measurements that are averaged when filtering is
               enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.filter.count)`` query.
             - Setting this property to a value will send the ``dmm.measure.filter.count = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.filter.count = value
             - print(dmm.measure.filter.count)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1760,21 +1715,20 @@ class DmmMeasureFilter(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``dmm.measure.filter.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the averaging filter for measurements of the
               selected function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.filter.enable)`` query.
             - Setting this property to a value will send the ``dmm.measure.filter.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.filter.enable = value
             - print(dmm.measure.filter.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1793,21 +1747,20 @@ class DmmMeasureFilter(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.filter.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the averaging filter for measurements of the
               selected function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.filter.enable)`` query.
             - Setting this property to a value will send the ``dmm.measure.filter.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.filter.enable = value
             - print(dmm.measure.filter.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1829,21 +1782,20 @@ class DmmMeasureFilter(BaseTSPCmd):
     def type(self) -> str:
         """Access the ``dmm.measure.filter.type`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the type of averaging filter that is used for the selected
               measure function when the measurement filter is enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.filter.type)`` query.
             - Setting this property to a value will send the ``dmm.measure.filter.type = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.filter.type = value
             - print(dmm.measure.filter.type)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1862,21 +1814,20 @@ class DmmMeasureFilter(BaseTSPCmd):
     def type(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.filter.type`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the type of averaging filter that is used for the selected
               measure function when the measurement filter is enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.filter.type)`` query.
             - Setting this property to a value will send the ``dmm.measure.filter.type = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.filter.type = value
             - print(dmm.measure.filter.type)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1898,21 +1849,20 @@ class DmmMeasureFilter(BaseTSPCmd):
     def window(self) -> str:
         """Access the ``dmm.measure.filter.window`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the window for the averaging filter that is used for measurements
               for the selected function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.filter.window)`` query.
             - Setting this property to a value will send the ``dmm.measure.filter.window = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.filter.window = value
             - print(dmm.measure.filter.window)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1931,21 +1881,20 @@ class DmmMeasureFilter(BaseTSPCmd):
     def window(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.filter.window`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the window for the averaging filter that is used for measurements
               for the selected function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.filter.window)`` query.
             - Setting this property to a value will send the ``dmm.measure.filter.window = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.filter.window = value
             - print(dmm.measure.filter.window)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -1967,7 +1916,7 @@ class DmmMeasureFilter(BaseTSPCmd):
 class DmmMeasureBias(BaseTSPCmd):
     """The ``dmm.measure.bias`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.actual``: The ``dmm.measure.bias.actual`` attribute.
         - ``.level``: The ``dmm.measure.bias.level`` attribute.
     """
@@ -1976,18 +1925,17 @@ class DmmMeasureBias(BaseTSPCmd):
     def actual(self) -> str:
         """Access the ``dmm.measure.bias.actual`` attribute.
 
-        **Description:**
+        Description:
             - This attribute returns the amount of current the instrument is sourcing when it makes
               measurements.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.bias.actual)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(dmm.measure.bias.actual)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2006,21 +1954,20 @@ class DmmMeasureBias(BaseTSPCmd):
     def level(self) -> str:
         """Access the ``dmm.measure.bias.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the amount of current the instrument sources when it makes
               measurements.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.bias.level)`` query.
             - Setting this property to a value will send the ``dmm.measure.bias.level = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.bias.level = value
             - print(dmm.measure.bias.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2039,21 +1986,20 @@ class DmmMeasureBias(BaseTSPCmd):
     def level(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.bias.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the amount of current the instrument sources when it makes
               measurements.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.bias.level)`` query.
             - Setting this property to a value will send the ``dmm.measure.bias.level = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.bias.level = value
             - print(dmm.measure.bias.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2075,7 +2021,7 @@ class DmmMeasureBias(BaseTSPCmd):
 class DmmMeasureAutozero(BaseTSPCmd):
     """The ``dmm.measure.autozero`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.enable``: The ``dmm.measure.autozero.enable`` attribute.
     """
 
@@ -2083,21 +2029,20 @@ class DmmMeasureAutozero(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``dmm.measure.autozero.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables automatic updates to the internal reference
               measurements (autozero) of the instrument.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.autozero.enable)`` query.
             - Setting this property to a value will send the ``dmm.measure.autozero.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.autozero.enable = value
             - print(dmm.measure.autozero.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2116,21 +2061,20 @@ class DmmMeasureAutozero(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.autozero.enable`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables automatic updates to the internal reference
               measurements (autozero) of the instrument.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.autozero.enable)`` query.
             - Setting this property to a value will send the ``dmm.measure.autozero.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.autozero.enable = value
             - print(dmm.measure.autozero.enable)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2152,7 +2096,7 @@ class DmmMeasureAutozero(BaseTSPCmd):
 class DmmMeasureAnalogtriggerWindow(BaseTSPCmd):
     """The ``dmm.measure.analogtrigger.window`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.direction``: The ``dmm.measure.analogtrigger.window.direction`` attribute.
         - ``.levelhigh``: The ``dmm.measure.analogtrigger.window.levelhigh`` attribute.
         - ``.levellow``: The ``dmm.measure.analogtrigger.window.levellow`` attribute.
@@ -2162,22 +2106,21 @@ class DmmMeasureAnalogtriggerWindow(BaseTSPCmd):
     def direction(self) -> str:
         """Access the ``dmm.measure.analogtrigger.window.direction`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines if the analog trigger occurs when the signal enters or leaves
               the defined high and low analog signal level boundaries.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.measure.analogtrigger.window.direction)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.window.direction = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.window.direction = value
             - print(dmm.measure.analogtrigger.window.direction)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2196,22 +2139,21 @@ class DmmMeasureAnalogtriggerWindow(BaseTSPCmd):
     def direction(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.analogtrigger.window.direction`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines if the analog trigger occurs when the signal enters or leaves
               the defined high and low analog signal level boundaries.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.measure.analogtrigger.window.direction)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.window.direction = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.window.direction = value
             - print(dmm.measure.analogtrigger.window.direction)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2233,21 +2175,20 @@ class DmmMeasureAnalogtriggerWindow(BaseTSPCmd):
     def levelhigh(self) -> str:
         """Access the ``dmm.measure.analogtrigger.window.levelhigh`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the upper boundary of the analog trigger window.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.measure.analogtrigger.window.levelhigh)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.window.levelhigh = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.window.levelhigh = value
             - print(dmm.measure.analogtrigger.window.levelhigh)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2266,21 +2207,20 @@ class DmmMeasureAnalogtriggerWindow(BaseTSPCmd):
     def levelhigh(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.analogtrigger.window.levelhigh`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the upper boundary of the analog trigger window.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.measure.analogtrigger.window.levelhigh)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.window.levelhigh = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.window.levelhigh = value
             - print(dmm.measure.analogtrigger.window.levelhigh)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2302,21 +2242,20 @@ class DmmMeasureAnalogtriggerWindow(BaseTSPCmd):
     def levellow(self) -> str:
         """Access the ``dmm.measure.analogtrigger.window.levellow`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the lower boundary of the analog trigger window.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.measure.analogtrigger.window.levellow)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.window.levellow = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.window.levellow = value
             - print(dmm.measure.analogtrigger.window.levellow)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2335,21 +2274,20 @@ class DmmMeasureAnalogtriggerWindow(BaseTSPCmd):
     def levellow(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.analogtrigger.window.levellow`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the lower boundary of the analog trigger window.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.measure.analogtrigger.window.levellow)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.window.levellow = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.window.levellow = value
             - print(dmm.measure.analogtrigger.window.levellow)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2371,7 +2309,7 @@ class DmmMeasureAnalogtriggerWindow(BaseTSPCmd):
 class DmmMeasureAnalogtriggerPulse(BaseTSPCmd):
     """The ``dmm.measure.analogtrigger.pulse`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.condition``: The ``dmm.measure.analogtrigger.pulse.condition`` attribute.
         - ``.level``: The ``dmm.measure.analogtrigger.pulse.level`` attribute.
         - ``.polarity``: The ``dmm.measure.analogtrigger.pulse.polarity`` attribute.
@@ -2382,23 +2320,22 @@ class DmmMeasureAnalogtriggerPulse(BaseTSPCmd):
     def condition(self) -> str:
         """Access the ``dmm.measure.analogtrigger.pulse.condition`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines if the pulse must be greater than or less than the incoming
               pulse must have a duration greater than or less than the threshold pulse width before
               an analog trigger is generated.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.measure.analogtrigger.pulse.condition)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.pulse.condition = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.pulse.condition = value
             - print(dmm.measure.analogtrigger.pulse.condition)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2417,23 +2354,22 @@ class DmmMeasureAnalogtriggerPulse(BaseTSPCmd):
     def condition(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.analogtrigger.pulse.condition`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines if the pulse must be greater than or less than the incoming
               pulse must have a duration greater than or less than the threshold pulse width before
               an analog trigger is generated.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.measure.analogtrigger.pulse.condition)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.pulse.condition = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.pulse.condition = value
             - print(dmm.measure.analogtrigger.pulse.condition)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2455,21 +2391,20 @@ class DmmMeasureAnalogtriggerPulse(BaseTSPCmd):
     def level(self) -> str:
         """Access the ``dmm.measure.analogtrigger.pulse.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the pulse level that generates an analog trigger event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.analogtrigger.pulse.level)``
               query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.pulse.level = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.pulse.level = value
             - print(dmm.measure.analogtrigger.pulse.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2488,21 +2423,20 @@ class DmmMeasureAnalogtriggerPulse(BaseTSPCmd):
     def level(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.analogtrigger.pulse.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the pulse level that generates an analog trigger event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.analogtrigger.pulse.level)``
               query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.pulse.level = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.pulse.level = value
             - print(dmm.measure.analogtrigger.pulse.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2524,22 +2458,21 @@ class DmmMeasureAnalogtriggerPulse(BaseTSPCmd):
     def polarity(self) -> str:
         """Access the ``dmm.measure.analogtrigger.pulse.polarity`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the polarity of the pulse that generates an analog trigger
               event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.measure.analogtrigger.pulse.polarity)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.pulse.polarity = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.pulse.polarity = value
             - print(dmm.measure.analogtrigger.pulse.polarity)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2558,22 +2491,21 @@ class DmmMeasureAnalogtriggerPulse(BaseTSPCmd):
     def polarity(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.analogtrigger.pulse.polarity`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the polarity of the pulse that generates an analog trigger
               event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.measure.analogtrigger.pulse.polarity)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.pulse.polarity = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.pulse.polarity = value
             - print(dmm.measure.analogtrigger.pulse.polarity)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2595,21 +2527,20 @@ class DmmMeasureAnalogtriggerPulse(BaseTSPCmd):
     def width(self) -> str:
         """Access the ``dmm.measure.analogtrigger.pulse.width`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the threshold value for the pulse width.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.analogtrigger.pulse.width)``
               query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.pulse.width = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.pulse.width = value
             - print(dmm.measure.analogtrigger.pulse.width)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2628,21 +2559,20 @@ class DmmMeasureAnalogtriggerPulse(BaseTSPCmd):
     def width(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.analogtrigger.pulse.width`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the threshold value for the pulse width.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.analogtrigger.pulse.width)``
               query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.pulse.width = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.pulse.width = value
             - print(dmm.measure.analogtrigger.pulse.width)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2664,7 +2594,7 @@ class DmmMeasureAnalogtriggerPulse(BaseTSPCmd):
 class DmmMeasureAnalogtriggerEdge(BaseTSPCmd):
     """The ``dmm.measure.analogtrigger.edge`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.level``: The ``dmm.measure.analogtrigger.edge.level`` attribute.
         - ``.slope``: The ``dmm.measure.analogtrigger.edge.slope`` attribute.
     """
@@ -2673,22 +2603,21 @@ class DmmMeasureAnalogtriggerEdge(BaseTSPCmd):
     def level(self) -> str:
         """Access the ``dmm.measure.analogtrigger.edge.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the signal level that generates the analog trigger event for
               the edge trigger mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.analogtrigger.edge.level)``
               query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.edge.level = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.edge.level = value
             - print(dmm.measure.analogtrigger.edge.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2707,22 +2636,21 @@ class DmmMeasureAnalogtriggerEdge(BaseTSPCmd):
     def level(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.analogtrigger.edge.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the signal level that generates the analog trigger event for
               the edge trigger mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.analogtrigger.edge.level)``
               query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.edge.level = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.edge.level = value
             - print(dmm.measure.analogtrigger.edge.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2744,21 +2672,20 @@ class DmmMeasureAnalogtriggerEdge(BaseTSPCmd):
     def slope(self) -> str:
         """Access the ``dmm.measure.analogtrigger.edge.slope`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the slope of the analog trigger edge.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.analogtrigger.edge.slope)``
               query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.edge.slope = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.edge.slope = value
             - print(dmm.measure.analogtrigger.edge.slope)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2777,21 +2704,20 @@ class DmmMeasureAnalogtriggerEdge(BaseTSPCmd):
     def slope(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.analogtrigger.edge.slope`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the slope of the analog trigger edge.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.analogtrigger.edge.slope)``
               query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.edge.slope = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.edge.slope = value
             - print(dmm.measure.analogtrigger.edge.slope)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2813,7 +2739,7 @@ class DmmMeasureAnalogtriggerEdge(BaseTSPCmd):
 class DmmMeasureAnalogtrigger(BaseTSPCmd):
     """The ``dmm.measure.analogtrigger`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.edge``: The ``dmm.measure.analogtrigger.edge`` command tree.
         - ``.highfreqreject``: The ``dmm.measure.analogtrigger.highfreqreject`` attribute.
         - ``.mode``: The ``dmm.measure.analogtrigger.mode`` attribute.
@@ -2831,7 +2757,7 @@ class DmmMeasureAnalogtrigger(BaseTSPCmd):
     def edge(self) -> DmmMeasureAnalogtriggerEdge:
         """Return the ``dmm.measure.analogtrigger.edge`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.level``: The ``dmm.measure.analogtrigger.edge.level`` attribute.
             - ``.slope``: The ``dmm.measure.analogtrigger.edge.slope`` attribute.
         """
@@ -2841,21 +2767,20 @@ class DmmMeasureAnalogtrigger(BaseTSPCmd):
     def highfreqreject(self) -> str:
         """Access the ``dmm.measure.analogtrigger.highfreqreject`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables high frequency rejection on analog trigger events.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.measure.analogtrigger.highfreqreject)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.highfreqreject = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.highfreqreject = value
             - print(dmm.measure.analogtrigger.highfreqreject)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2874,21 +2799,20 @@ class DmmMeasureAnalogtrigger(BaseTSPCmd):
     def highfreqreject(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.analogtrigger.highfreqreject`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables high frequency rejection on analog trigger events.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.measure.analogtrigger.highfreqreject)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.highfreqreject = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.highfreqreject = value
             - print(dmm.measure.analogtrigger.highfreqreject)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2910,21 +2834,20 @@ class DmmMeasureAnalogtrigger(BaseTSPCmd):
     def mode(self) -> str:
         """Access the ``dmm.measure.analogtrigger.mode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute configures the type of signal behavior that can generate an analog
               trigger event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.analogtrigger.mode)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.mode = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.mode = value
             - print(dmm.measure.analogtrigger.mode)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2943,21 +2866,20 @@ class DmmMeasureAnalogtrigger(BaseTSPCmd):
     def mode(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.analogtrigger.mode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute configures the type of signal behavior that can generate an analog
               trigger event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.analogtrigger.mode)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.analogtrigger.mode = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.analogtrigger.mode = value
             - print(dmm.measure.analogtrigger.mode)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -2979,7 +2901,7 @@ class DmmMeasureAnalogtrigger(BaseTSPCmd):
     def pulse(self) -> DmmMeasureAnalogtriggerPulse:
         """Return the ``dmm.measure.analogtrigger.pulse`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.condition``: The ``dmm.measure.analogtrigger.pulse.condition`` attribute.
             - ``.level``: The ``dmm.measure.analogtrigger.pulse.level`` attribute.
             - ``.polarity``: The ``dmm.measure.analogtrigger.pulse.polarity`` attribute.
@@ -2991,7 +2913,7 @@ class DmmMeasureAnalogtrigger(BaseTSPCmd):
     def window(self) -> DmmMeasureAnalogtriggerWindow:
         """Return the ``dmm.measure.analogtrigger.window`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.direction``: The ``dmm.measure.analogtrigger.window.direction`` attribute.
             - ``.levelhigh``: The ``dmm.measure.analogtrigger.window.levelhigh`` attribute.
             - ``.levellow``: The ``dmm.measure.analogtrigger.window.levellow`` attribute.
@@ -3003,7 +2925,7 @@ class DmmMeasureAnalogtrigger(BaseTSPCmd):
 class DmmMeasure(BaseTSPCmd):
     """The ``dmm.measure`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.analogtrigger``: The ``dmm.measure.analogtrigger`` command tree.
         - ``.aperture``: The ``dmm.measure.aperture`` attribute.
         - ``.autodelay``: The ``dmm.measure.autodelay`` attribute.
@@ -3063,7 +2985,7 @@ class DmmMeasure(BaseTSPCmd):
     def analogtrigger(self) -> DmmMeasureAnalogtrigger:
         """Return the ``dmm.measure.analogtrigger`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.edge``: The ``dmm.measure.analogtrigger.edge`` command tree.
             - ``.highfreqreject``: The ``dmm.measure.analogtrigger.highfreqreject`` attribute.
             - ``.mode``: The ``dmm.measure.analogtrigger.mode`` attribute.
@@ -3076,20 +2998,19 @@ class DmmMeasure(BaseTSPCmd):
     def aperture(self) -> str:
         """Access the ``dmm.measure.aperture`` attribute.
 
-        **Description:**
+        Description:
             - This function determines the aperture setting for the selected function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.aperture)`` query.
             - Setting this property to a value will send the ``dmm.measure.aperture = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.aperture = value
             - print(dmm.measure.aperture)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3108,20 +3029,19 @@ class DmmMeasure(BaseTSPCmd):
     def aperture(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.aperture`` attribute.
 
-        **Description:**
+        Description:
             - This function determines the aperture setting for the selected function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.aperture)`` query.
             - Setting this property to a value will send the ``dmm.measure.aperture = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.aperture = value
             - print(dmm.measure.aperture)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3143,21 +3063,20 @@ class DmmMeasure(BaseTSPCmd):
     def autodelay(self) -> str:
         """Access the ``dmm.measure.autodelay`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the automatic delay that occurs before each
               measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.autodelay)`` query.
             - Setting this property to a value will send the ``dmm.measure.autodelay = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.autodelay = value
             - print(dmm.measure.autodelay)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3176,21 +3095,20 @@ class DmmMeasure(BaseTSPCmd):
     def autodelay(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.autodelay`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the automatic delay that occurs before each
               measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.autodelay)`` query.
             - Setting this property to a value will send the ``dmm.measure.autodelay = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.autodelay = value
             - print(dmm.measure.autodelay)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3212,21 +3130,20 @@ class DmmMeasure(BaseTSPCmd):
     def autorange(self) -> str:
         """Access the ``dmm.measure.autorange`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the measurement range is set manually or automatically
               for the selected measure function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.autorange)`` query.
             - Setting this property to a value will send the ``dmm.measure.autorange = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.autorange = value
             - print(dmm.measure.autorange)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3245,21 +3162,20 @@ class DmmMeasure(BaseTSPCmd):
     def autorange(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.autorange`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the measurement range is set manually or automatically
               for the selected measure function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.autorange)`` query.
             - Setting this property to a value will send the ``dmm.measure.autorange = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.autorange = value
             - print(dmm.measure.autorange)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3281,7 +3197,7 @@ class DmmMeasure(BaseTSPCmd):
     def autozero(self) -> DmmMeasureAutozero:
         """Return the ``dmm.measure.autozero`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.enable``: The ``dmm.measure.autozero.enable`` attribute.
         """
         return self._autozero
@@ -3290,7 +3206,7 @@ class DmmMeasure(BaseTSPCmd):
     def bias(self) -> DmmMeasureBias:
         """Return the ``dmm.measure.bias`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.actual``: The ``dmm.measure.bias.actual`` attribute.
             - ``.level``: The ``dmm.measure.bias.level`` attribute.
         """
@@ -3300,20 +3216,19 @@ class DmmMeasure(BaseTSPCmd):
     def count(self) -> str:
         """Access the ``dmm.measure.count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of measurements to make when a measurement is
               requested.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.count)`` query.
             - Setting this property to a value will send the ``dmm.measure.count = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.count = value
             - print(dmm.measure.count)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3332,20 +3247,19 @@ class DmmMeasure(BaseTSPCmd):
     def count(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of measurements to make when a measurement is
               requested.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.count)`` query.
             - Setting this property to a value will send the ``dmm.measure.count = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.count = value
             - print(dmm.measure.count)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3367,20 +3281,19 @@ class DmmMeasure(BaseTSPCmd):
     def dbmreference(self) -> str:
         """Access the ``dmm.measure.dbmreference`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the decibel-milliwatts (dBm) reference.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.dbmreference)`` query.
             - Setting this property to a value will send the ``dmm.measure.dbmreference = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.dbmreference = value
             - print(dmm.measure.dbmreference)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3399,20 +3312,19 @@ class DmmMeasure(BaseTSPCmd):
     def dbmreference(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.dbmreference`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the decibel-milliwatts (dBm) reference.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.dbmreference)`` query.
             - Setting this property to a value will send the ``dmm.measure.dbmreference = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.dbmreference = value
             - print(dmm.measure.dbmreference)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3434,21 +3346,20 @@ class DmmMeasure(BaseTSPCmd):
     def detectorbandwidth(self) -> str:
         """Access the ``dmm.measure.detectorbandwidth`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the detector bandwidth for AC current and AC voltage
               measurements.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.detectorbandwidth)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.detectorbandwidth = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.detectorbandwidth = value
             - print(dmm.measure.detectorbandwidth)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3467,21 +3378,20 @@ class DmmMeasure(BaseTSPCmd):
     def detectorbandwidth(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.detectorbandwidth`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the detector bandwidth for AC current and AC voltage
               measurements.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.detectorbandwidth)`` query.
             - Setting this property to a value will send the
               ``dmm.measure.detectorbandwidth = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.detectorbandwidth = value
             - print(dmm.measure.detectorbandwidth)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3503,21 +3413,20 @@ class DmmMeasure(BaseTSPCmd):
     def displaydigits(self) -> str:
         """Access the ``dmm.measure.displaydigits`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines the number of digits that are displayed for measurements on
               the front panel.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.displaydigits)`` query.
             - Setting this property to a value will send the ``dmm.measure.displaydigits = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.displaydigits = value
             - print(dmm.measure.displaydigits)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3536,21 +3445,20 @@ class DmmMeasure(BaseTSPCmd):
     def displaydigits(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.displaydigits`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines the number of digits that are displayed for measurements on
               the front panel.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.displaydigits)`` query.
             - Setting this property to a value will send the ``dmm.measure.displaydigits = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.displaydigits = value
             - print(dmm.measure.displaydigits)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3572,21 +3480,20 @@ class DmmMeasure(BaseTSPCmd):
     def drycircuit(self) -> str:
         """Access the ``dmm.measure.drycircuit`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the dry circuit feature of the 4-wire resistance
               measure function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.drycircuit)`` query.
             - Setting this property to a value will send the ``dmm.measure.drycircuit = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.drycircuit = value
             - print(dmm.measure.drycircuit)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3605,21 +3512,20 @@ class DmmMeasure(BaseTSPCmd):
     def drycircuit(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.drycircuit`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the dry circuit feature of the 4-wire resistance
               measure function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.drycircuit)`` query.
             - Setting this property to a value will send the ``dmm.measure.drycircuit = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.drycircuit = value
             - print(dmm.measure.drycircuit)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3641,7 +3547,7 @@ class DmmMeasure(BaseTSPCmd):
     def filter(self) -> DmmMeasureFilter:
         """Return the ``dmm.measure.filter`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.count``: The ``dmm.measure.filter.count`` attribute.
             - ``.enable``: The ``dmm.measure.filter.enable`` attribute.
             - ``.type``: The ``dmm.measure.filter.type`` attribute.
@@ -3653,20 +3559,19 @@ class DmmMeasure(BaseTSPCmd):
     def fourrtd(self) -> str:
         """Access the ``dmm.measure.fourrtd`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the type of 4-wire RTD that is being used
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.fourrtd)`` query.
             - Setting this property to a value will send the ``dmm.measure.fourrtd = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.fourrtd = value
             - print(dmm.measure.fourrtd)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3685,20 +3590,19 @@ class DmmMeasure(BaseTSPCmd):
     def fourrtd(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.fourrtd`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the type of 4-wire RTD that is being used
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.fourrtd)`` query.
             - Setting this property to a value will send the ``dmm.measure.fourrtd = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.fourrtd = value
             - print(dmm.measure.fourrtd)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3720,19 +3624,18 @@ class DmmMeasure(BaseTSPCmd):
     def func(self) -> str:
         """Access the ``dmm.measure.func`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the active measure function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.func)`` query.
             - Setting this property to a value will send the ``dmm.measure.func = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.func = value
             - print(dmm.measure.func)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3751,19 +3654,18 @@ class DmmMeasure(BaseTSPCmd):
     def func(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.func`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the active measure function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.func)`` query.
             - Setting this property to a value will send the ``dmm.measure.func = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.func = value
             - print(dmm.measure.func)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3785,20 +3687,19 @@ class DmmMeasure(BaseTSPCmd):
     def inputimpedance(self) -> str:
         """Access the ``dmm.measure.inputimpedance`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines when the 10 MΩ input divider is enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.inputimpedance)`` query.
             - Setting this property to a value will send the ``dmm.measure.inputimpedance = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.inputimpedance = value
             - print(dmm.measure.inputimpedance)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3817,20 +3718,19 @@ class DmmMeasure(BaseTSPCmd):
     def inputimpedance(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.inputimpedance`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines when the 10 MΩ input divider is enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.inputimpedance)`` query.
             - Setting this property to a value will send the ``dmm.measure.inputimpedance = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.inputimpedance = value
             - print(dmm.measure.inputimpedance)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3852,7 +3752,7 @@ class DmmMeasure(BaseTSPCmd):
     def limit(self) -> Dict[int, DmmMeasureLimitItem]:
         """Return the ``dmm.measure.limit[r]`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.autoclear``: The ``dmm.measure.limit[r].autoclear`` attribute.
             - ``.enable``: The ``dmm.measure.limit[r].enable`` attribute.
             - ``.fail``: The ``dmm.measure.limit[r].fail`` attribute.
@@ -3865,20 +3765,19 @@ class DmmMeasure(BaseTSPCmd):
     def linesync(self) -> str:
         """Access the ``dmm.measure.linesync`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if line synchronization is used during the measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.linesync)`` query.
             - Setting this property to a value will send the ``dmm.measure.linesync = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.linesync = value
             - print(dmm.measure.linesync)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3897,20 +3796,19 @@ class DmmMeasure(BaseTSPCmd):
     def linesync(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.linesync`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if line synchronization is used during the measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.linesync)`` query.
             - Setting this property to a value will send the ``dmm.measure.linesync = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.linesync = value
             - print(dmm.measure.linesync)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3932,7 +3830,7 @@ class DmmMeasure(BaseTSPCmd):
     def math(self) -> DmmMeasureMath:
         """Return the ``dmm.measure.math`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.enable``: The ``dmm.measure.math.enable`` attribute.
             - ``.format``: The ``dmm.measure.math.format`` attribute.
             - ``.mxb``: The ``dmm.measure.math.mxb`` command tree.
@@ -3944,20 +3842,19 @@ class DmmMeasure(BaseTSPCmd):
     def nplc(self) -> str:
         """Access the ``dmm.measure.nplc`` attribute.
 
-        **Description:**
+        Description:
             - This command sets the time that the input signal is measured for the selected
               function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.nplc)`` query.
             - Setting this property to a value will send the ``dmm.measure.nplc = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.nplc = value
             - print(dmm.measure.nplc)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -3976,20 +3873,19 @@ class DmmMeasure(BaseTSPCmd):
     def nplc(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.nplc`` attribute.
 
-        **Description:**
+        Description:
             - This command sets the time that the input signal is measured for the selected
               function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.nplc)`` query.
             - Setting this property to a value will send the ``dmm.measure.nplc = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.nplc = value
             - print(dmm.measure.nplc)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4011,7 +3907,7 @@ class DmmMeasure(BaseTSPCmd):
     def offsetcompensation(self) -> DmmMeasureOffsetcompensation:
         """Return the ``dmm.measure.offsetcompensation`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.enable``: The ``dmm.measure.offsetcompensation.enable`` attribute.
         """
         return self._offsetcompensation
@@ -4020,20 +3916,19 @@ class DmmMeasure(BaseTSPCmd):
     def opendetector(self) -> str:
         """Access the ``dmm.measure.opendetector`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the detection of open leads is enabled or disabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.opendetector)`` query.
             - Setting this property to a value will send the ``dmm.measure.opendetector = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.opendetector = value
             - print(dmm.measure.opendetector)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4052,20 +3947,19 @@ class DmmMeasure(BaseTSPCmd):
     def opendetector(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.opendetector`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if the detection of open leads is enabled or disabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.opendetector)`` query.
             - Setting this property to a value will send the ``dmm.measure.opendetector = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.opendetector = value
             - print(dmm.measure.opendetector)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4087,19 +3981,18 @@ class DmmMeasure(BaseTSPCmd):
     def range(self) -> str:
         """Access the ``dmm.measure.range`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines the positive full-scale measure range.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.range)`` query.
             - Setting this property to a value will send the ``dmm.measure.range = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.range = value
             - print(dmm.measure.range)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4118,19 +4011,18 @@ class DmmMeasure(BaseTSPCmd):
     def range(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.range`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines the positive full-scale measure range.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.range)`` query.
             - Setting this property to a value will send the ``dmm.measure.range = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.range = value
             - print(dmm.measure.range)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4152,7 +4044,7 @@ class DmmMeasure(BaseTSPCmd):
     def rel(self) -> DmmMeasureRel:
         """Return the ``dmm.measure.rel`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.enable``: The ``dmm.measure.rel.enable`` attribute.
             - ``.level``: The ``dmm.measure.rel.level`` attribute.
             - ``.method``: The ``dmm.measure.rel.method`` attribute.
@@ -4163,20 +4055,19 @@ class DmmMeasure(BaseTSPCmd):
     def rtdalpha(self) -> str:
         """Access the ``dmm.measure.rtdalpha`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the alpha value of a user-defined RTD.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.rtdalpha)`` query.
             - Setting this property to a value will send the ``dmm.measure.rtdalpha = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.rtdalpha = value
             - print(dmm.measure.rtdalpha)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4195,20 +4086,19 @@ class DmmMeasure(BaseTSPCmd):
     def rtdalpha(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.rtdalpha`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the alpha value of a user-defined RTD.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.rtdalpha)`` query.
             - Setting this property to a value will send the ``dmm.measure.rtdalpha = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.rtdalpha = value
             - print(dmm.measure.rtdalpha)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4230,20 +4120,19 @@ class DmmMeasure(BaseTSPCmd):
     def rtdbeta(self) -> str:
         """Access the ``dmm.measure.rtdbeta`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the beta value of a user-defined RTD.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.rtdbeta)`` query.
             - Setting this property to a value will send the ``dmm.measure.rtdbeta = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.rtdbeta = value
             - print(dmm.measure.rtdbeta)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4262,20 +4151,19 @@ class DmmMeasure(BaseTSPCmd):
     def rtdbeta(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.rtdbeta`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the beta value of a user-defined RTD.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.rtdbeta)`` query.
             - Setting this property to a value will send the ``dmm.measure.rtdbeta = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.rtdbeta = value
             - print(dmm.measure.rtdbeta)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4297,20 +4185,19 @@ class DmmMeasure(BaseTSPCmd):
     def rtddelta(self) -> str:
         """Access the ``dmm.measure.rtddelta`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the delta value of a user-defined RTD.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.rtddelta)`` query.
             - Setting this property to a value will send the ``dmm.measure.rtddelta = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.rtddelta = value
             - print(dmm.measure.rtddelta)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4329,20 +4216,19 @@ class DmmMeasure(BaseTSPCmd):
     def rtddelta(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.rtddelta`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the delta value of a user-defined RTD.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.rtddelta)`` query.
             - Setting this property to a value will send the ``dmm.measure.rtddelta = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.rtddelta = value
             - print(dmm.measure.rtddelta)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4364,20 +4250,19 @@ class DmmMeasure(BaseTSPCmd):
     def rtdzero(self) -> str:
         """Access the ``dmm.measure.rtdzero`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the zero value of a user-defined RTD.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.rtdzero)`` query.
             - Setting this property to a value will send the ``dmm.measure.rtdzero = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.rtdzero = value
             - print(dmm.measure.rtdzero)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4396,20 +4281,19 @@ class DmmMeasure(BaseTSPCmd):
     def rtdzero(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.rtdzero`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the zero value of a user-defined RTD.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.rtdzero)`` query.
             - Setting this property to a value will send the ``dmm.measure.rtdzero = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.rtdzero = value
             - print(dmm.measure.rtdzero)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4431,7 +4315,7 @@ class DmmMeasure(BaseTSPCmd):
     def sense(self) -> DmmMeasureSense:
         """Return the ``dmm.measure.sense`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.autorange``: The ``dmm.measure.sense.autorange`` attribute.
             - ``.range``: The ``dmm.measure.sense.range`` attribute.
         """
@@ -4441,20 +4325,19 @@ class DmmMeasure(BaseTSPCmd):
     def thermistor(self) -> str:
         """Access the ``dmm.measure.thermistor`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes the type of thermistor.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.thermistor)`` query.
             - Setting this property to a value will send the ``dmm.measure.thermistor = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.thermistor = value
             - print(dmm.measure.thermistor)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4473,20 +4356,19 @@ class DmmMeasure(BaseTSPCmd):
     def thermistor(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.thermistor`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes the type of thermistor.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.thermistor)`` query.
             - Setting this property to a value will send the ``dmm.measure.thermistor = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.thermistor = value
             - print(dmm.measure.thermistor)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4508,20 +4390,19 @@ class DmmMeasure(BaseTSPCmd):
     def thermocouple(self) -> str:
         """Access the ``dmm.measure.thermocouple`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates the thermocouple type.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.thermocouple)`` query.
             - Setting this property to a value will send the ``dmm.measure.thermocouple = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.thermocouple = value
             - print(dmm.measure.thermocouple)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4540,20 +4421,19 @@ class DmmMeasure(BaseTSPCmd):
     def thermocouple(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.thermocouple`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates the thermocouple type.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.thermocouple)`` query.
             - Setting this property to a value will send the ``dmm.measure.thermocouple = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.thermocouple = value
             - print(dmm.measure.thermocouple)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4575,20 +4455,19 @@ class DmmMeasure(BaseTSPCmd):
     def threertd(self) -> str:
         """Access the ``dmm.measure.threertd`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the type of three-wire RTD that is being used.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.threertd)`` query.
             - Setting this property to a value will send the ``dmm.measure.threertd = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.threertd = value
             - print(dmm.measure.threertd)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4607,20 +4486,19 @@ class DmmMeasure(BaseTSPCmd):
     def threertd(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.threertd`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the type of three-wire RTD that is being used.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.threertd)`` query.
             - Setting this property to a value will send the ``dmm.measure.threertd = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.threertd = value
             - print(dmm.measure.threertd)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4642,7 +4520,7 @@ class DmmMeasure(BaseTSPCmd):
     def threshold(self) -> DmmMeasureThreshold:
         """Return the ``dmm.measure.threshold`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.autorange``: The ``dmm.measure.threshold.autorange`` attribute.
             - ``.level``: The ``dmm.measure.threshold.level`` attribute.
             - ``.range``: The ``dmm.measure.threshold.range`` attribute.
@@ -4653,20 +4531,19 @@ class DmmMeasure(BaseTSPCmd):
     def transducer(self) -> str:
         """Access the ``dmm.measure.transducer`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the transducer type for the temperature measurement function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.transducer)`` query.
             - Setting this property to a value will send the ``dmm.measure.transducer = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.transducer = value
             - print(dmm.measure.transducer)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4685,20 +4562,19 @@ class DmmMeasure(BaseTSPCmd):
     def transducer(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.transducer`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the transducer type for the temperature measurement function.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.transducer)`` query.
             - Setting this property to a value will send the ``dmm.measure.transducer = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.transducer = value
             - print(dmm.measure.transducer)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4720,20 +4596,19 @@ class DmmMeasure(BaseTSPCmd):
     def unit(self) -> str:
         """Access the ``dmm.measure.unit`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the units of measurement that are displayed on the front panel of
               the instrument and stored in the reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.unit)`` query.
             - Setting this property to a value will send the ``dmm.measure.unit = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.unit = value
             - print(dmm.measure.unit)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4752,20 +4627,19 @@ class DmmMeasure(BaseTSPCmd):
     def unit(self, value: Union[str, float]) -> None:
         """Access the ``dmm.measure.unit`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the units of measurement that are displayed on the front panel of
               the instrument and stored in the reading buffer.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.measure.unit)`` query.
             - Setting this property to a value will send the ``dmm.measure.unit = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.unit = value
             - print(dmm.measure.unit)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4786,15 +4660,14 @@ class DmmMeasure(BaseTSPCmd):
     def read(self, buffer_name: Optional[str] = None) -> str:
         """Run the ``dmm.measure.read()`` function.
 
-        **Description:**
+        Description:
             - This function makes measurements, places them in a reading buffer, and returns the
               last reading.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.read()
+            ```
 
         Args:
             buffer_name (optional): The name of the reading buffer, which may be a default buffer
@@ -4819,15 +4692,14 @@ class DmmMeasure(BaseTSPCmd):
     def setattribute(self, function: str, setting: str, value: str) -> None:
         """Run the ``dmm.measure.setattribute()`` function.
 
-        **Description:**
+        Description:
             - This function allows you to set up a measure function whether or not the function is
               active.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.measure.setattribute()
+            ```
 
         Args:
             function: The function for which you are setting parameters; see Functions.
@@ -4850,7 +4722,7 @@ class DmmMeasure(BaseTSPCmd):
 class DmmDigitizeCoupling(BaseTSPCmd):
     """The ``dmm.digitize.coupling`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.acfilter``: The ``dmm.digitize.coupling.acfilter`` attribute.
         - ``.acfrequency``: The ``dmm.digitize.coupling.acfrequency`` attribute.
         - ``.type``: The ``dmm.digitize.coupling.type`` attribute.
@@ -4860,20 +4732,19 @@ class DmmDigitizeCoupling(BaseTSPCmd):
     def acfilter(self) -> str:
         """Access the ``dmm.digitize.coupling.acfilter`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the instrument settling time when coupling is set to AC.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.digitize.coupling.acfilter)`` query.
             - Setting this property to a value will send the
               ``dmm.digitize.coupling.acfilter = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.coupling.acfilter = value
             - print(dmm.digitize.coupling.acfilter)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4892,20 +4763,19 @@ class DmmDigitizeCoupling(BaseTSPCmd):
     def acfilter(self, value: Union[str, float]) -> None:
         """Access the ``dmm.digitize.coupling.acfilter`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the instrument settling time when coupling is set to AC.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.digitize.coupling.acfilter)`` query.
             - Setting this property to a value will send the
               ``dmm.digitize.coupling.acfilter = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.coupling.acfilter = value
             - print(dmm.digitize.coupling.acfilter)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4927,22 +4797,21 @@ class DmmDigitizeCoupling(BaseTSPCmd):
     def acfrequency(self) -> str:
         """Access the ``dmm.digitize.coupling.acfrequency`` attribute.
 
-        **Description:**
+        Description:
             - This attribute allows you to optimize the amplitude to compensate for signal loss
               across the coupling capacitor when AC coupling is selected.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.digitize.coupling.acfrequency)``
               query.
             - Setting this property to a value will send the
               ``dmm.digitize.coupling.acfrequency = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.coupling.acfrequency = value
             - print(dmm.digitize.coupling.acfrequency)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4961,22 +4830,21 @@ class DmmDigitizeCoupling(BaseTSPCmd):
     def acfrequency(self, value: Union[str, float]) -> None:
         """Access the ``dmm.digitize.coupling.acfrequency`` attribute.
 
-        **Description:**
+        Description:
             - This attribute allows you to optimize the amplitude to compensate for signal loss
               across the coupling capacitor when AC coupling is selected.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.digitize.coupling.acfrequency)``
               query.
             - Setting this property to a value will send the
               ``dmm.digitize.coupling.acfrequency = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.coupling.acfrequency = value
             - print(dmm.digitize.coupling.acfrequency)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -4998,20 +4866,19 @@ class DmmDigitizeCoupling(BaseTSPCmd):
     def type(self) -> str:
         """Access the ``dmm.digitize.coupling.type`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if AC or DC signal coupling is used.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.digitize.coupling.type)`` query.
             - Setting this property to a value will send the ``dmm.digitize.coupling.type = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.coupling.type = value
             - print(dmm.digitize.coupling.type)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5030,20 +4897,19 @@ class DmmDigitizeCoupling(BaseTSPCmd):
     def type(self, value: Union[str, float]) -> None:
         """Access the ``dmm.digitize.coupling.type`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines if AC or DC signal coupling is used.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.digitize.coupling.type)`` query.
             - Setting this property to a value will send the ``dmm.digitize.coupling.type = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.coupling.type = value
             - print(dmm.digitize.coupling.type)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5065,7 +4931,7 @@ class DmmDigitizeCoupling(BaseTSPCmd):
 class DmmDigitizeAnalogtriggerWindow(BaseTSPCmd):
     """The ``dmm.digitize.analogtrigger.window`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.direction``: The ``dmm.digitize.analogtrigger.window.direction`` attribute.
         - ``.levelhigh``: The ``dmm.digitize.analogtrigger.window.levelhigh`` attribute.
         - ``.levellow``: The ``dmm.digitize.analogtrigger.window.levellow`` attribute.
@@ -5075,22 +4941,21 @@ class DmmDigitizeAnalogtriggerWindow(BaseTSPCmd):
     def direction(self) -> str:
         """Access the ``dmm.digitize.analogtrigger.window.direction`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines if the analog trigger occurs when the signal enters or leaves
               the defined high and low analog signal level boundaries.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.digitize.analogtrigger.window.direction)`` query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.window.direction = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.window.direction = value
             - print(dmm.digitize.analogtrigger.window.direction)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5109,22 +4974,21 @@ class DmmDigitizeAnalogtriggerWindow(BaseTSPCmd):
     def direction(self, value: Union[str, float]) -> None:
         """Access the ``dmm.digitize.analogtrigger.window.direction`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines if the analog trigger occurs when the signal enters or leaves
               the defined high and low analog signal level boundaries.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.digitize.analogtrigger.window.direction)`` query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.window.direction = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.window.direction = value
             - print(dmm.digitize.analogtrigger.window.direction)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5146,21 +5010,20 @@ class DmmDigitizeAnalogtriggerWindow(BaseTSPCmd):
     def levelhigh(self) -> str:
         """Access the ``dmm.digitize.analogtrigger.window.levelhigh`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the upper boundary of the analog trigger window.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.digitize.analogtrigger.window.levelhigh)`` query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.window.levelhigh = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.window.levelhigh = value
             - print(dmm.digitize.analogtrigger.window.levelhigh)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5179,21 +5042,20 @@ class DmmDigitizeAnalogtriggerWindow(BaseTSPCmd):
     def levelhigh(self, value: Union[str, float]) -> None:
         """Access the ``dmm.digitize.analogtrigger.window.levelhigh`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the upper boundary of the analog trigger window.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.digitize.analogtrigger.window.levelhigh)`` query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.window.levelhigh = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.window.levelhigh = value
             - print(dmm.digitize.analogtrigger.window.levelhigh)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5215,21 +5077,20 @@ class DmmDigitizeAnalogtriggerWindow(BaseTSPCmd):
     def levellow(self) -> str:
         """Access the ``dmm.digitize.analogtrigger.window.levellow`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the lower boundary of the analog trigger window.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.digitize.analogtrigger.window.levellow)`` query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.window.levellow = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.window.levellow = value
             - print(dmm.digitize.analogtrigger.window.levellow)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5248,21 +5109,20 @@ class DmmDigitizeAnalogtriggerWindow(BaseTSPCmd):
     def levellow(self, value: Union[str, float]) -> None:
         """Access the ``dmm.digitize.analogtrigger.window.levellow`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the lower boundary of the analog trigger window.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.digitize.analogtrigger.window.levellow)`` query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.window.levellow = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.window.levellow = value
             - print(dmm.digitize.analogtrigger.window.levellow)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5284,7 +5144,7 @@ class DmmDigitizeAnalogtriggerWindow(BaseTSPCmd):
 class DmmDigitizeAnalogtriggerPulse(BaseTSPCmd):
     """The ``dmm.digitize.analogtrigger.pulse`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.condition``: The ``dmm.digitize.analogtrigger.pulse.condition`` attribute.
         - ``.level``: The ``dmm.digitize.analogtrigger.pulse.level`` attribute.
         - ``.polarity``: The ``dmm.digitize.analogtrigger.pulse.polarity`` attribute.
@@ -5295,23 +5155,22 @@ class DmmDigitizeAnalogtriggerPulse(BaseTSPCmd):
     def condition(self) -> str:
         """Access the ``dmm.digitize.analogtrigger.pulse.condition`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines if the pulse must be greater than or less than the incoming
               pulse must have a duration greater than or less than the threshold pulse width before
               an analog trigger is generated.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.digitize.analogtrigger.pulse.condition)`` query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.pulse.condition = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.pulse.condition = value
             - print(dmm.digitize.analogtrigger.pulse.condition)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5330,23 +5189,22 @@ class DmmDigitizeAnalogtriggerPulse(BaseTSPCmd):
     def condition(self, value: Union[str, float]) -> None:
         """Access the ``dmm.digitize.analogtrigger.pulse.condition`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines if the pulse must be greater than or less than the incoming
               pulse must have a duration greater than or less than the threshold pulse width before
               an analog trigger is generated.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.digitize.analogtrigger.pulse.condition)`` query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.pulse.condition = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.pulse.condition = value
             - print(dmm.digitize.analogtrigger.pulse.condition)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5368,21 +5226,20 @@ class DmmDigitizeAnalogtriggerPulse(BaseTSPCmd):
     def level(self) -> str:
         """Access the ``dmm.digitize.analogtrigger.pulse.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the pulse level that generates an analog trigger event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.digitize.analogtrigger.pulse.level)`` query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.pulse.level = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.pulse.level = value
             - print(dmm.digitize.analogtrigger.pulse.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5401,21 +5258,20 @@ class DmmDigitizeAnalogtriggerPulse(BaseTSPCmd):
     def level(self, value: Union[str, float]) -> None:
         """Access the ``dmm.digitize.analogtrigger.pulse.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the pulse level that generates an analog trigger event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.digitize.analogtrigger.pulse.level)`` query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.pulse.level = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.pulse.level = value
             - print(dmm.digitize.analogtrigger.pulse.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5437,22 +5293,21 @@ class DmmDigitizeAnalogtriggerPulse(BaseTSPCmd):
     def polarity(self) -> str:
         """Access the ``dmm.digitize.analogtrigger.pulse.polarity`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the polarity of the pulse that generates an analog trigger
               event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.digitize.analogtrigger.pulse.polarity)`` query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.pulse.polarity = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.pulse.polarity = value
             - print(dmm.digitize.analogtrigger.pulse.polarity)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5471,22 +5326,21 @@ class DmmDigitizeAnalogtriggerPulse(BaseTSPCmd):
     def polarity(self, value: Union[str, float]) -> None:
         """Access the ``dmm.digitize.analogtrigger.pulse.polarity`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the polarity of the pulse that generates an analog trigger
               event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.digitize.analogtrigger.pulse.polarity)`` query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.pulse.polarity = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.pulse.polarity = value
             - print(dmm.digitize.analogtrigger.pulse.polarity)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5508,21 +5362,20 @@ class DmmDigitizeAnalogtriggerPulse(BaseTSPCmd):
     def width(self) -> str:
         """Access the ``dmm.digitize.analogtrigger.pulse.width`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the threshold value for the pulse width.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.digitize.analogtrigger.pulse.width)`` query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.pulse.width = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.pulse.width = value
             - print(dmm.digitize.analogtrigger.pulse.width)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5541,21 +5394,20 @@ class DmmDigitizeAnalogtriggerPulse(BaseTSPCmd):
     def width(self, value: Union[str, float]) -> None:
         """Access the ``dmm.digitize.analogtrigger.pulse.width`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the threshold value for the pulse width.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.digitize.analogtrigger.pulse.width)`` query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.pulse.width = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.pulse.width = value
             - print(dmm.digitize.analogtrigger.pulse.width)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5577,7 +5429,7 @@ class DmmDigitizeAnalogtriggerPulse(BaseTSPCmd):
 class DmmDigitizeAnalogtriggerEdge(BaseTSPCmd):
     """The ``dmm.digitize.analogtrigger.edge`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.level``: The ``dmm.digitize.analogtrigger.edge.level`` attribute.
         - ``.slope``: The ``dmm.digitize.analogtrigger.edge.slope`` attribute.
     """
@@ -5586,22 +5438,21 @@ class DmmDigitizeAnalogtriggerEdge(BaseTSPCmd):
     def level(self) -> str:
         """Access the ``dmm.digitize.analogtrigger.edge.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the signal level that generates the analog trigger event for
               the edge trigger mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.digitize.analogtrigger.edge.level)``
               query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.edge.level = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.edge.level = value
             - print(dmm.digitize.analogtrigger.edge.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5620,22 +5471,21 @@ class DmmDigitizeAnalogtriggerEdge(BaseTSPCmd):
     def level(self, value: Union[str, float]) -> None:
         """Access the ``dmm.digitize.analogtrigger.edge.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the signal level that generates the analog trigger event for
               the edge trigger mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.digitize.analogtrigger.edge.level)``
               query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.edge.level = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.edge.level = value
             - print(dmm.digitize.analogtrigger.edge.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5657,21 +5507,20 @@ class DmmDigitizeAnalogtriggerEdge(BaseTSPCmd):
     def slope(self) -> str:
         """Access the ``dmm.digitize.analogtrigger.edge.slope`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the slope of the analog trigger edge.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.digitize.analogtrigger.edge.slope)``
               query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.edge.slope = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.edge.slope = value
             - print(dmm.digitize.analogtrigger.edge.slope)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5690,21 +5539,20 @@ class DmmDigitizeAnalogtriggerEdge(BaseTSPCmd):
     def slope(self, value: Union[str, float]) -> None:
         """Access the ``dmm.digitize.analogtrigger.edge.slope`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the slope of the analog trigger edge.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.digitize.analogtrigger.edge.slope)``
               query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.edge.slope = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.edge.slope = value
             - print(dmm.digitize.analogtrigger.edge.slope)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5726,7 +5574,7 @@ class DmmDigitizeAnalogtriggerEdge(BaseTSPCmd):
 class DmmDigitizeAnalogtrigger(BaseTSPCmd):
     """The ``dmm.digitize.analogtrigger`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.edge``: The ``dmm.digitize.analogtrigger.edge`` command tree.
         - ``.highfreqreject``: The ``dmm.digitize.analogtrigger.highfreqreject`` attribute.
         - ``.mode``: The ``dmm.digitize.analogtrigger.mode`` attribute.
@@ -5744,7 +5592,7 @@ class DmmDigitizeAnalogtrigger(BaseTSPCmd):
     def edge(self) -> DmmDigitizeAnalogtriggerEdge:
         """Return the ``dmm.digitize.analogtrigger.edge`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.level``: The ``dmm.digitize.analogtrigger.edge.level`` attribute.
             - ``.slope``: The ``dmm.digitize.analogtrigger.edge.slope`` attribute.
         """
@@ -5754,21 +5602,20 @@ class DmmDigitizeAnalogtrigger(BaseTSPCmd):
     def highfreqreject(self) -> str:
         """Access the ``dmm.digitize.analogtrigger.highfreqreject`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables high frequency rejection on analog trigger events.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.digitize.analogtrigger.highfreqreject)`` query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.highfreqreject = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.highfreqreject = value
             - print(dmm.digitize.analogtrigger.highfreqreject)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5787,21 +5634,20 @@ class DmmDigitizeAnalogtrigger(BaseTSPCmd):
     def highfreqreject(self, value: Union[str, float]) -> None:
         """Access the ``dmm.digitize.analogtrigger.highfreqreject`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables high frequency rejection on analog trigger events.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the
               ``print(dmm.digitize.analogtrigger.highfreqreject)`` query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.highfreqreject = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.highfreqreject = value
             - print(dmm.digitize.analogtrigger.highfreqreject)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5823,22 +5669,21 @@ class DmmDigitizeAnalogtrigger(BaseTSPCmd):
     def mode(self) -> str:
         """Access the ``dmm.digitize.analogtrigger.mode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute configures the type of signal behavior that can generate an analog
               trigger event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.digitize.analogtrigger.mode)``
               query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.mode = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.mode = value
             - print(dmm.digitize.analogtrigger.mode)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5857,22 +5702,21 @@ class DmmDigitizeAnalogtrigger(BaseTSPCmd):
     def mode(self, value: Union[str, float]) -> None:
         """Access the ``dmm.digitize.analogtrigger.mode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute configures the type of signal behavior that can generate an analog
               trigger event.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.digitize.analogtrigger.mode)``
               query.
             - Setting this property to a value will send the
               ``dmm.digitize.analogtrigger.mode = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.analogtrigger.mode = value
             - print(dmm.digitize.analogtrigger.mode)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5894,7 +5738,7 @@ class DmmDigitizeAnalogtrigger(BaseTSPCmd):
     def pulse(self) -> DmmDigitizeAnalogtriggerPulse:
         """Return the ``dmm.digitize.analogtrigger.pulse`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.condition``: The ``dmm.digitize.analogtrigger.pulse.condition`` attribute.
             - ``.level``: The ``dmm.digitize.analogtrigger.pulse.level`` attribute.
             - ``.polarity``: The ``dmm.digitize.analogtrigger.pulse.polarity`` attribute.
@@ -5906,7 +5750,7 @@ class DmmDigitizeAnalogtrigger(BaseTSPCmd):
     def window(self) -> DmmDigitizeAnalogtriggerWindow:
         """Return the ``dmm.digitize.analogtrigger.window`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.direction``: The ``dmm.digitize.analogtrigger.window.direction`` attribute.
             - ``.levelhigh``: The ``dmm.digitize.analogtrigger.window.levelhigh`` attribute.
             - ``.levellow``: The ``dmm.digitize.analogtrigger.window.levellow`` attribute.
@@ -5917,7 +5761,7 @@ class DmmDigitizeAnalogtrigger(BaseTSPCmd):
 class DmmDigitize(BaseTSPCmd):
     """The ``dmm.digitize`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.analogtrigger``: The ``dmm.digitize.analogtrigger`` command tree.
         - ``.coupling``: The ``dmm.digitize.coupling`` command tree.
         - ``.dbmreference``: The ``dmm.digitize.dbmreference`` attribute.
@@ -5934,7 +5778,7 @@ class DmmDigitize(BaseTSPCmd):
     def analogtrigger(self) -> DmmDigitizeAnalogtrigger:
         """Return the ``dmm.digitize.analogtrigger`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.edge``: The ``dmm.digitize.analogtrigger.edge`` command tree.
             - ``.highfreqreject``: The ``dmm.digitize.analogtrigger.highfreqreject`` attribute.
             - ``.mode``: The ``dmm.digitize.analogtrigger.mode`` attribute.
@@ -5947,7 +5791,7 @@ class DmmDigitize(BaseTSPCmd):
     def coupling(self) -> DmmDigitizeCoupling:
         """Return the ``dmm.digitize.coupling`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.acfilter``: The ``dmm.digitize.coupling.acfilter`` attribute.
             - ``.acfrequency``: The ``dmm.digitize.coupling.acfrequency`` attribute.
             - ``.type``: The ``dmm.digitize.coupling.type`` attribute.
@@ -5958,20 +5802,19 @@ class DmmDigitize(BaseTSPCmd):
     def dbmreference(self) -> str:
         """Access the ``dmm.digitize.dbmreference`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the decibel-milliwatts (dBm) reference.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.digitize.dbmreference)`` query.
             - Setting this property to a value will send the ``dmm.digitize.dbmreference = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.dbmreference = value
             - print(dmm.digitize.dbmreference)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -5990,20 +5833,19 @@ class DmmDigitize(BaseTSPCmd):
     def dbmreference(self, value: Union[str, float]) -> None:
         """Access the ``dmm.digitize.dbmreference`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the decibel-milliwatts (dBm) reference.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.digitize.dbmreference)`` query.
             - Setting this property to a value will send the ``dmm.digitize.dbmreference = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.dbmreference = value
             - print(dmm.digitize.dbmreference)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -6025,20 +5867,19 @@ class DmmDigitize(BaseTSPCmd):
     def dbreference(self) -> str:
         """Access the ``dmm.digitize.dbreference`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the decibel (dB) reference setting for the DMM in volts.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.digitize.dbreference)`` query.
             - Setting this property to a value will send the ``dmm.digitize.dbreference = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.dbreference = value
             - print(dmm.digitize.dbreference)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -6057,20 +5898,19 @@ class DmmDigitize(BaseTSPCmd):
     def dbreference(self, value: Union[str, float]) -> None:
         """Access the ``dmm.digitize.dbreference`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the decibel (dB) reference setting for the DMM in volts.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.digitize.dbreference)`` query.
             - Setting this property to a value will send the ``dmm.digitize.dbreference = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.dbreference = value
             - print(dmm.digitize.dbreference)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -6092,20 +5932,19 @@ class DmmDigitize(BaseTSPCmd):
     def inputimpedance(self) -> str:
         """Access the ``dmm.digitize.inputimpedance`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines when the 10 MΩ input divider is enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.digitize.inputimpedance)`` query.
             - Setting this property to a value will send the ``dmm.digitize.inputimpedance = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.inputimpedance = value
             - print(dmm.digitize.inputimpedance)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -6124,20 +5963,19 @@ class DmmDigitize(BaseTSPCmd):
     def inputimpedance(self, value: Union[str, float]) -> None:
         """Access the ``dmm.digitize.inputimpedance`` attribute.
 
-        **Description:**
+        Description:
             - This attribute determines when the 10 MΩ input divider is enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.digitize.inputimpedance)`` query.
             - Setting this property to a value will send the ``dmm.digitize.inputimpedance = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.digitize.inputimpedance = value
             - print(dmm.digitize.inputimpedance)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -6163,7 +6001,7 @@ class Dmm(BaseTSPCmd):
         - ``.OFF``: Set the threshold range manually.
         - ``.ON``: Set the threshold range automatically.
 
-    Properties/methods:
+    Properties and methods:
         - ``.digitize``: The ``dmm.digitize`` command tree.
         - ``.measure``: The ``dmm.measure`` command tree.
         - ``.reset()``: The ``dmm.reset()`` function.
@@ -6186,7 +6024,7 @@ class Dmm(BaseTSPCmd):
     def digitize(self) -> DmmDigitize:
         """Return the ``dmm.digitize`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.analogtrigger``: The ``dmm.digitize.analogtrigger`` command tree.
             - ``.coupling``: The ``dmm.digitize.coupling`` command tree.
             - ``.dbmreference``: The ``dmm.digitize.dbmreference`` attribute.
@@ -6199,7 +6037,7 @@ class Dmm(BaseTSPCmd):
     def measure(self) -> DmmMeasure:
         """Return the ``dmm.measure`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.analogtrigger``: The ``dmm.measure.analogtrigger`` command tree.
             - ``.aperture``: The ``dmm.measure.aperture`` attribute.
             - ``.autodelay``: The ``dmm.measure.autodelay`` attribute.
@@ -6243,18 +6081,17 @@ class Dmm(BaseTSPCmd):
     def terminals(self) -> str:
         """Access the ``dmm.terminals`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes which set of input and output terminals the instrument is
               using.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dmm.terminals)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(dmm.terminals)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -6273,7 +6110,7 @@ class Dmm(BaseTSPCmd):
     def trigger(self) -> DmmTrigger:
         """Return the ``dmm.trigger`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.digitize``: The ``dmm.trigger.digitize`` command tree.
             - ``.measure``: The ``dmm.trigger.measure`` command tree.
         """
@@ -6282,15 +6119,14 @@ class Dmm(BaseTSPCmd):
     def reset(self, scope: str) -> None:
         """Run the ``dmm.reset()`` function.
 
-        **Description:**
+        Description:
             - Resets the DMM functions and attributes in the instrument, as indicated by the
               parameter.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dmm.reset()
+            ```
 
         Args:
             scope: A string equaling 'active' to set the active function only to factory default

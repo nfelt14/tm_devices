@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - script.anonymous
     - script.delete()
     - script.load()
@@ -33,7 +31,7 @@ if TYPE_CHECKING:
 class Script(BaseTSPCmd):
     """The ``script`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.anonymous``: The ``script.anonymous`` attribute.
         - ``.delete()``: The ``script.delete()`` function.
         - ``.load()``: The ``script.load()`` function.
@@ -50,17 +48,16 @@ class Script(BaseTSPCmd):
     def anonymous(self) -> str:
         """Access the ``script.anonymous`` attribute.
 
-        **Description:**
+        Description:
             - This is a reference to the anonymous script.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(script.anonymous)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(script.anonymous)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -78,14 +75,13 @@ class Script(BaseTSPCmd):
     def delete(self, script_name: str) -> None:
         """Run the ``script.delete()`` function.
 
-        **Description:**
+        Description:
             - This function deletes a script from the runtime memory and nonvolatile memory.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - script.delete()
+            ```
 
         Args:
             script_name: A string that represents the name of the script.
@@ -104,14 +100,13 @@ class Script(BaseTSPCmd):
     def load(self, file: str) -> str:
         """Run the ``script.load()`` function.
 
-        **Description:**
+        Description:
             - This function creates a script from a specified file.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - script.load()
+            ```
 
         Args:
             file: A string that contains the path and file name of the script file to load; if
@@ -135,14 +130,13 @@ class Script(BaseTSPCmd):
     def new(self, code: str, name: Optional[str] = None) -> str:
         """Run the ``script.new()`` function.
 
-        **Description:**
+        Description:
             - This function creates a script.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - script.new()
+            ```
 
         Args:
             code: A string containing the body of the script.
@@ -173,14 +167,13 @@ class Script(BaseTSPCmd):
     def newautorun(self, code: str, name: Optional[str] = None) -> str:
         """Run the ``script.newautorun()`` function.
 
-        **Description:**
+        Description:
             - This function creates a script and enables autorun.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - script.newautorun()
+            ```
 
         Args:
             code: A string that contains the body of the script.
@@ -211,14 +204,13 @@ class Script(BaseTSPCmd):
     def restore(self, name: str) -> None:
         """Run the ``script.restore()`` function.
 
-        **Description:**
+        Description:
             - This function restores a script that was removed from the runtime environment.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - script.restore()
+            ```
 
         Args:
             name: The name of the script to be restored.
@@ -237,14 +229,13 @@ class Script(BaseTSPCmd):
     def run(self) -> None:
         """Run the ``script.run()`` function.
 
-        **Description:**
+        Description:
             - This function runs the anonymous script.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - script.run()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.

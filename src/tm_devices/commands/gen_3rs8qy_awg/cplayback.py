@@ -10,10 +10,9 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CPLayback:CAPTure:FILE <signal_name>,{SIQ|CIQ},<file_path>[,<file_path>]
-    - CPLayback:CAPTure:INSTrument:OSCilloscope <signal_name>,<instrument_name>,<source_1>,<source_2>
+    - CPLayback:CAPTure:INSTrument:OSCilloscope
+      <signal_name>,<instrument_name>,<source_1>,<source_2>
     - CPLayback:CAPTure:INSTrument:RSA <signal_name>,<instrument_name>
     - CPLayback:CAPTure:WLISt <signal_name>,<waveform_name>
     - CPLayback:CLISt:NAME? <index>
@@ -37,7 +36,7 @@ Commands and Queries:
     - CPLayback:COMPile:SRATe:AUTO {0|1|OFF|ON}
     - CPLayback:COMPile:SRATe:AUTO?
     - CPLayback:COMPile:SRATe?
-"""  # noqa: E501
+"""
 
 from typing import Optional, TYPE_CHECKING
 
@@ -50,47 +49,45 @@ if TYPE_CHECKING:
 class CplaybackCompileSrateAuto(SCPICmdWrite, SCPICmdRead):
     """The ``CPLayback:COMPile:SRATe:AUTO`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns if the system will calculate the output sampling rate
           automatically when compiling the selected signals.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CPLayback:COMPile:SRATe:AUTO?`` query.
         - Using the ``.verify(value)`` method will send the ``CPLayback:COMPile:SRATe:AUTO?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CPLayback:COMPile:SRATe:AUTO value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:COMPile:SRATe:AUTO {0|1|OFF|ON}
         - CPLayback:COMPile:SRATe:AUTO?
+        ```
     """
 
 
 class CplaybackCompileSrate(SCPICmdWrite, SCPICmdRead):
     """The ``CPLayback:COMPile:SRATe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the output sampling rate for the compiled signals.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CPLayback:COMPile:SRATe?`` query.
         - Using the ``.verify(value)`` method will send the ``CPLayback:COMPile:SRATe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CPLayback:COMPile:SRATe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:COMPile:SRATe <NRf>
         - CPLayback:COMPile:SRATe?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to the maximum sample rate.
 
     Properties:
@@ -105,23 +102,22 @@ class CplaybackCompileSrate(SCPICmdWrite, SCPICmdRead):
     def auto(self) -> CplaybackCompileSrateAuto:
         """Return the ``CPLayback:COMPile:SRATe:AUTO`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns if the system will calculate the output sampling rate
               automatically when compiling the selected signals.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CPLayback:COMPile:SRATe:AUTO?`` query.
             - Using the ``.verify(value)`` method will send the ``CPLayback:COMPile:SRATe:AUTO?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``CPLayback:COMPile:SRATe:AUTO value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:COMPile:SRATe:AUTO {0|1|OFF|ON}
             - CPLayback:COMPile:SRATe:AUTO?
+            ```
         """
         return self._auto
 
@@ -129,69 +125,66 @@ class CplaybackCompileSrate(SCPICmdWrite, SCPICmdRead):
 class CplaybackCompileNormalize(SCPICmdWrite, SCPICmdRead):
     """The ``CPLayback:COMPile:NORMalize`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns if the IQ waveforms will be normalized during import.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CPLayback:COMPile:NORMalize?`` query.
         - Using the ``.verify(value)`` method will send the ``CPLayback:COMPile:NORMalize?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CPLayback:COMPile:NORMalize value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:COMPile:NORMalize {NONE|FSCale|ZREFerence}
         - CPLayback:COMPile:NORMalize?
+        ```
     """
 
 
 class CplaybackCompileLsequence(SCPICmdWrite, SCPICmdRead):
     """The ``CPLayback:COMPile:LSEQuence`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns if the compiled sequence should loop on itself, setting the
           GoTo of last sequence step to First.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CPLayback:COMPile:LSEQuence?`` query.
         - Using the ``.verify(value)`` method will send the ``CPLayback:COMPile:LSEQuence?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CPLayback:COMPile:LSEQuence value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:COMPile:LSEQuence {OFF|ON|0|1}
         - CPLayback:COMPile:LSEQuence?
+        ```
     """
 
 
 class CplaybackCompileCfrequency(SCPICmdWrite, SCPICmdRead):
     """The ``CPLayback:COMPile:CFRequency`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Carrier Frequency for the compiled signals.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CPLayback:COMPile:CFRequency?`` query.
         - Using the ``.verify(value)`` method will send the ``CPLayback:COMPile:CFRequency?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CPLayback:COMPile:CFRequency value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:COMPile:CFRequency <carrier_frequency>
         - CPLayback:COMPile:CFRequency?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 1 GHz.
     """
 
@@ -199,7 +192,7 @@ class CplaybackCompileCfrequency(SCPICmdWrite, SCPICmdRead):
 class CplaybackCompile(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``CPLayback:COMPile`` command.
 
-    **Description:**
+    Description:
         - The command resamples and upconverts the selected signal to the specified carrier
           frequency. With Option 03 (Sequencing) enabled: A sequence is generated containing all
           waveform segments in the signal (even if the signal contains only one waveform segment.
@@ -209,14 +202,13 @@ class CplaybackCompile(SCPICmdWriteNoArguments, SCPICmdRead):
           a time. The compile process generates a sequence (or waveform) for each of the selected
           signals.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``CPLayback:COMPile`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:COMPile
+        ```
 
     Properties:
         - ``.cfrequency``: The ``CPLayback:COMPile:CFRequency`` command.
@@ -236,24 +228,23 @@ class CplaybackCompile(SCPICmdWriteNoArguments, SCPICmdRead):
     def cfrequency(self) -> CplaybackCompileCfrequency:
         """Return the ``CPLayback:COMPile:CFRequency`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Carrier Frequency for the compiled signals.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CPLayback:COMPile:CFRequency?`` query.
             - Using the ``.verify(value)`` method will send the ``CPLayback:COMPile:CFRequency?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``CPLayback:COMPile:CFRequency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:COMPile:CFRequency <carrier_frequency>
             - CPLayback:COMPile:CFRequency?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 1 GHz.
         """
         return self._cfrequency
@@ -262,23 +253,22 @@ class CplaybackCompile(SCPICmdWriteNoArguments, SCPICmdRead):
     def lsequence(self) -> CplaybackCompileLsequence:
         """Return the ``CPLayback:COMPile:LSEQuence`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns if the compiled sequence should loop on itself, setting
               the GoTo of last sequence step to First.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CPLayback:COMPile:LSEQuence?`` query.
             - Using the ``.verify(value)`` method will send the ``CPLayback:COMPile:LSEQuence?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CPLayback:COMPile:LSEQuence value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:COMPile:LSEQuence {OFF|ON|0|1}
             - CPLayback:COMPile:LSEQuence?
+            ```
         """
         return self._lsequence
 
@@ -286,22 +276,21 @@ class CplaybackCompile(SCPICmdWriteNoArguments, SCPICmdRead):
     def normalize(self) -> CplaybackCompileNormalize:
         """Return the ``CPLayback:COMPile:NORMalize`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns if the IQ waveforms will be normalized during import.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CPLayback:COMPile:NORMalize?`` query.
             - Using the ``.verify(value)`` method will send the ``CPLayback:COMPile:NORMalize?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CPLayback:COMPile:NORMalize value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:COMPile:NORMalize {NONE|FSCale|ZREFerence}
             - CPLayback:COMPile:NORMalize?
+            ```
         """
         return self._normalize
 
@@ -309,24 +298,23 @@ class CplaybackCompile(SCPICmdWriteNoArguments, SCPICmdRead):
     def srate(self) -> CplaybackCompileSrate:
         """Return the ``CPLayback:COMPile:SRATe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the output sampling rate for the compiled signals.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CPLayback:COMPile:SRATe?`` query.
             - Using the ``.verify(value)`` method will send the ``CPLayback:COMPile:SRATe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``CPLayback:COMPile:SRATe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:COMPile:SRATe <NRf>
             - CPLayback:COMPile:SRATe?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to the maximum sample rate.
 
         Sub-properties:
@@ -338,127 +326,121 @@ class CplaybackCompile(SCPICmdWriteNoArguments, SCPICmdRead):
 class CplaybackClistSize(SCPICmdRead):
     """The ``CPLayback:CLISt:SIZE`` command.
 
-    **Description:**
+    Description:
         - This command returns the number of signals in the Captured Signal List.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CPLayback:CLISt:SIZE?`` query.
         - Using the ``.verify(value)`` method will send the ``CPLayback:CLISt:SIZE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:CLISt:SIZE?
+        ```
     """
 
 
 class CplaybackClistSignalWcount(SCPICmdReadWithArguments):
     """The ``CPLayback:CLISt:SIGNal:WCOunt`` command.
 
-    **Description:**
+    Description:
         - This command returns the number of waveform segments in the specified signal in the
           Captured Signal List.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``CPLayback:CLISt:SIGNal:WCOunt? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``CPLayback:CLISt:SIGNal:WCOunt? argument`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:CLISt:SIGNal:WCOunt? <signal_name>
+        ```
     """
 
 
 class CplaybackClistSignalWaveformSrate(SCPICmdWrite):
     """The ``CPLayback:CLISt:SIGNal:WAVeform:SRATe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the baseband sample rate of a waveform segment of a signal in
           the Captured Signal List.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``CPLayback:CLISt:SIGNal:WAVeform:SRATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:CLISt:SIGNal:WAVeform:SRATe <signal_name>,<ALL|NR1>,<NRf>? <signal_name>,<NR1>
+        ```
     """
 
 
 class CplaybackClistSignalWaveformOtime(SCPICmdWrite):
     """The ``CPLayback:CLISt:SIGNal:WAVeform:OTIMe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the Off time between waveform segments of the specified
           signal in the Captured Signal List.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``CPLayback:CLISt:SIGNal:WAVeform:OTIMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:CLISt:SIGNal:WAVeform:OTIMe <signal_name>,<ALL|<NR1>,<NRf>? <signal_name>,<NR1>
+        ```
     """
 
 
 class CplaybackClistSignalWaveformName(SCPICmdReadWithArguments):
     """The ``CPLayback:CLISt:SIGNal:WAVeform:NAME`` command.
 
-    **Description:**
+    Description:
         - This command returns the name of the specified waveform segment of the specified signal in
           the Captured Signal List.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``CPLayback:CLISt:SIGNal:WAVeform:NAME? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``CPLayback:CLISt:SIGNal:WAVeform:NAME? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:CLISt:SIGNal:WAVeform:NAME? <signal_name>,<NR1>
+        ```
     """
 
 
 class CplaybackClistSignalWaveformFoffset(SCPICmdWrite):
     """The ``CPLayback:CLISt:SIGNal:WAVeform:FOFFset`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the frequency offset of the specified waveform segment of the
           specified signal in the Captured Signal List.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``CPLayback:CLISt:SIGNal:WAVeform:FOFFset value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:CLISt:SIGNal:WAVeform:FOFFset <signal_name>,<ALL|NR1>,<NRf>? <signal_name>,<NR1>
+        ```
     """
 
 
 class CplaybackClistSignalWaveform(SCPICmdRead):
     """The ``CPLayback:CLISt:SIGNal:WAVeform`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CPLayback:CLISt:SIGNal:WAVeform?`` query.
         - Using the ``.verify(value)`` method will send the ``CPLayback:CLISt:SIGNal:WAVeform?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -481,19 +463,18 @@ class CplaybackClistSignalWaveform(SCPICmdRead):
     def foffset(self) -> CplaybackClistSignalWaveformFoffset:
         """Return the ``CPLayback:CLISt:SIGNal:WAVeform:FOFFset`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the frequency offset of the specified waveform segment of
               the specified signal in the Captured Signal List.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``CPLayback:CLISt:SIGNal:WAVeform:FOFFset value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:CLISt:SIGNal:WAVeform:FOFFset <signal_name>,<ALL|NR1>,<NRf>? <signal_name>,<NR1>
+            ```
         """  # noqa: E501
         return self._foffset
 
@@ -501,22 +482,21 @@ class CplaybackClistSignalWaveform(SCPICmdRead):
     def name(self) -> CplaybackClistSignalWaveformName:
         """Return the ``CPLayback:CLISt:SIGNal:WAVeform:NAME`` command.
 
-        **Description:**
+        Description:
             - This command returns the name of the specified waveform segment of the specified
               signal in the Captured Signal List.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``CPLayback:CLISt:SIGNal:WAVeform:NAME? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``CPLayback:CLISt:SIGNal:WAVeform:NAME? argument`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:CLISt:SIGNal:WAVeform:NAME? <signal_name>,<NR1>
+            ```
         """
         return self._name
 
@@ -524,19 +504,18 @@ class CplaybackClistSignalWaveform(SCPICmdRead):
     def otime(self) -> CplaybackClistSignalWaveformOtime:
         """Return the ``CPLayback:CLISt:SIGNal:WAVeform:OTIMe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the Off time between waveform segments of the specified
               signal in the Captured Signal List.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``CPLayback:CLISt:SIGNal:WAVeform:OTIMe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:CLISt:SIGNal:WAVeform:OTIMe <signal_name>,<ALL|<NR1>,<NRf>? <signal_name>,<NR1>
+            ```
         """  # noqa: E501
         return self._otime
 
@@ -544,19 +523,18 @@ class CplaybackClistSignalWaveform(SCPICmdRead):
     def srate(self) -> CplaybackClistSignalWaveformSrate:
         """Return the ``CPLayback:CLISt:SIGNal:WAVeform:SRATe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the baseband sample rate of a waveform segment of a
               signal in the Captured Signal List.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``CPLayback:CLISt:SIGNal:WAVeform:SRATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:CLISt:SIGNal:WAVeform:SRATe <signal_name>,<ALL|NR1>,<NRf>? <signal_name>,<NR1>
+            ```
         """  # noqa: E501
         return self._srate
 
@@ -564,27 +542,26 @@ class CplaybackClistSignalWaveform(SCPICmdRead):
 class CplaybackClistSignalScompile(SCPICmdWrite, SCPICmdRead):
     """The ``CPLayback:CLISt:SIGNal:SCOMpile`` command.
 
-    **Description:**
+    Description:
         - This command selects or deselects a signal from the captured signal list to be compiled.
           Single signals are selected with the command but more than one signal can be selected for
           compilation by sending multiple commands. Signals remain selected until deselected with
           this command. The query form returns the list of selected signals.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CPLayback:CLISt:SIGNal:SCOMpile?`` query.
         - Using the ``.verify(value)`` method will send the ``CPLayback:CLISt:SIGNal:SCOMpile?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``CPLayback:CLISt:SIGNal:SCOMpile value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:CLISt:SIGNal:SCOMpile <signal_name>,{OFF|ON|1|0}
         - CPLayback:CLISt:SIGNal:SCOMpile?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 0.
     """
 
@@ -592,25 +569,24 @@ class CplaybackClistSignalScompile(SCPICmdWrite, SCPICmdRead):
 class CplaybackClistSignalDelete(SCPICmdWrite):
     """The ``CPLayback:CLISt:SIGNal:DELete`` command.
 
-    **Description:**
+    Description:
         - This command removes the specified signal from the Captured Signal List.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CPLayback:CLISt:SIGNal:DELete value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:CLISt:SIGNal:DELete {ALL|signal_name}
+        ```
     """
 
 
 class CplaybackClistSignal(SCPICmdRead):
     """The ``CPLayback:CLISt:SIGNal`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CPLayback:CLISt:SIGNal?`` query.
         - Using the ``.verify(value)`` method will send the ``CPLayback:CLISt:SIGNal?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -633,18 +609,17 @@ class CplaybackClistSignal(SCPICmdRead):
     def delete(self) -> CplaybackClistSignalDelete:
         """Return the ``CPLayback:CLISt:SIGNal:DELete`` command.
 
-        **Description:**
+        Description:
             - This command removes the specified signal from the Captured Signal List.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``CPLayback:CLISt:SIGNal:DELete value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:CLISt:SIGNal:DELete {ALL|signal_name}
+            ```
         """
         return self._delete
 
@@ -652,13 +627,13 @@ class CplaybackClistSignal(SCPICmdRead):
     def scompile(self) -> CplaybackClistSignalScompile:
         """Return the ``CPLayback:CLISt:SIGNal:SCOMpile`` command.
 
-        **Description:**
+        Description:
             - This command selects or deselects a signal from the captured signal list to be
               compiled. Single signals are selected with the command but more than one signal can be
               selected for compilation by sending multiple commands. Signals remain selected until
               deselected with this command. The query form returns the list of selected signals.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CPLayback:CLISt:SIGNal:SCOMpile?``
               query.
             - Using the ``.verify(value)`` method will send the ``CPLayback:CLISt:SIGNal:SCOMpile?``
@@ -666,14 +641,13 @@ class CplaybackClistSignal(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``CPLayback:CLISt:SIGNal:SCOMpile value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:CLISt:SIGNal:SCOMpile <signal_name>,{OFF|ON|1|0}
             - CPLayback:CLISt:SIGNal:SCOMpile?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 0.
         """
         return self._scompile
@@ -682,7 +656,7 @@ class CplaybackClistSignal(SCPICmdRead):
     def waveform(self) -> CplaybackClistSignalWaveform:
         """Return the ``CPLayback:CLISt:SIGNal:WAVeform`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CPLayback:CLISt:SIGNal:WAVeform?``
               query.
             - Using the ``.verify(value)`` method will send the ``CPLayback:CLISt:SIGNal:WAVeform?``
@@ -700,22 +674,21 @@ class CplaybackClistSignal(SCPICmdRead):
     def wcount(self) -> CplaybackClistSignalWcount:
         """Return the ``CPLayback:CLISt:SIGNal:WCOunt`` command.
 
-        **Description:**
+        Description:
             - This command returns the number of waveform segments in the specified signal in the
               Captured Signal List.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``CPLayback:CLISt:SIGNal:WCOunt? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``CPLayback:CLISt:SIGNal:WCOunt? argument`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:CLISt:SIGNal:WCOunt? <signal_name>
+            ```
         """
         return self._wcount
 
@@ -723,29 +696,28 @@ class CplaybackClistSignal(SCPICmdRead):
 class CplaybackClistName(SCPICmdReadWithArguments):
     """The ``CPLayback:CLISt:NAME`` command.
 
-    **Description:**
+    Description:
         - This command returns the name of a signal from the Captured Signal List in the position
           specified by the index value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``CPLayback:CLISt:NAME? argument``
           query.
         - Using the ``.verify(argument, value)`` method will send the
           ``CPLayback:CLISt:NAME? argument`` query and raise an AssertionError if the returned value
           does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:CLISt:NAME? <index>
+        ```
     """
 
 
 class CplaybackClist(SCPICmdRead):
     """The ``CPLayback:CLISt`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CPLayback:CLISt?`` query.
         - Using the ``.verify(value)`` method will send the ``CPLayback:CLISt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -766,22 +738,21 @@ class CplaybackClist(SCPICmdRead):
     def name(self) -> CplaybackClistName:
         """Return the ``CPLayback:CLISt:NAME`` command.
 
-        **Description:**
+        Description:
             - This command returns the name of a signal from the Captured Signal List in the
               position specified by the index value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``CPLayback:CLISt:NAME? argument``
               query.
             - Using the ``.verify(argument, value)`` method will send the
               ``CPLayback:CLISt:NAME? argument`` query and raise an AssertionError if the returned
               value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:CLISt:NAME? <index>
+            ```
         """
         return self._name
 
@@ -789,7 +760,7 @@ class CplaybackClist(SCPICmdRead):
     def signal(self) -> CplaybackClistSignal:
         """Return the ``CPLayback:CLISt:SIGNal`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CPLayback:CLISt:SIGNal?`` query.
             - Using the ``.verify(value)`` method will send the ``CPLayback:CLISt:SIGNal?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -806,19 +777,18 @@ class CplaybackClist(SCPICmdRead):
     def size(self) -> CplaybackClistSize:
         """Return the ``CPLayback:CLISt:SIZE`` command.
 
-        **Description:**
+        Description:
             - This command returns the number of signals in the Captured Signal List.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CPLayback:CLISt:SIZE?`` query.
             - Using the ``.verify(value)`` method will send the ``CPLayback:CLISt:SIZE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:CLISt:SIZE?
+            ```
         """
         return self._size
 
@@ -826,67 +796,64 @@ class CplaybackClist(SCPICmdRead):
 class CplaybackCaptureWlist(SCPICmdWrite):
     """The ``CPLayback:CAPTure:WLISt`` command.
 
-    **Description:**
+    Description:
         - This command adds the specified IQ waveform from the Waveform List to the specified signal
           in the Captured Signal List. If the specified signal does not exist, a new signal is
           created and added to the captured signal list.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CPLayback:CAPTure:WLISt value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:CAPTure:WLISt <signal_name>,<waveform_name>
+        ```
     """
 
 
 class CplaybackCaptureInstrumentRsa(SCPICmdWrite):
     """The ``CPLayback:CAPTure:INSTrument:RSA`` command.
 
-    **Description:**
+    Description:
         - This command connects to the specified RSA (Realtime Spectrum Analyzer), transfers the
           existing acquisition to the AWG, and adds it to the specified signal. If the specified
           signal does not exist, it is created and added to the captured signal list.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``CPLayback:CAPTure:INSTrument:RSA value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:CAPTure:INSTrument:RSA <signal_name>,<instrument_name>
+        ```
     """
 
 
 class CplaybackCaptureInstrumentOscilloscope(SCPICmdWrite):
     """The ``CPLayback:CAPTure:INSTrument:OSCilloscope`` command.
 
-    **Description:**
+    Description:
         - This command connects to the specified oscilloscope, transfers the existing acquisition
           from the oscilloscope to the AWG, and adds it to the specified signal. If the specified
           signal does not exist, it is created and added to the captured signal list.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``CPLayback:CAPTure:INSTrument:OSCilloscope value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:CAPTure:INSTrument:OSCilloscope <signal_name>,<instrument_name>,<source_1>,<source_2>
+        ```
     """  # noqa: E501
 
 
 class CplaybackCaptureInstrument(SCPICmdRead):
     """The ``CPLayback:CAPTure:INSTrument`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CPLayback:CAPTure:INSTrument?`` query.
         - Using the ``.verify(value)`` method will send the ``CPLayback:CAPTure:INSTrument?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -907,21 +874,20 @@ class CplaybackCaptureInstrument(SCPICmdRead):
     def oscilloscope(self) -> CplaybackCaptureInstrumentOscilloscope:
         """Return the ``CPLayback:CAPTure:INSTrument:OSCilloscope`` command.
 
-        **Description:**
+        Description:
             - This command connects to the specified oscilloscope, transfers the existing
               acquisition from the oscilloscope to the AWG, and adds it to the specified signal. If
               the specified signal does not exist, it is created and added to the captured signal
               list.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``CPLayback:CAPTure:INSTrument:OSCilloscope value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:CAPTure:INSTrument:OSCilloscope <signal_name>,<instrument_name>,<source_1>,<source_2>
+            ```
         """  # noqa: E501
         return self._oscilloscope
 
@@ -929,20 +895,19 @@ class CplaybackCaptureInstrument(SCPICmdRead):
     def rsa(self) -> CplaybackCaptureInstrumentRsa:
         """Return the ``CPLayback:CAPTure:INSTrument:RSA`` command.
 
-        **Description:**
+        Description:
             - This command connects to the specified RSA (Realtime Spectrum Analyzer), transfers the
               existing acquisition to the AWG, and adds it to the specified signal. If the specified
               signal does not exist, it is created and added to the captured signal list.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``CPLayback:CAPTure:INSTrument:RSA value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:CAPTure:INSTrument:RSA <signal_name>,<instrument_name>
+            ```
         """
         return self._rsa
 
@@ -950,7 +915,7 @@ class CplaybackCaptureInstrument(SCPICmdRead):
 class CplaybackCaptureFile(SCPICmdWrite):
     """The ``CPLayback:CAPTure:FILE`` command.
 
-    **Description:**
+    Description:
         - The command imports baseband IQ waveform data and adds the waveform to the specified
           Signal Name in the captured signal list. If the specified Signal Name does not exist, it
           is created and added to the captured signal list. You can import a single IQ waveform,
@@ -963,21 +928,20 @@ class CplaybackCaptureFile(SCPICmdWrite):
           - AWG400/AWG500/AWG600/AWG700/AWG5000/AWG7000 Series waveform.MAT - MATLAB file format.RFD
           - RFXpress waveform file format
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CPLayback:CAPTure:FILE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CPLayback:CAPTure:FILE <signal_name>,{SIQ|CIQ},<file_path>[,<file_path>]
+        ```
     """
 
 
 class CplaybackCapture(SCPICmdRead):
     """The ``CPLayback:CAPTure`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CPLayback:CAPTure?`` query.
         - Using the ``.verify(value)`` method will send the ``CPLayback:CAPTure?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -998,7 +962,7 @@ class CplaybackCapture(SCPICmdRead):
     def file(self) -> CplaybackCaptureFile:
         """Return the ``CPLayback:CAPTure:FILE`` command.
 
-        **Description:**
+        Description:
             - The command imports baseband IQ waveform data and adds the waveform to the specified
               Signal Name in the captured signal list. If the specified Signal Name does not exist,
               it is created and added to the captured signal list. You can import a single IQ
@@ -1012,15 +976,14 @@ class CplaybackCapture(SCPICmdRead):
               AWG400/AWG500/AWG600/AWG700/AWG5000/AWG7000 Series waveform.MAT - MATLAB file
               format.RFD - RFXpress waveform file format
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CPLayback:CAPTure:FILE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:CAPTure:FILE <signal_name>,{SIQ|CIQ},<file_path>[,<file_path>]
+            ```
         """
         return self._file
 
@@ -1028,7 +991,7 @@ class CplaybackCapture(SCPICmdRead):
     def instrument(self) -> CplaybackCaptureInstrument:
         """Return the ``CPLayback:CAPTure:INSTrument`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CPLayback:CAPTure:INSTrument?`` query.
             - Using the ``.verify(value)`` method will send the ``CPLayback:CAPTure:INSTrument?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -1043,20 +1006,19 @@ class CplaybackCapture(SCPICmdRead):
     def wlist(self) -> CplaybackCaptureWlist:
         """Return the ``CPLayback:CAPTure:WLISt`` command.
 
-        **Description:**
+        Description:
             - This command adds the specified IQ waveform from the Waveform List to the specified
               signal in the Captured Signal List. If the specified signal does not exist, a new
               signal is created and added to the captured signal list.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CPLayback:CAPTure:WLISt value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:CAPTure:WLISt <signal_name>,<waveform_name>
+            ```
         """
         return self._wlist
 
@@ -1064,7 +1026,7 @@ class CplaybackCapture(SCPICmdRead):
 class Cplayback(SCPICmdRead):
     """The ``CPLayback`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CPLayback?`` query.
         - Using the ``.verify(value)`` method will send the ``CPLayback?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1085,7 +1047,7 @@ class Cplayback(SCPICmdRead):
     def capture(self) -> CplaybackCapture:
         """Return the ``CPLayback:CAPTure`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CPLayback:CAPTure?`` query.
             - Using the ``.verify(value)`` method will send the ``CPLayback:CAPTure?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1101,7 +1063,7 @@ class Cplayback(SCPICmdRead):
     def clist(self) -> CplaybackClist:
         """Return the ``CPLayback:CLISt`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CPLayback:CLISt?`` query.
             - Using the ``.verify(value)`` method will send the ``CPLayback:CLISt?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -1117,7 +1079,7 @@ class Cplayback(SCPICmdRead):
     def compile(self) -> CplaybackCompile:
         """Return the ``CPLayback:COMPile`` command.
 
-        **Description:**
+        Description:
             - The command resamples and upconverts the selected signal to the specified carrier
               frequency. With Option 03 (Sequencing) enabled: A sequence is generated containing all
               waveform segments in the signal (even if the signal contains only one waveform
@@ -1127,14 +1089,13 @@ class Cplayback(SCPICmdRead):
               one signal at a time. The compile process generates a sequence (or waveform) for each
               of the selected signals.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``CPLayback:COMPile`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CPLayback:COMPile
+            ```
 
         Sub-properties:
             - ``.cfrequency``: The ``CPLayback:COMPile:CFRequency`` command.

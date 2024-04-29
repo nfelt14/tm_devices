@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - OPCEXtended {<NR1>|OFF|ON}
     - OPCEXtended?
 """
@@ -27,7 +25,7 @@ if TYPE_CHECKING:
 class Opcextended(SCPICmdWrite, SCPICmdRead):
     """The ``OPCEXtended`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the behavior of OPC commands and queries. When enabled,
           operations referenced in the ``*OPC`` command description notify when their overlapped
           functionality has completed. When disabled, the operations notify as they have in the past
@@ -59,20 +57,19 @@ class Opcextended(SCPICmdWrite, SCPICmdRead):
           Count ``*RST``;``*WAI``;``:ACQUIRE:NUMACQ?`` Acq state after single sequence
           ``:ACQUIRE:STOPAFTER SEQUENCE``;STATE 1;``*WAI``;``:ACQUIRE:STATE?``
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OPCEXtended?`` query.
         - Using the ``.verify(value)`` method will send the ``OPCEXtended?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``OPCEXtended value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - OPCEXtended {<NR1>|OFF|ON}
         - OPCEXtended?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` turns on extended OPC behavior.
         - ``OFF`` turns off extended OPC behavior.
         - ``<NR1>`` = 0 turns off extended OPC behavior; any other value turns on extended OPC

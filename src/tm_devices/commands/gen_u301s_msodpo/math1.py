@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - MATH1:DEFine <QString>
     - MATH1:DEFine?
     - MATH1:HORizontal:POSition <NR3>
@@ -50,46 +48,44 @@ if TYPE_CHECKING:
 class Math1VerticalUnits(SCPICmdRead):
     """The ``MATH1:VERTical:UNIts`` command.
 
-    **Description:**
+    Description:
         - Returns the math waveform vertical measurement unit value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:VERTical:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH1:VERTical:UNIts?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH1:VERTical:UNIts?
+        ```
     """
 
 
 class Math1VerticalScale(SCPICmdWrite, SCPICmdRead):
     """The ``MATH1:VERTical:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command specifies the vertical scale of the currently selected math type. This
           setting controls the display only, graphically scaling these waveforms and having no
           affect on the acquisition hardware. For a signal with constant amplitude, increasing the
           scale causes the waveform to be displayed smaller. Decreasing the scale causes the
           waveform to be displayed larger.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:VERTical:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH1:VERTical:SCAle?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH1:VERTical:SCAle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH1:VERTical:SCAle <NR3>
         - MATH1:VERTical:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the scale-per-division in the current
           math vertical units. The range is from 1.0E-12 through 500.0E+12.
     """
@@ -98,24 +94,23 @@ class Math1VerticalScale(SCPICmdWrite, SCPICmdRead):
 class Math1VerticalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``MATH1:VERTical:POSition`` command.
 
-    **Description:**
+    Description:
         - This command specifies the vertical position of the currently selected math type.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:VERTical:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH1:VERTical:POSition?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH1:VERTical:POSition value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH1:VERTical:POSition <NR3>
         - MATH1:VERTical:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the desired position in divisions from
           the center graticule.
     """
@@ -124,7 +119,7 @@ class Math1VerticalPosition(SCPICmdWrite, SCPICmdRead):
 class Math1Vertical(SCPICmdRead):
     """The ``MATH1:VERTical`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:VERTical?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH1:VERTical?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -145,24 +140,23 @@ class Math1Vertical(SCPICmdRead):
     def position(self) -> Math1VerticalPosition:
         """Return the ``MATH1:VERTical:POSition`` command.
 
-        **Description:**
+        Description:
             - This command specifies the vertical position of the currently selected math type.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1:VERTical:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH1:VERTical:POSition?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH1:VERTical:POSition value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH1:VERTical:POSition <NR3>
             - MATH1:VERTical:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the desired position in divisions
               from the center graticule.
         """
@@ -172,28 +166,27 @@ class Math1Vertical(SCPICmdRead):
     def scale(self) -> Math1VerticalScale:
         """Return the ``MATH1:VERTical:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command specifies the vertical scale of the currently selected math type. This
               setting controls the display only, graphically scaling these waveforms and having no
               affect on the acquisition hardware. For a signal with constant amplitude, increasing
               the scale causes the waveform to be displayed smaller. Decreasing the scale causes the
               waveform to be displayed larger.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1:VERTical:SCAle?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH1:VERTical:SCAle?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH1:VERTical:SCAle value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH1:VERTical:SCAle <NR3>
             - MATH1:VERTical:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the scale-per-division in the
               current math vertical units. The range is from 1.0E-12 through 500.0E+12.
         """
@@ -203,19 +196,18 @@ class Math1Vertical(SCPICmdRead):
     def units(self) -> Math1VerticalUnits:
         """Return the ``MATH1:VERTical:UNIts`` command.
 
-        **Description:**
+        Description:
             - Returns the math waveform vertical measurement unit value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1:VERTical:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH1:VERTical:UNIts?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH1:VERTical:UNIts?
+            ```
         """
         return self._units
 
@@ -223,25 +215,24 @@ class Math1Vertical(SCPICmdRead):
 class Math1Type(SCPICmdWrite, SCPICmdRead):
     """The ``MATH1:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command specifies the math waveform type - either dual or FFT. This command is
           typically used along with ``1:DEFine``, which specifies the current mathematical
           expression as a text string which defines the waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH1:TYPe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH1:TYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH1:TYPe {DUAL|FFT}
         - MATH1:TYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``DUAL`` sets the math waveform mode to dual waveform math.
         - ``FFT`` sets the math waveform mode to FFT math.
     """
@@ -250,26 +241,25 @@ class Math1Type(SCPICmdWrite, SCPICmdRead):
 class Math1SpectralWindow(SCPICmdWrite, SCPICmdRead):
     """The ``MATH1:SPECTral:WINdow`` command.
 
-    **Description:**
+    Description:
         - This command specifies the window function for the spectral analyzer input data for the
           specified math waveform. A spectral window determines what the filter shape of the
           spectral analyzer will be in the frequency domain. It can be described by a mathematical
           function that is multiplied point-by-point times the input data to the spectral analyzer.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:SPECTral:WINdow?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH1:SPECTral:WINdow?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH1:SPECTral:WINdow value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH1:SPECTral:WINdow {RECTangular|HAMming|HANning|BLAckmanharris}
         - MATH1:SPECTral:WINdow?
+        ```
 
-    **Info:**
+    Info:
         - ``RECTangular`` window function is equivalent to multiplying all gate data by one.
         - ``HAMming`` window function is based on a cosine series.
         - ``HANning`` window function is based on a cosine series.
@@ -280,43 +270,41 @@ class Math1SpectralWindow(SCPICmdWrite, SCPICmdRead):
 class Math1SpectralNyquistfreq(SCPICmdRead):
     """The ``MATH1:SPECTral:NYQUISTFreq`` command.
 
-    **Description:**
+    Description:
         - Returns the Nyquist frequency of the FFT math waveforms.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:SPECTral:NYQUISTFreq?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH1:SPECTral:NYQUISTFreq?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH1:SPECTral:NYQUISTFreq?
+        ```
     """
 
 
 class Math1SpectralMag(SCPICmdWrite, SCPICmdRead):
     """The ``MATH1:SPECTral:MAG`` command.
 
-    **Description:**
+    Description:
         - This command specifies the units of the Spectral Magnification function in the math
           string.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:SPECTral:MAG?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH1:SPECTral:MAG?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH1:SPECTral:MAG value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH1:SPECTral:MAG {LINEAr|DB}
         - MATH1:SPECTral:MAG?
+        ```
 
-    **Info:**
+    Info:
         - ``LINEAR`` sets the SpectralMag units to linear.
         - ``DB`` sets the SpectralMag units to decibels.
     """
@@ -325,68 +313,65 @@ class Math1SpectralMag(SCPICmdWrite, SCPICmdRead):
 class Math1SpectralGatingIndicatorsStart(SCPICmdRead):
     """The ``MATH1:SPECTral:GATing:INDICators:STARt`` command.
 
-    **Description:**
+    Description:
         - Returns the starting point in the source waveform record used for computing the FFT math
           waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:SPECTral:GATing:INDICators:STARt?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``MATH1:SPECTral:GATing:INDICators:STARt?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH1:SPECTral:GATing:INDICators:STARt?
+        ```
     """
 
 
 class Math1SpectralGatingIndicatorsEnd(SCPICmdRead):
     """The ``MATH1:SPECTral:GATing:INDICators:END`` command.
 
-    **Description:**
+    Description:
         - Returns the ending point in the source waveform record used for computing the FFT
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:SPECTral:GATing:INDICators:END?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``MATH1:SPECTral:GATing:INDICators:END?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH1:SPECTral:GATing:INDICators:END?
+        ```
     """
 
 
 class Math1SpectralGatingIndicators(SCPICmdWrite, SCPICmdRead):
     """The ``MATH1:SPECTral:GATing:INDICators`` command.
 
-    **Description:**
+    Description:
         - Enables or disables the display of indicators that show the portion of the source waveform
           record used to compute the math FFT waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:SPECTral:GATing:INDICators?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH1:SPECTral:GATing:INDICators?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MATH1:SPECTral:GATing:INDICators value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH1:SPECTral:GATing:INDICators {<NR1>|OFF|ON}
         - MATH1:SPECTral:GATing:INDICators?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` turns off the display of indicators.
         - ``ON`` turns on the display of indicators.
         - ``<NR1>`` = 0 turns off the display of indicators. Any other value turns on the display of
@@ -406,21 +391,20 @@ class Math1SpectralGatingIndicators(SCPICmdWrite, SCPICmdRead):
     def end(self) -> Math1SpectralGatingIndicatorsEnd:
         """Return the ``MATH1:SPECTral:GATing:INDICators:END`` command.
 
-        **Description:**
+        Description:
             - Returns the ending point in the source waveform record used for computing the FFT
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1:SPECTral:GATing:INDICators:END?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``MATH1:SPECTral:GATing:INDICators:END?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH1:SPECTral:GATing:INDICators:END?
+            ```
         """
         return self._end
 
@@ -428,22 +412,21 @@ class Math1SpectralGatingIndicators(SCPICmdWrite, SCPICmdRead):
     def start(self) -> Math1SpectralGatingIndicatorsStart:
         """Return the ``MATH1:SPECTral:GATing:INDICators:STARt`` command.
 
-        **Description:**
+        Description:
             - Returns the starting point in the source waveform record used for computing the FFT
               math waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MATH1:SPECTral:GATing:INDICators:STARt?`` query.
             - Using the ``.verify(value)`` method will send the
               ``MATH1:SPECTral:GATing:INDICators:STARt?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH1:SPECTral:GATing:INDICators:STARt?
+            ```
         """
         return self._start
 
@@ -451,7 +434,7 @@ class Math1SpectralGatingIndicators(SCPICmdWrite, SCPICmdRead):
 class Math1SpectralGating(SCPICmdRead):
     """The ``MATH1:SPECTral:GATing`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:SPECTral:GATing?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH1:SPECTral:GATing?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -468,11 +451,11 @@ class Math1SpectralGating(SCPICmdRead):
     def indicators(self) -> Math1SpectralGatingIndicators:
         """Return the ``MATH1:SPECTral:GATing:INDICators`` command.
 
-        **Description:**
+        Description:
             - Enables or disables the display of indicators that show the portion of the source
               waveform record used to compute the math FFT waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1:SPECTral:GATing:INDICators?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -481,14 +464,13 @@ class Math1SpectralGating(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MATH1:SPECTral:GATing:INDICators value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH1:SPECTral:GATing:INDICators {<NR1>|OFF|ON}
             - MATH1:SPECTral:GATing:INDICators?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` turns off the display of indicators.
             - ``ON`` turns on the display of indicators.
             - ``<NR1>`` = 0 turns off the display of indicators. Any other value turns on the
@@ -504,7 +486,7 @@ class Math1SpectralGating(SCPICmdRead):
 class Math1Spectral(SCPICmdRead):
     """The ``MATH1:SPECTral`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:SPECTral?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH1:SPECTral?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -527,7 +509,7 @@ class Math1Spectral(SCPICmdRead):
     def gating(self) -> Math1SpectralGating:
         """Return the ``MATH1:SPECTral:GATing`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1:SPECTral:GATing?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH1:SPECTral:GATing?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -541,24 +523,23 @@ class Math1Spectral(SCPICmdRead):
     def mag(self) -> Math1SpectralMag:
         """Return the ``MATH1:SPECTral:MAG`` command.
 
-        **Description:**
+        Description:
             - This command specifies the units of the Spectral Magnification function in the math
               string.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1:SPECTral:MAG?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH1:SPECTral:MAG?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH1:SPECTral:MAG value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH1:SPECTral:MAG {LINEAr|DB}
             - MATH1:SPECTral:MAG?
+            ```
 
-        **Info:**
+        Info:
             - ``LINEAR`` sets the SpectralMag units to linear.
             - ``DB`` sets the SpectralMag units to decibels.
         """
@@ -568,19 +549,18 @@ class Math1Spectral(SCPICmdRead):
     def nyquistfreq(self) -> Math1SpectralNyquistfreq:
         """Return the ``MATH1:SPECTral:NYQUISTFreq`` command.
 
-        **Description:**
+        Description:
             - Returns the Nyquist frequency of the FFT math waveforms.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1:SPECTral:NYQUISTFreq?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH1:SPECTral:NYQUISTFreq?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH1:SPECTral:NYQUISTFreq?
+            ```
         """
         return self._nyquistfreq
 
@@ -588,28 +568,27 @@ class Math1Spectral(SCPICmdRead):
     def window(self) -> Math1SpectralWindow:
         """Return the ``MATH1:SPECTral:WINdow`` command.
 
-        **Description:**
+        Description:
             - This command specifies the window function for the spectral analyzer input data for
               the specified math waveform. A spectral window determines what the filter shape of the
               spectral analyzer will be in the frequency domain. It can be described by a
               mathematical function that is multiplied point-by-point times the input data to the
               spectral analyzer.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1:SPECTral:WINdow?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH1:SPECTral:WINdow?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH1:SPECTral:WINdow value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH1:SPECTral:WINdow {RECTangular|HAMming|HANning|BLAckmanharris}
             - MATH1:SPECTral:WINdow?
+            ```
 
-        **Info:**
+        Info:
             - ``RECTangular`` window function is equivalent to multiplying all gate data by one.
             - ``HAMming`` window function is based on a cosine series.
             - ``HANning`` window function is based on a cosine series.
@@ -621,23 +600,22 @@ class Math1Spectral(SCPICmdRead):
 class Math1Label(SCPICmdWrite, SCPICmdRead):
     """The ``MATH1:LABel`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the waveform label for the math waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:LABel?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH1:LABel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH1:LABel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH1:LABel <QString>
         - MATH1:LABel?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the quoted string used as the label for the math waveform.
     """
 
@@ -647,44 +625,42 @@ class Math1Label(SCPICmdWrite, SCPICmdRead):
 class Math1HorizontalUnits(SCPICmdRead):
     """The ``MATH1:HORizontal:UNIts`` command.
 
-    **Description:**
+    Description:
         - Returns the math waveform horizontal measurement unit value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:HORizontal:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH1:HORizontal:UNIts?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH1:HORizontal:UNIts?
+        ```
     """
 
 
 class Math1HorizontalScale(SCPICmdWrite, SCPICmdRead):
     """The ``MATH1:HORizontal:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command specifies the math horizontal display scale for FFT or for dual math
           waveforms that have source waveforms that are reference waveforms. The horizontal scale of
           a dual math waveform with a channel source waveform is set through the command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:HORizontal:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH1:HORizontal:SCAle?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH1:HORizontal:SCAle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH1:HORizontal:SCAle <NR3>
         - MATH1:HORizontal:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the math horizontal scale, in seconds.
     """
 
@@ -692,25 +668,24 @@ class Math1HorizontalScale(SCPICmdWrite, SCPICmdRead):
 class Math1HorizontalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``MATH1:HORizontal:POSition`` command.
 
-    **Description:**
+    Description:
         - This command specifies the math horizontal display position for FFT or (non-live) math
           reference waveforms.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:HORizontal:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH1:HORizontal:POSition?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH1:HORizontal:POSition value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH1:HORizontal:POSition <NR3>
         - MATH1:HORizontal:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the % of the math waveform that
           precedes center screen. It can vary from 0.0 to 100.0.
     """
@@ -719,7 +694,7 @@ class Math1HorizontalPosition(SCPICmdWrite, SCPICmdRead):
 class Math1Horizontal(SCPICmdRead):
     """The ``MATH1:HORizontal`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:HORizontal?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH1:HORizontal?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -740,25 +715,24 @@ class Math1Horizontal(SCPICmdRead):
     def position(self) -> Math1HorizontalPosition:
         """Return the ``MATH1:HORizontal:POSition`` command.
 
-        **Description:**
+        Description:
             - This command specifies the math horizontal display position for FFT or (non-live) math
               reference waveforms.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1:HORizontal:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH1:HORizontal:POSition?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH1:HORizontal:POSition value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH1:HORizontal:POSition <NR3>
             - MATH1:HORizontal:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the % of the math waveform that
               precedes center screen. It can vary from 0.0 to 100.0.
         """
@@ -768,27 +742,26 @@ class Math1Horizontal(SCPICmdRead):
     def scale(self) -> Math1HorizontalScale:
         """Return the ``MATH1:HORizontal:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command specifies the math horizontal display scale for FFT or for dual math
               waveforms that have source waveforms that are reference waveforms. The horizontal
               scale of a dual math waveform with a channel source waveform is set through the
               command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1:HORizontal:SCAle?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH1:HORizontal:SCAle?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH1:HORizontal:SCAle value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH1:HORizontal:SCAle <NR3>
             - MATH1:HORizontal:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the math horizontal scale, in
               seconds.
         """
@@ -798,19 +771,18 @@ class Math1Horizontal(SCPICmdRead):
     def units(self) -> Math1HorizontalUnits:
         """Return the ``MATH1:HORizontal:UNIts`` command.
 
-        **Description:**
+        Description:
             - Returns the math waveform horizontal measurement unit value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1:HORizontal:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH1:HORizontal:UNIts?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH1:HORizontal:UNIts?
+            ```
         """
         return self._units
 
@@ -818,7 +790,7 @@ class Math1Horizontal(SCPICmdRead):
 class Math1Define(SCPICmdWrite, SCPICmdRead):
     r"""The ``MATH1:DEFine`` command.
 
-    **Description:**
+    Description:
         - This command specifies the current math function as a text string. You must also specify
           the type (dual waveform, FFT, advanced math, or spectrum math) using ``MATH1:TYPE Dual``
           math expressions are strings of the form <wfm> <operation> <wfm>, where the <wfm>s are any
@@ -832,20 +804,19 @@ class Math1Define(SCPICmdWrite, SCPICmdRead):
           combination of live RF or reference traces in the frequency domain display, the
           <operation> is either  + or  -, and type has been set to SPECTRUM.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1:DEFine?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH1:DEFine?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MATH1:DEFine value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH1:DEFine <QString>
         - MATH1:DEFine?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` quoted string argument is the mathematical expression that defines the
           waveform.
         - ``:MATH:DEFINE 'FFT(CH1)'``
@@ -916,20 +887,19 @@ class Math1Define(SCPICmdWrite, SCPICmdRead):
 class Math1(SCPICmdRead):
     """The ``MATH1`` command.
 
-    **Description:**
+    Description:
         - Returns the definition of the math waveform. The returned data depends on the setting of
           the ``MATH1:TYPE`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MATH1?`` query.
         - Using the ``.verify(value)`` method will send the ``MATH1?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MATH1?
+        ```
 
     Properties:
         - ``.define``: The ``MATH1:DEFine`` command.
@@ -953,7 +923,7 @@ class Math1(SCPICmdRead):
     def define(self) -> Math1Define:
         r"""Return the ``MATH1:DEFine`` command.
 
-        **Description:**
+        Description:
             - This command specifies the current math function as a text string. You must also
               specify the type (dual waveform, FFT, advanced math, or spectrum math) using
               ``MATH1:TYPE Dual`` math expressions are strings of the form <wfm> <operation> <wfm>,
@@ -967,20 +937,19 @@ class Math1(SCPICmdRead):
               waveforms are any combination of live RF or reference traces in the frequency domain
               display, the <operation> is either  + or  -, and type has been set to SPECTRUM.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1:DEFine?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH1:DEFine?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH1:DEFine value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH1:DEFine <QString>
             - MATH1:DEFine?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` quoted string argument is the mathematical expression that defines the
               waveform.
             - ``:MATH:DEFINE 'FFT(CH1)'``
@@ -1050,7 +1019,7 @@ class Math1(SCPICmdRead):
     def horizontal(self) -> Math1Horizontal:
         """Return the ``MATH1:HORizontal`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1:HORizontal?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH1:HORizontal?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1066,23 +1035,22 @@ class Math1(SCPICmdRead):
     def label(self) -> Math1Label:
         """Return the ``MATH1:LABel`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the waveform label for the math waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1:LABel?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH1:LABel?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH1:LABel value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH1:LABel <QString>
             - MATH1:LABel?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the quoted string used as the label for the math waveform.
         """
         return self._label
@@ -1091,7 +1059,7 @@ class Math1(SCPICmdRead):
     def spectral(self) -> Math1Spectral:
         """Return the ``MATH1:SPECTral`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1:SPECTral?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH1:SPECTral?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -1108,25 +1076,24 @@ class Math1(SCPICmdRead):
     def type(self) -> Math1Type:
         """Return the ``MATH1:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command specifies the math waveform type - either dual or FFT. This command is
               typically used along with ``1:DEFine``, which specifies the current mathematical
               expression as a text string which defines the waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH1:TYPe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MATH1:TYPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MATH1:TYPe {DUAL|FFT}
             - MATH1:TYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``DUAL`` sets the math waveform mode to dual waveform math.
             - ``FFT`` sets the math waveform mode to FFT math.
         """
@@ -1136,7 +1103,7 @@ class Math1(SCPICmdRead):
     def vertical(self) -> Math1Vertical:
         """Return the ``MATH1:VERTical`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MATH1:VERTical?`` query.
             - Using the ``.verify(value)`` method will send the ``MATH1:VERTical?`` query and raise
               an AssertionError if the returned value does not match ``value``.

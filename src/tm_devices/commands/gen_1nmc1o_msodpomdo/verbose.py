@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - VERBose {OFF|ON|<NR1>}
 """
 
@@ -25,20 +23,19 @@ if TYPE_CHECKING:
 class Verbose(SCPICmdWrite):
     """The ``VERBose`` command.
 
-    **Description:**
+    Description:
         - This command specifies the Verbose state that controls the length of keywords on query
           responses. Keywords can be both headers and arguments.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``VERBose value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - VERBose {OFF|ON|<NR1>}
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` sets the Verbose state to false, which returns minimum-length keywords for
           applicable setting queries.
         - ``ON`` sets the Verbose state to true, which returns full-length keywords for applicable

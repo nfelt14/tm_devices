@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - FPANel:PRESS <menuoff>
 """
 
@@ -25,20 +23,19 @@ if TYPE_CHECKING:
 class FpanelPress(SCPICmdWrite):
     """The ``FPANel:PRESS`` command.
 
-    **Description:**
+    Description:
         - This command turns off the displayed menu. It turns off everything except warning
           messages.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FPANel:PRESS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FPANel:PRESS <menuoff>
+        ```
 
-    **Info:**
+    Info:
         - ``menuoff`` turns off the menu.
     """
 
@@ -46,7 +43,7 @@ class FpanelPress(SCPICmdWrite):
 class Fpanel(SCPICmdRead):
     """The ``FPANel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FPANel?`` query.
         - Using the ``.verify(value)`` method will send the ``FPANel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -63,20 +60,19 @@ class Fpanel(SCPICmdRead):
     def press(self) -> FpanelPress:
         """Return the ``FPANel:PRESS`` command.
 
-        **Description:**
+        Description:
             - This command turns off the displayed menu. It turns off everything except warning
               messages.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FPANel:PRESS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FPANel:PRESS <menuoff>
+            ```
 
-        **Info:**
+        Info:
             - ``menuoff`` turns off the menu.
         """
         return self._press

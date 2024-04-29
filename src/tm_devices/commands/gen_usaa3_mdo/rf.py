@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - RF:CLIPPing?
     - RF:DETECTionmethod:MODe {AUTO|MANual}
     - RF:DETECTionmethod:MODe?
@@ -138,27 +136,26 @@ if TYPE_CHECKING:
 class RfWindow(SCPICmdWrite, SCPICmdRead):
     """The ``RF:WINdow`` command.
 
-    **Description:**
+    Description:
         - This command specifies which window will be used for the windowing function, which is only
           used for the three time domain RF traces (RF Amplitude vs. Time, RF Frequency vs. Time and
           RF Phase vs. Time). The windowing function is a Fast Fourier Transform (FFT) technique
           used to minimize the discontinuities between successive frames of an RF time domain
           signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:WINdow?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:WINdow?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:WINdow value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:WINdow {RECTangular|HAMming|HANning|BLAckmanharris|KAIser|FLATtop}
         - RF:WINdow?
+        ```
 
-    **Info:**
+    Info:
         - ``RECTangular`` - window function equivalent to multiplying all gate data by one
           (sometimes known as a Dirichlet window).
         - ``HAMming`` - a high or moderate resolution window based on a cosine series.
@@ -173,24 +170,23 @@ class RfWindow(SCPICmdWrite, SCPICmdRead):
 class RfUnits(SCPICmdWrite, SCPICmdRead):
     """The ``RF:UNIts`` command.
 
-    **Description:**
+    Description:
         - This command specifies the vertical units to be used in all RF-related absolute
           logarithmic amplitudes.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:UNIts?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:UNIts value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:UNIts {DBM|DBUW|DBMV|DBUV|DBMA|DBUA}
         - RF:UNIts?
+        ```
 
-    **Info:**
+    Info:
         - ``DBM`` - Decibel milliwatts.
         - ``DBUW`` - Decibel microwatts.
         - ``DBMV`` - Decibel millivolts.
@@ -203,23 +199,22 @@ class RfUnits(SCPICmdWrite, SCPICmdRead):
 class RfStop(SCPICmdWrite, SCPICmdRead):
     """The ``RF:STOP`` command.
 
-    **Description:**
+    Description:
         - This command specifies to exclude frequencies above a certain level from use.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:STOP?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:STOP?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:STOP value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:STOP <NR3>
         - RF:STOP?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point value.
     """
 
@@ -227,23 +222,22 @@ class RfStop(SCPICmdWrite, SCPICmdRead):
 class RfStart(SCPICmdWrite, SCPICmdRead):
     """The ``RF:STARt`` command.
 
-    **Description:**
+    Description:
         - This command specifies to exclude frequencies below a certain level from use.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:STARt?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:STARt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:STARt value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:STARt <NR3>
         - RF:STARt?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point value that represents the Start frequency.
     """
 
@@ -251,24 +245,23 @@ class RfStart(SCPICmdWrite, SCPICmdRead):
 class RfSquelchThreshold(SCPICmdWrite, SCPICmdRead):
     """The ``RF:SQUELCH:THReshold`` command.
 
-    **Description:**
+    Description:
         - This command specifies the squelch threshold level, in volts, for the RF Frequency vs.
           Time and RF Phase vs. Time traces.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:SQUELCH:THReshold?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:SQUELCH:THReshold?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:SQUELCH:THReshold value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:SQUELCH:THReshold <NR3>
         - RF:SQUELCH:THReshold?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number.
     """
 
@@ -276,32 +269,31 @@ class RfSquelchThreshold(SCPICmdWrite, SCPICmdRead):
 class RfSquelchState(SCPICmdWrite, SCPICmdRead):
     """The ``RF:SQUELCH:STATE`` command.
 
-    **Description:**
+    Description:
         - This command turns the squelch control on or off for the RF Frequency vs. Time and RF
           Phase vs. Time traces. When squelch is on, only the portions of these traces where the
           amplitude exceeds the squelch threshold are displayed. This prevents the display of Phase
           and/or Frequency for signals that are at or near noise levels. The RF amplitude can be
           observed in the RF Amplitude vs. Time trace.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:SQUELCH:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:SQUELCH:STATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:SQUELCH:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:SQUELCH:STATE {OFF|ON|0|1}
         - RF:SQUELCH:STATE?
+        ```
     """
 
 
 class RfSquelch(SCPICmdRead):
     """The ``RF:SQUELCH`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:SQUELCH?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:SQUELCH?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -320,25 +312,24 @@ class RfSquelch(SCPICmdRead):
     def state(self) -> RfSquelchState:
         """Return the ``RF:SQUELCH:STATE`` command.
 
-        **Description:**
+        Description:
             - This command turns the squelch control on or off for the RF Frequency vs. Time and RF
               Phase vs. Time traces. When squelch is on, only the portions of these traces where the
               amplitude exceeds the squelch threshold are displayed. This prevents the display of
               Phase and/or Frequency for signals that are at or near noise levels. The RF amplitude
               can be observed in the RF Amplitude vs. Time trace.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:SQUELCH:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:SQUELCH:STATE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:SQUELCH:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:SQUELCH:STATE {OFF|ON|0|1}
             - RF:SQUELCH:STATE?
+            ```
         """
         return self._state
 
@@ -346,25 +337,24 @@ class RfSquelch(SCPICmdRead):
     def threshold(self) -> RfSquelchThreshold:
         """Return the ``RF:SQUELCH:THReshold`` command.
 
-        **Description:**
+        Description:
             - This command specifies the squelch threshold level, in volts, for the RF Frequency vs.
               Time and RF Phase vs. Time traces.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:SQUELCH:THReshold?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:SQUELCH:THReshold?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:SQUELCH:THReshold value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:SQUELCH:THReshold <NR3>
             - RF:SQUELCH:THReshold?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number.
         """
         return self._threshold
@@ -373,27 +363,26 @@ class RfSquelch(SCPICmdRead):
 class RfSpectrogramTime(SCPICmdRead):
     """The ``RF:SPECTRogram:TIMe`` command.
 
-    **Description:**
+    Description:
         - Queries the number of seconds in the spectrogram since continuous acquisition started. The
           value returned is always <= 0.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:SPECTRogram:TIMe?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:SPECTRogram:TIMe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:SPECTRogram:TIMe?
+        ```
     """
 
 
 class RfSpectrogramState(SCPICmdWrite, SCPICmdRead):
     """The ``RF:SPECTRogram:STATE`` command.
 
-    **Description:**
+    Description:
         - This command switches the frequency domain spectrogram display on or off. The spectrogram
           illustrates how frequency and amplitude change over time. It is useful for monitoring
           slowly-changing RF events, and for identifying low amplitude signals too subtle for the
@@ -404,47 +393,45 @@ class RfSpectrogramState(SCPICmdWrite, SCPICmdRead):
           spectrogram by using the ``RF:SPECTROGRAM:NUMSLICES`` and ``RF:SPECTROGRAM:SLICESELECT``
           commands.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:SPECTRogram:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:SPECTRogram:STATE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:SPECTRogram:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:SPECTRogram:STATE {OFF|ON|0|1}
         - RF:SPECTRogram:STATE?
+        ```
     """
 
 
 class RfSpectrogramSlicetime(SCPICmdRead):
     """The ``RF:SPECTRogram:SLICETIMe`` command.
 
-    **Description:**
+    Description:
         - Returns the time stamp of the selected spectrogram slice (specified using
           ``:RF:SPECTRogram:SLICESELect``). The value represents the number of seconds since
           spectrogram acquisitions were started after the instrument was powered up, or since the
           spectrogram was cleared (see ``RF:SPECTROGRAM``).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:SPECTRogram:SLICETIMe?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:SPECTRogram:SLICETIMe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:SPECTRogram:SLICETIMe?
+        ```
     """
 
 
 class RfSpectrogramSliceselect(SCPICmdWrite, SCPICmdRead):
     """The ``RF:SPECTRogram:SLICESELect`` command.
 
-    **Description:**
+    Description:
         - This command specifies the spectrogram slice number that is to be displayed. The slice can
           only be selected or changed when acquisitions have been stopped. As soon as acquisitions
           start again, the slice number is reset to 0 (the latest slice). Attempts to select a slice
@@ -460,21 +447,20 @@ class RfSpectrogramSliceselect(SCPICmdWrite, SCPICmdRead):
           the spectrogram using the spectrum slice control. When you select a spectrogram slice, it
           is displayed in the bottom window as the RF Normal trace.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:SPECTRogram:SLICESELect?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:SPECTRogram:SLICESELect?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:SPECTRogram:SLICESELect value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:SPECTRogram:SLICESELect <NR1>
         - RF:SPECTRogram:SLICESELect?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is an integer that specifies the spectrogram slice number that is to be
           displayed.
     """
@@ -483,40 +469,38 @@ class RfSpectrogramSliceselect(SCPICmdWrite, SCPICmdRead):
 class RfSpectrogramNumslices(SCPICmdRead):
     """The ``RF:SPECTRogram:NUMSLICEs`` command.
 
-    **Description:**
+    Description:
         - This query returns the number of spectrogram slices that are currently being rendered. A
           spectrogram slice is a section of the spectrogram representing one interval, or slice, of
           time in the spectrogram record.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:SPECTRogram:NUMSLICEs?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:SPECTRogram:NUMSLICEs?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:SPECTRogram:NUMSLICEs?
+        ```
     """
 
 
 class RfSpectrogram(SCPICmdWrite, SCPICmdRead):
     """The ``RF:SPECTRogram`` command.
 
-    **Description:**
+    Description:
         - Clears the spectrogram.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``RF:SPECTRogram value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:SPECTRogram {CLEAR}
+        ```
 
-    **Info:**
+    Info:
         - ``CLEAR`` clears the spectrogram.
 
     Properties:
@@ -539,21 +523,20 @@ class RfSpectrogram(SCPICmdWrite, SCPICmdRead):
     def numslices(self) -> RfSpectrogramNumslices:
         """Return the ``RF:SPECTRogram:NUMSLICEs`` command.
 
-        **Description:**
+        Description:
             - This query returns the number of spectrogram slices that are currently being rendered.
               A spectrogram slice is a section of the spectrogram representing one interval, or
               slice, of time in the spectrogram record.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:SPECTRogram:NUMSLICEs?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:SPECTRogram:NUMSLICEs?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:SPECTRogram:NUMSLICEs?
+            ```
         """
         return self._numslices
 
@@ -561,7 +544,7 @@ class RfSpectrogram(SCPICmdWrite, SCPICmdRead):
     def sliceselect(self) -> RfSpectrogramSliceselect:
         """Return the ``RF:SPECTRogram:SLICESELect`` command.
 
-        **Description:**
+        Description:
             - This command specifies the spectrogram slice number that is to be displayed. The slice
               can only be selected or changed when acquisitions have been stopped. As soon as
               acquisitions start again, the slice number is reset to 0 (the latest slice). Attempts
@@ -578,21 +561,20 @@ class RfSpectrogram(SCPICmdWrite, SCPICmdRead):
               slice control. When you select a spectrogram slice, it is displayed in the bottom
               window as the RF Normal trace.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:SPECTRogram:SLICESELect?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:SPECTRogram:SLICESELect?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:SPECTRogram:SLICESELect value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:SPECTRogram:SLICESELect <NR1>
             - RF:SPECTRogram:SLICESELect?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is an integer that specifies the spectrogram slice number that is to be
               displayed.
         """
@@ -602,22 +584,21 @@ class RfSpectrogram(SCPICmdWrite, SCPICmdRead):
     def slicetime(self) -> RfSpectrogramSlicetime:
         """Return the ``RF:SPECTRogram:SLICETIMe`` command.
 
-        **Description:**
+        Description:
             - Returns the time stamp of the selected spectrogram slice (specified using
               ``:RF:SPECTRogram:SLICESELect``). The value represents the number of seconds since
               spectrogram acquisitions were started after the instrument was powered up, or since
               the spectrogram was cleared (see ``RF:SPECTROGRAM``).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:SPECTRogram:SLICETIMe?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:SPECTRogram:SLICETIMe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:SPECTRogram:SLICETIMe?
+            ```
         """
         return self._slicetime
 
@@ -625,7 +606,7 @@ class RfSpectrogram(SCPICmdWrite, SCPICmdRead):
     def state(self) -> RfSpectrogramState:
         """Return the ``RF:SPECTRogram:STATE`` command.
 
-        **Description:**
+        Description:
             - This command switches the frequency domain spectrogram display on or off. The
               spectrogram illustrates how frequency and amplitude change over time. It is useful for
               monitoring slowly-changing RF events, and for identifying low amplitude signals too
@@ -636,19 +617,18 @@ class RfSpectrogram(SCPICmdWrite, SCPICmdRead):
               each spectrum slice in the spectrogram by using the ``RF:SPECTROGRAM:NUMSLICES`` and
               ``RF:SPECTROGRAM:SLICESELECT`` commands.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:SPECTRogram:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:SPECTRogram:STATE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:SPECTRogram:STATE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:SPECTRogram:STATE {OFF|ON|0|1}
             - RF:SPECTRogram:STATE?
+            ```
         """
         return self._state
 
@@ -656,20 +636,19 @@ class RfSpectrogram(SCPICmdWrite, SCPICmdRead):
     def time(self) -> RfSpectrogramTime:
         """Return the ``RF:SPECTRogram:TIMe`` command.
 
-        **Description:**
+        Description:
             - Queries the number of seconds in the spectrogram since continuous acquisition started.
               The value returned is always <= 0.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:SPECTRogram:TIMe?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:SPECTRogram:TIMe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:SPECTRogram:TIMe?
+            ```
         """
         return self._time
 
@@ -677,43 +656,41 @@ class RfSpectrogram(SCPICmdWrite, SCPICmdRead):
 class RfSpectrumtrace(SCPICmdWrite):
     """The ``RF:SPECTRUMTrace`` command.
 
-    **Description:**
+    Description:
         - Resets the spectrum traces, ``RF_MINHold``, ``RF_MAXHold`` and ``RF_AVErage``.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``RF:SPECTRUMTrace value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:SPECTRUMTrace {RESET}
+        ```
     """
 
 
 class RfSpectrummode(SCPICmdWrite, SCPICmdRead):
     """The ``RF:SPECTRUMMode`` command.
 
-    **Description:**
+    Description:
         - When only the frequency domain waveforms are displayed (no time domain waveforms), you can
           choose whether the MDO4000/B/C should use Triggered mode or Free Run mode. (3 Series MDO
           only uses Free Run mode.) When Free Run mode is selected, the oscilloscope generates RF
           acquisitions as fast as possible. The default is FREErun.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:SPECTRUMMode?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:SPECTRUMMode?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:SPECTRUMMode value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:SPECTRUMMode {TRIGgered|FREErun}
         - RF:SPECTRUMMode?
+        ```
 
-    **Info:**
+    Info:
         - ``TRIGgered`` ties RF acquisitions to the scope's unified triggering system for all
           channels.
         - ``FREErun`` acquires RF data as often as processing allows, without waiting for trigger
@@ -724,7 +701,7 @@ class RfSpectrummode(SCPICmdWrite, SCPICmdRead):
 class RfSpanrbwratio(SCPICmdWrite, SCPICmdRead):
     """The ``RF:SPANRbwratio`` command.
 
-    **Description:**
+    Description:
         - This command specifies the ratio of the span to the resolution bandwidth (RBW) that will
           be used when the RBW Mode is set to AUTO. (In order to set the RBW Mode to AUTO, use the
           command ``RF:RBW:MODE``.) The span is the width of the frequency domain trace in Hz, which
@@ -732,20 +709,19 @@ class RfSpanrbwratio(SCPICmdWrite, SCPICmdRead):
           narrowest measurable band of frequencies in a frequency domain trace. The default RBW
           ratio is a factor of 1000.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:SPANRbwratio?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:SPANRbwratio?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:SPANRbwratio value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:SPANRbwratio <NR3>
         - RF:SPANRbwratio?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number.
     """
 
@@ -753,7 +729,7 @@ class RfSpanrbwratio(SCPICmdWrite, SCPICmdRead):
 class RfSpan(SCPICmdWrite, SCPICmdRead):
     """The ``RF:SPAN`` command.
 
-    **Description:**
+    Description:
         - This command specifies the span setting. The span is the range of frequencies that can be
           observed around the center frequency. This is the width of the frequency domain trace,
           which is equal to the stop frequency minus the start frequency. The maximum span varies
@@ -761,20 +737,19 @@ class RfSpan(SCPICmdWrite, SCPICmdRead):
           analog bandwidth rating; however, if the option 3-SA3 is installed, then the maximum span
           is 3 GHz.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:SPAN?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:SPAN?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:SPAN value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:SPAN <NR3>
         - RF:SPAN?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number.
     """
 
@@ -782,25 +757,24 @@ class RfSpan(SCPICmdWrite, SCPICmdRead):
 class RfScale(SCPICmdWrite, SCPICmdRead):
     """The ``RF:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command specifies the overall vertical scale setting of the frequency domain window.
           The lower limit is 0.1 dB/division. The upper limit is 100dB/division. The vertical scale
           is adjustable in a 1-2-5 sequence.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:SCAle?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:SCAle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:SCAle <NR3>
         - RF:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number.
     """
 
@@ -808,30 +782,29 @@ class RfScale(SCPICmdWrite, SCPICmdRead):
 class RfRfVTimeBandwidth(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``RF:RF_V_TIMe:BANDWidth`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the RF versus time bandwidth as an NR3 value in Hz. This is the same as
           the 'RF v T BW' readout, which is displayed when at least one of the RF Versus Time traces
           is on.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:RF_V_TIMe:BANDWidth?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:RF_V_TIMe:BANDWidth?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``RF:RF_V_TIMe:BANDWidth`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:RF_V_TIMe:BANDWidth
         - RF:RF_V_TIMe:BANDWidth?
+        ```
     """
 
 
 class RfRfVTime(SCPICmdRead):
     """The ``RF:RF_V_TIMe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:RF_V_TIMe?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:RF_V_TIMe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -848,23 +821,22 @@ class RfRfVTime(SCPICmdRead):
     def bandwidth(self) -> RfRfVTimeBandwidth:
         """Return the ``RF:RF_V_TIMe:BANDWidth`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the RF versus time bandwidth as an NR3 value in Hz. This is the same
               as the 'RF v T BW' readout, which is displayed when at least one of the RF Versus Time
               traces is on.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:RF_V_TIMe:BANDWidth?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:RF_V_TIMe:BANDWidth?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write()`` method will send the ``RF:RF_V_TIMe:BANDWidth`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:RF_V_TIMe:BANDWidth
             - RF:RF_V_TIMe:BANDWidth?
+            ```
         """
         return self._bandwidth
 
@@ -872,54 +844,52 @@ class RfRfVTime(SCPICmdRead):
 class RfRfPhaseWrapState(SCPICmdWrite, SCPICmdRead):
     """The ``RF:RF_PHASe:WRAP:STATE`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the state of the phase wrap control for the ``RF_PHASE`` time domain
           trace. The default is 1, meaning that wrapping the ``RF_PHASe`` time domain trace is
           enabled.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:RF_PHASe:WRAP:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:RF_PHASe:WRAP:STATE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:RF_PHASe:WRAP:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:RF_PHASe:WRAP:STATE <Boolean>
         - RF:RF_PHASe:WRAP:STATE?
+        ```
     """
 
 
 class RfRfPhaseWrapDegrees(SCPICmdWrite, SCPICmdRead):
     """The ``RF:RF_PHASe:WRAP:DEGrees`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the number of degrees to wrap the ``RF_PHASe`` time domain trace. The
           value can range from -180.0 to 54,000.0 degrees. The default is 360.0 degrees and the
           resolution is 180.0 degrees.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:RF_PHASe:WRAP:DEGrees?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:RF_PHASe:WRAP:DEGrees?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:RF_PHASe:WRAP:DEGrees value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:RF_PHASe:WRAP:DEGrees <NR3>
         - RF:RF_PHASe:WRAP:DEGrees?
+        ```
     """
 
 
 class RfRfPhaseWrap(SCPICmdRead):
     """The ``RF:RF_PHASe:WRAP`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:RF_PHASe:WRAP?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:RF_PHASe:WRAP?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -938,24 +908,23 @@ class RfRfPhaseWrap(SCPICmdRead):
     def degrees(self) -> RfRfPhaseWrapDegrees:
         """Return the ``RF:RF_PHASe:WRAP:DEGrees`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the number of degrees to wrap the ``RF_PHASe`` time domain trace. The
               value can range from -180.0 to 54,000.0 degrees. The default is 360.0 degrees and the
               resolution is 180.0 degrees.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:RF_PHASe:WRAP:DEGrees?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:RF_PHASe:WRAP:DEGrees?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:RF_PHASe:WRAP:DEGrees value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:RF_PHASe:WRAP:DEGrees <NR3>
             - RF:RF_PHASe:WRAP:DEGrees?
+            ```
         """
         return self._degrees
 
@@ -963,24 +932,23 @@ class RfRfPhaseWrap(SCPICmdRead):
     def state(self) -> RfRfPhaseWrapState:
         """Return the ``RF:RF_PHASe:WRAP:STATE`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the state of the phase wrap control for the ``RF_PHASE`` time domain
               trace. The default is 1, meaning that wrapping the ``RF_PHASe`` time domain trace is
               enabled.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:RF_PHASe:WRAP:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:RF_PHASe:WRAP:STATE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:RF_PHASe:WRAP:STATE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:RF_PHASe:WRAP:STATE <Boolean>
             - RF:RF_PHASe:WRAP:STATE?
+            ```
         """
         return self._state
 
@@ -988,31 +956,30 @@ class RfRfPhaseWrap(SCPICmdRead):
 class RfRfPhaseReferenceDegrees(SCPICmdWrite, SCPICmdRead):
     """The ``RF:RF_PHASe:REFERence:DEGrees`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the phase, in degrees, at the trigger point for the
           ``RF_PHASe`` time domain trace. The value can range from -180 to +180 degrees. The default
           is 0.0 degrees and the resolution is 1.0 degrees.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:RF_PHASe:REFERence:DEGrees?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:RF_PHASe:REFERence:DEGrees?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:RF_PHASe:REFERence:DEGrees value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:RF_PHASe:REFERence:DEGrees <NR3>
         - RF:RF_PHASe:REFERence:DEGrees?
+        ```
     """
 
 
 class RfRfPhaseReference(SCPICmdRead):
     """The ``RF:RF_PHASe:REFERence`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:RF_PHASe:REFERence?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:RF_PHASe:REFERence?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1029,24 +996,23 @@ class RfRfPhaseReference(SCPICmdRead):
     def degrees(self) -> RfRfPhaseReferenceDegrees:
         """Return the ``RF:RF_PHASe:REFERence:DEGrees`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the phase, in degrees, at the trigger point for the
               ``RF_PHASe`` time domain trace. The value can range from -180 to +180 degrees. The
               default is 0.0 degrees and the resolution is 1.0 degrees.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:RF_PHASe:REFERence:DEGrees?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:RF_PHASe:REFERence:DEGrees?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``RF:RF_PHASe:REFERence:DEGrees value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:RF_PHASe:REFERence:DEGrees <NR3>
             - RF:RF_PHASe:REFERence:DEGrees?
+            ```
         """
         return self._degrees
 
@@ -1054,7 +1020,7 @@ class RfRfPhaseReference(SCPICmdRead):
 class RfRfPhase(SCPICmdRead):
     """The ``RF:RF_PHASe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:RF_PHASe?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:RF_PHASe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1073,7 +1039,7 @@ class RfRfPhase(SCPICmdRead):
     def reference(self) -> RfRfPhaseReference:
         """Return the ``RF:RF_PHASe:REFERence`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:RF_PHASe:REFERence?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:RF_PHASe:REFERence?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1087,7 +1053,7 @@ class RfRfPhase(SCPICmdRead):
     def wrap(self) -> RfRfPhaseWrap:
         """Return the ``RF:RF_PHASe:WRAP`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:RF_PHASe:WRAP?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:RF_PHASe:WRAP?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1102,25 +1068,24 @@ class RfRfPhase(SCPICmdRead):
 class RfRfAverageNumavg(SCPICmdWrite, SCPICmdRead):
     """The ``RF:RF_AVErage:NUMAVg`` command.
 
-    **Description:**
+    Description:
         - This command specifies the number of acquisitions to be used when creating the RF Average
           frequency domain trace, which displays the average of values from multiple acquisitions at
           each trace point. The range is 2 - 512, in exponential increments.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:RF_AVErage:NUMAVg?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:RF_AVErage:NUMAVg?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:RF_AVErage:NUMAVg value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:RF_AVErage:NUMAVg <NR1>
         - RF:RF_AVErage:NUMAVg?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is an integer.
     """
 
@@ -1128,27 +1093,26 @@ class RfRfAverageNumavg(SCPICmdWrite, SCPICmdRead):
 class RfRfAverageCount(SCPICmdRead):
     """The ``RF:RF_AVErage:COUNt`` command.
 
-    **Description:**
+    Description:
         - This query returns the number of RF traces that have been accumulated to create the RF
           Average frequency domain trace.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:RF_AVErage:COUNt?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:RF_AVErage:COUNt?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:RF_AVErage:COUNt?
+        ```
     """
 
 
 class RfRfAverage(SCPICmdRead):
     """The ``RF:RF_AVErage`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:RF_AVErage?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:RF_AVErage?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1167,20 +1131,19 @@ class RfRfAverage(SCPICmdRead):
     def count(self) -> RfRfAverageCount:
         """Return the ``RF:RF_AVErage:COUNt`` command.
 
-        **Description:**
+        Description:
             - This query returns the number of RF traces that have been accumulated to create the RF
               Average frequency domain trace.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:RF_AVErage:COUNt?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:RF_AVErage:COUNt?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:RF_AVErage:COUNt?
+            ```
         """
         return self._count
 
@@ -1188,26 +1151,25 @@ class RfRfAverage(SCPICmdRead):
     def numavg(self) -> RfRfAverageNumavg:
         """Return the ``RF:RF_AVErage:NUMAVg`` command.
 
-        **Description:**
+        Description:
             - This command specifies the number of acquisitions to be used when creating the RF
               Average frequency domain trace, which displays the average of values from multiple
               acquisitions at each trace point. The range is 2 - 512, in exponential increments.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:RF_AVErage:NUMAVg?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:RF_AVErage:NUMAVg?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:RF_AVErage:NUMAVg value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:RF_AVErage:NUMAVg <NR1>
             - RF:RF_AVErage:NUMAVg?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is an integer.
         """
         return self._numavg
@@ -1216,26 +1178,25 @@ class RfRfAverage(SCPICmdRead):
 class RfRfAmplitudeVerticalScale(SCPICmdWrite, SCPICmdRead):
     """The ``RF:RF_AMPlitude:VERTical:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command specifies the vertical scale for the RF Amplitude vs. Time trace. For a
           signal with constant amplitude, increasing the scale causes the waveform to be displayed
           smaller. Decreasing the scale causes the waveform to be displayed larger.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:RF_AMPlitude:VERTical:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:RF_AMPlitude:VERTical:SCAle?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:RF_AMPlitude:VERTical:SCAle value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:RF_AMPlitude:VERTical:SCAle <NR3>
         - RF:RF_AMPlitude:VERTical:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the vertical scale.
     """
 
@@ -1243,28 +1204,27 @@ class RfRfAmplitudeVerticalScale(SCPICmdWrite, SCPICmdRead):
 class RfRfAmplitudeVerticalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``RF:RF_AMPlitude:VERTical:POSition`` command.
 
-    **Description:**
+    Description:
         - This command specifies the vertical position of the RF Amplitude vs. Time trace. The
           position value determines the vertical graticule location at which the trace is displayed.
           Increasing the position value of a waveform causes the waveform to move up. Decreasing the
           position value causes the waveform to move down. The minimum is -50 divisions and the
           maximum is 50 divisions with a resolution of 0.02 divisions.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:RF_AMPlitude:VERTical:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:RF_AMPlitude:VERTical:POSition?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``RF:RF_AMPlitude:VERTical:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:RF_AMPlitude:VERTical:POSition <NR3>
         - RF:RF_AMPlitude:VERTical:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number.
     """
 
@@ -1272,7 +1232,7 @@ class RfRfAmplitudeVerticalPosition(SCPICmdWrite, SCPICmdRead):
 class RfRfAmplitudeVertical(SCPICmdRead):
     """The ``RF:RF_AMPlitude:VERTical`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:RF_AMPlitude:VERTical?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:RF_AMPlitude:VERTical?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1291,14 +1251,14 @@ class RfRfAmplitudeVertical(SCPICmdRead):
     def position(self) -> RfRfAmplitudeVerticalPosition:
         """Return the ``RF:RF_AMPlitude:VERTical:POSition`` command.
 
-        **Description:**
+        Description:
             - This command specifies the vertical position of the RF Amplitude vs. Time trace. The
               position value determines the vertical graticule location at which the trace is
               displayed. Increasing the position value of a waveform causes the waveform to move up.
               Decreasing the position value causes the waveform to move down. The minimum is -50
               divisions and the maximum is 50 divisions with a resolution of 0.02 divisions.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:RF_AMPlitude:VERTical:POSition?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1307,14 +1267,13 @@ class RfRfAmplitudeVertical(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``RF:RF_AMPlitude:VERTical:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:RF_AMPlitude:VERTical:POSition <NR3>
             - RF:RF_AMPlitude:VERTical:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number.
         """
         return self._position
@@ -1323,26 +1282,25 @@ class RfRfAmplitudeVertical(SCPICmdRead):
     def scale(self) -> RfRfAmplitudeVerticalScale:
         """Return the ``RF:RF_AMPlitude:VERTical:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command specifies the vertical scale for the RF Amplitude vs. Time trace. For a
               signal with constant amplitude, increasing the scale causes the waveform to be
               displayed smaller. Decreasing the scale causes the waveform to be displayed larger.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:RF_AMPlitude:VERTical:SCAle?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:RF_AMPlitude:VERTical:SCAle?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``RF:RF_AMPlitude:VERTical:SCAle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:RF_AMPlitude:VERTical:SCAle <NR3>
             - RF:RF_AMPlitude:VERTical:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the vertical scale.
         """
         return self._scale
@@ -1351,21 +1309,20 @@ class RfRfAmplitudeVertical(SCPICmdRead):
 class RfRfAmplitudeLabel(SCPICmdWrite, SCPICmdRead):
     """The ``RF:RF_AMPlitude:LABel`` command.
 
-    **Description:**
+    Description:
         - This command specifies the label for the RF Amplitude vs. Time trace.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:RF_AMPlitude:LABel?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:RF_AMPlitude:LABel?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:RF_AMPlitude:LABel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:RF_AMPlitude:LABel <QString>
         - RF:RF_AMPlitude:LABel?
+        ```
     """
 
     _WRAP_ARG_WITH_QUOTES = True
@@ -1374,7 +1331,7 @@ class RfRfAmplitudeLabel(SCPICmdWrite, SCPICmdRead):
 class RfRfAmplitude(SCPICmdRead):
     """The ``RF:RF_AMPlitude`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:RF_AMPlitude?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:RF_AMPlitude?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1393,22 +1350,21 @@ class RfRfAmplitude(SCPICmdRead):
     def label(self) -> RfRfAmplitudeLabel:
         """Return the ``RF:RF_AMPlitude:LABel`` command.
 
-        **Description:**
+        Description:
             - This command specifies the label for the RF Amplitude vs. Time trace.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:RF_AMPlitude:LABel?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:RF_AMPlitude:LABel?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:RF_AMPlitude:LABel value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:RF_AMPlitude:LABel <QString>
             - RF:RF_AMPlitude:LABel?
+            ```
         """
         return self._label
 
@@ -1416,7 +1372,7 @@ class RfRfAmplitude(SCPICmdRead):
     def vertical(self) -> RfRfAmplitudeVertical:
         """Return the ``RF:RF_AMPlitude:VERTical`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:RF_AMPlitude:VERTical?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:RF_AMPlitude:VERTical?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -1431,24 +1387,23 @@ class RfRfAmplitude(SCPICmdRead):
 class RfReflevel(SCPICmdWrite, SCPICmdRead):
     """The ``RF:REFLevel`` command.
 
-    **Description:**
+    Description:
         - This command sets the Reference Level of the RF input. The Reference Level can either be
           specified as a numeric floating point value, or set automatically.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:REFLevel?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:REFLevel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:REFLevel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:REFLevel {<NR3>|AUTO}
         - RF:REFLevel?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number.
         - ``AUTO`` directs the oscilloscope to automatically calculate and set the Reference Level.
           This is a one-time calculation based on the content of the RF input signal. It is not a
@@ -1459,23 +1414,22 @@ class RfReflevel(SCPICmdWrite, SCPICmdRead):
 class RfRbwMode(SCPICmdWrite, SCPICmdRead):
     """The ``RF:RBW:MODe`` command.
 
-    **Description:**
+    Description:
         - This command specifies the resolution bandwidth (RBW) mode, either automatic or manual.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:RBW:MODe?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:RBW:MODe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:RBW:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:RBW:MODe {AUTO|MANual}
         - RF:RBW:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``AUTO`` sets the resolution bandwidth automatically as the span is changed. The default
           behavior is ``1000:1``, but you can set it to other values in a 1-2-5 sequence (e.g.
           10000, 20000, 50000). To specify the RBW ratio that will be used when the mode is set to
@@ -1488,7 +1442,7 @@ class RfRbwMode(SCPICmdWrite, SCPICmdRead):
 class RfRbw(SCPICmdWrite, SCPICmdRead):
     """The ``RF:RBW`` command.
 
-    **Description:**
+    Description:
         - This command specifies the resolution bandwidth (RBW) when the RBW mode has been set to
           MANUAL (using the command ``RF:RBW:MODE``). The resolution bandwidth is the width of the
           narrowest measurable band of frequencies in a frequency domain trace. The RBW is
@@ -1498,20 +1452,19 @@ class RfRbw(SCPICmdWrite, SCPICmdRead):
           by 1 kHz, you will not be able to discriminate between them unless the RBW is less than 1
           kHz.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:RBW?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:RBW?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:RBW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:RBW <NR3>
         - RF:RBW?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that represents the width of the narrowest measurable
           band of frequencies in a frequency domain trace.
 
@@ -1527,24 +1480,23 @@ class RfRbw(SCPICmdWrite, SCPICmdRead):
     def mode(self) -> RfRbwMode:
         """Return the ``RF:RBW:MODe`` command.
 
-        **Description:**
+        Description:
             - This command specifies the resolution bandwidth (RBW) mode, either automatic or
               manual.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:RBW:MODe?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:RBW:MODe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:RBW:MODe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:RBW:MODe {AUTO|MANual}
             - RF:RBW:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``AUTO`` sets the resolution bandwidth automatically as the span is changed. The
               default behavior is ``1000:1``, but you can set it to other values in a 1-2-5 sequence
               (e.g. 10000, 20000, 50000). To specify the RBW ratio that will be used when the mode
@@ -1558,44 +1510,42 @@ class RfRbw(SCPICmdWrite, SCPICmdRead):
 class RfProbeUnits(SCPICmdRead):
     """The ``RF:PRObe:UNIts`` command.
 
-    **Description:**
+    Description:
         - This query returns a quoted string that describes the units of measure for the probe
           attached to the RF input.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:PRObe:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:PRObe:UNIts?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:PRObe:UNIts?
+        ```
     """
 
 
 class RfProbeSignal(SCPICmdWrite, SCPICmdRead):
     """The ``RF:PRObe:SIGnal`` command.
 
-    **Description:**
+    Description:
         - This command specifies the input bypass setting of a TekVPI probe attached to the RF
           input. The probe must support input bypass (for example, TCP0001).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:PRObe:SIGnal?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:PRObe:SIGnal?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:PRObe:SIGnal value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:PRObe:SIGnal {BYPass|PASS}
         - RF:PRObe:SIGnal?
+        ```
 
-    **Info:**
+    Info:
         - ``BYPass`` sets the probe to Bypass mode.
         - ``PASS`` sets the probe to Pass mode.
     """
@@ -1604,27 +1554,26 @@ class RfProbeSignal(SCPICmdWrite, SCPICmdRead):
 class RfProbeResistance(SCPICmdRead):
     """The ``RF:PRObe:RESistance`` command.
 
-    **Description:**
+    Description:
         - This query returns the input resistance of the probe attached to the RF input, if the
           probe supports it (otherwise, it returns 0.0). The RF input is 50 Ω impedance.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:PRObe:RESistance?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:PRObe:RESistance?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:PRObe:RESistance?
+        ```
     """
 
 
 class RfProbePreampStatus(SCPICmdRead):
     """The ``RF:PRObe:PREAmp:STATus`` command.
 
-    **Description:**
+    Description:
         - Returns the actual status of the RF pre-amp connected to the RF input. The returned status
           enumerations are: NONe - no pre-amp is connected. ON - the pre-amp is connected and is in
           the amplification (non-bypassed) state. BYPass - the pre-amp is connected but is in the
@@ -1632,42 +1581,40 @@ class RfProbePreampStatus(SCPICmdRead):
           reference level is at or above the RF reference level threshold. You can set the mode for
           the pre-amp (either BYPass or AUTO ) using the command ``RF:PROBE:PREAMP:MODE``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:PRObe:PREAmp:STATus?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:PRObe:PREAmp:STATus?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:PRObe:PREAmp:STATus?
+        ```
     """
 
 
 class RfProbePreampMode(SCPICmdWrite, SCPICmdRead):
     """The ``RF:PRObe:PREAmp:MODe`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the user-selected mode for an RF pre-amp connected to the RF input -
           either BYPass or AUTO. Note that the actual status of the pre-amp (either NONE, ON or
           BYPass ) is determined by the selected mode along with the RF reference level. You can
           query the status of the pre-amp using the command ``RF:PROBE:PREAMP:STATUS``
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:PRObe:PREAmp:MODe?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:PRObe:PREAmp:MODe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:PRObe:PREAmp:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:PRObe:PREAmp:MODe <BYPass|AUTO>
         - RF:PRObe:PREAmp:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``BYPass`` means the pre-amp will not amplify the signal. When the mode is set to BYPass,
           the pre-amp amplification is always off, regardless of the RF reference level.
         - ``AUTO`` means the pre-amp will turn its amplification on or off based on the RF reference
@@ -1682,7 +1629,7 @@ class RfProbePreampMode(SCPICmdWrite, SCPICmdRead):
 class RfProbePreamp(SCPICmdRead):
     """The ``RF:PRObe:PREAmp`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:PRObe:PREAmp?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:PRObe:PREAmp?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1701,27 +1648,26 @@ class RfProbePreamp(SCPICmdRead):
     def mode(self) -> RfProbePreampMode:
         """Return the ``RF:PRObe:PREAmp:MODe`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the user-selected mode for an RF pre-amp connected to the RF input -
               either BYPass or AUTO. Note that the actual status of the pre-amp (either NONE, ON or
               BYPass ) is determined by the selected mode along with the RF reference level. You can
               query the status of the pre-amp using the command ``RF:PROBE:PREAMP:STATUS``
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:PRObe:PREAmp:MODe?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:PRObe:PREAmp:MODe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:PRObe:PREAmp:MODe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:PRObe:PREAmp:MODe <BYPass|AUTO>
             - RF:PRObe:PREAmp:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``BYPass`` means the pre-amp will not amplify the signal. When the mode is set to
               BYPass, the pre-amp amplification is always off, regardless of the RF reference level.
             - ``AUTO`` means the pre-amp will turn its amplification on or off based on the RF
@@ -1737,7 +1683,7 @@ class RfProbePreamp(SCPICmdRead):
     def status(self) -> RfProbePreampStatus:
         """Return the ``RF:PRObe:PREAmp:STATus`` command.
 
-        **Description:**
+        Description:
             - Returns the actual status of the RF pre-amp connected to the RF input. The returned
               status enumerations are: NONe - no pre-amp is connected. ON - the pre-amp is connected
               and is in the amplification (non-bypassed) state. BYPass - the pre-amp is connected
@@ -1746,16 +1692,15 @@ class RfProbePreamp(SCPICmdRead):
               can set the mode for the pre-amp (either BYPass or AUTO ) using the command
               ``RF:PROBE:PREAMP:MODE``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:PRObe:PREAmp:STATus?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:PRObe:PREAmp:STATus?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:PRObe:PREAmp:STATus?
+            ```
         """
         return self._status
 
@@ -1763,47 +1708,45 @@ class RfProbePreamp(SCPICmdRead):
 class RfProbeIdType(SCPICmdRead):
     r"""The ``RF:PRObe:ID:TYPe`` command.
 
-    **Description:**
+    Description:
         - This query returns the type of probe attached to the RF input. Level 2 (or higher) probes
           supply their exact product nomenclature; for Level 0 or 1 probes, a generic \* 'No Probe
           Detected' message is returned.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:PRObe:ID:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:PRObe:ID:TYPe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:PRObe:ID:TYPe?
+        ```
     """
 
 
 class RfProbeIdSernumber(SCPICmdRead):
     """The ``RF:PRObe:ID:SERnumber`` command.
 
-    **Description:**
+    Description:
         - This query returns the serial number of the probe attached to the RF input.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:PRObe:ID:SERnumber?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:PRObe:ID:SERnumber?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:PRObe:ID:SERnumber?
+        ```
     """
 
 
 class RfProbeId(SCPICmdRead):
     """The ``RF:PRObe:ID`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:PRObe:ID?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:PRObe:ID?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1822,19 +1765,18 @@ class RfProbeId(SCPICmdRead):
     def sernumber(self) -> RfProbeIdSernumber:
         """Return the ``RF:PRObe:ID:SERnumber`` command.
 
-        **Description:**
+        Description:
             - This query returns the serial number of the probe attached to the RF input.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:PRObe:ID:SERnumber?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:PRObe:ID:SERnumber?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:PRObe:ID:SERnumber?
+            ```
         """
         return self._sernumber
 
@@ -1842,21 +1784,20 @@ class RfProbeId(SCPICmdRead):
     def type(self) -> RfProbeIdType:
         r"""Return the ``RF:PRObe:ID:TYPe`` command.
 
-        **Description:**
+        Description:
             - This query returns the type of probe attached to the RF input. Level 2 (or higher)
               probes supply their exact product nomenclature; for Level 0 or 1 probes, a generic \*
               'No Probe Detected' message is returned.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:PRObe:ID:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:PRObe:ID:TYPe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:PRObe:ID:TYPe?
+            ```
         """
         return self._type
 
@@ -1864,23 +1805,22 @@ class RfProbeId(SCPICmdRead):
 class RfProbeGain(SCPICmdWrite, SCPICmdRead):
     """The ``RF:PRObe:GAIN`` command.
 
-    **Description:**
+    Description:
         - This command specifies the scale factor for the probe attached to the RF input.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:PRObe:GAIN?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:PRObe:GAIN?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:PRObe:GAIN value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:PRObe:GAIN <NR3>
         - RF:PRObe:GAIN?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the probe scale factor. Allowed values
           depend on the specific probe.
     """
@@ -1889,23 +1829,22 @@ class RfProbeGain(SCPICmdWrite, SCPICmdRead):
 class RfProbeForcedrange(SCPICmdWrite, SCPICmdRead):
     """The ``RF:PRObe:FORCEDRange`` command.
 
-    **Description:**
+    Description:
         - This command specifies the range of a TekVPI probe attached to the RF input.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:PRObe:FORCEDRange?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:PRObe:FORCEDRange?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:PRObe:FORCEDRange value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:PRObe:FORCEDRange <NR3>
         - RF:PRObe:FORCEDRange?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the range, which is probe specific.
     """
 
@@ -1913,37 +1852,35 @@ class RfProbeForcedrange(SCPICmdWrite, SCPICmdRead):
 class RfProbeDegaussState(SCPICmdRead):
     """The ``RF:PRObe:DEGAUss:STATE`` command.
 
-    **Description:**
+    Description:
         - This command returns the state of the probe degauss for the RF input.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:PRObe:DEGAUss:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:PRObe:DEGAUss:STATE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:PRObe:DEGAUss:STATE?
+        ```
     """
 
 
 class RfProbeDegauss(SCPICmdWrite, SCPICmdRead):
     """The ``RF:PRObe:DEGAUss`` command.
 
-    **Description:**
+    Description:
         - This command starts a degauss/AutoZero cycle on a TekVPI current probe attached to the RF
           input.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``RF:PRObe:DEGAUss value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:PRObe:DEGAUss EXECute
+        ```
 
     Properties:
         - ``.state``: The ``RF:PRObe:DEGAUss:STATE`` command.
@@ -1957,19 +1894,18 @@ class RfProbeDegauss(SCPICmdWrite, SCPICmdRead):
     def state(self) -> RfProbeDegaussState:
         """Return the ``RF:PRObe:DEGAUss:STATE`` command.
 
-        **Description:**
+        Description:
             - This command returns the state of the probe degauss for the RF input.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:PRObe:DEGAUss:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:PRObe:DEGAUss:STATE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:PRObe:DEGAUss:STATE?
+            ```
         """
         return self._state
 
@@ -1977,7 +1913,7 @@ class RfProbeDegauss(SCPICmdWrite, SCPICmdRead):
 class RfProbeCommand(SCPICmdWrite):
     """The ``RF:PRObe:COMMAND`` command.
 
-    **Description:**
+    Description:
         - This command sets the state of the probe control specified with the first argument to the
           state specified with the second argument. The commands and states are unique to the
           attached probe type. See the probe documentation for how to set these string arguments.
@@ -1985,16 +1921,15 @@ class RfProbeCommand(SCPICmdWrite):
           the second is the data value. The query form requires a single quoted string argument to
           specify the probe command enumeration for which the response data is requested.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``RF:PRObe:COMMAND value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:PRObe:COMMAND <QString>, <QString>? <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` are quoted strings specifying the probe command and value to set in the
           probe attached to the specified channel.
     """
@@ -2003,60 +1938,57 @@ class RfProbeCommand(SCPICmdWrite):
 class RfProbeCalibrateState(SCPICmdRead):
     """The ``RF:PRObe:CALibrate:STATE`` command.
 
-    **Description:**
+    Description:
         - This command returns the calibration state of the probe connected to the RF input.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:PRObe:CALibrate:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:PRObe:CALibrate:STATE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:PRObe:CALibrate:STATE?
+        ```
     """
 
 
 class RfProbeCalibrateCalibratable(SCPICmdRead):
     """The ``RF:PRObe:CALibrate:CALIBRATABLe`` command.
 
-    **Description:**
+    Description:
         - This query returns a boolean value that indicates whether the attached probe is
           calibratable.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:PRObe:CALibrate:CALIBRATABLe?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:PRObe:CALibrate:CALIBRATABLe?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:PRObe:CALibrate:CALIBRATABLe?
+        ```
     """
 
 
 class RfProbeCalibrate(SCPICmdWrite, SCPICmdRead):
     """The ``RF:PRObe:CALibrate`` command.
 
-    **Description:**
+    Description:
         - This command executes a calibration or initialization for a probe attached to the RF
           input, if the probe is calibratable. To determine whether the probe is calibratable, use
           ``RF:PROBE:CALIBRATE:CALIBRATABLE``.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``RF:PRObe:CALibrate value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:PRObe:CALibrate {EXECute|INITialize}
+        ```
 
-    **Info:**
+    Info:
         - ``EXECute`` - executes a calibration for the attached probe.
         - ``INITialize`` - initializes the attached probe.
 
@@ -2076,21 +2008,20 @@ class RfProbeCalibrate(SCPICmdWrite, SCPICmdRead):
     def calibratable(self) -> RfProbeCalibrateCalibratable:
         """Return the ``RF:PRObe:CALibrate:CALIBRATABLe`` command.
 
-        **Description:**
+        Description:
             - This query returns a boolean value that indicates whether the attached probe is
               calibratable.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:PRObe:CALibrate:CALIBRATABLe?``
               query.
             - Using the ``.verify(value)`` method will send the ``RF:PRObe:CALibrate:CALIBRATABLe?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:PRObe:CALibrate:CALIBRATABLe?
+            ```
         """
         return self._calibratable
 
@@ -2098,19 +2029,18 @@ class RfProbeCalibrate(SCPICmdWrite, SCPICmdRead):
     def state(self) -> RfProbeCalibrateState:
         """Return the ``RF:PRObe:CALibrate:STATE`` command.
 
-        **Description:**
+        Description:
             - This command returns the calibration state of the probe connected to the RF input.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:PRObe:CALibrate:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:PRObe:CALibrate:STATE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:PRObe:CALibrate:STATE?
+            ```
         """
         return self._state
 
@@ -2118,18 +2048,17 @@ class RfProbeCalibrate(SCPICmdWrite, SCPICmdRead):
 class RfProbeAutozero(SCPICmdWrite):
     """The ``RF:PRObe:AUTOZero`` command.
 
-    **Description:**
+    Description:
         - This command executes the attached probe's AutoZero function, for probes that support this
           feature. See your probe documentation for more details.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``RF:PRObe:AUTOZero value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:PRObe:AUTOZero EXECute
+        ```
     """
 
 
@@ -2137,7 +2066,7 @@ class RfProbeAutozero(SCPICmdWrite):
 class RfProbe(SCPICmdRead):
     """The ``RF:PRObe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:PRObe?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:PRObe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2174,18 +2103,17 @@ class RfProbe(SCPICmdRead):
     def autozero(self) -> RfProbeAutozero:
         """Return the ``RF:PRObe:AUTOZero`` command.
 
-        **Description:**
+        Description:
             - This command executes the attached probe's AutoZero function, for probes that support
               this feature. See your probe documentation for more details.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``RF:PRObe:AUTOZero value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:PRObe:AUTOZero EXECute
+            ```
         """
         return self._autozero
 
@@ -2193,21 +2121,20 @@ class RfProbe(SCPICmdRead):
     def calibrate(self) -> RfProbeCalibrate:
         """Return the ``RF:PRObe:CALibrate`` command.
 
-        **Description:**
+        Description:
             - This command executes a calibration or initialization for a probe attached to the RF
               input, if the probe is calibratable. To determine whether the probe is calibratable,
               use ``RF:PROBE:CALIBRATE:CALIBRATABLE``.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``RF:PRObe:CALibrate value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:PRObe:CALibrate {EXECute|INITialize}
+            ```
 
-        **Info:**
+        Info:
             - ``EXECute`` - executes a calibration for the attached probe.
             - ``INITialize`` - initializes the attached probe.
 
@@ -2221,7 +2148,7 @@ class RfProbe(SCPICmdRead):
     def command(self) -> RfProbeCommand:
         """Return the ``RF:PRObe:COMMAND`` command.
 
-        **Description:**
+        Description:
             - This command sets the state of the probe control specified with the first argument to
               the state specified with the second argument. The commands and states are unique to
               the attached probe type. See the probe documentation for how to set these string
@@ -2230,16 +2157,15 @@ class RfProbe(SCPICmdRead):
               string argument to specify the probe command enumeration for which the response data
               is requested.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``RF:PRObe:COMMAND value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:PRObe:COMMAND <QString>, <QString>? <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` are quoted strings specifying the probe command and value to set in the
               probe attached to the specified channel.
         """
@@ -2249,18 +2175,17 @@ class RfProbe(SCPICmdRead):
     def degauss(self) -> RfProbeDegauss:
         """Return the ``RF:PRObe:DEGAUss`` command.
 
-        **Description:**
+        Description:
             - This command starts a degauss/AutoZero cycle on a TekVPI current probe attached to the
               RF input.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``RF:PRObe:DEGAUss value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:PRObe:DEGAUss EXECute
+            ```
 
         Sub-properties:
             - ``.state``: The ``RF:PRObe:DEGAUss:STATE`` command.
@@ -2271,24 +2196,23 @@ class RfProbe(SCPICmdRead):
     def forcedrange(self) -> RfProbeForcedrange:
         """Return the ``RF:PRObe:FORCEDRange`` command.
 
-        **Description:**
+        Description:
             - This command specifies the range of a TekVPI probe attached to the RF input.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:PRObe:FORCEDRange?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:PRObe:FORCEDRange?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:PRObe:FORCEDRange value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:PRObe:FORCEDRange <NR3>
             - RF:PRObe:FORCEDRange?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the range, which is probe
               specific.
         """
@@ -2298,23 +2222,22 @@ class RfProbe(SCPICmdRead):
     def gain(self) -> RfProbeGain:
         """Return the ``RF:PRObe:GAIN`` command.
 
-        **Description:**
+        Description:
             - This command specifies the scale factor for the probe attached to the RF input.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:PRObe:GAIN?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:PRObe:GAIN?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:PRObe:GAIN value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:PRObe:GAIN <NR3>
             - RF:PRObe:GAIN?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the probe scale factor. Allowed
               values depend on the specific probe.
         """
@@ -2324,7 +2247,7 @@ class RfProbe(SCPICmdRead):
     def id(self) -> RfProbeId:
         """Return the ``RF:PRObe:ID`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:PRObe:ID?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:PRObe:ID?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -2339,7 +2262,7 @@ class RfProbe(SCPICmdRead):
     def preamp(self) -> RfProbePreamp:
         """Return the ``RF:PRObe:PREAmp`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:PRObe:PREAmp?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:PRObe:PREAmp?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -2354,20 +2277,19 @@ class RfProbe(SCPICmdRead):
     def resistance(self) -> RfProbeResistance:
         """Return the ``RF:PRObe:RESistance`` command.
 
-        **Description:**
+        Description:
             - This query returns the input resistance of the probe attached to the RF input, if the
               probe supports it (otherwise, it returns 0.0). The RF input is 50 Ω impedance.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:PRObe:RESistance?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:PRObe:RESistance?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:PRObe:RESistance?
+            ```
         """
         return self._resistance
 
@@ -2375,24 +2297,23 @@ class RfProbe(SCPICmdRead):
     def signal(self) -> RfProbeSignal:
         """Return the ``RF:PRObe:SIGnal`` command.
 
-        **Description:**
+        Description:
             - This command specifies the input bypass setting of a TekVPI probe attached to the RF
               input. The probe must support input bypass (for example, TCP0001).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:PRObe:SIGnal?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:PRObe:SIGnal?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:PRObe:SIGnal value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:PRObe:SIGnal {BYPass|PASS}
             - RF:PRObe:SIGnal?
+            ```
 
-        **Info:**
+        Info:
             - ``BYPass`` sets the probe to Bypass mode.
             - ``PASS`` sets the probe to Pass mode.
         """
@@ -2402,20 +2323,19 @@ class RfProbe(SCPICmdRead):
     def units(self) -> RfProbeUnits:
         """Return the ``RF:PRObe:UNIts`` command.
 
-        **Description:**
+        Description:
             - This query returns a quoted string that describes the units of measure for the probe
               attached to the RF input.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:PRObe:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:PRObe:UNIts?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:PRObe:UNIts?
+            ```
         """
         return self._units
 
@@ -2423,25 +2343,24 @@ class RfProbe(SCPICmdRead):
 class RfPosition(SCPICmdWrite, SCPICmdRead):
     """The ``RF:POSition`` command.
 
-    **Description:**
+    Description:
         - This command specifies the vertical position for the frequency domain traces. The vertical
           position is the location of the Reference Level with respect to the top of the graticule,
           in divisions. The lower limit is -10 divisions. The upper limit is +10 divisions.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:POSition?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:POSition <NR3>
         - RF:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number.
     """
 
@@ -2449,24 +2368,23 @@ class RfPosition(SCPICmdWrite, SCPICmdRead):
 class RfMeasureType(SCPICmdWrite, SCPICmdRead):
     """The ``RF:MEASUre:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command specifies the RF measurement type: Channel Power, Adjacent Channel Power
           Ratio, Occupied Bandwidth, or none.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:TYPe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:MEASUre:TYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:MEASUre:TYPe {NONe|CP|ACPR|OBW}
         - RF:MEASUre:TYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``CP`` - Channel Power is the total power within the bandwidth defined by the channel
           width. When this measurement is active, the span is automatically set 10% wider than the
           channel width, and the auto detection method is set to Average. To configure the channel
@@ -2493,71 +2411,68 @@ class RfMeasureType(SCPICmdWrite, SCPICmdRead):
 class RfMeasureObwUpperfreq(SCPICmdRead):
     """The ``RF:MEASUre:OBW:UPPERFreq`` command.
 
-    **Description:**
+    Description:
         - This query returns the upper frequency threshold (on the display, the white line to the
           right bracketing OBW power). The RF measurement type must be set to OBW using the command
           ``RF:MEASURE:TYPE``. This frequency will locate the position where (100% -
           ``OBW:PERCENTdown``)/2 power is above this frequency.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:OBW:UPPERFreq?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:OBW:UPPERFreq?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:MEASUre:OBW:UPPERFreq?
+        ```
     """
 
 
 class RfMeasureObwPower(SCPICmdRead):
     """The ``RF:MEASUre:OBW:POWer`` command.
 
-    **Description:**
+    Description:
         - This query returns the total channel power within the occupied bandwidth, when the RF
           measurement type has been set to OBW (using the command ``RF:MEASURE:TYPE``). The units
           are user-set (with the command ``RF:UNITS``).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:OBW:POWer?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:OBW:POWer?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:MEASUre:OBW:POWer?
+        ```
     """
 
 
 class RfMeasureObwPercentdown(SCPICmdWrite, SCPICmdRead):
     """The ``RF:MEASUre:OBW:PERCENTdown`` command.
 
-    **Description:**
+    Description:
         - This command specifies the percentage of total power within the Analysis Bandwidth (the
           OBW power) such that half of the remaining power will be below the ``OBW:LOWERFreq`` level
           and the other half of the remaining power will be above the ``OBW:UPPERFreq`` level. The
           value can be set from 99.9 down to 60.0 in 0.1 increments. The RF measurement type must be
           set to OBW using the command ``RF:MEASURE:TYPE``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:OBW:PERCENTdown?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:OBW:PERCENTdown?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:MEASUre:OBW:PERCENTdown value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:MEASUre:OBW:PERCENTdown <NR3>
         - RF:MEASUre:OBW:PERCENTdown?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number.
     """
 
@@ -2565,52 +2480,50 @@ class RfMeasureObwPercentdown(SCPICmdWrite, SCPICmdRead):
 class RfMeasureObwLowerfreq(SCPICmdRead):
     """The ``RF:MEASUre:OBW:LOWERFreq`` command.
 
-    **Description:**
+    Description:
         - This query returns the lower frequency threshold (on the display, the white line to the
           left bracketing OBW power). The RF measurement type must be set to OBW using the command
           ``RF:MEASURE:TYPE``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:OBW:LOWERFreq?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:OBW:LOWERFreq?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:MEASUre:OBW:LOWERFreq?
+        ```
     """
 
 
 class RfMeasureObwChanbw(SCPICmdWrite, SCPICmdRead):
     """The ``RF:MEASUre:OBW:CHANBW`` command.
 
-    **Description:**
+    Description:
         - This command specifies the Analysis Bandwidth to use, when the RF measurement type has
           been set to OBW (using the command ``RF:MEASURE:TYPE``). Note that the span automatically
           increases or decreases to be 10% more than the Analysis Bandwidth (providing some room
           around the signal of interest).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:OBW:CHANBW?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:OBW:CHANBW?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:MEASUre:OBW:CHANBW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:MEASUre:OBW:CHANBW <NR3>
         - RF:MEASUre:OBW:CHANBW?
+        ```
     """
 
 
 class RfMeasureObw(SCPICmdRead):
     """The ``RF:MEASUre:OBW`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:OBW?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:OBW?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2635,25 +2548,24 @@ class RfMeasureObw(SCPICmdRead):
     def chanbw(self) -> RfMeasureObwChanbw:
         """Return the ``RF:MEASUre:OBW:CHANBW`` command.
 
-        **Description:**
+        Description:
             - This command specifies the Analysis Bandwidth to use, when the RF measurement type has
               been set to OBW (using the command ``RF:MEASURE:TYPE``). Note that the span
               automatically increases or decreases to be 10% more than the Analysis Bandwidth
               (providing some room around the signal of interest).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:OBW:CHANBW?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:OBW:CHANBW?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:MEASUre:OBW:CHANBW value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:MEASUre:OBW:CHANBW <NR3>
             - RF:MEASUre:OBW:CHANBW?
+            ```
         """
         return self._chanbw
 
@@ -2661,21 +2573,20 @@ class RfMeasureObw(SCPICmdRead):
     def lowerfreq(self) -> RfMeasureObwLowerfreq:
         """Return the ``RF:MEASUre:OBW:LOWERFreq`` command.
 
-        **Description:**
+        Description:
             - This query returns the lower frequency threshold (on the display, the white line to
               the left bracketing OBW power). The RF measurement type must be set to OBW using the
               command ``RF:MEASURE:TYPE``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:OBW:LOWERFreq?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:OBW:LOWERFreq?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:MEASUre:OBW:LOWERFreq?
+            ```
         """
         return self._lowerfreq
 
@@ -2683,7 +2594,7 @@ class RfMeasureObw(SCPICmdRead):
     def percentdown(self) -> RfMeasureObwPercentdown:
         """Return the ``RF:MEASUre:OBW:PERCENTdown`` command.
 
-        **Description:**
+        Description:
             - This command specifies the percentage of total power within the Analysis Bandwidth
               (the OBW power) such that half of the remaining power will be below the
               ``OBW:LOWERFreq`` level and the other half of the remaining power will be above the
@@ -2691,21 +2602,20 @@ class RfMeasureObw(SCPICmdRead):
               increments. The RF measurement type must be set to OBW using the command
               ``RF:MEASURE:TYPE``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:OBW:PERCENTdown?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:OBW:PERCENTdown?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:MEASUre:OBW:PERCENTdown value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:MEASUre:OBW:PERCENTdown <NR3>
             - RF:MEASUre:OBW:PERCENTdown?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number.
         """
         return self._percentdown
@@ -2714,21 +2624,20 @@ class RfMeasureObw(SCPICmdRead):
     def power(self) -> RfMeasureObwPower:
         """Return the ``RF:MEASUre:OBW:POWer`` command.
 
-        **Description:**
+        Description:
             - This query returns the total channel power within the occupied bandwidth, when the RF
               measurement type has been set to OBW (using the command ``RF:MEASURE:TYPE``). The
               units are user-set (with the command ``RF:UNITS``).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:OBW:POWer?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:OBW:POWer?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:MEASUre:OBW:POWer?
+            ```
         """
         return self._power
 
@@ -2736,22 +2645,21 @@ class RfMeasureObw(SCPICmdRead):
     def upperfreq(self) -> RfMeasureObwUpperfreq:
         """Return the ``RF:MEASUre:OBW:UPPERFreq`` command.
 
-        **Description:**
+        Description:
             - This query returns the upper frequency threshold (on the display, the white line to
               the right bracketing OBW power). The RF measurement type must be set to OBW using the
               command ``RF:MEASURE:TYPE``. This frequency will locate the position where (100% -
               ``OBW:PERCENTdown``)/2 power is above this frequency.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:OBW:UPPERFreq?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:OBW:UPPERFreq?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:MEASUre:OBW:UPPERFreq?
+            ```
         """
         return self._upperfreq
 
@@ -2759,46 +2667,44 @@ class RfMeasureObw(SCPICmdRead):
 class RfMeasureCpPower(SCPICmdRead):
     """The ``RF:MEASUre:CP:POWer`` command.
 
-    **Description:**
+    Description:
         - This query returns the total channel power within the displayed channel bandwidth, when
           the RF measurement type has been set to CP (using the command ``RF:MEASURE:TYPE``).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:CP:POWer?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:CP:POWer?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:MEASUre:CP:POWer?
+        ```
     """
 
 
 class RfMeasureCpChanbw(SCPICmdWrite, SCPICmdRead):
     """The ``RF:MEASUre:CP:CHANBW`` command.
 
-    **Description:**
+    Description:
         - This command specifies the channel bandwidth to use when the RF measurement type has been
           set to Channel Power (CP) using the command ``RF:MEASURE:TYPE``. The channel bandwidth is
           centered about the CF (center frequency). Note that the span is automatically controlled
           to be 10% wider than the channel width.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:CP:CHANBW?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:CP:CHANBW?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:MEASUre:CP:CHANBW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:MEASUre:CP:CHANBW <NR3>
         - RF:MEASUre:CP:CHANBW?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number.
     """
 
@@ -2806,7 +2712,7 @@ class RfMeasureCpChanbw(SCPICmdWrite, SCPICmdRead):
 class RfMeasureCp(SCPICmdRead):
     """The ``RF:MEASUre:CP`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:CP?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:CP?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2825,27 +2731,26 @@ class RfMeasureCp(SCPICmdRead):
     def chanbw(self) -> RfMeasureCpChanbw:
         """Return the ``RF:MEASUre:CP:CHANBW`` command.
 
-        **Description:**
+        Description:
             - This command specifies the channel bandwidth to use when the RF measurement type has
               been set to Channel Power (CP) using the command ``RF:MEASURE:TYPE``. The channel
               bandwidth is centered about the CF (center frequency). Note that the span is
               automatically controlled to be 10% wider than the channel width.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:CP:CHANBW?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:CP:CHANBW?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:MEASUre:CP:CHANBW value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:MEASUre:CP:CHANBW <NR3>
             - RF:MEASUre:CP:CHANBW?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number.
         """
         return self._chanbw
@@ -2854,21 +2759,20 @@ class RfMeasureCp(SCPICmdRead):
     def power(self) -> RfMeasureCpPower:
         """Return the ``RF:MEASUre:CP:POWer`` command.
 
-        **Description:**
+        Description:
             - This query returns the total channel power within the displayed channel bandwidth,
               when the RF measurement type has been set to CP (using the command
               ``RF:MEASURE:TYPE``).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:CP:POWer?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:CP:POWer?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:MEASUre:CP:POWer?
+            ```
         """
         return self._power
 
@@ -2876,188 +2780,180 @@ class RfMeasureCp(SCPICmdRead):
 class RfMeasureAcprUa3db(SCPICmdRead):
     """The ``RF:MEASUre:ACPR:UA3DB`` command.
 
-    **Description:**
+    Description:
         - This query measures a ratio between the third upper side channel and the Main channel when
           performing ACPR measurements using a frequency domain trace. The power in the adjacent
           channel is equivalent to the power in the main channel (dBm) added to the power ratio (dB)
           of the adjacent channel. (The RF measurement type must be set to ACPR using the command
           ``RF:MEASURE:TYPE``.)
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:UA3DB?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:UA3DB?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:MEASUre:ACPR:UA3DB?
+        ```
     """
 
 
 class RfMeasureAcprUa2db(SCPICmdRead):
     """The ``RF:MEASUre:ACPR:UA2DB`` command.
 
-    **Description:**
+    Description:
         - This query measures a ratio between the second upper side channel and the Main channel
           when performing ACPR measurements using a frequency domain trace. The power in the
           adjacent channel is equivalent to the power in the main channel (dBm) added to the power
           ratio (dB) of the adjacent channel. (The RF measurement type must be set to ACPR using the
           command ``RF:MEASURE:TYPE``.)
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:UA2DB?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:UA2DB?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:MEASUre:ACPR:UA2DB?
+        ```
     """
 
 
 class RfMeasureAcprUa1db(SCPICmdRead):
     """The ``RF:MEASUre:ACPR:UA1DB`` command.
 
-    **Description:**
+    Description:
         - This query measures a ratio between the first upper side channel and the Main channel when
           performing ACPR measurements using a frequency domain trace. The power in the adjacent
           channel is equivalent to the power in the main channel (dBm) added to the power ratio (dB)
           of the adjacent channel. (The RF measurement type must be set to ACPR using the command
           ``RF:MEASURE:TYPE``.)
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:UA1DB?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:UA1DB?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:MEASUre:ACPR:UA1DB?
+        ```
     """
 
 
 class RfMeasureAcprPower(SCPICmdRead):
     """The ``RF:MEASUre:ACPR:POWer`` command.
 
-    **Description:**
+    Description:
         - This query returns the measure of the total RF power in the Main channel within the
           channel bandwidth when performing ACPR measurements using a frequency domain trace. It
           uses the units that have been selected with the command ``RF:UNITS``. The RF measurement
           type must be set to ACPR using the command ``RF:MEASURE:TYPE``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:POWer?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:POWer?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:MEASUre:ACPR:POWer?
+        ```
     """
 
 
 class RfMeasureAcprLa3db(SCPICmdRead):
     """The ``RF:MEASUre:ACPR:LA3DB`` command.
 
-    **Description:**
+    Description:
         - This query measures a ratio between the third lower side channel and the Main channel when
           performing ACPR measurements using a frequency domain trace. The power in the adjacent
           channel is equivalent to the power in the main channel (dBm) added to the power ratio (dB)
           of the adjacent channel. (The RF measurement type must be set to ACPR using the command
           ``RF:MEASURE:TYPE``.)
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:LA3DB?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:LA3DB?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:MEASUre:ACPR:LA3DB?
+        ```
     """
 
 
 class RfMeasureAcprLa2db(SCPICmdRead):
     """The ``RF:MEASUre:ACPR:LA2DB`` command.
 
-    **Description:**
+    Description:
         - This query measures a ratio between the second lower side channel and the Main channel
           when performing ACPR measurements using a frequency domain trace. The power in the
           adjacent channel is equivalent to the power in the main channel (dBm) added to the power
           ratio (dB) of the adjacent channel. (The RF measurement type must be set to ACPR using the
           command ``RF:MEASURE:TYPE``.)
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:LA2DB?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:LA2DB?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:MEASUre:ACPR:LA2DB?
+        ```
     """
 
 
 class RfMeasureAcprLa1db(SCPICmdRead):
     """The ``RF:MEASUre:ACPR:LA1DB`` command.
 
-    **Description:**
+    Description:
         - This query measures a ratio between the first lower adjacent side channel and the Main
           channel when performing ACPR measurements. The power in the adjacent channel is equivalent
           to the power in the main channel (dBm) added to the power ratio (dB) of the adjacent
           channel. (The RF measurement type must be set to ACPR using the command
           ``RF:MEASURE:TYPE``.)
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:LA1DB?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:LA1DB?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:MEASUre:ACPR:LA1DB?
+        ```
     """
 
 
 class RfMeasureAcprChanspacing(SCPICmdWrite, SCPICmdRead):
     """The ``RF:MEASUre:ACPR:CHANSPACing`` command.
 
-    **Description:**
+    Description:
         - This command specifies the center-to-center spacing between the Main channel and adjacent
           channels when performing ACPR measurements using a frequency domain trace. (The RF
           measurement type must be set to ACPR using the command ``RF:MEASURE:TYPE``.) Note that if
           the channel spacing is adjusted to be more narrow than the channel bandwidth, then the
           oscilloscope will automatically decrease the channel bandwidth.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:CHANSPACing?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:CHANSPACing?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:MEASUre:ACPR:CHANSPACing value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:MEASUre:ACPR:CHANSPACing <NR3>
         - RF:MEASUre:ACPR:CHANSPACing?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number.
     """
 
@@ -3065,7 +2961,7 @@ class RfMeasureAcprChanspacing(SCPICmdWrite, SCPICmdRead):
 class RfMeasureAcprChanbw(SCPICmdWrite, SCPICmdRead):
     """The ``RF:MEASUre:ACPR:CHANBW`` command.
 
-    **Description:**
+    Description:
         - This command configures the measurement bandwidth to use for the Main channel, as well as
           the adjacent side channels, when performing ACPR measurements using a frequency domain
           trace. The RF measurement type must first be set to ACPR using the command
@@ -3073,20 +2969,19 @@ class RfMeasureAcprChanbw(SCPICmdWrite, SCPICmdRead):
           the channel spacing. If the bandwidth is adjusted to be wider than the channel spacing,
           the oscilloscope will automatically increase the channel spacing and the span.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:CHANBW?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:CHANBW?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:MEASUre:ACPR:CHANBW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:MEASUre:ACPR:CHANBW <NR3>
         - RF:MEASUre:ACPR:CHANBW?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number.
     """
 
@@ -3094,7 +2989,7 @@ class RfMeasureAcprChanbw(SCPICmdWrite, SCPICmdRead):
 class RfMeasureAcprAdjacentpairs(SCPICmdWrite, SCPICmdRead):
     """The ``RF:MEASUre:ACPR:ADJACENTPAIRs`` command.
 
-    **Description:**
+    Description:
         - When the RF measurement type has been set to ACPR, the frequency domain displays a Main
           channel in the center (``Ch:Main``), and a side channel group on either side of the Main
           Channel. There can be either 1, 2 or 3 channels within each side group; this command
@@ -3104,19 +2999,18 @@ class RfMeasureAcprAdjacentpairs(SCPICmdWrite, SCPICmdRead):
           the ratio of channel power between two user-selected channels (a side channel and a main
           channel).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:ADJACENTPAIRs?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:ADJACENTPAIRs?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:MEASUre:ACPR:ADJACENTPAIRs value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:MEASUre:ACPR:ADJACENTPAIRs [1|2|3]
         - RF:MEASUre:ACPR:ADJACENTPAIRs?
+        ```
     """
 
 
@@ -3124,7 +3018,7 @@ class RfMeasureAcprAdjacentpairs(SCPICmdWrite, SCPICmdRead):
 class RfMeasureAcpr(SCPICmdRead):
     """The ``RF:MEASUre:ACPR`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -3161,7 +3055,7 @@ class RfMeasureAcpr(SCPICmdRead):
     def adjacentpairs(self) -> RfMeasureAcprAdjacentpairs:
         """Return the ``RF:MEASUre:ACPR:ADJACENTPAIRs`` command.
 
-        **Description:**
+        Description:
             - When the RF measurement type has been set to ACPR, the frequency domain displays a
               Main channel in the center (``Ch:Main``), and a side channel group on either side of
               the Main Channel. There can be either 1, 2 or 3 channels within each side group; this
@@ -3171,19 +3065,18 @@ class RfMeasureAcpr(SCPICmdRead):
               Channel Power Ratio (ACPR) is the ratio of channel power between two user-selected
               channels (a side channel and a main channel).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:ADJACENTPAIRs?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:ADJACENTPAIRs?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``RF:MEASUre:ACPR:ADJACENTPAIRs value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:MEASUre:ACPR:ADJACENTPAIRs [1|2|3]
             - RF:MEASUre:ACPR:ADJACENTPAIRs?
+            ```
         """
         return self._adjacentpairs
 
@@ -3191,7 +3084,7 @@ class RfMeasureAcpr(SCPICmdRead):
     def chanbw(self) -> RfMeasureAcprChanbw:
         """Return the ``RF:MEASUre:ACPR:CHANBW`` command.
 
-        **Description:**
+        Description:
             - This command configures the measurement bandwidth to use for the Main channel, as well
               as the adjacent side channels, when performing ACPR measurements using a frequency
               domain trace. The RF measurement type must first be set to ACPR using the command
@@ -3200,21 +3093,20 @@ class RfMeasureAcpr(SCPICmdRead):
               spacing, the oscilloscope will automatically increase the channel spacing and the
               span.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:CHANBW?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:CHANBW?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:MEASUre:ACPR:CHANBW value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:MEASUre:ACPR:CHANBW <NR3>
             - RF:MEASUre:ACPR:CHANBW?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number.
         """
         return self._chanbw
@@ -3223,28 +3115,27 @@ class RfMeasureAcpr(SCPICmdRead):
     def chanspacing(self) -> RfMeasureAcprChanspacing:
         """Return the ``RF:MEASUre:ACPR:CHANSPACing`` command.
 
-        **Description:**
+        Description:
             - This command specifies the center-to-center spacing between the Main channel and
               adjacent channels when performing ACPR measurements using a frequency domain trace.
               (The RF measurement type must be set to ACPR using the command ``RF:MEASURE:TYPE``.)
               Note that if the channel spacing is adjusted to be more narrow than the channel
               bandwidth, then the oscilloscope will automatically decrease the channel bandwidth.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:CHANSPACing?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:CHANSPACing?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:MEASUre:ACPR:CHANSPACing value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:MEASUre:ACPR:CHANSPACing <NR3>
             - RF:MEASUre:ACPR:CHANSPACing?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number.
         """
         return self._chanspacing
@@ -3253,23 +3144,22 @@ class RfMeasureAcpr(SCPICmdRead):
     def la1db(self) -> RfMeasureAcprLa1db:
         """Return the ``RF:MEASUre:ACPR:LA1DB`` command.
 
-        **Description:**
+        Description:
             - This query measures a ratio between the first lower adjacent side channel and the Main
               channel when performing ACPR measurements. The power in the adjacent channel is
               equivalent to the power in the main channel (dBm) added to the power ratio (dB) of the
               adjacent channel. (The RF measurement type must be set to ACPR using the command
               ``RF:MEASURE:TYPE``.)
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:LA1DB?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:LA1DB?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:MEASUre:ACPR:LA1DB?
+            ```
         """
         return self._la1db
 
@@ -3277,23 +3167,22 @@ class RfMeasureAcpr(SCPICmdRead):
     def la2db(self) -> RfMeasureAcprLa2db:
         """Return the ``RF:MEASUre:ACPR:LA2DB`` command.
 
-        **Description:**
+        Description:
             - This query measures a ratio between the second lower side channel and the Main channel
               when performing ACPR measurements using a frequency domain trace. The power in the
               adjacent channel is equivalent to the power in the main channel (dBm) added to the
               power ratio (dB) of the adjacent channel. (The RF measurement type must be set to ACPR
               using the command ``RF:MEASURE:TYPE``.)
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:LA2DB?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:LA2DB?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:MEASUre:ACPR:LA2DB?
+            ```
         """
         return self._la2db
 
@@ -3301,23 +3190,22 @@ class RfMeasureAcpr(SCPICmdRead):
     def la3db(self) -> RfMeasureAcprLa3db:
         """Return the ``RF:MEASUre:ACPR:LA3DB`` command.
 
-        **Description:**
+        Description:
             - This query measures a ratio between the third lower side channel and the Main channel
               when performing ACPR measurements using a frequency domain trace. The power in the
               adjacent channel is equivalent to the power in the main channel (dBm) added to the
               power ratio (dB) of the adjacent channel. (The RF measurement type must be set to ACPR
               using the command ``RF:MEASURE:TYPE``.)
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:LA3DB?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:LA3DB?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:MEASUre:ACPR:LA3DB?
+            ```
         """
         return self._la3db
 
@@ -3325,22 +3213,21 @@ class RfMeasureAcpr(SCPICmdRead):
     def power(self) -> RfMeasureAcprPower:
         """Return the ``RF:MEASUre:ACPR:POWer`` command.
 
-        **Description:**
+        Description:
             - This query returns the measure of the total RF power in the Main channel within the
               channel bandwidth when performing ACPR measurements using a frequency domain trace. It
               uses the units that have been selected with the command ``RF:UNITS``. The RF
               measurement type must be set to ACPR using the command ``RF:MEASURE:TYPE``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:POWer?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:POWer?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:MEASUre:ACPR:POWer?
+            ```
         """
         return self._power
 
@@ -3348,23 +3235,22 @@ class RfMeasureAcpr(SCPICmdRead):
     def ua1db(self) -> RfMeasureAcprUa1db:
         """Return the ``RF:MEASUre:ACPR:UA1DB`` command.
 
-        **Description:**
+        Description:
             - This query measures a ratio between the first upper side channel and the Main channel
               when performing ACPR measurements using a frequency domain trace. The power in the
               adjacent channel is equivalent to the power in the main channel (dBm) added to the
               power ratio (dB) of the adjacent channel. (The RF measurement type must be set to ACPR
               using the command ``RF:MEASURE:TYPE``.)
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:UA1DB?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:UA1DB?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:MEASUre:ACPR:UA1DB?
+            ```
         """
         return self._ua1db
 
@@ -3372,23 +3258,22 @@ class RfMeasureAcpr(SCPICmdRead):
     def ua2db(self) -> RfMeasureAcprUa2db:
         """Return the ``RF:MEASUre:ACPR:UA2DB`` command.
 
-        **Description:**
+        Description:
             - This query measures a ratio between the second upper side channel and the Main channel
               when performing ACPR measurements using a frequency domain trace. The power in the
               adjacent channel is equivalent to the power in the main channel (dBm) added to the
               power ratio (dB) of the adjacent channel. (The RF measurement type must be set to ACPR
               using the command ``RF:MEASURE:TYPE``.)
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:UA2DB?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:UA2DB?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:MEASUre:ACPR:UA2DB?
+            ```
         """
         return self._ua2db
 
@@ -3396,23 +3281,22 @@ class RfMeasureAcpr(SCPICmdRead):
     def ua3db(self) -> RfMeasureAcprUa3db:
         """Return the ``RF:MEASUre:ACPR:UA3DB`` command.
 
-        **Description:**
+        Description:
             - This query measures a ratio between the third upper side channel and the Main channel
               when performing ACPR measurements using a frequency domain trace. The power in the
               adjacent channel is equivalent to the power in the main channel (dBm) added to the
               power ratio (dB) of the adjacent channel. (The RF measurement type must be set to ACPR
               using the command ``RF:MEASURE:TYPE``.)
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR:UA3DB?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR:UA3DB?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:MEASUre:ACPR:UA3DB?
+            ```
         """
         return self._ua3db
 
@@ -3420,7 +3304,7 @@ class RfMeasureAcpr(SCPICmdRead):
 class RfMeasure(SCPICmdRead):
     """The ``RF:MEASUre`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:MEASUre?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:MEASUre?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -3443,7 +3327,7 @@ class RfMeasure(SCPICmdRead):
     def acpr(self) -> RfMeasureAcpr:
         """Return the ``RF:MEASUre:ACPR`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:ACPR?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:ACPR?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -3466,7 +3350,7 @@ class RfMeasure(SCPICmdRead):
     def cp(self) -> RfMeasureCp:
         """Return the ``RF:MEASUre:CP`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:CP?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:CP?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -3481,7 +3365,7 @@ class RfMeasure(SCPICmdRead):
     def obw(self) -> RfMeasureObw:
         """Return the ``RF:MEASUre:OBW`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:OBW?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:OBW?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -3499,24 +3383,23 @@ class RfMeasure(SCPICmdRead):
     def type(self) -> RfMeasureType:
         """Return the ``RF:MEASUre:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command specifies the RF measurement type: Channel Power, Adjacent Channel Power
               Ratio, Occupied Bandwidth, or none.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre:TYPe?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:MEASUre:TYPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:MEASUre:TYPe {NONe|CP|ACPR|OBW}
             - RF:MEASUre:TYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``CP`` - Channel Power is the total power within the bandwidth defined by the channel
               width. When this measurement is active, the span is automatically set 10% wider than
               the channel width, and the auto detection method is set to Average. To configure the
@@ -3545,21 +3428,20 @@ class RfMeasure(SCPICmdRead):
 class RfLabel(SCPICmdWrite, SCPICmdRead):
     """The ``RF:LABel`` command.
 
-    **Description:**
+    Description:
         - This command specifies (or queries) a label for the RF frequency domain waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:LABel?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:LABel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:LABel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:LABel <QString>
         - RF:LABel?
+        ```
     """
 
     _WRAP_ARG_WITH_QUOTES = True
@@ -3568,23 +3450,22 @@ class RfLabel(SCPICmdWrite, SCPICmdRead):
 class RfFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``RF:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command specifies the center frequency of the RF acquisition system.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:FREQuency?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:FREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:FREQuency <NR3>
         - RF:FREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point value.
     """
 
@@ -3592,7 +3473,7 @@ class RfFrequency(SCPICmdWrite, SCPICmdRead):
 class RfDetectionmethodRfNormal(SCPICmdWrite, SCPICmdRead):
     """The ``RF:DETECTionmethod:RF_NORMal`` command.
 
-    **Description:**
+    Description:
         - This command specifies the detection method the oscilloscope should use when acquiring an
           RF Normal frequency domain trace. The Normal trace displays the most recently acquired
           sample at each trace point. . In order to change the detection method, you must first
@@ -3601,21 +3482,20 @@ class RfDetectionmethodRfNormal(SCPICmdWrite, SCPICmdRead):
           domain waveform down to display resolution, by dividing the waveform into intervals and
           choosing a single value to represent each interval on screen.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:DETECTionmethod:RF_NORMal?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:DETECTionmethod:RF_NORMal?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:DETECTionmethod:RF_NORMal value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:DETECTionmethod:RF_NORMal {PLUSpeak|MINUSpeak|SAMple|AVErage}
         - RF:DETECTionmethod:RF_NORMal?
+        ```
 
-    **Info:**
+    Info:
         - ``PLUSpeak`` - Detection method that selects the largest value in each interval.
         - ``MINUSpeak`` - Detection method that selects the smallest value in each interval.
         - ``SAMple`` - Detection method that selects the first point in each interval.
@@ -3626,7 +3506,7 @@ class RfDetectionmethodRfNormal(SCPICmdWrite, SCPICmdRead):
 class RfDetectionmethodRfMinhold(SCPICmdWrite, SCPICmdRead):
     """The ``RF:DETECTionmethod:RF_MINHold`` command.
 
-    **Description:**
+    Description:
         - This command specifies the detection method the oscilloscope should use when acquiring an
           RF Min Hold frequency domain trace. The Min Hold trace displays the smallest value
           throughout the acquisition history at each trace point. In order to change the detection
@@ -3636,21 +3516,20 @@ class RfDetectionmethodRfMinhold(SCPICmdWrite, SCPICmdRead):
           dividing the waveform into intervals and choosing a single value to represent each
           interval on screen.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:DETECTionmethod:RF_MINHold?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:DETECTionmethod:RF_MINHold?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:DETECTionmethod:RF_MINHold value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:DETECTionmethod:RF_MINHold {PLUSpeak|MINUSpeak|SAMple|AVErage}
         - RF:DETECTionmethod:RF_MINHold?
+        ```
 
-    **Info:**
+    Info:
         - ``PLUSpeak`` - Detection method that selects the largest value in each interval.
         - ``MINUSpeak`` - Detection method that selects the smallest value in each interval.
         - ``SAMple`` - Detection method that selects the first point in each interval.
@@ -3661,7 +3540,7 @@ class RfDetectionmethodRfMinhold(SCPICmdWrite, SCPICmdRead):
 class RfDetectionmethodRfMaxhold(SCPICmdWrite, SCPICmdRead):
     """The ``RF:DETECTionmethod:RF_MAXHold`` command.
 
-    **Description:**
+    Description:
         - This command specifies the detection method the oscilloscope should use when acquiring an
           RF Max Hold frequency domain trace. The Max Hold trace displays the largest value in all
           acquisition history at each trace point. In order to change the detection method, you must
@@ -3671,21 +3550,20 @@ class RfDetectionmethodRfMaxhold(SCPICmdWrite, SCPICmdRead):
           dividing the waveform into intervals and choosing a single value to represent each
           interval on screen.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:DETECTionmethod:RF_MAXHold?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:DETECTionmethod:RF_MAXHold?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:DETECTionmethod:RF_MAXHold value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:DETECTionmethod:RF_MAXHold {PLUSpeak|MINUSpeak|SAMple|AVErage}
         - RF:DETECTionmethod:RF_MAXHold?
+        ```
 
-    **Info:**
+    Info:
         - ``PLUSpeak`` - Detection method that selects the largest value in each interval.
         - ``MINUSpeak`` - Detection method that selects the smallest value in each interval.
         - ``SAMple`` - Detection method that selects the first point in each interval.
@@ -3696,7 +3574,7 @@ class RfDetectionmethodRfMaxhold(SCPICmdWrite, SCPICmdRead):
 class RfDetectionmethodRfAverage(SCPICmdWrite, SCPICmdRead):
     """The ``RF:DETECTionmethod:RF_AVErage`` command.
 
-    **Description:**
+    Description:
         - This command specifies the detection method the oscilloscope should use when acquiring an
           RF Average frequency domain trace. In order to change the detection method, you must first
           change the detection method mode to MANUAL using the command ``RF:DETECTIONMETHOD:MODE``.
@@ -3704,21 +3582,20 @@ class RfDetectionmethodRfAverage(SCPICmdWrite, SCPICmdRead):
           domain waveform down to display resolution, by dividing the waveform into intervals and
           choosing a single value to represent each interval on screen.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:DETECTionmethod:RF_AVErage?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:DETECTionmethod:RF_AVErage?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:DETECTionmethod:RF_AVErage value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:DETECTionmethod:RF_AVErage {PLUSpeak|MINUSpeak|SAMple|AVErage}
         - RF:DETECTionmethod:RF_AVErage?
+        ```
 
-    **Info:**
+    Info:
         - ``PLUSpeak`` - Detection method that selects the largest value in each interval.
         - ``MINUSpeak`` - Detection method that selects the smallest value in each interval.
         - ``SAMple`` - Detection method that selects the first point in each interval.
@@ -3729,7 +3606,7 @@ class RfDetectionmethodRfAverage(SCPICmdWrite, SCPICmdRead):
 class RfDetectionmethodMode(SCPICmdWrite, SCPICmdRead):
     """The ``RF:DETECTionmethod:MODe`` command.
 
-    **Description:**
+    Description:
         - This command specifies whether the RF detection within the oscilloscope occurs
           automatically or manually. If you set the detection method mode to MANual, you are able to
           use the related ``RF:DETECTionmethod`` commands to specify detection method options for
@@ -3738,26 +3615,25 @@ class RfDetectionmethodMode(SCPICmdWrite, SCPICmdRead):
           domain waveform down to display resolution, by dividing the waveform into intervals and
           choosing a single value to represent each interval on screen.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:DETECTionmethod:MODe?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:DETECTionmethod:MODe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RF:DETECTionmethod:MODe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:DETECTionmethod:MODe {AUTO|MANual}
         - RF:DETECTionmethod:MODe?
+        ```
     """
 
 
 class RfDetectionmethod(SCPICmdRead):
     """The ``RF:DETECTionmethod`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:DETECTionmethod?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:DETECTionmethod?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -3782,7 +3658,7 @@ class RfDetectionmethod(SCPICmdRead):
     def mode(self) -> RfDetectionmethodMode:
         """Return the ``RF:DETECTionmethod:MODe`` command.
 
-        **Description:**
+        Description:
             - This command specifies whether the RF detection within the oscilloscope occurs
               automatically or manually. If you set the detection method mode to MANual, you are
               able to use the related ``RF:DETECTionmethod`` commands to specify detection method
@@ -3792,19 +3668,18 @@ class RfDetectionmethod(SCPICmdRead):
               waveform into intervals and choosing a single value to represent each interval on
               screen.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:DETECTionmethod:MODe?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:DETECTionmethod:MODe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:DETECTionmethod:MODe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:DETECTionmethod:MODe {AUTO|MANual}
             - RF:DETECTionmethod:MODe?
+            ```
         """
         return self._mode
 
@@ -3812,7 +3687,7 @@ class RfDetectionmethod(SCPICmdRead):
     def rf_average(self) -> RfDetectionmethodRfAverage:
         """Return the ``RF:DETECTionmethod:RF_AVErage`` command.
 
-        **Description:**
+        Description:
             - This command specifies the detection method the oscilloscope should use when acquiring
               an RF Average frequency domain trace. In order to change the detection method, you
               must first change the detection method mode to MANUAL using the command
@@ -3821,21 +3696,20 @@ class RfDetectionmethod(SCPICmdRead):
               dividing the waveform into intervals and choosing a single value to represent each
               interval on screen.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:DETECTionmethod:RF_AVErage?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:DETECTionmethod:RF_AVErage?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``RF:DETECTionmethod:RF_AVErage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:DETECTionmethod:RF_AVErage {PLUSpeak|MINUSpeak|SAMple|AVErage}
             - RF:DETECTionmethod:RF_AVErage?
+            ```
 
-        **Info:**
+        Info:
             - ``PLUSpeak`` - Detection method that selects the largest value in each interval.
             - ``MINUSpeak`` - Detection method that selects the smallest value in each interval.
             - ``SAMple`` - Detection method that selects the first point in each interval.
@@ -3847,7 +3721,7 @@ class RfDetectionmethod(SCPICmdRead):
     def rf_maxhold(self) -> RfDetectionmethodRfMaxhold:
         """Return the ``RF:DETECTionmethod:RF_MAXHold`` command.
 
-        **Description:**
+        Description:
             - This command specifies the detection method the oscilloscope should use when acquiring
               an RF Max Hold frequency domain trace. The Max Hold trace displays the largest value
               in all acquisition history at each trace point. In order to change the detection
@@ -3857,21 +3731,20 @@ class RfDetectionmethod(SCPICmdRead):
               dividing the waveform into intervals and choosing a single value to represent each
               interval on screen.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:DETECTionmethod:RF_MAXHold?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:DETECTionmethod:RF_MAXHold?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``RF:DETECTionmethod:RF_MAXHold value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:DETECTionmethod:RF_MAXHold {PLUSpeak|MINUSpeak|SAMple|AVErage}
             - RF:DETECTionmethod:RF_MAXHold?
+            ```
 
-        **Info:**
+        Info:
             - ``PLUSpeak`` - Detection method that selects the largest value in each interval.
             - ``MINUSpeak`` - Detection method that selects the smallest value in each interval.
             - ``SAMple`` - Detection method that selects the first point in each interval.
@@ -3883,7 +3756,7 @@ class RfDetectionmethod(SCPICmdRead):
     def rf_minhold(self) -> RfDetectionmethodRfMinhold:
         """Return the ``RF:DETECTionmethod:RF_MINHold`` command.
 
-        **Description:**
+        Description:
             - This command specifies the detection method the oscilloscope should use when acquiring
               an RF Min Hold frequency domain trace. The Min Hold trace displays the smallest value
               throughout the acquisition history at each trace point. In order to change the
@@ -3893,21 +3766,20 @@ class RfDetectionmethod(SCPICmdRead):
               by dividing the waveform into intervals and choosing a single value to represent each
               interval on screen.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:DETECTionmethod:RF_MINHold?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:DETECTionmethod:RF_MINHold?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``RF:DETECTionmethod:RF_MINHold value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:DETECTionmethod:RF_MINHold {PLUSpeak|MINUSpeak|SAMple|AVErage}
             - RF:DETECTionmethod:RF_MINHold?
+            ```
 
-        **Info:**
+        Info:
             - ``PLUSpeak`` - Detection method that selects the largest value in each interval.
             - ``MINUSpeak`` - Detection method that selects the smallest value in each interval.
             - ``SAMple`` - Detection method that selects the first point in each interval.
@@ -3919,7 +3791,7 @@ class RfDetectionmethod(SCPICmdRead):
     def rf_normal(self) -> RfDetectionmethodRfNormal:
         """Return the ``RF:DETECTionmethod:RF_NORMal`` command.
 
-        **Description:**
+        Description:
             - This command specifies the detection method the oscilloscope should use when acquiring
               an RF Normal frequency domain trace. The Normal trace displays the most recently
               acquired sample at each trace point. . In order to change the detection method, you
@@ -3929,21 +3801,20 @@ class RfDetectionmethod(SCPICmdRead):
               dividing the waveform into intervals and choosing a single value to represent each
               interval on screen.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:DETECTionmethod:RF_NORMal?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:DETECTionmethod:RF_NORMal?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``RF:DETECTionmethod:RF_NORMal value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:DETECTionmethod:RF_NORMal {PLUSpeak|MINUSpeak|SAMple|AVErage}
             - RF:DETECTionmethod:RF_NORMal?
+            ```
 
-        **Info:**
+        Info:
             - ``PLUSpeak`` - Detection method that selects the largest value in each interval.
             - ``MINUSpeak`` - Detection method that selects the smallest value in each interval.
             - ``SAMple`` - Detection method that selects the first point in each interval.
@@ -3955,20 +3826,19 @@ class RfDetectionmethod(SCPICmdRead):
 class RfClipping(SCPICmdRead):
     """The ``RF:CLIPPing`` command.
 
-    **Description:**
+    Description:
         - Returns a boolean indicating whether the RF input is 'clipping' due to input
           over/under-range detection.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF:CLIPPing?`` query.
         - Using the ``.verify(value)`` method will send the ``RF:CLIPPing?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RF:CLIPPing?
+        ```
     """
 
 
@@ -3976,7 +3846,7 @@ class RfClipping(SCPICmdRead):
 class Rf(SCPICmdRead):
     """The ``RF`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RF?`` query.
         - Using the ``.verify(value)`` method will send the ``RF?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -4039,20 +3909,19 @@ class Rf(SCPICmdRead):
     def clipping(self) -> RfClipping:
         """Return the ``RF:CLIPPing`` command.
 
-        **Description:**
+        Description:
             - Returns a boolean indicating whether the RF input is 'clipping' due to input
               over/under-range detection.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:CLIPPing?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:CLIPPing?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:CLIPPing?
+            ```
         """
         return self._clipping
 
@@ -4060,7 +3929,7 @@ class Rf(SCPICmdRead):
     def detectionmethod(self) -> RfDetectionmethod:
         """Return the ``RF:DETECTionmethod`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:DETECTionmethod?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:DETECTionmethod?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -4078,23 +3947,22 @@ class Rf(SCPICmdRead):
     def frequency(self) -> RfFrequency:
         """Return the ``RF:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command specifies the center frequency of the RF acquisition system.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:FREQuency?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:FREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:FREQuency <NR3>
             - RF:FREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point value.
         """
         return self._frequency
@@ -4103,21 +3971,20 @@ class Rf(SCPICmdRead):
     def label(self) -> RfLabel:
         """Return the ``RF:LABel`` command.
 
-        **Description:**
+        Description:
             - This command specifies (or queries) a label for the RF frequency domain waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:LABel?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:LABel?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:LABel value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:LABel <QString>
             - RF:LABel?
+            ```
         """
         return self._label
 
@@ -4125,7 +3992,7 @@ class Rf(SCPICmdRead):
     def measure(self) -> RfMeasure:
         """Return the ``RF:MEASUre`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:MEASUre?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:MEASUre?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -4142,26 +4009,25 @@ class Rf(SCPICmdRead):
     def position(self) -> RfPosition:
         """Return the ``RF:POSition`` command.
 
-        **Description:**
+        Description:
             - This command specifies the vertical position for the frequency domain traces. The
               vertical position is the location of the Reference Level with respect to the top of
               the graticule, in divisions. The lower limit is -10 divisions. The upper limit is +10
               divisions.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:POSition?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:POSition <NR3>
             - RF:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number.
         """
         return self._position
@@ -4170,7 +4036,7 @@ class Rf(SCPICmdRead):
     def probe(self) -> RfProbe:
         """Return the ``RF:PRObe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:PRObe?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:PRObe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -4194,7 +4060,7 @@ class Rf(SCPICmdRead):
     def rbw(self) -> RfRbw:
         """Return the ``RF:RBW`` command.
 
-        **Description:**
+        Description:
             - This command specifies the resolution bandwidth (RBW) when the RBW mode has been set
               to MANUAL (using the command ``RF:RBW:MODE``). The resolution bandwidth is the width
               of the narrowest measurable band of frequencies in a frequency domain trace. The RBW
@@ -4204,20 +4070,19 @@ class Rf(SCPICmdRead):
               carriers separated by 1 kHz, you will not be able to discriminate between them unless
               the RBW is less than 1 kHz.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:RBW?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:RBW?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:RBW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:RBW <NR3>
             - RF:RBW?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that represents the width of the narrowest
               measurable band of frequencies in a frequency domain trace.
 
@@ -4230,24 +4095,23 @@ class Rf(SCPICmdRead):
     def reflevel(self) -> RfReflevel:
         """Return the ``RF:REFLevel`` command.
 
-        **Description:**
+        Description:
             - This command sets the Reference Level of the RF input. The Reference Level can either
               be specified as a numeric floating point value, or set automatically.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:REFLevel?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:REFLevel?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:REFLevel value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:REFLevel {<NR3>|AUTO}
             - RF:REFLevel?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number.
             - ``AUTO`` directs the oscilloscope to automatically calculate and set the Reference
               Level. This is a one-time calculation based on the content of the RF input signal. It
@@ -4259,7 +4123,7 @@ class Rf(SCPICmdRead):
     def rf_amplitude(self) -> RfRfAmplitude:
         """Return the ``RF:RF_AMPlitude`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:RF_AMPlitude?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:RF_AMPlitude?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -4274,7 +4138,7 @@ class Rf(SCPICmdRead):
     def rf_average(self) -> RfRfAverage:
         """Return the ``RF:RF_AVErage`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:RF_AVErage?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:RF_AVErage?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -4289,7 +4153,7 @@ class Rf(SCPICmdRead):
     def rf_phase(self) -> RfRfPhase:
         """Return the ``RF:RF_PHASe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:RF_PHASe?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:RF_PHASe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -4304,7 +4168,7 @@ class Rf(SCPICmdRead):
     def rf_v_time(self) -> RfRfVTime:
         """Return the ``RF:RF_V_TIMe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:RF_V_TIMe?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:RF_V_TIMe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -4318,25 +4182,24 @@ class Rf(SCPICmdRead):
     def scale(self) -> RfScale:
         """Return the ``RF:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command specifies the overall vertical scale setting of the frequency domain
               window. The lower limit is 0.1 dB/division. The upper limit is 100dB/division. The
               vertical scale is adjustable in a 1-2-5 sequence.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:SCAle?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:SCAle?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:SCAle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:SCAle <NR3>
             - RF:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number.
         """
         return self._scale
@@ -4345,7 +4208,7 @@ class Rf(SCPICmdRead):
     def span(self) -> RfSpan:
         """Return the ``RF:SPAN`` command.
 
-        **Description:**
+        Description:
             - This command specifies the span setting. The span is the range of frequencies that can
               be observed around the center frequency. This is the width of the frequency domain
               trace, which is equal to the stop frequency minus the start frequency. The maximum
@@ -4353,20 +4216,19 @@ class Rf(SCPICmdRead):
               matches the analog bandwidth rating; however, if the option 3-SA3 is installed, then
               the maximum span is 3 GHz.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:SPAN?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:SPAN?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:SPAN value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:SPAN <NR3>
             - RF:SPAN?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number.
         """
         return self._span
@@ -4375,7 +4237,7 @@ class Rf(SCPICmdRead):
     def spanrbwratio(self) -> RfSpanrbwratio:
         """Return the ``RF:SPANRbwratio`` command.
 
-        **Description:**
+        Description:
             - This command specifies the ratio of the span to the resolution bandwidth (RBW) that
               will be used when the RBW Mode is set to AUTO. (In order to set the RBW Mode to AUTO,
               use the command ``RF:RBW:MODE``.) The span is the width of the frequency domain trace
@@ -4383,20 +4245,19 @@ class Rf(SCPICmdRead):
               width of the narrowest measurable band of frequencies in a frequency domain trace. The
               default RBW ratio is a factor of 1000.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:SPANRbwratio?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:SPANRbwratio?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:SPANRbwratio value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:SPANRbwratio <NR3>
             - RF:SPANRbwratio?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number.
         """
         return self._spanrbwratio
@@ -4405,26 +4266,25 @@ class Rf(SCPICmdRead):
     def spectrummode(self) -> RfSpectrummode:
         """Return the ``RF:SPECTRUMMode`` command.
 
-        **Description:**
+        Description:
             - When only the frequency domain waveforms are displayed (no time domain waveforms), you
               can choose whether the MDO4000/B/C should use Triggered mode or Free Run mode. (3
               Series MDO only uses Free Run mode.) When Free Run mode is selected, the oscilloscope
               generates RF acquisitions as fast as possible. The default is FREErun.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:SPECTRUMMode?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:SPECTRUMMode?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:SPECTRUMMode value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:SPECTRUMMode {TRIGgered|FREErun}
             - RF:SPECTRUMMode?
+            ```
 
-        **Info:**
+        Info:
             - ``TRIGgered`` ties RF acquisitions to the scope's unified triggering system for all
               channels.
             - ``FREErun`` acquires RF data as often as processing allows, without waiting for
@@ -4436,17 +4296,16 @@ class Rf(SCPICmdRead):
     def spectrumtrace(self) -> RfSpectrumtrace:
         """Return the ``RF:SPECTRUMTrace`` command.
 
-        **Description:**
+        Description:
             - Resets the spectrum traces, ``RF_MINHold``, ``RF_MAXHold`` and ``RF_AVErage``.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``RF:SPECTRUMTrace value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:SPECTRUMTrace {RESET}
+            ```
         """
         return self._spectrumtrace
 
@@ -4454,19 +4313,18 @@ class Rf(SCPICmdRead):
     def spectrogram(self) -> RfSpectrogram:
         """Return the ``RF:SPECTRogram`` command.
 
-        **Description:**
+        Description:
             - Clears the spectrogram.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``RF:SPECTRogram value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:SPECTRogram {CLEAR}
+            ```
 
-        **Info:**
+        Info:
             - ``CLEAR`` clears the spectrogram.
 
         Sub-properties:
@@ -4482,7 +4340,7 @@ class Rf(SCPICmdRead):
     def squelch(self) -> RfSquelch:
         """Return the ``RF:SQUELCH`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:SQUELCH?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:SQUELCH?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -4497,23 +4355,22 @@ class Rf(SCPICmdRead):
     def start(self) -> RfStart:
         """Return the ``RF:STARt`` command.
 
-        **Description:**
+        Description:
             - This command specifies to exclude frequencies below a certain level from use.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:STARt?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:STARt?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:STARt value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:STARt <NR3>
             - RF:STARt?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point value that represents the Start frequency.
         """
         return self._start
@@ -4522,23 +4379,22 @@ class Rf(SCPICmdRead):
     def stop(self) -> RfStop:
         """Return the ``RF:STOP`` command.
 
-        **Description:**
+        Description:
             - This command specifies to exclude frequencies above a certain level from use.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:STOP?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:STOP?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:STOP value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:STOP <NR3>
             - RF:STOP?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point value.
         """
         return self._stop
@@ -4547,24 +4403,23 @@ class Rf(SCPICmdRead):
     def units(self) -> RfUnits:
         """Return the ``RF:UNIts`` command.
 
-        **Description:**
+        Description:
             - This command specifies the vertical units to be used in all RF-related absolute
               logarithmic amplitudes.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:UNIts?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:UNIts value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:UNIts {DBM|DBUW|DBMV|DBUV|DBMA|DBUA}
             - RF:UNIts?
+            ```
 
-        **Info:**
+        Info:
             - ``DBM`` - Decibel milliwatts.
             - ``DBUW`` - Decibel microwatts.
             - ``DBMV`` - Decibel millivolts.
@@ -4578,27 +4433,26 @@ class Rf(SCPICmdRead):
     def window(self) -> RfWindow:
         """Return the ``RF:WINdow`` command.
 
-        **Description:**
+        Description:
             - This command specifies which window will be used for the windowing function, which is
               only used for the three time domain RF traces (RF Amplitude vs. Time, RF Frequency vs.
               Time and RF Phase vs. Time). The windowing function is a Fast Fourier Transform (FFT)
               technique used to minimize the discontinuities between successive frames of an RF time
               domain signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RF:WINdow?`` query.
             - Using the ``.verify(value)`` method will send the ``RF:WINdow?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RF:WINdow value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RF:WINdow {RECTangular|HAMming|HANning|BLAckmanharris|KAIser|FLATtop}
             - RF:WINdow?
+            ```
 
-        **Info:**
+        Info:
             - ``RECTangular`` - window function equivalent to multiplying all gate data by one
               (sometimes known as a Dirichlet window).
             - ``HAMming`` - a high or moderate resolution window based on a cosine series.

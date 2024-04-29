@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SEARCH:ADDNew <QString>
     - SEARCH:DELETEALL
     - SEARCH:DELete <QString>
@@ -19,13 +17,15 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:COPy {SEARCHtotrigger|TRIGgertosearch}
     - SEARCH:SEARCH<x>:NAVigate {NEXT|PREVious|MIN|NONE|MAX}
     - SEARCH:SEARCH<x>:TOTAL?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:CONDition {SOF|FRAMEtype|IDentifier|DATa|IDANDDATA|EOF|ERRor|FDBITS}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:CONDition
+      {SOF|FRAMEtype|IDentifier|DATa|IDANDDATA|EOF|ERRor|FDBITS}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:CONDition?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:DIRection {READ|WRITE|NOCARE}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:DIRection?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:OFFSet <NR1>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:OFFSet?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:QUALifier {EQUal|LESSEQual|MOREEQua|UNEQual|LESSthan|MOREthan}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:QUALifier
+      {EQUal|LESSEQual|MOREEQua|UNEQual|LESSthan|MOREthan}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:SIZe <NR1>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:SIZe?
@@ -47,7 +47,8 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:MODe?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:VALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:VALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:CONDition {ADDRess|ADDRANDDATA|DATa|ACKMISS|REPEATstart|STARt|STOP}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:CONDition
+      {ADDRess|ADDRANDDATA|DATa|ACKMISS|REPEATstart|STARt|STOP}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:CONDition?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:DIRection {NOCARE|READ|WRITE}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:DIRection?
@@ -55,11 +56,13 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:SIZe?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:VALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:VALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:CONDition {DATA|IDANDDATA|ERRor|IDentifier|SLEEP|SYNCfield|WAKEup}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:CONDition
+      {DATA|IDANDDATA|ERRor|IDentifier|SLEEP|SYNCfield|WAKEup}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:CONDition?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:HIVALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:HIVALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:QUALifier {EQual|LESSEQual|MOREEQual|UNEQual|LESSthan|MOREthan| INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:QUALifier
+      {EQual|LESSEQual|MOREEQual|UNEQual|LESSthan|MOREthan| INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:SIZe <NR1>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:SIZe?
@@ -85,19 +88,22 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:HIVALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:HIVALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:QUALifier {EQual|UNEQual|LESSthan|MOREthan|
+      LESSEQual|MOREEQual|INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:VALue <Qstring>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:VALue?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:HIVALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:HIVALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:QUALifier {EQual|UNEQual|LESSthan|MOREthan|
+      LESSEQual|MOREEQual|INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:VALue <Qstring>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:VALue?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:HIVALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:HIVALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:QUALifier {EQual|UNEQual|LESSthan|MOREthan|
+      LESSEQual|MOREEQual|INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:VALue <Qstring>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:VALue?
@@ -105,7 +111,8 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:INVERTNIBble:VALue?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:STATus:VALue <Qstring>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:STATus:VALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:QUALifier {EQual|UNEQual|LESSthan|MOREthan|
+      LESSEQual|MOREEQual|INrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:HIVALue <NR1>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:HIVALue?
@@ -113,13 +120,15 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:VALue?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:HIVALue <QString>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:HIVALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQualINrange|OUTrange}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:QUALifier {EQual|UNEQual|LESSthan|MOREthan|
+      LESSEQual|MOREEQualINrange|OUTrange}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:QUALifier?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:VALue <Qstring>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:VALue?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:IDentifier:VALue <Qstring>
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:IDentifier:VALue?
-    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SOUrce {B0|B1|B2|B3|B4|B5|B6|B7|B8|B9|B10| B11|B12|B13|B14|B15|B16}
+    - SEARCH:SEARCH<x>:TRIGger:A:BUS:SOUrce {B0|B1|B2|B3|B4|B5|B6|B7|B8|B9|B10|
+      B11|B12|B13|B14|B15|B16}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SOUrce?
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:CONDition {DATA|SS|STARTofframe}
     - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:CONDition?
@@ -171,7 +180,8 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOWLimit?
     - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:POLarity {POSitive|NEGative}
     - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:POLarity?
-    - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce {CH<x>| DCH<x>_D<x>| MATH<x>| REF<x>| REF<x>_D<x>}
+    - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce {CH<x>| DCH<x>_D<x>| MATH<x>| REF<x>|
+      REF<x>_D<x>}
     - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce?
     - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:THReshold <NR3>
     - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:THReshold?
@@ -192,7 +202,8 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:RUNT:WIDth?
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:EDGE {FALL|RISe}
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:EDGE?
-    - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce {CH<x>| DCH<x>_D<x>| MATH<x>| REF<x>| REF<x>_D<x>}
+    - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce {CH<x>| DCH<x>_D<x>| MATH<x>| REF<x>|
+      REF<x>_D<x>}
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce?
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:THReshold <NR3>
     - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:THReshold?
@@ -228,11 +239,12 @@ Commands and Queries:
     - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:THReshold?
     - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:TIMe <NR3>
     - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:TIMe?
-    - SEARCH:SEARCH<x>:TRIGger:A:TYPe {EDGE| RUNT| TRANsition| PULSEWidth| TIMEOut| LOGIc| SETHold| Bus}
+    - SEARCH:SEARCH<x>:TRIGger:A:TYPe {EDGE| RUNT| TRANsition| PULSEWidth| TIMEOut| LOGIc| SETHold|
+      Bus}
     - SEARCH:SEARCH<x>:TRIGger:A:TYPe?
     - SEARCH:SELected SEARCH1
     - SEARCH:SELected?
-"""  # noqa: E501
+"""
 
 from typing import Dict, Optional, TYPE_CHECKING
 
@@ -253,24 +265,23 @@ if TYPE_CHECKING:
 class SearchSelected(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SELected`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the selected search, for example SEARCH1. The search number
           is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SELected?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SELected?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SEARCH:SELected value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SELected SEARCH1
         - SEARCH:SELected?
+        ```
 
-    **Info:**
+    Info:
         - ``SEARCH1`` is the specified search.
     """
 
@@ -278,25 +289,24 @@ class SearchSelected(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerAType(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the trigger type setting for a search to determine where to
           place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:TYPe?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:TYPe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:TYPe {EDGE| RUNT| TRANsition| PULSEWidth| TIMEOut| LOGIc| SETHold| Bus}
         - SEARCH:SEARCH<x>:TRIGger:A:TYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``EDGE`` triggers when the source input signal amplitude crosses the specified level in
           the direction given by the slope.
         - ``RUNT`` triggers when a pulse crosses the first preset voltage threshold but does not
@@ -323,11 +333,11 @@ class SearchSearchItemTriggerAType(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerATimeoutTime(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:TIMe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the time setting for a timeout trigger search to determine
           where to place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:TIMe?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -336,14 +346,13 @@ class SearchSearchItemTriggerATimeoutTime(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:TIMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:TIMe <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:TIMe?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the time in seconds.
     """
 
@@ -351,11 +360,11 @@ class SearchSearchItemTriggerATimeoutTime(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerATimeoutThreshold(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:THReshold`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the source threshold level for a timeout trigger search to determine where
           to place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:THReshold?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -364,14 +373,13 @@ class SearchSearchItemTriggerATimeoutThreshold(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:THReshold value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:THReshold <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:THReshold?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the source threshold level for a timeout trigger search.
     """
 
@@ -379,11 +387,11 @@ class SearchSearchItemTriggerATimeoutThreshold(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerATimeoutSource(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets and queries the source for timeout search input. The search number is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:SOUrce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -392,14 +400,13 @@ class SearchSearchItemTriggerATimeoutSource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:SOUrce {CH<x>| DCH<x>_D<x>| MATH<x>| REF<x>| REF<x>_D<x>}
         - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies an input channel as the edge source, where <x> = 1, 2, 3, 4, 5, 6, 7,
           or 8, depending on the number of channels in your instrument.
         - ``DCH<x>_D<x>`` specifies a digital channel for the search source. The supported digital
@@ -414,10 +421,10 @@ class SearchSearchItemTriggerATimeoutSource(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerATimeoutPolarity(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:POLarity`` command.
 
-    **Description:**
+    Description:
         - The polarity to be used for a Timeout search. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:POLarity?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -426,14 +433,13 @@ class SearchSearchItemTriggerATimeoutPolarity(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:POLarity value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:POLarity {STAYSHigh|STAYSLow|EITher}
         - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:POLarity?
+        ```
 
-    **Info:**
+    Info:
         - ``STAYSHigh`` specifies the polarity stays HIGH.
         - ``STAYSLow`` specifies the polarity stays LOW.
         - ``EITher`` specifies the polarity stays HIGH or stays LOW.
@@ -443,11 +449,11 @@ class SearchSearchItemTriggerATimeoutPolarity(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerATimeoutLogicqualification(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:LOGICQUALification`` command.
 
-    **Description:**
+    Description:
         - This command specifies whether or not to use logic qualification for a timeout search. The
           search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:LOGICQUALification?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -456,14 +462,13 @@ class SearchSearchItemTriggerATimeoutLogicqualification(SCPICmdWrite, SCPICmdRea
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:LOGICQUALification value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:LOGICQUALification {ON|OFF}
         - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:LOGICQUALification?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` specifies to use logic qualification.
         - ``OFF`` specifies not to use logic qualification.
     """
@@ -472,7 +477,7 @@ class SearchSearchItemTriggerATimeoutLogicqualification(SCPICmdWrite, SCPICmdRea
 class SearchSearchItemTriggerATimeout(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -504,11 +509,11 @@ class SearchSearchItemTriggerATimeout(SCPICmdRead):
     def logicqualification(self) -> SearchSearchItemTriggerATimeoutLogicqualification:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:LOGICQUALification`` command.
 
-        **Description:**
+        Description:
             - This command specifies whether or not to use logic qualification for a timeout search.
               The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:LOGICQUALification?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -517,14 +522,13 @@ class SearchSearchItemTriggerATimeout(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:LOGICQUALification value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:LOGICQUALification {ON|OFF}
             - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:LOGICQUALification?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` specifies to use logic qualification.
             - ``OFF`` specifies not to use logic qualification.
         """
@@ -534,10 +538,10 @@ class SearchSearchItemTriggerATimeout(SCPICmdRead):
     def polarity(self) -> SearchSearchItemTriggerATimeoutPolarity:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:POLarity`` command.
 
-        **Description:**
+        Description:
             - The polarity to be used for a Timeout search. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:POLarity?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -546,14 +550,13 @@ class SearchSearchItemTriggerATimeout(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:POLarity value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:POLarity {STAYSHigh|STAYSLow|EITher}
             - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:POLarity?
+            ```
 
-        **Info:**
+        Info:
             - ``STAYSHigh`` specifies the polarity stays HIGH.
             - ``STAYSLow`` specifies the polarity stays LOW.
             - ``EITher`` specifies the polarity stays HIGH or stays LOW.
@@ -564,11 +567,11 @@ class SearchSearchItemTriggerATimeout(SCPICmdRead):
     def source(self) -> SearchSearchItemTriggerATimeoutSource:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets and queries the source for timeout search input. The search number
               is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -577,14 +580,13 @@ class SearchSearchItemTriggerATimeout(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:SOUrce {CH<x>| DCH<x>_D<x>| MATH<x>| REF<x>| REF<x>_D<x>}
             - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies an input channel as the edge source, where <x> = 1, 2, 3, 4, 5, 6,
               7, or 8, depending on the number of channels in your instrument.
             - ``DCH<x>_D<x>`` specifies a digital channel for the search source. The supported
@@ -600,11 +602,11 @@ class SearchSearchItemTriggerATimeout(SCPICmdRead):
     def threshold(self) -> SearchSearchItemTriggerATimeoutThreshold:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:THReshold`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the source threshold level for a timeout trigger search to determine
               where to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:THReshold?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -613,14 +615,13 @@ class SearchSearchItemTriggerATimeout(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:THReshold value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:THReshold <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:THReshold?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the source threshold level for a timeout trigger search.
         """
         return self._threshold
@@ -629,11 +630,11 @@ class SearchSearchItemTriggerATimeout(SCPICmdRead):
     def time(self) -> SearchSearchItemTriggerATimeoutTime:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:TIMe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the time setting for a timeout trigger search to
               determine where to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:TIMe?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -642,14 +643,13 @@ class SearchSearchItemTriggerATimeout(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:TIMe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:TIMe <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:TIMEOut:TIMe?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the time in seconds.
         """
         return self._time
@@ -658,25 +658,24 @@ class SearchSearchItemTriggerATimeout(SCPICmdRead):
 class SearchSearchItemTriggerAStopacq(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:STOPAcq`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether acquisitions are stopped when a search hit is found.
           The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:STOPAcq?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:STOPAcq?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:STOPAcq value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:STOPAcq {<NR1>|OFF|ON}
         - SEARCH:SEARCH<x>:TRIGger:A:STOPAcq?
+        ```
 
-    **Info:**
+    Info:
         - ``<x>`` is the number of the search on which to enable or disable the stop acquisition
           function.
         - ``<NR1>`` = 1 enables stopping when a search hit is found. Any other character disables
@@ -689,25 +688,24 @@ class SearchSearchItemTriggerAStopacq(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerAState(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:STATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the enabled state of the search. The search number is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:STATE?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:STATE {<NR1>|OFF|ON}
         - SEARCH:SEARCH<x>:TRIGger:A:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 1 enables the search. Any other character disables the search.
         - ``ON`` enables the search.
         - ``OFF`` disables the search.
@@ -717,11 +715,11 @@ class SearchSearchItemTriggerAState(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerASetholdSettime(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:SETTime`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the setup time setting for a setup/hold trigger search to
           determine where to place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:SETTime?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -730,14 +728,13 @@ class SearchSearchItemTriggerASetholdSettime(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:SETTime value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:SETTime <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:SETTime?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the setup time for setup and hold violation triggering.
     """
 
@@ -747,12 +744,12 @@ class SearchSearchItemTriggerASetholdLogicpatternRefItem(
 ):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets and returns the conditions used for generating an A logic pattern, with
           respect to the defined input pattern,  and identifies the time that the selected pattern
           may be true and still generate the trigger. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:REF<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -761,14 +758,13 @@ class SearchSearchItemTriggerASetholdLogicpatternRefItem(
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:REF<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:REF<x> {INCLude|DONTInclude}
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:REF<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``INCLude`` specifies including the specified reference SETHOLD inputs in the specified
           search.
         - ``DONTInclude`` specifies not including the specified reference SETHOLD inputs in the
@@ -781,12 +777,12 @@ class SearchSearchItemTriggerASetholdLogicpatternMathItem(
 ):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:MATH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the conditions used for generating an A logic pattern, with
           respect to the defined input pattern, and identifies the time that the selected pattern
           may be true and still generate the trigger. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:MATH<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -795,14 +791,13 @@ class SearchSearchItemTriggerASetholdLogicpatternMathItem(
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:MATH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:MATH<x> {INCLude|DONTInclude}
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:MATH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``INCLude`` specifies including the specified math SETHOLD inputs in the specified search.
         - ``DONTInclude`` specifies not including the specified math SETHOLD inputs in the specified
           search.
@@ -814,13 +809,13 @@ class SearchSearchItemTriggerASetholdLogicpatternDchItemDigitalBit(
 ):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:DCH<x>_D<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the conditions used for generating an A logic pattern, with
           respect to the defined input pattern, and identifies the time that the selected pattern
           may be true and still generate the trigger. The search number is specified by x. The
           supported digital channel value is 1. The supported digital bit values are 0 to 15.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:DCH<x>_D<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -829,14 +824,13 @@ class SearchSearchItemTriggerASetholdLogicpatternDchItemDigitalBit(
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:DCH<x>_D<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:DCH<x>_D<x> {INCLude|DONTInclude}
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:DCH<x>_D<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``INCLude`` specifies including the specified channel SETHOLD inputs in the specified
           search.
         - ``DONTInclude`` specifies not including the specified channel SETHOLD inputs in the
@@ -847,7 +841,7 @@ class SearchSearchItemTriggerASetholdLogicpatternDchItemDigitalBit(
 class SearchSearchItemTriggerASetholdLogicpatternDchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:DCH<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:DCH<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -872,14 +866,14 @@ class SearchSearchItemTriggerASetholdLogicpatternDchItem(ValidatedDynamicNumberC
     def d(self) -> Dict[int, SearchSearchItemTriggerASetholdLogicpatternDchItemDigitalBit]:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:DCH<x>_D<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the conditions used for generating an A logic pattern,
               with respect to the defined input pattern, and identifies the time that the selected
               pattern may be true and still generate the trigger. The search number is specified by
               x. The supported digital channel value is 1. The supported digital bit values are 0 to
               15.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:DCH<x>_D<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -888,14 +882,13 @@ class SearchSearchItemTriggerASetholdLogicpatternDchItem(ValidatedDynamicNumberC
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:DCH<x>_D<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:DCH<x>_D<x> {INCLude|DONTInclude}
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:DCH<x>_D<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``INCLude`` specifies including the specified channel SETHOLD inputs in the specified
               search.
             - ``DONTInclude`` specifies not including the specified channel SETHOLD inputs in the
@@ -909,12 +902,12 @@ class SearchSearchItemTriggerASetholdLogicpatternChannel(
 ):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the conditions used for generating an A logic pattern, with
           respect to the defined input pattern, and identifies the time that the selected pattern
           may be true and still generate the trigger. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -923,14 +916,13 @@ class SearchSearchItemTriggerASetholdLogicpatternChannel(
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:CH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:CH<x> {INCLude|DONTInclude}
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:CH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``INCLude`` specifies including the specified channel SETHOLD inputs in the specified
           search.
         - ``DONTInclude`` specifies not including the specified channel SETHOLD inputs in the
@@ -941,7 +933,7 @@ class SearchSearchItemTriggerASetholdLogicpatternChannel(
 class SearchSearchItemTriggerASetholdLogicpattern(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -990,13 +982,13 @@ class SearchSearchItemTriggerASetholdLogicpattern(SCPICmdRead):
     def ch(self) -> Dict[int, SearchSearchItemTriggerASetholdLogicpatternChannel]:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the conditions used for generating an A logic pattern,
               with respect to the defined input pattern, and identifies the time that the selected
               pattern may be true and still generate the trigger. The search number is specified by
               x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1005,14 +997,13 @@ class SearchSearchItemTriggerASetholdLogicpattern(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:CH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:CH<x> {INCLude|DONTInclude}
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:CH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``INCLude`` specifies including the specified channel SETHOLD inputs in the specified
               search.
             - ``DONTInclude`` specifies not including the specified channel SETHOLD inputs in the
@@ -1024,7 +1015,7 @@ class SearchSearchItemTriggerASetholdLogicpattern(SCPICmdRead):
     def dch(self) -> Dict[int, SearchSearchItemTriggerASetholdLogicpatternDchItem]:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:DCH<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:DCH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1040,13 +1031,13 @@ class SearchSearchItemTriggerASetholdLogicpattern(SCPICmdRead):
     def math(self) -> Dict[int, SearchSearchItemTriggerASetholdLogicpatternMathItem]:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:MATH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the conditions used for generating an A logic pattern,
               with respect to the defined input pattern, and identifies the time that the selected
               pattern may be true and still generate the trigger. The search number is specified by
               x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:MATH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1055,14 +1046,13 @@ class SearchSearchItemTriggerASetholdLogicpattern(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:MATH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:MATH<x> {INCLude|DONTInclude}
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:MATH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``INCLude`` specifies including the specified math SETHOLD inputs in the specified
               search.
             - ``DONTInclude`` specifies not including the specified math SETHOLD inputs in the
@@ -1074,13 +1064,13 @@ class SearchSearchItemTriggerASetholdLogicpattern(SCPICmdRead):
     def ref(self) -> Dict[int, SearchSearchItemTriggerASetholdLogicpatternRefItem]:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets and returns the conditions used for generating an A logic pattern,
               with respect to the defined input pattern,  and identifies the time that the selected
               pattern may be true and still generate the trigger. The search number is specified by
               x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:REF<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1089,14 +1079,13 @@ class SearchSearchItemTriggerASetholdLogicpattern(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:REF<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:REF<x> {INCLude|DONTInclude}
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern:REF<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``INCLude`` specifies including the specified reference SETHOLD inputs in the
               specified search.
             - ``DONTInclude`` specifies not including the specified reference SETHOLD inputs in the
@@ -1110,11 +1099,11 @@ class SearchSearchItemTriggerASetholdLevelRefItem(
 ):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the voltage level to use for setup & hold trigger search. The
           search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:REF<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1123,14 +1112,13 @@ class SearchSearchItemTriggerASetholdLevelRefItem(
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:REF<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:REF<x> <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:REF<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the voltage level to use for setup & hold trigger search.
     """
 
@@ -1140,11 +1128,11 @@ class SearchSearchItemTriggerASetholdLevelMathItem(
 ):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:MATH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the voltage level to use for setup & hold trigger search. The
           search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:MATH<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1153,14 +1141,13 @@ class SearchSearchItemTriggerASetholdLevelMathItem(
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:MATH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:MATH<x> <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:MATH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` isi the voltage level to use for setup & hold trigger search.
     """
 
@@ -1168,11 +1155,11 @@ class SearchSearchItemTriggerASetholdLevelMathItem(
 class SearchSearchItemTriggerASetholdLevelChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the voltage level to use for setup & hold trigger search. The
           search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1181,14 +1168,13 @@ class SearchSearchItemTriggerASetholdLevelChannel(ValidatedChannel, SCPICmdWrite
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:CH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:CH<x> <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:CH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` the voltage level to use for setup & hold trigger search.
     """
 
@@ -1196,7 +1182,7 @@ class SearchSearchItemTriggerASetholdLevelChannel(ValidatedChannel, SCPICmdWrite
 class SearchSearchItemTriggerASetholdLevel(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1237,11 +1223,11 @@ class SearchSearchItemTriggerASetholdLevel(SCPICmdRead):
     def ch(self) -> Dict[int, SearchSearchItemTriggerASetholdLevelChannel]:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the voltage level to use for setup & hold trigger search.
               The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1250,14 +1236,13 @@ class SearchSearchItemTriggerASetholdLevel(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:CH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:CH<x> <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:CH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` the voltage level to use for setup & hold trigger search.
         """
         return self._ch
@@ -1266,11 +1251,11 @@ class SearchSearchItemTriggerASetholdLevel(SCPICmdRead):
     def math(self) -> Dict[int, SearchSearchItemTriggerASetholdLevelMathItem]:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:MATH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the voltage level to use for setup & hold trigger search.
               The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:MATH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1279,14 +1264,13 @@ class SearchSearchItemTriggerASetholdLevel(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:MATH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:MATH<x> <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:MATH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` isi the voltage level to use for setup & hold trigger search.
         """
         return self._math
@@ -1295,11 +1279,11 @@ class SearchSearchItemTriggerASetholdLevel(SCPICmdRead):
     def ref(self) -> Dict[int, SearchSearchItemTriggerASetholdLevelRefItem]:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the voltage level to use for setup & hold trigger search.
               The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:REF<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1308,14 +1292,13 @@ class SearchSearchItemTriggerASetholdLevel(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:REF<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:REF<x> <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel:REF<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the voltage level to use for setup & hold trigger search.
         """
         return self._ref
@@ -1324,11 +1307,11 @@ class SearchSearchItemTriggerASetholdLevel(SCPICmdRead):
 class SearchSearchItemTriggerASetholdHoldtime(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:HOLDTime`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the hold time setting for a setup/hold trigger search to
           determine where to place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:HOLDTime?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1337,14 +1320,13 @@ class SearchSearchItemTriggerASetholdHoldtime(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:HOLDTime value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:HOLDTime <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:HOLDTime?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the hold time setting in seconds. Positive values for hold time occur
           after the clock edge. Negative values occur before the clock edge.
     """
@@ -1353,11 +1335,11 @@ class SearchSearchItemTriggerASetholdHoldtime(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerASetholdClockThreshold(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:THReshold`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the clock threshold setting for a setup/hold trigger search
           to determine where to place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:THReshold?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1366,14 +1348,13 @@ class SearchSearchItemTriggerASetholdClockThreshold(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:THReshold value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:THReshold <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:THReshold?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` the clock threshold setting for a setup/hold trigger search.
     """
 
@@ -1381,11 +1362,11 @@ class SearchSearchItemTriggerASetholdClockThreshold(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerASetholdClockSource(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the clock source setting for a setup/hold trigger search to
           determine where to place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1394,14 +1375,13 @@ class SearchSearchItemTriggerASetholdClockSource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce {CH<x>| DCH<x>_D<x>| MATH<x>| REF<x>| REF<x>_D<x>}
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies an input channel as the edge source, where <x> = 1, 2, 3, 4, 5, 6, 7,
           or 8, depending on the number of channels in your instrument.
         - ``DCH<x>_D<x>`` specifies a digital waveform as the setup and hold clock source waveform
@@ -1417,11 +1397,11 @@ class SearchSearchItemTriggerASetholdClockSource(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerASetholdClockEdge(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:EDGE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the clock slope setting for a setup/hold trigger search to
           determine where to place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:EDGE?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1430,14 +1410,13 @@ class SearchSearchItemTriggerASetholdClockEdge(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:EDGE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:EDGE {FALL|RISe}
         - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:EDGE?
+        ```
 
-    **Info:**
+    Info:
         - ``FALL`` specifies the polarity as the clock falling edge.
         - ``RISe`` specifies the polarity as the clock rising edge.
     """
@@ -1446,7 +1425,7 @@ class SearchSearchItemTriggerASetholdClockEdge(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerASetholdClock(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1473,11 +1452,11 @@ class SearchSearchItemTriggerASetholdClock(SCPICmdRead):
     def edge(self) -> SearchSearchItemTriggerASetholdClockEdge:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:EDGE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the clock slope setting for a setup/hold trigger search
               to determine where to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:EDGE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1486,14 +1465,13 @@ class SearchSearchItemTriggerASetholdClock(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:EDGE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:EDGE {FALL|RISe}
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:EDGE?
+            ```
 
-        **Info:**
+        Info:
             - ``FALL`` specifies the polarity as the clock falling edge.
             - ``RISe`` specifies the polarity as the clock rising edge.
         """
@@ -1503,11 +1481,11 @@ class SearchSearchItemTriggerASetholdClock(SCPICmdRead):
     def source(self) -> SearchSearchItemTriggerASetholdClockSource:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the clock source setting for a setup/hold trigger search
               to determine where to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1516,14 +1494,13 @@ class SearchSearchItemTriggerASetholdClock(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce {CH<x>| DCH<x>_D<x>| MATH<x>| REF<x>| REF<x>_D<x>}
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies an input channel as the edge source, where <x> = 1, 2, 3, 4, 5, 6,
               7, or 8, depending on the number of channels in your instrument.
             - ``DCH<x>_D<x>`` specifies a digital waveform as the setup and hold clock source
@@ -1540,11 +1517,11 @@ class SearchSearchItemTriggerASetholdClock(SCPICmdRead):
     def threshold(self) -> SearchSearchItemTriggerASetholdClockThreshold:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:THReshold`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the clock threshold setting for a setup/hold trigger
               search to determine where to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:THReshold?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1553,14 +1530,13 @@ class SearchSearchItemTriggerASetholdClock(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:THReshold value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:THReshold <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk:THReshold?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` the clock threshold setting for a setup/hold trigger search.
         """
         return self._threshold
@@ -1569,7 +1545,7 @@ class SearchSearchItemTriggerASetholdClock(SCPICmdRead):
 class SearchSearchItemTriggerASethold(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:SETHold`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -1600,7 +1576,7 @@ class SearchSearchItemTriggerASethold(SCPICmdRead):
     def clock(self) -> SearchSearchItemTriggerASetholdClock:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:CLOCk?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1618,11 +1594,11 @@ class SearchSearchItemTriggerASethold(SCPICmdRead):
     def holdtime(self) -> SearchSearchItemTriggerASetholdHoldtime:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:HOLDTime`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the hold time setting for a setup/hold trigger search to
               determine where to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:HOLDTime?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1631,14 +1607,13 @@ class SearchSearchItemTriggerASethold(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:HOLDTime value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:HOLDTime <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:HOLDTime?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the hold time setting in seconds. Positive values for hold time
               occur after the clock edge. Negative values occur before the clock edge.
         """
@@ -1648,7 +1623,7 @@ class SearchSearchItemTriggerASethold(SCPICmdRead):
     def level(self) -> SearchSearchItemTriggerASetholdLevel:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LEVel?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1666,7 +1641,7 @@ class SearchSearchItemTriggerASethold(SCPICmdRead):
     def logicpattern(self) -> SearchSearchItemTriggerASetholdLogicpattern:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:LOGICPattern?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1685,11 +1660,11 @@ class SearchSearchItemTriggerASethold(SCPICmdRead):
     def settime(self) -> SearchSearchItemTriggerASetholdSettime:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:SETTime`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the setup time setting for a setup/hold trigger search to
               determine where to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:SETTime?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1698,14 +1673,13 @@ class SearchSearchItemTriggerASethold(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:SETHold:SETTime value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:SETTime <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:SETHold:SETTime?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the setup time for setup and hold violation triggering.
         """
         return self._settime
@@ -1714,11 +1688,11 @@ class SearchSearchItemTriggerASethold(SCPICmdRead):
 class SearchSearchItemTriggerARuntWidth(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:WIDth`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the width setting for a runt trigger search to determine
           where to place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:WIDth?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1727,14 +1701,13 @@ class SearchSearchItemTriggerARuntWidth(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:WIDth value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:RUNT:WIDth <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:RUNT:WIDth?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the minimum width in seconds.
     """
 
@@ -1742,11 +1715,11 @@ class SearchSearchItemTriggerARuntWidth(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerARuntWhen(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:WHEn`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the condition setting for a runt trigger search to determine
           where to place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:WHEn?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1755,14 +1728,13 @@ class SearchSearchItemTriggerARuntWhen(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:WHEn value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:RUNT:WHEn {OCCURS|LESSthan|MOREthan|EQual}NOTEQual}
         - SEARCH:SEARCH<x>:TRIGger:A:RUNT:WHEn?
+        ```
 
-    **Info:**
+    Info:
         - ``LESSthan`` argument sets the instrument to search if the a runt pulse is detected with
           width less than the time set by the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:WIDth`` command.
         - ``MOREthan`` argument sets the instrument to search if the a runt pulse is detected with
@@ -1780,11 +1752,11 @@ class SearchSearchItemTriggerARuntWhen(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerARuntThresholdLow(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:LOW`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the source threshold LOW level for a runt trigger search to determine
           where to place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:LOW?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1793,14 +1765,13 @@ class SearchSearchItemTriggerARuntThresholdLow(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:LOW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:LOW <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:LOW?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the source threshold LOW level for a runt trigger search.
     """
 
@@ -1808,11 +1779,11 @@ class SearchSearchItemTriggerARuntThresholdLow(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerARuntThresholdHigh(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:HIGH`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the source threshold HIGH level for a runt trigger search to
           determine where to place a mark.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:HIGH?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1821,14 +1792,13 @@ class SearchSearchItemTriggerARuntThresholdHigh(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:HIGH value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:HIGH <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:HIGH?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the source threshold HIGH level for a runt trigger search.
     """
 
@@ -1836,7 +1806,7 @@ class SearchSearchItemTriggerARuntThresholdHigh(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerARuntThreshold(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1857,11 +1827,11 @@ class SearchSearchItemTriggerARuntThreshold(SCPICmdRead):
     def high(self) -> SearchSearchItemTriggerARuntThresholdHigh:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:HIGH`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the source threshold HIGH level for a runt trigger search
               to determine where to place a mark.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:HIGH?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1870,14 +1840,13 @@ class SearchSearchItemTriggerARuntThreshold(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:HIGH value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:HIGH <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:HIGH?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the source threshold HIGH level for a runt trigger search.
         """
         return self._high
@@ -1886,11 +1855,11 @@ class SearchSearchItemTriggerARuntThreshold(SCPICmdRead):
     def low(self) -> SearchSearchItemTriggerARuntThresholdLow:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:LOW`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the source threshold LOW level for a runt trigger search to determine
               where to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:LOW?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1899,14 +1868,13 @@ class SearchSearchItemTriggerARuntThreshold(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:LOW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:LOW <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold:LOW?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the source threshold LOW level for a runt trigger search.
         """
         return self._low
@@ -1915,21 +1883,20 @@ class SearchSearchItemTriggerARuntThreshold(SCPICmdRead):
 class SearchSearchItemTriggerARuntSource(SCPICmdWrite):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets and queries the source for the Runt search input. The search number is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:RUNT:SOUrce {CH<x>|REF<x>}
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies an analog channel as the search source, where the channel number is
           specified by x.
         - ``REF<x>`` specifies the reference waveform as the search source, where the reference
@@ -1940,11 +1907,11 @@ class SearchSearchItemTriggerARuntSource(SCPICmdWrite):
 class SearchSearchItemTriggerARuntPolarity(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:POLarity`` command.
 
-    **Description:**
+    Description:
         - This command specifies the polarity for the runt search. The search number is specified by
           x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:POLarity?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1953,14 +1920,13 @@ class SearchSearchItemTriggerARuntPolarity(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:POLarity value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:RUNT:POLarity {POSitive|NEGative|EITher}
         - SEARCH:SEARCH<x>:TRIGger:A:RUNT:POLarity?
+        ```
 
-    **Info:**
+    Info:
         - ``POSitive`` specifies using positive polarity for the runt search.
         - ``NEGative`` specifies using negative polarity for the runt search.
         - ``EITher`` specifies using either positive or negative polarity for the runt search.
@@ -1970,11 +1936,11 @@ class SearchSearchItemTriggerARuntPolarity(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerARuntLogicqualification(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:LOGICQUALification`` command.
 
-    **Description:**
+    Description:
         - This command specifies whether or not to use logic qualification for a runt search. The
           search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:LOGICQUALification?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1983,14 +1949,13 @@ class SearchSearchItemTriggerARuntLogicqualification(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:LOGICQUALification value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:RUNT:LOGICQUALification {ON|OFF}
         - SEARCH:SEARCH<x>:TRIGger:A:RUNT:LOGICQUALification?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` specifies to use logic qualification for a runt search.
         - ``OFF`` specifies not to use logic qualification for a runt search.
     """
@@ -1999,7 +1964,7 @@ class SearchSearchItemTriggerARuntLogicqualification(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerARunt(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:RUNT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -2033,11 +1998,11 @@ class SearchSearchItemTriggerARunt(SCPICmdRead):
     def logicqualification(self) -> SearchSearchItemTriggerARuntLogicqualification:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:LOGICQUALification`` command.
 
-        **Description:**
+        Description:
             - This command specifies whether or not to use logic qualification for a runt search.
               The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:LOGICQUALification?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2046,14 +2011,13 @@ class SearchSearchItemTriggerARunt(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:LOGICQUALification value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:RUNT:LOGICQUALification {ON|OFF}
             - SEARCH:SEARCH<x>:TRIGger:A:RUNT:LOGICQUALification?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` specifies to use logic qualification for a runt search.
             - ``OFF`` specifies not to use logic qualification for a runt search.
         """
@@ -2063,11 +2027,11 @@ class SearchSearchItemTriggerARunt(SCPICmdRead):
     def polarity(self) -> SearchSearchItemTriggerARuntPolarity:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:POLarity`` command.
 
-        **Description:**
+        Description:
             - This command specifies the polarity for the runt search. The search number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:POLarity?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2076,14 +2040,13 @@ class SearchSearchItemTriggerARunt(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:POLarity value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:RUNT:POLarity {POSitive|NEGative|EITher}
             - SEARCH:SEARCH<x>:TRIGger:A:RUNT:POLarity?
+            ```
 
-        **Info:**
+        Info:
             - ``POSitive`` specifies using positive polarity for the runt search.
             - ``NEGative`` specifies using negative polarity for the runt search.
             - ``EITher`` specifies using either positive or negative polarity for the runt search.
@@ -2094,21 +2057,20 @@ class SearchSearchItemTriggerARunt(SCPICmdRead):
     def source(self) -> SearchSearchItemTriggerARuntSource:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets and queries the source for the Runt search input. The search number
               is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:RUNT:SOUrce {CH<x>|REF<x>}
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies an analog channel as the search source, where the channel number
               is specified by x.
             - ``REF<x>`` specifies the reference waveform as the search source, where the reference
@@ -2120,7 +2082,7 @@ class SearchSearchItemTriggerARunt(SCPICmdRead):
     def threshold(self) -> SearchSearchItemTriggerARuntThreshold:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:THReshold?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2137,11 +2099,11 @@ class SearchSearchItemTriggerARunt(SCPICmdRead):
     def when(self) -> SearchSearchItemTriggerARuntWhen:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:WHEn`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the condition setting for a runt trigger search to
               determine where to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:WHEn?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2150,14 +2112,13 @@ class SearchSearchItemTriggerARunt(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:WHEn value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:RUNT:WHEn {OCCURS|LESSthan|MOREthan|EQual}NOTEQual}
             - SEARCH:SEARCH<x>:TRIGger:A:RUNT:WHEn?
+            ```
 
-        **Info:**
+        Info:
             - ``LESSthan`` argument sets the instrument to search if the a runt pulse is detected
               with width less than the time set by the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:WIDth``
               command.
@@ -2178,11 +2139,11 @@ class SearchSearchItemTriggerARunt(SCPICmdRead):
     def width(self) -> SearchSearchItemTriggerARuntWidth:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:WIDth`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the width setting for a runt trigger search to determine
               where to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:WIDth?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2191,14 +2152,13 @@ class SearchSearchItemTriggerARunt(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:RUNT:WIDth value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:RUNT:WIDth <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:RUNT:WIDth?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the minimum width in seconds.
         """
         return self._width
@@ -2207,13 +2167,13 @@ class SearchSearchItemTriggerARunt(SCPICmdRead):
 class SearchSearchItemTriggerAPulsewidthWhen(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:WHEn`` command.
 
-    **Description:**
+    Description:
         - This command specifies to search for a pulse with a width (duration) that is less than,
           greater than, equal to, or unequal to a specified value (set using
           ``SEARch:A:PULSEWidth:WIDth`` ), OR whose ``SEARch:A:PULSEWidth:LOWLimit`` and
           ``SEARch:A:PULSEWidth:HIGHLimit`` ). The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:WHEn?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2222,14 +2182,13 @@ class SearchSearchItemTriggerAPulsewidthWhen(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:WHEn value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:WHEn {LESSthan|MOREthan| EQual|UNEQual|WIThin|OUTside}
         - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:WHEn?
+        ```
 
-    **Info:**
+    Info:
         - ``LESSthan`` causes a search when a pulse is detected with a width less than the time set
           by the ``SEARch:A:PULSEWidth:WIDth`` command.
         - ``MOREthan`` causes a search when a pulse is detected with a width greater than the time
@@ -2249,11 +2208,11 @@ class SearchSearchItemTriggerAPulsewidthWhen(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerAPulsewidthThreshold(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:THReshold`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the source threshold level for a pulse width trigger search to determine
           where to place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:THReshold?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2262,14 +2221,13 @@ class SearchSearchItemTriggerAPulsewidthThreshold(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:THReshold value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:THReshold <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:THReshold?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the source threshold level for a pulse width trigger search.
     """
 
@@ -2277,11 +2235,11 @@ class SearchSearchItemTriggerAPulsewidthThreshold(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerAPulsewidthSource(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets and queries the source for the pulse width search input. The search
           number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2290,14 +2248,13 @@ class SearchSearchItemTriggerAPulsewidthSource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce {CH<x>| DCH<x>_D<x>| MATH<x>| REF<x>| REF<x>_D<x>}
         - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies an analog channel to use as the source.
         - ``DCH<x>_D<x>`` specifies a digital channel to use as the source. The supported digital
           channel value is 1. The supported digital bit values are 0 to 15.
@@ -2310,11 +2267,11 @@ class SearchSearchItemTriggerAPulsewidthSource(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerAPulsewidthPolarity(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:POLarity`` command.
 
-    **Description:**
+    Description:
         - This command specifies the polarity for a pulse width search. The search number is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:POLarity?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2323,14 +2280,13 @@ class SearchSearchItemTriggerAPulsewidthPolarity(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:POLarity value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:POLarity {POSitive|NEGative}
         - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:POLarity?
+        ```
 
-    **Info:**
+    Info:
         - ``POSitive`` specifies positive polarity for a pulse width search.
         - ``NEGative`` specifies negative polarity for a pulse width search.
     """
@@ -2339,12 +2295,12 @@ class SearchSearchItemTriggerAPulsewidthPolarity(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerAPulsewidthLowlimit(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOWLimit`` command.
 
-    **Description:**
+    Description:
         - This command specifies the lower limit to use, in seconds, when searching for a pulse
           whose duration is inside or outside a range of two values. The search number is specified
           by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOWLimit?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2353,14 +2309,13 @@ class SearchSearchItemTriggerAPulsewidthLowlimit(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOWLimit value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOWLimit <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOWLimit?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the lower limit to use, in seconds, when searching for a pulse.
     """
 
@@ -2368,11 +2323,11 @@ class SearchSearchItemTriggerAPulsewidthLowlimit(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerAPulsewidthLogicqualification(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOGICQUALification`` command.
 
-    **Description:**
+    Description:
         - This command specifies whether or not to use logic qualification for a pulse width search.
           The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOGICQUALification?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2381,14 +2336,13 @@ class SearchSearchItemTriggerAPulsewidthLogicqualification(SCPICmdWrite, SCPICmd
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOGICQUALification value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOGICQUALification {ON|OFF}
         - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOGICQUALification?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` specifies to use logic qualification.
         - ``OFF`` specifies not to use logic qualification.
     """
@@ -2397,12 +2351,12 @@ class SearchSearchItemTriggerAPulsewidthLogicqualification(SCPICmdWrite, SCPICmd
 class SearchSearchItemTriggerAPulsewidthHighlimit(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:HIGHLimit`` command.
 
-    **Description:**
+    Description:
         - This command specifies the upper limit to use, in seconds, when searching for a pulse
           whose duration is inside or outside a range of two values. The search number is specified
           by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:HIGHLimit?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2411,14 +2365,13 @@ class SearchSearchItemTriggerAPulsewidthHighlimit(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:HIGHLimit value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:HIGHLimit <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:HIGHLimit?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the upper limit to use, in seconds, when searching for a pulse.
     """
 
@@ -2426,7 +2379,7 @@ class SearchSearchItemTriggerAPulsewidthHighlimit(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerAPulsewidth(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2470,12 +2423,12 @@ class SearchSearchItemTriggerAPulsewidth(SCPICmdRead):
     def highlimit(self) -> SearchSearchItemTriggerAPulsewidthHighlimit:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:HIGHLimit`` command.
 
-        **Description:**
+        Description:
             - This command specifies the upper limit to use, in seconds, when searching for a pulse
               whose duration is inside or outside a range of two values. The search number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:HIGHLimit?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2484,14 +2437,13 @@ class SearchSearchItemTriggerAPulsewidth(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:HIGHLimit value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:HIGHLimit <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:HIGHLimit?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the upper limit to use, in seconds, when searching for a pulse.
         """
         return self._highlimit
@@ -2500,11 +2452,11 @@ class SearchSearchItemTriggerAPulsewidth(SCPICmdRead):
     def logicqualification(self) -> SearchSearchItemTriggerAPulsewidthLogicqualification:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOGICQUALification`` command.
 
-        **Description:**
+        Description:
             - This command specifies whether or not to use logic qualification for a pulse width
               search. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOGICQUALification?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2513,14 +2465,13 @@ class SearchSearchItemTriggerAPulsewidth(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOGICQUALification value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOGICQUALification {ON|OFF}
             - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOGICQUALification?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` specifies to use logic qualification.
             - ``OFF`` specifies not to use logic qualification.
         """
@@ -2530,12 +2481,12 @@ class SearchSearchItemTriggerAPulsewidth(SCPICmdRead):
     def lowlimit(self) -> SearchSearchItemTriggerAPulsewidthLowlimit:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOWLimit`` command.
 
-        **Description:**
+        Description:
             - This command specifies the lower limit to use, in seconds, when searching for a pulse
               whose duration is inside or outside a range of two values. The search number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOWLimit?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2544,14 +2495,13 @@ class SearchSearchItemTriggerAPulsewidth(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOWLimit value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOWLimit <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:LOWLimit?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the lower limit to use, in seconds, when searching for a pulse.
         """
         return self._lowlimit
@@ -2560,11 +2510,11 @@ class SearchSearchItemTriggerAPulsewidth(SCPICmdRead):
     def polarity(self) -> SearchSearchItemTriggerAPulsewidthPolarity:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:POLarity`` command.
 
-        **Description:**
+        Description:
             - This command specifies the polarity for a pulse width search. The search number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:POLarity?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2573,14 +2523,13 @@ class SearchSearchItemTriggerAPulsewidth(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:POLarity value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:POLarity {POSitive|NEGative}
             - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:POLarity?
+            ```
 
-        **Info:**
+        Info:
             - ``POSitive`` specifies positive polarity for a pulse width search.
             - ``NEGative`` specifies negative polarity for a pulse width search.
         """
@@ -2590,11 +2539,11 @@ class SearchSearchItemTriggerAPulsewidth(SCPICmdRead):
     def source(self) -> SearchSearchItemTriggerAPulsewidthSource:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets and queries the source for the pulse width search input. The search
               number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2603,14 +2552,13 @@ class SearchSearchItemTriggerAPulsewidth(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce {CH<x>| DCH<x>_D<x>| MATH<x>| REF<x>| REF<x>_D<x>}
             - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies an analog channel to use as the source.
             - ``DCH<x>_D<x>`` specifies a digital channel to use as the source. The supported
               digital channel value is 1. The supported digital bit values are 0 to 15.
@@ -2624,11 +2572,11 @@ class SearchSearchItemTriggerAPulsewidth(SCPICmdRead):
     def threshold(self) -> SearchSearchItemTriggerAPulsewidthThreshold:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:THReshold`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the source threshold level for a pulse width trigger search to
               determine where to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:THReshold?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2637,14 +2585,13 @@ class SearchSearchItemTriggerAPulsewidth(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:THReshold value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:THReshold <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:THReshold?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the source threshold level for a pulse width trigger search.
         """
         return self._threshold
@@ -2653,13 +2600,13 @@ class SearchSearchItemTriggerAPulsewidth(SCPICmdRead):
     def when(self) -> SearchSearchItemTriggerAPulsewidthWhen:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:WHEn`` command.
 
-        **Description:**
+        Description:
             - This command specifies to search for a pulse with a width (duration) that is less
               than, greater than, equal to, or unequal to a specified value (set using
               ``SEARch:A:PULSEWidth:WIDth`` ), OR whose ``SEARch:A:PULSEWidth:LOWLimit`` and
               ``SEARch:A:PULSEWidth:HIGHLimit`` ). The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:WHEn?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2668,14 +2615,13 @@ class SearchSearchItemTriggerAPulsewidth(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:WHEn value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:WHEn {LESSthan|MOREthan| EQual|UNEQual|WIThin|OUTside}
             - SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth:WHEn?
+            ```
 
-        **Info:**
+        Info:
             - ``LESSthan`` causes a search when a pulse is detected with a width less than the time
               set by the ``SEARch:A:PULSEWidth:WIDth`` command.
             - ``MOREthan`` causes a search when a pulse is detected with a width greater than the
@@ -2696,11 +2642,11 @@ class SearchSearchItemTriggerAPulsewidth(SCPICmdRead):
 class SearchSearchItemTriggerALogicWhen(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:WHEn`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the condition for generating an A or B logic search with
           respect to the defined input pattern.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:WHEn?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2709,14 +2655,13 @@ class SearchSearchItemTriggerALogicWhen(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:WHEn value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:WHEn {TRUe|FALSe|MOREThan|LESSThan|EQual|UNEQual}
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:WHEn?
+        ```
 
-    **Info:**
+    Info:
         - ``TRUe`` searches on an input value that is true.
         - ``FALSe`` searches on an input value that is false.
         - ``MOREthan`` searches on an input value that is greater than a set value.
@@ -2729,11 +2674,11 @@ class SearchSearchItemTriggerALogicWhen(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerALogicUseclockedge(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:USEClockedge`` command.
 
-    **Description:**
+    Description:
         - This command specifies whether or not Logic search uses a clock source. The search number
           is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:USEClockedge?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2742,14 +2687,13 @@ class SearchSearchItemTriggerALogicUseclockedge(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:USEClockedge value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:USEClockedge {OFF|ON|0|1}
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:USEClockedge?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` specifies not to use the clock source.
         - ``ON`` specifies to use the clock source.
         - ``0`` specifies not to use the clock source.
@@ -2760,11 +2704,11 @@ class SearchSearchItemTriggerALogicUseclockedge(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerALogicPolarity(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:POLarity`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the polarity for the clock channel when Use Clock Edge is set
           to Yes for Logic search type. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:POLarity?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2773,14 +2717,13 @@ class SearchSearchItemTriggerALogicPolarity(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:POLarity value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:POLarity {POSitive|NEGative|EITher}
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:POLarity?
+        ```
 
-    **Info:**
+    Info:
         - ``POSitive`` specifies using the positive clock edge.
         - ``NEGative`` specifies using negative clock edge.
         - ``EITher`` specifies using either the positive or negative clock edge.
@@ -2792,12 +2735,12 @@ class SearchSearchItemTriggerALogicLogicpatternRefItem(
 ):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the conditions used for generating an A logic pattern, with
           respect to the defined input pattern, and identifies the time that the selected pattern
           may be true and still generate the trigger. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:REF<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2806,14 +2749,13 @@ class SearchSearchItemTriggerALogicLogicpatternRefItem(
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:REF<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:REF<x> {H|L|X}
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:REF<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``H`` specifies triggering when the pattern is high.
         - ``L`` specifies triggering when the pattern is low.
         - ``X`` specifies triggering when the pattern is high or low.
@@ -2825,12 +2767,12 @@ class SearchSearchItemTriggerALogicLogicpatternMathItem(
 ):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:MATH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the conditions used for generating an A logic pattern, with
           respect to the defined input pattern, and identifies the time that the selected pattern
           may be true and still generate the trigger. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:MATH<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2839,14 +2781,13 @@ class SearchSearchItemTriggerALogicLogicpatternMathItem(
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:MATH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:MATH<x> {H|L|X}
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:MATH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``H`` specifies triggering when the pattern is high.
         - ``L`` specifies triggering when the pattern is low.
         - ``X`` specifies triggering when the pattern is high or low.
@@ -2858,13 +2799,13 @@ class SearchSearchItemTriggerALogicLogicpatternDchItemDigitalBit(
 ):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:DCH<x>_D<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the conditions used for generating an A logic pattern, with
           respect to the defined input pattern, and identifies the time that the selected pattern
           may be true and still generate the trigger. The search number is specified by x. The
           supported digital channel value is 1. The supported digital bit values are 0 to 15.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:DCH<x>_D<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2873,14 +2814,13 @@ class SearchSearchItemTriggerALogicLogicpatternDchItemDigitalBit(
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:DCH<x>_D<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:DCH<x>_D<x> {H|L|X}
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:DCH<x>_D<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``H`` specifies triggering when the pattern is high.
         - ``L`` specifies triggering when the pattern is low.
         - ``X`` specifies triggering when the pattern is high or low.
@@ -2890,7 +2830,7 @@ class SearchSearchItemTriggerALogicLogicpatternDchItemDigitalBit(
 class SearchSearchItemTriggerALogicLogicpatternDchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:DCH<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:DCH<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2915,14 +2855,14 @@ class SearchSearchItemTriggerALogicLogicpatternDchItem(ValidatedDynamicNumberCmd
     def d(self) -> Dict[int, SearchSearchItemTriggerALogicLogicpatternDchItemDigitalBit]:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:DCH<x>_D<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the conditions used for generating an A logic pattern,
               with respect to the defined input pattern, and identifies the time that the selected
               pattern may be true and still generate the trigger. The search number is specified by
               x. The supported digital channel value is 1. The supported digital bit values are 0 to
               15.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:DCH<x>_D<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2931,14 +2871,13 @@ class SearchSearchItemTriggerALogicLogicpatternDchItem(ValidatedDynamicNumberCmd
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:DCH<x>_D<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:DCH<x>_D<x> {H|L|X}
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:DCH<x>_D<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``H`` specifies triggering when the pattern is high.
             - ``L`` specifies triggering when the pattern is low.
             - ``X`` specifies triggering when the pattern is high or low.
@@ -2949,12 +2888,12 @@ class SearchSearchItemTriggerALogicLogicpatternDchItem(ValidatedDynamicNumberCmd
 class SearchSearchItemTriggerALogicLogicpatternChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the conditions used for generating an A logic pattern, with
           respect to the defined input pattern, and identifies the time that the selected pattern
           may be true and still generate the trigger. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2963,14 +2902,13 @@ class SearchSearchItemTriggerALogicLogicpatternChannel(ValidatedChannel, SCPICmd
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:CH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:CH<x> {H|L|X}
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:CH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``H`` specifies triggering when the pattern is high.
         - ``L`` specifies triggering when the pattern is low.
         - ``X`` specifies triggering when the pattern is high or low.
@@ -2980,7 +2918,7 @@ class SearchSearchItemTriggerALogicLogicpatternChannel(ValidatedChannel, SCPICmd
 class SearchSearchItemTriggerALogicLogicpattern(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3029,13 +2967,13 @@ class SearchSearchItemTriggerALogicLogicpattern(SCPICmdRead):
     def ch(self) -> Dict[int, SearchSearchItemTriggerALogicLogicpatternChannel]:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the conditions used for generating an A logic pattern,
               with respect to the defined input pattern, and identifies the time that the selected
               pattern may be true and still generate the trigger. The search number is specified by
               x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3044,14 +2982,13 @@ class SearchSearchItemTriggerALogicLogicpattern(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:CH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:CH<x> {H|L|X}
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:CH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``H`` specifies triggering when the pattern is high.
             - ``L`` specifies triggering when the pattern is low.
             - ``X`` specifies triggering when the pattern is high or low.
@@ -3062,7 +2999,7 @@ class SearchSearchItemTriggerALogicLogicpattern(SCPICmdRead):
     def dch(self) -> Dict[int, SearchSearchItemTriggerALogicLogicpatternDchItem]:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:DCH<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:DCH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3078,13 +3015,13 @@ class SearchSearchItemTriggerALogicLogicpattern(SCPICmdRead):
     def math(self) -> Dict[int, SearchSearchItemTriggerALogicLogicpatternMathItem]:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:MATH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the conditions used for generating an A logic pattern,
               with respect to the defined input pattern, and identifies the time that the selected
               pattern may be true and still generate the trigger. The search number is specified by
               x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:MATH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3093,14 +3030,13 @@ class SearchSearchItemTriggerALogicLogicpattern(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:MATH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:MATH<x> {H|L|X}
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:MATH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``H`` specifies triggering when the pattern is high.
             - ``L`` specifies triggering when the pattern is low.
             - ``X`` specifies triggering when the pattern is high or low.
@@ -3111,13 +3047,13 @@ class SearchSearchItemTriggerALogicLogicpattern(SCPICmdRead):
     def ref(self) -> Dict[int, SearchSearchItemTriggerALogicLogicpatternRefItem]:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the conditions used for generating an A logic pattern,
               with respect to the defined input pattern, and identifies the time that the selected
               pattern may be true and still generate the trigger. The search number is specified by
               x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:REF<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3126,14 +3062,13 @@ class SearchSearchItemTriggerALogicLogicpattern(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:REF<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:REF<x> {H|L|X}
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern:REF<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``H`` specifies triggering when the pattern is high.
             - ``L`` specifies triggering when the pattern is low.
             - ``X`` specifies triggering when the pattern is high or low.
@@ -3146,11 +3081,11 @@ class SearchSearchItemTriggerALogicLevelRefItem(
 ):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets the voltage level to use for logic trigger search. The search number is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:REF<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3159,14 +3094,13 @@ class SearchSearchItemTriggerALogicLevelRefItem(
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:REF<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:REF<x> <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:REF<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the voltage level to use for logic trigger search.
     """
 
@@ -3176,11 +3110,11 @@ class SearchSearchItemTriggerALogicLevelMathItem(
 ):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:MATH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets the voltage level to use for logic trigger search. The search number is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:MATH<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3189,14 +3123,13 @@ class SearchSearchItemTriggerALogicLevelMathItem(
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:MATH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:MATH<x> <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:MATH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the voltage level to use for logic trigger search.
     """
 
@@ -3204,11 +3137,11 @@ class SearchSearchItemTriggerALogicLevelMathItem(
 class SearchSearchItemTriggerALogicLevelChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the voltage level to use for logic trigger search. The search
           number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3217,14 +3150,13 @@ class SearchSearchItemTriggerALogicLevelChannel(ValidatedChannel, SCPICmdWrite, 
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:CH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:CH<x> <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:CH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the voltage level to use for logic trigger search.
     """
 
@@ -3232,7 +3164,7 @@ class SearchSearchItemTriggerALogicLevelChannel(ValidatedChannel, SCPICmdWrite, 
 class SearchSearchItemTriggerALogicLevel(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3273,11 +3205,11 @@ class SearchSearchItemTriggerALogicLevel(SCPICmdRead):
     def ch(self) -> Dict[int, SearchSearchItemTriggerALogicLevelChannel]:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the voltage level to use for logic trigger search. The
               search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3286,14 +3218,13 @@ class SearchSearchItemTriggerALogicLevel(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:CH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:CH<x> <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:CH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the voltage level to use for logic trigger search.
         """
         return self._ch
@@ -3302,11 +3233,11 @@ class SearchSearchItemTriggerALogicLevel(SCPICmdRead):
     def math(self) -> Dict[int, SearchSearchItemTriggerALogicLevelMathItem]:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:MATH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets the voltage level to use for logic trigger search. The search number
               is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:MATH<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3315,14 +3246,13 @@ class SearchSearchItemTriggerALogicLevel(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:MATH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:MATH<x> <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:MATH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the voltage level to use for logic trigger search.
         """
         return self._math
@@ -3331,11 +3261,11 @@ class SearchSearchItemTriggerALogicLevel(SCPICmdRead):
     def ref(self) -> Dict[int, SearchSearchItemTriggerALogicLevelRefItem]:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets the voltage level to use for logic trigger search. The search number
               is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:REF<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3344,14 +3274,13 @@ class SearchSearchItemTriggerALogicLevel(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:REF<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:REF<x> <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel:REF<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the voltage level to use for logic trigger search.
         """
         return self._ref
@@ -3360,11 +3289,11 @@ class SearchSearchItemTriggerALogicLevel(SCPICmdRead):
 class SearchSearchItemTriggerALogicInputClockSource(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT:CLOCK:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command specifies or queries the channel to use as the clock source for logic
           trigger. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT:CLOCK:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3373,14 +3302,13 @@ class SearchSearchItemTriggerALogicInputClockSource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT:CLOCK:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT:CLOCK:SOUrce {CH<x>| DCH<x>_D<x>| REF<x>_D<x>}
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT:CLOCK:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies one input channel as the edge source, where the channel number is
           specified by x.
         - ``DCH<x>_D<x>`` specifies a digital waveform as the source waveform for the specified
@@ -3394,14 +3322,14 @@ class SearchSearchItemTriggerALogicInputClockSource(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerALogicInputClock(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT:CLOCK`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT:CLOCK?`` query.
         - Using the ``.verify(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT:CLOCK?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies one input channel as the edge source, where the channel number is
           specified by x.
 
@@ -3419,11 +3347,11 @@ class SearchSearchItemTriggerALogicInputClock(SCPICmdRead):
     def source(self) -> SearchSearchItemTriggerALogicInputClockSource:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT:CLOCK:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command specifies or queries the channel to use as the clock source for logic
               trigger. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT:CLOCK:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3432,14 +3360,13 @@ class SearchSearchItemTriggerALogicInputClock(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT:CLOCK:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT:CLOCK:SOUrce {CH<x>| DCH<x>_D<x>| REF<x>_D<x>}
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT:CLOCK:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies one input channel as the edge source, where the channel number is
               specified by x.
             - ``DCH<x>_D<x>`` specifies a digital waveform as the source waveform for the specified
@@ -3454,14 +3381,14 @@ class SearchSearchItemTriggerALogicInputClock(SCPICmdRead):
 class SearchSearchItemTriggerALogicInput(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies one input channel as the edge source, where the channel number is
           specified by x.
 
@@ -3477,14 +3404,14 @@ class SearchSearchItemTriggerALogicInput(SCPICmdRead):
     def clock(self) -> SearchSearchItemTriggerALogicInputClock:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT:CLOCK`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT:CLOCK?`` query.
             - Using the ``.verify(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT:CLOCK?`` query and raise an AssertionError if
               the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies one input channel as the edge source, where the channel number is
               specified by x.
 
@@ -3497,11 +3424,11 @@ class SearchSearchItemTriggerALogicInput(SCPICmdRead):
 class SearchSearchItemTriggerALogicFunction(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:FUNCtion`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the logic operator for a pattern or state trigger search to
           determine where to place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:FUNCtion?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3510,14 +3437,13 @@ class SearchSearchItemTriggerALogicFunction(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:FUNCtion value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:FUNCtion {AND|NANd|NOR|OR}
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:FUNCtion?
+        ```
 
-    **Info:**
+    Info:
         - ``AND`` places a mark if all conditions are true.
         - ``NANd`` places a mark if any of the conditions are false.
         - ``NOR`` places a mark if all conditions are false.
@@ -3528,12 +3454,12 @@ class SearchSearchItemTriggerALogicFunction(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerALogicDeltatime(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:DELTatime`` command.
 
-    **Description:**
+    Description:
         - This command specifies the Logic search delta time value. The time value is used as part
           of the Logic search condition to determine if the duration of a logic pattern meets the
           specified time constraints. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:DELTatime?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3542,14 +3468,13 @@ class SearchSearchItemTriggerALogicDeltatime(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:DELTatime value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:DELTatime <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:DELTatime?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is delta time value.
     """
 
@@ -3557,11 +3482,11 @@ class SearchSearchItemTriggerALogicDeltatime(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerALogicClockThreshold(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:CLOCk:THReshold`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the logic clock threshold for a logic trigger search to
           determine where to place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:CLOCk:THReshold?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3570,14 +3495,13 @@ class SearchSearchItemTriggerALogicClockThreshold(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:CLOCk:THReshold value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:CLOCk:THReshold <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:CLOCk:THReshold?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the logic clock threshold.
     """
 
@@ -3585,7 +3509,7 @@ class SearchSearchItemTriggerALogicClockThreshold(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerALogicClock(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:CLOCk`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:CLOCk?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3606,11 +3530,11 @@ class SearchSearchItemTriggerALogicClock(SCPICmdRead):
     def threshold(self) -> SearchSearchItemTriggerALogicClockThreshold:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:CLOCk:THReshold`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the logic clock threshold for a logic trigger search to
               determine where to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:CLOCk:THReshold?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3619,14 +3543,13 @@ class SearchSearchItemTriggerALogicClock(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:CLOCk:THReshold value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:CLOCk:THReshold <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:CLOCk:THReshold?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the logic clock threshold.
         """
         return self._threshold
@@ -3636,7 +3559,7 @@ class SearchSearchItemTriggerALogicClock(SCPICmdRead):
 class SearchSearchItemTriggerALogic(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -3679,7 +3602,7 @@ class SearchSearchItemTriggerALogic(SCPICmdRead):
     def clock(self) -> SearchSearchItemTriggerALogicClock:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:CLOCk`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:CLOCk?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3695,12 +3618,12 @@ class SearchSearchItemTriggerALogic(SCPICmdRead):
     def deltatime(self) -> SearchSearchItemTriggerALogicDeltatime:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:DELTatime`` command.
 
-        **Description:**
+        Description:
             - This command specifies the Logic search delta time value. The time value is used as
               part of the Logic search condition to determine if the duration of a logic pattern
               meets the specified time constraints. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:DELTatime?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3709,14 +3632,13 @@ class SearchSearchItemTriggerALogic(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:DELTatime value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:DELTatime <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:DELTatime?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is delta time value.
         """
         return self._deltatime
@@ -3725,11 +3647,11 @@ class SearchSearchItemTriggerALogic(SCPICmdRead):
     def function(self) -> SearchSearchItemTriggerALogicFunction:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:FUNCtion`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the logic operator for a pattern or state trigger search
               to determine where to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:FUNCtion?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3738,14 +3660,13 @@ class SearchSearchItemTriggerALogic(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:FUNCtion value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:FUNCtion {AND|NANd|NOR|OR}
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:FUNCtion?
+            ```
 
-        **Info:**
+        Info:
             - ``AND`` places a mark if all conditions are true.
             - ``NANd`` places a mark if any of the conditions are false.
             - ``NOR`` places a mark if all conditions are false.
@@ -3757,14 +3678,14 @@ class SearchSearchItemTriggerALogic(SCPICmdRead):
     def input(self) -> SearchSearchItemTriggerALogicInput:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT?`` query.
             - Using the ``.verify(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:INPUT?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies one input channel as the edge source, where the channel number is
               specified by x.
 
@@ -3777,7 +3698,7 @@ class SearchSearchItemTriggerALogic(SCPICmdRead):
     def level(self) -> SearchSearchItemTriggerALogicLevel:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LEVel?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3795,7 +3716,7 @@ class SearchSearchItemTriggerALogic(SCPICmdRead):
     def logicpattern(self) -> SearchSearchItemTriggerALogicLogicpattern:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:LOGICPattern?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3814,11 +3735,11 @@ class SearchSearchItemTriggerALogic(SCPICmdRead):
     def polarity(self) -> SearchSearchItemTriggerALogicPolarity:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:POLarity`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the polarity for the clock channel when Use Clock Edge is
               set to Yes for Logic search type. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:POLarity?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3827,14 +3748,13 @@ class SearchSearchItemTriggerALogic(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:POLarity value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:POLarity {POSitive|NEGative|EITher}
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:POLarity?
+            ```
 
-        **Info:**
+        Info:
             - ``POSitive`` specifies using the positive clock edge.
             - ``NEGative`` specifies using negative clock edge.
             - ``EITher`` specifies using either the positive or negative clock edge.
@@ -3845,11 +3765,11 @@ class SearchSearchItemTriggerALogic(SCPICmdRead):
     def useclockedge(self) -> SearchSearchItemTriggerALogicUseclockedge:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:USEClockedge`` command.
 
-        **Description:**
+        Description:
             - This command specifies whether or not Logic search uses a clock source. The search
               number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:USEClockedge?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3858,14 +3778,13 @@ class SearchSearchItemTriggerALogic(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:USEClockedge value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:USEClockedge {OFF|ON|0|1}
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:USEClockedge?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` specifies not to use the clock source.
             - ``ON`` specifies to use the clock source.
             - ``0`` specifies not to use the clock source.
@@ -3877,11 +3796,11 @@ class SearchSearchItemTriggerALogic(SCPICmdRead):
     def when(self) -> SearchSearchItemTriggerALogicWhen:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:WHEn`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the condition for generating an A or B logic search with
               respect to the defined input pattern.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:WHEn?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3890,14 +3809,13 @@ class SearchSearchItemTriggerALogic(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc:WHEn value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:WHEn {TRUe|FALSe|MOREThan|LESSThan|EQual|UNEQual}
             - SEARCH:SEARCH<x>:TRIGger:A:LOGIc:WHEn?
+            ```
 
-        **Info:**
+        Info:
             - ``TRUe`` searches on an input value that is true.
             - ``FALSe`` searches on an input value that is false.
             - ``MOREthan`` searches on an input value that is greater than a set value.
@@ -3911,11 +3829,11 @@ class SearchSearchItemTriggerALogic(SCPICmdRead):
 class SearchSearchItemTriggerAEdgeThreshold(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:EDGE:THReshold`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the source threshold level for an edge trigger search to
           determine where to place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:EDGE:THReshold?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3924,14 +3842,13 @@ class SearchSearchItemTriggerAEdgeThreshold(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:EDGE:THReshold value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:EDGE:THReshold <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:EDGE:THReshold?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the source threshold level for an edge trigger search.
     """
 
@@ -3939,11 +3856,11 @@ class SearchSearchItemTriggerAEdgeThreshold(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerAEdgeSource(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:EDGE:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the source waveform for an edge trigger search to determine
           where to place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:EDGE:SOUrce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3952,14 +3869,13 @@ class SearchSearchItemTriggerAEdgeSource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:EDGE:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:EDGE:SOUrce {CH<x>| DCH<x>_D<x>| MATH<x>| REF<x>| REF<x>_D<x>}
         - SEARCH:SEARCH<x>:TRIGger:A:EDGE:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies one input channel as the edge source, where the channel number is
           specified by x.
         - ``DCH<x>_D<x>`` specifies a digital waveform as the source waveform for the specified
@@ -3977,11 +3893,11 @@ class SearchSearchItemTriggerAEdgeSource(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerAEdgeSlope(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:EDGE:SLOpe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the slope for an edge trigger search to determine where to
           place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:EDGE:SLOpe?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3990,14 +3906,13 @@ class SearchSearchItemTriggerAEdgeSlope(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:EDGE:SLOpe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:EDGE:SLOpe {RISe|FALL|EITher}
         - SEARCH:SEARCH<x>:TRIGger:A:EDGE:SLOpe?
+        ```
 
-    **Info:**
+    Info:
         - ``RISe`` specifies a rising edge.
         - ``FALL`` specifies a falling edge.
         - ``EITher`` specifies either rising or falling edge.
@@ -4007,7 +3922,7 @@ class SearchSearchItemTriggerAEdgeSlope(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerAEdge(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:EDGE`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:EDGE?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:EDGE?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -4030,11 +3945,11 @@ class SearchSearchItemTriggerAEdge(SCPICmdRead):
     def slope(self) -> SearchSearchItemTriggerAEdgeSlope:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:EDGE:SLOpe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the slope for an edge trigger search to determine where
               to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:EDGE:SLOpe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4043,14 +3958,13 @@ class SearchSearchItemTriggerAEdge(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:EDGE:SLOpe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:EDGE:SLOpe {RISe|FALL|EITher}
             - SEARCH:SEARCH<x>:TRIGger:A:EDGE:SLOpe?
+            ```
 
-        **Info:**
+        Info:
             - ``RISe`` specifies a rising edge.
             - ``FALL`` specifies a falling edge.
             - ``EITher`` specifies either rising or falling edge.
@@ -4061,11 +3975,11 @@ class SearchSearchItemTriggerAEdge(SCPICmdRead):
     def source(self) -> SearchSearchItemTriggerAEdgeSource:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:EDGE:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the source waveform for an edge trigger search to
               determine where to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:EDGE:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4074,14 +3988,13 @@ class SearchSearchItemTriggerAEdge(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:EDGE:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:EDGE:SOUrce {CH<x>| DCH<x>_D<x>| MATH<x>| REF<x>| REF<x>_D<x>}
             - SEARCH:SEARCH<x>:TRIGger:A:EDGE:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies one input channel as the edge source, where the channel number is
               specified by x.
             - ``DCH<x>_D<x>`` specifies a digital waveform as the source waveform for the specified
@@ -4100,11 +4013,11 @@ class SearchSearchItemTriggerAEdge(SCPICmdRead):
     def threshold(self) -> SearchSearchItemTriggerAEdgeThreshold:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:EDGE:THReshold`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the source threshold level for an edge trigger search to
               determine where to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:EDGE:THReshold?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4113,14 +4026,13 @@ class SearchSearchItemTriggerAEdge(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:EDGE:THReshold value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:EDGE:THReshold <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:EDGE:THReshold?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the source threshold level for an edge trigger search.
         """
         return self._threshold
@@ -4129,11 +4041,11 @@ class SearchSearchItemTriggerAEdge(SCPICmdRead):
 class SearchSearchItemTriggerABusSpiSourcetype(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:SOURCETYpe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries trigger Source for SPI bus. The search number is specified by
           x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:SOURCETYpe?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -4142,14 +4054,13 @@ class SearchSearchItemTriggerABusSpiSourcetype(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:SOURCETYpe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:SOURCETYpe {MISo|MOSi}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:SOURCETYpe?
+        ```
 
-    **Info:**
+    Info:
         - ``MISo`` specifies the trigger source as MISo. The default search source type is MISo.
         - ``MOSi`` specifies the trigger source as MOSi.
     """
@@ -4158,12 +4069,12 @@ class SearchSearchItemTriggerABusSpiSourcetype(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusSpiDataValue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:VALue`` command.
 
-    **Description:**
+    Description:
         - The command sets or queries the binary data string used for an SPI bus search to determine
           where to place a mark. The search number is specified by x. The search condition must be
           DATA.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -4172,14 +4083,13 @@ class SearchSearchItemTriggerABusSpiDataValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:VALue <QString>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the data value in the specified valid format. The valid characters
           are 0, 1, and X for binary format; and A-F, 0-9, and X for hexadecimal format.
     """
@@ -4190,12 +4100,12 @@ class SearchSearchItemTriggerABusSpiDataValue(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusSpiDataSize(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:SIZe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the length of the data string in bytes used for the specified
           SPI bus trigger search to determine where to place a mark. The search condition must be
           DATA. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:SIZe?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -4204,14 +4114,13 @@ class SearchSearchItemTriggerABusSpiDataSize(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:SIZe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:SIZe <NR1>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:SIZe?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the number of contiguous data bytes.
     """
 
@@ -4219,7 +4128,7 @@ class SearchSearchItemTriggerABusSpiDataSize(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusSpiData(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4240,12 +4149,12 @@ class SearchSearchItemTriggerABusSpiData(SCPICmdRead):
     def size(self) -> SearchSearchItemTriggerABusSpiDataSize:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:SIZe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the length of the data string in bytes used for the
               specified SPI bus trigger search to determine where to place a mark. The search
               condition must be DATA. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:SIZe?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4254,14 +4163,13 @@ class SearchSearchItemTriggerABusSpiData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:SIZe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:SIZe <NR1>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:SIZe?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the number of contiguous data bytes.
         """
         return self._size
@@ -4270,12 +4178,12 @@ class SearchSearchItemTriggerABusSpiData(SCPICmdRead):
     def value(self) -> SearchSearchItemTriggerABusSpiDataValue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:VALue`` command.
 
-        **Description:**
+        Description:
             - The command sets or queries the binary data string used for an SPI bus search to
               determine where to place a mark. The search number is specified by x. The search
               condition must be DATA.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4284,14 +4192,13 @@ class SearchSearchItemTriggerABusSpiData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:VALue <QString>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the data value in the specified valid format. The valid
               characters are 0, 1, and X for binary format; and A-F, 0-9, and X for hexadecimal
               format.
@@ -4302,11 +4209,11 @@ class SearchSearchItemTriggerABusSpiData(SCPICmdRead):
 class SearchSearchItemTriggerABusSpiCondition(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:CONDition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the search condition for an SPI bus search to determine where
           to place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:CONDition?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -4315,14 +4222,13 @@ class SearchSearchItemTriggerABusSpiCondition(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:CONDition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:CONDition {DATA|SS|STARTofframe}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:CONDition?
+        ```
 
-    **Info:**
+    Info:
         - ``DATA`` specifies the trigger condition as Data.
         - ``SS`` specifies the trigger condition as Slave Selection.
         - ``STARTofframe`` specifies the trigger condition as start of frame.
@@ -4332,7 +4238,7 @@ class SearchSearchItemTriggerABusSpiCondition(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusSpi(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -4357,11 +4263,11 @@ class SearchSearchItemTriggerABusSpi(SCPICmdRead):
     def condition(self) -> SearchSearchItemTriggerABusSpiCondition:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:CONDition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the search condition for an SPI bus search to determine
               where to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:CONDition?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4370,14 +4276,13 @@ class SearchSearchItemTriggerABusSpi(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:CONDition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:CONDition {DATA|SS|STARTofframe}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:CONDition?
+            ```
 
-        **Info:**
+        Info:
             - ``DATA`` specifies the trigger condition as Data.
             - ``SS`` specifies the trigger condition as Slave Selection.
             - ``STARTofframe`` specifies the trigger condition as start of frame.
@@ -4388,7 +4293,7 @@ class SearchSearchItemTriggerABusSpi(SCPICmdRead):
     def data(self) -> SearchSearchItemTriggerABusSpiData:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:DATa?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4405,11 +4310,11 @@ class SearchSearchItemTriggerABusSpi(SCPICmdRead):
     def sourcetype(self) -> SearchSearchItemTriggerABusSpiSourcetype:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:SOURCETYpe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries trigger Source for SPI bus. The search number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:SOURCETYpe?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4418,14 +4323,13 @@ class SearchSearchItemTriggerABusSpi(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:SOURCETYpe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:SOURCETYpe {MISo|MOSi}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI:SOURCETYpe?
+            ```
 
-        **Info:**
+        Info:
             - ``MISo`` specifies the trigger source as MISo. The default search source type is MISo.
             - ``MOSi`` specifies the trigger source as MOSi.
         """
@@ -4435,11 +4339,11 @@ class SearchSearchItemTriggerABusSpi(SCPICmdRead):
 class SearchSearchItemTriggerABusSource(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the bus source for the bus search to determine where to place
           a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SOUrce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4448,14 +4352,13 @@ class SearchSearchItemTriggerABusSource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SOUrce {B0|B1|B2|B3|B4|B5|B6|B7|B8|B9|B10| B11|B12|B13|B14|B15|B16}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``B<x>`` specifies the bus source as a bus number from B01 to B16. x has a minimum of 0
           and a maximum of 16.
     """  # noqa: E501
@@ -4464,11 +4367,11 @@ class SearchSearchItemTriggerABusSource(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusSentSlowIdentifierValue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:IDentifier:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary slow identifier value to be used when searching on
           a SENT bus signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:IDentifier:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -4477,14 +4380,13 @@ class SearchSearchItemTriggerABusSentSlowIdentifierValue(SCPICmdWrite, SCPICmdRe
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:IDentifier:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:IDentifier:VALue <Qstring>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:IDentifier:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the number of the search.
         - ``<Qstring>`` is the slow channel identifier binary value.
     """
@@ -4493,7 +4395,7 @@ class SearchSearchItemTriggerABusSentSlowIdentifierValue(SCPICmdWrite, SCPICmdRe
 class SearchSearchItemTriggerABusSentSlowIdentifier(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:IDentifier`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:IDentifier?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -4514,11 +4416,11 @@ class SearchSearchItemTriggerABusSentSlowIdentifier(SCPICmdRead):
     def value(self) -> SearchSearchItemTriggerABusSentSlowIdentifierValue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:IDentifier:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary slow identifier value to be used when
               searching on a SENT bus signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:IDentifier:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4527,14 +4429,13 @@ class SearchSearchItemTriggerABusSentSlowIdentifier(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:IDentifier:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:IDentifier:VALue <Qstring>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:IDentifier:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the number of the search.
             - ``<Qstring>`` is the slow channel identifier binary value.
         """
@@ -4544,11 +4445,11 @@ class SearchSearchItemTriggerABusSentSlowIdentifier(SCPICmdRead):
 class SearchSearchItemTriggerABusSentSlowDataValue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary slow channel data value to be used when searching
           on a SENT bus signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -4557,14 +4458,13 @@ class SearchSearchItemTriggerABusSentSlowDataValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:VALue <Qstring>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the number of the search.
         - ``<Qstring>`` is the slow channel data binary value.
     """
@@ -4573,11 +4473,11 @@ class SearchSearchItemTriggerABusSentSlowDataValue(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusSentSlowDataQualifier(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:QUALifier`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the qualifier to be used when searching on SENT slow packet
           bus data.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:QUALifier?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -4586,14 +4486,13 @@ class SearchSearchItemTriggerABusSentSlowDataQualifier(SCPICmdWrite, SCPICmdRead
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:QUALifier value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQualINrange|OUTrange}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:QUALifier?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the number of the search.
         - ``EQUal`` specifies the qualifier as Equal.
         - ``LESSEQual`` sets the qualifier as Less Than or Equal to.
@@ -4609,11 +4508,11 @@ class SearchSearchItemTriggerABusSentSlowDataQualifier(SCPICmdWrite, SCPICmdRead
 class SearchSearchItemTriggerABusSentSlowDataHivalue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:HIVALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the high binary Slow channel data value to use when searching
           on a SENT bus signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:HIVALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -4622,14 +4521,13 @@ class SearchSearchItemTriggerABusSentSlowDataHivalue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:HIVALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:HIVALue <QString>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:HIVALue?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the Search identifier number.
         - ``<Qstring>`` sets the binary Slow channel data value.
     """
@@ -4640,7 +4538,7 @@ class SearchSearchItemTriggerABusSentSlowDataHivalue(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusSentSlowData(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -4669,11 +4567,11 @@ class SearchSearchItemTriggerABusSentSlowData(SCPICmdRead):
     def hivalue(self) -> SearchSearchItemTriggerABusSentSlowDataHivalue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:HIVALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the high binary Slow channel data value to use when
               searching on a SENT bus signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:HIVALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4682,14 +4580,13 @@ class SearchSearchItemTriggerABusSentSlowData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:HIVALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:HIVALue <QString>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:HIVALue?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the Search identifier number.
             - ``<Qstring>`` sets the binary Slow channel data value.
         """
@@ -4699,11 +4596,11 @@ class SearchSearchItemTriggerABusSentSlowData(SCPICmdRead):
     def qualifier(self) -> SearchSearchItemTriggerABusSentSlowDataQualifier:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:QUALifier`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the qualifier to be used when searching on SENT slow
               packet bus data.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:QUALifier?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4712,14 +4609,13 @@ class SearchSearchItemTriggerABusSentSlowData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:QUALifier value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQualINrange|OUTrange}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:QUALifier?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the number of the search.
             - ``EQUal`` specifies the qualifier as Equal.
             - ``LESSEQual`` sets the qualifier as Less Than or Equal to.
@@ -4736,11 +4632,11 @@ class SearchSearchItemTriggerABusSentSlowData(SCPICmdRead):
     def value(self) -> SearchSearchItemTriggerABusSentSlowDataValue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary slow channel data value to be used when
               searching on a SENT bus signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4749,14 +4645,13 @@ class SearchSearchItemTriggerABusSentSlowData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:VALue <Qstring>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the number of the search.
             - ``<Qstring>`` is the slow channel data binary value.
         """
@@ -4766,7 +4661,7 @@ class SearchSearchItemTriggerABusSentSlowData(SCPICmdRead):
 class SearchSearchItemTriggerABusSentSlow(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4789,7 +4684,7 @@ class SearchSearchItemTriggerABusSentSlow(SCPICmdRead):
     def data(self) -> SearchSearchItemTriggerABusSentSlowData:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:DATA?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4808,7 +4703,7 @@ class SearchSearchItemTriggerABusSentSlow(SCPICmdRead):
     def identifier(self) -> SearchSearchItemTriggerABusSentSlowIdentifier:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:IDentifier`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW:IDentifier?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4824,11 +4719,11 @@ class SearchSearchItemTriggerABusSentSlow(SCPICmdRead):
 class SearchSearchItemTriggerABusSentPauseTicksValue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the minimum number of pause clock ticks to be used when
           searching on a SENT bus signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -4837,14 +4732,13 @@ class SearchSearchItemTriggerABusSentPauseTicksValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:VALue <NR1>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the number of the search.
         - ``<NR1>`` is the minimum number of pause clock ticks to be used when searching.
     """
@@ -4853,11 +4747,11 @@ class SearchSearchItemTriggerABusSentPauseTicksValue(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusSentPauseTicksHivalue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:HIVALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the maximum number of pause clock ticks to be used when
           searching on a SENT bus signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:HIVALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -4866,14 +4760,13 @@ class SearchSearchItemTriggerABusSentPauseTicksHivalue(SCPICmdWrite, SCPICmdRead
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:HIVALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:HIVALue <NR1>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:HIVALue?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the number of the search.
         - ``<NR1>`` is the maximum number of pause clock ticks to be used when searching.
     """
@@ -4882,7 +4775,7 @@ class SearchSearchItemTriggerABusSentPauseTicksHivalue(SCPICmdWrite, SCPICmdRead
 class SearchSearchItemTriggerABusSentPauseTicks(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -4907,11 +4800,11 @@ class SearchSearchItemTriggerABusSentPauseTicks(SCPICmdRead):
     def hivalue(self) -> SearchSearchItemTriggerABusSentPauseTicksHivalue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:HIVALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the maximum number of pause clock ticks to be used when
               searching on a SENT bus signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:HIVALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4920,14 +4813,13 @@ class SearchSearchItemTriggerABusSentPauseTicks(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:HIVALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:HIVALue <NR1>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:HIVALue?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the number of the search.
             - ``<NR1>`` is the maximum number of pause clock ticks to be used when searching.
         """
@@ -4937,11 +4829,11 @@ class SearchSearchItemTriggerABusSentPauseTicks(SCPICmdRead):
     def value(self) -> SearchSearchItemTriggerABusSentPauseTicksValue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the minimum number of pause clock ticks to be used when
               searching on a SENT bus signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4950,14 +4842,13 @@ class SearchSearchItemTriggerABusSentPauseTicks(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:VALue <NR1>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the number of the search.
             - ``<NR1>`` is the minimum number of pause clock ticks to be used when searching.
         """
@@ -4967,10 +4858,10 @@ class SearchSearchItemTriggerABusSentPauseTicks(SCPICmdRead):
 class SearchSearchItemTriggerABusSentPauseQualifier(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:QUALifier`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the qualifier to be used when searching on SENT pause pulses.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:QUALifier?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -4979,14 +4870,13 @@ class SearchSearchItemTriggerABusSentPauseQualifier(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:QUALifier value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:QUALifier?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the number of the search.
         - ``EQUal`` specifies the qualifier as Equal.
         - ``INrange`` sets the qualifier to be within a range.
@@ -5002,7 +4892,7 @@ class SearchSearchItemTriggerABusSentPauseQualifier(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusSentPause(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -5025,11 +4915,11 @@ class SearchSearchItemTriggerABusSentPause(SCPICmdRead):
     def qualifier(self) -> SearchSearchItemTriggerABusSentPauseQualifier:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:QUALifier`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the qualifier to be used when searching on SENT pause
               pulses.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:QUALifier?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -5038,14 +4928,13 @@ class SearchSearchItemTriggerABusSentPause(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:QUALifier value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:QUALifier?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the number of the search.
             - ``EQUal`` specifies the qualifier as Equal.
             - ``INrange`` sets the qualifier to be within a range.
@@ -5062,7 +4951,7 @@ class SearchSearchItemTriggerABusSentPause(SCPICmdRead):
     def ticks(self) -> SearchSearchItemTriggerABusSentPauseTicks:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE:TICKs?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -5079,11 +4968,11 @@ class SearchSearchItemTriggerABusSentPause(SCPICmdRead):
 class SearchSearchItemTriggerABusSentFastStatusValue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:STATus:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary status value to be used when searching on a SENT
           bus signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:STATus:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -5092,14 +4981,13 @@ class SearchSearchItemTriggerABusSentFastStatusValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:STATus:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:STATus:VALue <Qstring>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:STATus:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the number of the search.
         - ``<Qstring>`` is the binary status binary value.
     """
@@ -5108,7 +4996,7 @@ class SearchSearchItemTriggerABusSentFastStatusValue(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusSentFastStatus(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:STATus`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:STATus?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -5129,11 +5017,11 @@ class SearchSearchItemTriggerABusSentFastStatus(SCPICmdRead):
     def value(self) -> SearchSearchItemTriggerABusSentFastStatusValue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:STATus:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary status value to be used when searching on a
               SENT bus signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:STATus:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -5142,14 +5030,13 @@ class SearchSearchItemTriggerABusSentFastStatus(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:STATus:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:STATus:VALue <Qstring>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:STATus:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the number of the search.
             - ``<Qstring>`` is the binary status binary value.
         """
@@ -5159,11 +5046,11 @@ class SearchSearchItemTriggerABusSentFastStatus(SCPICmdRead):
 class SearchSearchItemTriggerABusSentFastInvertnibbleValue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:INVERTNIBble:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary fast message inverted nibble value to be used when
           searching on a SENT bus signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:INVERTNIBble:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -5172,14 +5059,13 @@ class SearchSearchItemTriggerABusSentFastInvertnibbleValue(SCPICmdWrite, SCPICmd
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:INVERTNIBble:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:INVERTNIBble:VALue <Qstring>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:INVERTNIBble:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the number of the search.
         - ``<Qstring>`` is the fast message inverted nibble binary value.
     """
@@ -5188,7 +5074,7 @@ class SearchSearchItemTriggerABusSentFastInvertnibbleValue(SCPICmdWrite, SCPICmd
 class SearchSearchItemTriggerABusSentFastInvertnibble(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:INVERTNIBble`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:INVERTNIBble?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -5209,11 +5095,11 @@ class SearchSearchItemTriggerABusSentFastInvertnibble(SCPICmdRead):
     def value(self) -> SearchSearchItemTriggerABusSentFastInvertnibbleValue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:INVERTNIBble:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary fast message inverted nibble value to be used
               when searching on a SENT bus signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:INVERTNIBble:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -5222,14 +5108,13 @@ class SearchSearchItemTriggerABusSentFastInvertnibble(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:INVERTNIBble:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:INVERTNIBble:VALue <Qstring>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:INVERTNIBble:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the number of the search.
             - ``<Qstring>`` is the fast message inverted nibble binary value.
         """
@@ -5239,11 +5124,11 @@ class SearchSearchItemTriggerABusSentFastInvertnibble(SCPICmdRead):
 class SearchSearchItemTriggerABusSentFastCounterValue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary fast message counter value to be used when
           searching on a SENT bus signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -5252,14 +5137,13 @@ class SearchSearchItemTriggerABusSentFastCounterValue(SCPICmdWrite, SCPICmdRead)
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:VALue <Qstring>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the number of the search.
         - ``<Qstring>`` is the Fast Channel 1 counter value.
     """
@@ -5268,11 +5152,11 @@ class SearchSearchItemTriggerABusSentFastCounterValue(SCPICmdWrite, SCPICmdRead)
 class SearchSearchItemTriggerABusSentFastCounterQualifier(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:QUALifier`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the qualifier to be used when searching on SENT fast packet
           bus data for the secure format counter.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:QUALifier?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -5281,14 +5165,13 @@ class SearchSearchItemTriggerABusSentFastCounterQualifier(SCPICmdWrite, SCPICmdR
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:QUALifier value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:QUALifier?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the number of the search.
         - ``EQUal`` specifies the qualifier as Equal.
         - ``LESSEQual`` specifies the qualifier as Less Than or Equal to.
@@ -5304,11 +5187,11 @@ class SearchSearchItemTriggerABusSentFastCounterQualifier(SCPICmdWrite, SCPICmdR
 class SearchSearchItemTriggerABusSentFastCounterHivalue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:HIVALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the high binary fast message counter value to use when
           searching on a SENT bus signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:HIVALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -5317,14 +5200,13 @@ class SearchSearchItemTriggerABusSentFastCounterHivalue(SCPICmdWrite, SCPICmdRea
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:HIVALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:HIVALue <QString>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:HIVALue?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the Search identifier number.
         - ``<Qstring>`` sets the Fast Channel 1 counter binary value.
     """
@@ -5335,7 +5217,7 @@ class SearchSearchItemTriggerABusSentFastCounterHivalue(SCPICmdWrite, SCPICmdRea
 class SearchSearchItemTriggerABusSentFastCounter(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -5365,11 +5247,11 @@ class SearchSearchItemTriggerABusSentFastCounter(SCPICmdRead):
     def hivalue(self) -> SearchSearchItemTriggerABusSentFastCounterHivalue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:HIVALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the high binary fast message counter value to use when
               searching on a SENT bus signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:HIVALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -5378,14 +5260,13 @@ class SearchSearchItemTriggerABusSentFastCounter(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:HIVALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:HIVALue <QString>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:HIVALue?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the Search identifier number.
             - ``<Qstring>`` sets the Fast Channel 1 counter binary value.
         """
@@ -5395,11 +5276,11 @@ class SearchSearchItemTriggerABusSentFastCounter(SCPICmdRead):
     def qualifier(self) -> SearchSearchItemTriggerABusSentFastCounterQualifier:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:QUALifier`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the qualifier to be used when searching on SENT fast
               packet bus data for the secure format counter.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:QUALifier?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -5408,14 +5289,13 @@ class SearchSearchItemTriggerABusSentFastCounter(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:QUALifier value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:QUALifier?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the number of the search.
             - ``EQUal`` specifies the qualifier as Equal.
             - ``LESSEQual`` specifies the qualifier as Less Than or Equal to.
@@ -5432,11 +5312,11 @@ class SearchSearchItemTriggerABusSentFastCounter(SCPICmdRead):
     def value(self) -> SearchSearchItemTriggerABusSentFastCounterValue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary fast message counter value to be used when
               searching on a SENT bus signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -5445,14 +5325,13 @@ class SearchSearchItemTriggerABusSentFastCounter(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:VALue <Qstring>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the number of the search.
             - ``<Qstring>`` is the Fast Channel 1 counter value.
         """
@@ -5462,11 +5341,11 @@ class SearchSearchItemTriggerABusSentFastCounter(SCPICmdRead):
 class SearchSearchItemTriggerABusSentFastChan2bValue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary fast channel 2 value to be used when searching on
           a SENT bus signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -5475,14 +5354,13 @@ class SearchSearchItemTriggerABusSentFastChan2bValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:VALue <Qstring>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the number of the search.
         - ``<Qstring>`` is the Fast Channel 2 binary value.
     """
@@ -5491,11 +5369,11 @@ class SearchSearchItemTriggerABusSentFastChan2bValue(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusSentFastChan2bQualifier(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:QUALifier`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the qualifier to be used when searching on SENT fast packet
           bus data for device channel 2.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:QUALifier?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -5504,14 +5382,13 @@ class SearchSearchItemTriggerABusSentFastChan2bQualifier(SCPICmdWrite, SCPICmdRe
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:QUALifier value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:QUALifier?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the number of the search.
         - ``EQUal`` specifies the qualifier as Equal.
         - ``LESSEQual`` specifies the qualifier as Less Than or Equal to.
@@ -5527,11 +5404,11 @@ class SearchSearchItemTriggerABusSentFastChan2bQualifier(SCPICmdWrite, SCPICmdRe
 class SearchSearchItemTriggerABusSentFastChan2bHivalue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:HIVALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the high binary fast channel 2 value to use when searching on
           a SENT bus signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:HIVALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -5540,14 +5417,13 @@ class SearchSearchItemTriggerABusSentFastChan2bHivalue(SCPICmdWrite, SCPICmdRead
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:HIVALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:HIVALue <QString>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:HIVALue?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the Search identifier number.
         - ``<Qstring>`` sets the Fast Channel 2 high binary data value.
     """
@@ -5558,7 +5434,7 @@ class SearchSearchItemTriggerABusSentFastChan2bHivalue(SCPICmdWrite, SCPICmdRead
 class SearchSearchItemTriggerABusSentFastChan2b(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -5587,11 +5463,11 @@ class SearchSearchItemTriggerABusSentFastChan2b(SCPICmdRead):
     def hivalue(self) -> SearchSearchItemTriggerABusSentFastChan2bHivalue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:HIVALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the high binary fast channel 2 value to use when
               searching on a SENT bus signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:HIVALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -5600,14 +5476,13 @@ class SearchSearchItemTriggerABusSentFastChan2b(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:HIVALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:HIVALue <QString>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:HIVALue?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the Search identifier number.
             - ``<Qstring>`` sets the Fast Channel 2 high binary data value.
         """
@@ -5617,11 +5492,11 @@ class SearchSearchItemTriggerABusSentFastChan2b(SCPICmdRead):
     def qualifier(self) -> SearchSearchItemTriggerABusSentFastChan2bQualifier:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:QUALifier`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the qualifier to be used when searching on SENT fast
               packet bus data for device channel 2.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:QUALifier?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -5630,14 +5505,13 @@ class SearchSearchItemTriggerABusSentFastChan2b(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:QUALifier value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:QUALifier?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the number of the search.
             - ``EQUal`` specifies the qualifier as Equal.
             - ``LESSEQual`` specifies the qualifier as Less Than or Equal to.
@@ -5654,11 +5528,11 @@ class SearchSearchItemTriggerABusSentFastChan2b(SCPICmdRead):
     def value(self) -> SearchSearchItemTriggerABusSentFastChan2bValue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary fast channel 2 value to be used when searching
               on a SENT bus signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -5667,14 +5541,13 @@ class SearchSearchItemTriggerABusSentFastChan2b(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:VALue <Qstring>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the number of the search.
             - ``<Qstring>`` is the Fast Channel 2 binary value.
         """
@@ -5684,11 +5557,11 @@ class SearchSearchItemTriggerABusSentFastChan2b(SCPICmdRead):
 class SearchSearchItemTriggerABusSentFastChan1aValue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary fast channel 1 value to be used when searching on
           a SENT bus signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -5697,14 +5570,13 @@ class SearchSearchItemTriggerABusSentFastChan1aValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:VALue <Qstring>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the number of the search.
         - ``<Qstring>`` is the Fast Channel 1 binary value.
     """
@@ -5713,11 +5585,11 @@ class SearchSearchItemTriggerABusSentFastChan1aValue(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusSentFastChan1aQualifier(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:QUALifier`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the qualifier to be used when searching on SENT fast packet
           bus data for device channel 1.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:QUALifier?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -5726,14 +5598,13 @@ class SearchSearchItemTriggerABusSentFastChan1aQualifier(SCPICmdWrite, SCPICmdRe
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:QUALifier value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:QUALifier?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the number of the search.
         - ``EQUal`` specifies the qualifier as Equal.
         - ``LESSEQual`` specifies the qualifier as Less Than or Equal to.
@@ -5749,11 +5620,11 @@ class SearchSearchItemTriggerABusSentFastChan1aQualifier(SCPICmdWrite, SCPICmdRe
 class SearchSearchItemTriggerABusSentFastChan1aHivalue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:HIVALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the high binary fast channel 1 value to use when searching on
           a SENT bus signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:HIVALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -5762,14 +5633,13 @@ class SearchSearchItemTriggerABusSentFastChan1aHivalue(SCPICmdWrite, SCPICmdRead
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:HIVALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:HIVALue <QString>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:HIVALue?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the Search identifier number.
         - ``<Qstring>`` sets the Fast Channel 1 binary data high value.
     """
@@ -5780,7 +5650,7 @@ class SearchSearchItemTriggerABusSentFastChan1aHivalue(SCPICmdWrite, SCPICmdRead
 class SearchSearchItemTriggerABusSentFastChan1a(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -5809,11 +5679,11 @@ class SearchSearchItemTriggerABusSentFastChan1a(SCPICmdRead):
     def hivalue(self) -> SearchSearchItemTriggerABusSentFastChan1aHivalue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:HIVALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the high binary fast channel 1 value to use when
               searching on a SENT bus signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:HIVALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -5822,14 +5692,13 @@ class SearchSearchItemTriggerABusSentFastChan1a(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:HIVALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:HIVALue <QString>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:HIVALue?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the Search identifier number.
             - ``<Qstring>`` sets the Fast Channel 1 binary data high value.
         """
@@ -5839,11 +5708,11 @@ class SearchSearchItemTriggerABusSentFastChan1a(SCPICmdRead):
     def qualifier(self) -> SearchSearchItemTriggerABusSentFastChan1aQualifier:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:QUALifier`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the qualifier to be used when searching on SENT fast
               packet bus data for device channel 1.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:QUALifier?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -5852,14 +5721,13 @@ class SearchSearchItemTriggerABusSentFastChan1a(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:QUALifier value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:QUALifier?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the number of the search.
             - ``EQUal`` specifies the qualifier as Equal.
             - ``LESSEQual`` specifies the qualifier as Less Than or Equal to.
@@ -5876,11 +5744,11 @@ class SearchSearchItemTriggerABusSentFastChan1a(SCPICmdRead):
     def value(self) -> SearchSearchItemTriggerABusSentFastChan1aValue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary fast channel 1 value to be used when searching
               on a SENT bus signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -5889,14 +5757,13 @@ class SearchSearchItemTriggerABusSentFastChan1a(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:VALue <Qstring>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the number of the search.
             - ``<Qstring>`` is the Fast Channel 1 binary value.
         """
@@ -5906,7 +5773,7 @@ class SearchSearchItemTriggerABusSentFastChan1a(SCPICmdRead):
 class SearchSearchItemTriggerABusSentFast(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -5944,7 +5811,7 @@ class SearchSearchItemTriggerABusSentFast(SCPICmdRead):
     def chan1a(self) -> SearchSearchItemTriggerABusSentFastChan1a:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN1A?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -5963,7 +5830,7 @@ class SearchSearchItemTriggerABusSentFast(SCPICmdRead):
     def chan2b(self) -> SearchSearchItemTriggerABusSentFastChan2b:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:CHAN2B?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -5982,7 +5849,7 @@ class SearchSearchItemTriggerABusSentFast(SCPICmdRead):
     def counter(self) -> SearchSearchItemTriggerABusSentFastCounter:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:COUNTer?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6002,7 +5869,7 @@ class SearchSearchItemTriggerABusSentFast(SCPICmdRead):
     def invertnibble(self) -> SearchSearchItemTriggerABusSentFastInvertnibble:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:INVERTNIBble`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:INVERTNIBble?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6019,7 +5886,7 @@ class SearchSearchItemTriggerABusSentFast(SCPICmdRead):
     def status(self) -> SearchSearchItemTriggerABusSentFastStatus:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:STATus`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST:STATus?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6035,10 +5902,10 @@ class SearchSearchItemTriggerABusSentFast(SCPICmdRead):
 class SearchSearchItemTriggerABusSentErrtypeCrc(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType:CRC`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the CRC error type to be used when searching on SENT data.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType:CRC?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -6047,14 +5914,13 @@ class SearchSearchItemTriggerABusSentErrtypeCrc(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType:CRC value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType:CRC {FAST|SLOW}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType:CRC?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the number of the search.
         - ``FAST`` specifies searching for CRC errors only in the fast channel.
         - ``SLOW`` specifies searching for CRC errors only in the slow channel.
@@ -6064,10 +5930,10 @@ class SearchSearchItemTriggerABusSentErrtypeCrc(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusSentErrtype(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the error type to be used when searching on SENT data.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -6076,14 +5942,13 @@ class SearchSearchItemTriggerABusSentErrtype(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType {FRAMELENgth|CRC}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the number of the search.
         - ``FRAMELENgth`` specifies searching for SENT frame length errors.
         - ``CRC`` specifies searching for CRC errors.
@@ -6100,11 +5965,11 @@ class SearchSearchItemTriggerABusSentErrtype(SCPICmdWrite, SCPICmdRead):
     def crc(self) -> SearchSearchItemTriggerABusSentErrtypeCrc:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType:CRC`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the CRC error type to be used when searching on SENT
               data.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType:CRC?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6113,14 +5978,13 @@ class SearchSearchItemTriggerABusSentErrtype(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType:CRC value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType:CRC {FAST|SLOW}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType:CRC?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the number of the search.
             - ``FAST`` specifies searching for CRC errors only in the fast channel.
             - ``SLOW`` specifies searching for CRC errors only in the slow channel.
@@ -6131,10 +5995,10 @@ class SearchSearchItemTriggerABusSentErrtype(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusSentCondition(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:CONDition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the search condition for a SENT bus.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:CONDition?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -6143,14 +6007,13 @@ class SearchSearchItemTriggerABusSentCondition(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:CONDition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:CONDition {START|FAST|SLOW|PAUSE|ERRor}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:CONDition?
+        ```
 
-    **Info:**
+    Info:
         - ``Search<x>`` is the number of the search.
         - ``START`` specifies searching for start of packet.
         - ``FAST`` specifies searching for fast channel data.
@@ -6163,7 +6026,7 @@ class SearchSearchItemTriggerABusSentCondition(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusSent(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT?``
           query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT?``
@@ -6193,10 +6056,10 @@ class SearchSearchItemTriggerABusSent(SCPICmdRead):
     def condition(self) -> SearchSearchItemTriggerABusSentCondition:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:CONDition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the search condition for a SENT bus.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:CONDition?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6205,14 +6068,13 @@ class SearchSearchItemTriggerABusSent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:CONDition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:CONDition {START|FAST|SLOW|PAUSE|ERRor}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:CONDition?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the number of the search.
             - ``START`` specifies searching for start of packet.
             - ``FAST`` specifies searching for fast channel data.
@@ -6226,10 +6088,10 @@ class SearchSearchItemTriggerABusSent(SCPICmdRead):
     def errtype(self) -> SearchSearchItemTriggerABusSentErrtype:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the error type to be used when searching on SENT data.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6238,14 +6100,13 @@ class SearchSearchItemTriggerABusSent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType {FRAMELENgth|CRC}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:ERRType?
+            ```
 
-        **Info:**
+        Info:
             - ``Search<x>`` is the number of the search.
             - ``FRAMELENgth`` specifies searching for SENT frame length errors.
             - ``CRC`` specifies searching for CRC errors.
@@ -6259,7 +6120,7 @@ class SearchSearchItemTriggerABusSent(SCPICmdRead):
     def fast(self) -> SearchSearchItemTriggerABusSentFast:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:FAST?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6280,7 +6141,7 @@ class SearchSearchItemTriggerABusSent(SCPICmdRead):
     def pause(self) -> SearchSearchItemTriggerABusSentPause:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:PAUSE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6297,7 +6158,7 @@ class SearchSearchItemTriggerABusSent(SCPICmdRead):
     def slow(self) -> SearchSearchItemTriggerABusSentSlow:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT:SLOW?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6315,12 +6176,12 @@ class SearchSearchItemTriggerABusSent(SCPICmdRead):
 class SearchSearchItemTriggerABusRs232cDataValue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the data string used for the specified RS232C bus trigger
           search to determine where to place a mark. The search condition must be Data. The search
           number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -6329,14 +6190,13 @@ class SearchSearchItemTriggerABusRs232cDataValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:VALue <QString>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the value of the data string. The valid characters are 0, 1, and X
           for values in binary format; and A-F, 0-9, and X for values in hexadecimal format.
     """
@@ -6347,12 +6207,12 @@ class SearchSearchItemTriggerABusRs232cDataValue(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusRs232cDataSize(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:SIZe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the length of the data string in bytes to be used for an
           RS232 bus search  to determine where to place a mark when the search condition is Data.
           The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:SIZe?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -6361,14 +6221,13 @@ class SearchSearchItemTriggerABusRs232cDataSize(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:SIZe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:SIZe <NR3>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:SIZe?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the number of bits per word in the data string, from 1 to 8.
     """
 
@@ -6376,7 +6235,7 @@ class SearchSearchItemTriggerABusRs232cDataSize(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusRs232cData(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -6399,12 +6258,12 @@ class SearchSearchItemTriggerABusRs232cData(SCPICmdRead):
     def size(self) -> SearchSearchItemTriggerABusRs232cDataSize:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:SIZe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the length of the data string in bytes to be used for an
               RS232 bus search  to determine where to place a mark when the search condition is
               Data. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:SIZe?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6413,14 +6272,13 @@ class SearchSearchItemTriggerABusRs232cData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:SIZe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:SIZe <NR3>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:SIZe?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the number of bits per word in the data string, from 1 to 8.
         """
         return self._size
@@ -6429,12 +6287,12 @@ class SearchSearchItemTriggerABusRs232cData(SCPICmdRead):
     def value(self) -> SearchSearchItemTriggerABusRs232cDataValue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the data string used for the specified RS232C bus trigger
               search to determine where to place a mark. The search condition must be Data. The
               search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6443,14 +6301,13 @@ class SearchSearchItemTriggerABusRs232cData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:VALue <QString>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the value of the data string. The valid characters are 0, 1,
               and X for values in binary format; and A-F, 0-9, and X for values in hexadecimal
               format.
@@ -6461,11 +6318,11 @@ class SearchSearchItemTriggerABusRs232cData(SCPICmdRead):
 class SearchSearchItemTriggerABusRs232cCondition(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:CONDition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the condition for an RS232C bus search to determine where to
           place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:CONDition?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -6474,14 +6331,13 @@ class SearchSearchItemTriggerABusRs232cCondition(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:CONDition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:CONDition {DATa|EOp|PARItyerror|STARt}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:CONDition?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` specifies the search condition as Data.
         - ``EOp`` specifies the search condition as End of Packet.
         - ``PARItyerror`` specifies the search condition as Parity Error.
@@ -6492,7 +6348,7 @@ class SearchSearchItemTriggerABusRs232cCondition(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusRs232c(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -6515,11 +6371,11 @@ class SearchSearchItemTriggerABusRs232c(SCPICmdRead):
     def condition(self) -> SearchSearchItemTriggerABusRs232cCondition:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:CONDition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the condition for an RS232C bus search to determine where
               to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:CONDition?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6528,14 +6384,13 @@ class SearchSearchItemTriggerABusRs232c(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:CONDition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:CONDition {DATa|EOp|PARItyerror|STARt}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:CONDition?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` specifies the search condition as Data.
             - ``EOp`` specifies the search condition as End of Packet.
             - ``PARItyerror`` specifies the search condition as Parity Error.
@@ -6547,7 +6402,7 @@ class SearchSearchItemTriggerABusRs232c(SCPICmdRead):
     def data(self) -> SearchSearchItemTriggerABusRs232cData:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C:DATa?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6564,11 +6419,11 @@ class SearchSearchItemTriggerABusRs232c(SCPICmdRead):
 class SearchSearchItemTriggerABusParallelDataValue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:PARallel:DATa:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary data string used for a parallel bus search to
           determine where to place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:PARallel:DATa:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -6577,14 +6432,13 @@ class SearchSearchItemTriggerABusParallelDataValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:PARallel:DATa:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:PARallel:DATa:VALue <QString>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:PARallel:DATa:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the data value in a valid format. Valid characters are 0-9.
     """
 
@@ -6594,7 +6448,7 @@ class SearchSearchItemTriggerABusParallelDataValue(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusParallelData(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:PARallel:DATa`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:PARallel:DATa?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -6615,11 +6469,11 @@ class SearchSearchItemTriggerABusParallelData(SCPICmdRead):
     def value(self) -> SearchSearchItemTriggerABusParallelDataValue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:PARallel:DATa:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary data string used for a parallel bus search to
               determine where to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:PARallel:DATa:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6628,14 +6482,13 @@ class SearchSearchItemTriggerABusParallelData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:PARallel:DATa:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:PARallel:DATa:VALue <QString>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:PARallel:DATa:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the data value in a valid format. Valid characters are 0-9.
         """
         return self._value
@@ -6644,7 +6497,7 @@ class SearchSearchItemTriggerABusParallelData(SCPICmdRead):
 class SearchSearchItemTriggerABusParallel(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:PARallel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:PARallel?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -6663,7 +6516,7 @@ class SearchSearchItemTriggerABusParallel(SCPICmdRead):
     def data(self) -> SearchSearchItemTriggerABusParallelData:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:PARallel:DATa`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:PARallel:DATa?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6679,11 +6532,11 @@ class SearchSearchItemTriggerABusParallel(SCPICmdRead):
 class SearchSearchItemTriggerABusLinIdentifierValue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:IDentifier:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the string used for a LIN bus identifier value. The search
           number is specified by x. The search condition must be IDENTIFIER or IDANDDATA.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:IDentifier:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -6692,14 +6545,13 @@ class SearchSearchItemTriggerABusLinIdentifierValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:IDentifier:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:IDentifier:VALue <QString>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:IDentifier:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the identifier value.
     """
 
@@ -6709,7 +6561,7 @@ class SearchSearchItemTriggerABusLinIdentifierValue(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusLinIdentifier(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:IDentifier`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:IDentifier?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -6730,11 +6582,11 @@ class SearchSearchItemTriggerABusLinIdentifier(SCPICmdRead):
     def value(self) -> SearchSearchItemTriggerABusLinIdentifierValue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:IDentifier:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the string used for a LIN bus identifier value. The
               search number is specified by x. The search condition must be IDENTIFIER or IDANDDATA.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:IDentifier:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6743,14 +6595,13 @@ class SearchSearchItemTriggerABusLinIdentifier(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:IDentifier:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:IDentifier:VALue <QString>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:IDentifier:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the identifier value.
         """
         return self._value
@@ -6759,11 +6610,11 @@ class SearchSearchItemTriggerABusLinIdentifier(SCPICmdRead):
 class SearchSearchItemTriggerABusLinErrtype(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:ERRTYPE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the error type for a LIN bus search. The search number is
           specified by x. The search condition must be set to ERROR.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:ERRTYPE?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -6772,14 +6623,13 @@ class SearchSearchItemTriggerABusLinErrtype(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:ERRTYPE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:ERRTYPE {CHecksum|PARity|SYNC}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:ERRTYPE?
+        ```
 
-    **Info:**
+    Info:
         - ``CHecksum`` specifies the error type is checksum.
         - ``PARity`` specifies the error type is parity.
         - ``SYNC`` specifies the error type is sync.
@@ -6789,11 +6639,11 @@ class SearchSearchItemTriggerABusLinErrtype(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusLinDataValue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the data string used for a LIN bus search. The search number
           is specified by x. The search condition must be DATA or IDANDDATA.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -6802,14 +6652,13 @@ class SearchSearchItemTriggerABusLinDataValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:VALue <QString>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the data value.
     """
 
@@ -6819,11 +6668,11 @@ class SearchSearchItemTriggerABusLinDataValue(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusLinDataSize(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:SIZe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the length of the stat string in bytes used for a LIN bus
           search. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:SIZe?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -6832,14 +6681,13 @@ class SearchSearchItemTriggerABusLinDataSize(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:SIZe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:SIZe <NR1>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:SIZe?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the data size.
     """
 
@@ -6847,11 +6695,11 @@ class SearchSearchItemTriggerABusLinDataSize(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusLinDataQualifier(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:QUALifier`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the data qualifier used in a LIN bus search. The search
           number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:QUALifier?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -6860,14 +6708,13 @@ class SearchSearchItemTriggerABusLinDataQualifier(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:QUALifier value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:QUALifier {EQual|LESSEQual|MOREEQual|UNEQual|LESSthan|MOREthan| INrange|OUTrange}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:QUALifier?
+        ```
 
-    **Info:**
+    Info:
         - ``EQual`` Arguments are the following available data qualifiers.
         - ``LESSEQual`` Arguments are the following available data qualifiers.
         - ``MOREEQual`` Arguments are the following available data qualifiers.
@@ -6882,12 +6729,12 @@ class SearchSearchItemTriggerABusLinDataQualifier(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusLinDataHivalue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:HIVALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the high data value string used in a LIN bus search. The
           search number is specified by x. The search condition must be DATA or IDANDDATA and the
           data qualifier must be INRANGE or OUTRANGE.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:HIVALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -6896,14 +6743,13 @@ class SearchSearchItemTriggerABusLinDataHivalue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:HIVALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:HIVALue <QString>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:HIVALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string of 1s, 0s, or Xs representing the binary data string to
           be used in a LIN search if the search condition is IDentifier or IDANDDATA (identifier and
           data).
@@ -6915,7 +6761,7 @@ class SearchSearchItemTriggerABusLinDataHivalue(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusLinData(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -6944,12 +6790,12 @@ class SearchSearchItemTriggerABusLinData(SCPICmdRead):
     def hivalue(self) -> SearchSearchItemTriggerABusLinDataHivalue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:HIVALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the high data value string used in a LIN bus search. The
               search number is specified by x. The search condition must be DATA or IDANDDATA and
               the data qualifier must be INRANGE or OUTRANGE.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:HIVALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6958,14 +6804,13 @@ class SearchSearchItemTriggerABusLinData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:HIVALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:HIVALue <QString>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:HIVALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string of 1s, 0s, or Xs representing the binary data string
               to be used in a LIN search if the search condition is IDentifier or IDANDDATA
               (identifier and data).
@@ -6976,11 +6821,11 @@ class SearchSearchItemTriggerABusLinData(SCPICmdRead):
     def qualifier(self) -> SearchSearchItemTriggerABusLinDataQualifier:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:QUALifier`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the data qualifier used in a LIN bus search. The search
               number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:QUALifier?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6989,14 +6834,13 @@ class SearchSearchItemTriggerABusLinData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:QUALifier value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:QUALifier {EQual|LESSEQual|MOREEQual|UNEQual|LESSthan|MOREthan| INrange|OUTrange}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:QUALifier?
+            ```
 
-        **Info:**
+        Info:
             - ``EQual`` Arguments are the following available data qualifiers.
             - ``LESSEQual`` Arguments are the following available data qualifiers.
             - ``MOREEQual`` Arguments are the following available data qualifiers.
@@ -7012,11 +6856,11 @@ class SearchSearchItemTriggerABusLinData(SCPICmdRead):
     def size(self) -> SearchSearchItemTriggerABusLinDataSize:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:SIZe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the length of the stat string in bytes used for a LIN bus
               search. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:SIZe?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7025,14 +6869,13 @@ class SearchSearchItemTriggerABusLinData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:SIZe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:SIZe <NR1>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:SIZe?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the data size.
         """
         return self._size
@@ -7041,11 +6884,11 @@ class SearchSearchItemTriggerABusLinData(SCPICmdRead):
     def value(self) -> SearchSearchItemTriggerABusLinDataValue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the data string used for a LIN bus search. The search
               number is specified by x. The search condition must be DATA or IDANDDATA.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7054,14 +6897,13 @@ class SearchSearchItemTriggerABusLinData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:VALue <QString>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the data value.
         """
         return self._value
@@ -7070,11 +6912,11 @@ class SearchSearchItemTriggerABusLinData(SCPICmdRead):
 class SearchSearchItemTriggerABusLinCondition(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:CONDition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the condition for a LIN bus search. The search number is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:CONDition?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7083,14 +6925,13 @@ class SearchSearchItemTriggerABusLinCondition(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:CONDition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:CONDition {DATA|IDANDDATA|ERRor|IDentifier|SLEEP|SYNCfield|WAKEup}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:CONDition?
+        ```
 
-    **Info:**
+    Info:
         - ``DATA`` sets the trigger condition to data.
         - ``IDANDDATA`` sets the trigger condition to ID and data.
         - ``ERRor`` sets the trigger condition to error.
@@ -7104,7 +6945,7 @@ class SearchSearchItemTriggerABusLinCondition(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusLin(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -7131,11 +6972,11 @@ class SearchSearchItemTriggerABusLin(SCPICmdRead):
     def condition(self) -> SearchSearchItemTriggerABusLinCondition:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:CONDition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the condition for a LIN bus search. The search number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:CONDition?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7144,14 +6985,13 @@ class SearchSearchItemTriggerABusLin(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:CONDition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:CONDition {DATA|IDANDDATA|ERRor|IDentifier|SLEEP|SYNCfield|WAKEup}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:CONDition?
+            ```
 
-        **Info:**
+        Info:
             - ``DATA`` sets the trigger condition to data.
             - ``IDANDDATA`` sets the trigger condition to ID and data.
             - ``ERRor`` sets the trigger condition to error.
@@ -7166,7 +7006,7 @@ class SearchSearchItemTriggerABusLin(SCPICmdRead):
     def data(self) -> SearchSearchItemTriggerABusLinData:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:DATa?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7185,11 +7025,11 @@ class SearchSearchItemTriggerABusLin(SCPICmdRead):
     def errtype(self) -> SearchSearchItemTriggerABusLinErrtype:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:ERRTYPE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the error type for a LIN bus search. The search number is
               specified by x. The search condition must be set to ERROR.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:ERRTYPE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7198,14 +7038,13 @@ class SearchSearchItemTriggerABusLin(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:ERRTYPE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:ERRTYPE {CHecksum|PARity|SYNC}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:ERRTYPE?
+            ```
 
-        **Info:**
+        Info:
             - ``CHecksum`` specifies the error type is checksum.
             - ``PARity`` specifies the error type is parity.
             - ``SYNC`` specifies the error type is sync.
@@ -7216,7 +7055,7 @@ class SearchSearchItemTriggerABusLin(SCPICmdRead):
     def identifier(self) -> SearchSearchItemTriggerABusLinIdentifier:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:IDentifier`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN:IDentifier?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7232,12 +7071,12 @@ class SearchSearchItemTriggerABusLin(SCPICmdRead):
 class SearchSearchItemTriggerABusI2cDataValue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary data string used for I2C bus search to determine
           where to place a mark. The search number is specified by x. The search condition must be
           DATA or ADDRANDDATA.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7246,14 +7085,13 @@ class SearchSearchItemTriggerABusI2cDataValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:VALue <QString>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the data value. The valid characters are 0, 1, or X for binary
           format; and A-F, 0-9, and X for hexadecimal format.
     """
@@ -7264,12 +7102,12 @@ class SearchSearchItemTriggerABusI2cDataValue(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusI2cDataSize(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:SIZe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the length of the data string in bytes used for an I2C bus
           search to determine where to place a mark. The search number is specified by x. The search
           condition must be DATA or ADDRANDDATA.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:SIZe?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7278,14 +7116,13 @@ class SearchSearchItemTriggerABusI2cDataSize(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:SIZe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:SIZe <NR1>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:SIZe?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the data size in bytes.
     """
 
@@ -7293,12 +7130,12 @@ class SearchSearchItemTriggerABusI2cDataSize(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusI2cDataDirection(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:DIRection`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the direction of the data for the I2C bus search to determine
           where to place a mark. The search number is specified by x. Read or write is indicated by
           the R/W bit in the I2C protocol.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:DIRection?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7307,14 +7144,13 @@ class SearchSearchItemTriggerABusI2cDataDirection(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:DIRection value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:DIRection {NOCARE|READ|WRITE}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:DIRection?
+        ```
 
-    **Info:**
+    Info:
         - ``NOCARE`` specifies the direction of data as Don't Care.
         - ``READ`` specifies the direction of data as Read.
         - ``WRITE`` specifies the direction of data as Write.
@@ -7324,7 +7160,7 @@ class SearchSearchItemTriggerABusI2cDataDirection(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusI2cData(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -7349,12 +7185,12 @@ class SearchSearchItemTriggerABusI2cData(SCPICmdRead):
     def direction(self) -> SearchSearchItemTriggerABusI2cDataDirection:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:DIRection`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the direction of the data for the I2C bus search to
               determine where to place a mark. The search number is specified by x. Read or write is
               indicated by the R/W bit in the I2C protocol.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:DIRection?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7363,14 +7199,13 @@ class SearchSearchItemTriggerABusI2cData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:DIRection value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:DIRection {NOCARE|READ|WRITE}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:DIRection?
+            ```
 
-        **Info:**
+        Info:
             - ``NOCARE`` specifies the direction of data as Don't Care.
             - ``READ`` specifies the direction of data as Read.
             - ``WRITE`` specifies the direction of data as Write.
@@ -7381,12 +7216,12 @@ class SearchSearchItemTriggerABusI2cData(SCPICmdRead):
     def size(self) -> SearchSearchItemTriggerABusI2cDataSize:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:SIZe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the length of the data string in bytes used for an I2C
               bus search to determine where to place a mark. The search number is specified by x.
               The search condition must be DATA or ADDRANDDATA.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:SIZe?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7395,14 +7230,13 @@ class SearchSearchItemTriggerABusI2cData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:SIZe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:SIZe <NR1>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:SIZe?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the data size in bytes.
         """
         return self._size
@@ -7411,12 +7245,12 @@ class SearchSearchItemTriggerABusI2cData(SCPICmdRead):
     def value(self) -> SearchSearchItemTriggerABusI2cDataValue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary data string used for I2C bus search to
               determine where to place a mark. The search number is specified by x. The search
               condition must be DATA or ADDRANDDATA.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7425,14 +7259,13 @@ class SearchSearchItemTriggerABusI2cData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:VALue <QString>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the data value. The valid characters are 0, 1, or X for binary
               format; and A-F, 0-9, and X for hexadecimal format.
         """
@@ -7442,11 +7275,11 @@ class SearchSearchItemTriggerABusI2cData(SCPICmdRead):
 class SearchSearchItemTriggerABusI2cCondition(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:CONDition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the search condition for an I2C bus. The search number is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:CONDition?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7455,14 +7288,13 @@ class SearchSearchItemTriggerABusI2cCondition(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:CONDition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:CONDition {ADDRess|ADDRANDDATA|DATa|ACKMISS|REPEATstart|STARt|STOP}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:CONDition?
+        ```
 
-    **Info:**
+    Info:
         - ``ADDress`` specifies the trigger condition as Address.
         - ``ADDRANDDATA`` specifies the trigger condition as Address and Data.
         - ``DATa`` specifies the trigger condition as Data.
@@ -7476,11 +7308,11 @@ class SearchSearchItemTriggerABusI2cCondition(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusI2cAddressValue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary address string used for the I2C search the
           specified search condition is Address or AddressData. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7489,14 +7321,13 @@ class SearchSearchItemTriggerABusI2cAddressValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:VALue <QString>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the address value. This is either a 7-bit or 10-bit value
           depending on the address mode. The valid characters are 0-9, A-F, and X for addresses in
           hexadecimal format; and 0, 1, and X otherwise.
@@ -7508,11 +7339,11 @@ class SearchSearchItemTriggerABusI2cAddressValue(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusI2cAddressMode(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:MODe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the I2C address mode for the specified bus search to
           determine where to place a mark. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:MODe?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7521,14 +7352,13 @@ class SearchSearchItemTriggerABusI2cAddressMode(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:MODe {ADDR10|ADDR7}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``ADDR10`` specifies the address mode as ADDR10.
         - ``ADDR7`` specifies the address mode as ADDR7.
     """
@@ -7537,7 +7367,7 @@ class SearchSearchItemTriggerABusI2cAddressMode(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusI2cAddress(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7560,11 +7390,11 @@ class SearchSearchItemTriggerABusI2cAddress(SCPICmdRead):
     def mode(self) -> SearchSearchItemTriggerABusI2cAddressMode:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:MODe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the I2C address mode for the specified bus search to
               determine where to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:MODe?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7573,14 +7403,13 @@ class SearchSearchItemTriggerABusI2cAddress(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:MODe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:MODe {ADDR10|ADDR7}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``ADDR10`` specifies the address mode as ADDR10.
             - ``ADDR7`` specifies the address mode as ADDR7.
         """
@@ -7590,12 +7419,12 @@ class SearchSearchItemTriggerABusI2cAddress(SCPICmdRead):
     def value(self) -> SearchSearchItemTriggerABusI2cAddressValue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary address string used for the I2C search the
               specified search condition is Address or AddressData. The search number is specified
               by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7604,14 +7433,13 @@ class SearchSearchItemTriggerABusI2cAddress(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:VALue <QString>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the address value. This is either a 7-bit or 10-bit value
               depending on the address mode. The valid characters are 0-9, A-F, and X for addresses
               in hexadecimal format; and 0, 1, and X otherwise.
@@ -7622,7 +7450,7 @@ class SearchSearchItemTriggerABusI2cAddress(SCPICmdRead):
 class SearchSearchItemTriggerABusI2c(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -7645,7 +7473,7 @@ class SearchSearchItemTriggerABusI2c(SCPICmdRead):
     def address(self) -> SearchSearchItemTriggerABusI2cAddress:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:ADDRess?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7662,11 +7490,11 @@ class SearchSearchItemTriggerABusI2c(SCPICmdRead):
     def condition(self) -> SearchSearchItemTriggerABusI2cCondition:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:CONDition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the search condition for an I2C bus. The search number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:CONDition?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7675,14 +7503,13 @@ class SearchSearchItemTriggerABusI2c(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:CONDition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:CONDition {ADDRess|ADDRANDDATA|DATa|ACKMISS|REPEATstart|STARt|STOP}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:CONDition?
+            ```
 
-        **Info:**
+        Info:
             - ``ADDress`` specifies the trigger condition as Address.
             - ``ADDRANDDATA`` specifies the trigger condition as Address and Data.
             - ``DATa`` specifies the trigger condition as Data.
@@ -7697,7 +7524,7 @@ class SearchSearchItemTriggerABusI2c(SCPICmdRead):
     def data(self) -> SearchSearchItemTriggerABusI2cData:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C:DATa?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7715,12 +7542,12 @@ class SearchSearchItemTriggerABusI2c(SCPICmdRead):
 class SearchSearchItemTriggerABusCanIdentifierValue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries CAN bus trigger identifier (address) value to be used when
           searching on a CAN bus signal. The search number is specified by x. The search condition
           must be set to IDANDDATA or DATA.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7729,14 +7556,13 @@ class SearchSearchItemTriggerABusCanIdentifierValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:VALue <QString>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the identifier value.
     """
 
@@ -7746,12 +7572,12 @@ class SearchSearchItemTriggerABusCanIdentifierValue(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusCanIdentifierMode(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:MODe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the CAN bus trigger identifier (address) mode to be used when
           searching on a CAN bus signal. The search number is specified by x. The search condition
           must be set to IDANDDATA or DATA.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:MODe?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7760,14 +7586,13 @@ class SearchSearchItemTriggerABusCanIdentifierMode(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:MODe {EXTENDed|STandard}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``EXTENDed`` specifies the extended identifier mode.
         - ``STandard`` specifies the standard identifier mode.
     """
@@ -7776,7 +7601,7 @@ class SearchSearchItemTriggerABusCanIdentifierMode(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusCanIdentifier(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7801,12 +7626,12 @@ class SearchSearchItemTriggerABusCanIdentifier(SCPICmdRead):
     def mode(self) -> SearchSearchItemTriggerABusCanIdentifierMode:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:MODe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the CAN bus trigger identifier (address) mode to be used
               when searching on a CAN bus signal. The search number is specified by x. The search
               condition must be set to IDANDDATA or DATA.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:MODe?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7815,14 +7640,13 @@ class SearchSearchItemTriggerABusCanIdentifier(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:MODe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:MODe {EXTENDed|STandard}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``EXTENDed`` specifies the extended identifier mode.
             - ``STandard`` specifies the standard identifier mode.
         """
@@ -7832,12 +7656,12 @@ class SearchSearchItemTriggerABusCanIdentifier(SCPICmdRead):
     def value(self) -> SearchSearchItemTriggerABusCanIdentifierValue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries CAN bus trigger identifier (address) value to be used
               when searching on a CAN bus signal. The search number is specified by x. The search
               condition must be set to IDANDDATA or DATA.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7846,14 +7670,13 @@ class SearchSearchItemTriggerABusCanIdentifier(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:VALue <QString>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the identifier value.
         """
         return self._value
@@ -7862,12 +7685,12 @@ class SearchSearchItemTriggerABusCanIdentifier(SCPICmdRead):
 class SearchSearchItemTriggerABusCanFrametype(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FRAMEtype`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries CAN bus trigger frame type to be used when searching on a CAN
           bus signal. The search condition must be set to FRAMEtype. The search number is specified
           by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FRAMEtype?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7876,14 +7699,13 @@ class SearchSearchItemTriggerABusCanFrametype(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FRAMEtype value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FRAMEtype {DATa|ERRor|OVERLoad|REMote}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FRAMEtype?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` sets the frame type to data.
         - ``ERRor`` sets the frame type to error.
         - ``OVERLoad`` sets the frame type to overload.
@@ -7894,12 +7716,12 @@ class SearchSearchItemTriggerABusCanFrametype(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusCanFdEsibit(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:ESIBit`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the value of the error state indicator bit (ESI bit) for a
           CAN bus to search on. The search number is specified by x. The search condition must be
           set to FDBITS, and the CAN standard must be FDISO or FDNONISO.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:ESIBit?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7908,14 +7730,13 @@ class SearchSearchItemTriggerABusCanFdEsibit(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:ESIBit value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:ESIBit {ONE|ZERo|NOCARE}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:ESIBit?
+        ```
 
-    **Info:**
+    Info:
         - ``ONE`` filters CAN FD packets to only match those where the ESI bit has a value of 1
           (recessive).
         - ``ZERo`` filters CAN FD packets to only match those where the ESI bit has a value of 0
@@ -7927,12 +7748,12 @@ class SearchSearchItemTriggerABusCanFdEsibit(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusCanFdBrsbit(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:BRSBit`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the value of the bit rate switch bit (BRS bit) for a CAN bus
           to search on. The search number is specified by x. The search condition must be set to
           FDBITS, and the CAN standard must be FDISO or FDNONISO.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:BRSBit?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7941,14 +7762,13 @@ class SearchSearchItemTriggerABusCanFdBrsbit(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:BRSBit value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:BRSBit {ONE|ZERo|NOCARE}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:BRSBit?
+        ```
 
-    **Info:**
+    Info:
         - ``ONE`` filters CAN FD packets to only match those where the BRS bit has a value of 1
           (fast data enabled).
         - ``ZERo`` filters CAN FD packets to only match those where the BRS bit has a value of 0
@@ -7960,7 +7780,7 @@ class SearchSearchItemTriggerABusCanFdBrsbit(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusCanFd(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -7981,12 +7801,12 @@ class SearchSearchItemTriggerABusCanFd(SCPICmdRead):
     def brsbit(self) -> SearchSearchItemTriggerABusCanFdBrsbit:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:BRSBit`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the value of the bit rate switch bit (BRS bit) for a CAN
               bus to search on. The search number is specified by x. The search condition must be
               set to FDBITS, and the CAN standard must be FDISO or FDNONISO.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:BRSBit?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7995,14 +7815,13 @@ class SearchSearchItemTriggerABusCanFd(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:BRSBit value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:BRSBit {ONE|ZERo|NOCARE}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:BRSBit?
+            ```
 
-        **Info:**
+        Info:
             - ``ONE`` filters CAN FD packets to only match those where the BRS bit has a value of 1
               (fast data enabled).
             - ``ZERo`` filters CAN FD packets to only match those where the BRS bit has a value of 0
@@ -8015,12 +7834,12 @@ class SearchSearchItemTriggerABusCanFd(SCPICmdRead):
     def esibit(self) -> SearchSearchItemTriggerABusCanFdEsibit:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:ESIBit`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the value of the error state indicator bit (ESI bit) for
               a CAN bus to search on. The search number is specified by x. The search condition must
               be set to FDBITS, and the CAN standard must be FDISO or FDNONISO.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:ESIBit?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -8029,14 +7848,13 @@ class SearchSearchItemTriggerABusCanFd(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:ESIBit value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:ESIBit {ONE|ZERo|NOCARE}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD:ESIBit?
+            ```
 
-        **Info:**
+        Info:
             - ``ONE`` filters CAN FD packets to only match those where the ESI bit has a value of 1
               (recessive).
             - ``ZERo`` filters CAN FD packets to only match those where the ESI bit has a value of 0
@@ -8049,11 +7867,11 @@ class SearchSearchItemTriggerABusCanFd(SCPICmdRead):
 class SearchSearchItemTriggerABusCanErrtype(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:ERRType`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the type of error condition for a CAN bus to search on. The
           search number is specified by x. The search condition must be set to ERRor.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:ERRType?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -8062,14 +7880,13 @@ class SearchSearchItemTriggerABusCanErrtype(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:ERRType value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:ERRType {ACKMISS|BITSTUFFing|FORMERRor |ANYERRor}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:ERRType?
+        ```
 
-    **Info:**
+    Info:
         - ``ACKMISS`` specifies a search based on a missing ACK field.
         - ``BITSTUFFing`` specifies a search based on a bit stuffing error.
         - ``FORMERRor`` specifies a search based on a CAN FD form error. To use this option, the CAN
@@ -8081,11 +7898,11 @@ class SearchSearchItemTriggerABusCanErrtype(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusCanDataValue(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary data value to be used when searching on a CAN bus
           signal. The search condition must be set to IDANDDATA OR DATA.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -8094,14 +7911,13 @@ class SearchSearchItemTriggerABusCanDataValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:VALue <QString>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>``
     """
 
@@ -8111,12 +7927,12 @@ class SearchSearchItemTriggerABusCanDataValue(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusCanDataSize(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:SIZe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the length of the data string, in bytes, to be used when
           searching on a CAN bus signal. The search condition must be set to IDANDDATA or DATA. The
           search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:SIZe?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -8125,14 +7941,13 @@ class SearchSearchItemTriggerABusCanDataSize(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:SIZe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:SIZe <NR1>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:SIZe?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the data size.
     """
 
@@ -8140,11 +7955,11 @@ class SearchSearchItemTriggerABusCanDataSize(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusCanDataQualifier(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:QUALifier`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the CAN bus trigger data qualifier to be used when searching
           on a CAN bus signal. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:QUALifier?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -8153,14 +7968,13 @@ class SearchSearchItemTriggerABusCanDataQualifier(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:QUALifier value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:QUALifier {EQUal|LESSEQual|MOREEQua|UNEQual|LESSthan|MOREthan}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:QUALifier?
+        ```
 
-    **Info:**
+    Info:
         - ``EQUal`` sets the data qualifier to equal.
         - ``LESSEQual`` sets the data qualifier to less equal.
         - ``MOREEQua`` sets the data qualifier to more equal.
@@ -8173,12 +7987,12 @@ class SearchSearchItemTriggerABusCanDataQualifier(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusCanDataOffset(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:OFFSet`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the data offset value, in bytes, to use when searching on the
           CAN data field. The search number is specified by x. The search condition must be set to
           DATA or IDANDDATA.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:OFFSet?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -8187,14 +8001,13 @@ class SearchSearchItemTriggerABusCanDataOffset(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:OFFSet value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:OFFSet <NR1>
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:OFFSet?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is an integer whose minimum and default values are -1 (don't care) and maximum
           is up to 7 (for CAN 2.0) or up to 63 (for ISO CAN FD and Non-ISO CAN FD). The maximum is
           dependent on the number of bytes being matched and the CAN standard selected. Its value is
@@ -8208,11 +8021,11 @@ class SearchSearchItemTriggerABusCanDataOffset(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusCanDataDirection(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:DIRection`` command.
 
-    **Description:**
+    Description:
         - This command specifies the CAN search type to be valid on a Read, Write, or Either
           condition. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:DIRection?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -8221,14 +8034,13 @@ class SearchSearchItemTriggerABusCanDataDirection(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:DIRection value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:DIRection {READ|WRITE|NOCARE}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:DIRection?
+        ```
 
-    **Info:**
+    Info:
         - ``READ`` specifies the read direction.
         - ``WRITE`` specifies the write direction.
         - ``NOCARE`` specifies either data direction.
@@ -8238,7 +8050,7 @@ class SearchSearchItemTriggerABusCanDataDirection(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusCanData(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -8271,11 +8083,11 @@ class SearchSearchItemTriggerABusCanData(SCPICmdRead):
     def direction(self) -> SearchSearchItemTriggerABusCanDataDirection:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:DIRection`` command.
 
-        **Description:**
+        Description:
             - This command specifies the CAN search type to be valid on a Read, Write, or Either
               condition. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:DIRection?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -8284,14 +8096,13 @@ class SearchSearchItemTriggerABusCanData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:DIRection value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:DIRection {READ|WRITE|NOCARE}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:DIRection?
+            ```
 
-        **Info:**
+        Info:
             - ``READ`` specifies the read direction.
             - ``WRITE`` specifies the write direction.
             - ``NOCARE`` specifies either data direction.
@@ -8302,12 +8113,12 @@ class SearchSearchItemTriggerABusCanData(SCPICmdRead):
     def offset(self) -> SearchSearchItemTriggerABusCanDataOffset:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:OFFSet`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the data offset value, in bytes, to use when searching on
               the CAN data field. The search number is specified by x. The search condition must be
               set to DATA or IDANDDATA.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:OFFSet?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -8316,14 +8127,13 @@ class SearchSearchItemTriggerABusCanData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:OFFSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:OFFSet <NR1>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:OFFSet?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is an integer whose minimum and default values are -1 (don't care) and
               maximum is up to 7 (for CAN 2.0) or up to 63 (for ISO CAN FD and Non-ISO CAN FD). The
               maximum is dependent on the number of bytes being matched and the CAN standard
@@ -8339,11 +8149,11 @@ class SearchSearchItemTriggerABusCanData(SCPICmdRead):
     def qualifier(self) -> SearchSearchItemTriggerABusCanDataQualifier:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:QUALifier`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the CAN bus trigger data qualifier to be used when
               searching on a CAN bus signal. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:QUALifier?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -8352,14 +8162,13 @@ class SearchSearchItemTriggerABusCanData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:QUALifier value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:QUALifier {EQUal|LESSEQual|MOREEQua|UNEQual|LESSthan|MOREthan}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:QUALifier?
+            ```
 
-        **Info:**
+        Info:
             - ``EQUal`` sets the data qualifier to equal.
             - ``LESSEQual`` sets the data qualifier to less equal.
             - ``MOREEQua`` sets the data qualifier to more equal.
@@ -8373,12 +8182,12 @@ class SearchSearchItemTriggerABusCanData(SCPICmdRead):
     def size(self) -> SearchSearchItemTriggerABusCanDataSize:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:SIZe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the length of the data string, in bytes, to be used when
               searching on a CAN bus signal. The search condition must be set to IDANDDATA or DATA.
               The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:SIZe?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -8387,14 +8196,13 @@ class SearchSearchItemTriggerABusCanData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:SIZe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:SIZe <NR1>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:SIZe?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the data size.
         """
         return self._size
@@ -8403,11 +8211,11 @@ class SearchSearchItemTriggerABusCanData(SCPICmdRead):
     def value(self) -> SearchSearchItemTriggerABusCanDataValue:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary data value to be used when searching on a CAN
               bus signal. The search condition must be set to IDANDDATA OR DATA.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -8416,14 +8224,13 @@ class SearchSearchItemTriggerABusCanData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:VALue <QString>
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>``
         """
         return self._value
@@ -8432,11 +8239,11 @@ class SearchSearchItemTriggerABusCanData(SCPICmdRead):
 class SearchSearchItemTriggerABusCanCondition(SCPICmdWrite, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:CONDition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the search condition for a CAN bus. The search number is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:CONDition?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -8445,14 +8252,13 @@ class SearchSearchItemTriggerABusCanCondition(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:CONDition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:CONDition {SOF|FRAMEtype|IDentifier|DATa|IDANDDATA|EOF|ERRor|FDBITS}
         - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:CONDition?
+        ```
 
-    **Info:**
+    Info:
         - ``SOF`` Arguments specify the following CAN bus trigger conditions.
         - ``FRAMEtype`` Arguments specify the following CAN bus trigger conditions.
         - ``IDentifier`` Arguments specify the following CAN bus trigger conditions.
@@ -8467,7 +8273,7 @@ class SearchSearchItemTriggerABusCanCondition(SCPICmdWrite, SCPICmdRead):
 class SearchSearchItemTriggerABusCan(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -8500,11 +8306,11 @@ class SearchSearchItemTriggerABusCan(SCPICmdRead):
     def condition(self) -> SearchSearchItemTriggerABusCanCondition:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:CONDition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the search condition for a CAN bus. The search number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:CONDition?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -8513,14 +8319,13 @@ class SearchSearchItemTriggerABusCan(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:CONDition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:CONDition {SOF|FRAMEtype|IDentifier|DATa|IDANDDATA|EOF|ERRor|FDBITS}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:CONDition?
+            ```
 
-        **Info:**
+        Info:
             - ``SOF`` Arguments specify the following CAN bus trigger conditions.
             - ``FRAMEtype`` Arguments specify the following CAN bus trigger conditions.
             - ``IDentifier`` Arguments specify the following CAN bus trigger conditions.
@@ -8536,7 +8341,7 @@ class SearchSearchItemTriggerABusCan(SCPICmdRead):
     def data(self) -> SearchSearchItemTriggerABusCanData:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:DATa?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -8556,11 +8361,11 @@ class SearchSearchItemTriggerABusCan(SCPICmdRead):
     def errtype(self) -> SearchSearchItemTriggerABusCanErrtype:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:ERRType`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the type of error condition for a CAN bus to search on.
               The search number is specified by x. The search condition must be set to ERRor.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:ERRType?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -8569,14 +8374,13 @@ class SearchSearchItemTriggerABusCan(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:ERRType value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:ERRType {ACKMISS|BITSTUFFing|FORMERRor |ANYERRor}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:ERRType?
+            ```
 
-        **Info:**
+        Info:
             - ``ACKMISS`` specifies a search based on a missing ACK field.
             - ``BITSTUFFing`` specifies a search based on a bit stuffing error.
             - ``FORMERRor`` specifies a search based on a CAN FD form error. To use this option, the
@@ -8589,7 +8393,7 @@ class SearchSearchItemTriggerABusCan(SCPICmdRead):
     def fd(self) -> SearchSearchItemTriggerABusCanFd:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FD?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -8606,12 +8410,12 @@ class SearchSearchItemTriggerABusCan(SCPICmdRead):
     def frametype(self) -> SearchSearchItemTriggerABusCanFrametype:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FRAMEtype`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries CAN bus trigger frame type to be used when searching on a
               CAN bus signal. The search condition must be set to FRAMEtype. The search number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FRAMEtype?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -8620,14 +8424,13 @@ class SearchSearchItemTriggerABusCan(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FRAMEtype value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FRAMEtype {DATa|ERRor|OVERLoad|REMote}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:FRAMEtype?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` sets the frame type to data.
             - ``ERRor`` sets the frame type to error.
             - ``OVERLoad`` sets the frame type to overload.
@@ -8639,7 +8442,7 @@ class SearchSearchItemTriggerABusCan(SCPICmdRead):
     def identifier(self) -> SearchSearchItemTriggerABusCanIdentifier:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN:IDentifier?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -8657,7 +8460,7 @@ class SearchSearchItemTriggerABusCan(SCPICmdRead):
 class SearchSearchItemTriggerABus(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A:BUS`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -8688,7 +8491,7 @@ class SearchSearchItemTriggerABus(SCPICmdRead):
     def can(self) -> SearchSearchItemTriggerABusCan:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:CAN?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -8709,7 +8512,7 @@ class SearchSearchItemTriggerABus(SCPICmdRead):
     def i2c(self) -> SearchSearchItemTriggerABusI2c:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:I2C?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -8727,7 +8530,7 @@ class SearchSearchItemTriggerABus(SCPICmdRead):
     def lin(self) -> SearchSearchItemTriggerABusLin:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:LIN?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -8746,7 +8549,7 @@ class SearchSearchItemTriggerABus(SCPICmdRead):
     def parallel(self) -> SearchSearchItemTriggerABusParallel:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:PARallel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:PARallel?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -8762,7 +8565,7 @@ class SearchSearchItemTriggerABus(SCPICmdRead):
     def rs232c(self) -> SearchSearchItemTriggerABusRs232c:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:RS232C?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -8779,7 +8582,7 @@ class SearchSearchItemTriggerABus(SCPICmdRead):
     def sent(self) -> SearchSearchItemTriggerABusSent:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SENT?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -8799,11 +8602,11 @@ class SearchSearchItemTriggerABus(SCPICmdRead):
     def source(self) -> SearchSearchItemTriggerABusSource:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the bus source for the bus search to determine where to
               place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SOUrce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -8812,14 +8615,13 @@ class SearchSearchItemTriggerABus(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SOUrce {B0|B1|B2|B3|B4|B5|B6|B7|B8|B9|B10| B11|B12|B13|B14|B15|B16}
             - SEARCH:SEARCH<x>:TRIGger:A:BUS:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``B<x>`` specifies the bus source as a bus number from B01 to B16. x has a minimum of
               0 and a maximum of 16.
         """  # noqa: E501
@@ -8829,7 +8631,7 @@ class SearchSearchItemTriggerABus(SCPICmdRead):
     def spi(self) -> SearchSearchItemTriggerABusSpi:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS:SPI?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -8848,7 +8650,7 @@ class SearchSearchItemTriggerABus(SCPICmdRead):
 class SearchSearchItemTriggerA(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger:A`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -8885,7 +8687,7 @@ class SearchSearchItemTriggerA(SCPICmdRead):
     def bus(self) -> SearchSearchItemTriggerABus:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:BUS`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS?`` query.
             - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:BUS?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -8906,7 +8708,7 @@ class SearchSearchItemTriggerA(SCPICmdRead):
     def edge(self) -> SearchSearchItemTriggerAEdge:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:EDGE`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:EDGE?``
               query.
             - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:EDGE?``
@@ -8923,7 +8725,7 @@ class SearchSearchItemTriggerA(SCPICmdRead):
     def logic(self) -> SearchSearchItemTriggerALogic:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:LOGIc?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -8947,7 +8749,7 @@ class SearchSearchItemTriggerA(SCPICmdRead):
     def pulsewidth(self) -> SearchSearchItemTriggerAPulsewidth:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:PULSEWidth?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -8970,7 +8772,7 @@ class SearchSearchItemTriggerA(SCPICmdRead):
     def runt(self) -> SearchSearchItemTriggerARunt:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT?``
               query.
             - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:RUNT?``
@@ -8991,7 +8793,7 @@ class SearchSearchItemTriggerA(SCPICmdRead):
     def sethold(self) -> SearchSearchItemTriggerASethold:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:SETHold?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -9012,11 +8814,11 @@ class SearchSearchItemTriggerA(SCPICmdRead):
     def state(self) -> SearchSearchItemTriggerAState:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:STATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the enabled state of the search. The search number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:STATE?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -9025,14 +8827,13 @@ class SearchSearchItemTriggerA(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:STATE {<NR1>|OFF|ON}
             - SEARCH:SEARCH<x>:TRIGger:A:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 1 enables the search. Any other character disables the search.
             - ``ON`` enables the search.
             - ``OFF`` disables the search.
@@ -9043,11 +8844,11 @@ class SearchSearchItemTriggerA(SCPICmdRead):
     def stopacq(self) -> SearchSearchItemTriggerAStopacq:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:STOPAcq`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether acquisitions are stopped when a search hit is
               found. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:STOPAcq?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -9056,14 +8857,13 @@ class SearchSearchItemTriggerA(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:STOPAcq value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:STOPAcq {<NR1>|OFF|ON}
             - SEARCH:SEARCH<x>:TRIGger:A:STOPAcq?
+            ```
 
-        **Info:**
+        Info:
             - ``<x>`` is the number of the search on which to enable or disable the stop acquisition
               function.
             - ``<NR1>`` = 1 enables stopping when a search hit is found. Any other character
@@ -9077,7 +8877,7 @@ class SearchSearchItemTriggerA(SCPICmdRead):
     def timeout(self) -> SearchSearchItemTriggerATimeout:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:TIMEOut?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -9098,11 +8898,11 @@ class SearchSearchItemTriggerA(SCPICmdRead):
     def type(self) -> SearchSearchItemTriggerAType:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the trigger type setting for a search to determine where
               to place a mark. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:TYPe?``
               query.
             - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A:TYPe?``
@@ -9110,14 +8910,13 @@ class SearchSearchItemTriggerA(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SEARCH:SEARCH<x>:TRIGger:A:TYPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TRIGger:A:TYPe {EDGE| RUNT| TRANsition| PULSEWidth| TIMEOut| LOGIc| SETHold| Bus}
             - SEARCH:SEARCH<x>:TRIGger:A:TYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``EDGE`` triggers when the source input signal amplitude crosses the specified level
               in the direction given by the slope.
             - ``RUNT`` triggers when a pulse crosses the first preset voltage threshold but does not
@@ -9146,7 +8945,7 @@ class SearchSearchItemTriggerA(SCPICmdRead):
 class SearchSearchItemTrigger(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TRIGger`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -9163,7 +8962,7 @@ class SearchSearchItemTrigger(SCPICmdRead):
     def a(self) -> SearchSearchItemTriggerA:
         """Return the ``SEARCH:SEARCH<x>:TRIGger:A`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A?`` query.
             - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger:A?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -9186,41 +8985,39 @@ class SearchSearchItemTrigger(SCPICmdRead):
 class SearchSearchItemTotal(SCPICmdRead):
     """The ``SEARCH:SEARCH<x>:TOTAL`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the total number of found search marks for this search.
           The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TOTAL?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TOTAL?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:TOTAL?
+        ```
     """
 
 
 class SearchSearchItemNavigate(SCPICmdWrite):
     """The ``SEARCH:SEARCH<x>:NAVigate`` command.
 
-    **Description:**
+    Description:
         - This command sets the navigation action for search marks. The NONE action is the default
           setting when no action is being taken. The search number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SEARCH:SEARCH<x>:NAVigate value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:NAVigate {NEXT|PREVious|MIN|NONE|MAX}
+        ```
 
-    **Info:**
+    Info:
         - ``NEXT`` goes to the next search mark.
         - ``PREVious`` goes to the previous search mark.
         - ``MIN`` goes to the search result with the smallest value. Only supported by search
@@ -9234,20 +9031,19 @@ class SearchSearchItemNavigate(SCPICmdWrite):
 class SearchSearchItemCopy(SCPICmdWrite):
     """The ``SEARCH:SEARCH<x>:COPy`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) copies the search criteria to or from the trigger. The search
           number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SEARCH:SEARCH<x>:COPy value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:SEARCH<x>:COPy {SEARCHtotrigger|TRIGgertosearch}
+        ```
 
-    **Info:**
+    Info:
         - ``SEARCHtotrigger`` copies the search criteria to the trigger.
         - ``TRIGgertosearch`` copies the trigger criteria to the search.
     """
@@ -9256,7 +9052,7 @@ class SearchSearchItemCopy(SCPICmdWrite):
 class SearchSearchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``SEARCH:SEARCH<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -9279,21 +9075,20 @@ class SearchSearchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def copy(self) -> SearchSearchItemCopy:
         """Return the ``SEARCH:SEARCH<x>:COPy`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) copies the search criteria to or from the trigger. The
               search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SEARCH:SEARCH<x>:COPy value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:COPy {SEARCHtotrigger|TRIGgertosearch}
+            ```
 
-        **Info:**
+        Info:
             - ``SEARCHtotrigger`` copies the search criteria to the trigger.
             - ``TRIGgertosearch`` copies the trigger criteria to the search.
         """
@@ -9303,21 +9098,20 @@ class SearchSearchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def navigate(self) -> SearchSearchItemNavigate:
         """Return the ``SEARCH:SEARCH<x>:NAVigate`` command.
 
-        **Description:**
+        Description:
             - This command sets the navigation action for search marks. The NONE action is the
               default setting when no action is being taken. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SEARCH:SEARCH<x>:NAVigate value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:NAVigate {NEXT|PREVious|MIN|NONE|MAX}
+            ```
 
-        **Info:**
+        Info:
             - ``NEXT`` goes to the next search mark.
             - ``PREVious`` goes to the previous search mark.
             - ``MIN`` goes to the search result with the smallest value. Only supported by search
@@ -9334,20 +9128,19 @@ class SearchSearchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def total(self) -> SearchSearchItemTotal:
         """Return the ``SEARCH:SEARCH<x>:TOTAL`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the total number of found search marks for this
               search. The search number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TOTAL?`` query.
             - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TOTAL?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SEARCH<x>:TOTAL?
+            ```
         """
         return self._total
 
@@ -9355,7 +9148,7 @@ class SearchSearchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def trigger(self) -> SearchSearchItemTrigger:
         """Return the ``SEARCH:SEARCH<x>:TRIGger`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>:TRIGger?`` query.
             - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>:TRIGger?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -9369,38 +9162,36 @@ class SearchSearchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class SearchList(SCPICmdRead):
     """The ``SEARCH:LIST`` command.
 
-    **Description:**
+    Description:
         - This command returns a comma separated list of all currently defined searches.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH:LIST?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH:LIST?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:LIST?
+        ```
     """
 
 
 class SearchDelete(SCPICmdWrite):
     """The ``SEARCH:DELete`` command.
 
-    **Description:**
+    Description:
         - This command deletes the specified search.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SEARCH:DELete value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:DELete <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the specified search. The argument is of the form 'SEARCH<NR1>', where
           <NR1> is ≥ 1).
     """
@@ -9411,37 +9202,35 @@ class SearchDelete(SCPICmdWrite):
 class SearchDeleteall(SCPICmdWriteNoArguments):
     """The ``SEARCH:DELETEALL`` command.
 
-    **Description:**
+    Description:
         - This command deletes all the active instances of search definitions defined in the scope
           application.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``SEARCH:DELETEALL`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:DELETEALL
+        ```
     """
 
 
 class SearchAddnew(SCPICmdWrite):
     """The ``SEARCH:ADDNew`` command.
 
-    **Description:**
+    Description:
         - This command adds the specified search.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SEARCH:ADDNew value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SEARCH:ADDNew <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the specified search. The argument is of the form 'SEARCH<NR1>', where
           <NR1> is ≥ 1.
     """
@@ -9452,7 +9241,7 @@ class SearchAddnew(SCPICmdWrite):
 class Search(SCPICmdRead):
     """The ``SEARCH`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SEARCH?`` query.
         - Using the ``.verify(value)`` method will send the ``SEARCH?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -9481,19 +9270,18 @@ class Search(SCPICmdRead):
     def addnew(self) -> SearchAddnew:
         """Return the ``SEARCH:ADDNew`` command.
 
-        **Description:**
+        Description:
             - This command adds the specified search.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SEARCH:ADDNew value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:ADDNew <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the specified search. The argument is of the form 'SEARCH<NR1>',
               where <NR1> is ≥ 1.
         """
@@ -9503,18 +9291,17 @@ class Search(SCPICmdRead):
     def deleteall(self) -> SearchDeleteall:
         """Return the ``SEARCH:DELETEALL`` command.
 
-        **Description:**
+        Description:
             - This command deletes all the active instances of search definitions defined in the
               scope application.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``SEARCH:DELETEALL`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:DELETEALL
+            ```
         """
         return self._deleteall
 
@@ -9522,19 +9309,18 @@ class Search(SCPICmdRead):
     def delete(self) -> SearchDelete:
         """Return the ``SEARCH:DELete`` command.
 
-        **Description:**
+        Description:
             - This command deletes the specified search.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SEARCH:DELete value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:DELete <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the specified search. The argument is of the form 'SEARCH<NR1>',
               where <NR1> is ≥ 1).
         """
@@ -9544,19 +9330,18 @@ class Search(SCPICmdRead):
     def list(self) -> SearchList:
         """Return the ``SEARCH:LIST`` command.
 
-        **Description:**
+        Description:
             - This command returns a comma separated list of all currently defined searches.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:LIST?`` query.
             - Using the ``.verify(value)`` method will send the ``SEARCH:LIST?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:LIST?
+            ```
         """
         return self._list
 
@@ -9564,7 +9349,7 @@ class Search(SCPICmdRead):
     def search(self) -> Dict[int, SearchSearchItem]:
         """Return the ``SEARCH:SEARCH<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SEARCH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``SEARCH:SEARCH<x>?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -9581,24 +9366,23 @@ class Search(SCPICmdRead):
     def selected(self) -> SearchSelected:
         """Return the ``SEARCH:SELected`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the selected search, for example SEARCH1. The search
               number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SEARCH:SELected?`` query.
             - Using the ``.verify(value)`` method will send the ``SEARCH:SELected?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SEARCH:SELected value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SEARCH:SELected SEARCH1
             - SEARCH:SELected?
+            ```
 
-        **Info:**
+        Info:
             - ``SEARCH1`` is the specified search.
         """
         return self._selected

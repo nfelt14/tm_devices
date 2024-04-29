@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - HCOPy:SDUMp:IMMediate
 """
 
@@ -25,26 +23,25 @@ if TYPE_CHECKING:
 class HcopySdumpImmediate(SCPICmdWriteNoArguments):
     """The ``HCOPy:SDUMp:IMMediate`` command.
 
-    **Description:**
+    Description:
         - This command copies a screen image and saves the image file to a USB memory. The default
           file name is TEK00nnn.BMP, where nnn is a consecutive number from 000 through 999. The
           image files are saved in a folder named 'TEK' in the USB memory.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``HCOPy:SDUMp:IMMediate`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HCOPy:SDUMp:IMMediate
+        ```
     """
 
 
 class HcopySdump(SCPICmdRead):
     """The ``HCOPy:SDUMp`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HCOPy:SDUMp?`` query.
         - Using the ``.verify(value)`` method will send the ``HCOPy:SDUMp?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -61,19 +58,18 @@ class HcopySdump(SCPICmdRead):
     def immediate(self) -> HcopySdumpImmediate:
         """Return the ``HCOPy:SDUMp:IMMediate`` command.
 
-        **Description:**
+        Description:
             - This command copies a screen image and saves the image file to a USB memory. The
               default file name is TEK00nnn.BMP, where nnn is a consecutive number from 000 through
               999. The image files are saved in a folder named 'TEK' in the USB memory.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``HCOPy:SDUMp:IMMediate`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HCOPy:SDUMp:IMMediate
+            ```
         """
         return self._immediate
 
@@ -81,7 +77,7 @@ class HcopySdump(SCPICmdRead):
 class Hcopy(SCPICmdRead):
     """The ``HCOPy`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HCOPy?`` query.
         - Using the ``.verify(value)`` method will send the ``HCOPy?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -98,7 +94,7 @@ class Hcopy(SCPICmdRead):
     def sdump(self) -> HcopySdump:
         """Return the ``HCOPy:SDUMp`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HCOPy:SDUMp?`` query.
             - Using the ``.verify(value)`` method will send the ``HCOPy:SDUMp?`` query and raise an
               AssertionError if the returned value does not match ``value``.

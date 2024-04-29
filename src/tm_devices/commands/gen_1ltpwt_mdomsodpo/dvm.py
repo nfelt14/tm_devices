@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - DVM {RESET}
     - DVM:AUTORange {0|1|OFF|ON}
     - DVM:AUTORange?
@@ -40,23 +38,22 @@ if TYPE_CHECKING:
 class DvmSource(SCPICmdWrite, SCPICmdRead):
     """The ``DVM:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets (or queries) the source for the DVM.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DVM:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``DVM:SOUrce?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DVM:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DVM:SOUrce {CH<x>}
         - DVM:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specify which channel to use as the source for the DVM.
     """
 
@@ -64,24 +61,23 @@ class DvmSource(SCPICmdWrite, SCPICmdRead):
 class DvmMode(SCPICmdWrite, SCPICmdRead):
     """The ``DVM:MODe`` command.
 
-    **Description:**
+    Description:
         - Specifies (or queries) the mode to use for the Digital Voltmeter (ACRMS, ACDCRMS, DC,
           Frequency, or OFF).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DVM:MODe?`` query.
         - Using the ``.verify(value)`` method will send the ``DVM:MODe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DVM:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DVM:MODe {ACRMS|ACDCRMS|DC|FREQuency|OFF}
         - DVM:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``ACRMS`` - displays the root-mean-square value of the acquired data, with the DC
           component removed.
         - ``ACDCRMS`` - displays the RMS value of the acquired data.
@@ -94,126 +90,120 @@ class DvmMode(SCPICmdWrite, SCPICmdRead):
 class DvmMeasurementValue(SCPICmdRead):
     """The ``DVM:MEASUrement:VALue`` command.
 
-    **Description:**
+    Description:
         - Returns the DVM readout value (the largest displayed value at the top of the DVM screen).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DVM:MEASUrement:VALue?`` query.
         - Using the ``.verify(value)`` method will send the ``DVM:MEASUrement:VALue?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DVM:MEASUrement:VALue?
+        ```
     """
 
 
 class DvmMeasurementInfminimum(SCPICmdRead):
     """The ``DVM:MEASUrement:INFMINimum`` command.
 
-    **Description:**
+    Description:
         - Returns the minimum readout value of the DVM over the entire time that the DVM has been on
           since the last change using the ``DVM:MODE`` or ``DVM:SOURCE`` commands or DVM RESET.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DVM:MEASUrement:INFMINimum?`` query.
         - Using the ``.verify(value)`` method will send the ``DVM:MEASUrement:INFMINimum?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DVM:MEASUrement:INFMINimum?
+        ```
     """
 
 
 class DvmMeasurementInfmaximum(SCPICmdRead):
     """The ``DVM:MEASUrement:INFMAXimum`` command.
 
-    **Description:**
+    Description:
         - Returns the maximum DVM readout value over the entire time that the DVM has been on since
           the last change using the ``DVM:MODE`` or ``DVM:SOURCE`` commands or DVM RESET.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DVM:MEASUrement:INFMAXimum?`` query.
         - Using the ``.verify(value)`` method will send the ``DVM:MEASUrement:INFMAXimum?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DVM:MEASUrement:INFMAXimum?
+        ```
     """
 
 
 class DvmMeasurementHistoryMinimum(SCPICmdRead):
     """The ``DVM:MEASUrement:HIStory:MINImum`` command.
 
-    **Description:**
+    Description:
         - Returns the minimum readout value for the DVM over the history period. The history period
           is a constant period of 5 seconds.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DVM:MEASUrement:HIStory:MINImum?`` query.
         - Using the ``.verify(value)`` method will send the ``DVM:MEASUrement:HIStory:MINImum?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DVM:MEASUrement:HIStory:MINImum?
+        ```
     """
 
 
 class DvmMeasurementHistoryMaximum(SCPICmdRead):
     """The ``DVM:MEASUrement:HIStory:MAXimum`` command.
 
-    **Description:**
+    Description:
         - Returns the maximum readout value for the DVM function over the history period. The
           history period is a constant period of 5 seconds.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DVM:MEASUrement:HIStory:MAXimum?`` query.
         - Using the ``.verify(value)`` method will send the ``DVM:MEASUrement:HIStory:MAXimum?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DVM:MEASUrement:HIStory:MAXimum?
+        ```
     """
 
 
 class DvmMeasurementHistoryAverage(SCPICmdRead):
     """The ``DVM:MEASUrement:HIStory:AVErage`` command.
 
-    **Description:**
+    Description:
         - Returns the average DVM readout value over the history period. The history period is a
           constant period of 5 seconds.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DVM:MEASUrement:HIStory:AVErage?`` query.
         - Using the ``.verify(value)`` method will send the ``DVM:MEASUrement:HIStory:AVErage?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DVM:MEASUrement:HIStory:AVErage?
+        ```
     """
 
 
 class DvmMeasurementHistory(SCPICmdRead):
     """The ``DVM:MEASUrement:HIStory`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DVM:MEASUrement:HIStory?`` query.
         - Using the ``.verify(value)`` method will send the ``DVM:MEASUrement:HIStory?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -234,21 +224,20 @@ class DvmMeasurementHistory(SCPICmdRead):
     def average(self) -> DvmMeasurementHistoryAverage:
         """Return the ``DVM:MEASUrement:HIStory:AVErage`` command.
 
-        **Description:**
+        Description:
             - Returns the average DVM readout value over the history period. The history period is a
               constant period of 5 seconds.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DVM:MEASUrement:HIStory:AVErage?``
               query.
             - Using the ``.verify(value)`` method will send the ``DVM:MEASUrement:HIStory:AVErage?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DVM:MEASUrement:HIStory:AVErage?
+            ```
         """
         return self._average
 
@@ -256,21 +245,20 @@ class DvmMeasurementHistory(SCPICmdRead):
     def maximum(self) -> DvmMeasurementHistoryMaximum:
         """Return the ``DVM:MEASUrement:HIStory:MAXimum`` command.
 
-        **Description:**
+        Description:
             - Returns the maximum readout value for the DVM function over the history period. The
               history period is a constant period of 5 seconds.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DVM:MEASUrement:HIStory:MAXimum?``
               query.
             - Using the ``.verify(value)`` method will send the ``DVM:MEASUrement:HIStory:MAXimum?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DVM:MEASUrement:HIStory:MAXimum?
+            ```
         """
         return self._maximum
 
@@ -278,21 +266,20 @@ class DvmMeasurementHistory(SCPICmdRead):
     def minimum(self) -> DvmMeasurementHistoryMinimum:
         """Return the ``DVM:MEASUrement:HIStory:MINImum`` command.
 
-        **Description:**
+        Description:
             - Returns the minimum readout value for the DVM over the history period. The history
               period is a constant period of 5 seconds.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DVM:MEASUrement:HIStory:MINImum?``
               query.
             - Using the ``.verify(value)`` method will send the ``DVM:MEASUrement:HIStory:MINImum?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DVM:MEASUrement:HIStory:MINImum?
+            ```
         """
         return self._minimum
 
@@ -300,26 +287,25 @@ class DvmMeasurementHistory(SCPICmdRead):
 class DvmMeasurementFrequency(SCPICmdRead):
     """The ``DVM:MEASUrement:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command returns the current frequency value for the DVM.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DVM:MEASUrement:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``DVM:MEASUrement:FREQuency?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DVM:MEASUrement:FREQuency?
+        ```
     """
 
 
 class DvmMeasurement(SCPICmdRead):
     """The ``DVM:MEASUrement`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DVM:MEASUrement?`` query.
         - Using the ``.verify(value)`` method will send the ``DVM:MEASUrement?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -344,19 +330,18 @@ class DvmMeasurement(SCPICmdRead):
     def frequency(self) -> DvmMeasurementFrequency:
         """Return the ``DVM:MEASUrement:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command returns the current frequency value for the DVM.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DVM:MEASUrement:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``DVM:MEASUrement:FREQuency?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DVM:MEASUrement:FREQuency?
+            ```
         """
         return self._frequency
 
@@ -364,7 +349,7 @@ class DvmMeasurement(SCPICmdRead):
     def history(self) -> DvmMeasurementHistory:
         """Return the ``DVM:MEASUrement:HIStory`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DVM:MEASUrement:HIStory?`` query.
             - Using the ``.verify(value)`` method will send the ``DVM:MEASUrement:HIStory?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -380,20 +365,19 @@ class DvmMeasurement(SCPICmdRead):
     def infmaximum(self) -> DvmMeasurementInfmaximum:
         """Return the ``DVM:MEASUrement:INFMAXimum`` command.
 
-        **Description:**
+        Description:
             - Returns the maximum DVM readout value over the entire time that the DVM has been on
               since the last change using the ``DVM:MODE`` or ``DVM:SOURCE`` commands or DVM RESET.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DVM:MEASUrement:INFMAXimum?`` query.
             - Using the ``.verify(value)`` method will send the ``DVM:MEASUrement:INFMAXimum?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DVM:MEASUrement:INFMAXimum?
+            ```
         """
         return self._infmaximum
 
@@ -401,21 +385,20 @@ class DvmMeasurement(SCPICmdRead):
     def infminimum(self) -> DvmMeasurementInfminimum:
         """Return the ``DVM:MEASUrement:INFMINimum`` command.
 
-        **Description:**
+        Description:
             - Returns the minimum readout value of the DVM over the entire time that the DVM has
               been on since the last change using the ``DVM:MODE`` or ``DVM:SOURCE`` commands or DVM
               RESET.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DVM:MEASUrement:INFMINimum?`` query.
             - Using the ``.verify(value)`` method will send the ``DVM:MEASUrement:INFMINimum?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DVM:MEASUrement:INFMINimum?
+            ```
         """
         return self._infminimum
 
@@ -423,20 +406,19 @@ class DvmMeasurement(SCPICmdRead):
     def value(self) -> DvmMeasurementValue:
         """Return the ``DVM:MEASUrement:VALue`` command.
 
-        **Description:**
+        Description:
             - Returns the DVM readout value (the largest displayed value at the top of the DVM
               screen).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DVM:MEASUrement:VALue?`` query.
             - Using the ``.verify(value)`` method will send the ``DVM:MEASUrement:VALue?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DVM:MEASUrement:VALue?
+            ```
         """
         return self._value
 
@@ -444,23 +426,22 @@ class DvmMeasurement(SCPICmdRead):
 class DvmDisplaystyle(SCPICmdWrite, SCPICmdRead):
     """The ``DVM:DISPLAYSTYle`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the display style for the Digital Voltmeter.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DVM:DISPLAYSTYle?`` query.
         - Using the ``.verify(value)`` method will send the ``DVM:DISPLAYSTYle?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DVM:DISPLAYSTYle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DVM:DISPLAYSTYle {FULl|MINimum}
         - DVM:DISPLAYSTYle?
+        ```
 
-    **Info:**
+    Info:
         - ``FULl`` sets the display style for the DVM to Full.
         - ``MINimum`` sets the display style for the DVM to Minimum.
     """
@@ -469,23 +450,22 @@ class DvmDisplaystyle(SCPICmdWrite, SCPICmdRead):
 class DvmAutorange(SCPICmdWrite, SCPICmdRead):
     """The ``DVM:AUTORange`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the autorange state for the Digital Voltmeter.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DVM:AUTORange?`` query.
         - Using the ``.verify(value)`` method will send the ``DVM:AUTORange?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DVM:AUTORange value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DVM:AUTORange {0|1|OFF|ON}
         - DVM:AUTORange?
+        ```
 
-    **Info:**
+    Info:
         - ``1`` or ON turns on autorange for the Digital Voltmeter.
         - ``0`` or OFF turns autorange off.
     """
@@ -494,17 +474,16 @@ class DvmAutorange(SCPICmdWrite, SCPICmdRead):
 class Dvm(SCPICmdWrite, SCPICmdRead):
     """The ``DVM`` command.
 
-    **Description:**
+    Description:
         - Resets the Digital Voltmeter measurements and history.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``DVM value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DVM {RESET}
+        ```
 
     Properties:
         - ``.autorange``: The ``DVM:AUTORange`` command.
@@ -526,23 +505,22 @@ class Dvm(SCPICmdWrite, SCPICmdRead):
     def autorange(self) -> DvmAutorange:
         """Return the ``DVM:AUTORange`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the autorange state for the Digital Voltmeter.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DVM:AUTORange?`` query.
             - Using the ``.verify(value)`` method will send the ``DVM:AUTORange?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DVM:AUTORange value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DVM:AUTORange {0|1|OFF|ON}
             - DVM:AUTORange?
+            ```
 
-        **Info:**
+        Info:
             - ``1`` or ON turns on autorange for the Digital Voltmeter.
             - ``0`` or OFF turns autorange off.
         """
@@ -552,23 +530,22 @@ class Dvm(SCPICmdWrite, SCPICmdRead):
     def displaystyle(self) -> DvmDisplaystyle:
         """Return the ``DVM:DISPLAYSTYle`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the display style for the Digital Voltmeter.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DVM:DISPLAYSTYle?`` query.
             - Using the ``.verify(value)`` method will send the ``DVM:DISPLAYSTYle?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DVM:DISPLAYSTYle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DVM:DISPLAYSTYle {FULl|MINimum}
             - DVM:DISPLAYSTYle?
+            ```
 
-        **Info:**
+        Info:
             - ``FULl`` sets the display style for the DVM to Full.
             - ``MINimum`` sets the display style for the DVM to Minimum.
         """
@@ -578,7 +555,7 @@ class Dvm(SCPICmdWrite, SCPICmdRead):
     def measurement(self) -> DvmMeasurement:
         """Return the ``DVM:MEASUrement`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DVM:MEASUrement?`` query.
             - Using the ``.verify(value)`` method will send the ``DVM:MEASUrement?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -596,24 +573,23 @@ class Dvm(SCPICmdWrite, SCPICmdRead):
     def mode(self) -> DvmMode:
         """Return the ``DVM:MODe`` command.
 
-        **Description:**
+        Description:
             - Specifies (or queries) the mode to use for the Digital Voltmeter (ACRMS, ACDCRMS, DC,
               Frequency, or OFF).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DVM:MODe?`` query.
             - Using the ``.verify(value)`` method will send the ``DVM:MODe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DVM:MODe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DVM:MODe {ACRMS|ACDCRMS|DC|FREQuency|OFF}
             - DVM:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``ACRMS`` - displays the root-mean-square value of the acquired data, with the DC
               component removed.
             - ``ACDCRMS`` - displays the RMS value of the acquired data.
@@ -627,23 +603,22 @@ class Dvm(SCPICmdWrite, SCPICmdRead):
     def source(self) -> DvmSource:
         """Return the ``DVM:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets (or queries) the source for the DVM.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DVM:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``DVM:SOUrce?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DVM:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DVM:SOUrce {CH<x>}
             - DVM:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specify which channel to use as the source for the DVM.
         """
         return self._source

@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - lan.config.dns.hostname
 """
 
@@ -52,7 +50,7 @@ class LanTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
 class LanConfigDns(BaseTSPCmd):
     """The ``lan.config.dns`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.hostname``: The ``lan.config.dns.hostname`` attribute.
     """
 
@@ -60,20 +58,19 @@ class LanConfigDns(BaseTSPCmd):
     def hostname(self) -> str:
         """Access the ``lan.config.dns.hostname`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the dynamic DNS host name.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.dns.hostname)`` query.
             - Setting this property to a value will send the ``lan.config.dns.hostname = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.dns.hostname = value
             - print(lan.config.dns.hostname)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -92,20 +89,19 @@ class LanConfigDns(BaseTSPCmd):
     def hostname(self, value: Union[str, float]) -> None:
         """Access the ``lan.config.dns.hostname`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the dynamic DNS host name.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(lan.config.dns.hostname)`` query.
             - Setting this property to a value will send the ``lan.config.dns.hostname = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - lan.config.dns.hostname = value
             - print(lan.config.dns.hostname)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -127,7 +123,7 @@ class LanConfigDns(BaseTSPCmd):
 class LanConfig(BaseTSPCmd):
     """The ``lan.config`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.dns``: The ``lan.config.dns`` command tree.
     """
 
@@ -139,7 +135,7 @@ class LanConfig(BaseTSPCmd):
     def dns(self) -> LanConfigDns:
         """Return the ``lan.config.dns`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.hostname``: The ``lan.config.dns.hostname`` attribute.
         """
         return self._dns
@@ -175,7 +171,7 @@ class Lan(BaseTSPCmd):
           event to rising edge (positive state).
         - ``.UDP``: Use UDP protocol.
 
-    Properties/methods:
+    Properties and methods:
         - ``.config``: The ``lan.config`` command tree.
         - ``.trigger``: The ``lan.trigger[N]`` command tree.
     """
@@ -226,7 +222,7 @@ class Lan(BaseTSPCmd):
     def config(self) -> LanConfig:
         """Return the ``lan.config`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.dns``: The ``lan.config.dns`` command tree.
         """
         return self._config

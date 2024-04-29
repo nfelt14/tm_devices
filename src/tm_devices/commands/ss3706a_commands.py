@@ -74,7 +74,7 @@ class SS3706ACommands:
     This provides access to all the commands for the SS3706A device. See the documentation of each
     property for more usage information.
 
-    Properties/methods:
+    Properties and methods:
         - ``.beeper``: The ``beeper`` command tree.
         - ``.bit``: The ``bit`` command tree.
         - ``.buffer_var``: The ``bufferVar`` command tree.
@@ -174,7 +174,7 @@ class SS3706ACommands:
     def beeper(self) -> Beeper:
         """Return the ``beeper`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.beep()``: The ``beeper.beep()`` function.
             - ``.enable``: The ``beeper.enable`` attribute.
         """
@@ -184,7 +184,7 @@ class SS3706ACommands:
     def bit(self) -> Bit:
         """Return the ``bit`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.bitand()``: The ``bit.bitand()`` function.
             - ``.bitor()``: The ``bit.bitor()`` function.
             - ``.bitxor()``: The ``bit.bitxor()`` function.
@@ -202,10 +202,10 @@ class SS3706ACommands:
     def buffer_var(self) -> Dict[str, Buffervar]:
         """Return the ``bufferVar`` command tree.
 
-        **Info:**
+        Info:
             - ``bufferVar``, the reading buffer.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.appendmode``: The ``bufferVar.appendmode`` attribute.
             - ``.basetimefractional``: The ``bufferVar.basetimefractional`` attribute.
             - ``.basetimeseconds``: The ``bufferVar.basetimeseconds`` attribute.
@@ -236,7 +236,7 @@ class SS3706ACommands:
     def channel(self) -> Channel:
         """Return the ``channel`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.calibration``: The ``channel.calibration`` command tree.
             - ``.clearforbidden()``: The ``channel.clearforbidden()`` function.
             - ``.close()``: The ``channel.close()`` function.
@@ -284,7 +284,7 @@ class SS3706ACommands:
     def comm(self) -> Comm:
         """Return the ``comm`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.gpib``: The ``comm.gpib`` command tree.
             - ``.lan``: The ``comm.lan`` command tree.
         """
@@ -297,7 +297,7 @@ class SS3706ACommands:
         Constants:
             - ``.CAPACITY``: The maximum number of entries that you can store in the data queue.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.add()``: The ``dataqueue.add()`` function.
             - ``.clear()``: The ``dataqueue.clear()`` function.
             - ``.count``: The ``dataqueue.count`` attribute.
@@ -309,7 +309,7 @@ class SS3706ACommands:
     def digio(self) -> Digio:
         """Return the ``digio`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.readbit()``: The ``digio.readbit()`` function.
             - ``.readport()``: The ``digio.readport()`` function.
             - ``.trigger``: The ``digio.trigger[N]`` command tree.
@@ -323,7 +323,7 @@ class SS3706ACommands:
     def display(self) -> Display:
         """Return the ``display`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``display.clear()`` function.
             - ``.getannunciators()``: The ``display.getannunciators()`` function.
             - ``.getcursor()``: The ``display.getcursor()`` function.
@@ -347,7 +347,7 @@ class SS3706ACommands:
     def dmm(self) -> Dmm:
         """Return the ``dmm`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.adjustment``: The ``dmm.adjustment`` command tree.
             - ``.aperture``: The ``dmm.aperture`` attribute.
             - ``.appendbuffer()``: The ``dmm.appendbuffer()`` function.
@@ -401,7 +401,7 @@ class SS3706ACommands:
     def errorqueue(self) -> Errorqueue:
         """Return the ``errorqueue`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``errorqueue.clear()`` function.
             - ``.count``: The ``errorqueue.count`` attribute.
             - ``.next()``: The ``errorqueue.next()`` function.
@@ -412,7 +412,7 @@ class SS3706ACommands:
     def eventlog(self) -> Eventlog:
         """Return the ``eventlog`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.all()``: The ``eventlog.all()`` function.
             - ``.clear()``: The ``eventlog.clear()`` function.
             - ``.count``: The ``eventlog.count`` attribute.
@@ -426,7 +426,7 @@ class SS3706ACommands:
     def format(self) -> Format:
         """Return the ``format`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.asciiprecision``: The ``format.asciiprecision`` attribute.
             - ``.byteorder``: The ``format.byteorder`` attribute.
             - ``.data``: The ``format.data`` attribute.
@@ -437,7 +437,7 @@ class SS3706ACommands:
     def fs(self) -> Fs:
         """Return the ``fs`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.chdir()``: The ``fs.chdir()`` function.
             - ``.cwd()``: The ``fs.cwd()`` function.
             - ``.is_dir()``: The ``fs.is_dir()`` function.
@@ -452,7 +452,7 @@ class SS3706ACommands:
     def gpib(self) -> Gpib:
         """Return the ``gpib`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.address``: The ``gpib.address`` attribute.
         """
         return self._gpib
@@ -461,7 +461,7 @@ class SS3706ACommands:
     def io(self) -> Io:
         """Return the ``io`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.close()``: The ``io.close()`` function.
             - ``.flush()``: The ``io.flush()`` function.
             - ``.input()``: The ``io.input()`` function.
@@ -477,7 +477,7 @@ class SS3706ACommands:
     def lan(self) -> Lan:
         """Return the ``lan`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.applysettings()``: The ``lan.applysettings()`` function.
             - ``.config``: The ``lan.config`` command tree.
             - ``.lxidomain``: The ``lan.lxidomain`` attribute.
@@ -493,7 +493,7 @@ class SS3706ACommands:
     def localnode(self) -> Localnode:
         """Return the ``localnode`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.description``: The ``localnode.description`` attribute.
             - ``.emulation``: The ``localnode.emulation`` attribute.
             - ``.license``: The ``localnode.license`` attribute.
@@ -514,7 +514,7 @@ class SS3706ACommands:
     def memory(self) -> Memory:
         """Return the ``memory`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.available()``: The ``memory.available()`` function.
             - ``.used()``: The ``memory.used()`` function.
         """
@@ -524,10 +524,10 @@ class SS3706ACommands:
     def node(self) -> Dict[int, NodeItem]:
         """Return the ``node[N]`` command tree.
 
-        **Info:**
+        Info:
             - ``N``, the node number of this instrument (1 to 63).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.execute()``: The ``node[N].execute()`` function.
             - ``.getglobal()``: The ``node[N].getglobal()`` function.
             - ``.setglobal()``: The ``node[N].setglobal()`` function.
@@ -538,7 +538,7 @@ class SS3706ACommands:
     def os(self) -> Os:
         """Return the ``os`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.time()``: The ``os.time()`` function.
         """
         return self._os
@@ -547,7 +547,7 @@ class SS3706ACommands:
     def ptp(self) -> Ptp:
         """Return the ``ptp`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.domain``: The ``ptp.domain`` attribute.
             - ``.ds``: The ``ptp.ds`` command tree.
             - ``.enable``: The ``ptp.enable`` attribute.
@@ -562,7 +562,7 @@ class SS3706ACommands:
     def scan(self) -> Scan:
         """Return the ``scan`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.abort()``: The ``scan.abort()`` function.
             - ``.add()``: The ``scan.add()`` function.
             - ``.addimagestep()``: The ``scan.addimagestep()`` function.
@@ -588,7 +588,7 @@ class SS3706ACommands:
     def schedule(self) -> Schedule:
         """Return the ``schedule`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.alarm``: The ``schedule.alarm[N]`` command tree.
             - ``.disable()``: The ``schedule.disable()`` function.
         """
@@ -598,7 +598,7 @@ class SS3706ACommands:
     def script(self) -> Script:
         """Return the ``script`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.anonymous``: The ``script.anonymous`` attribute.
             - ``.delete()``: The ``script.delete()`` function.
             - ``.load()``: The ``script.load()`` function.
@@ -613,10 +613,10 @@ class SS3706ACommands:
     def script_var(self) -> Dict[str, Scriptvar]:
         """Return the ``scriptVar`` command tree.
 
-        **Info:**
+        Info:
             - ``scriptVar``, the name of the variable that references the script.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.autorun``: The ``scriptVar.autorun`` attribute.
             - ``.list()``: The ``scriptVar.list()`` function.
             - ``.name``: The ``scriptVar.name`` attribute.
@@ -630,7 +630,7 @@ class SS3706ACommands:
     def setup(self) -> Setup:
         """Return the ``setup`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.poweron``: The ``setup.poweron`` attribute.
             - ``.recall()``: The ``setup.recall()`` function.
             - ``.save()``: The ``setup.save()`` function.
@@ -641,10 +641,10 @@ class SS3706ACommands:
     def slot(self) -> Dict[int, SlotItem]:
         """Return the ``slot[slot]`` command tree.
 
-        **Info:**
+        Info:
             - ``slot``, the slot number.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.banks``: The ``slot[slot].banks`` command tree.
             - ``.columns``: The ``slot[slot].columns`` command tree.
             - ``.commonsideohms``: The ``slot[slot].commonsideohms`` attribute.
@@ -667,7 +667,7 @@ class SS3706ACommands:
     def status(self) -> Status:
         """Return the ``status`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.condition``: The ``status.condition`` attribute.
             - ``.measurement``: The ``status.measurement`` command tree.
             - ``.node_enable``: The ``status.node_enable`` attribute.
@@ -690,7 +690,7 @@ class SS3706ACommands:
     def timer(self) -> Timer:
         """Return the ``timer`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.measure``: The ``timer.measure`` command tree.
             - ``.reset()``: The ``timer.reset()`` function.
         """
@@ -703,7 +703,7 @@ class SS3706ACommands:
         Constants:
             - ``.EVENT_ID``: The command interface trigger event number.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.blender``: The ``trigger.blender[N]`` command tree.
             - ``.clear()``: The ``trigger.clear()`` function.
             - ``.timer``: The ``trigger.timer[N]`` command tree.
@@ -715,7 +715,7 @@ class SS3706ACommands:
     def tsplink(self) -> Tsplink:
         """Return the ``tsplink`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.group``: The ``tsplink.group`` attribute.
             - ``.master``: The ``tsplink.master`` attribute.
             - ``.node``: The ``tsplink.node`` attribute.
@@ -734,7 +734,7 @@ class SS3706ACommands:
     def tspnet(self) -> Tspnet:
         """Return the ``tspnet`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.clear()``: The ``tspnet.clear()`` function.
             - ``.connect()``: The ``tspnet.connect()`` function.
             - ``.disconnect()``: The ``tspnet.disconnect()`` function.
@@ -754,7 +754,7 @@ class SS3706ACommands:
     def upgrade(self) -> Upgrade:
         """Return the ``upgrade`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.previous()``: The ``upgrade.previous()`` function.
             - ``.unit()``: The ``upgrade.unit()`` function.
         """
@@ -764,7 +764,7 @@ class SS3706ACommands:
     def userstring(self) -> Userstring:
         """Return the ``userstring`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.add()``: The ``userstring.add()`` function.
             - ``.delete()``: The ``userstring.delete()`` function.
             - ``.get()``: The ``userstring.get()`` function.
@@ -774,15 +774,14 @@ class SS3706ACommands:
     def createconfigscript(self, script_name: str) -> None:
         """Run the ``createconfigscript()`` function.
 
-        **Description:**
+        Description:
             - This function creates a setup file that captures most of the present settings of the
               instrument.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - createconfigscript()
+            ```
 
         Args:
             script_name: A string that represents the name of the script that will be created.
@@ -801,14 +800,13 @@ class SS3706ACommands:
     def delay(self, seconds: int) -> None:
         """Run the ``delay()`` function.
 
-        **Description:**
+        Description:
             - This function delays the execution of the commands that follow it.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - delay()
+            ```
 
         Args:
             seconds: The number of seconds to delay (0 s to 100 ks).
@@ -827,14 +825,13 @@ class SS3706ACommands:
     def exit(self) -> None:
         """Run the ``exit()`` function.
 
-        **Description:**
+        Description:
             - This function stops a script that is presently running.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - exit()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -850,14 +847,13 @@ class SS3706ACommands:
     def gettimezone(self) -> str:
         """Run the ``gettimezone()`` function.
 
-        **Description:**
+        Description:
             - This function retrieves the local time zone.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - gettimezone()
+            ```
 
         Returns:
             The result of the function call.
@@ -876,14 +872,13 @@ class SS3706ACommands:
     def makegetter(self, table: str, attribute_name: str) -> str:
         """Run the ``makegetter()`` function.
 
-        **Description:**
+        Description:
             - This function creates a function to get the value of an attribute.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - makegetter()
+            ```
 
         Args:
             table: Read-only table where the attribute is located.
@@ -906,14 +901,13 @@ class SS3706ACommands:
     def makesetter(self, table: str, attribute_name: str) -> str:
         """Run the ``makesetter()`` function.
 
-        **Description:**
+        Description:
             - This function creates a function that, when called, sets the value of an attribute.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - makesetter()
+            ```
 
         Args:
             table: Read-only table where the attribute is located.
@@ -936,15 +930,14 @@ class SS3706ACommands:
     def opc(self) -> None:
         """Run the ``opc()`` function.
 
-        **Description:**
+        Description:
             - This function sets the operation complete (OPC) bit after all pending commands,
               including overlapped commands, have been executed.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - opc()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -960,14 +953,13 @@ class SS3706ACommands:
     def print(self, value: str) -> None:
         """Run the ``print()`` function.
 
-        **Description:**
+        Description:
             - This function generates a response message.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print()
+            ```
 
         Args:
             value: The first argument to output.
@@ -986,14 +978,13 @@ class SS3706ACommands:
     def printbuffer(self, start_index: int, end_index: int, buffer_var: str) -> str:
         """Run the ``printbuffer()`` function.
 
-        **Description:**
+        Description:
             - This function prints data from tables or reading buffer subtables.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - printbuffer()
+            ```
 
         Args:
             start_index: Beginning index of the buffer to print; this must be more than one and less
@@ -1020,14 +1011,13 @@ class SS3706ACommands:
     def printnumber(self, value: str) -> str:
         """Run the ``printnumber()`` function.
 
-        **Description:**
+        Description:
             - This function prints numbers using the configured format.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - printnumber()
+            ```
 
         Args:
             value: First value to print in the configured format.
@@ -1049,14 +1039,13 @@ class SS3706ACommands:
     def reset(self, system: Optional[str] = None) -> None:
         """Run the ``reset()`` function.
 
-        **Description:**
+        Description:
             - This function resets commands to their default settings and clears the buffers.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - reset()
+            ```
 
         Args:
             system (optional): If the node is the master, the entire system is reset.
@@ -1076,14 +1065,13 @@ class SS3706ACommands:
     def settime(self, time: str) -> None:
         """Run the ``settime()`` function.
 
-        **Description:**
+        Description:
             - This function sets the real-time clock (sets present time of the system).
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - settime()
+            ```
 
         Args:
             time: The time in seconds since January 1, 1970 UTC.
@@ -1108,14 +1096,13 @@ class SS3706ACommands:
     ) -> None:
         """Run the ``settimezone()`` function.
 
-        **Description:**
+        Description:
             - This function sets the local time zone.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - settimezone()
+            ```
 
         Args:
             offset: String representing offset from UTC.
@@ -1147,14 +1134,13 @@ class SS3706ACommands:
     def waitcomplete(self, group: Optional[str] = None) -> None:
         """Run the ``waitcomplete()`` function.
 
-        **Description:**
+        Description:
             - This function waits for all previously started overlapped commands to complete.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - waitcomplete()
+            ```
 
         Args:
             group (optional): Specifies which TSP-Link group on which to wait.
@@ -1202,7 +1188,7 @@ class SS3706AMixin:
         This provides access to all the commands for the SS3706A device. See the documentation of
         each sub-property for more usage information.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.beeper``: The ``beeper`` command tree.
             - ``.bit``: The ``bit`` command tree.
             - ``.buffer_var``: The ``bufferVar`` command tree.

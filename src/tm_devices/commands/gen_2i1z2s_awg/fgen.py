@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - FGEN:CHANnel[n]:AMPLitude:POWer <NRf>
     - FGEN:CHANnel[n]:AMPLitude:POWer?
     - FGEN:CHANnel[n]:AMPLitude:VOLTage <NRf>
@@ -47,24 +45,23 @@ if TYPE_CHECKING:
 class FgenChannelItemType(SCPICmdWrite, SCPICmdRead):
     """The ``FGEN:CHANnel[n]:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the function generator's waveform type (shape) for the
           specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:TYPE?`` query.
         - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:TYPE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:TYPE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FGEN:CHANnel[n]:TYPE {SINE|SQUare|TRIangle|NOISe|DC|GAUSsian|EXPRise|EXPDecay|NONE}
         - FGEN:CHANnel[n]:TYPE?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to SINE.
     """
 
@@ -72,25 +69,24 @@ class FgenChannelItemType(SCPICmdWrite, SCPICmdRead):
 class FgenChannelItemSymmetry(SCPICmdWrite, SCPICmdRead):
     """The ``FGEN:CHANnel[n]:SYMMetry`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the function generator's triangle waveform symmetry value for
           the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:SYMMetry?`` query.
         - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:SYMMetry?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:SYMMetry value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FGEN:CHANnel[n]:SYMMetry <NR1>
         - FGEN:CHANnel[n]:SYMMetry?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 100.
     """
 
@@ -98,24 +94,23 @@ class FgenChannelItemSymmetry(SCPICmdWrite, SCPICmdRead):
 class FgenChannelItemPhase(SCPICmdWrite, SCPICmdRead):
     """The ``FGEN:CHANnel[n]:PHASe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the function generator's waveform phase value for the
           specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:PHASe?`` query.
         - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:PHASe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:PHASe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FGEN:CHANnel[n]:PHASe <NRf>
         - FGEN:CHANnel[n]:PHASe?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 0.
     """
 
@@ -123,43 +118,41 @@ class FgenChannelItemPhase(SCPICmdWrite, SCPICmdRead):
 class FgenChannelItemPeriod(SCPICmdRead):
     """The ``FGEN:CHANnel[n]:PERiod`` command.
 
-    **Description:**
+    Description:
         - This command returns the function generator's waveform period for the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:PERiod?`` query.
         - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:PERiod?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FGEN:CHANnel[n]:PERiod?
+        ```
     """
 
 
 class FgenChannelItemPath(SCPICmdWrite, SCPICmdRead):
     """The ``FGEN:CHANnel[n]:PATH`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the function generator's signal path of the specified
           channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:PATH?`` query.
         - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:PATH?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:PATH value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FGEN:CHANnel[n]:PATH {DCHB|ACDirect|ACAMplified}
         - FGEN:CHANnel[n]:PATH?
+        ```
 
-    **Info:**
+    Info:
         - ``DCHB`` sets the signal path to DC High Bandwidth, going directly from the DAC to the +
           and - differential outputs. ACDirect sets signal path to go to the channel's (+) connector
           (single-ended AC output). ACAMplified sets signal path to go through the attenuators and
@@ -171,25 +164,24 @@ class FgenChannelItemPath(SCPICmdWrite, SCPICmdRead):
 class FgenChannelItemOffset(SCPICmdWrite, SCPICmdRead):
     """The ``FGEN:CHANnel[n]:OFFSet`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the function generator's waveform offset value for the
           specified channel. If the offset value is higher than the designated maximum offset or
           lower than the designated minimum offset, then the respective max/min values are used.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:OFFSet?`` query.
         - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:OFFSet?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:OFFSet value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FGEN:CHANnel[n]:OFFSet <NR3>
         - FGEN:CHANnel[n]:OFFSet?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 0.
     """
 
@@ -197,24 +189,23 @@ class FgenChannelItemOffset(SCPICmdWrite, SCPICmdRead):
 class FgenChannelItemLow(SCPICmdWrite, SCPICmdRead):
     """The ``FGEN:CHANnel[n]:LOW`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the function generator's waveform low voltage value for the
           specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:LOW?`` query.
         - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:LOW?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:LOW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FGEN:CHANnel[n]:LOW <NRf>
         - FGEN:CHANnel[n]:LOW?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to -250 mV.
     """
 
@@ -222,24 +213,23 @@ class FgenChannelItemLow(SCPICmdWrite, SCPICmdRead):
 class FgenChannelItemHigh(SCPICmdWrite, SCPICmdRead):
     """The ``FGEN:CHANnel[n]:HIGH`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the function generator's waveform high voltage value for the
           specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:HIGH?`` query.
         - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:HIGH?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:HIGH value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FGEN:CHANnel[n]:HIGH <NRf>
         - FGEN:CHANnel[n]:HIGH?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 250 mV.
     """
 
@@ -247,25 +237,24 @@ class FgenChannelItemHigh(SCPICmdWrite, SCPICmdRead):
 class FgenChannelItemFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``FGEN:CHANnel[n]:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the function generator's waveform frequency for the specified
           channel. All channels on a multi-channel instrument use the same frequency setting.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:FREQuency?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:FREQuency value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FGEN:CHANnel[n]:FREQuency <NRf>
         - FGEN:CHANnel[n]:FREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 1.2 MHz.
     """
 
@@ -273,25 +262,24 @@ class FgenChannelItemFrequency(SCPICmdWrite, SCPICmdRead):
 class FgenChannelItemDclevel(SCPICmdWrite, SCPICmdRead):
     """The ``FGEN:CHANnel[n]:DCLevel`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the DC level of the generated waveform for the specified
           channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:DCLevel?`` query.
         - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:DCLevel?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:DCLevel value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FGEN:CHANnel[n]:DCLevel <NRf>
         - FGEN:CHANnel[n]:DCLevel?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 0.
     """
 
@@ -299,25 +287,24 @@ class FgenChannelItemDclevel(SCPICmdWrite, SCPICmdRead):
 class FgenChannelItemAmplitudeVoltage(SCPICmdWrite, SCPICmdRead):
     """The ``FGEN:CHANnel[n]:AMPLitude:VOLTage`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the function generator's waveform amplitude value for the
           specified channel in units of volts.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:AMPLitude:VOLTage?`` query.
         - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:AMPLitude:VOLTage?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``FGEN:CHANnel[n]:AMPLitude:VOLTage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FGEN:CHANnel[n]:AMPLitude:VOLTage <NRf>
         - FGEN:CHANnel[n]:AMPLitude:VOLTage?
+        ```
 
-    **Info:**
+    Info:
         - ``*RST`` sets this to 500 mV.
     """
 
@@ -325,30 +312,29 @@ class FgenChannelItemAmplitudeVoltage(SCPICmdWrite, SCPICmdRead):
 class FgenChannelItemAmplitudePower(SCPICmdWrite, SCPICmdRead):
     """The ``FGEN:CHANnel[n]:AMPLitude:POWer`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the function generator's waveform amplitude value for the
           specified channel in units of dBm.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:AMPLitude:POWer?`` query.
         - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:AMPLitude:POWer?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:AMPLitude:POWer value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FGEN:CHANnel[n]:AMPLitude:POWer <NRf>
         - FGEN:CHANnel[n]:AMPLitude:POWer?
+        ```
     """
 
 
 class FgenChannelItemAmplitude(SCPICmdRead):
     """The ``FGEN:CHANnel[n]:AMPLitude`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:AMPLitude?`` query.
         - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:AMPLitude?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -367,11 +353,11 @@ class FgenChannelItemAmplitude(SCPICmdRead):
     def power(self) -> FgenChannelItemAmplitudePower:
         """Return the ``FGEN:CHANnel[n]:AMPLitude:POWer`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the function generator's waveform amplitude value for the
               specified channel in units of dBm.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:AMPLitude:POWer?``
               query.
             - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:AMPLitude:POWer?``
@@ -379,12 +365,11 @@ class FgenChannelItemAmplitude(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``FGEN:CHANnel[n]:AMPLitude:POWer value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FGEN:CHANnel[n]:AMPLitude:POWer <NRf>
             - FGEN:CHANnel[n]:AMPLitude:POWer?
+            ```
         """
         return self._power
 
@@ -392,11 +377,11 @@ class FgenChannelItemAmplitude(SCPICmdRead):
     def voltage(self) -> FgenChannelItemAmplitudeVoltage:
         """Return the ``FGEN:CHANnel[n]:AMPLitude:VOLTage`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the function generator's waveform amplitude value for the
               specified channel in units of volts.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:AMPLitude:VOLTage?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -405,14 +390,13 @@ class FgenChannelItemAmplitude(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``FGEN:CHANnel[n]:AMPLitude:VOLTage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FGEN:CHANnel[n]:AMPLitude:VOLTage <NRf>
             - FGEN:CHANnel[n]:AMPLitude:VOLTage?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 500 mV.
         """
         return self._voltage
@@ -422,7 +406,7 @@ class FgenChannelItemAmplitude(SCPICmdRead):
 class FgenChannelItem(ValidatedChannel, SCPICmdRead):
     """The ``FGEN:CHANnel[n]`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]?`` query.
         - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -459,7 +443,7 @@ class FgenChannelItem(ValidatedChannel, SCPICmdRead):
     def amplitude(self) -> FgenChannelItemAmplitude:
         """Return the ``FGEN:CHANnel[n]:AMPLitude`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:AMPLitude?`` query.
             - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:AMPLitude?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -474,25 +458,24 @@ class FgenChannelItem(ValidatedChannel, SCPICmdRead):
     def dclevel(self) -> FgenChannelItemDclevel:
         """Return the ``FGEN:CHANnel[n]:DCLevel`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the DC level of the generated waveform for the specified
               channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:DCLevel?`` query.
             - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:DCLevel?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:DCLevel value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FGEN:CHANnel[n]:DCLevel <NRf>
             - FGEN:CHANnel[n]:DCLevel?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 0.
         """
         return self._dclevel
@@ -501,26 +484,25 @@ class FgenChannelItem(ValidatedChannel, SCPICmdRead):
     def frequency(self) -> FgenChannelItemFrequency:
         """Return the ``FGEN:CHANnel[n]:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the function generator's waveform frequency for the
               specified channel. All channels on a multi-channel instrument use the same frequency
               setting.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:FREQuency?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:FREQuency value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FGEN:CHANnel[n]:FREQuency <NRf>
             - FGEN:CHANnel[n]:FREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 1.2 MHz.
         """
         return self._frequency
@@ -529,25 +511,24 @@ class FgenChannelItem(ValidatedChannel, SCPICmdRead):
     def high(self) -> FgenChannelItemHigh:
         """Return the ``FGEN:CHANnel[n]:HIGH`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the function generator's waveform high voltage value for
               the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:HIGH?`` query.
             - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:HIGH?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:HIGH value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FGEN:CHANnel[n]:HIGH <NRf>
             - FGEN:CHANnel[n]:HIGH?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 250 mV.
         """
         return self._high
@@ -556,25 +537,24 @@ class FgenChannelItem(ValidatedChannel, SCPICmdRead):
     def low(self) -> FgenChannelItemLow:
         """Return the ``FGEN:CHANnel[n]:LOW`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the function generator's waveform low voltage value for
               the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:LOW?`` query.
             - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:LOW?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:LOW value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FGEN:CHANnel[n]:LOW <NRf>
             - FGEN:CHANnel[n]:LOW?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to -250 mV.
         """
         return self._low
@@ -583,26 +563,25 @@ class FgenChannelItem(ValidatedChannel, SCPICmdRead):
     def offset(self) -> FgenChannelItemOffset:
         """Return the ``FGEN:CHANnel[n]:OFFSet`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the function generator's waveform offset value for the
               specified channel. If the offset value is higher than the designated maximum offset or
               lower than the designated minimum offset, then the respective max/min values are used.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:OFFSet?`` query.
             - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:OFFSet?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:OFFSet value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FGEN:CHANnel[n]:OFFSet <NR3>
             - FGEN:CHANnel[n]:OFFSet?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 0.
         """
         return self._offset
@@ -611,25 +590,24 @@ class FgenChannelItem(ValidatedChannel, SCPICmdRead):
     def path(self) -> FgenChannelItemPath:
         """Return the ``FGEN:CHANnel[n]:PATH`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the function generator's signal path of the specified
               channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:PATH?`` query.
             - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:PATH?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:PATH value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FGEN:CHANnel[n]:PATH {DCHB|ACDirect|ACAMplified}
             - FGEN:CHANnel[n]:PATH?
+            ```
 
-        **Info:**
+        Info:
             - ``DCHB`` sets the signal path to DC High Bandwidth, going directly from the DAC to the
               + and - differential outputs. ACDirect sets signal path to go to the channel's (+)
               connector (single-ended AC output). ACAMplified sets signal path to go through the
@@ -642,20 +620,19 @@ class FgenChannelItem(ValidatedChannel, SCPICmdRead):
     def period(self) -> FgenChannelItemPeriod:
         """Return the ``FGEN:CHANnel[n]:PERiod`` command.
 
-        **Description:**
+        Description:
             - This command returns the function generator's waveform period for the specified
               channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:PERiod?`` query.
             - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:PERiod?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FGEN:CHANnel[n]:PERiod?
+            ```
         """
         return self._period
 
@@ -663,25 +640,24 @@ class FgenChannelItem(ValidatedChannel, SCPICmdRead):
     def phase(self) -> FgenChannelItemPhase:
         """Return the ``FGEN:CHANnel[n]:PHASe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the function generator's waveform phase value for the
               specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:PHASe?`` query.
             - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:PHASe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:PHASe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FGEN:CHANnel[n]:PHASe <NRf>
             - FGEN:CHANnel[n]:PHASe?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 0.
         """
         return self._phase
@@ -690,25 +666,24 @@ class FgenChannelItem(ValidatedChannel, SCPICmdRead):
     def symmetry(self) -> FgenChannelItemSymmetry:
         """Return the ``FGEN:CHANnel[n]:SYMMetry`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the function generator's triangle waveform symmetry value
               for the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:SYMMetry?`` query.
             - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:SYMMetry?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:SYMMetry value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FGEN:CHANnel[n]:SYMMetry <NR1>
             - FGEN:CHANnel[n]:SYMMetry?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to 100.
         """
         return self._symmetry
@@ -717,25 +692,24 @@ class FgenChannelItem(ValidatedChannel, SCPICmdRead):
     def type(self) -> FgenChannelItemType:
         """Return the ``FGEN:CHANnel[n]:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the function generator's waveform type (shape) for the
               specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]:TYPE?`` query.
             - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]:TYPE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``FGEN:CHANnel[n]:TYPE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FGEN:CHANnel[n]:TYPE {SINE|SQUare|TRIangle|NOISe|DC|GAUSsian|EXPRise|EXPDecay|NONE}
             - FGEN:CHANnel[n]:TYPE?
+            ```
 
-        **Info:**
+        Info:
             - ``*RST`` sets this to SINE.
         """
         return self._type
@@ -744,7 +718,7 @@ class FgenChannelItem(ValidatedChannel, SCPICmdRead):
 class Fgen(SCPICmdRead):
     """The ``FGEN`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FGEN?`` query.
         - Using the ``.verify(value)`` method will send the ``FGEN?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -763,7 +737,7 @@ class Fgen(SCPICmdRead):
     def channel(self) -> Dict[int, FgenChannelItem]:
         """Return the ``FGEN:CHANnel[n]`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``FGEN:CHANnel[n]?`` query.
             - Using the ``.verify(value)`` method will send the ``FGEN:CHANnel[n]?`` query and raise
               an AssertionError if the returned value does not match ``value``.

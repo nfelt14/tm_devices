@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - TSTamptable:ADDNew <Qstring>
     - TSTamptable:DELETE <Qstring>
     - TSTamptable:LIST?
@@ -27,38 +25,36 @@ if TYPE_CHECKING:
 class TstamptableList(SCPICmdRead):
     """The ``TSTamptable:LIST`` command.
 
-    **Description:**
+    Description:
         - This command queries the list of History time stamp results tables has been added.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TSTamptable:LIST?`` query.
         - Using the ``.verify(value)`` method will send the ``TSTamptable:LIST?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TSTamptable:LIST?
+        ```
     """
 
 
 class TstamptableDelete(SCPICmdWrite):
     """The ``TSTamptable:DELETE`` command.
 
-    **Description:**
+    Description:
         - This command deletes the requested History time stamp results table.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``TSTamptable:DELETE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TSTamptable:DELETE <Qstring>
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` specifies the History time stamp results table name.
     """
 
@@ -66,19 +62,18 @@ class TstamptableDelete(SCPICmdWrite):
 class TstamptableAddnew(SCPICmdWrite):
     """The ``TSTamptable:ADDNew`` command.
 
-    **Description:**
+    Description:
         - This command adds a new History time stamp results table to the scope application.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``TSTamptable:ADDNew value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TSTamptable:ADDNew <Qstring>
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` specifies the History time stamp results table name.
     """
 
@@ -86,7 +81,7 @@ class TstamptableAddnew(SCPICmdWrite):
 class Tstamptable(SCPICmdRead):
     """The ``TSTamptable`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TSTamptable?`` query.
         - Using the ``.verify(value)`` method will send the ``TSTamptable?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -109,19 +104,18 @@ class Tstamptable(SCPICmdRead):
     def addnew(self) -> TstamptableAddnew:
         """Return the ``TSTamptable:ADDNew`` command.
 
-        **Description:**
+        Description:
             - This command adds a new History time stamp results table to the scope application.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``TSTamptable:ADDNew value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TSTamptable:ADDNew <Qstring>
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` specifies the History time stamp results table name.
         """
         return self._addnew
@@ -130,19 +124,18 @@ class Tstamptable(SCPICmdRead):
     def delete(self) -> TstamptableDelete:
         """Return the ``TSTamptable:DELETE`` command.
 
-        **Description:**
+        Description:
             - This command deletes the requested History time stamp results table.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``TSTamptable:DELETE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TSTamptable:DELETE <Qstring>
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` specifies the History time stamp results table name.
         """
         return self._delete
@@ -151,18 +144,17 @@ class Tstamptable(SCPICmdRead):
     def list(self) -> TstamptableList:
         """Return the ``TSTamptable:LIST`` command.
 
-        **Description:**
+        Description:
             - This command queries the list of History time stamp results tables has been added.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TSTamptable:LIST?`` query.
             - Using the ``.verify(value)`` method will send the ``TSTamptable:LIST?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TSTamptable:LIST?
+            ```
         """
         return self._list

@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - AUTOSet {EXECute|UNDo|VFields|VIDeo|VLines}
     - AUTOSet:OVErlay {ON | OFF}
     - AUTOSet:PERcent <NR3>
@@ -28,45 +26,43 @@ if TYPE_CHECKING:
 class AutosetPercent(SCPICmdWrite):
     """The ``AUTOSet:PERcent`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the percent of the full vertical scale that the signal should cover after
           Autoset is run when Overlay is turned on.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``AUTOSet:PERcent value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUTOSet:PERcent <NR3>
+        ```
     """
 
 
 class AutosetOverlay(SCPICmdWrite):
     """The ``AUTOSet:OVErlay`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the autoset overlay feature. If Autoset Overlay is turned on, Autoset will
           place all signals center vertically on-screen with the vertical settings on each channel
           configured so that the amplitude of the signal occupies n divisions = Percent/10
           divisions.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``AUTOSet:OVErlay value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUTOSet:OVErlay {ON | OFF}
+        ```
     """
 
 
 class Autoset(SCPICmdWrite, SCPICmdRead):
     """The ``AUTOSet`` command.
 
-    **Description:**
+    Description:
         - This command (no query format) sets the vertical, horizontal, and trigger controls of the
           instrument to automatically acquire and display the selected waveform. (To autoset a video
           waveform, the video trigger must be set to video standard, not custom. Video arguments
@@ -74,16 +70,15 @@ class Autoset(SCPICmdWrite, SCPICmdRead):
           For a detailed description of autoset functionality, see Autoset in the index of the
           online help for your instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``AUTOSet value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - AUTOSet {EXECute|UNDo|VFields|VIDeo|VLines}
+        ```
 
-    **Info:**
+    Info:
         - ``EXECute`` runs the autoset routine; this is equivalent to pressing the front panel
           AUTOSET button. If the display is set to a PAL, MV, or IRE graticule, this argument forces
           the graticule display to full mode (frame, grid, and cross hair).
@@ -106,20 +101,19 @@ class Autoset(SCPICmdWrite, SCPICmdRead):
     def overlay(self) -> AutosetOverlay:
         """Return the ``AUTOSet:OVErlay`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the autoset overlay feature. If Autoset Overlay is turned on, Autoset
               will place all signals center vertically on-screen with the vertical settings on each
               channel configured so that the amplitude of the signal occupies n divisions =
               Percent/10 divisions.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``AUTOSet:OVErlay value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUTOSet:OVErlay {ON | OFF}
+            ```
         """
         return self._overlay
 
@@ -127,17 +121,16 @@ class Autoset(SCPICmdWrite, SCPICmdRead):
     def percent(self) -> AutosetPercent:
         """Return the ``AUTOSet:PERcent`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the percent of the full vertical scale that the signal should cover
               after Autoset is run when Overlay is turned on.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``AUTOSet:PERcent value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - AUTOSet:PERcent <NR3>
+            ```
         """
         return self._percent

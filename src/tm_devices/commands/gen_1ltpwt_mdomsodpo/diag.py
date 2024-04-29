@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - DIAg:INDIvidual:TESTnumber
     - DIAg:INDIvidual:TESTnumber?
     - DIAg:LOOP:OPTion {ALWAYS|FAIL|ONFAIL|ONCE|NTIMES}
@@ -34,20 +32,19 @@ if TYPE_CHECKING:
 class DiagState(SCPICmdWrite):
     """The ``DIAg:STATE`` command.
 
-    **Description:**
+    Description:
         - This command starts or stops the oscilloscope diagnostic self-tests. Which self-test is
           run is specified by the ``DIAg:SELect``: or ``DIAg:SELect:<function>`` commands.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``DIAg:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAg:STATE {EXECute|ABORt}
+        ```
 
-    **Info:**
+    Info:
         - ``EXECute`` starts diagnostics.
         - ``ABORt`` stops diagnostics at the end of the current loop.
     """
@@ -56,20 +53,19 @@ class DiagState(SCPICmdWrite):
 class DiagSelect(SCPICmdWrite):
     """The ``DIAg:SELect`` command.
 
-    **Description:**
+    Description:
         - This command specifies which of the diagnostic groups will be tested when the
           ``DIAg:STATE EXECute`` command is run.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``DIAg:SELect value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAg:SELect {ALL|APPKey|CPU|DISplay|FPAnel|IO|ROM|ACQ|RF|AFG}
+        ```
 
-    **Info:**
+    Info:
         - ``ALL`` runs all diagnostic groups.
         - ``APPKey`` runs just the application key diagnostic group.
         - ``CPU`` runs just the CPU diagnostic group.
@@ -86,46 +82,44 @@ class DiagSelect(SCPICmdWrite):
 class DiagResultLog(SCPICmdRead):
     """The ``DIAg:RESUlt:LOG`` command.
 
-    **Description:**
+    Description:
         - This query returns the test Pass/Fail status of each diagnostic area. It does not return
           the overall status.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAg:RESUlt:LOG?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAg:RESUlt:LOG?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAg:RESUlt:LOG?
+        ```
     """
 
 
 class DiagResultFlag(SCPICmdRead):
     """The ``DIAg:RESUlt:FLAg`` command.
 
-    **Description:**
+    Description:
         - This query returns the status of the diagnostic test area that has been selected.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAg:RESUlt:FLAg?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAg:RESUlt:FLAg?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAg:RESUlt:FLAg?
+        ```
     """
 
 
 class DiagResult(SCPICmdRead):
     """The ``DIAg:RESUlt`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAg:RESUlt?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAg:RESUlt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -144,19 +138,18 @@ class DiagResult(SCPICmdRead):
     def flag(self) -> DiagResultFlag:
         """Return the ``DIAg:RESUlt:FLAg`` command.
 
-        **Description:**
+        Description:
             - This query returns the status of the diagnostic test area that has been selected.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAg:RESUlt:FLAg?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAg:RESUlt:FLAg?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAg:RESUlt:FLAg?
+            ```
         """
         return self._flag
 
@@ -164,20 +157,19 @@ class DiagResult(SCPICmdRead):
     def log(self) -> DiagResultLog:
         """Return the ``DIAg:RESUlt:LOG`` command.
 
-        **Description:**
+        Description:
             - This query returns the test Pass/Fail status of each diagnostic area. It does not
               return the overall status.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAg:RESUlt:LOG?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAg:RESUlt:LOG?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAg:RESUlt:LOG?
+            ```
         """
         return self._log
 
@@ -185,41 +177,39 @@ class DiagResult(SCPICmdRead):
 class DiagLoopStop(SCPICmdWriteNoArguments):
     """The ``DIAg:LOOP:STOP`` command.
 
-    **Description:**
+    Description:
         - Request that diagnostics stop looping.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``DIAg:LOOP:STOP`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAg:LOOP:STOP
+        ```
     """
 
 
 class DiagLoopOptionNtimes(SCPICmdWrite, SCPICmdRead):
     """The ``DIAg:LOOP:OPTion:NTIMes`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries how many loops to run, if N-times is being used.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAg:LOOP:OPTion:NTIMes?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAg:LOOP:OPTion:NTIMes?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DIAg:LOOP:OPTion:NTIMes value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAg:LOOP:OPTion:NTIMes <NR1>
         - DIAg:LOOP:OPTion:NTIMes?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is how many loops to run.
     """
 
@@ -227,19 +217,18 @@ class DiagLoopOptionNtimes(SCPICmdWrite, SCPICmdRead):
 class DiagLoopOption(SCPICmdWrite, SCPICmdRead):
     """The ``DIAg:LOOP:OPTion`` command.
 
-    **Description:**
+    Description:
         - Sets the self-test loop option.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``DIAg:LOOP:OPTion value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAg:LOOP:OPTion {ALWAYS|FAIL|ONFAIL|ONCE|NTIMES}
+        ```
 
-    **Info:**
+    Info:
         - ``ALWAYS`` continues looping until the self tests (diagnostics) are stopped via the front
           panel or by an oscilloscope command.
         - ``FAIL`` causes looping until the first self test (diagnostic) failure or until self tests
@@ -261,24 +250,23 @@ class DiagLoopOption(SCPICmdWrite, SCPICmdRead):
     def ntimes(self) -> DiagLoopOptionNtimes:
         """Return the ``DIAg:LOOP:OPTion:NTIMes`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries how many loops to run, if N-times is being used.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAg:LOOP:OPTion:NTIMes?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAg:LOOP:OPTion:NTIMes?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DIAg:LOOP:OPTion:NTIMes value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAg:LOOP:OPTion:NTIMes <NR1>
             - DIAg:LOOP:OPTion:NTIMes?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is how many loops to run.
         """
         return self._ntimes
@@ -287,7 +275,7 @@ class DiagLoopOption(SCPICmdWrite, SCPICmdRead):
 class DiagLoop(SCPICmdRead):
     """The ``DIAg:LOOP`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAg:LOOP?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAg:LOOP?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -306,19 +294,18 @@ class DiagLoop(SCPICmdRead):
     def option(self) -> DiagLoopOption:
         """Return the ``DIAg:LOOP:OPTion`` command.
 
-        **Description:**
+        Description:
             - Sets the self-test loop option.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``DIAg:LOOP:OPTion value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAg:LOOP:OPTion {ALWAYS|FAIL|ONFAIL|ONCE|NTIMES}
+            ```
 
-        **Info:**
+        Info:
             - ``ALWAYS`` continues looping until the self tests (diagnostics) are stopped via the
               front panel or by an oscilloscope command.
             - ``FAIL`` causes looping until the first self test (diagnostic) failure or until self
@@ -337,17 +324,16 @@ class DiagLoop(SCPICmdRead):
     def stop(self) -> DiagLoopStop:
         """Return the ``DIAg:LOOP:STOP`` command.
 
-        **Description:**
+        Description:
             - Request that diagnostics stop looping.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``DIAg:LOOP:STOP`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAg:LOOP:STOP
+            ```
         """
         return self._stop
 
@@ -355,23 +341,22 @@ class DiagLoop(SCPICmdRead):
 class DiagIndividualTestnumber(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``DIAg:INDIvidual:TESTnumber`` command.
 
-    **Description:**
+    Description:
         - This command specifies the number of the diagnostics test to run.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAg:INDIvidual:TESTnumber?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAg:INDIvidual:TESTnumber?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``DIAg:INDIvidual:TESTnumber`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIAg:INDIvidual:TESTnumber
         - DIAg:INDIvidual:TESTnumber?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the test number to run.
     """
 
@@ -379,7 +364,7 @@ class DiagIndividualTestnumber(SCPICmdWriteNoArguments, SCPICmdRead):
 class DiagIndividual(SCPICmdRead):
     """The ``DIAg:INDIvidual`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAg:INDIvidual?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAg:INDIvidual?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -396,23 +381,22 @@ class DiagIndividual(SCPICmdRead):
     def testnumber(self) -> DiagIndividualTestnumber:
         """Return the ``DIAg:INDIvidual:TESTnumber`` command.
 
-        **Description:**
+        Description:
             - This command specifies the number of the diagnostics test to run.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAg:INDIvidual:TESTnumber?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAg:INDIvidual:TESTnumber?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write()`` method will send the ``DIAg:INDIvidual:TESTnumber`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAg:INDIvidual:TESTnumber
             - DIAg:INDIvidual:TESTnumber?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the test number to run.
         """
         return self._testnumber
@@ -421,7 +405,7 @@ class DiagIndividual(SCPICmdRead):
 class Diag(SCPICmdRead):
     """The ``DIAg`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIAg?`` query.
         - Using the ``.verify(value)`` method will send the ``DIAg?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -446,7 +430,7 @@ class Diag(SCPICmdRead):
     def individual(self) -> DiagIndividual:
         """Return the ``DIAg:INDIvidual`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAg:INDIvidual?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAg:INDIvidual?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -460,7 +444,7 @@ class Diag(SCPICmdRead):
     def loop(self) -> DiagLoop:
         """Return the ``DIAg:LOOP`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAg:LOOP?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAg:LOOP?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -475,7 +459,7 @@ class Diag(SCPICmdRead):
     def result(self) -> DiagResult:
         """Return the ``DIAg:RESUlt`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIAg:RESUlt?`` query.
             - Using the ``.verify(value)`` method will send the ``DIAg:RESUlt?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -490,20 +474,19 @@ class Diag(SCPICmdRead):
     def select(self) -> DiagSelect:
         """Return the ``DIAg:SELect`` command.
 
-        **Description:**
+        Description:
             - This command specifies which of the diagnostic groups will be tested when the
               ``DIAg:STATE EXECute`` command is run.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``DIAg:SELect value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAg:SELect {ALL|APPKey|CPU|DISplay|FPAnel|IO|ROM|ACQ|RF|AFG}
+            ```
 
-        **Info:**
+        Info:
             - ``ALL`` runs all diagnostic groups.
             - ``APPKey`` runs just the application key diagnostic group.
             - ``CPU`` runs just the CPU diagnostic group.
@@ -521,20 +504,19 @@ class Diag(SCPICmdRead):
     def state(self) -> DiagState:
         """Return the ``DIAg:STATE`` command.
 
-        **Description:**
+        Description:
             - This command starts or stops the oscilloscope diagnostic self-tests. Which self-test
               is run is specified by the ``DIAg:SELect``: or ``DIAg:SELect:<function>`` commands.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``DIAg:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIAg:STATE {EXECute|ABORt}
+            ```
 
-        **Info:**
+        Info:
             - ``EXECute`` starts diagnostics.
             - ``ABORt`` stops diagnostics at the end of the current loop.
         """

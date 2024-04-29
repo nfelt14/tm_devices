@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - FPAnel:HOLD CURsor [,<NR1>]
     - FPAnel:PRESS <button>
     - FPAnel:TURN <knob>,<n>
@@ -27,7 +25,7 @@ if TYPE_CHECKING:
 class FpanelTurn(SCPICmdWrite):
     """The ``FPAnel:TURN`` command.
 
-    **Description:**
+    Description:
         - Simulates the action of turning a specified front-panel control knob. When the front panel
           is locked, the front-panel button and multipurpose knob operations are suspended. The
           ``FPANEL:PRESS`` and commands will also not work, and, they will not generate an error.
@@ -35,16 +33,15 @@ class FpanelTurn(SCPICmdWrite):
           of the front-panel commands. For example, to set the trigger level to 50%, you could use
           ``TRIGger:A SETLevel``. To force a trigger, you could use TRIGger FORCe.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FPAnel:TURN value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FPAnel:TURN <knob>,<n>
+        ```
 
-    **Info:**
+    Info:
         - ``<knob>`` is the name of a rotating control.
         - ``<n>`` represents the rotation direction and magnitude of rotation. Negative values
           represent a counterclockwise knob rotation, and positive values represent a clockwise
@@ -65,22 +62,21 @@ class FpanelTurn(SCPICmdWrite):
 class FpanelPress(SCPICmdWrite):
     """The ``FPAnel:PRESS`` command.
 
-    **Description:**
+    Description:
         - Simulates the action of pressing a specified front-panel button. When the front panel is
           locked, the front-panel button and multipurpose knob operations are suspended. The and the
           ``FPANEL:TURN`` commands will also not work. You can work around this by using the
           appropriate programmatic interface commands, instead of the front-panel commands.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FPAnel:PRESS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FPAnel:PRESS <button>
+        ```
 
-    **Info:**
+    Info:
         - ``<button>`` is the name of a front-panel button. Most of the argument names associate
           directly with their front panel buttons. For example, AUTOSet is for the Autoset button.
         - ``Acquire`` button.
@@ -113,23 +109,22 @@ class FpanelPress(SCPICmdWrite):
 class FpanelHold(SCPICmdWrite):
     """The ``FPAnel:HOLD`` command.
 
-    **Description:**
+    Description:
         - This command is used to emulate the button push-and-hold feature. Presently, only the
           Cursors button is supported by this command, even though any of the button enumerations
           described for ``FPAnel:PREss`` are accepted. (When the Cursors button on the front panel
           is held, the cursor menu is displayed on screen.) This command contains two arguments: a
           button, and an optional hold time.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``FPAnel:HOLD value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - FPAnel:HOLD CURsor [,<NR1>]
+        ```
 
-    **Info:**
+    Info:
         - ``CURsor`` - currently this is the only button supported by this command. If the hold time
           is not specified, it defaults to 1200 milliseconds. The range is 0 to 10,000 milliseconds.
           The system expects a minimum of 1 second to recognize a hold.
@@ -142,7 +137,7 @@ class FpanelHold(SCPICmdWrite):
 class Fpanel(SCPICmdRead):
     """The ``FPAnel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``FPAnel?`` query.
         - Using the ``.verify(value)`` method will send the ``FPAnel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -163,23 +158,22 @@ class Fpanel(SCPICmdRead):
     def hold(self) -> FpanelHold:
         """Return the ``FPAnel:HOLD`` command.
 
-        **Description:**
+        Description:
             - This command is used to emulate the button push-and-hold feature. Presently, only the
               Cursors button is supported by this command, even though any of the button
               enumerations described for ``FPAnel:PREss`` are accepted. (When the Cursors button on
               the front panel is held, the cursor menu is displayed on screen.) This command
               contains two arguments: a button, and an optional hold time.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FPAnel:HOLD value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FPAnel:HOLD CURsor [,<NR1>]
+            ```
 
-        **Info:**
+        Info:
             - ``CURsor`` - currently this is the only button supported by this command. If the hold
               time is not specified, it defaults to 1200 milliseconds. The range is 0 to 10,000
               milliseconds. The system expects a minimum of 1 second to recognize a hold.
@@ -193,22 +187,21 @@ class Fpanel(SCPICmdRead):
     def press(self) -> FpanelPress:
         """Return the ``FPAnel:PRESS`` command.
 
-        **Description:**
+        Description:
             - Simulates the action of pressing a specified front-panel button. When the front panel
               is locked, the front-panel button and multipurpose knob operations are suspended. The
               and the ``FPANEL:TURN`` commands will also not work. You can work around this by using
               the appropriate programmatic interface commands, instead of the front-panel commands.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FPAnel:PRESS value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FPAnel:PRESS <button>
+            ```
 
-        **Info:**
+        Info:
             - ``<button>`` is the name of a front-panel button. Most of the argument names associate
               directly with their front panel buttons. For example, AUTOSet is for the Autoset
               button.
@@ -243,7 +236,7 @@ class Fpanel(SCPICmdRead):
     def turn(self) -> FpanelTurn:
         """Return the ``FPAnel:TURN`` command.
 
-        **Description:**
+        Description:
             - Simulates the action of turning a specified front-panel control knob. When the front
               panel is locked, the front-panel button and multipurpose knob operations are
               suspended. The ``FPANEL:PRESS`` and commands will also not work, and, they will not
@@ -252,16 +245,15 @@ class Fpanel(SCPICmdRead):
               trigger level to 50%, you could use ``TRIGger:A SETLevel``. To force a trigger, you
               could use TRIGger FORCe.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``FPAnel:TURN value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - FPAnel:TURN <knob>,<n>
+            ```
 
-        **Info:**
+        Info:
             - ``<knob>`` is the name of a rotating control.
             - ``<n>`` represents the rotation direction and magnitude of rotation. Negative values
               represent a counterclockwise knob rotation, and positive values represent a clockwise

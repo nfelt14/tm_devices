@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - HORizontal:DELay:MODe {OFF|ON|<NR1>}
     - HORizontal:DELay:MODe?
     - HORizontal:DELay:TIMe <NR3>
@@ -41,23 +39,22 @@ if TYPE_CHECKING:
 class HorizontalScale(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:SCAle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the horizontal scale.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:SCAle?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:SCAle?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:SCAle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:SCAle <NR3>
         - HORizontal:SCAle?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the horizontal scale in time per division.
     """
 
@@ -65,45 +62,43 @@ class HorizontalScale(SCPICmdWrite, SCPICmdRead):
 class HorizontalSamplerate(SCPICmdRead):
     """The ``HORizontal:SAMPLERate`` command.
 
-    **Description:**
+    Description:
         - The command form is ignored. The query returns the sample rate for analog channels in
           samples per second.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:SAMPLERate?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:SAMPLERate?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:SAMPLERate?
+        ```
     """
 
 
 class HorizontalRecordlength(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:RECOrdlength`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the horizontal record length. To change the record length the
           Horizontal Mode must be set to Manual.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:RECOrdlength?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:RECOrdlength?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:RECOrdlength value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:RECOrdlength <NR1>
         - HORizontal:RECOrdlength?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the horizontal record length.
     """
 
@@ -111,45 +106,43 @@ class HorizontalRecordlength(SCPICmdWrite, SCPICmdRead):
 class HorizontalPreviewstate(SCPICmdRead):
     """The ``HORizontal:PREViewstate`` command.
 
-    **Description:**
+    Description:
         - This query returns the display system preview state.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:PREViewstate?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:PREViewstate?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:PREViewstate?
+        ```
     """
 
 
 class HorizontalPosition(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:POSition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the horizontal position as a percent of screen width. When
           Horizontal Delay Mode is turned off, this command is equivalent to adjusting the
           HORIZONTAL POSITION knob on the front panel. When Horizontal Delay Mode is turned on, the
           horizontal position is forced to 50%.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:POSition?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:POSition <NR3>
         - HORizontal:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is from 0 to ≈100 and is the position of the trigger point on the screen (0 =
           left edge, 100 = right edge).
     """
@@ -158,47 +151,45 @@ class HorizontalPosition(SCPICmdWrite, SCPICmdRead):
 class HorizontalDigitalSamplerateMain(SCPICmdRead):
     """The ``HORizontal:DIGital:SAMPLERate:MAIn`` command.
 
-    **Description:**
+    Description:
         - Returns the sample rate of the main digital acquisition.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DIGital:SAMPLERate:MAIn?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:DIGital:SAMPLERate:MAIn?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:DIGital:SAMPLERate:MAIn?
+        ```
     """
 
 
 class HorizontalDigitalSamplerateMagnivu(SCPICmdRead):
     """The ``HORizontal:DIGital:SAMPLERate:MAGnivu`` command.
 
-    **Description:**
+    Description:
         - Returns the sample rate of the MagniVu digital acquisition.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DIGital:SAMPLERate:MAGnivu?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``HORizontal:DIGital:SAMPLERate:MAGnivu?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:DIGital:SAMPLERate:MAGnivu?
+        ```
     """
 
 
 class HorizontalDigitalSamplerate(SCPICmdRead):
     """The ``HORizontal:DIGital:SAMPLERate`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DIGital:SAMPLERate?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:DIGital:SAMPLERate?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -217,21 +208,20 @@ class HorizontalDigitalSamplerate(SCPICmdRead):
     def magnivu(self) -> HorizontalDigitalSamplerateMagnivu:
         """Return the ``HORizontal:DIGital:SAMPLERate:MAGnivu`` command.
 
-        **Description:**
+        Description:
             - Returns the sample rate of the MagniVu digital acquisition.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:DIGital:SAMPLERate:MAGnivu?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:DIGital:SAMPLERate:MAGnivu?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:DIGital:SAMPLERate:MAGnivu?
+            ```
         """
         return self._magnivu
 
@@ -239,21 +229,20 @@ class HorizontalDigitalSamplerate(SCPICmdRead):
     def main(self) -> HorizontalDigitalSamplerateMain:
         """Return the ``HORizontal:DIGital:SAMPLERate:MAIn`` command.
 
-        **Description:**
+        Description:
             - Returns the sample rate of the main digital acquisition.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:DIGital:SAMPLERate:MAIn?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:DIGital:SAMPLERate:MAIn?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:DIGital:SAMPLERate:MAIn?
+            ```
         """
         return self._main
 
@@ -261,49 +250,47 @@ class HorizontalDigitalSamplerate(SCPICmdRead):
 class HorizontalDigitalRecordlengthMain(SCPICmdRead):
     """The ``HORizontal:DIGital:RECOrdlength:MAIn`` command.
 
-    **Description:**
+    Description:
         - Returns the record length of the main digital acquisition.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DIGital:RECOrdlength:MAIn?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``HORizontal:DIGital:RECOrdlength:MAIn?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:DIGital:RECOrdlength:MAIn?
+        ```
     """
 
 
 class HorizontalDigitalRecordlengthMagnivu(SCPICmdRead):
     """The ``HORizontal:DIGital:RECOrdlength:MAGnivu`` command.
 
-    **Description:**
+    Description:
         - Returns the record length of the MagniVu digital acquisition.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DIGital:RECOrdlength:MAGnivu?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``HORizontal:DIGital:RECOrdlength:MAGnivu?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:DIGital:RECOrdlength:MAGnivu?
+        ```
     """
 
 
 class HorizontalDigitalRecordlength(SCPICmdRead):
     """The ``HORizontal:DIGital:RECOrdlength`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DIGital:RECOrdlength?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:DIGital:RECOrdlength?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -322,21 +309,20 @@ class HorizontalDigitalRecordlength(SCPICmdRead):
     def magnivu(self) -> HorizontalDigitalRecordlengthMagnivu:
         """Return the ``HORizontal:DIGital:RECOrdlength:MAGnivu`` command.
 
-        **Description:**
+        Description:
             - Returns the record length of the MagniVu digital acquisition.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``HORizontal:DIGital:RECOrdlength:MAGnivu?`` query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:DIGital:RECOrdlength:MAGnivu?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:DIGital:RECOrdlength:MAGnivu?
+            ```
         """
         return self._magnivu
 
@@ -344,21 +330,20 @@ class HorizontalDigitalRecordlength(SCPICmdRead):
     def main(self) -> HorizontalDigitalRecordlengthMain:
         """Return the ``HORizontal:DIGital:RECOrdlength:MAIn`` command.
 
-        **Description:**
+        Description:
             - Returns the record length of the main digital acquisition.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:DIGital:RECOrdlength:MAIn?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``HORizontal:DIGital:RECOrdlength:MAIn?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:DIGital:RECOrdlength:MAIn?
+            ```
         """
         return self._main
 
@@ -366,7 +351,7 @@ class HorizontalDigitalRecordlength(SCPICmdRead):
 class HorizontalDigital(SCPICmdRead):
     """The ``HORizontal:DIGital`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DIGital?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:DIGital?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -387,7 +372,7 @@ class HorizontalDigital(SCPICmdRead):
     def recordlength(self) -> HorizontalDigitalRecordlength:
         """Return the ``HORizontal:DIGital:RECOrdlength`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:DIGital:RECOrdlength?``
               query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:DIGital:RECOrdlength?``
@@ -403,7 +388,7 @@ class HorizontalDigital(SCPICmdRead):
     def samplerate(self) -> HorizontalDigitalSamplerate:
         """Return the ``HORizontal:DIGital:SAMPLERate`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:DIGital:SAMPLERate?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:DIGital:SAMPLERate?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -418,23 +403,22 @@ class HorizontalDigital(SCPICmdRead):
 class HorizontalDelayTime(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:DELay:TIMe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the horizontal delay time that is used when delay mode is on.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DELay:TIMe?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:DELay:TIMe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:DELay:TIMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:DELay:TIMe <NR3>
         - HORizontal:DELay:TIMe?
+        ```
 
-    **Info:**
+    Info:
         - ``NR3`` is the delay in seconds.
     """
 
@@ -442,23 +426,22 @@ class HorizontalDelayTime(SCPICmdWrite, SCPICmdRead):
 class HorizontalDelayMode(SCPICmdWrite, SCPICmdRead):
     """The ``HORizontal:DELay:MODe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the horizontal delay mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DELay:MODe?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:DELay:MODe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``HORizontal:DELay:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal:DELay:MODe {OFF|ON|<NR1>}
         - HORizontal:DELay:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` sets the Horizontal Delay Mode to off. This causes the ``HORizontal:POSition``
           command to operate like the HORIZONTAL POSITION knob on the front panel.
         - ``ON`` sets the Horizontal Delay Mode to on. This causes the ``HORizontal:DELay:TIMe``
@@ -470,7 +453,7 @@ class HorizontalDelayMode(SCPICmdWrite, SCPICmdRead):
 class HorizontalDelay(SCPICmdRead):
     """The ``HORizontal:DELay`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal:DELay?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal:DELay?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -489,24 +472,23 @@ class HorizontalDelay(SCPICmdRead):
     def mode(self) -> HorizontalDelayMode:
         """Return the ``HORizontal:DELay:MODe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the horizontal delay mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:DELay:MODe?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:DELay:MODe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HORizontal:DELay:MODe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:DELay:MODe {OFF|ON|<NR1>}
             - HORizontal:DELay:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` sets the Horizontal Delay Mode to off. This causes the ``HORizontal:POSition``
               command to operate like the HORIZONTAL POSITION knob on the front panel.
             - ``ON`` sets the Horizontal Delay Mode to on. This causes the ``HORizontal:DELay:TIMe``
@@ -520,25 +502,24 @@ class HorizontalDelay(SCPICmdRead):
     def time(self) -> HorizontalDelayTime:
         """Return the ``HORizontal:DELay:TIMe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the horizontal delay time that is used when delay mode is
               on.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:DELay:TIMe?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:DELay:TIMe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HORizontal:DELay:TIMe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:DELay:TIMe <NR3>
             - HORizontal:DELay:TIMe?
+            ```
 
-        **Info:**
+        Info:
             - ``NR3`` is the delay in seconds.
         """
         return self._time
@@ -547,19 +528,18 @@ class HorizontalDelay(SCPICmdRead):
 class Horizontal(SCPICmdRead):
     """The ``HORizontal`` command.
 
-    **Description:**
+    Description:
         - Queries the current horizontal settings.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``HORizontal?`` query.
         - Using the ``.verify(value)`` method will send the ``HORizontal?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - HORizontal?
+        ```
 
     Properties:
         - ``.delay``: The ``HORizontal:DELay`` command tree.
@@ -585,7 +565,7 @@ class Horizontal(SCPICmdRead):
     def delay(self) -> HorizontalDelay:
         """Return the ``HORizontal:DELay`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:DELay?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:DELay?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -600,7 +580,7 @@ class Horizontal(SCPICmdRead):
     def digital(self) -> HorizontalDigital:
         """Return the ``HORizontal:DIGital`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:DIGital?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:DIGital?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -615,27 +595,26 @@ class Horizontal(SCPICmdRead):
     def position(self) -> HorizontalPosition:
         """Return the ``HORizontal:POSition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the horizontal position as a percent of screen width.
               When Horizontal Delay Mode is turned off, this command is equivalent to adjusting the
               HORIZONTAL POSITION knob on the front panel. When Horizontal Delay Mode is turned on,
               the horizontal position is forced to 50%.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:POSition?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HORizontal:POSition value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:POSition <NR3>
             - HORizontal:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is from 0 to ≈100 and is the position of the trigger point on the screen (0
               = left edge, 100 = right edge).
         """
@@ -645,19 +624,18 @@ class Horizontal(SCPICmdRead):
     def previewstate(self) -> HorizontalPreviewstate:
         """Return the ``HORizontal:PREViewstate`` command.
 
-        **Description:**
+        Description:
             - This query returns the display system preview state.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:PREViewstate?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:PREViewstate?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:PREViewstate?
+            ```
         """
         return self._previewstate
 
@@ -665,25 +643,24 @@ class Horizontal(SCPICmdRead):
     def recordlength(self) -> HorizontalRecordlength:
         """Return the ``HORizontal:RECOrdlength`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the horizontal record length. To change the record length
               the Horizontal Mode must be set to Manual.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:RECOrdlength?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:RECOrdlength?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HORizontal:RECOrdlength value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:RECOrdlength <NR1>
             - HORizontal:RECOrdlength?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the horizontal record length.
         """
         return self._recordlength
@@ -692,20 +669,19 @@ class Horizontal(SCPICmdRead):
     def samplerate(self) -> HorizontalSamplerate:
         """Return the ``HORizontal:SAMPLERate`` command.
 
-        **Description:**
+        Description:
             - The command form is ignored. The query returns the sample rate for analog channels in
               samples per second.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:SAMPLERate?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:SAMPLERate?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:SAMPLERate?
+            ```
         """
         return self._samplerate
 
@@ -713,23 +689,22 @@ class Horizontal(SCPICmdRead):
     def scale(self) -> HorizontalScale:
         """Return the ``HORizontal:SCAle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the horizontal scale.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``HORizontal:SCAle?`` query.
             - Using the ``.verify(value)`` method will send the ``HORizontal:SCAle?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``HORizontal:SCAle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - HORizontal:SCAle <NR3>
             - HORizontal:SCAle?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the horizontal scale in time per division.
         """
         return self._scale

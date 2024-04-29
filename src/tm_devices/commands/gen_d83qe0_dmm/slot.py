@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - slot[1].idn
     - slot[1].maxvoltage
     - slot[1].pseudocard
@@ -31,7 +29,7 @@ if TYPE_CHECKING:
 class SlotItemVoltage(BaseTSPCmd):
     """The ``slot[1].voltage`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.endchannel``: The ``slot[1].voltage.endchannel`` attribute.
         - ``.startchannel``: The ``slot[1].voltage.startchannel`` attribute.
     """
@@ -40,17 +38,16 @@ class SlotItemVoltage(BaseTSPCmd):
     def endchannel(self) -> str:
         """Access the ``slot[1].voltage.endchannel`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates the last channel in the specified slot that supports voltage.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[1].voltage.endchannel)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[1].voltage.endchannel)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -69,18 +66,17 @@ class SlotItemVoltage(BaseTSPCmd):
     def startchannel(self) -> str:
         """Access the ``slot[1].voltage.startchannel`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates the first channel in the specified slot that supports
               voltage.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[1].voltage.startchannel)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[1].voltage.startchannel)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -99,7 +95,7 @@ class SlotItemVoltage(BaseTSPCmd):
 class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``slot[1]`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.idn``: The ``slot[1].idn`` attribute.
         - ``.maxvoltage``: The ``slot[1].maxvoltage`` attribute.
         - ``.pseudocard``: The ``slot[1].pseudocard`` attribute.
@@ -114,17 +110,16 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def idn(self) -> str:
         """Access the ``slot[1].idn`` attribute.
 
-        **Description:**
+        Description:
             - This attribute returns a string that contains information about the .
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[1].idn)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[1].idn)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -143,18 +138,17 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def maxvoltage(self) -> str:
         """Access the ``slot[1].maxvoltage`` attribute.
 
-        **Description:**
+        Description:
             - This attribute returns the maximum voltage of all channels on a  in the specified slot
               on a  in the specified slot.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[1].maxvoltage)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(slot[1].maxvoltage)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -173,19 +167,18 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def pseudocard(self) -> str:
         """Access the ``slot[1].pseudocard`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies a pseudocard to use.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[1].pseudocard)`` query.
             - Setting this property to a value will send the ``slot[1].pseudocard = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - slot[1].pseudocard = value
             - print(slot[1].pseudocard)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -204,19 +197,18 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def pseudocard(self, value: Union[str, float]) -> None:
         """Access the ``slot[1].pseudocard`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies a pseudocard to use.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(slot[1].pseudocard)`` query.
             - Setting this property to a value will send the ``slot[1].pseudocard = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - slot[1].pseudocard = value
             - print(slot[1].pseudocard)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -238,7 +230,7 @@ class SlotItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def voltage(self) -> SlotItemVoltage:
         """Return the ``slot[1].voltage`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.endchannel``: The ``slot[1].voltage.endchannel`` attribute.
             - ``.startchannel``: The ``slot[1].voltage.startchannel`` attribute.
         """

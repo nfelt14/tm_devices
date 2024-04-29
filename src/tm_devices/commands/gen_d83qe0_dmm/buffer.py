@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - buffer.channelmath()
     - buffer.clearstats()
     - buffer.delete()
@@ -33,7 +31,7 @@ if TYPE_CHECKING:
 class BufferWrite(BaseTSPCmd):
     """The ``buffer.write`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.format()``: The ``buffer.write.format()`` function.
     """
 
@@ -47,15 +45,14 @@ class BufferWrite(BaseTSPCmd):
     ) -> None:
         """Run the ``buffer.write.format()`` function.
 
-        **Description:**
+        Description:
             - This function sets the units and number of digits of the readings that are written
               into the reading buffer.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - buffer.write.format()
+            ```
 
         Args:
             buffer_var: The name of the buffer.
@@ -201,7 +198,7 @@ class Buffer(BaseTSPCmd):
         - ``.UNIT_WATT``: Set units of measure to watts.
         - ``.UNIT_X``: Set units of measure to buffer.UNIT_X.
 
-    Properties/methods:
+    Properties and methods:
         - ``.channelmath()``: The ``buffer.channelmath()`` function.
         - ``.clearstats()``: The ``buffer.clearstats()`` function.
         - ``.delete()``: The ``buffer.delete()`` function.
@@ -406,7 +403,7 @@ class Buffer(BaseTSPCmd):
     def write(self) -> BufferWrite:
         """Return the ``buffer.write`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.format()``: The ``buffer.write.format()`` function.
         """
         return self._write
@@ -427,14 +424,13 @@ class Buffer(BaseTSPCmd):
     ) -> None:
         """Run the ``buffer.channelmath()`` function.
 
-        **Description:**
+        Description:
             - This function sets a math expression on a channel.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - buffer.channelmath()
+            ```
 
         Args:
             reading_buffer: The name of the reading buffer; must be set to the style FULL.
@@ -482,14 +478,13 @@ class Buffer(BaseTSPCmd):
     def clearstats(self, buffer_var: Optional[str] = None) -> None:
         """Run the ``buffer.clearstats()`` function.
 
-        **Description:**
+        Description:
             - This function clears the statistical information associated with the specified buffer.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - buffer.clearstats()
+            ```
 
         Args:
             buffer_var (optional): The name of the reading buffer, which may be a default buffer
@@ -511,14 +506,13 @@ class Buffer(BaseTSPCmd):
     def delete(self, buffer_name: str) -> None:
         """Run the ``buffer.delete()`` function.
 
-        **Description:**
+        Description:
             - This function deletes a user-defined reading buffer.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - buffer.delete()
+            ```
 
         Args:
             buffer_name: The name of a user-defined reading buffer.
@@ -537,14 +531,13 @@ class Buffer(BaseTSPCmd):
     def make(self, buffer_size: int, style: Optional[str] = None) -> str:
         """Run the ``buffer.make()`` function.
 
-        **Description:**
+        Description:
             - This function creates a user-defined reading buffer.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - buffer.make()
+            ```
 
         Args:
             buffer_size: The maximum number of readings that can be stored in bufferVar; minimum is
@@ -583,14 +576,13 @@ class Buffer(BaseTSPCmd):
     ) -> None:
         """Run the ``buffer.save()`` function.
 
-        **Description:**
+        Description:
             - This function saves data from the specified reading buffer to a USB flash drive.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - buffer.save()
+            ```
 
         Args:
             buffer_var: The name of the reading buffer, which may be a default buffer (defbuffer1 or
@@ -633,14 +625,13 @@ class Buffer(BaseTSPCmd):
     ) -> None:
         """Run the ``buffer.saveappend()`` function.
 
-        **Description:**
+        Description:
             - This function appends data from the reading buffer to a file on the USB flash drive.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - buffer.saveappend()
+            ```
 
         Args:
             buffer_var: Indicates the reading buffer to use; the default buffers (defbuffer1 or

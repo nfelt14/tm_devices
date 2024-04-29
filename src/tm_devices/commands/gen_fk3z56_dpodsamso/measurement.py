@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - MEASUrement:ANNOTation:IMMEDSTAte {<NR1>|OFF|ON}
     - MEASUrement:ANNOTation:IMMEDSTAte?
     - MEASUrement:ANNOTation:NUMX?
@@ -56,7 +54,12 @@ Commands and Queries:
     - MEASUrement:IMMed:SOUrce1:SIGType {PULse|EYE}
     - MEASUrement:IMMed:SOUrce1:SIGType?
     - MEASUrement:IMMed:SOUrce1?
-    - MEASUrement:IMMed:TYPe {AMPlitude|AREa| BURst|CARea|CMEan|CRMs|DELay|DISTDUty| EXTINCTDB|EXTINCTPCT|EXTINCTRATIO| EYEHeight|EYEWIdth|FALL|FREQuency|HIGH| HITs|LOW|MAXimum|MEAN| MEDian|MINImum| NCROss|NDUty|NOVershoot|NWIdth|PBASe| PCROss|PCTCROss|PDUty|PEAKHits|PERIod| PHAse|PK2Pk|PKPKJitter|PKPKNoise| POVershoot|PTOP|PWIdth|QFACtor|RISe| RMS|RMSJitter|RMSNoise|SIGMA1|SIGMA2| SIGMA3|SIXSigmajit|SNRatio|STDdev| UNDEFINED|WAVEFORMS}
+    - MEASUrement:IMMed:TYPe {AMPlitude|AREa| BURst|CARea|CMEan|CRMs|DELay|DISTDUty|
+      EXTINCTDB|EXTINCTPCT|EXTINCTRATIO| EYEHeight|EYEWIdth|FALL|FREQuency|HIGH|
+      HITs|LOW|MAXimum|MEAN| MEDian|MINImum| NCROss|NDUty|NOVershoot|NWIdth|PBASe|
+      PCROss|PCTCROss|PDUty|PEAKHits|PERIod| PHAse|PK2Pk|PKPKJitter|PKPKNoise|
+      POVershoot|PTOP|PWIdth|QFACtor|RISe| RMS|RMSJitter|RMSNoise|SIGMA1|SIGMA2|
+      SIGMA3|SIXSigmajit|SNRatio|STDdev| UNDEFINED|WAVEFORMS}
     - MEASUrement:IMMed:TYPe?
     - MEASUrement:IMMed:UNIts?
     - MEASUrement:IMMed:VALue?
@@ -96,7 +99,12 @@ Commands and Queries:
     - MEASUrement:MEAS<x>:STATE {<NR1>|OFF|ON}
     - MEASUrement:MEAS<x>:STATE?
     - MEASUrement:MEAS<x>:STDdev?
-    - MEASUrement:MEAS<x>:TYPe {AMPlitude|AREa| BURst|CARea|CMEan|CRMs|DELay|DISTDUty| EXTINCTDB|EXTINCTPCT|EXTINCTRATIO|EYEHeight| EYEWIdth|FALL|FREQuency|HIGH|HITs|LOW| MAXimum|MEAN|MEDian|MINImum|NCROss|NDUty| NOVershoot|NWIdth|PBASe|PCROss|PCTCROss|PDUty| PEAKHits|PERIod|PHAse|PK2Pk|PKPKJitter| PKPKNoise|POVershoot|PTOP|PWIdth|QFACtor| RISe|RMS|RMSJitter|RMSNoise|SIGMA1|SIGMA2| SIGMA3|SIXSigmajit|SNRatio|STDdev|UNDEFINED| WAVEFORMS}
+    - MEASUrement:MEAS<x>:TYPe {AMPlitude|AREa| BURst|CARea|CMEan|CRMs|DELay|DISTDUty|
+      EXTINCTDB|EXTINCTPCT|EXTINCTRATIO|EYEHeight| EYEWIdth|FALL|FREQuency|HIGH|HITs|LOW|
+      MAXimum|MEAN|MEDian|MINImum|NCROss|NDUty| NOVershoot|NWIdth|PBASe|PCROss|PCTCROss|PDUty|
+      PEAKHits|PERIod|PHAse|PK2Pk|PKPKJitter| PKPKNoise|POVershoot|PTOP|PWIdth|QFACtor|
+      RISe|RMS|RMSJitter|RMSNoise|SIGMA1|SIGMA2| SIGMA3|SIXSigmajit|SNRatio|STDdev|UNDEFINED|
+      WAVEFORMS}
     - MEASUrement:MEAS<x>:TYPe?
     - MEASUrement:MEAS<x>:UNIts?
     - MEASUrement:MEAS<x>:VALue?
@@ -128,7 +136,7 @@ Commands and Queries:
     - MEASUrement:STATIstics:WEIghting <NR1>
     - MEASUrement:STATIstics:WEIghting?
     - MEASUrement?
-"""  # noqa: E501
+"""
 
 from typing import Dict, Optional, TYPE_CHECKING
 
@@ -146,25 +154,24 @@ if TYPE_CHECKING:
 class MeasurementStatisticsWeighting(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:STATIstics:WEIghting`` command.
 
-    **Description:**
+    Description:
         - This command specifies the time constant for mean and standard deviation statistical
           accumulations.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:STATIstics:WEIghting?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:STATIstics:WEIghting?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:STATIstics:WEIghting value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:STATIstics:WEIghting <NR1>
         - MEASUrement:STATIstics:WEIghting?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the number of samples used for the mean and standard deviation statistical
           accumulations.
     """
@@ -173,26 +180,25 @@ class MeasurementStatisticsWeighting(SCPICmdWrite, SCPICmdRead):
 class MeasurementStatisticsMode(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:STATIstics:MODe`` command.
 
-    **Description:**
+    Description:
         - This command controls the operation and display of measurement statistics. This command is
           equivalent to selecting Measurement Setup from the Measure menu, clicking the Statistics
           button and then choosing the desired Measurement Format.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:STATIstics:MODe?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:STATIstics:MODe?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:STATIstics:MODe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:STATIstics:MODe {OFF|ALL|VALUEMean|MINMax|MEANSTDdev}
         - MEASUrement:STATIstics:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` turns off all measurements. This is the default value.
         - ``ALL`` turns on statistics and displays all statistics for each measurement.
         - ``VALUEMean`` turns on statistics and displays the value and the mean (µ) of each
@@ -206,22 +212,21 @@ class MeasurementStatisticsMode(SCPICmdWrite, SCPICmdRead):
 class MeasurementStatisticsCount(SCPICmdWrite):
     """The ``MEASUrement:STATIstics:COUNt`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) clears existing measurement statistics from memory. This
           command is equivalent to selecting Measurement Setup from the Measure menu, selecting
           Statistics, and clicking the Reset button.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MEASUrement:STATIstics:COUNt value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:STATIstics:COUNt {RESET}
+        ```
 
-    **Info:**
+    Info:
         - ``RESET`` clears existing measurement statistics from memory.
     """
 
@@ -229,7 +234,7 @@ class MeasurementStatisticsCount(SCPICmdWrite):
 class MeasurementStatistics(SCPICmdRead):
     """The ``MEASUrement:STATIstics`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:STATIstics?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:STATIstics?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -250,22 +255,21 @@ class MeasurementStatistics(SCPICmdRead):
     def count(self) -> MeasurementStatisticsCount:
         """Return the ``MEASUrement:STATIstics:COUNt`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) clears existing measurement statistics from memory. This
               command is equivalent to selecting Measurement Setup from the Measure menu, selecting
               Statistics, and clicking the Reset button.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:STATIstics:COUNt value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:STATIstics:COUNt {RESET}
+            ```
 
-        **Info:**
+        Info:
             - ``RESET`` clears existing measurement statistics from memory.
         """
         return self._count
@@ -274,26 +278,25 @@ class MeasurementStatistics(SCPICmdRead):
     def mode(self) -> MeasurementStatisticsMode:
         """Return the ``MEASUrement:STATIstics:MODe`` command.
 
-        **Description:**
+        Description:
             - This command controls the operation and display of measurement statistics. This
               command is equivalent to selecting Measurement Setup from the Measure menu, clicking
               the Statistics button and then choosing the desired Measurement Format.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:STATIstics:MODe?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:STATIstics:MODe?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MEASUrement:STATIstics:MODe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:STATIstics:MODe {OFF|ALL|VALUEMean|MINMax|MEANSTDdev}
             - MEASUrement:STATIstics:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` turns off all measurements. This is the default value.
             - ``ALL`` turns on statistics and displays all statistics for each measurement.
             - ``VALUEMean`` turns on statistics and displays the value and the mean (µ) of each
@@ -308,11 +311,11 @@ class MeasurementStatistics(SCPICmdRead):
     def weighting(self) -> MeasurementStatisticsWeighting:
         """Return the ``MEASUrement:STATIstics:WEIghting`` command.
 
-        **Description:**
+        Description:
             - This command specifies the time constant for mean and standard deviation statistical
               accumulations.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:STATIstics:WEIghting?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -321,14 +324,13 @@ class MeasurementStatistics(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:STATIstics:WEIghting value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:STATIstics:WEIghting <NR1>
             - MEASUrement:STATIstics:WEIghting?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the number of samples used for the mean and standard deviation
               statistical accumulations.
         """
@@ -338,26 +340,25 @@ class MeasurementStatistics(SCPICmdRead):
 class MeasurementSource1Sigtype(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:SOUrce1:SIGType`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the type of input signal used for measurement SOURCE<x>, 1 or
           2. To ensure accurate measurements, use this command to specify the input-signal type for
           the measurement source.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:SOUrce1:SIGType?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:SOUrce1:SIGType?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:SOUrce1:SIGType value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:SOUrce1:SIGType {PULse|EYE}
         - MEASUrement:SOUrce1:SIGType?
+        ```
 
-    **Info:**
+    Info:
         - ``PULSE`` is for generic signals that are not associated with synchronous communications
           standards.
         - ``EYE`` is for synchronous-communication signals with NRZ-like characteristics (nonreturn
@@ -368,7 +369,7 @@ class MeasurementSource1Sigtype(SCPICmdWrite, SCPICmdRead):
 class MeasurementSource1(SCPICmdRead):
     """The ``MEASUrement:SOUrce1`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:SOUrce1?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:SOUrce1?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -385,26 +386,25 @@ class MeasurementSource1(SCPICmdRead):
     def sigtype(self) -> MeasurementSource1Sigtype:
         """Return the ``MEASUrement:SOUrce1:SIGType`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the type of input signal used for measurement SOURCE<x>,
               1 or 2. To ensure accurate measurements, use this command to specify the input-signal
               type for the measurement source.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:SOUrce1:SIGType?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:SOUrce1:SIGType?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MEASUrement:SOUrce1:SIGType value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:SOUrce1:SIGType {PULse|EYE}
             - MEASUrement:SOUrce1:SIGType?
+            ```
 
-        **Info:**
+        Info:
             - ``PULSE`` is for generic signals that are not associated with synchronous
               communications standards.
             - ``EYE`` is for synchronous-communication signals with NRZ-like characteristics
@@ -416,14 +416,14 @@ class MeasurementSource1(SCPICmdRead):
 class MeasurementReflevelPercentMidItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:REFLevel:PERCent:MID<x>`` command.
 
-    **Description:**
+    Description:
         - This command specifies the percent (where 100% is equal to HIGH) that is used to calculate
           a mid reference level. There are two mid reference levels; thus, MID<x> can be either MID1
           or MID2. This command applies when the command ``MEASUREMENT:REFLEVEL:METHOD`` has been
           set to Percent. This command is equivalent to setting the Reference Levels in the MEASURE
           menu on the oscilloscope front panel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:REFLevel:PERCent:MID<x>?``
           query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:REFLevel:PERCent:MID<x>?``
@@ -431,14 +431,13 @@ class MeasurementReflevelPercentMidItem(ValidatedDynamicNumberCmd, SCPICmdWrite,
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:REFLevel:PERCent:MID<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:REFLevel:PERCent:MID<x> <NR3>
         - MEASUrement:REFLevel:PERCent:MID<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the mid reference level, ranging from
           0 to 100%. The default mid reference level is 50%.
     """
@@ -447,26 +446,25 @@ class MeasurementReflevelPercentMidItem(ValidatedDynamicNumberCmd, SCPICmdWrite,
 class MeasurementReflevelPercentLow(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:REFLevel:PERCent:LOW`` command.
 
-    **Description:**
+    Description:
         - This command specifies the percent (where 100% is equal to HIGH) used to calculate the low
           reference level when ``MEASUREMENT:REFLEVEL:METHOD`` is set to Percent. This command
           affects the results of rise and fall measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:REFLevel:PERCent:LOW?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:REFLevel:PERCent:LOW?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:REFLevel:PERCent:LOW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:REFLevel:PERCent:LOW <NR3>
         - MEASUrement:REFLevel:PERCent:LOW?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the low reference level, ranging from
           0 to 100%. The default low reference level is 10%.
     """
@@ -475,26 +473,25 @@ class MeasurementReflevelPercentLow(SCPICmdWrite, SCPICmdRead):
 class MeasurementReflevelPercentHigh(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:REFLevel:PERCent:HIGH`` command.
 
-    **Description:**
+    Description:
         - This command specifies the percent (where 100% is equal to HIGH) used to calculate the
           high reference level when ``MEASUREMENT:REFLEVEL:METHOD`` is set to Percent. This command
           affects the results of rise and fall measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:REFLevel:PERCent:HIGH?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:REFLevel:PERCent:HIGH?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:REFLevel:PERCent:HIGH value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:REFLevel:PERCent:HIGH <NR3>
         - MEASUrement:REFLevel:PERCent:HIGH?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the high reference level, ranging from
           0 to 100%. The default high reference level is 90%.
     """
@@ -503,7 +500,7 @@ class MeasurementReflevelPercentHigh(SCPICmdWrite, SCPICmdRead):
 class MeasurementReflevelPercent(SCPICmdRead):
     """The ``MEASUrement:REFLevel:PERCent`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:REFLevel:PERCent?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:REFLevel:PERCent?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -526,12 +523,12 @@ class MeasurementReflevelPercent(SCPICmdRead):
     def high(self) -> MeasurementReflevelPercentHigh:
         """Return the ``MEASUrement:REFLevel:PERCent:HIGH`` command.
 
-        **Description:**
+        Description:
             - This command specifies the percent (where 100% is equal to HIGH) used to calculate the
               high reference level when ``MEASUREMENT:REFLEVEL:METHOD`` is set to Percent. This
               command affects the results of rise and fall measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:REFLevel:PERCent:HIGH?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -540,14 +537,13 @@ class MeasurementReflevelPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:REFLevel:PERCent:HIGH value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:REFLevel:PERCent:HIGH <NR3>
             - MEASUrement:REFLevel:PERCent:HIGH?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the high reference level, ranging
               from 0 to 100%. The default high reference level is 90%.
         """
@@ -557,12 +553,12 @@ class MeasurementReflevelPercent(SCPICmdRead):
     def low(self) -> MeasurementReflevelPercentLow:
         """Return the ``MEASUrement:REFLevel:PERCent:LOW`` command.
 
-        **Description:**
+        Description:
             - This command specifies the percent (where 100% is equal to HIGH) used to calculate the
               low reference level when ``MEASUREMENT:REFLEVEL:METHOD`` is set to Percent. This
               command affects the results of rise and fall measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:REFLevel:PERCent:LOW?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -571,14 +567,13 @@ class MeasurementReflevelPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:REFLevel:PERCent:LOW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:REFLevel:PERCent:LOW <NR3>
             - MEASUrement:REFLevel:PERCent:LOW?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the low reference level, ranging
               from 0 to 100%. The default low reference level is 10%.
         """
@@ -588,14 +583,14 @@ class MeasurementReflevelPercent(SCPICmdRead):
     def mid(self) -> Dict[int, MeasurementReflevelPercentMidItem]:
         """Return the ``MEASUrement:REFLevel:PERCent:MID<x>`` command.
 
-        **Description:**
+        Description:
             - This command specifies the percent (where 100% is equal to HIGH) that is used to
               calculate a mid reference level. There are two mid reference levels; thus, MID<x> can
               be either MID1 or MID2. This command applies when the command
               ``MEASUREMENT:REFLEVEL:METHOD`` has been set to Percent. This command is equivalent to
               setting the Reference Levels in the MEASURE menu on the oscilloscope front panel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:REFLevel:PERCent:MID<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -604,14 +599,13 @@ class MeasurementReflevelPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:REFLevel:PERCent:MID<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:REFLevel:PERCent:MID<x> <NR3>
             - MEASUrement:REFLevel:PERCent:MID<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the mid reference level, ranging
               from 0 to 100%. The default mid reference level is 50%.
         """
@@ -621,24 +615,23 @@ class MeasurementReflevelPercent(SCPICmdRead):
 class MeasurementReflevelMethod(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:REFLevel:METHod`` command.
 
-    **Description:**
+    Description:
         - Specifies or returns the reference level units used for measurement calculations.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:REFLevel:METHod?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:REFLevel:METHod?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:REFLevel:METHod value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:REFLevel:METHod {ABSolute|PERCent}
         - MEASUrement:REFLevel:METHod?
+        ```
 
-    **Info:**
+    Info:
         - ``ABSolute`` specifies that the reference levels are set explicitly using the
           ``MEASUrement:REFLevel:ABSolute`` commands. This method is useful when precise values are
           required (for example, when designing to published interface specifications, such as
@@ -652,14 +645,14 @@ class MeasurementReflevelMethod(SCPICmdWrite, SCPICmdRead):
 class MeasurementReflevelAbsoluteMidItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:REFLevel:ABSolute:MID<x>`` command.
 
-    **Description:**
+    Description:
         - This command specifies an absolute mid reference level (the 50% reference level) for the
           'to' waveform when taking a delay measurement, in volts. There are two absolute mid
           reference levels; thus MID<x> can either be MID1 or MID2. This command applies when
           ``MEASUREMENT:REFLEVEL:METHOD`` has been set to Absolute. This command is equivalent to
           setting the Reference Levels in the MEASURE menu on the oscilloscope front panel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:REFLevel:ABSolute:MID<x>?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -668,14 +661,13 @@ class MeasurementReflevelAbsoluteMidItem(ValidatedDynamicNumberCmd, SCPICmdWrite
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:REFLevel:ABSolute:MID<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:REFLevel:ABSolute:MID<x> <NR3>
         - MEASUrement:REFLevel:ABSolute:MID<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the mid reference level in volts.
     """
 
@@ -683,25 +675,24 @@ class MeasurementReflevelAbsoluteMidItem(ValidatedDynamicNumberCmd, SCPICmdWrite
 class MeasurementReflevelAbsoluteLow(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:REFLevel:ABSolute:LOW`` command.
 
-    **Description:**
+    Description:
         - This command specifies the low reference level, and is the lower reference level when
           ``MEASUREMENT:REFLEVEL:METHOD`` is set to Absolute.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:REFLevel:ABSolute:LOW?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:REFLevel:ABSolute:LOW?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:REFLevel:ABSolute:LOW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:REFLevel:ABSolute:LOW <NR3>
         - MEASUrement:REFLevel:ABSolute:LOW?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the low reference level, in volts. The
           default is 0.0 V.
     """
@@ -710,26 +701,25 @@ class MeasurementReflevelAbsoluteLow(SCPICmdWrite, SCPICmdRead):
 class MeasurementReflevelAbsoluteHigh(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:REFLevel:ABSolute:HIGH`` command.
 
-    **Description:**
+    Description:
         - This command specifies the high reference level, and is the upper reference level when
           ``MEASUREMENT:REFLEVEL:METHOD`` is set to Absolute. This command affects the results of
           rise and fall measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:REFLevel:ABSolute:HIGH?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:REFLevel:ABSolute:HIGH?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:REFLevel:ABSolute:HIGH value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:REFLevel:ABSolute:HIGH <NR3>
         - MEASUrement:REFLevel:ABSolute:HIGH?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the high reference level, in volts.
           The default is 0.0 V.
     """
@@ -738,7 +728,7 @@ class MeasurementReflevelAbsoluteHigh(SCPICmdWrite, SCPICmdRead):
 class MeasurementReflevelAbsolute(SCPICmdRead):
     """The ``MEASUrement:REFLevel:ABSolute`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:REFLevel:ABSolute?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:REFLevel:ABSolute?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -761,12 +751,12 @@ class MeasurementReflevelAbsolute(SCPICmdRead):
     def high(self) -> MeasurementReflevelAbsoluteHigh:
         """Return the ``MEASUrement:REFLevel:ABSolute:HIGH`` command.
 
-        **Description:**
+        Description:
             - This command specifies the high reference level, and is the upper reference level when
               ``MEASUREMENT:REFLEVEL:METHOD`` is set to Absolute. This command affects the results
               of rise and fall measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:REFLevel:ABSolute:HIGH?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -775,14 +765,13 @@ class MeasurementReflevelAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:REFLevel:ABSolute:HIGH value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:REFLevel:ABSolute:HIGH <NR3>
             - MEASUrement:REFLevel:ABSolute:HIGH?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the high reference level, in
               volts. The default is 0.0 V.
         """
@@ -792,11 +781,11 @@ class MeasurementReflevelAbsolute(SCPICmdRead):
     def low(self) -> MeasurementReflevelAbsoluteLow:
         """Return the ``MEASUrement:REFLevel:ABSolute:LOW`` command.
 
-        **Description:**
+        Description:
             - This command specifies the low reference level, and is the lower reference level when
               ``MEASUREMENT:REFLEVEL:METHOD`` is set to Absolute.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:REFLevel:ABSolute:LOW?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -805,14 +794,13 @@ class MeasurementReflevelAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:REFLevel:ABSolute:LOW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:REFLevel:ABSolute:LOW <NR3>
             - MEASUrement:REFLevel:ABSolute:LOW?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the low reference level, in volts.
               The default is 0.0 V.
         """
@@ -822,7 +810,7 @@ class MeasurementReflevelAbsolute(SCPICmdRead):
     def mid(self) -> Dict[int, MeasurementReflevelAbsoluteMidItem]:
         """Return the ``MEASUrement:REFLevel:ABSolute:MID<x>`` command.
 
-        **Description:**
+        Description:
             - This command specifies an absolute mid reference level (the 50% reference level) for
               the 'to' waveform when taking a delay measurement, in volts. There are two absolute
               mid reference levels; thus MID<x> can either be MID1 or MID2. This command applies
@@ -830,7 +818,7 @@ class MeasurementReflevelAbsolute(SCPICmdRead):
               equivalent to setting the Reference Levels in the MEASURE menu on the oscilloscope
               front panel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:REFLevel:ABSolute:MID<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -839,14 +827,13 @@ class MeasurementReflevelAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:REFLevel:ABSolute:MID<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:REFLevel:ABSolute:MID<x> <NR3>
             - MEASUrement:REFLevel:ABSolute:MID<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the mid reference level in volts.
         """
         return self._mid
@@ -855,19 +842,18 @@ class MeasurementReflevelAbsolute(SCPICmdRead):
 class MeasurementReflevel(SCPICmdRead):
     """The ``MEASUrement:REFLevel`` command.
 
-    **Description:**
+    Description:
         - Returns the current reference level parameters.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:REFLevel?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:REFLevel?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:REFLevel?
+        ```
 
     Properties:
         - ``.absolute``: The ``MEASUrement:REFLevel:ABSolute`` command tree.
@@ -885,7 +871,7 @@ class MeasurementReflevel(SCPICmdRead):
     def absolute(self) -> MeasurementReflevelAbsolute:
         """Return the ``MEASUrement:REFLevel:ABSolute`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:REFLevel:ABSolute?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:REFLevel:ABSolute?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -901,24 +887,23 @@ class MeasurementReflevel(SCPICmdRead):
     def method(self) -> MeasurementReflevelMethod:
         """Return the ``MEASUrement:REFLevel:METHod`` command.
 
-        **Description:**
+        Description:
             - Specifies or returns the reference level units used for measurement calculations.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:REFLevel:METHod?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:REFLevel:METHod?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MEASUrement:REFLevel:METHod value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:REFLevel:METHod {ABSolute|PERCent}
             - MEASUrement:REFLevel:METHod?
+            ```
 
-        **Info:**
+        Info:
             - ``ABSolute`` specifies that the reference levels are set explicitly using the
               ``MEASUrement:REFLevel:ABSolute`` commands. This method is useful when precise values
               are required (for example, when designing to published interface specifications, such
@@ -933,7 +918,7 @@ class MeasurementReflevel(SCPICmdRead):
     def percent(self) -> MeasurementReflevelPercent:
         """Return the ``MEASUrement:REFLevel:PERCent`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:REFLevel:PERCent?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:REFLevel:PERCent?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -949,26 +934,25 @@ class MeasurementReflevel(SCPICmdRead):
 class MeasurementNoise(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:NOISe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the noise measurement is made on the high or low
           level of the waveform. Sending this command is equivalent to selecting Ref Levs > Eye >
           Top Level or Base Level in the Comm tab of the Measurement Setup dialog box. The Eye
           section is displayed only if you have an eye-pattern or optical measurement defined.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:NOISe?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:NOISe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:NOISe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:NOISe {HIGH|LOW}
         - MEASUrement:NOISe?
+        ```
 
-    **Info:**
+    Info:
         - ``HIGH`` argument causes the measurement for noise to be taken at the high level of the
           waveform.
         - ``LOW`` argument causes the measurement for noise to be taken at the low level of the
@@ -979,25 +963,24 @@ class MeasurementNoise(SCPICmdWrite, SCPICmdRead):
 class MeasurementMethod(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:METHod`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the method used to calculate the 0% and 100% reference level.
           This command is equivalent to selecting Reference Levels from the Measure menu and then
           choosing the desired Determine Base, Top From setting.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:METHod?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:METHod?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:METHod value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:METHod {HIStogram|MEAN|MINMax}
         - MEASUrement:METHod?
+        ```
 
-    **Info:**
+    Info:
         - ``HIStogram`` sets the high and low reference levels to the most common values either
           above or below the mid point, depending on whether the high reference point or the low
           reference point is being defined. Because the statistical approach ignores short-term
@@ -1015,67 +998,64 @@ class MeasurementMethod(SCPICmdWrite, SCPICmdRead):
 class MeasurementMeasItemValue(SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:VALue`` command.
 
-    **Description:**
+    Description:
         - Returns a calculate value for the measurement specified by <x>, which ranges from 1
           through 4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:VALue?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:VALue?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:VALue?
+        ```
     """
 
 
 class MeasurementMeasItemUnits(SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:UNIts`` command.
 
-    **Description:**
+    Description:
         - Returns the units associated with the specified measurement. The measurement slots are
           specified by <x>, which ranges from 1 through 4.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:UNIts?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:UNIts?
+        ```
     """
 
 
 class MeasurementMeasItemType(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the measurement type defined for the specified measurement
           slot. The measurement slot is specified by x, which ranges from 1 through 8. This command
           is equivalent to selecting Measurement Setup from the Measure menu and then choosing the
           desired measurement type.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:TYPe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:MEAS<x>:TYPe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:TYPe {AMPlitude|AREa| BURst|CARea|CMEan|CRMs|DELay|DISTDUty| EXTINCTDB|EXTINCTPCT|EXTINCTRATIO|EYEHeight| EYEWIdth|FALL|FREQuency|HIGH|HITs|LOW| MAXimum|MEAN|MEDian|MINImum|NCROss|NDUty| NOVershoot|NWIdth|PBASe|PCROss|PCTCROss|PDUty| PEAKHits|PERIod|PHAse|PK2Pk|PKPKJitter| PKPKNoise|POVershoot|PTOP|PWIdth|QFACtor| RISe|RMS|RMSJitter|RMSNoise|SIGMA1|SIGMA2| SIGMA3|SIXSigmajit|SNRatio|STDdev|UNDEFINED| WAVEFORMS}
         - MEASUrement:MEAS<x>:TYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``AMPlitude`` measures the amplitude of the selected waveform. In other words, it measures
           the high value less the low value measured over the entire waveform or gated region.
         - ``Amplitude = High - Low``
@@ -1219,28 +1199,27 @@ class MeasurementMeasItemType(SCPICmdWrite, SCPICmdRead):
 class MeasurementMeasItemStddev(SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:STDdev`` command.
 
-    **Description:**
+    Description:
         - Returns the standard deviation of values accumulated for this measurement since the last
           statistical reset. Measurements are specified by <x>, the measurement slots, from 1
           through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:STDdev?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:STDdev?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:STDdev?
+        ```
     """
 
 
 class MeasurementMeasItemState(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:STATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the specified measurement slot is computed and
           displayed. The measurement slot is specified by x, which ranges from 1 through 8. This
           command is equivalent to selecting Measurement Setup from the Measure menu and then
@@ -1249,21 +1228,20 @@ class MeasurementMeasItemState(SCPICmdWrite, SCPICmdRead):
           measurement using the ``MEASUREMENT:MEASX:SOURCEX`` command. You define the measurement
           type using the ``MEASUREMENT:MEASX:TYPE`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:STATE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:MEAS<x>:STATE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:STATE {<NR1>|OFF|ON}
         - MEASUrement:MEAS<x>:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables calculation and display of the specified measurement slot; any
           other value enables calculation and display of the specified measurement slot.
         - ``OFF`` disables calculation and display of the specified measurement slot.
@@ -1274,13 +1252,13 @@ class MeasurementMeasItemState(SCPICmdWrite, SCPICmdRead):
 class MeasurementMeasItemSource1Sigtype(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:SOUrce1:SIGType`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the type of input signal used for the specified measurement
           slot. MEAS<x> is 1 through 8 for the measurement slot using SOURCE<x>, 1 or 2. To ensure
           accurate measurements, use this command to specify the input-signal type for the
           measurement source.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:SOUrce1:SIGType?``
           query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:SOUrce1:SIGType?``
@@ -1288,14 +1266,13 @@ class MeasurementMeasItemSource1Sigtype(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:MEAS<x>:SOUrce1:SIGType value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:SOUrce1:SIGType {PULse|EYE}
         - MEASUrement:MEAS<x>:SOUrce1:SIGType?
+        ```
 
-    **Info:**
+    Info:
         - ``PULSE`` is for generic signals that are not associated with synchronous communications
           standards.
         - ``EYE`` is for synchronous-communication signals with NRZ-like characteristics (nonreturn
@@ -1306,7 +1283,7 @@ class MeasurementMeasItemSource1Sigtype(SCPICmdWrite, SCPICmdRead):
 class MeasurementMeasItemSource1(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:SOUrce1`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the source for all single channel measurements and specifies
           the reference source to measure 'to' when taking a delay measurement or phase measurement.
           Measurements are specified by x, which ranges from 1 through 8. This command is equivalent
@@ -1315,21 +1292,20 @@ class MeasurementMeasItemSource1(SCPICmdWrite, SCPICmdRead):
           measurements apply only to phase and delay measurement types, which require both a target
           (Source1) and reference (Source2) source.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:SOUrce1?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:SOUrce1?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:MEAS<x>:SOUrce1 value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:SOUrce1 {CH<x>|MATH<y>|REF<x>|HIStogram}
         - MEASUrement:MEAS<x>:SOUrce1?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is an input channel waveform. The x variable can be expressed as an integer
           ranging from 1 through 4.
         - ``MATH<y>`` is a math waveform. The y variable can be expressed as an integer ranging from
@@ -1350,13 +1326,13 @@ class MeasurementMeasItemSource1(SCPICmdWrite, SCPICmdRead):
     def sigtype(self) -> MeasurementMeasItemSource1Sigtype:
         """Return the ``MEASUrement:MEAS<x>:SOUrce1:SIGType`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the type of input signal used for the specified
               measurement slot. MEAS<x> is 1 through 8 for the measurement slot using SOURCE<x>, 1
               or 2. To ensure accurate measurements, use this command to specify the input-signal
               type for the measurement source.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:SOUrce1:SIGType?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1365,14 +1341,13 @@ class MeasurementMeasItemSource1(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:MEAS<x>:SOUrce1:SIGType value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:SOUrce1:SIGType {PULse|EYE}
             - MEASUrement:MEAS<x>:SOUrce1:SIGType?
+            ```
 
-        **Info:**
+        Info:
             - ``PULSE`` is for generic signals that are not associated with synchronous
               communications standards.
             - ``EYE`` is for synchronous-communication signals with NRZ-like characteristics
@@ -1386,14 +1361,14 @@ class MeasurementMeasItemReflevelPercentMidItem(
 ):
     """The ``MEASUrement:MEAS<x>:REFLevel:PERCent:MID<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the percentage (where 100% is equal to HIGH) used to
           calculate the mid reference level for the second waveform specified when
           ``MEASUREMENT:MEASX:REFLEVEL:METHOD`` is set to Percent. Mid1 specifies the 'from'
           waveform and Mid2 specifies the 'to' waveform for delay measurements. Measurements are
           specified by x, which ranges from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``MEASUrement:MEAS<x>:REFLevel:PERCent:MID<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1402,14 +1377,13 @@ class MeasurementMeasItemReflevelPercentMidItem(
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:MEAS<x>:REFLevel:PERCent:MID<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:REFLevel:PERCent:MID<x> <NR3>
         - MEASUrement:MEAS<x>:REFLevel:PERCent:MID<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the mid reference level, ranging from 0 to 100%. The default mid reference
           level is 50%.
     """
@@ -1418,14 +1392,14 @@ class MeasurementMeasItemReflevelPercentMidItem(
 class MeasurementMeasItemReflevelPercentLow(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:REFLevel:PERCent:LOW`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the percentage (where 100% is equal to HIGH) used to
           calculate the low reference level when ``MEASUREMENT:MEASX:REFLEVEL:METHOD`` is set to
           Percent. This command is equivalent to selecting Reference Levels from the Measure menu,
           and then entering the Percentage Low Ref value. Measurements are specified by x, which
           ranges from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:REFLevel:PERCent:LOW?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1434,14 +1408,13 @@ class MeasurementMeasItemReflevelPercentLow(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:MEAS<x>:REFLevel:PERCent:LOW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:REFLevel:PERCent:LOW <NR3>
         - MEASUrement:MEAS<x>:REFLevel:PERCent:LOW?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the low reference level, ranging from 0 to 100%. The default low reference
           level is 10%.
     """
@@ -1450,12 +1423,12 @@ class MeasurementMeasItemReflevelPercentLow(SCPICmdWrite, SCPICmdRead):
 class MeasurementMeasItemReflevelPercentHigh(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:REFLevel:PERCent:HIGH`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the percentage (where 100% is equal to HIGH) used to
           calculate the high reference level when ``MEASUREMENT:MEASX:REFLEVEL:METHOD`` is set to
           Percent. Measurements are specified by x, which ranges from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:REFLevel:PERCent:HIGH?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1464,14 +1437,13 @@ class MeasurementMeasItemReflevelPercentHigh(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:MEAS<x>:REFLevel:PERCent:HIGH value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:REFLevel:PERCent:HIGH <NR3>
         - MEASUrement:MEAS<x>:REFLevel:PERCent:HIGH?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the high reference level, ranging from 0 to 100%. The default high reference
           level is 90%.
     """
@@ -1480,7 +1452,7 @@ class MeasurementMeasItemReflevelPercentHigh(SCPICmdWrite, SCPICmdRead):
 class MeasurementMeasItemReflevelPercent(SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:REFLevel:PERCent`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:REFLevel:PERCent?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1509,12 +1481,12 @@ class MeasurementMeasItemReflevelPercent(SCPICmdRead):
     def high(self) -> MeasurementMeasItemReflevelPercentHigh:
         """Return the ``MEASUrement:MEAS<x>:REFLevel:PERCent:HIGH`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the percentage (where 100% is equal to HIGH) used to
               calculate the high reference level when ``MEASUREMENT:MEASX:REFLEVEL:METHOD`` is set
               to Percent. Measurements are specified by x, which ranges from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MEASUrement:MEAS<x>:REFLevel:PERCent:HIGH?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1523,14 +1495,13 @@ class MeasurementMeasItemReflevelPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:MEAS<x>:REFLevel:PERCent:HIGH value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:REFLevel:PERCent:HIGH <NR3>
             - MEASUrement:MEAS<x>:REFLevel:PERCent:HIGH?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the high reference level, ranging from 0 to 100%. The default high
               reference level is 90%.
         """
@@ -1540,14 +1511,14 @@ class MeasurementMeasItemReflevelPercent(SCPICmdRead):
     def low(self) -> MeasurementMeasItemReflevelPercentLow:
         """Return the ``MEASUrement:MEAS<x>:REFLevel:PERCent:LOW`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the percentage (where 100% is equal to HIGH) used to
               calculate the low reference level when ``MEASUREMENT:MEASX:REFLEVEL:METHOD`` is set to
               Percent. This command is equivalent to selecting Reference Levels from the Measure
               menu, and then entering the Percentage Low Ref value. Measurements are specified by x,
               which ranges from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MEASUrement:MEAS<x>:REFLevel:PERCent:LOW?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1556,14 +1527,13 @@ class MeasurementMeasItemReflevelPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:MEAS<x>:REFLevel:PERCent:LOW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:REFLevel:PERCent:LOW <NR3>
             - MEASUrement:MEAS<x>:REFLevel:PERCent:LOW?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the low reference level, ranging from 0 to 100%. The default low
               reference level is 10%.
         """
@@ -1573,14 +1543,14 @@ class MeasurementMeasItemReflevelPercent(SCPICmdRead):
     def mid(self) -> Dict[int, MeasurementMeasItemReflevelPercentMidItem]:
         """Return the ``MEASUrement:MEAS<x>:REFLevel:PERCent:MID<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the percentage (where 100% is equal to HIGH) used to
               calculate the mid reference level for the second waveform specified when
               ``MEASUREMENT:MEASX:REFLEVEL:METHOD`` is set to Percent. Mid1 specifies the 'from'
               waveform and Mid2 specifies the 'to' waveform for delay measurements. Measurements are
               specified by x, which ranges from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MEASUrement:MEAS<x>:REFLevel:PERCent:MID<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1589,14 +1559,13 @@ class MeasurementMeasItemReflevelPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:MEAS<x>:REFLevel:PERCent:MID<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:REFLevel:PERCent:MID<x> <NR3>
             - MEASUrement:MEAS<x>:REFLevel:PERCent:MID<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the mid reference level, ranging from 0 to 100%. The default mid
               reference level is 50%.
         """
@@ -1606,13 +1575,13 @@ class MeasurementMeasItemReflevelPercent(SCPICmdRead):
 class MeasurementMeasItemReflevelMethod(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:REFLevel:METHod`` command.
 
-    **Description:**
+    Description:
         - This command specifies or queries the reference level units used for measurement
           calculations. This command is equivalent to selecting Reference Levels from the Measure
           menu and then choosing the desired reference level from the Units group box. Measurements
           are specified by x, which ranges from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:REFLevel:METHod?``
           query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:REFLevel:METHod?``
@@ -1620,14 +1589,13 @@ class MeasurementMeasItemReflevelMethod(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:MEAS<x>:REFLevel:METHod value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:REFLevel:METHod {ABSolute|PERCent}
         - MEASUrement:MEAS<x>:REFLevel:METHod?
+        ```
 
-    **Info:**
+    Info:
         - ``ABSolute`` specifies that the reference levels are set explicitly using the
           ``MEASUrement:MEAS<x>:REFLevel:ABSolute`` commands. This method is useful when precise
           values are required (for example, when designing to published interface specifications,
@@ -1643,14 +1611,14 @@ class MeasurementMeasItemReflevelAbsoluteMidItem(
 ):
     """The ``MEASUrement:MEAS<x>:REFLevel:ABSolute:MID<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the mid reference level for the 'to' waveform when taking a
           delay measurement, and is the 50% reference level when
           ``MEASUREMENT:MEASX:REFLEVEL:METHOD`` is set to Absolute. Mid1 sets the 'from' waveform
           and Mid2 sets the 'to' waveform when taking a delay measurement. Measurements are
           specified by x, which ranges from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``MEASUrement:MEAS<x>:REFLevel:ABSolute:MID<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1659,14 +1627,13 @@ class MeasurementMeasItemReflevelAbsoluteMidItem(
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:MEAS<x>:REFLevel:ABSolute:MID<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:REFLevel:ABSolute:MID<x> <NR3>
         - MEASUrement:MEAS<x>:REFLevel:ABSolute:MID<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the mid reference level in volts. The default is 0.0 V.
     """
 
@@ -1674,12 +1641,12 @@ class MeasurementMeasItemReflevelAbsoluteMidItem(
 class MeasurementMeasItemReflevelAbsoluteLow(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:REFLevel:ABSolute:LOW`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the low reference level, and is the lower reference level
           when ``MEASUREMENT:MEASX:REFLEVEL:METHOD`` is set to Absolute. Measurements are specified
           by x, which ranges from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:REFLevel:ABSolute:LOW?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1688,14 +1655,13 @@ class MeasurementMeasItemReflevelAbsoluteLow(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:MEAS<x>:REFLevel:ABSolute:LOW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:REFLevel:ABSolute:LOW <NR3>
         - MEASUrement:MEAS<x>:REFLevel:ABSolute:LOW?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the low reference level in volts. The default is 0.0 V.
     """
 
@@ -1703,12 +1669,12 @@ class MeasurementMeasItemReflevelAbsoluteLow(SCPICmdWrite, SCPICmdRead):
 class MeasurementMeasItemReflevelAbsoluteHigh(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:REFLevel:ABSolute:HIGH`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the high reference level, and is the upper reference level
           when ``MEASUREMENT:MEASX:REFLEVEL:METHOD`` is set to Absolute. Measurements are specified
           by x, which ranges from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``MEASUrement:MEAS<x>:REFLevel:ABSolute:HIGH?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1717,14 +1683,13 @@ class MeasurementMeasItemReflevelAbsoluteHigh(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:MEAS<x>:REFLevel:ABSolute:HIGH value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:REFLevel:ABSolute:HIGH <NR3>
         - MEASUrement:MEAS<x>:REFLevel:ABSolute:HIGH?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the high reference level in volts. The default is 0.0 V.
     """
 
@@ -1732,7 +1697,7 @@ class MeasurementMeasItemReflevelAbsoluteHigh(SCPICmdWrite, SCPICmdRead):
 class MeasurementMeasItemReflevelAbsolute(SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:REFLevel:ABSolute`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:REFLevel:ABSolute?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1761,12 +1726,12 @@ class MeasurementMeasItemReflevelAbsolute(SCPICmdRead):
     def high(self) -> MeasurementMeasItemReflevelAbsoluteHigh:
         """Return the ``MEASUrement:MEAS<x>:REFLevel:ABSolute:HIGH`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the high reference level, and is the upper reference
               level when ``MEASUREMENT:MEASX:REFLEVEL:METHOD`` is set to Absolute. Measurements are
               specified by x, which ranges from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MEASUrement:MEAS<x>:REFLevel:ABSolute:HIGH?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1775,14 +1740,13 @@ class MeasurementMeasItemReflevelAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:MEAS<x>:REFLevel:ABSolute:HIGH value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:REFLevel:ABSolute:HIGH <NR3>
             - MEASUrement:MEAS<x>:REFLevel:ABSolute:HIGH?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the high reference level in volts. The default is 0.0 V.
         """
         return self._high
@@ -1791,12 +1755,12 @@ class MeasurementMeasItemReflevelAbsolute(SCPICmdRead):
     def low(self) -> MeasurementMeasItemReflevelAbsoluteLow:
         """Return the ``MEASUrement:MEAS<x>:REFLevel:ABSolute:LOW`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the low reference level, and is the lower reference level
               when ``MEASUREMENT:MEASX:REFLEVEL:METHOD`` is set to Absolute. Measurements are
               specified by x, which ranges from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MEASUrement:MEAS<x>:REFLevel:ABSolute:LOW?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1805,14 +1769,13 @@ class MeasurementMeasItemReflevelAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:MEAS<x>:REFLevel:ABSolute:LOW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:REFLevel:ABSolute:LOW <NR3>
             - MEASUrement:MEAS<x>:REFLevel:ABSolute:LOW?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the low reference level in volts. The default is 0.0 V.
         """
         return self._low
@@ -1821,14 +1784,14 @@ class MeasurementMeasItemReflevelAbsolute(SCPICmdRead):
     def mid(self) -> Dict[int, MeasurementMeasItemReflevelAbsoluteMidItem]:
         """Return the ``MEASUrement:MEAS<x>:REFLevel:ABSolute:MID<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the mid reference level for the 'to' waveform when taking
               a delay measurement, and is the 50% reference level when
               ``MEASUREMENT:MEASX:REFLEVEL:METHOD`` is set to Absolute. Mid1 sets the 'from'
               waveform and Mid2 sets the 'to' waveform when taking a delay measurement. Measurements
               are specified by x, which ranges from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MEASUrement:MEAS<x>:REFLevel:ABSolute:MID<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1837,14 +1800,13 @@ class MeasurementMeasItemReflevelAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:MEAS<x>:REFLevel:ABSolute:MID<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:REFLevel:ABSolute:MID<x> <NR3>
             - MEASUrement:MEAS<x>:REFLevel:ABSolute:MID<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the mid reference level in volts. The default is 0.0 V.
         """
         return self._mid
@@ -1853,21 +1815,20 @@ class MeasurementMeasItemReflevelAbsolute(SCPICmdRead):
 class MeasurementMeasItemReflevel(SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:REFLevel`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the current reference level parameters. It returns them in
           the following order: ABSOLUTE and then PERCENT for individual user measurements.
           Measurements are specified by x, which ranges from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:REFLevel?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:REFLevel?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:REFLevel?
+        ```
 
     Properties:
         - ``.absolute``: The ``MEASUrement:MEAS<x>:REFLevel:ABSolute`` command tree.
@@ -1885,7 +1846,7 @@ class MeasurementMeasItemReflevel(SCPICmdRead):
     def absolute(self) -> MeasurementMeasItemReflevelAbsolute:
         """Return the ``MEASUrement:MEAS<x>:REFLevel:ABSolute`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:REFLevel:ABSolute?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1903,13 +1864,13 @@ class MeasurementMeasItemReflevel(SCPICmdRead):
     def method(self) -> MeasurementMeasItemReflevelMethod:
         """Return the ``MEASUrement:MEAS<x>:REFLevel:METHod`` command.
 
-        **Description:**
+        Description:
             - This command specifies or queries the reference level units used for measurement
               calculations. This command is equivalent to selecting Reference Levels from the
               Measure menu and then choosing the desired reference level from the Units group box.
               Measurements are specified by x, which ranges from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:REFLevel:METHod?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1918,14 +1879,13 @@ class MeasurementMeasItemReflevel(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:MEAS<x>:REFLevel:METHod value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:REFLevel:METHod {ABSolute|PERCent}
             - MEASUrement:MEAS<x>:REFLevel:METHod?
+            ```
 
-        **Info:**
+        Info:
             - ``ABSolute`` specifies that the reference levels are set explicitly using the
               ``MEASUrement:MEAS<x>:REFLevel:ABSolute`` commands. This method is useful when precise
               values are required (for example, when designing to published interface
@@ -1940,7 +1900,7 @@ class MeasurementMeasItemReflevel(SCPICmdRead):
     def percent(self) -> MeasurementMeasItemReflevelPercent:
         """Return the ``MEASUrement:MEAS<x>:REFLevel:PERCent`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:REFLevel:PERCent?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1958,28 +1918,27 @@ class MeasurementMeasItemReflevel(SCPICmdRead):
 class MeasurementMeasItemNoise(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:NOISe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the noise measurement is made on the high or low
           level of the waveform. Sending this command is equivalent to selecting Ref Levs > Eye >
           Top Level or Base Level in the Comm tab of the Measurement Setup dialog box. The Eye
           section is displayed only if you have an eye-pattern or optical measurement defined.
           Measurements are specified by x, which ranges from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:NOISe?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:NOISe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:MEAS<x>:NOISe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:NOISe {HIGH|LOW}
         - MEASUrement:MEAS<x>:NOISe?
+        ```
 
-    **Info:**
+    Info:
         - ``HIGH`` argument causes the measurement for noise to be taken at the high level of the
           waveform.
         - ``LOW`` argument causes the measurement for noise to be taken at the low level of the
@@ -1990,45 +1949,43 @@ class MeasurementMeasItemNoise(SCPICmdWrite, SCPICmdRead):
 class MeasurementMeasItemMinimum(SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:MINImum`` command.
 
-    **Description:**
+    Description:
         - Returns the minimum value for this measurement since the last statistical reset.
           Measurements are specified by <x>, which ranges from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:MINImum?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:MINImum?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:MINImum?
+        ```
     """
 
 
 class MeasurementMeasItemMethod(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:METHod`` command.
 
-    **Description:**
+    Description:
         - This command specifies or queries the method used to calculate the 0% and 100% reference
           level.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:METHod?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:METHod?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:MEAS<x>:METHod value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:METHod {HIStogram|MINMax|MEAN}
         - MEASUrement:MEAS<x>:METHod?
+        ```
 
-    **Info:**
+    Info:
         - ``HIStogram`` sets the high and low waveform levels statistically using a histogram
           algorithm.
         - ``MINMax`` sets the high and low waveform levels to MAX and MIN, respectively.
@@ -2039,66 +1996,63 @@ class MeasurementMeasItemMethod(SCPICmdWrite, SCPICmdRead):
 class MeasurementMeasItemMean(SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:MEAN`` command.
 
-    **Description:**
+    Description:
         - Returns the mean value accumulated for this measurement since the last statistical reset.
           Measurements are specified by x, which ranges from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:MEAN?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:MEAN?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:MEAN?
+        ```
     """
 
 
 class MeasurementMeasItemMaximum(SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:MAXimum`` command.
 
-    **Description:**
+    Description:
         - Returns the maximum value found for this measurement since the last statistical reset.
           Measurements are specified by x, which ranges from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:MAXimum?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:MAXimum?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:MAXimum?
+        ```
     """
 
 
 class MeasurementMeasItemDelayEdgeItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:DELay:EDGE<x>`` command.
 
-    **Description:**
+    Description:
         - This command specifies the slope of the edge used for the delay 'from' or 'to' waveform
           when taking an immediate delay measurement. The waveform is specified by
           ``MEASUREMENT:MEASX:SOURCEX``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:DELay:EDGE<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:DELay:EDGE<x>?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:MEAS<x>:DELay:EDGE<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:DELay:EDGE<x> {FALL|RISe}
         - MEASUrement:MEAS<x>:DELay:EDGE<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<x>`` specifies which waveform to use, where <x> = 1 is the 'from' waveform, and <x> = 2
           is the 'to' waveform.
         - ``FALL`` specifies the falling edge.
@@ -2109,14 +2063,14 @@ class MeasurementMeasItemDelayEdgeItem(ValidatedDynamicNumberCmd, SCPICmdWrite, 
 class MeasurementMeasItemDelayDirection(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:DELay:DIREction`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the starting point and direction that determines the delay
           'to' edge when taking a delay measurement. Use the ``MEASUREMENT:MEASX:SOURCEX`` command
           to specify the waveform. This command is equivalent to selecting Time from the Measure
           menu, choosing Delay from the drop-down list and then clicking the desired Search
           Direction setting. Measurements are specified by x, which ranges from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:DELay:DIREction?``
           query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:DELay:DIREction?``
@@ -2124,14 +2078,13 @@ class MeasurementMeasItemDelayDirection(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:MEAS<x>:DELay:DIREction value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:DELay:DIREction {BACKWards|FORWards}
         - MEASUrement:MEAS<x>:DELay:DIREction?
+        ```
 
-    **Info:**
+    Info:
         - ``BACKWards`` means that the search starts at the end of the waveform and looks for the
           last rising or falling edge in the waveform. Use the ``MEASUREMENT:MEASX:DELAY:EDGEX``
           command to specify the slope of the edge.
@@ -2144,20 +2097,19 @@ class MeasurementMeasItemDelayDirection(SCPICmdWrite, SCPICmdRead):
 class MeasurementMeasItemDelay(SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:DELay`` command.
 
-    **Description:**
+    Description:
         - Returns the delay measurement parameters for the measurement specified by <x>, which
           ranges from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:DELay?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:DELay?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:DELay?
+        ```
 
     Properties:
         - ``.direction``: The ``MEASUrement:MEAS<x>:DELay:DIREction`` command.
@@ -2175,7 +2127,7 @@ class MeasurementMeasItemDelay(SCPICmdRead):
     def direction(self) -> MeasurementMeasItemDelayDirection:
         """Return the ``MEASUrement:MEAS<x>:DELay:DIREction`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the starting point and direction that determines the
               delay 'to' edge when taking a delay measurement. Use the ``MEASUREMENT:MEASX:SOURCEX``
               command to specify the waveform. This command is equivalent to selecting Time from the
@@ -2183,7 +2135,7 @@ class MeasurementMeasItemDelay(SCPICmdRead):
               Search Direction setting. Measurements are specified by x, which ranges from 1 through
               8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:DELay:DIREction?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2192,14 +2144,13 @@ class MeasurementMeasItemDelay(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:MEAS<x>:DELay:DIREction value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:DELay:DIREction {BACKWards|FORWards}
             - MEASUrement:MEAS<x>:DELay:DIREction?
+            ```
 
-        **Info:**
+        Info:
             - ``BACKWards`` means that the search starts at the end of the waveform and looks for
               the last rising or falling edge in the waveform. Use the
               ``MEASUREMENT:MEASX:DELAY:EDGEX`` command to specify the slope of the edge.
@@ -2213,12 +2164,12 @@ class MeasurementMeasItemDelay(SCPICmdRead):
     def edge(self) -> Dict[int, MeasurementMeasItemDelayEdgeItem]:
         """Return the ``MEASUrement:MEAS<x>:DELay:EDGE<x>`` command.
 
-        **Description:**
+        Description:
             - This command specifies the slope of the edge used for the delay 'from' or 'to'
               waveform when taking an immediate delay measurement. The waveform is specified by
               ``MEASUREMENT:MEASX:SOURCEX``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:DELay:EDGE<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2227,14 +2178,13 @@ class MeasurementMeasItemDelay(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:MEAS<x>:DELay:EDGE<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:DELay:EDGE<x> {FALL|RISe}
             - MEASUrement:MEAS<x>:DELay:EDGE<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<x>`` specifies which waveform to use, where <x> = 1 is the 'from' waveform, and <x>
               = 2 is the 'to' waveform.
             - ``FALL`` specifies the falling edge.
@@ -2246,21 +2196,20 @@ class MeasurementMeasItemDelay(SCPICmdRead):
 class MeasurementMeasItemCount(SCPICmdRead):
     """The ``MEASUrement:MEAS<x>:COUNt`` command.
 
-    **Description:**
+    Description:
         - Returns the number of values accumulated for this measurement since the last statistical
           reset. Values may be ignored if they generated an error. Measurements are specified by x,
           which ranges from 1 through 8.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:COUNt?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:COUNt?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>:COUNt?
+        ```
     """
 
 
@@ -2268,19 +2217,18 @@ class MeasurementMeasItemCount(SCPICmdRead):
 class MeasurementMeasItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``MEASUrement:MEAS<x>`` command.
 
-    **Description:**
+    Description:
         - Returns all measurement parameters for the specified active measurement <x>.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:MEAS<x>?
+        ```
 
     Properties:
         - ``.count``: The ``MEASUrement:MEAS<x>:COUNt`` command.
@@ -2320,21 +2268,20 @@ class MeasurementMeasItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def count(self) -> MeasurementMeasItemCount:
         """Return the ``MEASUrement:MEAS<x>:COUNt`` command.
 
-        **Description:**
+        Description:
             - Returns the number of values accumulated for this measurement since the last
               statistical reset. Values may be ignored if they generated an error. Measurements are
               specified by x, which ranges from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:COUNt?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:COUNt?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:COUNt?
+            ```
         """
         return self._count
 
@@ -2342,20 +2289,19 @@ class MeasurementMeasItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def delay(self) -> MeasurementMeasItemDelay:
         """Return the ``MEASUrement:MEAS<x>:DELay`` command.
 
-        **Description:**
+        Description:
             - Returns the delay measurement parameters for the measurement specified by <x>, which
               ranges from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:DELay?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:DELay?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:DELay?
+            ```
 
         Sub-properties:
             - ``.direction``: The ``MEASUrement:MEAS<x>:DELay:DIREction`` command.
@@ -2367,20 +2313,19 @@ class MeasurementMeasItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def maximum(self) -> MeasurementMeasItemMaximum:
         """Return the ``MEASUrement:MEAS<x>:MAXimum`` command.
 
-        **Description:**
+        Description:
             - Returns the maximum value found for this measurement since the last statistical reset.
               Measurements are specified by x, which ranges from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:MAXimum?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:MAXimum?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:MAXimum?
+            ```
         """
         return self._maximum
 
@@ -2388,20 +2333,19 @@ class MeasurementMeasItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def mean(self) -> MeasurementMeasItemMean:
         """Return the ``MEASUrement:MEAS<x>:MEAN`` command.
 
-        **Description:**
+        Description:
             - Returns the mean value accumulated for this measurement since the last statistical
               reset. Measurements are specified by x, which ranges from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:MEAN?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:MEAN?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:MEAN?
+            ```
         """
         return self._mean
 
@@ -2409,25 +2353,24 @@ class MeasurementMeasItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def method(self) -> MeasurementMeasItemMethod:
         """Return the ``MEASUrement:MEAS<x>:METHod`` command.
 
-        **Description:**
+        Description:
             - This command specifies or queries the method used to calculate the 0% and 100%
               reference level.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:METHod?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:METHod?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MEASUrement:MEAS<x>:METHod value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:METHod {HIStogram|MINMax|MEAN}
             - MEASUrement:MEAS<x>:METHod?
+            ```
 
-        **Info:**
+        Info:
             - ``HIStogram`` sets the high and low waveform levels statistically using a histogram
               algorithm.
             - ``MINMax`` sets the high and low waveform levels to MAX and MIN, respectively.
@@ -2439,20 +2382,19 @@ class MeasurementMeasItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def minimum(self) -> MeasurementMeasItemMinimum:
         """Return the ``MEASUrement:MEAS<x>:MINImum`` command.
 
-        **Description:**
+        Description:
             - Returns the minimum value for this measurement since the last statistical reset.
               Measurements are specified by <x>, which ranges from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:MINImum?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:MINImum?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:MINImum?
+            ```
         """
         return self._minimum
 
@@ -2460,28 +2402,27 @@ class MeasurementMeasItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def noise(self) -> MeasurementMeasItemNoise:
         """Return the ``MEASUrement:MEAS<x>:NOISe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the noise measurement is made on the high or low
               level of the waveform. Sending this command is equivalent to selecting Ref Levs > Eye
               > Top Level or Base Level in the Comm tab of the Measurement Setup dialog box. The Eye
               section is displayed only if you have an eye-pattern or optical measurement defined.
               Measurements are specified by x, which ranges from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:NOISe?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:NOISe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MEASUrement:MEAS<x>:NOISe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:NOISe {HIGH|LOW}
             - MEASUrement:MEAS<x>:NOISe?
+            ```
 
-        **Info:**
+        Info:
             - ``HIGH`` argument causes the measurement for noise to be taken at the high level of
               the waveform.
             - ``LOW`` argument causes the measurement for noise to be taken at the low level of the
@@ -2493,21 +2434,20 @@ class MeasurementMeasItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def reflevel(self) -> MeasurementMeasItemReflevel:
         """Return the ``MEASUrement:MEAS<x>:REFLevel`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the current reference level parameters. It returns
               them in the following order: ABSOLUTE and then PERCENT for individual user
               measurements. Measurements are specified by x, which ranges from 1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:REFLevel?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:REFLevel?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:REFLevel?
+            ```
 
         Sub-properties:
             - ``.absolute``: The ``MEASUrement:MEAS<x>:REFLevel:ABSolute`` command tree.
@@ -2520,7 +2460,7 @@ class MeasurementMeasItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def source1(self) -> MeasurementMeasItemSource1:
         """Return the ``MEASUrement:MEAS<x>:SOUrce1`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the source for all single channel measurements and
               specifies the reference source to measure 'to' when taking a delay measurement or
               phase measurement. Measurements are specified by x, which ranges from 1 through 8.
@@ -2530,21 +2470,20 @@ class MeasurementMeasItem(ValidatedDynamicNumberCmd, SCPICmdRead):
               measurement types, which require both a target (Source1) and reference (Source2)
               source.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:SOUrce1?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:SOUrce1?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MEASUrement:MEAS<x>:SOUrce1 value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:SOUrce1 {CH<x>|MATH<y>|REF<x>|HIStogram}
             - MEASUrement:MEAS<x>:SOUrce1?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is an input channel waveform. The x variable can be expressed as an integer
               ranging from 1 through 4.
             - ``MATH<y>`` is a math waveform. The y variable can be expressed as an integer ranging
@@ -2562,7 +2501,7 @@ class MeasurementMeasItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def state(self) -> MeasurementMeasItemState:
         """Return the ``MEASUrement:MEAS<x>:STATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the specified measurement slot is computed and
               displayed. The measurement slot is specified by x, which ranges from 1 through 8. This
               command is equivalent to selecting Measurement Setup from the Measure menu and then
@@ -2571,21 +2510,20 @@ class MeasurementMeasItem(ValidatedDynamicNumberCmd, SCPICmdRead):
               the measurement using the ``MEASUREMENT:MEASX:SOURCEX`` command. You define the
               measurement type using the ``MEASUREMENT:MEASX:TYPE`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:STATE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MEASUrement:MEAS<x>:STATE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:STATE {<NR1>|OFF|ON}
             - MEASUrement:MEAS<x>:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables calculation and display of the specified measurement slot; any
               other value enables calculation and display of the specified measurement slot.
             - ``OFF`` disables calculation and display of the specified measurement slot.
@@ -2597,21 +2535,20 @@ class MeasurementMeasItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def stddev(self) -> MeasurementMeasItemStddev:
         """Return the ``MEASUrement:MEAS<x>:STDdev`` command.
 
-        **Description:**
+        Description:
             - Returns the standard deviation of values accumulated for this measurement since the
               last statistical reset. Measurements are specified by <x>, the measurement slots, from
               1 through 8.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:STDdev?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:STDdev?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:STDdev?
+            ```
         """
         return self._stddev
 
@@ -2619,27 +2556,26 @@ class MeasurementMeasItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def type(self) -> MeasurementMeasItemType:
         """Return the ``MEASUrement:MEAS<x>:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the measurement type defined for the specified
               measurement slot. The measurement slot is specified by x, which ranges from 1 through
               8. This command is equivalent to selecting Measurement Setup from the Measure menu and
               then choosing the desired measurement type.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:TYPe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MEASUrement:MEAS<x>:TYPe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:TYPe {AMPlitude|AREa| BURst|CARea|CMEan|CRMs|DELay|DISTDUty| EXTINCTDB|EXTINCTPCT|EXTINCTRATIO|EYEHeight| EYEWIdth|FALL|FREQuency|HIGH|HITs|LOW| MAXimum|MEAN|MEDian|MINImum|NCROss|NDUty| NOVershoot|NWIdth|PBASe|PCROss|PCTCROss|PDUty| PEAKHits|PERIod|PHAse|PK2Pk|PKPKJitter| PKPKNoise|POVershoot|PTOP|PWIdth|QFACtor| RISe|RMS|RMSJitter|RMSNoise|SIGMA1|SIGMA2| SIGMA3|SIXSigmajit|SNRatio|STDdev|UNDEFINED| WAVEFORMS}
             - MEASUrement:MEAS<x>:TYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``AMPlitude`` measures the amplitude of the selected waveform. In other words, it
               measures the high value less the low value measured over the entire waveform or gated
               region.
@@ -2792,20 +2728,19 @@ class MeasurementMeasItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def units(self) -> MeasurementMeasItemUnits:
         """Return the ``MEASUrement:MEAS<x>:UNIts`` command.
 
-        **Description:**
+        Description:
             - Returns the units associated with the specified measurement. The measurement slots are
               specified by <x>, which ranges from 1 through 4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:UNIts?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:UNIts?
+            ```
         """
         return self._units
 
@@ -2813,20 +2748,19 @@ class MeasurementMeasItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def value(self) -> MeasurementMeasItemValue:
         """Return the ``MEASUrement:MEAS<x>:VALue`` command.
 
-        **Description:**
+        Description:
             - Returns a calculate value for the measurement specified by <x>, which ranges from 1
               through 4.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>:VALue?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>:VALue?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>:VALue?
+            ```
         """
         return self._value
 
@@ -2834,64 +2768,61 @@ class MeasurementMeasItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class MeasurementImmedValue(SCPICmdRead):
     """The ``MEASUrement:IMMed:VALue`` command.
 
-    **Description:**
+    Description:
         - Returns the value of the measurement specified by the ``MEASUREMENT:IMMED:TYPE`` command.
           The measurement is immediately taken on the source(s) specified by a
           ``MEASUREMENT:IMMED:SOURCEX`` command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:VALue?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:VALue?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:VALue?
+        ```
     """
 
 
 class MeasurementImmedUnits(SCPICmdRead):
     """The ``MEASUrement:IMMed:UNIts`` command.
 
-    **Description:**
+    Description:
         - Returns a string containing the units of the immediate measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:UNIts?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:UNIts?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:UNIts?
+        ```
     """
 
 
 class MeasurementImmedType(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:IMMed:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the immediate measurement type. Immediate measurements and
           annotations are not displayed on the screen.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:TYPe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:IMMed:TYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:TYPe {AMPlitude|AREa| BURst|CARea|CMEan|CRMs|DELay|DISTDUty| EXTINCTDB|EXTINCTPCT|EXTINCTRATIO| EYEHeight|EYEWIdth|FALL|FREQuency|HIGH| HITs|LOW|MAXimum|MEAN| MEDian|MINImum| NCROss|NDUty|NOVershoot|NWIdth|PBASe| PCROss|PCTCROss|PDUty|PEAKHits|PERIod| PHAse|PK2Pk|PKPKJitter|PKPKNoise| POVershoot|PTOP|PWIdth|QFACtor|RISe| RMS|RMSJitter|RMSNoise|SIGMA1|SIGMA2| SIGMA3|SIXSigmajit|SNRatio|STDdev| UNDEFINED|WAVEFORMS}
         - MEASUrement:IMMed:TYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``AMPlitude`` measures the amplitude of the selected waveform. In other words, it measures
           the high value less the low value measured over the entire waveform or gated region.
         - ``Amplitude = High - Low``
@@ -3035,26 +2966,25 @@ class MeasurementImmedType(SCPICmdWrite, SCPICmdRead):
 class MeasurementImmedSource1Sigtype(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:IMMed:SOUrce1:SIGType`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the type of input signal used for measurement SOURCE<x>, 1 or
           2. To ensure accurate measurements, use this command to specify the input-signal type for
           the measurement source.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:SOUrce1:SIGType?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:SOUrce1:SIGType?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:IMMed:SOUrce1:SIGType value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:SOUrce1:SIGType {PULse|EYE}
         - MEASUrement:IMMed:SOUrce1:SIGType?
+        ```
 
-    **Info:**
+    Info:
         - ``PULSE`` is for generic signals that are not associated with synchronous communications
           standards.
         - ``EYE`` is for synchronous-communication signals with NRZ-like characteristics (nonreturn
@@ -3065,7 +2995,7 @@ class MeasurementImmedSource1Sigtype(SCPICmdWrite, SCPICmdRead):
 class MeasurementImmedSource1(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:IMMed:SOUrce1`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the source for phase or delay immediate measurements. This
           command is equivalent to selecting Measurement Setup from the Measure menu, choosing the
           Time tab, clicking the Delay button to display the delay settings and then clicking the
@@ -3073,21 +3003,20 @@ class MeasurementImmedSource1(SCPICmdWrite, SCPICmdRead):
           apply to phase and delay measurement types, which require both a target (Source1) and
           reference (Source2) source.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:SOUrce1?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:SOUrce1?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:IMMed:SOUrce1 value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:SOUrce1 {CH<x>|MATH<y>|REF<x>|HIStogram}
         - MEASUrement:IMMed:SOUrce1?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` is an input channel waveform. The x variable can be expressed as an integer
           ranging from 1 through 4.
         - ``MATH<y>`` is a math waveform. The y variable can be expressed as an integer ranging from
@@ -3109,12 +3038,12 @@ class MeasurementImmedSource1(SCPICmdWrite, SCPICmdRead):
     def sigtype(self) -> MeasurementImmedSource1Sigtype:
         """Return the ``MEASUrement:IMMed:SOUrce1:SIGType`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the type of input signal used for measurement SOURCE<x>,
               1 or 2. To ensure accurate measurements, use this command to specify the input-signal
               type for the measurement source.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:IMMed:SOUrce1:SIGType?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3123,14 +3052,13 @@ class MeasurementImmedSource1(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:IMMed:SOUrce1:SIGType value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:SOUrce1:SIGType {PULse|EYE}
             - MEASUrement:IMMed:SOUrce1:SIGType?
+            ```
 
-        **Info:**
+        Info:
             - ``PULSE`` is for generic signals that are not associated with synchronous
               communications standards.
             - ``EYE`` is for synchronous-communication signals with NRZ-like characteristics
@@ -3142,13 +3070,13 @@ class MeasurementImmedSource1(SCPICmdWrite, SCPICmdRead):
 class MeasurementImmedReflevelPercentMidItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:IMMed:REFLevel:PERCent:MID<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the percentage (where 100% is equal to HIGH) used to
           calculate the mid reference level when ``MEASUREMENT:IMMED:REFLEVEL:METHOD`` is set to
           Percent. Mid1 is for the first waveform specified, and Mid2 is for the second waveform
           specified. Note that this command affects the results of delay measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:REFLevel:PERCent:MID<x>?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3157,14 +3085,13 @@ class MeasurementImmedReflevelPercentMidItem(ValidatedDynamicNumberCmd, SCPICmdW
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:IMMed:REFLevel:PERCent:MID<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:REFLevel:PERCent:MID<x> <NR1>
         - MEASUrement:IMMed:REFLevel:PERCent:MID<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the mid reference level, ranging from 0 to 100%. The default mid reference
           level is 50%.
     """
@@ -3173,14 +3100,14 @@ class MeasurementImmedReflevelPercentMidItem(ValidatedDynamicNumberCmd, SCPICmdW
 class MeasurementImmedReflevelPercentLow(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:IMMed:REFLevel:PERCent:LOW`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the percentage (where 100% is equal to HIGH) used to
           calculate the low reference level when ``MEASUREMENT:IMMED:REFLEVEL:METHOD`` is set to
           Percent. Note that this command affects the results of rise and fall measurements. This
           command is equivalent to selecting Reference Levels from the Measure menu and then
           entering the Percentage Low Ref value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:REFLevel:PERCent:LOW?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3189,14 +3116,13 @@ class MeasurementImmedReflevelPercentLow(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:IMMed:REFLevel:PERCent:LOW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:REFLevel:PERCent:LOW <NR1>
         - MEASUrement:IMMed:REFLevel:PERCent:LOW?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the low reference level, ranging from 0 to 100%. The default low reference
           level is 10%.
     """
@@ -3205,12 +3131,12 @@ class MeasurementImmedReflevelPercentLow(SCPICmdWrite, SCPICmdRead):
 class MeasurementImmedReflevelPercentHigh(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:IMMed:REFLevel:PERCent:HIGH`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the percentage (where 100% is equal to HIGH) used to
           calculate the high reference level when ``MEASUREMENT:IMMED:REFLEVEL:METHOD`` is set to
           Percent. Note that this command affects the results of rise and fall measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:REFLevel:PERCent:HIGH?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3219,14 +3145,13 @@ class MeasurementImmedReflevelPercentHigh(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:IMMed:REFLevel:PERCent:HIGH value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:REFLevel:PERCent:HIGH <NR1>
         - MEASUrement:IMMed:REFLevel:PERCent:HIGH?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the high reference level, ranging from 0 to 100%. The default high reference
           level is 90%.
     """
@@ -3235,7 +3160,7 @@ class MeasurementImmedReflevelPercentHigh(SCPICmdWrite, SCPICmdRead):
 class MeasurementImmedReflevelPercent(SCPICmdRead):
     """The ``MEASUrement:IMMed:REFLevel:PERCent`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:REFLevel:PERCent?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:REFLevel:PERCent?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -3258,12 +3183,12 @@ class MeasurementImmedReflevelPercent(SCPICmdRead):
     def high(self) -> MeasurementImmedReflevelPercentHigh:
         """Return the ``MEASUrement:IMMed:REFLevel:PERCent:HIGH`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the percentage (where 100% is equal to HIGH) used to
               calculate the high reference level when ``MEASUREMENT:IMMED:REFLEVEL:METHOD`` is set
               to Percent. Note that this command affects the results of rise and fall measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MEASUrement:IMMed:REFLevel:PERCent:HIGH?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3272,14 +3197,13 @@ class MeasurementImmedReflevelPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:IMMed:REFLevel:PERCent:HIGH value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:REFLevel:PERCent:HIGH <NR1>
             - MEASUrement:IMMed:REFLevel:PERCent:HIGH?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the high reference level, ranging from 0 to 100%. The default high
               reference level is 90%.
         """
@@ -3289,14 +3213,14 @@ class MeasurementImmedReflevelPercent(SCPICmdRead):
     def low(self) -> MeasurementImmedReflevelPercentLow:
         """Return the ``MEASUrement:IMMed:REFLevel:PERCent:LOW`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the percentage (where 100% is equal to HIGH) used to
               calculate the low reference level when ``MEASUREMENT:IMMED:REFLEVEL:METHOD`` is set to
               Percent. Note that this command affects the results of rise and fall measurements.
               This command is equivalent to selecting Reference Levels from the Measure menu and
               then entering the Percentage Low Ref value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MEASUrement:IMMed:REFLevel:PERCent:LOW?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3305,14 +3229,13 @@ class MeasurementImmedReflevelPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:IMMed:REFLevel:PERCent:LOW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:REFLevel:PERCent:LOW <NR1>
             - MEASUrement:IMMed:REFLevel:PERCent:LOW?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the low reference level, ranging from 0 to 100%. The default low
               reference level is 10%.
         """
@@ -3322,13 +3245,13 @@ class MeasurementImmedReflevelPercent(SCPICmdRead):
     def mid(self) -> Dict[int, MeasurementImmedReflevelPercentMidItem]:
         """Return the ``MEASUrement:IMMed:REFLevel:PERCent:MID<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the percentage (where 100% is equal to HIGH) used to
               calculate the mid reference level when ``MEASUREMENT:IMMED:REFLEVEL:METHOD`` is set to
               Percent. Mid1 is for the first waveform specified, and Mid2 is for the second waveform
               specified. Note that this command affects the results of delay measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MEASUrement:IMMed:REFLevel:PERCent:MID<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3337,14 +3260,13 @@ class MeasurementImmedReflevelPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:IMMed:REFLevel:PERCent:MID<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:REFLevel:PERCent:MID<x> <NR1>
             - MEASUrement:IMMed:REFLevel:PERCent:MID<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the mid reference level, ranging from 0 to 100%. The default mid
               reference level is 50%.
         """
@@ -3354,26 +3276,25 @@ class MeasurementImmedReflevelPercent(SCPICmdRead):
 class MeasurementImmedReflevelMethod(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:IMMed:REFLevel:METHod`` command.
 
-    **Description:**
+    Description:
         - This command specifies or queries the reference level units used for measurement
           calculations. This command is equivalent to selecting Reference Levels from the Measure
           menu and then choosing the desired reference level from the Units group box.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:REFLevel:METHod?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:REFLevel:METHod?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:IMMed:REFLevel:METHod value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:REFLevel:METHod {ABSolute|PERCent}
         - MEASUrement:IMMed:REFLevel:METHod?
+        ```
 
-    **Info:**
+    Info:
         - ``ABSolute`` specifies that the reference levels are set explicitly using the
           ``MEASUrement:IMMed:REFLevel:ABSolute`` commands. This method is useful when precise
           values are required. For instance, when designing to published interface specifications,
@@ -3387,13 +3308,13 @@ class MeasurementImmedReflevelMethod(SCPICmdWrite, SCPICmdRead):
 class MeasurementImmedReflevelAbsoluteMidItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:IMMed:REFLevel:ABSolute:MID<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the mid reference level, and is the 50% reference level when
           ``MEASUREMENT:IMMED:REFLEVEL:METHOD`` is set to Absolute. Note that this command affects
           the results of period, frequency, delay, and all cyclic measurements. Note that this
           command affects the results of delay measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``MEASUrement:IMMed:REFLevel:ABSolute:MID<x>?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3402,14 +3323,13 @@ class MeasurementImmedReflevelAbsoluteMidItem(ValidatedDynamicNumberCmd, SCPICmd
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:IMMed:REFLevel:ABSolute:MID<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:REFLevel:ABSolute:MID<x> <NR3>
         - MEASUrement:IMMed:REFLevel:ABSolute:MID<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the mid1 (the 'from' waveform when taking a delay measurement) or mid2 (the
           'to' waveform when taking a delay measurement) reference level in volts. The default is
           0.0 V.
@@ -3419,12 +3339,12 @@ class MeasurementImmedReflevelAbsoluteMidItem(ValidatedDynamicNumberCmd, SCPICmd
 class MeasurementImmedReflevelAbsoluteLow(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:IMMed:REFLevel:ABSolute:LOW`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the low reference level, and is the zero percent level when
           ``MEASUREMENT:IMMED:REFLEVEL:METHOD`` is set to Absolute. Note that this command affects
           the results of rise and fall measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:REFLevel:ABSolute:LOW?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3433,14 +3353,13 @@ class MeasurementImmedReflevelAbsoluteLow(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:IMMed:REFLevel:ABSolute:LOW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:REFLevel:ABSolute:LOW <NR3>
         - MEASUrement:IMMed:REFLevel:ABSolute:LOW?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the low reference level in volts. The default is 0.0 V.
     """
 
@@ -3448,12 +3367,12 @@ class MeasurementImmedReflevelAbsoluteLow(SCPICmdWrite, SCPICmdRead):
 class MeasurementImmedReflevelAbsoluteHigh(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:IMMed:REFLevel:ABSolute:HIGH`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the high reference level, and is the upper reference level
           when ``MEASUREMENT:IMMED:REFLEVEL:METHOD`` is set to Absolute. Note that this command
           affects the results of rise and fall measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:REFLevel:ABSolute:HIGH?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3462,14 +3381,13 @@ class MeasurementImmedReflevelAbsoluteHigh(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:IMMed:REFLevel:ABSolute:HIGH value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:REFLevel:ABSolute:HIGH <NR3>
         - MEASUrement:IMMed:REFLevel:ABSolute:HIGH?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the high reference level in volts. The default is 0.0 V.
     """
 
@@ -3477,7 +3395,7 @@ class MeasurementImmedReflevelAbsoluteHigh(SCPICmdWrite, SCPICmdRead):
 class MeasurementImmedReflevelAbsolute(SCPICmdRead):
     """The ``MEASUrement:IMMed:REFLevel:ABSolute`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:REFLevel:ABSolute?``
           query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:REFLevel:ABSolute?``
@@ -3501,12 +3419,12 @@ class MeasurementImmedReflevelAbsolute(SCPICmdRead):
     def high(self) -> MeasurementImmedReflevelAbsoluteHigh:
         """Return the ``MEASUrement:IMMed:REFLevel:ABSolute:HIGH`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the high reference level, and is the upper reference
               level when ``MEASUREMENT:IMMED:REFLEVEL:METHOD`` is set to Absolute. Note that this
               command affects the results of rise and fall measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MEASUrement:IMMed:REFLevel:ABSolute:HIGH?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3515,14 +3433,13 @@ class MeasurementImmedReflevelAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:IMMed:REFLevel:ABSolute:HIGH value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:REFLevel:ABSolute:HIGH <NR3>
             - MEASUrement:IMMed:REFLevel:ABSolute:HIGH?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the high reference level in volts. The default is 0.0 V.
         """
         return self._high
@@ -3531,12 +3448,12 @@ class MeasurementImmedReflevelAbsolute(SCPICmdRead):
     def low(self) -> MeasurementImmedReflevelAbsoluteLow:
         """Return the ``MEASUrement:IMMed:REFLevel:ABSolute:LOW`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the low reference level, and is the zero percent level
               when ``MEASUREMENT:IMMED:REFLEVEL:METHOD`` is set to Absolute. Note that this command
               affects the results of rise and fall measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MEASUrement:IMMed:REFLevel:ABSolute:LOW?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3545,14 +3462,13 @@ class MeasurementImmedReflevelAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:IMMed:REFLevel:ABSolute:LOW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:REFLevel:ABSolute:LOW <NR3>
             - MEASUrement:IMMed:REFLevel:ABSolute:LOW?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the low reference level in volts. The default is 0.0 V.
         """
         return self._low
@@ -3561,13 +3477,13 @@ class MeasurementImmedReflevelAbsolute(SCPICmdRead):
     def mid(self) -> Dict[int, MeasurementImmedReflevelAbsoluteMidItem]:
         """Return the ``MEASUrement:IMMed:REFLevel:ABSolute:MID<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the mid reference level, and is the 50% reference level
               when ``MEASUREMENT:IMMED:REFLEVEL:METHOD`` is set to Absolute. Note that this command
               affects the results of period, frequency, delay, and all cyclic measurements. Note
               that this command affects the results of delay measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``MEASUrement:IMMed:REFLevel:ABSolute:MID<x>?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3576,14 +3492,13 @@ class MeasurementImmedReflevelAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:IMMed:REFLevel:ABSolute:MID<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:REFLevel:ABSolute:MID<x> <NR3>
             - MEASUrement:IMMed:REFLevel:ABSolute:MID<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the mid1 (the 'from' waveform when taking a delay measurement) or mid2
               (the 'to' waveform when taking a delay measurement) reference level in volts. The
               default is 0.0 V.
@@ -3594,21 +3509,20 @@ class MeasurementImmedReflevelAbsolute(SCPICmdRead):
 class MeasurementImmedReflevel(SCPICmdRead):
     """The ``MEASUrement:IMMed:REFLevel`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the reference level settings for the immediate
           measurement. It returns them in the following order: ABSOLUTE and then PERCENT for
           individual user measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:REFLevel?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:REFLevel?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:REFLevel?
+        ```
 
     Properties:
         - ``.absolute``: The ``MEASUrement:IMMed:REFLevel:ABSolute`` command tree.
@@ -3626,7 +3540,7 @@ class MeasurementImmedReflevel(SCPICmdRead):
     def absolute(self) -> MeasurementImmedReflevelAbsolute:
         """Return the ``MEASUrement:IMMed:REFLevel:ABSolute`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:IMMed:REFLevel:ABSolute?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3644,12 +3558,12 @@ class MeasurementImmedReflevel(SCPICmdRead):
     def method(self) -> MeasurementImmedReflevelMethod:
         """Return the ``MEASUrement:IMMed:REFLevel:METHod`` command.
 
-        **Description:**
+        Description:
             - This command specifies or queries the reference level units used for measurement
               calculations. This command is equivalent to selecting Reference Levels from the
               Measure menu and then choosing the desired reference level from the Units group box.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:IMMed:REFLevel:METHod?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3658,14 +3572,13 @@ class MeasurementImmedReflevel(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:IMMed:REFLevel:METHod value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:REFLevel:METHod {ABSolute|PERCent}
             - MEASUrement:IMMed:REFLevel:METHod?
+            ```
 
-        **Info:**
+        Info:
             - ``ABSolute`` specifies that the reference levels are set explicitly using the
               ``MEASUrement:IMMed:REFLevel:ABSolute`` commands. This method is useful when precise
               values are required. For instance, when designing to published interface
@@ -3680,7 +3593,7 @@ class MeasurementImmedReflevel(SCPICmdRead):
     def percent(self) -> MeasurementImmedReflevelPercent:
         """Return the ``MEASUrement:IMMed:REFLevel:PERCent`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:IMMed:REFLevel:PERCent?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3698,27 +3611,26 @@ class MeasurementImmedReflevel(SCPICmdRead):
 class MeasurementImmedNoise(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:IMMed:NOISe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the noise measurement is made on the high or low
           level of the waveform. Sending this command is equivalent to selecting Ref Levs > Eye >
           Top Level or Base Level in the Comm tab of the Measurement Setup dialog box. The Eye
           section is displayed only if you have an eye-pattern or optical measurement defined.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:NOISe?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:NOISe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:IMMed:NOISe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:NOISe {HIGH|LOW}
         - MEASUrement:IMMed:NOISe?
+        ```
 
-    **Info:**
+    Info:
         - ``HIGH`` argument causes the measurement for noise to be taken at the high level of the
           waveform.
         - ``LOW`` argument causes the measurement for noise to be taken at the low level of the
@@ -3729,25 +3641,24 @@ class MeasurementImmedNoise(SCPICmdWrite, SCPICmdRead):
 class MeasurementImmedMethod(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:IMMed:METHod`` command.
 
-    **Description:**
+    Description:
         - This command specifies or queries the method used to calculate the 0% and 100% reference
           level for immediate measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:METHod?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:METHod?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:IMMed:METHod value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:METHod {HIStogram|MINMax|MEAN}
         - MEASUrement:IMMed:METHod?
+        ```
 
-    **Info:**
+    Info:
         - ``HIStogram`` sets the high and low waveform levels statistically using a histogram
           algorithm.
         - ``MINMax`` sets the high and low waveform levels to MAX and MIN, respectively.
@@ -3758,25 +3669,24 @@ class MeasurementImmedMethod(SCPICmdWrite, SCPICmdRead):
 class MeasurementImmedDelayEdgeItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:IMMed:DELay:EDGE<x>`` command.
 
-    **Description:**
+    Description:
         - This command specifies the slope of the edge the oscilloscope uses for the delay 'from' or
           'to' waveform when taking an immediate delay measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:DELay:EDGE<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:DELay:EDGE<x>?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:IMMed:DELay:EDGE<x> value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:DELay:EDGE<x> {FALL|RISe}
         - MEASUrement:IMMed:DELay:EDGE<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<x>`` specifies which waveform to use, where <x> = 1 is the 'from' waveform, and <x> = 2
           is the 'to' waveform.
         - ``FALL`` specifies the falling edge.
@@ -3787,28 +3697,27 @@ class MeasurementImmedDelayEdgeItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCP
 class MeasurementImmedDelayEdge2(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:IMMed:DELay:EDGE2`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the slope of the edge that is used for the delay 'to'
           waveform when taking an immediate delay measurement. Use the ``MEASUREMENT:IMMED:SOURCEX``
           command to specify the waveform. This command is equivalent to selecting Measurement Setup
           from the Measure menu, choosing the Time tab, clicking the Delay button to display the
           delay settings and then clicking the desired Delay Edge2 setting.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:DELay:EDGE2?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:DELay:EDGE2?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:IMMed:DELay:EDGE2 value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:DELay:EDGE2 {FALL|RISe}
         - MEASUrement:IMMed:DELay:EDGE2?
+        ```
 
-    **Info:**
+    Info:
         - ``FALL`` specifies the falling edge.
         - ``RISe`` specifies the rising edge.
     """
@@ -3817,7 +3726,7 @@ class MeasurementImmedDelayEdge2(SCPICmdWrite, SCPICmdRead):
 class MeasurementImmedDelayDirection(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:IMMed:DELay:DIREction`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the starting point and direction that determines the delay
           'to' edge when taking an immediate delay measurement. Use the
           ``MEASUREMENT:IMMED:SOURCEX`` command to specify the delay 'to' waveform. This command is
@@ -3825,21 +3734,20 @@ class MeasurementImmedDelayDirection(SCPICmdWrite, SCPICmdRead):
           clicking the Delay button to display the delay settings and then clicking the desired
           Search Direction setting.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:DELay:DIREction?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:DELay:DIREction?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:IMMed:DELay:DIREction value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:DELay:DIREction {BACKWards|FORWards}
         - MEASUrement:IMMed:DELay:DIREction?
+        ```
 
-    **Info:**
+    Info:
         - ``BACKWards`` starts the search at the end of the waveform and looks for the last rising
           or falling edge in the waveform.
         - ``FORWards`` starts the search at the beginning of the waveform and looks for the first
@@ -3850,20 +3758,19 @@ class MeasurementImmedDelayDirection(SCPICmdWrite, SCPICmdRead):
 class MeasurementImmedDelay(SCPICmdRead):
     """The ``MEASUrement:IMMed:DELay`` command.
 
-    **Description:**
+    Description:
         - Returns information about the immediate delay measurement. This command is equivalent to
           viewing the delay measurement settings on the measurement readout.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed:DELay?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:DELay?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed:DELay?
+        ```
 
     Properties:
         - ``.direction``: The ``MEASUrement:IMMed:DELay:DIREction`` command.
@@ -3883,7 +3790,7 @@ class MeasurementImmedDelay(SCPICmdRead):
     def direction(self) -> MeasurementImmedDelayDirection:
         """Return the ``MEASUrement:IMMed:DELay:DIREction`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the starting point and direction that determines the
               delay 'to' edge when taking an immediate delay measurement. Use the
               ``MEASUREMENT:IMMED:SOURCEX`` command to specify the delay 'to' waveform. This command
@@ -3891,7 +3798,7 @@ class MeasurementImmedDelay(SCPICmdRead):
               tab, clicking the Delay button to display the delay settings and then clicking the
               desired Search Direction setting.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:IMMed:DELay:DIREction?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3900,14 +3807,13 @@ class MeasurementImmedDelay(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:IMMed:DELay:DIREction value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:DELay:DIREction {BACKWards|FORWards}
             - MEASUrement:IMMed:DELay:DIREction?
+            ```
 
-        **Info:**
+        Info:
             - ``BACKWards`` starts the search at the end of the waveform and looks for the last
               rising or falling edge in the waveform.
             - ``FORWards`` starts the search at the beginning of the waveform and looks for the
@@ -3919,7 +3825,7 @@ class MeasurementImmedDelay(SCPICmdRead):
     def edge2(self) -> MeasurementImmedDelayEdge2:
         """Return the ``MEASUrement:IMMed:DELay:EDGE2`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the slope of the edge that is used for the delay 'to'
               waveform when taking an immediate delay measurement. Use the
               ``MEASUREMENT:IMMED:SOURCEX`` command to specify the waveform. This command is
@@ -3927,21 +3833,20 @@ class MeasurementImmedDelay(SCPICmdRead):
               tab, clicking the Delay button to display the delay settings and then clicking the
               desired Delay Edge2 setting.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:IMMed:DELay:EDGE2?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:DELay:EDGE2?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:IMMed:DELay:EDGE2 value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:DELay:EDGE2 {FALL|RISe}
             - MEASUrement:IMMed:DELay:EDGE2?
+            ```
 
-        **Info:**
+        Info:
             - ``FALL`` specifies the falling edge.
             - ``RISe`` specifies the rising edge.
         """
@@ -3951,11 +3856,11 @@ class MeasurementImmedDelay(SCPICmdRead):
     def edge(self) -> Dict[int, MeasurementImmedDelayEdgeItem]:
         """Return the ``MEASUrement:IMMed:DELay:EDGE<x>`` command.
 
-        **Description:**
+        Description:
             - This command specifies the slope of the edge the oscilloscope uses for the delay
               'from' or 'to' waveform when taking an immediate delay measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:IMMed:DELay:EDGE<x>?``
               query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:DELay:EDGE<x>?``
@@ -3963,14 +3868,13 @@ class MeasurementImmedDelay(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:IMMed:DELay:EDGE<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:DELay:EDGE<x> {FALL|RISe}
             - MEASUrement:IMMed:DELay:EDGE<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<x>`` specifies which waveform to use, where <x> = 1 is the 'from' waveform, and <x>
               = 2 is the 'to' waveform.
             - ``FALL`` specifies the falling edge.
@@ -3983,19 +3887,18 @@ class MeasurementImmedDelay(SCPICmdRead):
 class MeasurementImmed(SCPICmdRead):
     """The ``MEASUrement:IMMed`` command.
 
-    **Description:**
+    Description:
         - Returns all immediate measurement setup parameters.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:IMMed?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:IMMed?
+        ```
 
     Properties:
         - ``.delay``: The ``MEASUrement:IMMed:DELay`` command.
@@ -4023,20 +3926,19 @@ class MeasurementImmed(SCPICmdRead):
     def delay(self) -> MeasurementImmedDelay:
         """Return the ``MEASUrement:IMMed:DELay`` command.
 
-        **Description:**
+        Description:
             - Returns information about the immediate delay measurement. This command is equivalent
               to viewing the delay measurement settings on the measurement readout.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:IMMed:DELay?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:DELay?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:DELay?
+            ```
 
         Sub-properties:
             - ``.direction``: The ``MEASUrement:IMMed:DELay:DIREction`` command.
@@ -4049,25 +3951,24 @@ class MeasurementImmed(SCPICmdRead):
     def method(self) -> MeasurementImmedMethod:
         """Return the ``MEASUrement:IMMed:METHod`` command.
 
-        **Description:**
+        Description:
             - This command specifies or queries the method used to calculate the 0% and 100%
               reference level for immediate measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:IMMed:METHod?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:METHod?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MEASUrement:IMMed:METHod value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:METHod {HIStogram|MINMax|MEAN}
             - MEASUrement:IMMed:METHod?
+            ```
 
-        **Info:**
+        Info:
             - ``HIStogram`` sets the high and low waveform levels statistically using a histogram
               algorithm.
             - ``MINMax`` sets the high and low waveform levels to MAX and MIN, respectively.
@@ -4079,27 +3980,26 @@ class MeasurementImmed(SCPICmdRead):
     def noise(self) -> MeasurementImmedNoise:
         """Return the ``MEASUrement:IMMed:NOISe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the noise measurement is made on the high or low
               level of the waveform. Sending this command is equivalent to selecting Ref Levs > Eye
               > Top Level or Base Level in the Comm tab of the Measurement Setup dialog box. The Eye
               section is displayed only if you have an eye-pattern or optical measurement defined.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:IMMed:NOISe?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:NOISe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MEASUrement:IMMed:NOISe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:NOISe {HIGH|LOW}
             - MEASUrement:IMMed:NOISe?
+            ```
 
-        **Info:**
+        Info:
             - ``HIGH`` argument causes the measurement for noise to be taken at the high level of
               the waveform.
             - ``LOW`` argument causes the measurement for noise to be taken at the low level of the
@@ -4111,21 +4011,20 @@ class MeasurementImmed(SCPICmdRead):
     def reflevel(self) -> MeasurementImmedReflevel:
         """Return the ``MEASUrement:IMMed:REFLevel`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the reference level settings for the immediate
               measurement. It returns them in the following order: ABSOLUTE and then PERCENT for
               individual user measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:IMMed:REFLevel?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:REFLevel?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:REFLevel?
+            ```
 
         Sub-properties:
             - ``.absolute``: The ``MEASUrement:IMMed:REFLevel:ABSolute`` command tree.
@@ -4138,7 +4037,7 @@ class MeasurementImmed(SCPICmdRead):
     def source1(self) -> MeasurementImmedSource1:
         """Return the ``MEASUrement:IMMed:SOUrce1`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the source for phase or delay immediate measurements.
               This command is equivalent to selecting Measurement Setup from the Measure menu,
               choosing the Time tab, clicking the Delay button to display the delay settings and
@@ -4146,21 +4045,20 @@ class MeasurementImmed(SCPICmdRead):
               measurements only apply to phase and delay measurement types, which require both a
               target (Source1) and reference (Source2) source.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:IMMed:SOUrce1?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:SOUrce1?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MEASUrement:IMMed:SOUrce1 value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:SOUrce1 {CH<x>|MATH<y>|REF<x>|HIStogram}
             - MEASUrement:IMMed:SOUrce1?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` is an input channel waveform. The x variable can be expressed as an integer
               ranging from 1 through 4.
             - ``MATH<y>`` is a math waveform. The y variable can be expressed as an integer ranging
@@ -4179,25 +4077,24 @@ class MeasurementImmed(SCPICmdRead):
     def type(self) -> MeasurementImmedType:
         """Return the ``MEASUrement:IMMed:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the immediate measurement type. Immediate measurements
               and annotations are not displayed on the screen.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:IMMed:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:TYPe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MEASUrement:IMMed:TYPe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:TYPe {AMPlitude|AREa| BURst|CARea|CMEan|CRMs|DELay|DISTDUty| EXTINCTDB|EXTINCTPCT|EXTINCTRATIO| EYEHeight|EYEWIdth|FALL|FREQuency|HIGH| HITs|LOW|MAXimum|MEAN| MEDian|MINImum| NCROss|NDUty|NOVershoot|NWIdth|PBASe| PCROss|PCTCROss|PDUty|PEAKHits|PERIod| PHAse|PK2Pk|PKPKJitter|PKPKNoise| POVershoot|PTOP|PWIdth|QFACtor|RISe| RMS|RMSJitter|RMSNoise|SIGMA1|SIGMA2| SIGMA3|SIXSigmajit|SNRatio|STDdev| UNDEFINED|WAVEFORMS}
             - MEASUrement:IMMed:TYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``AMPlitude`` measures the amplitude of the selected waveform. In other words, it
               measures the high value less the low value measured over the entire waveform or gated
               region.
@@ -4350,19 +4247,18 @@ class MeasurementImmed(SCPICmdRead):
     def units(self) -> MeasurementImmedUnits:
         """Return the ``MEASUrement:IMMed:UNIts`` command.
 
-        **Description:**
+        Description:
             - Returns a string containing the units of the immediate measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:IMMed:UNIts?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:UNIts?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:UNIts?
+            ```
         """
         return self._units
 
@@ -4370,21 +4266,20 @@ class MeasurementImmed(SCPICmdRead):
     def value(self) -> MeasurementImmedValue:
         """Return the ``MEASUrement:IMMed:VALue`` command.
 
-        **Description:**
+        Description:
             - Returns the value of the measurement specified by the ``MEASUREMENT:IMMED:TYPE``
               command. The measurement is immediately taken on the source(s) specified by a
               ``MEASUREMENT:IMMED:SOURCEX`` command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:IMMed:VALue?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed:VALue?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed:VALue?
+            ```
         """
         return self._value
 
@@ -4392,25 +4287,24 @@ class MeasurementImmed(SCPICmdRead):
 class MeasurementGating(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:GATing`` command.
 
-    **Description:**
+    Description:
         - This command specifies or returns the measurement gating setting. This command is
           equivalent to selecting Gating from the Measure menu and then clicking the desired
           Measurement Gating setting.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:GATing?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:GATing?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:GATing value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:GATing {ON|OFF|<NR1>|ZOOM<x>|CURSor}
         - MEASUrement:GATing?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` turns on measurement gating.
         - ``OFF`` turns off measurement gating.
         - ``<NR1>`` = 0 turns off measurement gating; any other value turns on measurement gating.
@@ -4424,86 +4318,82 @@ class MeasurementGating(SCPICmdWrite, SCPICmdRead):
 class MeasurementDpojetstatistics(SCPICmdRead):
     """The ``MEASUrement:DPOJETSTATistics`` command.
 
-    **Description:**
+    Description:
         - This queries the DPOJET measurement statistics.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:DPOJETSTATistics?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:DPOJETSTATistics?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:DPOJETSTATistics?
+        ```
     """
 
 
 class MeasurementAnnotationYItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``MEASUrement:ANNOTation:Y<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the value of the specified Y annotation. Y annotations are
           numbered, in general, from left to right on the display. The value of <x> can vary from 1
           to 6. Immediate measurements and annotations are not displayed on the screen.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:ANNOTation:Y<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:ANNOTation:Y<x>?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:ANNOTation:Y<x>?
+        ```
     """
 
 
 class MeasurementAnnotationXItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``MEASUrement:ANNOTation:X<x>`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the value of the specified X annotation. X annotations are
           numbered, in general, from top to bottom on the display. The value of <x> can vary from 1
           to 6. Immediate measurements and annotations are not displayed on the screen.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:ANNOTation:X<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:ANNOTation:X<x>?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:ANNOTation:X<x>?
+        ```
     """
 
 
 class MeasurementAnnotationType(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:ANNOTation:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the type of annotations being used. This command is similar
           to setting the annotation type in the Measure > Annotation menu.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:ANNOTation:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:ANNOTation:TYPe?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:ANNOTation:TYPe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:ANNOTation:TYPe {STANdard|DETAiled}
         - MEASUrement:ANNOTation:TYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``STANdard`` sets the annotation type to STANDARD.
         - ``DETAiled`` sets the annotation type to DETAiled, so that more detailed annotations are
           displayed.
@@ -4513,24 +4403,23 @@ class MeasurementAnnotationType(SCPICmdWrite, SCPICmdRead):
 class MeasurementAnnotationState(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:ANNOTation:STATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the state of visible measurement annotations.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:ANNOTation:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:ANNOTation:STATE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MEASUrement:ANNOTation:STATE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:ANNOTation:STATE {OFF|MEAS<x>}
         - MEASUrement:ANNOTation:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` turns off visible measurement annotations.
         - ``MEAS<x>`` turns on the display of visible measurement annotations for measurement <x>,
           where <x> can be 1, 2, 3, 4, 5, 6, 7, or 8. There must be an active measurement before you
@@ -4541,65 +4430,62 @@ class MeasurementAnnotationState(SCPICmdWrite, SCPICmdRead):
 class MeasurementAnnotationNumy(SCPICmdRead):
     """The ``MEASUrement:ANNOTation:NUMY`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the number of vertical measurement annotations currently
           being displayed. Immediate measurements and annotations are not displayed on the screen.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:ANNOTation:NUMY?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:ANNOTation:NUMY?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:ANNOTation:NUMY?
+        ```
     """
 
 
 class MeasurementAnnotationNumx(SCPICmdRead):
     """The ``MEASUrement:ANNOTation:NUMX`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the number of horizontal measurement annotations currently
           being displayed. Immediate measurements and annotations are not displayed on the screen.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:ANNOTation:NUMX?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:ANNOTation:NUMX?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:ANNOTation:NUMX?
+        ```
     """
 
 
 class MeasurementAnnotationImmedstate(SCPICmdWrite, SCPICmdRead):
     """The ``MEASUrement:ANNOTation:IMMEDSTAte`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the state of immediate measurement annotation. Immediate
           measurements and annotations are not displayed on the screen.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:ANNOTation:IMMEDSTAte?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:ANNOTation:IMMEDSTAte?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``MEASUrement:ANNOTation:IMMEDSTAte value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement:ANNOTation:IMMEDSTAte {<NR1>|OFF|ON}
         - MEASUrement:ANNOTation:IMMEDSTAte?
+        ```
 
-    **Info:**
+    Info:
         - ``NR1`` = 0 disables immediate state measurement annotation, any other value enables
           immediate state measurements.
         - ``OFF`` disables annotation on immediate state measurements.
@@ -4610,7 +4496,7 @@ class MeasurementAnnotationImmedstate(SCPICmdWrite, SCPICmdRead):
 class MeasurementAnnotation(SCPICmdRead):
     """The ``MEASUrement:ANNOTation`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement:ANNOTation?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement:ANNOTation?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -4643,11 +4529,11 @@ class MeasurementAnnotation(SCPICmdRead):
     def immedstate(self) -> MeasurementAnnotationImmedstate:
         """Return the ``MEASUrement:ANNOTation:IMMEDSTAte`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the state of immediate measurement annotation. Immediate
               measurements and annotations are not displayed on the screen.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:ANNOTation:IMMEDSTAte?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4656,14 +4542,13 @@ class MeasurementAnnotation(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:ANNOTation:IMMEDSTAte value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:ANNOTation:IMMEDSTAte {<NR1>|OFF|ON}
             - MEASUrement:ANNOTation:IMMEDSTAte?
+            ```
 
-        **Info:**
+        Info:
             - ``NR1`` = 0 disables immediate state measurement annotation, any other value enables
               immediate state measurements.
             - ``OFF`` disables annotation on immediate state measurements.
@@ -4675,21 +4560,20 @@ class MeasurementAnnotation(SCPICmdRead):
     def numx(self) -> MeasurementAnnotationNumx:
         """Return the ``MEASUrement:ANNOTation:NUMX`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the number of horizontal measurement annotations
               currently being displayed. Immediate measurements and annotations are not displayed on
               the screen.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:ANNOTation:NUMX?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:ANNOTation:NUMX?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:ANNOTation:NUMX?
+            ```
         """
         return self._numx
 
@@ -4697,21 +4581,20 @@ class MeasurementAnnotation(SCPICmdRead):
     def numy(self) -> MeasurementAnnotationNumy:
         """Return the ``MEASUrement:ANNOTation:NUMY`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the number of vertical measurement annotations
               currently being displayed. Immediate measurements and annotations are not displayed on
               the screen.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:ANNOTation:NUMY?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:ANNOTation:NUMY?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:ANNOTation:NUMY?
+            ```
         """
         return self._numy
 
@@ -4719,24 +4602,23 @@ class MeasurementAnnotation(SCPICmdRead):
     def state(self) -> MeasurementAnnotationState:
         """Return the ``MEASUrement:ANNOTation:STATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the state of visible measurement annotations.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:ANNOTation:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:ANNOTation:STATE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``MEASUrement:ANNOTation:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:ANNOTation:STATE {OFF|MEAS<x>}
             - MEASUrement:ANNOTation:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` turns off visible measurement annotations.
             - ``MEAS<x>`` turns on the display of visible measurement annotations for measurement
               <x>, where <x> can be 1, 2, 3, 4, 5, 6, 7, or 8. There must be an active measurement
@@ -4748,25 +4630,24 @@ class MeasurementAnnotation(SCPICmdRead):
     def type(self) -> MeasurementAnnotationType:
         """Return the ``MEASUrement:ANNOTation:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the type of annotations being used. This command is
               similar to setting the annotation type in the Measure > Annotation menu.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:ANNOTation:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:ANNOTation:TYPe?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MEASUrement:ANNOTation:TYPe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:ANNOTation:TYPe {STANdard|DETAiled}
             - MEASUrement:ANNOTation:TYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``STANdard`` sets the annotation type to STANDARD.
             - ``DETAiled`` sets the annotation type to DETAiled, so that more detailed annotations
               are displayed.
@@ -4777,21 +4658,20 @@ class MeasurementAnnotation(SCPICmdRead):
     def x(self) -> Dict[int, MeasurementAnnotationXItem]:
         """Return the ``MEASUrement:ANNOTation:X<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the value of the specified X annotation. X annotations
               are numbered, in general, from top to bottom on the display. The value of <x> can vary
               from 1 to 6. Immediate measurements and annotations are not displayed on the screen.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:ANNOTation:X<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:ANNOTation:X<x>?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:ANNOTation:X<x>?
+            ```
         """
         return self._x
 
@@ -4799,21 +4679,20 @@ class MeasurementAnnotation(SCPICmdRead):
     def y(self) -> Dict[int, MeasurementAnnotationYItem]:
         """Return the ``MEASUrement:ANNOTation:Y<x>`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the value of the specified Y annotation. Y annotations
               are numbered, in general, from left to right on the display. The value of <x> can vary
               from 1 to 6. Immediate measurements and annotations are not displayed on the screen.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:ANNOTation:Y<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:ANNOTation:Y<x>?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:ANNOTation:Y<x>?
+            ```
         """
         return self._y
 
@@ -4822,19 +4701,18 @@ class MeasurementAnnotation(SCPICmdRead):
 class Measurement(SCPICmdRead):
     """The ``MEASUrement`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns all measurement parameters.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASUrement?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASUrement?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASUrement?
+        ```
 
     Properties:
         - ``.annotation``: The ``MEASUrement:ANNOTation`` command tree.
@@ -4872,7 +4750,7 @@ class Measurement(SCPICmdRead):
     def annotation(self) -> MeasurementAnnotation:
         """Return the ``MEASUrement:ANNOTation`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:ANNOTation?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:ANNOTation?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -4892,19 +4770,18 @@ class Measurement(SCPICmdRead):
     def dpojetstatistics(self) -> MeasurementDpojetstatistics:
         """Return the ``MEASUrement:DPOJETSTATistics`` command.
 
-        **Description:**
+        Description:
             - This queries the DPOJET measurement statistics.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:DPOJETSTATistics?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:DPOJETSTATistics?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:DPOJETSTATistics?
+            ```
         """
         return self._dpojetstatistics
 
@@ -4912,25 +4789,24 @@ class Measurement(SCPICmdRead):
     def gating(self) -> MeasurementGating:
         """Return the ``MEASUrement:GATing`` command.
 
-        **Description:**
+        Description:
             - This command specifies or returns the measurement gating setting. This command is
               equivalent to selecting Gating from the Measure menu and then clicking the desired
               Measurement Gating setting.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:GATing?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:GATing?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MEASUrement:GATing value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:GATing {ON|OFF|<NR1>|ZOOM<x>|CURSor}
             - MEASUrement:GATing?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` turns on measurement gating.
             - ``OFF`` turns off measurement gating.
             - ``<NR1>`` = 0 turns off measurement gating; any other value turns on measurement
@@ -4946,19 +4822,18 @@ class Measurement(SCPICmdRead):
     def immed(self) -> MeasurementImmed:
         """Return the ``MEASUrement:IMMed`` command.
 
-        **Description:**
+        Description:
             - Returns all immediate measurement setup parameters.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:IMMed?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:IMMed?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:IMMed?
+            ```
 
         Sub-properties:
             - ``.delay``: The ``MEASUrement:IMMed:DELay`` command.
@@ -4976,19 +4851,18 @@ class Measurement(SCPICmdRead):
     def meas(self) -> Dict[int, MeasurementMeasItem]:
         """Return the ``MEASUrement:MEAS<x>`` command.
 
-        **Description:**
+        Description:
             - Returns all measurement parameters for the specified active measurement <x>.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:MEAS<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:MEAS<x>?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:MEAS<x>?
+            ```
 
         Sub-properties:
             - ``.count``: The ``MEASUrement:MEAS<x>:COUNt`` command.
@@ -5012,25 +4886,24 @@ class Measurement(SCPICmdRead):
     def method(self) -> MeasurementMethod:
         """Return the ``MEASUrement:METHod`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the method used to calculate the 0% and 100% reference
               level. This command is equivalent to selecting Reference Levels from the Measure menu
               and then choosing the desired Determine Base, Top From setting.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:METHod?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:METHod?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MEASUrement:METHod value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:METHod {HIStogram|MEAN|MINMax}
             - MEASUrement:METHod?
+            ```
 
-        **Info:**
+        Info:
             - ``HIStogram`` sets the high and low reference levels to the most common values either
               above or below the mid point, depending on whether the high reference point or the low
               reference point is being defined. Because the statistical approach ignores short-term
@@ -5049,26 +4922,25 @@ class Measurement(SCPICmdRead):
     def noise(self) -> MeasurementNoise:
         """Return the ``MEASUrement:NOISe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the noise measurement is made on the high or low
               level of the waveform. Sending this command is equivalent to selecting Ref Levs > Eye
               > Top Level or Base Level in the Comm tab of the Measurement Setup dialog box. The Eye
               section is displayed only if you have an eye-pattern or optical measurement defined.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:NOISe?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:NOISe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MEASUrement:NOISe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:NOISe {HIGH|LOW}
             - MEASUrement:NOISe?
+            ```
 
-        **Info:**
+        Info:
             - ``HIGH`` argument causes the measurement for noise to be taken at the high level of
               the waveform.
             - ``LOW`` argument causes the measurement for noise to be taken at the low level of the
@@ -5080,19 +4952,18 @@ class Measurement(SCPICmdRead):
     def reflevel(self) -> MeasurementReflevel:
         """Return the ``MEASUrement:REFLevel`` command.
 
-        **Description:**
+        Description:
             - Returns the current reference level parameters.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:REFLevel?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:REFLevel?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASUrement:REFLevel?
+            ```
 
         Sub-properties:
             - ``.absolute``: The ``MEASUrement:REFLevel:ABSolute`` command tree.
@@ -5105,7 +4976,7 @@ class Measurement(SCPICmdRead):
     def source1(self) -> MeasurementSource1:
         """Return the ``MEASUrement:SOUrce1`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:SOUrce1?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:SOUrce1?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -5119,7 +4990,7 @@ class Measurement(SCPICmdRead):
     def statistics(self) -> MeasurementStatistics:
         """Return the ``MEASUrement:STATIstics`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MEASUrement:STATIstics?`` query.
             - Using the ``.verify(value)`` method will send the ``MEASUrement:STATIstics?`` query
               and raise an AssertionError if the returned value does not match ``value``.

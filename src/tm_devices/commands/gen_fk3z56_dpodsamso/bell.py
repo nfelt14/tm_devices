@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - BELl
 """
 
@@ -26,18 +24,17 @@ if TYPE_CHECKING:
 class Bell(SCPICmdWriteNoArguments):
     """The ``BELl`` command.
 
-    **Description:**
+    Description:
         - This command was previously used to beep an audio indicator and is provided for backward
           compatibility.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``BELl`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BELl
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "BELl") -> None:

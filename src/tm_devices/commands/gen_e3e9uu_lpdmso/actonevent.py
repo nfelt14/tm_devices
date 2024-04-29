@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - ACTONEVent:ENable <NR1>
     - ACTONEVent:ENable?
     - ACTONEVent:LIMITCount <NR1>
@@ -78,11 +76,11 @@ if TYPE_CHECKING:
 class ActoneventTriggerActionStopacqState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:TRIGger:ACTION:STOPACQ:STATE`` command.
 
-    **Description:**
+    Description:
         - This command stops acquisitions on a trigger event from a single sequence or sequence of N
           acquisition. Each acquisition in the sequence of N will perform a save operation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:TRIGger:ACTION:STOPACQ:STATE?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -91,14 +89,13 @@ class ActoneventTriggerActionStopacqState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:TRIGger:ACTION:STOPACQ:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:TRIGger:ACTION:STOPACQ:STATE {ON|OFF|<NR1>}
         - ACTONEVent:TRIGger:ACTION:STOPACQ:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the stop acquisitions on a trigger event feature.
         - ``OFF`` disables the stop acquisitions on a trigger event feature.
         - ``<NR1>`` is a number that enables or disables the stop acquisitions on a trigger event
@@ -109,7 +106,7 @@ class ActoneventTriggerActionStopacqState(SCPICmdWrite, SCPICmdRead):
 class ActoneventTriggerActionStopacq(SCPICmdRead):
     """The ``ACTONEVent:TRIGger:ACTION:STOPACQ`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:TRIGger:ACTION:STOPACQ?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:TRIGger:ACTION:STOPACQ?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -126,11 +123,11 @@ class ActoneventTriggerActionStopacq(SCPICmdRead):
     def state(self) -> ActoneventTriggerActionStopacqState:
         """Return the ``ACTONEVent:TRIGger:ACTION:STOPACQ:STATE`` command.
 
-        **Description:**
+        Description:
             - This command stops acquisitions on a trigger event from a single sequence or sequence
               of N acquisition. Each acquisition in the sequence of N will perform a save operation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:TRIGger:ACTION:STOPACQ:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -139,14 +136,13 @@ class ActoneventTriggerActionStopacq(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:TRIGger:ACTION:STOPACQ:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:TRIGger:ACTION:STOPACQ:STATE {ON|OFF|<NR1>}
             - ACTONEVent:TRIGger:ACTION:STOPACQ:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the stop acquisitions on a trigger event feature.
             - ``OFF`` disables the stop acquisitions on a trigger event feature.
             - ``<NR1>`` is a number that enables or disables the stop acquisitions on a trigger
@@ -159,10 +155,10 @@ class ActoneventTriggerActionStopacq(SCPICmdRead):
 class ActoneventTriggerActionSrqState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:TRIGger:ACTION:SRQ:STATE`` command.
 
-    **Description:**
+    Description:
         - This command generates an SRQ event when a trigger event occurs.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:TRIGger:ACTION:SRQ:STATE?``
           query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:TRIGger:ACTION:SRQ:STATE?``
@@ -170,14 +166,13 @@ class ActoneventTriggerActionSrqState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:TRIGger:ACTION:SRQ:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:TRIGger:ACTION:SRQ:STATE {ON|OFF|<NR1>}
         - ACTONEVent:TRIGger:ACTION:SRQ:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the generate an SRQ event when a trigger event occurs feature.
         - ``OFF`` disables the generate an SRQ event when a trigger event occurs feature.
         - ``<NR1>`` is a number that enables or disables the generate an SRQ event when a trigger
@@ -189,7 +184,7 @@ class ActoneventTriggerActionSrqState(SCPICmdWrite, SCPICmdRead):
 class ActoneventTriggerActionSrq(SCPICmdRead):
     """The ``ACTONEVent:TRIGger:ACTION:SRQ`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:TRIGger:ACTION:SRQ?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:TRIGger:ACTION:SRQ?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -206,10 +201,10 @@ class ActoneventTriggerActionSrq(SCPICmdRead):
     def state(self) -> ActoneventTriggerActionSrqState:
         """Return the ``ACTONEVent:TRIGger:ACTION:SRQ:STATE`` command.
 
-        **Description:**
+        Description:
             - This command generates an SRQ event when a trigger event occurs.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:TRIGger:ACTION:SRQ:STATE?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -218,14 +213,13 @@ class ActoneventTriggerActionSrq(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:TRIGger:ACTION:SRQ:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:TRIGger:ACTION:SRQ:STATE {ON|OFF|<NR1>}
             - ACTONEVent:TRIGger:ACTION:SRQ:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the generate an SRQ event when a trigger event occurs feature.
             - ``OFF`` disables the generate an SRQ event when a trigger event occurs feature.
             - ``<NR1>`` is a number that enables or disables the generate an SRQ event when a
@@ -238,10 +232,10 @@ class ActoneventTriggerActionSrq(SCPICmdRead):
 class ActoneventTriggerActionSavewaveformState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:TRIGger:ACTION:SAVEWAVEform:STATE`` command.
 
-    **Description:**
+    Description:
         - This command saves the user set source waveform(s) on a trigger event.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``ACTONEVent:TRIGger:ACTION:SAVEWAVEform:STATE?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -250,14 +244,13 @@ class ActoneventTriggerActionSavewaveformState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:TRIGger:ACTION:SAVEWAVEform:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:TRIGger:ACTION:SAVEWAVEform:STATE {ON|OFF|1|0}
         - ACTONEVent:TRIGger:ACTION:SAVEWAVEform:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the save source waveform(s) on a trigger event feature.
         - ``OFF`` disables the save source waveform(s) on a trigger event feature.
         - ``1`` enables the save source waveform(s) on a trigger event feature. Any number value,
@@ -270,7 +263,7 @@ class ActoneventTriggerActionSavewaveformState(SCPICmdWrite, SCPICmdRead):
 class ActoneventTriggerActionSavewaveform(SCPICmdRead):
     """The ``ACTONEVent:TRIGger:ACTION:SAVEWAVEform`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:TRIGger:ACTION:SAVEWAVEform?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -289,10 +282,10 @@ class ActoneventTriggerActionSavewaveform(SCPICmdRead):
     def state(self) -> ActoneventTriggerActionSavewaveformState:
         """Return the ``ACTONEVent:TRIGger:ACTION:SAVEWAVEform:STATE`` command.
 
-        **Description:**
+        Description:
             - This command saves the user set source waveform(s) on a trigger event.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:TRIGger:ACTION:SAVEWAVEform:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -301,14 +294,13 @@ class ActoneventTriggerActionSavewaveform(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:TRIGger:ACTION:SAVEWAVEform:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:TRIGger:ACTION:SAVEWAVEform:STATE {ON|OFF|1|0}
             - ACTONEVent:TRIGger:ACTION:SAVEWAVEform:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the save source waveform(s) on a trigger event feature.
             - ``OFF`` disables the save source waveform(s) on a trigger event feature.
             - ``1`` enables the save source waveform(s) on a trigger event feature. Any number
@@ -322,13 +314,13 @@ class ActoneventTriggerActionSavewaveform(SCPICmdRead):
 class ActoneventTriggerActionSaveimageState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:TRIGger:ACTION:SAVEIMAGe:STATE`` command.
 
-    **Description:**
+    Description:
         - This command saves a screen capture on a trigger event from a single sequence or sequence
           of N acquisition. Each acquisition in the sequence of N will perform a save operation.
           This command replaces ``SAVE:IMAGE`` (still valid command, but only an alias for this new
           command).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:TRIGger:ACTION:SAVEIMAGe:STATE?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -337,14 +329,13 @@ class ActoneventTriggerActionSaveimageState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:TRIGger:ACTION:SAVEIMAGe:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:TRIGger:ACTION:SAVEIMAGe:STATE {ON|OFF|<NR1>}
         - ACTONEVent:TRIGger:ACTION:SAVEIMAGe:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the save screen capture on a trigger event feature.
         - ``OFF`` disables the save screen capture on a trigger event feature.
         - ``<NR1>`` is a number that enables or disables the save screen capture on a trigger event
@@ -355,7 +346,7 @@ class ActoneventTriggerActionSaveimageState(SCPICmdWrite, SCPICmdRead):
 class ActoneventTriggerActionSaveimage(SCPICmdRead):
     """The ``ACTONEVent:TRIGger:ACTION:SAVEIMAGe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:TRIGger:ACTION:SAVEIMAGe?``
           query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:TRIGger:ACTION:SAVEIMAGe?``
@@ -373,13 +364,13 @@ class ActoneventTriggerActionSaveimage(SCPICmdRead):
     def state(self) -> ActoneventTriggerActionSaveimageState:
         """Return the ``ACTONEVent:TRIGger:ACTION:SAVEIMAGe:STATE`` command.
 
-        **Description:**
+        Description:
             - This command saves a screen capture on a trigger event from a single sequence or
               sequence of N acquisition. Each acquisition in the sequence of N will perform a save
               operation. This command replaces ``SAVE:IMAGE`` (still valid command, but only an
               alias for this new command).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:TRIGger:ACTION:SAVEIMAGe:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -388,14 +379,13 @@ class ActoneventTriggerActionSaveimage(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:TRIGger:ACTION:SAVEIMAGe:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:TRIGger:ACTION:SAVEIMAGe:STATE {ON|OFF|<NR1>}
             - ACTONEVent:TRIGger:ACTION:SAVEIMAGe:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the save screen capture on a trigger event feature.
             - ``OFF`` disables the save screen capture on a trigger event feature.
             - ``<NR1>`` is a number that enables or disables the save screen capture on a trigger
@@ -408,7 +398,7 @@ class ActoneventTriggerActionSaveimage(SCPICmdRead):
 class ActoneventTriggerAction(SCPICmdRead):
     """The ``ACTONEVent:TRIGger:ACTION`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:TRIGger:ACTION?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:TRIGger:ACTION?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -433,7 +423,7 @@ class ActoneventTriggerAction(SCPICmdRead):
     def saveimage(self) -> ActoneventTriggerActionSaveimage:
         """Return the ``ACTONEVent:TRIGger:ACTION:SAVEIMAGe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:TRIGger:ACTION:SAVEIMAGe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -449,7 +439,7 @@ class ActoneventTriggerAction(SCPICmdRead):
     def savewaveform(self) -> ActoneventTriggerActionSavewaveform:
         """Return the ``ACTONEVent:TRIGger:ACTION:SAVEWAVEform`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:TRIGger:ACTION:SAVEWAVEform?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -465,7 +455,7 @@ class ActoneventTriggerAction(SCPICmdRead):
     def srq(self) -> ActoneventTriggerActionSrq:
         """Return the ``ACTONEVent:TRIGger:ACTION:SRQ`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:TRIGger:ACTION:SRQ?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:TRIGger:ACTION:SRQ?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -479,7 +469,7 @@ class ActoneventTriggerAction(SCPICmdRead):
     def stopacq(self) -> ActoneventTriggerActionStopacq:
         """Return the ``ACTONEVent:TRIGger:ACTION:STOPACQ`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:TRIGger:ACTION:STOPACQ?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -495,7 +485,7 @@ class ActoneventTriggerAction(SCPICmdRead):
 class ActoneventTrigger(SCPICmdRead):
     """The ``ACTONEVent:TRIGger`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:TRIGger?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:TRIGger?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -512,7 +502,7 @@ class ActoneventTrigger(SCPICmdRead):
     def action(self) -> ActoneventTriggerAction:
         """Return the ``ACTONEVent:TRIGger:ACTION`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:TRIGger:ACTION?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:TRIGger:ACTION?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -529,10 +519,10 @@ class ActoneventTrigger(SCPICmdRead):
 class ActoneventSearchActionStopacqState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:SEARCH:ACTION:STOPACQ:STATE`` command.
 
-    **Description:**
+    Description:
         - This command stops acquisitions when a search event is found.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:SEARCH:ACTION:STOPACQ:STATE?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -541,14 +531,13 @@ class ActoneventSearchActionStopacqState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:SEARCH:ACTION:STOPACQ:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:SEARCH:ACTION:STOPACQ:STATE {ON|OFF|<NR1>}
         - ACTONEVent:SEARCH:ACTION:STOPACQ:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the stop acquisitions when a search event is found feature.
         - ``OFF`` disables the stop acquisitions when a search event is found feature.
         - ``<NR1>`` is a number that enables or disables the stop acquisitions when a search event
@@ -560,7 +549,7 @@ class ActoneventSearchActionStopacqState(SCPICmdWrite, SCPICmdRead):
 class ActoneventSearchActionStopacq(SCPICmdRead):
     """The ``ACTONEVent:SEARCH:ACTION:STOPACQ`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:SEARCH:ACTION:STOPACQ?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:SEARCH:ACTION:STOPACQ?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -577,10 +566,10 @@ class ActoneventSearchActionStopacq(SCPICmdRead):
     def state(self) -> ActoneventSearchActionStopacqState:
         """Return the ``ACTONEVent:SEARCH:ACTION:STOPACQ:STATE`` command.
 
-        **Description:**
+        Description:
             - This command stops acquisitions when a search event is found.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:SEARCH:ACTION:STOPACQ:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -589,14 +578,13 @@ class ActoneventSearchActionStopacq(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:SEARCH:ACTION:STOPACQ:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:SEARCH:ACTION:STOPACQ:STATE {ON|OFF|<NR1>}
             - ACTONEVent:SEARCH:ACTION:STOPACQ:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the stop acquisitions when a search event is found feature.
             - ``OFF`` disables the stop acquisitions when a search event is found feature.
             - ``<NR1>`` is a number that enables or disables the stop acquisitions when a search
@@ -609,24 +597,23 @@ class ActoneventSearchActionStopacq(SCPICmdRead):
 class ActoneventSearchActionSrqState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:SEARCH:ACTION:SRQ:STATE`` command.
 
-    **Description:**
+    Description:
         - This command generates an SRQ event when any search event is found.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:SEARCH:ACTION:SRQ:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:SEARCH:ACTION:SRQ:STATE?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:SEARCH:ACTION:SRQ:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:SEARCH:ACTION:SRQ:STATE {ON|OFF|<NR1>}
         - ACTONEVent:SEARCH:ACTION:SRQ:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the generate an SRQ event when any search event is found feature.
         - ``OFF`` disables the generate an SRQ event when any search event is found feature.
         - ``<NR1>`` is a number that enables or disables the generate an SRQ event when any search
@@ -638,7 +625,7 @@ class ActoneventSearchActionSrqState(SCPICmdWrite, SCPICmdRead):
 class ActoneventSearchActionSrq(SCPICmdRead):
     """The ``ACTONEVent:SEARCH:ACTION:SRQ`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:SEARCH:ACTION:SRQ?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:SEARCH:ACTION:SRQ?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -655,10 +642,10 @@ class ActoneventSearchActionSrq(SCPICmdRead):
     def state(self) -> ActoneventSearchActionSrqState:
         """Return the ``ACTONEVent:SEARCH:ACTION:SRQ:STATE`` command.
 
-        **Description:**
+        Description:
             - This command generates an SRQ event when any search event is found.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:SEARCH:ACTION:SRQ:STATE?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -667,14 +654,13 @@ class ActoneventSearchActionSrq(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:SEARCH:ACTION:SRQ:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:SEARCH:ACTION:SRQ:STATE {ON|OFF|<NR1>}
             - ACTONEVent:SEARCH:ACTION:SRQ:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the generate an SRQ event when any search event is found feature.
             - ``OFF`` disables the generate an SRQ event when any search event is found feature.
             - ``<NR1>`` is a number that enables or disables the generate an SRQ event when any
@@ -687,10 +673,10 @@ class ActoneventSearchActionSrq(SCPICmdRead):
 class ActoneventSearchActionSavewaveformState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:SEARCH:ACTION:SAVEWAVEform:STATE`` command.
 
-    **Description:**
+    Description:
         - This command saves the user set source waveform(s) when a search event is found.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``ACTONEVent:SEARCH:ACTION:SAVEWAVEform:STATE?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -699,14 +685,13 @@ class ActoneventSearchActionSavewaveformState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:SEARCH:ACTION:SAVEWAVEform:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:SEARCH:ACTION:SAVEWAVEform:STATE {ON|OFF|<NR1>}
         - ACTONEVent:SEARCH:ACTION:SAVEWAVEform:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the save source waveform(s) when a search event is found feature.
         - ``OFF`` disables the save source waveform(s) when a search event is found feature.
         - ``<NR1>`` is a number that enables or disables the save source waveform(s) when a search
@@ -718,7 +703,7 @@ class ActoneventSearchActionSavewaveformState(SCPICmdWrite, SCPICmdRead):
 class ActoneventSearchActionSavewaveform(SCPICmdRead):
     """The ``ACTONEVent:SEARCH:ACTION:SAVEWAVEform`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:SEARCH:ACTION:SAVEWAVEform?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -737,10 +722,10 @@ class ActoneventSearchActionSavewaveform(SCPICmdRead):
     def state(self) -> ActoneventSearchActionSavewaveformState:
         """Return the ``ACTONEVent:SEARCH:ACTION:SAVEWAVEform:STATE`` command.
 
-        **Description:**
+        Description:
             - This command saves the user set source waveform(s) when a search event is found.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:SEARCH:ACTION:SAVEWAVEform:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -749,14 +734,13 @@ class ActoneventSearchActionSavewaveform(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:SEARCH:ACTION:SAVEWAVEform:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:SEARCH:ACTION:SAVEWAVEform:STATE {ON|OFF|<NR1>}
             - ACTONEVent:SEARCH:ACTION:SAVEWAVEform:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the save source waveform(s) when a search event is found feature.
             - ``OFF`` disables the save source waveform(s) when a search event is found feature.
             - ``<NR1>`` is a number that enables or disables the save source waveform(s) when a
@@ -769,10 +753,10 @@ class ActoneventSearchActionSavewaveform(SCPICmdRead):
 class ActoneventSearchActionSaveimageState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:SEARCH:ACTION:SAVEIMAGe:STATE`` command.
 
-    **Description:**
+    Description:
         - This command saves a screen capture when a search event is found.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:SEARCH:ACTION:SAVEIMAGe:STATE?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -781,14 +765,13 @@ class ActoneventSearchActionSaveimageState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:SEARCH:ACTION:SAVEIMAGe:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:SEARCH:ACTION:SAVEIMAGe:STATE {ON|OFF|<NR1>}
         - ACTONEVent:SEARCH:ACTION:SAVEIMAGe:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the save screen capture when a search event is found feature.
         - ``OFF`` disables the save screen capture when a search event is found feature.
         - ``<NR1>`` is a number that enables or disables the save screen capture when a search event
@@ -800,7 +783,7 @@ class ActoneventSearchActionSaveimageState(SCPICmdWrite, SCPICmdRead):
 class ActoneventSearchActionSaveimage(SCPICmdRead):
     """The ``ACTONEVent:SEARCH:ACTION:SAVEIMAGe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:SEARCH:ACTION:SAVEIMAGe?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:SEARCH:ACTION:SAVEIMAGe?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -817,10 +800,10 @@ class ActoneventSearchActionSaveimage(SCPICmdRead):
     def state(self) -> ActoneventSearchActionSaveimageState:
         """Return the ``ACTONEVent:SEARCH:ACTION:SAVEIMAGe:STATE`` command.
 
-        **Description:**
+        Description:
             - This command saves a screen capture when a search event is found.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:SEARCH:ACTION:SAVEIMAGe:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -829,14 +812,13 @@ class ActoneventSearchActionSaveimage(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:SEARCH:ACTION:SAVEIMAGe:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:SEARCH:ACTION:SAVEIMAGe:STATE {ON|OFF|<NR1>}
             - ACTONEVent:SEARCH:ACTION:SAVEIMAGe:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the save screen capture when a search event is found feature.
             - ``OFF`` disables the save screen capture when a search event is found feature.
             - ``<NR1>`` is a number that enables or disables the save screen capture when a search
@@ -849,7 +831,7 @@ class ActoneventSearchActionSaveimage(SCPICmdRead):
 class ActoneventSearchAction(SCPICmdRead):
     """The ``ACTONEVent:SEARCH:ACTION`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:SEARCH:ACTION?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:SEARCH:ACTION?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -874,7 +856,7 @@ class ActoneventSearchAction(SCPICmdRead):
     def saveimage(self) -> ActoneventSearchActionSaveimage:
         """Return the ``ACTONEVent:SEARCH:ACTION:SAVEIMAGe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:SEARCH:ACTION:SAVEIMAGe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -890,7 +872,7 @@ class ActoneventSearchAction(SCPICmdRead):
     def savewaveform(self) -> ActoneventSearchActionSavewaveform:
         """Return the ``ACTONEVent:SEARCH:ACTION:SAVEWAVEform`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:SEARCH:ACTION:SAVEWAVEform?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -906,7 +888,7 @@ class ActoneventSearchAction(SCPICmdRead):
     def srq(self) -> ActoneventSearchActionSrq:
         """Return the ``ACTONEVent:SEARCH:ACTION:SRQ`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:SEARCH:ACTION:SRQ?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:SEARCH:ACTION:SRQ?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -920,7 +902,7 @@ class ActoneventSearchAction(SCPICmdRead):
     def stopacq(self) -> ActoneventSearchActionStopacq:
         """Return the ``ACTONEVent:SEARCH:ACTION:STOPACQ`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:SEARCH:ACTION:STOPACQ?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -936,7 +918,7 @@ class ActoneventSearchAction(SCPICmdRead):
 class ActoneventSearch(SCPICmdRead):
     """The ``ACTONEVent:SEARCH`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:SEARCH?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:SEARCH?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -953,7 +935,7 @@ class ActoneventSearch(SCPICmdRead):
     def action(self) -> ActoneventSearchAction:
         """Return the ``ACTONEVent:SEARCH:ACTION`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:SEARCH:ACTION?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:SEARCH:ACTION?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -970,10 +952,10 @@ class ActoneventSearch(SCPICmdRead):
 class ActoneventMeasurementActionStopacqState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:MEASUrement:ACTION:STOPACQ:STATE`` command.
 
-    **Description:**
+    Description:
         - This command stops acquisitions when the user-set measurement limit is exceeded.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``ACTONEVent:MEASUrement:ACTION:STOPACQ:STATE?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -982,14 +964,13 @@ class ActoneventMeasurementActionStopacqState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:MEASUrement:ACTION:STOPACQ:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:MEASUrement:ACTION:STOPACQ:STATE {ON|OFF|<NR1>}
         - ACTONEVent:MEASUrement:ACTION:STOPACQ:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the stop acquisitions when the measurement limit is exceeded feature.
         - ``OFF`` disables the stop acquisitions when the measurement limit is exceeded feature.
         - ``<NR1>`` is a number that enables or disables the stop acquisitions when the measurement
@@ -1001,7 +982,7 @@ class ActoneventMeasurementActionStopacqState(SCPICmdWrite, SCPICmdRead):
 class ActoneventMeasurementActionStopacq(SCPICmdRead):
     """The ``ACTONEVent:MEASUrement:ACTION:STOPACQ`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MEASUrement:ACTION:STOPACQ?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1020,10 +1001,10 @@ class ActoneventMeasurementActionStopacq(SCPICmdRead):
     def state(self) -> ActoneventMeasurementActionStopacqState:
         """Return the ``ACTONEVent:MEASUrement:ACTION:STOPACQ:STATE`` command.
 
-        **Description:**
+        Description:
             - This command stops acquisitions when the user-set measurement limit is exceeded.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:MEASUrement:ACTION:STOPACQ:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1032,14 +1013,13 @@ class ActoneventMeasurementActionStopacq(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:MEASUrement:ACTION:STOPACQ:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:MEASUrement:ACTION:STOPACQ:STATE {ON|OFF|<NR1>}
             - ACTONEVent:MEASUrement:ACTION:STOPACQ:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the stop acquisitions when the measurement limit is exceeded feature.
             - ``OFF`` disables the stop acquisitions when the measurement limit is exceeded feature.
             - ``<NR1>`` is a number that enables or disables the stop acquisitions when the
@@ -1052,11 +1032,11 @@ class ActoneventMeasurementActionStopacq(SCPICmdRead):
 class ActoneventMeasurementActionSrqState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:MEASUrement:ACTION:SRQ:STATE`` command.
 
-    **Description:**
+    Description:
         - This command generates an SRQ event when any measurement triggers the user-defined
           measurement limits.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MEASUrement:ACTION:SRQ:STATE?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1065,14 +1045,13 @@ class ActoneventMeasurementActionSrqState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:MEASUrement:ACTION:SRQ:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:MEASUrement:ACTION:SRQ:STATE {ON|OFF|<NR1>}
         - ACTONEVent:MEASUrement:ACTION:SRQ:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the generate an SRQ event when any measurement triggers the user-defined
           measurement limits feature.
         - ``OFF`` disables the generate an SRQ event when any measurement triggers the user-defined
@@ -1086,7 +1065,7 @@ class ActoneventMeasurementActionSrqState(SCPICmdWrite, SCPICmdRead):
 class ActoneventMeasurementActionSrq(SCPICmdRead):
     """The ``ACTONEVent:MEASUrement:ACTION:SRQ`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MEASUrement:ACTION:SRQ?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:MEASUrement:ACTION:SRQ?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -1103,11 +1082,11 @@ class ActoneventMeasurementActionSrq(SCPICmdRead):
     def state(self) -> ActoneventMeasurementActionSrqState:
         """Return the ``ACTONEVent:MEASUrement:ACTION:SRQ:STATE`` command.
 
-        **Description:**
+        Description:
             - This command generates an SRQ event when any measurement triggers the user-defined
               measurement limits.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:MEASUrement:ACTION:SRQ:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1116,14 +1095,13 @@ class ActoneventMeasurementActionSrq(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:MEASUrement:ACTION:SRQ:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:MEASUrement:ACTION:SRQ:STATE {ON|OFF|<NR1>}
             - ACTONEVent:MEASUrement:ACTION:SRQ:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the generate an SRQ event when any measurement triggers the
               user-defined measurement limits feature.
             - ``OFF`` disables the generate an SRQ event when any measurement triggers the
@@ -1138,11 +1116,11 @@ class ActoneventMeasurementActionSrq(SCPICmdRead):
 class ActoneventMeasurementActionSavewaveformState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:MEASUrement:ACTION:SAVEWAVEform:STATE`` command.
 
-    **Description:**
+    Description:
         - This command saves the user set source waveform(s) when the user-set measurement limit is
           exceeded.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``ACTONEVent:MEASUrement:ACTION:SAVEWAVEform:STATE?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1151,14 +1129,13 @@ class ActoneventMeasurementActionSavewaveformState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:MEASUrement:ACTION:SAVEWAVEform:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:MEASUrement:ACTION:SAVEWAVEform:STATE {ON|OFF|<NR1>}
         - ACTONEVent:MEASUrement:ACTION:SAVEWAVEform:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the save source waveform(s) when the measurement limit is exceeded feature.
         - ``OFF`` disables the save source waveform(s) when the measurement limit is exceeded
           feature.
@@ -1171,7 +1148,7 @@ class ActoneventMeasurementActionSavewaveformState(SCPICmdWrite, SCPICmdRead):
 class ActoneventMeasurementActionSavewaveform(SCPICmdRead):
     """The ``ACTONEVent:MEASUrement:ACTION:SAVEWAVEform`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``ACTONEVent:MEASUrement:ACTION:SAVEWAVEform?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1192,11 +1169,11 @@ class ActoneventMeasurementActionSavewaveform(SCPICmdRead):
     def state(self) -> ActoneventMeasurementActionSavewaveformState:
         """Return the ``ACTONEVent:MEASUrement:ACTION:SAVEWAVEform:STATE`` command.
 
-        **Description:**
+        Description:
             - This command saves the user set source waveform(s) when the user-set measurement limit
               is exceeded.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:MEASUrement:ACTION:SAVEWAVEform:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1205,14 +1182,13 @@ class ActoneventMeasurementActionSavewaveform(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:MEASUrement:ACTION:SAVEWAVEform:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:MEASUrement:ACTION:SAVEWAVEform:STATE {ON|OFF|<NR1>}
             - ACTONEVent:MEASUrement:ACTION:SAVEWAVEform:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the save source waveform(s) when the measurement limit is exceeded
               feature.
             - ``OFF`` disables the save source waveform(s) when the measurement limit is exceeded
@@ -1227,10 +1203,10 @@ class ActoneventMeasurementActionSavewaveform(SCPICmdRead):
 class ActoneventMeasurementActionSaveimageState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:MEASUrement:ACTION:SAVEIMAGe:STATE`` command.
 
-    **Description:**
+    Description:
         - This command saves a screen capture when the user-set measurement limit is exceeded.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``ACTONEVent:MEASUrement:ACTION:SAVEIMAGe:STATE?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1239,14 +1215,13 @@ class ActoneventMeasurementActionSaveimageState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:MEASUrement:ACTION:SAVEIMAGe:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:MEASUrement:ACTION:SAVEIMAGe:STATE {ON|OFF|<NR1>}
         - ACTONEVent:MEASUrement:ACTION:SAVEIMAGe:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the save screen capture when the measurement limit is exceeded feature.
         - ``OFF`` disables the save screen capture when the measurement limit is exceeded feature.
         - ``<NR1>`` is a number that enables or disables the save screen capture when the
@@ -1258,7 +1233,7 @@ class ActoneventMeasurementActionSaveimageState(SCPICmdWrite, SCPICmdRead):
 class ActoneventMeasurementActionSaveimage(SCPICmdRead):
     """The ``ACTONEVent:MEASUrement:ACTION:SAVEIMAGe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MEASUrement:ACTION:SAVEIMAGe?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1277,10 +1252,10 @@ class ActoneventMeasurementActionSaveimage(SCPICmdRead):
     def state(self) -> ActoneventMeasurementActionSaveimageState:
         """Return the ``ACTONEVent:MEASUrement:ACTION:SAVEIMAGe:STATE`` command.
 
-        **Description:**
+        Description:
             - This command saves a screen capture when the user-set measurement limit is exceeded.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:MEASUrement:ACTION:SAVEIMAGe:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1289,14 +1264,13 @@ class ActoneventMeasurementActionSaveimage(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:MEASUrement:ACTION:SAVEIMAGe:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:MEASUrement:ACTION:SAVEIMAGe:STATE {ON|OFF|<NR1>}
             - ACTONEVent:MEASUrement:ACTION:SAVEIMAGe:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the save screen capture when the measurement limit is exceeded feature.
             - ``OFF`` disables the save screen capture when the measurement limit is exceeded
               feature.
@@ -1310,7 +1284,7 @@ class ActoneventMeasurementActionSaveimage(SCPICmdRead):
 class ActoneventMeasurementAction(SCPICmdRead):
     """The ``ACTONEVent:MEASUrement:ACTION`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MEASUrement:ACTION?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:MEASUrement:ACTION?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -1337,7 +1311,7 @@ class ActoneventMeasurementAction(SCPICmdRead):
     def saveimage(self) -> ActoneventMeasurementActionSaveimage:
         """Return the ``ACTONEVent:MEASUrement:ACTION:SAVEIMAGe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:MEASUrement:ACTION:SAVEIMAGe?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1353,7 +1327,7 @@ class ActoneventMeasurementAction(SCPICmdRead):
     def savewaveform(self) -> ActoneventMeasurementActionSavewaveform:
         """Return the ``ACTONEVent:MEASUrement:ACTION:SAVEWAVEform`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:MEASUrement:ACTION:SAVEWAVEform?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1369,7 +1343,7 @@ class ActoneventMeasurementAction(SCPICmdRead):
     def srq(self) -> ActoneventMeasurementActionSrq:
         """Return the ``ACTONEVent:MEASUrement:ACTION:SRQ`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MEASUrement:ACTION:SRQ?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1385,7 +1359,7 @@ class ActoneventMeasurementAction(SCPICmdRead):
     def stopacq(self) -> ActoneventMeasurementActionStopacq:
         """Return the ``ACTONEVent:MEASUrement:ACTION:STOPACQ`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MEASUrement:ACTION:STOPACQ?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1401,7 +1375,7 @@ class ActoneventMeasurementAction(SCPICmdRead):
 class ActoneventMeasurement(SCPICmdRead):
     """The ``ACTONEVent:MEASUrement`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MEASUrement?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:MEASUrement?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1418,7 +1392,7 @@ class ActoneventMeasurement(SCPICmdRead):
     def action(self) -> ActoneventMeasurementAction:
         """Return the ``ACTONEVent:MEASUrement:ACTION`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MEASUrement:ACTION?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:MEASUrement:ACTION?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -1435,10 +1409,10 @@ class ActoneventMeasurement(SCPICmdRead):
 class ActoneventMaskpassActionStopacqState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:MASKPass:ACTION:STOPACQ:STATE`` command.
 
-    **Description:**
+    Description:
         - This command stops acquisitions when a mask test passes.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKPass:ACTION:STOPACQ:STATE?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1447,14 +1421,13 @@ class ActoneventMaskpassActionStopacqState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:MASKPass:ACTION:STOPACQ:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:MASKPass:ACTION:STOPACQ:STATE {ON|OFF|<NR1>}
         - ACTONEVent:MASKPass:ACTION:STOPACQ:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the stop acquisitions when a mask test passes feature.
         - ``OFF`` disables the stop acquisitions when a mask test passes feature.
         - ``<NR1>`` is a number that enables or disables the stop acquisitions when a mask test
@@ -1466,7 +1439,7 @@ class ActoneventMaskpassActionStopacqState(SCPICmdWrite, SCPICmdRead):
 class ActoneventMaskpassActionStopacq(SCPICmdRead):
     """The ``ACTONEVent:MASKPass:ACTION:STOPACQ`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKPass:ACTION:STOPACQ?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKPass:ACTION:STOPACQ?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -1483,10 +1456,10 @@ class ActoneventMaskpassActionStopacq(SCPICmdRead):
     def state(self) -> ActoneventMaskpassActionStopacqState:
         """Return the ``ACTONEVent:MASKPass:ACTION:STOPACQ:STATE`` command.
 
-        **Description:**
+        Description:
             - This command stops acquisitions when a mask test passes.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:MASKPass:ACTION:STOPACQ:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1495,14 +1468,13 @@ class ActoneventMaskpassActionStopacq(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:MASKPass:ACTION:STOPACQ:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:MASKPass:ACTION:STOPACQ:STATE {ON|OFF|<NR1>}
             - ACTONEVent:MASKPass:ACTION:STOPACQ:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the stop acquisitions when a mask test passes feature.
             - ``OFF`` disables the stop acquisitions when a mask test passes feature.
             - ``<NR1>`` is a number that enables or disables the stop acquisitions when a mask test
@@ -1515,10 +1487,10 @@ class ActoneventMaskpassActionStopacq(SCPICmdRead):
 class ActoneventMaskpassActionSrqState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:MASKPass:ACTION:SRQ:STATE`` command.
 
-    **Description:**
+    Description:
         - This command generates an SRQ event when a mask passes.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKPass:ACTION:SRQ:STATE?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1527,14 +1499,13 @@ class ActoneventMaskpassActionSrqState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:MASKPass:ACTION:SRQ:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:MASKPass:ACTION:SRQ:STATE {ON|OFF|<NR1>}
         - ACTONEVent:MASKPass:ACTION:SRQ:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the generate an SRQ event when a mask passes feature.
         - ``OFF`` disables the generate an SRQ event when a mask passes feature.
         - ``<NR1>`` is a number that enables or disables the generate an SRQ event when a mask
@@ -1546,7 +1517,7 @@ class ActoneventMaskpassActionSrqState(SCPICmdWrite, SCPICmdRead):
 class ActoneventMaskpassActionSrq(SCPICmdRead):
     """The ``ACTONEVent:MASKPass:ACTION:SRQ`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKPass:ACTION:SRQ?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKPass:ACTION:SRQ?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -1563,10 +1534,10 @@ class ActoneventMaskpassActionSrq(SCPICmdRead):
     def state(self) -> ActoneventMaskpassActionSrqState:
         """Return the ``ACTONEVent:MASKPass:ACTION:SRQ:STATE`` command.
 
-        **Description:**
+        Description:
             - This command generates an SRQ event when a mask passes.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MASKPass:ACTION:SRQ:STATE?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1575,14 +1546,13 @@ class ActoneventMaskpassActionSrq(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:MASKPass:ACTION:SRQ:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:MASKPass:ACTION:SRQ:STATE {ON|OFF|<NR1>}
             - ACTONEVent:MASKPass:ACTION:SRQ:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the generate an SRQ event when a mask passes feature.
             - ``OFF`` disables the generate an SRQ event when a mask passes feature.
             - ``<NR1>`` is a number that enables or disables the generate an SRQ event when a mask
@@ -1595,10 +1565,10 @@ class ActoneventMaskpassActionSrq(SCPICmdRead):
 class ActoneventMaskpassActionSavewaveformState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:MASKPass:ACTION:SAVEWAVEform:STATE`` command.
 
-    **Description:**
+    Description:
         - This command saves the user set source waveform(s) when a mask test passes.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``ACTONEVent:MASKPass:ACTION:SAVEWAVEform:STATE?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1607,14 +1577,13 @@ class ActoneventMaskpassActionSavewaveformState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:MASKPass:ACTION:SAVEWAVEform:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:MASKPass:ACTION:SAVEWAVEform:STATE {ON|OFF|<NR1>}
         - ACTONEVent:MASKPass:ACTION:SAVEWAVEform:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the save source waveform(s) when a mask test passes feature.
         - ``OFF`` disables the save source waveform(s) when a mask test passes feature.
         - ``<NR1>`` is a number that enables or disables the save source waveform(s) when a mask
@@ -1626,7 +1595,7 @@ class ActoneventMaskpassActionSavewaveformState(SCPICmdWrite, SCPICmdRead):
 class ActoneventMaskpassActionSavewaveform(SCPICmdRead):
     """The ``ACTONEVent:MASKPass:ACTION:SAVEWAVEform`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKPass:ACTION:SAVEWAVEform?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1645,10 +1614,10 @@ class ActoneventMaskpassActionSavewaveform(SCPICmdRead):
     def state(self) -> ActoneventMaskpassActionSavewaveformState:
         """Return the ``ACTONEVent:MASKPass:ACTION:SAVEWAVEform:STATE`` command.
 
-        **Description:**
+        Description:
             - This command saves the user set source waveform(s) when a mask test passes.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:MASKPass:ACTION:SAVEWAVEform:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1657,14 +1626,13 @@ class ActoneventMaskpassActionSavewaveform(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:MASKPass:ACTION:SAVEWAVEform:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:MASKPass:ACTION:SAVEWAVEform:STATE {ON|OFF|<NR1>}
             - ACTONEVent:MASKPass:ACTION:SAVEWAVEform:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the save source waveform(s) when a mask test passes feature.
             - ``OFF`` disables the save source waveform(s) when a mask test passes feature.
             - ``<NR1>`` is a number that enables or disables the save source waveform(s) when a mask
@@ -1677,10 +1645,10 @@ class ActoneventMaskpassActionSavewaveform(SCPICmdRead):
 class ActoneventMaskpassActionSaveimageState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:MASKPass:ACTION:SAVEIMAGe:STATE`` command.
 
-    **Description:**
+    Description:
         - This command saves a screen capture when a mask test passes.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``ACTONEVent:MASKPass:ACTION:SAVEIMAGe:STATE?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -1689,14 +1657,13 @@ class ActoneventMaskpassActionSaveimageState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:MASKPass:ACTION:SAVEIMAGe:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:MASKPass:ACTION:SAVEIMAGe:STATE {ON|OFF|<NR1>}
         - ACTONEVent:MASKPass:ACTION:SAVEIMAGe:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the save screen capture when a mask test passes feature.
         - ``OFF`` disables the save screen capture when a mask test passes feature.
         - ``<NR1>`` is a number that enables or disables the save screen capture when a mask test
@@ -1708,7 +1675,7 @@ class ActoneventMaskpassActionSaveimageState(SCPICmdWrite, SCPICmdRead):
 class ActoneventMaskpassActionSaveimage(SCPICmdRead):
     """The ``ACTONEVent:MASKPass:ACTION:SAVEIMAGe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKPass:ACTION:SAVEIMAGe?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1727,10 +1694,10 @@ class ActoneventMaskpassActionSaveimage(SCPICmdRead):
     def state(self) -> ActoneventMaskpassActionSaveimageState:
         """Return the ``ACTONEVent:MASKPass:ACTION:SAVEIMAGe:STATE`` command.
 
-        **Description:**
+        Description:
             - This command saves a screen capture when a mask test passes.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:MASKPass:ACTION:SAVEIMAGe:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1739,14 +1706,13 @@ class ActoneventMaskpassActionSaveimage(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:MASKPass:ACTION:SAVEIMAGe:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:MASKPass:ACTION:SAVEIMAGe:STATE {ON|OFF|<NR1>}
             - ACTONEVent:MASKPass:ACTION:SAVEIMAGe:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the save screen capture when a mask test passes feature.
             - ``OFF`` disables the save screen capture when a mask test passes feature.
             - ``<NR1>`` is a number that enables or disables the save screen capture when a mask
@@ -1759,7 +1725,7 @@ class ActoneventMaskpassActionSaveimage(SCPICmdRead):
 class ActoneventMaskpassAction(SCPICmdRead):
     """The ``ACTONEVent:MASKPass:ACTION`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKPass:ACTION?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKPass:ACTION?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -1784,7 +1750,7 @@ class ActoneventMaskpassAction(SCPICmdRead):
     def saveimage(self) -> ActoneventMaskpassActionSaveimage:
         """Return the ``ACTONEVent:MASKPass:ACTION:SAVEIMAGe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MASKPass:ACTION:SAVEIMAGe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1800,7 +1766,7 @@ class ActoneventMaskpassAction(SCPICmdRead):
     def savewaveform(self) -> ActoneventMaskpassActionSavewaveform:
         """Return the ``ACTONEVent:MASKPass:ACTION:SAVEWAVEform`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:MASKPass:ACTION:SAVEWAVEform?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1816,7 +1782,7 @@ class ActoneventMaskpassAction(SCPICmdRead):
     def srq(self) -> ActoneventMaskpassActionSrq:
         """Return the ``ACTONEVent:MASKPass:ACTION:SRQ`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MASKPass:ACTION:SRQ?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKPass:ACTION:SRQ?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -1830,7 +1796,7 @@ class ActoneventMaskpassAction(SCPICmdRead):
     def stopacq(self) -> ActoneventMaskpassActionStopacq:
         """Return the ``ACTONEVent:MASKPass:ACTION:STOPACQ`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MASKPass:ACTION:STOPACQ?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1846,7 +1812,7 @@ class ActoneventMaskpassAction(SCPICmdRead):
 class ActoneventMaskpass(SCPICmdRead):
     """The ``ACTONEVent:MASKPass`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKPass?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKPass?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -1863,7 +1829,7 @@ class ActoneventMaskpass(SCPICmdRead):
     def action(self) -> ActoneventMaskpassAction:
         """Return the ``ACTONEVent:MASKPass:ACTION`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MASKPass:ACTION?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKPass:ACTION?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -1880,10 +1846,10 @@ class ActoneventMaskpass(SCPICmdRead):
 class ActoneventMaskhitActionStopacqState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:MASKHit:ACTION:STOPACQ:STATE`` command.
 
-    **Description:**
+    Description:
         - This command stops acquisitions when a mask hit occurs.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKHit:ACTION:STOPACQ:STATE?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1892,14 +1858,13 @@ class ActoneventMaskhitActionStopacqState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:MASKHit:ACTION:STOPACQ:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:MASKHit:ACTION:STOPACQ:STATE {ON|OFF|<NR1>}
         - ACTONEVent:MASKHit:ACTION:STOPACQ:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the stop acquisitions when a mask hit occurs feature.
         - ``OFF`` disables the stop acquisitions when a mask hit occurs feature.
         - ``<NR1>`` is a number that enables or disables the stop acquisitions when a mask hit
@@ -1911,7 +1876,7 @@ class ActoneventMaskhitActionStopacqState(SCPICmdWrite, SCPICmdRead):
 class ActoneventMaskhitActionStopacq(SCPICmdRead):
     """The ``ACTONEVent:MASKHit:ACTION:STOPACQ`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKHit:ACTION:STOPACQ?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKHit:ACTION:STOPACQ?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -1928,10 +1893,10 @@ class ActoneventMaskhitActionStopacq(SCPICmdRead):
     def state(self) -> ActoneventMaskhitActionStopacqState:
         """Return the ``ACTONEVent:MASKHit:ACTION:STOPACQ:STATE`` command.
 
-        **Description:**
+        Description:
             - This command stops acquisitions when a mask hit occurs.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:MASKHit:ACTION:STOPACQ:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1940,14 +1905,13 @@ class ActoneventMaskhitActionStopacq(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:MASKHit:ACTION:STOPACQ:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:MASKHit:ACTION:STOPACQ:STATE {ON|OFF|<NR1>}
             - ACTONEVent:MASKHit:ACTION:STOPACQ:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the stop acquisitions when a mask hit occurs feature.
             - ``OFF`` disables the stop acquisitions when a mask hit occurs feature.
             - ``<NR1>`` is a number that enables or disables the stop acquisitions when a mask hit
@@ -1960,10 +1924,10 @@ class ActoneventMaskhitActionStopacq(SCPICmdRead):
 class ActoneventMaskhitActionSrqState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:MASKHit:ACTION:SRQ:STATE`` command.
 
-    **Description:**
+    Description:
         - This command generates an SRQ event when a mask hit occurs.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKHit:ACTION:SRQ:STATE?``
           query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKHit:ACTION:SRQ:STATE?``
@@ -1971,14 +1935,13 @@ class ActoneventMaskhitActionSrqState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:MASKHit:ACTION:SRQ:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:MASKHit:ACTION:SRQ:STATE {ON|OFF|<NR1>}
         - ACTONEVent:MASKHit:ACTION:SRQ:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the generate an SRQ event when a mask hit occurs feature.
         - ``OFF`` disables the generate an SRQ event when a mask hit occurs feature.
         - ``<NR1>`` is a number that enables or disables the generate an SRQ event when a mask hit
@@ -1990,7 +1953,7 @@ class ActoneventMaskhitActionSrqState(SCPICmdWrite, SCPICmdRead):
 class ActoneventMaskhitActionSrq(SCPICmdRead):
     """The ``ACTONEVent:MASKHit:ACTION:SRQ`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKHit:ACTION:SRQ?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKHit:ACTION:SRQ?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -2007,10 +1970,10 @@ class ActoneventMaskhitActionSrq(SCPICmdRead):
     def state(self) -> ActoneventMaskhitActionSrqState:
         """Return the ``ACTONEVent:MASKHit:ACTION:SRQ:STATE`` command.
 
-        **Description:**
+        Description:
             - This command generates an SRQ event when a mask hit occurs.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MASKHit:ACTION:SRQ:STATE?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2019,14 +1982,13 @@ class ActoneventMaskhitActionSrq(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:MASKHit:ACTION:SRQ:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:MASKHit:ACTION:SRQ:STATE {ON|OFF|<NR1>}
             - ACTONEVent:MASKHit:ACTION:SRQ:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the generate an SRQ event when a mask hit occurs feature.
             - ``OFF`` disables the generate an SRQ event when a mask hit occurs feature.
             - ``<NR1>`` is a number that enables or disables the generate an SRQ event when a mask
@@ -2039,10 +2001,10 @@ class ActoneventMaskhitActionSrq(SCPICmdRead):
 class ActoneventMaskhitActionSavewaveformState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:MASKHit:ACTION:SAVEWAVEform:STATE`` command.
 
-    **Description:**
+    Description:
         - This command saves the user set source waveform(s) when a mask hit occurs.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``ACTONEVent:MASKHit:ACTION:SAVEWAVEform:STATE?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2051,14 +2013,13 @@ class ActoneventMaskhitActionSavewaveformState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:MASKHit:ACTION:SAVEWAVEform:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:MASKHit:ACTION:SAVEWAVEform:STATE {ON|OFF|<NR1>}
         - ACTONEVent:MASKHit:ACTION:SAVEWAVEform:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the save source waveform(s) when a mask hit occurs feature.
         - ``OFF`` disables the save source waveform(s) when a mask hit occurs feature.
         - ``<NR1>`` is a number that enables or disables the save source waveform(s) when a mask hit
@@ -2070,7 +2031,7 @@ class ActoneventMaskhitActionSavewaveformState(SCPICmdWrite, SCPICmdRead):
 class ActoneventMaskhitActionSavewaveform(SCPICmdRead):
     """The ``ACTONEVent:MASKHit:ACTION:SAVEWAVEform`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKHit:ACTION:SAVEWAVEform?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2089,10 +2050,10 @@ class ActoneventMaskhitActionSavewaveform(SCPICmdRead):
     def state(self) -> ActoneventMaskhitActionSavewaveformState:
         """Return the ``ACTONEVent:MASKHit:ACTION:SAVEWAVEform:STATE`` command.
 
-        **Description:**
+        Description:
             - This command saves the user set source waveform(s) when a mask hit occurs.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:MASKHit:ACTION:SAVEWAVEform:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2101,14 +2062,13 @@ class ActoneventMaskhitActionSavewaveform(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:MASKHit:ACTION:SAVEWAVEform:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:MASKHit:ACTION:SAVEWAVEform:STATE {ON|OFF|<NR1>}
             - ACTONEVent:MASKHit:ACTION:SAVEWAVEform:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the save source waveform(s) when a mask hit occurs feature.
             - ``OFF`` disables the save source waveform(s) when a mask hit occurs feature.
             - ``<NR1>`` is a number that enables or disables the save source waveform(s) when a mask
@@ -2121,10 +2081,10 @@ class ActoneventMaskhitActionSavewaveform(SCPICmdRead):
 class ActoneventMaskhitActionSaveimageState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:MASKHit:ACTION:SAVEIMAGe:STATE`` command.
 
-    **Description:**
+    Description:
         - This command saves a screen capture when a mask hit occurs.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKHit:ACTION:SAVEIMAGe:STATE?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2133,14 +2093,13 @@ class ActoneventMaskhitActionSaveimageState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:MASKHit:ACTION:SAVEIMAGe:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:MASKHit:ACTION:SAVEIMAGe:STATE {ON|OFF|<NR1>}
         - ACTONEVent:MASKHit:ACTION:SAVEIMAGe:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the save screen capture when a mask hit occurs feature.
         - ``OFF`` disables the save screen capture when a mask hit occurs feature.
         - ``<NR1>`` is a number that enables or disables the save screen capture when a mask hit
@@ -2152,7 +2111,7 @@ class ActoneventMaskhitActionSaveimageState(SCPICmdWrite, SCPICmdRead):
 class ActoneventMaskhitActionSaveimage(SCPICmdRead):
     """The ``ACTONEVent:MASKHit:ACTION:SAVEIMAGe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKHit:ACTION:SAVEIMAGe?``
           query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKHit:ACTION:SAVEIMAGe?``
@@ -2170,10 +2129,10 @@ class ActoneventMaskhitActionSaveimage(SCPICmdRead):
     def state(self) -> ActoneventMaskhitActionSaveimageState:
         """Return the ``ACTONEVent:MASKHit:ACTION:SAVEIMAGe:STATE`` command.
 
-        **Description:**
+        Description:
             - This command saves a screen capture when a mask hit occurs.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:MASKHit:ACTION:SAVEIMAGe:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2182,14 +2141,13 @@ class ActoneventMaskhitActionSaveimage(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:MASKHit:ACTION:SAVEIMAGe:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:MASKHit:ACTION:SAVEIMAGe:STATE {ON|OFF|<NR1>}
             - ACTONEVent:MASKHit:ACTION:SAVEIMAGe:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the save screen capture when a mask hit occurs feature.
             - ``OFF`` disables the save screen capture when a mask hit occurs feature.
             - ``<NR1>`` is a number that enables or disables the save screen capture when a mask hit
@@ -2202,7 +2160,7 @@ class ActoneventMaskhitActionSaveimage(SCPICmdRead):
 class ActoneventMaskhitAction(SCPICmdRead):
     """The ``ACTONEVent:MASKHit:ACTION`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKHit:ACTION?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKHit:ACTION?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -2227,7 +2185,7 @@ class ActoneventMaskhitAction(SCPICmdRead):
     def saveimage(self) -> ActoneventMaskhitActionSaveimage:
         """Return the ``ACTONEVent:MASKHit:ACTION:SAVEIMAGe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MASKHit:ACTION:SAVEIMAGe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2243,7 +2201,7 @@ class ActoneventMaskhitAction(SCPICmdRead):
     def savewaveform(self) -> ActoneventMaskhitActionSavewaveform:
         """Return the ``ACTONEVent:MASKHit:ACTION:SAVEWAVEform`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:MASKHit:ACTION:SAVEWAVEform?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2259,7 +2217,7 @@ class ActoneventMaskhitAction(SCPICmdRead):
     def srq(self) -> ActoneventMaskhitActionSrq:
         """Return the ``ACTONEVent:MASKHit:ACTION:SRQ`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MASKHit:ACTION:SRQ?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKHit:ACTION:SRQ?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -2273,7 +2231,7 @@ class ActoneventMaskhitAction(SCPICmdRead):
     def stopacq(self) -> ActoneventMaskhitActionStopacq:
         """Return the ``ACTONEVent:MASKHit:ACTION:STOPACQ`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MASKHit:ACTION:STOPACQ?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2289,7 +2247,7 @@ class ActoneventMaskhitAction(SCPICmdRead):
 class ActoneventMaskhit(SCPICmdRead):
     """The ``ACTONEVent:MASKHit`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKHit?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKHit?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -2306,7 +2264,7 @@ class ActoneventMaskhit(SCPICmdRead):
     def action(self) -> ActoneventMaskhitAction:
         """Return the ``ACTONEVent:MASKHit:ACTION`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MASKHit:ACTION?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKHit:ACTION?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -2323,10 +2281,10 @@ class ActoneventMaskhit(SCPICmdRead):
 class ActoneventMaskfailActionStopacqState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:MASKFail:ACTION:STOPACQ:STATE`` command.
 
-    **Description:**
+    Description:
         - This command stops acquisitions when a mask test fails.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKFail:ACTION:STOPACQ:STATE?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2335,14 +2293,13 @@ class ActoneventMaskfailActionStopacqState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:MASKFail:ACTION:STOPACQ:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:MASKFail:ACTION:STOPACQ:STATE {ON|OFF|<NR1>}
         - ACTONEVent:MASKFail:ACTION:STOPACQ:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the stop acquisitions when a mask test fails feature.
         - ``OFF`` disables the stop acquisitions when a mask test fails feature.
         - ``<NR1>`` is a number that enables or disables the stop acquisitions when a mask test
@@ -2353,7 +2310,7 @@ class ActoneventMaskfailActionStopacqState(SCPICmdWrite, SCPICmdRead):
 class ActoneventMaskfailActionStopacq(SCPICmdRead):
     """The ``ACTONEVent:MASKFail:ACTION:STOPACQ`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKFail:ACTION:STOPACQ?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKFail:ACTION:STOPACQ?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -2370,10 +2327,10 @@ class ActoneventMaskfailActionStopacq(SCPICmdRead):
     def state(self) -> ActoneventMaskfailActionStopacqState:
         """Return the ``ACTONEVent:MASKFail:ACTION:STOPACQ:STATE`` command.
 
-        **Description:**
+        Description:
             - This command stops acquisitions when a mask test fails.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:MASKFail:ACTION:STOPACQ:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2382,14 +2339,13 @@ class ActoneventMaskfailActionStopacq(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:MASKFail:ACTION:STOPACQ:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:MASKFail:ACTION:STOPACQ:STATE {ON|OFF|<NR1>}
             - ACTONEVent:MASKFail:ACTION:STOPACQ:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the stop acquisitions when a mask test fails feature.
             - ``OFF`` disables the stop acquisitions when a mask test fails feature.
             - ``<NR1>`` is a number that enables or disables the stop acquisitions when a mask test
@@ -2402,10 +2358,10 @@ class ActoneventMaskfailActionStopacq(SCPICmdRead):
 class ActoneventMaskfailActionSrqState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:MASKFail:ACTION:SRQ:STATE`` command.
 
-    **Description:**
+    Description:
         - This command generates an SRQ event when a mask fails.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKFail:ACTION:SRQ:STATE?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2414,14 +2370,13 @@ class ActoneventMaskfailActionSrqState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:MASKFail:ACTION:SRQ:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:MASKFail:ACTION:SRQ:STATE {ON|OFF|<NR1>}
         - ACTONEVent:MASKFail:ACTION:SRQ:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the generate an SRQ event when a mask fails feature.
         - ``OFF`` disables the generate an SRQ event when a mask fails feature.
         - ``<NR1>`` is a number that enables or disables the generate an SRQ event when a mask fails
@@ -2432,7 +2387,7 @@ class ActoneventMaskfailActionSrqState(SCPICmdWrite, SCPICmdRead):
 class ActoneventMaskfailActionSrq(SCPICmdRead):
     """The ``ACTONEVent:MASKFail:ACTION:SRQ`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKFail:ACTION:SRQ?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKFail:ACTION:SRQ?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -2449,10 +2404,10 @@ class ActoneventMaskfailActionSrq(SCPICmdRead):
     def state(self) -> ActoneventMaskfailActionSrqState:
         """Return the ``ACTONEVent:MASKFail:ACTION:SRQ:STATE`` command.
 
-        **Description:**
+        Description:
             - This command generates an SRQ event when a mask fails.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MASKFail:ACTION:SRQ:STATE?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2461,14 +2416,13 @@ class ActoneventMaskfailActionSrq(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:MASKFail:ACTION:SRQ:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:MASKFail:ACTION:SRQ:STATE {ON|OFF|<NR1>}
             - ACTONEVent:MASKFail:ACTION:SRQ:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the generate an SRQ event when a mask fails feature.
             - ``OFF`` disables the generate an SRQ event when a mask fails feature.
             - ``<NR1>`` is a number that enables or disables the generate an SRQ event when a mask
@@ -2481,10 +2435,10 @@ class ActoneventMaskfailActionSrq(SCPICmdRead):
 class ActoneventMaskfailActionSavewaveformState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:MASKFail:ACTION:SAVEWAVEform:STATE`` command.
 
-    **Description:**
+    Description:
         - This command saves the user set source waveform(s) when a mask test fails.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``ACTONEVent:MASKFail:ACTION:SAVEWAVEform:STATE?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2493,14 +2447,13 @@ class ActoneventMaskfailActionSavewaveformState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:MASKFail:ACTION:SAVEWAVEform:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:MASKFail:ACTION:SAVEWAVEform:STATE {ON|OFF|<NR1>}
         - ACTONEVent:MASKFail:ACTION:SAVEWAVEform:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the save source waveform(s) when a mask test fails feature.
         - ``OFF`` disables the save source waveform(s) when a mask test fails feature.
         - ``<NR1>`` is a number that enables or disables the save source waveform(s) when a mask
@@ -2512,7 +2465,7 @@ class ActoneventMaskfailActionSavewaveformState(SCPICmdWrite, SCPICmdRead):
 class ActoneventMaskfailActionSavewaveform(SCPICmdRead):
     """The ``ACTONEVent:MASKFail:ACTION:SAVEWAVEform`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKFail:ACTION:SAVEWAVEform?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2531,10 +2484,10 @@ class ActoneventMaskfailActionSavewaveform(SCPICmdRead):
     def state(self) -> ActoneventMaskfailActionSavewaveformState:
         """Return the ``ACTONEVent:MASKFail:ACTION:SAVEWAVEform:STATE`` command.
 
-        **Description:**
+        Description:
             - This command saves the user set source waveform(s) when a mask test fails.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:MASKFail:ACTION:SAVEWAVEform:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2543,14 +2496,13 @@ class ActoneventMaskfailActionSavewaveform(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:MASKFail:ACTION:SAVEWAVEform:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:MASKFail:ACTION:SAVEWAVEform:STATE {ON|OFF|<NR1>}
             - ACTONEVent:MASKFail:ACTION:SAVEWAVEform:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the save source waveform(s) when a mask test fails feature.
             - ``OFF`` disables the save source waveform(s) when a mask test fails feature.
             - ``<NR1>`` is a number that enables or disables the save source waveform(s) when a mask
@@ -2563,10 +2515,10 @@ class ActoneventMaskfailActionSavewaveform(SCPICmdRead):
 class ActoneventMaskfailActionSaveimageState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:MASKFail:ACTION:SAVEIMAGe:STATE`` command.
 
-    **Description:**
+    Description:
         - This command saves a screen capture when a mask test fails.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``ACTONEVent:MASKFail:ACTION:SAVEIMAGe:STATE?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -2575,14 +2527,13 @@ class ActoneventMaskfailActionSaveimageState(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:MASKFail:ACTION:SAVEIMAGe:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:MASKFail:ACTION:SAVEIMAGe:STATE {ON|OFF|<NR1>}
         - ACTONEVent:MASKFail:ACTION:SAVEIMAGe:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables the save screen capture when a mask test fails feature.
         - ``OFF`` disables the save screen capture when a mask test fails feature.
         - ``<NR1>`` is a number that enables or disables the save screen capture when a mask test
@@ -2593,7 +2544,7 @@ class ActoneventMaskfailActionSaveimageState(SCPICmdWrite, SCPICmdRead):
 class ActoneventMaskfailActionSaveimage(SCPICmdRead):
     """The ``ACTONEVent:MASKFail:ACTION:SAVEIMAGe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKFail:ACTION:SAVEIMAGe?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2612,10 +2563,10 @@ class ActoneventMaskfailActionSaveimage(SCPICmdRead):
     def state(self) -> ActoneventMaskfailActionSaveimageState:
         """Return the ``ACTONEVent:MASKFail:ACTION:SAVEIMAGe:STATE`` command.
 
-        **Description:**
+        Description:
             - This command saves a screen capture when a mask test fails.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:MASKFail:ACTION:SAVEIMAGe:STATE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2624,14 +2575,13 @@ class ActoneventMaskfailActionSaveimage(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:MASKFail:ACTION:SAVEIMAGe:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:MASKFail:ACTION:SAVEIMAGe:STATE {ON|OFF|<NR1>}
             - ACTONEVent:MASKFail:ACTION:SAVEIMAGe:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables the save screen capture when a mask test fails feature.
             - ``OFF`` disables the save screen capture when a mask test fails feature.
             - ``<NR1>`` is a number that enables or disables the save screen capture when a mask
@@ -2644,7 +2594,7 @@ class ActoneventMaskfailActionSaveimage(SCPICmdRead):
 class ActoneventMaskfailAction(SCPICmdRead):
     """The ``ACTONEVent:MASKFail:ACTION`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKFail:ACTION?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKFail:ACTION?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -2669,7 +2619,7 @@ class ActoneventMaskfailAction(SCPICmdRead):
     def saveimage(self) -> ActoneventMaskfailActionSaveimage:
         """Return the ``ACTONEVent:MASKFail:ACTION:SAVEIMAGe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MASKFail:ACTION:SAVEIMAGe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2685,7 +2635,7 @@ class ActoneventMaskfailAction(SCPICmdRead):
     def savewaveform(self) -> ActoneventMaskfailActionSavewaveform:
         """Return the ``ACTONEVent:MASKFail:ACTION:SAVEWAVEform`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:MASKFail:ACTION:SAVEWAVEform?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2701,7 +2651,7 @@ class ActoneventMaskfailAction(SCPICmdRead):
     def srq(self) -> ActoneventMaskfailActionSrq:
         """Return the ``ACTONEVent:MASKFail:ACTION:SRQ`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MASKFail:ACTION:SRQ?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKFail:ACTION:SRQ?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -2715,7 +2665,7 @@ class ActoneventMaskfailAction(SCPICmdRead):
     def stopacq(self) -> ActoneventMaskfailActionStopacq:
         """Return the ``ACTONEVent:MASKFail:ACTION:STOPACQ`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MASKFail:ACTION:STOPACQ?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2731,7 +2681,7 @@ class ActoneventMaskfailAction(SCPICmdRead):
 class ActoneventMaskfail(SCPICmdRead):
     """The ``ACTONEVent:MASKFail`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:MASKFail?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKFail?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -2748,7 +2698,7 @@ class ActoneventMaskfail(SCPICmdRead):
     def action(self) -> ActoneventMaskfailAction:
         """Return the ``ACTONEVent:MASKFail:ACTION`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MASKFail:ACTION?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKFail:ACTION?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -2765,24 +2715,23 @@ class ActoneventMaskfail(SCPICmdRead):
 class ActoneventLimit(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:LIMit`` command.
 
-    **Description:**
+    Description:
         - This command sets whether the act on event should limit the number of saves. This prevents
           the saves from filling the hard drive.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:LIMit?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:LIMit?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACTONEVent:LIMit value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:LIMit <NR1>
         - ACTONEVent:LIMit?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is a number that enables or disables whether the act on event should limit the
           number of saves. The number zero disables the feature and the number one enables the
           feature.
@@ -2792,24 +2741,23 @@ class ActoneventLimit(SCPICmdWrite, SCPICmdRead):
 class ActoneventLimitcount(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:LIMITCount`` command.
 
-    **Description:**
+    Description:
         - This command sets the limit of act on even saves. The ``ACTONEVent:LIMit`` command must be
           enabled.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:LIMITCount?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:LIMITCount?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACTONEVent:LIMITCount value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:LIMITCount <NR1>
         - ACTONEVent:LIMITCount?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` sets the number of allowed saves for the act on event feature. The number must
           be a positive integer.
     """
@@ -2818,24 +2766,23 @@ class ActoneventLimitcount(SCPICmdWrite, SCPICmdRead):
 class ActoneventEnable(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:ENable`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables actions on event (AOE). If AOE saves are limited and the
           limit has been reached, this parameter will disable AOE.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ENable?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ENable?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACTONEVent:ENable value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:ENable <NR1>
         - ACTONEVent:ENable?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is a number that enables or disables actions on event. The number zero disables
           the feature and the number one enables the feature.
     """
@@ -2845,7 +2792,7 @@ class ActoneventEnable(SCPICmdWrite, SCPICmdRead):
 class Actonevent(SCPICmdRead):
     """The ``ACTONEVent`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2878,24 +2825,23 @@ class Actonevent(SCPICmdRead):
     def enable(self) -> ActoneventEnable:
         """Return the ``ACTONEVent:ENable`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables actions on event (AOE). If AOE saves are limited and
               the limit has been reached, this parameter will disable AOE.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ENable?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:ENable?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ACTONEVent:ENable value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:ENable <NR1>
             - ACTONEVent:ENable?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is a number that enables or disables actions on event. The number zero
               disables the feature and the number one enables the feature.
         """
@@ -2905,25 +2851,24 @@ class Actonevent(SCPICmdRead):
     def limitcount(self) -> ActoneventLimitcount:
         """Return the ``ACTONEVent:LIMITCount`` command.
 
-        **Description:**
+        Description:
             - This command sets the limit of act on even saves. The ``ACTONEVent:LIMit`` command
               must be enabled.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:LIMITCount?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:LIMITCount?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ACTONEVent:LIMITCount value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:LIMITCount <NR1>
             - ACTONEVent:LIMITCount?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` sets the number of allowed saves for the act on event feature. The number
               must be a positive integer.
         """
@@ -2933,24 +2878,23 @@ class Actonevent(SCPICmdRead):
     def limit(self) -> ActoneventLimit:
         """Return the ``ACTONEVent:LIMit`` command.
 
-        **Description:**
+        Description:
             - This command sets whether the act on event should limit the number of saves. This
               prevents the saves from filling the hard drive.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:LIMit?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:LIMit?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ACTONEVent:LIMit value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:LIMit <NR1>
             - ACTONEVent:LIMit?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is a number that enables or disables whether the act on event should limit
               the number of saves. The number zero disables the feature and the number one enables
               the feature.
@@ -2961,7 +2905,7 @@ class Actonevent(SCPICmdRead):
     def maskfail(self) -> ActoneventMaskfail:
         """Return the ``ACTONEVent:MASKFail`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MASKFail?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKFail?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -2975,7 +2919,7 @@ class Actonevent(SCPICmdRead):
     def maskhit(self) -> ActoneventMaskhit:
         """Return the ``ACTONEVent:MASKHit`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MASKHit?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKHit?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -2989,7 +2933,7 @@ class Actonevent(SCPICmdRead):
     def maskpass(self) -> ActoneventMaskpass:
         """Return the ``ACTONEVent:MASKPass`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MASKPass?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:MASKPass?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -3003,7 +2947,7 @@ class Actonevent(SCPICmdRead):
     def measurement(self) -> ActoneventMeasurement:
         """Return the ``ACTONEVent:MEASUrement`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:MEASUrement?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:MEASUrement?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -3017,7 +2961,7 @@ class Actonevent(SCPICmdRead):
     def search(self) -> ActoneventSearch:
         """Return the ``ACTONEVent:SEARCH`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:SEARCH?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:SEARCH?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -3031,7 +2975,7 @@ class Actonevent(SCPICmdRead):
     def trigger(self) -> ActoneventTrigger:
         """Return the ``ACTONEVent:TRIGger`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:TRIGger?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:TRIGger?`` query and
               raise an AssertionError if the returned value does not match ``value``.

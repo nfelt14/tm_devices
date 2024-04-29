@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - TRIGger:SEQuence:IMMediate
     - TRIGger:SEQuence:SLOPe {POSitive|NEGative}
     - TRIGger:SEQuence:SLOPe?
@@ -30,21 +28,20 @@ if TYPE_CHECKING:
 class TriggerSequenceTimer(SCPICmdWrite):
     """The ``TRIGger:SEQuence:TIMer`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the period of an internal clock when you select the internal
           clock as the trigger source with the TRIGger[``:SEQuence``]``:SOURce`` command. The
           setting range is 1 µs to 500.0 s.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:TIMer value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:SEQuence:TIMer <seconds>
+        ```
 
-    **Info:**
+    Info:
         - ``<seconds>::=<NRf>[<units>]``
     """
 
@@ -52,24 +49,23 @@ class TriggerSequenceTimer(SCPICmdWrite):
 class TriggerSequenceSource(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:SEQuence:SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the trigger source for an external trigger signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:SEQuence:SOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:SOURce?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:SOURce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:SEQuence:SOURce {TIMer|EXTernal}
         - TRIGger:SEQuence:SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``TIMer`` specifies an internal clock as the trigger source.
         - ``EXTernal`` specifies an external trigger input as the trigger source.
     """
@@ -78,23 +74,22 @@ class TriggerSequenceSource(SCPICmdWrite, SCPICmdRead):
 class TriggerSequenceSlope(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:SEQuence:SLOPe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the slope of trigger signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:SEQuence:SLOPe?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:SLOPe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:SLOPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:SEQuence:SLOPe {POSitive|NEGative}
         - TRIGger:SEQuence:SLOPe?
+        ```
 
-    **Info:**
+    Info:
         - ``POSitive`` indicates that the event occurs on the rising edge of the external trigger
           signal.
         - ``NEGative`` indicates that the event occurs on the falling edge of the external trigger
@@ -105,24 +100,23 @@ class TriggerSequenceSlope(SCPICmdWrite, SCPICmdRead):
 class TriggerSequenceImmediate(SCPICmdWriteNoArguments):
     """The ``TRIGger:SEQuence:IMMediate`` command.
 
-    **Description:**
+    Description:
         - This command forces a trigger event to occur.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``TRIGger:SEQuence:IMMediate`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:SEQuence:IMMediate
+        ```
     """
 
 
 class TriggerSequence(SCPICmdRead):
     """The ``TRIGger:SEQuence`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:SEQuence?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -145,24 +139,23 @@ class TriggerSequence(SCPICmdRead):
     def slope(self) -> TriggerSequenceSlope:
         """Return the ``TRIGger:SEQuence:SLOPe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the slope of trigger signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:SEQuence:SLOPe?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:SLOPe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:SLOPe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:SEQuence:SLOPe {POSitive|NEGative}
             - TRIGger:SEQuence:SLOPe?
+            ```
 
-        **Info:**
+        Info:
             - ``POSitive`` indicates that the event occurs on the rising edge of the external
               trigger signal.
             - ``NEGative`` indicates that the event occurs on the falling edge of the external
@@ -174,24 +167,23 @@ class TriggerSequence(SCPICmdRead):
     def source(self) -> TriggerSequenceSource:
         """Return the ``TRIGger:SEQuence:SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the trigger source for an external trigger signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:SEQuence:SOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence:SOURce?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:SOURce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:SEQuence:SOURce {TIMer|EXTernal}
             - TRIGger:SEQuence:SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``TIMer`` specifies an internal clock as the trigger source.
             - ``EXTernal`` specifies an external trigger input as the trigger source.
         """
@@ -201,22 +193,21 @@ class TriggerSequence(SCPICmdRead):
     def timer(self) -> TriggerSequenceTimer:
         """Return the ``TRIGger:SEQuence:TIMer`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the period of an internal clock when you select the
               internal clock as the trigger source with the TRIGger[``:SEQuence``]``:SOURce``
               command. The setting range is 1 µs to 500.0 s.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``TRIGger:SEQuence:TIMer value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:SEQuence:TIMer <seconds>
+            ```
 
-        **Info:**
+        Info:
             - ``<seconds>::=<NRf>[<units>]``
         """
         return self._timer
@@ -225,17 +216,16 @@ class TriggerSequence(SCPICmdRead):
     def immediate(self) -> TriggerSequenceImmediate:
         """Return the ``TRIGger:SEQuence:IMMediate`` command.
 
-        **Description:**
+        Description:
             - This command forces a trigger event to occur.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``TRIGger:SEQuence:IMMediate`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:SEQuence:IMMediate
+            ```
         """
         return self._immediate
 
@@ -243,7 +233,7 @@ class TriggerSequence(SCPICmdRead):
 class Trigger(SCPICmdRead):
     """The ``TRIGger`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -260,7 +250,7 @@ class Trigger(SCPICmdRead):
     def sequence(self) -> TriggerSequence:
         """Return the ``TRIGger:SEQuence`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:SEQuence?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:SEQuence?`` query and
               raise an AssertionError if the returned value does not match ``value``.

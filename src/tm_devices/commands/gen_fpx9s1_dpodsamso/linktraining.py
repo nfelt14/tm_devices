@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - LINKTRaining:ACQTime <NR1>
     - LINKTRaining:ACQTime?
     - LINKTRaining:ARMscope <OFF | ON>
@@ -42,7 +40,7 @@ if TYPE_CHECKING:
 class LinktrainingSetup(SCPICmdWrite):
     """The ``LINKTRaining:SETUP`` command.
 
-    **Description:**
+    Description:
         - This 70KSX command saves or restores custom Link Training setup files. The setup files are
           complete instrument setup files. The setup files are saved/restored depending on the
           current values for Link Training Standard, Trigger-On, and Lane selections. You only need
@@ -61,16 +59,15 @@ class LinktrainingSetup(SCPICmdWrite):
           save/restore the complete instrument setup for the particular Link Training mode currently
           selected. The Link Training application is only available on the 70KSX scopes.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``LINKTRaining:SETUP value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LINKTRaining:SETUP <SAVe |RESTore>
+        ```
 
-    **Info:**
+    Info:
         - ``SAVe`` saves your custom Link Training setup.
         - ``RESTore`` restores the custom Link Training setup.
     """
@@ -79,7 +76,7 @@ class LinktrainingSetup(SCPICmdWrite):
 class LinktrainingMark(SCPICmdWrite):
     """The ``LINKTRaining:MARK`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the Mark setting of the Link Training application. The
           default argument value is FRAme, which marks the Frame Marker. When the argument is set to
           CONtrol, the frame Control Channel information is marked (32 cells of
@@ -89,16 +86,15 @@ class LinktrainingMark(SCPICmdWrite):
           cursor-gated DPOJET measurements. Link Training is only available on the 70KSX family of
           oscilloscopes.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``LINKTRaining:MARK value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LINKTRaining:MARK <FRAme | CONtrol | TRAining>
+        ```
 
-    **Info:**
+    Info:
         - ``FRAme`` sets Link Training MARK to FRAME.
         - ``CONtrol`` sets Link Training MARK to CONTROL.
         - ``TRAining`` sets Link Training MARK to TRAINING.
@@ -108,7 +104,7 @@ class LinktrainingMark(SCPICmdWrite):
 class LinktrainingLane(SCPICmdWrite, SCPICmdRead):
     """The ``LINKTRaining:LANE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the activation of the individual communications lanes under
           test. The defaults are Lane1 ON, and Lane2 OFF. It is taken as given that Lane1 uses
           oscilloscope Ch1 and Ch3, Lane2 uses oscilloscope Ch2 and Ch4 (to maximize sample rate).
@@ -124,20 +120,19 @@ class LinktrainingLane(SCPICmdWrite, SCPICmdRead):
           oscilloscope channels, because the lanes are bi-directional (Full Duplex). Link Training
           is available on DPO70000SX oscilloscopes only.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LINKTRaining:LANE?`` query.
         - Using the ``.verify(value)`` method will send the ``LINKTRaining:LANE?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LINKTRaining:LANE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LINKTRaining:LANE <x> {<NR1>|OFF|ON}
         - LINKTRaining:LANE?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the specified lane; any other value enables the specified lane.
         - ``OFF`` disables the specified lane.
         - ``ON`` enables the specified lane.
@@ -147,7 +142,7 @@ class LinktrainingLane(SCPICmdWrite, SCPICmdRead):
 class LinktrainingEqualizationchItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``LINKTRaining:EQUalizationCH<x>`` command.
 
-    **Description:**
+    Description:
         - This 70KSX command sets the equalization value for Link Training of the specified channel.
           The default setting is zero. The units are dB. If you are probing a signal near to the
           transmitter, you likely do not need to increase the equalization value. However, if you
@@ -165,26 +160,25 @@ class LinktrainingEqualizationchItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SC
           of that rate, 3.125 Gb/s. The Link Training application is only available on the 70KSX
           scopes.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LINKTRaining:EQUalizationCH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``LINKTRaining:EQUalizationCH<x>?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LINKTRaining:EQUalizationCH<x> value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LINKTRaining:EQUalizationCH<x> <NR1>
         - LINKTRaining:EQUalizationCH<x>?
+        ```
     """
 
 
 class LinktrainingDecode(SCPICmdWrite, SCPICmdRead):
     """The ``LINKTRaining:DECOde`` command.
 
-    **Description:**
+    Description:
         - This 70KSX command sets or queries the Decode setting of the Link Training application.
           The default argument value is ON, which decodes the Control Channel information on the
           waveform display. Other system decode parameters optionally allow the Control Channel Hex
@@ -194,20 +188,19 @@ class LinktrainingDecode(SCPICmdWrite, SCPICmdRead):
           decoding is very small. Link Training is only available on the 70KSX family of
           oscilloscopes.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LINKTRaining:DECOde?`` query.
         - Using the ``.verify(value)`` method will send the ``LINKTRaining:DECOde?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LINKTRaining:DECOde value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LINKTRaining:DECOde <OFF | ON>
         - LINKTRaining:DECOde?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` indicates decode is OFF.
         - ``ON`` indicates decode is ON.
     """
@@ -216,7 +209,7 @@ class LinktrainingDecode(SCPICmdWrite, SCPICmdRead):
 class LinktrainingArmscope(SCPICmdWrite, SCPICmdRead):
     """The ``LINKTRaining:ARMscope`` command.
 
-    **Description:**
+    Description:
         - This 70KSX command sets or queries the ARMscope setting of the Link Training application
           on the 70KSX family of scopes. The default argument value is OFF. To use the Link Training
           application, the State argument must first be set to ON. With the DUT Lane 'powered down'
@@ -239,20 +232,19 @@ class LinktrainingArmscope(SCPICmdWrite, SCPICmdRead):
           ARMscope command, and power-up the lane on the DUT again. Link Training is only available
           on the 70KSX oscilloscopes.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LINKTRaining:ARMscope?`` query.
         - Using the ``.verify(value)`` method will send the ``LINKTRaining:ARMscope?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LINKTRaining:ARMscope value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LINKTRaining:ARMscope <OFF | ON>
         - LINKTRaining:ARMscope?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` indicates ARMscope is OFF.
         - ``ON`` indicates ARMscope is ON.
     """
@@ -261,7 +253,7 @@ class LinktrainingArmscope(SCPICmdWrite, SCPICmdRead):
 class LinktrainingAcqtime(SCPICmdWrite, SCPICmdRead):
     """The ``LINKTRaining:ACQTime`` command.
 
-    **Description:**
+    Description:
         - This 70KSX command sets the maximum Acquire Time for Link Training from 1 to 10 seconds.
           The default value is 2 seconds. The link training process is defined by the IEEE to
           complete within 500 ms. So, the default 2 seconds is sufficient for most purposes.
@@ -271,20 +263,19 @@ class LinktrainingAcqtime(SCPICmdWrite, SCPICmdRead):
           Table. Naturally, you will have to wait a little longer for the acquisition to complete.
           The Link Training application is only available on the 70KSX oscilloscopes.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LINKTRaining:ACQTime?`` query.
         - Using the ``.verify(value)`` method will send the ``LINKTRaining:ACQTime?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LINKTRaining:ACQTime value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LINKTRaining:ACQTime <NR1>
         - LINKTRaining:ACQTime?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the maximum Acquire Time for Link Training from 1 to 10 seconds.
     """
 
@@ -292,7 +283,7 @@ class LinktrainingAcqtime(SCPICmdWrite, SCPICmdRead):
 class Linktraining(SCPICmdRead):
     """The ``LINKTRaining`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LINKTRaining?`` query.
         - Using the ``.verify(value)`` method will send the ``LINKTRaining?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -329,7 +320,7 @@ class Linktraining(SCPICmdRead):
     def acqtime(self) -> LinktrainingAcqtime:
         """Return the ``LINKTRaining:ACQTime`` command.
 
-        **Description:**
+        Description:
             - This 70KSX command sets the maximum Acquire Time for Link Training from 1 to 10
               seconds. The default value is 2 seconds. The link training process is defined by the
               IEEE to complete within 500 ms. So, the default 2 seconds is sufficient for most
@@ -340,21 +331,20 @@ class Linktraining(SCPICmdRead):
               acquisition to complete. The Link Training application is only available on the 70KSX
               oscilloscopes.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LINKTRaining:ACQTime?`` query.
             - Using the ``.verify(value)`` method will send the ``LINKTRaining:ACQTime?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LINKTRaining:ACQTime value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LINKTRaining:ACQTime <NR1>
             - LINKTRaining:ACQTime?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the maximum Acquire Time for Link Training from 1 to 10 seconds.
         """
         return self._acqtime
@@ -363,7 +353,7 @@ class Linktraining(SCPICmdRead):
     def armscope(self) -> LinktrainingArmscope:
         """Return the ``LINKTRaining:ARMscope`` command.
 
-        **Description:**
+        Description:
             - This 70KSX command sets or queries the ARMscope setting of the Link Training
               application on the 70KSX family of scopes. The default argument value is OFF. To use
               the Link Training application, the State argument must first be set to ON. With the
@@ -387,21 +377,20 @@ class Linktraining(SCPICmdRead):
               ARMscope command, and power-up the lane on the DUT again. Link Training is only
               available on the 70KSX oscilloscopes.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LINKTRaining:ARMscope?`` query.
             - Using the ``.verify(value)`` method will send the ``LINKTRaining:ARMscope?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LINKTRaining:ARMscope value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LINKTRaining:ARMscope <OFF | ON>
             - LINKTRaining:ARMscope?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` indicates ARMscope is OFF.
             - ``ON`` indicates ARMscope is ON.
         """
@@ -411,7 +400,7 @@ class Linktraining(SCPICmdRead):
     def decode(self) -> LinktrainingDecode:
         """Return the ``LINKTRaining:DECOde`` command.
 
-        **Description:**
+        Description:
             - This 70KSX command sets or queries the Decode setting of the Link Training
               application. The default argument value is ON, which decodes the Control Channel
               information on the waveform display. Other system decode parameters optionally allow
@@ -421,21 +410,20 @@ class Linktraining(SCPICmdRead):
               ``ALL_frames``, the overhead for decoding is very small. Link Training is only
               available on the 70KSX family of oscilloscopes.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LINKTRaining:DECOde?`` query.
             - Using the ``.verify(value)`` method will send the ``LINKTRaining:DECOde?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LINKTRaining:DECOde value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LINKTRaining:DECOde <OFF | ON>
             - LINKTRaining:DECOde?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` indicates decode is OFF.
             - ``ON`` indicates decode is ON.
         """
@@ -445,7 +433,7 @@ class Linktraining(SCPICmdRead):
     def equalizationch(self) -> Dict[int, LinktrainingEqualizationchItem]:
         """Return the ``LINKTRaining:EQUalizationCH<x>`` command.
 
-        **Description:**
+        Description:
             - This 70KSX command sets the equalization value for Link Training of the specified
               channel. The default setting is zero. The units are dB. If you are probing a signal
               near to the transmitter, you likely do not need to increase the equalization value.
@@ -463,19 +451,18 @@ class Linktraining(SCPICmdRead):
               at 6.25 Gb/s, so set the equalization value considering half of that rate, 3.125 Gb/s.
               The Link Training application is only available on the 70KSX scopes.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LINKTRaining:EQUalizationCH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``LINKTRaining:EQUalizationCH<x>?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``LINKTRaining:EQUalizationCH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LINKTRaining:EQUalizationCH<x> <NR1>
             - LINKTRaining:EQUalizationCH<x>?
+            ```
         """
         return self._equalizationch
 
@@ -483,7 +470,7 @@ class Linktraining(SCPICmdRead):
     def lane(self) -> LinktrainingLane:
         """Return the ``LINKTRaining:LANE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the activation of the individual communications lanes
               under test. The defaults are Lane1 ON, and Lane2 OFF. It is taken as given that Lane1
               uses oscilloscope Ch1 and Ch3, Lane2 uses oscilloscope Ch2 and Ch4 (to maximize sample
@@ -500,20 +487,19 @@ class Linktraining(SCPICmdRead):
               bi-directional (Full Duplex). Link Training is available on DPO70000SX oscilloscopes
               only.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LINKTRaining:LANE?`` query.
             - Using the ``.verify(value)`` method will send the ``LINKTRaining:LANE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LINKTRaining:LANE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LINKTRaining:LANE <x> {<NR1>|OFF|ON}
             - LINKTRaining:LANE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the specified lane; any other value enables the specified lane.
             - ``OFF`` disables the specified lane.
             - ``ON`` enables the specified lane.
@@ -524,7 +510,7 @@ class Linktraining(SCPICmdRead):
     def mark(self) -> LinktrainingMark:
         """Return the ``LINKTRaining:MARK`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Mark setting of the Link Training application. The
               default argument value is FRAme, which marks the Frame Marker. When the argument is
               set to CONtrol, the frame Control Channel information is marked (32 cells of
@@ -534,16 +520,15 @@ class Linktraining(SCPICmdRead):
               use cursor-gated DPOJET measurements. Link Training is only available on the 70KSX
               family of oscilloscopes.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``LINKTRaining:MARK value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LINKTRaining:MARK <FRAme | CONtrol | TRAining>
+            ```
 
-        **Info:**
+        Info:
             - ``FRAme`` sets Link Training MARK to FRAME.
             - ``CONtrol`` sets Link Training MARK to CONTROL.
             - ``TRAining`` sets Link Training MARK to TRAINING.
@@ -554,7 +539,7 @@ class Linktraining(SCPICmdRead):
     def setup(self) -> LinktrainingSetup:
         """Return the ``LINKTRaining:SETUP`` command.
 
-        **Description:**
+        Description:
             - This 70KSX command saves or restores custom Link Training setup files. The setup files
               are complete instrument setup files. The setup files are saved/restored depending on
               the current values for Link Training Standard, Trigger-On, and Lane selections. You
@@ -574,16 +559,15 @@ class Linktraining(SCPICmdRead):
               instrument setup for the particular Link Training mode currently selected. The Link
               Training application is only available on the 70KSX scopes.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``LINKTRaining:SETUP value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LINKTRaining:SETUP <SAVe |RESTore>
+            ```
 
-        **Info:**
+        Info:
             - ``SAVe`` saves your custom Link Training setup.
             - ``RESTore`` restores the custom Link Training setup.
         """

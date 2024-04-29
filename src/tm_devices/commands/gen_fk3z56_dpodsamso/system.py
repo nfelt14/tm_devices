@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SYSTem:SETup <Data Block>
     - SYSTem:SETup?
 """
@@ -27,30 +25,29 @@ if TYPE_CHECKING:
 class SystemSetup(SCPICmdWrite, SCPICmdRead):
     """The ``SYSTem:SETup`` command.
 
-    **Description:**
+    Description:
         - This command configures the oscilloscope's data block as defined by the IEEE 488.2
           standard. The data block contains a compressed zip file. The query form of this command
           queries the block data containing the oscilloscope's current setup.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem:SETup?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem:SETup?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SYSTem:SETup value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SYSTem:SETup <Data Block>
         - SYSTem:SETup?
+        ```
     """
 
 
 class System(SCPICmdRead):
     """The ``SYSTem`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SYSTem?`` query.
         - Using the ``.verify(value)`` method will send the ``SYSTem?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -67,22 +64,21 @@ class System(SCPICmdRead):
     def setup(self) -> SystemSetup:
         """Return the ``SYSTem:SETup`` command.
 
-        **Description:**
+        Description:
             - This command configures the oscilloscope's data block as defined by the IEEE 488.2
               standard. The data block contains a compressed zip file. The query form of this
               command queries the block data containing the oscilloscope's current setup.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SYSTem:SETup?`` query.
             - Using the ``.verify(value)`` method will send the ``SYSTem:SETup?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SYSTem:SETup value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SYSTem:SETup <Data Block>
             - SYSTem:SETup?
+            ```
         """
         return self._setup

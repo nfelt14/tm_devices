@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - D<x>:LABEL <QString>
     - D<x>:LABEL?
     - D<x>:POSition <NR3>
@@ -33,23 +31,22 @@ if TYPE_CHECKING:
 class DigitalBitThreshold(SCPICmdWrite, SCPICmdRead):
     """The ``D<x>:THRESHold`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the threshold level for the specified digital signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``D<x>:THRESHold?`` query.
         - Using the ``.verify(value)`` method will send the ``D<x>:THRESHold?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``D<x>:THRESHold value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - D<x>:THRESHold <NR3>
         - D<x>:THRESHold?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the threshold level in volts.
     """
 
@@ -57,46 +54,44 @@ class DigitalBitThreshold(SCPICmdWrite, SCPICmdRead):
 class DigitalBitProbeIdType(SCPICmdRead):
     """The ``D<x>:PROBE:ID:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command queries the type of digital probe that provides the specified digital signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``D<x>:PROBE:ID:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``D<x>:PROBE:ID:TYPe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - D<x>:PROBE:ID:TYPe?
+        ```
     """
 
 
 class DigitalBitProbeIdSernumber(SCPICmdRead):
     """The ``D<x>:PROBE:ID:SERnumber`` command.
 
-    **Description:**
+    Description:
         - This command queries the serial number of the digital probe that provides the specified
           digital signal.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``D<x>:PROBE:ID:SERnumber?`` query.
         - Using the ``.verify(value)`` method will send the ``D<x>:PROBE:ID:SERnumber?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - D<x>:PROBE:ID:SERnumber?
+        ```
     """
 
 
 class DigitalBitProbeId(SCPICmdRead):
     """The ``D<x>:PROBE:ID`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``D<x>:PROBE:ID?`` query.
         - Using the ``.verify(value)`` method will send the ``D<x>:PROBE:ID?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -115,20 +110,19 @@ class DigitalBitProbeId(SCPICmdRead):
     def sernumber(self) -> DigitalBitProbeIdSernumber:
         """Return the ``D<x>:PROBE:ID:SERnumber`` command.
 
-        **Description:**
+        Description:
             - This command queries the serial number of the digital probe that provides the
               specified digital signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``D<x>:PROBE:ID:SERnumber?`` query.
             - Using the ``.verify(value)`` method will send the ``D<x>:PROBE:ID:SERnumber?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - D<x>:PROBE:ID:SERnumber?
+            ```
         """
         return self._sernumber
 
@@ -136,20 +130,19 @@ class DigitalBitProbeId(SCPICmdRead):
     def type(self) -> DigitalBitProbeIdType:
         """Return the ``D<x>:PROBE:ID:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command queries the type of digital probe that provides the specified digital
               signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``D<x>:PROBE:ID:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``D<x>:PROBE:ID:TYPe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - D<x>:PROBE:ID:TYPe?
+            ```
         """
         return self._type
 
@@ -157,7 +150,7 @@ class DigitalBitProbeId(SCPICmdRead):
 class DigitalBitProbe(SCPICmdRead):
     """The ``D<x>:PROBE`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``D<x>:PROBE?`` query.
         - Using the ``.verify(value)`` method will send the ``D<x>:PROBE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -174,7 +167,7 @@ class DigitalBitProbe(SCPICmdRead):
     def id(self) -> DigitalBitProbeId:
         """Return the ``D<x>:PROBE:ID`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``D<x>:PROBE:ID?`` query.
             - Using the ``.verify(value)`` method will send the ``D<x>:PROBE:ID?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -189,24 +182,23 @@ class DigitalBitProbe(SCPICmdRead):
 class DigitalBitPosition(SCPICmdWrite, SCPICmdRead):
     """The ``D<x>:POSition`` command.
 
-    **Description:**
+    Description:
         - This command specifies the vertical position for digital channel <x>, where x is the
           channel number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``D<x>:POSition?`` query.
         - Using the ``.verify(value)`` method will send the ``D<x>:POSition?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``D<x>:POSition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - D<x>:POSition <NR3>
         - D<x>:POSition?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the position of the digital channel,
           in slot units. Use the oscilloscope front-panel controls to place the channel; then query
           the channel to obtain an exact value for the position.
@@ -216,24 +208,23 @@ class DigitalBitPosition(SCPICmdWrite, SCPICmdRead):
 class DigitalBitLabel(SCPICmdWrite, SCPICmdRead):
     """The ``D<x>:LABEL`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the label that appears for the specified digital input on the
           display.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``D<x>:LABEL?`` query.
         - Using the ``.verify(value)`` method will send the ``D<x>:LABEL?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``D<x>:LABEL value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - D<x>:LABEL <QString>
         - D<x>:LABEL?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is an alphanumeric string of characters, enclosed in quotes, that defines
           the label text.
     """
@@ -244,7 +235,7 @@ class DigitalBitLabel(SCPICmdWrite, SCPICmdRead):
 class DigitalBit(ValidatedDigitalBit, SCPICmdRead):
     """The ``D<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``D<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``D<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -267,24 +258,23 @@ class DigitalBit(ValidatedDigitalBit, SCPICmdRead):
     def label(self) -> DigitalBitLabel:
         """Return the ``D<x>:LABEL`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the label that appears for the specified digital input on
               the display.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``D<x>:LABEL?`` query.
             - Using the ``.verify(value)`` method will send the ``D<x>:LABEL?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``D<x>:LABEL value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - D<x>:LABEL <QString>
             - D<x>:LABEL?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is an alphanumeric string of characters, enclosed in quotes, that
               defines the label text.
         """
@@ -294,24 +284,23 @@ class DigitalBit(ValidatedDigitalBit, SCPICmdRead):
     def position(self) -> DigitalBitPosition:
         """Return the ``D<x>:POSition`` command.
 
-        **Description:**
+        Description:
             - This command specifies the vertical position for digital channel <x>, where x is the
               channel number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``D<x>:POSition?`` query.
             - Using the ``.verify(value)`` method will send the ``D<x>:POSition?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``D<x>:POSition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - D<x>:POSition <NR3>
             - D<x>:POSition?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the position of the digital
               channel, in slot units. Use the oscilloscope front-panel controls to place the
               channel; then query the channel to obtain an exact value for the position.
@@ -322,7 +311,7 @@ class DigitalBit(ValidatedDigitalBit, SCPICmdRead):
     def probe(self) -> DigitalBitProbe:
         """Return the ``D<x>:PROBE`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``D<x>:PROBE?`` query.
             - Using the ``.verify(value)`` method will send the ``D<x>:PROBE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -336,23 +325,22 @@ class DigitalBit(ValidatedDigitalBit, SCPICmdRead):
     def threshold(self) -> DigitalBitThreshold:
         """Return the ``D<x>:THRESHold`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the threshold level for the specified digital signal.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``D<x>:THRESHold?`` query.
             - Using the ``.verify(value)`` method will send the ``D<x>:THRESHold?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``D<x>:THRESHold value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - D<x>:THRESHold <NR3>
             - D<x>:THRESHold?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the threshold level in volts.
         """
         return self._threshold

@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SAVEONEVent:FILEDest ? <Qstring>
     - SAVEONEVent:FILEName <QString>
     - SAVEONEVent:FILEName?
@@ -33,26 +31,25 @@ if TYPE_CHECKING:
 class SaveoneventWaveformSource(SCPICmdWrite, SCPICmdRead):
     """The ``SAVEONEVent:WAVEform:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the sources for saving waveforms when an event occurs. This
           command replaces ``SAVEON:WAVEFORM:SOURCE`` (still valid command, but only an alias for
           this new command).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEONEVent:WAVEform:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEONEVent:WAVEform:SOUrce?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVEONEVent:WAVEform:SOUrce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEONEVent:WAVEform:SOUrce {CH<x>|MATH<x>|REF<x>|ALL}
         - SAVEONEVent:WAVEform:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies an analog channel as the source waveform for saving.
         - ``MATH<x>`` specifies a math waveform as the source waveform for saving.
         - ``REF<x>`` specifies a reference waveform as the source waveform for saving.
@@ -64,26 +61,25 @@ class SaveoneventWaveformSource(SCPICmdWrite, SCPICmdRead):
 class SaveoneventWaveformFileformat(SCPICmdWrite, SCPICmdRead):
     """The ``SAVEONEVent:WAVEform:FILEFormat`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the file extension (csv, wfm, mat). This command replaces
           ``SAVEON:WAVEFORM:FILEFORMAT`` (still valid command, but only an alias for this new
           command).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEONEVent:WAVEform:FILEFormat?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEONEVent:WAVEform:FILEFormat?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVEONEVent:WAVEform:FILEFormat value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEONEVent:WAVEform:FILEFormat {INTERNal|SPREADSheet|MATlab}
         - SAVEONEVent:WAVEform:FILEFormat?
+        ```
 
-    **Info:**
+    Info:
         - ``INTERNal`` specifies saving the waveform in the instrument internal format.
         - ``SPREADSheet`` specifies saving the waveform in comma separated values format.
         - ``MATlab`` specifies saving the waveform in matlab compatible file format.
@@ -93,7 +89,7 @@ class SaveoneventWaveformFileformat(SCPICmdWrite, SCPICmdRead):
 class SaveoneventWaveform(SCPICmdRead):
     """The ``SAVEONEVent:WAVEform`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEONEVent:WAVEform?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEONEVent:WAVEform?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -112,12 +108,12 @@ class SaveoneventWaveform(SCPICmdRead):
     def fileformat(self) -> SaveoneventWaveformFileformat:
         """Return the ``SAVEONEVent:WAVEform:FILEFormat`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the file extension (csv, wfm, mat). This command replaces
               ``SAVEON:WAVEFORM:FILEFORMAT`` (still valid command, but only an alias for this new
               command).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEONEVent:WAVEform:FILEFormat?``
               query.
             - Using the ``.verify(value)`` method will send the ``SAVEONEVent:WAVEform:FILEFormat?``
@@ -125,14 +121,13 @@ class SaveoneventWaveform(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SAVEONEVent:WAVEform:FILEFormat value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEONEVent:WAVEform:FILEFormat {INTERNal|SPREADSheet|MATlab}
             - SAVEONEVent:WAVEform:FILEFormat?
+            ```
 
-        **Info:**
+        Info:
             - ``INTERNal`` specifies saving the waveform in the instrument internal format.
             - ``SPREADSheet`` specifies saving the waveform in comma separated values format.
             - ``MATlab`` specifies saving the waveform in matlab compatible file format.
@@ -143,26 +138,25 @@ class SaveoneventWaveform(SCPICmdRead):
     def source(self) -> SaveoneventWaveformSource:
         """Return the ``SAVEONEVent:WAVEform:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the sources for saving waveforms when an event occurs.
               This command replaces ``SAVEON:WAVEFORM:SOURCE`` (still valid command, but only an
               alias for this new command).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEONEVent:WAVEform:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEONEVent:WAVEform:SOUrce?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVEONEVent:WAVEform:SOUrce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEONEVent:WAVEform:SOUrce {CH<x>|MATH<x>|REF<x>|ALL}
             - SAVEONEVent:WAVEform:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies an analog channel as the source waveform for saving.
             - ``MATH<x>`` specifies a math waveform as the source waveform for saving.
             - ``REF<x>`` specifies a reference waveform as the source waveform for saving.
@@ -175,26 +169,25 @@ class SaveoneventWaveform(SCPICmdRead):
 class SaveoneventImageFileformat(SCPICmdWrite, SCPICmdRead):
     """The ``SAVEONEVent:IMAGe:FILEFormat`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the image file extension (png, jpg, bmp). This command
           replaces ``SAVEON:IMAGE:FILEFORMAT`` (still valid command, but only an alias for this new
           command).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEONEVent:IMAGe:FILEFormat?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEONEVent:IMAGe:FILEFormat?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVEONEVent:IMAGe:FILEFormat value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEONEVent:IMAGe:FILEFormat {PNG|BMP|JPG}
         - SAVEONEVent:IMAGe:FILEFormat?
+        ```
 
-    **Info:**
+    Info:
         - ``PNG`` specifies using PNG format for saved image files.
         - ``BMP`` specifies using BMP format for saved image files.
         - ``JPG`` specifies using JPEG format for saved image files.
@@ -204,7 +197,7 @@ class SaveoneventImageFileformat(SCPICmdWrite, SCPICmdRead):
 class SaveoneventImage(SCPICmdRead):
     """The ``SAVEONEVent:IMAGe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEONEVent:IMAGe?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEONEVent:IMAGe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -221,26 +214,25 @@ class SaveoneventImage(SCPICmdRead):
     def fileformat(self) -> SaveoneventImageFileformat:
         """Return the ``SAVEONEVent:IMAGe:FILEFormat`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the image file extension (png, jpg, bmp). This command
               replaces ``SAVEON:IMAGE:FILEFORMAT`` (still valid command, but only an alias for this
               new command).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEONEVent:IMAGe:FILEFormat?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEONEVent:IMAGe:FILEFormat?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SAVEONEVent:IMAGe:FILEFormat value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEONEVent:IMAGe:FILEFormat {PNG|BMP|JPG}
             - SAVEONEVent:IMAGe:FILEFormat?
+            ```
 
-        **Info:**
+        Info:
             - ``PNG`` specifies using PNG format for saved image files.
             - ``BMP`` specifies using BMP format for saved image files.
             - ``JPG`` specifies using JPEG format for saved image files.
@@ -251,24 +243,23 @@ class SaveoneventImage(SCPICmdRead):
 class SaveoneventFilename(SCPICmdWrite, SCPICmdRead):
     """The ``SAVEONEVent:FILEName`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the file name without the extension. This command replaces
           ``SAVEON:FILE:NAME`` (still valid command, but only an alias for this new command).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEONEVent:FILEName?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEONEVent:FILEName?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVEONEVent:FILEName value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEONEVent:FILEName <QString>
         - SAVEONEVent:FILEName?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the name of the file.
     """
 
@@ -278,20 +269,19 @@ class SaveoneventFilename(SCPICmdWrite, SCPICmdRead):
 class SaveoneventFiledest(SCPICmdWrite):
     """The ``SAVEONEVent:FILEDest`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the location where files are saved. This command replaces
           ``SAVEON:FILE:DEST`` (still valid command, but only an alias for this new command).
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVEONEVent:FILEDest value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVEONEVent:FILEDest ? <Qstring>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the location to store files.
     """
 
@@ -299,7 +289,7 @@ class SaveoneventFiledest(SCPICmdWrite):
 class Saveonevent(SCPICmdRead):
     """The ``SAVEONEVent`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVEONEVent?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVEONEVent?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -324,21 +314,20 @@ class Saveonevent(SCPICmdRead):
     def filedest(self) -> SaveoneventFiledest:
         """Return the ``SAVEONEVent:FILEDest`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the location where files are saved. This command replaces
               ``SAVEON:FILE:DEST`` (still valid command, but only an alias for this new command).
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVEONEVent:FILEDest value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEONEVent:FILEDest ? <Qstring>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the location to store files.
         """
         return self._filedest
@@ -347,26 +336,25 @@ class Saveonevent(SCPICmdRead):
     def filename(self) -> SaveoneventFilename:
         """Return the ``SAVEONEVent:FILEName`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the file name without the extension. This command
               replaces ``SAVEON:FILE:NAME`` (still valid command, but only an alias for this new
               command).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEONEVent:FILEName?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEONEVent:FILEName?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVEONEVent:FILEName value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVEONEVent:FILEName <QString>
             - SAVEONEVent:FILEName?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the name of the file.
         """
         return self._filename
@@ -375,7 +363,7 @@ class Saveonevent(SCPICmdRead):
     def image(self) -> SaveoneventImage:
         """Return the ``SAVEONEVent:IMAGe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEONEVent:IMAGe?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEONEVent:IMAGe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -389,7 +377,7 @@ class Saveonevent(SCPICmdRead):
     def waveform(self) -> SaveoneventWaveform:
         """Return the ``SAVEONEVent:WAVEform`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVEONEVent:WAVEform?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVEONEVent:WAVEform?`` query and
               raise an AssertionError if the returned value does not match ``value``.

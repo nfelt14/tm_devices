@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SAVe:EVENTtable:BUS <QString>
     - SAVe:EVENTtable:MEASUrement <QString>
     - SAVe:EVENTtable:SEARCHTable <QString>
@@ -28,13 +26,15 @@ Commands and Queries:
     - SAVe:SETUp <QString>
     - SAVe:SETUp:INCLUDEREFs {OFF|ON|0|1}
     - SAVe:SETUp:INCLUDEREFs?
-    - SAVe:WAVEform {CH<x>[_DALL|_SV_NORMal|_SV_AVErage|_SV_MAXHold| _SV_MINHold|_MAG_VS_TIME|_FREQ_VS_TIME| _PHASE_VS_TIME _SV_BASEBAND_IQ]|MATH<x>|REF<x>|ALL| },<QString>
+    - SAVe:WAVEform {CH<x>[_DALL|_SV_NORMal|_SV_AVErage|_SV_MAXHold|
+      _SV_MINHold|_MAG_VS_TIME|_FREQ_VS_TIME| _PHASE_VS_TIME _SV_BASEBAND_IQ]|MATH<x>|REF<x>|ALL|
+      },<QString>
     - SAVe:WAVEform:GATing {NONe|CURSors|SCREEN|RESAMPLE|SELected}
     - SAVe:WAVEform:GATing:RESAMPLErate <NR1>
     - SAVe:WAVEform:GATing:RESAMPLErate?
     - SAVe:WAVEform:GATing?
     - SAVe:WAVEform:SOURCELIst?
-"""  # noqa: E501
+"""
 
 from typing import Optional, TYPE_CHECKING
 
@@ -47,46 +47,44 @@ if TYPE_CHECKING:
 class SaveWaveformSourcelist(SCPICmdRead):
     """The ``SAVe:WAVEform:SOURCELIst`` command.
 
-    **Description:**
+    Description:
         - This query returns a list of the available waveforms that can be specified as the source
           for the ``SAVe:WAVEform`` command. Source waveforms must have their display mode set to On
           to appear in this list and to be saved.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:WAVEform:SOURCELIst?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:WAVEform:SOURCELIst?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:WAVEform:SOURCELIst?
+        ```
     """
 
 
 class SaveWaveformGatingResamplerate(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:WAVEform:GATing:RESAMPLErate`` command.
 
-    **Description:**
+    Description:
         - This command saves the waveform data at a sample interval. The resulting saved waveform is
           a resampled version of the original waveform with fewer data points.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:WAVEform:GATing:RESAMPLErate?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:WAVEform:GATing:RESAMPLErate?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``SAVe:WAVEform:GATing:RESAMPLErate value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:WAVEform:GATing:RESAMPLErate <NR1>
         - SAVe:WAVEform:GATing:RESAMPLErate?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the resample interval.
     """
 
@@ -94,24 +92,23 @@ class SaveWaveformGatingResamplerate(SCPICmdWrite, SCPICmdRead):
 class SaveWaveformGating(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:WAVEform:GATing`` command.
 
-    **Description:**
+    Description:
         - This command specifies the method to save a specified part of the waveform data or the
           entire waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:WAVEform:GATing?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:WAVEform:GATing?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVe:WAVEform:GATing value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:WAVEform:GATing {NONe|CURSors|SCREEN|RESAMPLE|SELected}
         - SAVe:WAVEform:GATing?
+        ```
 
-    **Info:**
+    Info:
         - ``NONe`` saves the full waveform data.
         - ``CURSors`` saves the waveform data located between the vertical cursors.
         - ``SCREEN`` saves the waveform data that is on the screen. Nothing outside the waveform
@@ -134,11 +131,11 @@ class SaveWaveformGating(SCPICmdWrite, SCPICmdRead):
     def resamplerate(self) -> SaveWaveformGatingResamplerate:
         """Return the ``SAVe:WAVEform:GATing:RESAMPLErate`` command.
 
-        **Description:**
+        Description:
             - This command saves the waveform data at a sample interval. The resulting saved
               waveform is a resampled version of the original waveform with fewer data points.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:WAVEform:GATing:RESAMPLErate?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -147,14 +144,13 @@ class SaveWaveformGating(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SAVe:WAVEform:GATing:RESAMPLErate value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:WAVEform:GATing:RESAMPLErate <NR1>
             - SAVe:WAVEform:GATing:RESAMPLErate?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the resample interval.
         """
         return self._resamplerate
@@ -163,19 +159,18 @@ class SaveWaveformGating(SCPICmdWrite, SCPICmdRead):
 class SaveWaveform(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:WAVEform`` command.
 
-    **Description:**
+    Description:
         - This command saves the specified waveform(s) to the specified destination file.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:WAVEform value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:WAVEform {CH<x>[_DALL|_SV_NORMal|_SV_AVErage|_SV_MAXHold| _SV_MINHold|_MAG_VS_TIME|_FREQ_VS_TIME| _PHASE_VS_TIME _SV_BASEBAND_IQ]|MATH<x>|REF<x>|ALL| },<QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<x>`` is the number of the analog channel (CH<x>), math (MATH<x>), or reference (REF<x>)
           waveform source used to save the waveform data.
         - ``_DALL`` saves the digital channel waveform data of the specified channel.
@@ -208,25 +203,24 @@ class SaveWaveform(SCPICmdWrite, SCPICmdRead):
     def gating(self) -> SaveWaveformGating:
         """Return the ``SAVe:WAVEform:GATing`` command.
 
-        **Description:**
+        Description:
             - This command specifies the method to save a specified part of the waveform data or the
               entire waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:WAVEform:GATing?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:WAVEform:GATing?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVe:WAVEform:GATing value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:WAVEform:GATing {NONe|CURSors|SCREEN|RESAMPLE|SELected}
             - SAVe:WAVEform:GATing?
+            ```
 
-        **Info:**
+        Info:
             - ``NONe`` saves the full waveform data.
             - ``CURSors`` saves the waveform data located between the vertical cursors.
             - ``SCREEN`` saves the waveform data that is on the screen. Nothing outside the waveform
@@ -246,21 +240,20 @@ class SaveWaveform(SCPICmdWrite, SCPICmdRead):
     def sourcelist(self) -> SaveWaveformSourcelist:
         """Return the ``SAVe:WAVEform:SOURCELIst`` command.
 
-        **Description:**
+        Description:
             - This query returns a list of the available waveforms that can be specified as the
               source for the ``SAVe:WAVEform`` command. Source waveforms must have their display
               mode set to On to appear in this list and to be saved.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:WAVEform:SOURCELIst?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:WAVEform:SOURCELIst?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:WAVEform:SOURCELIst?
+            ```
         """
         return self._sourcelist
 
@@ -268,24 +261,23 @@ class SaveWaveform(SCPICmdWrite, SCPICmdRead):
 class SaveSetupIncluderefs(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:SETUp:INCLUDEREFs`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether displayed reference waveforms are to be included in
           saved setups.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:SETUp:INCLUDEREFs?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:SETUp:INCLUDEREFs?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVe:SETUp:INCLUDEREFs value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:SETUp:INCLUDEREFs {OFF|ON|0|1}
         - SAVe:SETUp:INCLUDEREFs?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` specifies not including displayed reference waveforms in saved setups.
         - ``ON`` specifies including displayed reference waveforms in saved setups.
         - ``0`` specifies not including displayed reference waveforms in saved setups.
@@ -296,19 +288,18 @@ class SaveSetupIncluderefs(SCPICmdWrite, SCPICmdRead):
 class SaveSetup(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:SETUp`` command.
 
-    **Description:**
+    Description:
         - Saves the current instrument state to the specified file.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:SETUp value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:SETUp <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string that is the complete path specification. If a file name
           or path is specified, the file is expected to be located in a directory relative to the
           current working directory (specified by ``FILESYSTEM:CWD``) unless a complete path is
@@ -328,25 +319,24 @@ class SaveSetup(SCPICmdWrite, SCPICmdRead):
     def includerefs(self) -> SaveSetupIncluderefs:
         """Return the ``SAVe:SETUp:INCLUDEREFs`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether displayed reference waveforms are to be included
               in saved setups.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:SETUp:INCLUDEREFs?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:SETUp:INCLUDEREFs?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVe:SETUp:INCLUDEREFs value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:SETUp:INCLUDEREFs {OFF|ON|0|1}
             - SAVe:SETUp:INCLUDEREFs?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` specifies not including displayed reference waveforms in saved setups.
             - ``ON`` specifies including displayed reference waveforms in saved setups.
             - ``0`` specifies not including displayed reference waveforms in saved setups.
@@ -358,19 +348,18 @@ class SaveSetup(SCPICmdWrite, SCPICmdRead):
 class SaveSession(SCPICmdWrite):
     """The ``SAVe:SESsion`` command.
 
-    **Description:**
+    Description:
         - Saves the state of the instrument, including reference waveforms, to a saved session file.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:SESsion value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:SESsion <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the file path that specifies the location to save the specified
           instrument session file. If a file name or path is specified, the file is expected to be
           located in a directory relative to the current working directory (specified by.
@@ -382,23 +371,22 @@ class SaveSession(SCPICmdWrite):
 class SaveReportComments(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:REPOrt:COMMents`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the comments to be included in saved report files.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:REPOrt:COMMents?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:REPOrt:COMMents?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVe:REPOrt:COMMents value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:REPOrt:COMMents <QString>
         - SAVe:REPOrt:COMMents?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the comments to be included in saved report files.
     """
 
@@ -408,20 +396,19 @@ class SaveReportComments(SCPICmdWrite, SCPICmdRead):
 class SaveReport(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:REPOrt`` command.
 
-    **Description:**
+    Description:
         - This command saves a report to the specified file. Supported report formats are PDF and
           MHT (web page archive file).
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:REPOrt value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:REPOrt <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the complete path specification. When specifying the file name with this
           command, use the correct file extension (.pdf for PDF format, or .mht for MHT format).
 
@@ -439,24 +426,23 @@ class SaveReport(SCPICmdWrite, SCPICmdRead):
     def comments(self) -> SaveReportComments:
         """Return the ``SAVe:REPOrt:COMMents`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the comments to be included in saved report files.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:REPOrt:COMMents?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:REPOrt:COMMents?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVe:REPOrt:COMMents value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:REPOrt:COMMents <QString>
             - SAVe:REPOrt:COMMents?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the comments to be included in saved report files.
         """
         return self._comments
@@ -465,7 +451,7 @@ class SaveReport(SCPICmdWrite, SCPICmdRead):
 class SavePlotdata(SCPICmdWrite):
     """The ``SAVe:PLOTData`` command.
 
-    **Description:**
+    Description:
         - Saves the plot data of the currently selected plot to a specified file. Supported file
           format is CSV. When specifying the file name with this command, use the correct file
           extension (.CSV). If a file name or path is specified, the file is expected to be located
@@ -477,16 +463,15 @@ class SavePlotdata(SCPICmdWrite):
           current working directory. To export an eye diagram plot data to a .csv file, the
           prerequisite command is ``MEASUrement:ADDMEAS TIE``
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:PLOTData value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:PLOTData <Qstring>
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` sets the file name and location used to store the plot data.
     """
 
@@ -494,23 +479,22 @@ class SavePlotdata(SCPICmdWrite):
 class SaveImageViewtype(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:IMAGe:VIEWTYpe`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the view type for saved images. Currently only FULLScreen is supported.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:IMAGe:VIEWTYpe?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:IMAGe:VIEWTYpe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVe:IMAGe:VIEWTYpe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:IMAGe:VIEWTYpe {FULLScreen}
         - SAVe:IMAGe:VIEWTYpe?
+        ```
 
-    **Info:**
+    Info:
         - ``FULLScreen`` sets the screen capture mode to capture the full screen.
     """
 
@@ -518,23 +502,22 @@ class SaveImageViewtype(SCPICmdWrite, SCPICmdRead):
 class SaveImageComposition(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:IMAGe:COMPosition`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the color mode for saved images (normal or inverted).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:IMAGe:COMPosition?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:IMAGe:COMPosition?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SAVe:IMAGe:COMPosition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:IMAGe:COMPosition {NORMal|INVErted}
         - SAVe:IMAGe:COMPosition?
+        ```
 
-    **Info:**
+    Info:
         - ``NORMal`` Sets the saved screen capture to Normal colors.
         - ``INVErted`` sets the saved screen capture to Inverted colors.
     """
@@ -543,20 +526,19 @@ class SaveImageComposition(SCPICmdWrite, SCPICmdRead):
 class SaveImage(SCPICmdWrite, SCPICmdRead):
     """The ``SAVe:IMAGe`` command.
 
-    **Description:**
+    Description:
         - Saves a capture of the screen contents to the specified image file. Supported image
           formats are PNG, Windows Bitmap, and JPEG.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:IMAGe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:IMAGe <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the file name and location used to store the image file.
 
     Properties:
@@ -575,24 +557,23 @@ class SaveImage(SCPICmdWrite, SCPICmdRead):
     def composition(self) -> SaveImageComposition:
         """Return the ``SAVe:IMAGe:COMPosition`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the color mode for saved images (normal or inverted).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:IMAGe:COMPosition?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:IMAGe:COMPosition?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVe:IMAGe:COMPosition value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:IMAGe:COMPosition {NORMal|INVErted}
             - SAVe:IMAGe:COMPosition?
+            ```
 
-        **Info:**
+        Info:
             - ``NORMal`` Sets the saved screen capture to Normal colors.
             - ``INVErted`` sets the saved screen capture to Inverted colors.
         """
@@ -602,25 +583,24 @@ class SaveImage(SCPICmdWrite, SCPICmdRead):
     def viewtype(self) -> SaveImageViewtype:
         """Return the ``SAVe:IMAGe:VIEWTYpe`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the view type for saved images. Currently only FULLScreen is
               supported.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:IMAGe:VIEWTYpe?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:IMAGe:VIEWTYpe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SAVe:IMAGe:VIEWTYpe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:IMAGe:VIEWTYpe {FULLScreen}
             - SAVe:IMAGe:VIEWTYpe?
+            ```
 
-        **Info:**
+        Info:
             - ``FULLScreen`` sets the screen capture mode to capture the full screen.
         """
         return self._viewtype
@@ -629,20 +609,19 @@ class SaveImage(SCPICmdWrite, SCPICmdRead):
 class SaveEventtableSearchtable(SCPICmdWrite):
     """The ``SAVe:EVENTtable:SEARCHTable`` command.
 
-    **Description:**
+    Description:
         - This command saves a search results table to the specified file.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:EVENTtable:SEARCHTable value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:EVENTtable:SEARCHTable <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the specified file. If a file name or path is specified, the file is
           expected to be located in a directory relative to the current working directory (specified
           by ``FILESYSTEM:CWD``) unless a complete path is specified.
@@ -654,20 +633,19 @@ class SaveEventtableSearchtable(SCPICmdWrite):
 class SaveEventtableMeasurement(SCPICmdWrite):
     """The ``SAVe:EVENTtable:MEASUrement`` command.
 
-    **Description:**
+    Description:
         - This command saves data (measurement) results to the specified file.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:EVENTtable:MEASUrement value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:EVENTtable:MEASUrement <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the specified file. If a file name or path is specified, the file is
           expected to be located in a directory relative to the current working directory (specified
           by ``FILESYSTEM:CWD``) unless a complete path is specified.
@@ -679,19 +657,18 @@ class SaveEventtableMeasurement(SCPICmdWrite):
 class SaveEventtableBus(SCPICmdWrite):
     """The ``SAVe:EVENTtable:BUS`` command.
 
-    **Description:**
+    Description:
         - This command saves bus results table to the specified file.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SAVe:EVENTtable:BUS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SAVe:EVENTtable:BUS <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the specified file. If a file name or path is specified, the file is
           expected to be located in a directory relative to the current working directory (specified
           by ``FILESYSTEM:CWD``) unless a complete path is specified.
@@ -703,7 +680,7 @@ class SaveEventtableBus(SCPICmdWrite):
 class SaveEventtable(SCPICmdRead):
     """The ``SAVe:EVENTtable`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe:EVENTtable?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe:EVENTtable?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -724,20 +701,19 @@ class SaveEventtable(SCPICmdRead):
     def bus(self) -> SaveEventtableBus:
         """Return the ``SAVe:EVENTtable:BUS`` command.
 
-        **Description:**
+        Description:
             - This command saves bus results table to the specified file.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:EVENTtable:BUS value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:EVENTtable:BUS <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the specified file. If a file name or path is specified, the file is
               expected to be located in a directory relative to the current working directory
               (specified by ``FILESYSTEM:CWD``) unless a complete path is specified.
@@ -748,20 +724,19 @@ class SaveEventtable(SCPICmdRead):
     def measurement(self) -> SaveEventtableMeasurement:
         """Return the ``SAVe:EVENTtable:MEASUrement`` command.
 
-        **Description:**
+        Description:
             - This command saves data (measurement) results to the specified file.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:EVENTtable:MEASUrement value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:EVENTtable:MEASUrement <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the specified file. If a file name or path is specified, the file is
               expected to be located in a directory relative to the current working directory
               (specified by ``FILESYSTEM:CWD``) unless a complete path is specified.
@@ -772,20 +747,19 @@ class SaveEventtable(SCPICmdRead):
     def searchtable(self) -> SaveEventtableSearchtable:
         """Return the ``SAVe:EVENTtable:SEARCHTable`` command.
 
-        **Description:**
+        Description:
             - This command saves a search results table to the specified file.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:EVENTtable:SEARCHTable value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:EVENTtable:SEARCHTable <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the specified file. If a file name or path is specified, the file is
               expected to be located in a directory relative to the current working directory
               (specified by ``FILESYSTEM:CWD``) unless a complete path is specified.
@@ -796,7 +770,7 @@ class SaveEventtable(SCPICmdRead):
 class Save(SCPICmdRead):
     """The ``SAVe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SAVe?`` query.
         - Using the ``.verify(value)`` method will send the ``SAVe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -825,7 +799,7 @@ class Save(SCPICmdRead):
     def eventtable(self) -> SaveEventtable:
         """Return the ``SAVe:EVENTtable`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SAVe:EVENTtable?`` query.
             - Using the ``.verify(value)`` method will send the ``SAVe:EVENTtable?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -841,20 +815,19 @@ class Save(SCPICmdRead):
     def image(self) -> SaveImage:
         """Return the ``SAVe:IMAGe`` command.
 
-        **Description:**
+        Description:
             - Saves a capture of the screen contents to the specified image file. Supported image
               formats are PNG, Windows Bitmap, and JPEG.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:IMAGe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:IMAGe <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the file name and location used to store the image file.
 
         Sub-properties:
@@ -867,7 +840,7 @@ class Save(SCPICmdRead):
     def plotdata(self) -> SavePlotdata:
         """Return the ``SAVe:PLOTData`` command.
 
-        **Description:**
+        Description:
             - Saves the plot data of the currently selected plot to a specified file. Supported file
               format is CSV. When specifying the file name with this command, use the correct file
               extension (.CSV). If a file name or path is specified, the file is expected to be
@@ -880,16 +853,15 @@ class Save(SCPICmdRead):
               diagram plot data to a .csv file, the prerequisite command is
               ``MEASUrement:ADDMEAS TIE``
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:PLOTData value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:PLOTData <Qstring>
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` sets the file name and location used to store the plot data.
         """
         return self._plotdata
@@ -898,20 +870,19 @@ class Save(SCPICmdRead):
     def report(self) -> SaveReport:
         """Return the ``SAVe:REPOrt`` command.
 
-        **Description:**
+        Description:
             - This command saves a report to the specified file. Supported report formats are PDF
               and MHT (web page archive file).
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:REPOrt value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:REPOrt <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the complete path specification. When specifying the file name with
               this command, use the correct file extension (.pdf for PDF format, or .mht for MHT
               format).
@@ -925,20 +896,19 @@ class Save(SCPICmdRead):
     def session(self) -> SaveSession:
         """Return the ``SAVe:SESsion`` command.
 
-        **Description:**
+        Description:
             - Saves the state of the instrument, including reference waveforms, to a saved session
               file.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:SESsion value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:SESsion <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the file path that specifies the location to save the specified
               instrument session file. If a file name or path is specified, the file is expected to
               be located in a directory relative to the current working directory (specified by.
@@ -949,19 +919,18 @@ class Save(SCPICmdRead):
     def setup(self) -> SaveSetup:
         """Return the ``SAVe:SETUp`` command.
 
-        **Description:**
+        Description:
             - Saves the current instrument state to the specified file.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:SETUp value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:SETUp <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string that is the complete path specification. If a file
               name or path is specified, the file is expected to be located in a directory relative
               to the current working directory (specified by ``FILESYSTEM:CWD``) unless a complete
@@ -976,19 +945,18 @@ class Save(SCPICmdRead):
     def waveform(self) -> SaveWaveform:
         """Return the ``SAVe:WAVEform`` command.
 
-        **Description:**
+        Description:
             - This command saves the specified waveform(s) to the specified destination file.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SAVe:WAVEform value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SAVe:WAVEform {CH<x>[_DALL|_SV_NORMal|_SV_AVErage|_SV_MAXHold| _SV_MINHold|_MAG_VS_TIME|_FREQ_VS_TIME| _PHASE_VS_TIME _SV_BASEBAND_IQ]|MATH<x>|REF<x>|ALL| },<QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<x>`` is the number of the analog channel (CH<x>), math (MATH<x>), or reference
               (REF<x>) waveform source used to save the waveform data.
             - ``_DALL`` saves the digital channel waveform data of the specified channel.

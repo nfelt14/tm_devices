@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - PASSWord <QString>
 """
 
@@ -27,7 +25,7 @@ if TYPE_CHECKING:
 class Password(SCPICmdWrite):
     """The ``PASSWord`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) enables the ``*PUD`` and NEWpass set commands. Sending
           ``PASSWord`` without any arguments disables these same commands. Once the password is
           successfully entered, the ``*PUD`` and NEWpass commands are enabled until the instrument
@@ -36,16 +34,15 @@ class Password(SCPICmdWrite):
           password with the ``PASSWord`` command and then change to your new password with the
           NEWpass command. Remember that the password is case sensitive.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``PASSWord value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PASSWord <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the password, which can contain up to 10 characters. The factory default
           password is 'XYZZY' and is always valid.
     """

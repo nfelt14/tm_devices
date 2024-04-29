@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - tsplink.group
     - tsplink.master
     - tsplink.node
@@ -50,13 +48,13 @@ if TYPE_CHECKING:
 class TsplinkTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``tsplink.trigger[N]`` command tree.
 
-    **Info:**
+    Info:
         - ``N``, the trigger line (1 to 3).
 
     Constants:
         - ``.EVENT_ID``: The number that is used for the trigger events.
 
-    Properties/methods:
+    Properties and methods:
         - ``.assert()``: The ``tsplink.trigger[N].assert()`` function.
         - ``.clear()``: The ``tsplink.trigger[N].clear()`` function.
         - ``.mode``: The ``tsplink.trigger[N].mode`` attribute.
@@ -82,22 +80,21 @@ class TsplinkTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def mode(self) -> str:
         """Access the ``tsplink.trigger[N].mode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the trigger operation and detection mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(tsplink.trigger[N].mode)`` query.
             - Setting this property to a value will send the ``tsplink.trigger[N].mode = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.trigger[N].mode = value
             - print(tsplink.trigger[N].mode)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
         Raises:
@@ -117,22 +114,21 @@ class TsplinkTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def mode(self, value: Union[str, float]) -> None:
         """Access the ``tsplink.trigger[N].mode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the trigger operation and detection mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(tsplink.trigger[N].mode)`` query.
             - Setting this property to a value will send the ``tsplink.trigger[N].mode = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.trigger[N].mode = value
             - print(tsplink.trigger[N].mode)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
         Raises:
@@ -155,20 +151,19 @@ class TsplinkTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def overrun(self) -> str:
         """Access the ``tsplink.trigger[N].overrun`` attribute.
 
-        **Description:**
+        Description:
             - This attribute indicates if the event detector ignored an event while in the detected
               state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(tsplink.trigger[N].overrun)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(tsplink.trigger[N].overrun)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
         Raises:
@@ -188,23 +183,22 @@ class TsplinkTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def pulsewidth(self) -> str:
         """Access the ``tsplink.trigger[N].pulsewidth`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the length of time that the trigger line is asserted for output
               triggers.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(tsplink.trigger[N].pulsewidth)`` query.
             - Setting this property to a value will send the
               ``tsplink.trigger[N].pulsewidth = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.trigger[N].pulsewidth = value
             - print(tsplink.trigger[N].pulsewidth)
+            ```
 
-        **Info:**
+        Info:
             - ``width``, the pulse width (in seconds).
             - ``N``, the trigger line (1 to 3).
 
@@ -225,23 +219,22 @@ class TsplinkTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def pulsewidth(self, value: Union[str, float]) -> None:
         """Access the ``tsplink.trigger[N].pulsewidth`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the length of time that the trigger line is asserted for output
               triggers.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(tsplink.trigger[N].pulsewidth)`` query.
             - Setting this property to a value will send the
               ``tsplink.trigger[N].pulsewidth = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.trigger[N].pulsewidth = value
             - print(tsplink.trigger[N].pulsewidth)
+            ```
 
-        **Info:**
+        Info:
             - ``width``, the pulse width (in seconds).
             - ``N``, the trigger line (1 to 3).
 
@@ -265,23 +258,22 @@ class TsplinkTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def stimulus(self) -> str:
         """Access the ``tsplink.trigger[N].stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the event that causes the synchronization line to assert a
               trigger.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(tsplink.trigger[N].stimulus)`` query.
             - Setting this property to a value will send the ``tsplink.trigger[N].stimulus = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.trigger[N].stimulus = value
             - print(tsplink.trigger[N].stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
         Raises:
@@ -301,23 +293,22 @@ class TsplinkTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def stimulus(self, value: Union[str, float]) -> None:
         """Access the ``tsplink.trigger[N].stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute specifies the event that causes the synchronization line to assert a
               trigger.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(tsplink.trigger[N].stimulus)`` query.
             - Setting this property to a value will send the ``tsplink.trigger[N].stimulus = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.trigger[N].stimulus = value
             - print(tsplink.trigger[N].stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
         Raises:
@@ -339,17 +330,16 @@ class TsplinkTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def assert_(self) -> None:
         """Run the ``tsplink.trigger[N].assert()`` function.
 
-        **Description:**
+        Description:
             - This function simulates the occurrence of the trigger and generates the corresponding
               event ID.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.trigger[N].assert()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
         Raises:
@@ -366,16 +356,15 @@ class TsplinkTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``tsplink.trigger[N].clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the event detector for a LAN trigger.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.trigger[N].clear()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3) to clear.
 
         Raises:
@@ -392,16 +381,15 @@ class TsplinkTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def release(self) -> None:
         """Run the ``tsplink.trigger[N].release()`` function.
 
-        **Description:**
+        Description:
             - This function releases a latched trigger on the given TSP-Link trigger line.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.trigger[N].release()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
         Raises:
@@ -418,17 +406,16 @@ class TsplinkTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def reset(self) -> None:
         """Run the ``tsplink.trigger[N].reset()`` function.
 
-        **Description:**
+        Description:
             - This function resets some of the TSP-Link trigger attributes to their factory
               defaults.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.trigger[N].reset()
+            ```
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
         Raises:
@@ -445,14 +432,13 @@ class TsplinkTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def wait(self, timeout: float) -> str:
         """Run the ``tsplink.trigger[N].wait()`` function.
 
-        **Description:**
+        Description:
             - This function waits for a trigger.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.trigger[N].wait()
+            ```
 
         Args:
             timeout: The timeout value in seconds.
@@ -475,7 +461,7 @@ class TsplinkTriggerItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
 class Tsplink(BaseTSPCmd):
     """The ``tsplink`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.group``: The ``tsplink.group`` attribute.
         - ``.master``: The ``tsplink.master`` attribute.
         - ``.node``: The ``tsplink.node`` attribute.
@@ -499,19 +485,18 @@ class Tsplink(BaseTSPCmd):
     def group(self) -> str:
         """Access the ``tsplink.group`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the group number of a TSP-Link node.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(tsplink.group)`` query.
             - Setting this property to a value will send the ``tsplink.group = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.group = value
             - print(tsplink.group)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -530,19 +515,18 @@ class Tsplink(BaseTSPCmd):
     def group(self, value: Union[str, float]) -> None:
         """Access the ``tsplink.group`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the group number of a TSP-Link node.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(tsplink.group)`` query.
             - Setting this property to a value will send the ``tsplink.group = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.group = value
             - print(tsplink.group)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -564,17 +548,16 @@ class Tsplink(BaseTSPCmd):
     def master(self) -> str:
         """Access the ``tsplink.master`` attribute.
 
-        **Description:**
+        Description:
             - This attribute reads the node number assigned to the master node.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(tsplink.master)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(tsplink.master)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -593,19 +576,18 @@ class Tsplink(BaseTSPCmd):
     def node(self) -> str:
         """Access the ``tsplink.node`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the node number.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(tsplink.node)`` query.
             - Setting this property to a value will send the ``tsplink.node = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.node = value
             - print(tsplink.node)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -624,19 +606,18 @@ class Tsplink(BaseTSPCmd):
     def node(self, value: Union[str, float]) -> None:
         """Access the ``tsplink.node`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines the node number.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(tsplink.node)`` query.
             - Setting this property to a value will send the ``tsplink.node = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.node = value
             - print(tsplink.node)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -658,17 +639,16 @@ class Tsplink(BaseTSPCmd):
     def state(self) -> str:
         """Access the ``tsplink.state`` attribute.
 
-        **Description:**
+        Description:
             - This attribute describes the TSP-Link online state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(tsplink.state)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(tsplink.state)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -687,13 +667,13 @@ class Tsplink(BaseTSPCmd):
     def trigger(self) -> Dict[int, TsplinkTriggerItem]:
         """Return the ``tsplink.trigger[N]`` command tree.
 
-        **Info:**
+        Info:
             - ``N``, the trigger line (1 to 3).
 
         Constants:
             - ``.EVENT_ID``: The number that is used for the trigger events.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.assert()``: The ``tsplink.trigger[N].assert()`` function.
             - ``.clear()``: The ``tsplink.trigger[N].clear()`` function.
             - ``.mode``: The ``tsplink.trigger[N].mode`` attribute.
@@ -710,21 +690,20 @@ class Tsplink(BaseTSPCmd):
     def writeprotect(self) -> str:
         """Access the ``tsplink.writeprotect`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the write-protect mask that protects bits from changes by the
               tsplink.writebit() and tsplink.writeport() functions.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(tsplink.writeprotect)`` query.
             - Setting this property to a value will send the ``tsplink.writeprotect = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.writeprotect = value
             - print(tsplink.writeprotect)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -743,21 +722,20 @@ class Tsplink(BaseTSPCmd):
     def writeprotect(self, value: Union[str, float]) -> None:
         """Access the ``tsplink.writeprotect`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the write-protect mask that protects bits from changes by the
               tsplink.writebit() and tsplink.writeport() functions.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(tsplink.writeprotect)`` query.
             - Setting this property to a value will send the ``tsplink.writeprotect = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.writeprotect = value
             - print(tsplink.writeprotect)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -778,14 +756,13 @@ class Tsplink(BaseTSPCmd):
     def readbit(self, n: int) -> str:
         """Run the ``tsplink.readbit()`` function.
 
-        **Description:**
+        Description:
             - This function reads the state of a TSP-Link synchronization line.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.readbit()
+            ```
 
         Args:
             n: The trigger line (1 to 3).
@@ -807,14 +784,13 @@ class Tsplink(BaseTSPCmd):
     def readport(self) -> str:
         """Run the ``tsplink.readport()`` function.
 
-        **Description:**
+        Description:
             - This function reads the TSP-Link trigger lines as a digital I/O port.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.readport()
+            ```
 
         Returns:
             The result of the function call.
@@ -833,14 +809,13 @@ class Tsplink(BaseTSPCmd):
     def reset(self, expected_nodes: Optional[int] = None) -> str:
         """Run the ``tsplink.reset()`` function.
 
-        **Description:**
+        Description:
             - This function initializes (resets) all nodes (instruments) in the TSP-Link system.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.reset()
+            ```
 
         Args:
             expected_nodes (optional): The number of nodes expected on the system (1 to 64).
@@ -863,14 +838,13 @@ class Tsplink(BaseTSPCmd):
     def writebit(self, n: int, data: int) -> None:
         """Run the ``tsplink.writebit()`` function.
 
-        **Description:**
+        Description:
             - This function sets a TSP-Link trigger line high or low.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.writebit()
+            ```
 
         Args:
             n: The trigger line (1 to 3).
@@ -890,14 +864,13 @@ class Tsplink(BaseTSPCmd):
     def writeport(self, data: int) -> None:
         """Run the ``tsplink.writeport()`` function.
 
-        **Description:**
+        Description:
             - This function writes to all TSP-Link synchronization lines.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - tsplink.writeport()
+            ```
 
         Args:
             data: Value to write to the port (0 to 7).

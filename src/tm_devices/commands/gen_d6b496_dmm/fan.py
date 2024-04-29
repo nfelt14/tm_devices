@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - fan.level
 """
 
@@ -27,7 +25,7 @@ if TYPE_CHECKING:
 class Fan(BaseTSPCmd):
     """The ``fan`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.level``: The ``fan.level`` attribute.
     """
 
@@ -38,19 +36,18 @@ class Fan(BaseTSPCmd):
     def level(self) -> str:
         """Access the ``fan.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the speed of the instrument fan.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(fan.level)`` query.
             - Setting this property to a value will send the ``fan.level = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - fan.level = value
             - print(fan.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -69,19 +66,18 @@ class Fan(BaseTSPCmd):
     def level(self, value: Union[str, float]) -> None:
         """Access the ``fan.level`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the speed of the instrument fan.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(fan.level)`` query.
             - Setting this property to a value will send the ``fan.level = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - fan.level = value
             - print(fan.level)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.

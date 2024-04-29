@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - TRIGger FORCe
     - TRIGger:A SETLevel
     - TRIGger:A:BUS:B<x>:CAN:CONDition {SOF|FRAMEtype|IDentifier|DATa|IDANDDATA|EOF|ERRor|FDBITS}
@@ -54,7 +52,8 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:LIN:CONDition?
     - TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue?
-    - TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual|
+      INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier?
     - TRIGger:A:BUS:B<x>:LIN:DATa:SIZe <NR1>
     - TRIGger:A:BUS:B<x>:LIN:DATa:SIZe?
@@ -80,19 +79,22 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:SENT:ERRType?
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:HIVALue?
-    - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:QUALifier {EQual|UNEQual|LESSthan|MOREthan|
+      LESSEQual|MOREEQual|INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:QUALifier?
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:VALue <Qstring>
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:VALue?
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:HIVALue?
-    - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:QUALifier {EQual|UNEQual|LESSthan|MOREthan|
+      LESSEQual|MOREEQual|INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:QUALifier?
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:VALue <Qstring>
     - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:VALue?
     - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:HIVALue?
-    - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:QUALifier {EQual|UNEQual|LESSthan|MOREthan|
+      LESSEQual|MOREEQual|INrange|OUTrange}
     - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:QUALifier?
     - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:VALue <Qstring>
     - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:VALue?
@@ -100,11 +102,13 @@ Commands and Queries:
     - TRIGger:A:BUS:B<x>:SENT:FAST:INVERTNIBble:VALue?
     - TRIGger:A:BUS:B<x>:SENT:FAST:STATus:VALue <Qstring>
     - TRIGger:A:BUS:B<x>:SENT:FAST:STATus:VALue?
-    - TRIGger:A:BUS:B<x>:SENT:PAUSE:QUALifier {EQual|UNEQual| LESSthan|MOREthan|LESSEQual|MOREEQual|Inrange|OUTrange}
+    - TRIGger:A:BUS:B<x>:SENT:PAUSE:QUALifier {EQual|UNEQual|
+      LESSthan|MOREthan|LESSEQual|MOREEQual|Inrange|OUTrange}
     - TRIGger:A:BUS:B<x>:SENT:PAUSE:QUALifier?
     - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:HIVALue <QString>
     - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:HIVALue?
-    - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:QUALifier {EQual|UNEQual| LESSthan|MOREthan|LESSEQual|MOREEQual| INRange| OUTRange}
+    - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:QUALifier {EQual|UNEQual|
+      LESSthan|MOREthan|LESSEQual|MOREEQual| INRange| OUTRange}
     - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:QUALifier?
     - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:VALue <Qstring>
     - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:VALue?
@@ -195,7 +199,7 @@ Commands and Queries:
     - TRIGger:HYSTeresis:USER:VALue?
     - TRIGger:STATE?
     - TRIGger?
-"""  # noqa: E501
+"""
 
 from typing import Dict, Optional, TYPE_CHECKING
 
@@ -215,44 +219,42 @@ if TYPE_CHECKING:
 class TriggerState(SCPICmdRead):
     """The ``TRIGger:STATE`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns the current state of the triggering system.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:STATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:STATE?
+        ```
     """
 
 
 class TriggerHysteresisUserValue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:HYSTeresis:USER:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the height of the user-defined trigger hysteresis zone in
           volts.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:HYSTeresis:USER:VALue?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:HYSTeresis:USER:VALue?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:HYSTeresis:USER:VALue value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:HYSTeresis:USER:VALue <NR1>
         - TRIGger:HYSTeresis:USER:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` sets the height of the hysteresis zone in volts.
     """
 
@@ -260,24 +262,23 @@ class TriggerHysteresisUserValue(SCPICmdWrite, SCPICmdRead):
 class TriggerHysteresisUserState(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:HYSTeresis:USER:STATe`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables user-defined trigger hysteresis.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:HYSTeresis:USER:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:HYSTeresis:USER:STATe?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:HYSTeresis:USER:STATe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:HYSTeresis:USER:STATe {ON|OFF|1|0}
         - TRIGger:HYSTeresis:USER:STATe?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` enables user-defined trigger hysteresis.
         - ``OFF`` disables user-defined trigger hysteresis.
         - ``1`` enables user-defined trigger hysteresis.
@@ -288,7 +289,7 @@ class TriggerHysteresisUserState(SCPICmdWrite, SCPICmdRead):
 class TriggerHysteresisUser(SCPICmdRead):
     """The ``TRIGger:HYSTeresis:USER`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:HYSTeresis:USER?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:HYSTeresis:USER?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -307,24 +308,23 @@ class TriggerHysteresisUser(SCPICmdRead):
     def state(self) -> TriggerHysteresisUserState:
         """Return the ``TRIGger:HYSTeresis:USER:STATe`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables user-defined trigger hysteresis.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:HYSTeresis:USER:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:HYSTeresis:USER:STATe?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``TRIGger:HYSTeresis:USER:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:HYSTeresis:USER:STATe {ON|OFF|1|0}
             - TRIGger:HYSTeresis:USER:STATe?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` enables user-defined trigger hysteresis.
             - ``OFF`` disables user-defined trigger hysteresis.
             - ``1`` enables user-defined trigger hysteresis.
@@ -336,25 +336,24 @@ class TriggerHysteresisUser(SCPICmdRead):
     def value(self) -> TriggerHysteresisUserValue:
         """Return the ``TRIGger:HYSTeresis:USER:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the height of the user-defined trigger hysteresis zone in
               volts.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:HYSTeresis:USER:VALue?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:HYSTeresis:USER:VALue?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``TRIGger:HYSTeresis:USER:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:HYSTeresis:USER:VALue <NR1>
             - TRIGger:HYSTeresis:USER:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` sets the height of the hysteresis zone in volts.
         """
         return self._value
@@ -363,7 +362,7 @@ class TriggerHysteresisUser(SCPICmdRead):
 class TriggerHysteresis(SCPICmdRead):
     """The ``TRIGger:HYSTeresis`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:HYSTeresis?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:HYSTeresis?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -380,7 +379,7 @@ class TriggerHysteresis(SCPICmdRead):
     def user(self) -> TriggerHysteresisUser:
         """Return the ``TRIGger:HYSTeresis:USER`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:HYSTeresis:USER?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:HYSTeresis:USER?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -395,24 +394,23 @@ class TriggerHysteresis(SCPICmdRead):
 class TriggerAuxlevel(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:AUXLevel`` command.
 
-    **Description:**
+    Description:
         - For those instruments that have an Auxiliary Input (such as an MSO58LP), this command sets
           or queries the Auxiliary Input voltage level to use for an edge trigger.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:AUXLevel?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:AUXLevel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:AUXLevel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:AUXLevel {<NR3>|ECL|TTL}
         - TRIGger:AUXLevel?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is trigger level in Volts.
         - ``ECL`` sets trigger level to -1.3 Volts.
         - ``TTL`` sets trigger level to 1.4 Volts.
@@ -422,25 +420,24 @@ class TriggerAuxlevel(SCPICmdWrite, SCPICmdRead):
 class TriggerAUpperthresholdChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:UPPerthreshold:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the specified channel upper trigger level. The CH<x> range is
           1 to 4 and depends on the number of analog channels on your instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:UPPerthreshold:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:UPPerthreshold:CH<x>?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:UPPerthreshold:CH<x> value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:UPPerthreshold:CH<x> <NR3>
         - TRIGger:A:UPPerthreshold:CH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the trigger level in user units (usually volts).
     """
 
@@ -448,7 +445,7 @@ class TriggerAUpperthresholdChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead)
 class TriggerAUpperthreshold(SCPICmdRead):
     """The ``TRIGger:A:UPPerthreshold`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:UPPerthreshold?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:UPPerthreshold?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -467,25 +464,24 @@ class TriggerAUpperthreshold(SCPICmdRead):
     def ch(self) -> Dict[int, TriggerAUpperthresholdChannel]:
         """Return the ``TRIGger:A:UPPerthreshold:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the specified channel upper trigger level. The CH<x>
               range is 1 to 4 and depends on the number of analog channels on your instrument.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:UPPerthreshold:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:UPPerthreshold:CH<x>?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:UPPerthreshold:CH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:UPPerthreshold:CH<x> <NR3>
             - TRIGger:A:UPPerthreshold:CH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the trigger level in user units (usually volts).
         """
         return self._ch
@@ -494,23 +490,22 @@ class TriggerAUpperthreshold(SCPICmdRead):
 class TriggerAType(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the type of A trigger.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:TYPe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:TYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:TYPe {EDGE| WIDth| RISE| FALL| TIMEOut| RUNt| LOGIc| SETHold| BUS}
         - TRIGger:A:TYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``EDGE`` is a normal trigger. A trigger event occurs when a signal passes through a
           specified voltage level in a specified direction and is controlled by the
           ``TRIGger:A:EDGE`` commands.
@@ -533,26 +528,25 @@ class TriggerAType(SCPICmdWrite, SCPICmdRead):
 class TriggerATimeoutTime(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:TIMEOut:TIMe`` command.
 
-    **Description:**
+    Description:
         - When triggering using the TIMEOut trigger type, this command specifies the timeout time,
           in seconds. This command is equivalent to selecting Timeout from the Trig menu and setting
           a value for Time Limit. The timeout trigger type is selected using
           ``TRIGGER:A:TYPE TIMEOut``
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:TIMEOut:TIMe?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:TIMEOut:TIMe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:TIMEOut:TIMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:TIMEOut:TIMe <NR3>
         - TRIGger:A:TIMEOut:TIMe?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the timeout time, in seconds.
     """
 
@@ -560,26 +554,25 @@ class TriggerATimeoutTime(SCPICmdWrite, SCPICmdRead):
 class TriggerATimeoutSource(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:TIMEOut:SOUrce`` command.
 
-    **Description:**
+    Description:
         - When triggering using the TIMEOut trigger type, this command specifies the source. The
           available sources are live channels and digital channels. The default is channel 1. The
           timeout trigger type is selected using ``TRIGGER:A:TYPE TIMEOut``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:TIMEOut:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:TIMEOut:SOUrce?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:TIMEOut:SOUrce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:TIMEOut:SOUrce {CH<x>|DCH<x>_D<x>}
         - TRIGger:A:TIMEOut:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies an analog channel as the timeout trigger source.
         - ``DCH<x>_D<x>`` specifies a digital channel as the timeout trigger source. The supported
           digital channel value is 1. The supported digital bit values are 0 to 15.
@@ -589,25 +582,24 @@ class TriggerATimeoutSource(SCPICmdWrite, SCPICmdRead):
 class TriggerATimeoutPolarity(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:TIMEOut:POLarity`` command.
 
-    **Description:**
+    Description:
         - When triggering using the TIMEOut trigger type, this commands specifies the polarity to be
           used.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:TIMEOut:POLarity?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:TIMEOut:POLarity?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:TIMEOut:POLarity value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:TIMEOut:POLarity {STAYSHigh|STAYSLow|EITher}
         - TRIGger:A:TIMEOut:POLarity?
+        ```
 
-    **Info:**
+    Info:
         - ``STAYSHigh`` . Trigger when the signal stays high during the timeout time specified by
           the command ``TRIGGER:A:TIMEOUT:TIME``.
         - ``STAYSLow`` . Trigger when the signal stays low during the timeout time specified by the
@@ -620,7 +612,7 @@ class TriggerATimeoutPolarity(SCPICmdWrite, SCPICmdRead):
 class TriggerATimeout(SCPICmdRead):
     """The ``TRIGger:A:TIMEOut`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:TIMEOut?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:TIMEOut?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -641,25 +633,24 @@ class TriggerATimeout(SCPICmdRead):
     def polarity(self) -> TriggerATimeoutPolarity:
         """Return the ``TRIGger:A:TIMEOut:POLarity`` command.
 
-        **Description:**
+        Description:
             - When triggering using the TIMEOut trigger type, this commands specifies the polarity
               to be used.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:TIMEOut:POLarity?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:TIMEOut:POLarity?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:TIMEOut:POLarity value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:TIMEOut:POLarity {STAYSHigh|STAYSLow|EITher}
             - TRIGger:A:TIMEOut:POLarity?
+            ```
 
-        **Info:**
+        Info:
             - ``STAYSHigh`` . Trigger when the signal stays high during the timeout time specified
               by the command ``TRIGGER:A:TIMEOUT:TIME``.
             - ``STAYSLow`` . Trigger when the signal stays low during the timeout time specified by
@@ -673,26 +664,25 @@ class TriggerATimeout(SCPICmdRead):
     def source(self) -> TriggerATimeoutSource:
         """Return the ``TRIGger:A:TIMEOut:SOUrce`` command.
 
-        **Description:**
+        Description:
             - When triggering using the TIMEOut trigger type, this command specifies the source. The
               available sources are live channels and digital channels. The default is channel 1.
               The timeout trigger type is selected using ``TRIGGER:A:TYPE TIMEOut``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:TIMEOut:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:TIMEOut:SOUrce?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:TIMEOut:SOUrce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:TIMEOut:SOUrce {CH<x>|DCH<x>_D<x>}
             - TRIGger:A:TIMEOut:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies an analog channel as the timeout trigger source.
             - ``DCH<x>_D<x>`` specifies a digital channel as the timeout trigger source. The
               supported digital channel value is 1. The supported digital bit values are 0 to 15.
@@ -703,27 +693,26 @@ class TriggerATimeout(SCPICmdRead):
     def time(self) -> TriggerATimeoutTime:
         """Return the ``TRIGger:A:TIMEOut:TIMe`` command.
 
-        **Description:**
+        Description:
             - When triggering using the TIMEOut trigger type, this command specifies the timeout
               time, in seconds. This command is equivalent to selecting Timeout from the Trig menu
               and setting a value for Time Limit. The timeout trigger type is selected using
               ``TRIGGER:A:TYPE TIMEOut``
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:TIMEOut:TIMe?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:TIMEOut:TIMe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:TIMEOut:TIMe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:TIMEOut:TIMe <NR3>
             - TRIGger:A:TIMEOut:TIMe?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the timeout time, in seconds.
         """
         return self._time
@@ -732,26 +721,25 @@ class TriggerATimeout(SCPICmdRead):
 class TriggerASetholdSettime(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:SETHold:SETTime`` command.
 
-    **Description:**
+    Description:
         - This command specifies the setup time for setup and hold violation triggering. This
           command is equivalent to selecting Setup/Hold Setup from the Trig menu and then setting
           the desired Setup Time.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:SETHold:SETTime?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:SETHold:SETTime?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:SETHold:SETTime value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:SETHold:SETTime <NR3>
         - TRIGger:A:SETHold:SETTime?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the setup time for setup and hold
           violation triggering.
     """
@@ -760,26 +748,25 @@ class TriggerASetholdSettime(SCPICmdWrite, SCPICmdRead):
 class TriggerASetholdHoldtime(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:SETHold:HOLDTime`` command.
 
-    **Description:**
+    Description:
         - This command specifies the hold time for setup and hold violation triggering. This command
           is equivalent to selecting Setup/Hold Setup from the Trig menu and then setting the
           desired Hold Time.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:SETHold:HOLDTime?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:SETHold:HOLDTime?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:SETHold:HOLDTime value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:SETHold:HOLDTime <NR3>
         - TRIGger:A:SETHold:HOLDTime?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the hold time setting, in seconds.
           Positive values for hold time occur after the clock edge. Negative values occur before the
           clock edge.
@@ -789,25 +776,24 @@ class TriggerASetholdHoldtime(SCPICmdWrite, SCPICmdRead):
 class TriggerASetholdClockSource(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:SETHold:CLOCk:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command specifies the clock source for the setup and hold triggering. You cannot
           specify the same source for both clock and data.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:SETHold:CLOCk:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:SETHold:CLOCk:SOUrce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:SETHold:CLOCk:SOUrce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:SETHold:CLOCk:SOUrce {CH<x>|DCH<x>_D<x>}
         - TRIGger:A:SETHold:CLOCk:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the analog channel to use as the clock source waveform.
         - ``DCH<x>_D<x>`` specifies the digital channel to use as the clock source waveform. The
           supported digital channel value is 1. The supported digital bit values are 0 to 15.
@@ -817,24 +803,23 @@ class TriggerASetholdClockSource(SCPICmdWrite, SCPICmdRead):
 class TriggerASetholdClockEdge(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:SETHold:CLOCk:EDGE`` command.
 
-    **Description:**
+    Description:
         - This command specifies the clock edge polarity for setup and hold triggering.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:SETHold:CLOCk:EDGE?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:SETHold:CLOCk:EDGE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:SETHold:CLOCk:EDGE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:SETHold:CLOCk:EDGE {FALL|RISe}
         - TRIGger:A:SETHold:CLOCk:EDGE?
+        ```
 
-    **Info:**
+    Info:
         - ``FALL`` specifies polarity as the clock falling edge.
         - ``RISe`` specifies polarity as the clock rising edge.
     """
@@ -843,7 +828,7 @@ class TriggerASetholdClockEdge(SCPICmdWrite, SCPICmdRead):
 class TriggerASetholdClock(SCPICmdRead):
     """The ``TRIGger:A:SETHold:CLOCk`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:SETHold:CLOCk?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:SETHold:CLOCk?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -862,24 +847,23 @@ class TriggerASetholdClock(SCPICmdRead):
     def edge(self) -> TriggerASetholdClockEdge:
         """Return the ``TRIGger:A:SETHold:CLOCk:EDGE`` command.
 
-        **Description:**
+        Description:
             - This command specifies the clock edge polarity for setup and hold triggering.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:SETHold:CLOCk:EDGE?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:SETHold:CLOCk:EDGE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:SETHold:CLOCk:EDGE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:SETHold:CLOCk:EDGE {FALL|RISe}
             - TRIGger:A:SETHold:CLOCk:EDGE?
+            ```
 
-        **Info:**
+        Info:
             - ``FALL`` specifies polarity as the clock falling edge.
             - ``RISe`` specifies polarity as the clock rising edge.
         """
@@ -889,25 +873,24 @@ class TriggerASetholdClock(SCPICmdRead):
     def source(self) -> TriggerASetholdClockSource:
         """Return the ``TRIGger:A:SETHold:CLOCk:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command specifies the clock source for the setup and hold triggering. You cannot
               specify the same source for both clock and data.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:SETHold:CLOCk:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:SETHold:CLOCk:SOUrce?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:SETHold:CLOCk:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:SETHold:CLOCk:SOUrce {CH<x>|DCH<x>_D<x>}
             - TRIGger:A:SETHold:CLOCk:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the analog channel to use as the clock source waveform.
             - ``DCH<x>_D<x>`` specifies the digital channel to use as the clock source waveform. The
               supported digital channel value is 1. The supported digital bit values are 0 to 15.
@@ -918,7 +901,7 @@ class TriggerASetholdClock(SCPICmdRead):
 class TriggerASethold(SCPICmdRead):
     """The ``TRIGger:A:SETHold`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:SETHold?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:SETHold?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -939,7 +922,7 @@ class TriggerASethold(SCPICmdRead):
     def clock(self) -> TriggerASetholdClock:
         """Return the ``TRIGger:A:SETHold:CLOCk`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:SETHold:CLOCk?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:SETHold:CLOCk?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -954,26 +937,25 @@ class TriggerASethold(SCPICmdRead):
     def holdtime(self) -> TriggerASetholdHoldtime:
         """Return the ``TRIGger:A:SETHold:HOLDTime`` command.
 
-        **Description:**
+        Description:
             - This command specifies the hold time for setup and hold violation triggering. This
               command is equivalent to selecting Setup/Hold Setup from the Trig menu and then
               setting the desired Hold Time.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:SETHold:HOLDTime?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:SETHold:HOLDTime?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:SETHold:HOLDTime value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:SETHold:HOLDTime <NR3>
             - TRIGger:A:SETHold:HOLDTime?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the hold time setting, in seconds.
               Positive values for hold time occur after the clock edge. Negative values occur before
               the clock edge.
@@ -984,26 +966,25 @@ class TriggerASethold(SCPICmdRead):
     def settime(self) -> TriggerASetholdSettime:
         """Return the ``TRIGger:A:SETHold:SETTime`` command.
 
-        **Description:**
+        Description:
             - This command specifies the setup time for setup and hold violation triggering. This
               command is equivalent to selecting Setup/Hold Setup from the Trig menu and then
               setting the desired Setup Time.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:SETHold:SETTime?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:SETHold:SETTime?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:SETHold:SETTime value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:SETHold:SETTime <NR3>
             - TRIGger:A:SETHold:SETTime?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the setup time for setup and hold
               violation triggering.
         """
@@ -1013,12 +994,12 @@ class TriggerASethold(SCPICmdRead):
 class TriggerASetholdlogicvalDchItemDigitalBit(ValidatedDigitalBit, SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:SETHOLDLOGICVAL:DCH<x>_D<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the conditions used for generating an A logic pattern, with
           respect to the defined input pattern, and identifies the time that the selected pattern
           may be true and still generate the trigger.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:SETHOLDLOGICVAL:DCH<x>_D<x>?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1027,14 +1008,13 @@ class TriggerASetholdlogicvalDchItemDigitalBit(ValidatedDigitalBit, SCPICmdWrite
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:SETHOLDLOGICVAL:DCH<x>_D<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:SETHOLDLOGICVAL:DCH<x>_D<x> {INCLude|DONTInclude}
         - TRIGger:A:SETHOLDLOGICVAL:DCH<x>_D<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``DCH<x>_D<x>`` specifies the digital channel to use as the clock source waveform. The
           supported digital channel value is 1. The supported digital bit values are 0 to 15.
         - ``INCLude`` specifies including the specified digital channel SETHOLD inputs.
@@ -1045,7 +1025,7 @@ class TriggerASetholdlogicvalDchItemDigitalBit(ValidatedDigitalBit, SCPICmdWrite
 class TriggerASetholdlogicvalDchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``TRIGger:A:SETHOLDLOGICVAL:DCH<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:SETHOLDLOGICVAL:DCH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:SETHOLDLOGICVAL:DCH<x>?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -1064,12 +1044,12 @@ class TriggerASetholdlogicvalDchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def d(self) -> Dict[int, TriggerASetholdlogicvalDchItemDigitalBit]:
         """Return the ``TRIGger:A:SETHOLDLOGICVAL:DCH<x>_D<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the conditions used for generating an A logic pattern,
               with respect to the defined input pattern, and identifies the time that the selected
               pattern may be true and still generate the trigger.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:SETHOLDLOGICVAL:DCH<x>_D<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1078,14 +1058,13 @@ class TriggerASetholdlogicvalDchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:SETHOLDLOGICVAL:DCH<x>_D<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:SETHOLDLOGICVAL:DCH<x>_D<x> {INCLude|DONTInclude}
             - TRIGger:A:SETHOLDLOGICVAL:DCH<x>_D<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``DCH<x>_D<x>`` specifies the digital channel to use as the clock source waveform. The
               supported digital channel value is 1. The supported digital bit values are 0 to 15.
             - ``INCLude`` specifies including the specified digital channel SETHOLD inputs.
@@ -1097,7 +1076,7 @@ class TriggerASetholdlogicvalDchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class TriggerASetholdlogicval(SCPICmdRead):
     """The ``TRIGger:A:SETHOLDLOGICVAL`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:SETHOLDLOGICVAL?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:SETHOLDLOGICVAL?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1116,7 +1095,7 @@ class TriggerASetholdlogicval(SCPICmdRead):
     def dch(self) -> Dict[int, TriggerASetholdlogicvalDchItem]:
         """Return the ``TRIGger:A:SETHOLDLOGICVAL:DCH<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:SETHOLDLOGICVAL:DCH<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1132,23 +1111,22 @@ class TriggerASetholdlogicval(SCPICmdRead):
 class TriggerARuntWidth(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:RUNT:WIDth`` command.
 
-    **Description:**
+    Description:
         - This command specifies the width, in seconds, for a runt trigger.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:RUNT:WIDth?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:RUNT:WIDth?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:RUNT:WIDth value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:RUNT:WIDth <NR3>
         - TRIGger:A:RUNT:WIDth?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the minimum width, in seconds.
     """
 
@@ -1156,24 +1134,23 @@ class TriggerARuntWidth(SCPICmdWrite, SCPICmdRead):
 class TriggerARuntWhen(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:RUNT:WHEn`` command.
 
-    **Description:**
+    Description:
         - This command specifies the type of pulse width the trigger checks for when it detects a
           runt.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:RUNT:WHEn?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:RUNT:WHEn?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:RUNT:WHEn value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:RUNT:WHEn {LESSthan|MOREthan|EQual|UNEQual|OCCURS}
         - TRIGger:A:RUNT:WHEn?
+        ```
 
-    **Info:**
+    Info:
         - ``OCCURS`` sets the instrument to trigger if a runt signal of any detectable width occurs.
         - ``LESSthan`` sets the instrument to trigger if the a runt pulse is detected with width
           less than the time set by the ``TRIGGER:A:RUNT:WIDTH`` command.
@@ -1190,23 +1167,22 @@ class TriggerARuntWhen(SCPICmdWrite, SCPICmdRead):
 class TriggerARuntSource(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:RUNT:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command specifies the source waveform for the runt trigger.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:RUNT:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:RUNT:SOUrce?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:RUNT:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:RUNT:SOUrce {CH<x>}
         - TRIGger:A:RUNT:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the analog channel number to use as the source waveform for the runt
           trigger. To specify the threshold levels when using CH<x> as the source, use
           ``TRIGGER:A:LOWERTHRESHOLD:CHX`` and ``TRIGGER:A:UPPERTHRESHOLD:CHX``.
@@ -1216,24 +1192,23 @@ class TriggerARuntSource(SCPICmdWrite, SCPICmdRead):
 class TriggerARuntPolarity(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:RUNT:POLarity`` command.
 
-    **Description:**
+    Description:
         - This command specifies the polarity for the runt trigger.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:RUNT:POLarity?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:RUNT:POLarity?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:RUNT:POLarity value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:RUNT:POLarity {EITher|NEGative|POSitive}
         - TRIGger:A:RUNT:POLarity?
+        ```
 
-    **Info:**
+    Info:
         - ``POSitive`` indicates that the rising edge crosses the low threshold and the falling edge
           recrosses the low threshold without either edge ever crossing the high threshold.
         - ``NEGative`` indicates that the falling edge crosses the high threshold and the rising
@@ -1245,7 +1220,7 @@ class TriggerARuntPolarity(SCPICmdWrite, SCPICmdRead):
 class TriggerARunt(SCPICmdRead):
     """The ``TRIGger:A:RUNT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:RUNT?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:RUNT?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1268,24 +1243,23 @@ class TriggerARunt(SCPICmdRead):
     def polarity(self) -> TriggerARuntPolarity:
         """Return the ``TRIGger:A:RUNT:POLarity`` command.
 
-        **Description:**
+        Description:
             - This command specifies the polarity for the runt trigger.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:RUNT:POLarity?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:RUNT:POLarity?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:RUNT:POLarity value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:RUNT:POLarity {EITher|NEGative|POSitive}
             - TRIGger:A:RUNT:POLarity?
+            ```
 
-        **Info:**
+        Info:
             - ``POSitive`` indicates that the rising edge crosses the low threshold and the falling
               edge recrosses the low threshold without either edge ever crossing the high threshold.
             - ``NEGative`` indicates that the falling edge crosses the high threshold and the rising
@@ -1298,24 +1272,23 @@ class TriggerARunt(SCPICmdRead):
     def source(self) -> TriggerARuntSource:
         """Return the ``TRIGger:A:RUNT:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command specifies the source waveform for the runt trigger.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:RUNT:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:RUNT:SOUrce?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:RUNT:SOUrce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:RUNT:SOUrce {CH<x>}
             - TRIGger:A:RUNT:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the analog channel number to use as the source waveform for the
               runt trigger. To specify the threshold levels when using CH<x> as the source, use
               ``TRIGGER:A:LOWERTHRESHOLD:CHX`` and ``TRIGGER:A:UPPERTHRESHOLD:CHX``.
@@ -1326,25 +1299,24 @@ class TriggerARunt(SCPICmdRead):
     def when(self) -> TriggerARuntWhen:
         """Return the ``TRIGger:A:RUNT:WHEn`` command.
 
-        **Description:**
+        Description:
             - This command specifies the type of pulse width the trigger checks for when it detects
               a runt.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:RUNT:WHEn?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:RUNT:WHEn?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:RUNT:WHEn value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:RUNT:WHEn {LESSthan|MOREthan|EQual|UNEQual|OCCURS}
             - TRIGger:A:RUNT:WHEn?
+            ```
 
-        **Info:**
+        Info:
             - ``OCCURS`` sets the instrument to trigger if a runt signal of any detectable width
               occurs.
             - ``LESSthan`` sets the instrument to trigger if the a runt pulse is detected with width
@@ -1363,24 +1335,23 @@ class TriggerARunt(SCPICmdRead):
     def width(self) -> TriggerARuntWidth:
         """Return the ``TRIGger:A:RUNT:WIDth`` command.
 
-        **Description:**
+        Description:
             - This command specifies the width, in seconds, for a runt trigger.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:RUNT:WIDth?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:RUNT:WIDth?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:RUNT:WIDth value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:RUNT:WIDth <NR3>
             - TRIGger:A:RUNT:WIDth?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the minimum width, in seconds.
         """
         return self._width
@@ -1389,28 +1360,27 @@ class TriggerARunt(SCPICmdRead):
 class TriggerAPulsewidthWhen(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:PULSEWidth:WHEn`` command.
 
-    **Description:**
+    Description:
         - This command specifies to trigger when a pulse is detected with a width (duration) that is
           less than, greater than, equal to, or unequal to a specified value (set using
           ``TRIGGER:A:PULSEWIDTH:LOWLIMIT``), OR whose width falls outside of or within a specified
           range of two values (set using ``TRIGGER:A:PULSEWIDTH:LOWLIMIT`` and
           ``TRIGGER:A:PULSEWIDTH:HIGHLIMIT``).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:PULSEWidth:WHEn?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:PULSEWidth:WHEn?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:PULSEWidth:WHEn value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:PULSEWidth:WHEn {LESSthan|MOREthan|EQual|UNEQual|WIThin|OUTside}
         - TRIGger:A:PULSEWidth:WHEn?
+        ```
 
-    **Info:**
+    Info:
         - ``LESSthan`` causes a trigger when a pulse is detected with a width less than the time set
           by the ``TRIGGER:A:PULSEWIDTH:LOWLIMIT`` command.
         - ``MOREthan`` causes a trigger when a pulse is detected with a width greater than the time
@@ -1430,24 +1400,23 @@ class TriggerAPulsewidthWhen(SCPICmdWrite, SCPICmdRead):
 class TriggerAPulsewidthSource(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:PULSEWidth:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command specifies the source waveform for a pulse width trigger.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:PULSEWidth:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:PULSEWidth:SOUrce?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:PULSEWidth:SOUrce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:PULSEWidth:SOUrce {CH<x>|DCH<x>_D<x>}
         - TRIGger:A:PULSEWidth:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies an analog input channel as the pulse-width trigger source.
         - ``DCH<x>_D<x>`` specifies an digital input channel as the pulse-width trigger source. The
           supported digital channel value is 1. The supported digital bit values are 0 to 15.
@@ -1457,24 +1426,23 @@ class TriggerAPulsewidthSource(SCPICmdWrite, SCPICmdRead):
 class TriggerAPulsewidthPolarity(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:PULSEWidth:POLarity`` command.
 
-    **Description:**
+    Description:
         - This command specifies the polarity for a pulse width trigger.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:PULSEWidth:POLarity?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:PULSEWidth:POLarity?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:PULSEWidth:POLarity value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:PULSEWidth:POLarity {NEGative|POSitive}
         - TRIGger:A:PULSEWidth:POLarity?
+        ```
 
-    **Info:**
+    Info:
         - ``NEGative`` specifies a negative pulse.
         - ``POSitive`` specifies a positive pulse.
     """
@@ -1483,7 +1451,7 @@ class TriggerAPulsewidthPolarity(SCPICmdWrite, SCPICmdRead):
 class TriggerAPulsewidthLowlimit(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:PULSEWidth:LOWLimit`` command.
 
-    **Description:**
+    Description:
         - This command specifies the lower limit to use, in seconds, when triggering on detection of
           a pulse whose duration is inside or outside a range of two values. (Use
           ``TRIGGER:A:PULSEWIDTH:HIGHLIMIT`` to specify the upper limit of the range.) This command
@@ -1491,21 +1459,20 @@ class TriggerAPulsewidthLowlimit(SCPICmdWrite, SCPICmdRead):
           pulse whose duration is less than, greater than, equal to, or not equal to this time
           limit.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:PULSEWidth:LOWLimit?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:PULSEWidth:LOWLimit?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:PULSEWidth:LOWLimit value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:PULSEWidth:LOWLimit <NR3>
         - TRIGger:A:PULSEWidth:LOWLimit?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that represents the lower value of the range.
     """
 
@@ -1513,26 +1480,25 @@ class TriggerAPulsewidthLowlimit(SCPICmdWrite, SCPICmdRead):
 class TriggerAPulsewidthHighlimit(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:PULSEWidth:HIGHLimit`` command.
 
-    **Description:**
+    Description:
         - This command specifies the upper limit to use, in seconds, when triggering on detection of
           a pulse whose duration is inside or outside a range of two values. (Use
           ``TRIGGER:A:PULSEWIDTH:LOWLIMIT`` to specify the lower value of the range.)
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:PULSEWidth:HIGHLimit?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:PULSEWidth:HIGHLimit?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:PULSEWidth:HIGHLimit value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:PULSEWidth:HIGHLimit <NR3>
         - TRIGger:A:PULSEWidth:HIGHLimit?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that represents the higher value of the range.
     """
 
@@ -1540,7 +1506,7 @@ class TriggerAPulsewidthHighlimit(SCPICmdWrite, SCPICmdRead):
 class TriggerAPulsewidth(SCPICmdRead):
     """The ``TRIGger:A:PULSEWidth`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:PULSEWidth?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:PULSEWidth?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1565,26 +1531,25 @@ class TriggerAPulsewidth(SCPICmdRead):
     def highlimit(self) -> TriggerAPulsewidthHighlimit:
         """Return the ``TRIGger:A:PULSEWidth:HIGHLimit`` command.
 
-        **Description:**
+        Description:
             - This command specifies the upper limit to use, in seconds, when triggering on
               detection of a pulse whose duration is inside or outside a range of two values. (Use
               ``TRIGGER:A:PULSEWIDTH:LOWLIMIT`` to specify the lower value of the range.)
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:PULSEWidth:HIGHLimit?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:PULSEWidth:HIGHLimit?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:PULSEWidth:HIGHLimit value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:PULSEWidth:HIGHLimit <NR3>
             - TRIGger:A:PULSEWidth:HIGHLimit?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that represents the higher value of the range.
         """
         return self._highlimit
@@ -1593,7 +1558,7 @@ class TriggerAPulsewidth(SCPICmdRead):
     def lowlimit(self) -> TriggerAPulsewidthLowlimit:
         """Return the ``TRIGger:A:PULSEWidth:LOWLimit`` command.
 
-        **Description:**
+        Description:
             - This command specifies the lower limit to use, in seconds, when triggering on
               detection of a pulse whose duration is inside or outside a range of two values. (Use
               ``TRIGGER:A:PULSEWIDTH:HIGHLIMIT`` to specify the upper limit of the range.) This
@@ -1601,21 +1566,20 @@ class TriggerAPulsewidth(SCPICmdRead):
               detection of a pulse whose duration is less than, greater than, equal to, or not equal
               to this time limit.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:PULSEWidth:LOWLimit?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:PULSEWidth:LOWLimit?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:PULSEWidth:LOWLimit value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:PULSEWidth:LOWLimit <NR3>
             - TRIGger:A:PULSEWidth:LOWLimit?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that represents the lower value of the range.
         """
         return self._lowlimit
@@ -1624,24 +1588,23 @@ class TriggerAPulsewidth(SCPICmdRead):
     def polarity(self) -> TriggerAPulsewidthPolarity:
         """Return the ``TRIGger:A:PULSEWidth:POLarity`` command.
 
-        **Description:**
+        Description:
             - This command specifies the polarity for a pulse width trigger.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:PULSEWidth:POLarity?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:PULSEWidth:POLarity?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:PULSEWidth:POLarity value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:PULSEWidth:POLarity {NEGative|POSitive}
             - TRIGger:A:PULSEWidth:POLarity?
+            ```
 
-        **Info:**
+        Info:
             - ``NEGative`` specifies a negative pulse.
             - ``POSitive`` specifies a positive pulse.
         """
@@ -1651,24 +1614,23 @@ class TriggerAPulsewidth(SCPICmdRead):
     def source(self) -> TriggerAPulsewidthSource:
         """Return the ``TRIGger:A:PULSEWidth:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command specifies the source waveform for a pulse width trigger.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:PULSEWidth:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:PULSEWidth:SOUrce?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:PULSEWidth:SOUrce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:PULSEWidth:SOUrce {CH<x>|DCH<x>_D<x>}
             - TRIGger:A:PULSEWidth:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies an analog input channel as the pulse-width trigger source.
             - ``DCH<x>_D<x>`` specifies an digital input channel as the pulse-width trigger source.
               The supported digital channel value is 1. The supported digital bit values are 0 to
@@ -1680,28 +1642,27 @@ class TriggerAPulsewidth(SCPICmdRead):
     def when(self) -> TriggerAPulsewidthWhen:
         """Return the ``TRIGger:A:PULSEWidth:WHEn`` command.
 
-        **Description:**
+        Description:
             - This command specifies to trigger when a pulse is detected with a width (duration)
               that is less than, greater than, equal to, or unequal to a specified value (set using
               ``TRIGGER:A:PULSEWIDTH:LOWLIMIT``), OR whose width falls outside of or within a
               specified range of two values (set using ``TRIGGER:A:PULSEWIDTH:LOWLIMIT`` and
               ``TRIGGER:A:PULSEWIDTH:HIGHLIMIT``).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:PULSEWidth:WHEn?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:PULSEWidth:WHEn?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:PULSEWidth:WHEn value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:PULSEWidth:WHEn {LESSthan|MOREthan|EQual|UNEQual|WIThin|OUTside}
             - TRIGger:A:PULSEWidth:WHEn?
+            ```
 
-        **Info:**
+        Info:
             - ``LESSthan`` causes a trigger when a pulse is detected with a width less than the time
               set by the ``TRIGGER:A:PULSEWIDTH:LOWLIMIT`` command.
             - ``MOREthan`` causes a trigger when a pulse is detected with a width greater than the
@@ -1722,24 +1683,23 @@ class TriggerAPulsewidth(SCPICmdRead):
 class TriggerAMode(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:MODe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the A trigger mode. This command is equivalent to pushing the
           Mode button on the front panel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:MODe?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:MODe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:MODe {AUTO|NORMal}
         - TRIGger:A:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``AUTO`` generates a trigger if one is not detected within a specified time period.
         - ``NORMal`` waits for a valid trigger event.
     """
@@ -1748,25 +1708,24 @@ class TriggerAMode(SCPICmdWrite, SCPICmdRead):
 class TriggerALowerthresholdChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:LOWerthreshold:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the A or B lower trigger level threshold for the channel,
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:LOWerthreshold:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOWerthreshold:CH<x>?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:LOWerthreshold:CH<x> value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:LOWerthreshold:CH<x> <NR3>
         - TRIGger:A:LOWerthreshold:CH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the threshold voltage in user units.
     """
 
@@ -1774,7 +1733,7 @@ class TriggerALowerthresholdChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead)
 class TriggerALowerthreshold(SCPICmdRead):
     """The ``TRIGger:A:LOWerthreshold`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:LOWerthreshold?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOWerthreshold?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1793,25 +1752,24 @@ class TriggerALowerthreshold(SCPICmdRead):
     def ch(self) -> Dict[int, TriggerALowerthresholdChannel]:
         """Return the ``TRIGger:A:LOWerthreshold:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the A or B lower trigger level threshold for the channel,
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:LOWerthreshold:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOWerthreshold:CH<x>?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:LOWerthreshold:CH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:LOWerthreshold:CH<x> <NR3>
             - TRIGger:A:LOWerthreshold:CH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the threshold voltage in user units.
         """
         return self._ch
@@ -1820,26 +1778,25 @@ class TriggerALowerthreshold(SCPICmdRead):
 class TriggerALogicWhen(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:LOGIc:WHEn`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the condition for generating an A or B logic trigger with
           respect to the defined input pattern. This command is equivalent to selecting Logic for
           Trigger Type, Use Clock Edge to No, and choosing a trigger condition from the Logic
           Pattern drop-down list.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:LOGIc:WHEn?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGIc:WHEn?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:LOGIc:WHEn value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:LOGIc:WHEn {TRUe|FALSe|MOREThan|LESSThan|EQual| UNEQual}
         - TRIGger:A:LOGIc:WHEn?
+        ```
 
-    **Info:**
+    Info:
         - ``TRUe`` triggers on an input pattern that is true.
         - ``FALSe`` triggers on an input pattern that is false.
         - ``MOREthan`` triggers on an input pattern that is true for a time period greater than a
@@ -1856,24 +1813,23 @@ class TriggerALogicWhen(SCPICmdWrite, SCPICmdRead):
 class TriggerALogicUseclockedge(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:LOGIc:USECLockedge`` command.
 
-    **Description:**
+    Description:
         - This command specifies whether or not Logic trigger type uses clock source.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:LOGIc:USECLockedge?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGIc:USECLockedge?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:LOGIc:USECLockedge value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:LOGIc:USECLockedge {OFF|ON|0|1|<NR1>}
         - TRIGger:A:LOGIc:USECLockedge?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` specifies that logic trigger type uses clock source.
         - ``1`` specifies that logic trigger type uses clock source.
         - ``OFF`` specifies that logic trigger type does not use clock source.
@@ -1886,25 +1842,24 @@ class TriggerALogicUseclockedge(SCPICmdWrite, SCPICmdRead):
 class TriggerALogicPolarity(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:LOGIc:POLarity`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the polarity for the clock channel when Use Clock Edge is set
           to Yes for Logic trigger type.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:LOGIc:POLarity?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGIc:POLarity?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:LOGIc:POLarity value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:LOGIc:POLarity {POSitive|NEGative|EITher}
         - TRIGger:A:LOGIc:POLarity?
+        ```
 
-    **Info:**
+    Info:
         - ``NEGative`` specifies negative polarity.
         - ``POSITIVe`` specifies positive polarity.
         - ``EITher`` specifies either polarity.
@@ -1914,24 +1869,23 @@ class TriggerALogicPolarity(SCPICmdWrite, SCPICmdRead):
 class TriggerALogicInputClockSource(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:LOGIc:INPut:CLOCk:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command specifies the channel to use as the clock source for logic trigger.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:LOGIc:INPut:CLOCk:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGIc:INPut:CLOCk:SOUrce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:LOGIc:INPut:CLOCk:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:LOGIc:INPut:CLOCk:SOUrce {CH<x>|DCH<x>_D<x>}
         - TRIGger:A:LOGIc:INPut:CLOCk:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies an analog channel as the clock source. Number of channels depends on
           instrument configuration.
         - ``DCH<x>_D<x>`` specifies a digital channel as the clock source. The supported digital
@@ -1942,7 +1896,7 @@ class TriggerALogicInputClockSource(SCPICmdWrite, SCPICmdRead):
 class TriggerALogicInputClock(SCPICmdRead):
     """The ``TRIGger:A:LOGIc:INPut:CLOCk`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:LOGIc:INPut:CLOCk?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGIc:INPut:CLOCk?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -1959,10 +1913,10 @@ class TriggerALogicInputClock(SCPICmdRead):
     def source(self) -> TriggerALogicInputClockSource:
         """Return the ``TRIGger:A:LOGIc:INPut:CLOCk:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command specifies the channel to use as the clock source for logic trigger.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:LOGIc:INPut:CLOCk:SOUrce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1971,14 +1925,13 @@ class TriggerALogicInputClock(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:LOGIc:INPut:CLOCk:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:LOGIc:INPut:CLOCk:SOUrce {CH<x>|DCH<x>_D<x>}
             - TRIGger:A:LOGIc:INPut:CLOCk:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies an analog channel as the clock source. Number of channels depends
               on instrument configuration.
             - ``DCH<x>_D<x>`` specifies a digital channel as the clock source. The supported digital
@@ -1990,7 +1943,7 @@ class TriggerALogicInputClock(SCPICmdRead):
 class TriggerALogicInput(SCPICmdRead):
     """The ``TRIGger:A:LOGIc:INPut`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:LOGIc:INPut?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGIc:INPut?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -2007,7 +1960,7 @@ class TriggerALogicInput(SCPICmdRead):
     def clock(self) -> TriggerALogicInputClock:
         """Return the ``TRIGger:A:LOGIc:INPut:CLOCk`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:LOGIc:INPut:CLOCk?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGIc:INPut:CLOCk?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -2021,26 +1974,25 @@ class TriggerALogicInput(SCPICmdRead):
 class TriggerALogicFunction(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:LOGIc:FUNCtion`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the logical combination of the input channels for logic
           triggers. This command is equivalent to selecting Logic for the Trigger Type, and setting
           or viewing the Define Logic.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:LOGIc:FUNCtion?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGIc:FUNCtion?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:LOGIc:FUNCtion value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:LOGIc:FUNCtion {AND|NANd|NOR|OR}
         - TRIGger:A:LOGIc:FUNCtion?
+        ```
 
-    **Info:**
+    Info:
         - ``AND`` specifies to trigger if all conditions are true.
         - ``NANd`` specifies to trigger if any of the conditions are false.
         - ``NOR`` specifies to trigger if all conditions are false.
@@ -2051,26 +2003,25 @@ class TriggerALogicFunction(SCPICmdWrite, SCPICmdRead):
 class TriggerALogicDeltatime(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:LOGIc:DELTatime`` command.
 
-    **Description:**
+    Description:
         - This command specifies or queries the Logic trigger delta time value. The time value is
           used as part of the Logic trigger condition to determine if the duration of a logic
           pattern meets the specified time constraints.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:LOGIc:DELTatime?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGIc:DELTatime?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:LOGIc:DELTatime value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:LOGIc:DELTatime <NR3>
         - TRIGger:A:LOGIc:DELTatime?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` the Logic trigger delta time value.
     """
 
@@ -2078,7 +2029,7 @@ class TriggerALogicDeltatime(SCPICmdWrite, SCPICmdRead):
 class TriggerALogic(SCPICmdRead):
     """The ``TRIGger:A:LOGIc`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:LOGIc?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGIc?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2105,26 +2056,25 @@ class TriggerALogic(SCPICmdRead):
     def deltatime(self) -> TriggerALogicDeltatime:
         """Return the ``TRIGger:A:LOGIc:DELTatime`` command.
 
-        **Description:**
+        Description:
             - This command specifies or queries the Logic trigger delta time value. The time value
               is used as part of the Logic trigger condition to determine if the duration of a logic
               pattern meets the specified time constraints.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:LOGIc:DELTatime?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGIc:DELTatime?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:LOGIc:DELTatime value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:LOGIc:DELTatime <NR3>
             - TRIGger:A:LOGIc:DELTatime?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` the Logic trigger delta time value.
         """
         return self._deltatime
@@ -2133,26 +2083,25 @@ class TriggerALogic(SCPICmdRead):
     def function(self) -> TriggerALogicFunction:
         """Return the ``TRIGger:A:LOGIc:FUNCtion`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the logical combination of the input channels for logic
               triggers. This command is equivalent to selecting Logic for the Trigger Type, and
               setting or viewing the Define Logic.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:LOGIc:FUNCtion?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGIc:FUNCtion?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:LOGIc:FUNCtion value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:LOGIc:FUNCtion {AND|NANd|NOR|OR}
             - TRIGger:A:LOGIc:FUNCtion?
+            ```
 
-        **Info:**
+        Info:
             - ``AND`` specifies to trigger if all conditions are true.
             - ``NANd`` specifies to trigger if any of the conditions are false.
             - ``NOR`` specifies to trigger if all conditions are false.
@@ -2164,7 +2113,7 @@ class TriggerALogic(SCPICmdRead):
     def input(self) -> TriggerALogicInput:
         """Return the ``TRIGger:A:LOGIc:INPut`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:LOGIc:INPut?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGIc:INPut?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -2178,25 +2127,24 @@ class TriggerALogic(SCPICmdRead):
     def polarity(self) -> TriggerALogicPolarity:
         """Return the ``TRIGger:A:LOGIc:POLarity`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the polarity for the clock channel when Use Clock Edge is
               set to Yes for Logic trigger type.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:LOGIc:POLarity?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGIc:POLarity?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:LOGIc:POLarity value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:LOGIc:POLarity {POSitive|NEGative|EITher}
             - TRIGger:A:LOGIc:POLarity?
+            ```
 
-        **Info:**
+        Info:
             - ``NEGative`` specifies negative polarity.
             - ``POSITIVe`` specifies positive polarity.
             - ``EITher`` specifies either polarity.
@@ -2207,24 +2155,23 @@ class TriggerALogic(SCPICmdRead):
     def useclockedge(self) -> TriggerALogicUseclockedge:
         """Return the ``TRIGger:A:LOGIc:USECLockedge`` command.
 
-        **Description:**
+        Description:
             - This command specifies whether or not Logic trigger type uses clock source.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:LOGIc:USECLockedge?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGIc:USECLockedge?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:LOGIc:USECLockedge value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:LOGIc:USECLockedge {OFF|ON|0|1|<NR1>}
             - TRIGger:A:LOGIc:USECLockedge?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` specifies that logic trigger type uses clock source.
             - ``1`` specifies that logic trigger type uses clock source.
             - ``OFF`` specifies that logic trigger type does not use clock source.
@@ -2238,27 +2185,26 @@ class TriggerALogic(SCPICmdRead):
     def when(self) -> TriggerALogicWhen:
         """Return the ``TRIGger:A:LOGIc:WHEn`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the condition for generating an A or B logic trigger with
               respect to the defined input pattern. This command is equivalent to selecting Logic
               for Trigger Type, Use Clock Edge to No, and choosing a trigger condition from the
               Logic Pattern drop-down list.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:LOGIc:WHEn?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGIc:WHEn?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:LOGIc:WHEn value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:LOGIc:WHEn {TRUe|FALSe|MOREThan|LESSThan|EQual| UNEQual}
             - TRIGger:A:LOGIc:WHEn?
+            ```
 
-        **Info:**
+        Info:
             - ``TRUe`` triggers on an input pattern that is true.
             - ``FALSe`` triggers on an input pattern that is false.
             - ``MOREthan`` triggers on an input pattern that is true for a time period greater than
@@ -2276,26 +2222,25 @@ class TriggerALogic(SCPICmdRead):
 class TriggerALogicpatternDchItemDigitalBit(ValidatedDigitalBit, SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:LOGICPattern:DCH<x>_D<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the Logic Pattern for the specified digital channel. This
           command is used along with the Define Logic choice (``LOGIc:FUNCtion``) to determine when
           the logic trigger occurs.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:LOGICPattern:DCH<x>_D<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGICPattern:DCH<x>_D<x>?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:LOGICPattern:DCH<x>_D<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:LOGICPattern:DCH<x>_D<x> {HIGH|LOW|X}
         - TRIGger:A:LOGICPattern:DCH<x>_D<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``DCH<x>_D<x>`` specifies the digital channel. The supported digital channel value is 1.
           The supported digital bits values are 0 to 15.
         - ``HIGH`` specifies triggering when the pattern is high.
@@ -2307,7 +2252,7 @@ class TriggerALogicpatternDchItemDigitalBit(ValidatedDigitalBit, SCPICmdWrite, S
 class TriggerALogicpatternDchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``TRIGger:A:LOGICPattern:DCH<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:LOGICPattern:DCH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGICPattern:DCH<x>?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -2326,12 +2271,12 @@ class TriggerALogicpatternDchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def d(self) -> Dict[int, TriggerALogicpatternDchItemDigitalBit]:
         """Return the ``TRIGger:A:LOGICPattern:DCH<x>_D<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Logic Pattern for the specified digital channel. This
               command is used along with the Define Logic choice (``LOGIc:FUNCtion``) to determine
               when the logic trigger occurs.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:LOGICPattern:DCH<x>_D<x>?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2340,14 +2285,13 @@ class TriggerALogicpatternDchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:LOGICPattern:DCH<x>_D<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:LOGICPattern:DCH<x>_D<x> {HIGH|LOW|X}
             - TRIGger:A:LOGICPattern:DCH<x>_D<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``DCH<x>_D<x>`` specifies the digital channel. The supported digital channel value is
               1. The supported digital bits values are 0 to 15.
             - ``HIGH`` specifies triggering when the pattern is high.
@@ -2360,26 +2304,25 @@ class TriggerALogicpatternDchItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class TriggerALogicpatternChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:LOGICPattern:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the Logic Pattern for the specified channel. This command is
           used along with the Define Logic choice (``LOGIc:FUNCtion``) to determine when the logic
           trigger occurs.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:LOGICPattern:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGICPattern:CH<x>?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:LOGICPattern:CH<x> value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:LOGICPattern:CH<x> {HIGH|LOW|X}
         - TRIGger:A:LOGICPattern:CH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the channel.
         - ``HIGH`` specifies triggering when the pattern is high.
         - ``LOW`` specifies triggering when the pattern is low.
@@ -2390,7 +2333,7 @@ class TriggerALogicpatternChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
 class TriggerALogicpattern(SCPICmdRead):
     """The ``TRIGger:A:LOGICPattern`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:LOGICPattern?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGICPattern?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -2413,26 +2356,25 @@ class TriggerALogicpattern(SCPICmdRead):
     def ch(self) -> Dict[int, TriggerALogicpatternChannel]:
         """Return the ``TRIGger:A:LOGICPattern:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Logic Pattern for the specified channel. This command
               is used along with the Define Logic choice (``LOGIc:FUNCtion``) to determine when the
               logic trigger occurs.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:LOGICPattern:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGICPattern:CH<x>?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:LOGICPattern:CH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:LOGICPattern:CH<x> {HIGH|LOW|X}
             - TRIGger:A:LOGICPattern:CH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the channel.
             - ``HIGH`` specifies triggering when the pattern is high.
             - ``LOW`` specifies triggering when the pattern is low.
@@ -2444,7 +2386,7 @@ class TriggerALogicpattern(SCPICmdRead):
     def dch(self) -> Dict[int, TriggerALogicpatternDchItem]:
         """Return the ``TRIGger:A:LOGICPattern:DCH<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:LOGICPattern:DCH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGICPattern:DCH<x>?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -2458,26 +2400,25 @@ class TriggerALogicpattern(SCPICmdRead):
 class TriggerALevelChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:LEVel:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the CH<x> trigger level for an Edge, Pulse Width, Runt or
           Rise/Fall (Transition and Slew Rate) trigger when triggering on an analog channel
           waveform. Each channel can have an independent trigger level. The <x> is the channel
           number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:LEVel:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:LEVel:CH<x>?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:LEVel:CH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:LEVel:CH<x> <NR3>
         - TRIGger:A:LEVel:CH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the trigger level in user units (usually volts).
     """
 
@@ -2485,7 +2426,7 @@ class TriggerALevelChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
 class TriggerALevel(SCPICmdRead):
     """The ``TRIGger:A:LEVel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:LEVel?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:LEVel?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2504,27 +2445,26 @@ class TriggerALevel(SCPICmdRead):
     def ch(self) -> Dict[int, TriggerALevelChannel]:
         """Return the ``TRIGger:A:LEVel:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the CH<x> trigger level for an Edge, Pulse Width, Runt or
               Rise/Fall (Transition and Slew Rate) trigger when triggering on an analog channel
               waveform. Each channel can have an independent trigger level. The <x> is the channel
               number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:LEVel:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:LEVel:CH<x>?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:LEVel:CH<x> value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:LEVel:CH<x> <NR3>
             - TRIGger:A:LEVel:CH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the trigger level in user units (usually volts).
         """
         return self._ch
@@ -2533,25 +2473,24 @@ class TriggerALevel(SCPICmdRead):
 class TriggerAHoldoffTime(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:HOLDoff:TIMe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the A trigger holdoff time. This command is equivalent to
           selecting Mode & Holdoff from the Trig menu, selecting Time, and then setting the desired
           Holdoff Time.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:HOLDoff:TIMe?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:HOLDoff:TIMe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:HOLDoff:TIMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:HOLDoff:TIMe <NR3>
         - TRIGger:A:HOLDoff:TIMe?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the holdoff time in seconds. The range is from 0 seconds through 10
           seconds.
     """
@@ -2560,7 +2499,7 @@ class TriggerAHoldoffTime(SCPICmdWrite, SCPICmdRead):
 class TriggerAHoldoff(SCPICmdRead):
     """The ``TRIGger:A:HOLDoff`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:HOLDoff?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:HOLDoff?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -2577,26 +2516,25 @@ class TriggerAHoldoff(SCPICmdRead):
     def time(self) -> TriggerAHoldoffTime:
         """Return the ``TRIGger:A:HOLDoff:TIMe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the A trigger holdoff time. This command is equivalent to
               selecting Mode & Holdoff from the Trig menu, selecting Time, and then setting the
               desired Holdoff Time.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:HOLDoff:TIMe?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:HOLDoff:TIMe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:HOLDoff:TIMe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:HOLDoff:TIMe <NR3>
             - TRIGger:A:HOLDoff:TIMe?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the holdoff time in seconds. The range is from 0 seconds through
               10 seconds.
         """
@@ -2606,24 +2544,23 @@ class TriggerAHoldoff(SCPICmdRead):
 class TriggerAEdgeSource(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:EDGE:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the source for the edge trigger. For instruments that have an
           Auxiliary Input, AUXiliary can be selected as trigger source.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:EDGE:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:EDGE:SOUrce?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:EDGE:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:EDGE:SOUrce {CH<x>| DCH<x>_D<x>| INTernal| AUXiliary}
         - TRIGger:A:EDGE:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies an analog channel as the edge trigger source.
         - ``DCH<x>_D<x>`` specifies a digital channel as the edge trigger source. The supported
           digital channel value is 1. The supported digital bit values are 0 to 15.
@@ -2635,26 +2572,25 @@ class TriggerAEdgeSource(SCPICmdWrite, SCPICmdRead):
 class TriggerAEdgeSlope(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:EDGE:SLOpe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the slope for the edge trigger. This command is equivalent to
           selecting Edge from the Trigger Type drop-down in the Trigger setup context menu, and then
           choosing the desired Slope. This command is also equivalent to pressing the front-panel
           Slope button.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:EDGE:SLOpe?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:EDGE:SLOpe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:EDGE:SLOpe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:EDGE:SLOpe {RISe|FALL|EITher}
         - TRIGger:A:EDGE:SLOpe?
+        ```
 
-    **Info:**
+    Info:
         - ``RISe`` specifies to trigger on the rising or positive edge of a signal.
         - ``FALL`` specifies to trigger on the falling or negative edge of a signal.
         - ``EITHER`` specifies to trigger on either the rising or falling edge of a signal.
@@ -2664,26 +2600,25 @@ class TriggerAEdgeSlope(SCPICmdWrite, SCPICmdRead):
 class TriggerAEdgeCoupling(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:EDGE:COUPling`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the type of coupling for the edge trigger. This command is
           equivalent to selecting Edge from the Trigger Type drop-down in the Trigger setup context
           menu, and choosing from the Coupling drop-down list.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:EDGE:COUPling?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:EDGE:COUPling?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:EDGE:COUPling value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:EDGE:COUPling {DC|HFRej|LFRej|NOISErej}
         - TRIGger:A:EDGE:COUPling?
+        ```
 
-    **Info:**
+    Info:
         - ``DC`` selects DC trigger coupling, which passes all input signals to the trigger
           circuitry.
         - ``HFRej`` coupling attenuates signals above 50 kHz before passing the signals to the
@@ -2699,7 +2634,7 @@ class TriggerAEdgeCoupling(SCPICmdWrite, SCPICmdRead):
 class TriggerAEdge(SCPICmdRead):
     """The ``TRIGger:A:EDGE`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:EDGE?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:EDGE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2720,26 +2655,25 @@ class TriggerAEdge(SCPICmdRead):
     def coupling(self) -> TriggerAEdgeCoupling:
         """Return the ``TRIGger:A:EDGE:COUPling`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the type of coupling for the edge trigger. This command
               is equivalent to selecting Edge from the Trigger Type drop-down in the Trigger setup
               context menu, and choosing from the Coupling drop-down list.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:EDGE:COUPling?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:EDGE:COUPling?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:EDGE:COUPling value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:EDGE:COUPling {DC|HFRej|LFRej|NOISErej}
             - TRIGger:A:EDGE:COUPling?
+            ```
 
-        **Info:**
+        Info:
             - ``DC`` selects DC trigger coupling, which passes all input signals to the trigger
               circuitry.
             - ``HFRej`` coupling attenuates signals above 50 kHz before passing the signals to the
@@ -2756,27 +2690,26 @@ class TriggerAEdge(SCPICmdRead):
     def slope(self) -> TriggerAEdgeSlope:
         """Return the ``TRIGger:A:EDGE:SLOpe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the slope for the edge trigger. This command is
               equivalent to selecting Edge from the Trigger Type drop-down in the Trigger setup
               context menu, and then choosing the desired Slope. This command is also equivalent to
               pressing the front-panel Slope button.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:EDGE:SLOpe?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:EDGE:SLOpe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:EDGE:SLOpe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:EDGE:SLOpe {RISe|FALL|EITher}
             - TRIGger:A:EDGE:SLOpe?
+            ```
 
-        **Info:**
+        Info:
             - ``RISe`` specifies to trigger on the rising or positive edge of a signal.
             - ``FALL`` specifies to trigger on the falling or negative edge of a signal.
             - ``EITHER`` specifies to trigger on either the rising or falling edge of a signal.
@@ -2787,25 +2720,24 @@ class TriggerAEdge(SCPICmdRead):
     def source(self) -> TriggerAEdgeSource:
         """Return the ``TRIGger:A:EDGE:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the source for the edge trigger. For instruments that
               have an Auxiliary Input, AUXiliary can be selected as trigger source.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:EDGE:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:EDGE:SOUrce?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:EDGE:SOUrce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:EDGE:SOUrce {CH<x>| DCH<x>_D<x>| INTernal| AUXiliary}
             - TRIGger:A:EDGE:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies an analog channel as the edge trigger source.
             - ``DCH<x>_D<x>`` specifies a digital channel as the edge trigger source. The supported
               digital channel value is 1. The supported digital bit values are 0 to 15.
@@ -2818,23 +2750,22 @@ class TriggerAEdge(SCPICmdRead):
 class TriggerABusSource(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the source bus for a bus trigger.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:SOUrce?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:BUS:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:SOUrce B<x>
         - TRIGger:A:BUS:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``B<x>`` sets the selected source to the bus.
     """
 
@@ -2842,25 +2773,24 @@ class TriggerABusSource(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSpiDataValue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SPI:DATa:VALue`` command.
 
-    **Description:**
+    Description:
         - This command specifies the binary data string used for SPI triggering if the trigger
           condition is DATA. B<x> is the specified bus number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SPI:DATa:VALue?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SPI:DATa:VALue?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SPI:DATa:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SPI:DATa:VALue <QString>
         - TRIGger:A:BUS:B<x>:SPI:DATa:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the data value in the specified valid format. The valid characters
           are 0, 1, and X for binary format.
     """
@@ -2871,25 +2801,24 @@ class TriggerABusBItemSpiDataValue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSpiDataSize(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SPI:DATa:SIZe`` command.
 
-    **Description:**
+    Description:
         - This command specifies the length of the data string to be used for a SPI trigger if the
           trigger condition is DATa. B<x> is the specified bus number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SPI:DATa:SIZe?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SPI:DATa:SIZe?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SPI:DATa:SIZe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SPI:DATa:SIZe <NR1>
         - TRIGger:A:BUS:B<x>:SPI:DATa:SIZe?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the length of the data string in bytes.
     """
 
@@ -2897,7 +2826,7 @@ class TriggerABusBItemSpiDataSize(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSpiData(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SPI:DATa`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SPI:DATa?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SPI:DATa?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -2916,11 +2845,11 @@ class TriggerABusBItemSpiData(SCPICmdRead):
     def size(self) -> TriggerABusBItemSpiDataSize:
         """Return the ``TRIGger:A:BUS:B<x>:SPI:DATa:SIZe`` command.
 
-        **Description:**
+        Description:
             - This command specifies the length of the data string to be used for a SPI trigger if
               the trigger condition is DATa. B<x> is the specified bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SPI:DATa:SIZe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2929,14 +2858,13 @@ class TriggerABusBItemSpiData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SPI:DATa:SIZe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SPI:DATa:SIZe <NR1>
             - TRIGger:A:BUS:B<x>:SPI:DATa:SIZe?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the length of the data string in bytes.
         """
         return self._size
@@ -2945,11 +2873,11 @@ class TriggerABusBItemSpiData(SCPICmdRead):
     def value(self) -> TriggerABusBItemSpiDataValue:
         """Return the ``TRIGger:A:BUS:B<x>:SPI:DATa:VALue`` command.
 
-        **Description:**
+        Description:
             - This command specifies the binary data string used for SPI triggering if the trigger
               condition is DATA. B<x> is the specified bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SPI:DATa:VALue?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2958,14 +2886,13 @@ class TriggerABusBItemSpiData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SPI:DATa:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SPI:DATa:VALue <QString>
             - TRIGger:A:BUS:B<x>:SPI:DATa:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the data value in the specified valid format. The valid
               characters are 0, 1, and X for binary format.
         """
@@ -2975,25 +2902,24 @@ class TriggerABusBItemSpiData(SCPICmdRead):
 class TriggerABusBItemSpiCondition(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SPI:CONDition`` command.
 
-    **Description:**
+    Description:
         - This command specifies the trigger condition for a SPI trigger. B<x> is the specified bus
           number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SPI:CONDition?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SPI:CONDition?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SPI:CONDition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SPI:CONDition {SS|STARTofframe|DATa}
         - TRIGger:A:BUS:B<x>:SPI:CONDition?
+        ```
 
-    **Info:**
+    Info:
         - ``SS`` specifies the Slave Selection condition.
         - ``STARTofframe`` is applicable when ``BUS:B<x>:SPI:FRAMING`` is set to IDLEtime. When the
           trigger condition is set to STARTofframe, the instrument triggers on the first SPI clock
@@ -3005,7 +2931,7 @@ class TriggerABusBItemSpiCondition(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSpi(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SPI`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SPI?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SPI?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -3024,11 +2950,11 @@ class TriggerABusBItemSpi(SCPICmdRead):
     def condition(self) -> TriggerABusBItemSpiCondition:
         """Return the ``TRIGger:A:BUS:B<x>:SPI:CONDition`` command.
 
-        **Description:**
+        Description:
             - This command specifies the trigger condition for a SPI trigger. B<x> is the specified
               bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SPI:CONDition?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3037,14 +2963,13 @@ class TriggerABusBItemSpi(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SPI:CONDition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SPI:CONDition {SS|STARTofframe|DATa}
             - TRIGger:A:BUS:B<x>:SPI:CONDition?
+            ```
 
-        **Info:**
+        Info:
             - ``SS`` specifies the Slave Selection condition.
             - ``STARTofframe`` is applicable when ``BUS:B<x>:SPI:FRAMING`` is set to IDLEtime. When
               the trigger condition is set to STARTofframe, the instrument triggers on the first SPI
@@ -3057,7 +2982,7 @@ class TriggerABusBItemSpi(SCPICmdRead):
     def data(self) -> TriggerABusBItemSpiData:
         """Return the ``TRIGger:A:BUS:B<x>:SPI:DATa`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SPI:DATa?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SPI:DATa?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -3072,11 +2997,11 @@ class TriggerABusBItemSpi(SCPICmdRead):
 class TriggerABusBItemSentSlowIdentifierValue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:SLOW:IDentifier:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the qualifier to use when triggering on SENT slow packet bus
           data. B<x> is the specified bus number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:SLOW:IDentifier:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3085,14 +3010,13 @@ class TriggerABusBItemSentSlowIdentifierValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:SLOW:IDentifier:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:SLOW:IDentifier:VALue <Qstring>
         - TRIGger:A:BUS:B<x>:SENT:SLOW:IDentifier:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` is the binary identifier value.
     """
 
@@ -3100,7 +3024,7 @@ class TriggerABusBItemSentSlowIdentifierValue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSentSlowIdentifier(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:SLOW:IDentifier`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:SLOW:IDentifier?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3119,11 +3043,11 @@ class TriggerABusBItemSentSlowIdentifier(SCPICmdRead):
     def value(self) -> TriggerABusBItemSentSlowIdentifierValue:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:SLOW:IDentifier:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the qualifier to use when triggering on SENT slow packet
               bus data. B<x> is the specified bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:SLOW:IDentifier:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3132,14 +3056,13 @@ class TriggerABusBItemSentSlowIdentifier(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:SLOW:IDentifier:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:SLOW:IDentifier:VALue <Qstring>
             - TRIGger:A:BUS:B<x>:SENT:SLOW:IDentifier:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` is the binary identifier value.
         """
         return self._value
@@ -3148,11 +3071,11 @@ class TriggerABusBItemSentSlowIdentifier(SCPICmdRead):
 class TriggerABusBItemSentSlowDataValue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary slow channel value to use when triggering on a
           SENT bus signal. B<x> is the specified bus number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:VALue?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3161,14 +3084,13 @@ class TriggerABusBItemSentSlowDataValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:VALue <Qstring>
         - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` is the binary slow channel data value.
     """
 
@@ -3176,11 +3098,11 @@ class TriggerABusBItemSentSlowDataValue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSentSlowDataQualifier(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:QUALifier`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary identifier value to use when triggering on a SENT
           bus signal. B<x> is the specified bus number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:QUALifier?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3189,14 +3111,13 @@ class TriggerABusBItemSentSlowDataQualifier(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:QUALifier value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:QUALifier {EQual|UNEQual| LESSthan|MOREthan|LESSEQual|MOREEQual| INRange| OUTRange}
         - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:QUALifier?
+        ```
 
-    **Info:**
+    Info:
         - ``EQUal`` specifies the qualifier as Equal.
         - ``UNEQual`` specifies the qualifier as Not Equal to.
         - ``LESSthan`` specifies the qualifier as Less Than.
@@ -3211,11 +3132,11 @@ class TriggerABusBItemSentSlowDataQualifier(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSentSlowDataHivalue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:HIVALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the high binary Slow channel data value to use when
           triggering on a SENT bus signal. B<x> is the specified bus number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:HIVALue?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3224,14 +3145,13 @@ class TriggerABusBItemSentSlowDataHivalue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:HIVALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:HIVALue <QString>
         - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:HIVALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` sets the binary Slow channel data value.
     """
 
@@ -3241,7 +3161,7 @@ class TriggerABusBItemSentSlowDataHivalue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSentSlowData(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -3264,11 +3184,11 @@ class TriggerABusBItemSentSlowData(SCPICmdRead):
     def hivalue(self) -> TriggerABusBItemSentSlowDataHivalue:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:HIVALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the high binary Slow channel data value to use when
               triggering on a SENT bus signal. B<x> is the specified bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:HIVALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3277,14 +3197,13 @@ class TriggerABusBItemSentSlowData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:HIVALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:HIVALue <QString>
             - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:HIVALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` sets the binary Slow channel data value.
         """
         return self._hivalue
@@ -3293,11 +3212,11 @@ class TriggerABusBItemSentSlowData(SCPICmdRead):
     def qualifier(self) -> TriggerABusBItemSentSlowDataQualifier:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:QUALifier`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary identifier value to use when triggering on a
               SENT bus signal. B<x> is the specified bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:QUALifier?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3306,14 +3225,13 @@ class TriggerABusBItemSentSlowData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:QUALifier value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:QUALifier {EQual|UNEQual| LESSthan|MOREthan|LESSEQual|MOREEQual| INRange| OUTRange}
             - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:QUALifier?
+            ```
 
-        **Info:**
+        Info:
             - ``EQUal`` specifies the qualifier as Equal.
             - ``UNEQual`` specifies the qualifier as Not Equal to.
             - ``LESSthan`` specifies the qualifier as Less Than.
@@ -3329,11 +3247,11 @@ class TriggerABusBItemSentSlowData(SCPICmdRead):
     def value(self) -> TriggerABusBItemSentSlowDataValue:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary slow channel value to use when triggering on a
               SENT bus signal. B<x> is the specified bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3342,14 +3260,13 @@ class TriggerABusBItemSentSlowData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:VALue <Qstring>
             - TRIGger:A:BUS:B<x>:SENT:SLOW:DATA:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` is the binary slow channel data value.
         """
         return self._value
@@ -3358,7 +3275,7 @@ class TriggerABusBItemSentSlowData(SCPICmdRead):
 class TriggerABusBItemSentSlow(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:SLOW`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:SLOW?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SENT:SLOW?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -3379,7 +3296,7 @@ class TriggerABusBItemSentSlow(SCPICmdRead):
     def data(self) -> TriggerABusBItemSentSlowData:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:SLOW:DATA?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3397,7 +3314,7 @@ class TriggerABusBItemSentSlow(SCPICmdRead):
     def identifier(self) -> TriggerABusBItemSentSlowIdentifier:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:SLOW:IDentifier`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:SLOW:IDentifier?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3413,11 +3330,11 @@ class TriggerABusBItemSentSlow(SCPICmdRead):
 class TriggerABusBItemSentPauseQualifier(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:PAUSE:QUALifier`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the qualifier to be used when triggering on SENT pause
           pulses. B<x> is the specified bus number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:PAUSE:QUALifier?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3426,14 +3343,13 @@ class TriggerABusBItemSentPauseQualifier(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:PAUSE:QUALifier value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:PAUSE:QUALifier {EQual|UNEQual| LESSthan|MOREthan|LESSEQual|MOREEQual|Inrange|OUTrange}
         - TRIGger:A:BUS:B<x>:SENT:PAUSE:QUALifier?
+        ```
 
-    **Info:**
+    Info:
         - ``EQUal`` sets the qualifier as Equal.
         - ``INrange`` sets the qualifier to in range.
         - ``LESSEQual`` sets the qualifier as Less Than or Equal to.
@@ -3448,7 +3364,7 @@ class TriggerABusBItemSentPauseQualifier(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSentPause(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:PAUSE`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:PAUSE?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SENT:PAUSE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -3467,11 +3383,11 @@ class TriggerABusBItemSentPause(SCPICmdRead):
     def qualifier(self) -> TriggerABusBItemSentPauseQualifier:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:PAUSE:QUALifier`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the qualifier to be used when triggering on SENT pause
               pulses. B<x> is the specified bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:PAUSE:QUALifier?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3480,14 +3396,13 @@ class TriggerABusBItemSentPause(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:PAUSE:QUALifier value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:PAUSE:QUALifier {EQual|UNEQual| LESSthan|MOREthan|LESSEQual|MOREEQual|Inrange|OUTrange}
             - TRIGger:A:BUS:B<x>:SENT:PAUSE:QUALifier?
+            ```
 
-        **Info:**
+        Info:
             - ``EQUal`` sets the qualifier as Equal.
             - ``INrange`` sets the qualifier to in range.
             - ``LESSEQual`` sets the qualifier as Less Than or Equal to.
@@ -3503,11 +3418,11 @@ class TriggerABusBItemSentPause(SCPICmdRead):
 class TriggerABusBItemSentFastStatusValue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:FAST:STATus:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary status value to be used when triggering on a SENT
           bus signal. B<x> is the specified bus number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST:STATus:VALue?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3516,14 +3431,13 @@ class TriggerABusBItemSentFastStatusValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:STATus:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:FAST:STATus:VALue <Qstring>
         - TRIGger:A:BUS:B<x>:SENT:FAST:STATus:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` is the binary status value on which to trigger.
     """
 
@@ -3531,7 +3445,7 @@ class TriggerABusBItemSentFastStatusValue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSentFastStatus(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:FAST:STATus`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST:STATus?``
           query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST:STATus?``
@@ -3549,11 +3463,11 @@ class TriggerABusBItemSentFastStatus(SCPICmdRead):
     def value(self) -> TriggerABusBItemSentFastStatusValue:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:FAST:STATus:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary status value to be used when triggering on a
               SENT bus signal. B<x> is the specified bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:STATus:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3562,14 +3476,13 @@ class TriggerABusBItemSentFastStatus(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:STATus:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:FAST:STATus:VALue <Qstring>
             - TRIGger:A:BUS:B<x>:SENT:FAST:STATus:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` is the binary status value on which to trigger.
         """
         return self._value
@@ -3578,11 +3491,11 @@ class TriggerABusBItemSentFastStatus(SCPICmdRead):
 class TriggerABusBItemSentFastInvertnibbleValue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:FAST:INVERTNIBble:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary fast message inverted nibble value to be used when
           triggering on a SENT bus signal. B<x> is the specified bus number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:INVERTNIBble:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3591,14 +3504,13 @@ class TriggerABusBItemSentFastInvertnibbleValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:INVERTNIBble:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:FAST:INVERTNIBble:VALue <Qstring>
         - TRIGger:A:BUS:B<x>:SENT:FAST:INVERTNIBble:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` is the Fast Channel 1 inverted nibble binary value on which to trigger.
     """
 
@@ -3606,7 +3518,7 @@ class TriggerABusBItemSentFastInvertnibbleValue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSentFastInvertnibble(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:FAST:INVERTNIBble`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST:INVERTNIBble?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3625,11 +3537,11 @@ class TriggerABusBItemSentFastInvertnibble(SCPICmdRead):
     def value(self) -> TriggerABusBItemSentFastInvertnibbleValue:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:FAST:INVERTNIBble:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary fast message inverted nibble value to be used
               when triggering on a SENT bus signal. B<x> is the specified bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:INVERTNIBble:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3638,14 +3550,13 @@ class TriggerABusBItemSentFastInvertnibble(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:INVERTNIBble:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:FAST:INVERTNIBble:VALue <Qstring>
             - TRIGger:A:BUS:B<x>:SENT:FAST:INVERTNIBble:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` is the Fast Channel 1 inverted nibble binary value on which to trigger.
         """
         return self._value
@@ -3654,11 +3565,11 @@ class TriggerABusBItemSentFastInvertnibble(SCPICmdRead):
 class TriggerABusBItemSentFastCounterValue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary fast message counter value to be used when
           triggering on a SENT bus signal. B<x> is the specified bus number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:VALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3667,14 +3578,13 @@ class TriggerABusBItemSentFastCounterValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:VALue <Qstring>
         - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` is the Fast Channel 1 fast message counter binary value on which to trigger.
     """
 
@@ -3682,11 +3592,11 @@ class TriggerABusBItemSentFastCounterValue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSentFastCounterQualifier(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:QUALifier`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the qualifier to be used when triggering on SENT fast packet
           bus data for the secure format counter. B<x> is the specified bus number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:QUALifier?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3695,14 +3605,13 @@ class TriggerABusBItemSentFastCounterQualifier(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:QUALifier value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
         - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:QUALifier?
+        ```
 
-    **Info:**
+    Info:
         - ``EQUal`` sets the qualifier as Equal.
         - ``LESSEQual`` sets the qualifier as Less Than or Equal to.
         - ``LESSThan`` sets the qualifier as Less Than.
@@ -3717,11 +3626,11 @@ class TriggerABusBItemSentFastCounterQualifier(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSentFastCounterHivalue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:HIVALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the high binary fast message counter value to be used when
           triggering on a SENT bus signal. B<x> is the specified bus number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:HIVALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3730,14 +3639,13 @@ class TriggerABusBItemSentFastCounterHivalue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:HIVALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:HIVALue <QString>
         - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:HIVALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` sets the Fast Channel 1 counter binary value.
     """
 
@@ -3747,7 +3655,7 @@ class TriggerABusBItemSentFastCounterHivalue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSentFastCounter(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3774,11 +3682,11 @@ class TriggerABusBItemSentFastCounter(SCPICmdRead):
     def hivalue(self) -> TriggerABusBItemSentFastCounterHivalue:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:HIVALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the high binary fast message counter value to be used
               when triggering on a SENT bus signal. B<x> is the specified bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:HIVALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3787,14 +3695,13 @@ class TriggerABusBItemSentFastCounter(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:HIVALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:HIVALue <QString>
             - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:HIVALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` sets the Fast Channel 1 counter binary value.
         """
         return self._hivalue
@@ -3803,11 +3710,11 @@ class TriggerABusBItemSentFastCounter(SCPICmdRead):
     def qualifier(self) -> TriggerABusBItemSentFastCounterQualifier:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:QUALifier`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the qualifier to be used when triggering on SENT fast
               packet bus data for the secure format counter. B<x> is the specified bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:QUALifier?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3816,14 +3723,13 @@ class TriggerABusBItemSentFastCounter(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:QUALifier value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
             - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:QUALifier?
+            ```
 
-        **Info:**
+        Info:
             - ``EQUal`` sets the qualifier as Equal.
             - ``LESSEQual`` sets the qualifier as Less Than or Equal to.
             - ``LESSThan`` sets the qualifier as Less Than.
@@ -3839,11 +3745,11 @@ class TriggerABusBItemSentFastCounter(SCPICmdRead):
     def value(self) -> TriggerABusBItemSentFastCounterValue:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary fast message counter value to be used when
               triggering on a SENT bus signal. B<x> is the specified bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3852,14 +3758,13 @@ class TriggerABusBItemSentFastCounter(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:VALue <Qstring>
             - TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` is the Fast Channel 1 fast message counter binary value on which to
               trigger.
         """
@@ -3869,12 +3774,12 @@ class TriggerABusBItemSentFastCounter(SCPICmdRead):
 class TriggerABusBItemSentFastChan2bValue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary fast channel 2 value to be used when triggering on
           a SENT bus signal. The trigger condition must be set to FAST. B<x> is the specified bus
           number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:VALue?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3883,14 +3788,13 @@ class TriggerABusBItemSentFastChan2bValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:VALue <Qstring>
         - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` is the Fast Channel 2 binary value on which to trigger.
     """
 
@@ -3898,11 +3802,11 @@ class TriggerABusBItemSentFastChan2bValue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSentFastChan2bQualifier(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:QUALifier`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the qualifier to be used when triggering on SENT fast packet
           bus data for device channel 2. B<x> is the specified bus number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:QUALifier?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3911,14 +3815,13 @@ class TriggerABusBItemSentFastChan2bQualifier(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:QUALifier value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
         - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:QUALifier?
+        ```
 
-    **Info:**
+    Info:
         - ``EQUal`` sets the qualifier as Equal.
         - ``LESSEQual`` sets the qualifier as Less Than or Equal to.
         - ``LESSThan`` sets the qualifier as Less Than.
@@ -3933,11 +3836,11 @@ class TriggerABusBItemSentFastChan2bQualifier(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSentFastChan2bHivalue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:HIVALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the high binary fast channel 2 value to use when triggering
           on a SENT bus signal. B<x> is the specified bus number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:HIVALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3946,14 +3849,13 @@ class TriggerABusBItemSentFastChan2bHivalue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:HIVALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:HIVALue <QString>
         - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:HIVALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` sets the Fast Channel 2 high binary data value.
     """
 
@@ -3963,7 +3865,7 @@ class TriggerABusBItemSentFastChan2bHivalue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSentFastChan2b(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B?``
           query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B?``
@@ -3987,11 +3889,11 @@ class TriggerABusBItemSentFastChan2b(SCPICmdRead):
     def hivalue(self) -> TriggerABusBItemSentFastChan2bHivalue:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:HIVALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the high binary fast channel 2 value to use when
               triggering on a SENT bus signal. B<x> is the specified bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:HIVALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4000,14 +3902,13 @@ class TriggerABusBItemSentFastChan2b(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:HIVALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:HIVALue <QString>
             - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:HIVALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` sets the Fast Channel 2 high binary data value.
         """
         return self._hivalue
@@ -4016,11 +3917,11 @@ class TriggerABusBItemSentFastChan2b(SCPICmdRead):
     def qualifier(self) -> TriggerABusBItemSentFastChan2bQualifier:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:QUALifier`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the qualifier to be used when triggering on SENT fast
               packet bus data for device channel 2. B<x> is the specified bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:QUALifier?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4029,14 +3930,13 @@ class TriggerABusBItemSentFastChan2b(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:QUALifier value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
             - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:QUALifier?
+            ```
 
-        **Info:**
+        Info:
             - ``EQUal`` sets the qualifier as Equal.
             - ``LESSEQual`` sets the qualifier as Less Than or Equal to.
             - ``LESSThan`` sets the qualifier as Less Than.
@@ -4052,12 +3952,12 @@ class TriggerABusBItemSentFastChan2b(SCPICmdRead):
     def value(self) -> TriggerABusBItemSentFastChan2bValue:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary fast channel 2 value to be used when
               triggering on a SENT bus signal. The trigger condition must be set to FAST. B<x> is
               the specified bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4066,14 +3966,13 @@ class TriggerABusBItemSentFastChan2b(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:VALue <Qstring>
             - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` is the Fast Channel 2 binary value on which to trigger.
         """
         return self._value
@@ -4082,11 +3981,11 @@ class TriggerABusBItemSentFastChan2b(SCPICmdRead):
 class TriggerABusBItemSentFastChan1aValue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the binary fast channel 1 value to be used when triggering on
           a SENT bus signal. B<x> is the specified bus number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:VALue?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4095,14 +3994,13 @@ class TriggerABusBItemSentFastChan1aValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:VALue <Qstring>
         - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` is the Fast Channel 1 value on which to trigger.
     """
 
@@ -4110,11 +4008,11 @@ class TriggerABusBItemSentFastChan1aValue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSentFastChan1aQualifier(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:QUALifier`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the qualifier to be used when triggering on SENT fast packet
           bus data for device channel 1. B<x> is the specified bus number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:QUALifier?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -4123,14 +4021,13 @@ class TriggerABusBItemSentFastChan1aQualifier(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:QUALifier value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
         - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:QUALifier?
+        ```
 
-    **Info:**
+    Info:
         - ``EQUal`` sets the qualifier as Equal.
         - ``LESSEQual`` sets the qualifier as Less Than or Equal to.
         - ``LESSThan`` sets the qualifier as Less Than.
@@ -4145,11 +4042,11 @@ class TriggerABusBItemSentFastChan1aQualifier(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSentFastChan1aHivalue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:HIVALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the high binary fast channel 1 value to use when triggering
           on a SENT bus signal. B<x> is the specified bus number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:HIVALue?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -4158,14 +4055,13 @@ class TriggerABusBItemSentFastChan1aHivalue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:HIVALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:HIVALue <QString>
         - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:HIVALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` sets the Fast Channel 1 binary data high value.
     """
 
@@ -4175,7 +4071,7 @@ class TriggerABusBItemSentFastChan1aHivalue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSentFastChan1a(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A?``
           query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A?``
@@ -4199,11 +4095,11 @@ class TriggerABusBItemSentFastChan1a(SCPICmdRead):
     def hivalue(self) -> TriggerABusBItemSentFastChan1aHivalue:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:HIVALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the high binary fast channel 1 value to use when
               triggering on a SENT bus signal. B<x> is the specified bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:HIVALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4212,14 +4108,13 @@ class TriggerABusBItemSentFastChan1a(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:HIVALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:HIVALue <QString>
             - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:HIVALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` sets the Fast Channel 1 binary data high value.
         """
         return self._hivalue
@@ -4228,11 +4123,11 @@ class TriggerABusBItemSentFastChan1a(SCPICmdRead):
     def qualifier(self) -> TriggerABusBItemSentFastChan1aQualifier:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:QUALifier`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the qualifier to be used when triggering on SENT fast
               packet bus data for device channel 1. B<x> is the specified bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:QUALifier?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4241,14 +4136,13 @@ class TriggerABusBItemSentFastChan1a(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:QUALifier value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:QUALifier {EQual|UNEQual|LESSthan|MOREthan| LESSEQual|MOREEQual|INrange|OUTrange}
             - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:QUALifier?
+            ```
 
-        **Info:**
+        Info:
             - ``EQUal`` sets the qualifier as Equal.
             - ``LESSEQual`` sets the qualifier as Less Than or Equal to.
             - ``LESSThan`` sets the qualifier as Less Than.
@@ -4264,11 +4158,11 @@ class TriggerABusBItemSentFastChan1a(SCPICmdRead):
     def value(self) -> TriggerABusBItemSentFastChan1aValue:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the binary fast channel 1 value to be used when
               triggering on a SENT bus signal. B<x> is the specified bus number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4277,14 +4171,13 @@ class TriggerABusBItemSentFastChan1a(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:VALue <Qstring>
             - TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` is the Fast Channel 1 value on which to trigger.
         """
         return self._value
@@ -4293,7 +4186,7 @@ class TriggerABusBItemSentFastChan1a(SCPICmdRead):
 class TriggerABusBItemSentFast(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:FAST`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -4320,7 +4213,7 @@ class TriggerABusBItemSentFast(SCPICmdRead):
     def chan1a(self) -> TriggerABusBItemSentFastChan1a:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN1A?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4338,7 +4231,7 @@ class TriggerABusBItemSentFast(SCPICmdRead):
     def chan2b(self) -> TriggerABusBItemSentFastChan2b:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST:CHAN2B?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4356,7 +4249,7 @@ class TriggerABusBItemSentFast(SCPICmdRead):
     def counter(self) -> TriggerABusBItemSentFastCounter:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST:COUNTer?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4374,7 +4267,7 @@ class TriggerABusBItemSentFast(SCPICmdRead):
     def invertnibble(self) -> TriggerABusBItemSentFastInvertnibble:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:FAST:INVERTNIBble`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:FAST:INVERTNIBble?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4390,7 +4283,7 @@ class TriggerABusBItemSentFast(SCPICmdRead):
     def status(self) -> TriggerABusBItemSentFastStatus:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:FAST:STATus`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST:STATus?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4406,10 +4299,10 @@ class TriggerABusBItemSentFast(SCPICmdRead):
 class TriggerABusBItemSentErrtypeCrc(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:ERRType:CRC`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the CRC error type to be used when triggering on SENT data.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:ERRType:CRC?``
           query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SENT:ERRType:CRC?``
@@ -4417,14 +4310,13 @@ class TriggerABusBItemSentErrtypeCrc(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:ERRType:CRC value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:ERRType:CRC {FAST|SLOW}
         - TRIGger:A:BUS:B<x>:SENT:ERRType:CRC?
+        ```
 
-    **Info:**
+    Info:
         - ``B<x>`` is the number of the bus waveform.
         - ``FAST`` specifies triggering on CRC errors in only the Fast Channel.
         - ``SLOW`` specifies triggering on CRC errors in only the slow channel.
@@ -4434,24 +4326,23 @@ class TriggerABusBItemSentErrtypeCrc(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSentErrtype(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:ERRType`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the error type to be used when triggering on SENT data.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:ERRType?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SENT:ERRType?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:BUS:B<x>:SENT:ERRType value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:ERRType CRC
         - TRIGger:A:BUS:B<x>:SENT:ERRType?
+        ```
 
-    **Info:**
+    Info:
         - ``B<x>`` is the number of the bus waveform.
         - ``CRC`` specifies triggering on CRC errors.
 
@@ -4467,11 +4358,11 @@ class TriggerABusBItemSentErrtype(SCPICmdWrite, SCPICmdRead):
     def crc(self) -> TriggerABusBItemSentErrtypeCrc:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:ERRType:CRC`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the CRC error type to be used when triggering on SENT
               data.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:ERRType:CRC?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4480,14 +4371,13 @@ class TriggerABusBItemSentErrtype(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:ERRType:CRC value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:ERRType:CRC {FAST|SLOW}
             - TRIGger:A:BUS:B<x>:SENT:ERRType:CRC?
+            ```
 
-        **Info:**
+        Info:
             - ``B<x>`` is the number of the bus waveform.
             - ``FAST`` specifies triggering on CRC errors in only the Fast Channel.
             - ``SLOW`` specifies triggering on CRC errors in only the slow channel.
@@ -4498,24 +4388,23 @@ class TriggerABusBItemSentErrtype(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSentCondition(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT:CONDition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the trigger condition for a SENT bus.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:CONDition?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SENT:CONDition?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:SENT:CONDition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:SENT:CONDition {START|FAST|SLOW|ERRor}
         - TRIGger:A:BUS:B<x>:SENT:CONDition?
+        ```
 
-    **Info:**
+    Info:
         - ``B<x>`` is the number of the bus waveform.
         - ``START`` sets triggering on start of packet.
         - ``FAST`` sets triggering on fast channel packets.
@@ -4527,12 +4416,12 @@ class TriggerABusBItemSentCondition(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemSent(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:SENT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SENT?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``B<x>`` is the number of the bus waveform.
 
     Properties:
@@ -4555,10 +4444,10 @@ class TriggerABusBItemSent(SCPICmdRead):
     def condition(self) -> TriggerABusBItemSentCondition:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:CONDition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the trigger condition for a SENT bus.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:CONDition?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4567,14 +4456,13 @@ class TriggerABusBItemSent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:CONDition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:CONDition {START|FAST|SLOW|ERRor}
             - TRIGger:A:BUS:B<x>:SENT:CONDition?
+            ```
 
-        **Info:**
+        Info:
             - ``B<x>`` is the number of the bus waveform.
             - ``START`` sets triggering on start of packet.
             - ``FAST`` sets triggering on fast channel packets.
@@ -4587,10 +4475,10 @@ class TriggerABusBItemSent(SCPICmdRead):
     def errtype(self) -> TriggerABusBItemSentErrtype:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:ERRType`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the error type to be used when triggering on SENT data.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:ERRType?``
               query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SENT:ERRType?``
@@ -4598,14 +4486,13 @@ class TriggerABusBItemSent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:SENT:ERRType value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:SENT:ERRType CRC
             - TRIGger:A:BUS:B<x>:SENT:ERRType?
+            ```
 
-        **Info:**
+        Info:
             - ``B<x>`` is the number of the bus waveform.
             - ``CRC`` specifies triggering on CRC errors.
 
@@ -4618,7 +4505,7 @@ class TriggerABusBItemSent(SCPICmdRead):
     def fast(self) -> TriggerABusBItemSentFast:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:FAST`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SENT:FAST?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -4636,7 +4523,7 @@ class TriggerABusBItemSent(SCPICmdRead):
     def pause(self) -> TriggerABusBItemSentPause:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:PAUSE`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:PAUSE?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SENT:PAUSE?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -4650,7 +4537,7 @@ class TriggerABusBItemSent(SCPICmdRead):
     def slow(self) -> TriggerABusBItemSentSlow:
         """Return the ``TRIGger:A:BUS:B<x>:SENT:SLOW`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT:SLOW?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SENT:SLOW?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -4665,11 +4552,11 @@ class TriggerABusBItemSent(SCPICmdRead):
 class TriggerABusBItemRs232cDataValue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:RS232C:DATa:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the data address string used for the RS-232 bus trigger when
           the trigger condition is set to Data. The bus number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:RS232C:DATa:VALue?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4678,14 +4565,13 @@ class TriggerABusBItemRs232cDataValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:RS232C:DATa:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:RS232C:DATa:VALue <QString>
         - TRIGger:A:BUS:B<x>:RS232C:DATa:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the address value. The argument is a string of 0, 1, or X
           representing a binary number.
     """
@@ -4696,11 +4582,11 @@ class TriggerABusBItemRs232cDataValue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemRs232cDataSize(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:RS232C:DATa:SIZe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the length of the data string in bytes to be used for an
           RS-232C trigger when the trigger condition is Data. The bus number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:RS232C:DATa:SIZe?``
           query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:RS232C:DATa:SIZe?``
@@ -4708,14 +4594,13 @@ class TriggerABusBItemRs232cDataSize(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:RS232C:DATa:SIZe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:RS232C:DATa:SIZe <NR3>
         - TRIGger:A:BUS:B<x>:RS232C:DATa:SIZe?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` specifies the data size in bytes.
     """
 
@@ -4723,7 +4608,7 @@ class TriggerABusBItemRs232cDataSize(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemRs232cData(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:RS232C:DATa`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:RS232C:DATa?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:RS232C:DATa?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -4742,11 +4627,11 @@ class TriggerABusBItemRs232cData(SCPICmdRead):
     def size(self) -> TriggerABusBItemRs232cDataSize:
         """Return the ``TRIGger:A:BUS:B<x>:RS232C:DATa:SIZe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the length of the data string in bytes to be used for an
               RS-232C trigger when the trigger condition is Data. The bus number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:RS232C:DATa:SIZe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4755,14 +4640,13 @@ class TriggerABusBItemRs232cData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:RS232C:DATa:SIZe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:RS232C:DATa:SIZe <NR3>
             - TRIGger:A:BUS:B<x>:RS232C:DATa:SIZe?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` specifies the data size in bytes.
         """
         return self._size
@@ -4771,11 +4655,11 @@ class TriggerABusBItemRs232cData(SCPICmdRead):
     def value(self) -> TriggerABusBItemRs232cDataValue:
         """Return the ``TRIGger:A:BUS:B<x>:RS232C:DATa:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the data address string used for the RS-232 bus trigger
               when the trigger condition is set to Data. The bus number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:RS232C:DATa:VALue?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4784,14 +4668,13 @@ class TriggerABusBItemRs232cData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:RS232C:DATa:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:RS232C:DATa:VALue <QString>
             - TRIGger:A:BUS:B<x>:RS232C:DATa:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the address value. The argument is a string of 0, 1, or X
               representing a binary number.
         """
@@ -4801,11 +4684,11 @@ class TriggerABusBItemRs232cData(SCPICmdRead):
 class TriggerABusBItemRs232cCondition(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:RS232C:CONDition`` command.
 
-    **Description:**
+    Description:
         - This command specifies the condition for an RS-232C trigger, where the bus number is
           specified by< >x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:RS232C:CONDition?``
           query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:RS232C:CONDition?``
@@ -4813,14 +4696,13 @@ class TriggerABusBItemRs232cCondition(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:RS232C:CONDition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:RS232C:CONDition {STARt|EOp|DATa|PARItyerror}
         - TRIGger:A:BUS:B<x>:RS232C:CONDition?
+        ```
 
-    **Info:**
+    Info:
         - ``STARt`` sets the Trigger on condition to Start.
         - ``EOp`` sets the Trigger on condition to End of Packet.
         - ``DATa`` sets the Trigger on condition to Data.
@@ -4831,7 +4713,7 @@ class TriggerABusBItemRs232cCondition(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemRs232c(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:RS232C`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:RS232C?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:RS232C?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -4850,11 +4732,11 @@ class TriggerABusBItemRs232c(SCPICmdRead):
     def condition(self) -> TriggerABusBItemRs232cCondition:
         """Return the ``TRIGger:A:BUS:B<x>:RS232C:CONDition`` command.
 
-        **Description:**
+        Description:
             - This command specifies the condition for an RS-232C trigger, where the bus number is
               specified by< >x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:RS232C:CONDition?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4863,14 +4745,13 @@ class TriggerABusBItemRs232c(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:RS232C:CONDition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:RS232C:CONDition {STARt|EOp|DATa|PARItyerror}
             - TRIGger:A:BUS:B<x>:RS232C:CONDition?
+            ```
 
-        **Info:**
+        Info:
             - ``STARt`` sets the Trigger on condition to Start.
             - ``EOp`` sets the Trigger on condition to End of Packet.
             - ``DATa`` sets the Trigger on condition to Data.
@@ -4882,7 +4763,7 @@ class TriggerABusBItemRs232c(SCPICmdRead):
     def data(self) -> TriggerABusBItemRs232cData:
         """Return the ``TRIGger:A:BUS:B<x>:RS232C:DATa`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:RS232C:DATa?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:RS232C:DATa?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -4897,11 +4778,11 @@ class TriggerABusBItemRs232c(SCPICmdRead):
 class TriggerABusBItemParallelDataValue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:PARallel:DATa:VALue`` command.
 
-    **Description:**
+    Description:
         - This command specifies the binary data string used for a Parallel Bus trigger. The bus
           number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:PARallel:DATa:VALue?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4910,14 +4791,13 @@ class TriggerABusBItemParallelDataValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:PARallel:DATa:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:PARallel:DATa:VALue <QString>
         - TRIGger:A:BUS:B<x>:PARallel:DATa:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the binary data string used for a Parallel Bus trigger.
     """
 
@@ -4927,7 +4807,7 @@ class TriggerABusBItemParallelDataValue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemParallelData(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:PARallel:DATa`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:PARallel:DATa?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:PARallel:DATa?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -4944,11 +4824,11 @@ class TriggerABusBItemParallelData(SCPICmdRead):
     def value(self) -> TriggerABusBItemParallelDataValue:
         """Return the ``TRIGger:A:BUS:B<x>:PARallel:DATa:VALue`` command.
 
-        **Description:**
+        Description:
             - This command specifies the binary data string used for a Parallel Bus trigger. The bus
               number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:PARallel:DATa:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4957,14 +4837,13 @@ class TriggerABusBItemParallelData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:PARallel:DATa:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:PARallel:DATa:VALue <QString>
             - TRIGger:A:BUS:B<x>:PARallel:DATa:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the binary data string used for a Parallel Bus trigger.
         """
         return self._value
@@ -4973,7 +4852,7 @@ class TriggerABusBItemParallelData(SCPICmdRead):
 class TriggerABusBItemParallel(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:PARallel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:PARallel?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:PARallel?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -4990,7 +4869,7 @@ class TriggerABusBItemParallel(SCPICmdRead):
     def data(self) -> TriggerABusBItemParallelData:
         """Return the ``TRIGger:A:BUS:B<x>:PARallel:DATa`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:PARallel:DATa?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5006,11 +4885,11 @@ class TriggerABusBItemParallel(SCPICmdRead):
 class TriggerABusBItemLinIdentifierValue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:LIN:IDentifier:VALue`` command.
 
-    **Description:**
+    Description:
         - This command specifies the binary address string used for LIN bus trigger if the trigger
           condition is ID or IDANDDATA. The bus number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN:IDentifier:VALue?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -5019,14 +4898,13 @@ class TriggerABusBItemLinIdentifierValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:LIN:IDentifier:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:LIN:IDentifier:VALue <QString>
         - TRIGger:A:BUS:B<x>:LIN:IDentifier:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the binary address string used for LIN trigger if the trigger condition
           is ID or IDANDDATA.
     """
@@ -5037,7 +4915,7 @@ class TriggerABusBItemLinIdentifierValue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemLinIdentifier(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:LIN:IDentifier`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN:IDentifier?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:LIN:IDentifier?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -5054,11 +4932,11 @@ class TriggerABusBItemLinIdentifier(SCPICmdRead):
     def value(self) -> TriggerABusBItemLinIdentifierValue:
         """Return the ``TRIGger:A:BUS:B<x>:LIN:IDentifier:VALue`` command.
 
-        **Description:**
+        Description:
             - This command specifies the binary address string used for LIN bus trigger if the
               trigger condition is ID or IDANDDATA. The bus number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:LIN:IDentifier:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -5067,14 +4945,13 @@ class TriggerABusBItemLinIdentifier(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:LIN:IDentifier:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:LIN:IDentifier:VALue <QString>
             - TRIGger:A:BUS:B<x>:LIN:IDentifier:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the binary address string used for LIN trigger if the trigger
               condition is ID or IDANDDATA.
         """
@@ -5084,25 +4961,24 @@ class TriggerABusBItemLinIdentifier(SCPICmdRead):
 class TriggerABusBItemLinErrtype(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:LIN:ERRTYPE`` command.
 
-    **Description:**
+    Description:
         - This command specifies the error type be used for LIN trigger. The bus number is specified
           by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN:ERRTYPE?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:LIN:ERRTYPE?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:BUS:B<x>:LIN:ERRTYPE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:LIN:ERRTYPE {SYNC|PARity|CHecksum}
         - TRIGger:A:BUS:B<x>:LIN:ERRTYPE?
+        ```
 
-    **Info:**
+    Info:
         - ``SYNC`` sets the LIN error type to SYNC.
         - ``PARity`` sets the LIN error type to parity.
         - ``CHecksum`` sets the LIN error type to checksum.
@@ -5112,25 +4988,24 @@ class TriggerABusBItemLinErrtype(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemLinDataValue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:LIN:DATa:VALue`` command.
 
-    **Description:**
+    Description:
         - This command specifies the binary data string to be used for LIN trigger condition if
           trigger condition is ID or IDANDDATA. The bus number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN:DATa:VALue?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:LIN:DATa:VALue?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:LIN:DATa:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:LIN:DATa:VALue <QString>
         - TRIGger:A:BUS:B<x>:LIN:DATa:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string that is the LIN trigger data value.
     """
 
@@ -5140,25 +5015,24 @@ class TriggerABusBItemLinDataValue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemLinDataSize(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:LIN:DATa:SIZe`` command.
 
-    **Description:**
+    Description:
         - This command specifies the length of the data string in bytes to be used for LIN trigger.
           The bus number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN:DATa:SIZe?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:LIN:DATa:SIZe?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:LIN:DATa:SIZe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:LIN:DATa:SIZe <NR1>
         - TRIGger:A:BUS:B<x>:LIN:DATa:SIZe?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the size of the data string in bytes.
     """
 
@@ -5166,11 +5040,11 @@ class TriggerABusBItemLinDataSize(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemLinDataQualifier(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier`` command.
 
-    **Description:**
+    Description:
         - This command specifies the LIN data qualifier. This only applies if the trigger condition
           is IDANDDATA or DATA. The bus number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -5179,14 +5053,13 @@ class TriggerABusBItemLinDataQualifier(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
         - TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier?
+        ```
 
-    **Info:**
+    Info:
         - ``LESSthan`` sets the LIN data qualifier to less than.
         - ``MOREthan`` sets the LIN data qualifier to greater than.
         - ``EQual`` sets the LIN data qualifier to equal.
@@ -5201,12 +5074,12 @@ class TriggerABusBItemLinDataQualifier(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemLinDataHivalue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue`` command.
 
-    **Description:**
+    Description:
         - This command specifies the high data value string used for a LIN bus trigger when the
           trigger condition is DATA or IDANDDATA and the data qualifier is INRANGE or OUTRANGE. The
           bus number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue?``
           query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue?``
@@ -5214,14 +5087,13 @@ class TriggerABusBItemLinDataHivalue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue <QString>
         - TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string that is the binary data string used for LIN trigger if
           the trigger condition is ID or IDANDDATA.
     """
@@ -5232,7 +5104,7 @@ class TriggerABusBItemLinDataHivalue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemLinData(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:LIN:DATa`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN:DATa?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:LIN:DATa?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -5255,12 +5127,12 @@ class TriggerABusBItemLinData(SCPICmdRead):
     def hivalue(self) -> TriggerABusBItemLinDataHivalue:
         """Return the ``TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue`` command.
 
-        **Description:**
+        Description:
             - This command specifies the high data value string used for a LIN bus trigger when the
               trigger condition is DATA or IDANDDATA and the data qualifier is INRANGE or OUTRANGE.
               The bus number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5269,14 +5141,13 @@ class TriggerABusBItemLinData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue <QString>
             - TRIGger:A:BUS:B<x>:LIN:DATa:HIVALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string that is the binary data string used for LIN trigger
               if the trigger condition is ID or IDANDDATA.
         """
@@ -5286,11 +5157,11 @@ class TriggerABusBItemLinData(SCPICmdRead):
     def qualifier(self) -> TriggerABusBItemLinDataQualifier:
         """Return the ``TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier`` command.
 
-        **Description:**
+        Description:
             - This command specifies the LIN data qualifier. This only applies if the trigger
               condition is IDANDDATA or DATA. The bus number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5299,14 +5170,13 @@ class TriggerABusBItemLinData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual| INrange|OUTrange}
             - TRIGger:A:BUS:B<x>:LIN:DATa:QUALifier?
+            ```
 
-        **Info:**
+        Info:
             - ``LESSthan`` sets the LIN data qualifier to less than.
             - ``MOREthan`` sets the LIN data qualifier to greater than.
             - ``EQual`` sets the LIN data qualifier to equal.
@@ -5322,11 +5192,11 @@ class TriggerABusBItemLinData(SCPICmdRead):
     def size(self) -> TriggerABusBItemLinDataSize:
         """Return the ``TRIGger:A:BUS:B<x>:LIN:DATa:SIZe`` command.
 
-        **Description:**
+        Description:
             - This command specifies the length of the data string in bytes to be used for LIN
               trigger. The bus number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN:DATa:SIZe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5335,14 +5205,13 @@ class TriggerABusBItemLinData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:LIN:DATa:SIZe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:LIN:DATa:SIZe <NR1>
             - TRIGger:A:BUS:B<x>:LIN:DATa:SIZe?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the size of the data string in bytes.
         """
         return self._size
@@ -5351,11 +5220,11 @@ class TriggerABusBItemLinData(SCPICmdRead):
     def value(self) -> TriggerABusBItemLinDataValue:
         """Return the ``TRIGger:A:BUS:B<x>:LIN:DATa:VALue`` command.
 
-        **Description:**
+        Description:
             - This command specifies the binary data string to be used for LIN trigger condition if
               trigger condition is ID or IDANDDATA. The bus number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN:DATa:VALue?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5364,14 +5233,13 @@ class TriggerABusBItemLinData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:LIN:DATa:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:LIN:DATa:VALue <QString>
             - TRIGger:A:BUS:B<x>:LIN:DATa:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string that is the LIN trigger data value.
         """
         return self._value
@@ -5380,24 +5248,23 @@ class TriggerABusBItemLinData(SCPICmdRead):
 class TriggerABusBItemLinCondition(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:LIN:CONDition`` command.
 
-    **Description:**
+    Description:
         - This command specifies the trigger condition for LIN. The bus number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN:CONDition?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:LIN:CONDition?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:LIN:CONDition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:LIN:CONDition {SYNCfield|IDentifier|DATa|IDANDDATA|WAKEup|SLEEP|ERRor}
         - TRIGger:A:BUS:B<x>:LIN:CONDition?
+        ```
 
-    **Info:**
+    Info:
         - ``SYNCfield`` sets the LIN trigger condition to sync field.
         - ``IDentifier`` sets the LIN trigger condition to identifier.
         - ``DATa`` sets the LIN trigger condition to data.
@@ -5411,7 +5278,7 @@ class TriggerABusBItemLinCondition(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemLin(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:LIN`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:LIN?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -5434,11 +5301,11 @@ class TriggerABusBItemLin(SCPICmdRead):
     def condition(self) -> TriggerABusBItemLinCondition:
         """Return the ``TRIGger:A:BUS:B<x>:LIN:CONDition`` command.
 
-        **Description:**
+        Description:
             - This command specifies the trigger condition for LIN. The bus number is specified by
               x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN:CONDition?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5447,14 +5314,13 @@ class TriggerABusBItemLin(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:LIN:CONDition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:LIN:CONDition {SYNCfield|IDentifier|DATa|IDANDDATA|WAKEup|SLEEP|ERRor}
             - TRIGger:A:BUS:B<x>:LIN:CONDition?
+            ```
 
-        **Info:**
+        Info:
             - ``SYNCfield`` sets the LIN trigger condition to sync field.
             - ``IDentifier`` sets the LIN trigger condition to identifier.
             - ``DATa`` sets the LIN trigger condition to data.
@@ -5469,7 +5335,7 @@ class TriggerABusBItemLin(SCPICmdRead):
     def data(self) -> TriggerABusBItemLinData:
         """Return the ``TRIGger:A:BUS:B<x>:LIN:DATa`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN:DATa?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:LIN:DATa?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -5486,25 +5352,24 @@ class TriggerABusBItemLin(SCPICmdRead):
     def errtype(self) -> TriggerABusBItemLinErrtype:
         """Return the ``TRIGger:A:BUS:B<x>:LIN:ERRTYPE`` command.
 
-        **Description:**
+        Description:
             - This command specifies the error type be used for LIN trigger. The bus number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN:ERRTYPE?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:LIN:ERRTYPE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:LIN:ERRTYPE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:LIN:ERRTYPE {SYNC|PARity|CHecksum}
             - TRIGger:A:BUS:B<x>:LIN:ERRTYPE?
+            ```
 
-        **Info:**
+        Info:
             - ``SYNC`` sets the LIN error type to SYNC.
             - ``PARity`` sets the LIN error type to parity.
             - ``CHecksum`` sets the LIN error type to checksum.
@@ -5515,7 +5380,7 @@ class TriggerABusBItemLin(SCPICmdRead):
     def identifier(self) -> TriggerABusBItemLinIdentifier:
         """Return the ``TRIGger:A:BUS:B<x>:LIN:IDentifier`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN:IDentifier?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5531,25 +5396,24 @@ class TriggerABusBItemLin(SCPICmdRead):
 class TriggerABusBItemI2cDataValue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:I2C:DATa:VALue`` command.
 
-    **Description:**
+    Description:
         - This command specifies the binary data string used for I2C triggering if the trigger
           condition is DATA or ADDRANDDATA. The bus number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:I2C:DATa:VALue?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:I2C:DATa:VALue?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:I2C:DATa:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:I2C:DATa:VALue <QString>
         - TRIGger:A:BUS:B<x>:I2C:DATa:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the binary data string, where the number of bits is 8 times the number of
           bytes specified. The only allowed characters in the string are 0, 1, and X.
     """
@@ -5560,26 +5424,25 @@ class TriggerABusBItemI2cDataValue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemI2cDataSize(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:I2C:DATa:SIZe`` command.
 
-    **Description:**
+    Description:
         - This command specifies the length of the data string in bytes to be used for an I2C
           trigger if the trigger condition is DATA or ADDRANDDATA. Applies to bus <x>, where the bus
           number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:I2C:DATa:SIZe?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:I2C:DATa:SIZe?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:I2C:DATa:SIZe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:I2C:DATa:SIZe <NR1>
         - TRIGger:A:BUS:B<x>:I2C:DATa:SIZe?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the length of the data string in bytes.
     """
 
@@ -5587,12 +5450,12 @@ class TriggerABusBItemI2cDataSize(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemI2cDataDirection(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:I2C:DATa:DIRection`` command.
 
-    **Description:**
+    Description:
         - This command specifies the I 2 C trigger type to be valid on a Read, Write, or Either
           condition. Read or write is indicated by the R/W bit in the I 2 C protocol. The bus number
           is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:I2C:DATa:DIRection?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -5601,14 +5464,13 @@ class TriggerABusBItemI2cDataDirection(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:I2C:DATa:DIRection value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:I2C:DATa:DIRection {READ|WRITE|NOCARE}
         - TRIGger:A:BUS:B<x>:I2C:DATa:DIRection?
+        ```
 
-    **Info:**
+    Info:
         - ``READ`` specifies read as the data direction.
         - ``WRITE`` specifies write as the data direction.
         - ``NOCARE`` specifies either as the data direction.
@@ -5618,7 +5480,7 @@ class TriggerABusBItemI2cDataDirection(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemI2cData(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:I2C:DATa`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:I2C:DATa?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:I2C:DATa?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -5639,12 +5501,12 @@ class TriggerABusBItemI2cData(SCPICmdRead):
     def direction(self) -> TriggerABusBItemI2cDataDirection:
         """Return the ``TRIGger:A:BUS:B<x>:I2C:DATa:DIRection`` command.
 
-        **Description:**
+        Description:
             - This command specifies the I 2 C trigger type to be valid on a Read, Write, or Either
               condition. Read or write is indicated by the R/W bit in the I 2 C protocol. The bus
               number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:I2C:DATa:DIRection?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5653,14 +5515,13 @@ class TriggerABusBItemI2cData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:I2C:DATa:DIRection value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:I2C:DATa:DIRection {READ|WRITE|NOCARE}
             - TRIGger:A:BUS:B<x>:I2C:DATa:DIRection?
+            ```
 
-        **Info:**
+        Info:
             - ``READ`` specifies read as the data direction.
             - ``WRITE`` specifies write as the data direction.
             - ``NOCARE`` specifies either as the data direction.
@@ -5671,12 +5532,12 @@ class TriggerABusBItemI2cData(SCPICmdRead):
     def size(self) -> TriggerABusBItemI2cDataSize:
         """Return the ``TRIGger:A:BUS:B<x>:I2C:DATa:SIZe`` command.
 
-        **Description:**
+        Description:
             - This command specifies the length of the data string in bytes to be used for an I2C
               trigger if the trigger condition is DATA or ADDRANDDATA. Applies to bus <x>, where the
               bus number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:I2C:DATa:SIZe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5685,14 +5546,13 @@ class TriggerABusBItemI2cData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:I2C:DATa:SIZe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:I2C:DATa:SIZe <NR1>
             - TRIGger:A:BUS:B<x>:I2C:DATa:SIZe?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the length of the data string in bytes.
         """
         return self._size
@@ -5701,11 +5561,11 @@ class TriggerABusBItemI2cData(SCPICmdRead):
     def value(self) -> TriggerABusBItemI2cDataValue:
         """Return the ``TRIGger:A:BUS:B<x>:I2C:DATa:VALue`` command.
 
-        **Description:**
+        Description:
             - This command specifies the binary data string used for I2C triggering if the trigger
               condition is DATA or ADDRANDDATA. The bus number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:I2C:DATa:VALue?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5714,14 +5574,13 @@ class TriggerABusBItemI2cData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:I2C:DATa:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:I2C:DATa:VALue <QString>
             - TRIGger:A:BUS:B<x>:I2C:DATa:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the binary data string, where the number of bits is 8 times the
               number of bytes specified. The only allowed characters in the string are 0, 1, and X.
         """
@@ -5731,25 +5590,24 @@ class TriggerABusBItemI2cData(SCPICmdRead):
 class TriggerABusBItemI2cCondition(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:I2C:CONDition`` command.
 
-    **Description:**
+    Description:
         - This command specifies the trigger condition for an I 2 C trigger. The bus number is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:I2C:CONDition?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:I2C:CONDition?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:I2C:CONDition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:I2C:CONDition {STARt|STOP|REPEATstart|ACKMISS|ADDRess|DATa|ADDRANDDATA}
         - TRIGger:A:BUS:B<x>:I2C:CONDition?
+        ```
 
-    **Info:**
+    Info:
         - ``STARt`` specifies a search based on start condition.
         - ``STOP`` specifies a search based on stop condition.
         - ``REPEATstart`` specifies a search based on repeat of start condition.
@@ -5763,11 +5621,11 @@ class TriggerABusBItemI2cCondition(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemI2cAddressValue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:I2C:ADDRess:VALue`` command.
 
-    **Description:**
+    Description:
         - This command specifies the binary address string used for the I 2 C trigger if the trigger
           condition is ADDRESS or ADDRANDDATA. The bus number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:I2C:ADDRess:VALue?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -5776,14 +5634,13 @@ class TriggerABusBItemI2cAddressValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:I2C:ADDRess:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:I2C:ADDRess:VALue <QString>
         - TRIGger:A:BUS:B<x>:I2C:ADDRess:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is up to 7 or 10-bits depending on the address mode that specifies the
           address. The only allowed characters in the QString are 0, 1, and X.
     """
@@ -5794,11 +5651,11 @@ class TriggerABusBItemI2cAddressValue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemI2cAddressMode(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:I2C:ADDRess:MODe`` command.
 
-    **Description:**
+    Description:
         - This command specifies the I 2 C address mode to 7 or 10-bit. The bus number is specified
           by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:I2C:ADDRess:MODe?``
           query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:I2C:ADDRess:MODe?``
@@ -5806,14 +5663,13 @@ class TriggerABusBItemI2cAddressMode(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:I2C:ADDRess:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:I2C:ADDRess:MODe {ADDR7|ADDR10}
         - TRIGger:A:BUS:B<x>:I2C:ADDRess:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``ADDR7`` specifies the 7-bit I2C address mode.
         - ``ADDR10`` specifies the 10-bit I2C address mode.
     """
@@ -5822,7 +5678,7 @@ class TriggerABusBItemI2cAddressMode(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemI2cAddress(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:I2C:ADDRess`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:I2C:ADDRess?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:I2C:ADDRess?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -5841,11 +5697,11 @@ class TriggerABusBItemI2cAddress(SCPICmdRead):
     def mode(self) -> TriggerABusBItemI2cAddressMode:
         """Return the ``TRIGger:A:BUS:B<x>:I2C:ADDRess:MODe`` command.
 
-        **Description:**
+        Description:
             - This command specifies the I 2 C address mode to 7 or 10-bit. The bus number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:I2C:ADDRess:MODe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5854,14 +5710,13 @@ class TriggerABusBItemI2cAddress(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:I2C:ADDRess:MODe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:I2C:ADDRess:MODe {ADDR7|ADDR10}
             - TRIGger:A:BUS:B<x>:I2C:ADDRess:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``ADDR7`` specifies the 7-bit I2C address mode.
             - ``ADDR10`` specifies the 10-bit I2C address mode.
         """
@@ -5871,11 +5726,11 @@ class TriggerABusBItemI2cAddress(SCPICmdRead):
     def value(self) -> TriggerABusBItemI2cAddressValue:
         """Return the ``TRIGger:A:BUS:B<x>:I2C:ADDRess:VALue`` command.
 
-        **Description:**
+        Description:
             - This command specifies the binary address string used for the I 2 C trigger if the
               trigger condition is ADDRESS or ADDRANDDATA. The bus number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:I2C:ADDRess:VALue?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5884,14 +5739,13 @@ class TriggerABusBItemI2cAddress(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:I2C:ADDRess:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:I2C:ADDRess:VALue <QString>
             - TRIGger:A:BUS:B<x>:I2C:ADDRess:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is up to 7 or 10-bits depending on the address mode that specifies the
               address. The only allowed characters in the QString are 0, 1, and X.
         """
@@ -5901,7 +5755,7 @@ class TriggerABusBItemI2cAddress(SCPICmdRead):
 class TriggerABusBItemI2c(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:I2C`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:I2C?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:I2C?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -5922,7 +5776,7 @@ class TriggerABusBItemI2c(SCPICmdRead):
     def address(self) -> TriggerABusBItemI2cAddress:
         """Return the ``TRIGger:A:BUS:B<x>:I2C:ADDRess`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:I2C:ADDRess?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:I2C:ADDRess?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -5937,11 +5791,11 @@ class TriggerABusBItemI2c(SCPICmdRead):
     def condition(self) -> TriggerABusBItemI2cCondition:
         """Return the ``TRIGger:A:BUS:B<x>:I2C:CONDition`` command.
 
-        **Description:**
+        Description:
             - This command specifies the trigger condition for an I 2 C trigger. The bus number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:I2C:CONDition?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -5950,14 +5804,13 @@ class TriggerABusBItemI2c(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:I2C:CONDition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:I2C:CONDition {STARt|STOP|REPEATstart|ACKMISS|ADDRess|DATa|ADDRANDDATA}
             - TRIGger:A:BUS:B<x>:I2C:CONDition?
+            ```
 
-        **Info:**
+        Info:
             - ``STARt`` specifies a search based on start condition.
             - ``STOP`` specifies a search based on stop condition.
             - ``REPEATstart`` specifies a search based on repeat of start condition.
@@ -5972,7 +5825,7 @@ class TriggerABusBItemI2c(SCPICmdRead):
     def data(self) -> TriggerABusBItemI2cData:
         """Return the ``TRIGger:A:BUS:B<x>:I2C:DATa`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:I2C:DATa?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:I2C:DATa?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -5988,12 +5841,12 @@ class TriggerABusBItemI2c(SCPICmdRead):
 class TriggerABusBItemCanIdentifierValue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:CAN:IDentifier:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets the binary address value to be used when triggering on a CAN bus signal.
           The trigger condition must be set to IDANDDATA or DATa (using
           ``TRIGGER:A:BUS:BX:CAN:CONDITION``). The bus number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:IDentifier:VALue?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -6002,14 +5855,13 @@ class TriggerABusBItemCanIdentifierValue(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:CAN:IDentifier:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:CAN:IDentifier:VALue <QString>
         - TRIGger:A:BUS:B<x>:CAN:IDentifier:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is up to 29 bits specifying the binary identifier value. The only allowed
           characters in the QString are 0, 1, and X.
     """
@@ -6020,12 +5872,12 @@ class TriggerABusBItemCanIdentifierValue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemCanIdentifierMode(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:CAN:IDentifier:MODe`` command.
 
-    **Description:**
+    Description:
         - This command sets the addressing mode (standard or extended format) to be used when
           triggering on a CAN bus signal. The trigger condition must be set to IDANDDATA or DATa
           (using ``TRIGGER:A:BUS:BX:CAN:CONDITION``). The bus number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:IDentifier:MODe?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -6034,14 +5886,13 @@ class TriggerABusBItemCanIdentifierMode(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:CAN:IDentifier:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:CAN:IDentifier:MODe {STandard|EXTended}
         - TRIGger:A:BUS:B<x>:CAN:IDentifier:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``STandard`` specifies the standard addressing mode.
         - ``EXTended`` specifies the extended addressing mode.
     """
@@ -6050,7 +5901,7 @@ class TriggerABusBItemCanIdentifierMode(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemCanIdentifier(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:CAN:IDentifier`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:IDentifier?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:CAN:IDentifier?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -6069,12 +5920,12 @@ class TriggerABusBItemCanIdentifier(SCPICmdRead):
     def mode(self) -> TriggerABusBItemCanIdentifierMode:
         """Return the ``TRIGger:A:BUS:B<x>:CAN:IDentifier:MODe`` command.
 
-        **Description:**
+        Description:
             - This command sets the addressing mode (standard or extended format) to be used when
               triggering on a CAN bus signal. The trigger condition must be set to IDANDDATA or DATa
               (using ``TRIGGER:A:BUS:BX:CAN:CONDITION``). The bus number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:CAN:IDentifier:MODe?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6083,14 +5934,13 @@ class TriggerABusBItemCanIdentifier(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:CAN:IDentifier:MODe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:CAN:IDentifier:MODe {STandard|EXTended}
             - TRIGger:A:BUS:B<x>:CAN:IDentifier:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``STandard`` specifies the standard addressing mode.
             - ``EXTended`` specifies the extended addressing mode.
         """
@@ -6100,12 +5950,12 @@ class TriggerABusBItemCanIdentifier(SCPICmdRead):
     def value(self) -> TriggerABusBItemCanIdentifierValue:
         """Return the ``TRIGger:A:BUS:B<x>:CAN:IDentifier:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets the binary address value to be used when triggering on a CAN bus
               signal. The trigger condition must be set to IDANDDATA or DATa (using
               ``TRIGGER:A:BUS:BX:CAN:CONDITION``). The bus number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``TRIGger:A:BUS:B<x>:CAN:IDentifier:VALue?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -6114,14 +5964,13 @@ class TriggerABusBItemCanIdentifier(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:CAN:IDentifier:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:CAN:IDentifier:VALue <QString>
             - TRIGger:A:BUS:B<x>:CAN:IDentifier:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is up to 29 bits specifying the binary identifier value. The only
               allowed characters in the QString are 0, 1, and X.
         """
@@ -6131,27 +5980,26 @@ class TriggerABusBItemCanIdentifier(SCPICmdRead):
 class TriggerABusBItemCanFrametype(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:CAN:FRAMEtype`` command.
 
-    **Description:**
+    Description:
         - This command sets the frame type (data, remote, error or overload) to be used when
           triggering on a CAN bus signal. The trigger condition must be set to FRAMEtype (using
           ``TRIGGER:A:BUS:BX:CAN:CONDITION``). B<x> is the bus number.The bus number is specified by
           x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:FRAMEtype?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:CAN:FRAMEtype?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:CAN:FRAMEtype value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:CAN:FRAMEtype {DATa|REMote|ERRor|OVERLoad}
         - TRIGger:A:BUS:B<x>:CAN:FRAMEtype?
+        ```
 
-    **Info:**
+    Info:
         - ``DATa`` specifies a data frame type.
         - ``REMote`` specifies a remote frame type.
         - ``ERRor`` specifies an error frame type.
@@ -6162,26 +6010,25 @@ class TriggerABusBItemCanFrametype(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemCanFdEsibit(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:CAN:FD:ESIBit`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the value of the error state indicator bit (ESI bit) for a
           CAN bus to triggering on. The bus number is specified by x. The trigger condition must be
           set to FDBITS, and the CAN standard must be FDISO or FDNONISO.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:FD:ESIBit?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:CAN:FD:ESIBit?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:CAN:FD:ESIBit value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:CAN:FD:ESIBit {ONE|ZERo|NOCARE}
         - TRIGger:A:BUS:B<x>:CAN:FD:ESIBit?
+        ```
 
-    **Info:**
+    Info:
         - ``ONE`` filters CAN FD packets to only match those where the ESI bit has a value of 1
           (recessive).
         - ``ZERo`` filters CAN FD packets to only match those where the ESI bit has a value of 0
@@ -6193,26 +6040,25 @@ class TriggerABusBItemCanFdEsibit(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemCanFdBrsbit(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:CAN:FD:BRSBit`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the value of the bit rate switch bit (BRS bit) for a CAN bus
           to triggering on. The bus number is specified by x. The trigger condition must be set to
           FDBITS, and the CAN standard must be FDISO or FDNONISO.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:FD:BRSBit?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:CAN:FD:BRSBit?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:CAN:FD:BRSBit value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:CAN:FD:BRSBit {ONE|ZERo|NOCARE}
         - TRIGger:A:BUS:B<x>:CAN:FD:BRSBit?
+        ```
 
-    **Info:**
+    Info:
         - ``ONE`` filters CAN FD packets to only match those where the BRS bit has a value of 1
           (fast data enabled).
         - ``ZERo`` filters CAN FD packets to only match those where the BRS bit has a value of 0
@@ -6224,7 +6070,7 @@ class TriggerABusBItemCanFdBrsbit(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemCanFd(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:CAN:FD`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:FD?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:CAN:FD?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -6243,12 +6089,12 @@ class TriggerABusBItemCanFd(SCPICmdRead):
     def brsbit(self) -> TriggerABusBItemCanFdBrsbit:
         """Return the ``TRIGger:A:BUS:B<x>:CAN:FD:BRSBit`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the value of the bit rate switch bit (BRS bit) for a CAN
               bus to triggering on. The bus number is specified by x. The trigger condition must be
               set to FDBITS, and the CAN standard must be FDISO or FDNONISO.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:FD:BRSBit?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -6257,14 +6103,13 @@ class TriggerABusBItemCanFd(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:CAN:FD:BRSBit value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:CAN:FD:BRSBit {ONE|ZERo|NOCARE}
             - TRIGger:A:BUS:B<x>:CAN:FD:BRSBit?
+            ```
 
-        **Info:**
+        Info:
             - ``ONE`` filters CAN FD packets to only match those where the BRS bit has a value of 1
               (fast data enabled).
             - ``ZERo`` filters CAN FD packets to only match those where the BRS bit has a value of 0
@@ -6277,12 +6122,12 @@ class TriggerABusBItemCanFd(SCPICmdRead):
     def esibit(self) -> TriggerABusBItemCanFdEsibit:
         """Return the ``TRIGger:A:BUS:B<x>:CAN:FD:ESIBit`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the value of the error state indicator bit (ESI bit) for
               a CAN bus to triggering on. The bus number is specified by x. The trigger condition
               must be set to FDBITS, and the CAN standard must be FDISO or FDNONISO.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:FD:ESIBit?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -6291,14 +6136,13 @@ class TriggerABusBItemCanFd(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:CAN:FD:ESIBit value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:CAN:FD:ESIBit {ONE|ZERo|NOCARE}
             - TRIGger:A:BUS:B<x>:CAN:FD:ESIBit?
+            ```
 
-        **Info:**
+        Info:
             - ``ONE`` filters CAN FD packets to only match those where the ESI bit has a value of 1
               (recessive).
             - ``ZERo`` filters CAN FD packets to only match those where the ESI bit has a value of 0
@@ -6311,25 +6155,24 @@ class TriggerABusBItemCanFd(SCPICmdRead):
 class TriggerABusBItemCanErrtype(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:CAN:ERRType`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the type of error condition for a CAN bus to triggering on.
           The bus number is specified by x. The trigger condition must be set to ERRor.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:ERRType?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:CAN:ERRType?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A:BUS:B<x>:CAN:ERRType value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:CAN:ERRType {ACKMISS|BITSTUFFing|FORMERRor|ANYERRor}
         - TRIGger:A:BUS:B<x>:CAN:ERRType?
+        ```
 
-    **Info:**
+    Info:
         - ``ACKMISS`` specifies triggering on a missing ACK field.
         - ``BITSTUFFing`` specifies triggering on a bit stuffing error.
         - ``FORMERRor`` specifies triggering on a CAN FD form error. To use this option, the CAN
@@ -6341,26 +6184,25 @@ class TriggerABusBItemCanErrtype(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemCanDataValue(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:CAN:DATa:VALue`` command.
 
-    **Description:**
+    Description:
         - This command sets the binary data value to be used when triggering on a CAN bus signal.
           The trigger condition must be set to IDANDDATA or DATa (using
           ``TRIGGER:A:BUS:BX:CAN:CONDITION``). The bus number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:DATa:VALue?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:CAN:DATa:VALue?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:CAN:DATa:VALue value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:CAN:DATa:VALue <QString>
         - TRIGger:A:BUS:B<x>:CAN:DATa:VALue?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the data value in binary format. The only allowed characters in the
           QString are 0, 1, and X.
     """
@@ -6371,26 +6213,25 @@ class TriggerABusBItemCanDataValue(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemCanDataSize(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:CAN:DATa:SIZe`` command.
 
-    **Description:**
+    Description:
         - This command sets the length of the data string, in bytes, to be used when triggering on a
           CAN bus signal. The trigger condition must be set to IDANDDATA or DATa (using
           ``TRIGGER:A:BUS:BX:CAN:CONDITION``). The bus number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:DATa:SIZe?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:CAN:DATa:SIZe?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:CAN:DATa:SIZe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:CAN:DATa:SIZe <NR1>
         - TRIGger:A:BUS:B<x>:CAN:DATa:SIZe?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is the length of the data string in bytes.
     """
 
@@ -6398,12 +6239,12 @@ class TriggerABusBItemCanDataSize(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemCanDataQualifier(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:CAN:DATa:QUALifier`` command.
 
-    **Description:**
+    Description:
         - This command sets the qualifier (<, >, =, ≠, ≤, ≥) to be used when triggering on a CAN bus
           signal. The trigger condition must be set to IDANDDATA or DATa (using
           ``TRIGGER:A:BUS:BX:CAN:CONDITION``). The bus number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:DATa:QUALifier?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -6412,14 +6253,13 @@ class TriggerABusBItemCanDataQualifier(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:CAN:DATa:QUALifier value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:CAN:DATa:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual}
         - TRIGger:A:BUS:B<x>:CAN:DATa:QUALifier?
+        ```
 
-    **Info:**
+    Info:
         - ``LESSthan`` sets the instrument to trigger when the data is less than the qualifier
           value.
         - ``MOREthan`` sets the instrument to trigger when the data is greater than the qualifier
@@ -6437,26 +6277,25 @@ class TriggerABusBItemCanDataQualifier(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemCanDataOffset(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:CAN:DATa:OFFSet`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the data offset value, in bytes, to use when triggering on
           the CAN data field. The bus number is specified by x. The trigger condition must be set to
           DATA or IDANDDATA.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:DATa:OFFSet?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:CAN:DATa:OFFSet?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:CAN:DATa:OFFSet value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:CAN:DATa:OFFSet <NR1>
         - TRIGger:A:BUS:B<x>:CAN:DATa:OFFSet?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is an integer whose minimum and default values are -1 (don't care), and the
           maximum is up to 7 (for CAN 2.0) or up to 63 (for ISO CAN FD and Non-ISO CAN FD).
     """
@@ -6465,12 +6304,12 @@ class TriggerABusBItemCanDataOffset(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemCanDataDirection(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:CAN:DATa:DIRection`` command.
 
-    **Description:**
+    Description:
         - This command sets the data direction (read, write or 'nocare') to be used to search on a
           CAN bus signal. The trigger condition must be set to IDentifier (using
           ``TRIGGER:A:BUS:BX:CAN:CONDITION``). The bus number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:DATa:DIRection?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -6479,14 +6318,13 @@ class TriggerABusBItemCanDataDirection(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:CAN:DATa:DIRection value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:CAN:DATa:DIRection {READ|WRITE|NOCARE}
         - TRIGger:A:BUS:B<x>:CAN:DATa:DIRection?
+        ```
 
-    **Info:**
+    Info:
         - ``READ`` sets the CAN data direction to READ.
         - ``WRITE`` sets the CAN data direction to WRITE.
         - ``NOCARE`` sets the CAN data direction to either.
@@ -6496,7 +6334,7 @@ class TriggerABusBItemCanDataDirection(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemCanData(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:CAN:DATa`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:DATa?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:CAN:DATa?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -6521,12 +6359,12 @@ class TriggerABusBItemCanData(SCPICmdRead):
     def direction(self) -> TriggerABusBItemCanDataDirection:
         """Return the ``TRIGger:A:BUS:B<x>:CAN:DATa:DIRection`` command.
 
-        **Description:**
+        Description:
             - This command sets the data direction (read, write or 'nocare') to be used to search on
               a CAN bus signal. The trigger condition must be set to IDentifier (using
               ``TRIGGER:A:BUS:BX:CAN:CONDITION``). The bus number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:DATa:DIRection?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -6535,14 +6373,13 @@ class TriggerABusBItemCanData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:CAN:DATa:DIRection value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:CAN:DATa:DIRection {READ|WRITE|NOCARE}
             - TRIGger:A:BUS:B<x>:CAN:DATa:DIRection?
+            ```
 
-        **Info:**
+        Info:
             - ``READ`` sets the CAN data direction to READ.
             - ``WRITE`` sets the CAN data direction to WRITE.
             - ``NOCARE`` sets the CAN data direction to either.
@@ -6553,12 +6390,12 @@ class TriggerABusBItemCanData(SCPICmdRead):
     def offset(self) -> TriggerABusBItemCanDataOffset:
         """Return the ``TRIGger:A:BUS:B<x>:CAN:DATa:OFFSet`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the data offset value, in bytes, to use when triggering
               on the CAN data field. The bus number is specified by x. The trigger condition must be
               set to DATA or IDANDDATA.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:DATa:OFFSet?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -6567,14 +6404,13 @@ class TriggerABusBItemCanData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:CAN:DATa:OFFSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:CAN:DATa:OFFSet <NR1>
             - TRIGger:A:BUS:B<x>:CAN:DATa:OFFSet?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is an integer whose minimum and default values are -1 (don't care), and the
               maximum is up to 7 (for CAN 2.0) or up to 63 (for ISO CAN FD and Non-ISO CAN FD).
         """
@@ -6584,12 +6420,12 @@ class TriggerABusBItemCanData(SCPICmdRead):
     def qualifier(self) -> TriggerABusBItemCanDataQualifier:
         """Return the ``TRIGger:A:BUS:B<x>:CAN:DATa:QUALifier`` command.
 
-        **Description:**
+        Description:
             - This command sets the qualifier (<, >, =, ≠, ≤, ≥) to be used when triggering on a CAN
               bus signal. The trigger condition must be set to IDANDDATA or DATa (using
               ``TRIGGER:A:BUS:BX:CAN:CONDITION``). The bus number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:DATa:QUALifier?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -6598,14 +6434,13 @@ class TriggerABusBItemCanData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:CAN:DATa:QUALifier value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:CAN:DATa:QUALifier {LESSthan|MOREthan|EQual|UNEQual|LESSEQual|MOREEQual}
             - TRIGger:A:BUS:B<x>:CAN:DATa:QUALifier?
+            ```
 
-        **Info:**
+        Info:
             - ``LESSthan`` sets the instrument to trigger when the data is less than the qualifier
               value.
             - ``MOREthan`` sets the instrument to trigger when the data is greater than the
@@ -6625,12 +6460,12 @@ class TriggerABusBItemCanData(SCPICmdRead):
     def size(self) -> TriggerABusBItemCanDataSize:
         """Return the ``TRIGger:A:BUS:B<x>:CAN:DATa:SIZe`` command.
 
-        **Description:**
+        Description:
             - This command sets the length of the data string, in bytes, to be used when triggering
               on a CAN bus signal. The trigger condition must be set to IDANDDATA or DATa (using
               ``TRIGGER:A:BUS:BX:CAN:CONDITION``). The bus number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:DATa:SIZe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -6639,14 +6474,13 @@ class TriggerABusBItemCanData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:CAN:DATa:SIZe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:CAN:DATa:SIZe <NR1>
             - TRIGger:A:BUS:B<x>:CAN:DATa:SIZe?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is the length of the data string in bytes.
         """
         return self._size
@@ -6655,12 +6489,12 @@ class TriggerABusBItemCanData(SCPICmdRead):
     def value(self) -> TriggerABusBItemCanDataValue:
         """Return the ``TRIGger:A:BUS:B<x>:CAN:DATa:VALue`` command.
 
-        **Description:**
+        Description:
             - This command sets the binary data value to be used when triggering on a CAN bus
               signal. The trigger condition must be set to IDANDDATA or DATa (using
               ``TRIGGER:A:BUS:BX:CAN:CONDITION``). The bus number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:DATa:VALue?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -6669,14 +6503,13 @@ class TriggerABusBItemCanData(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:CAN:DATa:VALue value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:CAN:DATa:VALue <QString>
             - TRIGger:A:BUS:B<x>:CAN:DATa:VALue?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the data value in binary format. The only allowed characters in the
               QString are 0, 1, and X.
         """
@@ -6686,26 +6519,25 @@ class TriggerABusBItemCanData(SCPICmdRead):
 class TriggerABusBItemCanCondition(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:CAN:CONDition`` command.
 
-    **Description:**
+    Description:
         - This command sets the condition (start of frame, frame type, identifier, matching data,
           EOF, missing ACK field, bit-stuffing error) to be used when triggering on a CAN bus
           signal. The bus number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:CONDition?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:CAN:CONDition?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``TRIGger:A:BUS:B<x>:CAN:CONDition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A:BUS:B<x>:CAN:CONDition {SOF|FRAMEtype|IDentifier|DATa|IDANDDATA|EOF|ERRor|FDBITS}
         - TRIGger:A:BUS:B<x>:CAN:CONDition?
+        ```
 
-    **Info:**
+    Info:
         - ``SOF`` enables triggering on the start of frame.
         - ``FDBITS`` enables triggering on the values of the BRS and ESI bits in an FD packet.
         - ``FRAMEtype`` enables triggering on the type of frame.
@@ -6720,7 +6552,7 @@ class TriggerABusBItemCanCondition(SCPICmdWrite, SCPICmdRead):
 class TriggerABusBItemCan(SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>:CAN`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:CAN?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -6747,12 +6579,12 @@ class TriggerABusBItemCan(SCPICmdRead):
     def condition(self) -> TriggerABusBItemCanCondition:
         """Return the ``TRIGger:A:BUS:B<x>:CAN:CONDition`` command.
 
-        **Description:**
+        Description:
             - This command sets the condition (start of frame, frame type, identifier, matching
               data, EOF, missing ACK field, bit-stuffing error) to be used when triggering on a CAN
               bus signal. The bus number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:CONDition?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -6761,14 +6593,13 @@ class TriggerABusBItemCan(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:CAN:CONDition value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:CAN:CONDition {SOF|FRAMEtype|IDentifier|DATa|IDANDDATA|EOF|ERRor|FDBITS}
             - TRIGger:A:BUS:B<x>:CAN:CONDition?
+            ```
 
-        **Info:**
+        Info:
             - ``SOF`` enables triggering on the start of frame.
             - ``FDBITS`` enables triggering on the values of the BRS and ESI bits in an FD packet.
             - ``FRAMEtype`` enables triggering on the type of frame.
@@ -6784,7 +6615,7 @@ class TriggerABusBItemCan(SCPICmdRead):
     def data(self) -> TriggerABusBItemCanData:
         """Return the ``TRIGger:A:BUS:B<x>:CAN:DATa`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:DATa?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:CAN:DATa?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -6802,25 +6633,24 @@ class TriggerABusBItemCan(SCPICmdRead):
     def errtype(self) -> TriggerABusBItemCanErrtype:
         """Return the ``TRIGger:A:BUS:B<x>:CAN:ERRType`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the type of error condition for a CAN bus to triggering
               on. The bus number is specified by x. The trigger condition must be set to ERRor.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:ERRType?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:CAN:ERRType?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:CAN:ERRType value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:CAN:ERRType {ACKMISS|BITSTUFFing|FORMERRor|ANYERRor}
             - TRIGger:A:BUS:B<x>:CAN:ERRType?
+            ```
 
-        **Info:**
+        Info:
             - ``ACKMISS`` specifies triggering on a missing ACK field.
             - ``BITSTUFFing`` specifies triggering on a bit stuffing error.
             - ``FORMERRor`` specifies triggering on a CAN FD form error. To use this option, the CAN
@@ -6833,7 +6663,7 @@ class TriggerABusBItemCan(SCPICmdRead):
     def fd(self) -> TriggerABusBItemCanFd:
         """Return the ``TRIGger:A:BUS:B<x>:CAN:FD`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:FD?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:CAN:FD?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -6848,13 +6678,13 @@ class TriggerABusBItemCan(SCPICmdRead):
     def frametype(self) -> TriggerABusBItemCanFrametype:
         """Return the ``TRIGger:A:BUS:B<x>:CAN:FRAMEtype`` command.
 
-        **Description:**
+        Description:
             - This command sets the frame type (data, remote, error or overload) to be used when
               triggering on a CAN bus signal. The trigger condition must be set to FRAMEtype (using
               ``TRIGGER:A:BUS:BX:CAN:CONDITION``). B<x> is the bus number.The bus number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:FRAMEtype?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -6863,14 +6693,13 @@ class TriggerABusBItemCan(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``TRIGger:A:BUS:B<x>:CAN:FRAMEtype value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:B<x>:CAN:FRAMEtype {DATa|REMote|ERRor|OVERLoad}
             - TRIGger:A:BUS:B<x>:CAN:FRAMEtype?
+            ```
 
-        **Info:**
+        Info:
             - ``DATa`` specifies a data frame type.
             - ``REMote`` specifies a remote frame type.
             - ``ERRor`` specifies an error frame type.
@@ -6882,7 +6711,7 @@ class TriggerABusBItemCan(SCPICmdRead):
     def identifier(self) -> TriggerABusBItemCanIdentifier:
         """Return the ``TRIGger:A:BUS:B<x>:CAN:IDentifier`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN:IDentifier?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -6899,7 +6728,7 @@ class TriggerABusBItemCan(SCPICmdRead):
 class TriggerABusBItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``TRIGger:A:BUS:B<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -6928,7 +6757,7 @@ class TriggerABusBItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def can(self) -> TriggerABusBItemCan:
         """Return the ``TRIGger:A:BUS:B<x>:CAN`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:CAN?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:CAN?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -6947,7 +6776,7 @@ class TriggerABusBItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def i2c(self) -> TriggerABusBItemI2c:
         """Return the ``TRIGger:A:BUS:B<x>:I2C`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:I2C?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:I2C?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -6963,7 +6792,7 @@ class TriggerABusBItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def lin(self) -> TriggerABusBItemLin:
         """Return the ``TRIGger:A:BUS:B<x>:LIN`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:LIN?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:LIN?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -6980,7 +6809,7 @@ class TriggerABusBItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def parallel(self) -> TriggerABusBItemParallel:
         """Return the ``TRIGger:A:BUS:B<x>:PARallel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:PARallel?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:PARallel?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -6994,7 +6823,7 @@ class TriggerABusBItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def rs232c(self) -> TriggerABusBItemRs232c:
         """Return the ``TRIGger:A:BUS:B<x>:RS232C`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:RS232C?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:RS232C?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -7009,12 +6838,12 @@ class TriggerABusBItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def sent(self) -> TriggerABusBItemSent:
         """Return the ``TRIGger:A:BUS:B<x>:SENT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SENT?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SENT?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``B<x>`` is the number of the bus waveform.
 
         Sub-properties:
@@ -7030,7 +6859,7 @@ class TriggerABusBItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def spi(self) -> TriggerABusBItemSpi:
         """Return the ``TRIGger:A:BUS:B<x>:SPI`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>:SPI?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>:SPI?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -7045,7 +6874,7 @@ class TriggerABusBItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class TriggerABus(SCPICmdRead):
     """The ``TRIGger:A:BUS`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A:BUS?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -7066,7 +6895,7 @@ class TriggerABus(SCPICmdRead):
     def b(self) -> Dict[int, TriggerABusBItem]:
         """Return the ``TRIGger:A:BUS:B<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:B<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:B<x>?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -7086,24 +6915,23 @@ class TriggerABus(SCPICmdRead):
     def source(self) -> TriggerABusSource:
         """Return the ``TRIGger:A:BUS:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the source bus for a bus trigger.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS:SOUrce?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:BUS:SOUrce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:BUS:SOUrce B<x>
             - TRIGger:A:BUS:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``B<x>`` sets the selected source to the bus.
         """
         return self._source
@@ -7113,27 +6941,26 @@ class TriggerABus(SCPICmdRead):
 class TriggerA(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger:A`` command.
 
-    **Description:**
+    Description:
         - This command sets the A trigger level automatically to 50% of the range of the minimum and
           maximum values of the trigger input signal. The query returns current trigger parameters.
           The trigger level is the voltage threshold through which the trigger source signal must
           pass to generate a trigger event. This command is equivalent to pushing the LEVEL knob on
           the front panel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger:A?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger:A?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger:A value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger:A SETLevel
         - TRIGger:A?
+        ```
 
-    **Info:**
+    Info:
         - ``SETLevel`` sets the trigger level to 50% of the range of the minimum and maximum values
           of the trigger input signal.
 
@@ -7179,7 +7006,7 @@ class TriggerA(SCPICmdWrite, SCPICmdRead):
     def bus(self) -> TriggerABus:
         """Return the ``TRIGger:A:BUS`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:BUS?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:BUS?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -7194,7 +7021,7 @@ class TriggerA(SCPICmdWrite, SCPICmdRead):
     def edge(self) -> TriggerAEdge:
         """Return the ``TRIGger:A:EDGE`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:EDGE?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:EDGE?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -7210,7 +7037,7 @@ class TriggerA(SCPICmdWrite, SCPICmdRead):
     def holdoff(self) -> TriggerAHoldoff:
         """Return the ``TRIGger:A:HOLDoff`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:HOLDoff?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:HOLDoff?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -7224,7 +7051,7 @@ class TriggerA(SCPICmdWrite, SCPICmdRead):
     def level(self) -> TriggerALevel:
         """Return the ``TRIGger:A:LEVel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:LEVel?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:LEVel?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -7238,7 +7065,7 @@ class TriggerA(SCPICmdWrite, SCPICmdRead):
     def logicpattern(self) -> TriggerALogicpattern:
         """Return the ``TRIGger:A:LOGICPattern`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:LOGICPattern?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGICPattern?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -7253,7 +7080,7 @@ class TriggerA(SCPICmdWrite, SCPICmdRead):
     def logic(self) -> TriggerALogic:
         """Return the ``TRIGger:A:LOGIc`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:LOGIc?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOGIc?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -7272,7 +7099,7 @@ class TriggerA(SCPICmdWrite, SCPICmdRead):
     def lowerthreshold(self) -> TriggerALowerthreshold:
         """Return the ``TRIGger:A:LOWerthreshold`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:LOWerthreshold?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:LOWerthreshold?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -7286,24 +7113,23 @@ class TriggerA(SCPICmdWrite, SCPICmdRead):
     def mode(self) -> TriggerAMode:
         """Return the ``TRIGger:A:MODe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the A trigger mode. This command is equivalent to pushing
               the Mode button on the front panel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:MODe?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:MODe?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:MODe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:MODe {AUTO|NORMal}
             - TRIGger:A:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``AUTO`` generates a trigger if one is not detected within a specified time period.
             - ``NORMal`` waits for a valid trigger event.
         """
@@ -7313,7 +7139,7 @@ class TriggerA(SCPICmdWrite, SCPICmdRead):
     def pulsewidth(self) -> TriggerAPulsewidth:
         """Return the ``TRIGger:A:PULSEWidth`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:PULSEWidth?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:PULSEWidth?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -7331,7 +7157,7 @@ class TriggerA(SCPICmdWrite, SCPICmdRead):
     def runt(self) -> TriggerARunt:
         """Return the ``TRIGger:A:RUNT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:RUNT?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:RUNT?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -7348,7 +7174,7 @@ class TriggerA(SCPICmdWrite, SCPICmdRead):
     def setholdlogicval(self) -> TriggerASetholdlogicval:
         """Return the ``TRIGger:A:SETHOLDLOGICVAL`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:SETHOLDLOGICVAL?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:SETHOLDLOGICVAL?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -7362,7 +7188,7 @@ class TriggerA(SCPICmdWrite, SCPICmdRead):
     def sethold(self) -> TriggerASethold:
         """Return the ``TRIGger:A:SETHold`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:SETHold?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:SETHold?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -7378,7 +7204,7 @@ class TriggerA(SCPICmdWrite, SCPICmdRead):
     def timeout(self) -> TriggerATimeout:
         """Return the ``TRIGger:A:TIMEOut`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:TIMEOut?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:TIMEOut?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -7394,23 +7220,22 @@ class TriggerA(SCPICmdWrite, SCPICmdRead):
     def type(self) -> TriggerAType:
         """Return the ``TRIGger:A:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the type of A trigger.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:TYPe?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A:TYPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A:TYPe {EDGE| WIDth| RISE| FALL| TIMEOut| RUNt| LOGIc| SETHold| BUS}
             - TRIGger:A:TYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``EDGE`` is a normal trigger. A trigger event occurs when a signal passes through a
               specified voltage level in a specified direction and is controlled by the
               ``TRIGger:A:EDGE`` commands.
@@ -7437,7 +7262,7 @@ class TriggerA(SCPICmdWrite, SCPICmdRead):
     def upperthreshold(self) -> TriggerAUpperthreshold:
         """Return the ``TRIGger:A:UPPerthreshold`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A:UPPerthreshold?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A:UPPerthreshold?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -7451,24 +7276,23 @@ class TriggerA(SCPICmdWrite, SCPICmdRead):
 class Trigger(SCPICmdWrite, SCPICmdRead):
     """The ``TRIGger`` command.
 
-    **Description:**
+    Description:
         - This command forces a trigger event to occur. The query returns the current trigger
           parameters for the instrument.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TRIGger?`` query.
         - Using the ``.verify(value)`` method will send the ``TRIGger?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TRIGger value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TRIGger FORCe
         - TRIGger?
+        ```
 
-    **Info:**
+    Info:
         - ``FORCe`` creates a trigger event. If ``TRIGger:STATE`` is set to READy, the acquisition
           will complete. Otherwise, this command will be ignored. This is equivalent to pressing the
           Force button on the front panel.
@@ -7491,27 +7315,26 @@ class Trigger(SCPICmdWrite, SCPICmdRead):
     def a(self) -> TriggerA:
         """Return the ``TRIGger:A`` command.
 
-        **Description:**
+        Description:
             - This command sets the A trigger level automatically to 50% of the range of the minimum
               and maximum values of the trigger input signal. The query returns current trigger
               parameters. The trigger level is the voltage threshold through which the trigger
               source signal must pass to generate a trigger event. This command is equivalent to
               pushing the LEVEL knob on the front panel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:A?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:A?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:A value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:A SETLevel
             - TRIGger:A?
+            ```
 
-        **Info:**
+        Info:
             - ``SETLevel`` sets the trigger level to 50% of the range of the minimum and maximum
               values of the trigger input signal.
 
@@ -7538,24 +7361,23 @@ class Trigger(SCPICmdWrite, SCPICmdRead):
     def auxlevel(self) -> TriggerAuxlevel:
         """Return the ``TRIGger:AUXLevel`` command.
 
-        **Description:**
+        Description:
             - For those instruments that have an Auxiliary Input (such as an MSO58LP), this command
               sets or queries the Auxiliary Input voltage level to use for an edge trigger.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:AUXLevel?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:AUXLevel?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TRIGger:AUXLevel value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:AUXLevel {<NR3>|ECL|TTL}
             - TRIGger:AUXLevel?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is trigger level in Volts.
             - ``ECL`` sets trigger level to -1.3 Volts.
             - ``TTL`` sets trigger level to 1.4 Volts.
@@ -7566,7 +7388,7 @@ class Trigger(SCPICmdWrite, SCPICmdRead):
     def hysteresis(self) -> TriggerHysteresis:
         """Return the ``TRIGger:HYSTeresis`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:HYSTeresis?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:HYSTeresis?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -7580,18 +7402,17 @@ class Trigger(SCPICmdWrite, SCPICmdRead):
     def state(self) -> TriggerState:
         """Return the ``TRIGger:STATE`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns the current state of the triggering system.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TRIGger:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``TRIGger:STATE?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TRIGger:STATE?
+            ```
         """
         return self._state

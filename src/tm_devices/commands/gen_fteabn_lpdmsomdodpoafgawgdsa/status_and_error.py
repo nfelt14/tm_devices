@@ -12,8 +12,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - *OPT?
 """
 
@@ -28,23 +26,22 @@ if TYPE_CHECKING:
 class Opt(SCPICmdRead):
     """The ``*OPT`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns a comma separated list of installed options as an
           arbitrary ASCII string (no quotes) of the form:
           ``<optionCode>:<optionDescription>``,``<optionCode>:<optionDescription>``... The last
           section of each entry (the text following the last hyphen) indicates the license type. If
           no options are found, NONE is returned.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``*OPT?`` query.
         - Using the ``.verify(value)`` method will send the ``*OPT?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - *OPT?
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "*OPT") -> None:

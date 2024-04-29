@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - PG:AMPlitude {2.5|3.3|5V}
     - PG:AMPlitude?
     - PG:BIT:ONE {HIGH|LOW|TOGGLE|HIGH_Z}
@@ -45,25 +43,24 @@ if TYPE_CHECKING:
 class PgPatterndefinition(SCPICmdWrite, SCPICmdRead):
     """The ``PG:PATTERNdefinition`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the Pattern Generator definition. If set to manual mode, you
           can configure the bit independently. If set to file mode, you can set a data file that
           will be loaded into memory and generated as a sequence.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PG:PATTERNdefinition?`` query.
         - Using the ``.verify(value)`` method will send the ``PG:PATTERNdefinition?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``PG:PATTERNdefinition value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PG:PATTERNdefinition {MANual|FILE}
         - PG:PATTERNdefinition?
+        ```
 
-    **Info:**
+    Info:
         - ``MANual`` sets the pattern definition source to Manual. This is the default value.
         - ``FILE`` sets the pattern definition source to File.
     """
@@ -72,23 +69,22 @@ class PgPatterndefinition(SCPICmdWrite, SCPICmdRead):
 class PgOutputMode(SCPICmdWrite, SCPICmdRead):
     """The ``PG:OUTPut:MODe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the Pattern Generator output mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PG:OUTPut:MODe?`` query.
         - Using the ``.verify(value)`` method will send the ``PG:OUTPut:MODe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``PG:OUTPut:MODe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PG:OUTPut:MODe {CONTinuous|BURSt|OFF}
         - PG:OUTPut:MODe?
+        ```
 
-    **Info:**
+    Info:
         - ``CONTinuous`` sets the Pattern Generator output type to continuous.
         - ``BURSt`` sets the Pattern Generator output type to burst.
         - ``OFF`` sets the Pattern Generator output type to off. This is the default value.
@@ -98,7 +94,7 @@ class PgOutputMode(SCPICmdWrite, SCPICmdRead):
 class PgOutput(SCPICmdRead):
     """The ``PG:OUTPut`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PG:OUTPut?`` query.
         - Using the ``.verify(value)`` method will send the ``PG:OUTPut?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -115,23 +111,22 @@ class PgOutput(SCPICmdRead):
     def mode(self) -> PgOutputMode:
         """Return the ``PG:OUTPut:MODe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Pattern Generator output mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PG:OUTPut:MODe?`` query.
             - Using the ``.verify(value)`` method will send the ``PG:OUTPut:MODe?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``PG:OUTPut:MODe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PG:OUTPut:MODe {CONTinuous|BURSt|OFF}
             - PG:OUTPut:MODe?
+            ```
 
-        **Info:**
+        Info:
             - ``CONTinuous`` sets the Pattern Generator output type to continuous.
             - ``BURSt`` sets the Pattern Generator output type to burst.
             - ``OFF`` sets the Pattern Generator output type to off. This is the default value.
@@ -142,24 +137,23 @@ class PgOutput(SCPICmdRead):
 class PgFilePattern(SCPICmdWrite, SCPICmdRead):
     """The ``PG:FILE:PATTern`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the path of your data file to generate a digital pattern in
           file mode. Only .csv files are supported.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PG:FILE:PATTern?`` query.
         - Using the ``.verify(value)`` method will send the ``PG:FILE:PATTern?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``PG:FILE:PATTern value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PG:FILE:PATTern <QString>
         - PG:FILE:PATTern?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the file path that specifies the location of the specified instrument
           file.
     """
@@ -170,7 +164,7 @@ class PgFilePattern(SCPICmdWrite, SCPICmdRead):
 class PgFile(SCPICmdRead):
     """The ``PG:FILE`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PG:FILE?`` query.
         - Using the ``.verify(value)`` method will send the ``PG:FILE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -187,24 +181,23 @@ class PgFile(SCPICmdRead):
     def pattern(self) -> PgFilePattern:
         """Return the ``PG:FILE:PATTern`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the path of your data file to generate a digital pattern
               in file mode. Only .csv files are supported.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PG:FILE:PATTern?`` query.
             - Using the ``.verify(value)`` method will send the ``PG:FILE:PATTern?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``PG:FILE:PATTern value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PG:FILE:PATTern <QString>
             - PG:FILE:PATTern?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the file path that specifies the location of the specified instrument
               file.
         """
@@ -214,42 +207,40 @@ class PgFile(SCPICmdRead):
 class PgBurstTrigger(SCPICmdWriteNoArguments):
     """The ``PG:BURSt:TRIGger`` command.
 
-    **Description:**
+    Description:
         - This command manually starts the burst pattern. This is only available when output is
           Burst.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``PG:BURSt:TRIGger`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PG:BURSt:TRIGger
+        ```
     """
 
 
 class PgBurstCcount(SCPICmdWrite, SCPICmdRead):
     """The ``PG:BURSt:CCOUnt`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the cycle count for Pattern Generator burst mode. This is
           only available when output is Burst.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PG:BURSt:CCOUnt?`` query.
         - Using the ``.verify(value)`` method will send the ``PG:BURSt:CCOUnt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``PG:BURSt:CCOUnt value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PG:BURSt:CCOUnt <NR1>
         - PG:BURSt:CCOUnt?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` sets the cycle count for Pattern Generator burst mode. The minimum cycle value
           can be set is 1 and maximum cycles are 2000. The default value is 1.
     """
@@ -258,7 +249,7 @@ class PgBurstCcount(SCPICmdWrite, SCPICmdRead):
 class PgBurst(SCPICmdRead):
     """The ``PG:BURSt`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PG:BURSt?`` query.
         - Using the ``.verify(value)`` method will send the ``PG:BURSt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -277,24 +268,23 @@ class PgBurst(SCPICmdRead):
     def ccount(self) -> PgBurstCcount:
         """Return the ``PG:BURSt:CCOUnt`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the cycle count for Pattern Generator burst mode. This is
               only available when output is Burst.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PG:BURSt:CCOUnt?`` query.
             - Using the ``.verify(value)`` method will send the ``PG:BURSt:CCOUnt?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``PG:BURSt:CCOUnt value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PG:BURSt:CCOUnt <NR1>
             - PG:BURSt:CCOUnt?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` sets the cycle count for Pattern Generator burst mode. The minimum cycle
               value can be set is 1 and maximum cycles are 2000. The default value is 1.
         """
@@ -304,18 +294,17 @@ class PgBurst(SCPICmdRead):
     def trigger(self) -> PgBurstTrigger:
         """Return the ``PG:BURSt:TRIGger`` command.
 
-        **Description:**
+        Description:
             - This command manually starts the burst pattern. This is only available when output is
               Burst.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``PG:BURSt:TRIGger`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PG:BURSt:TRIGger
+            ```
         """
         return self._trigger
 
@@ -323,24 +312,23 @@ class PgBurst(SCPICmdRead):
 class PgBitrate(SCPICmdWrite, SCPICmdRead):
     """The ``PG:BITRate`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the bit rate of data in the Pattern Generator. You can give
           any value, but it will take nearest possible value and generate the pattern.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PG:BITRate?`` query.
         - Using the ``.verify(value)`` method will send the ``PG:BITRate?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``PG:BITRate value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PG:BITRate <NR3>
         - PG:BITRate?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` sets the Pattern Generator bit rate. The minimum bit rate is 1 b/s and maximum
           bit rate is 25 Mb/s. The default value is 125000 b/s.
     """
@@ -349,23 +337,22 @@ class PgBitrate(SCPICmdWrite, SCPICmdRead):
 class PgBitZero(SCPICmdWrite, SCPICmdRead):
     """The ``PG:BIT:ZERO`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output value of Pattern Generator bit 0.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PG:BIT:ZERO?`` query.
         - Using the ``.verify(value)`` method will send the ``PG:BIT:ZERO?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``PG:BIT:ZERO value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PG:BIT:ZERO {HIGH|LOW|TOGGLE|HIGH_Z}
         - PG:BIT:ZERO?
+        ```
 
-    **Info:**
+    Info:
         - ``LOW`` sets the Pattern Generator bit value to Low.
         - ``HIGH`` sets the Pattern Generator bit value to High.
         - ``TOGGLE`` sets the Pattern Generator bit value to Toggle.
@@ -377,23 +364,22 @@ class PgBitZero(SCPICmdWrite, SCPICmdRead):
 class PgBitTwo(SCPICmdWrite, SCPICmdRead):
     """The ``PG:BIT:TWO`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output value of Pattern Generator bit 2.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PG:BIT:TWO?`` query.
         - Using the ``.verify(value)`` method will send the ``PG:BIT:TWO?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``PG:BIT:TWO value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PG:BIT:TWO {HIGH|LOW|TOGGLE|HIGH_Z}
         - PG:BIT:TWO?
+        ```
 
-    **Info:**
+    Info:
         - ``LOW`` sets the Pattern Generator bit value to Low.
         - ``HIGH`` sets the Pattern Generator bit value to High.
         - ``TOGGLE`` sets the Pattern Generator bit value to Toggle.
@@ -405,23 +391,22 @@ class PgBitTwo(SCPICmdWrite, SCPICmdRead):
 class PgBitThree(SCPICmdWrite, SCPICmdRead):
     """The ``PG:BIT:THREE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output value of Pattern Generator bit 3.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PG:BIT:THREE?`` query.
         - Using the ``.verify(value)`` method will send the ``PG:BIT:THREE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``PG:BIT:THREE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PG:BIT:THREE {HIGH|LOW|TOGGLE|HIGH_Z}
         - PG:BIT:THREE?
+        ```
 
-    **Info:**
+    Info:
         - ``LOW`` sets the Pattern Generator bit value to Low.
         - ``HIGH`` sets the Pattern Generator bit value to High.
         - ``TOGGLE`` sets the Pattern Generator bit value to Toggle.
@@ -433,23 +418,22 @@ class PgBitThree(SCPICmdWrite, SCPICmdRead):
 class PgBitOne(SCPICmdWrite, SCPICmdRead):
     """The ``PG:BIT:ONE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output value of Pattern Generator bit 1.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PG:BIT:ONE?`` query.
         - Using the ``.verify(value)`` method will send the ``PG:BIT:ONE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``PG:BIT:ONE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PG:BIT:ONE {HIGH|LOW|TOGGLE|HIGH_Z}
         - PG:BIT:ONE?
+        ```
 
-    **Info:**
+    Info:
         - ``LOW`` sets the Pattern Generator bit value to Low.
         - ``HIGH`` sets the Pattern Generator bit value to High.
         - ``TOGGLE`` sets the Pattern Generator bit value to Toggle.
@@ -461,7 +445,7 @@ class PgBitOne(SCPICmdWrite, SCPICmdRead):
 class PgBit(SCPICmdRead):
     """The ``PG:BIT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PG:BIT?`` query.
         - Using the ``.verify(value)`` method will send the ``PG:BIT?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -484,23 +468,22 @@ class PgBit(SCPICmdRead):
     def one(self) -> PgBitOne:
         """Return the ``PG:BIT:ONE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output value of Pattern Generator bit 1.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PG:BIT:ONE?`` query.
             - Using the ``.verify(value)`` method will send the ``PG:BIT:ONE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``PG:BIT:ONE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PG:BIT:ONE {HIGH|LOW|TOGGLE|HIGH_Z}
             - PG:BIT:ONE?
+            ```
 
-        **Info:**
+        Info:
             - ``LOW`` sets the Pattern Generator bit value to Low.
             - ``HIGH`` sets the Pattern Generator bit value to High.
             - ``TOGGLE`` sets the Pattern Generator bit value to Toggle.
@@ -513,23 +496,22 @@ class PgBit(SCPICmdRead):
     def three(self) -> PgBitThree:
         """Return the ``PG:BIT:THREE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output value of Pattern Generator bit 3.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PG:BIT:THREE?`` query.
             - Using the ``.verify(value)`` method will send the ``PG:BIT:THREE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``PG:BIT:THREE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PG:BIT:THREE {HIGH|LOW|TOGGLE|HIGH_Z}
             - PG:BIT:THREE?
+            ```
 
-        **Info:**
+        Info:
             - ``LOW`` sets the Pattern Generator bit value to Low.
             - ``HIGH`` sets the Pattern Generator bit value to High.
             - ``TOGGLE`` sets the Pattern Generator bit value to Toggle.
@@ -542,23 +524,22 @@ class PgBit(SCPICmdRead):
     def two(self) -> PgBitTwo:
         """Return the ``PG:BIT:TWO`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output value of Pattern Generator bit 2.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PG:BIT:TWO?`` query.
             - Using the ``.verify(value)`` method will send the ``PG:BIT:TWO?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``PG:BIT:TWO value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PG:BIT:TWO {HIGH|LOW|TOGGLE|HIGH_Z}
             - PG:BIT:TWO?
+            ```
 
-        **Info:**
+        Info:
             - ``LOW`` sets the Pattern Generator bit value to Low.
             - ``HIGH`` sets the Pattern Generator bit value to High.
             - ``TOGGLE`` sets the Pattern Generator bit value to Toggle.
@@ -571,23 +552,22 @@ class PgBit(SCPICmdRead):
     def zero(self) -> PgBitZero:
         """Return the ``PG:BIT:ZERO`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output value of Pattern Generator bit 0.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PG:BIT:ZERO?`` query.
             - Using the ``.verify(value)`` method will send the ``PG:BIT:ZERO?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``PG:BIT:ZERO value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PG:BIT:ZERO {HIGH|LOW|TOGGLE|HIGH_Z}
             - PG:BIT:ZERO?
+            ```
 
-        **Info:**
+        Info:
             - ``LOW`` sets the Pattern Generator bit value to Low.
             - ``HIGH`` sets the Pattern Generator bit value to High.
             - ``TOGGLE`` sets the Pattern Generator bit value to Toggle.
@@ -600,25 +580,24 @@ class PgBit(SCPICmdRead):
 class PgAmplitude(SCPICmdWrite, SCPICmdRead):
     """The ``PG:AMPlitude`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the Pattern Generator output voltage. You can give any value,
           but the command will replace it with the nearest valid value (2.5, 3.3 and 5). In burst
           mode, only 5 V is supported.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PG:AMPlitude?`` query.
         - Using the ``.verify(value)`` method will send the ``PG:AMPlitude?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``PG:AMPlitude value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - PG:AMPlitude {2.5|3.3|5V}
         - PG:AMPlitude?
+        ```
 
-    **Info:**
+    Info:
         - ``2.5`` sets the Pattern Generator amplitude to 2.5 V.
         - ``3.3`` sets the Pattern Generator amplitude to 3.3 V.
         - ``5`` sets the Pattern Generator amplitude to 5 V. This is the default value.
@@ -628,7 +607,7 @@ class PgAmplitude(SCPICmdWrite, SCPICmdRead):
 class Pg(SCPICmdRead):
     """The ``PG`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``PG?`` query.
         - Using the ``.verify(value)`` method will send the ``PG?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -659,25 +638,24 @@ class Pg(SCPICmdRead):
     def amplitude(self) -> PgAmplitude:
         """Return the ``PG:AMPlitude`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Pattern Generator output voltage. You can give any
               value, but the command will replace it with the nearest valid value (2.5, 3.3 and 5).
               In burst mode, only 5 V is supported.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PG:AMPlitude?`` query.
             - Using the ``.verify(value)`` method will send the ``PG:AMPlitude?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``PG:AMPlitude value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PG:AMPlitude {2.5|3.3|5V}
             - PG:AMPlitude?
+            ```
 
-        **Info:**
+        Info:
             - ``2.5`` sets the Pattern Generator amplitude to 2.5 V.
             - ``3.3`` sets the Pattern Generator amplitude to 3.3 V.
             - ``5`` sets the Pattern Generator amplitude to 5 V. This is the default value.
@@ -688,7 +666,7 @@ class Pg(SCPICmdRead):
     def bit(self) -> PgBit:
         """Return the ``PG:BIT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PG:BIT?`` query.
             - Using the ``.verify(value)`` method will send the ``PG:BIT?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -705,24 +683,23 @@ class Pg(SCPICmdRead):
     def bitrate(self) -> PgBitrate:
         """Return the ``PG:BITRate`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the bit rate of data in the Pattern Generator. You can
               give any value, but it will take nearest possible value and generate the pattern.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PG:BITRate?`` query.
             - Using the ``.verify(value)`` method will send the ``PG:BITRate?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``PG:BITRate value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PG:BITRate <NR3>
             - PG:BITRate?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` sets the Pattern Generator bit rate. The minimum bit rate is 1 b/s and
               maximum bit rate is 25 Mb/s. The default value is 125000 b/s.
         """
@@ -732,7 +709,7 @@ class Pg(SCPICmdRead):
     def burst(self) -> PgBurst:
         """Return the ``PG:BURSt`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PG:BURSt?`` query.
             - Using the ``.verify(value)`` method will send the ``PG:BURSt?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -747,7 +724,7 @@ class Pg(SCPICmdRead):
     def file(self) -> PgFile:
         """Return the ``PG:FILE`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PG:FILE?`` query.
             - Using the ``.verify(value)`` method will send the ``PG:FILE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -761,7 +738,7 @@ class Pg(SCPICmdRead):
     def output(self) -> PgOutput:
         """Return the ``PG:OUTPut`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PG:OUTPut?`` query.
             - Using the ``.verify(value)`` method will send the ``PG:OUTPut?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -775,26 +752,25 @@ class Pg(SCPICmdRead):
     def patterndefinition(self) -> PgPatterndefinition:
         """Return the ``PG:PATTERNdefinition`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Pattern Generator definition. If set to manual mode,
               you can configure the bit independently. If set to file mode, you can set a data file
               that will be loaded into memory and generated as a sequence.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``PG:PATTERNdefinition?`` query.
             - Using the ``.verify(value)`` method will send the ``PG:PATTERNdefinition?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``PG:PATTERNdefinition value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - PG:PATTERNdefinition {MANual|FILE}
             - PG:PATTERNdefinition?
+            ```
 
-        **Info:**
+        Info:
             - ``MANual`` sets the pattern definition source to Manual. This is the default value.
             - ``FILE`` sets the pattern definition source to File.
         """

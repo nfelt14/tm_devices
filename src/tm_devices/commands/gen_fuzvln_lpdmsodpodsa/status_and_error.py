@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - *PSC {<NR1>|OFF|ON}
     - *PSC?
 """
@@ -27,27 +25,26 @@ if TYPE_CHECKING:
 class Psc(SCPICmdWrite, SCPICmdRead):
     """The ``*PSC`` command.
 
-    **Description:**
+    Description:
         - This command sets and queries the power-on status flag that controls the automatic
           power-on handling of the DESER, SRER, and ESER registers. When ``*PSC`` is true, the DESER
           register is set to 255 and the SRER and ESER registers are set to 0 at power-on. When
           ``*PSC`` is false, the current values in the DESER, SRER, and ESER registers are preserved
           in nonvolatile memory when power is shut off and are restored at power-on.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``*PSC?`` query.
         - Using the ``.verify(value)`` method will send the ``*PSC?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``*PSC value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - *PSC {<NR1>|OFF|ON}
         - *PSC?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 sets the power-on status clear flag to false, disables the power-on clear
           and allows the instrument to possibly assert SRQ after power-on; any other value sets the
           power-on status clear flag to true, enabling the power-on status clear and prevents any

@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - ROSc:SOUrce {INTERnal|EXTernal|TRACking}
     - ROSc:SOUrce?
     - ROSc:STATE?
@@ -27,46 +25,44 @@ if TYPE_CHECKING:
 class RoscState(SCPICmdRead):
     """The ``ROSc:STATE`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns whether the time base reference oscillator is locked. This
           command will return either LOCKED or UNLOCKED.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ROSc:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ROSc:STATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ROSc:STATE?
+        ```
     """
 
 
 class RoscSource(SCPICmdWrite, SCPICmdRead):
     """The ``ROSc:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the selected source for the time base reference oscillator.
           The reference oscillator locks to this source. Depending on the command argument that you
           specify, you can use an external reference or use the internal crystal oscillator as the
           time base reference.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ROSc:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``ROSc:SOUrce?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ROSc:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ROSc:SOUrce {INTERnal|EXTernal|TRACking}
         - ROSc:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``INTERnal`` specifies the internal 10 MHz crystal oscillator as the time base reference.
         - ``EXTernal`` specifies the user-supplied external signal at ±1 ppm as the time base
           reference.
@@ -78,7 +74,7 @@ class RoscSource(SCPICmdWrite, SCPICmdRead):
 class Rosc(SCPICmdRead):
     """The ``ROSc`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ROSc?`` query.
         - Using the ``.verify(value)`` method will send the ``ROSc?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -97,26 +93,25 @@ class Rosc(SCPICmdRead):
     def source(self) -> RoscSource:
         """Return the ``ROSc:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the selected source for the time base reference
               oscillator. The reference oscillator locks to this source. Depending on the command
               argument that you specify, you can use an external reference or use the internal
               crystal oscillator as the time base reference.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ROSc:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``ROSc:SOUrce?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ROSc:SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ROSc:SOUrce {INTERnal|EXTernal|TRACking}
             - ROSc:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``INTERnal`` specifies the internal 10 MHz crystal oscillator as the time base
               reference.
             - ``EXTernal`` specifies the user-supplied external signal at ±1 ppm as the time base
@@ -130,19 +125,18 @@ class Rosc(SCPICmdRead):
     def state(self) -> RoscState:
         """Return the ``ROSc:STATE`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns whether the time base reference oscillator is locked.
               This command will return either LOCKED or UNLOCKED.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ROSc:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``ROSc:STATE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ROSc:STATE?
+            ```
         """
         return self._state

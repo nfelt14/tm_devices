@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - smuX.abort()
     - smuX.buffer.getstats()
     - smuX.buffer.recalculatestats()
@@ -126,11 +124,11 @@ if TYPE_CHECKING:
 class SmuxItemTriggerSource(BaseTSPCmd):
     """The ``smuX.trigger.source`` command tree.
 
-    **Info:**
+    Info:
         - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.source.action
           applies to SMU channel A).
 
-    Properties/methods:
+    Properties and methods:
         - ``.action``: The ``smuX.trigger.source.action`` attribute.
         - ``.limiti``: The ``smuX.trigger.source.limiti`` attribute.
         - ``.limitv``: The ``smuX.trigger.source.limitv`` attribute.
@@ -148,22 +146,21 @@ class SmuxItemTriggerSource(BaseTSPCmd):
     def action(self) -> str:
         """Access the ``smuX.trigger.source.action`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables sweeping the source (on or off).
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.source.action)`` query.
             - Setting this property to a value will send the ``smuX.trigger.source.action = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.source.action = value
             - print(smuX.trigger.source.action)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.source.action
               applies to SMU channel A).
 
@@ -184,22 +181,21 @@ class SmuxItemTriggerSource(BaseTSPCmd):
     def action(self, value: Union[str, float]) -> None:
         """Access the ``smuX.trigger.source.action`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables sweeping the source (on or off).
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.source.action)`` query.
             - Setting this property to a value will send the ``smuX.trigger.source.action = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.source.action = value
             - print(smuX.trigger.source.action)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.source.action
               applies to SMU channel A).
 
@@ -223,22 +219,21 @@ class SmuxItemTriggerSource(BaseTSPCmd):
     def limiti(self) -> str:
         """Access the ``smuX.trigger.source.limiti`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the sweep source limit. (i = current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.source.limiti)`` query.
             - Setting this property to a value will send the ``smuX.trigger.source.limiti = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.source.limiti = value
             - print(smuX.trigger.source.limiti)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.source.limitv
               applies to SMU channel A).
 
@@ -259,22 +254,21 @@ class SmuxItemTriggerSource(BaseTSPCmd):
     def limiti(self, value: Union[str, float]) -> None:
         """Access the ``smuX.trigger.source.limiti`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the sweep source limit. (i = current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.source.limiti)`` query.
             - Setting this property to a value will send the ``smuX.trigger.source.limiti = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.source.limiti = value
             - print(smuX.trigger.source.limiti)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.source.limitv
               applies to SMU channel A).
 
@@ -298,22 +292,21 @@ class SmuxItemTriggerSource(BaseTSPCmd):
     def limitv(self) -> str:
         """Access the ``smuX.trigger.source.limitv`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the sweep source limit. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.source.limitv)`` query.
             - Setting this property to a value will send the ``smuX.trigger.source.limitv = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.source.limitv = value
             - print(smuX.trigger.source.limitv)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.source.limitv
               applies to SMU channel A).
 
@@ -334,22 +327,21 @@ class SmuxItemTriggerSource(BaseTSPCmd):
     def limitv(self, value: Union[str, float]) -> None:
         """Access the ``smuX.trigger.source.limitv`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the sweep source limit. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.source.limitv)`` query.
             - Setting this property to a value will send the ``smuX.trigger.source.limitv = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.source.limitv = value
             - print(smuX.trigger.source.limitv)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.source.limitv
               applies to SMU channel A).
 
@@ -373,23 +365,22 @@ class SmuxItemTriggerSource(BaseTSPCmd):
     def stimulus(self) -> str:
         """Access the ``smuX.trigger.source.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines which event causes the source event detector to enter the
               detected state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.source.stimulus)`` query.
             - Setting this property to a value will send the
               ``smuX.trigger.source.stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.source.stimulus = value
             - print(smuX.trigger.source.stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure (SMU) channel (for example, smua.trigger.source.stimulus
               applies to SMU channel A).
 
@@ -410,23 +401,22 @@ class SmuxItemTriggerSource(BaseTSPCmd):
     def stimulus(self, value: Union[str, float]) -> None:
         """Access the ``smuX.trigger.source.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines which event causes the source event detector to enter the
               detected state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.source.stimulus)`` query.
             - Setting this property to a value will send the
               ``smuX.trigger.source.stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.source.stimulus = value
             - print(smuX.trigger.source.stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure (SMU) channel (for example, smua.trigger.source.stimulus
               applies to SMU channel A).
 
@@ -449,14 +439,13 @@ class SmuxItemTriggerSource(BaseTSPCmd):
     def lineari(self, start_value: float, end_value: float, points: int) -> None:
         """Run the ``smuX.trigger.source.lineari()`` function.
 
-        **Description:**
+        Description:
             - This function configures a linear source sweep. (i = current in amperes)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.source.lineari()
+            ```
 
         Args:
             start_value: Source value of the first point.
@@ -477,14 +466,13 @@ class SmuxItemTriggerSource(BaseTSPCmd):
     def linearv(self, start_value: float, end_value: float, points: int) -> None:
         """Run the ``smuX.trigger.source.linearv()`` function.
 
-        **Description:**
+        Description:
             - This function configures a linear source sweep. (v = voltage in volts)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.source.linearv()
+            ```
 
         Args:
             start_value: Source value of the first point.
@@ -505,14 +493,13 @@ class SmuxItemTriggerSource(BaseTSPCmd):
     def listi(self, sweep_list: Sequence[Union[str, float]]) -> None:
         """Run the ``smuX.trigger.source.listi()`` function.
 
-        **Description:**
+        Description:
             - This function configures an array-based source sweep. (i = current in amperes)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.source.listi()
+            ```
 
         Args:
             sweep_list: An array of source values.
@@ -531,14 +518,13 @@ class SmuxItemTriggerSource(BaseTSPCmd):
     def listv(self, sweep_list: Sequence[Union[str, float]]) -> None:
         """Run the ``smuX.trigger.source.listv()`` function.
 
-        **Description:**
+        Description:
             - This function configures an array-based source sweep. (v = voltage in volts)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.source.listv()
+            ```
 
         Args:
             sweep_list: An array of source values.
@@ -557,15 +543,14 @@ class SmuxItemTriggerSource(BaseTSPCmd):
     def logi(self, start_value: float, end_value: float, points: int, asymptote: str) -> None:
         """Run the ``smuX.trigger.source.logi()`` function.
 
-        **Description:**
+        Description:
             - This function configures an exponential (geometric) source sweep. (i = current in
               amperes)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.source.logi()
+            ```
 
         Args:
             start_value: Source value of the first point.
@@ -587,15 +572,14 @@ class SmuxItemTriggerSource(BaseTSPCmd):
     def logv(self, start_value: float, end_value: float, points: int, asymptote: str) -> None:
         """Run the ``smuX.trigger.source.logv()`` function.
 
-        **Description:**
+        Description:
             - This function configures an exponential (geometric) source sweep. (v = voltage in
               volts)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.source.logv()
+            ```
 
         Args:
             start_value: Source value of the first point.
@@ -617,16 +601,15 @@ class SmuxItemTriggerSource(BaseTSPCmd):
     def set_(self) -> None:
         """Run the ``smuX.trigger.source.set()`` function.
 
-        **Description:**
+        Description:
             - This function sets the source event detector to the detected state.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.source.set()
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.source.set()
               applies to SMU channel A).
 
@@ -645,11 +628,11 @@ class SmuxItemTriggerSource(BaseTSPCmd):
 class SmuxItemTriggerMeasure(BaseTSPCmd):
     """The ``smuX.trigger.measure`` command tree.
 
-    **Info:**
+    Info:
         - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.measure.v()
           applies to SMU channel A).
 
-    Properties/methods:
+    Properties and methods:
         - ``.i()``: The ``smuX.trigger.measure.i()`` function.
         - ``.iv()``: The ``smuX.trigger.measure.iv()`` function.
         - ``.p()``: The ``smuX.trigger.measure.p()`` function.
@@ -664,22 +647,21 @@ class SmuxItemTriggerMeasure(BaseTSPCmd):
     def action(self) -> str:
         """Access the ``smuX.trigger.measure.action`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls measurement actions during a sweep.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.measure.action)`` query.
             - Setting this property to a value will send the ``smuX.trigger.measure.action = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.measure.action = value
             - print(smuX.trigger.measure.action)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.measure.action
               applies to SMU channel A).
 
@@ -700,22 +682,21 @@ class SmuxItemTriggerMeasure(BaseTSPCmd):
     def action(self, value: Union[str, float]) -> None:
         """Access the ``smuX.trigger.measure.action`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls measurement actions during a sweep.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.measure.action)`` query.
             - Setting this property to a value will send the ``smuX.trigger.measure.action = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.measure.action = value
             - print(smuX.trigger.measure.action)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.measure.action
               applies to SMU channel A).
 
@@ -739,23 +720,22 @@ class SmuxItemTriggerMeasure(BaseTSPCmd):
     def stimulus(self) -> str:
         """Access the ``smuX.trigger.measure.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the event that causes the measure event detector to enter the
               detected state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.measure.stimulus)`` query.
             - Setting this property to a value will send the
               ``smuX.trigger.measure.stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.measure.stimulus = value
             - print(smuX.trigger.measure.stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example,
               smua.trigger.measure.stimulus applies to SMU channel A).
 
@@ -776,23 +756,22 @@ class SmuxItemTriggerMeasure(BaseTSPCmd):
     def stimulus(self, value: Union[str, float]) -> None:
         """Access the ``smuX.trigger.measure.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the event that causes the measure event detector to enter the
               detected state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.measure.stimulus)`` query.
             - Setting this property to a value will send the
               ``smuX.trigger.measure.stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.measure.stimulus = value
             - print(smuX.trigger.measure.stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example,
               smua.trigger.measure.stimulus applies to SMU channel A).
 
@@ -815,15 +794,14 @@ class SmuxItemTriggerMeasure(BaseTSPCmd):
     def i(self, rbuffer: str) -> None:
         """Run the ``smuX.trigger.measure.i()`` function.
 
-        **Description:**
+        Description:
             - This function configures the measurements that are to be made in a subsequent sweep.
               (i = current in amperes)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.measure.i()
+            ```
 
         Args:
             rbuffer: A reading buffer object where the readings are stored.
@@ -842,15 +820,14 @@ class SmuxItemTriggerMeasure(BaseTSPCmd):
     def iv(self, ibuffer: str, vbuffer: str) -> None:
         """Run the ``smuX.trigger.measure.iv()`` function.
 
-        **Description:**
+        Description:
             - This function configures the measurements that are to be made in a subsequent sweep.
               (i = current in amperes, v = voltage in volts)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.measure.iv()
+            ```
 
         Args:
             ibuffer: A reading buffer object where current readings are stored.
@@ -870,15 +847,14 @@ class SmuxItemTriggerMeasure(BaseTSPCmd):
     def p(self, rbuffer: str) -> None:
         """Run the ``smuX.trigger.measure.p()`` function.
 
-        **Description:**
+        Description:
             - This function configures the measurements that are to be made in a subsequent sweep.
               (p = power in watts)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.measure.p()
+            ```
 
         Args:
             rbuffer: A reading buffer object where the readings are stored.
@@ -897,15 +873,14 @@ class SmuxItemTriggerMeasure(BaseTSPCmd):
     def r(self, rbuffer: str) -> None:
         """Run the ``smuX.trigger.measure.r()`` function.
 
-        **Description:**
+        Description:
             - This function configures the measurements that are to be made in a subsequent sweep.
               (r = resistance in ohms)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.measure.r()
+            ```
 
         Args:
             rbuffer: A reading buffer object where the readings are stored.
@@ -924,15 +899,14 @@ class SmuxItemTriggerMeasure(BaseTSPCmd):
     def v(self, rbuffer: str) -> None:
         """Run the ``smuX.trigger.measure.v()`` function.
 
-        **Description:**
+        Description:
             - This function configures the measurements that are to be made in a subsequent sweep.
               (v = voltage in volts)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.measure.v()
+            ```
 
         Args:
             rbuffer: A reading buffer object where the readings are stored.
@@ -951,16 +925,15 @@ class SmuxItemTriggerMeasure(BaseTSPCmd):
     def set_(self) -> None:
         """Run the ``smuX.trigger.measure.set()`` function.
 
-        **Description:**
+        Description:
             - This function sets the measurement event detector to the detected state.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.measure.set()
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.measure.set()
               applies to SMU channel A).
 
@@ -979,11 +952,11 @@ class SmuxItemTriggerMeasure(BaseTSPCmd):
 class SmuxItemTriggerEndsweep(BaseTSPCmd):
     """The ``smuX.trigger.endsweep`` command tree.
 
-    **Info:**
+    Info:
         - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.endsweep.action
           applies to SMU channel A).
 
-    Properties/methods:
+    Properties and methods:
         - ``.action``: The ``smuX.trigger.endsweep.action`` attribute.
     """
 
@@ -991,22 +964,21 @@ class SmuxItemTriggerEndsweep(BaseTSPCmd):
     def action(self) -> str:
         """Access the ``smuX.trigger.endsweep.action`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the action of the source at the end of a sweep.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.endsweep.action)`` query.
             - Setting this property to a value will send the
               ``smuX.trigger.endsweep.action = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.endsweep.action = value
             - print(smuX.trigger.endsweep.action)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example,
               smua.trigger.endsweep.action applies to SMU channel A).
 
@@ -1027,22 +999,21 @@ class SmuxItemTriggerEndsweep(BaseTSPCmd):
     def action(self, value: Union[str, float]) -> None:
         """Access the ``smuX.trigger.endsweep.action`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the action of the source at the end of a sweep.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.endsweep.action)`` query.
             - Setting this property to a value will send the
               ``smuX.trigger.endsweep.action = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.endsweep.action = value
             - print(smuX.trigger.endsweep.action)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example,
               smua.trigger.endsweep.action applies to SMU channel A).
 
@@ -1066,11 +1037,11 @@ class SmuxItemTriggerEndsweep(BaseTSPCmd):
 class SmuxItemTriggerEndpulse(BaseTSPCmd):
     """The ``smuX.trigger.endpulse`` command tree.
 
-    **Info:**
+    Info:
         - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.endpulse.action
           applies to SMU channel A).
 
-    Properties/methods:
+    Properties and methods:
         - ``.action``: The ``smuX.trigger.endpulse.action`` attribute.
         - ``.set()``: The ``smuX.trigger.endpulse.set()`` function.
         - ``.stimulus``: The ``smuX.trigger.endpulse.stimulus`` attribute.
@@ -1080,22 +1051,21 @@ class SmuxItemTriggerEndpulse(BaseTSPCmd):
     def action(self) -> str:
         """Access the ``smuX.trigger.endpulse.action`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables pulse mode sweeps.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.endpulse.action)`` query.
             - Setting this property to a value will send the
               ``smuX.trigger.endpulse.action = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.endpulse.action = value
             - print(smuX.trigger.endpulse.action)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example,
               smua.trigger.endpulse.action applies to SMU channel A).
 
@@ -1116,22 +1086,21 @@ class SmuxItemTriggerEndpulse(BaseTSPCmd):
     def action(self, value: Union[str, float]) -> None:
         """Access the ``smuX.trigger.endpulse.action`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables pulse mode sweeps.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.endpulse.action)`` query.
             - Setting this property to a value will send the
               ``smuX.trigger.endpulse.action = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.endpulse.action = value
             - print(smuX.trigger.endpulse.action)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example,
               smua.trigger.endpulse.action applies to SMU channel A).
 
@@ -1155,23 +1124,22 @@ class SmuxItemTriggerEndpulse(BaseTSPCmd):
     def stimulus(self) -> str:
         """Access the ``smuX.trigger.endpulse.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines which event causes the end pulse event detector to enter the
               detected state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.endpulse.stimulus)`` query.
             - Setting this property to a value will send the
               ``smuX.trigger.endpulse.stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.endpulse.stimulus = value
             - print(smuX.trigger.endpulse.stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example,
               smua.trigger.endpulse.stimulus applies to SMU channel A).
 
@@ -1192,23 +1160,22 @@ class SmuxItemTriggerEndpulse(BaseTSPCmd):
     def stimulus(self, value: Union[str, float]) -> None:
         """Access the ``smuX.trigger.endpulse.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute defines which event causes the end pulse event detector to enter the
               detected state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.endpulse.stimulus)`` query.
             - Setting this property to a value will send the
               ``smuX.trigger.endpulse.stimulus = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.endpulse.stimulus = value
             - print(smuX.trigger.endpulse.stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example,
               smua.trigger.endpulse.stimulus applies to SMU channel A).
 
@@ -1231,16 +1198,15 @@ class SmuxItemTriggerEndpulse(BaseTSPCmd):
     def set_(self) -> None:
         """Run the ``smuX.trigger.endpulse.set()`` function.
 
-        **Description:**
+        Description:
             - This function sets the end pulse event detector to the detected state.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.endpulse.set()
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.endpulse.set()
               applies to SMU channel A).
 
@@ -1259,11 +1225,11 @@ class SmuxItemTriggerEndpulse(BaseTSPCmd):
 class SmuxItemTriggerArm(BaseTSPCmd):
     """The ``smuX.trigger.arm`` command tree.
 
-    **Info:**
+    Info:
         - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.arm.count applies
           to SMU channel A).
 
-    Properties/methods:
+    Properties and methods:
         - ``.count``: The ``smuX.trigger.arm.count`` attribute.
         - ``.set()``: The ``smuX.trigger.arm.set()`` function.
         - ``.stimulus``: The ``smuX.trigger.arm.stimulus`` attribute.
@@ -1273,22 +1239,21 @@ class SmuxItemTriggerArm(BaseTSPCmd):
     def count(self) -> str:
         """Access the ``smuX.trigger.arm.count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the arm count in the trigger model.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.arm.count)`` query.
             - Setting this property to a value will send the ``smuX.trigger.arm.count = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.arm.count = value
             - print(smuX.trigger.arm.count)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.arm.count
               applies to SMU channel A).
 
@@ -1309,22 +1274,21 @@ class SmuxItemTriggerArm(BaseTSPCmd):
     def count(self, value: Union[str, float]) -> None:
         """Access the ``smuX.trigger.arm.count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the arm count in the trigger model.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.arm.count)`` query.
             - Setting this property to a value will send the ``smuX.trigger.arm.count = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.arm.count = value
             - print(smuX.trigger.arm.count)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.arm.count
               applies to SMU channel A).
 
@@ -1348,23 +1312,22 @@ class SmuxItemTriggerArm(BaseTSPCmd):
     def stimulus(self) -> str:
         """Access the ``smuX.trigger.arm.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the event that causes the arm event detector to enter the
               detected state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.arm.stimulus)`` query.
             - Setting this property to a value will send the ``smuX.trigger.arm.stimulus = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.arm.stimulus = value
             - print(smuX.trigger.arm.stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.arm.stimulus
               applies to SMU channel A).
 
@@ -1385,23 +1348,22 @@ class SmuxItemTriggerArm(BaseTSPCmd):
     def stimulus(self, value: Union[str, float]) -> None:
         """Access the ``smuX.trigger.arm.stimulus`` attribute.
 
-        **Description:**
+        Description:
             - This attribute selects the event that causes the arm event detector to enter the
               detected state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.arm.stimulus)`` query.
             - Setting this property to a value will send the ``smuX.trigger.arm.stimulus = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.arm.stimulus = value
             - print(smuX.trigger.arm.stimulus)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.arm.stimulus
               applies to SMU channel A).
 
@@ -1424,16 +1386,15 @@ class SmuxItemTriggerArm(BaseTSPCmd):
     def set_(self) -> None:
         """Run the ``smuX.trigger.arm.set()`` function.
 
-        **Description:**
+        Description:
             - This function sets the arm event detector to the detected state.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.arm.set()
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.arm.set()
               applies to SMU channel A).
 
@@ -1453,7 +1414,7 @@ class SmuxItemTriggerArm(BaseTSPCmd):
 class SmuxItemTrigger(BaseTSPCmd):
     """The ``smuX.trigger`` command tree.
 
-    **Info:**
+    Info:
         - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.ARMED_EVENT_ID
           applies to SMU channel A).
 
@@ -1466,7 +1427,7 @@ class SmuxItemTrigger(BaseTSPCmd):
         - ``.SWEEPING_EVENT_ID``: The sweeping event number.
         - ``.SWEEP_COMPLETE_EVENT_ID``: The sweep complete event number.
 
-    Properties/methods:
+    Properties and methods:
         - ``.arm``: The ``smuX.trigger.arm`` command tree.
         - ``.autoclear``: The ``smuX.trigger.autoclear`` attribute.
         - ``.count``: The ``smuX.trigger.count`` attribute.
@@ -1526,11 +1487,11 @@ class SmuxItemTrigger(BaseTSPCmd):
     def arm(self) -> SmuxItemTriggerArm:
         """Return the ``smuX.trigger.arm`` command tree.
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.arm.count
               applies to SMU channel A).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.count``: The ``smuX.trigger.arm.count`` attribute.
             - ``.set()``: The ``smuX.trigger.arm.set()`` function.
             - ``.stimulus``: The ``smuX.trigger.arm.stimulus`` attribute.
@@ -1541,22 +1502,21 @@ class SmuxItemTrigger(BaseTSPCmd):
     def autoclear(self) -> str:
         """Access the ``smuX.trigger.autoclear`` attribute.
 
-        **Description:**
+        Description:
             - This attribute turns automatic clearing of the event detectors on or off.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.autoclear)`` query.
             - Setting this property to a value will send the ``smuX.trigger.autoclear = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.autoclear = value
             - print(smuX.trigger.autoclear)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.autoclear
               applies to SMU channel A).
 
@@ -1577,22 +1537,21 @@ class SmuxItemTrigger(BaseTSPCmd):
     def autoclear(self, value: Union[str, float]) -> None:
         """Access the ``smuX.trigger.autoclear`` attribute.
 
-        **Description:**
+        Description:
             - This attribute turns automatic clearing of the event detectors on or off.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.autoclear)`` query.
             - Setting this property to a value will send the ``smuX.trigger.autoclear = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.autoclear = value
             - print(smuX.trigger.autoclear)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.autoclear
               applies to SMU channel A).
 
@@ -1616,21 +1575,20 @@ class SmuxItemTrigger(BaseTSPCmd):
     def count(self) -> str:
         """Access the ``smuX.trigger.count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the trigger count in the trigger model.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.count)`` query.
             - Setting this property to a value will send the ``smuX.trigger.count = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.count = value
             - print(smuX.trigger.count)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the sMU channel (for example, smua.trigger.count applies to SMU channel A).
 
         Raises:
@@ -1650,21 +1608,20 @@ class SmuxItemTrigger(BaseTSPCmd):
     def count(self, value: Union[str, float]) -> None:
         """Access the ``smuX.trigger.count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the trigger count in the trigger model.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.trigger.count)`` query.
             - Setting this property to a value will send the ``smuX.trigger.count = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.count = value
             - print(smuX.trigger.count)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the sMU channel (for example, smua.trigger.count applies to SMU channel A).
 
         Raises:
@@ -1687,11 +1644,11 @@ class SmuxItemTrigger(BaseTSPCmd):
     def endpulse(self) -> SmuxItemTriggerEndpulse:
         """Return the ``smuX.trigger.endpulse`` command tree.
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example,
               smua.trigger.endpulse.action applies to SMU channel A).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.action``: The ``smuX.trigger.endpulse.action`` attribute.
             - ``.set()``: The ``smuX.trigger.endpulse.set()`` function.
             - ``.stimulus``: The ``smuX.trigger.endpulse.stimulus`` attribute.
@@ -1702,11 +1659,11 @@ class SmuxItemTrigger(BaseTSPCmd):
     def endsweep(self) -> SmuxItemTriggerEndsweep:
         """Return the ``smuX.trigger.endsweep`` command tree.
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example,
               smua.trigger.endsweep.action applies to SMU channel A).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.action``: The ``smuX.trigger.endsweep.action`` attribute.
         """
         return self._endsweep
@@ -1715,11 +1672,11 @@ class SmuxItemTrigger(BaseTSPCmd):
     def measure(self) -> SmuxItemTriggerMeasure:
         """Return the ``smuX.trigger.measure`` command tree.
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.measure.v()
               applies to SMU channel A).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.i()``: The ``smuX.trigger.measure.i()`` function.
             - ``.iv()``: The ``smuX.trigger.measure.iv()`` function.
             - ``.p()``: The ``smuX.trigger.measure.p()`` function.
@@ -1735,11 +1692,11 @@ class SmuxItemTrigger(BaseTSPCmd):
     def source(self) -> SmuxItemTriggerSource:
         """Return the ``smuX.trigger.source`` command tree.
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.source.action
               applies to SMU channel A).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.action``: The ``smuX.trigger.source.action`` attribute.
             - ``.limiti``: The ``smuX.trigger.source.limiti`` attribute.
             - ``.limitv``: The ``smuX.trigger.source.limitv`` attribute.
@@ -1757,16 +1714,15 @@ class SmuxItemTrigger(BaseTSPCmd):
     def initiate(self) -> None:
         """Run the ``smuX.trigger.initiate()`` function.
 
-        **Description:**
+        Description:
             - This function initiates a sweep operation.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.trigger.initiate()
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.initiate()
               applies to SMU channel A).
 
@@ -1786,11 +1742,11 @@ class SmuxItemTrigger(BaseTSPCmd):
 class SmuxItemSource(BaseTSPCmd):
     """The ``smuX.source`` command tree.
 
-    **Info:**
+    Info:
         - ``X``, the source-measure unit (SMU) channel (for example, smua.source.autorangev applies
           to SMU channel A).
 
-    Properties/methods:
+    Properties and methods:
         - ``.autorangei``: The ``smuX.source.autorangei`` attribute.
         - ``.autorangev``: The ``smuX.source.autorangev`` attribute.
         - ``.calibratei()``: The ``smuX.source.calibratei()`` function.
@@ -1822,23 +1778,22 @@ class SmuxItemSource(BaseTSPCmd):
     def autorangei(self) -> str:
         """Access the ``smuX.source.autorangei`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the state of the source autorange control (on/off). (i =
               current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.autorangei)`` query.
             - Setting this property to a value will send the ``smuX.source.autorangei = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.autorangei = value
             - print(smuX.source.autorangei)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.autorangev
               applies to SMU channel A).
 
@@ -1859,23 +1814,22 @@ class SmuxItemSource(BaseTSPCmd):
     def autorangei(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.autorangei`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the state of the source autorange control (on/off). (i =
               current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.autorangei)`` query.
             - Setting this property to a value will send the ``smuX.source.autorangei = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.autorangei = value
             - print(smuX.source.autorangei)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.autorangev
               applies to SMU channel A).
 
@@ -1899,23 +1853,22 @@ class SmuxItemSource(BaseTSPCmd):
     def autorangev(self) -> str:
         """Access the ``smuX.source.autorangev`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the state of the source autorange control (on/off). (v =
               voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.autorangev)`` query.
             - Setting this property to a value will send the ``smuX.source.autorangev = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.autorangev = value
             - print(smuX.source.autorangev)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.autorangev
               applies to SMU channel A).
 
@@ -1936,23 +1889,22 @@ class SmuxItemSource(BaseTSPCmd):
     def autorangev(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.autorangev`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the state of the source autorange control (on/off). (v =
               voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.autorangev)`` query.
             - Setting this property to a value will send the ``smuX.source.autorangev = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.autorangev = value
             - print(smuX.source.autorangev)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.autorangev
               applies to SMU channel A).
 
@@ -1976,19 +1928,18 @@ class SmuxItemSource(BaseTSPCmd):
     def compliance(self) -> str:
         """Access the ``smuX.source.compliance`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the state of source compliance.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.compliance)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(smuX.source.compliance)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.compliance
               applies to SMU channel A).
 
@@ -2009,21 +1960,20 @@ class SmuxItemSource(BaseTSPCmd):
     def delay(self) -> str:
         """Access the ``smuX.source.delay`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source delay.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.delay)`` query.
             - Setting this property to a value will send the ``smuX.source.delay = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.delay = value
             - print(smuX.source.delay)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.delay applies
               to SMU channel A).
 
@@ -2044,21 +1994,20 @@ class SmuxItemSource(BaseTSPCmd):
     def delay(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.delay`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source delay.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.delay)`` query.
             - Setting this property to a value will send the ``smuX.source.delay = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.delay = value
             - print(smuX.source.delay)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.delay applies
               to SMU channel A).
 
@@ -2082,21 +2031,20 @@ class SmuxItemSource(BaseTSPCmd):
     def func(self) -> str:
         """Access the ``smuX.source.func`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source function, which can be voltage or current.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.func)`` query.
             - Setting this property to a value will send the ``smuX.source.func = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.func = value
             - print(smuX.source.func)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.func applies to
               SMU channel A).
 
@@ -2117,21 +2065,20 @@ class SmuxItemSource(BaseTSPCmd):
     def func(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.func`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source function, which can be voltage or current.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.func)`` query.
             - Setting this property to a value will send the ``smuX.source.func = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.func = value
             - print(smuX.source.func)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.func applies to
               SMU channel A).
 
@@ -2155,21 +2102,20 @@ class SmuxItemSource(BaseTSPCmd):
     def highc(self) -> str:
         """Access the ``smuX.source.highc`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables high-capacitance mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.highc)`` query.
             - Setting this property to a value will send the ``smuX.source.highc = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.highc = value
             - print(smuX.source.highc)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.highc applies
               to SMU channel A).
 
@@ -2190,21 +2136,20 @@ class SmuxItemSource(BaseTSPCmd):
     def highc(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.highc`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables high-capacitance mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.highc)`` query.
             - Setting this property to a value will send the ``smuX.source.highc = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.highc = value
             - print(smuX.source.highc)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.highc applies
               to SMU channel A).
 
@@ -2228,21 +2173,20 @@ class SmuxItemSource(BaseTSPCmd):
     def leveli(self) -> str:
         """Access the ``smuX.source.leveli`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the source level. (i = current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.leveli)`` query.
             - Setting this property to a value will send the ``smuX.source.leveli = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.leveli = value
             - print(smuX.source.leveli)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.levelv applies
               to SMU channel A).
 
@@ -2263,21 +2207,20 @@ class SmuxItemSource(BaseTSPCmd):
     def leveli(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.leveli`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the source level. (i = current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.leveli)`` query.
             - Setting this property to a value will send the ``smuX.source.leveli = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.leveli = value
             - print(smuX.source.leveli)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.levelv applies
               to SMU channel A).
 
@@ -2301,21 +2244,20 @@ class SmuxItemSource(BaseTSPCmd):
     def levelv(self) -> str:
         """Access the ``smuX.source.levelv`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the source level. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.levelv)`` query.
             - Setting this property to a value will send the ``smuX.source.levelv = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.levelv = value
             - print(smuX.source.levelv)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.levelv applies
               to SMU channel A).
 
@@ -2336,21 +2278,20 @@ class SmuxItemSource(BaseTSPCmd):
     def levelv(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.levelv`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the source level. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.levelv)`` query.
             - Setting this property to a value will send the ``smuX.source.levelv = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.levelv = value
             - print(smuX.source.levelv)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.levelv applies
               to SMU channel A).
 
@@ -2374,21 +2315,20 @@ class SmuxItemSource(BaseTSPCmd):
     def limiti(self) -> str:
         """Access the ``smuX.source.limiti`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets compliance limits. (i = current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.limiti)`` query.
             - Setting this property to a value will send the ``smuX.source.limiti = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.limiti = value
             - print(smuX.source.limiti)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.limitv applies
               to SMU channel A).
 
@@ -2409,21 +2349,20 @@ class SmuxItemSource(BaseTSPCmd):
     def limiti(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.limiti`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets compliance limits. (i = current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.limiti)`` query.
             - Setting this property to a value will send the ``smuX.source.limiti = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.limiti = value
             - print(smuX.source.limiti)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.limitv applies
               to SMU channel A).
 
@@ -2447,21 +2386,20 @@ class SmuxItemSource(BaseTSPCmd):
     def limitp(self) -> str:
         """Access the ``smuX.source.limitp`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets compliance limits. (p = power in watts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.limitp)`` query.
             - Setting this property to a value will send the ``smuX.source.limitp = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.limitp = value
             - print(smuX.source.limitp)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.limitv applies
               to SMU channel A).
 
@@ -2482,21 +2420,20 @@ class SmuxItemSource(BaseTSPCmd):
     def limitp(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.limitp`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets compliance limits. (p = power in watts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.limitp)`` query.
             - Setting this property to a value will send the ``smuX.source.limitp = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.limitp = value
             - print(smuX.source.limitp)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.limitv applies
               to SMU channel A).
 
@@ -2520,21 +2457,20 @@ class SmuxItemSource(BaseTSPCmd):
     def limitv(self) -> str:
         """Access the ``smuX.source.limitv`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets compliance limits. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.limitv)`` query.
             - Setting this property to a value will send the ``smuX.source.limitv = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.limitv = value
             - print(smuX.source.limitv)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.limitv applies
               to SMU channel A).
 
@@ -2555,21 +2491,20 @@ class SmuxItemSource(BaseTSPCmd):
     def limitv(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.limitv`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets compliance limits. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.limitv)`` query.
             - Setting this property to a value will send the ``smuX.source.limitv = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.limitv = value
             - print(smuX.source.limitv)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.limitv applies
               to SMU channel A).
 
@@ -2593,23 +2528,22 @@ class SmuxItemSource(BaseTSPCmd):
     def lowrangei(self) -> str:
         """Access the ``smuX.source.lowrangei`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the lowest source range that is used during autoranging. (i =
               current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.lowrangei)`` query.
             - Setting this property to a value will send the ``smuX.source.lowrangei = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.lowrangei = value
             - print(smuX.source.lowrangei)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.lowrangev
               applies to SMU channel A).
 
@@ -2630,23 +2564,22 @@ class SmuxItemSource(BaseTSPCmd):
     def lowrangei(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.lowrangei`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the lowest source range that is used during autoranging. (i =
               current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.lowrangei)`` query.
             - Setting this property to a value will send the ``smuX.source.lowrangei = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.lowrangei = value
             - print(smuX.source.lowrangei)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.lowrangev
               applies to SMU channel A).
 
@@ -2670,23 +2603,22 @@ class SmuxItemSource(BaseTSPCmd):
     def lowrangev(self) -> str:
         """Access the ``smuX.source.lowrangev`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the lowest source range that is used during autoranging. (v =
               voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.lowrangev)`` query.
             - Setting this property to a value will send the ``smuX.source.lowrangev = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.lowrangev = value
             - print(smuX.source.lowrangev)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.lowrangev
               applies to SMU channel A).
 
@@ -2707,23 +2639,22 @@ class SmuxItemSource(BaseTSPCmd):
     def lowrangev(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.lowrangev`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the lowest source range that is used during autoranging. (v =
               voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.lowrangev)`` query.
             - Setting this property to a value will send the ``smuX.source.lowrangev = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.lowrangev = value
             - print(smuX.source.lowrangev)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.lowrangev
               applies to SMU channel A).
 
@@ -2747,23 +2678,22 @@ class SmuxItemSource(BaseTSPCmd):
     def offfunc(self) -> str:
         """Access the ``smuX.source.offfunc`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the source function that is used (source 0 A or 0 V) when the
               output is turned off and the source-measure unit (SMU) is in normal output-off mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.offfunc)`` query.
             - Setting this property to a value will send the ``smuX.source.offfunc = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.offfunc = value
             - print(smuX.source.offfunc)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the sMU channel (for example, smua.source.offfunc applies to SMU channel A).
 
         Raises:
@@ -2783,23 +2713,22 @@ class SmuxItemSource(BaseTSPCmd):
     def offfunc(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.offfunc`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the source function that is used (source 0 A or 0 V) when the
               output is turned off and the source-measure unit (SMU) is in normal output-off mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.offfunc)`` query.
             - Setting this property to a value will send the ``smuX.source.offfunc = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.offfunc = value
             - print(smuX.source.offfunc)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the sMU channel (for example, smua.source.offfunc applies to SMU channel A).
 
         Raises:
@@ -2822,23 +2751,22 @@ class SmuxItemSource(BaseTSPCmd):
     def offlimiti(self) -> str:
         """Access the ``smuX.source.offlimiti`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the limit (current or voltage) used when the source-measure unit
               (SMU) is in normal output-off mode. (i = current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.offlimiti)`` query.
             - Setting this property to a value will send the ``smuX.source.offlimiti = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.offlimiti = value
             - print(smuX.source.offlimiti)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.offlimiti
               applies to SMU channel A).
 
@@ -2859,23 +2787,22 @@ class SmuxItemSource(BaseTSPCmd):
     def offlimiti(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.offlimiti`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the limit (current or voltage) used when the source-measure unit
               (SMU) is in normal output-off mode. (i = current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.offlimiti)`` query.
             - Setting this property to a value will send the ``smuX.source.offlimiti = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.offlimiti = value
             - print(smuX.source.offlimiti)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.offlimiti
               applies to SMU channel A).
 
@@ -2899,23 +2826,22 @@ class SmuxItemSource(BaseTSPCmd):
     def offlimitv(self) -> str:
         """Access the ``smuX.source.offlimitv`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the limit (current or voltage) used when the source-measure unit
               (SMU) is in normal output-off mode. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.offlimitv)`` query.
             - Setting this property to a value will send the ``smuX.source.offlimitv = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.offlimitv = value
             - print(smuX.source.offlimitv)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.offlimiti
               applies to SMU channel A).
 
@@ -2936,23 +2862,22 @@ class SmuxItemSource(BaseTSPCmd):
     def offlimitv(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.offlimitv`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the limit (current or voltage) used when the source-measure unit
               (SMU) is in normal output-off mode. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.offlimitv)`` query.
             - Setting this property to a value will send the ``smuX.source.offlimitv = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.offlimitv = value
             - print(smuX.source.offlimitv)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.offlimiti
               applies to SMU channel A).
 
@@ -2976,22 +2901,21 @@ class SmuxItemSource(BaseTSPCmd):
     def offmode(self) -> str:
         """Access the ``smuX.source.offmode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the source output-off mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.offmode)`` query.
             - Setting this property to a value will send the ``smuX.source.offmode = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.offmode = value
             - print(smuX.source.offmode)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.offmode applies
               to SMU channel A).
 
@@ -3012,22 +2936,21 @@ class SmuxItemSource(BaseTSPCmd):
     def offmode(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.offmode`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the source output-off mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.offmode)`` query.
             - Setting this property to a value will send the ``smuX.source.offmode = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.offmode = value
             - print(smuX.source.offmode)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.offmode applies
               to SMU channel A).
 
@@ -3051,21 +2974,20 @@ class SmuxItemSource(BaseTSPCmd):
     def output(self) -> str:
         """Access the ``smuX.source.output`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the source output.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.output)`` query.
             - Setting this property to a value will send the ``smuX.source.output = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.output = value
             - print(smuX.source.output)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.output applies
               to SMU channel A).
 
@@ -3086,21 +3008,20 @@ class SmuxItemSource(BaseTSPCmd):
     def output(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.output`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables the source output.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.output)`` query.
             - Setting this property to a value will send the ``smuX.source.output = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.output = value
             - print(smuX.source.output)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.output applies
               to SMU channel A).
 
@@ -3124,22 +3045,21 @@ class SmuxItemSource(BaseTSPCmd):
     def outputenableaction(self) -> str:
         """Access the ``smuX.source.outputenableaction`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls output enable action of the source.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.outputenableaction)`` query.
             - Setting this property to a value will send the
               ``smuX.source.outputenableaction = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.outputenableaction = value
             - print(smuX.source.outputenableaction)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example,
               smua.source.outputenableaction applies to SMU channel A).
 
@@ -3160,22 +3080,21 @@ class SmuxItemSource(BaseTSPCmd):
     def outputenableaction(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.outputenableaction`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls output enable action of the source.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.outputenableaction)`` query.
             - Setting this property to a value will send the
               ``smuX.source.outputenableaction = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.outputenableaction = value
             - print(smuX.source.outputenableaction)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example,
               smua.source.outputenableaction applies to SMU channel A).
 
@@ -3199,21 +3118,20 @@ class SmuxItemSource(BaseTSPCmd):
     def rangei(self) -> str:
         """Access the ``smuX.source.rangei`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source range. (i = current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.rangei)`` query.
             - Setting this property to a value will send the ``smuX.source.rangei = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.rangei = value
             - print(smuX.source.rangei)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rangev applies
               to SMU channel A).
 
@@ -3234,21 +3152,20 @@ class SmuxItemSource(BaseTSPCmd):
     def rangei(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.rangei`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source range. (i = current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.rangei)`` query.
             - Setting this property to a value will send the ``smuX.source.rangei = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.rangei = value
             - print(smuX.source.rangei)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rangev applies
               to SMU channel A).
 
@@ -3272,21 +3189,20 @@ class SmuxItemSource(BaseTSPCmd):
     def rangev(self) -> str:
         """Access the ``smuX.source.rangev`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source range. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.rangev)`` query.
             - Setting this property to a value will send the ``smuX.source.rangev = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.rangev = value
             - print(smuX.source.rangev)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rangev applies
               to SMU channel A).
 
@@ -3307,21 +3223,20 @@ class SmuxItemSource(BaseTSPCmd):
     def rangev(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.rangev`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source range. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.rangev)`` query.
             - Setting this property to a value will send the ``smuX.source.rangev = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.rangev = value
             - print(smuX.source.rangev)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rangev applies
               to SMU channel A).
 
@@ -3345,22 +3260,21 @@ class SmuxItemSource(BaseTSPCmd):
     def settling(self) -> str:
         """Access the ``smuX.source.settling`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source settling mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.settling)`` query.
             - Setting this property to a value will send the ``smuX.source.settling = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.settling = value
             - print(smuX.source.settling)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the sMU channel (for example, smua.source.settling applies to SMU channel A).
 
         Raises:
@@ -3380,22 +3294,21 @@ class SmuxItemSource(BaseTSPCmd):
     def settling(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.settling`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the source settling mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.settling)`` query.
             - Setting this property to a value will send the ``smuX.source.settling = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.settling = value
             - print(smuX.source.settling)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the sMU channel (for example, smua.source.settling applies to SMU channel A).
 
         Raises:
@@ -3418,21 +3331,20 @@ class SmuxItemSource(BaseTSPCmd):
     def sink(self) -> str:
         """Access the ``smuX.source.sink`` attribute.
 
-        **Description:**
+        Description:
             - This attribute turns sink mode on or off.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.sink)`` query.
             - Setting this property to a value will send the ``smuX.source.sink = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.sink = value
             - print(smuX.source.sink)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.sink applies to
               SMU channel A).
 
@@ -3453,21 +3365,20 @@ class SmuxItemSource(BaseTSPCmd):
     def sink(self, value: Union[str, float]) -> None:
         """Access the ``smuX.source.sink`` attribute.
 
-        **Description:**
+        Description:
             - This attribute turns sink mode on or off.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.source.sink)`` query.
             - Setting this property to a value will send the ``smuX.source.sink = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.sink = value
             - print(smuX.source.sink)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.sink applies to
               SMU channel A).
 
@@ -3497,15 +3408,14 @@ class SmuxItemSource(BaseTSPCmd):
     ) -> None:
         """Run the ``smuX.source.calibratei()`` function.
 
-        **Description:**
+        Description:
             - This function generates and activates new source calibration constants. (i = current
               in amperes)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.calibratei()
+            ```
 
         Args:
             range_: The measurement range to adjust.
@@ -3539,15 +3449,14 @@ class SmuxItemSource(BaseTSPCmd):
     ) -> None:
         """Run the ``smuX.source.calibratev()`` function.
 
-        **Description:**
+        Description:
             - This function generates and activates new source calibration constants. (v = voltage
               in volts)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.source.calibratev()
+            ```
 
         Args:
             range_: The measurement range to adjust.
@@ -3575,11 +3484,11 @@ class SmuxItemSource(BaseTSPCmd):
 class SmuxItemMeasureRel(BaseTSPCmd):
     """The ``smuX.measure.rel`` command tree.
 
-    **Info:**
+    Info:
         - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rel.enablev
           applies to SMU channel A).
 
-    Properties/methods:
+    Properties and methods:
         - ``.enablei``: The ``smuX.measure.rel.enablei`` attribute.
         - ``.enablep``: The ``smuX.measure.rel.enablep`` attribute.
         - ``.enabler``: The ``smuX.measure.rel.enabler`` attribute.
@@ -3594,22 +3503,21 @@ class SmuxItemMeasureRel(BaseTSPCmd):
     def enablei(self) -> str:
         """Access the ``smuX.measure.rel.enablei`` attribute.
 
-        **Description:**
+        Description:
             - This attribute turns relative measurements on or off. (i = current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rel.enablei)`` query.
             - Setting this property to a value will send the ``smuX.measure.rel.enablei = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rel.enablei = value
             - print(smuX.measure.rel.enablei)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rel.enablev
               applies to SMU channel A).
 
@@ -3630,22 +3538,21 @@ class SmuxItemMeasureRel(BaseTSPCmd):
     def enablei(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.rel.enablei`` attribute.
 
-        **Description:**
+        Description:
             - This attribute turns relative measurements on or off. (i = current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rel.enablei)`` query.
             - Setting this property to a value will send the ``smuX.measure.rel.enablei = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rel.enablei = value
             - print(smuX.measure.rel.enablei)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rel.enablev
               applies to SMU channel A).
 
@@ -3669,22 +3576,21 @@ class SmuxItemMeasureRel(BaseTSPCmd):
     def enablep(self) -> str:
         """Access the ``smuX.measure.rel.enablep`` attribute.
 
-        **Description:**
+        Description:
             - This attribute turns relative measurements on or off. (p = power in watts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rel.enablep)`` query.
             - Setting this property to a value will send the ``smuX.measure.rel.enablep = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rel.enablep = value
             - print(smuX.measure.rel.enablep)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rel.enablev
               applies to SMU channel A).
 
@@ -3705,22 +3611,21 @@ class SmuxItemMeasureRel(BaseTSPCmd):
     def enablep(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.rel.enablep`` attribute.
 
-        **Description:**
+        Description:
             - This attribute turns relative measurements on or off. (p = power in watts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rel.enablep)`` query.
             - Setting this property to a value will send the ``smuX.measure.rel.enablep = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rel.enablep = value
             - print(smuX.measure.rel.enablep)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rel.enablev
               applies to SMU channel A).
 
@@ -3744,22 +3649,21 @@ class SmuxItemMeasureRel(BaseTSPCmd):
     def enabler(self) -> str:
         """Access the ``smuX.measure.rel.enabler`` attribute.
 
-        **Description:**
+        Description:
             - This attribute turns relative measurements on or off. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rel.enabler)`` query.
             - Setting this property to a value will send the ``smuX.measure.rel.enabler = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rel.enabler = value
             - print(smuX.measure.rel.enabler)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rel.enablev
               applies to SMU channel A).
 
@@ -3780,22 +3684,21 @@ class SmuxItemMeasureRel(BaseTSPCmd):
     def enabler(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.rel.enabler`` attribute.
 
-        **Description:**
+        Description:
             - This attribute turns relative measurements on or off. (r = resistance in ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rel.enabler)`` query.
             - Setting this property to a value will send the ``smuX.measure.rel.enabler = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rel.enabler = value
             - print(smuX.measure.rel.enabler)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rel.enablev
               applies to SMU channel A).
 
@@ -3819,22 +3722,21 @@ class SmuxItemMeasureRel(BaseTSPCmd):
     def enablev(self) -> str:
         """Access the ``smuX.measure.rel.enablev`` attribute.
 
-        **Description:**
+        Description:
             - This attribute turns relative measurements on or off. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rel.enablev)`` query.
             - Setting this property to a value will send the ``smuX.measure.rel.enablev = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rel.enablev = value
             - print(smuX.measure.rel.enablev)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rel.enablev
               applies to SMU channel A).
 
@@ -3855,22 +3757,21 @@ class SmuxItemMeasureRel(BaseTSPCmd):
     def enablev(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.rel.enablev`` attribute.
 
-        **Description:**
+        Description:
             - This attribute turns relative measurements on or off. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rel.enablev)`` query.
             - Setting this property to a value will send the ``smuX.measure.rel.enablev = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rel.enablev = value
             - print(smuX.measure.rel.enablev)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rel.enablev
               applies to SMU channel A).
 
@@ -3894,23 +3795,22 @@ class SmuxItemMeasureRel(BaseTSPCmd):
     def leveli(self) -> str:
         """Access the ``smuX.measure.rel.leveli`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the offset value for relative measurements. (i = current in
               amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rel.leveli)`` query.
             - Setting this property to a value will send the ``smuX.measure.rel.leveli = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rel.leveli = value
             - print(smuX.measure.rel.leveli)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rel.levelv
               applies to SMU channel A).
 
@@ -3931,23 +3831,22 @@ class SmuxItemMeasureRel(BaseTSPCmd):
     def leveli(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.rel.leveli`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the offset value for relative measurements. (i = current in
               amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rel.leveli)`` query.
             - Setting this property to a value will send the ``smuX.measure.rel.leveli = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rel.leveli = value
             - print(smuX.measure.rel.leveli)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rel.levelv
               applies to SMU channel A).
 
@@ -3971,22 +3870,21 @@ class SmuxItemMeasureRel(BaseTSPCmd):
     def levelp(self) -> str:
         """Access the ``smuX.measure.rel.levelp`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the offset value for relative measurements. (p = power in watts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rel.levelp)`` query.
             - Setting this property to a value will send the ``smuX.measure.rel.levelp = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rel.levelp = value
             - print(smuX.measure.rel.levelp)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rel.levelv
               applies to SMU channel A).
 
@@ -4007,22 +3905,21 @@ class SmuxItemMeasureRel(BaseTSPCmd):
     def levelp(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.rel.levelp`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the offset value for relative measurements. (p = power in watts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rel.levelp)`` query.
             - Setting this property to a value will send the ``smuX.measure.rel.levelp = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rel.levelp = value
             - print(smuX.measure.rel.levelp)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rel.levelv
               applies to SMU channel A).
 
@@ -4046,23 +3943,22 @@ class SmuxItemMeasureRel(BaseTSPCmd):
     def levelr(self) -> str:
         """Access the ``smuX.measure.rel.levelr`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the offset value for relative measurements. (r = resistance in
               ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rel.levelr)`` query.
             - Setting this property to a value will send the ``smuX.measure.rel.levelr = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rel.levelr = value
             - print(smuX.measure.rel.levelr)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rel.levelv
               applies to SMU channel A).
 
@@ -4083,23 +3979,22 @@ class SmuxItemMeasureRel(BaseTSPCmd):
     def levelr(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.rel.levelr`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the offset value for relative measurements. (r = resistance in
               ohms)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rel.levelr)`` query.
             - Setting this property to a value will send the ``smuX.measure.rel.levelr = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rel.levelr = value
             - print(smuX.measure.rel.levelr)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rel.levelv
               applies to SMU channel A).
 
@@ -4123,22 +4018,21 @@ class SmuxItemMeasureRel(BaseTSPCmd):
     def levelv(self) -> str:
         """Access the ``smuX.measure.rel.levelv`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the offset value for relative measurements. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rel.levelv)`` query.
             - Setting this property to a value will send the ``smuX.measure.rel.levelv = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rel.levelv = value
             - print(smuX.measure.rel.levelv)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rel.levelv
               applies to SMU channel A).
 
@@ -4159,22 +4053,21 @@ class SmuxItemMeasureRel(BaseTSPCmd):
     def levelv(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.rel.levelv`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the offset value for relative measurements. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rel.levelv)`` query.
             - Setting this property to a value will send the ``smuX.measure.rel.levelv = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rel.levelv = value
             - print(smuX.measure.rel.levelv)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rel.levelv
               applies to SMU channel A).
 
@@ -4198,11 +4091,11 @@ class SmuxItemMeasureRel(BaseTSPCmd):
 class SmuxItemMeasureFilter(BaseTSPCmd):
     """The ``smuX.measure.filter`` command tree.
 
-    **Info:**
+    Info:
         - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.filter.count
           applies to SMU channel A).
 
-    Properties/methods:
+    Properties and methods:
         - ``.count``: The ``smuX.measure.filter.count`` attribute.
         - ``.enable``: The ``smuX.measure.filter.enable`` attribute.
         - ``.type``: The ``smuX.measure.filter.type`` attribute.
@@ -4212,23 +4105,22 @@ class SmuxItemMeasureFilter(BaseTSPCmd):
     def count(self) -> str:
         """Access the ``smuX.measure.filter.count`` attribute.
 
-        **Description:**
+        Description:
             - This command sets the number of measured readings that are required to yield one
               filtered measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.filter.count)`` query.
             - Setting this property to a value will send the ``smuX.measure.filter.count = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.filter.count = value
             - print(smuX.measure.filter.count)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.filter.count
               applies to SMU channel A).
 
@@ -4249,23 +4141,22 @@ class SmuxItemMeasureFilter(BaseTSPCmd):
     def count(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.filter.count`` attribute.
 
-        **Description:**
+        Description:
             - This command sets the number of measured readings that are required to yield one
               filtered measurement.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.filter.count)`` query.
             - Setting this property to a value will send the ``smuX.measure.filter.count = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.filter.count = value
             - print(smuX.measure.filter.count)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.filter.count
               applies to SMU channel A).
 
@@ -4289,22 +4180,21 @@ class SmuxItemMeasureFilter(BaseTSPCmd):
     def enable(self) -> str:
         """Access the ``smuX.measure.filter.enable`` attribute.
 
-        **Description:**
+        Description:
             - This command enables or disables filtered measurements.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.filter.enable)`` query.
             - Setting this property to a value will send the ``smuX.measure.filter.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.filter.enable = value
             - print(smuX.measure.filter.enable)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the sMU channel (for example, smua.measure.filter.enable applies to SMU channel
               A).
 
@@ -4325,22 +4215,21 @@ class SmuxItemMeasureFilter(BaseTSPCmd):
     def enable(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.filter.enable`` attribute.
 
-        **Description:**
+        Description:
             - This command enables or disables filtered measurements.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.filter.enable)`` query.
             - Setting this property to a value will send the ``smuX.measure.filter.enable = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.filter.enable = value
             - print(smuX.measure.filter.enable)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the sMU channel (for example, smua.measure.filter.enable applies to SMU channel
               A).
 
@@ -4364,23 +4253,22 @@ class SmuxItemMeasureFilter(BaseTSPCmd):
     def type(self) -> str:
         """Access the ``smuX.measure.filter.type`` attribute.
 
-        **Description:**
+        Description:
             - This command sets the type of filter used for measurements when the measurement filter
               is enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.filter.type)`` query.
             - Setting this property to a value will send the ``smuX.measure.filter.type = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.filter.type = value
             - print(smuX.measure.filter.type)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the sMU channel (for example, smua.measure.filter.type applies to SMU Channel
               A).
 
@@ -4401,23 +4289,22 @@ class SmuxItemMeasureFilter(BaseTSPCmd):
     def type(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.filter.type`` attribute.
 
-        **Description:**
+        Description:
             - This command sets the type of filter used for measurements when the measurement filter
               is enabled.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.filter.type)`` query.
             - Setting this property to a value will send the ``smuX.measure.filter.type = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.filter.type = value
             - print(smuX.measure.filter.type)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the sMU channel (for example, smua.measure.filter.type applies to SMU Channel
               A).
 
@@ -4442,11 +4329,11 @@ class SmuxItemMeasureFilter(BaseTSPCmd):
 class SmuxItemMeasure(BaseTSPCmd):
     """The ``smuX.measure`` command tree.
 
-    **Info:**
+    Info:
         - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.v() applies to SMU
           channel A).
 
-    Properties/methods:
+    Properties and methods:
         - ``.i()``: The ``smuX.measure.i()`` function.
         - ``.iv()``: The ``smuX.measure.iv()`` function.
         - ``.p()``: The ``smuX.measure.p()`` function.
@@ -4486,23 +4373,22 @@ class SmuxItemMeasure(BaseTSPCmd):
     def analogfilter(self) -> str:
         """Access the ``smuX.measure.analogfilter`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls the use of an analog filter when measuring on the lowest
               current ranges (2634B, 2635B, and 2636B only).
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.analogfilter)`` query.
             - Setting this property to a value will send the ``smuX.measure.analogfilter = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.analogfilter = value
             - print(smuX.measure.analogfilter)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.analogfilter
               applies to SMU channel A).
 
@@ -4523,23 +4409,22 @@ class SmuxItemMeasure(BaseTSPCmd):
     def analogfilter(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.analogfilter`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls the use of an analog filter when measuring on the lowest
               current ranges (2634B, 2635B, and 2636B only).
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.analogfilter)`` query.
             - Setting this property to a value will send the ``smuX.measure.analogfilter = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.analogfilter = value
             - print(smuX.measure.analogfilter)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.analogfilter
               applies to SMU channel A).
 
@@ -4563,22 +4448,21 @@ class SmuxItemMeasure(BaseTSPCmd):
     def autorangei(self) -> str:
         """Access the ``smuX.measure.autorangei`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the measurement autorange setting. (i = current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.autorangei)`` query.
             - Setting this property to a value will send the ``smuX.measure.autorangei = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.autorangei = value
             - print(smuX.measure.autorangei)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.autorangev
               applies to SMU channel A).
 
@@ -4599,22 +4483,21 @@ class SmuxItemMeasure(BaseTSPCmd):
     def autorangei(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.autorangei`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the measurement autorange setting. (i = current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.autorangei)`` query.
             - Setting this property to a value will send the ``smuX.measure.autorangei = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.autorangei = value
             - print(smuX.measure.autorangei)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.autorangev
               applies to SMU channel A).
 
@@ -4638,22 +4521,21 @@ class SmuxItemMeasure(BaseTSPCmd):
     def autorangev(self) -> str:
         """Access the ``smuX.measure.autorangev`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the measurement autorange setting. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.autorangev)`` query.
             - Setting this property to a value will send the ``smuX.measure.autorangev = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.autorangev = value
             - print(smuX.measure.autorangev)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.autorangev
               applies to SMU channel A).
 
@@ -4674,22 +4556,21 @@ class SmuxItemMeasure(BaseTSPCmd):
     def autorangev(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.autorangev`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the measurement autorange setting. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.autorangev)`` query.
             - Setting this property to a value will send the ``smuX.measure.autorangev = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.autorangev = value
             - print(smuX.measure.autorangev)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.autorangev
               applies to SMU channel A).
 
@@ -4713,23 +4594,22 @@ class SmuxItemMeasure(BaseTSPCmd):
     def autozero(self) -> str:
         """Access the ``smuX.measure.autozero`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables automatic updates to the internal reference
               measurements (autozero) of the instrument.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.autozero)`` query.
             - Setting this property to a value will send the ``smuX.measure.autozero = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.autozero = value
             - print(smuX.measure.autozero)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.autozero
               applies to SMU channel A).
 
@@ -4750,23 +4630,22 @@ class SmuxItemMeasure(BaseTSPCmd):
     def autozero(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.autozero`` attribute.
 
-        **Description:**
+        Description:
             - This attribute enables or disables automatic updates to the internal reference
               measurements (autozero) of the instrument.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.autozero)`` query.
             - Setting this property to a value will send the ``smuX.measure.autozero = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.autozero = value
             - print(smuX.measure.autozero)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.autozero
               applies to SMU channel A).
 
@@ -4790,21 +4669,20 @@ class SmuxItemMeasure(BaseTSPCmd):
     def count(self) -> str:
         """Access the ``smuX.measure.count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of measurements made when a measurement is requested.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.count)`` query.
             - Setting this property to a value will send the ``smuX.measure.count = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.count = value
             - print(smuX.measure.count)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.count applies
               to SMU channel A).
 
@@ -4825,21 +4703,20 @@ class SmuxItemMeasure(BaseTSPCmd):
     def count(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the number of measurements made when a measurement is requested.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.count)`` query.
             - Setting this property to a value will send the ``smuX.measure.count = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.count = value
             - print(smuX.measure.count)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.count applies
               to SMU channel A).
 
@@ -4863,21 +4740,20 @@ class SmuxItemMeasure(BaseTSPCmd):
     def delay(self) -> str:
         """Access the ``smuX.measure.delay`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls the measurement delay.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.delay)`` query.
             - Setting this property to a value will send the ``smuX.measure.delay = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.delay = value
             - print(smuX.measure.delay)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.delay applies
               to SMU channel A).
 
@@ -4898,21 +4774,20 @@ class SmuxItemMeasure(BaseTSPCmd):
     def delay(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.delay`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls the measurement delay.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.delay)`` query.
             - Setting this property to a value will send the ``smuX.measure.delay = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.delay = value
             - print(smuX.measure.delay)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.delay applies
               to SMU channel A).
 
@@ -4936,23 +4811,22 @@ class SmuxItemMeasure(BaseTSPCmd):
     def delayfactor(self) -> str:
         """Access the ``smuX.measure.delayfactor`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores a multiplier to the delays that are used when smuX.measure.delay
               is set to smuX.DELAY_AUTO.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.delayfactor)`` query.
             - Setting this property to a value will send the ``smuX.measure.delayfactor = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.delayfactor = value
             - print(smuX.measure.delayfactor)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.delayfactor
               applies to SMU channel A).
 
@@ -4973,23 +4847,22 @@ class SmuxItemMeasure(BaseTSPCmd):
     def delayfactor(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.delayfactor`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores a multiplier to the delays that are used when smuX.measure.delay
               is set to smuX.DELAY_AUTO.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.delayfactor)`` query.
             - Setting this property to a value will send the ``smuX.measure.delayfactor = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.delayfactor = value
             - print(smuX.measure.delayfactor)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.delayfactor
               applies to SMU channel A).
 
@@ -5013,11 +4886,11 @@ class SmuxItemMeasure(BaseTSPCmd):
     def filter(self) -> SmuxItemMeasureFilter:
         """Return the ``smuX.measure.filter`` command tree.
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.filter.count
               applies to SMU channel A).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.count``: The ``smuX.measure.filter.count`` attribute.
             - ``.enable``: The ``smuX.measure.filter.enable`` attribute.
             - ``.type``: The ``smuX.measure.filter.type`` attribute.
@@ -5028,24 +4901,23 @@ class SmuxItemMeasure(BaseTSPCmd):
     def highcrangedelayfactor(self) -> str:
         """Access the ``smuX.measure.highcrangedelayfactor`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains a delay multiplier that is only used during range changes when
               the high-capacitance mode is active.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.highcrangedelayfactor)``
               query.
             - Setting this property to a value will send the
               ``smuX.measure.highcrangedelayfactor = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.highcrangedelayfactor = value
             - print(smuX.measure.highcrangedelayfactor)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the sMU channel (for example, smua.measure.highcrangedelayfactor applies to SMU
               Channel A).
 
@@ -5066,24 +4938,23 @@ class SmuxItemMeasure(BaseTSPCmd):
     def highcrangedelayfactor(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.highcrangedelayfactor`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains a delay multiplier that is only used during range changes when
               the high-capacitance mode is active.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.highcrangedelayfactor)``
               query.
             - Setting this property to a value will send the
               ``smuX.measure.highcrangedelayfactor = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.highcrangedelayfactor = value
             - print(smuX.measure.highcrangedelayfactor)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the sMU channel (for example, smua.measure.highcrangedelayfactor applies to SMU
               Channel A).
 
@@ -5107,22 +4978,21 @@ class SmuxItemMeasure(BaseTSPCmd):
     def interval(self) -> str:
         """Access the ``smuX.measure.interval`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the interval between multiple measurements.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.interval)`` query.
             - Setting this property to a value will send the ``smuX.measure.interval = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.interval = value
             - print(smuX.measure.interval)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the sMU channel (for example, smua.measure.interval applies to SMU Channel A).
 
         Raises:
@@ -5142,22 +5012,21 @@ class SmuxItemMeasure(BaseTSPCmd):
     def interval(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.interval`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the interval between multiple measurements.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.interval)`` query.
             - Setting this property to a value will send the ``smuX.measure.interval = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.interval = value
             - print(smuX.measure.interval)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the sMU channel (for example, smua.measure.interval applies to SMU Channel A).
 
         Raises:
@@ -5180,23 +5049,22 @@ class SmuxItemMeasure(BaseTSPCmd):
     def lowrangei(self) -> str:
         """Access the ``smuX.measure.lowrangei`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the lowest measurement range that is used when the instrument is
               autoranging. (i = current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.lowrangei)`` query.
             - Setting this property to a value will send the ``smuX.measure.lowrangei = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.lowrangei = value
             - print(smuX.measure.lowrangei)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.lowrangev
               applies to SMU channel A).
 
@@ -5217,23 +5085,22 @@ class SmuxItemMeasure(BaseTSPCmd):
     def lowrangei(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.lowrangei`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the lowest measurement range that is used when the instrument is
               autoranging. (i = current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.lowrangei)`` query.
             - Setting this property to a value will send the ``smuX.measure.lowrangei = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.lowrangei = value
             - print(smuX.measure.lowrangei)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.lowrangev
               applies to SMU channel A).
 
@@ -5257,23 +5124,22 @@ class SmuxItemMeasure(BaseTSPCmd):
     def lowrangev(self) -> str:
         """Access the ``smuX.measure.lowrangev`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the lowest measurement range that is used when the instrument is
               autoranging. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.lowrangev)`` query.
             - Setting this property to a value will send the ``smuX.measure.lowrangev = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.lowrangev = value
             - print(smuX.measure.lowrangev)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.lowrangev
               applies to SMU channel A).
 
@@ -5294,23 +5160,22 @@ class SmuxItemMeasure(BaseTSPCmd):
     def lowrangev(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.lowrangev`` attribute.
 
-        **Description:**
+        Description:
             - This attribute sets the lowest measurement range that is used when the instrument is
               autoranging. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.lowrangev)`` query.
             - Setting this property to a value will send the ``smuX.measure.lowrangev = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.lowrangev = value
             - print(smuX.measure.lowrangev)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.lowrangev
               applies to SMU channel A).
 
@@ -5334,21 +5199,20 @@ class SmuxItemMeasure(BaseTSPCmd):
     def nplc(self) -> str:
         """Access the ``smuX.measure.nplc`` attribute.
 
-        **Description:**
+        Description:
             - This command sets the integration aperture for measurements.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.nplc)`` query.
             - Setting this property to a value will send the ``smuX.measure.nplc = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.nplc = value
             - print(smuX.measure.nplc)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.nplc applies
               to SMU channel A).
 
@@ -5369,21 +5233,20 @@ class SmuxItemMeasure(BaseTSPCmd):
     def nplc(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.nplc`` attribute.
 
-        **Description:**
+        Description:
             - This command sets the integration aperture for measurements.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.nplc)`` query.
             - Setting this property to a value will send the ``smuX.measure.nplc = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.nplc = value
             - print(smuX.measure.nplc)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.nplc applies
               to SMU channel A).
 
@@ -5407,23 +5270,22 @@ class SmuxItemMeasure(BaseTSPCmd):
     def rangei(self) -> str:
         """Access the ``smuX.measure.rangei`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the positive full-scale value of the measurement range for
               voltage or current. (i = current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rangei)`` query.
             - Setting this property to a value will send the ``smuX.measure.rangei = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rangei = value
             - print(smuX.measure.rangei)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rangev applies
               to SMU channel A).
 
@@ -5444,23 +5306,22 @@ class SmuxItemMeasure(BaseTSPCmd):
     def rangei(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.rangei`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the positive full-scale value of the measurement range for
               voltage or current. (i = current in amperes)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rangei)`` query.
             - Setting this property to a value will send the ``smuX.measure.rangei = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rangei = value
             - print(smuX.measure.rangei)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rangev applies
               to SMU channel A).
 
@@ -5484,23 +5345,22 @@ class SmuxItemMeasure(BaseTSPCmd):
     def rangev(self) -> str:
         """Access the ``smuX.measure.rangev`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the positive full-scale value of the measurement range for
               voltage or current. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rangev)`` query.
             - Setting this property to a value will send the ``smuX.measure.rangev = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rangev = value
             - print(smuX.measure.rangev)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rangev applies
               to SMU channel A).
 
@@ -5521,23 +5381,22 @@ class SmuxItemMeasure(BaseTSPCmd):
     def rangev(self, value: Union[str, float]) -> None:
         """Access the ``smuX.measure.rangev`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the positive full-scale value of the measurement range for
               voltage or current. (v = voltage in volts)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.measure.rangev)`` query.
             - Setting this property to a value will send the ``smuX.measure.rangev = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.rangev = value
             - print(smuX.measure.rangev)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rangev applies
               to SMU channel A).
 
@@ -5561,11 +5420,11 @@ class SmuxItemMeasure(BaseTSPCmd):
     def rel(self) -> SmuxItemMeasureRel:
         """Return the ``smuX.measure.rel`` command tree.
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.rel.enablev
               applies to SMU channel A).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.enablei``: The ``smuX.measure.rel.enablei`` attribute.
             - ``.enablep``: The ``smuX.measure.rel.enablep`` attribute.
             - ``.enabler``: The ``smuX.measure.rel.enabler`` attribute.
@@ -5580,14 +5439,13 @@ class SmuxItemMeasure(BaseTSPCmd):
     def i(self, reading_buffer: Optional[str] = None) -> str:
         """Run the ``smuX.measure.i()`` function.
 
-        **Description:**
+        Description:
             - This function makes one or more measurements. (i = current in amperes)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.i()
+            ```
 
         Args:
             reading_buffer (optional): A reading buffer object where all readings are stored.
@@ -5612,15 +5470,14 @@ class SmuxItemMeasure(BaseTSPCmd):
     ) -> str:
         """Run the ``smuX.measure.iv()`` function.
 
-        **Description:**
+        Description:
             - This function makes one or more measurements. (i = current in amperes, v = voltage in
               volts)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.iv()
+            ```
 
         Args:
             i_reading_buffer (optional): A reading buffer object where current readings are stored.
@@ -5651,14 +5508,13 @@ class SmuxItemMeasure(BaseTSPCmd):
     def p(self, reading_buffer: Optional[str] = None) -> str:
         """Run the ``smuX.measure.p()`` function.
 
-        **Description:**
+        Description:
             - This function makes one or more measurements. (p = power in watts)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.p()
+            ```
 
         Args:
             reading_buffer (optional): A reading buffer object where all readings are stored.
@@ -5681,14 +5537,13 @@ class SmuxItemMeasure(BaseTSPCmd):
     def r(self, reading_buffer: Optional[str] = None) -> str:
         """Run the ``smuX.measure.r()`` function.
 
-        **Description:**
+        Description:
             - This function makes one or more measurements. (r = resistance in ohms)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.r()
+            ```
 
         Args:
             reading_buffer (optional): A reading buffer object where all readings are stored.
@@ -5711,14 +5566,13 @@ class SmuxItemMeasure(BaseTSPCmd):
     def v(self, reading_buffer: Optional[str] = None) -> str:
         """Run the ``smuX.measure.v()`` function.
 
-        **Description:**
+        Description:
             - This function makes one or more measurements. (v = voltage in volts)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.v()
+            ```
 
         Args:
             reading_buffer (optional): A reading buffer object where all readings are stored.
@@ -5748,15 +5602,14 @@ class SmuxItemMeasure(BaseTSPCmd):
     ) -> None:
         """Run the ``smuX.measure.calibratei()`` function.
 
-        **Description:**
+        Description:
             - This function generates and activates new measurement calibration constants. (i =
               current in amperes)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.calibratei()
+            ```
 
         Args:
             range_: The measurement range to adjust.
@@ -5790,15 +5643,14 @@ class SmuxItemMeasure(BaseTSPCmd):
     ) -> None:
         """Run the ``smuX.measure.calibratev()`` function.
 
-        **Description:**
+        Description:
             - This function generates and activates new measurement calibration constants. (v =
               voltage in volts)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.calibratev()
+            ```
 
         Args:
             range_: The measurement range to adjust.
@@ -5825,15 +5677,14 @@ class SmuxItemMeasure(BaseTSPCmd):
     def overlappedi(self, rbuffer: str) -> None:
         """Run the ``smuX.measure.overlappedi()`` function.
 
-        **Description:**
+        Description:
             - This function starts an asynchronous (background) measurement. (i = current in
               amperes)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.overlappedi()
+            ```
 
         Args:
             rbuffer: A reading buffer object where the readings are stored.
@@ -5852,15 +5703,14 @@ class SmuxItemMeasure(BaseTSPCmd):
     def overlappediv(self, ibuffer: str, vbuffer: str) -> None:
         """Run the ``smuX.measure.overlappediv()`` function.
 
-        **Description:**
+        Description:
             - This function starts an asynchronous (background) measurement. (i = current in
               amperes, v = voltage in volts)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.overlappediv()
+            ```
 
         Args:
             ibuffer: A reading buffer object where current readings are stored.
@@ -5880,14 +5730,13 @@ class SmuxItemMeasure(BaseTSPCmd):
     def overlappedp(self, rbuffer: str) -> None:
         """Run the ``smuX.measure.overlappedp()`` function.
 
-        **Description:**
+        Description:
             - This function starts an asynchronous (background) measurement. (p = power in watts)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.overlappedp()
+            ```
 
         Args:
             rbuffer: A reading buffer object where the readings are stored.
@@ -5906,15 +5755,14 @@ class SmuxItemMeasure(BaseTSPCmd):
     def overlappedr(self, rbuffer: str) -> None:
         """Run the ``smuX.measure.overlappedr()`` function.
 
-        **Description:**
+        Description:
             - This function starts an asynchronous (background) measurement. (r = resistance in
               ohms)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.overlappedr()
+            ```
 
         Args:
             rbuffer: A reading buffer object where the readings are stored.
@@ -5933,14 +5781,13 @@ class SmuxItemMeasure(BaseTSPCmd):
     def overlappedv(self, rbuffer: str) -> None:
         """Run the ``smuX.measure.overlappedv()`` function.
 
-        **Description:**
+        Description:
             - This function starts an asynchronous (background) measurement. (v = voltage in volts)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measure.overlappedv()
+            ```
 
         Args:
             rbuffer: A reading buffer object where the readings are stored.
@@ -5960,11 +5807,11 @@ class SmuxItemMeasure(BaseTSPCmd):
 class SmuxItemContact(BaseTSPCmd):
     """The ``smuX.contact`` command tree.
 
-    **Info:**
+    Info:
         - ``X``, the source-measure unit (SMU) channel (for example, smua.contact.calibratehi()
           applies to SMU channel A).
 
-    Properties/methods:
+    Properties and methods:
         - ``.calibratehi()``: The ``smuX.contact.calibratehi()`` function.
         - ``.calibratelo()``: The ``smuX.contact.calibratelo()`` function.
         - ``.check()``: The ``smuX.contact.check()`` function.
@@ -5977,22 +5824,21 @@ class SmuxItemContact(BaseTSPCmd):
     def speed(self) -> str:
         """Access the ``smuX.contact.speed`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the speed setting for contact check measurements. This command
               is not available on the 2604B, 2614B, or 2634B.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.contact.speed)`` query.
             - Setting this property to a value will send the ``smuX.contact.speed = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.contact.speed = value
             - print(smuX.contact.speed)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.contact.speed applies
               to SMU channel A).
 
@@ -6013,22 +5859,21 @@ class SmuxItemContact(BaseTSPCmd):
     def speed(self, value: Union[str, float]) -> None:
         """Access the ``smuX.contact.speed`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the speed setting for contact check measurements. This command
               is not available on the 2604B, 2614B, or 2634B.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.contact.speed)`` query.
             - Setting this property to a value will send the ``smuX.contact.speed = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.contact.speed = value
             - print(smuX.contact.speed)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.contact.speed applies
               to SMU channel A).
 
@@ -6052,23 +5897,22 @@ class SmuxItemContact(BaseTSPCmd):
     def threshold(self) -> str:
         """Access the ``smuX.contact.threshold`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the resistance threshold for the smuX.contact.check() function.
               This command is not available on the 2604B, 2614B, or 2634B.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.contact.threshold)`` query.
             - Setting this property to a value will send the ``smuX.contact.threshold = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.contact.threshold = value
             - print(smuX.contact.threshold)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.contact.threshold
               applies to SMU channel A).
 
@@ -6089,23 +5933,22 @@ class SmuxItemContact(BaseTSPCmd):
     def threshold(self, value: Union[str, float]) -> None:
         """Access the ``smuX.contact.threshold`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the resistance threshold for the smuX.contact.check() function.
               This command is not available on the 2604B, 2614B, or 2634B.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.contact.threshold)`` query.
             - Setting this property to a value will send the ``smuX.contact.threshold = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.contact.threshold = value
             - print(smuX.contact.threshold)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.contact.threshold
               applies to SMU channel A).
 
@@ -6130,15 +5973,14 @@ class SmuxItemContact(BaseTSPCmd):
     ) -> None:
         """Run the ``smuX.contact.calibratehi()`` function.
 
-        **Description:**
+        Description:
             - This function adjusts the high/sense high contact check measurement. This command is
               not available on the 2604B, 2614B, or 2634B.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.contact.calibratehi()
+            ```
 
         Args:
             cp1_measured: The value measured by this SMU for point 1.
@@ -6165,15 +6007,14 @@ class SmuxItemContact(BaseTSPCmd):
     ) -> None:
         """Run the ``smuX.contact.calibratelo()`` function.
 
-        **Description:**
+        Description:
             - This function adjusts the low/sense low contact check measurement. This command is not
               available on the 2604B, 2614B, or 2634B.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.contact.calibratelo()
+            ```
 
         Args:
             cp1_measured: The value measured by this SMU for point 1.
@@ -6198,17 +6039,16 @@ class SmuxItemContact(BaseTSPCmd):
     def check(self) -> None:
         """Run the ``smuX.contact.check()`` function.
 
-        **Description:**
+        Description:
             - This function determines if contact resistance is lower than the threshold. This
               command is not available on the 2604B, 2614B, or 2634B.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.contact.check()
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.contact.check()
               applies to SMU channel A).
 
@@ -6226,17 +6066,16 @@ class SmuxItemContact(BaseTSPCmd):
     def r(self) -> str:
         """Run the ``smuX.contact.r()`` function.
 
-        **Description:**
+        Description:
             - This function measures aggregate contact resistance. This command is not available on
               the 2604B, 2614B, or 2634B.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.contact.r()
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.contact.r() applies to
               SMU channel A).
 
@@ -6258,11 +6097,11 @@ class SmuxItemContact(BaseTSPCmd):
 class SmuxItemCal(BaseTSPCmd):
     """The ``smuX.cal`` command tree.
 
-    **Info:**
+    Info:
         - ``X``, the source-measure unit (SMU) channel (for example, smua.cal.adjustdate applies to
           SMU channel A).
 
-    Properties/methods:
+    Properties and methods:
         - ``.adjustdate``: The ``smuX.cal.adjustdate`` attribute.
         - ``.date``: The ``smuX.cal.date`` attribute.
         - ``.due``: The ``smuX.cal.due`` attribute.
@@ -6279,22 +6118,21 @@ class SmuxItemCal(BaseTSPCmd):
     def adjustdate(self) -> str:
         """Access the ``smuX.cal.adjustdate`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the date of the last calibration adjustment.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.cal.adjustdate)`` query.
             - Setting this property to a value will send the ``smuX.cal.adjustdate = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.cal.adjustdate = value
             - print(smuX.cal.adjustdate)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.cal.adjustdate applies
               to SMU channel A).
 
@@ -6315,22 +6153,21 @@ class SmuxItemCal(BaseTSPCmd):
     def adjustdate(self, value: Union[str, float]) -> None:
         """Access the ``smuX.cal.adjustdate`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the date of the last calibration adjustment.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.cal.adjustdate)`` query.
             - Setting this property to a value will send the ``smuX.cal.adjustdate = value``
               command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.cal.adjustdate = value
             - print(smuX.cal.adjustdate)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.cal.adjustdate applies
               to SMU channel A).
 
@@ -6354,21 +6191,20 @@ class SmuxItemCal(BaseTSPCmd):
     def date(self) -> str:
         """Access the ``smuX.cal.date`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the calibration date of the active calibration set.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.cal.date)`` query.
             - Setting this property to a value will send the ``smuX.cal.date = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.cal.date = value
             - print(smuX.cal.date)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.cal.date applies to
               SMU channel A).
 
@@ -6389,21 +6225,20 @@ class SmuxItemCal(BaseTSPCmd):
     def date(self, value: Union[str, float]) -> None:
         """Access the ``smuX.cal.date`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the calibration date of the active calibration set.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.cal.date)`` query.
             - Setting this property to a value will send the ``smuX.cal.date = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.cal.date = value
             - print(smuX.cal.date)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.cal.date applies to
               SMU channel A).
 
@@ -6427,21 +6262,20 @@ class SmuxItemCal(BaseTSPCmd):
     def due(self) -> str:
         """Access the ``smuX.cal.due`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the calibration due date for the next calibration.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.cal.due)`` query.
             - Setting this property to a value will send the ``smuX.cal.due = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.cal.due = value
             - print(smuX.cal.due)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.cal.due applies to SMU
               channel A).
 
@@ -6462,21 +6296,20 @@ class SmuxItemCal(BaseTSPCmd):
     def due(self, value: Union[str, float]) -> None:
         """Access the ``smuX.cal.due`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the calibration due date for the next calibration.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.cal.due)`` query.
             - Setting this property to a value will send the ``smuX.cal.due = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.cal.due = value
             - print(smuX.cal.due)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.cal.due applies to SMU
               channel A).
 
@@ -6500,19 +6333,18 @@ class SmuxItemCal(BaseTSPCmd):
     def password(self) -> str:
         """Access the ``smuX.cal.password`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the password required to enable calibration.
 
-        **Usage:**
+        Usage:
             - Setting this property to a value will send the ``smuX.cal.password = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.cal.password = value
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the sMU channel (for example, smua.cal.password applies to SMU channel A).
 
         Raises:
@@ -6527,19 +6359,18 @@ class SmuxItemCal(BaseTSPCmd):
     def password(self, value: Union[str, float]) -> None:
         """Access the ``smuX.cal.password`` attribute.
 
-        **Description:**
+        Description:
             - This attribute stores the password required to enable calibration.
 
-        **Usage:**
+        Usage:
             - Setting this property to a value will send the ``smuX.cal.password = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.cal.password = value
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the sMU channel (for example, smua.cal.password applies to SMU channel A).
 
         Raises:
@@ -6557,22 +6388,21 @@ class SmuxItemCal(BaseTSPCmd):
     def polarity(self) -> str:
         """Access the ``smuX.cal.polarity`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls which calibration constants are used for all subsequent
               measurements.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.cal.polarity)`` query.
             - Setting this property to a value will send the ``smuX.cal.polarity = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.cal.polarity = value
             - print(smuX.cal.polarity)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the sMU channel (for example, smua.cal.polarity applies to SMU channel A).
 
         Raises:
@@ -6592,22 +6422,21 @@ class SmuxItemCal(BaseTSPCmd):
     def polarity(self, value: Union[str, float]) -> None:
         """Access the ``smuX.cal.polarity`` attribute.
 
-        **Description:**
+        Description:
             - This attribute controls which calibration constants are used for all subsequent
               measurements.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.cal.polarity)`` query.
             - Setting this property to a value will send the ``smuX.cal.polarity = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.cal.polarity = value
             - print(smuX.cal.polarity)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the sMU channel (for example, smua.cal.polarity applies to SMU channel A).
 
         Raises:
@@ -6630,19 +6459,18 @@ class SmuxItemCal(BaseTSPCmd):
     def state(self) -> str:
         """Access the ``smuX.cal.state`` attribute.
 
-        **Description:**
+        Description:
             - This attribute returns the present calibration state.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.cal.state)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(smuX.cal.state)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.cal.state applies to
               SMU channel A).
 
@@ -6662,16 +6490,15 @@ class SmuxItemCal(BaseTSPCmd):
     def lock(self) -> None:
         """Run the ``smuX.cal.lock()`` function.
 
-        **Description:**
+        Description:
             - This function disables the commands that change calibration settings.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.cal.lock()
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.cal.lock() specifies
               SMU channel A).
 
@@ -6689,14 +6516,13 @@ class SmuxItemCal(BaseTSPCmd):
     def restore(self, calset: Optional[str] = None) -> None:
         """Run the ``smuX.cal.restore()`` function.
 
-        **Description:**
+        Description:
             - This function loads a stored set of calibration constants.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.cal.restore()
+            ```
 
         Args:
             calset (optional): The calibration set to be loaded; set calset to one of the following
@@ -6717,16 +6543,15 @@ class SmuxItemCal(BaseTSPCmd):
     def save(self) -> None:
         """Run the ``smuX.cal.save()`` function.
 
-        **Description:**
+        Description:
             - This function stores the active calibration constants to nonvolatile memory.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.cal.save()
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.cal.save() applies to
               SMU channel A).
 
@@ -6744,14 +6569,13 @@ class SmuxItemCal(BaseTSPCmd):
     def unlock(self, password: str) -> None:
         """Run the ``smuX.cal.unlock()`` function.
 
-        **Description:**
+        Description:
             - This function enables the commands that change calibration settings.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.cal.unlock()
+            ```
 
         Args:
             password: Calibration password.
@@ -6771,11 +6595,11 @@ class SmuxItemCal(BaseTSPCmd):
 class SmuxItemBuffer(BaseTSPCmd):
     """The ``smuX.buffer`` command tree.
 
-    **Info:**
+    Info:
         - ``X``, the source-measure unit (SMU) channel (for example, smua.buffer.getstats()
           specifies SMU channel A).
 
-    Properties/methods:
+    Properties and methods:
         - ``.getstats()``: The ``smuX.buffer.getstats()`` function.
         - ``.recalculatestats()``: The ``smuX.buffer.recalculatestats()`` function.
     """
@@ -6783,14 +6607,13 @@ class SmuxItemBuffer(BaseTSPCmd):
     def getstats(self, buffer_var: str) -> Dict[Any, Any]:
         """Run the ``smuX.buffer.getstats()`` function.
 
-        **Description:**
+        Description:
             - This function returns the statistics for a specified reading buffer.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.buffer.getstats()
+            ```
 
         Args:
             buffer_var: The reading buffer to process.
@@ -6815,14 +6638,13 @@ class SmuxItemBuffer(BaseTSPCmd):
     def recalculatestats(self, buffer_var: str) -> None:
         """Run the ``smuX.buffer.recalculatestats()`` function.
 
-        **Description:**
+        Description:
             - This function recalculates the statistics of the specified reading buffer.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.buffer.recalculatestats()
+            ```
 
         Args:
             buffer_var: The reading buffer to process.
@@ -6912,7 +6734,7 @@ class SmuxItem(ValidatedChannel, BaseTSPCmd):
         - ``.SOURCE_IDLE``: Sets the source level to the programmed (idle) level at the end of the
           pulse.
 
-    Properties/methods:
+    Properties and methods:
         - ``.abort()``: The ``smuX.abort()`` function.
         - ``.buffer``: The ``smuX.buffer`` command tree.
         - ``.cal``: The ``smuX.cal`` command tree.
@@ -7171,11 +6993,11 @@ reading at index bufferVar.fillcount."""
     def buffer(self) -> SmuxItemBuffer:
         """Return the ``smuX.buffer`` command tree.
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.buffer.getstats()
               specifies SMU channel A).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.getstats()``: The ``smuX.buffer.getstats()`` function.
             - ``.recalculatestats()``: The ``smuX.buffer.recalculatestats()`` function.
         """
@@ -7185,11 +7007,11 @@ reading at index bufferVar.fillcount."""
     def cal(self) -> SmuxItemCal:
         """Return the ``smuX.cal`` command tree.
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.cal.adjustdate applies
               to SMU channel A).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.adjustdate``: The ``smuX.cal.adjustdate`` attribute.
             - ``.date``: The ``smuX.cal.date`` attribute.
             - ``.due``: The ``smuX.cal.due`` attribute.
@@ -7207,11 +7029,11 @@ reading at index bufferVar.fillcount."""
     def contact(self) -> SmuxItemContact:
         """Return the ``smuX.contact`` command tree.
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.contact.calibratehi()
               applies to SMU channel A).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.calibratehi()``: The ``smuX.contact.calibratehi()`` function.
             - ``.calibratelo()``: The ``smuX.contact.calibratelo()`` function.
             - ``.check()``: The ``smuX.contact.check()`` function.
@@ -7225,11 +7047,11 @@ reading at index bufferVar.fillcount."""
     def measure(self) -> SmuxItemMeasure:
         """Return the ``smuX.measure`` command tree.
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.measure.v() applies to
               SMU channel A).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.i()``: The ``smuX.measure.i()`` function.
             - ``.iv()``: The ``smuX.measure.iv()`` function.
             - ``.p()``: The ``smuX.measure.p()`` function.
@@ -7265,19 +7087,18 @@ reading at index bufferVar.fillcount."""
     def nvbuffer1(self) -> str:
         """Access the ``smuX.nvbuffer1`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains a dedicated reading buffer. (1 = default buffer1)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.nvbuffer1)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(smuX.nvbuffer1)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.nvbuffer1 applies to
               SMU channel A).
 
@@ -7298,19 +7119,18 @@ reading at index bufferVar.fillcount."""
     def nvbuffer2(self) -> str:
         """Access the ``smuX.nvbuffer2`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains a dedicated reading buffer. (2 = default buffer2)
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.nvbuffer2)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(smuX.nvbuffer2)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.nvbuffer1 applies to
               SMU channel A).
 
@@ -7331,21 +7151,20 @@ reading at index bufferVar.fillcount."""
     def sense(self) -> str:
         """Access the ``smuX.sense`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the state of the sense mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.sense)`` query.
             - Setting this property to a value will send the ``smuX.sense = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.sense = value
             - print(smuX.sense)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.sense applies to SMU
               channel A).
 
@@ -7366,21 +7185,20 @@ reading at index bufferVar.fillcount."""
     def sense(self, value: Union[str, float]) -> None:
         """Access the ``smuX.sense`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the state of the sense mode.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(smuX.sense)`` query.
             - Setting this property to a value will send the ``smuX.sense = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.sense = value
             - print(smuX.sense)
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.sense applies to SMU
               channel A).
 
@@ -7404,11 +7222,11 @@ reading at index bufferVar.fillcount."""
     def source(self) -> SmuxItemSource:
         """Return the ``smuX.source`` command tree.
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.source.autorangev
               applies to SMU channel A).
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.autorangei``: The ``smuX.source.autorangei`` attribute.
             - ``.autorangev``: The ``smuX.source.autorangev`` attribute.
             - ``.calibratei()``: The ``smuX.source.calibratei()`` function.
@@ -7441,7 +7259,7 @@ reading at index bufferVar.fillcount."""
     def trigger(self) -> SmuxItemTrigger:
         """Return the ``smuX.trigger`` command tree.
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.trigger.ARMED_EVENT_ID
               applies to SMU channel A).
 
@@ -7454,7 +7272,7 @@ reading at index bufferVar.fillcount."""
             - ``.SWEEPING_EVENT_ID``: The sweeping event number.
             - ``.SWEEP_COMPLETE_EVENT_ID``: The sweep complete event number.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.arm``: The ``smuX.trigger.arm`` command tree.
             - ``.autoclear``: The ``smuX.trigger.autoclear`` attribute.
             - ``.count``: The ``smuX.trigger.count`` attribute.
@@ -7469,17 +7287,16 @@ reading at index bufferVar.fillcount."""
     def abort(self) -> None:
         """Run the ``smuX.abort()`` function.
 
-        **Description:**
+        Description:
             - This function terminates all overlapped operations on the specified source-measure
               unit (SMU).
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.abort()
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.abort() applies to SMU
               channel A).
 
@@ -7497,14 +7314,13 @@ reading at index bufferVar.fillcount."""
     def makebuffer(self, buffer_size: str) -> str:
         """Run the ``smuX.makebuffer()`` function.
 
-        **Description:**
+        Description:
             - This function creates a reading buffer.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.makebuffer()
+            ```
 
         Args:
             buffer_size: Maximum number of readings that can be stored.
@@ -7526,15 +7342,14 @@ reading at index bufferVar.fillcount."""
     def measureiandstep(self, source_value: float) -> str:
         """Run the ``smuX.measureiandstep()`` function.
 
-        **Description:**
+        Description:
             - This function makes one or two measurements and then steps the source. (i = current in
               amperes)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measureiandstep()
+            ```
 
         Args:
             source_value: Source value to be set after the measurement is made.
@@ -7556,15 +7371,14 @@ reading at index bufferVar.fillcount."""
     def measureivandstep(self, source_value: float) -> str:
         """Run the ``smuX.measureivandstep()`` function.
 
-        **Description:**
+        Description:
             - This function makes one or two measurements and then steps the source. (i = current in
               amperes, v = voltage in volts)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measureivandstep()
+            ```
 
         Args:
             source_value: Source value to be set after the measurement is made.
@@ -7586,15 +7400,14 @@ reading at index bufferVar.fillcount."""
     def measurepandstep(self, source_value: float) -> str:
         """Run the ``smuX.measurepandstep()`` function.
 
-        **Description:**
+        Description:
             - This function makes one or two measurements and then steps the source. (p = power in
               watts)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measurepandstep()
+            ```
 
         Args:
             source_value: Source value to be set after the measurement is made.
@@ -7616,15 +7429,14 @@ reading at index bufferVar.fillcount."""
     def measurerandstep(self, source_value: float) -> str:
         """Run the ``smuX.measurerandstep()`` function.
 
-        **Description:**
+        Description:
             - This function makes one or two measurements and then steps the source. (r = resistance
               in ohms)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measurerandstep()
+            ```
 
         Args:
             source_value: Source value to be set after the measurement is made.
@@ -7646,15 +7458,14 @@ reading at index bufferVar.fillcount."""
     def measurevandstep(self, source_value: float) -> str:
         """Run the ``smuX.measurevandstep()`` function.
 
-        **Description:**
+        Description:
             - This function makes one or two measurements and then steps the source. (v = voltage in
               volts)
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.measurevandstep()
+            ```
 
         Args:
             source_value: Source value to be set after the measurement is made.
@@ -7676,17 +7487,16 @@ reading at index bufferVar.fillcount."""
     def reset(self) -> None:
         """Run the ``smuX.reset()`` function.
 
-        **Description:**
+        Description:
             - This function turns off the output and resets the commands that begin with smuX. to
               their default settings.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.reset()
+            ```
 
-        **Info:**
+        Info:
             - ``X``, the source-measure unit (SMU) channel (for example, smua.reset() applies to SMU
               channel A).
 
@@ -7704,15 +7514,14 @@ reading at index bufferVar.fillcount."""
     def savebuffer(self, y: str) -> None:
         """Run the ``smuX.savebuffer()`` function.
 
-        **Description:**
+        Description:
             - This function saves one source-measure unit (SMU) dedicated reading buffer to
               nonvolatile memory (there are two dedicated reading buffers for each SMU).
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - smuX.savebuffer()
+            ```
 
         Args:
             y: SMU dedicated reading buffer (1 or 2).

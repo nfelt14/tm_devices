@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - ACTONEVent:ACTION:AUXOUT:STATE <0|1|OFF|ON>
     - ACTONEVent:ACTION:AUXOUT:STATE?
     - ACTONEVent:ACTION:EMAIL:SETUp:TOADDRess <QString>
@@ -48,23 +46,22 @@ if TYPE_CHECKING:
 class ActoneventRepeatcount(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:REPEATCount`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the number of events to run.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:REPEATCount?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:REPEATCount?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACTONEVent:REPEATCount value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:REPEATCount <NR1>
         - ACTONEVent:REPEATCount?
+        ```
 
-    **Info:**
+    Info:
         - ``NR1`` is an integer that specifies the number of events to run. The default is 1 event
           and the maximum is 1000000 events. A repeat count greater than 1000000 specifies to run
           forever. In this case, the action on event can be terminated by setting the state for all
@@ -76,47 +73,45 @@ class ActoneventRepeatcount(SCPICmdWrite, SCPICmdRead):
 class ActoneventNumacqs(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:NUMACQs`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the number of acquisitions to complete for the event type ACQCOMPLete.
           The default is 1 acquisition.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:NUMACQs?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:NUMACQs?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACTONEVent:NUMACQs value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:NUMACQs <NR1>
         - ACTONEVent:NUMACQs?
+        ```
     """
 
 
 class ActoneventEventtype(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:EVENTTYPe`` command.
 
-    **Description:**
+    Description:
         - Specifies (or queries) which event to act on (TRIGger, ACQCOMPLete, or NONe) when using an
           Act on Event command. The default is NONe. To specify the action to take, use the
           ``ACTONEVent:ACTION`` commands.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:EVENTTYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:EVENTTYPe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACTONEVent:EVENTTYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:EVENTTYPe <NONe|TRIGger|ACQCOMPLete>
         - ACTONEVent:EVENTTYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``NONe`` no event (this is the default).
         - ``TRIGger`` specifies to act when a trigger occurs.
         - ``ACQCOMPLete`` specifies to act when acquisition completes.
@@ -126,26 +121,25 @@ class ActoneventEventtype(SCPICmdWrite, SCPICmdRead):
 class ActoneventActionVisualState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:ACTION:VISUAL:STATE`` command.
 
-    **Description:**
+    Description:
         - Displays a visual notification when a specified event occurs, or queries the state of the
           'display a visual notification' action. The default state is 0 (off). To specify an event,
           use the command ``ACTONEVENT:EVENTTYPE``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:VISUAL:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:VISUAL:STATE?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACTONEVent:ACTION:VISUAL:STATE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:ACTION:VISUAL:STATE <0|1|OFF|ON>
         - ACTONEVent:ACTION:VISUAL:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``1, ON`` displays a visual notification when the specified event occurs.
         - ``0, OFF`` turns off this action.
     """
@@ -154,7 +148,7 @@ class ActoneventActionVisualState(SCPICmdWrite, SCPICmdRead):
 class ActoneventActionVisual(SCPICmdRead):
     """The ``ACTONEVent:ACTION:VISUAL`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:VISUAL?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:VISUAL?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -171,26 +165,25 @@ class ActoneventActionVisual(SCPICmdRead):
     def state(self) -> ActoneventActionVisualState:
         """Return the ``ACTONEVent:ACTION:VISUAL:STATE`` command.
 
-        **Description:**
+        Description:
             - Displays a visual notification when a specified event occurs, or queries the state of
               the 'display a visual notification' action. The default state is 0 (off). To specify
               an event, use the command ``ACTONEVENT:EVENTTYPE``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:VISUAL:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:VISUAL:STATE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:ACTION:VISUAL:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:ACTION:VISUAL:STATE <0|1|OFF|ON>
             - ACTONEVent:ACTION:VISUAL:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``1, ON`` displays a visual notification when the specified event occurs.
             - ``0, OFF`` turns off this action.
         """
@@ -200,26 +193,25 @@ class ActoneventActionVisual(SCPICmdRead):
 class ActoneventActionStopacqState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:ACTION:STOPACQ:STATE`` command.
 
-    **Description:**
+    Description:
         - Stops acquisitions when a specified event occurs, or queries the state of the 'stop
           acquisition' action. The default state is 0 (off). To specify an event, use the command
           ``ACTONEVENT:EVENTTYPE``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:STOPACQ:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:STOPACQ:STATE?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACTONEVent:ACTION:STOPACQ:STATE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:ACTION:STOPACQ:STATE <0|1|OFF|ON>
         - ACTONEVent:ACTION:STOPACQ:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``1, ON`` stops acquisitions when the specified event occurs.
         - ``0, OFF`` turns off this action.
     """
@@ -228,7 +220,7 @@ class ActoneventActionStopacqState(SCPICmdWrite, SCPICmdRead):
 class ActoneventActionStopacq(SCPICmdRead):
     """The ``ACTONEVent:ACTION:STOPACQ`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:STOPACQ?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:STOPACQ?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -245,12 +237,12 @@ class ActoneventActionStopacq(SCPICmdRead):
     def state(self) -> ActoneventActionStopacqState:
         """Return the ``ACTONEVent:ACTION:STOPACQ:STATE`` command.
 
-        **Description:**
+        Description:
             - Stops acquisitions when a specified event occurs, or queries the state of the 'stop
               acquisition' action. The default state is 0 (off). To specify an event, use the
               command ``ACTONEVENT:EVENTTYPE``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:STOPACQ:STATE?``
               query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:STOPACQ:STATE?``
@@ -258,14 +250,13 @@ class ActoneventActionStopacq(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:ACTION:STOPACQ:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:ACTION:STOPACQ:STATE <0|1|OFF|ON>
             - ACTONEVent:ACTION:STOPACQ:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``1, ON`` stops acquisitions when the specified event occurs.
             - ``0, OFF`` turns off this action.
         """
@@ -275,7 +266,7 @@ class ActoneventActionStopacq(SCPICmdRead):
 class ActoneventActionSrqState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:ACTION:SRQ:STATE`` command.
 
-    **Description:**
+    Description:
         - Sets or returns the enabled state of the generate service request (SRQ) action when a
           specified event occurs. The default state is 0. When this control is set, the instrument
           will set the OPC bit (bit 0) in the SESR (Standard Events Status Register) when the
@@ -286,21 +277,20 @@ class ActoneventActionSrqState(SCPICmdWrite, SCPICmdRead):
           code 2600 ('Mask testing complete') is queued to the event queue. To specify an event, use
           the command ``ACTONEVENT:EVENTTYPE``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:SRQ:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:SRQ:STATE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACTONEVent:ACTION:SRQ:STATE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:ACTION:SRQ:STATE <0|1|OFF|ON>
         - ACTONEVent:ACTION:SRQ:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``1, ON`` generates an SRQ when the specified event occurs.
         - ``0, OFF`` turns off this action.
     """
@@ -309,7 +299,7 @@ class ActoneventActionSrqState(SCPICmdWrite, SCPICmdRead):
 class ActoneventActionSrq(SCPICmdRead):
     """The ``ACTONEVent:ACTION:SRQ`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:SRQ?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:SRQ?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -326,7 +316,7 @@ class ActoneventActionSrq(SCPICmdRead):
     def state(self) -> ActoneventActionSrqState:
         """Return the ``ACTONEVent:ACTION:SRQ:STATE`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the enabled state of the generate service request (SRQ) action when a
               specified event occurs. The default state is 0. When this control is set, the
               instrument will set the OPC bit (bit 0) in the SESR (Standard Events Status Register)
@@ -337,21 +327,20 @@ class ActoneventActionSrq(SCPICmdRead):
               the mask test, event code 2600 ('Mask testing complete') is queued to the event queue.
               To specify an event, use the command ``ACTONEVENT:EVENTTYPE``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:SRQ:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:SRQ:STATE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ACTONEVent:ACTION:SRQ:STATE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:ACTION:SRQ:STATE <0|1|OFF|ON>
             - ACTONEVent:ACTION:SRQ:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``1, ON`` generates an SRQ when the specified event occurs.
             - ``0, OFF`` turns off this action.
         """
@@ -361,26 +350,25 @@ class ActoneventActionSrq(SCPICmdRead):
 class ActoneventActionSavewfmState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:ACTION:SAVEWFM:STATE`` command.
 
-    **Description:**
+    Description:
         - Saves the currently selected waveform data to a file when a specified event occurs, or
           queries the state of the 'save waveform to file' action. The default state is 0 (off). To
           specify an event, use the command ``ACTONEVENT:EVENTTYPE``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:SAVEWFM:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:SAVEWFM:STATE?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACTONEVent:ACTION:SAVEWFM:STATE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:ACTION:SAVEWFM:STATE <0|1|OFF|ON>
         - ACTONEVent:ACTION:SAVEWFM:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``1, ON`` saves the waveform to a file when the specified event occurs.
         - ``0, OFF`` turns off this action.
     """
@@ -389,7 +377,7 @@ class ActoneventActionSavewfmState(SCPICmdWrite, SCPICmdRead):
 class ActoneventActionSavewfm(SCPICmdRead):
     """The ``ACTONEVent:ACTION:SAVEWFM`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:SAVEWFM?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:SAVEWFM?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -406,12 +394,12 @@ class ActoneventActionSavewfm(SCPICmdRead):
     def state(self) -> ActoneventActionSavewfmState:
         """Return the ``ACTONEVent:ACTION:SAVEWFM:STATE`` command.
 
-        **Description:**
+        Description:
             - Saves the currently selected waveform data to a file when a specified event occurs, or
               queries the state of the 'save waveform to file' action. The default state is 0 (off).
               To specify an event, use the command ``ACTONEVENT:EVENTTYPE``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:SAVEWFM:STATE?``
               query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:SAVEWFM:STATE?``
@@ -419,14 +407,13 @@ class ActoneventActionSavewfm(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:ACTION:SAVEWFM:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:ACTION:SAVEWFM:STATE <0|1|OFF|ON>
             - ACTONEVent:ACTION:SAVEWFM:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``1, ON`` saves the waveform to a file when the specified event occurs.
             - ``0, OFF`` turns off this action.
         """
@@ -436,26 +423,25 @@ class ActoneventActionSavewfm(SCPICmdRead):
 class ActoneventActionSaveimageState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:ACTION:SAVEIMAGE:STATE`` command.
 
-    **Description:**
+    Description:
         - Saves a screen image to file when a specified event occurs, or queries the state of the
           'save screen image to a file' action. The default state is 0 (off). To specify an event,
           use the command ``ACTONEVENT:EVENTTYPE``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:SAVEIMAGE:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:SAVEIMAGE:STATE?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:ACTION:SAVEIMAGE:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:ACTION:SAVEIMAGE:STATE <0|1|OFF|ON>
         - ACTONEVent:ACTION:SAVEIMAGE:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``1, ON`` saves a screen image to a file when the specified event occurs.
         - ``0, OFF`` turns off this action.
     """
@@ -464,7 +450,7 @@ class ActoneventActionSaveimageState(SCPICmdWrite, SCPICmdRead):
 class ActoneventActionSaveimage(SCPICmdRead):
     """The ``ACTONEVent:ACTION:SAVEIMAGE`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:SAVEIMAGE?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:SAVEIMAGE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -481,12 +467,12 @@ class ActoneventActionSaveimage(SCPICmdRead):
     def state(self) -> ActoneventActionSaveimageState:
         """Return the ``ACTONEVent:ACTION:SAVEIMAGE:STATE`` command.
 
-        **Description:**
+        Description:
             - Saves a screen image to file when a specified event occurs, or queries the state of
               the 'save screen image to a file' action. The default state is 0 (off). To specify an
               event, use the command ``ACTONEVENT:EVENTTYPE``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:SAVEIMAGE:STATE?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -495,14 +481,13 @@ class ActoneventActionSaveimage(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:ACTION:SAVEIMAGE:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:ACTION:SAVEIMAGE:STATE <0|1|OFF|ON>
             - ACTONEVent:ACTION:SAVEIMAGE:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``1, ON`` saves a screen image to a file when the specified event occurs.
             - ``0, OFF`` turns off this action.
         """
@@ -512,26 +497,25 @@ class ActoneventActionSaveimage(SCPICmdRead):
 class ActoneventActionPrintState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:ACTION:PRINT:STATE`` command.
 
-    **Description:**
+    Description:
         - Sends a screen image to a printer when a specified event occurs, or queries the state of
           the 'send screen image' action. The default state is 0 (off). To specify an event, use the
           command ``ACTONEVENT:EVENTTYPE``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:PRINT:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:PRINT:STATE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACTONEVent:ACTION:PRINT:STATE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:ACTION:PRINT:STATE <0|1|OFF|ON>
         - ACTONEVent:ACTION:PRINT:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``1, ON`` sends a screen image to the printer when the specified event occurs.
         - ``0, OFF`` turns off this action.
     """
@@ -540,7 +524,7 @@ class ActoneventActionPrintState(SCPICmdWrite, SCPICmdRead):
 class ActoneventActionPrint(SCPICmdRead):
     """The ``ACTONEVent:ACTION:PRINT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:PRINT?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:PRINT?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -557,26 +541,25 @@ class ActoneventActionPrint(SCPICmdRead):
     def state(self) -> ActoneventActionPrintState:
         """Return the ``ACTONEVent:ACTION:PRINT:STATE`` command.
 
-        **Description:**
+        Description:
             - Sends a screen image to a printer when a specified event occurs, or queries the state
               of the 'send screen image' action. The default state is 0 (off). To specify an event,
               use the command ``ACTONEVENT:EVENTTYPE``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:PRINT:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:PRINT:STATE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:ACTION:PRINT:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:ACTION:PRINT:STATE <0|1|OFF|ON>
             - ACTONEVent:ACTION:PRINT:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``1, ON`` sends a screen image to the printer when the specified event occurs.
             - ``0, OFF`` turns off this action.
         """
@@ -586,27 +569,26 @@ class ActoneventActionPrint(SCPICmdRead):
 class ActoneventActionEmailState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:ACTION:EMAIL:STATE`` command.
 
-    **Description:**
+    Description:
         - Sends an email when a specified event occurs, or queries the state of the 'send email'
           action. The default state is 0 (off). To specify an email address for the recipient, use
           the command ``ACTONEVENT:ACTION:EMAIL:SETUP:TOADDRESS To`` specify an event, use the
           command ``ACTONEVENT:EVENTTYPE``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:EMAIL:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:EMAIL:STATE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACTONEVent:ACTION:EMAIL:STATE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:ACTION:EMAIL:STATE <0|1|OFF|ON>
         - ACTONEVent:ACTION:EMAIL:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``1, ON`` sends an email when the specified event occurs.
         - ``0, OFF`` turns off this action.
     """
@@ -615,12 +597,12 @@ class ActoneventActionEmailState(SCPICmdWrite, SCPICmdRead):
 class ActoneventActionEmailSetupToaddress(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:ACTION:EMAIL:SETUp:TOADDRess`` command.
 
-    **Description:**
+    Description:
         - Sets (or queries) the email address for the recipient when the
           ``ACTONEVENT:ACTION:EMAIL:STATE`` command is used. To set up the email address for the
           sender, use ``EMAIL:SETUP:FROMADDRESS``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:EMAIL:SETUp:TOADDRess?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -629,12 +611,11 @@ class ActoneventActionEmailSetupToaddress(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``ACTONEVent:ACTION:EMAIL:SETUp:TOADDRess value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:ACTION:EMAIL:SETUp:TOADDRess <QString>
         - ACTONEVent:ACTION:EMAIL:SETUp:TOADDRess?
+        ```
     """
 
     _WRAP_ARG_WITH_QUOTES = True
@@ -643,7 +624,7 @@ class ActoneventActionEmailSetupToaddress(SCPICmdWrite, SCPICmdRead):
 class ActoneventActionEmailSetup(SCPICmdRead):
     """The ``ACTONEVent:ACTION:EMAIL:SETUp`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:EMAIL:SETUp?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:EMAIL:SETUp?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -662,12 +643,12 @@ class ActoneventActionEmailSetup(SCPICmdRead):
     def toaddress(self) -> ActoneventActionEmailSetupToaddress:
         """Return the ``ACTONEVent:ACTION:EMAIL:SETUp:TOADDRess`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the email address for the recipient when the
               ``ACTONEVENT:ACTION:EMAIL:STATE`` command is used. To set up the email address for the
               sender, use ``EMAIL:SETUP:FROMADDRESS``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``ACTONEVent:ACTION:EMAIL:SETUp:TOADDRess?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -676,12 +657,11 @@ class ActoneventActionEmailSetup(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:ACTION:EMAIL:SETUp:TOADDRess value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:ACTION:EMAIL:SETUp:TOADDRess <QString>
             - ACTONEVent:ACTION:EMAIL:SETUp:TOADDRess?
+            ```
         """
         return self._toaddress
 
@@ -689,7 +669,7 @@ class ActoneventActionEmailSetup(SCPICmdRead):
 class ActoneventActionEmail(SCPICmdRead):
     """The ``ACTONEVent:ACTION:EMAIL`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:EMAIL?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:EMAIL?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -708,7 +688,7 @@ class ActoneventActionEmail(SCPICmdRead):
     def setup(self) -> ActoneventActionEmailSetup:
         """Return the ``ACTONEVent:ACTION:EMAIL:SETUp`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:EMAIL:SETUp?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:EMAIL:SETUp?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -722,27 +702,26 @@ class ActoneventActionEmail(SCPICmdRead):
     def state(self) -> ActoneventActionEmailState:
         """Return the ``ACTONEVent:ACTION:EMAIL:STATE`` command.
 
-        **Description:**
+        Description:
             - Sends an email when a specified event occurs, or queries the state of the 'send email'
               action. The default state is 0 (off). To specify an email address for the recipient,
               use the command ``ACTONEVENT:ACTION:EMAIL:SETUP:TOADDRESS To`` specify an event, use
               the command ``ACTONEVENT:EVENTTYPE``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:EMAIL:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:EMAIL:STATE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:ACTION:EMAIL:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:ACTION:EMAIL:STATE <0|1|OFF|ON>
             - ACTONEVent:ACTION:EMAIL:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``1, ON`` sends an email when the specified event occurs.
             - ``0, OFF`` turns off this action.
         """
@@ -752,26 +731,25 @@ class ActoneventActionEmail(SCPICmdRead):
 class ActoneventActionAuxoutState(SCPICmdWrite, SCPICmdRead):
     """The ``ACTONEVent:ACTION:AUXOUT:STATE`` command.
 
-    **Description:**
+    Description:
         - Sends a pulse to the Auxiliary Out port when a specified event occurs, or queries the
           state of the 'pulse to aux out' action. The default state is 0 (off). To specify an event,
           use the command ``ACTONEVENT:EVENTTYPE``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:AUXOUT:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:AUXOUT:STATE?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACTONEVent:ACTION:AUXOUT:STATE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTONEVent:ACTION:AUXOUT:STATE <0|1|OFF|ON>
         - ACTONEVent:ACTION:AUXOUT:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``1, ON`` sends a pulse to the Auxiliary Out port when the specified event occurs.
         - ``0, OFF`` turns off this action.
     """
@@ -780,7 +758,7 @@ class ActoneventActionAuxoutState(SCPICmdWrite, SCPICmdRead):
 class ActoneventActionAuxout(SCPICmdRead):
     """The ``ACTONEVent:ACTION:AUXOUT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:AUXOUT?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:AUXOUT?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -797,26 +775,25 @@ class ActoneventActionAuxout(SCPICmdRead):
     def state(self) -> ActoneventActionAuxoutState:
         """Return the ``ACTONEVent:ACTION:AUXOUT:STATE`` command.
 
-        **Description:**
+        Description:
             - Sends a pulse to the Auxiliary Out port when a specified event occurs, or queries the
               state of the 'pulse to aux out' action. The default state is 0 (off). To specify an
               event, use the command ``ACTONEVENT:EVENTTYPE``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:AUXOUT:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:AUXOUT:STATE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``ACTONEVent:ACTION:AUXOUT:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:ACTION:AUXOUT:STATE <0|1|OFF|ON>
             - ACTONEVent:ACTION:AUXOUT:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``1, ON`` sends a pulse to the Auxiliary Out port when the specified event occurs.
             - ``0, OFF`` turns off this action.
         """
@@ -827,7 +804,7 @@ class ActoneventActionAuxout(SCPICmdRead):
 class ActoneventAction(SCPICmdRead):
     """The ``ACTONEVent:ACTION`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent:ACTION?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -858,7 +835,7 @@ class ActoneventAction(SCPICmdRead):
     def auxout(self) -> ActoneventActionAuxout:
         """Return the ``ACTONEVent:ACTION:AUXOUT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:AUXOUT?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:AUXOUT?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -872,7 +849,7 @@ class ActoneventAction(SCPICmdRead):
     def email(self) -> ActoneventActionEmail:
         """Return the ``ACTONEVent:ACTION:EMAIL`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:EMAIL?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:EMAIL?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -887,7 +864,7 @@ class ActoneventAction(SCPICmdRead):
     def print(self) -> ActoneventActionPrint:
         """Return the ``ACTONEVent:ACTION:PRINT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:PRINT?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:PRINT?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -901,7 +878,7 @@ class ActoneventAction(SCPICmdRead):
     def saveimage(self) -> ActoneventActionSaveimage:
         """Return the ``ACTONEVent:ACTION:SAVEIMAGE`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:SAVEIMAGE?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:SAVEIMAGE?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -915,7 +892,7 @@ class ActoneventAction(SCPICmdRead):
     def savewfm(self) -> ActoneventActionSavewfm:
         """Return the ``ACTONEVent:ACTION:SAVEWFM`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:SAVEWFM?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:SAVEWFM?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -929,7 +906,7 @@ class ActoneventAction(SCPICmdRead):
     def srq(self) -> ActoneventActionSrq:
         """Return the ``ACTONEVent:ACTION:SRQ`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:SRQ?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:SRQ?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -943,7 +920,7 @@ class ActoneventAction(SCPICmdRead):
     def stopacq(self) -> ActoneventActionStopacq:
         """Return the ``ACTONEVent:ACTION:STOPACQ`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:STOPACQ?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:STOPACQ?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -957,7 +934,7 @@ class ActoneventAction(SCPICmdRead):
     def visual(self) -> ActoneventActionVisual:
         """Return the ``ACTONEVent:ACTION:VISUAL`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ACTION:VISUAL?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION:VISUAL?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -971,7 +948,7 @@ class ActoneventAction(SCPICmdRead):
 class Actonevent(SCPICmdRead):
     """The ``ACTONEVent`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTONEVent?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTONEVent?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -994,7 +971,7 @@ class Actonevent(SCPICmdRead):
     def action(self) -> ActoneventAction:
         """Return the ``ACTONEVent:ACTION`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:ACTION?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:ACTION?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1015,26 +992,25 @@ class Actonevent(SCPICmdRead):
     def eventtype(self) -> ActoneventEventtype:
         """Return the ``ACTONEVent:EVENTTYPe`` command.
 
-        **Description:**
+        Description:
             - Specifies (or queries) which event to act on (TRIGger, ACQCOMPLete, or NONe) when
               using an Act on Event command. The default is NONe. To specify the action to take, use
               the ``ACTONEVent:ACTION`` commands.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:EVENTTYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:EVENTTYPe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ACTONEVent:EVENTTYPe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:EVENTTYPe <NONe|TRIGger|ACQCOMPLete>
             - ACTONEVent:EVENTTYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``NONe`` no event (this is the default).
             - ``TRIGger`` specifies to act when a trigger occurs.
             - ``ACQCOMPLete`` specifies to act when acquisition completes.
@@ -1045,22 +1021,21 @@ class Actonevent(SCPICmdRead):
     def numacqs(self) -> ActoneventNumacqs:
         """Return the ``ACTONEVent:NUMACQs`` command.
 
-        **Description:**
+        Description:
             - Sets (or queries) the number of acquisitions to complete for the event type
               ACQCOMPLete. The default is 1 acquisition.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:NUMACQs?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:NUMACQs?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ACTONEVent:NUMACQs value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:NUMACQs <NR1>
             - ACTONEVent:NUMACQs?
+            ```
         """
         return self._numacqs
 
@@ -1068,24 +1043,23 @@ class Actonevent(SCPICmdRead):
     def repeatcount(self) -> ActoneventRepeatcount:
         """Return the ``ACTONEVent:REPEATCount`` command.
 
-        **Description:**
+        Description:
             - Sets or returns the number of events to run.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTONEVent:REPEATCount?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTONEVent:REPEATCount?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ACTONEVent:REPEATCount value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTONEVent:REPEATCount <NR1>
             - ACTONEVent:REPEATCount?
+            ```
 
-        **Info:**
+        Info:
             - ``NR1`` is an integer that specifies the number of events to run. The default is 1
               event and the maximum is 1000000 events. A repeat count greater than 1000000 specifies
               to run forever. In this case, the action on event can be terminated by setting the

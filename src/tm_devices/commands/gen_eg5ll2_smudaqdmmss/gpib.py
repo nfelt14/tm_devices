@@ -12,8 +12,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - gpib.address
 """
 
@@ -28,7 +26,7 @@ if TYPE_CHECKING:
 class Gpib(BaseTSPCmd):
     """The ``gpib`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.address``: The ``gpib.address`` attribute.
     """
 
@@ -39,19 +37,18 @@ class Gpib(BaseTSPCmd):
     def address(self) -> str:
         """Access the ``gpib.address`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the GPIB address.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(gpib.address)`` query.
             - Setting this property to a value will send the ``gpib.address = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - gpib.address = value
             - print(gpib.address)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -70,19 +67,18 @@ class Gpib(BaseTSPCmd):
     def address(self, value: Union[str, float]) -> None:
         """Access the ``gpib.address`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the GPIB address.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(gpib.address)`` query.
             - Setting this property to a value will send the ``gpib.address = value`` command.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - gpib.address = value
             - print(gpib.address)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.

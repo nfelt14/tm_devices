@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - TEKLink:CONNection?
     - TEKLink:REFClk {ON|OFF|PENDING}
     - TEKLink:REFClk?
@@ -28,24 +26,23 @@ if TYPE_CHECKING:
 class TeklinkRefclk(SCPICmdWrite, SCPICmdRead):
     """The ``TEKLink:REFClk`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current state of the intrument's TekLink Reference
           Output.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TEKLink:REFClk?`` query.
         - Using the ``.verify(value)`` method will send the ``TEKLink:REFClk?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TEKLink:REFClk value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TEKLink:REFClk {ON|OFF|PENDING}
         - TEKLink:REFClk?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` specifies the on state of the TekLink Reference Output.
         - ``OFF`` specifies the off state of the TekLink Reference Output.
         - ``PENDING`` specifies the pending state of the TekLink Reference Output.
@@ -55,26 +52,25 @@ class TeklinkRefclk(SCPICmdWrite, SCPICmdRead):
 class TeklinkConnection(SCPICmdRead):
     """The ``TEKLink:CONNection`` command.
 
-    **Description:**
+    Description:
         - This command returns the current TekLink network connection.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TEKLink:CONNection?`` query.
         - Using the ``.verify(value)`` method will send the ``TEKLink:CONNection?`` query and raise
           an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TEKLink:CONNection?
+        ```
     """
 
 
 class Teklink(SCPICmdRead):
     """The ``TEKLink`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TEKLink?`` query.
         - Using the ``.verify(value)`` method will send the ``TEKLink?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -93,19 +89,18 @@ class Teklink(SCPICmdRead):
     def connection(self) -> TeklinkConnection:
         """Return the ``TEKLink:CONNection`` command.
 
-        **Description:**
+        Description:
             - This command returns the current TekLink network connection.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TEKLink:CONNection?`` query.
             - Using the ``.verify(value)`` method will send the ``TEKLink:CONNection?`` query and
               raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TEKLink:CONNection?
+            ```
         """
         return self._connection
 
@@ -113,24 +108,23 @@ class Teklink(SCPICmdRead):
     def refclk(self) -> TeklinkRefclk:
         """Return the ``TEKLink:REFClk`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current state of the intrument's TekLink Reference
               Output.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``TEKLink:REFClk?`` query.
             - Using the ``.verify(value)`` method will send the ``TEKLink:REFClk?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``TEKLink:REFClk value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - TEKLink:REFClk {ON|OFF|PENDING}
             - TEKLink:REFClk?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` specifies the on state of the TekLink Reference Output.
             - ``OFF`` specifies the off state of the TekLink Reference Output.
             - ``PENDING`` specifies the pending state of the TekLink Reference Output.

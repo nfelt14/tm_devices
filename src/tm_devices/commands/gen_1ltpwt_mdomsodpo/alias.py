@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - ALIas:CATalog?
     - ALIas:DEFine <QString><,>{<QString>|<Block>}? <QString>
     - ALIas:DELEte:ALL
@@ -30,23 +28,22 @@ if TYPE_CHECKING:
 class AliasState(SCPICmdWrite, SCPICmdRead):
     """The ``ALIas:STATE`` command.
 
-    **Description:**
+    Description:
         - Turns aliases on or off.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ALIas:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``ALIas:STATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ALIas:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ALIas:STATE {<NR1>|OFF|ON}
         - ALIas:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` or <NR1> = 0 turns alias expansion off. If a defined alias is sent when
           ``ALIas:STATE`` is OFF, a command error (102) is generated.
         - ``ON`` or <NR1>0 turns alias expansion on. When a defined alias is received, the specified
@@ -57,19 +54,18 @@ class AliasState(SCPICmdWrite, SCPICmdRead):
 class AliasDeleteName(SCPICmdWrite):
     """The ``ALIas:DELEte:NAMe`` command.
 
-    **Description:**
+    Description:
         - Removes a specified alias.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``ALIas:DELEte:NAMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ALIas:DELEte:NAMe <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the name of the alias to remove. Using <QString> must be an existing
           alias.
     """
@@ -80,24 +76,23 @@ class AliasDeleteName(SCPICmdWrite):
 class AliasDeleteAll(SCPICmdWriteNoArguments):
     """The ``ALIas:DELEte:ALL`` command.
 
-    **Description:**
+    Description:
         - This command deletes all existing aliases.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``ALIas:DELEte:ALL`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ALIas:DELEte:ALL
+        ```
     """
 
 
 class AliasDelete(SCPICmdRead):
     """The ``ALIas:DELEte`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ALIas:DELEte?`` query.
         - Using the ``.verify(value)`` method will send the ``ALIas:DELEte?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -116,17 +111,16 @@ class AliasDelete(SCPICmdRead):
     def all(self) -> AliasDeleteAll:
         """Return the ``ALIas:DELEte:ALL`` command.
 
-        **Description:**
+        Description:
             - This command deletes all existing aliases.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``ALIas:DELEte:ALL`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ALIas:DELEte:ALL
+            ```
         """
         return self._all
 
@@ -134,19 +128,18 @@ class AliasDelete(SCPICmdRead):
     def name(self) -> AliasDeleteName:
         """Return the ``ALIas:DELEte:NAMe`` command.
 
-        **Description:**
+        Description:
             - Removes a specified alias.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``ALIas:DELEte:NAMe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ALIas:DELEte:NAMe <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the name of the alias to remove. Using <QString> must be an existing
               alias.
         """
@@ -156,22 +149,21 @@ class AliasDelete(SCPICmdRead):
 class AliasDefine(SCPICmdWrite):
     """The ``ALIas:DEFine`` command.
 
-    **Description:**
+    Description:
         - Assigns a sequence of program messages to an alias label. These messages are then
           substituted for the alias whenever it is received as a command or query, provided that
           ``ALIas:STATE`` has been turned on. The query form of this command returns the definitions
           of a selected alias.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``ALIas:DEFine value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ALIas:DEFine <QString><,>{<QString>|<Block>}? <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the alias label.
         - ``<QString>`` or <Block> is a complete sequence of program messages.
     """
@@ -180,27 +172,26 @@ class AliasDefine(SCPICmdWrite):
 class AliasCatalog(SCPICmdRead):
     """The ``ALIas:CATalog`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns a list of the currently defined alias labels, separated by
           commas. If no aliases are defined, the query returns the string ''.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ALIas:CATalog?`` query.
         - Using the ``.verify(value)`` method will send the ``ALIas:CATalog?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ALIas:CATalog?
+        ```
     """
 
 
 class Alias(SCPICmdRead):
     """The ``ALIas`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ALIas?`` query.
         - Using the ``.verify(value)`` method will send the ``ALIas?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -223,20 +214,19 @@ class Alias(SCPICmdRead):
     def catalog(self) -> AliasCatalog:
         """Return the ``ALIas:CATalog`` command.
 
-        **Description:**
+        Description:
             - This query-only command returns a list of the currently defined alias labels,
               separated by commas. If no aliases are defined, the query returns the string ''.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ALIas:CATalog?`` query.
             - Using the ``.verify(value)`` method will send the ``ALIas:CATalog?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ALIas:CATalog?
+            ```
         """
         return self._catalog
 
@@ -244,22 +234,21 @@ class Alias(SCPICmdRead):
     def define(self) -> AliasDefine:
         """Return the ``ALIas:DEFine`` command.
 
-        **Description:**
+        Description:
             - Assigns a sequence of program messages to an alias label. These messages are then
               substituted for the alias whenever it is received as a command or query, provided that
               ``ALIas:STATE`` has been turned on. The query form of this command returns the
               definitions of a selected alias.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``ALIas:DEFine value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ALIas:DEFine <QString><,>{<QString>|<Block>}? <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the alias label.
             - ``<QString>`` or <Block> is a complete sequence of program messages.
         """
@@ -269,7 +258,7 @@ class Alias(SCPICmdRead):
     def delete(self) -> AliasDelete:
         """Return the ``ALIas:DELEte`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ALIas:DELEte?`` query.
             - Using the ``.verify(value)`` method will send the ``ALIas:DELEte?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -284,23 +273,22 @@ class Alias(SCPICmdRead):
     def state(self) -> AliasState:
         """Return the ``ALIas:STATE`` command.
 
-        **Description:**
+        Description:
             - Turns aliases on or off.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ALIas:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``ALIas:STATE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ALIas:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ALIas:STATE {<NR1>|OFF|ON}
             - ALIas:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` or <NR1> = 0 turns alias expansion off. If a defined alias is sent when
               ``ALIas:STATE`` is OFF, a command error (102) is generated.
             - ``ON`` or <NR1>0 turns alias expansion on. When a defined alias is received, the

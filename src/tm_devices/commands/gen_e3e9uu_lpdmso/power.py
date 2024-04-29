@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - POWer:ADDNew 'POWER<x>'
     - POWer:DELete 'POWER<x>'
     - POWer:POWer<x>:AUTOSet EXECute
@@ -119,7 +117,8 @@ Commands and Queries:
     - POWer:POWer<x>:HARMONICS:IPOWer?
     - POWer:POWer<x>:HARMONICS:ISOURce {CH<x>|MATH<x>|REF<x>}
     - POWer:POWer<x>:HARMONICS:ISOURce?
-    - POWer:POWer<x>:HARMONICS:LINEFREQUEncy {Auto|FIFTyhz|SIXTyhz |THREESIXTyhz|FOURHUNDREdhz|SIXFIFTyhz|EIGHTHUNDREdhz|CUSTom
+    - POWer:POWer<x>:HARMONICS:LINEFREQUEncy {Auto|FIFTyhz|SIXTyhz
+      |THREESIXTyhz|FOURHUNDREdhz|SIXFIFTyhz|EIGHTHUNDREdhz|CUSTom
     - POWer:POWer<x>:HARMONICS:LINEFREQUEncy?
     - POWer:POWer<x>:HARMONICS:ODDEVen {ALL | ODD | EVEN}
     - POWer:POWer<x>:HARMONICS:ODDEVen?
@@ -322,7 +321,8 @@ Commands and Queries:
     - POWer:POWer<x>:REFLevels:ABSolute:RISEMid?
     - POWer:POWer<x>:REFLevels:ABSolute:TYPE {SAME | UNIQue}
     - POWer:POWer<x>:REFLevels:ABSolute:TYPE?
-    - POWer:POWer<x>:REFLevels:BASETop {AUTO | MINMax | MEANhistogram | MODEhistogram | EYEhistogram}
+    - POWer:POWer<x>:REFLevels:BASETop {AUTO | MINMax | MEANhistogram | MODEhistogram |
+      EYEhistogram}
     - POWer:POWer<x>:REFLevels:BASETop?
     - POWer:POWer<x>:REFLevels:METHod {PERCent | ABSolute}
     - POWer:POWer<x>:REFLevels:METHod?
@@ -342,27 +342,130 @@ Commands and Queries:
     - POWer:POWer<x>:REFLevels:PERCent:RISEMid?
     - POWer:POWer<x>:REFLevels:PERCent:TYPE {TENNinety | TWENtyeighty | CUSTom}
     - POWer:POWer<x>:REFLevels:PERCent:TYPE?
-    - POWer:POWer<x>:RESUlts:ALLAcqs:MAXimum? {InputPwr|Output1Pwr| Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3| TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak| Br|Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability| RDS|TRUEPWR|APPPWR|REPWR|PWRFACTOR|PHASE| PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS|TONENRG| TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT| LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL| PKPK|HIGH|LOW|MAX|MIN| INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
-    - POWer:POWer<x>:RESUlts:ALLAcqs:MEAN? {InputPwr|Output1Pwr|Output2Pwr| Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency| INDUCT|IVSINTV|MAGLOSS|Bpeak|Br|Hc|Hmax| IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR| APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ| ICFACTOR|VCFACTOR|IRMS|VRMS|TONENRG| TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT| LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL| PKPK|HIGH|LOW|MAX|MIN| INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
-    - POWer:POWer<x>:RESUlts:ALLAcqs:MINimum? {InputPwr|Output1Pwr| Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3| TotalEfficiency|INDUCT|IVSINTV|MAGLOSS| Bpeak|Br|Hc|Hmax|IRipple|DeltaB|DeltaH| Permeability|RDS|TRUEPWR|APPPWR|REPWR| PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR| IRMS|VRMS|TONENRG|TONLOSS|TOFFENRG| TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS|TTLENRG| DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK| SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY| NDUTY|PPULSE|NPULSE|AMPL|PKPK| HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
-    - POWer:POWer<x>:RESUlts:ALLAcqs:PK2PK? {InputPwr|Output1Pwr| Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3| TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak| Br|Hc|Hmax|IRipple|DeltaB|DeltaH| Permeability|RDS|TRUEPWR|APPPWR|REPWR| PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR| IRMS|VRMS|TONENRG|TONLOSS|TOFFENRG| TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS|TTLENRG| DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK| SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY| NDUTY|PPULSE|NPULSE|AMPL|PKPK| HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
-    - POWer:POWer<x>:RESUlts:ALLAcqs:POPUlation? {InputPwr|Output1Pwr| Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3| TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak| Br|Hc|Hmax|IRipple|DeltaB|DeltaH| Permeability|RDS|TRUEPWR|APPPWR|REPWR|PWRFACTOR| PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS| TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT| LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE| AMPL|PKPK|HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
-    - POWer:POWer<x>:RESUlts:ALLAcqs:STDDev? {InputPwr|Output1Pwr| Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3| TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br|Hc| Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS| TRUEPWR|APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ| ICFACTOR|VCFACTOR|IRMS|VRMS|TONENRG|TONLOSS| TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS| TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS| LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY| NDUTY|PPULSE|NPULSE|AMPL|PKPK|HIGH|LOW|MAX|MIN| INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+    - POWer:POWer<x>:RESUlts:ALLAcqs:MAXimum? {InputPwr|Output1Pwr|
+      Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3|
+      TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak| Br|Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability|
+      RDS|TRUEPWR|APPPWR|REPWR|PWRFACTOR|PHASE| PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS|TONENRG|
+      TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|
+      LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL|
+      PKPK|HIGH|LOW|MAX|MIN| INRUSH|CAPACITANCE|OUTPUT1|
+      OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM|
+      MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+    - POWer:POWer<x>:RESUlts:ALLAcqs:MEAN? {InputPwr|Output1Pwr|Output2Pwr|
+      Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency|
+      INDUCT|IVSINTV|MAGLOSS|Bpeak|Br|Hc|Hmax| IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR|
+      APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ| ICFACTOR|VCFACTOR|IRMS|VRMS|TONENRG|
+      TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|
+      LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL|
+      PKPK|HIGH|LOW|MAX|MIN| INRUSH|CAPACITANCE|OUTPUT1|
+      OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM|
+      MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+    - POWer:POWer<x>:RESUlts:ALLAcqs:MINimum? {InputPwr|Output1Pwr|
+      Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3|
+      TotalEfficiency|INDUCT|IVSINTV|MAGLOSS| Bpeak|Br|Hc|Hmax|IRipple|DeltaB|DeltaH|
+      Permeability|RDS|TRUEPWR|APPPWR|REPWR| PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR|
+      IRMS|VRMS|TONENRG|TONLOSS|TOFFENRG| TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS|TTLENRG|
+      DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK| SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY|
+      NDUTY|PPULSE|NPULSE|AMPL|PKPK| HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1|
+      OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM|
+      MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+    - POWer:POWer<x>:RESUlts:ALLAcqs:PK2PK? {InputPwr|Output1Pwr|
+      Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3|
+      TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak| Br|Hc|Hmax|IRipple|DeltaB|DeltaH|
+      Permeability|RDS|TRUEPWR|APPPWR|REPWR| PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR|
+      IRMS|VRMS|TONENRG|TONLOSS|TOFFENRG| TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS|TTLENRG|
+      DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK| SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY|
+      NDUTY|PPULSE|NPULSE|AMPL|PKPK| HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1|
+      OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM|
+      MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+    - POWer:POWer<x>:RESUlts:ALLAcqs:POPUlation? {InputPwr|Output1Pwr|
+      Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3|
+      TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak| Br|Hc|Hmax|IRipple|DeltaB|DeltaH|
+      Permeability|RDS|TRUEPWR|APPPWR|REPWR|PWRFACTOR| PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS|
+      TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|
+      LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE|
+      AMPL|PKPK|HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1|
+      OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM|
+      MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+    - POWer:POWer<x>:RESUlts:ALLAcqs:STDDev? {InputPwr|Output1Pwr|
+      Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3|
+      TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br|Hc|
+      Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS| TRUEPWR|APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ|
+      ICFACTOR|VCFACTOR|IRMS|VRMS|TONENRG|TONLOSS| TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS|
+      TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS| LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY|
+      NDUTY|PPULSE|NPULSE|AMPL|PKPK|HIGH|LOW|MAX|MIN| INRUSH|CAPACITANCE|OUTPUT1|
+      OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM|
+      MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
     - POWer:POWer<x>:RESUlts:CURRentacq:F1MAG? 'harmonics'
     - POWer:POWer<x>:RESUlts:CURRentacq:F3MAG? 'harmonics'
     - POWer:POWer<x>:RESUlts:CURRentacq:FREQUENCY? 'harmonics'
     - POWer:POWer<x>:RESUlts:CURRentacq:IRMS? 'harmonics'
-    - POWer:POWer<x>:RESUlts:CURRentacq:MAXimum? {InputPwr| Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS| Bpeak|Br|Hc|Hmax|IRipple|DeltaB|DeltaH| Permeability|RDS|TRUEPWR|APPPWR|REPWR|PWRFACTOR| PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS| TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT| LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL|PKPK| HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
-    - POWer:POWer<x>:RESUlts:CURRentacq:MEAN? {InputPwr| Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak| Br|Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR| APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS| VRMS|TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK| SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY|NDUTY|PPULSE|NPULSE| AMPL|PKPK|HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
-    - POWer:POWer<x>:RESUlts:CURRentacq:MINimum? {InputPwr| Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br| Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR| APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS| VRMS|TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK| SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL| PKPK|HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
-    - POWer:POWer<x>:RESUlts:CURRentacq:PK2PK? {InputPwr| Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br| Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR|APPPWR| REPWR|PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS| TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS| TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK|SWRIPRMS| SWRIPPKPK|PRIOD|FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL|PKPK| HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+    - POWer:POWer<x>:RESUlts:CURRentacq:MAXimum? {InputPwr|
+      Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|
+      Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS| Bpeak|Br|Hc|Hmax|IRipple|DeltaB|DeltaH|
+      Permeability|RDS|TRUEPWR|APPPWR|REPWR|PWRFACTOR| PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS|
+      TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|
+      LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL|PKPK|
+      HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7|
+      GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+    - POWer:POWer<x>:RESUlts:CURRentacq:MEAN? {InputPwr|
+      Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|
+      Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|
+      Br|Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR|
+      APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|
+      VRMS|TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS|
+      TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK|
+      SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY|NDUTY|PPULSE|NPULSE|
+      AMPL|PKPK|HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1|
+      OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM|
+      MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+    - POWer:POWer<x>:RESUlts:CURRentacq:MINimum? {InputPwr|
+      Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|
+      Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br|
+      Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR|
+      APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|
+      VRMS|TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS|
+      TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK|
+      SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL|
+      PKPK|HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1|
+      OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM|
+      MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+    - POWer:POWer<x>:RESUlts:CURRentacq:PK2PK? {InputPwr|
+      Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|
+      Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br|
+      Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR|APPPWR|
+      REPWR|PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS|
+      TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS|
+      TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK|SWRIPRMS|
+      SWRIPPKPK|PRIOD|FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL|PKPK|
+      HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7|
+      GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
     - POWer:POWer<x>:RESUlts:CURRentacq:POHCL? 'harmonics'
     - POWer:POWer<x>:RESUlts:CURRentacq:POHCM? 'harmonics'
     - POWer:POWer<x>:RESUlts:CURRentacq:POHCS? 'harmonics'
-    - POWer:POWer<x>:RESUlts:CURRentacq:POPUlation? {InputPwr| Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br| Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR| APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS| VRMS|TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK| SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY|NDUTY|PPULSE|NPULSE| AMPL|PKPK|HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+    - POWer:POWer<x>:RESUlts:CURRentacq:POPUlation? {InputPwr|
+      Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|
+      Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br|
+      Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR|
+      APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|
+      VRMS|TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS|
+      TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK|
+      SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY|NDUTY|PPULSE|NPULSE|
+      AMPL|PKPK|HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1|
+      OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM|
+      MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
     - POWer:POWer<x>:RESUlts:CURRentacq:RMS? 'harmonics'
     - POWer:POWer<x>:RESUlts:CURRentacq:STATUS? 'harmonics'
-    - POWer:POWer<x>:RESUlts:CURRentacq:STDDev? {InputPwr|Output1Pwr| Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3| TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br|Hc|Hmax|IRipple| DeltaB|DeltaH|Permeability|RDS|TRUEPWR|APPPWR|REPWR|PWRFACTOR| PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS|TONENRG|TONLOSS| TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS|TTLENRG|DVBYDT| DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL|PKPK|HIGH|LOW|MAX|MIN |INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+    - POWer:POWer<x>:RESUlts:CURRentacq:STDDev? {InputPwr|Output1Pwr|
+      Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3|
+      TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br|Hc|Hmax|IRipple|
+      DeltaB|DeltaH|Permeability|RDS|TRUEPWR|APPPWR|REPWR|PWRFACTOR|
+      PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS|TONENRG|TONLOSS|
+      TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS|TTLENRG|DVBYDT|
+      DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD|
+      FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL|PKPK|HIGH|LOW|MAX|MIN |INRUSH|CAPACITANCE|OUTPUT1|
+      OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM|
+      MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
     - POWer:POWer<x>:RESUlts:CURRentacq:THDF? 'harmonics'
     - POWer:POWer<x>:RESUlts:CURRentacq:THDR? 'harmonics'
     - POWer:POWer<x>:RESUlts:CURRentacq:TRPWR? 'harmonics'
@@ -508,7 +611,7 @@ Commands and Queries:
     - POWer:POWer<x>:WRAP:DEGrees?
     - POWer:POWer<x>:WRAP:STATE {ON|OFF}
     - POWer:POWer<x>:WRAP:STATE?
-"""  # noqa: E501
+"""
 
 from typing import Dict, Optional, TYPE_CHECKING
 
@@ -528,24 +631,23 @@ if TYPE_CHECKING:
 class PowerPowerItemWrapState(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:WRAP:STATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the phase wrap status for FRA measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:WRAP:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:WRAP:STATE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:WRAP:STATE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:WRAP:STATE {ON|OFF}
         - POWer:POWer<x>:WRAP:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``ON`` specifies that phase wrap has been turned on for FRA measurements.
@@ -556,24 +658,23 @@ class PowerPowerItemWrapState(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemWrapDegrees(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:WRAP:DEGrees`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the phase wrap value for FRA measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:WRAP:DEGrees?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:WRAP:DEGrees?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:WRAP:DEGrees value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:WRAP:DEGrees NR3
         - POWer:POWer<x>:WRAP:DEGrees?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``NR3`` specifies the phase wrap value for FRA measurements.
@@ -583,7 +684,7 @@ class PowerPowerItemWrapDegrees(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemWrap(SCPICmdRead):
     """The ``POWer:POWer<x>:WRAP`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:WRAP?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:WRAP?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -602,24 +703,23 @@ class PowerPowerItemWrap(SCPICmdRead):
     def degrees(self) -> PowerPowerItemWrapDegrees:
         """Return the ``POWer:POWer<x>:WRAP:DEGrees`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the phase wrap value for FRA measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:WRAP:DEGrees?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:WRAP:DEGrees?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:WRAP:DEGrees value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:WRAP:DEGrees NR3
             - POWer:POWer<x>:WRAP:DEGrees?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``NR3`` specifies the phase wrap value for FRA measurements.
@@ -630,24 +730,23 @@ class PowerPowerItemWrap(SCPICmdRead):
     def state(self) -> PowerPowerItemWrapState:
         """Return the ``POWer:POWer<x>:WRAP:STATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the phase wrap status for FRA measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:WRAP:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:WRAP:STATE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:WRAP:STATE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:WRAP:STATE {ON|OFF}
             - POWer:POWer<x>:WRAP:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``ON`` specifies that phase wrap has been turned on for FRA measurements.
@@ -659,26 +758,25 @@ class PowerPowerItemWrap(SCPICmdRead):
 class PowerPowerItemType(SCPICmdWrite, SCPICmdRead):
     r"""The ``POWer:POWer<x>:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the measurement type of the specified power measurement
           number. If the measurement number does not exist, this command creates a new power
           measurement, assigns the specified measurement number to the new measurement, and then
           assigns the measurement type to the new measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:TYPe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:TYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TYPe <Measurement Type>
         - POWer:POWer<x>:TYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<Measurement Type>`` = CYCLEAmp \| CYCLEBase \| CYCLEMAx \| CYCLEMIn \| CYCLEPKpk \|
@@ -693,25 +791,24 @@ class PowerPowerItemType(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeType(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the type of AC/DC converter used in the specified Turn On
           Time power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:TYPE?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:TURNONtime:TYPE?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:TURNONtime:TYPE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:TYPE {DCDC|ACDC}
         - POWer:POWer<x>:TURNONtime:TYPE?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``DCDC`` sets the measurement to use a DC to DC converter.
@@ -722,11 +819,11 @@ class PowerPowerItemTurnontimeType(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeOutput7voltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:OUTPUT7VOLTage`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 7 voltage level of the specified Turn On Time
           power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:OUTPUT7VOLTage?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -735,14 +832,13 @@ class PowerPowerItemTurnontimeOutput7voltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:OUTPUT7VOLTage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:OUTPUT7VOLTage <NR2>
         - POWer:POWer<x>:TURNONtime:OUTPUT7VOLTage?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -752,11 +848,11 @@ class PowerPowerItemTurnontimeOutput7voltage(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeOutput7source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:OUTPUT7SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 7 source of the specified Turn On Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:OUTPUT7SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -765,14 +861,13 @@ class PowerPowerItemTurnontimeOutput7source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:OUTPUT7SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:OUTPUT7SOURce {CH<x>|REF<x>|MATH<x>}
         - POWer:POWer<x>:TURNONtime:OUTPUT7SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number of
@@ -787,11 +882,11 @@ class PowerPowerItemTurnontimeOutput7source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeOutput6voltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:OUTPUT6VOLTage`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 6 voltage level of the specified Turn On Time
           power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:OUTPUT6VOLTage?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -800,14 +895,13 @@ class PowerPowerItemTurnontimeOutput6voltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:OUTPUT6VOLTage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:OUTPUT6VOLTage <NR2>
         - POWer:POWer<x>:TURNONtime:OUTPUT6VOLTage?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -817,11 +911,11 @@ class PowerPowerItemTurnontimeOutput6voltage(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeOutput6source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:OUTPUT6SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 6 source of the specified Turn On Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:OUTPUT6SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -830,14 +924,13 @@ class PowerPowerItemTurnontimeOutput6source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:OUTPUT6SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:OUTPUT6SOURce {CH<x>|REF<x>|MATH<x>}
         - POWer:POWer<x>:TURNONtime:OUTPUT6SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number of
@@ -852,11 +945,11 @@ class PowerPowerItemTurnontimeOutput6source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeOutput5voltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:OUTPUT5VOLTage`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 5 voltage level of the specified Turn On Time
           power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:OUTPUT5VOLTage?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -865,14 +958,13 @@ class PowerPowerItemTurnontimeOutput5voltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:OUTPUT5VOLTage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:OUTPUT5VOLTage <NR2>
         - POWer:POWer<x>:TURNONtime:OUTPUT5VOLTage?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -882,11 +974,11 @@ class PowerPowerItemTurnontimeOutput5voltage(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeOutput5source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:OUTPUT5SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 5 source of the specified Turn On Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:OUTPUT5SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -895,14 +987,13 @@ class PowerPowerItemTurnontimeOutput5source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:OUTPUT5SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:OUTPUT5SOURce {CH<x>|REF<x>|MATH<x>}
         - POWer:POWer<x>:TURNONtime:OUTPUT5SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number of
@@ -917,11 +1008,11 @@ class PowerPowerItemTurnontimeOutput5source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeOutput4voltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:OUTPUT4VOLTage`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 4 voltage level of the specified Turn On Time
           power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:OUTPUT4VOLTage?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -930,14 +1021,13 @@ class PowerPowerItemTurnontimeOutput4voltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:OUTPUT4VOLTage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:OUTPUT4VOLTage <NR2>
         - POWer:POWer<x>:TURNONtime:OUTPUT4VOLTage?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -947,11 +1037,11 @@ class PowerPowerItemTurnontimeOutput4voltage(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeOutput4source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:OUTPUT4SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 4 source of the specified Turn On Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:OUTPUT4SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -960,14 +1050,13 @@ class PowerPowerItemTurnontimeOutput4source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:OUTPUT4SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:OUTPUT4SOURce {CH<x>|REF<x>|MATH<x>}
         - POWer:POWer<x>:TURNONtime:OUTPUT4SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number of
@@ -982,11 +1071,11 @@ class PowerPowerItemTurnontimeOutput4source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeOutput3voltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:OUTPUT3VOLTage`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 3 voltage level of the specified Turn On Time
           power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:OUTPUT3VOLTage?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -995,14 +1084,13 @@ class PowerPowerItemTurnontimeOutput3voltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:OUTPUT3VOLTage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:OUTPUT3VOLTage <NR2>
         - POWer:POWer<x>:TURNONtime:OUTPUT3VOLTage?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -1012,11 +1100,11 @@ class PowerPowerItemTurnontimeOutput3voltage(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeOutput3source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:OUTPUT3SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 3 source of the specified Turn On Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:OUTPUT3SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1025,14 +1113,13 @@ class PowerPowerItemTurnontimeOutput3source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:OUTPUT3SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:OUTPUT3SOURce {CH<x>|REF<x>|MATH<x>}
         - POWer:POWer<x>:TURNONtime:OUTPUT3SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number of
@@ -1047,11 +1134,11 @@ class PowerPowerItemTurnontimeOutput3source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeOutput2voltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:OUTPUT2VOLTage`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 2 voltage level of the specified Turn On Time
           power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:OUTPUT2VOLTage?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1060,14 +1147,13 @@ class PowerPowerItemTurnontimeOutput2voltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:OUTPUT2VOLTage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:OUTPUT2VOLTage <NR2>
         - POWer:POWer<x>:TURNONtime:OUTPUT2VOLTage?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -1077,11 +1163,11 @@ class PowerPowerItemTurnontimeOutput2voltage(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeOutput2source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:OUTPUT2SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 2 source of the specified Turn On Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:OUTPUT2SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1090,14 +1176,13 @@ class PowerPowerItemTurnontimeOutput2source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:OUTPUT2SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:OUTPUT2SOURce {CH<x>|REF<x>|MATH<x>}
         - POWer:POWer<x>:TURNONtime:OUTPUT2SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number of
@@ -1112,11 +1197,11 @@ class PowerPowerItemTurnontimeOutput2source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeOutput1voltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:OUTPUT1VOLTage`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 1 voltage level of the specified Turn On Time
           power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:OUTPUT1VOLTage?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1125,14 +1210,13 @@ class PowerPowerItemTurnontimeOutput1voltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:OUTPUT1VOLTage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:OUTPUT1VOLTage <NR2>
         - POWer:POWer<x>:TURNONtime:OUTPUT1VOLTage?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -1142,11 +1226,11 @@ class PowerPowerItemTurnontimeOutput1voltage(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeOutput1source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:OUTPUT1SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 1 source of the specified Turn On Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:OUTPUT1SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1155,14 +1239,13 @@ class PowerPowerItemTurnontimeOutput1source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:OUTPUT1SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:OUTPUT1SOURce {CH<x>|REF<x>|MATH<x>}
         - POWer:POWer<x>:TURNONtime:OUTPUT1SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number of
@@ -1177,11 +1260,11 @@ class PowerPowerItemTurnontimeOutput1source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeNumoutputs(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:NUMOUTputs`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of outputs for the specified Turn On Time power
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:NUMOUTputs?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1190,14 +1273,13 @@ class PowerPowerItemTurnontimeNumoutputs(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:NUMOUTputs value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:NUMOUTputs {ONE|TWO|THREE|FOUR|FIVE| SIX|SEVEN}
         - POWer:POWer<x>:TURNONtime:NUMOUTputs?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``ONE`` through SEVEN sets the number of outputs for the specified Turn On Time power
@@ -1208,11 +1290,11 @@ class PowerPowerItemTurnontimeNumoutputs(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeMaxvoltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:MAXVoltage`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the maximum voltage setting of the specified Turn On Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:MAXVoltage?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1221,14 +1303,13 @@ class PowerPowerItemTurnontimeMaxvoltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:MAXVoltage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:MAXVoltage <NR3>
         - POWer:POWer<x>:TURNONtime:MAXVoltage?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR3>`` is a floating point number that represents the maximum voltage in the range 1 V
@@ -1239,25 +1320,24 @@ class PowerPowerItemTurnontimeMaxvoltage(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeMaxtime(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:MAXTIMe`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the maximum turn on time of the specified Turn On Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:MAXTIMe?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:TURNONtime:MAXTIMe?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:MAXTIMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:MAXTIMe <NR3>
         - POWer:POWer<x>:TURNONtime:MAXTIMe?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR3>`` is a floating point number that represents the maximum time value, in seconds,
@@ -1268,10 +1348,10 @@ class PowerPowerItemTurnontimeMaxtime(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeInputsource(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source of the specified Turn On Time measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:INPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1280,14 +1360,13 @@ class PowerPowerItemTurnontimeInputsource(SCPICmdWriteNoArguments, SCPICmdRead):
         - Using the ``.write()`` method will send the ``POWer:POWer<x>:TURNONtime:INPUTSOurce``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:INPUTSOurce
         - POWer:POWer<x>:TURNONtime:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` is the channel specifier in the range of 1 through 8 and is limited by the
@@ -1302,11 +1381,11 @@ class PowerPowerItemTurnontimeInputsource(SCPICmdWriteNoArguments, SCPICmdRead):
 class PowerPowerItemTurnontimeInputlevel(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:INPUTLEVel`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the input voltage level of the specified Turn On Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:INPUTLEVel?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -1315,14 +1394,13 @@ class PowerPowerItemTurnontimeInputlevel(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:INPUTLEVel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:INPUTLEVel <NR3>
         - POWer:POWer<x>:TURNONtime:INPUTLEVel?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR3>`` is a floating point number that represents the voltage level, in volts, from
@@ -1333,11 +1411,11 @@ class PowerPowerItemTurnontimeInputlevel(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontimeFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input frequency used by the AC or DC converter of the
           specified Turn On Time measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:FREQuency?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:TURNONtime:FREQuency?``
@@ -1345,14 +1423,13 @@ class PowerPowerItemTurnontimeFrequency(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNONtime:FREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNONtime:FREQuency <NR3>
         - POWer:POWer<x>:TURNONtime:FREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR3>`` is a floating point number that represents the frequency, in Hertz, from 1 Hz to
@@ -1364,7 +1441,7 @@ class PowerPowerItemTurnontimeFrequency(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnontime(SCPICmdRead):
     """The ``POWer:POWer<x>:TURNONtime`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:TURNONtime?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1457,11 +1534,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def frequency(self) -> PowerPowerItemTurnontimeFrequency:
         """Return the ``POWer:POWer<x>:TURNONtime:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input frequency used by the AC or DC converter of the
               specified Turn On Time measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:FREQuency?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1470,14 +1547,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:FREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:FREQuency <NR3>
             - POWer:POWer<x>:TURNONtime:FREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR3>`` is a floating point number that represents the frequency, in Hertz, from 1
@@ -1489,11 +1565,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def inputlevel(self) -> PowerPowerItemTurnontimeInputlevel:
         """Return the ``POWer:POWer<x>:TURNONtime:INPUTLEVel`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the input voltage level of the specified Turn On Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:INPUTLEVel?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1502,14 +1578,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:INPUTLEVel value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:INPUTLEVel <NR3>
             - POWer:POWer<x>:TURNONtime:INPUTLEVel?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR3>`` is a floating point number that represents the voltage level, in volts, from
@@ -1521,11 +1596,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemTurnontimeInputsource:
         """Return the ``POWer:POWer<x>:TURNONtime:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source of the specified Turn On Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:INPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1534,14 +1609,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write()`` method will send the ``POWer:POWer<x>:TURNONtime:INPUTSOurce``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:INPUTSOurce
             - POWer:POWer<x>:TURNONtime:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` is the channel specifier in the range of 1 through 8 and is limited by the
@@ -1557,11 +1631,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def maxtime(self) -> PowerPowerItemTurnontimeMaxtime:
         """Return the ``POWer:POWer<x>:TURNONtime:MAXTIMe`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the maximum turn on time of the specified Turn On Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:MAXTIMe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1570,14 +1644,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:MAXTIMe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:MAXTIMe <NR3>
             - POWer:POWer<x>:TURNONtime:MAXTIMe?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR3>`` is a floating point number that represents the maximum time value, in
@@ -1589,11 +1662,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def maxvoltage(self) -> PowerPowerItemTurnontimeMaxvoltage:
         """Return the ``POWer:POWer<x>:TURNONtime:MAXVoltage`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the maximum voltage setting of the specified Turn On Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:MAXVoltage?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1602,14 +1675,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:MAXVoltage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:MAXVoltage <NR3>
             - POWer:POWer<x>:TURNONtime:MAXVoltage?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR3>`` is a floating point number that represents the maximum voltage in the range
@@ -1621,11 +1693,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def numoutputs(self) -> PowerPowerItemTurnontimeNumoutputs:
         """Return the ``POWer:POWer<x>:TURNONtime:NUMOUTputs`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of outputs for the specified Turn On Time
               power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:NUMOUTputs?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1634,14 +1706,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:NUMOUTputs value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:NUMOUTputs {ONE|TWO|THREE|FOUR|FIVE| SIX|SEVEN}
             - POWer:POWer<x>:TURNONtime:NUMOUTputs?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``ONE`` through SEVEN sets the number of outputs for the specified Turn On Time power
@@ -1653,11 +1724,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def output1source(self) -> PowerPowerItemTurnontimeOutput1source:
         """Return the ``POWer:POWer<x>:TURNONtime:OUTPUT1SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 1 source of the specified Turn On Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT1SOURce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1666,14 +1737,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT1SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:OUTPUT1SOURce {CH<x>|REF<x>|MATH<x>}
             - POWer:POWer<x>:TURNONtime:OUTPUT1SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number
@@ -1689,11 +1759,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def output1voltage(self) -> PowerPowerItemTurnontimeOutput1voltage:
         """Return the ``POWer:POWer<x>:TURNONtime:OUTPUT1VOLTage`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 1 voltage level of the specified Turn On Time
               power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT1VOLTage?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1702,14 +1772,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT1VOLTage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:OUTPUT1VOLTage <NR2>
             - POWer:POWer<x>:TURNONtime:OUTPUT1VOLTage?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -1720,11 +1789,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def output2source(self) -> PowerPowerItemTurnontimeOutput2source:
         """Return the ``POWer:POWer<x>:TURNONtime:OUTPUT2SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 2 source of the specified Turn On Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT2SOURce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1733,14 +1802,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT2SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:OUTPUT2SOURce {CH<x>|REF<x>|MATH<x>}
             - POWer:POWer<x>:TURNONtime:OUTPUT2SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number
@@ -1756,11 +1824,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def output2voltage(self) -> PowerPowerItemTurnontimeOutput2voltage:
         """Return the ``POWer:POWer<x>:TURNONtime:OUTPUT2VOLTage`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 2 voltage level of the specified Turn On Time
               power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT2VOLTage?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1769,14 +1837,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT2VOLTage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:OUTPUT2VOLTage <NR2>
             - POWer:POWer<x>:TURNONtime:OUTPUT2VOLTage?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -1787,11 +1854,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def output3source(self) -> PowerPowerItemTurnontimeOutput3source:
         """Return the ``POWer:POWer<x>:TURNONtime:OUTPUT3SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 3 source of the specified Turn On Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT3SOURce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1800,14 +1867,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT3SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:OUTPUT3SOURce {CH<x>|REF<x>|MATH<x>}
             - POWer:POWer<x>:TURNONtime:OUTPUT3SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number
@@ -1823,11 +1889,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def output3voltage(self) -> PowerPowerItemTurnontimeOutput3voltage:
         """Return the ``POWer:POWer<x>:TURNONtime:OUTPUT3VOLTage`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 3 voltage level of the specified Turn On Time
               power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT3VOLTage?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1836,14 +1902,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT3VOLTage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:OUTPUT3VOLTage <NR2>
             - POWer:POWer<x>:TURNONtime:OUTPUT3VOLTage?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -1854,11 +1919,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def output4source(self) -> PowerPowerItemTurnontimeOutput4source:
         """Return the ``POWer:POWer<x>:TURNONtime:OUTPUT4SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 4 source of the specified Turn On Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT4SOURce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1867,14 +1932,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT4SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:OUTPUT4SOURce {CH<x>|REF<x>|MATH<x>}
             - POWer:POWer<x>:TURNONtime:OUTPUT4SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number
@@ -1890,11 +1954,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def output4voltage(self) -> PowerPowerItemTurnontimeOutput4voltage:
         """Return the ``POWer:POWer<x>:TURNONtime:OUTPUT4VOLTage`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 4 voltage level of the specified Turn On Time
               power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT4VOLTage?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1903,14 +1967,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT4VOLTage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:OUTPUT4VOLTage <NR2>
             - POWer:POWer<x>:TURNONtime:OUTPUT4VOLTage?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -1921,11 +1984,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def output5source(self) -> PowerPowerItemTurnontimeOutput5source:
         """Return the ``POWer:POWer<x>:TURNONtime:OUTPUT5SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 5 source of the specified Turn On Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT5SOURce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1934,14 +1997,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT5SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:OUTPUT5SOURce {CH<x>|REF<x>|MATH<x>}
             - POWer:POWer<x>:TURNONtime:OUTPUT5SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number
@@ -1957,11 +2019,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def output5voltage(self) -> PowerPowerItemTurnontimeOutput5voltage:
         """Return the ``POWer:POWer<x>:TURNONtime:OUTPUT5VOLTage`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 5 voltage level of the specified Turn On Time
               power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT5VOLTage?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -1970,14 +2032,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT5VOLTage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:OUTPUT5VOLTage <NR2>
             - POWer:POWer<x>:TURNONtime:OUTPUT5VOLTage?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -1988,11 +2049,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def output6source(self) -> PowerPowerItemTurnontimeOutput6source:
         """Return the ``POWer:POWer<x>:TURNONtime:OUTPUT6SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 6 source of the specified Turn On Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT6SOURce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2001,14 +2062,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT6SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:OUTPUT6SOURce {CH<x>|REF<x>|MATH<x>}
             - POWer:POWer<x>:TURNONtime:OUTPUT6SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number
@@ -2024,11 +2084,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def output6voltage(self) -> PowerPowerItemTurnontimeOutput6voltage:
         """Return the ``POWer:POWer<x>:TURNONtime:OUTPUT6VOLTage`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 6 voltage level of the specified Turn On Time
               power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT6VOLTage?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2037,14 +2097,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT6VOLTage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:OUTPUT6VOLTage <NR2>
             - POWer:POWer<x>:TURNONtime:OUTPUT6VOLTage?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -2055,11 +2114,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def output7source(self) -> PowerPowerItemTurnontimeOutput7source:
         """Return the ``POWer:POWer<x>:TURNONtime:OUTPUT7SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 7 source of the specified Turn On Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT7SOURce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2068,14 +2127,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT7SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:OUTPUT7SOURce {CH<x>|REF<x>|MATH<x>}
             - POWer:POWer<x>:TURNONtime:OUTPUT7SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number
@@ -2091,11 +2149,11 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def output7voltage(self) -> PowerPowerItemTurnontimeOutput7voltage:
         """Return the ``POWer:POWer<x>:TURNONtime:OUTPUT7VOLTage`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 7 voltage level of the specified Turn On Time
               power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT7VOLTage?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2104,14 +2162,13 @@ class PowerPowerItemTurnontime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:OUTPUT7VOLTage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:OUTPUT7VOLTage <NR2>
             - POWer:POWer<x>:TURNONtime:OUTPUT7VOLTage?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -2122,25 +2179,24 @@ class PowerPowerItemTurnontime(SCPICmdRead):
     def type(self) -> PowerPowerItemTurnontimeType:
         """Return the ``POWer:POWer<x>:TURNONtime:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the type of AC/DC converter used in the specified Turn On
               Time power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime:TYPE?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:TURNONtime:TYPE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNONtime:TYPE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNONtime:TYPE {DCDC|ACDC}
             - POWer:POWer<x>:TURNONtime:TYPE?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``DCDC`` sets the measurement to use a DC to DC converter.
@@ -2152,25 +2208,24 @@ class PowerPowerItemTurnontime(SCPICmdRead):
 class PowerPowerItemTurnofftimeType(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the type of AC/DC converter used in the specified Turn Off
           Time power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:TYPE?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:TURNOFFtime:TYPE?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:TURNOFFtime:TYPE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:TYPE {DCDC|ACDC}
         - POWer:POWer<x>:TURNOFFtime:TYPE?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``DCDC`` sets the measurement to use a DC to DC converter.
@@ -2181,11 +2236,11 @@ class PowerPowerItemTurnofftimeType(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeOutput7voltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:OUTPUT7VOLTage`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 7 voltage level of the specified Turn Off Time
           power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:OUTPUT7VOLTage?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2194,14 +2249,13 @@ class PowerPowerItemTurnofftimeOutput7voltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:OUTPUT7VOLTage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:OUTPUT7VOLTage <NR2>
         - POWer:POWer<x>:TURNOFFtime:OUTPUT7VOLTage?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -2211,11 +2265,11 @@ class PowerPowerItemTurnofftimeOutput7voltage(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeOutput7source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:OUTPUT7SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 7 source of the specified Turn Off Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:OUTPUT7SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2224,14 +2278,13 @@ class PowerPowerItemTurnofftimeOutput7source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:OUTPUT7SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:OUTPUT7SOURce {CH<x>|REF<x>|MATH<x>}
         - POWer:POWer<x>:TURNOFFtime:OUTPUT7SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number of
@@ -2246,11 +2299,11 @@ class PowerPowerItemTurnofftimeOutput7source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeOutput6voltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:OUTPUT6VOLTage`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 6 voltage level of the specified Turn Off Time
           power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:OUTPUT6VOLTage?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2259,14 +2312,13 @@ class PowerPowerItemTurnofftimeOutput6voltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:OUTPUT6VOLTage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:OUTPUT6VOLTage <NR2>
         - POWer:POWer<x>:TURNOFFtime:OUTPUT6VOLTage?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -2276,11 +2328,11 @@ class PowerPowerItemTurnofftimeOutput6voltage(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeOutput6source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:OUTPUT6SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 6 source of the specified Turn Off Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:OUTPUT6SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2289,14 +2341,13 @@ class PowerPowerItemTurnofftimeOutput6source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:OUTPUT6SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:OUTPUT6SOURce {CH<x>|REF<x>|MATH<x>}
         - POWer:POWer<x>:TURNOFFtime:OUTPUT6SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number of
@@ -2311,11 +2362,11 @@ class PowerPowerItemTurnofftimeOutput6source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeOutput5voltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:OUTPUT5VOLTage`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 5 voltage level of the specified Turn Off Time
           power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:OUTPUT5VOLTage?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2324,14 +2375,13 @@ class PowerPowerItemTurnofftimeOutput5voltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:OUTPUT5VOLTage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:OUTPUT5VOLTage <NR2>
         - POWer:POWer<x>:TURNOFFtime:OUTPUT5VOLTage?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -2341,11 +2391,11 @@ class PowerPowerItemTurnofftimeOutput5voltage(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeOutput5source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:OUTPUT5SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 5 source of the specified Turn Off Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:OUTPUT5SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2354,14 +2404,13 @@ class PowerPowerItemTurnofftimeOutput5source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:OUTPUT5SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:OUTPUT5SOURce {CH<x>|REF<x>|MATH<x>}
         - POWer:POWer<x>:TURNOFFtime:OUTPUT5SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number of
@@ -2376,11 +2425,11 @@ class PowerPowerItemTurnofftimeOutput5source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeOutput4voltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:OUTPUT4VOLTage`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 4 voltage level of the specified Turn Off Time
           power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:OUTPUT4VOLTage?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2389,14 +2438,13 @@ class PowerPowerItemTurnofftimeOutput4voltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:OUTPUT4VOLTage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:OUTPUT4VOLTage <NR2>
         - POWer:POWer<x>:TURNOFFtime:OUTPUT4VOLTage?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -2406,11 +2454,11 @@ class PowerPowerItemTurnofftimeOutput4voltage(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeOutput4source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:OUTPUT4SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 4 source of the specified Turn Off Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:OUTPUT4SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2419,14 +2467,13 @@ class PowerPowerItemTurnofftimeOutput4source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:OUTPUT4SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:OUTPUT4SOURce {CH<x>|REF<x>|MATH<x>}
         - POWer:POWer<x>:TURNOFFtime:OUTPUT4SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number of
@@ -2441,11 +2488,11 @@ class PowerPowerItemTurnofftimeOutput4source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeOutput3voltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:OUTPUT3VOLTage`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 3 voltage level of the specified Turn Off Time
           power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:OUTPUT3VOLTage?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2454,14 +2501,13 @@ class PowerPowerItemTurnofftimeOutput3voltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:OUTPUT3VOLTage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:OUTPUT3VOLTage <NR2>
         - POWer:POWer<x>:TURNOFFtime:OUTPUT3VOLTage?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -2471,11 +2517,11 @@ class PowerPowerItemTurnofftimeOutput3voltage(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeOutput3source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:OUTPUT3SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 3 source of the specified Turn Off Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:OUTPUT3SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2484,14 +2530,13 @@ class PowerPowerItemTurnofftimeOutput3source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:OUTPUT3SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:OUTPUT3SOURce {CH<x>|REF<x>|MATH<x>}
         - POWer:POWer<x>:TURNOFFtime:OUTPUT3SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number of
@@ -2506,11 +2551,11 @@ class PowerPowerItemTurnofftimeOutput3source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeOutput2voltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:OUTPUT2VOLTage`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 2 voltage level of the specified Turn Off Time
           power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:OUTPUT2VOLTage?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2519,14 +2564,13 @@ class PowerPowerItemTurnofftimeOutput2voltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:OUTPUT2VOLTage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:OUTPUT2VOLTage <NR2>
         - POWer:POWer<x>:TURNOFFtime:OUTPUT2VOLTage?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -2536,11 +2580,11 @@ class PowerPowerItemTurnofftimeOutput2voltage(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeOutput2source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:OUTPUT2SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 2 source of the specified Turn Off Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:OUTPUT2SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2549,14 +2593,13 @@ class PowerPowerItemTurnofftimeOutput2source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:OUTPUT2SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:OUTPUT2SOURce {CH<x>|REF<x>|MATH<x>}
         - POWer:POWer<x>:TURNOFFtime:OUTPUT2SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number of
@@ -2571,11 +2614,11 @@ class PowerPowerItemTurnofftimeOutput2source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeOutput1voltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:OUTPUT1VOLTage`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 1 voltage level of the of the specified Turn Off
           Time power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:OUTPUT1VOLTage?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2584,14 +2627,13 @@ class PowerPowerItemTurnofftimeOutput1voltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:OUTPUT1VOLTage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:OUTPUT1VOLTage <NR2>
         - POWer:POWer<x>:TURNOFFtime:OUTPUT1VOLTage?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -2601,11 +2643,11 @@ class PowerPowerItemTurnofftimeOutput1voltage(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeOutput1source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:OUTPUT1SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 1 source of the specified Turn Off Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:OUTPUT1SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2614,14 +2656,13 @@ class PowerPowerItemTurnofftimeOutput1source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:OUTPUT1SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:OUTPUT1SOURce {CH<x>|REF<x>|MATH<x>}
         - POWer:POWer<x>:TURNOFFtime:OUTPUT1SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number of
@@ -2636,11 +2677,11 @@ class PowerPowerItemTurnofftimeOutput1source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeNumoutputs(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:NUMOUTputs`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of outputs of the specified Turn Off Time power
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:NUMOUTputs?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2649,14 +2690,13 @@ class PowerPowerItemTurnofftimeNumoutputs(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:NUMOUTputs value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:NUMOUTputs {ONE|TWO|THREE|FOUR|FIVE| SIX|SEVEN}
         - POWer:POWer<x>:TURNOFFtime:NUMOUTputs?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``ONE`` through SEVEN sets the number of outputs for the Turn Off Time measurement.
@@ -2666,11 +2706,11 @@ class PowerPowerItemTurnofftimeNumoutputs(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeMaxvoltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:MAXVoltage`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the maximum voltage of the specified Turn OffTime
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:MAXVoltage?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2679,14 +2719,13 @@ class PowerPowerItemTurnofftimeMaxvoltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:MAXVoltage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:MAXVoltage <NR3>
         - POWer:POWer<x>:TURNOFFtime:MAXVoltage?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR3>`` is a floating point number that represents the maximum voltage in the range 1 V
@@ -2697,25 +2736,24 @@ class PowerPowerItemTurnofftimeMaxvoltage(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeMaxtime(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:MAXTIMe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the maximum turn off time of the specified Turn Off Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:MAXTIMe?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:TURNOFFtime:MAXTIMe?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:MAXTIMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:MAXTIMe <NR3>
         - POWer:POWer<x>:TURNOFFtime:MAXTIMe?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR3>`` is a floating point number that represents the maximum time value, in seconds,
@@ -2726,10 +2764,10 @@ class PowerPowerItemTurnofftimeMaxtime(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source of the specified Turn Off Time measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:INPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2738,14 +2776,13 @@ class PowerPowerItemTurnofftimeInputsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:INPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:INPUTSOurce {CH<x>|REF<x>|MATH<x>}
         - POWer:POWer<x>:TURNOFFtime:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` is the channel specifier in the range of 1 through 8 and is limited by the
@@ -2760,11 +2797,11 @@ class PowerPowerItemTurnofftimeInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeInputlevel(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:INPUTLEVel`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input voltage level of the specified Turn Off Time
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:INPUTLEVel?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2773,14 +2810,13 @@ class PowerPowerItemTurnofftimeInputlevel(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:INPUTLEVel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:INPUTLEVel <NR3>
         - POWer:POWer<x>:TURNOFFtime:INPUTLEVel?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR3>`` is a floating point number that represents the voltage level, in volts, from
@@ -2791,11 +2827,11 @@ class PowerPowerItemTurnofftimeInputlevel(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftimeFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input frequency used by the AC or DC converter of the
           specified Turn Off Time measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:FREQuency?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -2804,14 +2840,13 @@ class PowerPowerItemTurnofftimeFrequency(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:TURNOFFtime:FREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:TURNOFFtime:FREQuency <NR3>
         - POWer:POWer<x>:TURNOFFtime:FREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR3>`` is a floating point number that represents the frequency, in Hertz, from 1 Hz to
@@ -2823,7 +2858,7 @@ class PowerPowerItemTurnofftimeFrequency(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemTurnofftime(SCPICmdRead):
     """The ``POWer:POWer<x>:TURNOFFtime`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:TURNOFFtime?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -2918,11 +2953,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def frequency(self) -> PowerPowerItemTurnofftimeFrequency:
         """Return the ``POWer:POWer<x>:TURNOFFtime:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input frequency used by the AC or DC converter of the
               specified Turn Off Time measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:FREQuency?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2931,14 +2966,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:FREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:FREQuency <NR3>
             - POWer:POWer<x>:TURNOFFtime:FREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR3>`` is a floating point number that represents the frequency, in Hertz, from 1
@@ -2950,11 +2984,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def inputlevel(self) -> PowerPowerItemTurnofftimeInputlevel:
         """Return the ``POWer:POWer<x>:TURNOFFtime:INPUTLEVel`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input voltage level of the specified Turn Off Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:INPUTLEVel?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -2963,14 +2997,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:INPUTLEVel value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:INPUTLEVel <NR3>
             - POWer:POWer<x>:TURNOFFtime:INPUTLEVel?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR3>`` is a floating point number that represents the voltage level, in volts, from
@@ -2982,11 +3015,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemTurnofftimeInputsource:
         """Return the ``POWer:POWer<x>:TURNOFFtime:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source of the specified Turn Off Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:INPUTSOurce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -2995,14 +3028,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:INPUTSOurce {CH<x>|REF<x>|MATH<x>}
             - POWer:POWer<x>:TURNOFFtime:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` is the channel specifier in the range of 1 through 8 and is limited by the
@@ -3018,11 +3050,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def maxtime(self) -> PowerPowerItemTurnofftimeMaxtime:
         """Return the ``POWer:POWer<x>:TURNOFFtime:MAXTIMe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the maximum turn off time of the specified Turn Off Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:MAXTIMe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3031,14 +3063,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:MAXTIMe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:MAXTIMe <NR3>
             - POWer:POWer<x>:TURNOFFtime:MAXTIMe?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR3>`` is a floating point number that represents the maximum time value, in
@@ -3050,11 +3081,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def maxvoltage(self) -> PowerPowerItemTurnofftimeMaxvoltage:
         """Return the ``POWer:POWer<x>:TURNOFFtime:MAXVoltage`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the maximum voltage of the specified Turn OffTime
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:MAXVoltage?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3063,14 +3094,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:MAXVoltage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:MAXVoltage <NR3>
             - POWer:POWer<x>:TURNOFFtime:MAXVoltage?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR3>`` is a floating point number that represents the maximum voltage in the range
@@ -3082,11 +3112,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def numoutputs(self) -> PowerPowerItemTurnofftimeNumoutputs:
         """Return the ``POWer:POWer<x>:TURNOFFtime:NUMOUTputs`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of outputs of the specified Turn Off Time
               power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:NUMOUTputs?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3095,14 +3125,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:NUMOUTputs value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:NUMOUTputs {ONE|TWO|THREE|FOUR|FIVE| SIX|SEVEN}
             - POWer:POWer<x>:TURNOFFtime:NUMOUTputs?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``ONE`` through SEVEN sets the number of outputs for the Turn Off Time measurement.
@@ -3113,11 +3142,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def output1source(self) -> PowerPowerItemTurnofftimeOutput1source:
         """Return the ``POWer:POWer<x>:TURNOFFtime:OUTPUT1SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 1 source of the specified Turn Off Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT1SOURce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3126,14 +3155,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT1SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:OUTPUT1SOURce {CH<x>|REF<x>|MATH<x>}
             - POWer:POWer<x>:TURNOFFtime:OUTPUT1SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number
@@ -3149,11 +3177,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def output1voltage(self) -> PowerPowerItemTurnofftimeOutput1voltage:
         """Return the ``POWer:POWer<x>:TURNOFFtime:OUTPUT1VOLTage`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 1 voltage level of the of the specified Turn
               Off Time power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT1VOLTage?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3162,14 +3190,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT1VOLTage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:OUTPUT1VOLTage <NR2>
             - POWer:POWer<x>:TURNOFFtime:OUTPUT1VOLTage?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -3180,11 +3207,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def output2source(self) -> PowerPowerItemTurnofftimeOutput2source:
         """Return the ``POWer:POWer<x>:TURNOFFtime:OUTPUT2SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 2 source of the specified Turn Off Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT2SOURce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3193,14 +3220,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT2SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:OUTPUT2SOURce {CH<x>|REF<x>|MATH<x>}
             - POWer:POWer<x>:TURNOFFtime:OUTPUT2SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number
@@ -3216,11 +3242,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def output2voltage(self) -> PowerPowerItemTurnofftimeOutput2voltage:
         """Return the ``POWer:POWer<x>:TURNOFFtime:OUTPUT2VOLTage`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 2 voltage level of the specified Turn Off Time
               power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT2VOLTage?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3229,14 +3255,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT2VOLTage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:OUTPUT2VOLTage <NR2>
             - POWer:POWer<x>:TURNOFFtime:OUTPUT2VOLTage?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -3247,11 +3272,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def output3source(self) -> PowerPowerItemTurnofftimeOutput3source:
         """Return the ``POWer:POWer<x>:TURNOFFtime:OUTPUT3SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 3 source of the specified Turn Off Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT3SOURce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3260,14 +3285,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT3SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:OUTPUT3SOURce {CH<x>|REF<x>|MATH<x>}
             - POWer:POWer<x>:TURNOFFtime:OUTPUT3SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number
@@ -3283,11 +3307,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def output3voltage(self) -> PowerPowerItemTurnofftimeOutput3voltage:
         """Return the ``POWer:POWer<x>:TURNOFFtime:OUTPUT3VOLTage`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 3 voltage level of the specified Turn Off Time
               power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT3VOLTage?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3296,14 +3320,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT3VOLTage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:OUTPUT3VOLTage <NR2>
             - POWer:POWer<x>:TURNOFFtime:OUTPUT3VOLTage?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -3314,11 +3337,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def output4source(self) -> PowerPowerItemTurnofftimeOutput4source:
         """Return the ``POWer:POWer<x>:TURNOFFtime:OUTPUT4SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 4 source of the specified Turn Off Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT4SOURce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3327,14 +3350,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT4SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:OUTPUT4SOURce {CH<x>|REF<x>|MATH<x>}
             - POWer:POWer<x>:TURNOFFtime:OUTPUT4SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number
@@ -3350,11 +3372,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def output4voltage(self) -> PowerPowerItemTurnofftimeOutput4voltage:
         """Return the ``POWer:POWer<x>:TURNOFFtime:OUTPUT4VOLTage`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 4 voltage level of the specified Turn Off Time
               power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT4VOLTage?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3363,14 +3385,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT4VOLTage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:OUTPUT4VOLTage <NR2>
             - POWer:POWer<x>:TURNOFFtime:OUTPUT4VOLTage?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -3381,11 +3402,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def output5source(self) -> PowerPowerItemTurnofftimeOutput5source:
         """Return the ``POWer:POWer<x>:TURNOFFtime:OUTPUT5SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 5 source of the specified Turn Off Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT5SOURce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3394,14 +3415,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT5SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:OUTPUT5SOURce {CH<x>|REF<x>|MATH<x>}
             - POWer:POWer<x>:TURNOFFtime:OUTPUT5SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number
@@ -3417,11 +3437,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def output5voltage(self) -> PowerPowerItemTurnofftimeOutput5voltage:
         """Return the ``POWer:POWer<x>:TURNOFFtime:OUTPUT5VOLTage`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 5 voltage level of the specified Turn Off Time
               power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT5VOLTage?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3430,14 +3450,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT5VOLTage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:OUTPUT5VOLTage <NR2>
             - POWer:POWer<x>:TURNOFFtime:OUTPUT5VOLTage?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -3448,11 +3467,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def output6source(self) -> PowerPowerItemTurnofftimeOutput6source:
         """Return the ``POWer:POWer<x>:TURNOFFtime:OUTPUT6SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 6 source of the specified Turn Off Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT6SOURce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3461,14 +3480,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT6SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:OUTPUT6SOURce {CH<x>|REF<x>|MATH<x>}
             - POWer:POWer<x>:TURNOFFtime:OUTPUT6SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number
@@ -3484,11 +3502,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def output6voltage(self) -> PowerPowerItemTurnofftimeOutput6voltage:
         """Return the ``POWer:POWer<x>:TURNOFFtime:OUTPUT6VOLTage`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 6 voltage level of the specified Turn Off Time
               power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT6VOLTage?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3497,14 +3515,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT6VOLTage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:OUTPUT6VOLTage <NR2>
             - POWer:POWer<x>:TURNOFFtime:OUTPUT6VOLTage?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -3515,11 +3532,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def output7source(self) -> PowerPowerItemTurnofftimeOutput7source:
         """Return the ``POWer:POWer<x>:TURNOFFtime:OUTPUT7SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 7 source of the specified Turn Off Time
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT7SOURce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3528,14 +3545,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT7SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:OUTPUT7SOURce {CH<x>|REF<x>|MATH<x>}
             - POWer:POWer<x>:TURNOFFtime:OUTPUT7SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` A channel specifier in the range of 1 through 8 and is limited by the number
@@ -3551,11 +3567,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def output7voltage(self) -> PowerPowerItemTurnofftimeOutput7voltage:
         """Return the ``POWer:POWer<x>:TURNOFFtime:OUTPUT7VOLTage`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 7 voltage level of the specified Turn Off Time
               power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT7VOLTage?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3564,14 +3580,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:OUTPUT7VOLTage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:OUTPUT7VOLTage <NR2>
             - POWer:POWer<x>:TURNOFFtime:OUTPUT7VOLTage?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR2>`` sets the output voltage value, in the range of -6,000 volts to +6,000 volts.
@@ -3582,11 +3597,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
     def type(self) -> PowerPowerItemTurnofftimeType:
         """Return the ``POWer:POWer<x>:TURNOFFtime:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the type of AC/DC converter used in the specified Turn
               Off Time power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime:TYPE?``
               query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:TURNOFFtime:TYPE?``
@@ -3594,14 +3609,13 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:TURNOFFtime:TYPE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TURNOFFtime:TYPE {DCDC|ACDC}
             - POWer:POWer<x>:TURNOFFtime:TYPE?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``DCDC`` sets the measurement to use a DC to DC converter.
@@ -3613,11 +3627,11 @@ class PowerPowerItemTurnofftime(SCPICmdRead):
 class PowerPowerItemSwitchingrippleLfrequency(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:SWITCHINGRIPPLE:LFREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the switching frequency for switching ripple measurement in
           the specified power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGRIPPLE:LFREQuency?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3626,14 +3640,13 @@ class PowerPowerItemSwitchingrippleLfrequency(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:SWITCHINGRIPPLE:LFREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SWITCHINGRIPPLE:LFREQuency <NR1>
         - POWer:POWer<x>:SWITCHINGRIPPLE:LFREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from 50 to 1000000.
@@ -3643,11 +3656,11 @@ class PowerPowerItemSwitchingrippleLfrequency(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemSwitchingrippleInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:SWITCHINGRIPPLE:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source for switching ripple measurement in the
           specified power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``POWer:POWer<x>:SWITCHINGRIPPLE:INPUTSOurce?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3656,14 +3669,13 @@ class PowerPowerItemSwitchingrippleInputsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:SWITCHINGRIPPLE:INPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SWITCHINGRIPPLE:INPUTSOurce {CH<x> | MATH<x> | REF<x>}
         - POWer:POWer<x>:SWITCHINGRIPPLE:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -3676,7 +3688,7 @@ class PowerPowerItemSwitchingrippleInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemSwitchingripple(SCPICmdRead):
     """The ``POWer:POWer<x>:SWITCHINGRIPPLE`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGRIPPLE?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SWITCHINGRIPPLE?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -3699,11 +3711,11 @@ class PowerPowerItemSwitchingripple(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemSwitchingrippleInputsource:
         """Return the ``POWer:POWer<x>:SWITCHINGRIPPLE:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source for switching ripple measurement in the
               specified power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:SWITCHINGRIPPLE:INPUTSOurce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3712,14 +3724,13 @@ class PowerPowerItemSwitchingripple(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:SWITCHINGRIPPLE:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SWITCHINGRIPPLE:INPUTSOurce {CH<x> | MATH<x> | REF<x>}
             - POWer:POWer<x>:SWITCHINGRIPPLE:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -3733,12 +3744,12 @@ class PowerPowerItemSwitchingripple(SCPICmdRead):
     def lfrequency(self) -> PowerPowerItemSwitchingrippleLfrequency:
         """Return the ``POWer:POWer<x>:SWITCHINGRIPPLE:LFREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the switching frequency for switching ripple measurement
               in the specified power measurement number. The power measurement number is specified
               by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:SWITCHINGRIPPLE:LFREQuency?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -3747,14 +3758,13 @@ class PowerPowerItemSwitchingripple(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:SWITCHINGRIPPLE:LFREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SWITCHINGRIPPLE:LFREQuency <NR1>
             - POWer:POWer<x>:SWITCHINGRIPPLE:LFREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from 50 to 1000000.
@@ -3765,11 +3775,11 @@ class PowerPowerItemSwitchingripple(SCPICmdRead):
 class PowerPowerItemSwitchinglossVsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:SWITCHINGLOSS:VSOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the voltage source for the switching loss measurement in the
           specified power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:VSOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3778,14 +3788,13 @@ class PowerPowerItemSwitchinglossVsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:SWITCHINGLOSS:VSOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SWITCHINGLOSS:VSOURce {CH<x> | MATH<x> | REF<x>}
         - POWer:POWer<x>:SWITCHINGLOSS:VSOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -3798,12 +3807,12 @@ class PowerPowerItemSwitchinglossVsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemSwitchinglossVlevelpct(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:SWITCHINGLOSS:VLEVELPct`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the voltage level (Ton-Start & Stop) in percentage for
           switching loss measurement in the specified power measurement number. The power
           measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:VLEVELPct?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3812,14 +3821,13 @@ class PowerPowerItemSwitchinglossVlevelpct(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:SWITCHINGLOSS:VLEVELPct value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SWITCHINGLOSS:VLEVELPct <NR1>
         - POWer:POWer<x>:SWITCHINGLOSS:VLEVELPct?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from 0.0001 to 90.
@@ -3829,12 +3837,12 @@ class PowerPowerItemSwitchinglossVlevelpct(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemSwitchinglossVlevelabs(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:SWITCHINGLOSS:VLEVELAbs`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the voltage level (Ton-Start & Stop) in absolute units for
           switching loss measurement in the specified power measurement number. The power
           measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:VLEVELAbs?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3843,14 +3851,13 @@ class PowerPowerItemSwitchinglossVlevelabs(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:SWITCHINGLOSS:VLEVELAbs value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SWITCHINGLOSS:VLEVELAbs <NR1>
         - POWer:POWer<x>:SWITCHINGLOSS:VLEVELAbs?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from -100 to 100.
@@ -3860,12 +3867,12 @@ class PowerPowerItemSwitchinglossVlevelabs(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemSwitchinglossVglevel(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:SWITCHINGLOSS:VGLevel`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the gate voltage value (V g Level Ton-Start) for the
           switching loss measurement in the specified power measurement number. The power
           measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:VGLevel?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3874,14 +3881,13 @@ class PowerPowerItemSwitchinglossVglevel(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:SWITCHINGLOSS:VGLevel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SWITCHINGLOSS:VGLevel <NR1>
         - POWer:POWer<x>:SWITCHINGLOSS:VGLevel?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from -100 to 100.
@@ -3891,12 +3897,12 @@ class PowerPowerItemSwitchinglossVglevel(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemSwitchinglossVcesat(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:SWITCHINGLOSS:VCESat`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the value for the VCE(sat) value for switching loss
           measurement in the specified power measurement number. The power measurement number is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:VCESat?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:VCESat?``
@@ -3904,14 +3910,13 @@ class PowerPowerItemSwitchinglossVcesat(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:SWITCHINGLOSS:VCESat value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SWITCHINGLOSS:VCESat <NR1>
         - POWer:POWer<x>:SWITCHINGLOSS:VCESat?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from 0.001 to 100.
@@ -3921,11 +3926,11 @@ class PowerPowerItemSwitchinglossVcesat(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemSwitchinglossSwlconfigtype(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:SWITCHINGLOSS:SWLCONFIGType`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the configuration type for the switching loss measurement in
           the specified power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``POWer:POWer<x>:SWITCHINGLOSS:SWLCONFIGType?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -3934,14 +3939,13 @@ class PowerPowerItemSwitchinglossSwlconfigtype(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:SWITCHINGLOSS:SWLCONFIGType value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SWITCHINGLOSS:SWLCONFIGType {SMPS | PFC | FLYBACK}
         - POWer:POWer<x>:SWITCHINGLOSS:SWLCONFIGType?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``SMPS`` : Select this option in case of signals without noise and ringing. The Vg source
@@ -3956,25 +3960,24 @@ class PowerPowerItemSwitchinglossSwlconfigtype(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemSwitchinglossRdson(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:SWITCHINGLOSS:RDSOn`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the RDS(on) value for switching loss measurement in the
           specified power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:RDSOn?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:RDSOn?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:SWITCHINGLOSS:RDSOn value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SWITCHINGLOSS:RDSOn <NR1>
         - POWer:POWer<x>:SWITCHINGLOSS:RDSOn?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from 0 to 100.
@@ -3984,11 +3987,11 @@ class PowerPowerItemSwitchinglossRdson(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemSwitchinglossLevelunits(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:SWITCHINGLOSS:LEVELUNIts`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the level units for switching loss measurement in the
           specified power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:LEVELUNIts?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -3997,14 +4000,13 @@ class PowerPowerItemSwitchinglossLevelunits(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:SWITCHINGLOSS:LEVELUNIts value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SWITCHINGLOSS:LEVELUNIts {PERCent | ABSolute}
         - POWer:POWer<x>:SWITCHINGLOSS:LEVELUNIts?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``PERCent`` to set the High, Mid, and Low reference levels in percentage.
@@ -4015,11 +4017,11 @@ class PowerPowerItemSwitchinglossLevelunits(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemSwitchinglossIsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:SWITCHINGLOSS:ISOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current source for the switching loss measurement in the
           specified power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:ISOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4028,14 +4030,13 @@ class PowerPowerItemSwitchinglossIsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:SWITCHINGLOSS:ISOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SWITCHINGLOSS:ISOURce {CH<x> | MATH<x> | REF<x>}
         - POWer:POWer<x>:SWITCHINGLOSS:ISOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -4048,12 +4049,12 @@ class PowerPowerItemSwitchinglossIsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemSwitchinglossIlevelpct(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:SWITCHINGLOSS:ILEVELPct`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current level (Ton-Start & Stop) in percentage for
           switching loss measurement in the specified power measurement number. The power
           measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:ILEVELPct?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4062,14 +4063,13 @@ class PowerPowerItemSwitchinglossIlevelpct(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:SWITCHINGLOSS:ILEVELPct value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SWITCHINGLOSS:ILEVELPct <NR1>
         - POWer:POWer<x>:SWITCHINGLOSS:ILEVELPct?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from 0.0001 to 90.
@@ -4079,12 +4079,12 @@ class PowerPowerItemSwitchinglossIlevelpct(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemSwitchinglossIlevelabs(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:SWITCHINGLOSS:ILEVELAbs`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current level (Ton-Start & Stop) in absolute units for
           switching loss measurement in the specified power measurement number. The power
           measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:ILEVELAbs?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4093,14 +4093,13 @@ class PowerPowerItemSwitchinglossIlevelabs(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:SWITCHINGLOSS:ILEVELAbs value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SWITCHINGLOSS:ILEVELAbs <NR1>
         - POWer:POWer<x>:SWITCHINGLOSS:ILEVELAbs?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from -100 to 100.
@@ -4110,11 +4109,11 @@ class PowerPowerItemSwitchinglossIlevelabs(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemSwitchinglossGatesource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:SWITCHINGLOSS:GATESOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the gate voltage (V g ) for the switching loss measurement in
           the specified power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:GATESOurce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4123,14 +4122,13 @@ class PowerPowerItemSwitchinglossGatesource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:SWITCHINGLOSS:GATESOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SWITCHINGLOSS:GATESOurce {CH<x> | MATH<x> | REF<x>}
         - POWer:POWer<x>:SWITCHINGLOSS:GATESOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -4143,12 +4141,12 @@ class PowerPowerItemSwitchinglossGatesource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemSwitchinglossDevicetype(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:SWITCHINGLOSS:DEVICEType`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the conduction calculation method for switching loss
           measurement in the specified power measurement number. The power measurement number is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:DEVICEType?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4157,12 +4155,11 @@ class PowerPowerItemSwitchinglossDevicetype(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:SWITCHINGLOSS:DEVICEType value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SWITCHINGLOSS:DEVICEType {MOSFET | BJT}
         - POWer:POWer<x>:SWITCHINGLOSS:DEVICEType?
+        ```
     """
 
 
@@ -4170,7 +4167,7 @@ class PowerPowerItemSwitchinglossDevicetype(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemSwitchingloss(SCPICmdRead):
     """The ``POWer:POWer<x>:SWITCHINGLOSS`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -4227,12 +4224,12 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
     def devicetype(self) -> PowerPowerItemSwitchinglossDevicetype:
         """Return the ``POWer:POWer<x>:SWITCHINGLOSS:DEVICEType`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the conduction calculation method for switching loss
               measurement in the specified power measurement number. The power measurement number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:DEVICEType?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4241,12 +4238,11 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:DEVICEType value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SWITCHINGLOSS:DEVICEType {MOSFET | BJT}
             - POWer:POWer<x>:SWITCHINGLOSS:DEVICEType?
+            ```
         """
         return self._devicetype
 
@@ -4254,12 +4250,12 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
     def gatesource(self) -> PowerPowerItemSwitchinglossGatesource:
         """Return the ``POWer:POWer<x>:SWITCHINGLOSS:GATESOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the gate voltage (V g ) for the switching loss
               measurement in the specified power measurement number. The power measurement number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:GATESOurce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4268,14 +4264,13 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:GATESOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SWITCHINGLOSS:GATESOurce {CH<x> | MATH<x> | REF<x>}
             - POWer:POWer<x>:SWITCHINGLOSS:GATESOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -4289,12 +4284,12 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
     def ilevelabs(self) -> PowerPowerItemSwitchinglossIlevelabs:
         """Return the ``POWer:POWer<x>:SWITCHINGLOSS:ILEVELAbs`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current level (Ton-Start & Stop) in absolute units
               for switching loss measurement in the specified power measurement number. The power
               measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:ILEVELAbs?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4303,14 +4298,13 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:ILEVELAbs value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SWITCHINGLOSS:ILEVELAbs <NR1>
             - POWer:POWer<x>:SWITCHINGLOSS:ILEVELAbs?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from -100 to 100.
@@ -4321,12 +4315,12 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
     def ilevelpct(self) -> PowerPowerItemSwitchinglossIlevelpct:
         """Return the ``POWer:POWer<x>:SWITCHINGLOSS:ILEVELPct`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current level (Ton-Start & Stop) in percentage for
               switching loss measurement in the specified power measurement number. The power
               measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:ILEVELPct?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4335,14 +4329,13 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:ILEVELPct value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SWITCHINGLOSS:ILEVELPct <NR1>
             - POWer:POWer<x>:SWITCHINGLOSS:ILEVELPct?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from 0.0001 to 90.
@@ -4353,12 +4346,12 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
     def isource(self) -> PowerPowerItemSwitchinglossIsource:
         """Return the ``POWer:POWer<x>:SWITCHINGLOSS:ISOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current source for the switching loss measurement in
               the specified power measurement number. The power measurement number is specified by
               x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:ISOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4367,14 +4360,13 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:ISOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SWITCHINGLOSS:ISOURce {CH<x> | MATH<x> | REF<x>}
             - POWer:POWer<x>:SWITCHINGLOSS:ISOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -4388,11 +4380,11 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
     def levelunits(self) -> PowerPowerItemSwitchinglossLevelunits:
         """Return the ``POWer:POWer<x>:SWITCHINGLOSS:LEVELUNIts`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the level units for switching loss measurement in the
               specified power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:LEVELUNIts?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4401,14 +4393,13 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:LEVELUNIts value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SWITCHINGLOSS:LEVELUNIts {PERCent | ABSolute}
             - POWer:POWer<x>:SWITCHINGLOSS:LEVELUNIts?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``PERCent`` to set the High, Mid, and Low reference levels in percentage.
@@ -4420,11 +4411,11 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
     def rdson(self) -> PowerPowerItemSwitchinglossRdson:
         """Return the ``POWer:POWer<x>:SWITCHINGLOSS:RDSOn`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the RDS(on) value for switching loss measurement in the
               specified power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:RDSOn?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4433,14 +4424,13 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:RDSOn value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SWITCHINGLOSS:RDSOn <NR1>
             - POWer:POWer<x>:SWITCHINGLOSS:RDSOn?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from 0 to 100.
@@ -4451,12 +4441,12 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
     def swlconfigtype(self) -> PowerPowerItemSwitchinglossSwlconfigtype:
         """Return the ``POWer:POWer<x>:SWITCHINGLOSS:SWLCONFIGType`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the configuration type for the switching loss measurement
               in the specified power measurement number. The power measurement number is specified
               by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:SWLCONFIGType?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4465,14 +4455,13 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:SWLCONFIGType value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SWITCHINGLOSS:SWLCONFIGType {SMPS | PFC | FLYBACK}
             - POWer:POWer<x>:SWITCHINGLOSS:SWLCONFIGType?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``SMPS`` : Select this option in case of signals without noise and ringing. The Vg
@@ -4488,12 +4477,12 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
     def vcesat(self) -> PowerPowerItemSwitchinglossVcesat:
         """Return the ``POWer:POWer<x>:SWITCHINGLOSS:VCESat`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the value for the VCE(sat) value for switching loss
               measurement in the specified power measurement number. The power measurement number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:VCESat?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4502,14 +4491,13 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:VCESat value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SWITCHINGLOSS:VCESat <NR1>
             - POWer:POWer<x>:SWITCHINGLOSS:VCESat?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from 0.001 to 100.
@@ -4520,12 +4508,12 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
     def vglevel(self) -> PowerPowerItemSwitchinglossVglevel:
         """Return the ``POWer:POWer<x>:SWITCHINGLOSS:VGLevel`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the gate voltage value (V g Level Ton-Start) for the
               switching loss measurement in the specified power measurement number. The power
               measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:VGLevel?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4534,14 +4522,13 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:VGLevel value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SWITCHINGLOSS:VGLevel <NR1>
             - POWer:POWer<x>:SWITCHINGLOSS:VGLevel?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from -100 to 100.
@@ -4552,12 +4539,12 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
     def vlevelabs(self) -> PowerPowerItemSwitchinglossVlevelabs:
         """Return the ``POWer:POWer<x>:SWITCHINGLOSS:VLEVELAbs`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the voltage level (Ton-Start & Stop) in absolute units
               for switching loss measurement in the specified power measurement number. The power
               measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:VLEVELAbs?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4566,14 +4553,13 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:VLEVELAbs value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SWITCHINGLOSS:VLEVELAbs <NR1>
             - POWer:POWer<x>:SWITCHINGLOSS:VLEVELAbs?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from -100 to 100.
@@ -4584,12 +4570,12 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
     def vlevelpct(self) -> PowerPowerItemSwitchinglossVlevelpct:
         """Return the ``POWer:POWer<x>:SWITCHINGLOSS:VLEVELPct`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the voltage level (Ton-Start & Stop) in percentage for
               switching loss measurement in the specified power measurement number. The power
               measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:VLEVELPct?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4598,14 +4584,13 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:VLEVELPct value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SWITCHINGLOSS:VLEVELPct <NR1>
             - POWer:POWer<x>:SWITCHINGLOSS:VLEVELPct?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from 0.0001 to 90.
@@ -4616,12 +4601,12 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
     def vsource(self) -> PowerPowerItemSwitchinglossVsource:
         """Return the ``POWer:POWer<x>:SWITCHINGLOSS:VSOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the voltage source for the switching loss measurement in
               the specified power measurement number. The power measurement number is specified by
               x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS:VSOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4630,14 +4615,13 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:SWITCHINGLOSS:VSOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SWITCHINGLOSS:VSOURce {CH<x> | MATH<x> | REF<x>}
             - POWer:POWer<x>:SWITCHINGLOSS:VSOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -4651,25 +4635,24 @@ class PowerPowerItemSwitchingloss(SCPICmdRead):
 class PowerPowerItemSoaVsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:SOA:VSOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the voltage source for SOA measurement in the specified power
           measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SOA:VSOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SOA:VSOURce?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:SOA:VSOURce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SOA:VSOURce {CH<x> | MATH<x> | REF<x>}
         - POWer:POWer<x>:SOA:VSOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -4682,34 +4665,33 @@ class PowerPowerItemSoaVsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemSoaSavemaskFolder(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``POWer:POWer<x>:SOA:SAVemask:FOLDer`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the mask file folder path for SOA measurement in the
           specified power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SOA:SAVemask:FOLDer?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SOA:SAVemask:FOLDer?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``POWer:POWer<x>:SOA:SAVemask:FOLDer``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SOA:SAVemask:FOLDer
         - POWer:POWer<x>:SOA:SAVemask:FOLDer?
+        ```
     """
 
 
 class PowerPowerItemSoaSavemaskFilename(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``POWer:POWer<x>:SOA:SAVemask:FILEName`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the mask file name for SOA measurement in the specified power
           measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SOA:SAVemask:FILEName?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4718,23 +4700,22 @@ class PowerPowerItemSoaSavemaskFilename(SCPICmdWriteNoArguments, SCPICmdRead):
         - Using the ``.write()`` method will send the ``POWer:POWer<x>:SOA:SAVemask:FILEName``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SOA:SAVemask:FILEName
         - POWer:POWer<x>:SOA:SAVemask:FILEName?
+        ```
     """
 
 
 class PowerPowerItemSoaSavemaskAutoincrement(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``POWer:POWer<x>:SOA:SAVemask:AUTOINCrement`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the state of auto-increment for saved SOA mask file names in
           the specified power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SOA:SAVemask:AUTOINCrement?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4743,35 +4724,33 @@ class PowerPowerItemSoaSavemaskAutoincrement(SCPICmdWriteNoArguments, SCPICmdRea
         - Using the ``.write()`` method will send the ``POWer:POWer<x>:SOA:SAVemask:AUTOINCrement``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SOA:SAVemask:AUTOINCrement
         - POWer:POWer<x>:SOA:SAVemask:AUTOINCrement?
+        ```
     """
 
 
 class PowerPowerItemSoaSavemask(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``POWer:POWer<x>:SOA:SAVemask`` command.
 
-    **Description:**
+    Description:
         - This command saves the mask file as per the name configured and at the configured path or
           queries the mask file name, path, and file type for the SOA measurement in the specified
           power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SOA:SAVemask?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SOA:SAVemask?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``POWer:POWer<x>:SOA:SAVemask`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SOA:SAVemask
         - POWer:POWer<x>:SOA:SAVemask?
+        ```
 
     Properties:
         - ``.autoincrement``: The ``POWer:POWer<x>:SOA:SAVemask:AUTOINCrement`` command.
@@ -4791,12 +4770,12 @@ class PowerPowerItemSoaSavemask(SCPICmdWriteNoArguments, SCPICmdRead):
     def autoincrement(self) -> PowerPowerItemSoaSavemaskAutoincrement:
         """Return the ``POWer:POWer<x>:SOA:SAVemask:AUTOINCrement`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the state of auto-increment for saved SOA mask file names
               in the specified power measurement number. The power measurement number is specified
               by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:SOA:SAVemask:AUTOINCrement?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4805,12 +4784,11 @@ class PowerPowerItemSoaSavemask(SCPICmdWriteNoArguments, SCPICmdRead):
             - Using the ``.write()`` method will send the
               ``POWer:POWer<x>:SOA:SAVemask:AUTOINCrement`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SOA:SAVemask:AUTOINCrement
             - POWer:POWer<x>:SOA:SAVemask:AUTOINCrement?
+            ```
         """
         return self._autoincrement
 
@@ -4818,11 +4796,11 @@ class PowerPowerItemSoaSavemask(SCPICmdWriteNoArguments, SCPICmdRead):
     def filename(self) -> PowerPowerItemSoaSavemaskFilename:
         """Return the ``POWer:POWer<x>:SOA:SAVemask:FILEName`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the mask file name for SOA measurement in the specified
               power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:SOA:SAVemask:FILEName?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4831,12 +4809,11 @@ class PowerPowerItemSoaSavemask(SCPICmdWriteNoArguments, SCPICmdRead):
             - Using the ``.write()`` method will send the ``POWer:POWer<x>:SOA:SAVemask:FILEName``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SOA:SAVemask:FILEName
             - POWer:POWer<x>:SOA:SAVemask:FILEName?
+            ```
         """
         return self._filename
 
@@ -4844,11 +4821,11 @@ class PowerPowerItemSoaSavemask(SCPICmdWriteNoArguments, SCPICmdRead):
     def folder(self) -> PowerPowerItemSoaSavemaskFolder:
         """Return the ``POWer:POWer<x>:SOA:SAVemask:FOLDer`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the mask file folder path for SOA measurement in the
               specified power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:SOA:SAVemask:FOLDer?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4857,12 +4834,11 @@ class PowerPowerItemSoaSavemask(SCPICmdWriteNoArguments, SCPICmdRead):
             - Using the ``.write()`` method will send the ``POWer:POWer<x>:SOA:SAVemask:FOLDer``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SOA:SAVemask:FOLDer
             - POWer:POWer<x>:SOA:SAVemask:FOLDer?
+            ```
         """
         return self._folder
 
@@ -4870,11 +4846,11 @@ class PowerPowerItemSoaSavemask(SCPICmdWriteNoArguments, SCPICmdRead):
 class PowerPowerItemSoaRecallmaskFilename(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``POWer:POWer<x>:SOA:RECAllmask:FILEName`` command.
 
-    **Description:**
+    Description:
         - This command  sets or queries the file name for saving SOA mask file name in the specified
           power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SOA:RECAllmask:FILEName?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -4883,34 +4859,32 @@ class PowerPowerItemSoaRecallmaskFilename(SCPICmdWriteNoArguments, SCPICmdRead):
         - Using the ``.write()`` method will send the ``POWer:POWer<x>:SOA:RECAllmask:FILEName``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SOA:RECAllmask:FILEName
         - POWer:POWer<x>:SOA:RECAllmask:FILEName?
+        ```
     """
 
 
 class PowerPowerItemSoaRecallmask(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``POWer:POWer<x>:SOA:RECAllmask`` command.
 
-    **Description:**
+    Description:
         - This command recalls or queries the recall mask file name in the specified power
           measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SOA:RECAllmask?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SOA:RECAllmask?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``POWer:POWer<x>:SOA:RECAllmask`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SOA:RECAllmask
         - POWer:POWer<x>:SOA:RECAllmask?
+        ```
 
     Properties:
         - ``.filename``: The ``POWer:POWer<x>:SOA:RECAllmask:FILEName`` command.
@@ -4924,11 +4898,11 @@ class PowerPowerItemSoaRecallmask(SCPICmdWriteNoArguments, SCPICmdRead):
     def filename(self) -> PowerPowerItemSoaRecallmaskFilename:
         """Return the ``POWer:POWer<x>:SOA:RECAllmask:FILEName`` command.
 
-        **Description:**
+        Description:
             - This command  sets or queries the file name for saving SOA mask file name in the
               specified power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:SOA:RECAllmask:FILEName?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -4937,12 +4911,11 @@ class PowerPowerItemSoaRecallmask(SCPICmdWriteNoArguments, SCPICmdRead):
             - Using the ``.write()`` method will send the ``POWer:POWer<x>:SOA:RECAllmask:FILEName``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SOA:RECAllmask:FILEName
             - POWer:POWer<x>:SOA:RECAllmask:FILEName?
+            ```
         """
         return self._filename
 
@@ -4950,25 +4923,24 @@ class PowerPowerItemSoaRecallmask(SCPICmdWriteNoArguments, SCPICmdRead):
 class PowerPowerItemSoaPointItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     r"""The ``POWer:POWer<x>:SOA:POINT<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the X or Y coordinate value for an SOA mask of a specified
           power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SOA:POINT<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SOA:POINT<x>?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:SOA:POINT<x> value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SOA:POINT<x> <NR1>
         - POWer:POWer<x>:SOA:POINT<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``POINT<x>`` = 1X \| 2X \| 3X \| 4X \| 5X \| 6X \| 7X \| 8X \| 9X \| 10X \| 11X \| 12X \|
@@ -4984,25 +4956,24 @@ class PowerPowerItemSoaPointItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICm
 class PowerPowerItemSoaIsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:SOA:ISOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current source for SOA measurement in the specified power
           measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SOA:ISOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SOA:ISOURce?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:SOA:ISOURce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SOA:ISOURce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:SOA:ISOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -5015,7 +4986,7 @@ class PowerPowerItemSoaIsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemSoa(SCPICmdRead):
     """The ``POWer:POWer<x>:SOA`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SOA?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SOA?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -5042,25 +5013,24 @@ class PowerPowerItemSoa(SCPICmdRead):
     def isource(self) -> PowerPowerItemSoaIsource:
         """Return the ``POWer:POWer<x>:SOA:ISOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current source for SOA measurement in the specified
               power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:SOA:ISOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SOA:ISOURce?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:SOA:ISOURce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SOA:ISOURce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:SOA:ISOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -5074,25 +5044,24 @@ class PowerPowerItemSoa(SCPICmdRead):
     def point(self) -> Dict[int, PowerPowerItemSoaPointItem]:
         r"""Return the ``POWer:POWer<x>:SOA:POINT<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the X or Y coordinate value for an SOA mask of a
               specified power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:SOA:POINT<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SOA:POINT<x>?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:SOA:POINT<x> value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SOA:POINT<x> <NR1>
             - POWer:POWer<x>:SOA:POINT<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``POINT<x>`` = 1X \| 2X \| 3X \| 4X \| 5X \| 6X \| 7X \| 8X \| 9X \| 10X \| 11X \| 12X
@@ -5110,22 +5079,21 @@ class PowerPowerItemSoa(SCPICmdRead):
     def recallmask(self) -> PowerPowerItemSoaRecallmask:
         """Return the ``POWer:POWer<x>:SOA:RECAllmask`` command.
 
-        **Description:**
+        Description:
             - This command recalls or queries the recall mask file name in the specified power
               measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:SOA:RECAllmask?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SOA:RECAllmask?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write()`` method will send the ``POWer:POWer<x>:SOA:RECAllmask`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SOA:RECAllmask
             - POWer:POWer<x>:SOA:RECAllmask?
+            ```
 
         Sub-properties:
             - ``.filename``: The ``POWer:POWer<x>:SOA:RECAllmask:FILEName`` command.
@@ -5136,23 +5104,22 @@ class PowerPowerItemSoa(SCPICmdRead):
     def savemask(self) -> PowerPowerItemSoaSavemask:
         """Return the ``POWer:POWer<x>:SOA:SAVemask`` command.
 
-        **Description:**
+        Description:
             - This command saves the mask file as per the name configured and at the configured path
               or queries the mask file name, path, and file type for the SOA measurement in the
               specified power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:SOA:SAVemask?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SOA:SAVemask?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write()`` method will send the ``POWer:POWer<x>:SOA:SAVemask`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SOA:SAVemask
             - POWer:POWer<x>:SOA:SAVemask?
+            ```
 
         Sub-properties:
             - ``.autoincrement``: The ``POWer:POWer<x>:SOA:SAVemask:AUTOINCrement`` command.
@@ -5165,25 +5132,24 @@ class PowerPowerItemSoa(SCPICmdRead):
     def vsource(self) -> PowerPowerItemSoaVsource:
         """Return the ``POWer:POWer<x>:SOA:VSOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the voltage source for SOA measurement in the specified
               power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:SOA:VSOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SOA:VSOURce?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:SOA:VSOURce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SOA:VSOURce {CH<x> | MATH<x> | REF<x>}
             - POWer:POWer<x>:SOA:VSOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -5197,24 +5163,23 @@ class PowerPowerItemSoa(SCPICmdRead):
 class PowerPowerItemSequence(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:SEQuence`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the run state of a single sequence power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:SEQuence?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SEQuence?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:SEQuence value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SEQuence {RUN|RERUN}
         - POWer:POWer<x>:SEQuence?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the Power measurement identifier number. The number must be for a power
           measurement that requires a single sequence acquisition.
         - ``RUN`` sets the measurement to run an acquisition and acquire data for the specified
@@ -5227,21 +5192,20 @@ class PowerPowerItemSequence(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemSeqsetup(SCPICmdWrite):
     """The ``POWer:POWer<x>:SEQSETup`` command.
 
-    **Description:**
+    Description:
         - This command sets up the instrument's horizontal, vertical, and trigger parameters to
           optimize for taking the specified power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:SEQSETup value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:SEQSETup Execute
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the Power measurement identifier number. The number must be for a power
           measurement that requires a single sequence acquisition.
         - ``Execute`` sets the measurement to run an acquisition and acquire data for the specified
@@ -5252,24 +5216,23 @@ class PowerPowerItemSeqsetup(SCPICmdWrite):
 class PowerPowerItemResultsCurrentacqVrms(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:VRMS`` command.
 
-    **Description:**
+    Description:
         - This command queries the RMS voltage value for the specified power measurement number. The
           power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:VRMS? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:VRMS? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:VRMS? 'harmonics'
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
     """
@@ -5278,24 +5241,23 @@ class PowerPowerItemResultsCurrentacqVrms(SCPICmdReadWithArguments):
 class PowerPowerItemResultsCurrentacqTrpwr(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:TRPWR`` command.
 
-    **Description:**
+    Description:
         - This command queries the true power value for the specified power measurement number. The
           power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:TRPWR? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:TRPWR? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:TRPWR? 'harmonics'
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
     """
@@ -5304,24 +5266,23 @@ class PowerPowerItemResultsCurrentacqTrpwr(SCPICmdReadWithArguments):
 class PowerPowerItemResultsCurrentacqThdr(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:THDR`` command.
 
-    **Description:**
+    Description:
         - This command queries the total harmonic distortion (RMS) value for the specified power
           measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:THDR? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:THDR? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:THDR? 'harmonics'
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
     """
@@ -5330,24 +5291,23 @@ class PowerPowerItemResultsCurrentacqThdr(SCPICmdReadWithArguments):
 class PowerPowerItemResultsCurrentacqThdf(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:THDF`` command.
 
-    **Description:**
+    Description:
         - This command queries the total harmonic distortion (fundamental) value for the specified
           power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:THDF? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:THDF? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:THDF? 'harmonics'
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
     """
@@ -5356,25 +5316,24 @@ class PowerPowerItemResultsCurrentacqThdf(SCPICmdReadWithArguments):
 class PowerPowerItemResultsCurrentacqStddev(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:STDDev`` command.
 
-    **Description:**
+    Description:
         - This command queries the standard deviation value of the current acquisition for the
           measurement parameter in the specified power measurement number. The power measurement
           number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:STDDev? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:STDDev? argument`` query and raise an AssertionError
           if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:STDDev? {InputPwr|Output1Pwr| Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3| TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br|Hc|Hmax|IRipple| DeltaB|DeltaH|Permeability|RDS|TRUEPWR|APPPWR|REPWR|PWRFACTOR| PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS|TONENRG|TONLOSS| TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS|TTLENRG|DVBYDT| DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL|PKPK|HIGH|LOW|MAX|MIN |INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<QString>`` = the measurement result that you want to return from the specified power
@@ -5386,24 +5345,23 @@ class PowerPowerItemResultsCurrentacqStddev(SCPICmdReadWithArguments):
 class PowerPowerItemResultsCurrentacqStatus(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:STATUS`` command.
 
-    **Description:**
+    Description:
         - This command queries the status of the measurement for the specified power measurement
           number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:STATUS? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:STATUS? argument`` query and raise an AssertionError
           if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:STATUS? 'harmonics'
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
     """
@@ -5412,24 +5370,23 @@ class PowerPowerItemResultsCurrentacqStatus(SCPICmdReadWithArguments):
 class PowerPowerItemResultsCurrentacqRms(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:RMS`` command.
 
-    **Description:**
+    Description:
         - This command queries the RMS value of the source selected for the specified power
           measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:RMS? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:RMS? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:RMS? 'harmonics'
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
     """
@@ -5438,25 +5395,24 @@ class PowerPowerItemResultsCurrentacqRms(SCPICmdReadWithArguments):
 class PowerPowerItemResultsCurrentacqPopulation(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:POPUlation`` command.
 
-    **Description:**
+    Description:
         - This command queries the population (number of complete cycles) of the current acquisition
           for the measurement parameter in the specified power measurement number. The power
           measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:POPUlation? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:POPUlation? argument`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:POPUlation? {InputPwr| Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br| Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR| APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS| VRMS|TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK| SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY|NDUTY|PPULSE|NPULSE| AMPL|PKPK|HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<QString>`` = the measurement result that you want to return from the specified power
@@ -5468,24 +5424,23 @@ class PowerPowerItemResultsCurrentacqPopulation(SCPICmdReadWithArguments):
 class PowerPowerItemResultsCurrentacqPohcs(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:POHCS`` command.
 
-    **Description:**
+    Description:
         - This command queries the status of partial odd harmonic current for the specified power
           measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:POHCS? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:POHCS? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:POHCS? 'harmonics'
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
     """
@@ -5494,46 +5449,44 @@ class PowerPowerItemResultsCurrentacqPohcs(SCPICmdReadWithArguments):
 class PowerPowerItemResultsCurrentacqPohcm(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:POHCM`` command.
 
-    **Description:**
+    Description:
         - This command queries the measured value of partial odd harmonic current for the specified
           power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:POHCM? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:POHCM? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:POHCM? 'harmonics'
+        ```
     """
 
 
 class PowerPowerItemResultsCurrentacqPohcl(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:POHCL`` command.
 
-    **Description:**
+    Description:
         - This command queries the limit of partial odd harmonic current for the specified power
           measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:POHCL? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:POHCL? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:POHCL? 'harmonics'
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
     """
@@ -5542,24 +5495,23 @@ class PowerPowerItemResultsCurrentacqPohcl(SCPICmdReadWithArguments):
 class PowerPowerItemResultsCurrentacqPk2pk(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:PK2PK`` command.
 
-    **Description:**
+    Description:
         - This command queries the peak-to-peak value of the current acquisition for the measurement
           parameter in the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:PK2PK? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:PK2PK? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:PK2PK? {InputPwr| Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br| Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR|APPPWR| REPWR|PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS| TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS| TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK|SWRIPRMS| SWRIPPKPK|PRIOD|FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL|PKPK| HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<QString>`` = the measurement result that you want to return from the specified power
@@ -5572,24 +5524,23 @@ class PowerPowerItemResultsCurrentacqPk2pk(SCPICmdReadWithArguments):
 class PowerPowerItemResultsCurrentacqMinimum(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:MINimum`` command.
 
-    **Description:**
+    Description:
         - This command queries the minimum value of the current acquisition for the measurement
           parameter in the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:MINimum? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:MINimum? argument`` query and raise an AssertionError
           if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:MINimum? {InputPwr| Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br| Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR| APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS| VRMS|TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK| SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL| PKPK|HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<QString>`` = the measurement result that you want to return from the specified power
@@ -5602,24 +5553,23 @@ class PowerPowerItemResultsCurrentacqMinimum(SCPICmdReadWithArguments):
 class PowerPowerItemResultsCurrentacqMean(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:MEAN`` command.
 
-    **Description:**
+    Description:
         - This command queries the mean value of the current acquisition for the measurement
           parameter of the specified power measurement <x>.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:MEAN? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:MEAN? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:MEAN? {InputPwr| Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak| Br|Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR| APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS| VRMS|TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK| SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY|NDUTY|PPULSE|NPULSE| AMPL|PKPK|HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<QString>`` = the measurement result that you want to return from the specified power
@@ -5631,24 +5581,23 @@ class PowerPowerItemResultsCurrentacqMean(SCPICmdReadWithArguments):
 class PowerPowerItemResultsCurrentacqMaximum(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:MAXimum`` command.
 
-    **Description:**
+    Description:
         - This command queries the maximum value of the current acquisition for the measurement
           parameter in the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:MAXimum? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:MAXimum? argument`` query and raise an AssertionError
           if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:MAXimum? {InputPwr| Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS| Bpeak|Br|Hc|Hmax|IRipple|DeltaB|DeltaH| Permeability|RDS|TRUEPWR|APPPWR|REPWR|PWRFACTOR| PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS| TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT| LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL|PKPK| HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<QString>`` = the measurement result that you want to return from the specified power
@@ -5660,23 +5609,22 @@ class PowerPowerItemResultsCurrentacqMaximum(SCPICmdReadWithArguments):
 class PowerPowerItemResultsCurrentacqIrms(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:IRMS`` command.
 
-    **Description:**
+    Description:
         - This command queries the RMS current value for the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:IRMS? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:IRMS? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:IRMS? 'harmonics'
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
     """
@@ -5685,23 +5633,22 @@ class PowerPowerItemResultsCurrentacqIrms(SCPICmdReadWithArguments):
 class PowerPowerItemResultsCurrentacqFrequency(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:FREQUENCY`` command.
 
-    **Description:**
+    Description:
         - This command queries the fundamental frequency for the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:FREQUENCY? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:FREQUENCY? argument`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:FREQUENCY? 'harmonics'
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
     """
@@ -5710,24 +5657,23 @@ class PowerPowerItemResultsCurrentacqFrequency(SCPICmdReadWithArguments):
 class PowerPowerItemResultsCurrentacqF3mag(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:F3MAG`` command.
 
-    **Description:**
+    Description:
         - This command queries the third harmonics magnitude value for the specified power
           measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:F3MAG? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:F3MAG? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:F3MAG? 'harmonics'
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
     """
@@ -5736,24 +5682,23 @@ class PowerPowerItemResultsCurrentacqF3mag(SCPICmdReadWithArguments):
 class PowerPowerItemResultsCurrentacqF1mag(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq:F1MAG`` command.
 
-    **Description:**
+    Description:
         - This command queries the first harmonics magnitude value for the specified power
           measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:F1MAG? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:CURRentacq:F1MAG? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:CURRentacq:F1MAG? 'harmonics'
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
     """
@@ -5763,7 +5708,7 @@ class PowerPowerItemResultsCurrentacqF1mag(SCPICmdReadWithArguments):
 class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     """The ``POWer:POWer<x>:RESUlts:CURRentacq`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:RESUlts:CURRentacq?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:RESUlts:CURRentacq?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -5824,24 +5769,23 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def f1mag(self) -> PowerPowerItemResultsCurrentacqF1mag:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:F1MAG`` command.
 
-        **Description:**
+        Description:
             - This command queries the first harmonics magnitude value for the specified power
               measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:F1MAG? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:F1MAG? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:F1MAG? 'harmonics'
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
         """
@@ -5851,24 +5795,23 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def f3mag(self) -> PowerPowerItemResultsCurrentacqF3mag:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:F3MAG`` command.
 
-        **Description:**
+        Description:
             - This command queries the third harmonics magnitude value for the specified power
               measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:F3MAG? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:F3MAG? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:F3MAG? 'harmonics'
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
         """
@@ -5878,24 +5821,23 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def frequency(self) -> PowerPowerItemResultsCurrentacqFrequency:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:FREQUENCY`` command.
 
-        **Description:**
+        Description:
             - This command queries the fundamental frequency for the specified power measurement
               number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:FREQUENCY? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:FREQUENCY? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:FREQUENCY? 'harmonics'
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
         """
@@ -5905,23 +5847,22 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def irms(self) -> PowerPowerItemResultsCurrentacqIrms:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:IRMS`` command.
 
-        **Description:**
+        Description:
             - This command queries the RMS current value for the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:IRMS? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:IRMS? argument`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:IRMS? 'harmonics'
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
         """
@@ -5931,24 +5872,23 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def maximum(self) -> PowerPowerItemResultsCurrentacqMaximum:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:MAXimum`` command.
 
-        **Description:**
+        Description:
             - This command queries the maximum value of the current acquisition for the measurement
               parameter in the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:MAXimum? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:MAXimum? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:MAXimum? {InputPwr| Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS| Bpeak|Br|Hc|Hmax|IRipple|DeltaB|DeltaH| Permeability|RDS|TRUEPWR|APPPWR|REPWR|PWRFACTOR| PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS| TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT| LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL|PKPK| HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<QString>`` = the measurement result that you want to return from the specified
@@ -5961,24 +5901,23 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def mean(self) -> PowerPowerItemResultsCurrentacqMean:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:MEAN`` command.
 
-        **Description:**
+        Description:
             - This command queries the mean value of the current acquisition for the measurement
               parameter of the specified power measurement <x>.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:MEAN? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:MEAN? argument`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:MEAN? {InputPwr| Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak| Br|Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR| APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS| VRMS|TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK| SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY|NDUTY|PPULSE|NPULSE| AMPL|PKPK|HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<QString>`` = the measurement result that you want to return from the specified
@@ -5991,24 +5930,23 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def minimum(self) -> PowerPowerItemResultsCurrentacqMinimum:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:MINimum`` command.
 
-        **Description:**
+        Description:
             - This command queries the minimum value of the current acquisition for the measurement
               parameter in the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:MINimum? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:MINimum? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:MINimum? {InputPwr| Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br| Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR| APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS| VRMS|TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK| SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL| PKPK|HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<QString>`` = the measurement result that you want to return from the specified
@@ -6022,24 +5960,23 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def pk2pk(self) -> PowerPowerItemResultsCurrentacqPk2pk:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:PK2PK`` command.
 
-        **Description:**
+        Description:
             - This command queries the peak-to-peak value of the current acquisition for the
               measurement parameter in the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:PK2PK? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:PK2PK? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:PK2PK? {InputPwr| Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br| Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR|APPPWR| REPWR|PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS| TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS| TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK|SWRIPRMS| SWRIPPKPK|PRIOD|FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL|PKPK| HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<QString>`` = the measurement result that you want to return from the specified
@@ -6053,24 +5990,23 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def pohcl(self) -> PowerPowerItemResultsCurrentacqPohcl:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:POHCL`` command.
 
-        **Description:**
+        Description:
             - This command queries the limit of partial odd harmonic current for the specified power
               measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:POHCL? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:POHCL? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:POHCL? 'harmonics'
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
         """
@@ -6080,22 +6016,21 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def pohcm(self) -> PowerPowerItemResultsCurrentacqPohcm:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:POHCM`` command.
 
-        **Description:**
+        Description:
             - This command queries the measured value of partial odd harmonic current for the
               specified power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:POHCM? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:POHCM? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:POHCM? 'harmonics'
+            ```
         """
         return self._pohcm
 
@@ -6103,24 +6038,23 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def pohcs(self) -> PowerPowerItemResultsCurrentacqPohcs:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:POHCS`` command.
 
-        **Description:**
+        Description:
             - This command queries the status of partial odd harmonic current for the specified
               power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:POHCS? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:POHCS? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:POHCS? 'harmonics'
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
         """
@@ -6130,25 +6064,24 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def population(self) -> PowerPowerItemResultsCurrentacqPopulation:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:POPUlation`` command.
 
-        **Description:**
+        Description:
             - This command queries the population (number of complete cycles) of the current
               acquisition for the measurement parameter in the specified power measurement number.
               The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:POPUlation? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:POPUlation? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:POPUlation? {InputPwr| Output1Pwr|Output2Pwr|Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br| Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR| APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS| VRMS|TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK| SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY|NDUTY|PPULSE|NPULSE| AMPL|PKPK|HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<QString>`` = the measurement result that you want to return from the specified
@@ -6161,24 +6094,23 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def rms(self) -> PowerPowerItemResultsCurrentacqRms:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:RMS`` command.
 
-        **Description:**
+        Description:
             - This command queries the RMS value of the source selected for the specified power
               measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:RMS? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:RMS? argument`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:RMS? 'harmonics'
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
         """
@@ -6188,24 +6120,23 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def status(self) -> PowerPowerItemResultsCurrentacqStatus:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:STATUS`` command.
 
-        **Description:**
+        Description:
             - This command queries the status of the measurement for the specified power measurement
               number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:STATUS? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:STATUS? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:STATUS? 'harmonics'
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
         """
@@ -6215,25 +6146,24 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def stddev(self) -> PowerPowerItemResultsCurrentacqStddev:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:STDDev`` command.
 
-        **Description:**
+        Description:
             - This command queries the standard deviation value of the current acquisition for the
               measurement parameter in the specified power measurement number. The power measurement
               number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:STDDev? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:STDDev? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:STDDev? {InputPwr|Output1Pwr| Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3| TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br|Hc|Hmax|IRipple| DeltaB|DeltaH|Permeability|RDS|TRUEPWR|APPPWR|REPWR|PWRFACTOR| PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS|TONENRG|TONLOSS| TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS|TTLENRG|DVBYDT| DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL|PKPK|HIGH|LOW|MAX|MIN |INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<QString>`` = the measurement result that you want to return from the specified
@@ -6246,24 +6176,23 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def thdf(self) -> PowerPowerItemResultsCurrentacqThdf:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:THDF`` command.
 
-        **Description:**
+        Description:
             - This command queries the total harmonic distortion (fundamental) value for the
               specified power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:THDF? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:THDF? argument`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:THDF? 'harmonics'
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
         """
@@ -6273,24 +6202,23 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def thdr(self) -> PowerPowerItemResultsCurrentacqThdr:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:THDR`` command.
 
-        **Description:**
+        Description:
             - This command queries the total harmonic distortion (RMS) value for the specified power
               measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:THDR? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:THDR? argument`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:THDR? 'harmonics'
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
         """
@@ -6300,24 +6228,23 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def trpwr(self) -> PowerPowerItemResultsCurrentacqTrpwr:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:TRPWR`` command.
 
-        **Description:**
+        Description:
             - This command queries the true power value for the specified power measurement number.
               The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:TRPWR? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:TRPWR? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:TRPWR? 'harmonics'
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
         """
@@ -6327,24 +6254,23 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
     def vrms(self) -> PowerPowerItemResultsCurrentacqVrms:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq:VRMS`` command.
 
-        **Description:**
+        Description:
             - This command queries the RMS voltage value for the specified power measurement number.
               The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:VRMS? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:CURRentacq:VRMS? argument`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:CURRentacq:VRMS? 'harmonics'
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
         """
@@ -6354,24 +6280,23 @@ class PowerPowerItemResultsCurrentacq(SCPICmdRead):
 class PowerPowerItemResultsAllacqsStddev(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:ALLAcqs:STDDev`` command.
 
-    **Description:**
+    Description:
         - This command queries the standard deviation value of all acquisitions for the measurement
           parameter in the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:ALLAcqs:STDDev? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:ALLAcqs:STDDev? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:ALLAcqs:STDDev? {InputPwr|Output1Pwr| Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3| TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br|Hc| Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS| TRUEPWR|APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ| ICFACTOR|VCFACTOR|IRMS|VRMS|TONENRG|TONLOSS| TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS| TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS| LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY| NDUTY|PPULSE|NPULSE|AMPL|PKPK|HIGH|LOW|MAX|MIN| INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<QString>`` = the measurement result that you want to return from the specified power
@@ -6383,24 +6308,23 @@ class PowerPowerItemResultsAllacqsStddev(SCPICmdReadWithArguments):
 class PowerPowerItemResultsAllacqsPopulation(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:ALLAcqs:POPUlation`` command.
 
-    **Description:**
+    Description:
         - This command queries the population (number of complete cycles) of all acquisitions for
           the measurement parameter in the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:ALLAcqs:POPUlation? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:ALLAcqs:POPUlation? argument`` query and raise an AssertionError
           if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:ALLAcqs:POPUlation? {InputPwr|Output1Pwr| Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3| TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak| Br|Hc|Hmax|IRipple|DeltaB|DeltaH| Permeability|RDS|TRUEPWR|APPPWR|REPWR|PWRFACTOR| PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS| TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT| LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE| AMPL|PKPK|HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<QString>`` = the measurement result that you want to return from the specified power
@@ -6412,24 +6336,23 @@ class PowerPowerItemResultsAllacqsPopulation(SCPICmdReadWithArguments):
 class PowerPowerItemResultsAllacqsPk2pk(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:ALLAcqs:PK2PK`` command.
 
-    **Description:**
+    Description:
         - This command queries the peak-to-peak value of all acquisitions for the measurement
           parameter in the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:ALLAcqs:PK2PK? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:ALLAcqs:PK2PK? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:ALLAcqs:PK2PK? {InputPwr|Output1Pwr| Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3| TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak| Br|Hc|Hmax|IRipple|DeltaB|DeltaH| Permeability|RDS|TRUEPWR|APPPWR|REPWR| PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR| IRMS|VRMS|TONENRG|TONLOSS|TOFFENRG| TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS|TTLENRG| DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK| SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY| NDUTY|PPULSE|NPULSE|AMPL|PKPK| HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<QString>`` = the measurement result that you want to return from the specified power
@@ -6442,24 +6365,23 @@ class PowerPowerItemResultsAllacqsPk2pk(SCPICmdReadWithArguments):
 class PowerPowerItemResultsAllacqsMinimum(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:ALLAcqs:MINimum`` command.
 
-    **Description:**
+    Description:
         - This command queries the minimum value of all acquisitions for the measurement parameter
           of the specified power measurement <x>.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:ALLAcqs:MINimum? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:ALLAcqs:MINimum? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:ALLAcqs:MINimum? {InputPwr|Output1Pwr| Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3| TotalEfficiency|INDUCT|IVSINTV|MAGLOSS| Bpeak|Br|Hc|Hmax|IRipple|DeltaB|DeltaH| Permeability|RDS|TRUEPWR|APPPWR|REPWR| PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR| IRMS|VRMS|TONENRG|TONLOSS|TOFFENRG| TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS|TTLENRG| DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK| SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY| NDUTY|PPULSE|NPULSE|AMPL|PKPK| HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<QString>`` = the measurement result that you want to return from the specified power
@@ -6471,24 +6393,23 @@ class PowerPowerItemResultsAllacqsMinimum(SCPICmdReadWithArguments):
 class PowerPowerItemResultsAllacqsMean(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:ALLAcqs:MEAN`` command.
 
-    **Description:**
+    Description:
         - This command queries the mean value of all acquisitions for the measurement parameter in
           the specified power measurement number <x>.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:ALLAcqs:MEAN? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:ALLAcqs:MEAN? argument`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:ALLAcqs:MEAN? {InputPwr|Output1Pwr|Output2Pwr| Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency| INDUCT|IVSINTV|MAGLOSS|Bpeak|Br|Hc|Hmax| IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR| APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ| ICFACTOR|VCFACTOR|IRMS|VRMS|TONENRG| TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT| LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL| PKPK|HIGH|LOW|MAX|MIN| INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<QString>`` = the measurement result that you want to return from the specified power
@@ -6500,24 +6421,23 @@ class PowerPowerItemResultsAllacqsMean(SCPICmdReadWithArguments):
 class PowerPowerItemResultsAllacqsMaximum(SCPICmdReadWithArguments):
     """The ``POWer:POWer<x>:RESUlts:ALLAcqs:MAXimum`` command.
 
-    **Description:**
+    Description:
         - This command queries the maximum value of all acquisitions for the measurement parameter
           in the specified power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the
           ``POWer:POWer<x>:RESUlts:ALLAcqs:MAXimum? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the
           ``POWer:POWer<x>:RESUlts:ALLAcqs:MAXimum? argument`` query and raise an AssertionError if
           the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RESUlts:ALLAcqs:MAXimum? {InputPwr|Output1Pwr| Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3| TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak| Br|Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability| RDS|TRUEPWR|APPPWR|REPWR|PWRFACTOR|PHASE| PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS|TONENRG| TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT| LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL| PKPK|HIGH|LOW|MAX|MIN| INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<QString>`` = the measurement result that you want to return from the specified power
@@ -6529,7 +6449,7 @@ class PowerPowerItemResultsAllacqsMaximum(SCPICmdReadWithArguments):
 class PowerPowerItemResultsAllacqs(SCPICmdRead):
     """The ``POWer:POWer<x>:RESUlts:ALLAcqs`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:RESUlts:ALLAcqs?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:RESUlts:ALLAcqs?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -6558,25 +6478,24 @@ class PowerPowerItemResultsAllacqs(SCPICmdRead):
     def maximum(self) -> PowerPowerItemResultsAllacqsMaximum:
         """Return the ``POWer:POWer<x>:RESUlts:ALLAcqs:MAXimum`` command.
 
-        **Description:**
+        Description:
             - This command queries the maximum value of all acquisitions for the measurement
               parameter in the specified power measurement number. The power measurement number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:ALLAcqs:MAXimum? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:ALLAcqs:MAXimum? argument`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:ALLAcqs:MAXimum? {InputPwr|Output1Pwr| Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3| TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak| Br|Hc|Hmax|IRipple|DeltaB|DeltaH|Permeability| RDS|TRUEPWR|APPPWR|REPWR|PWRFACTOR|PHASE| PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS|TONENRG| TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT| LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL| PKPK|HIGH|LOW|MAX|MIN| INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<QString>`` = the measurement result that you want to return from the specified
@@ -6589,24 +6508,23 @@ class PowerPowerItemResultsAllacqs(SCPICmdRead):
     def mean(self) -> PowerPowerItemResultsAllacqsMean:
         """Return the ``POWer:POWer<x>:RESUlts:ALLAcqs:MEAN`` command.
 
-        **Description:**
+        Description:
             - This command queries the mean value of all acquisitions for the measurement parameter
               in the specified power measurement number <x>.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:ALLAcqs:MEAN? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:ALLAcqs:MEAN? argument`` query and raise an AssertionError if
               the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:ALLAcqs:MEAN? {InputPwr|Output1Pwr|Output2Pwr| Output3Pwr|Efficiency1|Efficiency2| Efficiency3|TotalEfficiency| INDUCT|IVSINTV|MAGLOSS|Bpeak|Br|Hc|Hmax| IRipple|DeltaB|DeltaH|Permeability|RDS|TRUEPWR| APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ| ICFACTOR|VCFACTOR|IRMS|VRMS|TONENRG| TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT| LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE|AMPL| PKPK|HIGH|LOW|MAX|MIN| INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<QString>`` = the measurement result that you want to return from the specified
@@ -6619,24 +6537,23 @@ class PowerPowerItemResultsAllacqs(SCPICmdRead):
     def minimum(self) -> PowerPowerItemResultsAllacqsMinimum:
         """Return the ``POWer:POWer<x>:RESUlts:ALLAcqs:MINimum`` command.
 
-        **Description:**
+        Description:
             - This command queries the minimum value of all acquisitions for the measurement
               parameter of the specified power measurement <x>.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:ALLAcqs:MINimum? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:ALLAcqs:MINimum? argument`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:ALLAcqs:MINimum? {InputPwr|Output1Pwr| Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3| TotalEfficiency|INDUCT|IVSINTV|MAGLOSS| Bpeak|Br|Hc|Hmax|IRipple|DeltaB|DeltaH| Permeability|RDS|TRUEPWR|APPPWR|REPWR| PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR| IRMS|VRMS|TONENRG|TONLOSS|TOFFENRG| TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS|TTLENRG| DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK| SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY| NDUTY|PPULSE|NPULSE|AMPL|PKPK| HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<QString>`` = the measurement result that you want to return from the specified
@@ -6649,24 +6566,23 @@ class PowerPowerItemResultsAllacqs(SCPICmdRead):
     def pk2pk(self) -> PowerPowerItemResultsAllacqsPk2pk:
         """Return the ``POWer:POWer<x>:RESUlts:ALLAcqs:PK2PK`` command.
 
-        **Description:**
+        Description:
             - This command queries the peak-to-peak value of all acquisitions for the measurement
               parameter in the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:ALLAcqs:PK2PK? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:ALLAcqs:PK2PK? argument`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:ALLAcqs:PK2PK? {InputPwr|Output1Pwr| Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3| TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak| Br|Hc|Hmax|IRipple|DeltaB|DeltaH| Permeability|RDS|TRUEPWR|APPPWR|REPWR| PWRFACTOR|PHASE|PWRFREQ|ICFACTOR|VCFACTOR| IRMS|VRMS|TONENRG|TONLOSS|TOFFENRG| TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS|TTLENRG| DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS|LRIPPKPK| SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY| NDUTY|PPULSE|NPULSE|AMPL|PKPK| HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<QString>`` = the measurement result that you want to return from the specified
@@ -6680,24 +6596,23 @@ class PowerPowerItemResultsAllacqs(SCPICmdRead):
     def population(self) -> PowerPowerItemResultsAllacqsPopulation:
         """Return the ``POWer:POWer<x>:RESUlts:ALLAcqs:POPUlation`` command.
 
-        **Description:**
+        Description:
             - This command queries the population (number of complete cycles) of all acquisitions
               for the measurement parameter in the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:ALLAcqs:POPUlation? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:ALLAcqs:POPUlation? argument`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:ALLAcqs:POPUlation? {InputPwr|Output1Pwr| Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3| TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak| Br|Hc|Hmax|IRipple|DeltaB|DeltaH| Permeability|RDS|TRUEPWR|APPPWR|REPWR|PWRFACTOR| PHASE|PWRFREQ|ICFACTOR|VCFACTOR|IRMS|VRMS| TONENRG|TONLOSS|TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS| TTLLOSS|TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT| LRIPRMS|LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD| FREQ|PDUTY|NDUTY|PPULSE|NPULSE| AMPL|PKPK|HIGH|LOW|MAX|MIN|INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<QString>`` = the measurement result that you want to return from the specified
@@ -6710,24 +6625,23 @@ class PowerPowerItemResultsAllacqs(SCPICmdRead):
     def stddev(self) -> PowerPowerItemResultsAllacqsStddev:
         """Return the ``POWer:POWer<x>:RESUlts:ALLAcqs:STDDev`` command.
 
-        **Description:**
+        Description:
             - This command queries the standard deviation value of all acquisitions for the
               measurement parameter in the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the
               ``POWer:POWer<x>:RESUlts:ALLAcqs:STDDev? argument`` query.
             - Using the ``.verify(argument, value)`` method will send the
               ``POWer:POWer<x>:RESUlts:ALLAcqs:STDDev? argument`` query and raise an AssertionError
               if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RESUlts:ALLAcqs:STDDev? {InputPwr|Output1Pwr| Output2Pwr|Output3Pwr|Efficiency1|Efficiency2|Efficiency3| TotalEfficiency|INDUCT|IVSINTV|MAGLOSS|Bpeak|Br|Hc| Hmax|IRipple|DeltaB|DeltaH|Permeability|RDS| TRUEPWR|APPPWR|REPWR|PWRFACTOR|PHASE|PWRFREQ| ICFACTOR|VCFACTOR|IRMS|VRMS|TONENRG|TONLOSS| TOFFENRG|TOFFLOSS|CONDENRG|CONDLOSS|TTLLOSS| TTLENRG|DVBYDT|DIBYDT|SOAHITSCNT|LRIPRMS| LRIPPKPK|SWRIPRMS|SWRIPPKPK|PRIOD|FREQ|PDUTY| NDUTY|PPULSE|NPULSE|AMPL|PKPK|HIGH|LOW|MAX|MIN| INRUSH|CAPACITANCE|OUTPUT1| OUTPUT2|OUTPUT3|OUTPUT4|OUTPUT5|OUTPUT6|OUTPUT7| GAINCROSSOVERFREQ|PHASECROSSOVERFREQ|GM|PM| MAXPSRR|MAXPSRRFREQ|MINPSRR|MINPSRRFREQ}
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<QString>`` = the measurement result that you want to return from the specified
@@ -6740,7 +6654,7 @@ class PowerPowerItemResultsAllacqs(SCPICmdRead):
 class PowerPowerItemResults(SCPICmdRead):
     """The ``POWer:POWer<x>:RESUlts`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:RESUlts?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:RESUlts?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -6759,7 +6673,7 @@ class PowerPowerItemResults(SCPICmdRead):
     def allacqs(self) -> PowerPowerItemResultsAllacqs:
         """Return the ``POWer:POWer<x>:RESUlts:ALLAcqs`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:RESUlts:ALLAcqs?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:RESUlts:ALLAcqs?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -6778,7 +6692,7 @@ class PowerPowerItemResults(SCPICmdRead):
     def currentacq(self) -> PowerPowerItemResultsCurrentacq:
         """Return the ``POWer:POWer<x>:RESUlts:CURRentacq`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:RESUlts:CURRentacq?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -6812,11 +6726,11 @@ class PowerPowerItemResults(SCPICmdRead):
 class PowerPowerItemReflevelsPercentType(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:PERCent:TYPE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the reference levels for the specified power measurement
           number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:PERCent:TYPE?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -6825,14 +6739,13 @@ class PowerPowerItemReflevelsPercentType(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:REFLevels:PERCent:TYPE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:REFLevels:PERCent:TYPE {TENNinety | TWENtyeighty | CUSTom}
         - POWer:POWer<x>:REFLevels:PERCent:TYPE?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``TENNinety`` to set the low reference levels as 10% and high reference levels as 90%.
@@ -6845,11 +6758,11 @@ class PowerPowerItemReflevelsPercentType(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemReflevelsPercentRisemid(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:PERCent:RISEMid`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the rising edge for mid reference level in percentage for the
           specified power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:PERCent:RISEMid?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -6858,14 +6771,13 @@ class PowerPowerItemReflevelsPercentRisemid(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:REFLevels:PERCent:RISEMid value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:REFLevels:PERCent:RISEMid <NR1>
         - POWer:POWer<x>:REFLevels:PERCent:RISEMid?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from 1 to 99.
@@ -6875,11 +6787,11 @@ class PowerPowerItemReflevelsPercentRisemid(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemReflevelsPercentRiselow(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:PERCent:RISELow`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the rising edge for low reference level in percentage for the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:PERCent:RISELow?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -6888,14 +6800,13 @@ class PowerPowerItemReflevelsPercentRiselow(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:REFLevels:PERCent:RISELow value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:REFLevels:PERCent:RISELow <NR1>
         - POWer:POWer<x>:REFLevels:PERCent:RISELow?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from 1 to 99.
@@ -6905,11 +6816,11 @@ class PowerPowerItemReflevelsPercentRiselow(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemReflevelsPercentRisehigh(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:PERCent:RISEHigh`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the rising edge for high reference level in percentage for
           the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:PERCent:RISEHigh?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -6918,14 +6829,13 @@ class PowerPowerItemReflevelsPercentRisehigh(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:REFLevels:PERCent:RISEHigh value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:REFLevels:PERCent:RISEHigh <NR1>
         - POWer:POWer<x>:REFLevels:PERCent:RISEHigh?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from 1 to 99.
@@ -6935,11 +6845,11 @@ class PowerPowerItemReflevelsPercentRisehigh(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemReflevelsPercentHysteresis(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:PERCent:HYSTeresis`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the hysteresis in percentage for the specified power
           measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``POWer:POWer<x>:REFLevels:PERCent:HYSTeresis?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -6948,14 +6858,13 @@ class PowerPowerItemReflevelsPercentHysteresis(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:REFLevels:PERCent:HYSTeresis value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:REFLevels:PERCent:HYSTeresis <NR1>
         - POWer:POWer<x>:REFLevels:PERCent:HYSTeresis?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from 1 to 99.
@@ -6965,11 +6874,11 @@ class PowerPowerItemReflevelsPercentHysteresis(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemReflevelsPercentFallmid(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:PERCent:FALLMid`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the falling edge for mid reference level in percentage for
           the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:PERCent:FALLMid?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -6978,14 +6887,13 @@ class PowerPowerItemReflevelsPercentFallmid(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:REFLevels:PERCent:FALLMid value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:REFLevels:PERCent:FALLMid <NR1>
         - POWer:POWer<x>:REFLevels:PERCent:FALLMid?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from 1 to 99.
@@ -6995,11 +6903,11 @@ class PowerPowerItemReflevelsPercentFallmid(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemReflevelsPercentFalllow(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:PERCent:FALLLow`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the falling edge for low reference level in percentage for
           the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:PERCent:FALLLow?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -7008,14 +6916,13 @@ class PowerPowerItemReflevelsPercentFalllow(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:REFLevels:PERCent:FALLLow value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:REFLevels:PERCent:FALLLow <NR1>
         - POWer:POWer<x>:REFLevels:PERCent:FALLLow?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from 1 to 99.
@@ -7025,11 +6932,11 @@ class PowerPowerItemReflevelsPercentFalllow(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemReflevelsPercentFallhigh(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:PERCent:FALLHigh`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the falling edge for high reference level in percentage for
           the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:PERCent:FALLHigh?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -7038,14 +6945,13 @@ class PowerPowerItemReflevelsPercentFallhigh(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:REFLevels:PERCent:FALLHigh value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:REFLevels:PERCent:FALLHigh <NR1>
         - POWer:POWer<x>:REFLevels:PERCent:FALLHigh?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from 1 to 99.
@@ -7056,7 +6962,7 @@ class PowerPowerItemReflevelsPercentFallhigh(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemReflevelsPercent(SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:PERCent`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:PERCent?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:REFLevels:PERCent?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -7093,11 +6999,11 @@ class PowerPowerItemReflevelsPercent(SCPICmdRead):
     def fallhigh(self) -> PowerPowerItemReflevelsPercentFallhigh:
         """Return the ``POWer:POWer<x>:REFLevels:PERCent:FALLHigh`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the falling edge for high reference level in percentage
               for the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:REFLevels:PERCent:FALLHigh?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7106,14 +7012,13 @@ class PowerPowerItemReflevelsPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:REFLevels:PERCent:FALLHigh value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:REFLevels:PERCent:FALLHigh <NR1>
             - POWer:POWer<x>:REFLevels:PERCent:FALLHigh?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from 1 to 99.
@@ -7124,11 +7029,11 @@ class PowerPowerItemReflevelsPercent(SCPICmdRead):
     def falllow(self) -> PowerPowerItemReflevelsPercentFalllow:
         """Return the ``POWer:POWer<x>:REFLevels:PERCent:FALLLow`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the falling edge for low reference level in percentage
               for the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:REFLevels:PERCent:FALLLow?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7137,14 +7042,13 @@ class PowerPowerItemReflevelsPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:REFLevels:PERCent:FALLLow value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:REFLevels:PERCent:FALLLow <NR1>
             - POWer:POWer<x>:REFLevels:PERCent:FALLLow?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from 1 to 99.
@@ -7155,11 +7059,11 @@ class PowerPowerItemReflevelsPercent(SCPICmdRead):
     def fallmid(self) -> PowerPowerItemReflevelsPercentFallmid:
         """Return the ``POWer:POWer<x>:REFLevels:PERCent:FALLMid`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the falling edge for mid reference level in percentage
               for the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:REFLevels:PERCent:FALLMid?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7168,14 +7072,13 @@ class PowerPowerItemReflevelsPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:REFLevels:PERCent:FALLMid value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:REFLevels:PERCent:FALLMid <NR1>
             - POWer:POWer<x>:REFLevels:PERCent:FALLMid?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from 1 to 99.
@@ -7186,11 +7089,11 @@ class PowerPowerItemReflevelsPercent(SCPICmdRead):
     def hysteresis(self) -> PowerPowerItemReflevelsPercentHysteresis:
         """Return the ``POWer:POWer<x>:REFLevels:PERCent:HYSTeresis`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the hysteresis in percentage for the specified power
               measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:REFLevels:PERCent:HYSTeresis?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7199,14 +7102,13 @@ class PowerPowerItemReflevelsPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:REFLevels:PERCent:HYSTeresis value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:REFLevels:PERCent:HYSTeresis <NR1>
             - POWer:POWer<x>:REFLevels:PERCent:HYSTeresis?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from 1 to 99.
@@ -7217,11 +7119,11 @@ class PowerPowerItemReflevelsPercent(SCPICmdRead):
     def risehigh(self) -> PowerPowerItemReflevelsPercentRisehigh:
         """Return the ``POWer:POWer<x>:REFLevels:PERCent:RISEHigh`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the rising edge for high reference level in percentage
               for the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:REFLevels:PERCent:RISEHigh?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7230,14 +7132,13 @@ class PowerPowerItemReflevelsPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:REFLevels:PERCent:RISEHigh value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:REFLevels:PERCent:RISEHigh <NR1>
             - POWer:POWer<x>:REFLevels:PERCent:RISEHigh?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from 1 to 99.
@@ -7248,11 +7149,11 @@ class PowerPowerItemReflevelsPercent(SCPICmdRead):
     def riselow(self) -> PowerPowerItemReflevelsPercentRiselow:
         """Return the ``POWer:POWer<x>:REFLevels:PERCent:RISELow`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the rising edge for low reference level in percentage for
               the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:REFLevels:PERCent:RISELow?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7261,14 +7162,13 @@ class PowerPowerItemReflevelsPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:REFLevels:PERCent:RISELow value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:REFLevels:PERCent:RISELow <NR1>
             - POWer:POWer<x>:REFLevels:PERCent:RISELow?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from 1 to 99.
@@ -7279,12 +7179,12 @@ class PowerPowerItemReflevelsPercent(SCPICmdRead):
     def risemid(self) -> PowerPowerItemReflevelsPercentRisemid:
         """Return the ``POWer:POWer<x>:REFLevels:PERCent:RISEMid`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the rising edge for mid reference level in percentage for
               the specified power measurement number. The power measurement number is specified by
               x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:REFLevels:PERCent:RISEMid?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7293,14 +7193,13 @@ class PowerPowerItemReflevelsPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:REFLevels:PERCent:RISEMid value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:REFLevels:PERCent:RISEMid <NR1>
             - POWer:POWer<x>:REFLevels:PERCent:RISEMid?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from 1 to 99.
@@ -7311,11 +7210,11 @@ class PowerPowerItemReflevelsPercent(SCPICmdRead):
     def type(self) -> PowerPowerItemReflevelsPercentType:
         """Return the ``POWer:POWer<x>:REFLevels:PERCent:TYPE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the reference levels for the specified power measurement
               number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:PERCent:TYPE?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -7324,14 +7223,13 @@ class PowerPowerItemReflevelsPercent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:REFLevels:PERCent:TYPE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:REFLevels:PERCent:TYPE {TENNinety | TWENtyeighty | CUSTom}
             - POWer:POWer<x>:REFLevels:PERCent:TYPE?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``TENNinety`` to set the low reference levels as 10% and high reference levels as 90%.
@@ -7346,25 +7244,24 @@ class PowerPowerItemReflevelsPercent(SCPICmdRead):
 class PowerPowerItemReflevelsMethod(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:METHod`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the method to configure reference level values for the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:METHod?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:REFLevels:METHod?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:REFLevels:METHod value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:REFLevels:METHod {PERCent | ABSolute}
         - POWer:POWer<x>:REFLevels:METHod?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``PERCent`` sets the power measurement to use absolute values to configure reference level
@@ -7377,34 +7274,33 @@ class PowerPowerItemReflevelsMethod(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemReflevelsBasetop(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:BASETop`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the reference level base top method for the specified power
           measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:BASETop?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:REFLevels:BASETop?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:REFLevels:BASETop value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:REFLevels:BASETop {AUTO | MINMax | MEANhistogram | MODEhistogram | EYEhistogram}
         - POWer:POWer<x>:REFLevels:BASETop?
+        ```
     """  # noqa: E501
 
 
 class PowerPowerItemReflevelsAbsoluteType(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:ABSolute:TYPE`` command.
 
-    **Description:**
+    Description:
         - This  command sets or queries the type of measurement levels when reference level is set
           to absolute for the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:ABSolute:TYPE?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -7413,14 +7309,13 @@ class PowerPowerItemReflevelsAbsoluteType(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:REFLevels:ABSolute:TYPE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:REFLevels:ABSolute:TYPE {SAME | UNIQue}
         - POWer:POWer<x>:REFLevels:ABSolute:TYPE?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``SAME`` : select when the rising edge and falling edge reference levels are same.
@@ -7431,11 +7326,11 @@ class PowerPowerItemReflevelsAbsoluteType(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemReflevelsAbsoluteRisemid(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:ABSolute:RISEMid`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the rising edge for mid reference level in absolute units for
           the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:ABSolute:RISEMid?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -7444,14 +7339,13 @@ class PowerPowerItemReflevelsAbsoluteRisemid(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:REFLevels:ABSolute:RISEMid value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:REFLevels:ABSolute:RISEMid <NR1>
         - POWer:POWer<x>:REFLevels:ABSolute:RISEMid?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from -40000 to 40000.
@@ -7461,11 +7355,11 @@ class PowerPowerItemReflevelsAbsoluteRisemid(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemReflevelsAbsoluteRiselow(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:ABSolute:RISELow`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the rising edge for low reference level in absolute units for
           the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:ABSolute:RISELow?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -7474,14 +7368,13 @@ class PowerPowerItemReflevelsAbsoluteRiselow(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:REFLevels:ABSolute:RISELow value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:REFLevels:ABSolute:RISELow <NR1>
         - POWer:POWer<x>:REFLevels:ABSolute:RISELow?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from -40000 to 40000.
@@ -7491,11 +7384,11 @@ class PowerPowerItemReflevelsAbsoluteRiselow(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemReflevelsAbsoluteRisehigh(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:ABSolute:RISEHigh`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the rising edge for high reference level in absolute units
           for the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``POWer:POWer<x>:REFLevels:ABSolute:RISEHigh?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7504,14 +7397,13 @@ class PowerPowerItemReflevelsAbsoluteRisehigh(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:REFLevels:ABSolute:RISEHigh value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:REFLevels:ABSolute:RISEHigh <NR1>
         - POWer:POWer<x>:REFLevels:ABSolute:RISEHigh?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from -40000 to 40000.
@@ -7521,11 +7413,11 @@ class PowerPowerItemReflevelsAbsoluteRisehigh(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemReflevelsAbsoluteHysteresis(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:ABSolute:HYSTeresis`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the absolute hysteresis value for the specified power
           measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``POWer:POWer<x>:REFLevels:ABSolute:HYSTeresis?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7534,14 +7426,13 @@ class PowerPowerItemReflevelsAbsoluteHysteresis(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:REFLevels:ABSolute:HYSTeresis value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:REFLevels:ABSolute:HYSTeresis <NR1>
         - POWer:POWer<x>:REFLevels:ABSolute:HYSTeresis?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from 0.0000005 to 10.
@@ -7551,11 +7442,11 @@ class PowerPowerItemReflevelsAbsoluteHysteresis(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemReflevelsAbsoluteFallmid(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:ABSolute:FALLMid`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the falling edge for mid reference level in absolute units
           for the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:ABSolute:FALLMid?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -7564,14 +7455,13 @@ class PowerPowerItemReflevelsAbsoluteFallmid(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:REFLevels:ABSolute:FALLMid value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:REFLevels:ABSolute:FALLMid <NR1>
         - POWer:POWer<x>:REFLevels:ABSolute:FALLMid?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from -40000 to 40000.
@@ -7581,11 +7471,11 @@ class PowerPowerItemReflevelsAbsoluteFallmid(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemReflevelsAbsoluteFalllow(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:ABSolute:FALLLow`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the falling edge for low reference level in absolute units
           for the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:ABSolute:FALLLow?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -7594,14 +7484,13 @@ class PowerPowerItemReflevelsAbsoluteFalllow(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:REFLevels:ABSolute:FALLLow value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:REFLevels:ABSolute:FALLLow <NR1>
         - POWer:POWer<x>:REFLevels:ABSolute:FALLLow?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from -40000 to 40000.
@@ -7611,11 +7500,11 @@ class PowerPowerItemReflevelsAbsoluteFalllow(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemReflevelsAbsoluteFallhigh(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:ABSolute:FALLHigh`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the falling edge for high reference level in absolute units
           for the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``POWer:POWer<x>:REFLevels:ABSolute:FALLHigh?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -7624,14 +7513,13 @@ class PowerPowerItemReflevelsAbsoluteFallhigh(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:REFLevels:ABSolute:FALLHigh value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:REFLevels:ABSolute:FALLHigh <NR1>
         - POWer:POWer<x>:REFLevels:ABSolute:FALLHigh?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR1>`` ranges from -40000 to 40000.
@@ -7642,7 +7530,7 @@ class PowerPowerItemReflevelsAbsoluteFallhigh(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemReflevelsAbsolute(SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels:ABSolute`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:ABSolute?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:REFLevels:ABSolute?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -7687,11 +7575,11 @@ class PowerPowerItemReflevelsAbsolute(SCPICmdRead):
     def fallhigh(self) -> PowerPowerItemReflevelsAbsoluteFallhigh:
         """Return the ``POWer:POWer<x>:REFLevels:ABSolute:FALLHigh`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the falling edge for high reference level in absolute
               units for the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:REFLevels:ABSolute:FALLHigh?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7700,14 +7588,13 @@ class PowerPowerItemReflevelsAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:REFLevels:ABSolute:FALLHigh value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:REFLevels:ABSolute:FALLHigh <NR1>
             - POWer:POWer<x>:REFLevels:ABSolute:FALLHigh?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from -40000 to 40000.
@@ -7718,11 +7605,11 @@ class PowerPowerItemReflevelsAbsolute(SCPICmdRead):
     def falllow(self) -> PowerPowerItemReflevelsAbsoluteFalllow:
         """Return the ``POWer:POWer<x>:REFLevels:ABSolute:FALLLow`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the falling edge for low reference level in absolute
               units for the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:REFLevels:ABSolute:FALLLow?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7731,14 +7618,13 @@ class PowerPowerItemReflevelsAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:REFLevels:ABSolute:FALLLow value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:REFLevels:ABSolute:FALLLow <NR1>
             - POWer:POWer<x>:REFLevels:ABSolute:FALLLow?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from -40000 to 40000.
@@ -7749,11 +7635,11 @@ class PowerPowerItemReflevelsAbsolute(SCPICmdRead):
     def fallmid(self) -> PowerPowerItemReflevelsAbsoluteFallmid:
         """Return the ``POWer:POWer<x>:REFLevels:ABSolute:FALLMid`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the falling edge for mid reference level in absolute
               units for the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:REFLevels:ABSolute:FALLMid?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7762,14 +7648,13 @@ class PowerPowerItemReflevelsAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:REFLevels:ABSolute:FALLMid value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:REFLevels:ABSolute:FALLMid <NR1>
             - POWer:POWer<x>:REFLevels:ABSolute:FALLMid?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from -40000 to 40000.
@@ -7780,11 +7665,11 @@ class PowerPowerItemReflevelsAbsolute(SCPICmdRead):
     def hysteresis(self) -> PowerPowerItemReflevelsAbsoluteHysteresis:
         """Return the ``POWer:POWer<x>:REFLevels:ABSolute:HYSTeresis`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the absolute hysteresis value for the specified power
               measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:REFLevels:ABSolute:HYSTeresis?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7793,14 +7678,13 @@ class PowerPowerItemReflevelsAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:REFLevels:ABSolute:HYSTeresis value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:REFLevels:ABSolute:HYSTeresis <NR1>
             - POWer:POWer<x>:REFLevels:ABSolute:HYSTeresis?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from 0.0000005 to 10.
@@ -7811,11 +7695,11 @@ class PowerPowerItemReflevelsAbsolute(SCPICmdRead):
     def risehigh(self) -> PowerPowerItemReflevelsAbsoluteRisehigh:
         """Return the ``POWer:POWer<x>:REFLevels:ABSolute:RISEHigh`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the rising edge for high reference level in absolute
               units for the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:REFLevels:ABSolute:RISEHigh?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7824,14 +7708,13 @@ class PowerPowerItemReflevelsAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:REFLevels:ABSolute:RISEHigh value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:REFLevels:ABSolute:RISEHigh <NR1>
             - POWer:POWer<x>:REFLevels:ABSolute:RISEHigh?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from -40000 to 40000.
@@ -7842,11 +7725,11 @@ class PowerPowerItemReflevelsAbsolute(SCPICmdRead):
     def riselow(self) -> PowerPowerItemReflevelsAbsoluteRiselow:
         """Return the ``POWer:POWer<x>:REFLevels:ABSolute:RISELow`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the rising edge for low reference level in absolute units
               for the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:REFLevels:ABSolute:RISELow?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7855,14 +7738,13 @@ class PowerPowerItemReflevelsAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:REFLevels:ABSolute:RISELow value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:REFLevels:ABSolute:RISELow <NR1>
             - POWer:POWer<x>:REFLevels:ABSolute:RISELow?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from -40000 to 40000.
@@ -7873,11 +7755,11 @@ class PowerPowerItemReflevelsAbsolute(SCPICmdRead):
     def risemid(self) -> PowerPowerItemReflevelsAbsoluteRisemid:
         """Return the ``POWer:POWer<x>:REFLevels:ABSolute:RISEMid`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the rising edge for mid reference level in absolute units
               for the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:REFLevels:ABSolute:RISEMid?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7886,14 +7768,13 @@ class PowerPowerItemReflevelsAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:REFLevels:ABSolute:RISEMid value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:REFLevels:ABSolute:RISEMid <NR1>
             - POWer:POWer<x>:REFLevels:ABSolute:RISEMid?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR1>`` ranges from -40000 to 40000.
@@ -7904,11 +7785,11 @@ class PowerPowerItemReflevelsAbsolute(SCPICmdRead):
     def type(self) -> PowerPowerItemReflevelsAbsoluteType:
         """Return the ``POWer:POWer<x>:REFLevels:ABSolute:TYPE`` command.
 
-        **Description:**
+        Description:
             - This  command sets or queries the type of measurement levels when reference level is
               set to absolute for the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:REFLevels:ABSolute:TYPE?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -7917,14 +7798,13 @@ class PowerPowerItemReflevelsAbsolute(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:REFLevels:ABSolute:TYPE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:REFLevels:ABSolute:TYPE {SAME | UNIQue}
             - POWer:POWer<x>:REFLevels:ABSolute:TYPE?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``SAME`` : select when the rising edge and falling edge reference levels are same.
@@ -7937,7 +7817,7 @@ class PowerPowerItemReflevelsAbsolute(SCPICmdRead):
 class PowerPowerItemReflevels(SCPICmdRead):
     """The ``POWer:POWer<x>:REFLevels`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:REFLevels?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -7960,7 +7840,7 @@ class PowerPowerItemReflevels(SCPICmdRead):
     def absolute(self) -> PowerPowerItemReflevelsAbsolute:
         """Return the ``POWer:POWer<x>:REFLevels:ABSolute`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:ABSolute?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -7983,11 +7863,11 @@ class PowerPowerItemReflevels(SCPICmdRead):
     def basetop(self) -> PowerPowerItemReflevelsBasetop:
         """Return the ``POWer:POWer<x>:REFLevels:BASETop`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the reference level base top method for the specified
               power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:BASETop?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -7996,12 +7876,11 @@ class PowerPowerItemReflevels(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:REFLevels:BASETop value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:REFLevels:BASETop {AUTO | MINMax | MEANhistogram | MODEhistogram | EYEhistogram}
             - POWer:POWer<x>:REFLevels:BASETop?
+            ```
         """  # noqa: E501
         return self._basetop
 
@@ -8009,11 +7888,11 @@ class PowerPowerItemReflevels(SCPICmdRead):
     def method(self) -> PowerPowerItemReflevelsMethod:
         """Return the ``POWer:POWer<x>:REFLevels:METHod`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the method to configure reference level values for the
               specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:METHod?``
               query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:REFLevels:METHod?``
@@ -8021,14 +7900,13 @@ class PowerPowerItemReflevels(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:REFLevels:METHod value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:REFLevels:METHod {PERCent | ABSolute}
             - POWer:POWer<x>:REFLevels:METHod?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``PERCent`` sets the power measurement to use absolute values to configure reference
@@ -8042,7 +7920,7 @@ class PowerPowerItemReflevels(SCPICmdRead):
     def percent(self) -> PowerPowerItemReflevelsPercent:
         """Return the ``POWer:POWer<x>:REFLevels:PERCent`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels:PERCent?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -8065,25 +7943,24 @@ class PowerPowerItemReflevels(SCPICmdRead):
 class PowerPowerItemRdsonVsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:RDSON:VSOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the voltage source for RDSon measurement of the specified
           power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:RDSON:VSOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:RDSON:VSOURce?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:RDSON:VSOURce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RDSON:VSOURce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:RDSON:VSOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -8096,25 +7973,24 @@ class PowerPowerItemRdsonVsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemRdsonIsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:RDSON:ISOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current source for RDSon measurement of the specified
           power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:RDSON:ISOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:RDSON:ISOURce?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:RDSON:ISOURce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RDSON:ISOURce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:RDSON:ISOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -8127,25 +8003,24 @@ class PowerPowerItemRdsonIsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemRdsonDevicetype(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:RDSON:DEVICEType`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the device type for the power drain source on resistance
           measurement for RDSon measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:RDSON:DEVICEType?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:RDSON:DEVICEType?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:RDSON:DEVICEType value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:RDSON:DEVICEType {SWITCHING | PNJUNCTION}
         - POWer:POWer<x>:RDSON:DEVICEType?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``SWITCHING`` sets the Device Type to a switching device (v/i).
@@ -8156,7 +8031,7 @@ class PowerPowerItemRdsonDevicetype(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemRdson(SCPICmdRead):
     """The ``POWer:POWer<x>:RDSON`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:RDSON?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:RDSON?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -8177,11 +8052,11 @@ class PowerPowerItemRdson(SCPICmdRead):
     def devicetype(self) -> PowerPowerItemRdsonDevicetype:
         """Return the ``POWer:POWer<x>:RDSON:DEVICEType`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the device type for the power drain source on resistance
               measurement for RDSon measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:RDSON:DEVICEType?``
               query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:RDSON:DEVICEType?``
@@ -8189,14 +8064,13 @@ class PowerPowerItemRdson(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:RDSON:DEVICEType value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RDSON:DEVICEType {SWITCHING | PNJUNCTION}
             - POWer:POWer<x>:RDSON:DEVICEType?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``SWITCHING`` sets the Device Type to a switching device (v/i).
@@ -8208,25 +8082,24 @@ class PowerPowerItemRdson(SCPICmdRead):
     def isource(self) -> PowerPowerItemRdsonIsource:
         """Return the ``POWer:POWer<x>:RDSON:ISOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current source for RDSon measurement of the specified
               power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:RDSON:ISOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:RDSON:ISOURce?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:RDSON:ISOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RDSON:ISOURce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:RDSON:ISOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number
@@ -8240,25 +8113,24 @@ class PowerPowerItemRdson(SCPICmdRead):
     def vsource(self) -> PowerPowerItemRdsonVsource:
         """Return the ``POWer:POWer<x>:RDSON:VSOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the voltage source for RDSon measurement of the specified
               power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:RDSON:VSOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:RDSON:VSOURce?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:RDSON:VSOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:RDSON:VSOURce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:RDSON:VSOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number
@@ -8272,21 +8144,20 @@ class PowerPowerItemRdson(SCPICmdRead):
 class PowerPowerItemPsrrTestconnection(SCPICmdWrite):
     """The ``POWer:POWer<x>:PSRR:TESTCONNection`` command.
 
-    **Description:**
+    Description:
         - This command tests the connection with the external instrument for the specified Power
           Supply Rejection Ratio (PSRR) measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:PSRR:TESTCONNection value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PSRR:TESTCONNection {EXECute}
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the PSRR power measurement.
         - ``EXECute`` runs the test connection function.
     """
@@ -8295,25 +8166,24 @@ class PowerPowerItemPsrrTestconnection(SCPICmdWrite):
 class PowerPowerItemPsrrStopfrequency(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PSRR:STOPFREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the stop frequency value for the Power Supply Rejection Ratio
           (PSRR) power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:STOPFREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:STOPFREQuency?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:PSRR:STOPFREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PSRR:STOPFREQuency <NR3>
         - POWer:POWer<x>:PSRR:STOPFREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR3>`` is the stop frequency for the measurement, in the range of 10 Hz to 50 MHz.
@@ -8323,25 +8193,24 @@ class PowerPowerItemPsrrStopfrequency(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPsrrStartfrequency(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PSRR:STARTFREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the start frequency value for the Power Supply Rejection
           Ratio (PSRR) power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:STARTFREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:STARTFREQuency?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:PSRR:STARTFREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PSRR:STARTFREQuency <NR3>
         - POWer:POWer<x>:PSRR:STARTFREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR3>`` is the starting frequency for the measurement, in the range of 10 Hz to 50 MHz.
@@ -8351,25 +8220,24 @@ class PowerPowerItemPsrrStartfrequency(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPsrrPpd(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PSRR:PPD`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the points per decade (PPD) value for the Power Supply
           Rejection Ratio (PSRR) power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:PPD?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:PPD?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:PSRR:PPD value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PSRR:PPD <NR3>
         - POWer:POWer<x>:PSRR:PPD?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR3>`` is the PPD value for the measurement, in the range of 10 to 100 points.
@@ -8379,25 +8247,24 @@ class PowerPowerItemPsrrPpd(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPsrrOutputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PSRR:OUTPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output source for the Power Supply Rejection Ratio (PSRR)
           power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:OUTPUTSOurce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:OUTPUTSOurce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:PSRR:OUTPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PSRR:OUTPUTSOurce CH<x>
         - POWer:POWer<x>:PSRR:OUTPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``CH<x>`` sets the channel to use for the output source.
@@ -8407,25 +8274,24 @@ class PowerPowerItemPsrrOutputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPsrrInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PSRR:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source for the Power Supply Rejection Ratio (PSRR)
           power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:INPUTSOurce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:INPUTSOurce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:PSRR:INPUTSOurce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PSRR:INPUTSOurce CH<x>
         - POWer:POWer<x>:PSRR:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``CH<x>`` sets the channel to use for the input source.
@@ -8435,25 +8301,24 @@ class PowerPowerItemPsrrInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPsrrImpedance(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PSRR:IMPEDance`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the vertical termination impedance for the Power Supply
           Rejection Ratio (PSRR) power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:IMPEDance?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:IMPEDance?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:PSRR:IMPEDance value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PSRR:IMPEDance {FIFTy|HIGHZ}
         - POWer:POWer<x>:PSRR:IMPEDance?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``FIFTy`` sets the impedance to be 50 Ω.
@@ -8464,25 +8329,24 @@ class PowerPowerItemPsrrImpedance(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPsrrGenerator(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PSRR:GENerator`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the generator source for the Power Supply Rejection Ratio (PSRR) power
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:GENerator?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:GENerator?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:PSRR:GENerator value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PSRR:GENerator {INTernal|EXTernal}
         - POWer:POWer<x>:PSRR:GENerator?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the PSRR power measurement.
         - ``INTernal`` sets the internal generator as the source for the Power Supply Rejection
           Ratio (PSRR) power measurement.
@@ -8494,25 +8358,24 @@ class PowerPowerItemPsrrGenerator(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPsrrGenipaddress(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PSRR:GENIPADDress`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the instrument's IP Address associated with the specified Power Supply
           Rejection Ratio (PSRR) measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:GENIPADDress?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:GENIPADDress?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:PSRR:GENIPADDress value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PSRR:GENIPADDress <Qstring>
         - POWer:POWer<x>:PSRR:GENIPADDress?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the PSRR power measurement.<NR2> is the IP address of the
           generator.
     """
@@ -8521,25 +8384,24 @@ class PowerPowerItemPsrrGenipaddress(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPsrrFreqvalItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PSRR:FREQ<x>Val`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the generator frequency value of the specified configuration
           step for the Power Supply Rejection Ratio (PSRR) power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:FREQ<x>Val?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:FREQ<x>Val?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:PSRR:FREQ<x>Val value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PSRR:FREQ<x>Val <NR3>
         - POWer:POWer<x>:PSRR:FREQ<x>Val?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` sets the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``FREQ<x>`` sets the configuration step number, in the range of 1 to 11. Values outside
@@ -8552,25 +8414,24 @@ class PowerPowerItemPsrrFreqvalItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCP
 class PowerPowerItemPsrrConstamplitude(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PSRR:CONSTAMPlitude`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the constant amplitude voltage for the Power Supply Rejection
           Ratio (PSRR) power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:CONSTAMPlitude?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:CONSTAMPlitude?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:PSRR:CONSTAMPlitude value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PSRR:CONSTAMPlitude <NR3>
         - POWer:POWer<x>:PSRR:CONSTAMPlitude?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR3>`` is the constant amplitude voltage value for the measurement, in the range of
@@ -8581,22 +8442,21 @@ class PowerPowerItemPsrrConstamplitude(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPsrrConnectstatus(SCPICmdRead):
     """The ``POWer:POWer<x>:PSRR:CONNECTSTATus`` command.
 
-    **Description:**
+    Description:
         - Queries the external instrument's connection status for the specified Power Supply
           Rejection Ratio (PSRR) measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:CONNECTSTATus?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:CONNECTSTATus?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PSRR:CONNECTSTATus?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the PSRR power measurement.
     """
 
@@ -8604,24 +8464,23 @@ class PowerPowerItemPsrrConnectstatus(SCPICmdRead):
 class PowerPowerItemPsrrAutorbw(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PSRR:AUTORbw`` command.
 
-    **Description:**
+    Description:
         - This command enables Auto RBW computation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:AUTORbw?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:AUTORbw?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:PSRR:AUTORbw value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PSRR:AUTORbw {True|False}
         - POWer:POWer<x>:PSRR:AUTORbw?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``True`` enables Auto RBW computation.
@@ -8632,24 +8491,23 @@ class PowerPowerItemPsrrAutorbw(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPsrrAnalysismethod(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PSRR:ANALYSISMethod`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the Analysis Method for PSRR measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:ANALYSISMethod?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:ANALYSISMethod?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:PSRR:ANALYSISMethod value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PSRR:ANALYSISMethod {SV|FFT}
         - POWer:POWer<x>:PSRR:ANALYSISMethod?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``SV`` sets the Analysis Method as Spectrum View.
@@ -8660,25 +8518,24 @@ class PowerPowerItemPsrrAnalysismethod(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPsrrAmpmode(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PSRR:AMPMode`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the amplitude mode for the Power Supply Rejection Ratio
           (PSRR) power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:AMPMode?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:AMPMode?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:PSRR:AMPMode value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PSRR:AMPMode {CONSTant|PROFile}
         - POWer:POWer<x>:PSRR:AMPMode?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``CONSTant`` sets the amplitude mode to output a constant amplitude signal from the DUT
@@ -8691,25 +8548,24 @@ class PowerPowerItemPsrrAmpmode(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPsrrAmpvalItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PSRR:AMP<x>Val`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the generator amplitude value of the specified configuration
           step for the Power Supply Rejection Ratio (PSRR) power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:AMP<x>Val?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:AMP<x>Val?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:PSRR:AMP<x>Val value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PSRR:AMP<x>Val <NR3>
         - POWer:POWer<x>:PSRR:AMP<x>Val?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` sets the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``AMP<x>`` sets the configuration step number, in the range of 1 to 10. Values outside
@@ -8723,7 +8579,7 @@ class PowerPowerItemPsrrAmpvalItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPI
 class PowerPowerItemPsrr(SCPICmdRead):
     """The ``POWer:POWer<x>:PSRR`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -8790,25 +8646,24 @@ class PowerPowerItemPsrr(SCPICmdRead):
     def ampval(self) -> Dict[int, PowerPowerItemPsrrAmpvalItem]:
         """Return the ``POWer:POWer<x>:PSRR:AMP<x>Val`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the generator amplitude value of the specified
               configuration step for the Power Supply Rejection Ratio (PSRR) power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:AMP<x>Val?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:AMP<x>Val?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:PSRR:AMP<x>Val value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PSRR:AMP<x>Val <NR3>
             - POWer:POWer<x>:PSRR:AMP<x>Val?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` sets the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``AMP<x>`` sets the configuration step number, in the range of 1 to 10. Values outside
@@ -8822,25 +8677,24 @@ class PowerPowerItemPsrr(SCPICmdRead):
     def ampmode(self) -> PowerPowerItemPsrrAmpmode:
         """Return the ``POWer:POWer<x>:PSRR:AMPMode`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the amplitude mode for the Power Supply Rejection Ratio
               (PSRR) power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:AMPMode?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:AMPMode?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:PSRR:AMPMode value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PSRR:AMPMode {CONSTant|PROFile}
             - POWer:POWer<x>:PSRR:AMPMode?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``CONSTant`` sets the amplitude mode to output a constant amplitude signal from the
@@ -8854,10 +8708,10 @@ class PowerPowerItemPsrr(SCPICmdRead):
     def analysismethod(self) -> PowerPowerItemPsrrAnalysismethod:
         """Return the ``POWer:POWer<x>:PSRR:ANALYSISMethod`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Analysis Method for PSRR measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:ANALYSISMethod?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -8866,14 +8720,13 @@ class PowerPowerItemPsrr(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:PSRR:ANALYSISMethod value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PSRR:ANALYSISMethod {SV|FFT}
             - POWer:POWer<x>:PSRR:ANALYSISMethod?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``SV`` sets the Analysis Method as Spectrum View.
@@ -8885,24 +8738,23 @@ class PowerPowerItemPsrr(SCPICmdRead):
     def autorbw(self) -> PowerPowerItemPsrrAutorbw:
         """Return the ``POWer:POWer<x>:PSRR:AUTORbw`` command.
 
-        **Description:**
+        Description:
             - This command enables Auto RBW computation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:AUTORbw?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:AUTORbw?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:PSRR:AUTORbw value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PSRR:AUTORbw {True|False}
             - POWer:POWer<x>:PSRR:AUTORbw?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``True`` enables Auto RBW computation.
@@ -8914,24 +8766,23 @@ class PowerPowerItemPsrr(SCPICmdRead):
     def connectstatus(self) -> PowerPowerItemPsrrConnectstatus:
         """Return the ``POWer:POWer<x>:PSRR:CONNECTSTATus`` command.
 
-        **Description:**
+        Description:
             - Queries the external instrument's connection status for the specified Power Supply
               Rejection Ratio (PSRR) measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:CONNECTSTATus?``
               query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:POWer<x>:PSRR:CONNECTSTATus?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PSRR:CONNECTSTATus?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the PSRR power measurement.
         """
         return self._connectstatus
@@ -8940,11 +8791,11 @@ class PowerPowerItemPsrr(SCPICmdRead):
     def constamplitude(self) -> PowerPowerItemPsrrConstamplitude:
         """Return the ``POWer:POWer<x>:PSRR:CONSTAMPlitude`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the constant amplitude voltage for the Power Supply
               Rejection Ratio (PSRR) power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:CONSTAMPlitude?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -8953,14 +8804,13 @@ class PowerPowerItemPsrr(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:PSRR:CONSTAMPlitude value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PSRR:CONSTAMPlitude <NR3>
             - POWer:POWer<x>:PSRR:CONSTAMPlitude?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR3>`` is the constant amplitude voltage value for the measurement, in the range of
@@ -8972,25 +8822,24 @@ class PowerPowerItemPsrr(SCPICmdRead):
     def freqval(self) -> Dict[int, PowerPowerItemPsrrFreqvalItem]:
         """Return the ``POWer:POWer<x>:PSRR:FREQ<x>Val`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the generator frequency value of the specified
               configuration step for the Power Supply Rejection Ratio (PSRR) power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:FREQ<x>Val?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:FREQ<x>Val?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:PSRR:FREQ<x>Val value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PSRR:FREQ<x>Val <NR3>
             - POWer:POWer<x>:PSRR:FREQ<x>Val?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` sets the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``FREQ<x>`` sets the configuration step number, in the range of 1 to 11. Values
@@ -9004,11 +8853,11 @@ class PowerPowerItemPsrr(SCPICmdRead):
     def genipaddress(self) -> PowerPowerItemPsrrGenipaddress:
         """Return the ``POWer:POWer<x>:PSRR:GENIPADDress`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the instrument's IP Address associated with the specified Power Supply
               Rejection Ratio (PSRR) measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:GENIPADDress?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -9017,14 +8866,13 @@ class PowerPowerItemPsrr(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:PSRR:GENIPADDress value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PSRR:GENIPADDress <Qstring>
             - POWer:POWer<x>:PSRR:GENIPADDress?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the PSRR power measurement.<NR2> is the IP address of
               the generator.
         """
@@ -9034,25 +8882,24 @@ class PowerPowerItemPsrr(SCPICmdRead):
     def generator(self) -> PowerPowerItemPsrrGenerator:
         """Return the ``POWer:POWer<x>:PSRR:GENerator`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the generator source for the Power Supply Rejection Ratio (PSRR) power
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:GENerator?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:GENerator?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:PSRR:GENerator value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PSRR:GENerator {INTernal|EXTernal}
             - POWer:POWer<x>:PSRR:GENerator?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the PSRR power measurement.
             - ``INTernal`` sets the internal generator as the source for the Power Supply Rejection
               Ratio (PSRR) power measurement.
@@ -9065,25 +8912,24 @@ class PowerPowerItemPsrr(SCPICmdRead):
     def impedance(self) -> PowerPowerItemPsrrImpedance:
         """Return the ``POWer:POWer<x>:PSRR:IMPEDance`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the vertical termination impedance for the Power Supply
               Rejection Ratio (PSRR) power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:IMPEDance?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:IMPEDance?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:PSRR:IMPEDance value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PSRR:IMPEDance {FIFTy|HIGHZ}
             - POWer:POWer<x>:PSRR:IMPEDance?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``FIFTy`` sets the impedance to be 50 Ω.
@@ -9095,11 +8941,11 @@ class PowerPowerItemPsrr(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemPsrrInputsource:
         """Return the ``POWer:POWer<x>:PSRR:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source for the Power Supply Rejection Ratio
               (PSRR) power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:INPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:INPUTSOurce?``
@@ -9107,14 +8953,13 @@ class PowerPowerItemPsrr(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:PSRR:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PSRR:INPUTSOurce CH<x>
             - POWer:POWer<x>:PSRR:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``CH<x>`` sets the channel to use for the input source.
@@ -9125,11 +8970,11 @@ class PowerPowerItemPsrr(SCPICmdRead):
     def outputsource(self) -> PowerPowerItemPsrrOutputsource:
         """Return the ``POWer:POWer<x>:PSRR:OUTPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output source for the Power Supply Rejection Ratio
               (PSRR) power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:OUTPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -9138,14 +8983,13 @@ class PowerPowerItemPsrr(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:PSRR:OUTPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PSRR:OUTPUTSOurce CH<x>
             - POWer:POWer<x>:PSRR:OUTPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``CH<x>`` sets the channel to use for the output source.
@@ -9156,25 +9000,24 @@ class PowerPowerItemPsrr(SCPICmdRead):
     def ppd(self) -> PowerPowerItemPsrrPpd:
         """Return the ``POWer:POWer<x>:PSRR:PPD`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the points per decade (PPD) value for the Power Supply
               Rejection Ratio (PSRR) power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:PPD?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR:PPD?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:PSRR:PPD value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PSRR:PPD <NR3>
             - POWer:POWer<x>:PSRR:PPD?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR3>`` is the PPD value for the measurement, in the range of 10 to 100 points.
@@ -9185,11 +9028,11 @@ class PowerPowerItemPsrr(SCPICmdRead):
     def startfrequency(self) -> PowerPowerItemPsrrStartfrequency:
         """Return the ``POWer:POWer<x>:PSRR:STARTFREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the start frequency value for the Power Supply Rejection
               Ratio (PSRR) power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:STARTFREQuency?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -9198,14 +9041,13 @@ class PowerPowerItemPsrr(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:PSRR:STARTFREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PSRR:STARTFREQuency <NR3>
             - POWer:POWer<x>:PSRR:STARTFREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR3>`` is the starting frequency for the measurement, in the range of 10 Hz to 50
@@ -9217,11 +9059,11 @@ class PowerPowerItemPsrr(SCPICmdRead):
     def stopfrequency(self) -> PowerPowerItemPsrrStopfrequency:
         """Return the ``POWer:POWer<x>:PSRR:STOPFREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the stop frequency value for the Power Supply Rejection
               Ratio (PSRR) power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR:STOPFREQuency?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -9230,14 +9072,13 @@ class PowerPowerItemPsrr(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:PSRR:STOPFREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PSRR:STOPFREQuency <NR3>
             - POWer:POWer<x>:PSRR:STOPFREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR3>`` is the stop frequency for the measurement, in the range of 10 Hz to 50 MHz.
@@ -9248,21 +9089,20 @@ class PowerPowerItemPsrr(SCPICmdRead):
     def testconnection(self) -> PowerPowerItemPsrrTestconnection:
         """Return the ``POWer:POWer<x>:PSRR:TESTCONNection`` command.
 
-        **Description:**
+        Description:
             - This command tests the connection with the external instrument for the specified Power
               Supply Rejection Ratio (PSRR) measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:PSRR:TESTCONNection value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PSRR:TESTCONNection {EXECute}
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the PSRR power measurement.
             - ``EXECute`` runs the test connection function.
         """
@@ -9272,19 +9112,18 @@ class PowerPowerItemPsrr(SCPICmdRead):
 class PowerPowerItemPreset(SCPICmdWrite):
     """The ``POWer:POWer<x>:PRESET`` command.
 
-    **Description:**
+    Description:
         - This command runs a power preset action for the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:PRESET value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PRESET {EXECute}
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``EXECute`` runs the power preset action.
@@ -9294,11 +9133,11 @@ class PowerPowerItemPreset(SCPICmdWrite):
 class PowerPowerItemPpulsewidthInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PPULSEWIDTH:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source for positive pulse width measurement in the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PPULSEWIDTH:INPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -9307,14 +9146,13 @@ class PowerPowerItemPpulsewidthInputsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:PPULSEWIDTH:INPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PPULSEWIDTH:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:PPULSEWIDTH:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -9327,7 +9165,7 @@ class PowerPowerItemPpulsewidthInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPpulsewidth(SCPICmdRead):
     """The ``POWer:POWer<x>:PPULSEWIDTH`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PPULSEWIDTH?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PPULSEWIDTH?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -9346,11 +9184,11 @@ class PowerPowerItemPpulsewidth(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemPpulsewidthInputsource:
         """Return the ``POWer:POWer<x>:PPULSEWIDTH:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source for positive pulse width measurement in
               the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:PPULSEWIDTH:INPUTSOurce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -9359,14 +9197,13 @@ class PowerPowerItemPpulsewidth(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:PPULSEWIDTH:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PPULSEWIDTH:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:PPULSEWIDTH:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -9380,11 +9217,11 @@ class PowerPowerItemPpulsewidth(SCPICmdRead):
 class PowerPowerItemPowerqualityVsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:POWERQUALITY:VSOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the voltage source for power quality measurement in the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:POWERQUALITY:VSOURce?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:POWERQUALITY:VSOURce?``
@@ -9392,14 +9229,13 @@ class PowerPowerItemPowerqualityVsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:POWERQUALITY:VSOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:POWERQUALITY:VSOURce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:POWERQUALITY:VSOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -9412,24 +9248,23 @@ class PowerPowerItemPowerqualityVsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPowerqualityStype(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:POWERQUALITY:STYPe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the source type.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:POWERQUALITY:STYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:POWERQUALITY:STYPe?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:POWERQUALITY:STYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:POWERQUALITY:STYPe {AC|DC}
         - POWer:POWer<x>:POWERQUALITY:STYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``AC`` sets the signal type as AC.
@@ -9440,11 +9275,11 @@ class PowerPowerItemPowerqualityStype(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPowerqualityIsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:POWERQUALITY:ISOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current source for power quality measurement in the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:POWERQUALITY:ISOURce?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:POWERQUALITY:ISOURce?``
@@ -9452,14 +9287,13 @@ class PowerPowerItemPowerqualityIsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:POWERQUALITY:ISOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:POWERQUALITY:ISOURce {CH<x> | MATH<x> | REF<x>}
         - POWer:POWer<x>:POWERQUALITY:ISOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -9472,11 +9306,11 @@ class PowerPowerItemPowerqualityIsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPowerqualityFreference(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:POWERQUALITY:FREFerence`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the frequency reference type for power quality measurement in
           the specified power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:POWERQUALITY:FREFerence?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -9485,23 +9319,22 @@ class PowerPowerItemPowerqualityFreference(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:POWERQUALITY:FREFerence value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:POWERQUALITY:FREFerence {VOLTage | CURRent}
         - POWer:POWer<x>:POWERQUALITY:FREFerence?
+        ```
     """
 
 
 class PowerPowerItemPowerqualityCcycles(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:POWERQUALITY:CCYCles`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the calculate cycles over full cycles settings for the
           specified power quality measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:POWERQUALITY:CCYCles?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:POWERQUALITY:CCYCles?``
@@ -9509,14 +9342,13 @@ class PowerPowerItemPowerqualityCcycles(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:POWERQUALITY:CCYCles value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:POWERQUALITY:CCYCles {ON |OFF |1 |0}
         - POWer:POWer<x>:POWERQUALITY:CCYCles?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``1`` selects the calculate cycles over full cycles.
@@ -9529,7 +9361,7 @@ class PowerPowerItemPowerqualityCcycles(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPowerquality(SCPICmdRead):
     """The ``POWer:POWer<x>:POWERQUALITY`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:POWERQUALITY?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:POWERQUALITY?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -9556,11 +9388,11 @@ class PowerPowerItemPowerquality(SCPICmdRead):
     def ccycles(self) -> PowerPowerItemPowerqualityCcycles:
         """Return the ``POWer:POWer<x>:POWERQUALITY:CCYCles`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the calculate cycles over full cycles settings for the
               specified power quality measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:POWERQUALITY:CCYCles?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -9569,14 +9401,13 @@ class PowerPowerItemPowerquality(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:POWERQUALITY:CCYCles value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:POWERQUALITY:CCYCles {ON |OFF |1 |0}
             - POWer:POWer<x>:POWERQUALITY:CCYCles?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``1`` selects the calculate cycles over full cycles.
@@ -9590,12 +9421,12 @@ class PowerPowerItemPowerquality(SCPICmdRead):
     def freference(self) -> PowerPowerItemPowerqualityFreference:
         """Return the ``POWer:POWer<x>:POWERQUALITY:FREFerence`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the frequency reference type for power quality
               measurement in the specified power measurement number. The power measurement number is
               specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:POWERQUALITY:FREFerence?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -9604,12 +9435,11 @@ class PowerPowerItemPowerquality(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:POWERQUALITY:FREFerence value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:POWERQUALITY:FREFerence {VOLTage | CURRent}
             - POWer:POWer<x>:POWERQUALITY:FREFerence?
+            ```
         """
         return self._freference
 
@@ -9617,11 +9447,11 @@ class PowerPowerItemPowerquality(SCPICmdRead):
     def isource(self) -> PowerPowerItemPowerqualityIsource:
         """Return the ``POWer:POWer<x>:POWERQUALITY:ISOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current source for power quality measurement in the
               specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:POWERQUALITY:ISOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -9630,14 +9460,13 @@ class PowerPowerItemPowerquality(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:POWERQUALITY:ISOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:POWERQUALITY:ISOURce {CH<x> | MATH<x> | REF<x>}
             - POWer:POWer<x>:POWERQUALITY:ISOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -9651,10 +9480,10 @@ class PowerPowerItemPowerquality(SCPICmdRead):
     def stype(self) -> PowerPowerItemPowerqualityStype:
         """Return the ``POWer:POWer<x>:POWERQUALITY:STYPe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the source type.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:POWERQUALITY:STYPe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -9663,14 +9492,13 @@ class PowerPowerItemPowerquality(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:POWERQUALITY:STYPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:POWERQUALITY:STYPe {AC|DC}
             - POWer:POWer<x>:POWERQUALITY:STYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``AC`` sets the signal type as AC.
@@ -9682,11 +9510,11 @@ class PowerPowerItemPowerquality(SCPICmdRead):
     def vsource(self) -> PowerPowerItemPowerqualityVsource:
         """Return the ``POWer:POWer<x>:POWERQUALITY:VSOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the voltage source for power quality measurement in the
               specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:POWERQUALITY:VSOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -9695,14 +9523,13 @@ class PowerPowerItemPowerquality(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:POWERQUALITY:VSOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:POWERQUALITY:VSOURce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:POWERQUALITY:VSOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -9716,25 +9543,24 @@ class PowerPowerItemPowerquality(SCPICmdRead):
 class PowerPowerItemPeriodInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PERIOD:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source for period measurement in the specified
           power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PERIOD:INPUTSOurce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PERIOD:INPUTSOurce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:PERIOD:INPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PERIOD:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:PERIOD:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -9747,30 +9573,29 @@ class PowerPowerItemPeriodInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPeriodEdge(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PERIOD:EDGe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the edge type for period measurement in the specified power
           measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PERIOD:EDGe?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PERIOD:EDGe?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:PERIOD:EDGe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PERIOD:EDGe {RISE | FALL}
         - POWer:POWer<x>:PERIOD:EDGe?
+        ```
     """
 
 
 class PowerPowerItemPeriod(SCPICmdRead):
     """The ``POWer:POWer<x>:PERIOD`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PERIOD?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PERIOD?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -9791,23 +9616,22 @@ class PowerPowerItemPeriod(SCPICmdRead):
     def edge(self) -> PowerPowerItemPeriodEdge:
         """Return the ``POWer:POWer<x>:PERIOD:EDGe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the edge type for period measurement in the specified
               power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PERIOD:EDGe?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PERIOD:EDGe?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:PERIOD:EDGe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PERIOD:EDGe {RISE | FALL}
             - POWer:POWer<x>:PERIOD:EDGe?
+            ```
         """
         return self._edge
 
@@ -9815,11 +9639,11 @@ class PowerPowerItemPeriod(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemPeriodInputsource:
         """Return the ``POWer:POWer<x>:PERIOD:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source for period measurement in the specified
               power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PERIOD:INPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -9828,14 +9652,13 @@ class PowerPowerItemPeriod(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:PERIOD:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PERIOD:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:PERIOD:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -9849,11 +9672,11 @@ class PowerPowerItemPeriod(SCPICmdRead):
 class PowerPowerItemPdutycycleInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PDUTYCYCLE:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source for positive duty cycle measurement in the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PDUTYCYCLE:INPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -9862,14 +9685,13 @@ class PowerPowerItemPdutycycleInputsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:PDUTYCYCLE:INPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PDUTYCYCLE:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:PDUTYCYCLE:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -9882,30 +9704,29 @@ class PowerPowerItemPdutycycleInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemPdutycycleEdgetype(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:PDUTYCYCLE:EDGEType`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the clock edge type for positive duty cycle measurement in
           the specified power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PDUTYCYCLE:EDGEType?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PDUTYCYCLE:EDGEType?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:PDUTYCYCLE:EDGEType value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:PDUTYCYCLE:EDGEType {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:PDUTYCYCLE:EDGEType?
+        ```
     """
 
 
 class PowerPowerItemPdutycycle(SCPICmdRead):
     """The ``POWer:POWer<x>:PDUTYCYCLE`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:PDUTYCYCLE?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PDUTYCYCLE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -9926,12 +9747,12 @@ class PowerPowerItemPdutycycle(SCPICmdRead):
     def edgetype(self) -> PowerPowerItemPdutycycleEdgetype:
         """Return the ``POWer:POWer<x>:PDUTYCYCLE:EDGEType`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the clock edge type for positive duty cycle measurement
               in the specified power measurement number. The power measurement number is specified
               by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PDUTYCYCLE:EDGEType?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -9940,12 +9761,11 @@ class PowerPowerItemPdutycycle(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:PDUTYCYCLE:EDGEType value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PDUTYCYCLE:EDGEType {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:PDUTYCYCLE:EDGEType?
+            ```
         """
         return self._edgetype
 
@@ -9953,11 +9773,11 @@ class PowerPowerItemPdutycycle(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemPdutycycleInputsource:
         """Return the ``POWer:POWer<x>:PDUTYCYCLE:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source for positive duty cycle measurement in
               the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PDUTYCYCLE:INPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -9966,14 +9786,13 @@ class PowerPowerItemPdutycycle(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:PDUTYCYCLE:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PDUTYCYCLE:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:PDUTYCYCLE:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -9987,11 +9806,11 @@ class PowerPowerItemPdutycycle(SCPICmdRead):
 class PowerPowerItemNpulsewidthInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:NPULSEWIDTH:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source for negative pulse width measurement in the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:NPULSEWIDTH:INPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -10000,14 +9819,13 @@ class PowerPowerItemNpulsewidthInputsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:NPULSEWIDTH:INPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:NPULSEWIDTH:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:NPULSEWIDTH:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -10020,7 +9838,7 @@ class PowerPowerItemNpulsewidthInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemNpulsewidth(SCPICmdRead):
     """The ``POWer:POWer<x>:NPULSEWIDTH`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:NPULSEWIDTH?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:NPULSEWIDTH?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -10039,11 +9857,11 @@ class PowerPowerItemNpulsewidth(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemNpulsewidthInputsource:
         """Return the ``POWer:POWer<x>:NPULSEWIDTH:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source for negative pulse width measurement in
               the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:NPULSEWIDTH:INPUTSOurce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -10052,14 +9870,13 @@ class PowerPowerItemNpulsewidth(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:NPULSEWIDTH:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:NPULSEWIDTH:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:NPULSEWIDTH:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -10073,11 +9890,11 @@ class PowerPowerItemNpulsewidth(SCPICmdRead):
 class PowerPowerItemNdutycycleInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:NDUTYCYCLE:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source for negative duty cycle measurement in the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:NDUTYCYCLE:INPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -10086,14 +9903,13 @@ class PowerPowerItemNdutycycleInputsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:NDUTYCYCLE:INPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:NDUTYCYCLE:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:NDUTYCYCLE:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -10106,30 +9922,29 @@ class PowerPowerItemNdutycycleInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemNdutycycleEdgetype(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:NDUTYCYCLE:EDGEType`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the clock edge type for negative duty cycle measurement in
           the specified power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:NDUTYCYCLE:EDGEType?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:NDUTYCYCLE:EDGEType?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:NDUTYCYCLE:EDGEType value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:NDUTYCYCLE:EDGEType {RISE | FALL | BOTH}
         - POWer:POWer<x>:NDUTYCYCLE:EDGEType?
+        ```
     """
 
 
 class PowerPowerItemNdutycycle(SCPICmdRead):
     """The ``POWer:POWer<x>:NDUTYCYCLE`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:NDUTYCYCLE?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:NDUTYCYCLE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -10150,12 +9965,12 @@ class PowerPowerItemNdutycycle(SCPICmdRead):
     def edgetype(self) -> PowerPowerItemNdutycycleEdgetype:
         """Return the ``POWer:POWer<x>:NDUTYCYCLE:EDGEType`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the clock edge type for negative duty cycle measurement
               in the specified power measurement number. The power measurement number is specified
               by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:NDUTYCYCLE:EDGEType?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -10164,12 +9979,11 @@ class PowerPowerItemNdutycycle(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:NDUTYCYCLE:EDGEType value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:NDUTYCYCLE:EDGEType {RISE | FALL | BOTH}
             - POWer:POWer<x>:NDUTYCYCLE:EDGEType?
+            ```
         """
         return self._edgetype
 
@@ -10177,11 +9991,11 @@ class PowerPowerItemNdutycycle(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemNdutycycleInputsource:
         """Return the ``POWer:POWer<x>:NDUTYCYCLE:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source for negative duty cycle measurement in
               the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:NDUTYCYCLE:INPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -10190,14 +10004,13 @@ class PowerPowerItemNdutycycle(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:NDUTYCYCLE:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:NDUTYCYCLE:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:NDUTYCYCLE:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -10211,25 +10024,24 @@ class PowerPowerItemNdutycycle(SCPICmdRead):
 class PowerPowerItemMagpropertyVsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:VSOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the primary winding voltage source for the magnetic
           measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:VSOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:MAGPROPERTY:VSOURce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:VSOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:VSOURce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:MAGPROPERTY:VSOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -10242,25 +10054,24 @@ class PowerPowerItemMagpropertyVsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertyUnits(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:UNITs`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the units for magnetic measurements of the specified power
           measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:UNITs?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:MAGPROPERTY:UNITs?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:UNITs value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:UNITs {SI|CGS}
         - POWer:POWer<x>:MAGPROPERTY:UNITs?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``SI`` sets the measurement to International System of Units.
@@ -10271,11 +10082,11 @@ class PowerPowerItemMagpropertyUnits(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertySecwindings(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:SECWINDings`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of secondary windings for the magnetic property
           measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SECWINDings?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -10284,14 +10095,13 @@ class PowerPowerItemMagpropertySecwindings(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:SECWINDings value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:SECWINDings {None|ONE|TWO|THREE|FOUR|FIVE|SIX}
         - POWer:POWer<x>:MAGPROPERTY:SECWINDings?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the magnetic property power measurement number. This is the equivalent of
           the number shown in the power measurement badge on the UI.
         - ``None`` , ONE, TWO, THREE, FOUR, FIVE, SIX sets the number of secondary windings to the
@@ -10302,24 +10112,23 @@ class PowerPowerItemMagpropertySecwindings(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertySecvolt(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:SECVolt`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables secondary voltage input for measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SECVolt?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SECVolt?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:SECVolt value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:SECVolt {True|False}
         - POWer:POWer<x>:MAGPROPERTY:SECVolt?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``True`` enables secondary voltage source.
@@ -10330,11 +10139,11 @@ class PowerPowerItemMagpropertySecvolt(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertySecphase(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:SECPhase`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the value for the phase difference between secondary and
           primary voltage.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SECPhase?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SECPhase?``
@@ -10342,14 +10151,13 @@ class PowerPowerItemMagpropertySecphase(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:SECPhase value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:SECPhase <NR3>
         - POWer:POWer<x>:MAGPROPERTY:SECPhase?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR3>`` sets the value for the phase difference between secondary and primary voltage,
@@ -10360,11 +10168,11 @@ class PowerPowerItemMagpropertySecphase(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertySec6turns(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:SEC6TURNs`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of turns of secondary winding 6 for magnetic
           measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC6TURNs?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -10373,14 +10181,13 @@ class PowerPowerItemMagpropertySec6turns(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:SEC6TURNs value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:SEC6TURNs <NR1>
         - POWer:POWer<x>:MAGPROPERTY:SEC6TURNs?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``<NR1>`` is the number of turns on the secondary winding, and ranges from 0 to 1,000,000.
@@ -10390,11 +10197,11 @@ class PowerPowerItemMagpropertySec6turns(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertySec6source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:SEC6SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current source for secondary winding 6 for magnetic
           measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC6SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -10403,14 +10210,13 @@ class PowerPowerItemMagpropertySec6source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:SEC6SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:SEC6SOURce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:MAGPROPERTY:SEC6SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -10423,11 +10229,11 @@ class PowerPowerItemMagpropertySec6source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertySec5turns(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:SEC5TURNs`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of turns of secondary winding 5 for magnetic
           measurement of the specified power measurement badge.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC5TURNs?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -10436,14 +10242,13 @@ class PowerPowerItemMagpropertySec5turns(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:SEC5TURNs value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:SEC5TURNs <NR1>
         - POWer:POWer<x>:MAGPROPERTY:SEC5TURNs?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``<NR1>`` is the number of turns on the secondary winding, and ranges from 0 to 1,000,000.
@@ -10453,11 +10258,11 @@ class PowerPowerItemMagpropertySec5turns(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertySec5source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:SEC5SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current source for secondary winding 5 for magnetic
           measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC5SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -10466,14 +10271,13 @@ class PowerPowerItemMagpropertySec5source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:SEC5SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:SEC5SOURce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:MAGPROPERTY:SEC5SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -10486,11 +10290,11 @@ class PowerPowerItemMagpropertySec5source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertySec4turns(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:SEC4TURNs`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of turns of secondary winding 4 for magnetic
           measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC4TURNs?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -10499,14 +10303,13 @@ class PowerPowerItemMagpropertySec4turns(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:SEC4TURNs value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:SEC4TURNs <NR1>
         - POWer:POWer<x>:MAGPROPERTY:SEC4TURNs?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``<NR1>`` is the number of turns on the secondary winding, and ranges from 0 to 1,000,000.
@@ -10516,11 +10319,11 @@ class PowerPowerItemMagpropertySec4turns(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertySec4source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:SEC4SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current source for secondary winding 4 for magnetic
           measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC4SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -10529,14 +10332,13 @@ class PowerPowerItemMagpropertySec4source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:SEC4SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:SEC4SOURce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:MAGPROPERTY:SEC4SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -10549,11 +10351,11 @@ class PowerPowerItemMagpropertySec4source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertySec3turns(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:SEC3TURNs`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of turns of secondary winding 3 for magnetic
           measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC3TURNs?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -10562,14 +10364,13 @@ class PowerPowerItemMagpropertySec3turns(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:SEC3TURNs value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:SEC3TURNs <NR1>
         - POWer:POWer<x>:MAGPROPERTY:SEC3TURNs?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``<NR1>`` is the number of turns on the secondary winding, and ranges from 0 to 1,000,000.
@@ -10579,11 +10380,11 @@ class PowerPowerItemMagpropertySec3turns(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertySec3source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:SEC3SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current source channel for secondary winding 3 for
           magnetic measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC3SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -10592,14 +10393,13 @@ class PowerPowerItemMagpropertySec3source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:SEC3SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:SEC3SOURce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:MAGPROPERTY:SEC3SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -10612,11 +10412,11 @@ class PowerPowerItemMagpropertySec3source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertySec2turns(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:SEC2TURNs`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of turns of secondary winding 2 for magnetic
           measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC2TURNs?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -10625,14 +10425,13 @@ class PowerPowerItemMagpropertySec2turns(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:SEC2TURNs value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:SEC2TURNs <NR1>
         - POWer:POWer<x>:MAGPROPERTY:SEC2TURNs?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``<NR1>`` is the number of turns on the secondary winding, and ranges from 0 to 1,000,000.
@@ -10642,11 +10441,11 @@ class PowerPowerItemMagpropertySec2turns(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertySec2source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:SEC2SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current source for secondary winding2 for magnetic
           measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC2SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -10655,14 +10454,13 @@ class PowerPowerItemMagpropertySec2source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:SEC2SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:SEC2SOURce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:MAGPROPERTY:SEC2SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -10675,11 +10473,11 @@ class PowerPowerItemMagpropertySec2source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertySec1turns(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:SEC1TURNs`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of turns of secondary winding 1 for magnetic
           measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC1TURNs?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -10688,14 +10486,13 @@ class PowerPowerItemMagpropertySec1turns(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:SEC1TURNs value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:SEC1TURNs <NR1>
         - POWer:POWer<x>:MAGPROPERTY:SEC1TURNs?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``<NR1>`` is the number of turns on the secondary winding, and ranges from 0 to 1,000,000.
@@ -10705,11 +10502,11 @@ class PowerPowerItemMagpropertySec1turns(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertySec1source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:SEC1SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current source channel for secondary winding 1 for
           magnetic measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC1SOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -10718,14 +10515,13 @@ class PowerPowerItemMagpropertySec1source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:SEC1SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:SEC1SOURce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:MAGPROPERTY:SEC1SOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -10738,11 +10534,11 @@ class PowerPowerItemMagpropertySec1source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertyPrimaryturns(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:PRIMARYTURNs`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of primary turns for magnetic measurement of the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:PRIMARYTURNs?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -10751,14 +10547,13 @@ class PowerPowerItemMagpropertyPrimaryturns(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:PRIMARYTURNs value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:PRIMARYTURNs <NR1>
         - POWer:POWer<x>:MAGPROPERTY:PRIMARYTURNs?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the magnetic property power measurement number. This is the equivalent of
           the number shown in the power measurement badge on the UI.
         - ``<NR1>`` is the integer number of turns in the primary winding, in the range of 1 to 1 M.
@@ -10768,25 +10563,24 @@ class PowerPowerItemMagpropertyPrimaryturns(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertyLength(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:LENgth`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the conductor length of the primary winding for magnetic
           measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:LENgth?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:MAGPROPERTY:LENgth?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:LENgth value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:LENgth <NR2>
         - POWer:POWer<x>:MAGPROPERTY:LENgth?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the magnetic property power measurement number. This is the equivalent of
           the number shown in the power measurement badge on the UI.
         - ``<NR2>`` is the magnetic length, in the range of 1.00E-09 through 1,000,000.
@@ -10796,25 +10590,24 @@ class PowerPowerItemMagpropertyLength(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertyIsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:ISOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current source for the magnetic property measurement of
           the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:ISOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:MAGPROPERTY:ISOURce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:ISOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:ISOURce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:MAGPROPERTY:ISOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the magnetic property power measurement number. This is the equivalent of
           the number shown in the power measurement badge on the UI.
         - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -10827,11 +10620,11 @@ class PowerPowerItemMagpropertyIsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertyEdgesource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:EDGESOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the edge source type for the magnetic property measurement of
           the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:EDGESOURce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -10840,14 +10633,13 @@ class PowerPowerItemMagpropertyEdgesource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:EDGESOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:EDGESOURce {Current | VOLTAGE}
         - POWer:POWer<x>:MAGPROPERTY:EDGESOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the magnetic property power measurement number. This is the equivalent of
           the number shown on a power measurement badge in the UI.
         - ``Current`` sets the measurement to use the primary voltage source as the signal edge for
@@ -10860,11 +10652,11 @@ class PowerPowerItemMagpropertyEdgesource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagpropertyAreaofcrosssection(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY:AREAofcrosssection`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the coil cross section area for magnetic measurement of the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:AREAofcrosssection?`` query.
         - Using the ``.verify(value)`` method will send the
@@ -10873,14 +10665,13 @@ class PowerPowerItemMagpropertyAreaofcrosssection(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGPROPERTY:AREAofcrosssection value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGPROPERTY:AREAofcrosssection <NR2>
         - POWer:POWer<x>:MAGPROPERTY:AREAofcrosssection?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the magnetic property power measurement number. This is the equivalent of
           the number shown in the power measurement badge on the UI.
         - ``<NR2>`` is the cross section area in square meters, in the range of 1 nanometer2 to 1
@@ -10892,7 +10683,7 @@ class PowerPowerItemMagpropertyAreaofcrosssection(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagproperty(SCPICmdRead):
     """The ``POWer:POWer<x>:MAGPROPERTY`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:MAGPROPERTY?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -10983,11 +10774,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def areaofcrosssection(self) -> PowerPowerItemMagpropertyAreaofcrosssection:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:AREAofcrosssection`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the coil cross section area for magnetic measurement of
               the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:AREAofcrosssection?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -10996,14 +10787,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:AREAofcrosssection value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:AREAofcrosssection <NR2>
             - POWer:POWer<x>:MAGPROPERTY:AREAofcrosssection?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the magnetic property power measurement number. This is the equivalent
               of the number shown in the power measurement badge on the UI.
             - ``<NR2>`` is the cross section area in square meters, in the range of 1 nanometer2 to
@@ -11015,11 +10805,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def edgesource(self) -> PowerPowerItemMagpropertyEdgesource:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:EDGESOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the edge source type for the magnetic property
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:EDGESOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11028,14 +10818,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:EDGESOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:EDGESOURce {Current | VOLTAGE}
             - POWer:POWer<x>:MAGPROPERTY:EDGESOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the magnetic property power measurement number. This is the equivalent
               of the number shown on a power measurement badge in the UI.
             - ``Current`` sets the measurement to use the primary voltage source as the signal edge
@@ -11049,11 +10838,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def isource(self) -> PowerPowerItemMagpropertyIsource:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:ISOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current source for the magnetic property measurement
               of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:ISOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11062,14 +10851,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:ISOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:ISOURce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:MAGPROPERTY:ISOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the magnetic property power measurement number. This is the equivalent
               of the number shown in the power measurement badge on the UI.
             - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number
@@ -11083,11 +10871,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def length(self) -> PowerPowerItemMagpropertyLength:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:LENgth`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the conductor length of the primary winding for magnetic
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:LENgth?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11096,14 +10884,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:LENgth value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:LENgth <NR2>
             - POWer:POWer<x>:MAGPROPERTY:LENgth?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the magnetic property power measurement number. This is the equivalent
               of the number shown in the power measurement badge on the UI.
             - ``<NR2>`` is the magnetic length, in the range of 1.00E-09 through 1,000,000.
@@ -11114,11 +10901,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def primaryturns(self) -> PowerPowerItemMagpropertyPrimaryturns:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:PRIMARYTURNs`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of primary turns for magnetic measurement of
               the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:PRIMARYTURNs?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -11127,14 +10914,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:PRIMARYTURNs value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:PRIMARYTURNs <NR1>
             - POWer:POWer<x>:MAGPROPERTY:PRIMARYTURNs?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the magnetic property power measurement number. This is the equivalent
               of the number shown in the power measurement badge on the UI.
             - ``<NR1>`` is the integer number of turns in the primary winding, in the range of 1 to
@@ -11146,11 +10932,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def sec1source(self) -> PowerPowerItemMagpropertySec1source:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:SEC1SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current source channel for secondary winding 1 for
               magnetic measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC1SOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11159,14 +10945,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:SEC1SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:SEC1SOURce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:MAGPROPERTY:SEC1SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number
@@ -11180,11 +10965,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def sec1turns(self) -> PowerPowerItemMagpropertySec1turns:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:SEC1TURNs`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of turns of secondary winding 1 for magnetic
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC1TURNs?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11193,14 +10978,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:SEC1TURNs value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:SEC1TURNs <NR1>
             - POWer:POWer<x>:MAGPROPERTY:SEC1TURNs?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``<NR1>`` is the number of turns on the secondary winding, and ranges from 0 to
@@ -11212,11 +10996,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def sec2source(self) -> PowerPowerItemMagpropertySec2source:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:SEC2SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current source for secondary winding2 for magnetic
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC2SOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11225,14 +11009,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:SEC2SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:SEC2SOURce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:MAGPROPERTY:SEC2SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number
@@ -11246,11 +11029,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def sec2turns(self) -> PowerPowerItemMagpropertySec2turns:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:SEC2TURNs`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of turns of secondary winding 2 for magnetic
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC2TURNs?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11259,14 +11042,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:SEC2TURNs value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:SEC2TURNs <NR1>
             - POWer:POWer<x>:MAGPROPERTY:SEC2TURNs?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``<NR1>`` is the number of turns on the secondary winding, and ranges from 0 to
@@ -11278,11 +11060,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def sec3source(self) -> PowerPowerItemMagpropertySec3source:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:SEC3SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current source channel for secondary winding 3 for
               magnetic measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC3SOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11291,14 +11073,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:SEC3SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:SEC3SOURce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:MAGPROPERTY:SEC3SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number
@@ -11312,11 +11093,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def sec3turns(self) -> PowerPowerItemMagpropertySec3turns:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:SEC3TURNs`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of turns of secondary winding 3 for magnetic
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC3TURNs?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11325,14 +11106,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:SEC3TURNs value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:SEC3TURNs <NR1>
             - POWer:POWer<x>:MAGPROPERTY:SEC3TURNs?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``<NR1>`` is the number of turns on the secondary winding, and ranges from 0 to
@@ -11344,11 +11124,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def sec4source(self) -> PowerPowerItemMagpropertySec4source:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:SEC4SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current source for secondary winding 4 for magnetic
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC4SOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11357,14 +11137,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:SEC4SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:SEC4SOURce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:MAGPROPERTY:SEC4SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number
@@ -11378,11 +11157,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def sec4turns(self) -> PowerPowerItemMagpropertySec4turns:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:SEC4TURNs`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of turns of secondary winding 4 for magnetic
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC4TURNs?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11391,14 +11170,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:SEC4TURNs value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:SEC4TURNs <NR1>
             - POWer:POWer<x>:MAGPROPERTY:SEC4TURNs?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``<NR1>`` is the number of turns on the secondary winding, and ranges from 0 to
@@ -11410,11 +11188,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def sec5source(self) -> PowerPowerItemMagpropertySec5source:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:SEC5SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current source for secondary winding 5 for magnetic
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC5SOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11423,14 +11201,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:SEC5SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:SEC5SOURce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:MAGPROPERTY:SEC5SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number
@@ -11444,11 +11221,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def sec5turns(self) -> PowerPowerItemMagpropertySec5turns:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:SEC5TURNs`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of turns of secondary winding 5 for magnetic
               measurement of the specified power measurement badge.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC5TURNs?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11457,14 +11234,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:SEC5TURNs value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:SEC5TURNs <NR1>
             - POWer:POWer<x>:MAGPROPERTY:SEC5TURNs?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``<NR1>`` is the number of turns on the secondary winding, and ranges from 0 to
@@ -11476,11 +11252,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def sec6source(self) -> PowerPowerItemMagpropertySec6source:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:SEC6SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current source for secondary winding 6 for magnetic
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC6SOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11489,14 +11265,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:SEC6SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:SEC6SOURce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:MAGPROPERTY:SEC6SOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number
@@ -11510,11 +11285,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def sec6turns(self) -> PowerPowerItemMagpropertySec6turns:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:SEC6TURNs`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of turns of secondary winding 6 for magnetic
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SEC6TURNs?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11523,14 +11298,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:SEC6TURNs value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:SEC6TURNs <NR1>
             - POWer:POWer<x>:MAGPROPERTY:SEC6TURNs?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``<NR1>`` is the number of turns on the secondary winding, and ranges from 0 to
@@ -11542,11 +11316,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def secphase(self) -> PowerPowerItemMagpropertySecphase:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:SECPhase`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the value for the phase difference between secondary and
               primary voltage.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SECPhase?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11555,14 +11329,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:SECPhase value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:SECPhase <NR3>
             - POWer:POWer<x>:MAGPROPERTY:SECPhase?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR3>`` sets the value for the phase difference between secondary and primary
@@ -11574,10 +11347,10 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def secvolt(self) -> PowerPowerItemMagpropertySecvolt:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:SECVolt`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables secondary voltage input for measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:SECVolt?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11586,14 +11359,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:SECVolt value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:SECVolt {True|False}
             - POWer:POWer<x>:MAGPROPERTY:SECVolt?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``True`` enables secondary voltage source.
@@ -11605,11 +11377,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def secwindings(self) -> PowerPowerItemMagpropertySecwindings:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:SECWINDings`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of secondary windings for the magnetic
               property measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:SECWINDings?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -11618,14 +11390,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:SECWINDings value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:SECWINDings {None|ONE|TWO|THREE|FOUR|FIVE|SIX}
             - POWer:POWer<x>:MAGPROPERTY:SECWINDings?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the magnetic property power measurement number. This is the equivalent
               of the number shown in the power measurement badge on the UI.
             - ``None`` , ONE, TWO, THREE, FOUR, FIVE, SIX sets the number of secondary windings to
@@ -11637,11 +11408,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def units(self) -> PowerPowerItemMagpropertyUnits:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:UNITs`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the units for magnetic measurements of the specified
               power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:UNITs?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11650,14 +11421,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:UNITs value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:UNITs {SI|CGS}
             - POWer:POWer<x>:MAGPROPERTY:UNITs?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``SI`` sets the measurement to International System of Units.
@@ -11669,11 +11439,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
     def vsource(self) -> PowerPowerItemMagpropertyVsource:
         """Return the ``POWer:POWer<x>:MAGPROPERTY:VSOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the primary winding voltage source for the magnetic
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY:VSOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11682,14 +11452,13 @@ class PowerPowerItemMagproperty(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGPROPERTY:VSOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGPROPERTY:VSOURce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:MAGPROPERTY:VSOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number
@@ -11703,11 +11472,11 @@ class PowerPowerItemMagproperty(SCPICmdRead):
 class PowerPowerItemMagneticlossVsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGNETICLOSS:VSOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the voltage source for magnetic measurement of the specified
           power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGNETICLOSS:VSOURce?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:MAGNETICLOSS:VSOURce?``
@@ -11715,14 +11484,13 @@ class PowerPowerItemMagneticlossVsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGNETICLOSS:VSOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGNETICLOSS:VSOURce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:MAGNETICLOSS:VSOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -11735,11 +11503,11 @@ class PowerPowerItemMagneticlossVsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagneticlossIsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:MAGNETICLOSS:ISOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current source for the magnetic loss measurement of the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGNETICLOSS:ISOURce?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:MAGNETICLOSS:ISOURce?``
@@ -11747,14 +11515,13 @@ class PowerPowerItemMagneticlossIsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:MAGNETICLOSS:ISOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:MAGNETICLOSS:ISOURce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:MAGNETICLOSS:ISOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -11767,7 +11534,7 @@ class PowerPowerItemMagneticlossIsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemMagneticloss(SCPICmdRead):
     """The ``POWer:POWer<x>:MAGNETICLOSS`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGNETICLOSS?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:MAGNETICLOSS?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -11786,11 +11553,11 @@ class PowerPowerItemMagneticloss(SCPICmdRead):
     def isource(self) -> PowerPowerItemMagneticlossIsource:
         """Return the ``POWer:POWer<x>:MAGNETICLOSS:ISOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current source for the magnetic loss measurement of
               the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGNETICLOSS:ISOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11799,14 +11566,13 @@ class PowerPowerItemMagneticloss(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGNETICLOSS:ISOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGNETICLOSS:ISOURce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:MAGNETICLOSS:ISOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number
@@ -11820,11 +11586,11 @@ class PowerPowerItemMagneticloss(SCPICmdRead):
     def vsource(self) -> PowerPowerItemMagneticlossVsource:
         """Return the ``POWer:POWer<x>:MAGNETICLOSS:VSOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the voltage source for magnetic measurement of the
               specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGNETICLOSS:VSOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11833,14 +11599,13 @@ class PowerPowerItemMagneticloss(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:MAGNETICLOSS:VSOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:MAGNETICLOSS:VSOURce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:MAGNETICLOSS:VSOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number
@@ -11854,11 +11619,11 @@ class PowerPowerItemMagneticloss(SCPICmdRead):
 class PowerPowerItemLinerippleLfrequency(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:LINERIPPLE:LFREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the frequency present for line ripple measurement of the
           specified power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:LINERIPPLE:LFREQuency?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -11867,23 +11632,22 @@ class PowerPowerItemLinerippleLfrequency(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:LINERIPPLE:LFREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:LINERIPPLE:LFREQuency {FIFty | SIXty | FOURHundred}
         - POWer:POWer<x>:LINERIPPLE:LFREQuency?
+        ```
     """
 
 
 class PowerPowerItemLinerippleInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:LINERIPPLE:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source for line ripple measurement of the specified
           power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:LINERIPPLE:INPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -11892,14 +11656,13 @@ class PowerPowerItemLinerippleInputsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:LINERIPPLE:INPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:LINERIPPLE:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:LINERIPPLE:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -11912,7 +11675,7 @@ class PowerPowerItemLinerippleInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemLineripple(SCPICmdRead):
     """The ``POWer:POWer<x>:LINERIPPLE`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:LINERIPPLE?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:LINERIPPLE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -11935,11 +11698,11 @@ class PowerPowerItemLineripple(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemLinerippleInputsource:
         """Return the ``POWer:POWer<x>:LINERIPPLE:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source for line ripple measurement of the
               specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:LINERIPPLE:INPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11948,14 +11711,13 @@ class PowerPowerItemLineripple(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:LINERIPPLE:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:LINERIPPLE:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:LINERIPPLE:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -11969,11 +11731,11 @@ class PowerPowerItemLineripple(SCPICmdRead):
     def lfrequency(self) -> PowerPowerItemLinerippleLfrequency:
         """Return the ``POWer:POWer<x>:LINERIPPLE:LFREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the frequency present for line ripple measurement of the
               specified power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:LINERIPPLE:LFREQuency?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -11982,12 +11744,11 @@ class PowerPowerItemLineripple(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:LINERIPPLE:LFREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:LINERIPPLE:LFREQuency {FIFty | SIXty | FOURHundred}
             - POWer:POWer<x>:LINERIPPLE:LFREQuency?
+            ```
         """
         return self._lfrequency
 
@@ -11995,23 +11756,22 @@ class PowerPowerItemLineripple(SCPICmdRead):
 class PowerPowerItemLabel(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:LABel`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the label for the specified power measurement. As the label
           can contain non 7-bit ASCII text, it is stored in Percent Encoding format. The power
           measurement badge is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:LABel?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:LABel?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:LABel value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:LABel <QString>
         - POWer:POWer<x>:LABel?
+        ```
     """
 
     _WRAP_ARG_WITH_QUOTES = True
@@ -12020,11 +11780,11 @@ class PowerPowerItemLabel(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemIvsintegralvVsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:IVSINTEGRALV:VSOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the voltage source for I vs Integral V measurement of the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IVSINTEGRALV:VSOURce?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:IVSINTEGRALV:VSOURce?``
@@ -12032,14 +11792,13 @@ class PowerPowerItemIvsintegralvVsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:IVSINTEGRALV:VSOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:IVSINTEGRALV:VSOURce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:IVSINTEGRALV:VSOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -12052,11 +11811,11 @@ class PowerPowerItemIvsintegralvVsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemIvsintegralvIsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:IVSINTEGRALV:ISOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current source for I vs Integral V measurement of the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IVSINTEGRALV:ISOURce?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:IVSINTEGRALV:ISOURce?``
@@ -12064,14 +11823,13 @@ class PowerPowerItemIvsintegralvIsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:IVSINTEGRALV:ISOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:IVSINTEGRALV:ISOURce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:IVSINTEGRALV:ISOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
         - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -12084,7 +11842,7 @@ class PowerPowerItemIvsintegralvIsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemIvsintegralv(SCPICmdRead):
     """The ``POWer:POWer<x>:IVSINTEGRALV`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IVSINTEGRALV?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:IVSINTEGRALV?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -12103,11 +11861,11 @@ class PowerPowerItemIvsintegralv(SCPICmdRead):
     def isource(self) -> PowerPowerItemIvsintegralvIsource:
         """Return the ``POWer:POWer<x>:IVSINTEGRALV:ISOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current source for I vs Integral V measurement of the
               specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:IVSINTEGRALV:ISOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -12116,14 +11874,13 @@ class PowerPowerItemIvsintegralv(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:IVSINTEGRALV:ISOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:IVSINTEGRALV:ISOURce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:IVSINTEGRALV:ISOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number
@@ -12137,11 +11894,11 @@ class PowerPowerItemIvsintegralv(SCPICmdRead):
     def vsource(self) -> PowerPowerItemIvsintegralvVsource:
         """Return the ``POWer:POWer<x>:IVSINTEGRALV:VSOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the voltage source for I vs Integral V measurement of the
               specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:IVSINTEGRALV:VSOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -12150,14 +11907,13 @@ class PowerPowerItemIvsintegralv(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:IVSINTEGRALV:VSOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:IVSINTEGRALV:VSOURce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:IVSINTEGRALV:VSOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
             - ``CH<x>`` sets the channel specifier; <x> is 1 through 8 and is limited by the number
@@ -12171,11 +11927,11 @@ class PowerPowerItemIvsintegralv(SCPICmdRead):
 class PowerPowerItemInrushcurrentPeakcurrent(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:INRUSHcurrent:PEAKCURRent`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the peak current value of the specified Inrush Current
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:INRUSHcurrent:PEAKCURRent?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -12184,14 +11940,13 @@ class PowerPowerItemInrushcurrentPeakcurrent(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:INRUSHcurrent:PEAKCURRent value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:INRUSHcurrent:PEAKCURRent <NR3>
         - POWer:POWer<x>:INRUSHcurrent:PEAKCURRent?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR3>`` is a floating point number that represents the peak current value, in amps, in
@@ -12202,10 +11957,10 @@ class PowerPowerItemInrushcurrentPeakcurrent(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemInrushcurrentInputsource(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``POWer:POWer<x>:INRUSHcurrent:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the input source of the specified Inrush Current measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:INRUSHcurrent:INPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -12214,14 +11969,13 @@ class PowerPowerItemInrushcurrentInputsource(SCPICmdWriteNoArguments, SCPICmdRea
         - Using the ``.write()`` method will send the ``POWer:POWer<x>:INRUSHcurrent:INPUTSOurce``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:INRUSHcurrent:INPUTSOurce
         - POWer:POWer<x>:INRUSHcurrent:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` is the channel specifier in the range of 1 through 8 and is limited by the
@@ -12236,7 +11990,7 @@ class PowerPowerItemInrushcurrentInputsource(SCPICmdWriteNoArguments, SCPICmdRea
 class PowerPowerItemInrushcurrent(SCPICmdRead):
     """The ``POWer:POWer<x>:INRUSHcurrent`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:INRUSHcurrent?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:INRUSHcurrent?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -12259,11 +12013,11 @@ class PowerPowerItemInrushcurrent(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemInrushcurrentInputsource:
         """Return the ``POWer:POWer<x>:INRUSHcurrent:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the input source of the specified Inrush Current
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:INRUSHcurrent:INPUTSOurce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -12272,14 +12026,13 @@ class PowerPowerItemInrushcurrent(SCPICmdRead):
             - Using the ``.write()`` method will send the
               ``POWer:POWer<x>:INRUSHcurrent:INPUTSOurce`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:INRUSHcurrent:INPUTSOurce
             - POWer:POWer<x>:INRUSHcurrent:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` is the channel specifier in the range of 1 through 8 and is limited by the
@@ -12295,11 +12048,11 @@ class PowerPowerItemInrushcurrent(SCPICmdRead):
     def peakcurrent(self) -> PowerPowerItemInrushcurrentPeakcurrent:
         """Return the ``POWer:POWer<x>:INRUSHcurrent:PEAKCURRent`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the peak current value of the specified Inrush Current
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:INRUSHcurrent:PEAKCURRent?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -12308,14 +12061,13 @@ class PowerPowerItemInrushcurrent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:INRUSHcurrent:PEAKCURRent value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:INRUSHcurrent:PEAKCURRent <NR3>
             - POWer:POWer<x>:INRUSHcurrent:PEAKCURRent?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR3>`` is a floating point number that represents the peak current value, in amps,
@@ -12327,25 +12079,24 @@ class PowerPowerItemInrushcurrent(SCPICmdRead):
 class PowerPowerItemInputcapVsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:INPUTCAP:VSOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input voltage source of the specified Input Capacitance
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:INPUTCAP:VSOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:INPUTCAP:VSOURce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:INPUTCAP:VSOURce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:INPUTCAP:VSOURce {CH<x>|REF<x>|MATH<x>}
         - POWer:POWer<x>:INPUTCAP:VSOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` is the channel specifier in the range of 1 through 8 and is limited by the
@@ -12360,11 +12111,11 @@ class PowerPowerItemInputcapVsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemInputcapPeakvoltage(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:INPUTCAP:PEAKVOLTage`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the peak voltage value of the specified Input Capacitance
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:INPUTCAP:PEAKVOLTage?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:INPUTCAP:PEAKVOLTage?``
@@ -12372,14 +12123,13 @@ class PowerPowerItemInputcapPeakvoltage(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:INPUTCAP:PEAKVOLTage value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:INPUTCAP:PEAKVOLTage <NR3>
         - POWer:POWer<x>:INPUTCAP:PEAKVOLTage?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR3>`` is a floating point number that represents the peak voltage value in the range
@@ -12390,11 +12140,11 @@ class PowerPowerItemInputcapPeakvoltage(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemInputcapPeakcurrent(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:INPUTCAP:PEAKCURRent`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the peak current value of the specified Input Capacitance
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:INPUTCAP:PEAKCURRent?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:INPUTCAP:PEAKCURRent?``
@@ -12402,14 +12152,13 @@ class PowerPowerItemInputcapPeakcurrent(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:INPUTCAP:PEAKCURRent value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:INPUTCAP:PEAKCURRent <NR3>
         - POWer:POWer<x>:INPUTCAP:PEAKCURRent?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR3>`` is a floating point number that represents the peak current value, in amps, in
@@ -12420,25 +12169,24 @@ class PowerPowerItemInputcapPeakcurrent(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemInputcapIsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:INPUTCAP:ISOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the inrush current input source of the specified Input
           Capacitance measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:INPUTCAP:ISOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:INPUTCAP:ISOURce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:INPUTCAP:ISOURce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:INPUTCAP:ISOURce {CH<x>|REF<x>|MATH<x>}
         - POWer:POWer<x>:INPUTCAP:ISOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` is the channel specifier in the range of 1 through 8 and is limited by the
@@ -12453,7 +12201,7 @@ class PowerPowerItemInputcapIsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemInputcap(SCPICmdRead):
     """The ``POWer:POWer<x>:INPUTCAP`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:INPUTCAP?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:INPUTCAP?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -12480,11 +12228,11 @@ class PowerPowerItemInputcap(SCPICmdRead):
     def isource(self) -> PowerPowerItemInputcapIsource:
         """Return the ``POWer:POWer<x>:INPUTCAP:ISOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the inrush current input source of the specified Input
               Capacitance measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:INPUTCAP:ISOURce?``
               query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:INPUTCAP:ISOURce?``
@@ -12492,14 +12240,13 @@ class PowerPowerItemInputcap(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:INPUTCAP:ISOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:INPUTCAP:ISOURce {CH<x>|REF<x>|MATH<x>}
             - POWer:POWer<x>:INPUTCAP:ISOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` is the channel specifier in the range of 1 through 8 and is limited by the
@@ -12515,11 +12262,11 @@ class PowerPowerItemInputcap(SCPICmdRead):
     def peakcurrent(self) -> PowerPowerItemInputcapPeakcurrent:
         """Return the ``POWer:POWer<x>:INPUTCAP:PEAKCURRent`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the peak current value of the specified Input Capacitance
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:INPUTCAP:PEAKCURRent?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -12528,14 +12275,13 @@ class PowerPowerItemInputcap(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:INPUTCAP:PEAKCURRent value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:INPUTCAP:PEAKCURRent <NR3>
             - POWer:POWer<x>:INPUTCAP:PEAKCURRent?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR3>`` is a floating point number that represents the peak current value, in amps,
@@ -12547,11 +12293,11 @@ class PowerPowerItemInputcap(SCPICmdRead):
     def peakvoltage(self) -> PowerPowerItemInputcapPeakvoltage:
         """Return the ``POWer:POWer<x>:INPUTCAP:PEAKVOLTage`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the peak voltage value of the specified Input Capacitance
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:INPUTCAP:PEAKVOLTage?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -12560,14 +12306,13 @@ class PowerPowerItemInputcap(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:INPUTCAP:PEAKVOLTage value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:INPUTCAP:PEAKVOLTage <NR3>
             - POWer:POWer<x>:INPUTCAP:PEAKVOLTage?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR3>`` is a floating point number that represents the peak voltage value in the
@@ -12579,11 +12324,11 @@ class PowerPowerItemInputcap(SCPICmdRead):
     def vsource(self) -> PowerPowerItemInputcapVsource:
         """Return the ``POWer:POWer<x>:INPUTCAP:VSOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input voltage source of the specified Input
               Capacitance measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:INPUTCAP:VSOURce?``
               query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:INPUTCAP:VSOURce?``
@@ -12591,14 +12336,13 @@ class PowerPowerItemInputcap(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:INPUTCAP:VSOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:INPUTCAP:VSOURce {CH<x>|REF<x>|MATH<x>}
             - POWer:POWer<x>:INPUTCAP:VSOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` is the channel specifier in the range of 1 through 8 and is limited by the
@@ -12614,24 +12358,23 @@ class PowerPowerItemInputcap(SCPICmdRead):
 class PowerPowerItemInductanceVsource(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``POWer:POWer<x>:INDUCTANCE:VSOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the voltage source for inductance measurement of the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:INDUCTANCE:VSOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:INDUCTANCE:VSOURce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``POWer:POWer<x>:INDUCTANCE:VSOURce`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:INDUCTANCE:VSOURce
         - POWer:POWer<x>:INDUCTANCE:VSOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -12644,24 +12387,23 @@ class PowerPowerItemInductanceVsource(SCPICmdWriteNoArguments, SCPICmdRead):
 class PowerPowerItemInductanceIsource(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``POWer:POWer<x>:INDUCTANCE:ISOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current signal source for the inductance measurement of
           the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:INDUCTANCE:ISOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:INDUCTANCE:ISOUrce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``POWer:POWer<x>:INDUCTANCE:ISOUrce`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:INDUCTANCE:ISOUrce
         - POWer:POWer<x>:INDUCTANCE:ISOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -12674,11 +12416,11 @@ class PowerPowerItemInductanceIsource(SCPICmdWriteNoArguments, SCPICmdRead):
 class PowerPowerItemInductanceEdgesource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:INDUCTANCE:EDGESource`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the edge source for the power inductance measurement of the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:INDUCTANCE:EDGESource?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -12687,14 +12429,13 @@ class PowerPowerItemInductanceEdgesource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:INDUCTANCE:EDGESource value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:INDUCTANCE:EDGESource {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:INDUCTANCE:EDGESource?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -12707,7 +12448,7 @@ class PowerPowerItemInductanceEdgesource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemInductance(SCPICmdRead):
     """The ``POWer:POWer<x>:INDUCTANCE`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:INDUCTANCE?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:INDUCTANCE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -12730,11 +12471,11 @@ class PowerPowerItemInductance(SCPICmdRead):
     def edgesource(self) -> PowerPowerItemInductanceEdgesource:
         """Return the ``POWer:POWer<x>:INDUCTANCE:EDGESource`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the edge source for the power inductance measurement of
               the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:INDUCTANCE:EDGESource?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -12743,14 +12484,13 @@ class PowerPowerItemInductance(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:INDUCTANCE:EDGESource value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:INDUCTANCE:EDGESource {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:INDUCTANCE:EDGESource?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -12764,11 +12504,11 @@ class PowerPowerItemInductance(SCPICmdRead):
     def isource(self) -> PowerPowerItemInductanceIsource:
         """Return the ``POWer:POWer<x>:INDUCTANCE:ISOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current signal source for the inductance measurement
               of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:INDUCTANCE:ISOUrce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -12777,14 +12517,13 @@ class PowerPowerItemInductance(SCPICmdRead):
             - Using the ``.write()`` method will send the ``POWer:POWer<x>:INDUCTANCE:ISOUrce``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:INDUCTANCE:ISOUrce
             - POWer:POWer<x>:INDUCTANCE:ISOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -12798,11 +12537,11 @@ class PowerPowerItemInductance(SCPICmdRead):
     def vsource(self) -> PowerPowerItemInductanceVsource:
         """Return the ``POWer:POWer<x>:INDUCTANCE:VSOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the voltage source for inductance measurement of the
               specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:INDUCTANCE:VSOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -12811,14 +12550,13 @@ class PowerPowerItemInductance(SCPICmdRead):
             - Using the ``.write()`` method will send the ``POWer:POWer<x>:INDUCTANCE:VSOURce``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:INDUCTANCE:VSOURce
             - POWer:POWer<x>:INDUCTANCE:VSOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -12832,21 +12570,20 @@ class PowerPowerItemInductance(SCPICmdRead):
 class PowerPowerItemImpedanceTestconnection(SCPICmdWrite):
     """The ``POWer:POWer<x>:IMPEDANCE:TESTCONNection`` command.
 
-    **Description:**
+    Description:
         - This command tests the connection with the external instrument for the specified Impedance
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:IMPEDANCE:TESTCONNection value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:IMPEDANCE:TESTCONNection {EXECute}
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the Impedance power measurement.
         - ``EXECute`` runs the test connection function.
     """
@@ -12855,10 +12592,10 @@ class PowerPowerItemImpedanceTestconnection(SCPICmdWrite):
 class PowerPowerItemImpedanceStopfrequency(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:IMPEDANCE:STOPFREQuency`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the value of the specified Impedance measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:STOPFREQuency?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -12867,14 +12604,13 @@ class PowerPowerItemImpedanceStopfrequency(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:IMPEDANCE:STOPFREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:IMPEDANCE:STOPFREQuency <NR3>
         - POWer:POWer<x>:IMPEDANCE:STOPFREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the Impedance power measurement.
         - ``<NR3>`` specifies the start frequency, in the range of 10 Hz to 50 MHz.
     """
@@ -12883,10 +12619,10 @@ class PowerPowerItemImpedanceStopfrequency(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemImpedanceStartfrequency(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:IMPEDANCE:STARTFREQuency`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the value for the start frequency of the specified Impedance measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:STARTFREQuency?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -12895,14 +12631,13 @@ class PowerPowerItemImpedanceStartfrequency(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:IMPEDANCE:STARTFREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:IMPEDANCE:STARTFREQuency <NR3>
         - POWer:POWer<x>:IMPEDANCE:STARTFREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the Impedance power measurement.
         - ``<NR3>`` is a floating point number representing the start frequency, in the range of 10
           Hz to 50 MHz.
@@ -12912,24 +12647,23 @@ class PowerPowerItemImpedanceStartfrequency(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemImpedancePpd(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:IMPEDANCE:PPD`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the value for points per decade for the specified Impedance measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:PPD?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:IMPEDANCE:PPD?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:IMPEDANCE:PPD value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:IMPEDANCE:PPD <NR1>
         - POWer:POWer<x>:IMPEDANCE:PPD?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the Impedance power measurement.
         - ``<NR1>`` specifies the number of frequency points between the start and stop frequency in
           terms of log scale, in the range of 10 to 100 points.
@@ -12939,10 +12673,10 @@ class PowerPowerItemImpedancePpd(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemImpedanceOutputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:IMPEDANCE:OUTPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the source for the Impedance output measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:OUTPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -12951,14 +12685,13 @@ class PowerPowerItemImpedanceOutputsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:IMPEDANCE:OUTPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:IMPEDANCE:OUTPUTSOurce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:IMPEDANCE:OUTPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the Impedance power measurement.
         - ``CH<x>`` specifies the instrument input channel number.
         - ``MATH<x>`` specifies the instrument math waveform number.
@@ -12969,10 +12702,10 @@ class PowerPowerItemImpedanceOutputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemImpedanceInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:IMPEDANCE:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the source for the Impedance input measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:INPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -12981,14 +12714,13 @@ class PowerPowerItemImpedanceInputsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:IMPEDANCE:INPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:IMPEDANCE:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:IMPEDANCE:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the Impedance power measurement.
         - ``CH<x>`` specifies the instrument input channel number.
         - ``MATH<x>`` specifies the instrument math waveform number.
@@ -12999,25 +12731,24 @@ class PowerPowerItemImpedanceInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemImpedanceImpedance(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:IMPEDANCE:IMPEDANCE`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the output impedance of the generator for the specified Impedance power
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:IMPEDANCE?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:IMPEDANCE:IMPEDANCE?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:IMPEDANCE:IMPEDANCE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:IMPEDANCE:IMPEDANCE {FIFTy|HIGHZ}
         - POWer:POWer<x>:IMPEDANCE:IMPEDANCE?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the Impedance power measurement.
         - ``FIFTy`` sets the measurement impedance to 50`Ω.
         - ``HIGHZ`` sets the measurement impedance to 1`MΩ.
@@ -13027,24 +12758,23 @@ class PowerPowerItemImpedanceImpedance(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemImpedanceGenerator(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:IMPEDANCE:GENerator`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the generator source for the Impedance power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:GENerator?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:IMPEDANCE:GENerator?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:IMPEDANCE:GENerator value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:IMPEDANCE:GENerator {INTernal|EXTernal}
         - POWer:POWer<x>:IMPEDANCE:GENerator?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the Impedance power measurement.
         - ``INTernal`` sets the internal generator as the source for the Impedance power
           measurement.
@@ -13056,11 +12786,11 @@ class PowerPowerItemImpedanceGenerator(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemImpedanceGenipaddress(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:IMPEDANCE:GENIPADDress`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the external generator IP Address associated with the specified Impedance
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:GENIPADDress?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -13069,14 +12799,13 @@ class PowerPowerItemImpedanceGenipaddress(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:IMPEDANCE:GENIPADDress value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:IMPEDANCE:GENIPADDress <String>
         - POWer:POWer<x>:IMPEDANCE:GENIPADDress?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the Impedance power measurement.<string> is the IP address
           of the generator.
     """
@@ -13085,11 +12814,11 @@ class PowerPowerItemImpedanceGenipaddress(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemImpedanceFreqvalItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:IMPEDANCE:FREQ<x>Val`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the signal generator start frequency of the specified profile step, for
           the specified Impedance measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:FREQ<x>Val?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:IMPEDANCE:FREQ<x>Val?``
@@ -13097,14 +12826,13 @@ class PowerPowerItemImpedanceFreqvalItem(ValidatedDynamicNumberCmd, SCPICmdWrite
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:IMPEDANCE:FREQ<x>Val value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:IMPEDANCE:FREQ<x>Val <NR3>
         - POWer:POWer<x>:IMPEDANCE:FREQ<x>Val?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the Impedance power measurement.
         - ``FREQ<x>`` specifies the number of the profile step. The valid range is 1 to 10.
         - ``<NR3>`` sets the start frequency, in the range of 10 Hz to 50 MHz, for the specified
@@ -13118,10 +12846,10 @@ class PowerPowerItemImpedanceFreqvalItem(ValidatedDynamicNumberCmd, SCPICmdWrite
 class PowerPowerItemImpedanceConstamplitude(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:IMPEDANCE:CONSTAMPlitude`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the constant amplitude value for the specified Impedance measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:CONSTAMPlitude?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -13130,14 +12858,13 @@ class PowerPowerItemImpedanceConstamplitude(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:IMPEDANCE:CONSTAMPlitude value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:IMPEDANCE:CONSTAMPlitude <NR3>
         - POWer:POWer<x>:IMPEDANCE:CONSTAMPlitude?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the Impedance power measurement.
         - ``<NR3>`` specifies the constant amplitude value, in the range of -100 V to 100 V.
     """
@@ -13146,25 +12873,24 @@ class PowerPowerItemImpedanceConstamplitude(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemImpedanceConnectstatus(SCPICmdRead):
     """The ``POWer:POWer<x>:IMPEDANCE:CONNECTSTATus`` command.
 
-    **Description:**
+    Description:
         - Queries the instrument's connection status to the external generator, for the specified
           Impedance measurement. The Impedance measurement generator IP address (for external
           generators) is set with ``POWER:POWERX:IMPEDANCE:GENIPADDRESS``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:CONNECTSTATus?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``POWer:POWer<x>:IMPEDANCE:CONNECTSTATus?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:IMPEDANCE:CONNECTSTATus?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the Impedance power measurement.
     """
 
@@ -13172,24 +12898,23 @@ class PowerPowerItemImpedanceConnectstatus(SCPICmdRead):
 class PowerPowerItemImpedanceAutorbw(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:IMPEDANCE:AUTORbw`` command.
 
-    **Description:**
+    Description:
         - This command enables Auto RBW computation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:AUTORbw?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:IMPEDANCE:AUTORbw?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:IMPEDANCE:AUTORbw value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:IMPEDANCE:AUTORbw {True|False}
         - POWer:POWer<x>:IMPEDANCE:AUTORbw?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``True`` enables Auto RBW computation.
@@ -13200,10 +12925,10 @@ class PowerPowerItemImpedanceAutorbw(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemImpedanceAnalysismethod(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:IMPEDANCE:ANALYSISMethod`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the Analysis Method for  Impedance measurements.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:ANALYSISMethod?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -13212,14 +12937,13 @@ class PowerPowerItemImpedanceAnalysismethod(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:IMPEDANCE:ANALYSISMethod value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:IMPEDANCE:ANALYSISMethod {SV|FFT}
         - POWer:POWer<x>:IMPEDANCE:ANALYSISMethod?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``SV`` sets the Analysis Method as Spectrum View.
@@ -13230,24 +12954,23 @@ class PowerPowerItemImpedanceAnalysismethod(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemImpedanceAmpmode(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:IMPEDANCE:AMPMode`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the power amplitude mode for the Impedance measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:AMPMode?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:IMPEDANCE:AMPMode?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:IMPEDANCE:AMPMode value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:IMPEDANCE:AMPMode {CONSTant|PROFile}
         - POWer:POWer<x>:IMPEDANCE:AMPMode?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the Impedance power measurement.
         - ``CONSTant`` sets the generator to output a constant level signal.
         - ``PROFile`` uses related commands to set the generator output signal profile (Start
@@ -13258,25 +12981,24 @@ class PowerPowerItemImpedanceAmpmode(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemImpedanceAmpvalItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:IMPEDANCE:AMP<x>Val`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the signal generator amplitude setting of the specified profile step, for
           the specified Impedance measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:AMP<x>Val?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:IMPEDANCE:AMP<x>Val?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:IMPEDANCE:AMP<x>Val value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:IMPEDANCE:AMP<x>Val <NR3>
         - POWer:POWer<x>:IMPEDANCE:AMP<x>Val?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the Impedance power measurement.
         - ``AMP<x>`` specifies the number of the profile step. The valid range is 1 to 10.
         - ``<NR3>`` sets the generator output amplitude for the specified profile step, in the range
@@ -13288,12 +13010,12 @@ class PowerPowerItemImpedanceAmpvalItem(ValidatedDynamicNumberCmd, SCPICmdWrite,
 class PowerPowerItemImpedance(SCPICmdRead):
     """The ``POWer:POWer<x>:IMPEDANCE`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:IMPEDANCE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the Impedance power measurement.
 
     Properties:
@@ -13360,11 +13082,11 @@ class PowerPowerItemImpedance(SCPICmdRead):
     def ampval(self) -> Dict[int, PowerPowerItemImpedanceAmpvalItem]:
         """Return the ``POWer:POWer<x>:IMPEDANCE:AMP<x>Val`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the signal generator amplitude setting of the specified profile step,
               for the specified Impedance measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:AMP<x>Val?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -13373,14 +13095,13 @@ class PowerPowerItemImpedance(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:AMP<x>Val value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:IMPEDANCE:AMP<x>Val <NR3>
             - POWer:POWer<x>:IMPEDANCE:AMP<x>Val?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the Impedance power measurement.
             - ``AMP<x>`` specifies the number of the profile step. The valid range is 1 to 10.
             - ``<NR3>`` sets the generator output amplitude for the specified profile step, in the
@@ -13392,10 +13113,10 @@ class PowerPowerItemImpedance(SCPICmdRead):
     def ampmode(self) -> PowerPowerItemImpedanceAmpmode:
         """Return the ``POWer:POWer<x>:IMPEDANCE:AMPMode`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the power amplitude mode for the Impedance measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:AMPMode?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -13404,14 +13125,13 @@ class PowerPowerItemImpedance(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:AMPMode value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:IMPEDANCE:AMPMode {CONSTant|PROFile}
             - POWer:POWer<x>:IMPEDANCE:AMPMode?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the Impedance power measurement.
             - ``CONSTant`` sets the generator to output a constant level signal.
             - ``PROFile`` uses related commands to set the generator output signal profile (Start
@@ -13423,10 +13143,10 @@ class PowerPowerItemImpedance(SCPICmdRead):
     def analysismethod(self) -> PowerPowerItemImpedanceAnalysismethod:
         """Return the ``POWer:POWer<x>:IMPEDANCE:ANALYSISMethod`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Analysis Method for  Impedance measurements.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:ANALYSISMethod?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -13435,14 +13155,13 @@ class PowerPowerItemImpedance(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:ANALYSISMethod value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:IMPEDANCE:ANALYSISMethod {SV|FFT}
             - POWer:POWer<x>:IMPEDANCE:ANALYSISMethod?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``SV`` sets the Analysis Method as Spectrum View.
@@ -13454,10 +13173,10 @@ class PowerPowerItemImpedance(SCPICmdRead):
     def autorbw(self) -> PowerPowerItemImpedanceAutorbw:
         """Return the ``POWer:POWer<x>:IMPEDANCE:AUTORbw`` command.
 
-        **Description:**
+        Description:
             - This command enables Auto RBW computation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:AUTORbw?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -13466,14 +13185,13 @@ class PowerPowerItemImpedance(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:AUTORbw value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:IMPEDANCE:AUTORbw {True|False}
             - POWer:POWer<x>:IMPEDANCE:AUTORbw?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``True`` enables Auto RBW computation.
@@ -13485,25 +13203,24 @@ class PowerPowerItemImpedance(SCPICmdRead):
     def connectstatus(self) -> PowerPowerItemImpedanceConnectstatus:
         """Return the ``POWer:POWer<x>:IMPEDANCE:CONNECTSTATus`` command.
 
-        **Description:**
+        Description:
             - Queries the instrument's connection status to the external generator, for the
               specified Impedance measurement. The Impedance measurement generator IP address (for
               external generators) is set with ``POWER:POWERX:IMPEDANCE:GENIPADDRESS``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:CONNECTSTATus?`` query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:CONNECTSTATus?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:IMPEDANCE:CONNECTSTATus?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the Impedance power measurement.
         """
         return self._connectstatus
@@ -13512,10 +13229,10 @@ class PowerPowerItemImpedance(SCPICmdRead):
     def constamplitude(self) -> PowerPowerItemImpedanceConstamplitude:
         """Return the ``POWer:POWer<x>:IMPEDANCE:CONSTAMPlitude`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the constant amplitude value for the specified Impedance measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:CONSTAMPlitude?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -13524,14 +13241,13 @@ class PowerPowerItemImpedance(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:CONSTAMPlitude value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:IMPEDANCE:CONSTAMPlitude <NR3>
             - POWer:POWer<x>:IMPEDANCE:CONSTAMPlitude?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the Impedance power measurement.
             - ``<NR3>`` specifies the constant amplitude value, in the range of -100 V to 100 V.
         """
@@ -13541,11 +13257,11 @@ class PowerPowerItemImpedance(SCPICmdRead):
     def freqval(self) -> Dict[int, PowerPowerItemImpedanceFreqvalItem]:
         """Return the ``POWer:POWer<x>:IMPEDANCE:FREQ<x>Val`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the signal generator start frequency of the specified profile step,
               for the specified Impedance measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:FREQ<x>Val?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -13554,14 +13270,13 @@ class PowerPowerItemImpedance(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:FREQ<x>Val value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:IMPEDANCE:FREQ<x>Val <NR3>
             - POWer:POWer<x>:IMPEDANCE:FREQ<x>Val?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the Impedance power measurement.
             - ``FREQ<x>`` specifies the number of the profile step. The valid range is 1 to 10.
             - ``<NR3>`` sets the start frequency, in the range of 10 Hz to 50 MHz, for the specified
@@ -13576,11 +13291,11 @@ class PowerPowerItemImpedance(SCPICmdRead):
     def genipaddress(self) -> PowerPowerItemImpedanceGenipaddress:
         """Return the ``POWer:POWer<x>:IMPEDANCE:GENIPADDress`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the external generator IP Address associated with the specified
               Impedance measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:GENIPADDress?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -13589,14 +13304,13 @@ class PowerPowerItemImpedance(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:GENIPADDress value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:IMPEDANCE:GENIPADDress <String>
             - POWer:POWer<x>:IMPEDANCE:GENIPADDress?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the Impedance power measurement.<string> is the IP
               address of the generator.
         """
@@ -13606,10 +13320,10 @@ class PowerPowerItemImpedance(SCPICmdRead):
     def generator(self) -> PowerPowerItemImpedanceGenerator:
         """Return the ``POWer:POWer<x>:IMPEDANCE:GENerator`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the generator source for the Impedance power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:GENerator?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -13618,14 +13332,13 @@ class PowerPowerItemImpedance(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:GENerator value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:IMPEDANCE:GENerator {INTernal|EXTernal}
             - POWer:POWer<x>:IMPEDANCE:GENerator?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the Impedance power measurement.
             - ``INTernal`` sets the internal generator as the source for the Impedance power
               measurement.
@@ -13639,11 +13352,11 @@ class PowerPowerItemImpedance(SCPICmdRead):
     def impedance(self) -> PowerPowerItemImpedanceImpedance:
         """Return the ``POWer:POWer<x>:IMPEDANCE:IMPEDANCE`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the output impedance of the generator for the specified Impedance
               power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:IMPEDANCE?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -13652,14 +13365,13 @@ class PowerPowerItemImpedance(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:IMPEDANCE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:IMPEDANCE:IMPEDANCE {FIFTy|HIGHZ}
             - POWer:POWer<x>:IMPEDANCE:IMPEDANCE?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the Impedance power measurement.
             - ``FIFTy`` sets the measurement impedance to 50`Ω.
             - ``HIGHZ`` sets the measurement impedance to 1`MΩ.
@@ -13670,10 +13382,10 @@ class PowerPowerItemImpedance(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemImpedanceInputsource:
         """Return the ``POWer:POWer<x>:IMPEDANCE:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the source for the Impedance input measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:INPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -13682,14 +13394,13 @@ class PowerPowerItemImpedance(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:IMPEDANCE:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:IMPEDANCE:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the Impedance power measurement.
             - ``CH<x>`` specifies the instrument input channel number.
             - ``MATH<x>`` specifies the instrument math waveform number.
@@ -13701,10 +13412,10 @@ class PowerPowerItemImpedance(SCPICmdRead):
     def outputsource(self) -> PowerPowerItemImpedanceOutputsource:
         """Return the ``POWer:POWer<x>:IMPEDANCE:OUTPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the source for the Impedance output measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:OUTPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -13713,14 +13424,13 @@ class PowerPowerItemImpedance(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:OUTPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:IMPEDANCE:OUTPUTSOurce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:IMPEDANCE:OUTPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the Impedance power measurement.
             - ``CH<x>`` specifies the instrument input channel number.
             - ``MATH<x>`` specifies the instrument math waveform number.
@@ -13732,25 +13442,24 @@ class PowerPowerItemImpedance(SCPICmdRead):
     def ppd(self) -> PowerPowerItemImpedancePpd:
         """Return the ``POWer:POWer<x>:IMPEDANCE:PPD`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the value for points per decade for the specified Impedance
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE:PPD?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:IMPEDANCE:PPD?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:PPD value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:IMPEDANCE:PPD <NR1>
             - POWer:POWer<x>:IMPEDANCE:PPD?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the Impedance power measurement.
             - ``<NR1>`` specifies the number of frequency points between the start and stop
               frequency in terms of log scale, in the range of 10 to 100 points.
@@ -13761,11 +13470,11 @@ class PowerPowerItemImpedance(SCPICmdRead):
     def startfrequency(self) -> PowerPowerItemImpedanceStartfrequency:
         """Return the ``POWer:POWer<x>:IMPEDANCE:STARTFREQuency`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the value for the start frequency of the specified Impedance
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:STARTFREQuency?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -13774,14 +13483,13 @@ class PowerPowerItemImpedance(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:STARTFREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:IMPEDANCE:STARTFREQuency <NR3>
             - POWer:POWer<x>:IMPEDANCE:STARTFREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the Impedance power measurement.
             - ``<NR3>`` is a floating point number representing the start frequency, in the range of
               10 Hz to 50 MHz.
@@ -13792,10 +13500,10 @@ class PowerPowerItemImpedance(SCPICmdRead):
     def stopfrequency(self) -> PowerPowerItemImpedanceStopfrequency:
         """Return the ``POWer:POWer<x>:IMPEDANCE:STOPFREQuency`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the value of the specified Impedance measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:STOPFREQuency?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -13804,14 +13512,13 @@ class PowerPowerItemImpedance(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:STOPFREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:IMPEDANCE:STOPFREQuency <NR3>
             - POWer:POWer<x>:IMPEDANCE:STOPFREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the Impedance power measurement.
             - ``<NR3>`` specifies the start frequency, in the range of 10 Hz to 50 MHz.
         """
@@ -13821,21 +13528,20 @@ class PowerPowerItemImpedance(SCPICmdRead):
     def testconnection(self) -> PowerPowerItemImpedanceTestconnection:
         """Return the ``POWer:POWer<x>:IMPEDANCE:TESTCONNection`` command.
 
-        **Description:**
+        Description:
             - This command tests the connection with the external instrument for the specified
               Impedance measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:IMPEDANCE:TESTCONNection value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:IMPEDANCE:TESTCONNection {EXECute}
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the Impedance power measurement.
             - ``EXECute`` runs the test connection function.
         """
@@ -13845,25 +13551,24 @@ class PowerPowerItemImpedance(SCPICmdRead):
 class PowerPowerItemHarmonicsVsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:HARMONICS:VSOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the voltage source for SOA measurement of the specified power
           measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:VSOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS:VSOURce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:HARMONICS:VSOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:HARMONICS:VSOURce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:HARMONICS:VSOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -13876,34 +13581,33 @@ class PowerPowerItemHarmonicsVsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemHarmonicsUnits(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:HARMONICS:UNITs`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the harmonics results units of the specified power
           measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:UNITs?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS:UNITs?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:HARMONICS:UNITs value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:HARMONICS:UNITs {LOG | LINear}
         - POWer:POWer<x>:HARMONICS:UNITs?
+        ```
     """
 
 
 class PowerPowerItemHarmonicsStartfrequency(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:HARMONICS:STARTFREQUEncy`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the value for the start frequency for the Harmonics
           measurement. in the range of 1 Hz to 1 GHz.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:STARTFREQUEncy?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -13912,14 +13616,13 @@ class PowerPowerItemHarmonicsStartfrequency(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:HARMONICS:STARTFREQUEncy value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:HARMONICS:STARTFREQUEncy <NR2>
         - POWer:POWer<x>:HARMONICS:STARTFREQUEncy?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the Power measurement.
         - ``<NR2>`` sets the starting frequency, in hertz.
     """
@@ -13928,25 +13631,24 @@ class PowerPowerItemHarmonicsStartfrequency(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemHarmonicsStandard(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:HARMONICS:STANDard`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the test mode for harmonics measurement of the specified
           power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:STANDard?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS:STANDard?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:HARMONICS:STANDard value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:HARMONICS:STANDard {NONe |IEC |MIL |AM14 |DO160 |CUSTOM}
         - POWer:POWer<x>:HARMONICS:STANDard?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``NONe`` = No standard.
@@ -13961,25 +13663,24 @@ class PowerPowerItemHarmonicsStandard(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemHarmonicsRcurrent(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:HARMONICS:RCURRent`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the rated current for the harmonics measurement of the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:RCURRent?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS:RCURRent?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:HARMONICS:RCURRent value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:HARMONICS:RCURRent <NR1>
         - POWer:POWer<x>:HARMONICS:RCURRent?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR1>`` ranges from 0 to 100.
@@ -13989,11 +13690,11 @@ class PowerPowerItemHarmonicsRcurrent(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemHarmonicsPowerrating(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:HARMONICS:POWERRating`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the power level for the harmonics measurement of the
           specified power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:POWERRating?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -14002,37 +13703,35 @@ class PowerPowerItemHarmonicsPowerrating(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:HARMONICS:POWERRating value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:HARMONICS:POWERRating {HIGH | LOW}
         - POWer:POWer<x>:HARMONICS:POWERRating?
+        ```
     """
 
 
 class PowerPowerItemHarmonicsPfactor(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:HARMONICS:PFACtor`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the value of power factor for the harmonics measurement of
           the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:PFACtor?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS:PFACtor?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:HARMONICS:PFACtor value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:HARMONICS:PFACtor <NR1>
         - POWer:POWer<x>:HARMONICS:PFACtor?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR1>`` ranges from 0 to 1.
@@ -14042,25 +13741,24 @@ class PowerPowerItemHarmonicsPfactor(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemHarmonicsOddeven(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:HARMONICS:ODDEVen`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the harmonics value analysis format of the specified power
           measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:ODDEVen?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS:ODDEVen?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:HARMONICS:ODDEVen value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:HARMONICS:ODDEVen {ALL | ODD | EVEN}
         - POWer:POWer<x>:HARMONICS:ODDEVen?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``ALL`` to display all harmonics values.
@@ -14072,11 +13770,11 @@ class PowerPowerItemHarmonicsOddeven(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemHarmonicsLinefrequency(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:HARMONICS:LINEFREQUEncy`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the value for the line frequency for the Harmonics
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:LINEFREQUEncy?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -14085,14 +13783,13 @@ class PowerPowerItemHarmonicsLinefrequency(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:HARMONICS:LINEFREQUEncy value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:HARMONICS:LINEFREQUEncy {Auto|FIFTyhz|SIXTyhz |THREESIXTyhz|FOURHUNDREdhz|SIXFIFTyhz|EIGHTHUNDREdhz|CUSTom
         - POWer:POWer<x>:HARMONICS:LINEFREQUEncy?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the Power measurement identifier number.
         - ``Auto`` automatically detects and sets the line frequency value.
         - ``FIFTyhz`` sets the line frequency value to 50 Hz.
@@ -14110,25 +13807,24 @@ class PowerPowerItemHarmonicsLinefrequency(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemHarmonicsIsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:HARMONICS:ISOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current source for SOA measurement of the specified power
           measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:ISOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS:ISOURce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:HARMONICS:ISOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:HARMONICS:ISOURce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:HARMONICS:ISOURce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -14141,25 +13837,24 @@ class PowerPowerItemHarmonicsIsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemHarmonicsIpower(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:HARMONICS:IPOWer`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input power value for the harmonics measurement of the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:IPOWer?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS:IPOWer?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:HARMONICS:IPOWer value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:HARMONICS:IPOWer <NR1>
         - POWer:POWer<x>:HARMONICS:IPOWer?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR1>`` ranges from 0 to 600.
@@ -14169,48 +13864,46 @@ class PowerPowerItemHarmonicsIpower(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemHarmonicsHsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:HARMONICS:HSOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the source type for the harmonics measurement of the
           specified power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:HSOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS:HSOURce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:HARMONICS:HSOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:HARMONICS:HSOURce {CURRent | VOLTage}
         - POWer:POWer<x>:HARMONICS:HSOURce?
+        ```
     """
 
 
 class PowerPowerItemHarmonicsHorder(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:HARMONICS:HORDer`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the order value for the harmonics measurement of the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:HORDer?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS:HORDer?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:HARMONICS:HORDer value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:HARMONICS:HORDer <NR1>
         - POWer:POWer<x>:HARMONICS:HORDer?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR1>`` ranges from 40 to 100.
@@ -14220,11 +13913,11 @@ class PowerPowerItemHarmonicsHorder(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemHarmonicsFundcurrent(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:HARMONICS:FUNDCURRent`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the fundamental current value for the harmonics measurement
           of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:FUNDCURRent?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -14233,14 +13926,13 @@ class PowerPowerItemHarmonicsFundcurrent(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:HARMONICS:FUNDCURRent value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:HARMONICS:FUNDCURRent <NR1>
         - POWer:POWer<x>:HARMONICS:FUNDCURRent?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``<NR1>`` ranges from 0 to 16.
@@ -14250,25 +13942,24 @@ class PowerPowerItemHarmonicsFundcurrent(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemHarmonicsCmethod(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:HARMONICS:CMEThod`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the fundamental current method for the harmonics measurement
           of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:CMEThod?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS:CMEThod?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:HARMONICS:CMEThod value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:HARMONICS:CMEThod {RATed | MEASured}
         - POWer:POWer<x>:HARMONICS:CMEThod?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``RATed`` : select to use the standard input current values in the measurement.
@@ -14279,25 +13970,24 @@ class PowerPowerItemHarmonicsCmethod(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemHarmonicsClfile(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:HARMONICS:CLFile`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the custom limits file path for the harmonics measurement.
           The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:CLFile?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS:CLFile?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:HARMONICS:CLFile value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:HARMONICS:CLFile <QString>
         - POWer:POWer<x>:HARMONICS:CLFile?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies the custom limits file path that can be loaded when the harmonics
           standard type selected is CUSTom.
     """
@@ -14308,23 +13998,22 @@ class PowerPowerItemHarmonicsClfile(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemHarmonicsClass(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:HARMONICS:CLASs`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the class type for the harmonics measurement in the specified
           power measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:CLASs?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS:CLASs?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:HARMONICS:CLASs value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:HARMONICS:CLASs {CLASSA | CLASSB | CLASSC | CLASSD}
         - POWer:POWer<x>:HARMONICS:CLASs?
+        ```
     """
 
 
@@ -14332,7 +14021,7 @@ class PowerPowerItemHarmonicsClass(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemHarmonics(SCPICmdRead):
     """The ``POWer:POWer<x>:HARMONICS`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -14389,23 +14078,22 @@ class PowerPowerItemHarmonics(SCPICmdRead):
     def class_(self) -> PowerPowerItemHarmonicsClass:
         """Return the ``POWer:POWer<x>:HARMONICS:CLASs`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the class type for the harmonics measurement in the
               specified power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:CLASs?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS:CLASs?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:HARMONICS:CLASs value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:HARMONICS:CLASs {CLASSA | CLASSB | CLASSC | CLASSD}
             - POWer:POWer<x>:HARMONICS:CLASs?
+            ```
         """
         return self._class
 
@@ -14413,11 +14101,11 @@ class PowerPowerItemHarmonics(SCPICmdRead):
     def clfile(self) -> PowerPowerItemHarmonicsClfile:
         """Return the ``POWer:POWer<x>:HARMONICS:CLFile`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the custom limits file path for the harmonics
               measurement. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:CLFile?``
               query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS:CLFile?``
@@ -14425,14 +14113,13 @@ class PowerPowerItemHarmonics(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:HARMONICS:CLFile value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:HARMONICS:CLFile <QString>
             - POWer:POWer<x>:HARMONICS:CLFile?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies the custom limits file path that can be loaded when the
               harmonics standard type selected is CUSTom.
         """
@@ -14442,11 +14129,11 @@ class PowerPowerItemHarmonics(SCPICmdRead):
     def cmethod(self) -> PowerPowerItemHarmonicsCmethod:
         """Return the ``POWer:POWer<x>:HARMONICS:CMEThod`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the fundamental current method for the harmonics
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:CMEThod?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -14455,14 +14142,13 @@ class PowerPowerItemHarmonics(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:HARMONICS:CMEThod value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:HARMONICS:CMEThod {RATed | MEASured}
             - POWer:POWer<x>:HARMONICS:CMEThod?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``RATed`` : select to use the standard input current values in the measurement.
@@ -14474,11 +14160,11 @@ class PowerPowerItemHarmonics(SCPICmdRead):
     def fundcurrent(self) -> PowerPowerItemHarmonicsFundcurrent:
         """Return the ``POWer:POWer<x>:HARMONICS:FUNDCURRent`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the fundamental current value for the harmonics
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:FUNDCURRent?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -14487,14 +14173,13 @@ class PowerPowerItemHarmonics(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:HARMONICS:FUNDCURRent value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:HARMONICS:FUNDCURRent <NR1>
             - POWer:POWer<x>:HARMONICS:FUNDCURRent?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR1>`` ranges from 0 to 16.
@@ -14505,11 +14190,11 @@ class PowerPowerItemHarmonics(SCPICmdRead):
     def horder(self) -> PowerPowerItemHarmonicsHorder:
         """Return the ``POWer:POWer<x>:HARMONICS:HORDer`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the order value for the harmonics measurement of the
               specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:HORDer?``
               query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS:HORDer?``
@@ -14517,14 +14202,13 @@ class PowerPowerItemHarmonics(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:HARMONICS:HORDer value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:HARMONICS:HORDer <NR1>
             - POWer:POWer<x>:HARMONICS:HORDer?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR1>`` ranges from 40 to 100.
@@ -14535,11 +14219,11 @@ class PowerPowerItemHarmonics(SCPICmdRead):
     def hsource(self) -> PowerPowerItemHarmonicsHsource:
         """Return the ``POWer:POWer<x>:HARMONICS:HSOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the source type for the harmonics measurement of the
               specified power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:HSOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -14548,12 +14232,11 @@ class PowerPowerItemHarmonics(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:HARMONICS:HSOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:HARMONICS:HSOURce {CURRent | VOLTage}
             - POWer:POWer<x>:HARMONICS:HSOURce?
+            ```
         """
         return self._hsource
 
@@ -14561,11 +14244,11 @@ class PowerPowerItemHarmonics(SCPICmdRead):
     def ipower(self) -> PowerPowerItemHarmonicsIpower:
         """Return the ``POWer:POWer<x>:HARMONICS:IPOWer`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input power value for the harmonics measurement of
               the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:IPOWer?``
               query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS:IPOWer?``
@@ -14573,14 +14256,13 @@ class PowerPowerItemHarmonics(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:HARMONICS:IPOWer value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:HARMONICS:IPOWer <NR1>
             - POWer:POWer<x>:HARMONICS:IPOWer?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR1>`` ranges from 0 to 600.
@@ -14591,11 +14273,11 @@ class PowerPowerItemHarmonics(SCPICmdRead):
     def isource(self) -> PowerPowerItemHarmonicsIsource:
         """Return the ``POWer:POWer<x>:HARMONICS:ISOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current source for SOA measurement of the specified
               power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:ISOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -14604,14 +14286,13 @@ class PowerPowerItemHarmonics(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:HARMONICS:ISOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:HARMONICS:ISOURce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:HARMONICS:ISOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -14625,11 +14306,11 @@ class PowerPowerItemHarmonics(SCPICmdRead):
     def linefrequency(self) -> PowerPowerItemHarmonicsLinefrequency:
         """Return the ``POWer:POWer<x>:HARMONICS:LINEFREQUEncy`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the value for the line frequency for the Harmonics
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:HARMONICS:LINEFREQUEncy?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -14638,14 +14319,13 @@ class PowerPowerItemHarmonics(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:HARMONICS:LINEFREQUEncy value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:HARMONICS:LINEFREQUEncy {Auto|FIFTyhz|SIXTyhz |THREESIXTyhz|FOURHUNDREdhz|SIXFIFTyhz|EIGHTHUNDREdhz|CUSTom
             - POWer:POWer<x>:HARMONICS:LINEFREQUEncy?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the Power measurement identifier number.
             - ``Auto`` automatically detects and sets the line frequency value.
             - ``FIFTyhz`` sets the line frequency value to 50 Hz.
@@ -14664,11 +14344,11 @@ class PowerPowerItemHarmonics(SCPICmdRead):
     def oddeven(self) -> PowerPowerItemHarmonicsOddeven:
         """Return the ``POWer:POWer<x>:HARMONICS:ODDEVen`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the harmonics value analysis format of the specified
               power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:ODDEVen?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -14677,14 +14357,13 @@ class PowerPowerItemHarmonics(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:HARMONICS:ODDEVen value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:HARMONICS:ODDEVen {ALL | ODD | EVEN}
             - POWer:POWer<x>:HARMONICS:ODDEVen?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``ALL`` to display all harmonics values.
@@ -14697,11 +14376,11 @@ class PowerPowerItemHarmonics(SCPICmdRead):
     def pfactor(self) -> PowerPowerItemHarmonicsPfactor:
         """Return the ``POWer:POWer<x>:HARMONICS:PFACtor`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the value of power factor for the harmonics measurement
               of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:PFACtor?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -14710,14 +14389,13 @@ class PowerPowerItemHarmonics(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:HARMONICS:PFACtor value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:HARMONICS:PFACtor <NR1>
             - POWer:POWer<x>:HARMONICS:PFACtor?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR1>`` ranges from 0 to 1.
@@ -14728,11 +14406,11 @@ class PowerPowerItemHarmonics(SCPICmdRead):
     def powerrating(self) -> PowerPowerItemHarmonicsPowerrating:
         """Return the ``POWer:POWer<x>:HARMONICS:POWERRating`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the power level for the harmonics measurement of the
               specified power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:POWERRating?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -14741,12 +14419,11 @@ class PowerPowerItemHarmonics(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:HARMONICS:POWERRating value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:HARMONICS:POWERRating {HIGH | LOW}
             - POWer:POWer<x>:HARMONICS:POWERRating?
+            ```
         """
         return self._powerrating
 
@@ -14754,11 +14431,11 @@ class PowerPowerItemHarmonics(SCPICmdRead):
     def rcurrent(self) -> PowerPowerItemHarmonicsRcurrent:
         """Return the ``POWer:POWer<x>:HARMONICS:RCURRent`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the rated current for the harmonics measurement of the
               specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:RCURRent?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -14767,14 +14444,13 @@ class PowerPowerItemHarmonics(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:HARMONICS:RCURRent value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:HARMONICS:RCURRent <NR1>
             - POWer:POWer<x>:HARMONICS:RCURRent?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``<NR1>`` ranges from 0 to 100.
@@ -14785,11 +14461,11 @@ class PowerPowerItemHarmonics(SCPICmdRead):
     def standard(self) -> PowerPowerItemHarmonicsStandard:
         """Return the ``POWer:POWer<x>:HARMONICS:STANDard`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the test mode for harmonics measurement of the specified
               power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:STANDard?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -14798,14 +14474,13 @@ class PowerPowerItemHarmonics(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:HARMONICS:STANDard value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:HARMONICS:STANDard {NONe |IEC |MIL |AM14 |DO160 |CUSTOM}
             - POWer:POWer<x>:HARMONICS:STANDard?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``NONe`` = No standard.
@@ -14821,11 +14496,11 @@ class PowerPowerItemHarmonics(SCPICmdRead):
     def startfrequency(self) -> PowerPowerItemHarmonicsStartfrequency:
         """Return the ``POWer:POWer<x>:HARMONICS:STARTFREQUEncy`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the value for the start frequency for the Harmonics
               measurement. in the range of 1 Hz to 1 GHz.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:HARMONICS:STARTFREQUEncy?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -14834,14 +14509,13 @@ class PowerPowerItemHarmonics(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:HARMONICS:STARTFREQUEncy value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:HARMONICS:STARTFREQUEncy <NR2>
             - POWer:POWer<x>:HARMONICS:STARTFREQUEncy?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the Power measurement.
             - ``<NR2>`` sets the starting frequency, in hertz.
         """
@@ -14851,23 +14525,22 @@ class PowerPowerItemHarmonics(SCPICmdRead):
     def units(self) -> PowerPowerItemHarmonicsUnits:
         """Return the ``POWer:POWer<x>:HARMONICS:UNITs`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the harmonics results units of the specified power
               measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:UNITs?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS:UNITs?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:HARMONICS:UNITs value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:HARMONICS:UNITs {LOG | LINear}
             - POWer:POWer<x>:HARMONICS:UNITs?
+            ```
         """
         return self._units
 
@@ -14875,11 +14548,11 @@ class PowerPowerItemHarmonics(SCPICmdRead):
     def vsource(self) -> PowerPowerItemHarmonicsVsource:
         """Return the ``POWer:POWer<x>:HARMONICS:VSOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the voltage source for SOA measurement of the specified
               power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS:VSOURce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -14888,14 +14561,13 @@ class PowerPowerItemHarmonics(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:HARMONICS:VSOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:HARMONICS:VSOURce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:HARMONICS:VSOURce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -14909,25 +14581,24 @@ class PowerPowerItemHarmonics(SCPICmdRead):
 class PowerPowerItemGatingGlobal(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:GATing:GLOBal`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the gating settings for the specified power measurement
           number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:GATing:GLOBal?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:GATing:GLOBal?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:GATing:GLOBal value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:GATing:GLOBal {ON|OFF|1|0}
         - POWer:POWer<x>:GATing:GLOBal?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``1`` selects the gating settings as Global.
@@ -14940,23 +14611,22 @@ class PowerPowerItemGatingGlobal(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemGating(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:GATing`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the gating type for the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:GATing?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:GATing?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:GATing value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:GATing {NONE|CURSOR|SCREEN|LOGIC}
         - POWer:POWer<x>:GATing?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``NONE`` makes measurement across the entire waveform record.
@@ -14979,25 +14649,24 @@ class PowerPowerItemGating(SCPICmdWrite, SCPICmdRead):
     def global_(self) -> PowerPowerItemGatingGlobal:
         """Return the ``POWer:POWer<x>:GATing:GLOBal`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the gating settings for the specified power measurement
               number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:GATing:GLOBal?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:GATing:GLOBal?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:GATing:GLOBal value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:GATing:GLOBal {ON|OFF|1|0}
             - POWer:POWer<x>:GATing:GLOBal?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``1`` selects the gating settings as Global.
@@ -15011,11 +14680,11 @@ class PowerPowerItemGating(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemFrequencyInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:FREQUENCY:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source for frequency measurement of the specified
           power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:FREQUENCY:INPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -15024,14 +14693,13 @@ class PowerPowerItemFrequencyInputsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:FREQUENCY:INPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:FREQUENCY:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:FREQUENCY:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -15044,25 +14712,24 @@ class PowerPowerItemFrequencyInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemFrequencyEdge(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:FREQUENCY:EDGe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the edge type for frequency measurement of the specified
           power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:FREQUENCY:EDGe?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:FREQUENCY:EDGe?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:FREQUENCY:EDGe value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:FREQUENCY:EDGe {RISE|FALL}
         - POWer:POWer<x>:FREQUENCY:EDGe?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the power measurement badge on the UI.
     """
@@ -15071,7 +14738,7 @@ class PowerPowerItemFrequencyEdge(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemFrequency(SCPICmdRead):
     """The ``POWer:POWer<x>:FREQUENCY`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:FREQUENCY?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:FREQUENCY?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -15092,25 +14759,24 @@ class PowerPowerItemFrequency(SCPICmdRead):
     def edge(self) -> PowerPowerItemFrequencyEdge:
         """Return the ``POWer:POWer<x>:FREQUENCY:EDGe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the edge type for frequency measurement of the specified
               power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:FREQUENCY:EDGe?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:FREQUENCY:EDGe?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:FREQUENCY:EDGe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:FREQUENCY:EDGe {RISE|FALL}
             - POWer:POWer<x>:FREQUENCY:EDGe?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the power measurement badge on the UI.
         """
@@ -15120,11 +14786,11 @@ class PowerPowerItemFrequency(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemFrequencyInputsource:
         """Return the ``POWer:POWer<x>:FREQUENCY:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source for frequency measurement of the
               specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:FREQUENCY:INPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -15133,14 +14799,13 @@ class PowerPowerItemFrequency(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:FREQUENCY:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:FREQUENCY:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:FREQUENCY:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -15154,24 +14819,23 @@ class PowerPowerItemFrequency(SCPICmdRead):
 class PowerPowerItemEfficiencyVsource(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``POWer:POWer<x>:EFFICIENCY:VSOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the voltage source for the power Efficiency measurement of
           the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:VSOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:EFFICIENCY:VSOUrce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``POWer:POWer<x>:EFFICIENCY:VSOUrce`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:EFFICIENCY:VSOUrce
         - POWer:POWer<x>:EFFICIENCY:VSOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent of
           the number shown in the power measurement badge on the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -15184,11 +14848,11 @@ class PowerPowerItemEfficiencyVsource(SCPICmdWriteNoArguments, SCPICmdRead):
 class PowerPowerItemEfficiencyVout3source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:EFFICIENCY:VOUT3SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 3 voltage source for the power Efficiency
           measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:VOUT3SOUrce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -15197,14 +14861,13 @@ class PowerPowerItemEfficiencyVout3source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:EFFICIENCY:VOUT3SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:EFFICIENCY:VOUT3SOUrce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:EFFICIENCY:VOUT3SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent of
           the number shown on the power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -15217,11 +14880,11 @@ class PowerPowerItemEfficiencyVout3source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemEfficiencyVout2source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:EFFICIENCY:VOUT2SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 2 voltage source for the power Efficiency
           measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:VOUT2SOUrce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -15230,14 +14893,13 @@ class PowerPowerItemEfficiencyVout2source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:EFFICIENCY:VOUT2SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:EFFICIENCY:VOUT2SOUrce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:EFFICIENCY:VOUT2SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent of
           the number shown in the power measurement badge on the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -15250,11 +14912,11 @@ class PowerPowerItemEfficiencyVout2source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemEfficiencyVout1source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:EFFICIENCY:VOUT1SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 1 voltage source for the power Efficiency
           measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:VOUT1SOUrce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -15263,14 +14925,13 @@ class PowerPowerItemEfficiencyVout1source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:EFFICIENCY:VOUT1SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:EFFICIENCY:VOUT1SOUrce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:EFFICIENCY:VOUT1SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent of
           the number shown in the power measurement badge on the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -15283,11 +14944,11 @@ class PowerPowerItemEfficiencyVout1source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemEfficiencyOutputtype(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:EFFICIENCY:OUTPUTType`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output type (AC or DC) for power Efficiency measurement
           of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:OUTPUTType?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -15296,14 +14957,13 @@ class PowerPowerItemEfficiencyOutputtype(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:EFFICIENCY:OUTPUTType value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:EFFICIENCY:OUTPUTType {AC|DC}
         - POWer:POWer<x>:EFFICIENCY:OUTPUTType?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent of
           the number shown on the power measurement badge of the UI.
         - ``AC`` sets the output voltage type to AC.
@@ -15314,11 +14974,11 @@ class PowerPowerItemEfficiencyOutputtype(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemEfficiencyOutput3type(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:EFFICIENCY:OUTPUT3Type`` command.
 
-    **Description:**
+    Description:
         - ``POWer:POWer<x>:EFFICIENCY:OUTPUT3Type This`` command sets or queries the Output3 type
           (AC or DC) for the power Efficiency measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:OUTPUT3Type?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -15327,14 +14987,13 @@ class PowerPowerItemEfficiencyOutput3type(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:EFFICIENCY:OUTPUT3Type value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:EFFICIENCY:OUTPUT3Type {AC|DC}
         - POWer:POWer<x>:EFFICIENCY:OUTPUT3Type?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent of
           the number shown on the power measurement badge of the UI.
         - ``AC`` sets the Output3 voltage type to AC.
@@ -15345,11 +15004,11 @@ class PowerPowerItemEfficiencyOutput3type(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemEfficiencyOutput2type(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:EFFICIENCY:OUTPUT2Type`` command.
 
-    **Description:**
+    Description:
         - ``POWer:POWer<x>:EFFICIENCY:OUTPUT2Type This`` command sets or queries the Output2 type
           (AC or DC) for the power Efficiency measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:OUTPUT2Type?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -15358,14 +15017,13 @@ class PowerPowerItemEfficiencyOutput2type(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:EFFICIENCY:OUTPUT2Type value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:EFFICIENCY:OUTPUT2Type {AC|DC}
         - POWer:POWer<x>:EFFICIENCY:OUTPUT2Type?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent of
           the number shown on the power measurement badge of the UI.
         - ``AC`` sets the Output2 voltage type to AC.
@@ -15376,11 +15034,11 @@ class PowerPowerItemEfficiencyOutput2type(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemEfficiencyOutput1type(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:EFFICIENCY:OUTPUT1Type`` command.
 
-    **Description:**
+    Description:
         - ``POWer:POWer<x>:EFFICIENCY:OUTPUT1Type This`` command sets or queries the Output1 type
           (AC or DC) for the power Efficiency measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:OUTPUT1Type?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -15389,14 +15047,13 @@ class PowerPowerItemEfficiencyOutput1type(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:EFFICIENCY:OUTPUT1Type value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:EFFICIENCY:OUTPUT1Type {AC|DC}
         - POWer:POWer<x>:EFFICIENCY:OUTPUT1Type?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent of
           the number shown on the power measurement badge of the UI.
         - ``AC`` sets the output1 voltage type to AC.
@@ -15407,11 +15064,11 @@ class PowerPowerItemEfficiencyOutput1type(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemEfficiencyNumofoutputs(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:EFFICIENCY:NUMOFOutputs`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of outputs for the power Efficiency measurement of
           the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:NUMOFOutputs?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -15420,14 +15077,13 @@ class PowerPowerItemEfficiencyNumofoutputs(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:EFFICIENCY:NUMOFOutputs value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:EFFICIENCY:NUMOFOutputs {ONE|TWO|THREE}
         - POWer:POWer<x>:EFFICIENCY:NUMOFOutputs?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent of
           the number shown in the power measurement badge on the UI.
         - ``ONE`` , TWO, THREE sets the number of outputs to test in the power efficiency
@@ -15438,24 +15094,23 @@ class PowerPowerItemEfficiencyNumofoutputs(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemEfficiencyIsource(SCPICmdWriteNoArguments, SCPICmdRead):
     """The ``POWer:POWer<x>:EFFICIENCY:ISOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the current source for the power Efficiency measurement of
           the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:ISOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:EFFICIENCY:ISOUrce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write()`` method will send the ``POWer:POWer<x>:EFFICIENCY:ISOUrce`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:EFFICIENCY:ISOUrce
         - POWer:POWer<x>:EFFICIENCY:ISOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent of
           the number shown in the power measurement badge on the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -15468,11 +15123,11 @@ class PowerPowerItemEfficiencyIsource(SCPICmdWriteNoArguments, SCPICmdRead):
 class PowerPowerItemEfficiencyIout3source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:EFFICIENCY:IOUT3SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 3 current source for the power Efficiency
           measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:IOUT3SOUrce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -15481,14 +15136,13 @@ class PowerPowerItemEfficiencyIout3source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:EFFICIENCY:IOUT3SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:EFFICIENCY:IOUT3SOUrce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:EFFICIENCY:IOUT3SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent of
           the number shown on the power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -15501,11 +15155,11 @@ class PowerPowerItemEfficiencyIout3source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemEfficiencyIout2source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:EFFICIENCY:IOUT2SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 2 current source for the power Efficiency
           measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:IOUT2SOUrce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -15514,14 +15168,13 @@ class PowerPowerItemEfficiencyIout2source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:EFFICIENCY:IOUT2SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:EFFICIENCY:IOUT2SOUrce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:EFFICIENCY:IOUT2SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent of
           the number shown in the power measurement badge on the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -15534,11 +15187,11 @@ class PowerPowerItemEfficiencyIout2source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemEfficiencyIout1source(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:EFFICIENCY:IOUT1SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output 1 current source for the power Efficiency
           measurement of the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:IOUT1SOUrce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -15547,14 +15200,13 @@ class PowerPowerItemEfficiencyIout1source(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:EFFICIENCY:IOUT1SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:EFFICIENCY:IOUT1SOUrce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:EFFICIENCY:IOUT1SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent of
           the number shown in the power measurement badge on the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -15567,11 +15219,11 @@ class PowerPowerItemEfficiencyIout1source(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemEfficiencyInputtype(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:EFFICIENCY:INPUTType`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input type (AC or DC) for power Efficiency measurement of
           the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:INPUTType?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:EFFICIENCY:INPUTType?``
@@ -15579,14 +15231,13 @@ class PowerPowerItemEfficiencyInputtype(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:EFFICIENCY:INPUTType value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:EFFICIENCY:INPUTType {AC|DC}
         - POWer:POWer<x>:EFFICIENCY:INPUTType?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent of
           the number shown on the power measurement badge of the UI.
         - ``AC`` sets the input voltage type to AC.
@@ -15598,7 +15249,7 @@ class PowerPowerItemEfficiencyInputtype(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemEfficiency(SCPICmdRead):
     """The ``POWer:POWer<x>:EFFICIENCY`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:EFFICIENCY?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -15663,11 +15314,11 @@ class PowerPowerItemEfficiency(SCPICmdRead):
     def inputtype(self) -> PowerPowerItemEfficiencyInputtype:
         """Return the ``POWer:POWer<x>:EFFICIENCY:INPUTType`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input type (AC or DC) for power Efficiency
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:INPUTType?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -15676,14 +15327,13 @@ class PowerPowerItemEfficiency(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:EFFICIENCY:INPUTType value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:EFFICIENCY:INPUTType {AC|DC}
             - POWer:POWer<x>:EFFICIENCY:INPUTType?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent
               of the number shown on the power measurement badge of the UI.
             - ``AC`` sets the input voltage type to AC.
@@ -15695,11 +15345,11 @@ class PowerPowerItemEfficiency(SCPICmdRead):
     def iout1source(self) -> PowerPowerItemEfficiencyIout1source:
         """Return the ``POWer:POWer<x>:EFFICIENCY:IOUT1SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 1 current source for the power Efficiency
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:IOUT1SOUrce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -15708,14 +15358,13 @@ class PowerPowerItemEfficiency(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:EFFICIENCY:IOUT1SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:EFFICIENCY:IOUT1SOUrce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:EFFICIENCY:IOUT1SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent
               of the number shown in the power measurement badge on the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -15729,11 +15378,11 @@ class PowerPowerItemEfficiency(SCPICmdRead):
     def iout2source(self) -> PowerPowerItemEfficiencyIout2source:
         """Return the ``POWer:POWer<x>:EFFICIENCY:IOUT2SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 2 current source for the power Efficiency
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:IOUT2SOUrce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -15742,14 +15391,13 @@ class PowerPowerItemEfficiency(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:EFFICIENCY:IOUT2SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:EFFICIENCY:IOUT2SOUrce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:EFFICIENCY:IOUT2SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent
               of the number shown in the power measurement badge on the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -15763,11 +15411,11 @@ class PowerPowerItemEfficiency(SCPICmdRead):
     def iout3source(self) -> PowerPowerItemEfficiencyIout3source:
         """Return the ``POWer:POWer<x>:EFFICIENCY:IOUT3SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 3 current source for the power Efficiency
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:IOUT3SOUrce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -15776,14 +15424,13 @@ class PowerPowerItemEfficiency(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:EFFICIENCY:IOUT3SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:EFFICIENCY:IOUT3SOUrce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:EFFICIENCY:IOUT3SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent
               of the number shown on the power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -15797,11 +15444,11 @@ class PowerPowerItemEfficiency(SCPICmdRead):
     def isource(self) -> PowerPowerItemEfficiencyIsource:
         """Return the ``POWer:POWer<x>:EFFICIENCY:ISOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the current source for the power Efficiency measurement
               of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:ISOUrce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -15810,14 +15457,13 @@ class PowerPowerItemEfficiency(SCPICmdRead):
             - Using the ``.write()`` method will send the ``POWer:POWer<x>:EFFICIENCY:ISOUrce``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:EFFICIENCY:ISOUrce
             - POWer:POWer<x>:EFFICIENCY:ISOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent
               of the number shown in the power measurement badge on the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -15831,11 +15477,11 @@ class PowerPowerItemEfficiency(SCPICmdRead):
     def numofoutputs(self) -> PowerPowerItemEfficiencyNumofoutputs:
         """Return the ``POWer:POWer<x>:EFFICIENCY:NUMOFOutputs`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of outputs for the power Efficiency
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:EFFICIENCY:NUMOFOutputs?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -15844,14 +15490,13 @@ class PowerPowerItemEfficiency(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:EFFICIENCY:NUMOFOutputs value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:EFFICIENCY:NUMOFOutputs {ONE|TWO|THREE}
             - POWer:POWer<x>:EFFICIENCY:NUMOFOutputs?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent
               of the number shown in the power measurement badge on the UI.
             - ``ONE`` , TWO, THREE sets the number of outputs to test in the power efficiency
@@ -15863,12 +15508,12 @@ class PowerPowerItemEfficiency(SCPICmdRead):
     def output1type(self) -> PowerPowerItemEfficiencyOutput1type:
         """Return the ``POWer:POWer<x>:EFFICIENCY:OUTPUT1Type`` command.
 
-        **Description:**
+        Description:
             - ``POWer:POWer<x>:EFFICIENCY:OUTPUT1Type This`` command sets or queries the Output1
               type (AC or DC) for the power Efficiency measurement of the specified power
               measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:OUTPUT1Type?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -15877,14 +15522,13 @@ class PowerPowerItemEfficiency(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:EFFICIENCY:OUTPUT1Type value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:EFFICIENCY:OUTPUT1Type {AC|DC}
             - POWer:POWer<x>:EFFICIENCY:OUTPUT1Type?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent
               of the number shown on the power measurement badge of the UI.
             - ``AC`` sets the output1 voltage type to AC.
@@ -15896,12 +15540,12 @@ class PowerPowerItemEfficiency(SCPICmdRead):
     def output2type(self) -> PowerPowerItemEfficiencyOutput2type:
         """Return the ``POWer:POWer<x>:EFFICIENCY:OUTPUT2Type`` command.
 
-        **Description:**
+        Description:
             - ``POWer:POWer<x>:EFFICIENCY:OUTPUT2Type This`` command sets or queries the Output2
               type (AC or DC) for the power Efficiency measurement of the specified power
               measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:OUTPUT2Type?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -15910,14 +15554,13 @@ class PowerPowerItemEfficiency(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:EFFICIENCY:OUTPUT2Type value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:EFFICIENCY:OUTPUT2Type {AC|DC}
             - POWer:POWer<x>:EFFICIENCY:OUTPUT2Type?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent
               of the number shown on the power measurement badge of the UI.
             - ``AC`` sets the Output2 voltage type to AC.
@@ -15929,12 +15572,12 @@ class PowerPowerItemEfficiency(SCPICmdRead):
     def output3type(self) -> PowerPowerItemEfficiencyOutput3type:
         """Return the ``POWer:POWer<x>:EFFICIENCY:OUTPUT3Type`` command.
 
-        **Description:**
+        Description:
             - ``POWer:POWer<x>:EFFICIENCY:OUTPUT3Type This`` command sets or queries the Output3
               type (AC or DC) for the power Efficiency measurement of the specified power
               measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:OUTPUT3Type?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -15943,14 +15586,13 @@ class PowerPowerItemEfficiency(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:EFFICIENCY:OUTPUT3Type value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:EFFICIENCY:OUTPUT3Type {AC|DC}
             - POWer:POWer<x>:EFFICIENCY:OUTPUT3Type?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent
               of the number shown on the power measurement badge of the UI.
             - ``AC`` sets the Output3 voltage type to AC.
@@ -15962,11 +15604,11 @@ class PowerPowerItemEfficiency(SCPICmdRead):
     def outputtype(self) -> PowerPowerItemEfficiencyOutputtype:
         """Return the ``POWer:POWer<x>:EFFICIENCY:OUTPUTType`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output type (AC or DC) for power Efficiency
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:OUTPUTType?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -15975,14 +15617,13 @@ class PowerPowerItemEfficiency(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:EFFICIENCY:OUTPUTType value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:EFFICIENCY:OUTPUTType {AC|DC}
             - POWer:POWer<x>:EFFICIENCY:OUTPUTType?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent
               of the number shown on the power measurement badge of the UI.
             - ``AC`` sets the output voltage type to AC.
@@ -15994,11 +15635,11 @@ class PowerPowerItemEfficiency(SCPICmdRead):
     def vout1source(self) -> PowerPowerItemEfficiencyVout1source:
         """Return the ``POWer:POWer<x>:EFFICIENCY:VOUT1SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 1 voltage source for the power Efficiency
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:VOUT1SOUrce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -16007,14 +15648,13 @@ class PowerPowerItemEfficiency(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:EFFICIENCY:VOUT1SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:EFFICIENCY:VOUT1SOUrce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:EFFICIENCY:VOUT1SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent
               of the number shown in the power measurement badge on the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16028,11 +15668,11 @@ class PowerPowerItemEfficiency(SCPICmdRead):
     def vout2source(self) -> PowerPowerItemEfficiencyVout2source:
         """Return the ``POWer:POWer<x>:EFFICIENCY:VOUT2SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 2 voltage source for the power Efficiency
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:VOUT2SOUrce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -16041,14 +15681,13 @@ class PowerPowerItemEfficiency(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:EFFICIENCY:VOUT2SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:EFFICIENCY:VOUT2SOUrce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:EFFICIENCY:VOUT2SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent
               of the number shown in the power measurement badge on the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16062,11 +15701,11 @@ class PowerPowerItemEfficiency(SCPICmdRead):
     def vout3source(self) -> PowerPowerItemEfficiencyVout3source:
         """Return the ``POWer:POWer<x>:EFFICIENCY:VOUT3SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output 3 voltage source for the power Efficiency
               measurement of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:VOUT3SOUrce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -16075,14 +15714,13 @@ class PowerPowerItemEfficiency(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:EFFICIENCY:VOUT3SOUrce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:EFFICIENCY:VOUT3SOUrce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:EFFICIENCY:VOUT3SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent
               of the number shown on the power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16096,11 +15734,11 @@ class PowerPowerItemEfficiency(SCPICmdRead):
     def vsource(self) -> PowerPowerItemEfficiencyVsource:
         """Return the ``POWer:POWer<x>:EFFICIENCY:VSOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the voltage source for the power Efficiency measurement
               of the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY:VSOUrce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -16109,14 +15747,13 @@ class PowerPowerItemEfficiency(SCPICmdRead):
             - Using the ``.write()`` method will send the ``POWer:POWer<x>:EFFICIENCY:VSOUrce``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:EFFICIENCY:VSOUrce
             - POWer:POWer<x>:EFFICIENCY:VSOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the number of a power efficiency measurement. This is the equivalent
               of the number shown in the power measurement badge on the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16130,48 +15767,46 @@ class PowerPowerItemEfficiency(SCPICmdRead):
 class PowerPowerItemDvdtSourceedgetype(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:DVDT:SOURCEEDGEType`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the edge type for dv/dt measurement in the specified power
           measurement number. The power measurement number is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:DVDT:SOURCEEDGEType?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:DVDT:SOURCEEDGEType?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:DVDT:SOURCEEDGEType value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:DVDT:SOURCEEDGEType {RISE|FALL}
         - POWer:POWer<x>:DVDT:SOURCEEDGEType?
+        ```
     """
 
 
 class PowerPowerItemDvdtInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:DVDT:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source for dv/dt measurement of the specified power
           measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:DVDT:INPUTSOurce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:DVDT:INPUTSOurce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:DVDT:INPUTSOurce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:DVDT:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:DVDT:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16184,7 +15819,7 @@ class PowerPowerItemDvdtInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemDvdt(SCPICmdRead):
     """The ``POWer:POWer<x>:DVDT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:DVDT?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:DVDT?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -16205,11 +15840,11 @@ class PowerPowerItemDvdt(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemDvdtInputsource:
         """Return the ``POWer:POWer<x>:DVDT:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source for dv/dt measurement of the specified
               power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:DVDT:INPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:DVDT:INPUTSOurce?``
@@ -16217,14 +15852,13 @@ class PowerPowerItemDvdt(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:DVDT:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:DVDT:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:DVDT:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16238,11 +15872,11 @@ class PowerPowerItemDvdt(SCPICmdRead):
     def sourceedgetype(self) -> PowerPowerItemDvdtSourceedgetype:
         """Return the ``POWer:POWer<x>:DVDT:SOURCEEDGEType`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the edge type for dv/dt measurement in the specified
               power measurement number. The power measurement number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:DVDT:SOURCEEDGEType?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -16251,12 +15885,11 @@ class PowerPowerItemDvdt(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:DVDT:SOURCEEDGEType value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:DVDT:SOURCEEDGEType {RISE|FALL}
             - POWer:POWer<x>:DVDT:SOURCEEDGEType?
+            ```
         """
         return self._sourceedgetype
 
@@ -16264,48 +15897,46 @@ class PowerPowerItemDvdt(SCPICmdRead):
 class PowerPowerItemDidtSourceedgetype(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:DIDT:SOURCEEDGEType`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the edge type for di/dt measurement of the specified power
           measurement number. <x> specifies the number of the power measurement badge.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:DIDT:SOURCEEDGEType?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:DIDT:SOURCEEDGEType?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:DIDT:SOURCEEDGEType value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:DIDT:SOURCEEDGEType {RISE|FALL}
         - POWer:POWer<x>:DIDT:SOURCEEDGEType?
+        ```
     """
 
 
 class PowerPowerItemDidtInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:DIDT:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source for di/dt measurement in the specified power
           measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:DIDT:INPUTSOurce?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:DIDT:INPUTSOurce?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:DIDT:INPUTSOurce value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:DIDT:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:DIDT:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16318,7 +15949,7 @@ class PowerPowerItemDidtInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemDidt(SCPICmdRead):
     """The ``POWer:POWer<x>:DIDT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:DIDT?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:DIDT?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -16339,11 +15970,11 @@ class PowerPowerItemDidt(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemDidtInputsource:
         """Return the ``POWer:POWer<x>:DIDT:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source for di/dt measurement in the specified
               power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:DIDT:INPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:DIDT:INPUTSOurce?``
@@ -16351,14 +15982,13 @@ class PowerPowerItemDidt(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:DIDT:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:DIDT:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:DIDT:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16372,11 +16002,11 @@ class PowerPowerItemDidt(SCPICmdRead):
     def sourceedgetype(self) -> PowerPowerItemDidtSourceedgetype:
         """Return the ``POWer:POWer<x>:DIDT:SOURCEEDGEType`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the edge type for di/dt measurement of the specified
               power measurement number. <x> specifies the number of the power measurement badge.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:DIDT:SOURCEEDGEType?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -16385,12 +16015,11 @@ class PowerPowerItemDidt(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:DIDT:SOURCEEDGEType value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:DIDT:SOURCEEDGEType {RISE|FALL}
             - POWer:POWer<x>:DIDT:SOURCEEDGEType?
+            ```
         """
         return self._sourceedgetype
 
@@ -16398,11 +16027,11 @@ class PowerPowerItemDidt(SCPICmdRead):
 class PowerPowerItemCycletopInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CYCLETop:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source for cycle top measurement in the specified
           power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLETop:INPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CYCLETop:INPUTSOurce?``
@@ -16410,14 +16039,13 @@ class PowerPowerItemCycletopInputsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CYCLETop:INPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CYCLETop:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:CYCLETop:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16430,7 +16058,7 @@ class PowerPowerItemCycletopInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemCycletop(SCPICmdRead):
     """The ``POWer:POWer<x>:CYCLETop`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLETop?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CYCLETop?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -16449,11 +16077,11 @@ class PowerPowerItemCycletop(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemCycletopInputsource:
         """Return the ``POWer:POWer<x>:CYCLETop:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source for cycle top measurement in the
               specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLETop:INPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -16462,14 +16090,13 @@ class PowerPowerItemCycletop(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CYCLETop:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CYCLETop:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:CYCLETop:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16483,11 +16110,11 @@ class PowerPowerItemCycletop(SCPICmdRead):
 class PowerPowerItemCyclepkpkInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CYCLEPKPK:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source for cycle peak-to-peak measurement in the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEPKPK:INPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -16496,14 +16123,13 @@ class PowerPowerItemCyclepkpkInputsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CYCLEPKPK:INPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CYCLEPKPK:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:CYCLEPKPK:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16516,7 +16142,7 @@ class PowerPowerItemCyclepkpkInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemCyclepkpk(SCPICmdRead):
     """The ``POWer:POWer<x>:CYCLEPKPK`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEPKPK?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CYCLEPKPK?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -16535,11 +16161,11 @@ class PowerPowerItemCyclepkpk(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemCyclepkpkInputsource:
         """Return the ``POWer:POWer<x>:CYCLEPKPK:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source for cycle peak-to-peak measurement in
               the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEPKPK:INPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -16548,14 +16174,13 @@ class PowerPowerItemCyclepkpk(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CYCLEPKPK:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CYCLEPKPK:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:CYCLEPKPK:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16569,11 +16194,11 @@ class PowerPowerItemCyclepkpk(SCPICmdRead):
 class PowerPowerItemCycleminInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CYCLEMin:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source for cycle minimum measurement in the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEMin:INPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CYCLEMin:INPUTSOurce?``
@@ -16581,14 +16206,13 @@ class PowerPowerItemCycleminInputsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CYCLEMin:INPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CYCLEMin:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:CYCLEMin:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16601,7 +16225,7 @@ class PowerPowerItemCycleminInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemCyclemin(SCPICmdRead):
     """The ``POWer:POWer<x>:CYCLEMin`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEMin?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CYCLEMin?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -16620,11 +16244,11 @@ class PowerPowerItemCyclemin(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemCycleminInputsource:
         """Return the ``POWer:POWer<x>:CYCLEMin:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source for cycle minimum measurement in the
               specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEMin:INPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -16633,14 +16257,13 @@ class PowerPowerItemCyclemin(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CYCLEMin:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CYCLEMin:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:CYCLEMin:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16654,11 +16277,11 @@ class PowerPowerItemCyclemin(SCPICmdRead):
 class PowerPowerItemCyclemaxInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CYCLEMAX:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source for cycle maximum measurement in the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEMAX:INPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CYCLEMAX:INPUTSOurce?``
@@ -16666,14 +16289,13 @@ class PowerPowerItemCyclemaxInputsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CYCLEMAX:INPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CYCLEMAX:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:CYCLEMAX:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16686,7 +16308,7 @@ class PowerPowerItemCyclemaxInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemCyclemax(SCPICmdRead):
     """The ``POWer:POWer<x>:CYCLEMAX`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEMAX?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CYCLEMAX?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -16705,11 +16327,11 @@ class PowerPowerItemCyclemax(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemCyclemaxInputsource:
         """Return the ``POWer:POWer<x>:CYCLEMAX:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source for cycle maximum measurement in the
               specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEMAX:INPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -16718,14 +16340,13 @@ class PowerPowerItemCyclemax(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CYCLEMAX:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CYCLEMAX:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:CYCLEMAX:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16739,11 +16360,11 @@ class PowerPowerItemCyclemax(SCPICmdRead):
 class PowerPowerItemCyclebaseInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CYCLEBase:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source for cycle base measurement of the specified
           power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEBase:INPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -16752,14 +16373,13 @@ class PowerPowerItemCyclebaseInputsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CYCLEBase:INPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CYCLEBase:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:CYCLEBase:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16772,7 +16392,7 @@ class PowerPowerItemCyclebaseInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemCyclebase(SCPICmdRead):
     """The ``POWer:POWer<x>:CYCLEBase`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEBase?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CYCLEBase?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -16791,11 +16411,11 @@ class PowerPowerItemCyclebase(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemCyclebaseInputsource:
         """Return the ``POWer:POWer<x>:CYCLEBase:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source for cycle base measurement of the
               specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEBase:INPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -16804,14 +16424,13 @@ class PowerPowerItemCyclebase(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CYCLEBase:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CYCLEBase:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:CYCLEBase:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16825,11 +16444,11 @@ class PowerPowerItemCyclebase(SCPICmdRead):
 class PowerPowerItemCycleampInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CYCLEAmp:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source for cycle amplitude measurement of the
           specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEAmp:INPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CYCLEAmp:INPUTSOurce?``
@@ -16837,14 +16456,13 @@ class PowerPowerItemCycleampInputsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CYCLEAmp:INPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CYCLEAmp:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
         - POWer:POWer<x>:CYCLEAmp:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
         - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16857,7 +16475,7 @@ class PowerPowerItemCycleampInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemCycleamp(SCPICmdRead):
     """The ``POWer:POWer<x>:CYCLEAmp`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEAmp?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CYCLEAmp?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -16876,11 +16494,11 @@ class PowerPowerItemCycleamp(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemCycleampInputsource:
         """Return the ``POWer:POWer<x>:CYCLEAmp:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source for cycle amplitude measurement of the
               specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEAmp:INPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -16889,14 +16507,13 @@ class PowerPowerItemCycleamp(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CYCLEAmp:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CYCLEAmp:INPUTSOurce {CH<x>|MATH<x>|REF<x>}
             - POWer:POWer<x>:CYCLEAmp:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``CH<x>`` = A channel specifier; <x> is 1 through 8 and is limited by the number of
@@ -16910,21 +16527,20 @@ class PowerPowerItemCycleamp(SCPICmdRead):
 class PowerPowerItemClresponseTestconnection(SCPICmdWrite):
     """The ``POWer:POWer<x>:CLRESPONSE:TESTCONNection`` command.
 
-    **Description:**
+    Description:
         - This command tests the connection to the external generator used with the specified
           Control Loop Response power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CLRESPONSE:TESTCONNection value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CLRESPONSE:TESTCONNection EXECute
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the PSRR power measurement.
         - ``EXECute`` runs the test connection function.
     """
@@ -16933,11 +16549,11 @@ class PowerPowerItemClresponseTestconnection(SCPICmdWrite):
 class PowerPowerItemClresponseStopfrequency(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CLRESPONSE:STOPFREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the stop frequency value for the Control Loop Response power
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:STOPFREQuency?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -16946,14 +16562,13 @@ class PowerPowerItemClresponseStopfrequency(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CLRESPONSE:STOPFREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CLRESPONSE:STOPFREQuency <NR3>
         - POWer:POWer<x>:CLRESPONSE:STOPFREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR3>`` is the stop frequency for the measurement, in the range of 10 Hz to 50 MHz.
@@ -16963,11 +16578,11 @@ class PowerPowerItemClresponseStopfrequency(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemClresponseStartfrequency(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CLRESPONSE:STARTFREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the start frequency value for the Control Loop Response power
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:STARTFREQuency?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -16976,14 +16591,13 @@ class PowerPowerItemClresponseStartfrequency(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CLRESPONSE:STARTFREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CLRESPONSE:STARTFREQuency <NR3>
         - POWer:POWer<x>:CLRESPONSE:STARTFREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR3>`` is the starting frequency for the measurement, in the range of 10 Hz to 50 MHz.
@@ -16993,25 +16607,24 @@ class PowerPowerItemClresponseStartfrequency(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemClresponsePpd(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CLRESPONSE:PPD`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the points per decade (PPD) value for the Control Loop
           Response power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:PPD?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CLRESPONSE:PPD?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:CLRESPONSE:PPD value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CLRESPONSE:PPD <NR3>
         - POWer:POWer<x>:CLRESPONSE:PPD?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR3>`` is the PPD value for the measurement, in the range of 10 to 100 points.
@@ -17021,11 +16634,11 @@ class PowerPowerItemClresponsePpd(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemClresponseOutputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CLRESPONSE:OUTPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output source for the Control Loop Response power
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:OUTPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -17034,14 +16647,13 @@ class PowerPowerItemClresponseOutputsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CLRESPONSE:OUTPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CLRESPONSE:OUTPUTSOurce CH<x>
         - POWer:POWer<x>:CLRESPONSE:OUTPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``CH<x>`` sets the channel to use for the output signal source.
@@ -17051,25 +16663,24 @@ class PowerPowerItemClresponseOutputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemClresponseMon(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CLRESPONSE:MON`` command.
 
-    **Description:**
+    Description:
         - This command sets or returns the measure on for the control loop response, PSRR or
           impedance measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:MON?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CLRESPONSE:MON?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:CLRESPONSE:MON value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CLRESPONSE:MON {SAVG|SSEQ}
         - POWer:POWer<x>:CLRESPONSE:MON?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``SAVG`` specifies the measure analysis method for the Control Loop Response/PSRR or
@@ -17082,11 +16693,11 @@ class PowerPowerItemClresponseMon(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemClresponseInputsource(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CLRESPONSE:INPUTSOurce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the input source for the Control Loop Response power
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:INPUTSOurce?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -17095,14 +16706,13 @@ class PowerPowerItemClresponseInputsource(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CLRESPONSE:INPUTSOurce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CLRESPONSE:INPUTSOurce CH<x>
         - POWer:POWer<x>:CLRESPONSE:INPUTSOurce?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``CH<x>`` sets the channel to use for the output signal source.
@@ -17112,11 +16722,11 @@ class PowerPowerItemClresponseInputsource(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemClresponseImpedance(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CLRESPONSE:IMPEDance`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the vertical termination impedance for the Control Loop
           Response power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:IMPEDance?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CLRESPONSE:IMPEDance?``
@@ -17124,14 +16734,13 @@ class PowerPowerItemClresponseImpedance(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CLRESPONSE:IMPEDance value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CLRESPONSE:IMPEDance {FIFTy|HIGHZ}
         - POWer:POWer<x>:CLRESPONSE:IMPEDance?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``FIFTy`` sets the impedance to be 50 Ω.
@@ -17142,11 +16751,11 @@ class PowerPowerItemClresponseImpedance(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemClresponseGenerator(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CLRESPONSE:GENerator`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the generator source used to send stimulus signals to the
           DUT, for the Control Loop Response power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:GENerator?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CLRESPONSE:GENerator?``
@@ -17154,14 +16763,13 @@ class PowerPowerItemClresponseGenerator(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CLRESPONSE:GENerator value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CLRESPONSE:GENerator {INTernal}
         - POWer:POWer<x>:CLRESPONSE:GENerator?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``INTernal`` sets the generator to the instrument AFG. This is the only valid argument.
@@ -17171,11 +16779,11 @@ class PowerPowerItemClresponseGenerator(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemClresponseGenipaddress(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CLRESPONSE:GENIPADDress`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the IP address of the external generator to be used with the specified
           Control Loop Response measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:GENIPADDress?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -17184,14 +16792,13 @@ class PowerPowerItemClresponseGenipaddress(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CLRESPONSE:GENIPADDress value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CLRESPONSE:GENIPADDress <NR2>
         - POWer:POWer<x>:CLRESPONSE:GENIPADDress?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the power measurement.<NR2> is the IP address of the
           generator.
     """
@@ -17200,11 +16807,11 @@ class PowerPowerItemClresponseGenipaddress(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemClresponseFreqvalItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CLRESPONSE:FREQ<x>Val`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the generator frequency value of the specified configuration
           step for the Control Loop Response power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:FREQ<x>Val?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -17213,14 +16820,13 @@ class PowerPowerItemClresponseFreqvalItem(ValidatedDynamicNumberCmd, SCPICmdWrit
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CLRESPONSE:FREQ<x>Val value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CLRESPONSE:FREQ<x>Val <NR3>
         - POWer:POWer<x>:CLRESPONSE:FREQ<x>Val?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` sets the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``FREQ<x>`` sets the configuration step number, in the range of 1 to 11. Values outside
@@ -17233,11 +16839,11 @@ class PowerPowerItemClresponseFreqvalItem(ValidatedDynamicNumberCmd, SCPICmdWrit
 class PowerPowerItemClresponseConstamplitude(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CLRESPONSE:CONSTAMPlitude`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the constant amplitude voltage for the Control Loop Response
           power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:CONSTAMPlitude?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -17246,14 +16852,13 @@ class PowerPowerItemClresponseConstamplitude(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CLRESPONSE:CONSTAMPlitude value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CLRESPONSE:CONSTAMPlitude <NR3>
         - POWer:POWer<x>:CLRESPONSE:CONSTAMPlitude?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``<NR3>`` is the constant amplitude voltage value for the measurement, in the range of
@@ -17264,24 +16869,23 @@ class PowerPowerItemClresponseConstamplitude(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemClresponseConnectstatus(SCPICmdRead):
     """The ``POWer:POWer<x>:CLRESPONSE:CONNECTSTATus`` command.
 
-    **Description:**
+    Description:
         - Queries connection status to the external generator used with the specified Control Loop
           Response power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:CONNECTSTATus?``
           query.
         - Using the ``.verify(value)`` method will send the
           ``POWer:POWer<x>:CLRESPONSE:CONNECTSTATus?`` query and raise an AssertionError if the
           returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CLRESPONSE:CONNECTSTATus?
+        ```
 
-    **Info:**
+    Info:
         - ``POWer<x>`` is the number of the power measurement.
     """
 
@@ -17289,24 +16893,23 @@ class PowerPowerItemClresponseConnectstatus(SCPICmdRead):
 class PowerPowerItemClresponseAutorbw(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CLRESPONSE:AUTORbw`` command.
 
-    **Description:**
+    Description:
         - This command enables Auto RBW computation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:AUTORbw?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CLRESPONSE:AUTORbw?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CLRESPONSE:AUTORbw value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CLRESPONSE:AUTORbw {True|False}
         - POWer:POWer<x>:CLRESPONSE:AUTORbw?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``True`` enables Auto RBW computation.
@@ -17317,10 +16920,10 @@ class PowerPowerItemClresponseAutorbw(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemClresponseAnalysismethod(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CLRESPONSE:ANALYSISMethod`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the Analysis Method for Control Loop Response measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:ANALYSISMethod?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -17329,14 +16932,13 @@ class PowerPowerItemClresponseAnalysismethod(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CLRESPONSE:ANALYSISMethod value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CLRESPONSE:ANALYSISMethod {SV|FFT}
         - POWer:POWer<x>:CLRESPONSE:ANALYSISMethod?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``SV`` sets the Analysis Method as Spectrum View.
@@ -17347,25 +16949,24 @@ class PowerPowerItemClresponseAnalysismethod(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemClresponseAmpmode(SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CLRESPONSE:AMPMode`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the amplitude mode for the Control Loop Response power
           measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:AMPMode?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CLRESPONSE:AMPMode?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CLRESPONSE:AMPMode value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CLRESPONSE:AMPMode {CONSTant|PROFile}
         - POWer:POWer<x>:CLRESPONSE:AMPMode?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``CONSTant`` sets the amplitude mode to output a constant amplitude signal from the DUT
@@ -17378,11 +16979,11 @@ class PowerPowerItemClresponseAmpmode(SCPICmdWrite, SCPICmdRead):
 class PowerPowerItemClresponseAmpvalItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``POWer:POWer<x>:CLRESPONSE:AMP<x>Val`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the generator amplitude value of the specified configuration
           step for the Control Loop Response power measurement.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:AMP<x>Val?``
           query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CLRESPONSE:AMP<x>Val?``
@@ -17390,14 +16991,13 @@ class PowerPowerItemClresponseAmpvalItem(ValidatedDynamicNumberCmd, SCPICmdWrite
         - Using the ``.write(value)`` method will send the
           ``POWer:POWer<x>:CLRESPONSE:AMP<x>Val value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:CLRESPONSE:AMP<x>Val <NR3>
         - POWer:POWer<x>:CLRESPONSE:AMP<x>Val?
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` sets the power measurement number. This is the equivalent of the number shown
           in the UI for a power measurement badge.
         - ``AMP<x>`` sets the configuration step number, in the range of 1 to 10. Values outside
@@ -17411,7 +17011,7 @@ class PowerPowerItemClresponseAmpvalItem(ValidatedDynamicNumberCmd, SCPICmdWrite
 class PowerPowerItemClresponse(SCPICmdRead):
     """The ``POWer:POWer<x>:CLRESPONSE`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CLRESPONSE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -17482,11 +17082,11 @@ class PowerPowerItemClresponse(SCPICmdRead):
     def ampval(self) -> Dict[int, PowerPowerItemClresponseAmpvalItem]:
         """Return the ``POWer:POWer<x>:CLRESPONSE:AMP<x>Val`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the generator amplitude value of the specified
               configuration step for the Control Loop Response power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:AMP<x>Val?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -17495,14 +17095,13 @@ class PowerPowerItemClresponse(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:AMP<x>Val value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CLRESPONSE:AMP<x>Val <NR3>
             - POWer:POWer<x>:CLRESPONSE:AMP<x>Val?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` sets the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``AMP<x>`` sets the configuration step number, in the range of 1 to 10. Values outside
@@ -17516,11 +17115,11 @@ class PowerPowerItemClresponse(SCPICmdRead):
     def ampmode(self) -> PowerPowerItemClresponseAmpmode:
         """Return the ``POWer:POWer<x>:CLRESPONSE:AMPMode`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the amplitude mode for the Control Loop Response power
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:AMPMode?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -17529,14 +17128,13 @@ class PowerPowerItemClresponse(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:AMPMode value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CLRESPONSE:AMPMode {CONSTant|PROFile}
             - POWer:POWer<x>:CLRESPONSE:AMPMode?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``CONSTant`` sets the amplitude mode to output a constant amplitude signal from the
@@ -17550,11 +17148,11 @@ class PowerPowerItemClresponse(SCPICmdRead):
     def analysismethod(self) -> PowerPowerItemClresponseAnalysismethod:
         """Return the ``POWer:POWer<x>:CLRESPONSE:ANALYSISMethod`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the Analysis Method for Control Loop Response
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:ANALYSISMethod?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -17563,14 +17161,13 @@ class PowerPowerItemClresponse(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:ANALYSISMethod value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CLRESPONSE:ANALYSISMethod {SV|FFT}
             - POWer:POWer<x>:CLRESPONSE:ANALYSISMethod?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``SV`` sets the Analysis Method as Spectrum View.
@@ -17582,10 +17179,10 @@ class PowerPowerItemClresponse(SCPICmdRead):
     def autorbw(self) -> PowerPowerItemClresponseAutorbw:
         """Return the ``POWer:POWer<x>:CLRESPONSE:AUTORbw`` command.
 
-        **Description:**
+        Description:
             - This command enables Auto RBW computation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:AUTORbw?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -17594,14 +17191,13 @@ class PowerPowerItemClresponse(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:AUTORbw value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CLRESPONSE:AUTORbw {True|False}
             - POWer:POWer<x>:CLRESPONSE:AUTORbw?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``True`` enables Auto RBW computation.
@@ -17613,24 +17209,23 @@ class PowerPowerItemClresponse(SCPICmdRead):
     def connectstatus(self) -> PowerPowerItemClresponseConnectstatus:
         """Return the ``POWer:POWer<x>:CLRESPONSE:CONNECTSTATus`` command.
 
-        **Description:**
+        Description:
             - Queries connection status to the external generator used with the specified Control
               Loop Response power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:CONNECTSTATus?`` query.
             - Using the ``.verify(value)`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:CONNECTSTATus?`` query and raise an AssertionError if the
               returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CLRESPONSE:CONNECTSTATus?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the power measurement.
         """
         return self._connectstatus
@@ -17639,11 +17234,11 @@ class PowerPowerItemClresponse(SCPICmdRead):
     def constamplitude(self) -> PowerPowerItemClresponseConstamplitude:
         """Return the ``POWer:POWer<x>:CLRESPONSE:CONSTAMPlitude`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the constant amplitude voltage for the Control Loop
               Response power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:CONSTAMPlitude?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -17652,14 +17247,13 @@ class PowerPowerItemClresponse(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:CONSTAMPlitude value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CLRESPONSE:CONSTAMPlitude <NR3>
             - POWer:POWer<x>:CLRESPONSE:CONSTAMPlitude?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR3>`` is the constant amplitude voltage value for the measurement, in the range of
@@ -17671,11 +17265,11 @@ class PowerPowerItemClresponse(SCPICmdRead):
     def freqval(self) -> Dict[int, PowerPowerItemClresponseFreqvalItem]:
         """Return the ``POWer:POWer<x>:CLRESPONSE:FREQ<x>Val`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the generator frequency value of the specified
               configuration step for the Control Loop Response power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:FREQ<x>Val?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -17684,14 +17278,13 @@ class PowerPowerItemClresponse(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:FREQ<x>Val value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CLRESPONSE:FREQ<x>Val <NR3>
             - POWer:POWer<x>:CLRESPONSE:FREQ<x>Val?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` sets the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``FREQ<x>`` sets the configuration step number, in the range of 1 to 11. Values
@@ -17705,11 +17298,11 @@ class PowerPowerItemClresponse(SCPICmdRead):
     def genipaddress(self) -> PowerPowerItemClresponseGenipaddress:
         """Return the ``POWer:POWer<x>:CLRESPONSE:GENIPADDress`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the IP address of the external generator to be used with the specified
               Control Loop Response measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:GENIPADDress?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -17718,14 +17311,13 @@ class PowerPowerItemClresponse(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:GENIPADDress value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CLRESPONSE:GENIPADDress <NR2>
             - POWer:POWer<x>:CLRESPONSE:GENIPADDress?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the power measurement.<NR2> is the IP address of the
               generator.
         """
@@ -17735,11 +17327,11 @@ class PowerPowerItemClresponse(SCPICmdRead):
     def generator(self) -> PowerPowerItemClresponseGenerator:
         """Return the ``POWer:POWer<x>:CLRESPONSE:GENerator`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the generator source used to send stimulus signals to the
               DUT, for the Control Loop Response power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:GENerator?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -17748,14 +17340,13 @@ class PowerPowerItemClresponse(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:GENerator value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CLRESPONSE:GENerator {INTernal}
             - POWer:POWer<x>:CLRESPONSE:GENerator?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``INTernal`` sets the generator to the instrument AFG. This is the only valid
@@ -17767,11 +17358,11 @@ class PowerPowerItemClresponse(SCPICmdRead):
     def impedance(self) -> PowerPowerItemClresponseImpedance:
         """Return the ``POWer:POWer<x>:CLRESPONSE:IMPEDance`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the vertical termination impedance for the Control Loop
               Response power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:IMPEDance?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -17780,14 +17371,13 @@ class PowerPowerItemClresponse(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:IMPEDance value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CLRESPONSE:IMPEDance {FIFTy|HIGHZ}
             - POWer:POWer<x>:CLRESPONSE:IMPEDance?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``FIFTy`` sets the impedance to be 50 Ω.
@@ -17799,11 +17389,11 @@ class PowerPowerItemClresponse(SCPICmdRead):
     def inputsource(self) -> PowerPowerItemClresponseInputsource:
         """Return the ``POWer:POWer<x>:CLRESPONSE:INPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the input source for the Control Loop Response power
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:INPUTSOurce?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -17812,14 +17402,13 @@ class PowerPowerItemClresponse(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:INPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CLRESPONSE:INPUTSOurce CH<x>
             - POWer:POWer<x>:CLRESPONSE:INPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``CH<x>`` sets the channel to use for the output signal source.
@@ -17830,25 +17419,24 @@ class PowerPowerItemClresponse(SCPICmdRead):
     def mon(self) -> PowerPowerItemClresponseMon:
         """Return the ``POWer:POWer<x>:CLRESPONSE:MON`` command.
 
-        **Description:**
+        Description:
             - This command sets or returns the measure on for the control loop response, PSRR or
               impedance measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:MON?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CLRESPONSE:MON?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:MON value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CLRESPONSE:MON {SAVG|SSEQ}
             - POWer:POWer<x>:CLRESPONSE:MON?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``SAVG`` specifies the measure analysis method for the Control Loop Response/PSRR or
@@ -17862,11 +17450,11 @@ class PowerPowerItemClresponse(SCPICmdRead):
     def outputsource(self) -> PowerPowerItemClresponseOutputsource:
         """Return the ``POWer:POWer<x>:CLRESPONSE:OUTPUTSOurce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output source for the Control Loop Response power
               measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:OUTPUTSOurce?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -17875,14 +17463,13 @@ class PowerPowerItemClresponse(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:OUTPUTSOurce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CLRESPONSE:OUTPUTSOurce CH<x>
             - POWer:POWer<x>:CLRESPONSE:OUTPUTSOurce?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``CH<x>`` sets the channel to use for the output signal source.
@@ -17893,25 +17480,24 @@ class PowerPowerItemClresponse(SCPICmdRead):
     def ppd(self) -> PowerPowerItemClresponsePpd:
         """Return the ``POWer:POWer<x>:CLRESPONSE:PPD`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the points per decade (PPD) value for the Control Loop
               Response power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE:PPD?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CLRESPONSE:PPD?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:PPD value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CLRESPONSE:PPD <NR3>
             - POWer:POWer<x>:CLRESPONSE:PPD?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR3>`` is the PPD value for the measurement, in the range of 10 to 100 points.
@@ -17922,11 +17508,11 @@ class PowerPowerItemClresponse(SCPICmdRead):
     def startfrequency(self) -> PowerPowerItemClresponseStartfrequency:
         """Return the ``POWer:POWer<x>:CLRESPONSE:STARTFREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the start frequency value for the Control Loop Response
               power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:STARTFREQuency?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -17935,14 +17521,13 @@ class PowerPowerItemClresponse(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:STARTFREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CLRESPONSE:STARTFREQuency <NR3>
             - POWer:POWer<x>:CLRESPONSE:STARTFREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR3>`` is the starting frequency for the measurement, in the range of 10 Hz to 50
@@ -17954,11 +17539,11 @@ class PowerPowerItemClresponse(SCPICmdRead):
     def stopfrequency(self) -> PowerPowerItemClresponseStopfrequency:
         """Return the ``POWer:POWer<x>:CLRESPONSE:STOPFREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the stop frequency value for the Control Loop Response
               power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:STOPFREQuency?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -17967,14 +17552,13 @@ class PowerPowerItemClresponse(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:STOPFREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CLRESPONSE:STOPFREQuency <NR3>
             - POWer:POWer<x>:CLRESPONSE:STOPFREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<NR3>`` is the stop frequency for the measurement, in the range of 10 Hz to 50 MHz.
@@ -17985,21 +17569,20 @@ class PowerPowerItemClresponse(SCPICmdRead):
     def testconnection(self) -> PowerPowerItemClresponseTestconnection:
         """Return the ``POWer:POWer<x>:CLRESPONSE:TESTCONNection`` command.
 
-        **Description:**
+        Description:
             - This command tests the connection to the external generator used with the specified
               Control Loop Response power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``POWer:POWer<x>:CLRESPONSE:TESTCONNection value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:CLRESPONSE:TESTCONNection EXECute
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the PSRR power measurement.
             - ``EXECute`` runs the test connection function.
         """
@@ -18009,19 +17592,18 @@ class PowerPowerItemClresponse(SCPICmdRead):
 class PowerPowerItemAutoset(SCPICmdWrite):
     """The ``POWer:POWer<x>:AUTOSet`` command.
 
-    **Description:**
+    Description:
         - This command executes power autoset for the specified power measurement number.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:AUTOSet value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:POWer<x>:AUTOSet EXECute
+        ```
 
-    **Info:**
+    Info:
         - ``Power<x>`` is the power measurement number. This is the equivalent of the number shown
           on a power measurement badge in the UI.
     """
@@ -18031,7 +17613,7 @@ class PowerPowerItemAutoset(SCPICmdWrite):
 class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``POWer:POWer<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer:POWer<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -18138,20 +17720,19 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def autoset(self) -> PowerPowerItemAutoset:
         """Return the ``POWer:POWer<x>:AUTOSet`` command.
 
-        **Description:**
+        Description:
             - This command executes power autoset for the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:AUTOSet value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:AUTOSet EXECute
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
         """
@@ -18161,7 +17742,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def clresponse(self) -> PowerPowerItemClresponse:
         """Return the ``POWer:POWer<x>:CLRESPONSE`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CLRESPONSE?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CLRESPONSE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -18191,7 +17772,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def cycleamp(self) -> PowerPowerItemCycleamp:
         """Return the ``POWer:POWer<x>:CYCLEAmp`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEAmp?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CYCLEAmp?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -18205,7 +17786,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def cyclebase(self) -> PowerPowerItemCyclebase:
         """Return the ``POWer:POWer<x>:CYCLEBase`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEBase?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CYCLEBase?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -18219,7 +17800,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def cyclemax(self) -> PowerPowerItemCyclemax:
         """Return the ``POWer:POWer<x>:CYCLEMAX`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEMAX?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CYCLEMAX?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -18233,7 +17814,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def cyclemin(self) -> PowerPowerItemCyclemin:
         """Return the ``POWer:POWer<x>:CYCLEMin`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEMin?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CYCLEMin?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -18247,7 +17828,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def cyclepkpk(self) -> PowerPowerItemCyclepkpk:
         """Return the ``POWer:POWer<x>:CYCLEPKPK`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLEPKPK?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CYCLEPKPK?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -18261,7 +17842,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def cycletop(self) -> PowerPowerItemCycletop:
         """Return the ``POWer:POWer<x>:CYCLETop`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:CYCLETop?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:CYCLETop?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -18275,7 +17856,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def didt(self) -> PowerPowerItemDidt:
         """Return the ``POWer:POWer<x>:DIDT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:DIDT?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:DIDT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -18290,7 +17871,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def dvdt(self) -> PowerPowerItemDvdt:
         """Return the ``POWer:POWer<x>:DVDT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:DVDT?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:DVDT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -18305,7 +17886,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def efficiency(self) -> PowerPowerItemEfficiency:
         """Return the ``POWer:POWer<x>:EFFICIENCY`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:EFFICIENCY?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:EFFICIENCY?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -18332,7 +17913,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def frequency(self) -> PowerPowerItemFrequency:
         """Return the ``POWer:POWer<x>:FREQUENCY`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:FREQUENCY?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:FREQUENCY?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -18347,25 +17928,24 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def gating(self) -> PowerPowerItemGating:
         """Return the ``POWer:POWer<x>:GATing`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the gating type for the specified power measurement
               number.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:GATing?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:GATing?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:GATing value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:GATing {NONE|CURSOR|SCREEN|LOGIC}
             - POWer:POWer<x>:GATing?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown on a power measurement badge in the UI.
             - ``NONE`` makes measurement across the entire waveform record.
@@ -18386,7 +17966,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def harmonics(self) -> PowerPowerItemHarmonics:
         """Return the ``POWer:POWer<x>:HARMONICS`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:HARMONICS?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:HARMONICS?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -18416,12 +17996,12 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def impedance(self) -> PowerPowerItemImpedance:
         """Return the ``POWer:POWer<x>:IMPEDANCE`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:IMPEDANCE?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:IMPEDANCE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the number of the Impedance power measurement.
 
         Sub-properties:
@@ -18448,7 +18028,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def inductance(self) -> PowerPowerItemInductance:
         """Return the ``POWer:POWer<x>:INDUCTANCE`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:INDUCTANCE?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:INDUCTANCE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -18464,7 +18044,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def inputcap(self) -> PowerPowerItemInputcap:
         """Return the ``POWer:POWer<x>:INPUTCAP`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:INPUTCAP?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:INPUTCAP?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -18481,7 +18061,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def inrushcurrent(self) -> PowerPowerItemInrushcurrent:
         """Return the ``POWer:POWer<x>:INRUSHcurrent`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:INRUSHcurrent?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:INRUSHcurrent?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -18496,7 +18076,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def ivsintegralv(self) -> PowerPowerItemIvsintegralv:
         """Return the ``POWer:POWer<x>:IVSINTEGRALV`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:IVSINTEGRALV?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:IVSINTEGRALV?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -18511,24 +18091,23 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def label(self) -> PowerPowerItemLabel:
         """Return the ``POWer:POWer<x>:LABel`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the label for the specified power measurement. As the
               label can contain non 7-bit ASCII text, it is stored in Percent Encoding format. The
               power measurement badge is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:LABel?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:LABel?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:LABel value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:LABel <QString>
             - POWer:POWer<x>:LABel?
+            ```
         """
         return self._label
 
@@ -18536,7 +18115,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def lineripple(self) -> PowerPowerItemLineripple:
         """Return the ``POWer:POWer<x>:LINERIPPLE`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:LINERIPPLE?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:LINERIPPLE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -18551,7 +18130,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def magneticloss(self) -> PowerPowerItemMagneticloss:
         """Return the ``POWer:POWer<x>:MAGNETICLOSS`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGNETICLOSS?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:MAGNETICLOSS?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -18566,7 +18145,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def magproperty(self) -> PowerPowerItemMagproperty:
         """Return the ``POWer:POWer<x>:MAGPROPERTY`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:MAGPROPERTY?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:MAGPROPERTY?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -18602,7 +18181,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def ndutycycle(self) -> PowerPowerItemNdutycycle:
         """Return the ``POWer:POWer<x>:NDUTYCYCLE`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:NDUTYCYCLE?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:NDUTYCYCLE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -18617,7 +18196,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def npulsewidth(self) -> PowerPowerItemNpulsewidth:
         """Return the ``POWer:POWer<x>:NPULSEWIDTH`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:NPULSEWIDTH?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:NPULSEWIDTH?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -18631,7 +18210,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def pdutycycle(self) -> PowerPowerItemPdutycycle:
         """Return the ``POWer:POWer<x>:PDUTYCYCLE`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PDUTYCYCLE?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PDUTYCYCLE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -18646,7 +18225,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def period(self) -> PowerPowerItemPeriod:
         """Return the ``POWer:POWer<x>:PERIOD`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PERIOD?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PERIOD?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -18661,7 +18240,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def powerquality(self) -> PowerPowerItemPowerquality:
         """Return the ``POWer:POWer<x>:POWERQUALITY`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:POWERQUALITY?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:POWERQUALITY?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -18679,7 +18258,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def ppulsewidth(self) -> PowerPowerItemPpulsewidth:
         """Return the ``POWer:POWer<x>:PPULSEWIDTH`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PPULSEWIDTH?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PPULSEWIDTH?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -18693,20 +18272,19 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def preset(self) -> PowerPowerItemPreset:
         """Return the ``POWer:POWer<x>:PRESET`` command.
 
-        **Description:**
+        Description:
             - This command runs a power preset action for the specified power measurement number.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:PRESET value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:PRESET {EXECute}
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``EXECute`` runs the power preset action.
@@ -18717,7 +18295,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def psrr(self) -> PowerPowerItemPsrr:
         """Return the ``POWer:POWer<x>:PSRR`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:PSRR?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:PSRR?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -18746,7 +18324,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def rdson(self) -> PowerPowerItemRdson:
         """Return the ``POWer:POWer<x>:RDSON`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:RDSON?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:RDSON?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -18762,7 +18340,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def reflevels(self) -> PowerPowerItemReflevels:
         """Return the ``POWer:POWer<x>:REFLevels`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:REFLevels?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:REFLevels?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -18779,7 +18357,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def results(self) -> PowerPowerItemResults:
         """Return the ``POWer:POWer<x>:RESUlts`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:RESUlts?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:RESUlts?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -18794,21 +18372,20 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def seqsetup(self) -> PowerPowerItemSeqsetup:
         """Return the ``POWer:POWer<x>:SEQSETup`` command.
 
-        **Description:**
+        Description:
             - This command sets up the instrument's horizontal, vertical, and trigger parameters to
               optimize for taking the specified power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:SEQSETup value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SEQSETup Execute
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the Power measurement identifier number. The number must be for a
               power measurement that requires a single sequence acquisition.
             - ``Execute`` sets the measurement to run an acquisition and acquire data for the
@@ -18820,24 +18397,23 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def sequence(self) -> PowerPowerItemSequence:
         """Return the ``POWer:POWer<x>:SEQuence`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the run state of a single sequence power measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:SEQuence?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SEQuence?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:SEQuence value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:SEQuence {RUN|RERUN}
             - POWer:POWer<x>:SEQuence?
+            ```
 
-        **Info:**
+        Info:
             - ``POWer<x>`` is the Power measurement identifier number. The number must be for a
               power measurement that requires a single sequence acquisition.
             - ``RUN`` sets the measurement to run an acquisition and acquire data for the specified
@@ -18851,7 +18427,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def soa(self) -> PowerPowerItemSoa:
         """Return the ``POWer:POWer<x>:SOA`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:SOA?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SOA?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -18869,7 +18445,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def switchingloss(self) -> PowerPowerItemSwitchingloss:
         """Return the ``POWer:POWer<x>:SWITCHINGLOSS`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SWITCHINGLOSS?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -18895,7 +18471,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def switchingripple(self) -> PowerPowerItemSwitchingripple:
         """Return the ``POWer:POWer<x>:SWITCHINGRIPPLE`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:SWITCHINGRIPPLE?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:SWITCHINGRIPPLE?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -18910,7 +18486,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def turnofftime(self) -> PowerPowerItemTurnofftime:
         """Return the ``POWer:POWer<x>:TURNOFFtime`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNOFFtime?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:TURNOFFtime?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -18944,7 +18520,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def turnontime(self) -> PowerPowerItemTurnontime:
         """Return the ``POWer:POWer<x>:TURNONtime`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:TURNONtime?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:TURNONtime?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -18978,27 +18554,26 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def type(self) -> PowerPowerItemType:
         r"""Return the ``POWer:POWer<x>:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the measurement type of the specified power measurement
               number. If the measurement number does not exist, this command creates a new power
               measurement, assigns the specified measurement number to the new measurement, and then
               assigns the measurement type to the new measurement.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:TYPe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``POWer:POWer<x>:TYPe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:POWer<x>:TYPe <Measurement Type>
             - POWer:POWer<x>:TYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``Power<x>`` is the power measurement number. This is the equivalent of the number
               shown in the UI for a power measurement badge.
             - ``<Measurement Type>`` = CYCLEAmp \| CYCLEBase \| CYCLEMAx \| CYCLEMIn \| CYCLEPKpk \|
@@ -19014,7 +18589,7 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def wrap(self) -> PowerPowerItemWrap:
         """Return the ``POWer:POWer<x>:WRAP`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>:WRAP?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>:WRAP?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -19029,43 +18604,41 @@ class PowerPowerItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class PowerDelete(SCPICmdWrite):
     """The ``POWer:DELete`` command.
 
-    **Description:**
+    Description:
         - This command deletes the specified power measurement number. The power measurement number
           is specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``POWer:DELete value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:DELete 'POWER<x>'
+        ```
     """
 
 
 class PowerAddnew(SCPICmdWrite):
     """The ``POWer:ADDNew`` command.
 
-    **Description:**
+    Description:
         - This command adds the specified power measurement number. The power measurement number is
           specified by x.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``POWer:ADDNew value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - POWer:ADDNew 'POWER<x>'
+        ```
     """
 
 
 class Power(SCPICmdRead):
     """The ``POWer`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``POWer?`` query.
         - Using the ``.verify(value)`` method will send the ``POWer?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -19088,18 +18661,17 @@ class Power(SCPICmdRead):
     def addnew(self) -> PowerAddnew:
         """Return the ``POWer:ADDNew`` command.
 
-        **Description:**
+        Description:
             - This command adds the specified power measurement number. The power measurement number
               is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``POWer:ADDNew value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:ADDNew 'POWER<x>'
+            ```
         """
         return self._addnew
 
@@ -19107,18 +18679,17 @@ class Power(SCPICmdRead):
     def delete(self) -> PowerDelete:
         """Return the ``POWer:DELete`` command.
 
-        **Description:**
+        Description:
             - This command deletes the specified power measurement number. The power measurement
               number is specified by x.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``POWer:DELete value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - POWer:DELete 'POWER<x>'
+            ```
         """
         return self._delete
 
@@ -19126,7 +18697,7 @@ class Power(SCPICmdRead):
     def power(self) -> Dict[int, PowerPowerItem]:
         """Return the ``POWer:POWer<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``POWer:POWer<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``POWer:POWer<x>?`` query and raise
               an AssertionError if the returned value does not match ``value``.

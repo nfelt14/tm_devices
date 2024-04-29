@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - node[N].execute()
     - node[N].getglobal()
     - node[N].setglobal()
@@ -29,10 +27,10 @@ if TYPE_CHECKING:
 class NodeItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     """The ``node[N]`` command tree.
 
-    **Info:**
+    Info:
         - ``N``, the node number of this instrument.
 
-    Properties/methods:
+    Properties and methods:
         - ``.execute()``: The ``node[N].execute()`` function.
         - ``.getglobal()``: The ``node[N].getglobal()`` function.
         - ``.setglobal()``: The ``node[N].setglobal()`` function.
@@ -44,15 +42,14 @@ class NodeItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def execute(self, script_code: str) -> None:
         """Run the ``node[N].execute()`` function.
 
-        **Description:**
+        Description:
             - This function starts test scripts from a remote node. This command is not available on
               the 2604B, 2614B, or 2634B.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - node[N].execute()
+            ```
 
         Args:
             script_code: A string containing the source code.
@@ -71,15 +68,14 @@ class NodeItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def getglobal(self, name: str) -> str:
         """Run the ``node[N].getglobal()`` function.
 
-        **Description:**
+        Description:
             - This function returns the value of a global variable. This command is not available on
               the 2604B, 2614B, or 2634B.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - node[N].getglobal()
+            ```
 
         Args:
             name: The global variable name.
@@ -101,15 +97,14 @@ class NodeItem(ValidatedDynamicNumberCmd, BaseTSPCmd):
     def setglobal(self, name: str, value: str) -> None:
         """Run the ``node[N].setglobal()`` function.
 
-        **Description:**
+        Description:
             - This function sets the value of a global variable. This command is not available on
               the 2604B, 2614B, or 2634B.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - node[N].setglobal()
+            ```
 
         Args:
             name: The global variable name to set.

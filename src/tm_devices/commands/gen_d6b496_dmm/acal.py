@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - acal.count
     - acal.lastrun.internaltemp
     - acal.lastrun.tempdiff
@@ -34,7 +32,7 @@ if TYPE_CHECKING:
 class AcalNextrun(BaseTSPCmd):
     """The ``acal.nextrun`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.time``: The ``acal.nextrun.time`` attribute.
     """
 
@@ -42,18 +40,17 @@ class AcalNextrun(BaseTSPCmd):
     def time(self) -> str:
         """Access the ``acal.nextrun.time`` attribute.
 
-        **Description:**
+        Description:
             - This attribute returns the date and time when the next autocalibration is scheduled to
               be run.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(acal.nextrun.time)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(acal.nextrun.time)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -72,7 +69,7 @@ class AcalNextrun(BaseTSPCmd):
 class AcalLastrun(BaseTSPCmd):
     """The ``acal.lastrun`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.internaltemp``: The ``acal.lastrun.internaltemp`` attribute.
         - ``.tempdiff``: The ``acal.lastrun.tempdiff`` attribute.
         - ``.time``: The ``acal.lastrun.time`` attribute.
@@ -82,18 +79,17 @@ class AcalLastrun(BaseTSPCmd):
     def internaltemp(self) -> str:
         """Access the ``acal.lastrun.internaltemp`` attribute.
 
-        **Description:**
+        Description:
             - This attribute returns the internal temperature of the instrument when autocalibration
               was run.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(acal.lastrun.internaltemp)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(acal.lastrun.internaltemp)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -112,18 +108,17 @@ class AcalLastrun(BaseTSPCmd):
     def tempdiff(self) -> str:
         """Access the ``acal.lastrun.tempdiff`` attribute.
 
-        **Description:**
+        Description:
             - This attribute returns the difference between the internal temperature and the
               temperature when autocalibration was last run.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(acal.lastrun.tempdiff)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(acal.lastrun.tempdiff)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -142,17 +137,16 @@ class AcalLastrun(BaseTSPCmd):
     def time(self) -> str:
         """Access the ``acal.lastrun.time`` attribute.
 
-        **Description:**
+        Description:
             - This attribute returns the date and time when autocalibration was last run.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(acal.lastrun.time)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(acal.lastrun.time)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -171,7 +165,7 @@ class AcalLastrun(BaseTSPCmd):
 class Acal(BaseTSPCmd):
     """The ``acal`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.count``: The ``acal.count`` attribute.
         - ``.lastrun``: The ``acal.lastrun`` command tree.
         - ``.nextrun``: The ``acal.nextrun`` command tree.
@@ -189,17 +183,16 @@ class Acal(BaseTSPCmd):
     def count(self) -> str:
         """Access the ``acal.count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute returns the number of times autocalibration has been run.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(acal.count)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(acal.count)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -218,7 +211,7 @@ class Acal(BaseTSPCmd):
     def lastrun(self) -> AcalLastrun:
         """Return the ``acal.lastrun`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.internaltemp``: The ``acal.lastrun.internaltemp`` attribute.
             - ``.tempdiff``: The ``acal.lastrun.tempdiff`` attribute.
             - ``.time``: The ``acal.lastrun.time`` attribute.
@@ -229,7 +222,7 @@ class Acal(BaseTSPCmd):
     def nextrun(self) -> AcalNextrun:
         """Return the ``acal.nextrun`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.time``: The ``acal.nextrun.time`` attribute.
         """
         return self._nextrun
@@ -237,14 +230,13 @@ class Acal(BaseTSPCmd):
     def revert(self) -> str:
         """Run the ``acal.revert()`` function.
 
-        **Description:**
+        Description:
             - This function returns autocalibration constants to the previous constants.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - acal.revert()
+            ```
 
         Returns:
             The result of the function call.
@@ -263,14 +255,13 @@ class Acal(BaseTSPCmd):
     def run(self) -> None:
         """Run the ``acal.run()`` function.
 
-        **Description:**
+        Description:
             - This function immediately runs autocalibration and stores the constants.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - acal.run()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -291,14 +282,13 @@ class Acal(BaseTSPCmd):
     ) -> str:
         """Run the ``acal.schedule()`` function.
 
-        **Description:**
+        Description:
             - This function sets how often autocalibration occurs or prompts you to run it.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - acal.schedule()
+            ```
 
         Args:
             action (optional): Determines when and if the instrument automatically runs

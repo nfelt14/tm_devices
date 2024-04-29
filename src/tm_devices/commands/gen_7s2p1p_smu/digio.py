@@ -78,7 +78,7 @@ class Digio(BaseTSPCmd):
           trigger generator operate on the specified trigger line to detect rising-edge triggers as
           input and assert a TTL-low pulse for output.
 
-    Properties/methods:
+    Properties and methods:
         - ``.trigger``: The ``digio.trigger[N]`` command tree.
     """
 

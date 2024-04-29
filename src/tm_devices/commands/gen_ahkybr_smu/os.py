@@ -12,8 +12,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - os.remove()
     - os.rename()
     - os.time()
@@ -30,7 +28,7 @@ if TYPE_CHECKING:
 class Os(BaseTSPCmd):
     """The ``os`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.remove()``: The ``os.remove()`` function.
         - ``.rename()``: The ``os.rename()`` function.
         - ``.time()``: The ``os.time()`` function.
@@ -42,14 +40,13 @@ class Os(BaseTSPCmd):
     def remove(self, filename: str) -> str:
         """Run the ``os.remove()`` function.
 
-        **Description:**
+        Description:
             - This function deletes the file or directory with a given name.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - os.remove()
+            ```
 
         Args:
             filename: A string representing the name of the file or directory to delete.
@@ -71,14 +68,13 @@ class Os(BaseTSPCmd):
     def rename(self, oldname: str, newname: str) -> str:
         """Run the ``os.rename()`` function.
 
-        **Description:**
+        Description:
             - This function renames an existing file or directory.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - os.rename()
+            ```
 
         Args:
             oldname: String representing the name of the file or directory to rename.
@@ -101,14 +97,13 @@ class Os(BaseTSPCmd):
     def time(self, timespec: Optional[str] = None) -> str:
         """Run the ``os.time()`` function.
 
-        **Description:**
+        Description:
             - This function generates a time value in UTC time.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - os.time()
+            ```
 
         Args:
             timespec (optional): The date and time (year, month, day, hour, and minute).

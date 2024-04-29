@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - DESE <NR1>
     - DESE?
 """
@@ -28,26 +26,25 @@ if TYPE_CHECKING:
 class Dese(SCPICmdWrite, SCPICmdRead):
     """The ``DESE`` command.
 
-    **Description:**
+    Description:
         - This command sets and queries the bits in the Device Event Status Enable Register (DESER).
           The DESER is the mask that determines whether events are reported to the Standard Event
           Status Register (SESR), and entered into the Event Queue. For a more detailed discussion
           of the use of these registers, see Registers.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DESE?`` query.
         - Using the ``.verify(value)`` method will send the ``DESE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DESE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DESE <NR1>
         - DESE?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` The binary bits of the DESER are set according to this value, which ranges from
           1 through 255. For example, ``DESE 209`` sets the DESER to the binary value 11010001 (that
           is, the most significant bit in the register is set to 1, the next most significant bit to

@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - APPLication:ACTivate <QString>
 """
 
@@ -25,20 +23,19 @@ if TYPE_CHECKING:
 class ApplicationActivate(SCPICmdWrite):
     """The ``APPLication:ACTivate`` command.
 
-    **Description:**
+    Description:
         - For legacy TekExpress applications. Starts the application specified in the string. The
           available applications depend on the oscilloscope model and installed options.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``APPLication:ACTivate value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - APPLication:ACTivate <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is the name of the application that you want to start. Enter the application
           name exactly as it appears in the oscilloscope Applications menu.
     """
@@ -49,7 +46,7 @@ class ApplicationActivate(SCPICmdWrite):
 class Application(SCPICmdRead):
     """The ``APPLication`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``APPLication?`` query.
         - Using the ``.verify(value)`` method will send the ``APPLication?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -68,21 +65,20 @@ class Application(SCPICmdRead):
     def activate(self) -> ApplicationActivate:
         """Return the ``APPLication:ACTivate`` command.
 
-        **Description:**
+        Description:
             - For legacy TekExpress applications. Starts the application specified in the string.
               The available applications depend on the oscilloscope model and installed options.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``APPLication:ACTivate value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - APPLication:ACTivate <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is the name of the application that you want to start. Enter the
               application name exactly as it appears in the oscilloscope Applications menu.
         """

@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - timer.cleartime()
     - timer.gettime()
 """
@@ -28,7 +26,7 @@ if TYPE_CHECKING:
 class Timer(BaseTSPCmd):
     """The ``timer`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.cleartime()``: The ``timer.cleartime()`` function.
         - ``.gettime()``: The ``timer.gettime()`` function.
     """
@@ -39,14 +37,13 @@ class Timer(BaseTSPCmd):
     def cleartime(self) -> None:
         """Run the ``timer.cleartime()`` function.
 
-        **Description:**
+        Description:
             - This function resets the timer to zero (0) seconds.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - timer.cleartime()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -62,14 +59,13 @@ class Timer(BaseTSPCmd):
     def gettime(self) -> str:
         """Run the ``timer.gettime()`` function.
 
-        **Description:**
+        Description:
             - This function measures the elapsed time since the timer was last cleared.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - timer.gettime()
+            ```
 
         Returns:
             The result of the function call.

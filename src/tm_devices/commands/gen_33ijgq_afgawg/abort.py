@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - ABORt
 """
 
@@ -25,17 +23,16 @@ if TYPE_CHECKING:
 class Abort(SCPICmdWriteNoArguments):
     """The ``ABORt`` command.
 
-    **Description:**
+    Description:
         - Initializes all the current trigger system parameters and resets all trigger sequences.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``ABORt`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ABORt
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "ABORt") -> None:

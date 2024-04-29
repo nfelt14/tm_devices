@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - eventlog.clear()
     - eventlog.getcount()
     - eventlog.next()
@@ -37,7 +35,7 @@ class Eventlog(BaseTSPCmd):
         - ``.SEV_INFO``: Returns the number of information messages in the event log.
         - ``.SEV_WARN``: Returns the number of warnings in the event log.
 
-    Properties/methods:
+    Properties and methods:
         - ``.clear()``: The ``eventlog.clear()`` function.
         - ``.getcount()``: The ``eventlog.getcount()`` function.
         - ``.next()``: The ``eventlog.next()`` function.
@@ -60,14 +58,13 @@ class Eventlog(BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``eventlog.clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the event log.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - eventlog.clear()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -83,14 +80,13 @@ class Eventlog(BaseTSPCmd):
     def getcount(self, event_type: Optional[str] = None) -> str:
         """Run the ``eventlog.getcount()`` function.
 
-        **Description:**
+        Description:
             - This function returns the number of unread events in the event log.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - eventlog.getcount()
+            ```
 
         Args:
             event_type (optional): Limits the return to specific event log types; set a cumulative
@@ -114,14 +110,13 @@ class Eventlog(BaseTSPCmd):
     def next(self, event_type: Optional[str] = None) -> str:
         """Run the ``eventlog.next()`` function.
 
-        **Description:**
+        Description:
             - This function returns the oldest unread event message from the event log.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - eventlog.next()
+            ```
 
         Args:
             event_type (optional): Limits the return to specific event log types; set a cumulative
@@ -145,14 +140,13 @@ class Eventlog(BaseTSPCmd):
     def post(self, message: str, event_type: Optional[str] = None) -> None:
         """Run the ``eventlog.post()`` function.
 
-        **Description:**
+        Description:
             - This function allows you to post your own text to the event log.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - eventlog.post()
+            ```
 
         Args:
             message: String that contains the message.
@@ -181,14 +175,13 @@ class Eventlog(BaseTSPCmd):
     def save(self, filename: str, event_type: Optional[str] = None) -> None:
         """Run the ``eventlog.save()`` function.
 
-        **Description:**
+        Description:
             - This function saves the event log to a file on a USB flash drive.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - eventlog.save()
+            ```
 
         Args:
             filename: A string that represents the name of the file to be saved.

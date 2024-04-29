@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SELect:CH<x> {ON|OFF|1|0}
     - SELect:CH<x>?
 """
@@ -26,25 +24,24 @@ if TYPE_CHECKING:
 class SelectChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
     """The ``SELect:CH<x>`` command.
 
-    **Description:**
+    Description:
         - Turns the display of the channel <x> waveform on or off, where <x > is the channel number.
           This command also resets the acquisition. The query returns whether the channel is on or
           off but does not indicate whether it is the specified waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SELect:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``SELect:CH<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SELect:CH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SELect:CH<x> {ON|OFF|1|0}
         - SELect:CH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``ON`` turns on the display of the specified waveform. This waveform also becomes the
           selected waveform.
         - ``OFF`` turns off the display of the specified waveform.
@@ -57,7 +54,7 @@ class SelectChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
 class Select(SCPICmdRead):
     """The ``SELect`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SELect?`` query.
         - Using the ``.verify(value)`` method will send the ``SELect?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -76,25 +73,24 @@ class Select(SCPICmdRead):
     def ch(self) -> Dict[int, SelectChannel]:
         """Return the ``SELect:CH<x>`` command.
 
-        **Description:**
+        Description:
             - Turns the display of the channel <x> waveform on or off, where <x > is the channel
               number. This command also resets the acquisition. The query returns whether the
               channel is on or off but does not indicate whether it is the specified waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SELect:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``SELect:CH<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SELect:CH<x> value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SELect:CH<x> {ON|OFF|1|0}
             - SELect:CH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``ON`` turns on the display of the specified waveform. This waveform also becomes the
               selected waveform.
             - ``OFF`` turns off the display of the specified waveform.

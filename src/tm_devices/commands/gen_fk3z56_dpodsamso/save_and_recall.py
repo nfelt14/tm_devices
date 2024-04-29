@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - *SDS <NR1>
 """
 
@@ -26,22 +24,21 @@ if TYPE_CHECKING:
 class Sds(SCPICmdWrite):
     """The ``*SDS`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) changes the specified setup to reference the factory setup
           instead of the specific user setup slot. The content of the setup slot is unchanged, but
           the data will no longer be accessible to you. This command is equivalent to selecting
           Delete from the File menu, and then choosing the specified setup.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``*SDS value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - *SDS <NR1>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies a user setup location to delete. Setup storage location values range
           from 1 through 10; using an out-of-range value causes an error.
     """

@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - ID?
 """
 
@@ -27,21 +25,20 @@ if TYPE_CHECKING:
 class Id(SCPICmdRead):
     """The ``ID`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns identifying information about the instrument and related
           firmware similar to that returned by the ``*IDN?`` IEEE488.2 common query but does not
           include the instrument serial number.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ID?`` query.
         - Using the ``.verify(value)`` method will send the ``ID?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ID?
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "ID") -> None:

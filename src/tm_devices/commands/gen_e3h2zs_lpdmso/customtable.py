@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - CUSTOMTABle:ADDNew <Qstring>
     - CUSTOMTABle:DELete <Qstring>
     - CUSTOMTABle:LIST? <Qstring>
@@ -27,21 +25,20 @@ if TYPE_CHECKING:
 class CustomtableList(SCPICmdReadWithArguments):
     """The ``CUSTOMTABle:LIST`` command.
 
-    **Description:**
+    Description:
         - This command queries the list of custom result tables has been added.
 
-    **Usage:**
+    Usage:
         - Using the ``.query(argument)`` method will send the ``CUSTOMTABle:LIST? argument`` query.
         - Using the ``.verify(argument, value)`` method will send the ``CUSTOMTABle:LIST? argument``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CUSTOMTABle:LIST? <Qstring>
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` specifies the custom results table name.
     """
 
@@ -49,19 +46,18 @@ class CustomtableList(SCPICmdReadWithArguments):
 class CustomtableDelete(SCPICmdWrite):
     """The ``CUSTOMTABle:DELete`` command.
 
-    **Description:**
+    Description:
         - This command deletes the custom result(s) table that was added.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CUSTOMTABle:DELete value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CUSTOMTABle:DELete <Qstring>
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` specifies the custom results table name.
     """
 
@@ -69,19 +65,18 @@ class CustomtableDelete(SCPICmdWrite):
 class CustomtableAddnew(SCPICmdWrite):
     """The ``CUSTOMTABle:ADDNew`` command.
 
-    **Description:**
+    Description:
         - This command adds new custom results table.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CUSTOMTABle:ADDNew value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CUSTOMTABle:ADDNew <Qstring>
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` specifies the custom results table name.
     """
 
@@ -89,7 +84,7 @@ class CustomtableAddnew(SCPICmdWrite):
 class Customtable(SCPICmdRead):
     """The ``CUSTOMTABle`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CUSTOMTABle?`` query.
         - Using the ``.verify(value)`` method will send the ``CUSTOMTABle?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -112,19 +107,18 @@ class Customtable(SCPICmdRead):
     def addnew(self) -> CustomtableAddnew:
         """Return the ``CUSTOMTABle:ADDNew`` command.
 
-        **Description:**
+        Description:
             - This command adds new custom results table.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CUSTOMTABle:ADDNew value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CUSTOMTABle:ADDNew <Qstring>
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` specifies the custom results table name.
         """
         return self._addnew
@@ -133,19 +127,18 @@ class Customtable(SCPICmdRead):
     def delete(self) -> CustomtableDelete:
         """Return the ``CUSTOMTABle:DELete`` command.
 
-        **Description:**
+        Description:
             - This command deletes the custom result(s) table that was added.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CUSTOMTABle:DELete value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CUSTOMTABle:DELete <Qstring>
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` specifies the custom results table name.
         """
         return self._delete
@@ -154,23 +147,22 @@ class Customtable(SCPICmdRead):
     def list(self) -> CustomtableList:
         """Return the ``CUSTOMTABle:LIST`` command.
 
-        **Description:**
+        Description:
             - This command queries the list of custom result tables has been added.
 
-        **Usage:**
+        Usage:
             - Using the ``.query(argument)`` method will send the ``CUSTOMTABle:LIST? argument``
               query.
             - Using the ``.verify(argument, value)`` method will send the
               ``CUSTOMTABle:LIST? argument`` query and raise an AssertionError if the returned value
               does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CUSTOMTABle:LIST? <Qstring>
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` specifies the custom results table name.
         """
         return self._list

@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - MAINWindow:BADGe:BRINgtoview <Qstring>
     - MAINWindow:FONTSize <NR1>
     - MAINWindow:RRBDisplaystate {1|ON|0|OFF}
@@ -27,21 +25,20 @@ if TYPE_CHECKING:
 class MainwindowRrbdisplaystate(SCPICmdWrite):
     """The ``MAINWindow:RRBDisplaystate`` command.
 
-    **Description:**
+    Description:
         - Sets the display state of the Results readout bar to ON (displayed) or OFF (not
           displayed).
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MAINWindow:RRBDisplaystate value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MAINWindow:RRBDisplaystate {1|ON|0|OFF}
+        ```
 
-    **Info:**
+    Info:
         - ``1`` or ON enables Autoset to change vertical settings.
         - ``0`` or OFF disables Autoset from changing vertical settings.
     """
@@ -50,19 +47,18 @@ class MainwindowRrbdisplaystate(SCPICmdWrite):
 class MainwindowFontsize(SCPICmdWrite):
     """The ``MAINWindow:FONTSize`` command.
 
-    **Description:**
+    Description:
         - Sets the font size for UI text elements. Font size range is 12 to 20 points.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MAINWindow:FONTSize value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MAINWindow:FONTSize <NR1>
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` specifies the font size.
     """
 
@@ -70,21 +66,20 @@ class MainwindowFontsize(SCPICmdWrite):
 class MainwindowBadgeBringtoview(SCPICmdWrite):
     """The ``MAINWindow:BADGe:BRINgtoview`` command.
 
-    **Description:**
+    Description:
         - This command is used to automatically scroll the specified badge to make it visible. The
           input to the command is the badge title name.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MAINWindow:BADGe:BRINgtoview value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MAINWindow:BADGe:BRINgtoview <Qstring>
+        ```
 
-    **Info:**
+    Info:
         - ``<Qstring>`` specifies a badge title name to make the badge visible.
     """
 
@@ -92,7 +87,7 @@ class MainwindowBadgeBringtoview(SCPICmdWrite):
 class MainwindowBadge(SCPICmdRead):
     """The ``MAINWindow:BADGe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MAINWindow:BADGe?`` query.
         - Using the ``.verify(value)`` method will send the ``MAINWindow:BADGe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -109,21 +104,20 @@ class MainwindowBadge(SCPICmdRead):
     def bringtoview(self) -> MainwindowBadgeBringtoview:
         """Return the ``MAINWindow:BADGe:BRINgtoview`` command.
 
-        **Description:**
+        Description:
             - This command is used to automatically scroll the specified badge to make it visible.
               The input to the command is the badge title name.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the
               ``MAINWindow:BADGe:BRINgtoview value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MAINWindow:BADGe:BRINgtoview <Qstring>
+            ```
 
-        **Info:**
+        Info:
             - ``<Qstring>`` specifies a badge title name to make the badge visible.
         """
         return self._bringtoview
@@ -132,7 +126,7 @@ class MainwindowBadge(SCPICmdRead):
 class Mainwindow(SCPICmdRead):
     """The ``MAINWindow`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MAINWindow?`` query.
         - Using the ``.verify(value)`` method will send the ``MAINWindow?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -155,7 +149,7 @@ class Mainwindow(SCPICmdRead):
     def badge(self) -> MainwindowBadge:
         """Return the ``MAINWindow:BADGe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MAINWindow:BADGe?`` query.
             - Using the ``.verify(value)`` method will send the ``MAINWindow:BADGe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -169,20 +163,19 @@ class Mainwindow(SCPICmdRead):
     def fontsize(self) -> MainwindowFontsize:
         """Return the ``MAINWindow:FONTSize`` command.
 
-        **Description:**
+        Description:
             - Sets the font size for UI text elements. Font size range is 12 to 20 points.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MAINWindow:FONTSize value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MAINWindow:FONTSize <NR1>
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` specifies the font size.
         """
         return self._fontsize
@@ -191,21 +184,20 @@ class Mainwindow(SCPICmdRead):
     def rrbdisplaystate(self) -> MainwindowRrbdisplaystate:
         """Return the ``MAINWindow:RRBDisplaystate`` command.
 
-        **Description:**
+        Description:
             - Sets the display state of the Results readout bar to ON (displayed) or OFF (not
               displayed).
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MAINWindow:RRBDisplaystate value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MAINWindow:RRBDisplaystate {1|ON|0|OFF}
+            ```
 
-        **Info:**
+        Info:
             - ``1`` or ON enables Autoset to change vertical settings.
             - ``0`` or OFF disables Autoset from changing vertical settings.
         """

@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - REBOOT
 """
 
@@ -25,18 +23,17 @@ if TYPE_CHECKING:
 class Reboot(SCPICmdWriteNoArguments):
     """The ``REBOOT`` command.
 
-    **Description:**
+    Description:
         - Reboots the system after a short delay, emulating the front panel power button push. The
           system will power back on after a 5 second delay.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``REBOOT`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - REBOOT
+        ```
     """
 
     def __init__(self, device: Optional["PIDevice"] = None, cmd_syntax: str = "REBOOT") -> None:

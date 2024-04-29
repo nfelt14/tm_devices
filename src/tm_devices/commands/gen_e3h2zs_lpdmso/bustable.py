@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - BUSTABle:ADDNew <QString>
     - BUSTABle:DELete <QString>
     - BUSTABle:LIST?
@@ -27,38 +25,36 @@ if TYPE_CHECKING:
 class BustableList(SCPICmdRead):
     """The ``BUSTABle:LIST`` command.
 
-    **Description:**
+    Description:
         - This query lists all currently defined bus tables.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``BUSTABle:LIST?`` query.
         - Using the ``.verify(value)`` method will send the ``BUSTABle:LIST?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BUSTABle:LIST?
+        ```
     """
 
 
 class BustableDelete(SCPICmdWrite):
     """The ``BUSTABle:DELete`` command.
 
-    **Description:**
+    Description:
         - Deletes the specified bus table. Argument is of the form 'TABLE<NR1>', where <NR1> is ≥1).
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``BUSTABle:DELete value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BUSTABle:DELete <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string that is the name of the bus table to delete.
     """
 
@@ -68,19 +64,18 @@ class BustableDelete(SCPICmdWrite):
 class BustableAddnew(SCPICmdWrite):
     """The ``BUSTABle:ADDNew`` command.
 
-    **Description:**
+    Description:
         - Adds the specified bus table. Argument is of the form 'TABLE<NR1>', where <NR1> is ≥1).
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``BUSTABle:ADDNew value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - BUSTABle:ADDNew <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a quoted string that is the name of the new bus table.
     """
 
@@ -90,7 +85,7 @@ class BustableAddnew(SCPICmdWrite):
 class Bustable(SCPICmdRead):
     """The ``BUSTABle`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``BUSTABle?`` query.
         - Using the ``.verify(value)`` method will send the ``BUSTABle?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -111,20 +106,19 @@ class Bustable(SCPICmdRead):
     def addnew(self) -> BustableAddnew:
         """Return the ``BUSTABle:ADDNew`` command.
 
-        **Description:**
+        Description:
             - Adds the specified bus table. Argument is of the form 'TABLE<NR1>', where <NR1> is
               ≥1).
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``BUSTABle:ADDNew value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BUSTABle:ADDNew <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string that is the name of the new bus table.
         """
         return self._addnew
@@ -133,20 +127,19 @@ class Bustable(SCPICmdRead):
     def delete(self) -> BustableDelete:
         """Return the ``BUSTABle:DELete`` command.
 
-        **Description:**
+        Description:
             - Deletes the specified bus table. Argument is of the form 'TABLE<NR1>', where <NR1> is
               ≥1).
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``BUSTABle:DELete value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BUSTABle:DELete <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` is a quoted string that is the name of the bus table to delete.
         """
         return self._delete
@@ -155,18 +148,17 @@ class Bustable(SCPICmdRead):
     def list(self) -> BustableList:
         """Return the ``BUSTABle:LIST`` command.
 
-        **Description:**
+        Description:
             - This query lists all currently defined bus tables.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``BUSTABle:LIST?`` query.
             - Using the ``.verify(value)`` method will send the ``BUSTABle:LIST?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - BUSTABle:LIST?
+            ```
         """
         return self._list

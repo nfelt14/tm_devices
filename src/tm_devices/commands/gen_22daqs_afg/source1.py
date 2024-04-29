@@ -10,13 +10,12 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - SOURce1:AM:DEPTh {<depth>|MINimum|MAXimum}
     - SOURce1:AM:DEPTh?
     - SOURce1:AM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
     - SOURce1:AM:INTernal:FREQuency?
-    - SOURce1:AM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle|RAMP |NRAMp|PRNoise| USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
+    - SOURce1:AM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle|RAMP |NRAMp|PRNoise|
+      USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
     - SOURce1:AM:INTernal:FUNCtion:EFILe <file_name>
     - SOURce1:AM:INTernal:FUNCtion:EFILe?
     - SOURce1:AM:INTernal:FUNCtion?
@@ -38,7 +37,8 @@ Commands and Queries:
     - SOURce1:FM:DEViation?
     - SOURce1:FM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
     - SOURce1:FM:INTernal:FREQuency?
-    - SOURce1:FM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle| RAMP| NRAMp| PRNoise| USER[1]| USER<x>|EMEMory[1]|EMEMory2|EFILe}
+    - SOURce1:FM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle| RAMP| NRAMp| PRNoise| USER[1]|
+      USER<x>|EMEMory[1]|EMEMory2|EFILe}
     - SOURce1:FM:INTernal:FUNCtion:EFILe <file_name>
     - SOURce1:FM:INTernal:FUNCtion:EFILe?
     - SOURce1:FM:INTernal:FUNCtion?
@@ -73,7 +73,9 @@ Commands and Queries:
     - SOURce1:FUNCtion:EFILe?
     - SOURce1:FUNCtion:RAMP:SYMMetry {<symmetry>|MINimum|MAXimum}
     - SOURce1:FUNCtion:RAMP:SYMMetry?
-    - SOURce1:FUNCtion:SHAPe {SINusoid|SQUare|PULSe|RAMP |PRNoise|DC|SINC|GAUSsian|LORentz|ERISe|EDECay| HAVersine|USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
+    - SOURce1:FUNCtion:SHAPe {SINusoid|SQUare|PULSe|RAMP
+      |PRNoise|DC|SINC|GAUSsian|LORentz|ERISe|EDECay|
+      HAVersine|USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
     - SOURce1:FUNCtion:SHAPe?
     - SOURce1:PHASe:ADJust {<phase>|MINimum|MAXimum}
     - SOURce1:PHASe:ADJust?
@@ -82,7 +84,8 @@ Commands and Queries:
     - SOURce1:PM:DEViation?
     - SOURce1:PM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
     - SOURce1:PM:INTernal:FREQuency?
-    - SOURce1:PM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle| RAMP|NRAMp|PRNoise| USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
+    - SOURce1:PM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle| RAMP|NRAMp|PRNoise|
+      USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
     - SOURce1:PM:INTernal:FUNCtion:EFILe <file_name>
     - SOURce1:PM:INTernal:FUNCtion:EFILe?
     - SOURce1:PM:INTernal:FUNCtion?
@@ -108,7 +111,8 @@ Commands and Queries:
     - SOURce1:PWM:DEViation:DCYCle?
     - SOURce1:PWM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
     - SOURce1:PWM:INTernal:FREQuency?
-    - SOURce1:PWM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle |RAMP|NRAMp|PRNoise|USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
+    - SOURce1:PWM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle
+      |RAMP|NRAMp|PRNoise|USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
     - SOURce1:PWM:INTernal:FUNCtion:EFILe <file_name>
     - SOURce1:PWM:INTernal:FUNCtion:EFILe?
     - SOURce1:PWM:INTernal:FUNCtion?
@@ -142,7 +146,7 @@ Commands and Queries:
     - SOURce1:VOLTage:LIMit:LOW?
     - SOURce1:VOLTage:UNIT {VPP|VRMS|DBM}
     - SOURce1:VOLTage:UNIT?
-"""  # noqa: E501
+"""
 
 from typing import Optional, TYPE_CHECKING
 
@@ -155,7 +159,7 @@ if TYPE_CHECKING:
 class Source1VoltageUnit(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:VOLTage:UNIT`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the units of output amplitude for the specified channel. This
           command does not affect the offset, High level, or Low level of output. The setting of
           this command is not affected by the units setting of
@@ -165,75 +169,72 @@ class Source1VoltageUnit(SCPICmdWrite, SCPICmdRead):
           [SOURce[1|2]]``:VOLTage:CONCurrent``[``:STATe``] command is set to ON, then the units of
           the other channel are set the same.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:VOLTage:UNIT?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:VOLTage:UNIT?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:VOLTage:UNIT value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:VOLTage:UNIT {VPP|VRMS|DBM}
         - SOURce1:VOLTage:UNIT?
+        ```
     """
 
 
 class Source1VoltageLimitLow(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:VOLTage:LIMit:LOW`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the lower limit of the output amplitude low level for the
           specified channel. If your instrument is a dual-channel model and the
           [SOURce[1|2]]``:VOLTage:CONCurrent``[``:STATe``] command is set to ON, then the low level
           lower limit of the other channel is the same value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:VOLTage:LIMit:LOW?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:VOLTage:LIMit:LOW?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:VOLTage:LIMit:LOW value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:VOLTage:LIMit:LOW {<voltage>|MINimum|MAXimum}
         - SOURce1:VOLTage:LIMit:LOW?
+        ```
     """
 
 
 class Source1VoltageLimitHigh(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:VOLTage:LIMit:HIGH`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the higher limit of the output amplitude high level for the
           specified channel. If your instrument is a dual-channel model and the
           [SOURce[1|2]]``:VOLTage:CONCurrent``[``:STATe``] command is set to ON, then the higher
           level limit of the other channel is the same value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:VOLTage:LIMit:HIGH?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:VOLTage:LIMit:HIGH?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:VOLTage:LIMit:HIGH value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:VOLTage:LIMit:HIGH {<voltage>|MINimum|MAXimum}
         - SOURce1:VOLTage:LIMit:HIGH?
+        ```
     """
 
 
 class Source1VoltageLimit(SCPICmdRead):
     """The ``SOURce1:VOLTage:LIMit`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:VOLTage:LIMit?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:VOLTage:LIMit?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -252,25 +253,24 @@ class Source1VoltageLimit(SCPICmdRead):
     def high(self) -> Source1VoltageLimitHigh:
         """Return the ``SOURce1:VOLTage:LIMit:HIGH`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the higher limit of the output amplitude high level for
               the specified channel. If your instrument is a dual-channel model and the
               [SOURce[1|2]]``:VOLTage:CONCurrent``[``:STATe``] command is set to ON, then the higher
               level limit of the other channel is the same value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:VOLTage:LIMit:HIGH?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:VOLTage:LIMit:HIGH?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:VOLTage:LIMit:HIGH value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:VOLTage:LIMit:HIGH {<voltage>|MINimum|MAXimum}
             - SOURce1:VOLTage:LIMit:HIGH?
+            ```
         """
         return self._high
 
@@ -278,25 +278,24 @@ class Source1VoltageLimit(SCPICmdRead):
     def low(self) -> Source1VoltageLimitLow:
         """Return the ``SOURce1:VOLTage:LIMit:LOW`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the lower limit of the output amplitude low level for the
               specified channel. If your instrument is a dual-channel model and the
               [SOURce[1|2]]``:VOLTage:CONCurrent``[``:STATe``] command is set to ON, then the low
               level lower limit of the other channel is the same value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:VOLTage:LIMit:LOW?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:VOLTage:LIMit:LOW?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:VOLTage:LIMit:LOW value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:VOLTage:LIMit:LOW {<voltage>|MINimum|MAXimum}
             - SOURce1:VOLTage:LIMit:LOW?
+            ```
         """
         return self._low
 
@@ -304,13 +303,13 @@ class Source1VoltageLimit(SCPICmdRead):
 class Source1VoltageLevelImmediateOffset(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:VOLTage:LEVel:IMMediate:OFFSet`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the offset level for the specified channel. If your
           instrument is a dual-channel model and the
           [SOURce[1|2]]``:VOLTage:CONCurrent``[``:STATe``] command is set to ON, then the offset
           level of the other channel is also the same value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:VOLTage:LEVel:IMMediate:OFFSet?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -319,25 +318,24 @@ class Source1VoltageLevelImmediateOffset(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SOURce1:VOLTage:LEVel:IMMediate:OFFSet value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:VOLTage:LEVel:IMMediate:OFFSet {<voltage>|MINimum|MAXimum}
         - SOURce1:VOLTage:LEVel:IMMediate:OFFSet?
+        ```
     """
 
 
 class Source1VoltageLevelImmediateLow(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:VOLTage:LEVel:IMMediate:LOW`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the low level of output amplitude for the specified channel.
           If your instrument is a dual-channel model and the
           [SOURce[1|2]]``:VOLTage:CONCurrent``[``:STATe``] command is set to ON, then the low level
           of other channel is also the same value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:VOLTage:LEVel:IMMediate:LOW?``
           query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:VOLTage:LEVel:IMMediate:LOW?``
@@ -345,25 +343,24 @@ class Source1VoltageLevelImmediateLow(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SOURce1:VOLTage:LEVel:IMMediate:LOW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:VOLTage:LEVel:IMMediate:LOW {<voltage>|MINimum| MAXimum}
         - SOURce1:VOLTage:LEVel:IMMediate:LOW?
+        ```
     """
 
 
 class Source1VoltageLevelImmediateHigh(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:VOLTage:LEVel:IMMediate:HIGH`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the high level of output amplitude for the specified channel.
           If your instrument is a dual-channel model and the
           [SOURce[1|2]]``:VOLTage:CONCurrent``[``:STATe``] command is set to ON, then the high level
           of other channel is also the same value.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:VOLTage:LEVel:IMMediate:HIGH?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -372,26 +369,25 @@ class Source1VoltageLevelImmediateHigh(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SOURce1:VOLTage:LEVel:IMMediate:HIGH value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:VOLTage:LEVel:IMMediate:HIGH {<voltage>|MINimum|MAXimum}
         - SOURce1:VOLTage:LEVel:IMMediate:HIGH?
+        ```
     """
 
 
 class Source1VoltageLevelImmediateAmplitude(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:VOLTage:LEVel:IMMediate:AMPLitude`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the output amplitude for the specified channel. Units
           Amplitude resolution VPP 0.1 mVp-p or four digits VRMS 0.1 mVrms or four digits DBM 0.1
           dBm You can set the units of output amplitude by using either the bezel menu selection or
           the [SOURce[1|2]]``:VOLTage:UNIT`` command. The selection by bezel menu has priority over
           the remote command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:VOLTage:LEVel:IMMediate:AMPLitude?``
           query.
         - Using the ``.verify(value)`` method will send the
@@ -400,19 +396,18 @@ class Source1VoltageLevelImmediateAmplitude(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SOURce1:VOLTage:LEVel:IMMediate:AMPLitude value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:VOLTage:LEVel:IMMediate:AMPLitude {<amplitude>|MINimum|MAXimum}
         - SOURce1:VOLTage:LEVel:IMMediate:AMPLitude?
+        ```
     """
 
 
 class Source1VoltageLevelImmediate(SCPICmdRead):
     """The ``SOURce1:VOLTage:LEVel:IMMediate`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:VOLTage:LEVel:IMMediate?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:VOLTage:LEVel:IMMediate?``
           query and raise an AssertionError if the returned value does not match ``value``.
@@ -437,13 +432,13 @@ class Source1VoltageLevelImmediate(SCPICmdRead):
     def high(self) -> Source1VoltageLevelImmediateHigh:
         """Return the ``SOURce1:VOLTage:LEVel:IMMediate:HIGH`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the high level of output amplitude for the specified
               channel. If your instrument is a dual-channel model and the
               [SOURce[1|2]]``:VOLTage:CONCurrent``[``:STATe``] command is set to ON, then the high
               level of other channel is also the same value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:VOLTage:LEVel:IMMediate:HIGH?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -452,12 +447,11 @@ class Source1VoltageLevelImmediate(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce1:VOLTage:LEVel:IMMediate:HIGH value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:VOLTage:LEVel:IMMediate:HIGH {<voltage>|MINimum|MAXimum}
             - SOURce1:VOLTage:LEVel:IMMediate:HIGH?
+            ```
         """
         return self._high
 
@@ -465,13 +459,13 @@ class Source1VoltageLevelImmediate(SCPICmdRead):
     def low(self) -> Source1VoltageLevelImmediateLow:
         """Return the ``SOURce1:VOLTage:LEVel:IMMediate:LOW`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the low level of output amplitude for the specified
               channel. If your instrument is a dual-channel model and the
               [SOURce[1|2]]``:VOLTage:CONCurrent``[``:STATe``] command is set to ON, then the low
               level of other channel is also the same value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:VOLTage:LEVel:IMMediate:LOW?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -480,12 +474,11 @@ class Source1VoltageLevelImmediate(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce1:VOLTage:LEVel:IMMediate:LOW value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:VOLTage:LEVel:IMMediate:LOW {<voltage>|MINimum| MAXimum}
             - SOURce1:VOLTage:LEVel:IMMediate:LOW?
+            ```
         """
         return self._low
 
@@ -493,13 +486,13 @@ class Source1VoltageLevelImmediate(SCPICmdRead):
     def offset(self) -> Source1VoltageLevelImmediateOffset:
         """Return the ``SOURce1:VOLTage:LEVel:IMMediate:OFFSet`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the offset level for the specified channel. If your
               instrument is a dual-channel model and the
               [SOURce[1|2]]``:VOLTage:CONCurrent``[``:STATe``] command is set to ON, then the offset
               level of the other channel is also the same value.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SOURce1:VOLTage:LEVel:IMMediate:OFFSet?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -508,12 +501,11 @@ class Source1VoltageLevelImmediate(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce1:VOLTage:LEVel:IMMediate:OFFSet value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:VOLTage:LEVel:IMMediate:OFFSet {<voltage>|MINimum|MAXimum}
             - SOURce1:VOLTage:LEVel:IMMediate:OFFSet?
+            ```
         """
         return self._offset
 
@@ -521,14 +513,14 @@ class Source1VoltageLevelImmediate(SCPICmdRead):
     def amplitude(self) -> Source1VoltageLevelImmediateAmplitude:
         """Return the ``SOURce1:VOLTage:LEVel:IMMediate:AMPLitude`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the output amplitude for the specified channel. Units
               Amplitude resolution VPP 0.1 mVp-p or four digits VRMS 0.1 mVrms or four digits DBM
               0.1 dBm You can set the units of output amplitude by using either the bezel menu
               selection or the [SOURce[1|2]]``:VOLTage:UNIT`` command. The selection by bezel menu
               has priority over the remote command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the
               ``SOURce1:VOLTage:LEVel:IMMediate:AMPLitude?`` query.
             - Using the ``.verify(value)`` method will send the
@@ -537,12 +529,11 @@ class Source1VoltageLevelImmediate(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce1:VOLTage:LEVel:IMMediate:AMPLitude value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:VOLTage:LEVel:IMMediate:AMPLitude {<amplitude>|MINimum|MAXimum}
             - SOURce1:VOLTage:LEVel:IMMediate:AMPLitude?
+            ```
         """
         return self._amplitude
 
@@ -550,7 +541,7 @@ class Source1VoltageLevelImmediate(SCPICmdRead):
 class Source1VoltageLevel(SCPICmdRead):
     """The ``SOURce1:VOLTage:LEVel`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:VOLTage:LEVel?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:VOLTage:LEVel?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -567,7 +558,7 @@ class Source1VoltageLevel(SCPICmdRead):
     def immediate(self) -> Source1VoltageLevelImmediate:
         """Return the ``SOURce1:VOLTage:LEVel:IMMediate`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:VOLTage:LEVel:IMMediate?``
               query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:VOLTage:LEVel:IMMediate?``
@@ -585,7 +576,7 @@ class Source1VoltageLevel(SCPICmdRead):
 class Source1VoltageConcurrentState(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:VOLTage:CONCurrent:STATe`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables the function to copy the voltage level of one channel to
           another channel. The[SOURce[1|2]]``:VOLTage:CONCurrent``[``:STATe``] command copies the
           voltage level of the channel specified by the header suffix to another channel. If you
@@ -593,26 +584,25 @@ class Source1VoltageConcurrentState(SCPICmdWrite, SCPICmdRead):
           command returns '0' (off) or '1' (on). If your arbitrary function generator is a
           single-channel model, this command is not supported.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:VOLTage:CONCurrent:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:VOLTage:CONCurrent:STATe?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``SOURce1:VOLTage:CONCurrent:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:VOLTage:CONCurrent:STATe {ON|OFF|<NR1>}
         - SOURce1:VOLTage:CONCurrent:STATe?
+        ```
     """
 
 
 class Source1VoltageConcurrent(SCPICmdRead):
     """The ``SOURce1:VOLTage:CONCurrent`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:VOLTage:CONCurrent?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:VOLTage:CONCurrent?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -629,7 +619,7 @@ class Source1VoltageConcurrent(SCPICmdRead):
     def state(self) -> Source1VoltageConcurrentState:
         """Return the ``SOURce1:VOLTage:CONCurrent:STATe`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables the function to copy the voltage level of one channel
               to another channel. The[SOURce[1|2]]``:VOLTage:CONCurrent``[``:STATe``] command copies
               the voltage level of the channel specified by the header suffix to another channel. If
@@ -637,7 +627,7 @@ class Source1VoltageConcurrent(SCPICmdRead):
               query command returns '0' (off) or '1' (on). If your arbitrary function generator is a
               single-channel model, this command is not supported.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:VOLTage:CONCurrent:STATe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -646,12 +636,11 @@ class Source1VoltageConcurrent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce1:VOLTage:CONCurrent:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:VOLTage:CONCurrent:STATe {ON|OFF|<NR1>}
             - SOURce1:VOLTage:CONCurrent:STATe?
+            ```
         """
         return self._state
 
@@ -659,7 +648,7 @@ class Source1VoltageConcurrent(SCPICmdRead):
 class Source1Voltage(SCPICmdRead):
     """The ``SOURce1:VOLTage`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:VOLTage?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:VOLTage?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -682,7 +671,7 @@ class Source1Voltage(SCPICmdRead):
     def concurrent(self) -> Source1VoltageConcurrent:
         """Return the ``SOURce1:VOLTage:CONCurrent`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:VOLTage:CONCurrent?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:VOLTage:CONCurrent?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -696,7 +685,7 @@ class Source1Voltage(SCPICmdRead):
     def limit(self) -> Source1VoltageLimit:
         """Return the ``SOURce1:VOLTage:LIMit`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:VOLTage:LIMit?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:VOLTage:LIMit?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -711,7 +700,7 @@ class Source1Voltage(SCPICmdRead):
     def unit(self) -> Source1VoltageUnit:
         """Return the ``SOURce1:VOLTage:UNIT`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the units of output amplitude for the specified channel.
               This command does not affect the offset, High level, or Low level of output. The
               setting of this command is not affected by the units setting of
@@ -721,19 +710,18 @@ class Source1Voltage(SCPICmdRead):
               [SOURce[1|2]]``:VOLTage:CONCurrent``[``:STATe``] command is set to ON, then the units
               of the other channel are set the same.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:VOLTage:UNIT?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:VOLTage:UNIT?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:VOLTage:UNIT value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:VOLTage:UNIT {VPP|VRMS|DBM}
             - SOURce1:VOLTage:UNIT?
+            ```
         """
         return self._unit
 
@@ -741,7 +729,7 @@ class Source1Voltage(SCPICmdRead):
     def level(self) -> Source1VoltageLevel:
         """Return the ``SOURce1:VOLTage:LEVel`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:VOLTage:LEVel?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:VOLTage:LEVel?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -755,118 +743,113 @@ class Source1Voltage(SCPICmdRead):
 class Source1SweepTime(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:SWEep:TIME`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the sweep time for the sweep for the specified channel. The
           sweep time does not include hold time and return time. The setting range is 1 ms to 300 s.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:SWEep:TIME?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:SWEep:TIME?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:SWEep:TIME value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:SWEep:TIME {<seconds>|MINimum|MAXimum}
         - SOURce1:SWEep:TIME?
+        ```
     """
 
 
 class Source1SweepSpacing(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:SWEep:SPACing`` command.
 
-    **Description:**
+    Description:
         - The [SOURce[1|2]]``:SWEep:SPACing`` command selects linear or logarithmic spacing for the
           sweep for the specified channel. The query command returns the type for the sweep spacing
           for the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:SWEep:SPACing?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:SWEep:SPACing?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:SWEep:SPACing value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:SWEep:SPACing {LINear|LOGarithmic}
         - SOURce1:SWEep:SPACing?
+        ```
     """
 
 
 class Source1SweepRtime(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:SWEep:RTIMe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the sweep return time. Return time represents the amount of
           time from stop frequency through start frequency. Return time does not include hold time.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:SWEep:RTIMe?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:SWEep:RTIMe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:SWEep:RTIMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:SWEep:RTIMe {<seconds>|MINimum|MAXimum}
         - SOURce1:SWEep:RTIMe?
+        ```
     """
 
 
 class Source1SweepMode(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:SWEep:MODE`` command.
 
-    **Description:**
+    Description:
         - The [SOURce[1|2]]``:SWEep:MODE`` command selects auto or manual for the sweep mode for the
           specified channel. The query command returns the sweep mode for the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:SWEep:MODE?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:SWEep:MODE?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:SWEep:MODE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:SWEep:MODE {AUTO|MANual}
         - SOURce1:SWEep:MODE?
+        ```
     """
 
 
 class Source1SweepHtime(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:SWEep:HTIMe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the sweep hold time. Hold time represents the amount of time
           that the frequency must remain stable after reaching the stop frequency.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:SWEep:HTIMe?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:SWEep:HTIMe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:SWEep:HTIMe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:SWEep:HTIMe {<seconds>|MINimum|MAXimum}
         - SOURce1:SWEep:HTIMe?
+        ```
     """
 
 
 class Source1Sweep(SCPICmdRead):
     """The ``SOURce1:SWEep`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:SWEep?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:SWEep?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -891,23 +874,22 @@ class Source1Sweep(SCPICmdRead):
     def htime(self) -> Source1SweepHtime:
         """Return the ``SOURce1:SWEep:HTIMe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the sweep hold time. Hold time represents the amount of
               time that the frequency must remain stable after reaching the stop frequency.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:SWEep:HTIMe?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:SWEep:HTIMe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:SWEep:HTIMe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:SWEep:HTIMe {<seconds>|MINimum|MAXimum}
             - SOURce1:SWEep:HTIMe?
+            ```
         """
         return self._htime
 
@@ -915,23 +897,22 @@ class Source1Sweep(SCPICmdRead):
     def mode(self) -> Source1SweepMode:
         """Return the ``SOURce1:SWEep:MODE`` command.
 
-        **Description:**
+        Description:
             - The [SOURce[1|2]]``:SWEep:MODE`` command selects auto or manual for the sweep mode for
               the specified channel. The query command returns the sweep mode for the specified
               channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:SWEep:MODE?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:SWEep:MODE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:SWEep:MODE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:SWEep:MODE {AUTO|MANual}
             - SOURce1:SWEep:MODE?
+            ```
         """
         return self._mode
 
@@ -939,24 +920,23 @@ class Source1Sweep(SCPICmdRead):
     def rtime(self) -> Source1SweepRtime:
         """Return the ``SOURce1:SWEep:RTIMe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the sweep return time. Return time represents the amount
               of time from stop frequency through start frequency. Return time does not include hold
               time.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:SWEep:RTIMe?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:SWEep:RTIMe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:SWEep:RTIMe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:SWEep:RTIMe {<seconds>|MINimum|MAXimum}
             - SOURce1:SWEep:RTIMe?
+            ```
         """
         return self._rtime
 
@@ -964,24 +944,23 @@ class Source1Sweep(SCPICmdRead):
     def spacing(self) -> Source1SweepSpacing:
         """Return the ``SOURce1:SWEep:SPACing`` command.
 
-        **Description:**
+        Description:
             - The [SOURce[1|2]]``:SWEep:SPACing`` command selects linear or logarithmic spacing for
               the sweep for the specified channel. The query command returns the type for the sweep
               spacing for the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:SWEep:SPACing?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:SWEep:SPACing?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:SWEep:SPACing value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:SWEep:SPACing {LINear|LOGarithmic}
             - SOURce1:SWEep:SPACing?
+            ```
         """
         return self._spacing
 
@@ -989,23 +968,22 @@ class Source1Sweep(SCPICmdRead):
     def time(self) -> Source1SweepTime:
         """Return the ``SOURce1:SWEep:TIME`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the sweep time for the sweep for the specified channel.
               The sweep time does not include hold time and return time. The setting range is 1 ms
               to 300 s.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:SWEep:TIME?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:SWEep:TIME?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:SWEep:TIME value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:SWEep:TIME {<seconds>|MINimum|MAXimum}
             - SOURce1:SWEep:TIME?
+            ```
         """
         return self._time
 
@@ -1013,56 +991,54 @@ class Source1Sweep(SCPICmdRead):
 class Source1PwmState(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PWM:STATe`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables PWM modulation. The query command returns the state of
           PWM modulation. You can select only pulse waveform as a carrier waveform for PWM.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PWM:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PWM:STATe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:PWM:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PWM:STATe {ON|OFF|<NR1>}
         - SOURce1:PWM:STATe?
+        ```
     """
 
 
 class Source1PwmSource(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PWM:SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the source of modulating signal of PWM modulation for the
           specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PWM:SOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PWM:SOURce?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:PWM:SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PWM:SOURce [INTernal|EXTernal]
         - SOURce1:PWM:SOURce?
+        ```
     """
 
 
 class Source1PwmInternalFunctionEfile(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PWM:INTernal:FUNCtion:EFILe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries an EFILe name used as a modulating waveform for PWM
           modulation. A file name must be specified in the mass storage system. This command returns
           ' ' if there is no file in the mass storage.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PWM:INTernal:FUNCtion:EFILe?``
           query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PWM:INTernal:FUNCtion:EFILe?``
@@ -1070,39 +1046,37 @@ class Source1PwmInternalFunctionEfile(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``SOURce1:PWM:INTernal:FUNCtion:EFILe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PWM:INTernal:FUNCtion:EFILe <file_name>
         - SOURce1:PWM:INTernal:FUNCtion:EFILe?
+        ```
     """
 
 
 class Source1PwmInternalFunction(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PWM:INTernal:FUNCtion`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the modulating waveform of PWM modulation for the specified
           channel. You can use this command only when the internal modulation source is selected. If
           you specify EFILe when there is no EFILe or the EFILe is not yet defined, this command
           causes an error.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PWM:INTernal:FUNCtion?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PWM:INTernal:FUNCtion?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:PWM:INTernal:FUNCtion value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PWM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle |RAMP|NRAMp|PRNoise|USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
         - SOURce1:PWM:INTernal:FUNCtion?
+        ```
 
-    **Info:**
+    Info:
         - ``SINusoid``
         - ``SQUare``
         - ``TRIangle``
@@ -1129,12 +1103,12 @@ class Source1PwmInternalFunction(SCPICmdWrite, SCPICmdRead):
     def efile(self) -> Source1PwmInternalFunctionEfile:
         """Return the ``SOURce1:PWM:INTernal:FUNCtion:EFILe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries an EFILe name used as a modulating waveform for PWM
               modulation. A file name must be specified in the mass storage system. This command
               returns ' ' if there is no file in the mass storage.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PWM:INTernal:FUNCtion:EFILe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1143,12 +1117,11 @@ class Source1PwmInternalFunction(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce1:PWM:INTernal:FUNCtion:EFILe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PWM:INTernal:FUNCtion:EFILe <file_name>
             - SOURce1:PWM:INTernal:FUNCtion:EFILe?
+            ```
         """
         return self._efile
 
@@ -1156,33 +1129,32 @@ class Source1PwmInternalFunction(SCPICmdWrite, SCPICmdRead):
 class Source1PwmInternalFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PWM:INTernal:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the internal modulation frequency of PWM modulation for the
           specified channel. You can use this command only when the internal modulation source is
           selected. You can set the internal modulation frequency from 2 mHz to 50.00 kHz with
           resolution of 1 mHz. You can select the source of modulating signal by using the
           [SOURce[1|2]]``:PWM:SOURce`` [INTernal|EXTernal] command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PWM:INTernal:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PWM:INTernal:FREQuency?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:PWM:INTernal:FREQuency value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PWM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
         - SOURce1:PWM:INTernal:FREQuency?
+        ```
     """
 
 
 class Source1PwmInternal(SCPICmdRead):
     """The ``SOURce1:PWM:INTernal`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PWM:INTernal?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PWM:INTernal?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1201,26 +1173,25 @@ class Source1PwmInternal(SCPICmdRead):
     def frequency(self) -> Source1PwmInternalFrequency:
         """Return the ``SOURce1:PWM:INTernal:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the internal modulation frequency of PWM modulation for
               the specified channel. You can use this command only when the internal modulation
               source is selected. You can set the internal modulation frequency from 2 mHz to 50.00
               kHz with resolution of 1 mHz. You can select the source of modulating signal by using
               the [SOURce[1|2]]``:PWM:SOURce`` [INTernal|EXTernal] command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PWM:INTernal:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PWM:INTernal:FREQuency?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SOURce1:PWM:INTernal:FREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PWM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
             - SOURce1:PWM:INTernal:FREQuency?
+            ```
         """
         return self._frequency
 
@@ -1228,27 +1199,26 @@ class Source1PwmInternal(SCPICmdRead):
     def function(self) -> Source1PwmInternalFunction:
         """Return the ``SOURce1:PWM:INTernal:FUNCtion`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the modulating waveform of PWM modulation for the
               specified channel. You can use this command only when the internal modulation source
               is selected. If you specify EFILe when there is no EFILe or the EFILe is not yet
               defined, this command causes an error.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PWM:INTernal:FUNCtion?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PWM:INTernal:FUNCtion?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SOURce1:PWM:INTernal:FUNCtion value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PWM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle |RAMP|NRAMp|PRNoise|USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
             - SOURce1:PWM:INTernal:FUNCtion?
+            ```
 
-        **Info:**
+        Info:
             - ``SINusoid``
             - ``SQUare``
             - ``TRIangle``
@@ -1272,33 +1242,32 @@ class Source1PwmInternal(SCPICmdRead):
 class Source1PwmDeviationDcycle(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PWM:DEViation:DCYCle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the PWM deviation in percent for the specified channel. The
           setting range must meet the following conditions: Deviation ≤ Pulse Width - PWmin
           Deviation ≤ Pulse Period - Pulse Width - PWmin Deviation ≤ Pulse Width - 0.8 × (Leading
           Edge Time + Trailing Edge Time) Deviation ≤ Pulse Period - Pulse Width - 0.8 × (Leading
           Edge Time + Trailing Edge Time) where PWmin is the minimum pulse width.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PWM:DEViation:DCYCle?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PWM:DEViation:DCYCle?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:PWM:DEViation:DCYCle value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PWM:DEViation:DCYCle {<percent>|MINimum|MAXimum}
         - SOURce1:PWM:DEViation:DCYCle?
+        ```
     """
 
 
 class Source1PwmDeviation(SCPICmdRead):
     """The ``SOURce1:PWM:DEViation`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PWM:DEViation?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PWM:DEViation?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1315,26 +1284,25 @@ class Source1PwmDeviation(SCPICmdRead):
     def dcycle(self) -> Source1PwmDeviationDcycle:
         """Return the ``SOURce1:PWM:DEViation:DCYCle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the PWM deviation in percent for the specified channel.
               The setting range must meet the following conditions: Deviation ≤ Pulse Width - PWmin
               Deviation ≤ Pulse Period - Pulse Width - PWmin Deviation ≤ Pulse Width - 0.8 ×
               (Leading Edge Time + Trailing Edge Time) Deviation ≤ Pulse Period - Pulse Width - 0.8
               × (Leading Edge Time + Trailing Edge Time) where PWmin is the minimum pulse width.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PWM:DEViation:DCYCle?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PWM:DEViation:DCYCle?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SOURce1:PWM:DEViation:DCYCle value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PWM:DEViation:DCYCle {<percent>|MINimum|MAXimum}
             - SOURce1:PWM:DEViation:DCYCle?
+            ```
         """
         return self._dcycle
 
@@ -1342,7 +1310,7 @@ class Source1PwmDeviation(SCPICmdRead):
 class Source1Pwm(SCPICmdRead):
     """The ``SOURce1:PWM`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PWM?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PWM?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1365,7 +1333,7 @@ class Source1Pwm(SCPICmdRead):
     def internal(self) -> Source1PwmInternal:
         """Return the ``SOURce1:PWM:INTernal`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PWM:INTernal?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PWM:INTernal?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1380,22 +1348,21 @@ class Source1Pwm(SCPICmdRead):
     def source(self) -> Source1PwmSource:
         """Return the ``SOURce1:PWM:SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the source of modulating signal of PWM modulation for the
               specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PWM:SOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PWM:SOURce?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:PWM:SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PWM:SOURce [INTernal|EXTernal]
             - SOURce1:PWM:SOURce?
+            ```
         """
         return self._source
 
@@ -1403,22 +1370,21 @@ class Source1Pwm(SCPICmdRead):
     def state(self) -> Source1PwmState:
         """Return the ``SOURce1:PWM:STATe`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables PWM modulation. The query command returns the state
               of PWM modulation. You can select only pulse waveform as a carrier waveform for PWM.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PWM:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PWM:STATe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:PWM:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PWM:STATe {ON|OFF|<NR1>}
             - SOURce1:PWM:STATe?
+            ```
         """
         return self._state
 
@@ -1426,7 +1392,7 @@ class Source1Pwm(SCPICmdRead):
     def deviation(self) -> Source1PwmDeviation:
         """Return the ``SOURce1:PWM:DEViation`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PWM:DEViation?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PWM:DEViation?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -1440,7 +1406,7 @@ class Source1Pwm(SCPICmdRead):
 class Source1PulseWidth(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PULSe:WIDTh`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the pulse width for the specified channel. Pulse Width =
           Period ∞ Duty Cycle / 100 The pulse width must be less than the period. The setting range
           is 0.001% to 99.999% in terms of duty cycle. AFG3011 / 3011C: 80 ns to 999.99 s AFG3021B /
@@ -1449,69 +1415,66 @@ class Source1PulseWidth(SCPICmdWrite, SCPICmdRead):
           / 3252 / 3252C: 4 ns to 999.99 s Pulse Width ≤ Pulse Period - 0.8 ∞ (Leading Edge Time +
           Trailing Edge Time) Pulse Width ≥ 0.625 ∞ (Leading Edge Time + Trailing Edge Time)
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PULSe:WIDTh?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PULSe:WIDTh?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:PULSe:WIDTh value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PULSe:WIDTh {<seconds>|MINimum|MAXimum}
         - SOURce1:PULSe:WIDTh?
+        ```
     """
 
 
 class Source1PulseTransitionTrailing(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PULSe:TRANsition:TRAiling`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the trailing edge time of pulse waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PULSe:TRANsition:TRAiling?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PULSe:TRANsition:TRAiling?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``SOURce1:PULSe:TRANsition:TRAiling value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PULSe:TRANsition:TRAiling {<seconds>|MINimum| MAXimum}
         - SOURce1:PULSe:TRANsition:TRAiling?
+        ```
     """
 
 
 class Source1PulseTransitionLeading(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PULSe:TRANsition:LEADing`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the leading edge time of pulse waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PULSe:TRANsition:LEADing?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PULSe:TRANsition:LEADing?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``SOURce1:PULSe:TRANsition:LEADing value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PULSe:TRANsition:LEADing {<seconds>|MINimum| MAXimum}
         - SOURce1:PULSe:TRANsition:LEADing?
+        ```
     """
 
 
 class Source1PulseTransition(SCPICmdRead):
     """The ``SOURce1:PULSe:TRANsition`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PULSe:TRANsition?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PULSe:TRANsition?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -1530,10 +1493,10 @@ class Source1PulseTransition(SCPICmdRead):
     def trailing(self) -> Source1PulseTransitionTrailing:
         """Return the ``SOURce1:PULSe:TRANsition:TRAiling`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the trailing edge time of pulse waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PULSe:TRANsition:TRAiling?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1542,12 +1505,11 @@ class Source1PulseTransition(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce1:PULSe:TRANsition:TRAiling value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PULSe:TRANsition:TRAiling {<seconds>|MINimum| MAXimum}
             - SOURce1:PULSe:TRANsition:TRAiling?
+            ```
         """
         return self._trailing
 
@@ -1555,10 +1517,10 @@ class Source1PulseTransition(SCPICmdRead):
     def leading(self) -> Source1PulseTransitionLeading:
         """Return the ``SOURce1:PULSe:TRANsition:LEADing`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the leading edge time of pulse waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PULSe:TRANsition:LEADing?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1567,12 +1529,11 @@ class Source1PulseTransition(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce1:PULSe:TRANsition:LEADing value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PULSe:TRANsition:LEADing {<seconds>|MINimum| MAXimum}
             - SOURce1:PULSe:TRANsition:LEADing?
+            ```
         """
         return self._leading
 
@@ -1580,97 +1541,93 @@ class Source1PulseTransition(SCPICmdRead):
 class Source1PulsePeriod(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PULSe:PERiod`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the period for pulse waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PULSe:PERiod?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PULSe:PERiod?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:PULSe:PERiod value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PULSe:PERiod {<period>|MINimum|MAXimum}
         - SOURce1:PULSe:PERiod?
+        ```
     """
 
 
 class Source1PulseHold(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PULSe:HOLD`` command.
 
-    **Description:**
+    Description:
         - The [SOURce[1|2]]``:PULSe:HOLD`` command sets the arbitrary function generator to hold
           either pulse width or pulse duty. The [SOURce[1|2]]``:PULSe:HOLD?`` query returns WIDTh or
           DUTY.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PULSe:HOLD?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PULSe:HOLD?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:PULSe:HOLD value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PULSe:HOLD {WIDTh|DUTY}
         - SOURce1:PULSe:HOLD?
+        ```
     """
 
 
 class Source1PulseDelay(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PULSe:DELay`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the lead delay of the pulse waveform for the specified
           channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PULSe:DELay?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PULSe:DELay?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:PULSe:DELay value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PULSe:DELay {<delay>|MINimum|MAXimum}
         - SOURce1:PULSe:DELay?
+        ```
     """
 
 
 class Source1PulseDcycle(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PULSe:DCYCle`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the duty cycle of the pulse waveform for the specified
           channel. The setting range is 0.001% to 99.999% in increments of 0.001. The arbitrary
           function generator will hold the settings of leading edge and trailing edge when the duty
           cycle is varied. Refer to the [SOURce[1|2]]``:PULSe:WIDTh`` command for the setting range.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PULSe:DCYCle?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PULSe:DCYCle?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:PULSe:DCYCle value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PULSe:DCYCle {<percent>|MINimum|MAXimum}
         - SOURce1:PULSe:DCYCle?
+        ```
     """
 
 
 class Source1Pulse(SCPICmdRead):
     """The ``SOURce1:PULSe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PULSe?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PULSe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -1697,26 +1654,25 @@ class Source1Pulse(SCPICmdRead):
     def dcycle(self) -> Source1PulseDcycle:
         """Return the ``SOURce1:PULSe:DCYCle`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the duty cycle of the pulse waveform for the specified
               channel. The setting range is 0.001% to 99.999% in increments of 0.001. The arbitrary
               function generator will hold the settings of leading edge and trailing edge when the
               duty cycle is varied. Refer to the [SOURce[1|2]]``:PULSe:WIDTh`` command for the
               setting range.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PULSe:DCYCle?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PULSe:DCYCle?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:PULSe:DCYCle value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PULSe:DCYCle {<percent>|MINimum|MAXimum}
             - SOURce1:PULSe:DCYCle?
+            ```
         """
         return self._dcycle
 
@@ -1724,23 +1680,22 @@ class Source1Pulse(SCPICmdRead):
     def delay(self) -> Source1PulseDelay:
         """Return the ``SOURce1:PULSe:DELay`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the lead delay of the pulse waveform for the specified
               channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PULSe:DELay?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PULSe:DELay?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:PULSe:DELay value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PULSe:DELay {<delay>|MINimum|MAXimum}
             - SOURce1:PULSe:DELay?
+            ```
         """
         return self._delay
 
@@ -1748,23 +1703,22 @@ class Source1Pulse(SCPICmdRead):
     def hold(self) -> Source1PulseHold:
         """Return the ``SOURce1:PULSe:HOLD`` command.
 
-        **Description:**
+        Description:
             - The [SOURce[1|2]]``:PULSe:HOLD`` command sets the arbitrary function generator to hold
               either pulse width or pulse duty. The [SOURce[1|2]]``:PULSe:HOLD?`` query returns
               WIDTh or DUTY.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PULSe:HOLD?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PULSe:HOLD?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:PULSe:HOLD value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PULSe:HOLD {WIDTh|DUTY}
             - SOURce1:PULSe:HOLD?
+            ```
         """
         return self._hold
 
@@ -1772,22 +1726,21 @@ class Source1Pulse(SCPICmdRead):
     def period(self) -> Source1PulsePeriod:
         """Return the ``SOURce1:PULSe:PERiod`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the period for pulse waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PULSe:PERiod?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PULSe:PERiod?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:PULSe:PERiod value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PULSe:PERiod {<period>|MINimum|MAXimum}
             - SOURce1:PULSe:PERiod?
+            ```
         """
         return self._period
 
@@ -1795,7 +1748,7 @@ class Source1Pulse(SCPICmdRead):
     def transition(self) -> Source1PulseTransition:
         """Return the ``SOURce1:PULSe:TRANsition`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PULSe:TRANsition?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PULSe:TRANsition?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -1810,7 +1763,7 @@ class Source1Pulse(SCPICmdRead):
     def width(self) -> Source1PulseWidth:
         """Return the ``SOURce1:PULSe:WIDTh`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the pulse width for the specified channel. Pulse Width =
               Period ∞ Duty Cycle / 100 The pulse width must be less than the period. The setting
               range is 0.001% to 99.999% in terms of duty cycle. AFG3011 / 3011C: 80 ns to 999.99 s
@@ -1820,19 +1773,18 @@ class Source1Pulse(SCPICmdRead):
               (Leading Edge Time + Trailing Edge Time) Pulse Width ≥ 0.625 ∞ (Leading Edge Time +
               Trailing Edge Time)
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PULSe:WIDTh?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PULSe:WIDTh?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:PULSe:WIDTh value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PULSe:WIDTh {<seconds>|MINimum|MAXimum}
             - SOURce1:PULSe:WIDTh?
+            ```
         """
         return self._width
 
@@ -1840,94 +1792,90 @@ class Source1Pulse(SCPICmdRead):
 class Source1PmState(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PM:STATe`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables PM modulation. The query command returns the state of PM
           modulation. You can select a sine, square, ramp, or arbitrary waveform for the carrier
           waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PM:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PM:STATe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:PM:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PM:STATe {ON|OFF|<NR1>}
         - SOURce1:PM:STATe?
+        ```
     """
 
 
 class Source1PmSource(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PM:SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the source of modulation signal of PM modulation for the
           specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PM:SOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PM:SOURce?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:PM:SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PM:SOURce [INTernal|EXTernal]
         - SOURce1:PM:SOURce?
+        ```
     """
 
 
 class Source1PmInternalFunctionEfile(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PM:INTernal:FUNCtion:EFILe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries an EFILe name used as a modulating waveform for PM
           modulation. A file name must be specified in the mass storage system. This command returns
           ' ' if there is no file in the mass storage.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PM:INTernal:FUNCtion:EFILe?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PM:INTernal:FUNCtion:EFILe?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``SOURce1:PM:INTernal:FUNCtion:EFILe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PM:INTernal:FUNCtion:EFILe <file_name>
         - SOURce1:PM:INTernal:FUNCtion:EFILe?
+        ```
     """
 
 
 class Source1PmInternalFunction(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PM:INTernal:FUNCtion`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the modulating waveform of PM modulation for the specified
           channel. You can use this command only when the internal modulation source is selected.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PM:INTernal:FUNCtion?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PM:INTernal:FUNCtion?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:PM:INTernal:FUNCtion value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle| RAMP|NRAMp|PRNoise| USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
         - SOURce1:PM:INTernal:FUNCtion?
+        ```
 
-    **Info:**
+    Info:
         - ``SINusoid``
         - ``SQUare``
         - ``TRIangle``
@@ -1954,12 +1902,12 @@ class Source1PmInternalFunction(SCPICmdWrite, SCPICmdRead):
     def efile(self) -> Source1PmInternalFunctionEfile:
         """Return the ``SOURce1:PM:INTernal:FUNCtion:EFILe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries an EFILe name used as a modulating waveform for PM
               modulation. A file name must be specified in the mass storage system. This command
               returns ' ' if there is no file in the mass storage.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PM:INTernal:FUNCtion:EFILe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -1968,12 +1916,11 @@ class Source1PmInternalFunction(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce1:PM:INTernal:FUNCtion:EFILe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PM:INTernal:FUNCtion:EFILe <file_name>
             - SOURce1:PM:INTernal:FUNCtion:EFILe?
+            ```
         """
         return self._efile
 
@@ -1981,33 +1928,32 @@ class Source1PmInternalFunction(SCPICmdWrite, SCPICmdRead):
 class Source1PmInternalFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PM:INTernal:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the internal modulation frequency of PM modulation for the
           specified channel. You can use this command only when the internal modulation source is
           selected. You can set the internal modulation frequency from 2 mHz to 50.00 kHz with
           resolution of 1 mHz. You can select the source of modulating signal by using the
           [SOURce[1|2]]``:PM:SOURce`` [INTernal|EXTernal] command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PM:INTernal:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PM:INTernal:FREQuency?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:PM:INTernal:FREQuency value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
         - SOURce1:PM:INTernal:FREQuency?
+        ```
     """
 
 
 class Source1PmInternal(SCPICmdRead):
     """The ``SOURce1:PM:INTernal`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PM:INTernal?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PM:INTernal?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -2026,26 +1972,25 @@ class Source1PmInternal(SCPICmdRead):
     def frequency(self) -> Source1PmInternalFrequency:
         """Return the ``SOURce1:PM:INTernal:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the internal modulation frequency of PM modulation for
               the specified channel. You can use this command only when the internal modulation
               source is selected. You can set the internal modulation frequency from 2 mHz to 50.00
               kHz with resolution of 1 mHz. You can select the source of modulating signal by using
               the [SOURce[1|2]]``:PM:SOURce`` [INTernal|EXTernal] command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PM:INTernal:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PM:INTernal:FREQuency?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SOURce1:PM:INTernal:FREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
             - SOURce1:PM:INTernal:FREQuency?
+            ```
         """
         return self._frequency
 
@@ -2053,26 +1998,25 @@ class Source1PmInternal(SCPICmdRead):
     def function(self) -> Source1PmInternalFunction:
         """Return the ``SOURce1:PM:INTernal:FUNCtion`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the modulating waveform of PM modulation for the
               specified channel. You can use this command only when the internal modulation source
               is selected.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PM:INTernal:FUNCtion?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PM:INTernal:FUNCtion?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SOURce1:PM:INTernal:FUNCtion value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle| RAMP|NRAMp|PRNoise| USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
             - SOURce1:PM:INTernal:FUNCtion?
+            ```
 
-        **Info:**
+        Info:
             - ``SINusoid``
             - ``SQUare``
             - ``TRIangle``
@@ -2096,29 +2040,28 @@ class Source1PmInternal(SCPICmdRead):
 class Source1PmDeviation(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PM:DEViation`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the peak frequency deviation of PM modulation for the
           specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PM:DEViation?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PM:DEViation?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:PM:DEViation value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PM:DEViation {<deviation>|MINimum|MAXimum}
         - SOURce1:PM:DEViation?
+        ```
     """
 
 
 class Source1Pm(SCPICmdRead):
     """The ``SOURce1:PM`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PM?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PM?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2141,7 +2084,7 @@ class Source1Pm(SCPICmdRead):
     def internal(self) -> Source1PmInternal:
         """Return the ``SOURce1:PM:INTernal`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PM:INTernal?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PM:INTernal?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -2156,22 +2099,21 @@ class Source1Pm(SCPICmdRead):
     def source(self) -> Source1PmSource:
         """Return the ``SOURce1:PM:SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the source of modulation signal of PM modulation for the
               specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PM:SOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PM:SOURce?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:PM:SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PM:SOURce [INTernal|EXTernal]
             - SOURce1:PM:SOURce?
+            ```
         """
         return self._source
 
@@ -2179,23 +2121,22 @@ class Source1Pm(SCPICmdRead):
     def state(self) -> Source1PmState:
         """Return the ``SOURce1:PM:STATe`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables PM modulation. The query command returns the state of
               PM modulation. You can select a sine, square, ramp, or arbitrary waveform for the
               carrier waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PM:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PM:STATe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:PM:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PM:STATe {ON|OFF|<NR1>}
             - SOURce1:PM:STATe?
+            ```
         """
         return self._state
 
@@ -2203,23 +2144,22 @@ class Source1Pm(SCPICmdRead):
     def deviation(self) -> Source1PmDeviation:
         """Return the ``SOURce1:PM:DEViation`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the peak frequency deviation of PM modulation for the
               specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PM:DEViation?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PM:DEViation?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:PM:DEViation value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PM:DEViation {<deviation>|MINimum|MAXimum}
             - SOURce1:PM:DEViation?
+            ```
         """
         return self._deviation
 
@@ -2227,51 +2167,49 @@ class Source1Pm(SCPICmdRead):
 class Source1PhaseInitiate(SCPICmdWriteNoArguments):
     """The ``SOURce1:PHASe:INITiate`` command.
 
-    **Description:**
+    Description:
         - This command synchronizes the phase of CH 1 and CH 2 output waveforms. The arbitrary
           function generator performs the same operation if you specify either SOURce1 or SOURce2.
           If your arbitrary function generator is single-channel model, this command is not
           supported.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``SOURce1:PHASe:INITiate`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PHASe:INITiate
+        ```
     """
 
 
 class Source1PhaseAdjust(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:PHASe:ADJust`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the phase of output waveform for the specified channel. You
           can set the value in radians or degrees. If no units are specified, the default is RAD.
           The query command returns the value in RAD. This command is supported when you select a
           waveform other than DC, Noise, and Pulse.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PHASe:ADJust?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PHASe:ADJust?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:PHASe:ADJust value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:PHASe:ADJust {<phase>|MINimum|MAXimum}
         - SOURce1:PHASe:ADJust?
+        ```
     """
 
 
 class Source1Phase(SCPICmdRead):
     """The ``SOURce1:PHASe`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:PHASe?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:PHASe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2290,20 +2228,19 @@ class Source1Phase(SCPICmdRead):
     def initiate(self) -> Source1PhaseInitiate:
         """Return the ``SOURce1:PHASe:INITiate`` command.
 
-        **Description:**
+        Description:
             - This command synchronizes the phase of CH 1 and CH 2 output waveforms. The arbitrary
               function generator performs the same operation if you specify either SOURce1 or
               SOURce2. If your arbitrary function generator is single-channel model, this command is
               not supported.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``SOURce1:PHASe:INITiate`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PHASe:INITiate
+            ```
         """
         return self._initiate
 
@@ -2311,25 +2248,24 @@ class Source1Phase(SCPICmdRead):
     def adjust(self) -> Source1PhaseAdjust:
         """Return the ``SOURce1:PHASe:ADJust`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the phase of output waveform for the specified channel.
               You can set the value in radians or degrees. If no units are specified, the default is
               RAD. The query command returns the value in RAD. This command is supported when you
               select a waveform other than DC, Noise, and Pulse.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PHASe:ADJust?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PHASe:ADJust?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:PHASe:ADJust value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:PHASe:ADJust {<phase>|MINimum|MAXimum}
             - SOURce1:PHASe:ADJust?
+            ```
         """
         return self._adjust
 
@@ -2337,24 +2273,23 @@ class Source1Phase(SCPICmdRead):
 class Source1FunctionShape(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FUNCtion:SHAPe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the shape of the output waveform. When the specified user
           memory is deleted, this command causes an error if you select the user memory.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FUNCtion:SHAPe?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FUNCtion:SHAPe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:FUNCtion:SHAPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FUNCtion:SHAPe {SINusoid|SQUare|PULSe|RAMP |PRNoise|DC|SINC|GAUSsian|LORentz|ERISe|EDECay| HAVersine|USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
         - SOURce1:FUNCtion:SHAPe?
+        ```
 
-    **Info:**
+    Info:
         - ``USER[1]`` A user defined waveform saved in the user waveform memory or the EMEMory can
           be selected as an output waveform.
         - ``USER2`` A user defined waveform saved in the user waveform memory or the EMEMory can be
@@ -2373,30 +2308,29 @@ class Source1FunctionShape(SCPICmdWrite, SCPICmdRead):
 class Source1FunctionRampSymmetry(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FUNCtion:RAMP:SYMMetry`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the symmetry of ramp waveform for the specified channel. The
           setting range is 0.0% to 100.0%.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FUNCtion:RAMP:SYMMetry?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FUNCtion:RAMP:SYMMetry?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:FUNCtion:RAMP:SYMMetry value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FUNCtion:RAMP:SYMMetry {<symmetry>|MINimum|MAXimum}
         - SOURce1:FUNCtion:RAMP:SYMMetry?
+        ```
     """
 
 
 class Source1FunctionRamp(SCPICmdRead):
     """The ``SOURce1:FUNCtion:RAMP`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FUNCtion:RAMP?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FUNCtion:RAMP?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -2413,23 +2347,22 @@ class Source1FunctionRamp(SCPICmdRead):
     def symmetry(self) -> Source1FunctionRampSymmetry:
         """Return the ``SOURce1:FUNCtion:RAMP:SYMMetry`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the symmetry of ramp waveform for the specified channel.
               The setting range is 0.0% to 100.0%.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FUNCtion:RAMP:SYMMetry?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FUNCtion:RAMP:SYMMetry?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SOURce1:FUNCtion:RAMP:SYMMetry value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FUNCtion:RAMP:SYMMetry {<symmetry>|MINimum|MAXimum}
             - SOURce1:FUNCtion:RAMP:SYMMetry?
+            ```
         """
         return self._symmetry
 
@@ -2437,30 +2370,29 @@ class Source1FunctionRamp(SCPICmdRead):
 class Source1FunctionEfile(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FUNCtion:EFILe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries an EFILe name used as an output waveform. A file name must be
           specified in the mass storage system. This command returns ' ' if there is no file in the
           mass storage.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FUNCtion:EFILe?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FUNCtion:EFILe?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:FUNCtion:EFILe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FUNCtion:EFILe <file_name>
         - SOURce1:FUNCtion:EFILe?
+        ```
     """
 
 
 class Source1Function(SCPICmdRead):
     """The ``SOURce1:FUNCtion`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FUNCtion?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FUNCtion?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2481,24 +2413,23 @@ class Source1Function(SCPICmdRead):
     def efile(self) -> Source1FunctionEfile:
         """Return the ``SOURce1:FUNCtion:EFILe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries an EFILe name used as an output waveform. A file name
               must be specified in the mass storage system. This command returns ' ' if there is no
               file in the mass storage.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FUNCtion:EFILe?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FUNCtion:EFILe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:FUNCtion:EFILe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FUNCtion:EFILe <file_name>
             - SOURce1:FUNCtion:EFILe?
+            ```
         """
         return self._efile
 
@@ -2506,7 +2437,7 @@ class Source1Function(SCPICmdRead):
     def ramp(self) -> Source1FunctionRamp:
         """Return the ``SOURce1:FUNCtion:RAMP`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FUNCtion:RAMP?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FUNCtion:RAMP?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -2520,25 +2451,24 @@ class Source1Function(SCPICmdRead):
     def shape(self) -> Source1FunctionShape:
         """Return the ``SOURce1:FUNCtion:SHAPe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the shape of the output waveform. When the specified user
               memory is deleted, this command causes an error if you select the user memory.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FUNCtion:SHAPe?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FUNCtion:SHAPe?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:FUNCtion:SHAPe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FUNCtion:SHAPe {SINusoid|SQUare|PULSe|RAMP |PRNoise|DC|SINC|GAUSsian|LORentz|ERISe|EDECay| HAVersine|USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
             - SOURce1:FUNCtion:SHAPe?
+            ```
 
-        **Info:**
+        Info:
             - ``USER[1]`` A user defined waveform saved in the user waveform memory or the EMEMory
               can be selected as an output waveform.
             - ``USER2`` A user defined waveform saved in the user waveform memory or the EMEMory can
@@ -2558,76 +2488,73 @@ class Source1Function(SCPICmdRead):
 class Source1FskeyState(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FSKey:STATe`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables FSK modulation. The query command returns the state of
           FSK modulation. You can select a sine, square, ramp, or arbitrary waveform for the carrier
           waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FSKey:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FSKey:STATe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:FSKey:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FSKey:STATe {ON|OFF|<NR1>}
         - SOURce1:FSKey:STATe?
+        ```
     """
 
 
 class Source1FskeySource(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FSKey:SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the source of modulation signal of FSK modulation for the
           specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FSKey:SOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FSKey:SOURce?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:FSKey:SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FSKey:SOURce [INTernal|EXTernal]
         - SOURce1:FSKey:SOURce?
+        ```
     """
 
 
 class Source1FskeyInternalRate(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FSKey:INTernal:RATE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the internal modulation rate of FSK modulation for the
           specified channel. You can use this command only when the internal modulation source is
           selected.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FSKey:INTernal:RATE?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FSKey:INTernal:RATE?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:FSKey:INTernal:RATE value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FSKey:INTernal:RATE {<rate>|MINimum|MAXimum}
         - SOURce1:FSKey:INTernal:RATE?
+        ```
     """
 
 
 class Source1FskeyInternal(SCPICmdRead):
     """The ``SOURce1:FSKey:INTernal`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FSKey:INTernal?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FSKey:INTernal?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -2644,24 +2571,23 @@ class Source1FskeyInternal(SCPICmdRead):
     def rate(self) -> Source1FskeyInternalRate:
         """Return the ``SOURce1:FSKey:INTernal:RATE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the internal modulation rate of FSK modulation for the
               specified channel. You can use this command only when the internal modulation source
               is selected.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FSKey:INTernal:RATE?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FSKey:INTernal:RATE?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:FSKey:INTernal:RATE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FSKey:INTernal:RATE {<rate>|MINimum|MAXimum}
             - SOURce1:FSKey:INTernal:RATE?
+            ```
         """
         return self._rate
 
@@ -2669,30 +2595,29 @@ class Source1FskeyInternal(SCPICmdRead):
 class Source1FskeyFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FSKey:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the hop frequency of FSK modulation for the specified
           channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FSKey:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FSKey:FREQuency?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:FSKey:FREQuency value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FSKey:FREQuency {<frequency>|MINimum|MAXimum}
         - SOURce1:FSKey:FREQuency?
+        ```
     """
 
 
 class Source1Fskey(SCPICmdRead):
     """The ``SOURce1:FSKey`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FSKey?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FSKey?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -2715,7 +2640,7 @@ class Source1Fskey(SCPICmdRead):
     def internal(self) -> Source1FskeyInternal:
         """Return the ``SOURce1:FSKey:INTernal`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FSKey:INTernal?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FSKey:INTernal?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -2729,23 +2654,22 @@ class Source1Fskey(SCPICmdRead):
     def source(self) -> Source1FskeySource:
         """Return the ``SOURce1:FSKey:SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the source of modulation signal of FSK modulation for the
               specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FSKey:SOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FSKey:SOURce?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:FSKey:SOURce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FSKey:SOURce [INTernal|EXTernal]
             - SOURce1:FSKey:SOURce?
+            ```
         """
         return self._source
 
@@ -2753,24 +2677,23 @@ class Source1Fskey(SCPICmdRead):
     def state(self) -> Source1FskeyState:
         """Return the ``SOURce1:FSKey:STATe`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables FSK modulation. The query command returns the state
               of FSK modulation. You can select a sine, square, ramp, or arbitrary waveform for the
               carrier waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FSKey:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FSKey:STATe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:FSKey:STATe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FSKey:STATe {ON|OFF|<NR1>}
             - SOURce1:FSKey:STATe?
+            ```
         """
         return self._state
 
@@ -2778,23 +2701,22 @@ class Source1Fskey(SCPICmdRead):
     def frequency(self) -> Source1FskeyFrequency:
         """Return the ``SOURce1:FSKey:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the hop frequency of FSK modulation for the specified
               channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FSKey:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FSKey:FREQuency?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:FSKey:FREQuency value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FSKey:FREQuency {<frequency>|MINimum|MAXimum}
             - SOURce1:FSKey:FREQuency?
+            ```
         """
         return self._frequency
 
@@ -2802,7 +2724,7 @@ class Source1Fskey(SCPICmdRead):
 class Source1FrequencyStop(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FREQuency:STOP`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the start frequency of sweep for the specified channel. This
           command is always used with the [SOURce[1|2]]``:FREQuency:STARt`` command. The setting
           range of stop frequency depends on the waveform selected for sweep. For more information
@@ -2810,93 +2732,89 @@ class Source1FrequencyStop(SCPICmdWrite, SCPICmdRead):
           Verification Technical Reference, which can be found on the Tektronix Web site
           (www.tektronix.com/downloads).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FREQuency:STOP?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FREQuency:STOP?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:FREQuency:STOP value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FREQuency:STOP {<frequency>|MINimum|MAXimum}
         - SOURce1:FREQuency:STOP?
+        ```
     """
 
 
 class Source1FrequencyStart(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FREQuency:STARt`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the start frequency of sweep for the specified channel. This
           command is always used with the [SOURce[1|2]]``:FREQuency:STOP`` command. The setting
           range of start frequency depends on the waveform selected for sweep. For more information
           on the setting range, refer to the specifications page of Quick Start User Manual.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FREQuency:STARt?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FREQuency:STARt?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:FREQuency:STARt value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FREQuency:STARt {<frequency>|MINimum|MAXimum}
         - SOURce1:FREQuency:STARt?
+        ```
     """
 
 
 class Source1FrequencySpan(SCPICmdWrite):
     """The ``SOURce1:FREQuency:SPAN`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the span of frequency sweep for the specified channel. This
           command is always used with the [SOURce[1|2]]``:FREQuency:CENTer`` command. The setting
           range of frequency span depends on the waveform selected for sweep.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``SOURce1:FREQuency:SPAN value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FREQuency:SPAN {<frequency>|MINimum|MAXimum}
+        ```
     """
 
 
 class Source1FrequencyMode(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FREQuency:MODE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the frequency sweep state. You can select sine, square, ramp,
           or arbitrary waveform for sweep. The arbitrary function generator automatically changes to
           the Continuous mode if any waveform is selected other than sine, square, ramp, or an
           arbitrary waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FREQuency:MODE?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FREQuency:MODE?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:FREQuency:MODE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FREQuency:MODE {CW|FIXed|SWEep}
         - SOURce1:FREQuency:MODE?
+        ```
     """
 
 
 class Source1FrequencyFixed(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FREQuency:FIXed`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the frequency of output waveform for the specified channel.
           This command is available when the Run Mode is set to other than Sweep. The setting range
           of output frequency depends on the type of output waveform. If you change the type of
@@ -2906,26 +2824,25 @@ class Source1FrequencyFixed(SCPICmdWrite, SCPICmdRead):
           Performance Verification Technical Reference, which can be found on the Tektronix Web site
           (www.tektronix.com/downloads).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FREQuency:FIXed?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FREQuency:FIXed?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:FREQuency:FIXed value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FREQuency:FIXed {<frequency>|MINimum|MAXimum}
         - SOURce1:FREQuency:FIXed?
+        ```
     """
 
 
 class Source1FrequencyCw(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FREQuency:CW`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the frequency of output waveform for the specified channel.
           This command is available when the Run Mode is set to other than Sweep. The setting range
           of output frequency depends on the type of output waveform. If you change the type of
@@ -2935,25 +2852,24 @@ class Source1FrequencyCw(SCPICmdWrite, SCPICmdRead):
           Performance Verification Technical Reference, which can be found on the Tektronix Web site
           (www.tektronix.com/downloads).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FREQuency:CW?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FREQuency:CW?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:FREQuency:CW value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FREQuency:CW {<frequency>|MINimum|MAXimum}
         - SOURce1:FREQuency:CW?
+        ```
     """
 
 
 class Source1FrequencyConcurrentState(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FREQuency:CONCurrent:STATe`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables the function to copy the frequency (or period) of one
           channel to another channel. The [SOURce[1|2]]``:FREQuency:CONCurrent`` command copies the
           frequency (or period) of the channel specified by the header suffix to another channel. If
@@ -2961,26 +2877,25 @@ class Source1FrequencyConcurrentState(SCPICmdWrite, SCPICmdRead):
           [SOURce[1|2]]``:FREQuency:CONCurrent?`` command returns '0' (off) or '1' (on). If your
           arbitrary function generator is single-channel model, this command is not supported.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FREQuency:CONCurrent:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FREQuency:CONCurrent:STATe?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``SOURce1:FREQuency:CONCurrent:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FREQuency:CONCurrent:STATe {ON|OFF|<NR1>}
         - SOURce1:FREQuency:CONCurrent:STATe?
+        ```
     """
 
 
 class Source1FrequencyConcurrent(SCPICmdRead):
     """The ``SOURce1:FREQuency:CONCurrent`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FREQuency:CONCurrent?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FREQuency:CONCurrent?`` query
           and raise an AssertionError if the returned value does not match ``value``.
@@ -2997,7 +2912,7 @@ class Source1FrequencyConcurrent(SCPICmdRead):
     def state(self) -> Source1FrequencyConcurrentState:
         """Return the ``SOURce1:FREQuency:CONCurrent:STATe`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables the function to copy the frequency (or period) of one
               channel to another channel. The [SOURce[1|2]]``:FREQuency:CONCurrent`` command copies
               the frequency (or period) of the channel specified by the header suffix to another
@@ -3006,7 +2921,7 @@ class Source1FrequencyConcurrent(SCPICmdRead):
               If your arbitrary function generator is single-channel model, this command is not
               supported.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FREQuency:CONCurrent:STATe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3015,12 +2930,11 @@ class Source1FrequencyConcurrent(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce1:FREQuency:CONCurrent:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FREQuency:CONCurrent:STATe {ON|OFF|<NR1>}
             - SOURce1:FREQuency:CONCurrent:STATe?
+            ```
         """
         return self._state
 
@@ -3028,24 +2942,23 @@ class Source1FrequencyConcurrent(SCPICmdRead):
 class Source1FrequencyCenter(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FREQuency:CENTer`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the center frequency of sweep for the specified channel. This
           command is always used with the [SOURce[1|2]]``:FREQuency:SPAN`` command. The setting
           range of center frequency depends on the waveform selected for sweep.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FREQuency:CENTer?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FREQuency:CENTer?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:FREQuency:CENTer value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FREQuency:CENTer {<frequency>|MINimum|MAXimum}
         - SOURce1:FREQuency:CENTer?
+        ```
     """
 
 
@@ -3053,7 +2966,7 @@ class Source1FrequencyCenter(SCPICmdWrite, SCPICmdRead):
 class Source1Frequency(SCPICmdRead):
     """The ``SOURce1:FREQuency`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FREQuency?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -3084,24 +2997,23 @@ class Source1Frequency(SCPICmdRead):
     def center(self) -> Source1FrequencyCenter:
         """Return the ``SOURce1:FREQuency:CENTer`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the center frequency of sweep for the specified channel.
               This command is always used with the [SOURce[1|2]]``:FREQuency:SPAN`` command. The
               setting range of center frequency depends on the waveform selected for sweep.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FREQuency:CENTer?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FREQuency:CENTer?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:FREQuency:CENTer value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FREQuency:CENTer {<frequency>|MINimum|MAXimum}
             - SOURce1:FREQuency:CENTer?
+            ```
         """
         return self._center
 
@@ -3109,7 +3021,7 @@ class Source1Frequency(SCPICmdRead):
     def concurrent(self) -> Source1FrequencyConcurrent:
         """Return the ``SOURce1:FREQuency:CONCurrent`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FREQuency:CONCurrent?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FREQuency:CONCurrent?``
               query and raise an AssertionError if the returned value does not match ``value``.
@@ -3123,25 +3035,24 @@ class Source1Frequency(SCPICmdRead):
     def mode(self) -> Source1FrequencyMode:
         """Return the ``SOURce1:FREQuency:MODE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the frequency sweep state. You can select sine, square,
               ramp, or arbitrary waveform for sweep. The arbitrary function generator automatically
               changes to the Continuous mode if any waveform is selected other than sine, square,
               ramp, or an arbitrary waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FREQuency:MODE?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FREQuency:MODE?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:FREQuency:MODE value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FREQuency:MODE {CW|FIXed|SWEep}
             - SOURce1:FREQuency:MODE?
+            ```
         """
         return self._mode
 
@@ -3149,20 +3060,19 @@ class Source1Frequency(SCPICmdRead):
     def span(self) -> Source1FrequencySpan:
         """Return the ``SOURce1:FREQuency:SPAN`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the span of frequency sweep for the specified channel.
               This command is always used with the [SOURce[1|2]]``:FREQuency:CENTer`` command. The
               setting range of frequency span depends on the waveform selected for sweep.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``SOURce1:FREQuency:SPAN value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FREQuency:SPAN {<frequency>|MINimum|MAXimum}
+            ```
         """
         return self._span
 
@@ -3170,26 +3080,25 @@ class Source1Frequency(SCPICmdRead):
     def start(self) -> Source1FrequencyStart:
         """Return the ``SOURce1:FREQuency:STARt`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the start frequency of sweep for the specified channel.
               This command is always used with the [SOURce[1|2]]``:FREQuency:STOP`` command. The
               setting range of start frequency depends on the waveform selected for sweep. For more
               information on the setting range, refer to the specifications page of Quick Start User
               Manual.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FREQuency:STARt?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FREQuency:STARt?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:FREQuency:STARt value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FREQuency:STARt {<frequency>|MINimum|MAXimum}
             - SOURce1:FREQuency:STARt?
+            ```
         """
         return self._start
 
@@ -3197,7 +3106,7 @@ class Source1Frequency(SCPICmdRead):
     def stop(self) -> Source1FrequencyStop:
         """Return the ``SOURce1:FREQuency:STOP`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the start frequency of sweep for the specified channel.
               This command is always used with the [SOURce[1|2]]``:FREQuency:STARt`` command. The
               setting range of stop frequency depends on the waveform selected for sweep. For more
@@ -3205,19 +3114,18 @@ class Source1Frequency(SCPICmdRead):
               Performance Verification Technical Reference, which can be found on the Tektronix Web
               site (www.tektronix.com/downloads).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FREQuency:STOP?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FREQuency:STOP?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:FREQuency:STOP value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FREQuency:STOP {<frequency>|MINimum|MAXimum}
             - SOURce1:FREQuency:STOP?
+            ```
         """
         return self._stop
 
@@ -3225,7 +3133,7 @@ class Source1Frequency(SCPICmdRead):
     def cw(self) -> Source1FrequencyCw:
         """Return the ``SOURce1:FREQuency:CW`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the frequency of output waveform for the specified
               channel. This command is available when the Run Mode is set to other than Sweep. The
               setting range of output frequency depends on the type of output waveform. If you
@@ -3235,19 +3143,18 @@ class Source1Frequency(SCPICmdRead):
               the AFG3000 Series Specifications and Performance Verification Technical Reference,
               which can be found on the Tektronix Web site (www.tektronix.com/downloads).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FREQuency:CW?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FREQuency:CW?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:FREQuency:CW value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FREQuency:CW {<frequency>|MINimum|MAXimum}
             - SOURce1:FREQuency:CW?
+            ```
         """
         return self._cw
 
@@ -3255,7 +3162,7 @@ class Source1Frequency(SCPICmdRead):
     def fixed(self) -> Source1FrequencyFixed:
         """Return the ``SOURce1:FREQuency:FIXed`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the frequency of output waveform for the specified
               channel. This command is available when the Run Mode is set to other than Sweep. The
               setting range of output frequency depends on the type of output waveform. If you
@@ -3265,19 +3172,18 @@ class Source1Frequency(SCPICmdRead):
               the AFG3000 Series Specifications and Performance Verification Technical Reference,
               which can be found on the Tektronix Web site (www.tektronix.com/downloads).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FREQuency:FIXed?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FREQuency:FIXed?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:FREQuency:FIXed value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FREQuency:FIXed {<frequency>|MINimum|MAXimum}
             - SOURce1:FREQuency:FIXed?
+            ```
         """
         return self._fixed
 
@@ -3285,95 +3191,91 @@ class Source1Frequency(SCPICmdRead):
 class Source1FmState(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FM:STATe`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables FM modulation. The query command returns the state of FM
           modulation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FM:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FM:STATe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:FM:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FM:STATe {ON|OFF|<NR1>}
         - SOURce1:FM:STATe?
+        ```
     """
 
 
 class Source1FmSource(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FM:SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the source of modulating signal of FM modulation for the
           specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FM:SOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FM:SOURce?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:FM:SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FM:SOURce [INTernal|EXTernal]
         - SOURce1:FM:SOURce?
+        ```
     """
 
 
 class Source1FmInternalFunctionEfile(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FM:INTernal:FUNCtion:EFILe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries an EFILe name used as a modulating waveform for FM
           modulation. A file name must be specified in the mass storage system. This command returns
           ' ' if there is no file in the mass storage.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FM:INTernal:FUNCtion:EFILe?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FM:INTernal:FUNCtion:EFILe?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``SOURce1:FM:INTernal:FUNCtion:EFILe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FM:INTernal:FUNCtion:EFILe <file_name>
         - SOURce1:FM:INTernal:FUNCtion:EFILe?
+        ```
     """
 
 
 class Source1FmInternalFunction(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FM:INTernal:FUNCtion`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the modulating waveform of FM modulation for the specified
           channel. You can use this command only when the internal modulation source is selected. If
           you specify EFILe when there is no EFILe or the EFILe is not yet defined, this command
           causes an error.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FM:INTernal:FUNCtion?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FM:INTernal:FUNCtion?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:FM:INTernal:FUNCtion value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle| RAMP| NRAMp| PRNoise| USER[1]| USER<x>|EMEMory[1]|EMEMory2|EFILe}
         - SOURce1:FM:INTernal:FUNCtion?
+        ```
 
-    **Info:**
+    Info:
         - ``SINusoid``
         - ``SQUare``
         - ``TRIangle``
@@ -3400,12 +3302,12 @@ class Source1FmInternalFunction(SCPICmdWrite, SCPICmdRead):
     def efile(self) -> Source1FmInternalFunctionEfile:
         """Return the ``SOURce1:FM:INTernal:FUNCtion:EFILe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries an EFILe name used as a modulating waveform for FM
               modulation. A file name must be specified in the mass storage system. This command
               returns ' ' if there is no file in the mass storage.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FM:INTernal:FUNCtion:EFILe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -3414,12 +3316,11 @@ class Source1FmInternalFunction(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce1:FM:INTernal:FUNCtion:EFILe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FM:INTernal:FUNCtion:EFILe <file_name>
             - SOURce1:FM:INTernal:FUNCtion:EFILe?
+            ```
         """
         return self._efile
 
@@ -3427,33 +3328,32 @@ class Source1FmInternalFunction(SCPICmdWrite, SCPICmdRead):
 class Source1FmInternalFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FM:INTernal:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the internal modulation frequency of FM modulation for the
           specified channel. You can use this command only when the internal modulation source is
           selected. You can set the internal modulation frequency from 2 mHz to 50.00 kHz with
           resolution of 1 mHz. You can select the source of modulating signal by using the
           [SOURce[1|2]]``:FM:SOURce`` [INTernal|EXTernal] command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FM:INTernal:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FM:INTernal:FREQuency?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:FM:INTernal:FREQuency value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
         - SOURce1:FM:INTernal:FREQuency?
+        ```
     """
 
 
 class Source1FmInternal(SCPICmdRead):
     """The ``SOURce1:FM:INTernal`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FM:INTernal?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FM:INTernal?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -3472,26 +3372,25 @@ class Source1FmInternal(SCPICmdRead):
     def frequency(self) -> Source1FmInternalFrequency:
         """Return the ``SOURce1:FM:INTernal:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the internal modulation frequency of FM modulation for
               the specified channel. You can use this command only when the internal modulation
               source is selected. You can set the internal modulation frequency from 2 mHz to 50.00
               kHz with resolution of 1 mHz. You can select the source of modulating signal by using
               the [SOURce[1|2]]``:FM:SOURce`` [INTernal|EXTernal] command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FM:INTernal:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FM:INTernal:FREQuency?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SOURce1:FM:INTernal:FREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
             - SOURce1:FM:INTernal:FREQuency?
+            ```
         """
         return self._frequency
 
@@ -3499,27 +3398,26 @@ class Source1FmInternal(SCPICmdRead):
     def function(self) -> Source1FmInternalFunction:
         """Return the ``SOURce1:FM:INTernal:FUNCtion`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the modulating waveform of FM modulation for the
               specified channel. You can use this command only when the internal modulation source
               is selected. If you specify EFILe when there is no EFILe or the EFILe is not yet
               defined, this command causes an error.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FM:INTernal:FUNCtion?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FM:INTernal:FUNCtion?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SOURce1:FM:INTernal:FUNCtion value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle| RAMP| NRAMp| PRNoise| USER[1]| USER<x>|EMEMory[1]|EMEMory2|EFILe}
             - SOURce1:FM:INTernal:FUNCtion?
+            ```
 
-        **Info:**
+        Info:
             - ``SINusoid``
             - ``SQUare``
             - ``TRIangle``
@@ -3543,32 +3441,31 @@ class Source1FmInternal(SCPICmdRead):
 class Source1FmDeviation(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:FM:DEViation`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the peak frequency deviation of FM modulation for the
           specified channel. The setting range of frequency deviation depends on the waveform
           selected as the carrier. For more information, refer to the specifications in the AFG3000
           Series Specifications and Performance Verification Technical Reference, which can be found
           on the Tektronix Web site (www.tektronix.com/downloads).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FM:DEViation?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FM:DEViation?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:FM:DEViation value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:FM:DEViation {<deviation>|MINimum|MAXimum}
         - SOURce1:FM:DEViation?
+        ```
     """
 
 
 class Source1Fm(SCPICmdRead):
     """The ``SOURce1:FM`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:FM?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:FM?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -3591,7 +3488,7 @@ class Source1Fm(SCPICmdRead):
     def internal(self) -> Source1FmInternal:
         """Return the ``SOURce1:FM:INTernal`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FM:INTernal?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FM:INTernal?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -3606,22 +3503,21 @@ class Source1Fm(SCPICmdRead):
     def source(self) -> Source1FmSource:
         """Return the ``SOURce1:FM:SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the source of modulating signal of FM modulation for the
               specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FM:SOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FM:SOURce?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:FM:SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FM:SOURce [INTernal|EXTernal]
             - SOURce1:FM:SOURce?
+            ```
         """
         return self._source
 
@@ -3629,22 +3525,21 @@ class Source1Fm(SCPICmdRead):
     def state(self) -> Source1FmState:
         """Return the ``SOURce1:FM:STATe`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables FM modulation. The query command returns the state of
               FM modulation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FM:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FM:STATe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:FM:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FM:STATe {ON|OFF|<NR1>}
             - SOURce1:FM:STATe?
+            ```
         """
         return self._state
 
@@ -3652,26 +3547,25 @@ class Source1Fm(SCPICmdRead):
     def deviation(self) -> Source1FmDeviation:
         """Return the ``SOURce1:FM:DEViation`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the peak frequency deviation of FM modulation for the
               specified channel. The setting range of frequency deviation depends on the waveform
               selected as the carrier. For more information, refer to the specifications in the
               AFG3000 Series Specifications and Performance Verification Technical Reference, which
               can be found on the Tektronix Web site (www.tektronix.com/downloads).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FM:DEViation?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FM:DEViation?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:FM:DEViation value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:FM:DEViation {<deviation>|MINimum|MAXimum}
             - SOURce1:FM:DEViation?
+            ```
         """
         return self._deviation
 
@@ -3679,7 +3573,7 @@ class Source1Fm(SCPICmdRead):
 class Source1CombineFeed(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:COMBine:FEED`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether to add the internal noise or an external signal to an
           output signal for the specified channel. When you specify the internal noise, you can set
           or query the noise level by
@@ -3690,25 +3584,24 @@ class Source1CombineFeed(SCPICmdWrite, SCPICmdRead):
           internal noise and an external signal can be added simultaneously to the arbitrary
           function generator.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:COMBine:FEED?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:COMBine:FEED?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:COMBine:FEED value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:COMBine:FEED ['NOISe'|'EXTernal'|'BOTH'|'']
         - SOURce1:COMBine:FEED?
+        ```
     """
 
 
 class Source1Combine(SCPICmdRead):
     """The ``SOURce1:COMBine`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:COMBine?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:COMBine?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -3725,7 +3618,7 @@ class Source1Combine(SCPICmdRead):
     def feed(self) -> Source1CombineFeed:
         """Return the ``SOURce1:COMBine:FEED`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether to add the internal noise or an external signal
               to an output signal for the specified channel. When you specify the internal noise,
               you can set or query the noise level by
@@ -3736,19 +3629,18 @@ class Source1Combine(SCPICmdRead):
               the internal noise and an external signal can be added simultaneously to the arbitrary
               function generator.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:COMBine:FEED?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:COMBine:FEED?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:COMBine:FEED value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:COMBine:FEED ['NOISe'|'EXTernal'|'BOTH'|'']
             - SOURce1:COMBine:FEED?
+            ```
         """
         return self._feed
 
@@ -3756,97 +3648,93 @@ class Source1Combine(SCPICmdRead):
 class Source1BurstTdelay(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:BURSt:TDELay`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries delay time in the burst mode for the specified channel. It
           specifies a time delay between the trigger and the signal output. This command is
           available only in the Triggered burst mode. The setting range is 0.0 ns to 85.000 s with
           resolution of 100 ps or 5 digits.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:BURSt:TDELay?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:BURSt:TDELay?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:BURSt:TDELay value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:BURSt:TDELay {<delay>|MINimum|MAXimum}
         - SOURce1:BURSt:TDELay?
+        ```
     """
 
 
 class Source1BurstState(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:BURSt:STATe`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables the burst mode for the specified channel. The query
           command returns the state of burst mode.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:BURSt:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:BURSt:STATe?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:BURSt:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:BURSt:STATe {ON|OFF|<NR1>}
         - SOURce1:BURSt:STATe?
+        ```
     """
 
 
 class Source1BurstNcycles(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:BURSt:NCYCles`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the number of cycles (burst count) to be output in burst mode
           for the specified channel. The query command returns 9.9E+37 if the burst count is set to
           INFinity.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:BURSt:NCYCles?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:BURSt:NCYCles?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:BURSt:NCYCles value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:BURSt:NCYCles {<cycles>|INFinity|MINimum| MAXimum}
         - SOURce1:BURSt:NCYCles?
+        ```
     """
 
 
 class Source1BurstMode(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:BURSt:MODE`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the burst mode for the specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:BURSt:MODE?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:BURSt:MODE?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:BURSt:MODE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:BURSt:MODE {TRIGgered|GATed}
         - SOURce1:BURSt:MODE?
+        ```
     """
 
 
 class Source1Burst(SCPICmdRead):
     """The ``SOURce1:BURSt`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:BURSt?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:BURSt?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -3869,21 +3757,20 @@ class Source1Burst(SCPICmdRead):
     def mode(self) -> Source1BurstMode:
         """Return the ``SOURce1:BURSt:MODE`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the burst mode for the specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:BURSt:MODE?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:BURSt:MODE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:BURSt:MODE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:BURSt:MODE {TRIGgered|GATed}
             - SOURce1:BURSt:MODE?
+            ```
         """
         return self._mode
 
@@ -3891,24 +3778,23 @@ class Source1Burst(SCPICmdRead):
     def ncycles(self) -> Source1BurstNcycles:
         """Return the ``SOURce1:BURSt:NCYCles`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the number of cycles (burst count) to be output in burst
               mode for the specified channel. The query command returns 9.9E+37 if the burst count
               is set to INFinity.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:BURSt:NCYCles?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:BURSt:NCYCles?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:BURSt:NCYCles value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:BURSt:NCYCles {<cycles>|INFinity|MINimum| MAXimum}
             - SOURce1:BURSt:NCYCles?
+            ```
         """
         return self._ncycles
 
@@ -3916,25 +3802,24 @@ class Source1Burst(SCPICmdRead):
     def tdelay(self) -> Source1BurstTdelay:
         """Return the ``SOURce1:BURSt:TDELay`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries delay time in the burst mode for the specified channel.
               It specifies a time delay between the trigger and the signal output. This command is
               available only in the Triggered burst mode. The setting range is 0.0 ns to 85.000 s
               with resolution of 100 ps or 5 digits.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:BURSt:TDELay?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:BURSt:TDELay?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:BURSt:TDELay value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:BURSt:TDELay {<delay>|MINimum|MAXimum}
             - SOURce1:BURSt:TDELay?
+            ```
         """
         return self._tdelay
 
@@ -3942,23 +3827,22 @@ class Source1Burst(SCPICmdRead):
     def state(self) -> Source1BurstState:
         """Return the ``SOURce1:BURSt:STATe`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables the burst mode for the specified channel. The query
               command returns the state of burst mode.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:BURSt:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:BURSt:STATe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:BURSt:STATe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:BURSt:STATe {ON|OFF|<NR1>}
             - SOURce1:BURSt:STATe?
+            ```
         """
         return self._state
 
@@ -3966,95 +3850,91 @@ class Source1Burst(SCPICmdRead):
 class Source1AmState(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:AM:STATe`` command.
 
-    **Description:**
+    Description:
         - This command enables or disables AM modulation for the specified channel. The query
           command returns the state of AM modulation.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:AM:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:AM:STATe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:AM:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:AM:STATe {ON|OFF|<NR1>}
         - SOURce1:AM:STATe?
+        ```
     """
 
 
 class Source1AmSource(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:AM:SOURce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the source of modulating signal of AM modulation for the
           specified channel.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:AM:SOURce?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:AM:SOURce?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:AM:SOURce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:AM:SOURce [INTernal|EXTernal]
         - SOURce1:AM:SOURce?
+        ```
     """
 
 
 class Source1AmInternalFunctionEfile(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:AM:INTernal:FUNCtion:EFILe`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries an EFILe name used as a modulating waveform for AM
           modulation. A file name must be specified in the mass storage system. This command returns
           ' ' if there is no file in the mass storage.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:AM:INTernal:FUNCtion:EFILe?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:AM:INTernal:FUNCtion:EFILe?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``SOURce1:AM:INTernal:FUNCtion:EFILe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:AM:INTernal:FUNCtion:EFILe <file_name>
         - SOURce1:AM:INTernal:FUNCtion:EFILe?
+        ```
     """
 
 
 class Source1AmInternalFunction(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:AM:INTernal:FUNCtion`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the modulating waveform of AM modulation for the specified
           channel. You can use this command only when the internal modulation source is selected. If
           you specify EFILe when there is no EFILe or the EFILe is not yet defined, this command
           causes an error.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:AM:INTernal:FUNCtion?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:AM:INTernal:FUNCtion?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:AM:INTernal:FUNCtion value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:AM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle|RAMP |NRAMp|PRNoise| USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
         - SOURce1:AM:INTernal:FUNCtion?
+        ```
 
-    **Info:**
+    Info:
         - ``SINusoid``
         - ``SQUare``
         - ``TRIangle``
@@ -4081,12 +3961,12 @@ class Source1AmInternalFunction(SCPICmdWrite, SCPICmdRead):
     def efile(self) -> Source1AmInternalFunctionEfile:
         """Return the ``SOURce1:AM:INTernal:FUNCtion:EFILe`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries an EFILe name used as a modulating waveform for AM
               modulation. A file name must be specified in the mass storage system. This command
               returns ' ' if there is no file in the mass storage.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:AM:INTernal:FUNCtion:EFILe?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -4095,12 +3975,11 @@ class Source1AmInternalFunction(SCPICmdWrite, SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``SOURce1:AM:INTernal:FUNCtion:EFILe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:AM:INTernal:FUNCtion:EFILe <file_name>
             - SOURce1:AM:INTernal:FUNCtion:EFILe?
+            ```
         """
         return self._efile
 
@@ -4108,33 +3987,32 @@ class Source1AmInternalFunction(SCPICmdWrite, SCPICmdRead):
 class Source1AmInternalFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:AM:INTernal:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the internal modulation frequency of AM modulation for the
           specified channel. You can use this command only when the internal modulation source is
           selected. You can set the internal modulation frequency from 2 mHz to 50.00 kHz with
           resolution of 1 mHz. You can select the source of modulating signal by using the
           [SOURce[1|2]]``:AM:SOURce`` [INTernal|EXTernal] command.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:AM:INTernal:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:AM:INTernal:FREQuency?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:AM:INTernal:FREQuency value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:AM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
         - SOURce1:AM:INTernal:FREQuency?
+        ```
     """
 
 
 class Source1AmInternal(SCPICmdRead):
     """The ``SOURce1:AM:INTernal`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:AM:INTernal?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:AM:INTernal?`` query and raise
           an AssertionError if the returned value does not match ``value``.
@@ -4153,26 +4031,25 @@ class Source1AmInternal(SCPICmdRead):
     def frequency(self) -> Source1AmInternalFrequency:
         """Return the ``SOURce1:AM:INTernal:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the internal modulation frequency of AM modulation for
               the specified channel. You can use this command only when the internal modulation
               source is selected. You can set the internal modulation frequency from 2 mHz to 50.00
               kHz with resolution of 1 mHz. You can select the source of modulating signal by using
               the [SOURce[1|2]]``:AM:SOURce`` [INTernal|EXTernal] command.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:AM:INTernal:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:AM:INTernal:FREQuency?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SOURce1:AM:INTernal:FREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:AM:INTernal:FREQuency {<frequency>|MINimum|MAXimum}
             - SOURce1:AM:INTernal:FREQuency?
+            ```
         """
         return self._frequency
 
@@ -4180,27 +4057,26 @@ class Source1AmInternal(SCPICmdRead):
     def function(self) -> Source1AmInternalFunction:
         """Return the ``SOURce1:AM:INTernal:FUNCtion`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the modulating waveform of AM modulation for the
               specified channel. You can use this command only when the internal modulation source
               is selected. If you specify EFILe when there is no EFILe or the EFILe is not yet
               defined, this command causes an error.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:AM:INTernal:FUNCtion?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:AM:INTernal:FUNCtion?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``SOURce1:AM:INTernal:FUNCtion value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:AM:INTernal:FUNCtion {SINusoid|SQUare|TRIangle|RAMP |NRAMp|PRNoise| USER[1]|USER<x>|EMEMory[1]|EMEMory2|EFILe}
             - SOURce1:AM:INTernal:FUNCtion?
+            ```
 
-        **Info:**
+        Info:
             - ``SINusoid``
             - ``SQUare``
             - ``TRIangle``
@@ -4224,29 +4100,28 @@ class Source1AmInternal(SCPICmdRead):
 class Source1AmDepth(SCPICmdWrite, SCPICmdRead):
     """The ``SOURce1:AM:DEPTh`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the modulation depth of AM modulation for the specified
           channel. You can set the modulation depth from 0.0% to 120.0% with resolution of 0.1%.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:AM:DEPTh?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:AM:DEPTh?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``SOURce1:AM:DEPTh value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - SOURce1:AM:DEPTh {<depth>|MINimum|MAXimum}
         - SOURce1:AM:DEPTh?
+        ```
     """
 
 
 class Source1Am(SCPICmdRead):
     """The ``SOURce1:AM`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1:AM?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1:AM?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -4269,7 +4144,7 @@ class Source1Am(SCPICmdRead):
     def internal(self) -> Source1AmInternal:
         """Return the ``SOURce1:AM:INTernal`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:AM:INTernal?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:AM:INTernal?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -4284,22 +4159,21 @@ class Source1Am(SCPICmdRead):
     def source(self) -> Source1AmSource:
         """Return the ``SOURce1:AM:SOURce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the source of modulating signal of AM modulation for the
               specified channel.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:AM:SOURce?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:AM:SOURce?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:AM:SOURce value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:AM:SOURce [INTernal|EXTernal]
             - SOURce1:AM:SOURce?
+            ```
         """
         return self._source
 
@@ -4307,22 +4181,21 @@ class Source1Am(SCPICmdRead):
     def state(self) -> Source1AmState:
         """Return the ``SOURce1:AM:STATe`` command.
 
-        **Description:**
+        Description:
             - This command enables or disables AM modulation for the specified channel. The query
               command returns the state of AM modulation.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:AM:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:AM:STATe?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:AM:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:AM:STATe {ON|OFF|<NR1>}
             - SOURce1:AM:STATe?
+            ```
         """
         return self._state
 
@@ -4330,22 +4203,21 @@ class Source1Am(SCPICmdRead):
     def depth(self) -> Source1AmDepth:
         """Return the ``SOURce1:AM:DEPTh`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the modulation depth of AM modulation for the specified
               channel. You can set the modulation depth from 0.0% to 120.0% with resolution of 0.1%.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:AM:DEPTh?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:AM:DEPTh?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``SOURce1:AM:DEPTh value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - SOURce1:AM:DEPTh {<depth>|MINimum|MAXimum}
             - SOURce1:AM:DEPTh?
+            ```
         """
         return self._depth
 
@@ -4354,7 +4226,7 @@ class Source1Am(SCPICmdRead):
 class Source1(SCPICmdRead):
     """The ``SOURce1`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``SOURce1?`` query.
         - Using the ``.verify(value)`` method will send the ``SOURce1?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -4395,7 +4267,7 @@ class Source1(SCPICmdRead):
     def am(self) -> Source1Am:
         """Return the ``SOURce1:AM`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:AM?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:AM?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -4412,7 +4284,7 @@ class Source1(SCPICmdRead):
     def burst(self) -> Source1Burst:
         """Return the ``SOURce1:BURSt`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:BURSt?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:BURSt?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -4429,7 +4301,7 @@ class Source1(SCPICmdRead):
     def combine(self) -> Source1Combine:
         """Return the ``SOURce1:COMBine`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:COMBine?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:COMBine?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -4443,7 +4315,7 @@ class Source1(SCPICmdRead):
     def fm(self) -> Source1Fm:
         """Return the ``SOURce1:FM`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FM?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FM?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -4460,7 +4332,7 @@ class Source1(SCPICmdRead):
     def frequency(self) -> Source1Frequency:
         """Return the ``SOURce1:FREQuency`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FREQuency?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -4481,7 +4353,7 @@ class Source1(SCPICmdRead):
     def fskey(self) -> Source1Fskey:
         """Return the ``SOURce1:FSKey`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FSKey?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FSKey?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -4498,7 +4370,7 @@ class Source1(SCPICmdRead):
     def function(self) -> Source1Function:
         """Return the ``SOURce1:FUNCtion`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:FUNCtion?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:FUNCtion?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -4514,7 +4386,7 @@ class Source1(SCPICmdRead):
     def phase(self) -> Source1Phase:
         """Return the ``SOURce1:PHASe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PHASe?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PHASe?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -4529,7 +4401,7 @@ class Source1(SCPICmdRead):
     def pm(self) -> Source1Pm:
         """Return the ``SOURce1:PM`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PM?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PM?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -4546,7 +4418,7 @@ class Source1(SCPICmdRead):
     def pulse(self) -> Source1Pulse:
         """Return the ``SOURce1:PULSe`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PULSe?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PULSe?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -4565,7 +4437,7 @@ class Source1(SCPICmdRead):
     def pwm(self) -> Source1Pwm:
         """Return the ``SOURce1:PWM`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:PWM?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:PWM?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -4582,7 +4454,7 @@ class Source1(SCPICmdRead):
     def sweep(self) -> Source1Sweep:
         """Return the ``SOURce1:SWEep`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:SWEep?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:SWEep?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -4600,7 +4472,7 @@ class Source1(SCPICmdRead):
     def voltage(self) -> Source1Voltage:
         """Return the ``SOURce1:VOLTage`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``SOURce1:VOLTage?`` query.
             - Using the ``.verify(value)`` method will send the ``SOURce1:VOLTage?`` query and raise
               an AssertionError if the returned value does not match ``value``.

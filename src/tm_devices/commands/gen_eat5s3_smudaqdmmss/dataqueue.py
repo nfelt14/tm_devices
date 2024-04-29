@@ -12,8 +12,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - dataqueue.add()
     - dataqueue.clear()
     - dataqueue.count
@@ -34,7 +32,7 @@ class Dataqueue(BaseTSPCmd):
     Constants:
         - ``.CAPACITY``: The maximum number of entries that you can store in the data queue.
 
-    Properties/methods:
+    Properties and methods:
         - ``.add()``: The ``dataqueue.add()`` function.
         - ``.clear()``: The ``dataqueue.clear()`` function.
         - ``.count``: The ``dataqueue.count`` attribute.
@@ -51,17 +49,16 @@ class Dataqueue(BaseTSPCmd):
     def count(self) -> str:
         """Access the ``dataqueue.count`` attribute.
 
-        **Description:**
+        Description:
             - This attribute contains the number of items in the data queue.
 
-        **Usage:**
+        Usage:
             - Accessing this property will send the ``print(dataqueue.count)`` query.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - print(dataqueue.count)
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -79,14 +76,13 @@ class Dataqueue(BaseTSPCmd):
     def add(self, value: str, timeout: Optional[float] = None) -> str:
         """Run the ``dataqueue.add()`` function.
 
-        **Description:**
+        Description:
             - This function adds an entry to the data queue.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dataqueue.add()
+            ```
 
         Args:
             value: The data item to add; value can be of any type.
@@ -117,14 +113,13 @@ class Dataqueue(BaseTSPCmd):
     def clear(self) -> None:
         """Run the ``dataqueue.clear()`` function.
 
-        **Description:**
+        Description:
             - This function clears the data queue.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dataqueue.clear()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -140,14 +135,13 @@ class Dataqueue(BaseTSPCmd):
     def next(self, timeout: Optional[float] = None) -> str:
         """Run the ``dataqueue.next()`` function.
 
-        **Description:**
+        Description:
             - This function removes the next entry from the data queue.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - dataqueue.next()
+            ```
 
         Args:
             timeout (optional): The number of seconds to wait for data in the queue.

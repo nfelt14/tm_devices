@@ -12,8 +12,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - timer.measure.t()
     - timer.reset()
 """
@@ -29,21 +27,20 @@ if TYPE_CHECKING:
 class TimerMeasure(BaseTSPCmd):
     """The ``timer.measure`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.t()``: The ``timer.measure.t()`` function.
     """
 
     def t(self) -> str:
         """Run the ``timer.measure.t()`` function.
 
-        **Description:**
+        Description:
             - This function measures the elapsed time since the timer was last reset.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - timer.measure.t()
+            ```
 
         Returns:
             The result of the function call.
@@ -63,7 +60,7 @@ class TimerMeasure(BaseTSPCmd):
 class Timer(BaseTSPCmd):
     """The ``timer`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.measure``: The ``timer.measure`` command tree.
         - ``.reset()``: The ``timer.reset()`` function.
     """
@@ -76,7 +73,7 @@ class Timer(BaseTSPCmd):
     def measure(self) -> TimerMeasure:
         """Return the ``timer.measure`` command tree.
 
-        Sub-properties/methods:
+        Sub-properties and sub-methods:
             - ``.t()``: The ``timer.measure.t()`` function.
         """
         return self._measure
@@ -84,14 +81,13 @@ class Timer(BaseTSPCmd):
     def reset(self) -> None:
         """Run the ``timer.reset()`` function.
 
-        **Description:**
+        Description:
             - This function resets the timer to zero (0) seconds.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - timer.reset()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.

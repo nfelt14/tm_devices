@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - RRB:STATE {<NR1>|OFF|ON}
     - RRB:STATE?
 """
@@ -26,24 +24,23 @@ if TYPE_CHECKING:
 class RrbState(SCPICmdWrite, SCPICmdRead):
     """The ``RRB:STATE`` command.
 
-    **Description:**
+    Description:
         - This command returns or sets the state of the Results Readout bar (RRB). Visible if set to
           1. Hidden when set to 0.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RRB:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``RRB:STATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``RRB:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - RRB:STATE {<NR1>|OFF|ON}
         - RRB:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF or <NR1> = 0`` sets the state of the right results readout bar to off.
         - ``ON or <NR1> ≠ 0`` sets the state of the right results readout bar to on.
     """
@@ -52,7 +49,7 @@ class RrbState(SCPICmdWrite, SCPICmdRead):
 class Rrb(SCPICmdRead):
     """The ``RRB`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``RRB?`` query.
         - Using the ``.verify(value)`` method will send the ``RRB?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -69,24 +66,23 @@ class Rrb(SCPICmdRead):
     def state(self) -> RrbState:
         """Return the ``RRB:STATE`` command.
 
-        **Description:**
+        Description:
             - This command returns or sets the state of the Results Readout bar (RRB). Visible if
               set to 1. Hidden when set to 0.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``RRB:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``RRB:STATE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``RRB:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - RRB:STATE {<NR1>|OFF|ON}
             - RRB:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF or <NR1> = 0`` sets the state of the right results readout bar to off.
             - ``ON or <NR1> ≠ 0`` sets the state of the right results readout bar to on.
         """

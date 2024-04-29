@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - LIMit:BEEP {<NR1>|OFF|ON}
     - LIMit:BEEP?
     - LIMit:COMpare {RESet}
@@ -73,25 +71,24 @@ if TYPE_CHECKING:
 class LimitTemplateToleranceVertical(SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:TEMPlate:TOLerance:VERTical`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the amount in units of vertical divisions, by which the
           source waveform is varied vertically when creating the destination waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:TEMPlate:TOLerance:VERTical?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:TEMPlate:TOLerance:VERTical?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``LIMit:TEMPlate:TOLerance:VERTical value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:TEMPlate:TOLerance:VERTical <NR3>
         - LIMit:TEMPlate:TOLerance:VERTical?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the amount in vertical divisions, by which the current source waveform is
           allowed to deviate from the template waveform without exceeding the limits set in the
           limit test. The range is 0 to 5 divisions.
@@ -101,11 +98,11 @@ class LimitTemplateToleranceVertical(SCPICmdWrite, SCPICmdRead):
 class LimitTemplateToleranceHorizontal(SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:TEMPlate:TOLerance:HORizontal`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the amount in units of horizontal divisions, by which the
           source waveform is varied horizontally when creating the destination waveform.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:TEMPlate:TOLerance:HORizontal?``
           query.
         - Using the ``.verify(value)`` method will send the ``LIMit:TEMPlate:TOLerance:HORizontal?``
@@ -113,14 +110,13 @@ class LimitTemplateToleranceHorizontal(SCPICmdWrite, SCPICmdRead):
         - Using the ``.write(value)`` method will send the
           ``LIMit:TEMPlate:TOLerance:HORizontal value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:TEMPlate:TOLerance:HORizontal <NR3>
         - LIMit:TEMPlate:TOLerance:HORizontal?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is the amount in horizontal divisions, by which the current source waveform is
           allowed to deviate from the template waveform without exceeding the limits set in the
           limit test. The range is 0 to 5 divisions.
@@ -130,7 +126,7 @@ class LimitTemplateToleranceHorizontal(SCPICmdWrite, SCPICmdRead):
 class LimitTemplateTolerance(SCPICmdRead):
     """The ``LIMit:TEMPlate:TOLerance`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:TEMPlate:TOLerance?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:TEMPlate:TOLerance?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -151,11 +147,11 @@ class LimitTemplateTolerance(SCPICmdRead):
     def horizontal(self) -> LimitTemplateToleranceHorizontal:
         """Return the ``LIMit:TEMPlate:TOLerance:HORizontal`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the amount in units of horizontal divisions, by which the
               source waveform is varied horizontally when creating the destination waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:TEMPlate:TOLerance:HORizontal?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -164,14 +160,13 @@ class LimitTemplateTolerance(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``LIMit:TEMPlate:TOLerance:HORizontal value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:TEMPlate:TOLerance:HORizontal <NR3>
             - LIMit:TEMPlate:TOLerance:HORizontal?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the amount in horizontal divisions, by which the current source waveform
               is allowed to deviate from the template waveform without exceeding the limits set in
               the limit test. The range is 0 to 5 divisions.
@@ -182,11 +177,11 @@ class LimitTemplateTolerance(SCPICmdRead):
     def vertical(self) -> LimitTemplateToleranceVertical:
         """Return the ``LIMit:TEMPlate:TOLerance:VERTical`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the amount in units of vertical divisions, by which the
               source waveform is varied vertically when creating the destination waveform.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:TEMPlate:TOLerance:VERTical?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -195,14 +190,13 @@ class LimitTemplateTolerance(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``LIMit:TEMPlate:TOLerance:VERTical value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:TEMPlate:TOLerance:VERTical <NR3>
             - LIMit:TEMPlate:TOLerance:VERTical?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is the amount in vertical divisions, by which the current source waveform is
               allowed to deviate from the template waveform without exceeding the limits set in the
               limit test. The range is 0 to 5 divisions.
@@ -213,20 +207,19 @@ class LimitTemplateTolerance(SCPICmdRead):
 class LimitTemplateStore(SCPICmdWrite):
     """The ``LIMit:TEMPlate:STORe`` command.
 
-    **Description:**
+    Description:
         - This command (no query form) saves the specified source waveform to the specified
           reference or file name.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``LIMit:TEMPlate:STORe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:TEMPlate:STORe <wfm>,{REF<x>|<file path>}
+        ```
 
-    **Info:**
+    Info:
         - ``<wfm>`` specifies the waveform that will be saved as the template. The source of the
           waveform can be CH<x> (where x is 1 through 4 for four channel instruments), MATH<x>, or
           Ref<x> (where x is 1 through 4).
@@ -240,24 +233,23 @@ class LimitTemplateStore(SCPICmdWrite):
 class LimitTemplateSource(SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:TEMPlate:SOUrce`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the channel, math waveform, or reference waveform that the
           ``LIMIT:TEMPLATE:STORE`` command will use.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:TEMPlate:SOUrce?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:TEMPlate:SOUrce?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LIMit:TEMPlate:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:TEMPlate:SOUrce {CH<x>|MATH<x>|REF<x>}
         - LIMit:TEMPlate:SOUrce?
+        ```
 
-    **Info:**
+    Info:
         - ``CH<x>`` specifies the channel used by the ``LIMIT:TEMPLATE:STORE`` command. x has a
           minimum of 1 and a maximum of 4.
         - ``MATH<x>`` specifies the math waveform used by the ``LIMIT:TEMPLATE:STORE`` command. x
@@ -270,25 +262,24 @@ class LimitTemplateSource(SCPICmdWrite, SCPICmdRead):
 class LimitTemplateDestination(SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:TEMPlate:DESTination`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the destination reference waveform that the
           ``LIMIT:TEMPLATE:STORE`` command will use.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:TEMPlate:DESTination?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:TEMPlate:DESTination?`` query
           and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LIMit:TEMPlate:DESTination value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:TEMPlate:DESTination {REF<x>}
         - LIMit:TEMPlate:DESTination?
+        ```
 
-    **Info:**
+    Info:
         - ``REF<x>`` specifies the reference waveform destination in which the template waveform is
           to be stored.
     """
@@ -297,7 +288,7 @@ class LimitTemplateDestination(SCPICmdWrite, SCPICmdRead):
 class LimitTemplate(SCPICmdRead):
     """The ``LIMit:TEMPlate`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:TEMPlate?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:TEMPlate?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -320,25 +311,24 @@ class LimitTemplate(SCPICmdRead):
     def destination(self) -> LimitTemplateDestination:
         """Return the ``LIMit:TEMPlate:DESTination`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the destination reference waveform that the
               ``LIMIT:TEMPLATE:STORE`` command will use.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:TEMPlate:DESTination?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:TEMPlate:DESTination?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LIMit:TEMPlate:DESTination value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:TEMPlate:DESTination {REF<x>}
             - LIMit:TEMPlate:DESTination?
+            ```
 
-        **Info:**
+        Info:
             - ``REF<x>`` specifies the reference waveform destination in which the template waveform
               is to be stored.
         """
@@ -348,25 +338,24 @@ class LimitTemplate(SCPICmdRead):
     def source(self) -> LimitTemplateSource:
         """Return the ``LIMit:TEMPlate:SOUrce`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the channel, math waveform, or reference waveform that
               the ``LIMIT:TEMPLATE:STORE`` command will use.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:TEMPlate:SOUrce?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:TEMPlate:SOUrce?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LIMit:TEMPlate:SOUrce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:TEMPlate:SOUrce {CH<x>|MATH<x>|REF<x>}
             - LIMit:TEMPlate:SOUrce?
+            ```
 
-        **Info:**
+        Info:
             - ``CH<x>`` specifies the channel used by the ``LIMIT:TEMPLATE:STORE`` command. x has a
               minimum of 1 and a maximum of 4.
             - ``MATH<x>`` specifies the math waveform used by the ``LIMIT:TEMPLATE:STORE`` command.
@@ -380,21 +369,20 @@ class LimitTemplate(SCPICmdRead):
     def store(self) -> LimitTemplateStore:
         """Return the ``LIMit:TEMPlate:STORe`` command.
 
-        **Description:**
+        Description:
             - This command (no query form) saves the specified source waveform to the specified
               reference or file name.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``LIMit:TEMPlate:STORe value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:TEMPlate:STORe <wfm>,{REF<x>|<file path>}
+            ```
 
-        **Info:**
+        Info:
             - ``<wfm>`` specifies the waveform that will be saved as the template. The source of the
               waveform can be CH<x> (where x is 1 through 4 for four channel instruments), MATH<x>,
               or Ref<x> (where x is 1 through 4).
@@ -409,7 +397,7 @@ class LimitTemplate(SCPICmdRead):
     def tolerance(self) -> LimitTemplateTolerance:
         """Return the ``LIMit:TEMPlate:TOLerance`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:TEMPlate:TOLerance?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:TEMPlate:TOLerance?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -424,24 +412,23 @@ class LimitTemplate(SCPICmdRead):
 class LimitStoponviolation(SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:STOPOnviolation`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether acquisitions are stopped when the waveform data
           exceeds the test limits.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:STOPOnviolation?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:STOPOnviolation?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LIMit:STOPOnviolation value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:STOPOnviolation {<NR1>|OFF|ON}
         - LIMit:STOPOnviolation?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the stop on violation feature; any other value enables the stop on
           violation feature so that when the waveform data exceeds the limits set by the limit test,
           acquisitions are stopped. For queries, a 0 is returned if the stop on violation feature is
@@ -455,42 +442,40 @@ class LimitStoponviolation(SCPICmdWrite, SCPICmdRead):
 class LimitStatus(SCPICmdRead):
     """The ``LIMit:STATus`` command.
 
-    **Description:**
+    Description:
         - This command queries the state of limit testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:STATus?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:STATus?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:STATus?
+        ```
     """
 
 
 class LimitState(SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:STATE`` command.
 
-    **Description:**
+    Description:
         - This command sets limit testing on or off or queries whether limit testing is in effect.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:STATE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LIMit:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:STATE {<NR1>|OFF|ON}
         - LIMit:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the limit testing operation; any other value turns on limit testing
           of waveforms. For queries, a 0 is returned if limit testing is off; a 1 is returned if the
           limit testing is on.
@@ -502,24 +487,23 @@ class LimitState(SCPICmdWrite, SCPICmdRead):
 class LimitSrq(SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:SRQ`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether a Service Request Interrupt (SRQ) is generated when
           the waveform data falls outside of the test limits.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:SRQ?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:SRQ?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LIMit:SRQ value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:SRQ {<NR1>|OFF|ON}
         - LIMit:SRQ?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables sending an SRQ when the waveform data falls outside of the limits
           set by the limit test; any other value enables generation of an SRQ when the waveform data
           falls outside of the limits set by the limit test. For queries, a 0 is returned if SRQ is
@@ -535,24 +519,23 @@ class LimitSrq(SCPICmdWrite, SCPICmdRead):
 class LimitSavewfmFilename(SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:SAVEWFM:FILEName`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the path where waveforms or log files will be saved when the
           waveform data exceeds the limits set by the limit test.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:SAVEWFM:FILEName?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:SAVEWFM:FILEName?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LIMit:SAVEWFM:FILEName value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:SAVEWFM:FILEName <QString>
         - LIMit:SAVEWFM:FILEName?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` argument is a string containing the path of where the waveform will be
           saved.
     """
@@ -563,24 +546,23 @@ class LimitSavewfmFilename(SCPICmdWrite, SCPICmdRead):
 class LimitSavewfm(SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:SAVEWFM`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether the source waveform is saved when the source waveform
           data exceeds the test limits.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:SAVEWFM?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:SAVEWFM?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LIMit:SAVEWFM value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:SAVEWFM {<NR1>|OFF|ON}
         - LIMit:SAVEWFM?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the save waveform feature so that when the source waveform data
           exceeds the limits set by the limit test, the source waveform is not saved; any other
           value enables the save waveform feature so that when the source waveform data exceeds the
@@ -601,25 +583,24 @@ class LimitSavewfm(SCPICmdWrite, SCPICmdRead):
     def filename(self) -> LimitSavewfmFilename:
         """Return the ``LIMit:SAVEWFM:FILEName`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the path where waveforms or log files will be saved when
               the waveform data exceeds the limits set by the limit test.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:SAVEWFM:FILEName?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:SAVEWFM:FILEName?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LIMit:SAVEWFM:FILEName value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:SAVEWFM:FILEName <QString>
             - LIMit:SAVEWFM:FILEName?
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` argument is a string containing the path of where the waveform will be
               saved.
         """
@@ -629,24 +610,23 @@ class LimitSavewfm(SCPICmdWrite, SCPICmdRead):
 class LimitLog(SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:LOG`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether a log file is saved when the source waveform data
           exceeds the test limits.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:LOG?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:LOG?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LIMit:LOG value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:LOG {<NR1>|OFF|ON}
         - LIMit:LOG?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the save log file feature so that when the source waveform data
           exceeds the limits set by the limit test, a log file is not saved; any other value enables
           the save log file feature so that when the source waveform data exceeds the limits set by
@@ -660,24 +640,23 @@ class LimitLog(SCPICmdWrite, SCPICmdRead):
 class LimitLock(SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:LOCk`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether vertical scaling and positioning affect both source
           and template for template comparison pairs.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:LOCk?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:LOCk?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LIMit:LOCk value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:LOCk {<NR1>|OFF|ON}
         - LIMit:LOCk?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the lock feature; any other value enables the lock feature. For
           queries, a 0 is returned if the lock feature is off; a 1 is returned if the lock feature
           is on.
@@ -689,41 +668,39 @@ class LimitLock(SCPICmdWrite, SCPICmdRead):
 class LimitHighlighthitsReset(SCPICmdWriteNoArguments):
     """The ``LIMit:HIGHLIGHTHits:RESet`` command.
 
-    **Description:**
+    Description:
         - This command resets the hits highlighting for limit testing.
 
-    **Usage:**
+    Usage:
         - Using the ``.write()`` method will send the ``LIMit:HIGHLIGHTHits:RESet`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:HIGHLIGHTHits:RESet
+        ```
     """
 
 
 class LimitHighlighthits(SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:HIGHLIGHTHits`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether violation highlighting occurs when limit testing is
           active, and, if the RESET argument is set, clears the highlighting.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:HIGHLIGHTHits?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:HIGHLIGHTHits?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LIMit:HIGHLIGHTHits value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:HIGHLIGHTHits {<NR1>|OFF|ON}
         - LIMit:HIGHLIGHTHits?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the violation highlighting when limit testing is active; any other
           value enables the violation highlighting feature when limit testing is active. For
           queries, a 0 is returned if the violation highlighting feature is off; a 1 is returned if
@@ -743,17 +720,16 @@ class LimitHighlighthits(SCPICmdWrite, SCPICmdRead):
     def reset(self) -> LimitHighlighthitsReset:
         """Return the ``LIMit:HIGHLIGHTHits:RESet`` command.
 
-        **Description:**
+        Description:
             - This command resets the hits highlighting for limit testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.write()`` method will send the ``LIMit:HIGHLIGHTHits:RESet`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:HIGHLIGHTHits:RESet
+            ```
         """
         return self._reset
 
@@ -761,26 +737,25 @@ class LimitHighlighthits(SCPICmdWrite, SCPICmdRead):
 class LimitHardcopy(SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:HARDCopy`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether a hard copy operation is executed on the waveform
           when any waveform data exceeds the limit set in the limit test. ``LIMit:STATE`` must be
           set to ON for the hard copy operation to execute. The hard copy operation uses the port
           and prints in the format and layout specified by the HARDCopy commands.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:HARDCopy?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:HARDCopy?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LIMit:HARDCopy value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:HARDCopy {<NR1>|OFF|ON}
         - LIMit:HARDCopy?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the hard copy operation; any other value turns on the hard copy
           operation for the waveform when any waveform data exceeds the limits set by the limit
           test. For queries, a 0 is returned if the hard copy operation is off; a 1 is returned if
@@ -794,24 +769,23 @@ class LimitHardcopy(SCPICmdWrite, SCPICmdRead):
 class LimitEmail(SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:EMail`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries whether an e-mail is generated when the source waveform data
           exceeds the limits specified for the limit test.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:EMail?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:EMail?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LIMit:EMail value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:EMail {<NR1>|OFF|ON}
         - LIMit:EMail?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the e-mail feature so that when the source waveform data exceeds
           the limits set by the limit test, an e-mail is not generated; any other value enables the
           e-mail feature so that when the source waveform data exceeds the limits set by the limit
@@ -825,25 +799,24 @@ class LimitEmail(SCPICmdWrite, SCPICmdRead):
 class LimitCompareRefItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:COMpare:REF<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the template against which to compare the reference waveform
           specified by x, which can be 1 through 4. The template can be a waveform saved in any of
           the reference locations (REF1 through REF4) or none.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:COMpare:REF<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:COMpare:REF<x>?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LIMit:COMpare:REF<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:COMpare:REF<x> {NONe|REF<x>}
         - LIMit:COMpare:REF<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``NONe`` argument turns off template testing for the reference waveform specified by
           REF<x>.
         - ``REF<x>`` argument selects which reference waveform to use as the template against which
@@ -854,25 +827,24 @@ class LimitCompareRefItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
 class LimitCompareMathItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:COMpare:MATH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the template against which to compare the math waveform
           specified by x, which can be 1 through 4. The template can be a waveform saved in any of
           the reference locations (REF1 through REF4) or none.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:COMpare:MATH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:COMpare:MATH<x>?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LIMit:COMpare:MATH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:COMpare:MATH<x> {NONe|REF<x>}
         - LIMit:COMpare:MATH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``NONe`` argument turns off template testing for the math waveform specified by MATH<x>.
         - ``REF<x>`` argument selects which reference waveform to use as the template against which
           to compare the math waveform specified by MATH<x>.
@@ -882,25 +854,24 @@ class LimitCompareMathItem(ValidatedDynamicNumberCmd, SCPICmdWrite, SCPICmdRead)
 class LimitCompareChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:COMpare:CH<x>`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the template against which to compare the waveform acquired
           from the channel specified by x. The template can be a waveform saved in any of the
           reference locations (REF1 through REF4) or none.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:COMpare:CH<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:COMpare:CH<x>?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LIMit:COMpare:CH<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:COMpare:CH<x> {NONe|REF<x>}
         - LIMit:COMpare:CH<x>?
+        ```
 
-    **Info:**
+    Info:
         - ``NONe`` turns off template testing for the channel specified by CH<x>.
         - ``REF<x>`` selects which channel waveform to use as the template against which to compare
           the waveforms acquired by the specified channel (CH<x>).
@@ -910,19 +881,18 @@ class LimitCompareChannel(ValidatedChannel, SCPICmdWrite, SCPICmdRead):
 class LimitCompare(SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:COMpare`` command.
 
-    **Description:**
+    Description:
         - This command resets the Limit Test comparison template.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``LIMit:COMpare value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:COMpare {RESet}
+        ```
 
-    **Info:**
+    Info:
         - ``RESet`` resets the Limit template to 'None.'.
 
     Properties:
@@ -947,26 +917,25 @@ class LimitCompare(SCPICmdWrite, SCPICmdRead):
     def ch(self) -> Dict[int, LimitCompareChannel]:
         """Return the ``LIMit:COMpare:CH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the template against which to compare the waveform
               acquired from the channel specified by x. The template can be a waveform saved in any
               of the reference locations (REF1 through REF4) or none.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:COMpare:CH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:COMpare:CH<x>?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LIMit:COMpare:CH<x> value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:COMpare:CH<x> {NONe|REF<x>}
             - LIMit:COMpare:CH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``NONe`` turns off template testing for the channel specified by CH<x>.
             - ``REF<x>`` selects which channel waveform to use as the template against which to
               compare the waveforms acquired by the specified channel (CH<x>).
@@ -977,26 +946,25 @@ class LimitCompare(SCPICmdWrite, SCPICmdRead):
     def math(self) -> Dict[int, LimitCompareMathItem]:
         """Return the ``LIMit:COMpare:MATH<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the template against which to compare the math waveform
               specified by x, which can be 1 through 4. The template can be a waveform saved in any
               of the reference locations (REF1 through REF4) or none.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:COMpare:MATH<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:COMpare:MATH<x>?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LIMit:COMpare:MATH<x> value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:COMpare:MATH<x> {NONe|REF<x>}
             - LIMit:COMpare:MATH<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``NONe`` argument turns off template testing for the math waveform specified by
               MATH<x>.
             - ``REF<x>`` argument selects which reference waveform to use as the template against
@@ -1008,26 +976,25 @@ class LimitCompare(SCPICmdWrite, SCPICmdRead):
     def ref(self) -> Dict[int, LimitCompareRefItem]:
         """Return the ``LIMit:COMpare:REF<x>`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries the template against which to compare the reference
               waveform specified by x, which can be 1 through 4. The template can be a waveform
               saved in any of the reference locations (REF1 through REF4) or none.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:COMpare:REF<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:COMpare:REF<x>?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LIMit:COMpare:REF<x> value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:COMpare:REF<x> {NONe|REF<x>}
             - LIMit:COMpare:REF<x>?
+            ```
 
-        **Info:**
+        Info:
             - ``NONe`` argument turns off template testing for the reference waveform specified by
               REF<x>.
             - ``REF<x>`` argument selects which reference waveform to use as the template against
@@ -1039,24 +1006,23 @@ class LimitCompare(SCPICmdWrite, SCPICmdRead):
 class LimitBeep(SCPICmdWrite, SCPICmdRead):
     """The ``LIMit:BEEP`` command.
 
-    **Description:**
+    Description:
         - This command causes the instrument to beep when the waveform data exceeds the limits set
           in the limit test ( ``LIMit:STATE`` must be on).
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit:BEEP?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit:BEEP?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``LIMit:BEEP value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit:BEEP {<NR1>|OFF|ON}
         - LIMit:BEEP?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` = 0 disables the beep; any other value enables the beep.
         - ``OFF`` disables the beep.
         - ``ON`` enables the beep.
@@ -1067,19 +1033,18 @@ class LimitBeep(SCPICmdWrite, SCPICmdRead):
 class Limit(SCPICmdRead):
     """The ``LIMit`` command.
 
-    **Description:**
+    Description:
         - This query-only command returns all settings for the Limit commands.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``LIMit?`` query.
         - Using the ``.verify(value)`` method will send the ``LIMit?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - LIMit?
+        ```
 
     Properties:
         - ``.beep``: The ``LIMit:BEEP`` command.
@@ -1117,24 +1082,23 @@ class Limit(SCPICmdRead):
     def beep(self) -> LimitBeep:
         """Return the ``LIMit:BEEP`` command.
 
-        **Description:**
+        Description:
             - This command causes the instrument to beep when the waveform data exceeds the limits
               set in the limit test ( ``LIMit:STATE`` must be on).
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:BEEP?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:BEEP?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LIMit:BEEP value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:BEEP {<NR1>|OFF|ON}
             - LIMit:BEEP?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the beep; any other value enables the beep.
             - ``OFF`` disables the beep.
             - ``ON`` enables the beep.
@@ -1145,19 +1109,18 @@ class Limit(SCPICmdRead):
     def compare(self) -> LimitCompare:
         """Return the ``LIMit:COMpare`` command.
 
-        **Description:**
+        Description:
             - This command resets the Limit Test comparison template.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``LIMit:COMpare value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:COMpare {RESet}
+            ```
 
-        **Info:**
+        Info:
             - ``RESet`` resets the Limit template to 'None.'.
 
         Sub-properties:
@@ -1171,24 +1134,23 @@ class Limit(SCPICmdRead):
     def email(self) -> LimitEmail:
         """Return the ``LIMit:EMail`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether an e-mail is generated when the source waveform
               data exceeds the limits specified for the limit test.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:EMail?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:EMail?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LIMit:EMail value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:EMail {<NR1>|OFF|ON}
             - LIMit:EMail?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the e-mail feature so that when the source waveform data
               exceeds the limits set by the limit test, an e-mail is not generated; any other value
               enables the e-mail feature so that when the source waveform data exceeds the limits
@@ -1204,26 +1166,25 @@ class Limit(SCPICmdRead):
     def hardcopy(self) -> LimitHardcopy:
         """Return the ``LIMit:HARDCopy`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether a hard copy operation is executed on the waveform
               when any waveform data exceeds the limit set in the limit test. ``LIMit:STATE`` must
               be set to ON for the hard copy operation to execute. The hard copy operation uses the
               port and prints in the format and layout specified by the HARDCopy commands.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:HARDCopy?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:HARDCopy?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LIMit:HARDCopy value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:HARDCopy {<NR1>|OFF|ON}
             - LIMit:HARDCopy?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the hard copy operation; any other value turns on the hard copy
               operation for the waveform when any waveform data exceeds the limits set by the limit
               test. For queries, a 0 is returned if the hard copy operation is off; a 1 is returned
@@ -1238,25 +1199,24 @@ class Limit(SCPICmdRead):
     def highlighthits(self) -> LimitHighlighthits:
         """Return the ``LIMit:HIGHLIGHTHits`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether violation highlighting occurs when limit testing
               is active, and, if the RESET argument is set, clears the highlighting.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:HIGHLIGHTHits?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:HIGHLIGHTHits?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LIMit:HIGHLIGHTHits value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:HIGHLIGHTHits {<NR1>|OFF|ON}
             - LIMit:HIGHLIGHTHits?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the violation highlighting when limit testing is active; any
               other value enables the violation highlighting feature when limit testing is active.
               For queries, a 0 is returned if the violation highlighting feature is off; a 1 is
@@ -1273,24 +1233,23 @@ class Limit(SCPICmdRead):
     def lock(self) -> LimitLock:
         """Return the ``LIMit:LOCk`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether vertical scaling and positioning affect both
               source and template for template comparison pairs.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:LOCk?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:LOCk?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LIMit:LOCk value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:LOCk {<NR1>|OFF|ON}
             - LIMit:LOCk?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the lock feature; any other value enables the lock feature. For
               queries, a 0 is returned if the lock feature is off; a 1 is returned if the lock
               feature is on.
@@ -1303,24 +1262,23 @@ class Limit(SCPICmdRead):
     def log(self) -> LimitLog:
         """Return the ``LIMit:LOG`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether a log file is saved when the source waveform data
               exceeds the test limits.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:LOG?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:LOG?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LIMit:LOG value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:LOG {<NR1>|OFF|ON}
             - LIMit:LOG?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the save log file feature so that when the source waveform data
               exceeds the limits set by the limit test, a log file is not saved; any other value
               enables the save log file feature so that when the source waveform data exceeds the
@@ -1335,24 +1293,23 @@ class Limit(SCPICmdRead):
     def savewfm(self) -> LimitSavewfm:
         """Return the ``LIMit:SAVEWFM`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether the source waveform is saved when the source
               waveform data exceeds the test limits.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:SAVEWFM?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:SAVEWFM?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LIMit:SAVEWFM value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:SAVEWFM {<NR1>|OFF|ON}
             - LIMit:SAVEWFM?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the save waveform feature so that when the source waveform data
               exceeds the limits set by the limit test, the source waveform is not saved; any other
               value enables the save waveform feature so that when the source waveform data exceeds
@@ -1371,24 +1328,23 @@ class Limit(SCPICmdRead):
     def srq(self) -> LimitSrq:
         """Return the ``LIMit:SRQ`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether a Service Request Interrupt (SRQ) is generated
               when the waveform data falls outside of the test limits.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:SRQ?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:SRQ?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LIMit:SRQ value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:SRQ {<NR1>|OFF|ON}
             - LIMit:SRQ?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables sending an SRQ when the waveform data falls outside of the
               limits set by the limit test; any other value enables generation of an SRQ when the
               waveform data falls outside of the limits set by the limit test. For queries, a 0 is
@@ -1405,24 +1361,23 @@ class Limit(SCPICmdRead):
     def state(self) -> LimitState:
         """Return the ``LIMit:STATE`` command.
 
-        **Description:**
+        Description:
             - This command sets limit testing on or off or queries whether limit testing is in
               effect.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:STATE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LIMit:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:STATE {<NR1>|OFF|ON}
             - LIMit:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the limit testing operation; any other value turns on limit
               testing of waveforms. For queries, a 0 is returned if limit testing is off; a 1 is
               returned if the limit testing is on.
@@ -1435,19 +1390,18 @@ class Limit(SCPICmdRead):
     def status(self) -> LimitStatus:
         """Return the ``LIMit:STATus`` command.
 
-        **Description:**
+        Description:
             - This command queries the state of limit testing.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:STATus?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:STATus?`` query and raise an
               AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:STATus?
+            ```
         """
         return self._status
 
@@ -1455,25 +1409,24 @@ class Limit(SCPICmdRead):
     def stoponviolation(self) -> LimitStoponviolation:
         """Return the ``LIMit:STOPOnviolation`` command.
 
-        **Description:**
+        Description:
             - This command sets or queries whether acquisitions are stopped when the waveform data
               exceeds the test limits.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:STOPOnviolation?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:STOPOnviolation?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``LIMit:STOPOnviolation value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - LIMit:STOPOnviolation {<NR1>|OFF|ON}
             - LIMit:STOPOnviolation?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` = 0 disables the stop on violation feature; any other value enables the stop
               on violation feature so that when the waveform data exceeds the limits set by the
               limit test, acquisitions are stopped. For queries, a 0 is returned if the stop on
@@ -1488,7 +1441,7 @@ class Limit(SCPICmdRead):
     def template(self) -> LimitTemplate:
         """Return the ``LIMit:TEMPlate`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``LIMit:TEMPlate?`` query.
             - Using the ``.verify(value)`` method will send the ``LIMit:TEMPlate?`` query and raise
               an AssertionError if the returned value does not match ``value``.

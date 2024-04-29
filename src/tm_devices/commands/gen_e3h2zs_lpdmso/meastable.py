@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - MEASTABle:ADDNew <QString>
     - MEASTABle:DELETE <QString>
 """
@@ -26,20 +24,19 @@ if TYPE_CHECKING:
 class MeastableDelete(SCPICmdWrite):
     """The ``MEASTABle:DELETE`` command.
 
-    **Description:**
+    Description:
         - This command removes the requested measurement results view table from the scope
           application.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MEASTABle:DELETE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASTABle:DELETE <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies a measurement results view table to remove.
     """
 
@@ -49,20 +46,19 @@ class MeastableDelete(SCPICmdWrite):
 class MeastableAddnew(SCPICmdWrite):
     """The ``MEASTABle:ADDNew`` command.
 
-    **Description:**
+    Description:
         - This command adds a new measurement results view table to the scope application. The
           results view table can be named through the argument sent to the command.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MEASTABle:ADDNew value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MEASTABle:ADDNew <QString>
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` specifies a new measurement results view table to the scope application.
     """
 
@@ -72,7 +68,7 @@ class MeastableAddnew(SCPICmdWrite):
 class Meastable(SCPICmdRead):
     """The ``MEASTABle`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MEASTABle?`` query.
         - Using the ``.verify(value)`` method will send the ``MEASTABle?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -91,20 +87,19 @@ class Meastable(SCPICmdRead):
     def addnew(self) -> MeastableAddnew:
         """Return the ``MEASTABle:ADDNew`` command.
 
-        **Description:**
+        Description:
             - This command adds a new measurement results view table to the scope application. The
               results view table can be named through the argument sent to the command.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MEASTABle:ADDNew value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASTABle:ADDNew <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies a new measurement results view table to the scope application.
         """
         return self._addnew
@@ -113,20 +108,19 @@ class Meastable(SCPICmdRead):
     def delete(self) -> MeastableDelete:
         """Return the ``MEASTABle:DELETE`` command.
 
-        **Description:**
+        Description:
             - This command removes the requested measurement results view table from the scope
               application.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MEASTABle:DELETE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MEASTABle:DELETE <QString>
+            ```
 
-        **Info:**
+        Info:
             - ``<QString>`` specifies a measurement results view table to remove.
         """
         return self._delete

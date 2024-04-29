@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - ACTive:MODE {NORMal|CALibration|DIAGnostic}
     - ACTive:MODE?
 """
@@ -26,7 +24,7 @@ if TYPE_CHECKING:
 class ActiveMode(SCPICmdWrite, SCPICmdRead):
     """The ``ACTive:MODE`` command.
 
-    **Description:**
+    Description:
         - This command enables and disables access to diagnostics or calibration. When the active
           mode is DIAGnostic or CALibration, all other non-diagnostic and non-calibration commands
           are ignored and no action occurs. If a test or procedure is in progress, errors are not
@@ -42,20 +40,19 @@ class ActiveMode(SCPICmdWrite, SCPICmdRead):
           action with an operation complete command (``*OPC``) to ensure the command has finished
           before other commands are processed.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTive:MODE?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTive:MODE?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``ACTive:MODE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - ACTive:MODE {NORMal|CALibration|DIAGnostic}
         - ACTive:MODE?
+        ```
 
-    **Info:**
+    Info:
         - ``NORMal`` disables any active state for either calibration or diagnostics. When entering
           the active state of normal, the hardware is set to a default state and the previous system
           state is restored and waveform playout is set to off.
@@ -70,7 +67,7 @@ class ActiveMode(SCPICmdWrite, SCPICmdRead):
 class Active(SCPICmdRead):
     """The ``ACTive`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``ACTive?`` query.
         - Using the ``.verify(value)`` method will send the ``ACTive?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -87,7 +84,7 @@ class Active(SCPICmdRead):
     def mode(self) -> ActiveMode:
         """Return the ``ACTive:MODE`` command.
 
-        **Description:**
+        Description:
             - This command enables and disables access to diagnostics or calibration. When the
               active mode is DIAGnostic or CALibration, all other non-diagnostic and non-calibration
               commands are ignored and no action occurs. If a test or procedure is in progress,
@@ -104,20 +101,19 @@ class Active(SCPICmdRead):
               operation complete command (``*OPC``) to ensure the command has finished before other
               commands are processed.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``ACTive:MODE?`` query.
             - Using the ``.verify(value)`` method will send the ``ACTive:MODE?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``ACTive:MODE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - ACTive:MODE {NORMal|CALibration|DIAGnostic}
             - ACTive:MODE?
+            ```
 
-        **Info:**
+        Info:
             - ``NORMal`` disables any active state for either calibration or diagnostics. When
               entering the active state of normal, the hardware is set to a default state and the
               previous system state is restored and waveform playout is set to off.

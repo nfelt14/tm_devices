@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - OUTPut[n]:FILTer:LPASs:FREQuency {<NR3>|INFinity}
     - OUTPut[n]:FILTer:LPASs:FREQuency?
     - OUTPut[n]:STATe <output_state>
@@ -28,25 +26,24 @@ if TYPE_CHECKING:
 class OutputItemState(SCPICmdWrite, SCPICmdRead):
     """The ``OUTPut[n]:STATe`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the output state of the arbitrary waveform
           generator. Setting the output state of a channel to ON will switch on its analog output
           signal and marker.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut[n]:STATe?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut[n]:STATe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``OUTPut[n]:STATe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - OUTPut[n]:STATe <output_state>
         - OUTPut[n]:STATe?
+        ```
 
-    **Info:**
+    Info:
         - ``<output_state>`` ::=<Boolean>.
         - ``0`` sets the channel output to False (OFF).
         - ``1`` sets the channel output to True (ON).
@@ -56,26 +53,25 @@ class OutputItemState(SCPICmdWrite, SCPICmdRead):
 class OutputItemFilterLpassFrequency(SCPICmdWrite, SCPICmdRead):
     """The ``OUTPut[n]:FILTer:LPASs:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This command and query sets or returns the low-pass filter frequency of the filter.
           INFinity is same as Through (no filter). This command is not available on instruments with
           option 02 or option 06.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut[n]:FILTer:LPASs:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut[n]:FILTer:LPASs:FREQuency?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the
           ``OUTPut[n]:FILTer:LPASs:FREQuency value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - OUTPut[n]:FILTer:LPASs:FREQuency {<NR3>|INFinity}
         - OUTPut[n]:FILTer:LPASs:FREQuency?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>``
     """
 
@@ -83,7 +79,7 @@ class OutputItemFilterLpassFrequency(SCPICmdWrite, SCPICmdRead):
 class OutputItemFilterLpass(SCPICmdRead):
     """The ``OUTPut[n]:FILTer:LPASs`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut[n]:FILTer:LPASs?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut[n]:FILTer:LPASs?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -100,12 +96,12 @@ class OutputItemFilterLpass(SCPICmdRead):
     def frequency(self) -> OutputItemFilterLpassFrequency:
         """Return the ``OUTPut[n]:FILTer:LPASs:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the low-pass filter frequency of the filter.
               INFinity is same as Through (no filter). This command is not available on instruments
               with option 02 or option 06.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut[n]:FILTer:LPASs:FREQuency?``
               query.
             - Using the ``.verify(value)`` method will send the
@@ -114,14 +110,13 @@ class OutputItemFilterLpass(SCPICmdRead):
             - Using the ``.write(value)`` method will send the
               ``OUTPut[n]:FILTer:LPASs:FREQuency value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - OUTPut[n]:FILTer:LPASs:FREQuency {<NR3>|INFinity}
             - OUTPut[n]:FILTer:LPASs:FREQuency?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>``
         """
         return self._frequency
@@ -130,7 +125,7 @@ class OutputItemFilterLpass(SCPICmdRead):
 class OutputItemFilter(SCPICmdRead):
     """The ``OUTPut[n]:FILTer`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut[n]:FILTer?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut[n]:FILTer?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -147,7 +142,7 @@ class OutputItemFilter(SCPICmdRead):
     def lpass(self) -> OutputItemFilterLpass:
         """Return the ``OUTPut[n]:FILTer:LPASs`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut[n]:FILTer:LPASs?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut[n]:FILTer:LPASs?`` query
               and raise an AssertionError if the returned value does not match ``value``.
@@ -161,7 +156,7 @@ class OutputItemFilter(SCPICmdRead):
 class OutputItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``OUTPut[n]`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``OUTPut[n]?`` query.
         - Using the ``.verify(value)`` method will send the ``OUTPut[n]?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -180,7 +175,7 @@ class OutputItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def filter(self) -> OutputItemFilter:
         """Return the ``OUTPut[n]:FILTer`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut[n]:FILTer?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut[n]:FILTer?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -194,25 +189,24 @@ class OutputItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def state(self) -> OutputItemState:
         """Return the ``OUTPut[n]:STATe`` command.
 
-        **Description:**
+        Description:
             - This command and query sets or returns the output state of the arbitrary waveform
               generator. Setting the output state of a channel to ON will switch on its analog
               output signal and marker.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``OUTPut[n]:STATe?`` query.
             - Using the ``.verify(value)`` method will send the ``OUTPut[n]:STATe?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``OUTPut[n]:STATe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - OUTPut[n]:STATe <output_state>
             - OUTPut[n]:STATe?
+            ```
 
-        **Info:**
+        Info:
             - ``<output_state>`` ::=<Boolean>.
             - ``0`` sets the channel output to False (OFF).
             - ``1`` sets the channel output to True (ON).

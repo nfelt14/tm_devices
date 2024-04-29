@@ -11,8 +11,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - upgrade.previous()
     - upgrade.unit()
 """
@@ -28,7 +26,7 @@ if TYPE_CHECKING:
 class Upgrade(BaseTSPCmd):
     """The ``upgrade`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.previous()``: The ``upgrade.previous()`` function.
         - ``.unit()``: The ``upgrade.unit()`` function.
     """
@@ -39,14 +37,13 @@ class Upgrade(BaseTSPCmd):
     def previous(self) -> str:
         """Run the ``upgrade.previous()`` function.
 
-        **Description:**
+        Description:
             - This function returns to a previous version of the 2461 firmware.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - upgrade.previous()
+            ```
 
         Returns:
             The result of the function call.
@@ -65,14 +62,13 @@ class Upgrade(BaseTSPCmd):
     def unit(self) -> None:
         """Run the ``upgrade.unit()`` function.
 
-        **Description:**
+        Description:
             - This function upgrades the 2461 firmware.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - upgrade.unit()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.

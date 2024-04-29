@@ -1,6 +1,5 @@
 black
 graphviz
-griffe-typingdoc
 mkdocs
 mkdocs-codeinclude-plugin
 mkdocs-ezglossary-plugin

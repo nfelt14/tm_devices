@@ -12,8 +12,6 @@ Please report an issue if one is found.
 
 Attributes and Functions:
 
-::
-
     - io.close()
     - io.flush()
     - io.input()
@@ -35,7 +33,7 @@ if TYPE_CHECKING:
 class Io(BaseTSPCmd):
     """The ``io`` command tree.
 
-    Properties/methods:
+    Properties and methods:
         - ``.close()``: The ``io.close()`` function.
         - ``.flush()``: The ``io.flush()`` function.
         - ``.input()``: The ``io.input()`` function.
@@ -52,14 +50,13 @@ class Io(BaseTSPCmd):
     def close(self, file: Optional[str] = None) -> None:
         """Run the ``io.close()`` function.
 
-        **Description:**
+        Description:
             - This function closes a file.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - io.close()
+            ```
 
         Args:
             file (optional): The descriptor of the file to close.
@@ -79,14 +76,13 @@ class Io(BaseTSPCmd):
     def flush(self) -> None:
         """Run the ``io.flush()`` function.
 
-        **Description:**
+        Description:
             - This function saves buffered data to a file.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - io.flush()
+            ```
 
         Raises:
             tm_devices.commands.NoDeviceProvidedError: Indicates that no device connection exists.
@@ -102,15 +98,14 @@ class Io(BaseTSPCmd):
     def input(self, newfile: Optional[str] = None) -> str:
         """Run the ``io.input()`` function.
 
-        **Description:**
+        Description:
             - This function assigns a previously opened file, or opens a new file, as the default
               input file.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - io.input()
+            ```
 
         Args:
             newfile (optional): A string representing the path of a file to open as the default
@@ -136,14 +131,13 @@ class Io(BaseTSPCmd):
     def open(self, path: str, mode: Optional[str] = None) -> str:
         """Run the ``io.open()`` function.
 
-        **Description:**
+        Description:
             - This function opens a file for later reference.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - io.open()
+            ```
 
         Args:
             path: The path of the file to open.
@@ -175,15 +169,14 @@ class Io(BaseTSPCmd):
     def output(self, newfile: Optional[str] = None) -> str:
         """Run the ``io.output()`` function.
 
-        **Description:**
+        Description:
             - This function assigns a previously opened file or opens a new file as the default
               output file.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - io.output()
+            ```
 
         Args:
             newfile (optional): A file descriptor to assign (or the path of a file to open) as the
@@ -209,14 +202,13 @@ class Io(BaseTSPCmd):
     def read(self, format_: Optional[str] = None) -> str:
         """Run the ``io.read()`` function.
 
-        **Description:**
+        Description:
             - This function reads data from the default input file.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - io.read()
+            ```
 
         Args:
             format_ (optional): A string or number indicating the type of data to be read.
@@ -241,14 +233,13 @@ class Io(BaseTSPCmd):
     def type(self, obj: str) -> str:
         """Run the ``io.type()`` function.
 
-        **Description:**
+        Description:
             - This function checks whether or not a given object is a file handle.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - io.type()
+            ```
 
         Args:
             obj: Object to check.
@@ -270,14 +261,13 @@ class Io(BaseTSPCmd):
     def write(self, data: Optional[str] = None) -> None:
         """Run the ``io.write()`` function.
 
-        **Description:**
+        Description:
             - This function writes data to the default output file.
 
-        **TSP Syntax:**
-
-        ::
-
+        TSP Syntax:
+            ```
             - io.write()
+            ```
 
         Args:
             data (optional): The data to be written.

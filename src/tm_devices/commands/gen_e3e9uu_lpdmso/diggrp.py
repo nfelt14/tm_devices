@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - DIGGRP<x>:D<x>:THReshold <NR3>
     - DIGGRP<x>:D<x>:THReshold?
 """
@@ -32,25 +30,24 @@ if TYPE_CHECKING:
 class DiggrpItemDigitalBitThreshold(SCPICmdWrite, SCPICmdRead):
     """The ``DIGGRP<x>:D<x>:THReshold`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the threshold level in volts for the specified digital channel. If the
           source channel doesn't exist, a hardware missing error event is set.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIGGRP<x>:D<x>:THReshold?`` query.
         - Using the ``.verify(value)`` method will send the ``DIGGRP<x>:D<x>:THReshold?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``DIGGRP<x>:D<x>:THReshold value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - DIGGRP<x>:D<x>:THReshold <NR3>
         - DIGGRP<x>:D<x>:THReshold?
+        ```
 
-    **Info:**
+    Info:
         - ``DIGGRP<x>`` is the channel number.
         - ``D<x>`` is the digital channel bit number (0-7).
         - ``<NR3>`` is the threshold level in volts for the specified digital channel.
@@ -60,12 +57,12 @@ class DiggrpItemDigitalBitThreshold(SCPICmdWrite, SCPICmdRead):
 class DiggrpItemDigitalBit(ValidatedDigitalBit, SCPICmdRead):
     """The ``DIGGRP<x>:D<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIGGRP<x>:D<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``DIGGRP<x>:D<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``DIGGRP<x>`` is the channel number.
         - ``D<x>`` is the digital channel bit number (0-7).
 
@@ -81,25 +78,24 @@ class DiggrpItemDigitalBit(ValidatedDigitalBit, SCPICmdRead):
     def threshold(self) -> DiggrpItemDigitalBitThreshold:
         """Return the ``DIGGRP<x>:D<x>:THReshold`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the threshold level in volts for the specified digital channel. If the
               source channel doesn't exist, a hardware missing error event is set.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIGGRP<x>:D<x>:THReshold?`` query.
             - Using the ``.verify(value)`` method will send the ``DIGGRP<x>:D<x>:THReshold?`` query
               and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``DIGGRP<x>:D<x>:THReshold value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - DIGGRP<x>:D<x>:THReshold <NR3>
             - DIGGRP<x>:D<x>:THReshold?
+            ```
 
-        **Info:**
+        Info:
             - ``DIGGRP<x>`` is the channel number.
             - ``D<x>`` is the digital channel bit number (0-7).
             - ``<NR3>`` is the threshold level in volts for the specified digital channel.
@@ -110,12 +106,12 @@ class DiggrpItemDigitalBit(ValidatedDigitalBit, SCPICmdRead):
 class DiggrpItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``DIGGRP<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``DIGGRP<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``DIGGRP<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
 
-    **Info:**
+    Info:
         - ``DIGGRP<x>`` is the channel number.
 
     Properties:
@@ -132,12 +128,12 @@ class DiggrpItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def d(self) -> Dict[int, DiggrpItemDigitalBit]:
         """Return the ``DIGGRP<x>:D<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``DIGGRP<x>:D<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``DIGGRP<x>:D<x>?`` query and raise
               an AssertionError if the returned value does not match ``value``.
 
-        **Info:**
+        Info:
             - ``DIGGRP<x>`` is the channel number.
             - ``D<x>`` is the digital channel bit number (0-7).
 

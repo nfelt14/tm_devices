@@ -9,8 +9,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - MARKER:M<x>:AMPLitude:ABSolute?
     - MARKER:M<x>:AMPLitude:DELTa?
     - MARKER:M<x>:FREQuency:ABSolute <NR3>
@@ -51,7 +49,7 @@ if TYPE_CHECKING:
 class MarkerType(SCPICmdWrite, SCPICmdRead):
     """The ``MARKER:TYPe`` command.
 
-    **Description:**
+    Description:
         - This command specifies the marker type (either DELTa or ABSolute). An absolute marker
           shows the frequency and amplitude at the location of the marker. A delta marker shows the
           frequency and amplitude of the marker relative to the Reference Marker. The Reference
@@ -59,20 +57,19 @@ class MarkerType(SCPICmdWrite, SCPICmdRead):
           amplitude measurements are in dBm for absolute, or in dBc (dB below carrier amplitude) for
           delta.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER:TYPe?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER:TYPe?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MARKER:TYPe value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARKER:TYPe {DELTa|ABSolute}
         - MARKER:TYPe?
+        ```
 
-    **Info:**
+    Info:
         - ``DELTa`` specifies to display the frequency and amplitude of the markers relative to the
           Reference Marker. The relative amplitude is in dBc (dB below carrier amplitude); the
           relative frequency is in Hz.
@@ -84,30 +81,29 @@ class MarkerType(SCPICmdWrite, SCPICmdRead):
 class MarkerReferenceFrequency(SCPICmdRead):
     """The ``MARKER:REFERence:FREQuency`` command.
 
-    **Description:**
+    Description:
         - This query returns the frequency of the Reference Marker, in Hz, when the frequency domain
           trace markers are on (using either the command ``MARKER:PEAK:STATE`` or
           ``MARKER:MANUAL``). This data is equivalent to the number that appears on the display next
           to the red R inside a triangle when markers areon. If all markers are off, the value
           returned will be the last value displayed.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER:REFERence:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER:REFERence:FREQuency?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARKER:REFERence:FREQuency?
+        ```
     """
 
 
 class MarkerReferenceAmplitude(SCPICmdRead):
     """The ``MARKER:REFERence:AMPlitude`` command.
 
-    **Description:**
+    Description:
         - This query returns the actual amplitude (vertical) value of the Reference Marker in
           user-set units. This value indicates the absolute amplitude of the Reference Marker,
           regardless of whether the other markers are manual or automatic. This data is equivalent
@@ -115,36 +111,34 @@ class MarkerReferenceAmplitude(SCPICmdRead):
           are turned on. If all markers are turned off, the value returned will be the last value
           displayed.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER:REFERence:AMPlitude?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER:REFERence:AMPlitude?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARKER:REFERence:AMPlitude?
+        ```
     """
 
 
 class MarkerReference(SCPICmdWrite, SCPICmdRead):
     """The ``MARKER:REFERence`` command.
 
-    **Description:**
+    Description:
         - This command changes the Center Frequency to the frequency indicated by the Reference
           Marker, in effect moving the Reference Marker to the center of the screen. This applies
           when markers are turned on (using the command ``MARKER:PEAK:STATE`` or ``MARKER:MANUAL``).
           This is equivalent to the 'R' to Center side menu button in the front panel Markers menu.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``MARKER:REFERence value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARKER:REFERence CENTER
+        ```
 
     Properties:
         - ``.amplitude``: The ``MARKER:REFERence:AMPlitude`` command.
@@ -160,7 +154,7 @@ class MarkerReference(SCPICmdWrite, SCPICmdRead):
     def amplitude(self) -> MarkerReferenceAmplitude:
         """Return the ``MARKER:REFERence:AMPlitude`` command.
 
-        **Description:**
+        Description:
             - This query returns the actual amplitude (vertical) value of the Reference Marker in
               user-set units. This value indicates the absolute amplitude of the Reference Marker,
               regardless of whether the other markers are manual or automatic. This data is
@@ -168,16 +162,15 @@ class MarkerReference(SCPICmdWrite, SCPICmdRead):
               triangle when markers are turned on. If all markers are turned off, the value returned
               will be the last value displayed.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER:REFERence:AMPlitude?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER:REFERence:AMPlitude?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARKER:REFERence:AMPlitude?
+            ```
         """
         return self._amplitude
 
@@ -185,23 +178,22 @@ class MarkerReference(SCPICmdWrite, SCPICmdRead):
     def frequency(self) -> MarkerReferenceFrequency:
         """Return the ``MARKER:REFERence:FREQuency`` command.
 
-        **Description:**
+        Description:
             - This query returns the frequency of the Reference Marker, in Hz, when the frequency
               domain trace markers are on (using either the command ``MARKER:PEAK:STATE`` or
               ``MARKER:MANUAL``). This data is equivalent to the number that appears on the display
               next to the red R inside a triangle when markers areon. If all markers are off, the
               value returned will be the last value displayed.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER:REFERence:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER:REFERence:FREQuency?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARKER:REFERence:FREQuency?
+            ```
         """
         return self._frequency
 
@@ -209,7 +201,7 @@ class MarkerReference(SCPICmdWrite, SCPICmdRead):
 class MarkerPeakThreshold(SCPICmdWrite, SCPICmdRead):
     """The ``MARKER:PEAK:THReshold`` command.
 
-    **Description:**
+    Description:
         - This command specifies the threshold value of the automatic peak markers available for
           frequency domain traces. (Use the ``RF:UNITS`` command to specify the units.) Only peaks
           with an amplitude greater than the threshold value will qualify for automatic peak marker
@@ -219,20 +211,19 @@ class MarkerPeakThreshold(SCPICmdWrite, SCPICmdRead):
           markers, use the commands ``MARKER:PEAK:STATE`` and ``MARKER:PEAK:MAXIMUM``. To list all
           of the peak markers, use the command ``SEARCH:SPECTRAL:LIST``
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER:PEAK:THReshold?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER:PEAK:THReshold?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MARKER:PEAK:THReshold value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARKER:PEAK:THReshold <NR3>
         - MARKER:PEAK:THReshold?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that indicates the automatic marker threshold value.
     """
 
@@ -240,7 +231,7 @@ class MarkerPeakThreshold(SCPICmdWrite, SCPICmdRead):
 class MarkerPeakState(SCPICmdWrite, SCPICmdRead):
     """The ``MARKER:PEAK:STATE`` command.
 
-    **Description:**
+    Description:
         - This command switches on or off the automatic peak markers that are available for
           frequency domain traces. There are up to 11 automatic markers. The maximum number of
           markers can be set using the command ``MARKER:PEAK:MAXIMUM``. The automatic peak markers
@@ -250,20 +241,19 @@ class MarkerPeakState(SCPICmdWrite, SCPICmdRead):
           ``MARKER:TYPE`` command.) To list all of the peak markers, use the command
           ``SEARCH:SPECTRAL:LIST``
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER:PEAK:STATE?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER:PEAK:STATE?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MARKER:PEAK:STATE value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARKER:PEAK:STATE {OFF|ON|0|1}
         - MARKER:PEAK:STATE?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` or 0 turns the automatic peak markers off.
         - ``ON`` or 1 turns the automatic peak markers on.
     """
@@ -272,7 +262,7 @@ class MarkerPeakState(SCPICmdWrite, SCPICmdRead):
 class MarkerPeakMaximum(SCPICmdWrite, SCPICmdRead):
     """The ``MARKER:PEAK:MAXimum`` command.
 
-    **Description:**
+    Description:
         - This command specifies the maximum number of frequency domain trace peaks that could have
           automatic markers placed on them. This can be a number between 1 and 11. The default is 5.
           To turn on the automatic peak markers, use the command ``MARKER:PEAK:STATE``. To list all
@@ -282,20 +272,19 @@ class MarkerPeakMaximum(SCPICmdWrite, SCPICmdRead):
           detected that meet the threshold and excursion criteria, only the highest amplitude peaks
           will have automatic markers placed on them.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER:PEAK:MAXimum?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER:PEAK:MAXimum?`` query and raise
           an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MARKER:PEAK:MAXimum value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARKER:PEAK:MAXimum <NR1>
         - MARKER:PEAK:MAXimum?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR1>`` is an integer that represents the maximum number of peaks that could have
           automatic markers.
     """
@@ -304,7 +293,7 @@ class MarkerPeakMaximum(SCPICmdWrite, SCPICmdRead):
 class MarkerPeakExcursion(SCPICmdWrite, SCPICmdRead):
     """The ``MARKER:PEAK:EXCURsion`` command.
 
-    **Description:**
+    Description:
         - This command specifies the peak excursion value, in dB, for the frequency domain trace
           automatic peak markers. Peak excursion refers to how far an RF signal needs to fall in
           amplitude between marked peaks, in order to be considered another valid peak. If the peak
@@ -312,20 +301,19 @@ class MarkerPeakExcursion(SCPICmdWrite, SCPICmdRead):
           markers. If the peak excursion value is high, fewer peaks will tend to qualify as valid
           peaks and have associated markers.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER:PEAK:EXCURsion?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER:PEAK:EXCURsion?`` query and
           raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MARKER:PEAK:EXCURsion value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARKER:PEAK:EXCURsion <NR3>
         - MARKER:PEAK:EXCURsion?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point number that specifies the automatic marker excursion value.
     """
 
@@ -333,7 +321,7 @@ class MarkerPeakExcursion(SCPICmdWrite, SCPICmdRead):
 class MarkerPeak(SCPICmdRead):
     """The ``MARKER:PEAK`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER:PEAK?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER:PEAK?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -356,7 +344,7 @@ class MarkerPeak(SCPICmdRead):
     def excursion(self) -> MarkerPeakExcursion:
         """Return the ``MARKER:PEAK:EXCURsion`` command.
 
-        **Description:**
+        Description:
             - This command specifies the peak excursion value, in dB, for the frequency domain trace
               automatic peak markers. Peak excursion refers to how far an RF signal needs to fall in
               amplitude between marked peaks, in order to be considered another valid peak. If the
@@ -364,21 +352,20 @@ class MarkerPeak(SCPICmdRead):
               associated markers. If the peak excursion value is high, fewer peaks will tend to
               qualify as valid peaks and have associated markers.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER:PEAK:EXCURsion?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER:PEAK:EXCURsion?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MARKER:PEAK:EXCURsion value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARKER:PEAK:EXCURsion <NR3>
             - MARKER:PEAK:EXCURsion?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that specifies the automatic marker excursion
               value.
         """
@@ -388,7 +375,7 @@ class MarkerPeak(SCPICmdRead):
     def maximum(self) -> MarkerPeakMaximum:
         """Return the ``MARKER:PEAK:MAXimum`` command.
 
-        **Description:**
+        Description:
             - This command specifies the maximum number of frequency domain trace peaks that could
               have automatic markers placed on them. This can be a number between 1 and 11. The
               default is 5. To turn on the automatic peak markers, use the command
@@ -399,21 +386,20 @@ class MarkerPeak(SCPICmdRead):
               excursion criteria, only the highest amplitude peaks will have automatic markers
               placed on them.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER:PEAK:MAXimum?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER:PEAK:MAXimum?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MARKER:PEAK:MAXimum value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARKER:PEAK:MAXimum <NR1>
             - MARKER:PEAK:MAXimum?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR1>`` is an integer that represents the maximum number of peaks that could have
               automatic markers.
         """
@@ -423,7 +409,7 @@ class MarkerPeak(SCPICmdRead):
     def state(self) -> MarkerPeakState:
         """Return the ``MARKER:PEAK:STATE`` command.
 
-        **Description:**
+        Description:
             - This command switches on or off the automatic peak markers that are available for
               frequency domain traces. There are up to 11 automatic markers. The maximum number of
               markers can be set using the command ``MARKER:PEAK:MAXIMUM``. The automatic peak
@@ -433,20 +419,19 @@ class MarkerPeak(SCPICmdRead):
               readouts (set with the ``MARKER:TYPE`` command.) To list all of the peak markers, use
               the command ``SEARCH:SPECTRAL:LIST``
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER:PEAK:STATE?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER:PEAK:STATE?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MARKER:PEAK:STATE value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARKER:PEAK:STATE {OFF|ON|0|1}
             - MARKER:PEAK:STATE?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` or 0 turns the automatic peak markers off.
             - ``ON`` or 1 turns the automatic peak markers on.
         """
@@ -456,7 +441,7 @@ class MarkerPeak(SCPICmdRead):
     def threshold(self) -> MarkerPeakThreshold:
         """Return the ``MARKER:PEAK:THReshold`` command.
 
-        **Description:**
+        Description:
             - This command specifies the threshold value of the automatic peak markers available for
               frequency domain traces. (Use the ``RF:UNITS`` command to specify the units.) Only
               peaks with an amplitude greater than the threshold value will qualify for automatic
@@ -466,21 +451,20 @@ class MarkerPeak(SCPICmdRead):
               automatic markers, use the commands ``MARKER:PEAK:STATE`` and ``MARKER:PEAK:MAXIMUM``.
               To list all of the peak markers, use the command ``SEARCH:SPECTRAL:LIST``
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER:PEAK:THReshold?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER:PEAK:THReshold?`` query and
               raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MARKER:PEAK:THReshold value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARKER:PEAK:THReshold <NR3>
             - MARKER:PEAK:THReshold?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point number that indicates the automatic marker threshold
               value.
         """
@@ -490,7 +474,7 @@ class MarkerPeak(SCPICmdRead):
 class MarkerManual(SCPICmdWrite, SCPICmdRead):
     """The ``MARKER:MANual`` command.
 
-    **Description:**
+    Description:
         - This command switches on or off the manual markers a and b that are available for
           frequency domain traces. Two manual markers are available for measuring non-peak areas of
           interest. The absolute measurements are in dBm; the relative measurements (relative to the
@@ -499,20 +483,19 @@ class MarkerManual(SCPICmdWrite, SCPICmdRead):
           highest amplitude peak. With manual markers on, the Reference Marker is placed at the a
           manual marker. The manual markers use the units specified with the command ``RF:UNITS``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER:MANual?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER:MANual?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MARKER:MANual value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARKER:MANual {OFF|ON|0|1}
         - MARKER:MANual?
+        ```
 
-    **Info:**
+    Info:
         - ``OFF`` or 0 turns the manual markers off.
         - ``ON`` or 1 turns the manual markers on.
     """
@@ -521,90 +504,86 @@ class MarkerManual(SCPICmdWrite, SCPICmdRead):
 class MarkerMItemPhasenoise(SCPICmdRead):
     """The ``MARKER:M<x>:PHASENoise`` command.
 
-    **Description:**
+    Description:
         - This command returns the phase noise of the ``RF_NORMal`` trace at the specified marker
           position in dBc/Hz units.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER:M<x>:PHASENoise?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER:M<x>:PHASENoise?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARKER:M<x>:PHASENoise?
+        ```
     """
 
 
 class MarkerMItemNoisedensity(SCPICmdRead):
     """The ``MARKER:M<x>:NOISEDensity`` command.
 
-    **Description:**
+    Description:
         - This command returns the noise density of the ``RF_NORMal`` trace at the specified marker
           position in <RF Units>/Hz units, where <RF Units> are the units specified by the command
           ``RF:UNITS``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER:M<x>:NOISEDensity?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER:M<x>:NOISEDensity?`` query and
           raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARKER:M<x>:NOISEDensity?
+        ```
     """
 
 
 class MarkerMItemFrequencyDelta(SCPICmdRead):
     """The ``MARKER:M<x>:FREQuency:DELTa`` command.
 
-    **Description:**
+    Description:
         - This query returns the delta frequency (horizontal) value of either of the two manual
           markers that are available for frequency domain traces, in relation to the Reference
           Marker. M<x> can be either M1, which specifies manual marker a, or M2, which specifies
           manual marker b. The manual marker readouts use the units specified with the command
           ``RF:UNITS``.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER:M<x>:FREQuency:DELTa?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER:M<x>:FREQuency:DELTa?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARKER:M<x>:FREQuency:DELTa?
+        ```
     """
 
 
 class MarkerMItemFrequencyAbsolute(SCPICmdWrite, SCPICmdRead):
     """The ``MARKER:M<x>:FREQuency:ABSolute`` command.
 
-    **Description:**
+    Description:
         - This command specifies the actual frequency (horizontal) value of either of the two manual
           markers that are available for frequency domain traces. M<x> can be either M1, which
           specifies manual marker a, or M2, which specifies manual marker b.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER:M<x>:FREQuency:ABSolute?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER:M<x>:FREQuency:ABSolute?``
           query and raise an AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``MARKER:M<x>:FREQuency:ABSolute value``
           command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARKER:M<x>:FREQuency:ABSolute <NR3>
         - MARKER:M<x>:FREQuency:ABSolute?
+        ```
 
-    **Info:**
+    Info:
         - ``<NR3>`` is a floating point value that indicates the actual frequency of either of the
           two manual markers.
     """
@@ -613,7 +592,7 @@ class MarkerMItemFrequencyAbsolute(SCPICmdWrite, SCPICmdRead):
 class MarkerMItemFrequency(SCPICmdRead):
     """The ``MARKER:M<x>:FREQuency`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER:M<x>:FREQuency?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER:M<x>:FREQuency?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -632,26 +611,25 @@ class MarkerMItemFrequency(SCPICmdRead):
     def absolute(self) -> MarkerMItemFrequencyAbsolute:
         """Return the ``MARKER:M<x>:FREQuency:ABSolute`` command.
 
-        **Description:**
+        Description:
             - This command specifies the actual frequency (horizontal) value of either of the two
               manual markers that are available for frequency domain traces. M<x> can be either M1,
               which specifies manual marker a, or M2, which specifies manual marker b.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER:M<x>:FREQuency:ABSolute?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER:M<x>:FREQuency:ABSolute?``
               query and raise an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the
               ``MARKER:M<x>:FREQuency:ABSolute value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARKER:M<x>:FREQuency:ABSolute <NR3>
             - MARKER:M<x>:FREQuency:ABSolute?
+            ```
 
-        **Info:**
+        Info:
             - ``<NR3>`` is a floating point value that indicates the actual frequency of either of
               the two manual markers.
         """
@@ -661,23 +639,22 @@ class MarkerMItemFrequency(SCPICmdRead):
     def delta(self) -> MarkerMItemFrequencyDelta:
         """Return the ``MARKER:M<x>:FREQuency:DELTa`` command.
 
-        **Description:**
+        Description:
             - This query returns the delta frequency (horizontal) value of either of the two manual
               markers that are available for frequency domain traces, in relation to the Reference
               Marker. M<x> can be either M1, which specifies manual marker a, or M2, which specifies
               manual marker b. The manual marker readouts use the units specified with the command
               ``RF:UNITS``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER:M<x>:FREQuency:DELTa?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER:M<x>:FREQuency:DELTa?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARKER:M<x>:FREQuency:DELTa?
+            ```
         """
         return self._delta
 
@@ -685,51 +662,49 @@ class MarkerMItemFrequency(SCPICmdRead):
 class MarkerMItemAmplitudeDelta(SCPICmdRead):
     """The ``MARKER:M<x>:AMPLitude:DELTa`` command.
 
-    **Description:**
+    Description:
         - This query returns the delta amplitude (vertical) value of either of the two manual
           markers that are available for frequency domain traces, in relation to the Reference
           Marker. M<x> can be either M1, which specifies manual marker a, or M2, which specifies
           manual marker b.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER:M<x>:AMPLitude:DELTa?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER:M<x>:AMPLitude:DELTa?`` query
           and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARKER:M<x>:AMPLitude:DELTa?
+        ```
     """
 
 
 class MarkerMItemAmplitudeAbsolute(SCPICmdRead):
     """The ``MARKER:M<x>:AMPLitude:ABSolute`` command.
 
-    **Description:**
+    Description:
         - This query returns the actual amplitude (vertical) value of either of the two manual
           markers that are available for frequency domain traces, in user-set units. M<x> can be
           either M1, which specifies manual marker a, or M2, which specifies manual marker b. (Use
           ``RF:UNITS`` to specify the units.)
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER:M<x>:AMPLitude:ABSolute?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER:M<x>:AMPLitude:ABSolute?``
           query and raise an AssertionError if the returned value does not match ``value``.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - MARKER:M<x>:AMPLitude:ABSolute?
+        ```
     """
 
 
 class MarkerMItemAmplitude(SCPICmdRead):
     """The ``MARKER:M<x>:AMPLitude`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER:M<x>:AMPLitude?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER:M<x>:AMPLitude?`` query and
           raise an AssertionError if the returned value does not match ``value``.
@@ -748,22 +723,21 @@ class MarkerMItemAmplitude(SCPICmdRead):
     def absolute(self) -> MarkerMItemAmplitudeAbsolute:
         """Return the ``MARKER:M<x>:AMPLitude:ABSolute`` command.
 
-        **Description:**
+        Description:
             - This query returns the actual amplitude (vertical) value of either of the two manual
               markers that are available for frequency domain traces, in user-set units. M<x> can be
               either M1, which specifies manual marker a, or M2, which specifies manual marker b.
               (Use ``RF:UNITS`` to specify the units.)
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER:M<x>:AMPLitude:ABSolute?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER:M<x>:AMPLitude:ABSolute?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARKER:M<x>:AMPLitude:ABSolute?
+            ```
         """
         return self._absolute
 
@@ -771,22 +745,21 @@ class MarkerMItemAmplitude(SCPICmdRead):
     def delta(self) -> MarkerMItemAmplitudeDelta:
         """Return the ``MARKER:M<x>:AMPLitude:DELTa`` command.
 
-        **Description:**
+        Description:
             - This query returns the delta amplitude (vertical) value of either of the two manual
               markers that are available for frequency domain traces, in relation to the Reference
               Marker. M<x> can be either M1, which specifies manual marker a, or M2, which specifies
               manual marker b.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER:M<x>:AMPLitude:DELTa?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER:M<x>:AMPLitude:DELTa?``
               query and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARKER:M<x>:AMPLitude:DELTa?
+            ```
         """
         return self._delta
 
@@ -794,7 +767,7 @@ class MarkerMItemAmplitude(SCPICmdRead):
 class MarkerMItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``MARKER:M<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER:M<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER:M<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -817,7 +790,7 @@ class MarkerMItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def amplitude(self) -> MarkerMItemAmplitude:
         """Return the ``MARKER:M<x>:AMPLitude`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER:M<x>:AMPLitude?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER:M<x>:AMPLitude?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -832,7 +805,7 @@ class MarkerMItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def frequency(self) -> MarkerMItemFrequency:
         """Return the ``MARKER:M<x>:FREQuency`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER:M<x>:FREQuency?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER:M<x>:FREQuency?`` query and
               raise an AssertionError if the returned value does not match ``value``.
@@ -847,21 +820,20 @@ class MarkerMItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def noisedensity(self) -> MarkerMItemNoisedensity:
         """Return the ``MARKER:M<x>:NOISEDensity`` command.
 
-        **Description:**
+        Description:
             - This command returns the noise density of the ``RF_NORMal`` trace at the specified
               marker position in <RF Units>/Hz units, where <RF Units> are the units specified by
               the command ``RF:UNITS``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER:M<x>:NOISEDensity?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER:M<x>:NOISEDensity?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARKER:M<x>:NOISEDensity?
+            ```
         """
         return self._noisedensity
 
@@ -869,20 +841,19 @@ class MarkerMItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def phasenoise(self) -> MarkerMItemPhasenoise:
         """Return the ``MARKER:M<x>:PHASENoise`` command.
 
-        **Description:**
+        Description:
             - This command returns the phase noise of the ``RF_NORMal`` trace at the specified
               marker position in dBc/Hz units.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER:M<x>:PHASENoise?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER:M<x>:PHASENoise?`` query
               and raise an AssertionError if the returned value does not match ``value``.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARKER:M<x>:PHASENoise?
+            ```
         """
         return self._phasenoise
 
@@ -890,7 +861,7 @@ class MarkerMItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class Marker(SCPICmdRead):
     """The ``MARKER`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``MARKER?`` query.
         - Using the ``.verify(value)`` method will send the ``MARKER?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -917,7 +888,7 @@ class Marker(SCPICmdRead):
     def m(self) -> Dict[int, MarkerMItem]:
         """Return the ``MARKER:M<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER:M<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER:M<x>?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -934,7 +905,7 @@ class Marker(SCPICmdRead):
     def manual(self) -> MarkerManual:
         """Return the ``MARKER:MANual`` command.
 
-        **Description:**
+        Description:
             - This command switches on or off the manual markers a and b that are available for
               frequency domain traces. Two manual markers are available for measuring non-peak areas
               of interest. The absolute measurements are in dBm; the relative measurements (relative
@@ -944,20 +915,19 @@ class Marker(SCPICmdRead):
               placed at the a manual marker. The manual markers use the units specified with the
               command ``RF:UNITS``.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER:MANual?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER:MANual?`` query and raise
               an AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MARKER:MANual value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARKER:MANual {OFF|ON|0|1}
             - MARKER:MANual?
+            ```
 
-        **Info:**
+        Info:
             - ``OFF`` or 0 turns the manual markers off.
             - ``ON`` or 1 turns the manual markers on.
         """
@@ -967,7 +937,7 @@ class Marker(SCPICmdRead):
     def peak(self) -> MarkerPeak:
         """Return the ``MARKER:PEAK`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER:PEAK?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER:PEAK?`` query and raise an
               AssertionError if the returned value does not match ``value``.
@@ -984,21 +954,20 @@ class Marker(SCPICmdRead):
     def reference(self) -> MarkerReference:
         """Return the ``MARKER:REFERence`` command.
 
-        **Description:**
+        Description:
             - This command changes the Center Frequency to the frequency indicated by the Reference
               Marker, in effect moving the Reference Marker to the center of the screen. This
               applies when markers are turned on (using the command ``MARKER:PEAK:STATE`` or
               ``MARKER:MANUAL``). This is equivalent to the 'R' to Center side menu button in the
               front panel Markers menu.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``MARKER:REFERence value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARKER:REFERence CENTER
+            ```
 
         Sub-properties:
             - ``.amplitude``: The ``MARKER:REFERence:AMPlitude`` command.
@@ -1010,7 +979,7 @@ class Marker(SCPICmdRead):
     def type(self) -> MarkerType:
         """Return the ``MARKER:TYPe`` command.
 
-        **Description:**
+        Description:
             - This command specifies the marker type (either DELTa or ABSolute). An absolute marker
               shows the frequency and amplitude at the location of the marker. A delta marker shows
               the frequency and amplitude of the marker relative to the Reference Marker. The
@@ -1018,20 +987,19 @@ class Marker(SCPICmdRead):
               command. The marker amplitude measurements are in dBm for absolute, or in dBc (dB
               below carrier amplitude) for delta.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``MARKER:TYPe?`` query.
             - Using the ``.verify(value)`` method will send the ``MARKER:TYPe?`` query and raise an
               AssertionError if the returned value does not match ``value``.
             - Using the ``.write(value)`` method will send the ``MARKER:TYPe value`` command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - MARKER:TYPe {DELTa|ABSolute}
             - MARKER:TYPe?
+            ```
 
-        **Info:**
+        Info:
             - ``DELTa`` specifies to display the frequency and amplitude of the markers relative to
               the Reference Marker. The relative amplitude is in dBc (dB below carrier amplitude);
               the relative frequency is in Hz.

@@ -11,13 +11,12 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
-    - CUSTOM:GATE<x>:SOUrce { CH1 | CH2 | CH3 | CH4 | MATH1 | MATH2 | MATH3 | MATH4| REF1 | REF2 | REF3 | REF4 }
+    - CUSTOM:GATE<x>:SOUrce { CH1 | CH2 | CH3 | CH4 | MATH1 | MATH2 | MATH3 | MATH4| REF1 | REF2 |
+      REF3 | REF4 }
     - CUSTOM:GATE<x>:START <NR3>
     - CUSTOM:GATE<x>:WIDth <NR3>
     - CUSTOM:SELECT:GATE<x> {1 | 0 | ON | OFF}
-"""  # noqa: E501
+"""
 
 from typing import Dict, Optional, TYPE_CHECKING
 
@@ -35,19 +34,18 @@ if TYPE_CHECKING:
 class CustomSelectGateItem(ValidatedDynamicNumberCmd, SCPICmdWrite):
     """The ``CUSTOM:SELECT:GATE<x>`` command.
 
-    **Description:**
+    Description:
         - Sets or queries wether or not the selected gate is displayed on the screen.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CUSTOM:SELECT:GATE<x> value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CUSTOM:SELECT:GATE<x> {1 | 0 | ON | OFF}
+        ```
 
-    **Info:**
+    Info:
         - ``1`` sets the specified gate to be displayed.
         - ``0`` sets the specified gate to be hidden.
         - ``ON`` sets the specified gate to be displayed.
@@ -58,7 +56,7 @@ class CustomSelectGateItem(ValidatedDynamicNumberCmd, SCPICmdWrite):
 class CustomSelect(SCPICmdRead):
     """The ``CUSTOM:SELECT`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CUSTOM:SELECT?`` query.
         - Using the ``.verify(value)`` method will send the ``CUSTOM:SELECT?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -77,20 +75,19 @@ class CustomSelect(SCPICmdRead):
     def gate(self) -> Dict[int, CustomSelectGateItem]:
         """Return the ``CUSTOM:SELECT:GATE<x>`` command.
 
-        **Description:**
+        Description:
             - Sets or queries wether or not the selected gate is displayed on the screen.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CUSTOM:SELECT:GATE<x> value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CUSTOM:SELECT:GATE<x> {1 | 0 | ON | OFF}
+            ```
 
-        **Info:**
+        Info:
             - ``1`` sets the specified gate to be displayed.
             - ``0`` sets the specified gate to be hidden.
             - ``ON`` sets the specified gate to be displayed.
@@ -102,58 +99,55 @@ class CustomSelect(SCPICmdRead):
 class CustomGateItemWidth(SCPICmdWrite):
     """The ``CUSTOM:GATE<x>:WIDth`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the width of the specified gate.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CUSTOM:GATE<x>:WIDth value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CUSTOM:GATE<x>:WIDth <NR3>
+        ```
     """
 
 
 class CustomGateItemStart(SCPICmdWrite):
     """The ``CUSTOM:GATE<x>:START`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the start position of the specified gate.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CUSTOM:GATE<x>:START value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CUSTOM:GATE<x>:START <NR3>
+        ```
     """
 
 
 class CustomGateItemSource(SCPICmdWrite):
     """The ``CUSTOM:GATE<x>:SOUrce`` command.
 
-    **Description:**
+    Description:
         - Sets or queries the source for the specified gate.
 
-    **Usage:**
+    Usage:
         - Using the ``.write(value)`` method will send the ``CUSTOM:GATE<x>:SOUrce value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - CUSTOM:GATE<x>:SOUrce { CH1 | CH2 | CH3 | CH4 | MATH1 | MATH2 | MATH3 | MATH4| REF1 | REF2 | REF3 | REF4 }
+        ```
     """  # noqa: E501
 
 
 class CustomGateItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     """The ``CUSTOM:GATE<x>`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CUSTOM:GATE<x>?`` query.
         - Using the ``.verify(value)`` method will send the ``CUSTOM:GATE<x>?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -174,18 +168,17 @@ class CustomGateItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def source(self) -> CustomGateItemSource:
         """Return the ``CUSTOM:GATE<x>:SOUrce`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the source for the specified gate.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CUSTOM:GATE<x>:SOUrce value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CUSTOM:GATE<x>:SOUrce { CH1 | CH2 | CH3 | CH4 | MATH1 | MATH2 | MATH3 | MATH4| REF1 | REF2 | REF3 | REF4 }
+            ```
         """  # noqa: E501
         return self._source
 
@@ -193,18 +186,17 @@ class CustomGateItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def start(self) -> CustomGateItemStart:
         """Return the ``CUSTOM:GATE<x>:START`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the start position of the specified gate.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CUSTOM:GATE<x>:START value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CUSTOM:GATE<x>:START <NR3>
+            ```
         """
         return self._start
 
@@ -212,18 +204,17 @@ class CustomGateItem(ValidatedDynamicNumberCmd, SCPICmdRead):
     def width(self) -> CustomGateItemWidth:
         """Return the ``CUSTOM:GATE<x>:WIDth`` command.
 
-        **Description:**
+        Description:
             - Sets or queries the width of the specified gate.
 
-        **Usage:**
+        Usage:
             - Using the ``.write(value)`` method will send the ``CUSTOM:GATE<x>:WIDth value``
               command.
 
-        **SCPI Syntax:**
-
-        ::
-
+        SCPI Syntax:
+            ```
             - CUSTOM:GATE<x>:WIDth <NR3>
+            ```
         """
         return self._width
 
@@ -231,7 +222,7 @@ class CustomGateItem(ValidatedDynamicNumberCmd, SCPICmdRead):
 class Custom(SCPICmdRead):
     """The ``CUSTOM`` command tree.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``CUSTOM?`` query.
         - Using the ``.verify(value)`` method will send the ``CUSTOM?`` query and raise an
           AssertionError if the returned value does not match ``value``.
@@ -252,7 +243,7 @@ class Custom(SCPICmdRead):
     def gate(self) -> Dict[int, CustomGateItem]:
         """Return the ``CUSTOM:GATE<x>`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CUSTOM:GATE<x>?`` query.
             - Using the ``.verify(value)`` method will send the ``CUSTOM:GATE<x>?`` query and raise
               an AssertionError if the returned value does not match ``value``.
@@ -268,7 +259,7 @@ class Custom(SCPICmdRead):
     def select(self) -> CustomSelect:
         """Return the ``CUSTOM:SELECT`` command tree.
 
-        **Usage:**
+        Usage:
             - Using the ``.query()`` method will send the ``CUSTOM:SELECT?`` query.
             - Using the ``.verify(value)`` method will send the ``CUSTOM:SELECT?`` query and raise
               an AssertionError if the returned value does not match ``value``.

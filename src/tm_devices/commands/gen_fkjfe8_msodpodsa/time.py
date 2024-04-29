@@ -10,8 +10,6 @@ Please report an issue if one is found.
 
 Commands and Queries:
 
-::
-
     - TIME <QString>
     - TIME?
 """
@@ -27,25 +25,24 @@ if TYPE_CHECKING:
 class Time(SCPICmdWrite, SCPICmdRead):
     """The ``TIME`` command.
 
-    **Description:**
+    Description:
         - This command sets or queries the time that the instrument displays. This command is
           equivalent to selecting Set Time & Date from the Utilities menu and then setting the
           fields in the Time group box.
 
-    **Usage:**
+    Usage:
         - Using the ``.query()`` method will send the ``TIME?`` query.
         - Using the ``.verify(value)`` method will send the ``TIME?`` query and raise an
           AssertionError if the returned value does not match ``value``.
         - Using the ``.write(value)`` method will send the ``TIME value`` command.
 
-    **SCPI Syntax:**
-
-    ::
-
+    SCPI Syntax:
+        ```
         - TIME <QString>
         - TIME?
+        ```
 
-    **Info:**
+    Info:
         - ``<QString>`` is a time in the form '``hh:mm:ss``' where hh refers to a two-digit hour
           number, mm refers to a two-digit minute number from 01 to 60, and ss refers to a two-digit
           second number from 01 to 60.
