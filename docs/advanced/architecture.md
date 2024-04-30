@@ -16,7 +16,7 @@ the physical device and also contains useful attributes, which contain
 information about the device, and methods, which provide various functionality.
 
 The [`DeviceManager`][tm_devices.DeviceManager] uses a configuration parser
-([`DMConfigParser`][tm_devices.helpers.DMConfigParser]) to read in
+([`DMConfigParser`][tm_devices.components.DMConfigParser]) to read in
 connection information from an optional config file as well as to store
 connection information that is provided directly via python code.
 
