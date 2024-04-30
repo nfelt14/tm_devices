@@ -24,25 +24,28 @@ via [Python code](configuration.md#python-code) (shown here). See the
 [Configuration guide](configuration.md) for more information on how to
 configure devices to connect with.
 
-<!--codeinclude-->
-[](../examples/miscellaneous/adding_devices.py)
-<!--/codeinclude-->
+```python
+# fmt: off
+--8<-- "examples/miscellaneous/adding_devices.py"
+```
 
 ## VISA backend selection
 
 The [`DeviceManager`][tm_devices.DeviceManager] can be configured to use VISA backends from different VISA implementations.
 
-<!--codeinclude-->
-[](../examples/miscellaneous/visa_connection_selectivity.py)
-<!--/codeinclude-->
+```python
+# fmt: off
+--8<-- "examples/miscellaneous/visa_connection_selectivity.py"
+```
 
 ## Alias usage
 
 Devices can be given custom alias names and can be referenced by that alias.
 
-<!--codeinclude-->
-[](../examples/miscellaneous/alias_usage.py)
-<!--/codeinclude-->
+```python
+# fmt: off
+--8<-- "examples/miscellaneous/alias_usage.py"
+```
 
 ## Adding devices with environment variables
 
@@ -51,9 +54,10 @@ Device configuration information can be defined in an
 outside the Python code for ease of automation
 (shown inside the Python code here for demonstration purposes).
 
-<!--codeinclude-->
-[](../examples/miscellaneous/adding_devices_with_env_var.py)
-<!--/codeinclude-->
+```python
+# fmt: off
+--8<-- "examples/miscellaneous/adding_devices_with_env_var.py"
+```
 
 ## Disable command checking
 
@@ -61,9 +65,10 @@ This removes an extra query that verifies the property was set to the expected
 value. This can be disabled at the device level or disabled for all devices by
 disabling verification via the device manager.
 
-<!--codeinclude-->
-[](../examples/miscellaneous/disable_command_verification.py)
-<!--/codeinclude-->
+```python
+# fmt: off
+--8<-- "examples/miscellaneous/disable_command_verification.py"
+```
 
 ## Generate a signal using the Internal AFG
 
@@ -73,9 +78,10 @@ on CH1 of the SCOPE.
 - Requires a SCOPE with a license for the Internal AFG.
 - Requires the Internal AFG output to be connected to CH1 on the SCOPE
 
-<!--codeinclude-->
-[](../examples/scopes/tekscope/generate_internal_afg_signal.py)
-<!--/codeinclude-->
+```python
+# fmt: off
+--8<-- "examples/scopes/tekscope/generate_internal_afg_signal.py"
+```
 
 ## Curve query saved to csv
 
@@ -83,9 +89,10 @@ Perform a curve query and save the results to a csv file.
 
 - Requires an AFG connected to channel 1 on a SCOPE.
 
-<!--codeinclude-->
-[](../examples/scopes/tekscope/basic_curve_query.py)
-<!--/codeinclude-->
+```python
+# fmt: off
+--8<-- "examples/scopes/tekscope/basic_curve_query.py"
+```
 
 ## Saving / recalling a waveform and session
 
@@ -95,27 +102,30 @@ recalling previously saved waveforms if we ever need to use that waveform again.
 The same can be done for scope sessions, sessions are essentially a snapshot of
 the current state of our scope.
 
-<!--codeinclude-->
-[](../examples/scopes/tekscope/basic_save_recall.py)
-<!--/codeinclude-->
+```python
+# fmt: off
+--8<-- "examples/scopes/tekscope/basic_save_recall.py"
+```
 
 ## Configuring a measurement on a single sequence
 
 A scope can be configured for a measurement on a single acquisition by setting the appropriate acquisition parameters
 and adding the desired measurement on the selected channel.
 
-<!--codeinclude-->
-[](../examples/scopes/tekscope/get_acquisition_data.py)
-<!--/codeinclude-->
+```python
+# fmt: off
+--8<-- "examples/scopes/tekscope/get_acquisition_data.py"
+```
 
 ## Adding DPOJET measurements and plots
 
 DPOJET measurements and plots can be added on a DPO70KSX/C/7KC/DPO5KB scope.
 Measurements report can be saved in a `.pdf` format.
 
-<!--codeinclude-->
-[](../examples/scopes/tekscope_70k/dpojet/adding_dpojet_measurements.py)
-<!--/codeinclude-->
+```python
+# fmt: off
+--8<-- "examples/scopes/tekscope_70k/dpojet/adding_dpojet_measurements.py"
+```
 
 ## Directly accessing the PyVISA resource object
 
@@ -123,17 +133,19 @@ The [PyVISA](https://pyvisa.readthedocs.io/en/latest/) resource object can be di
 accessed if there is a specific action that is not yet available directly through
 the drivers in the `tm_devices` package.
 
-<!--codeinclude-->
-[](../examples/miscellaneous/pyvisa_resource_access.py)
-<!--/codeinclude-->
+```python
+# fmt: off
+--8<-- "examples/miscellaneous/pyvisa_resource_access.py"
+```
 
 ## Dynamic reading buffers (SMUs)
 
 Create and read from a dynamic buffer.
 
-<!--codeinclude-->
-[](../examples/source_measure_units/2600/reading_dynamic_buffers.py)
-<!--/codeinclude-->
+```python
+# fmt: off
+--8<-- "examples/source_measure_units/2600/reading_dynamic_buffers.py"
+```
 
 ## Registering the Device Manager to be closed at program termination
 
@@ -142,9 +154,10 @@ In those instances there is an alternative way to enforce the device manager to
 close when the Python script execution is finished without needing to explicitly
 call the [`.close()`][tm_devices.DeviceManager.close] method.
 
-<!--codeinclude-->
-[](../examples/miscellaneous/register_dm_atexit.py)
-<!--/codeinclude-->
+```python
+# fmt: off
+--8<-- "examples/miscellaneous/register_dm_atexit.py"
+```
 
 ## Add custom device support
 
@@ -159,6 +172,7 @@ In order to do this a few things will need to be created:
     [main device types](advanced/architecture.md#main-device-types).
 2. A mapping of the parsed model series string to the Python class.
 
-<!--codeinclude-->
-[](../examples/miscellaneous/custom_device_driver_support.py)
-<!--/codeinclude-->
+```python
+# fmt: off
+--8<-- "examples/miscellaneous/custom_device_driver_support.py"
+```

@@ -109,7 +109,6 @@ matplotlib = [
 ]
 memory-profiler = ">=0.61.0"
 mkdocs = ">=1.5.3"
-mkdocs-codeinclude-plugin = ">=0.2.1"
 mkdocs-ezglossary-plugin = ">=1.6.7"
 mkdocs-gen-files = ">=0.5.0"
 mkdocs-include-markdown-plugin = ">=6.0.5"

@@ -41,6 +41,10 @@ PAGE_REPLACEMENTS = {
         ("(https://tinyurl.com/tek-tm-devices/LICENSE.md)", "(./LICENSE.md)"),
     ),
 }
+FILES_TO_REMOVE_BLACK_FORMATTER_DISABLE_COMMENT = {
+    "configuration.md",
+    "basic_usage.md",
+}
 
 
 ####################################################################################################
@@ -105,6 +109,9 @@ def get_classes(*cls_or_modules: str, strict: bool = False) -> Generator[Any, No
             raise ValueError(msg)
 
 
+####################################################################################################
+# Macro functions
+####################################################################################################
 def class_diagram(
     *cls_or_modules: str,
     full: bool = False,
@@ -152,6 +159,17 @@ def class_diagram(
     )
 
 
+def create_repo_link(link_text: str, base_repo_url: str, relative_repo_path: str) -> str:
+    """Create a Markdown link to a specific location in the remote repository.
+
+    Args:
+        link_text: The text to show in the Markdown link.
+        base_repo_url: The base URL of the repository.
+        relative_repo_path: The relative path to the location to link to in the remote repository.
+    """
+    return f"[{link_text}]({base_repo_url}/blob/main/{relative_repo_path})"
+
+
 ####################################################################################################
 # Mkdocs Macros functions
 ####################################################################################################
@@ -171,15 +189,21 @@ def define_env(env: MacrosPlugin) -> None:
         pyproject_data = tomli.load(file_handle)
         env.variables["package_version"] = "v" + pyproject_data["tool"]["poetry"]["version"]
 
-    # Add the autoclassdiagram macro
+    # Add the auto_class_diagram macro
     env.macro(class_diagram, "auto_class_diagram")  # pyright: ignore[reportUnknownMemberType]
+    # Add the create_repo_link macro
+    env.macro(create_repo_link, "create_repo_link")  # pyright: ignore[reportUnknownMemberType]
 
 
 def on_post_page_macros(env: MacrosPlugin) -> None:
     """Post-process pages."""
+    # Check if there are any replacements to perform on the page
     if env.page.file.src_path in PAGE_REPLACEMENTS:  # pyright: ignore[reportUnknownMemberType]
         for search, replace in PAGE_REPLACEMENTS[env.page.file.src_path]:  # pyright: ignore[reportUnknownMemberType]
             env.markdown = env.markdown.replace(search, replace)  # pyright: ignore[reportUnknownMemberType]
+    # Check if all black format disable comments should be removed from the page
+    if env.page.file.src_path in FILES_TO_REMOVE_BLACK_FORMATTER_DISABLE_COMMENT:  # pyright: ignore[reportUnknownMemberType]
+        env.markdown = env.markdown.replace("# fmt: off\n", "")  # pyright: ignore[reportUnknownMemberType]
     # Check if the title is correct
     if actual_title_match := HEADER_ONE_REGEX.search(env.markdown):  # pyright: ignore[reportUnknownMemberType,reportUnknownArgumentType]
         actual_title = actual_title_match.group(1)

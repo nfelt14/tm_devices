@@ -62,26 +62,25 @@ repos:
     rev: 1.16.0
     hooks:
       - id: yamlfix
-# TODO: figure out how to enable this hook, currently it can't handle the links to API documentation.
-#  - repo: https://github.com/executablebooks/mdformat
-#    rev: 0.7.17
-#    hooks:
-#      - id: mdformat
-#        args: [--number, --end-of-line, keep]
-#        additional_dependencies:
-#          - setuptools  # This is required since Python 3.12 no longer installs setuptools by default in virtual environments
-#          - mdformat-beautysh
-#          - mdformat-config
-#          - mdformat-footnote
-#          - mdformat-frontmatter
-#          - mdformat-gfm
-#          - mdformat-mkdocs
-#          - mdformat-shfmt
-#          - mdformat-simple-breaks
-#          - mdformat-tables
-#          - mdformat-toc
-#          - mdformat-web
-#          - mdformat-wikilink
+  - repo: https://github.com/executablebooks/mdformat
+    rev: 0.7.17
+    hooks:
+      - id: mdformat
+        args: [--number, --end-of-line, keep, --ignore-missing-references]
+        additional_dependencies:
+          - setuptools  # This is required since Python 3.12 no longer installs setuptools by default in virtual environments
+          - mdformat-beautysh
+          - mdformat-config
+          - mdformat-footnote
+          - mdformat-frontmatter
+          - mdformat-gfm
+          - mdformat-mkdocs
+          - mdformat-shfmt
+          - mdformat-simple-breaks
+          - mdformat-tables
+          - mdformat-toc
+          - mdformat-web
+          - mdformat-wikilink
   - repo: https://gitlab.com/smop/pre-commit-hooks
     rev: v1.0.0
     hooks:

@@ -10,9 +10,10 @@ The Device Manager can be instantiated without any connections defined. Devices
 can then be added to the Device Manager directly in the python code. Specific
 configuration options can also be changed during runtime.
 
-<!--codeinclude-->
-[](../examples/miscellaneous/adding_devices.py)
-<!--/codeinclude-->
+```python
+# fmt: off
+--8<-- "examples/miscellaneous/adding_devices.py"
+```
 
 See the [Example Usage](basic_usage.md) for more usage examples.
 
