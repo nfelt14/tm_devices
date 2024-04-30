@@ -70,7 +70,8 @@ plugins:
       on_error_fail: true
       on_undefined: strict
   - gen-files:
-      enabled: !ENV [TM_DEVICES_API_GENERATION, 'true']
+      # noinspection YAMLIncompatibleTypes
+      enabled: !ENV [TM_DEVICES_API_GENERATION, true]
       scripts: [docs/generate_api_pages.py]
   - literate-nav
   - ezglossary:
@@ -80,7 +81,8 @@ plugins:
       inline_refs: none
       markdown_links: true
   - mkdocstrings:  # additional customization takes place in docs/generate_api_pages.py
-      enabled: !ENV [TM_DEVICES_API_GENERATION, 'true']
+      # noinspection YAMLIncompatibleTypes
+      enabled: !ENV [TM_DEVICES_API_GENERATION, true]
       enable_inventory: true
       custom_templates: docs/_templates/mkdocstrings
       handlers:
