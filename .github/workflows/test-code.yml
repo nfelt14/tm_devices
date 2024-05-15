@@ -133,7 +133,8 @@ jobs:
           max-annotations: 0\
   # Benchmark test job
   test-benchmark:
-    if: ${{ (inputs.run-codspeed-benchmarks == '') || (inputs.run-codspeed-benchmarks == 'true') }}
+#    if: ${{ (inputs.run-codspeed-benchmarks == '') || (inputs.run-codspeed-benchmarks == 'true') }}
+    if: ${{ (inputs.run-codspeed-benchmarks == 'true') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -146,10 +147,12 @@ jobs:
         id: req_check
         run: |
           if [ -f tests/requirements.txt ]; then
-            echo "::set-output name=exists::true"
+            echo "exists=true" >> $GITHUB_OUTPUT
           else
-            echo "::set-output name=exists::false"
+            echo "exists=false" >> $GITHUB_OUTPUT
           fi
+      - name: Install current package
+        run: pip install .
       - name: Install dependencies
         if: steps.req_check.outputs.exists == 'true'
         run: pip install -r tests/requirements.txt
