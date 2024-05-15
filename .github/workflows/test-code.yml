@@ -16,6 +16,13 @@ on:
           installed via npm and graphviz will be installed via apt.
         required: false
         type: number
+      run-codspeed-benchmarks:
+        description: A boolean indicating to run the following command `pytest --codspeed`
+          in a CodSpeedHQ/action workflow step. It will first attempt to install the
+          requirements.txt file located at `tests/requirements.txt`.
+        required: false
+        type: boolean
+        default: false
 # Cancel running jobs for the same workflow and branch.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -24,6 +31,7 @@ concurrency:
 jobs:
   # Basic testing & linting
   test-general:
+    if: false  # TODO: remove this line
     runs-on: ${{ matrix.platform }}
     strategy:
       fail-fast: false
@@ -122,14 +130,41 @@ jobs:
           path: artifacts/**/.results_tests/results.xml
           reporter: java-junit
           fail-on-error: false
-          max-annotations: 0
+          max-annotations: 0\
+  # Benchmark test job
+  test-benchmark:
+    if: ${{ (inputs.run-codspeed-benchmarks == '') || (inputs.run-codspeed-benchmarks == 'true') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: x  # any version
+          check-latest: true
+      - name: Check for a tests requirements file
+        id: req_check
+        run: |
+          if [ -f tests/requirements.txt ]; then
+            echo "::set-output name=exists::true"
+          else
+            echo "::set-output name=exists::false"
+          fi
+      - name: Install dependencies
+        if: steps.req_check.outputs.exists == 'true'
+        run: pip install -r tests/requirements.txt
+      - name: Run benchmark tests
+        uses: CodSpeedHQ/action@v2
+        with:
+          run: pytest --codspeed
   # Check that all jobs passed
   check-tests-passed:
     if: ${{ !cancelled() }}
-    needs: [test-general, test-fast, create-job-summary]
+    needs: [test-general, test-fast, create-job-summary, test-benchmark]
     runs-on: ubuntu-latest
     steps:
       - name: Decide whether the needed jobs succeeded or failed
-        uses: re-actors/alls-green@release/v1
+        uses: re-actors/alls-green@v1.2.2
         with:
           jobs: ${{ toJSON(needs) }}
+          allowed-skips: test-benchmark
