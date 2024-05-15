@@ -9,9 +9,8 @@ import pytest
 
 from pytest_benchmark.fixture import BenchmarkFixture  # pyright: ignore[reportMissingTypeStubs]
 
-INSTRUMENT_RESOURCE_EXPRESSION = "TCPIP0::MSO58B-HOSTNAME::inst0::INSTR"
 
-
+@pytest.mark.slow
 @pytest.mark.benchmark
 def test_pyvisa_benchmark(benchmark: BenchmarkFixture) -> None:
     """Benchmark speed with pyvisa."""
@@ -19,6 +18,7 @@ def test_pyvisa_benchmark(benchmark: BenchmarkFixture) -> None:
     benchmark(subprocess.check_call, args)
 
 
+@pytest.mark.slow
 @pytest.mark.benchmark
 def test_tm_devices_benchmark(benchmark: BenchmarkFixture) -> None:
     """Benchmark speed with tm_devices."""
