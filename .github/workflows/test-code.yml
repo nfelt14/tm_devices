@@ -133,8 +133,7 @@ jobs:
           max-annotations: 0\
   # Benchmark test job
   test-benchmark:
-#    if: ${{ (inputs.run-codspeed-benchmarks == '') || (inputs.run-codspeed-benchmarks == 'true') }}
-    if: ${{ (inputs.run-codspeed-benchmarks == 'true') }}
+    if: ${{ (inputs.run-codspeed-benchmarks == '') || (inputs.run-codspeed-benchmarks == 'true') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
