@@ -117,7 +117,7 @@ def class_diagram(
     *cls_or_modules: str,
     full: bool = False,
     strict: bool = False,
-    namespace: Optional[str] = None,
+    namespaces: Optional[Tuple[str]] = None,
 ) -> str:
     """Create a mermaid classDiagram for the provided classes or modules.
 
@@ -126,7 +126,7 @@ def class_diagram(
         full: A boolean indicating to show the complete class hierarchy.
         strict: A boolean indicating to only consider classes that are strictly defined in that
             module and not imported from somewhere else.
-        namespace: Limits the diagram to only include classes defined in this namespace.
+        namespaces: Limits the diagram to only include classes defined in the provided namespaces.
 
     Returns:
         The mermaid code block with complete syntax for the classDiagram.
@@ -140,7 +140,7 @@ def class_diagram(
         for base in cls.__bases__:
             if base.__name__ == "object":
                 continue
-            if namespace and not base.__module__.startswith(namespace):
+            if namespaces and not base.__module__.startswith(namespaces):
                 continue
             inheritances.add((base.__name__, cls.__name__))
             if full:
