@@ -30,9 +30,6 @@ jobs:
     needs: [job-variables]
     if: github.repository == needs.job-variables.outputs.repo-name
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      attestations: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -55,8 +52,6 @@ jobs:
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
       - name: Build package
         uses: hynek/build-and-inspect-python-package@v2.6.0
-        with:
-          attest-build-provenance-github: 'true'
     outputs:
       built-version: ${{ steps.create-version.outputs.NEW_VERSION }}
   test-pypi-upload:
@@ -67,15 +62,22 @@ jobs:
     environment: package-testpypi
     permissions:
       id-token: write
+      attestations: write
     steps:
       - name: Download built packages
         uses: actions/download-artifact@v4
         with:
           name: Packages
           path: dist
+      # TODO: determine if this is necessary
+      - name: Create attestations
+        uses: actions/attest-build-provenance@v1
+        with:
+          subject-path: dist/*
       - name: Upload package to Test PyPI
         uses: pypa/gh-action-pypi-publish@v1.8.14
         with:
+          attestations: true
           repository-url: https://test.pypi.org/legacy/
   test-pypi-install:
     name: Install package from test.pypi.org

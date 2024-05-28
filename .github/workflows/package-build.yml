@@ -20,17 +20,14 @@ jobs:
     name: Build package
     runs-on: ubuntu-latest
     environment: package-build
-    permissions:
-      id-token: write
-      attestations: write
+    env:
+      PACKAGE_NAME: ${{ inputs.package-name || 'tm_devices' }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: hynek/build-and-inspect-python-package@v2.6.0
         id: build-pkg
-        with:
-          attest-build-provenance-github: ${{ !(github.event.pull_request.head.repo.fork || github.event.workflow_call.pull_request.head.repo.fork) && github.actor != 'dependabot[bot]' }}
   install-package:
     name: Install package
     needs: build-package

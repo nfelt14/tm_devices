@@ -1,13 +1,13 @@
-"""PSU2281 device driver."""
+"""PSU2231A device driver."""
 
 import pyvisa as visa
 
-from tm_devices.drivers.pi.power_supplies.psu2200.psu2200 import PSU2200
+from tm_devices.drivers.pi.power_supplies.psu22xx.psu2231 import PSU2231
 from tm_devices.helpers import DeviceConfigEntry
 
 
-class PSU2281(PSU2200):
-    """PSU2281 device driver."""
+class PSU2231A(PSU2231):
+    """PSU2231A device driver."""
 
     ################################################################################################
     # Magic Methods
@@ -18,7 +18,7 @@ class PSU2281(PSU2200):
         verbose: bool,
         visa_resource: visa.resources.MessageBasedResource,
     ) -> None:
-        """Create a PSU2281 device.
+        """Create a PSU2231A device.
 
         Args:
             config_entry: A config entry object parsed by the DMConfigParser.

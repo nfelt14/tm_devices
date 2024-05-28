@@ -100,9 +100,6 @@ jobs:
     if: github.repository == needs.print-inputs.outputs.repo-name && github.ref ==
       'refs/heads/main'
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      attestations: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -110,8 +107,6 @@ jobs:
           fetch-depth: 0
       - name: Build package
         uses: hynek/build-and-inspect-python-package@v2.6.0
-        with:
-          attest-build-provenance-github: 'true'
   upload-testpypi:
     name: Upload package to TestPyPI
     needs: [print-inputs, pypi-build]
@@ -121,15 +116,22 @@ jobs:
     environment: package-testpypi
     permissions:
       id-token: write
+      attestations: write
     steps:
       - name: Download built packages
         uses: actions/download-artifact@v4
         with:
           name: Packages
           path: dist
+      # TODO: determine if this is necessary
+      - name: Create attestations
+        uses: actions/attest-build-provenance@v1
+        with:
+          subject-path: dist/*
       - name: Upload package to Test PyPI
         uses: pypa/gh-action-pypi-publish@v1.8.14
         with:
+          attestations: true
           repository-url: https://test.pypi.org/legacy/
   upload-pypi:
     name: Upload package to PyPI
@@ -140,14 +142,22 @@ jobs:
     environment: package-release
     permissions:
       id-token: write
+      attestations: write
     steps:
       - name: Download built packages
         uses: actions/download-artifact@v4
         with:
           name: Packages
           path: dist
+      # TODO: determine if this is necessary (might be duplicating the previous job)
+      - name: Create attestations
+        uses: actions/attest-build-provenance@v1
+        with:
+          subject-path: dist/*
       - name: Upload package to PyPI
         uses: pypa/gh-action-pypi-publish@v1.8.14
+        with:
+          attestations: true
   upload-github:
     name: Upload package to GitHub Release
     needs: [print-inputs, upload-pypi]
