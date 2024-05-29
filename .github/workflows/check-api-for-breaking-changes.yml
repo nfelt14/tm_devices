@@ -26,14 +26,14 @@ jobs:
           check-latest: true
       - name: Install package to check
         run: |
-          pip install poetry
-          poetry install
+          pip install --upgrade .
+          pip install griffe
       - name: Check API for breaking changes
         continue-on-error: true
         run: |
-          echo "## Breaking API Changes"
+          echo "## Breaking API Changes" > breaking_changes.md
           echo "\`\`\`" >> breaking_changes.md
-          poetry run griffe check --format=verbose --against=$(git rev-parse origin/main) --source=src "$PACKAGE_NAME" 2>&1 | tee -a breaking_changes.md
+          griffe check --format=verbose --against=$(git rev-parse origin/main) --source=src "$PACKAGE_NAME" 2>&1 | tee -a breaking_changes.md
       - name: Finish writing summary file
         run: echo "\`\`\`" >> breaking_changes.md
       - uses: actions/upload-artifact@v4
