@@ -298,8 +298,8 @@ def check_visa_connection(
 
 
 def create_visa_connection(
-    device_config_entry: DeviceConfigEntry,
     visa_library: str,
+    device_config_entry: DeviceConfigEntry,
     *,
     retry_connection: bool = False,
 ) -> MessageBasedResource:
