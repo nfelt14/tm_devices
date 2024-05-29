@@ -31,7 +31,8 @@ jobs:
       - name: Check API for breaking changes
         continue-on-error: true
         run: |
-          echo "## Breaking API Changes\n\`\`\`\n" > breaking_changes.md
+          echo "## Breaking API Changes"
+          echo "\`\`\`" >> breaking_changes.md
           poetry run griffe check --format verbose --against $(git rev-parse origin/main) --source src "$PACKAGE_NAME" 2>&1 | tee -a breaking_changes.md
       - name: Finish writing summary file
         run: echo "\`\`\`" >> breaking_changes.md
