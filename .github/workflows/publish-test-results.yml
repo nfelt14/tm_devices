@@ -23,7 +23,7 @@ jobs:
           run_id: ${{ github.event.workflow_run.id }}
           name: artifact_${{ matrix.os_name }}_tests
           path: artifacts
-      - name: Fetch PR number
+      - name: Fetch PR number with retries
         id: pr
         uses: actions/github-script@v7
         with:
