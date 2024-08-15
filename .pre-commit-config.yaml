@@ -6,7 +6,6 @@ ci:
   autoupdate_schedule: quarterly
   skip:
     - check-poetry
-    - toml-sort
     - pylint
     - pyright
     - pyright-verifytypes
@@ -14,7 +13,7 @@ ci:
     - poetry-audit
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: 2c9f875913ee60ca25ce70243dc24d5b6415598c  # frozen: v4.6.0
     hooks:
       - id: check-yaml
         args: [--unsafe]
@@ -35,12 +34,12 @@ repos:
       - id: pretty-format-json
         args: [--autofix, --indent=4]
   - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.5.5
+    rev: a30f0d816e5062a67d87c8de753cfe499672b959  # frozen: v1.5.5
     hooks:
       - id: remove-tabs
       - id: forbid-tabs
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.28.6
+    rev: e2dde74d0702d15f4f43e4f4fb93e301b4bc1e30  # frozen: 0.29.1
     hooks:
       - id: check-readthedocs
       - id: check-dependabot
@@ -52,19 +51,19 @@ repos:
     hooks:
       - id: renovate-config-validator
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.27.0
+    rev: d7e01aa9b0cfe3c1b732e66d523bbd0656221127  # frozen: v3.29.0
     hooks:
       - id: commitizen
         stages: [commit-msg]
   - repo: https://github.com/adamchainz/blacken-docs
-    rev: 1.18.0
+    rev: 4c97c4a0d921007af6fefae92d8447cfbf63720b  # frozen: 1.18.0
     hooks:
       - id: blacken-docs
         files: \.(rst|md|markdown|tex)$
-        additional_dependencies: [black==23.12.1]  # This may need to be updated/removed in the future once ruff supports formatting python code blocks in markdown
+        additional_dependencies: [black==24.4.2]  # This may need to be updated/removed in the future once ruff supports formatting python code blocks in markdown
         args: [--line-length=100]
   - repo: https://github.com/lyz-code/yamlfix
-    rev: 1.16.0
+    rev: 47039c9bf8039e81f092c9777a1bc8be32fb7870  # frozen: 1.16.0
     hooks:
       - id: yamlfix
 # TODO: get this working
@@ -73,16 +72,17 @@ repos:
 #    hooks:
 #      - id: jinjalint
   - repo: https://github.com/thibaudcolas/curlylint
-    rev: v0.13.1
+    rev: 71adf4d34c290684fd9f94a4d21ac55bcfe640f0  # frozen: v0.13.1
     hooks:
       - id: curlylint
   - repo: https://github.com/executablebooks/mdformat
-    rev: 0.7.17
+    rev: 08fba30538869a440b5059de90af03e3502e35fb  # frozen: 0.7.17
     hooks:
       - id: mdformat
         args: [--number, --end-of-line, keep, --ignore-missing-references]
         additional_dependencies:
           - setuptools  # This is required since Python 3.12 no longer installs setuptools by default in virtual environments
+          - mdformat-admon
           - mdformat-beautysh
           - mdformat-config
           - mdformat-footnote
@@ -97,17 +97,15 @@ repos:
           - mdformat-web
           - mdformat-wikilink
   - repo: https://gitlab.com/smop/pre-commit-hooks
-    rev: v1.0.0
+    rev: df034f88cf92b394e6f00a78fa97a2aa4e270e60  # frozen: v1.0.0
     hooks:
       - id: check-poetry
+  - repo: https://github.com/pappasam/toml-sort
+    rev: b9b6210da457c38122995e434b314f4c4a4a923e  # frozen: v0.23.1
+    hooks:
+      - id: toml-sort-fix
   - repo: local
     hooks:
-      - id: toml-sort
-        name: toml-sort
-        entry: toml-sort
-        language: system
-        types: [toml]
-        pass_filenames: true
       - id: pylint
         name: pylint
         entry: pylint
@@ -145,13 +143,13 @@ repos:
         always_run: true
         args: [audit, --json, --ignore-code=CVE-2019-8341]
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.5.0
+    rev: ac97362543353002a47d6cae8918b25444d102df  # frozen: v0.5.7
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
       - id: ruff-format
   - repo: https://github.com/PyCQA/docformatter
-    rev: v1.7.5
+    rev: dfefe062799848234b4cd60b04aa633c0608025e  # frozen: v1.7.5
     hooks:
       - id: docformatter
         additional_dependencies: [tomli]

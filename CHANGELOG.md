@@ -20,6 +20,111 @@ Things to be included in the next release go here.
 
 ---
 
+## v2.2.2 (2024-08-14)
+
+### Merged Pull Requests
+
+- Fix the stubgen helper function to attach stubs to the correct class in modules with multiple classes ([#276](https://github.com/tektronix/tm_devices/pull/276))
+- python-deps(deps-dev): bump the python-dependencies group with 2 updates ([#273](https://github.com/tektronix/tm_devices/pull/273))
+- docs: Update the contribution guide to provide details on how to track the status of changes in the GitHub repo using issues ([#271](https://github.com/tektronix/tm_devices/pull/271))
+
+### Fixed
+
+- Fixed the stubgen helper to properly attach stubs to the correct class in modules that have multiple classes.
+
+---
+
+## v2.2.1 (2024-08-07)
+
+### Merged Pull Requests
+
+- feat: Custom LAN Device Name for TCPIP Connections ([#267](https://github.com/tektronix/tm_devices/pull/267))
+- docs: Update links on the Readme to point to the full GitHub URL ([#266](https://github.com/tektronix/tm_devices/pull/266))
+- ci: Update the script that updates the pre-commit dependencies to update them with frozen hashes ([#265](https://github.com/tektronix/tm_devices/pull/265))
+- Convert test-docs.yml to a reusable workflow ([#264](https://github.com/tektronix/tm_devices/pull/264))
+- python-deps(deps-dev): bump the python-dependencies group with 3 updates ([#263](https://github.com/tektronix/tm_devices/pull/263))
+
+### Changed
+
+- Changed `DeviceConfigEntry` dataclass by adding an optional `lan_device_name` field, which allows connecting to instruments through TCPIP on LAN device names other than `inst0`.
+
+---
+
+## v2.2.0 (2024-08-02)
+
+### Merged Pull Requests
+
+- Enable adding unsupported device types via the DeviceManager ([#262](https://github.com/tektronix/tm_devices/pull/262))
+- test: Ignore http-rate-limited warnings to avoid failure due to the abundance of GitHub URLs in the Changelog ([#261](https://github.com/tektronix/tm_devices/pull/261))
+
+### Added
+
+- Added a new method to the `DeviceManager` class, `add_unsupported_device()`, which enables adding an unsupported device type.
+
+---
+
+## v2.1.0 (2024-07-31)
+
+### Merged Pull Requests
+
+- feat: Added SourceXpress API support and AWG defects fix ([#260](https://github.com/tektronix/tm_devices/pull/260))
+- gh-actions(deps): bump hynek/build-and-inspect-python-package ([#258](https://github.com/tektronix/tm_devices/pull/258))
+- python-deps(deps-dev): bump the python-dependencies group with 2 updates ([#257](https://github.com/tektronix/tm_devices/pull/257))
+- Update jinja templates ([#254](https://github.com/tektronix/tm_devices/pull/254))
+
+### Added
+
+- Full Python API support for SourceXpress to AWG70KA, AWG70KB and AWG7K models.
+
+### Fixed
+
+- Fixed APIs with writes and queries accepting arguments for AWG70KA and AWG70KB models drivers.
+
+---
+
+## v2.0.0 (2024-07-24)
+
+### Merged Pull Requests
+
+- Downgrade python-semantic-release to allow release workflow to run ([#253](https://github.com/tektronix/tm_devices/pull/253))
+- docs: Updated the signal generation docs to fix some bugs that were found ([#252](https://github.com/tektronix/tm_devices/pull/252))
+- Signal Generation Restructure and addition of high level methods ([#246](https://github.com/tektronix/tm_devices/pull/246))
+- gh-actions(deps): bump the gh-actions-dependencies group with 2 updates ([#250](https://github.com/tektronix/tm_devices/pull/250))
+- python-deps(deps-dev): bump the python-dependencies group with 3 updates ([#242](https://github.com/tektronix/tm_devices/pull/242))
+- gh-actions(deps): bump anchore/scan-action ([#248](https://github.com/tektronix/tm_devices/pull/248))
+- python-deps(deps-dev): bump the python-dependencies group with 2 updates ([#238](https://github.com/tektronix/tm_devices/pull/238))
+- gh-actions(deps): bump python-semantic-release/python-semantic-release ([#244](https://github.com/tektronix/tm_devices/pull/244))
+- ci: Add back file sorter hook to pre-commit ([#243](https://github.com/tektronix/tm_devices/pull/243))
+- python-deps(deps): bump the python-dependencies group with 3 updates ([#241](https://github.com/tektronix/tm_devices/pull/241))
+- gh-actions(deps): bump the gh-actions-dependencies group across 1 directory with 3 updates ([#239](https://github.com/tektronix/tm_devices/pull/239))
+- refactor: Miscellaneous refactors to reduce technical debt in variable declarations and comparison operations ([#236](https://github.com/tektronix/tm_devices/pull/236))
+
+### Added
+
+- Added the constraint ranges for all signal generators
+- Added drivers for AWG and AFG channels
+- Added a property named `source_channel` in AWG's and AFG's.
+- Added drivers for the internal AFG in TekScopes.
+- Added a property named `internal_afg` in TekScope.
+- Added implementation of `generate_function` for all AWG models.
+- Added two burst functions to `SignalGeneratorMixin`: one to set up burst and one to generate the burst by forcing trigger.
+    - NOTE: Only the AFGs and Internal AFGs have these functions implemented.
+- Added `OutputSignalPath` enum attribute in AWGs representing output signal path options.
+- Added two functions for loading waveform set files in the AWG70k and AWG5200 drivers: one for loading a waveform set file and another for loading a specific waveform from a waveform set file.
+- Added `sample_waveform_set_file` attribute in the AWG70k and AWG5200 drivers to define the default waveform set file.
+
+### Changed
+
+- <span style="color:red">BREAKING CHANGE</span>. Changed the term "signal source" to "signal generator".
+    - All uses of this term are changed. Import paths now use `signal_generator` instead of `signal_source`.
+- <span style="color:red">BREAKING CHANGE</span>. Changed the function name of `generate_waveform()` to `generate_function()`.
+    - `generate_waveform()` only exists on AWGs now, however the functionality is entirely changed.
+- <span style="color:red">BREAKING CHANGE</span>. Changed the `generate_function()` function by removing burst functionality.
+    - Any use of burst now must use `setup_burst()` and `generate_burst()` instead.
+- Updated AWGs such that the `family_base_class` is at the series level.
+
+---
+
 ## v1.5.0 (2024-06-10)
 
 ### Merged Pull Requests
