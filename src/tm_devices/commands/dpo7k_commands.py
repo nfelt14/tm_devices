@@ -5,9 +5,10 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 """
 
-from typing import Any, Dict, Optional
+from typing import Dict, Optional
 
-from tm_devices.drivers.pi.pi_device import PIDevice
+from tm_devices.driver_mixins.device_control.pi_control import PIControl
+from tm_devices.helpers import ReadOnlyCachedProperty as cached_property  # noqa: N813
 
 from .gen_ffz2xs_dpodsamso.bus import Bus
 from .gen_fhrp27_msodpomdodsa.curve import Curve
@@ -79,31 +80,40 @@ from .gen_fn2qbf_msodpo.trigger import Trigger
 from .gen_fpx9s1_dpodsamso.counter import Counter
 from .gen_fpx9s1_dpodsamso.linktraining import Linktraining
 from .gen_fpx9s1_dpodsamso.rosc import Rosc
+from .gen_fsksdy_lpdmsotekscopepcdpomdoafgawgdsa.miscellaneous import Idn, Tst
+from .gen_fsksdy_lpdmsotekscopepcdpomdoafgawgdsa.status_and_error import (
+    Cls,
+    Esr,
+    Opc,
+    Rst,
+    Stb,
+    Wai,
+)
+from .gen_fst7sp_lpdmsotekscopepcmdodpoafgawgdsa.status_and_error import Opt
 from .gen_ft5uww_lpdmsodpomdoafgawgdsa.calibration import Cal
-from .gen_ft5uww_lpdmsodpomdoafgawgdsa.miscellaneous import Idn, Trg, Tst
-from .gen_ft5uww_lpdmsodpomdoafgawgdsa.status_and_error import Cls, Esr, Opc, Rst, Stb, Wai
-from .gen_fteabn_lpdmsomdodpoafgawgdsa.status_and_error import Opt
-from .gen_fug7nl_lpdmsodpomdoawgdsa.status_and_error import Ese, Sre
-from .gen_fuzvln_lpdmsodpodsa.alias import Alias
-from .gen_fuzvln_lpdmsodpodsa.status_and_error import Psc
-from .gen_fx54ua_lpdmsodpomdodsa.allev import Allev
-from .gen_fx54ua_lpdmsodpomdodsa.busy import Busy
-from .gen_fx54ua_lpdmsodpomdodsa.dese import Dese
-from .gen_fx54ua_lpdmsodpomdodsa.event import Event
-from .gen_fx54ua_lpdmsodpomdodsa.evmsg import Evmsg
-from .gen_fx54ua_lpdmsodpomdodsa.evqty import Evqty
-from .gen_fx54ua_lpdmsodpomdodsa.factory import Factory
-from .gen_fx54ua_lpdmsodpomdodsa.header import Header
-from .gen_fx54ua_lpdmsodpomdodsa.id import Id
-from .gen_fx54ua_lpdmsodpomdodsa.miscellaneous import Ddt, Lrn
+from .gen_ft5uww_lpdmsodpomdoafgawgdsa.miscellaneous import Trg
+from .gen_fu6dog_lpdmsotekscopepcdpomdoawgdsa.status_and_error import Ese, Sre
+from .gen_fuq1mi_lpdmsotekscopepcdpodsa.alias import Alias
+from .gen_fuq1mi_lpdmsotekscopepcdpodsa.status_and_error import Psc
+from .gen_fx54ua_lpdmsodpomdodsa.miscellaneous import Ddt
 from .gen_fx54ua_lpdmsodpomdodsa.newpass import Newpass
 from .gen_fx54ua_lpdmsodpomdodsa.password import Password
-from .gen_fx54ua_lpdmsodpomdodsa.rem import Rem
-from .gen_fx54ua_lpdmsodpomdodsa.set import Set
-from .gen_fx54ua_lpdmsodpomdodsa.status_and_error import Pud
 from .gen_fx54ua_lpdmsodpomdodsa.teksecure import Teksecure
-from .gen_fx54ua_lpdmsodpomdodsa.verbose import Verbose
-from .gen_fx54ua_lpdmsodpomdodsa.wavfrm import Wavfrm
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.allev import Allev
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.busy import Busy
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.dese import Dese
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.event import Event
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.evmsg import Evmsg
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.evqty import Evqty
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.factory import Factory
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.id import Id
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.miscellaneous import Lrn
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.rem import Rem
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.set import Set
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.status_and_error import Pud
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.verbose import Verbose
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.wavfrm import Wavfrm
+from .gen_fzd77z_lpdmsotekscopepcdpomdodsa.header import Header
 from .gen_fzn174_lpdmsodpomdodsa.lock import Lock
 from .gen_fzn174_lpdmsodpomdodsa.unlock import Unlock
 from .helpers import DefaultDictPassKeyToFactory
@@ -887,7 +897,7 @@ class DPO7KCommands:
     """
 
     # pylint: disable=too-many-statements
-    def __init__(self, device: Optional[PIDevice] = None) -> None:  # noqa: PLR0915
+    def __init__(self, device: Optional[PIControl] = None) -> None:  # noqa: PLR0915
         self._acquire = Acquire(device)
         self._alias = Alias(device)
         self._allev = Allev(device)
@@ -3773,22 +3783,16 @@ class DPO7KMixin:
         - ``.commands``: The DPO7K commands.
     """
 
-    def __init__(self, *args: Any, **kwargs: Any) -> None:
-        super().__init__(*args, **kwargs)
-        device = self if isinstance(self, PIDevice) else None
-        self._command_argument_constants = DPO7KCommandConstants()
-        self._commands = DPO7KCommands(device)
-
-    @property
-    def command_argument_constants(self) -> DPO7KCommandConstants:
+    @cached_property
+    def command_argument_constants(self) -> DPO7KCommandConstants:  # pylint: disable=no-self-use
         """Return the DPO7K command argument constants.
 
         This provides access to all the string constants which can be used as arguments for DPO7K
         commands.
         """
-        return self._command_argument_constants
+        return DPO7KCommandConstants()
 
-    @property
+    @cached_property
     def commands(self) -> DPO7KCommands:
         """Return the DPO7K commands.
 
@@ -3904,4 +3908,5 @@ class DPO7KMixin:
             - ``.wfmpre``: The ``WFMPre`` command tree.
             - ``.zoom``: The ``ZOOm`` command.
         """
-        return self._commands
+        device = self if isinstance(self, PIControl) else None
+        return DPO7KCommands(device)

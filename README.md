@@ -1,13 +1,13 @@
 <div markdown="1" class="custom-badge-table">
 
-|                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Testing**       | [![Code testing status](https://github.com/tektronix/tm_devices/actions/workflows/test-code.yml/badge.svg?branch=main)](https://github.com/tektronix/tm_devices/actions/workflows/test-code.yml) [![Docs testing status](https://github.com/tektronix/tm_devices/actions/workflows/test-docs.yml/badge.svg?branch=main)](https://github.com/tektronix/tm_devices/actions/workflows/test-docs.yml) [![Coverage status](https://codecov.io/gh/tektronix/tm_devices/branch/main/graph/badge.svg)](https://codecov.io/gh/tektronix/tm_devices)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| **Code Quality**  | [![CodeQL status](https://github.com/tektronix/tm_devices/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/tektronix/tm_devices/actions/workflows/codeql-analysis.yml) [![CodeFactor grade](https://www.codefactor.io/repository/github/tektronix/tm_devices/badge)](https://www.codefactor.io/repository/github/tektronix/tm_devices) [![pre-commit status](https://results.pre-commit.ci/badge/github/tektronix/tm_devices/main.svg)](https://results.pre-commit.ci/latest/github/tektronix/tm_devices/main)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| **Package**       | [![PyPI: Package status](https://img.shields.io/pypi/status/tm_devices?logo=pypi)](https://pypi.org/project/tm_devices/) [![PyPI: Latest release version](https://img.shields.io/pypi/v/tm_devices?logo=pypi)](https://pypi.org/project/tm_devices/) [![PyPI: Supported Python versions](https://img.shields.io/pypi/pyversions/tm_devices?logo=python)](https://pypi.org/project/tm_devices/) [![PyPI: Downloads](https://pepy.tech/badge/tm-devices)](https://pepy.tech/project/tm_devices) [![License: Apache 2.0](https://img.shields.io/pypi/l/tm_devices)](https://github.com/tektronix/tm_devices/blob/main/LICENSE.md) [![Package build status](https://github.com/tektronix/tm_devices/actions/workflows/package-build.yml/badge.svg?branch=main)](https://github.com/tektronix/tm_devices/actions/workflows/package-build.yml) [![PyPI upload status](https://github.com/tektronix/tm_devices/actions/workflows/package-release.yml/badge.svg?branch=main)](https://github.com/tektronix/tm_devices/actions/workflows/package-release.yml) |
-| **Documentation** | [![ReadtheDocs Status](https://img.shields.io/readthedocs/tm-devices/stable?logo=readthedocs)](https://tm-devices.readthedocs.io/stable)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| **Code Style**    | [![Test style: pytest](https://img.shields.io/badge/test%20style-pytest-blue)](https://github.com/pytest-dev/pytest) [![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-black)](https://docs.astral.sh/ruff/formatter/) [![Docstring style: google](https://img.shields.io/badge/docstring%20style-google-tan)](https://google.github.io/styleguide/pyguide.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| **Linting**       | [![pre-commit enabled](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit) [![Docstring formatter: docformatter](https://img.shields.io/badge/docstring%20formatter-docformatter-tan)](https://github.com/PyCQA/docformatter) [![Type Checker: pyright](https://img.shields.io/badge/type%20checker-pyright-yellowgreen)](https://github.com/RobertCraigie/pyright-python) [![Linter: pylint](https://img.shields.io/badge/linter-pylint-purple)](https://github.com/pylint-dev/pylint) [![Linter: Ruff](https://img.shields.io/badge/linter-ruff-purple)](https://github.com/charliermarsh/ruff)                                                                                                                                                                                                                                                                                                                                                                               |
+|                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Testing**       | [![Code testing status](https://github.com/tektronix/tm_devices/actions/workflows/test-code.yml/badge.svg?branch=main)](https://github.com/tektronix/tm_devices/actions/workflows/test-code.yml) [![Docs testing status](https://github.com/tektronix/tm_devices/actions/workflows/test-docs.yml/badge.svg?branch=main)](https://github.com/tektronix/tm_devices/actions/workflows/test-docs.yml) [![Coverage status](https://codecov.io/gh/tektronix/tm_devices/branch/main/graph/badge.svg)](https://codecov.io/gh/tektronix/tm_devices)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Code Quality**  | [![CodeQL status](https://github.com/tektronix/tm_devices/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/tektronix/tm_devices/actions/workflows/codeql-analysis.yml) [![CodeFactor grade](https://www.codefactor.io/repository/github/tektronix/tm_devices/badge)](https://www.codefactor.io/repository/github/tektronix/tm_devices) [![pre-commit status](https://results.pre-commit.ci/badge/github/tektronix/tm_devices/main.svg)](https://results.pre-commit.ci/latest/github/tektronix/tm_devices/main)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Package**       | [![PyPI: Package status](https://img.shields.io/pypi/status/tm_devices?logo=pypi)](https://pypi.org/project/tm_devices/) [![PyPI: Latest release version](https://img.shields.io/pypi/v/tm_devices?logo=pypi)](https://pypi.org/project/tm_devices/) [![PyPI: Supported Python versions](https://img.shields.io/pypi/pyversions/tm_devices?logo=python)](https://pypi.org/project/tm_devices/) [![PyPI: Downloads](https://static.pepy.tech/badge/tm-devices)](https://pepy.tech/project/tm_devices) [![License: Apache 2.0](https://img.shields.io/pypi/l/tm_devices)](https://github.com/tektronix/tm_devices/blob/main/LICENSE.md) [![Package build status](https://github.com/tektronix/tm_devices/actions/workflows/package-build.yml/badge.svg?branch=main)](https://github.com/tektronix/tm_devices/actions/workflows/package-build.yml) [![PyPI upload status](https://github.com/tektronix/tm_devices/actions/workflows/package-release.yml/badge.svg?branch=main)](https://github.com/tektronix/tm_devices/actions/workflows/package-release.yml) |
+| **Documentation** | [![ReadtheDocs Status](https://img.shields.io/readthedocs/tm-devices/stable?logo=readthedocs)](https://tm-devices.readthedocs.io/stable)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Code Style**    | [![Test style: pytest](https://img.shields.io/badge/test%20style-pytest-blue)](https://github.com/pytest-dev/pytest) [![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-black)](https://docs.astral.sh/ruff/formatter/) [![Docstring style: google](https://img.shields.io/badge/docstring%20style-google-tan)](https://google.github.io/styleguide/pyguide.html)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Linting**       | [![pre-commit enabled](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit) [![Docstring formatter: docformatter](https://img.shields.io/badge/docstring%20formatter-docformatter-tan)](https://github.com/PyCQA/docformatter) [![Type Checker: pyright](https://img.shields.io/badge/type%20checker-pyright-yellowgreen)](https://github.com/RobertCraigie/pyright-python) [![Linter: pylint](https://img.shields.io/badge/linter-pylint-purple)](https://github.com/pylint-dev/pylint) [![Linter: Ruff](https://img.shields.io/badge/linter-ruff-purple)](https://github.com/charliermarsh/ruff)                                                                                                                                                                                                                                                                                                                                                                                      |
 
 </div>
 
@@ -50,7 +50,7 @@ pip install tm_devices
 ```console
 $ list-visa-resources
 [
-  "TCPIP0::192.168.0.100::inst0::INSTR",
+  "TCPIP0::192.168.0.1::inst0::INSTR",
   "ASRL4::INSTR"
 ]
 ```
@@ -61,7 +61,7 @@ $ list-visa-resources
 from tm_devices import DeviceManager
 
 with DeviceManager() as device_manager:
-    scope = device_manager.add_scope("192.168.0.100")
+    scope = device_manager.add_scope("192.168.0.1")
     scope.query("*IDN?")
     print(scope)
 ```
@@ -81,59 +81,59 @@ _Device Support Levels_
 
 | Type   | Series/Model             | Command<br>Type | Basic<br>Control | Python API<br>Validation<br>Status |
 | ------ | ------------------------ | --------------- | ---------------- | ---------------------------------- |
-| AFGs   | **AFG3000**              | PI              | ✅                |                                    |
-|        | **AFG31xxx**             | PI              | ✅                |                                    |
-| AWGs   | **AWG5000**              | PI              | ✅                |                                    |
-|        | **AWG5200**              | PI              | ✅                |                                    |
-|        | **AWG7000**              | PI              | ✅                | ✅                                  |
-|        | **AWG70000**             | PI              | ✅                | ✅                                  |
-| Scopes | **2 Series MSO**         | PI              | ✅                | ✅                                  |
-|        | **3 Series MDO**         | PI              | ✅                |                                    |
-|        | **4 Series MSO**         | PI              | ✅                | ✅                                  |
-|        | **4 Series B MSO**       | PI              | ✅                | ✅                                  |
-|        | **5 Series MSO**         | PI              | ✅                | ✅                                  |
-|        | **5 Series B MSO**       | PI              | ✅                | ✅                                  |
-|        | **5 Series MSO (LP)**    | PI              | ✅                | ✅                                  |
-|        | **6 Series MSO**         | PI              | ✅                | ✅                                  |
-|        | **6 Series B MSO**       | PI              | ✅                | ✅                                  |
-|        | **6 Series LPD**         | PI              | ✅                | ✅                                  |
-|        | **MSO2000/B**            | PI              | ✅                |                                    |
-|        | **DPO2000/B**            | PI              | ✅                |                                    |
-|        | **MDO3000**              | PI              | ✅                | ✅                                  |
-|        | **MDO4000/B/C**          | PI              | ✅                | ✅                                  |
-|        | **MSO4000/B**            | PI              | ✅                | ✅                                  |
-|        | **DPO4000/B**            | PI              | ✅                | ✅                                  |
-|        | **MSO5000/B**            | PI              | ✅                | ✅                                  |
-|        | **DPO5000/B**            | PI              | ✅                | ✅                                  |
-|        | **DPO7000/C**            | PI              | ✅                | ✅                                  |
-|        | **DPO70000/C/D/DX/SX**   | PI              | ✅                | ✅                                  |
-|        | **DSA70000/C/D**         | PI              | ✅                | ✅                                  |
-|        | **MSO70000/C/DX**        | PI              | ✅                | ✅                                  |
-|        | **TSOVu**                | PI              | ✅                |                                    |
-|        | **TekScope**             | PI              | ✅                |                                    |
-| PSUs   | **2200**                 | PI              | ✅                |                                    |
-|        | **2220**                 | PI              | ✅                |                                    |
-|        | **2230**                 | PI              | ✅                |                                    |
-|        | **2231**                 | PI              | ✅                |                                    |
-|        | **2280S**                | PI              | ✅                |                                    |
-|        | **2281S**                | PI              | ✅                |                                    |
-| SMUs   | **24xx Standard**        | PI              | ✅                |                                    |
-|        | **24xx Interactive**     | TSP             | ✅                | ✅                                  |
-|        | **26xxB**                | TSP             | ✅                | 🚧                                  |
-|        | **2636B**                | TSP             | ✅                | ✅                                  |
-|        | **Model 2601B-PULSE**    | TSP             | ✅                |                                    |
-|        | **Model 2606B**          | TSP             | ✅                | 🚧                                  |
-|        | **2651A**                | TSP             | ✅                | ✅                                  |
-|        | **2657A**                | TSP             | ✅                |                                    |
-|        | **6430 (electrometer)**  | PI              | ✅                |                                    |
-|        | **6514 (electrometer)**  | PI              | ✅                |                                    |
-|        | **6517B (electrometer)** | PI              | ✅                |                                    |
-| MTs    | **TMT4**                 | API             | ✅                |                                    |
-| DMMs   | **DMM6500**              | TSP             | ✅                |                                    |
-|        | **DMM7510**              | TSP             | ✅                |                                    |
-|        | **DMM7512**              | TSP             | ✅                |                                    |
-| DAQs   | **DAQ6510**              | TSP             | ✅                |                                    |
-| SSs    | **3706A**                | TSP             | ✅                |                                    |
+| AFGs   | **AFG3000**              | PI              | ✅               |                                    |
+|        | **AFG31xxx**             | PI              | ✅               |                                    |
+| AWGs   | **AWG5000**              | PI              | ✅               |                                    |
+|        | **AWG5200**              | PI              | ✅               |                                    |
+|        | **AWG7000**              | PI              | ✅               | ✅                                 |
+|        | **AWG70000**             | PI              | ✅               | ✅                                 |
+| Scopes | **2 Series MSO**         | PI              | ✅               | ✅                                 |
+|        | **3 Series MDO**         | PI              | ✅               | ✅                                 |
+|        | **4 Series MSO**         | PI              | ✅               | ✅                                 |
+|        | **4 Series B MSO**       | PI              | ✅               | ✅                                 |
+|        | **5 Series MSO**         | PI              | ✅               | ✅                                 |
+|        | **5 Series B MSO**       | PI              | ✅               | ✅                                 |
+|        | **5 Series MSO (LP)**    | PI              | ✅               | ✅                                 |
+|        | **6 Series MSO**         | PI              | ✅               | ✅                                 |
+|        | **6 Series B MSO**       | PI              | ✅               | ✅                                 |
+|        | **6 Series LPD**         | PI              | ✅               | ✅                                 |
+|        | **MSO2000/B**            | PI              | ✅               |                                    |
+|        | **DPO2000/B**            | PI              | ✅               |                                    |
+|        | **MDO3000**              | PI              | ✅               | ✅                                 |
+|        | **MDO4000/B/C**          | PI              | ✅               | ✅                                 |
+|        | **MSO4000/B**            | PI              | ✅               | ✅                                 |
+|        | **DPO4000/B**            | PI              | ✅               | ✅                                 |
+|        | **MSO5000/B**            | PI              | ✅               | ✅                                 |
+|        | **DPO5000/B**            | PI              | ✅               | ✅                                 |
+|        | **DPO7000/C**            | PI              | ✅               | ✅                                 |
+|        | **DPO70000/C/D/DX/SX**   | PI              | ✅               | ✅                                 |
+|        | **DSA70000/C/D**         | PI              | ✅               | ✅                                 |
+|        | **MSO70000/C/DX**        | PI              | ✅               | ✅                                 |
+|        | **TSOVu**                | PI              | ✅               |                                    |
+|        | **TekScope**             | PI              | ✅               | ✅                                 |
+| PSUs   | **2200**                 | PI              | ✅               |                                    |
+|        | **2220**                 | PI              | ✅               |                                    |
+|        | **2230**                 | PI              | ✅               |                                    |
+|        | **2231**                 | PI              | ✅               |                                    |
+|        | **2280S**                | PI              | ✅               |                                    |
+|        | **2281S**                | PI              | ✅               |                                    |
+| SMUs   | **24xx Standard**        | PI              | ✅               |                                    |
+|        | **24xx Interactive**     | TSP             | ✅               | ✅                                 |
+|        | **26xxB**                | TSP             | ✅               | 🚧                                 |
+|        | **2636B**                | TSP             | ✅               | ✅                                 |
+|        | **Model 2601B-PULSE**    | TSP             | ✅               |                                    |
+|        | **Model 2606B**          | TSP             | ✅               | 🚧                                 |
+|        | **2651A**                | TSP             | ✅               | ✅                                 |
+|        | **2657A**                | TSP             | ✅               |                                    |
+|        | **6430 (electrometer)**  | PI              | ✅               |                                    |
+|        | **6514 (electrometer)**  | PI              | ✅               |                                    |
+|        | **6517B (electrometer)** | PI              | ✅               |                                    |
+| MTs    | **TMT4**                 | API             | ✅               |                                    |
+| DMMs   | **DMM6500**              | TSP             | ✅               |                                    |
+|        | **DMM7510**              | TSP             | ✅               |                                    |
+|        | **DMM7512**              | TSP             | ✅               |                                    |
+| DAQs   | **DAQ6510**              | TSP             | ✅               |                                    |
+| SSs    | **3706A**                | TSP             | ✅               |                                    |
 
 </div>
 
@@ -147,8 +147,8 @@ _Software Solution Support Levels_
 
 | Software<br>Solution | Command<br>Type | Basic<br>Control | Python API<br>Validation<br>Status |
 | -------------------- | --------------- | ---------------- | ---------------------------------- |
-| DPOJET               | PI              | ✅                | ✅                                  |
-| SourceXpress         | PI              | ✅                | ✅                                  |
+| DPOJET               | PI              | ✅               | ✅                                 |
+| SourceXpress         | PI              | ✅               | ✅                                 |
 
 </div>
 

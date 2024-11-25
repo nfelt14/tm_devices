@@ -40,7 +40,7 @@ def fixture_docs_server(site_dir: str) -> Generator[str, None, None]:
 def fixture_site_dir(pytestconfig: pytest.Config) -> str:
     """Create the site directory path for testing."""
     site_path = (
-        Path(__file__).parent / f".site_{sys.version_info.major}{sys.version_info.minor}/"
+        Path(__file__).parent.parent / f".site_{sys.version_info.major}{sys.version_info.minor}/"
     ).resolve()
     if xml_path := pytestconfig.getoption("xmlpath"):
         site_path = (Path(xml_path).parent / ".site_html/").resolve()  # pyright: ignore[reportArgumentType]
@@ -51,7 +51,7 @@ def fixture_site_dir(pytestconfig: pytest.Config) -> str:
 @pytest.fixture(scope="module", autouse=True)
 def _docs_tests_setup() -> Generator[None, None, None]:  # pyright: ignore [reportUnusedFunction]
     """Setup for docs tests.."""
-    starting_directory = os.getcwd()
+    starting_directory = Path.cwd()
     try:
         os.chdir(PROJECT_ROOT_DIR)
         yield

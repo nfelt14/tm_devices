@@ -5,9 +5,10 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 """
 
-from typing import Any, Dict, Optional
+from typing import Dict, Optional
 
-from tm_devices.drivers.pi.pi_device import PIDevice
+from tm_devices.driver_mixins.device_control.pi_control import PIControl
+from tm_devices.helpers import ReadOnlyCachedProperty as cached_property  # noqa: N813
 
 from .gen_32dszm_awg.awgcontrol import Awgcontrol
 from .gen_32dszm_awg.diagnostic import Diagnostic
@@ -25,11 +26,19 @@ from .gen_32dszm_awg.trigger import Trigger
 from .gen_32dszm_awg.wlist import Wlist
 from .gen_33ijgq_afgawg.abort import Abort
 from .gen_33ijgq_afgawg.calibration import Calibration
+from .gen_fsksdy_lpdmsotekscopepcdpomdoafgawgdsa.miscellaneous import Idn, Tst
+from .gen_fsksdy_lpdmsotekscopepcdpomdoafgawgdsa.status_and_error import (
+    Cls,
+    Esr,
+    Opc,
+    Rst,
+    Stb,
+    Wai,
+)
+from .gen_fst7sp_lpdmsotekscopepcmdodpoafgawgdsa.status_and_error import Opt
 from .gen_ft5uww_lpdmsodpomdoafgawgdsa.calibration import Cal
-from .gen_ft5uww_lpdmsodpomdoafgawgdsa.miscellaneous import Idn, Trg, Tst
-from .gen_ft5uww_lpdmsodpomdoafgawgdsa.status_and_error import Cls, Esr, Opc, Rst, Stb, Wai
-from .gen_fteabn_lpdmsomdodpoafgawgdsa.status_and_error import Opt
-from .gen_fug7nl_lpdmsodpomdoawgdsa.status_and_error import Ese, Sre
+from .gen_ft5uww_lpdmsodpomdoafgawgdsa.miscellaneous import Trg
+from .gen_fu6dog_lpdmsotekscopepcdpomdoawgdsa.status_and_error import Ese, Sre
 from .helpers import DefaultDictPassKeyToFactory
 
 
@@ -99,7 +108,7 @@ class AWG7KCCommands:
         - ``.wlist``: The ``WLISt`` command tree.
     """
 
-    def __init__(self, device: Optional[PIDevice] = None) -> None:
+    def __init__(self, device: Optional[PIControl] = None) -> None:
         self._abort = Abort(device)
         self._awgcontrol = Awgcontrol(device)
         self._cal = Cal(device)
@@ -735,22 +744,16 @@ class AWG7KCMixin:
         - ``.commands``: The AWG7KC commands.
     """
 
-    def __init__(self, *args: Any, **kwargs: Any) -> None:
-        super().__init__(*args, **kwargs)
-        device = self if isinstance(self, PIDevice) else None
-        self._command_argument_constants = AWG7KCCommandConstants()
-        self._commands = AWG7KCCommands(device)
-
-    @property
-    def command_argument_constants(self) -> AWG7KCCommandConstants:
+    @cached_property
+    def command_argument_constants(self) -> AWG7KCCommandConstants:  # pylint: disable=no-self-use
         """Return the AWG7KC command argument constants.
 
         This provides access to all the string constants which can be used as arguments for AWG7KC
         commands.
         """
-        return self._command_argument_constants
+        return AWG7KCCommandConstants()
 
-    @property
+    @cached_property
     def commands(self) -> AWG7KCCommands:
         """Return the AWG7KC commands.
 
@@ -788,4 +791,5 @@ class AWG7KCMixin:
             - ``.wai``: The ``*WAI`` command.
             - ``.wlist``: The ``WLISt`` command tree.
         """
-        return self._commands
+        device = self if isinstance(self, PIControl) else None
+        return AWG7KCCommands(device)

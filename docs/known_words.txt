@@ -1,7 +1,10 @@
 __none__
 add_new
 adding_devices
+afg
+afgs
 alias_usage
+analyze
 api
 artifact
 artifacts
@@ -16,14 +19,15 @@ ci
 classdiagram
 codebase
 codecov
+colored
 config
 conftest
 cookiecutter
 cov
 csv
+customizable
 deps
 dev
-device_type_classes
 disable_command_verification
 dll
 docformatter
@@ -31,6 +35,7 @@ docstring
 docstrings
 en
 enum
+env
 executables
 filepath
 generate_function
@@ -46,6 +51,7 @@ https
 io
 js
 keithley
+lawngreen
 licensor
 linter
 linters
@@ -54,11 +60,13 @@ mailto
 md
 mixin
 mixins
+ms
 multimeters
 mv
 namespace
 noqa
 opensource
+orangered
 parallelization
 pi
 pre
@@ -96,6 +104,7 @@ tm_devices
 tmdevicessupport
 toml
 usb
+venv
 walkthrough
 www
 yaml

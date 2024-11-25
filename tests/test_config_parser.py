@@ -32,7 +32,7 @@ def test_nested_config_prefix_mapping() -> None:
 
 def test_environment_variable_config(capsys: pytest.CaptureFixture[str]) -> None:
     """Test the environment variable config method."""
-    options = ["STANDALONE"]
+    options = ["STANDALONE", "DEFAULT_VISA_TIMEOUT=10000", "LOG_FILE_LEVEL=NONE"]
     expected_device_string = (
         "address=MSO54-123456,connection_type=TCPIP,device_type=SCOPE,lan_device_name=hislip0"
     )
@@ -54,13 +54,18 @@ def test_environment_variable_config(capsys: pytest.CaptureFixture[str]) -> None
     assert str(expected_device) == expected_device_string
     assert not config.options.teardown_cleanup
     assert config.options.standalone
+    assert config.options.log_file_level == "NONE"
+    assert config.options.default_visa_timeout == 10000
     assert (
         config.devices == expected_entry
     ), f"\nDevice dictionaries don't match:\n{expected_entry}\n{config.devices}"
 
     # test that the config string representation looks like env declaration
-    expected_entry_string = f"TM_OPTIONS=STANDALONE\nTM_DEVICES=~~~{expected_device_string}~~~"
-    print(config)
+    expected_entry_string = (
+        f"TM_OPTIONS=DEFAULT_VISA_TIMEOUT=10000,LOG_FILE_LEVEL=NONE,STANDALONE\n"
+        f"TM_DEVICES=~~~{expected_device_string}~~~"
+    )
+    print(config)  # noqa: T201
     assert capsys.readouterr().out.strip() == expected_entry_string
 
     # test smu with serial properties
@@ -96,8 +101,11 @@ def test_environment_variable_config(capsys: pytest.CaptureFixture[str]) -> None
     assert (
         config.devices == expected_entry
     ), f"\nDevice dictionaries don't match:\n{expected_entry}\n{config.devices}"
-    expected_entry_string = f"TM_OPTIONS=STANDALONE\nTM_DEVICES=~~~{expected_device_string}~~~"
-    print(config)
+    expected_entry_string = (
+        f"TM_OPTIONS=DEFAULT_VISA_TIMEOUT=10000,LOG_FILE_LEVEL=NONE,STANDALONE\n"
+        f"TM_DEVICES=~~~{expected_device_string}~~~"
+    )
+    print(config)  # noqa: T201
     assert capsys.readouterr().out.strip() == expected_entry_string
 
     expected_device = DeviceConfigEntry(
@@ -141,6 +149,8 @@ options:
   standalone: false
   verbose_mode: false
   verbose_visa: false
+  default_visa_timeout: 10000
+  log_console_level: DEBUG
   """
     expected_options = DMConfigOptions(
         standalone=False,
@@ -148,6 +158,8 @@ options:
         teardown_cleanup=True,
         verbose_mode=False,
         verbose_visa=False,
+        default_visa_timeout=10000,
+        log_console_level="DEBUG",
     )
     expected_devices = {
         "SCOPE 1": DeviceConfigEntry(
@@ -170,7 +182,7 @@ options:
     }
     with mock.patch.dict("os.environ", {}, clear=True), mock.patch(
         "pathlib.Path.is_file", mock.MagicMock(return_value=True)
-    ), mock.patch("builtins.open", mock.mock_open(read_data=file_contents)):
+    ), mock.patch("pathlib.Path.open", mock.mock_open(read_data=file_contents)):
         config = DMConfigParser()
 
     assert expected_options == config.options
@@ -204,6 +216,8 @@ def test_file_config_non_default_path(
         teardown_cleanup=False,
         verbose_mode=False,
         verbose_visa=False,
+        default_visa_timeout=1000,
+        log_file_level="WARNING",
     )
     expected_devices = {
         "SCOPE 1": DeviceConfigEntry(
@@ -241,9 +255,7 @@ def test_file_config_non_default_path(
     config_2.load_config_file(os_environ["TM_DEVICES_CONFIG"])
 
     # Read in the golden files
-    with open(os_environ["TM_DEVICES_CONFIG"], encoding="utf-8") as config_file:
-        text = config_file.read()
-
+    text = Path(os_environ["TM_DEVICES_CONFIG"]).read_text(encoding="utf-8")
     assert config.to_config_file_text(file_type) == text, "issue generating config file text"
     assert config_2.to_config_file_text(file_type) == text, "issue generating config file text"
 
@@ -257,7 +269,6 @@ def test_file_config_non_default_path(
     ), f"\nDevice dictionaries don't match:\n{expected_devices}\n{config_2.devices}"
 
 
-# TODO: test with duplicated device address, one with domain name, one without
 @pytest.mark.parametrize(
     ("os_environ", "expected_exception"),
     [
@@ -276,6 +287,14 @@ def test_file_config_non_default_path(
             {
                 "TM_DEVICES": "device_type=SCOPE,address=MSO54-123456~~~"
                 "device_type=SCOPE,address=MSO54-123456"
+            },
+            ValueError,
+        ),
+        # test with duplicate device addresses, one with domain name, one without
+        (
+            {
+                "TM_DEVICES": "device_type=SCOPE,address=MSO54-123456,alias=foo1"
+                "~~~device_type=SCOPE,address=MSO54-123456.unit.test.domain,alias=foo2"
             },
             ValueError,
         ),
@@ -353,6 +372,11 @@ def test_file_config_non_default_path(
         # Test REST_API connection with no device driver
         (
             {"TM_DEVICES": "device_type=MT,connection_type=REST_API,address=localhost"},
+            ValueError,
+        ),
+        # Test invalid configuration options
+        (
+            {"TM_OPTIONS": "STANDALONE,LOG_FILE_LEVEL=INVALID"},
             ValueError,
         ),
     ],

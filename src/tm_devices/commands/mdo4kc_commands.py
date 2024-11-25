@@ -6,13 +6,15 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 """
 
-from typing import Any, Dict, Optional
+from typing import Dict, Optional
 
-from tm_devices.drivers.pi.pi_device import PIDevice
+from tm_devices.driver_mixins.device_control.pi_control import PIControl
+from tm_devices.helpers import ReadOnlyCachedProperty as cached_property  # noqa: N813
 
 from .gen_1kdqwg_mdo.search import Search
 from .gen_1kdqwg_mdo.trigger import Trigger
 from .gen_1kjd62_mdo.rf import Rf
+from .gen_1l4fot_mdomso.bus import Bus
 from .gen_1l4fot_mdomso.cursor import Cursor
 from .gen_1lcv3a_msodpomdo.message import Message
 from .gen_1lcv3a_msodpomdo.setup_1 import SetupItem
@@ -23,7 +25,6 @@ from .gen_1ltpwt_mdomsodpo.application import Application
 from .gen_1ltpwt_mdomsodpo.autoset import Autoset
 from .gen_1ltpwt_mdomsodpo.auxin import Auxin
 from .gen_1ltpwt_mdomsodpo.auxout import Auxout
-from .gen_1ltpwt_mdomsodpo.bus import Bus
 from .gen_1ltpwt_mdomsodpo.calibrate import Calibrate
 from .gen_1ltpwt_mdomsodpo.ch import Channel
 from .gen_1ltpwt_mdomsodpo.d import DigitalBit
@@ -36,7 +37,6 @@ from .gen_1ltpwt_mdomsodpo.filesystem import Filesystem
 from .gen_1ltpwt_mdomsodpo.fpanel import Fpanel
 from .gen_1ltpwt_mdomsodpo.gpibusb import Gpibusb
 from .gen_1ltpwt_mdomsodpo.hardcopy import Hardcopy
-from .gen_1ltpwt_mdomsodpo.histogram import Histogram
 from .gen_1ltpwt_mdomsodpo.horizontal import Horizontal
 from .gen_1ltpwt_mdomsodpo.mark import Mark
 from .gen_1ltpwt_mdomsodpo.marker import Marker
@@ -45,7 +45,6 @@ from .gen_1ltpwt_mdomsodpo.pictbridge import Pictbridge
 from .gen_1ltpwt_mdomsodpo.power import Power
 from .gen_1ltpwt_mdomsodpo.reboot import Reboot
 from .gen_1ltpwt_mdomsodpo.ref import RefItem
-from .gen_1ltpwt_mdomsodpo.save import Save
 from .gen_1ltpwt_mdomsodpo.socketserver import Socketserver
 from .gen_1ltpwt_mdomsodpo.time import Time
 from .gen_1ltpwt_mdomsodpo.vidpic import Vidpic
@@ -57,9 +56,11 @@ from .gen_1mlt9u_mdomsodpo.acquire import Acquire
 from .gen_1mlt9u_mdomsodpo.configuration import Configuration
 from .gen_1mlt9u_mdomsodpo.deskew import Deskew
 from .gen_1mlt9u_mdomsodpo.display import Display
+from .gen_1mlt9u_mdomsodpo.histogram import Histogram
 from .gen_1mlt9u_mdomsodpo.mask import Mask
 from .gen_1mlt9u_mdomsodpo.measurement import Measurement
 from .gen_1mlt9u_mdomsodpo.recall import Recall
+from .gen_1mlt9u_mdomsodpo.save import Save
 from .gen_1mlt9u_mdomsodpo.select import Select
 from .gen_1nmc1o_msodpomdo.clearmenu import Clearmenu
 from .gen_1nmc1o_msodpomdo.errlog import Errlog
@@ -67,35 +68,44 @@ from .gen_1nmc1o_msodpomdo.language import Language
 from .gen_1nmc1o_msodpomdo.status_and_error import Psc
 from .gen_1nmc1o_msodpomdo.usbdevice import Usbdevice
 from .gen_1nmc1o_msodpomdo.usbtmc import Usbtmc
-from .gen_e6lgg1_lpdmsodpomdo.totaluptime import Totaluptime
-from .gen_e6606z_lpdmsomdodpo.pause import Pause
+from .gen_e6bmgw_lpdmsotekscopepcdpomdo.totaluptime import Totaluptime
+from .gen_e6wozn_lpdmsotekscopepcmdodpo.pause import Pause
 from .gen_fhrp27_msodpomdodsa.curve import Curve
 from .gen_fhrp27_msodpomdodsa.date import Date
 from .gen_fhrp27_msodpomdodsa.mathvar import Mathvar
 from .gen_fhrp27_msodpomdodsa.save_and_recall import Rcl, Sav
+from .gen_fsksdy_lpdmsotekscopepcdpomdoafgawgdsa.miscellaneous import Idn, Tst
+from .gen_fsksdy_lpdmsotekscopepcdpomdoafgawgdsa.status_and_error import (
+    Cls,
+    Esr,
+    Opc,
+    Rst,
+    Stb,
+    Wai,
+)
+from .gen_fst7sp_lpdmsotekscopepcmdodpoafgawgdsa.status_and_error import Opt
 from .gen_ft5uww_lpdmsodpomdoafgawgdsa.calibration import Cal
-from .gen_ft5uww_lpdmsodpomdoafgawgdsa.miscellaneous import Idn, Trg, Tst
-from .gen_ft5uww_lpdmsodpomdoafgawgdsa.status_and_error import Cls, Esr, Opc, Rst, Stb, Wai
-from .gen_fteabn_lpdmsomdodpoafgawgdsa.status_and_error import Opt
-from .gen_fug7nl_lpdmsodpomdoawgdsa.status_and_error import Ese, Sre
-from .gen_fx54ua_lpdmsodpomdodsa.allev import Allev
-from .gen_fx54ua_lpdmsodpomdodsa.busy import Busy
-from .gen_fx54ua_lpdmsodpomdodsa.dese import Dese
-from .gen_fx54ua_lpdmsodpomdodsa.event import Event
-from .gen_fx54ua_lpdmsodpomdodsa.evmsg import Evmsg
-from .gen_fx54ua_lpdmsodpomdodsa.evqty import Evqty
-from .gen_fx54ua_lpdmsodpomdodsa.factory import Factory
-from .gen_fx54ua_lpdmsodpomdodsa.header import Header
-from .gen_fx54ua_lpdmsodpomdodsa.id import Id
-from .gen_fx54ua_lpdmsodpomdodsa.miscellaneous import Ddt, Lrn
+from .gen_ft5uww_lpdmsodpomdoafgawgdsa.miscellaneous import Trg
+from .gen_fu6dog_lpdmsotekscopepcdpomdoawgdsa.status_and_error import Ese, Sre
+from .gen_fx54ua_lpdmsodpomdodsa.miscellaneous import Ddt
 from .gen_fx54ua_lpdmsodpomdodsa.newpass import Newpass
 from .gen_fx54ua_lpdmsodpomdodsa.password import Password
-from .gen_fx54ua_lpdmsodpomdodsa.rem import Rem
-from .gen_fx54ua_lpdmsodpomdodsa.set import Set
-from .gen_fx54ua_lpdmsodpomdodsa.status_and_error import Pud
 from .gen_fx54ua_lpdmsodpomdodsa.teksecure import Teksecure
-from .gen_fx54ua_lpdmsodpomdodsa.verbose import Verbose
-from .gen_fx54ua_lpdmsodpomdodsa.wavfrm import Wavfrm
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.allev import Allev
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.busy import Busy
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.dese import Dese
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.event import Event
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.evmsg import Evmsg
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.evqty import Evqty
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.factory import Factory
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.id import Id
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.miscellaneous import Lrn
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.rem import Rem
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.set import Set
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.status_and_error import Pud
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.verbose import Verbose
+from .gen_fxvtmy_lpdmsotekscopepcdpomdodsa.wavfrm import Wavfrm
+from .gen_fzd77z_lpdmsotekscopepcdpomdodsa.header import Header
 from .gen_fzn174_lpdmsodpomdodsa.lock import Lock
 from .gen_fzn174_lpdmsodpomdodsa.unlock import Unlock
 from .helpers import DefaultDictPassKeyToFactory
@@ -738,7 +748,7 @@ class MDO4KCCommands:
     """
 
     # pylint: disable=too-many-statements
-    def __init__(self, device: Optional[PIDevice] = None) -> None:  # noqa: PLR0915
+    def __init__(self, device: Optional[PIControl] = None) -> None:  # noqa: PLR0915
         self._acquire = Acquire(device)
         self._actonevent = Actonevent(device)
         self._afg = Afg(device)
@@ -3289,22 +3299,16 @@ class MDO4KCMixin:
         - ``.commands``: The MDO4KC commands.
     """
 
-    def __init__(self, *args: Any, **kwargs: Any) -> None:
-        super().__init__(*args, **kwargs)
-        device = self if isinstance(self, PIDevice) else None
-        self._command_argument_constants = MDO4KCCommandConstants()
-        self._commands = MDO4KCCommands(device)
-
-    @property
-    def command_argument_constants(self) -> MDO4KCCommandConstants:
+    @cached_property
+    def command_argument_constants(self) -> MDO4KCCommandConstants:  # pylint: disable=no-self-use
         """Return the MDO4KC command argument constants.
 
         This provides access to all the string constants which can be used as arguments for MDO4KC
         commands.
         """
-        return self._command_argument_constants
+        return MDO4KCCommandConstants()
 
-    @property
+    @cached_property
     def commands(self) -> MDO4KCCommands:
         """Return the MDO4KC commands.
 
@@ -3411,4 +3415,5 @@ class MDO4KCMixin:
             - ``.wfmoutpre``: The ``WFMOutpre`` command.
             - ``.zoom``: The ``ZOOm`` command.
         """
-        return self._commands
+        device = self if isinstance(self, PIControl) else None
+        return MDO4KCCommands(device)

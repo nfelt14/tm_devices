@@ -32,7 +32,7 @@ things change, but does not require modification with every script execution.
 
 A config file can be **overruled** by an
 [environment variable](#environment-variable) configuration. That means that if
-you have both a config file defined and the environment variables set, the
+you have both a config file defined and **either** of the environment variables set, the
 config parser will **always** prioritize the environment variables. Make sure to
 delete the environment variables if you want to switch back to the config file.
 
@@ -215,8 +215,7 @@ devices:
 
 ### Config Options
 
-These options are flags that enable/disable runtime behaviors of the Device
-Manager.
+These options are used to configure runtime behaviors of `tm_devices`.
 
 #### Yaml Options Syntax
 
@@ -228,7 +227,14 @@ options:
   setup_cleanup: false
   teardown_cleanup: false
   retry_visa_connection: false
+  default_visa_timeout: 5000
   check_for_updates: false
+  log_console_level: INFO
+  log_file_level: DEBUG
+  log_file_directory: ./logs
+  log_file_name: tm_devices_<timestamp>.log
+  log_colored_output: false
+  log_pyvisa_messages: false
 ```
 
 These are all `false` by default if not defined, set to `true` to modify the
@@ -252,9 +258,36 @@ runtime behavior configuration.
 - `retry_visa_connection`
     - This config option will enable a second attempt when creating VISA connections,
         the second attempt is made after waiting, to allow the device time to become available.
+- `default_visa_timeout`
+    - This config option is used to set the default VISA timeout value in milliseconds.
+        The default value of this config option is 5000 ms.
 - `check_for_updates`
     - This config option will enable a check for any available updates on pypi.org for the
         package when the `DeviceManager` is instantiated.
+- `log_console_level`
+    - This config option is used to set the log level for the console output.
+        The default value of this config option is "INFO". See the
+        [`configure_logging()`][tm_devices.helpers.logging.configure_logging] function for more information.
+- `log_file_level`
+    - This config option is used to set the log level for the file output.
+        The default value of this config option is "DEBUG". See the
+        [`configure_logging()`][tm_devices.helpers.logging.configure_logging] function for more information.
+- `log_file_directory`
+    - This config option is used to set the directory where the log files will be saved.
+        The default value of this config option is "./logs". See the
+        [`configure_logging()`][tm_devices.helpers.logging.configure_logging] function for more information.
+- `log_file_name`
+    - This config option is used to set the name of the log file.
+        The default value of this config option is a timestamped filename with the .log extension. See the
+        [`configure_logging()`][tm_devices.helpers.logging.configure_logging] function for more information.
+- `log_colored_output`
+    - This config option is used to enable or disable colored output in the console.
+        The default value of this config option is false. See the
+        [`configure_logging()`][tm_devices.helpers.logging.configure_logging] function for more information.
+- `log_pyvisa_messages`
+    - This config option is used to enable or disable logging of PyVISA messages within the
+        configured log file. The default value of this config option is false. See the
+        [`configure_logging()`][tm_devices.helpers.logging.configure_logging] function for more information.
 
 ### Sample Config File
 
@@ -314,7 +347,14 @@ options:
   verbose_mode: false
   verbose_visa: false
   retry_visa_connection: false
+  default_visa_timeout: 10000  # 10 second default VISA timeout
   check_for_updates: false
+  log_console_level: NONE    # completely disable console output
+  log_file_level: DEBUG
+  log_file_directory: ./logs
+  log_file_name: custom_logfile.log    # customize the log file name
+  log_colored_output: false
+  log_pyvisa_messages: true  # log PyVISA messages in the log file
 ```
 
 #### TOML
@@ -388,7 +428,14 @@ standalone = false
 verbose_mode = false
 verbose_visa = false
 retry_visa_connection = false
+default_visa_timeout = 10000         # 10 second default VISA timeout
 check_for_updates = false
+log_console_level = "NONE"           # completely disable console output
+log_file_level = "DEBUG"
+log_file_directory = "./logs"
+log_file_name = "custom_logfile.log" # customize the log file name
+log_colored_output = false
+log_pyvisa_messages = true           # log PyVISA messages in the log file
 ```
 
 ---
@@ -399,7 +446,9 @@ Two environment variables, `TM_OPTIONS` and `TM_DEVICES`, can be used for
 runtime configurations and have a **HIGHER** priority than the config file.
 
 - `TM_OPTIONS` is a comma-delimited, all-uppercase list of enabled options
-    names.
+    names and values. Config options that act as boolean flags can be set simply by
+    adding the option name to the environment variable. Config options that require non-boolean
+    inputs should be specified with the option name followed by an equals sign and the value.
 - `TM_DEVICES` is a `~~~`-delimited list of device entries.
     - Each device entry is a comma-delimited list of `<key>=<value>` pairs.
 
@@ -409,8 +458,8 @@ execution scenarios where the list of devices needs to be temporary and
 workspace variables can be changed easily per script executor.
 
 There is no mechanism for merging the options and devices between the two config
-methods; if either of the `TM_DEVICES` or `TM_OPTIONS` environment variables is
-defined, the config file is ignored. If the environment variable(s) exist,
+methods; if **either** of the `TM_DEVICES` or `TM_OPTIONS` environment variables is
+defined, the config file is completely ignored. If **either** of the environment variable(s) exist,
 either permanently or temporarily, for the lifetime of the shell instance, they
 will override any existing config file you have.
 
@@ -420,12 +469,13 @@ Sample environment variable device configurations (with comments, not allowed in
 environment variable)
 
 ```python
+# fmt: off
 # Sample SMU using IP address and PyVISA-py
 TM_OPTIONS = "STANDALONE"
 TM_DEVICES = "address=123.45.67.255,device_type=SMU"
 
-# Sample scope using hostname and AFG using IP address with cleanup
-TM_OPTIONS = "SETUP_CLEANUP,TEARDOWN_CLEANUP"
+# Sample scope using hostname and AFG using IP address with cleanup and a non-standard default VISA timeout
+TM_OPTIONS = "SETUP_CLEANUP,TEARDOWN_CLEANUP,DEFAULT_VISA_TIMEOUT=10000"
 TM_DEVICES = "address=MDO9876-C543210,device_type=SCOPE~~~address=123.45.67.255,device_type=AFG"
 
 # Sample scope using IP address and AWG using hostname

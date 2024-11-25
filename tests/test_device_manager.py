@@ -11,7 +11,7 @@ import pytest
 import pyvisa as visa
 import pyvisa.constants
 
-from conftest import SIMULATED_VISA_LIB
+from conftest import SIMULATED_VISA_LIB, UNIT_TEST_TIMEOUT
 from tm_devices import DeviceManager
 from tm_devices.helpers import ConnectionTypes, DeviceTypes, PYVISA_PY_BACKEND, SerialConfig
 
@@ -69,11 +69,10 @@ class TestDeviceManager:  # pylint: disable=no-self-use
                 device_manager.write_current_configuration_to_config_file()
                 # respect the env var if no path is given
                 device_manager.write_current_configuration_to_config_file("./temp_config.yaml")
-            with open("./temp_config.toml", encoding="utf-8") as temp_config:
-                text = temp_config.read()
+            text = Path("./temp_config.toml").read_text(encoding="utf-8")
             assert (
                 text
-                == """[[devices]]
+                == f"""[[devices]]
 address = "1"
 alias = "TESTING"
 connection_type = "SERIAL"
@@ -93,6 +92,7 @@ connection_type = "TCPIP"
 device_type = "SCOPE"
 
 [options]
+default_visa_timeout = {UNIT_TEST_TIMEOUT}
 setup_cleanup = false
 standalone = false
 teardown_cleanup = false
@@ -100,12 +100,11 @@ verbose_mode = true
 verbose_visa = false
 """
             )
-            with open("./temp_config.yaml", encoding="utf-8") as temp_config:
-                text = temp_config.read()
-                print(text)
+            text = Path("./temp_config.yaml").read_text(encoding="utf-8")
+            print(text)  # noqa: T201
             assert (
                 text
-                == """---
+                == f"""---
 devices:
   - address: '1'
     alias: TESTING
@@ -122,6 +121,7 @@ devices:
     connection_type: TCPIP
     device_type: SCOPE
 options:
+  default_visa_timeout: {UNIT_TEST_TIMEOUT}
   setup_cleanup: false
   standalone: false
   teardown_cleanup: false
@@ -135,7 +135,7 @@ options:
 
         assert (
             device_manager.get_current_configuration_as_environment_variable_strings()
-            == "TM_OPTIONS=VERBOSE_MODE\n"
+            == f"TM_OPTIONS=DEFAULT_VISA_TIMEOUT={UNIT_TEST_TIMEOUT},VERBOSE_MODE\n"
             "TM_DEVICES=~~~address=1,alias=TESTING,connection_type=SERIAL,device_type=SMU,"
             "serial_baud_rate=115200,serial_data_bits=8,serial_end_input=none,"
             "serial_flow_control=xon_xoff,serial_parity=none,serial_stop_bits=one"
@@ -166,6 +166,8 @@ options:
             assert device_manager.verbose != saved_verbose
             device_manager.visa_library = PYVISA_PY_BACKEND
             assert device_manager.visa_library == PYVISA_PY_BACKEND
+            device_manager.default_visa_timeout = 1500
+            assert device_manager.default_visa_timeout == 1500
         finally:
             # Reset properties
             device_manager.teardown_cleanup_enabled = saved_teardown
@@ -385,6 +387,7 @@ options:
         assert stdout.count("Closing Connection to AFG 1") == num_closes
         assert stdout.count("DeviceManager Closed") == num_closes
 
+    # noinspection PyUnresolvedReferences
     def test_loading_isolated_config_file(
         self, device_manager: DeviceManager, capsys: pytest.CaptureFixture[str]
     ) -> None:
@@ -400,13 +403,22 @@ options:
         saved_teardown_enable = device_manager.teardown_cleanup_enabled
         device_manager.add_scope("MSO56-HOSTNAME")
         assert len(device_manager.devices) == 1
+        assert device_manager.default_visa_timeout == UNIT_TEST_TIMEOUT
+        assert list(device_manager.devices.values())[-1].default_visa_timeout == UNIT_TEST_TIMEOUT  # pyright: ignore[reportUnknownMemberType,reportAttributeAccessIssue]
         _ = capsys.readouterr()  # clear the output
 
+        expected_new_default_timeout = 1000
         device_manager.load_config_file(Path(__file__).parent / "samples/simulated_config.yaml")
         assert len(device_manager.devices) == 3
         stdout = capsys.readouterr().out
         assert "Beginning Device Cleanup on AFG " in stdout
         assert "Finished Device Cleanup on AFG " in stdout
+        assert device_manager.default_visa_timeout == expected_new_default_timeout
+        assert next(iter(device_manager.devices.values())).default_visa_timeout == UNIT_TEST_TIMEOUT  # pyright: ignore[reportUnknownMemberType,reportAttributeAccessIssue]
+        assert (
+            list(device_manager.devices.values())[-1].default_visa_timeout  # pyright: ignore[reportUnknownMemberType,reportAttributeAccessIssue]
+            == expected_new_default_timeout
+        )
 
         # Test with an option set in the file
         device_manager.remove_all_devices()
@@ -418,6 +430,7 @@ options:
         stdout = capsys.readouterr().out
         assert "Beginning Device Cleanup on AFG " not in stdout
         assert "Finished Device Cleanup on AFG " not in stdout
+        assert device_manager.default_visa_timeout == expected_new_default_timeout
 
         # Test adding no devices
         device_manager.remove_all_devices()
@@ -428,6 +441,7 @@ options:
         assert not device_manager.devices
         stdout = capsys.readouterr().out
         assert "Opening Connections to Devices" not in stdout
+        assert device_manager.default_visa_timeout == expected_new_default_timeout
 
         # Reset things
         device_manager.remove_all_devices()

@@ -5,9 +5,10 @@ THIS FILE IS AUTO-GENERATED, IT SHOULD NOT BE MANUALLY MODIFIED.
 Please report an issue if one is found.
 """
 
-from typing import Any, Dict, Optional
+from typing import Dict, Optional
 
-from tm_devices.drivers.pi.pi_device import PIDevice
+from tm_devices.driver_mixins.device_control.pi_control import PIControl
+from tm_devices.helpers import ReadOnlyCachedProperty as cached_property  # noqa: N813
 
 from .gen_2i1z2s_awg.abort import Abort
 from .gen_2i1z2s_awg.auxoutput import AuxoutputItem
@@ -33,11 +34,19 @@ from .gen_3n9auv_awg.output import Output
 from .gen_3n9auv_awg.slist import Slist
 from .gen_3n9auv_awg.status import Status
 from .gen_3n9auv_awg.wplugin import Wplugin
+from .gen_fsksdy_lpdmsotekscopepcdpomdoafgawgdsa.miscellaneous import Idn, Tst
+from .gen_fsksdy_lpdmsotekscopepcdpomdoafgawgdsa.status_and_error import (
+    Cls,
+    Esr,
+    Opc,
+    Rst,
+    Stb,
+    Wai,
+)
+from .gen_fst7sp_lpdmsotekscopepcmdodpoafgawgdsa.status_and_error import Opt
 from .gen_ft5uww_lpdmsodpomdoafgawgdsa.calibration import Cal
-from .gen_ft5uww_lpdmsodpomdoafgawgdsa.miscellaneous import Idn, Trg, Tst
-from .gen_ft5uww_lpdmsodpomdoafgawgdsa.status_and_error import Cls, Esr, Opc, Rst, Stb, Wai
-from .gen_fteabn_lpdmsomdodpoafgawgdsa.status_and_error import Opt
-from .gen_fug7nl_lpdmsodpomdoawgdsa.status_and_error import Ese, Sre
+from .gen_ft5uww_lpdmsodpomdoafgawgdsa.miscellaneous import Trg
+from .gen_fu6dog_lpdmsotekscopepcdpomdoawgdsa.status_and_error import Ese, Sre
 from .helpers import DefaultDictPassKeyToFactory
 
 
@@ -117,7 +126,7 @@ class AWG5200Commands:
         - ``.wplugin``: The ``WPLugin`` command tree.
     """
 
-    def __init__(self, device: Optional[PIDevice] = None) -> None:
+    def __init__(self, device: Optional[PIControl] = None) -> None:
         self._abort = Abort(device)
         self._active = Active(device)
         self._auxoutput: Dict[int, AuxoutputItem] = DefaultDictPassKeyToFactory(
@@ -944,22 +953,16 @@ class AWG5200Mixin:
         - ``.commands``: The AWG5200 commands.
     """
 
-    def __init__(self, *args: Any, **kwargs: Any) -> None:
-        super().__init__(*args, **kwargs)
-        device = self if isinstance(self, PIDevice) else None
-        self._command_argument_constants = AWG5200CommandConstants()
-        self._commands = AWG5200Commands(device)
-
-    @property
-    def command_argument_constants(self) -> AWG5200CommandConstants:
+    @cached_property
+    def command_argument_constants(self) -> AWG5200CommandConstants:  # pylint: disable=no-self-use
         """Return the AWG5200 command argument constants.
 
         This provides access to all the string constants which can be used as arguments for AWG5200
         commands.
         """
-        return self._command_argument_constants
+        return AWG5200CommandConstants()
 
-    @property
+    @cached_property
     def commands(self) -> AWG5200Commands:
         """Return the AWG5200 commands.
 
@@ -1006,4 +1009,5 @@ class AWG5200Mixin:
             - ``.wlist``: The ``WLISt`` command tree.
             - ``.wplugin``: The ``WPLugin`` command tree.
         """
-        return self._commands
+        device = self if isinstance(self, PIControl) else None
+        return AWG5200Commands(device)

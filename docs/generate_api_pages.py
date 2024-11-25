@@ -43,7 +43,7 @@ for path in file_list:
         parts = parts[:-1]
         doc_path = doc_path.with_name("index.md")
         full_doc_path = full_doc_path.with_name("index.md")
-    elif parts[-1] == "__main__":
+    elif parts[-1] == "__main__" or parts[-1].startswith("_"):
         continue
 
     nav[parts] = doc_path.as_posix()
@@ -77,6 +77,7 @@ for path in file_list:
                 "    options:\n"
                 "        inherited_members: false\n"
                 "        merge_init_into_class: false\n"
+                "        show_inheritance_diagram: false\n"
                 "        filters: ['!^_']\n"
             )
         if module_path.parts[-2:] == ("drivers", "__init__"):
