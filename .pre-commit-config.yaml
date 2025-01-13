@@ -132,6 +132,13 @@ repos:
         pass_filenames: false
         always_run: true
         args: [audit, --json, --ignore-code=CVE-2019-8341]
+      - id: check-tm-devices-schema-file
+        name: check-tm-devices-schema-file
+        entry: python
+        language: system
+        types: [python]
+        pass_filenames: false
+        args: [scripts/generate_schema.py]
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: 89c421dff2e1026ba12cdb9ebd731f4a83aa8021  # frozen: v0.8.6
     hooks:
