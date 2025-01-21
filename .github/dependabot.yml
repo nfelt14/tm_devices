@@ -13,7 +13,7 @@ updates:
       prefix: gh-actions
       include: scope
   - package-ecosystem: pip
-    directories: [/*.toml]
+    directory: /
     schedule:
       interval: weekly
     versioning-strategy: increase-if-necessary
