@@ -48,6 +48,10 @@ repos:
       - id: check-github-actions
       - id: check-github-workflows
         args: [--verbose]
+  - repo: https://github.com/renovatebot/pre-commit-hooks
+    rev: 37.440.4
+    hooks:
+      - id: renovate-config-validator
   - repo: https://github.com/Mateusz-Grzelinski/actionlint-py
     rev: f999ae59ac949d9b57aaa5569c2d60eb846b3a00  # frozen: v1.7.7.24
     hooks:
